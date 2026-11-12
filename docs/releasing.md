@@ -154,7 +154,7 @@ and by hand:
 | Job | When | What |
 | --- | --- | --- |
 | Linux | always | `tools/version.py check`, `cargo fmt --check`, clippy with `-D warnings`, `cargo test --workspace` with the Klein model and ONNX Runtime, and `kalliope-cli say`, which must produce 1.5 to 6 seconds of speech |
-| Windows, macOS | pushes to `main`, and runs started by hand | `cargo test --workspace` with the model, after Linux has passed, on `windows-latest` and `macos-latest` (Apple Silicon) |
+| Windows, macOS | pushes to `main`, and runs started by hand | the workspace's tests with the model, after Linux has passed, on `windows-latest` and `macos-latest` (Apple Silicon); not the examples, as `crates/voice/examples/measure.rs` uses Linux-only calls |
 
 Pull requests from branches of this repository are not checked twice: the push already was. A new
 push to a branch cancels the run it replaces. Compiled dependencies are cached with

@@ -87,10 +87,11 @@ arch)
     install -d -o builder "$build"
     install -o builder -m644 "$dist/kalliope-bin.PKGBUILD" "$build/PKGBUILD"
     install -o builder -m644 "$dist/kalliope-$version-linux-x86_64.tar.gz" "$build/"
-    su builder -c "cd $build && makepkg --noconfirm"
+    # Only packing here; pacman -U below installs the dependencies.
+    su builder -c "cd $build && makepkg --noconfirm --nodeps"
     pacman -U --noconfirm "$build"/kalliope-bin-*.pkg.tar.zst
     check /usr/bin /usr/lib/kalliope/libonnxruntime.so.1
-    test -e /usr/share/licenses/kalliope-bin/LICENSE
+    test -L /usr/share/licenses/kalliope-bin/LICENSE
     pacman -R --noconfirm kalliope-bin
     gone /usr/bin/kalliope /usr/bin/kalliope-cli /usr/lib/kalliope
     exit 0
