@@ -1,0 +1,32 @@
+[package]
+name = "kalliope-app"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+description = "Type, and be heard: the Kalliope app"
+
+[[bin]]
+name = "kalliope"
+path = "src/main.rs"
+
+[dependencies]
+kalliope-text.workspace = true
+kalliope-phonemes.workspace = true
+kalliope-voice.workspace = true
+kalliope-mic.workspace = true
+# The window. Software renderer only (no GPU stack), winit for Wayland/X11/Windows/macOS,
+# AccessKit for screen readers. Licensed to us under the Slint Royalty-free License 2.0, which
+# requires the AboutSlint widget in the About dialog.
+slint = { version = "1.18.1", default-features = false, features = [
+    "std",
+    "compat-1-2",
+    "backend-winit",
+    "renderer-software",
+    "software-renderer-systemfonts",
+    "accessibility",
+] }
+
+[build-dependencies]
+slint-build = "1.18.1"
