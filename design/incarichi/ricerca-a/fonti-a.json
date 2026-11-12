@@ -1,0 +1,721 @@
+{
+  "incarico": "ricerca-a: fonti Gruppo A (problema, settore, meccanismo) secondo design/ricerca/piano.md 3.1, 6.1, 6.3",
+  "data_consultazione": "2026-11-12",
+  "nota_formato": "Il contenuto richiesto per design/ricerca/fonti-a.md e in questo file JSON: la regola del worker vieta di scrivere report in .md. Il coordinatore puo convertirlo.",
+  "edizione_usata": {
+    "nome": "30th Annual Webby Awards (2026)",
+    "annuncio_vincitori": "21/04/2026",
+    "cerimonia": "11/05/2026, New York",
+    "fonte": "https://www.webbyawards.com/press/press-releases/30th-annual-webby-awards-announce-2026-winners/",
+    "nota": "Edizione conclusa piu recente al 12/11/2026. La 31ª edizione e in raccolta candidature (vincitori attesi 04/2027). Edizioni 2024 e 1999 viste solo come controllo: scartate."
+  },
+  "metodo": "Catalogo: pagine ufficiali winners.webbyawards.com (categorie e voci 2026) e comunicati webbyawards.com. Testo letto con WebFetch (riassunto di un modello): ogni affermazione decisiva e stata letta sulla pagina ufficiale o incrociata con un secondo passaggio. Prodotto: apertura con WebFetch e richiesta HTTP semplice (curl, senza display). Nessuna visita visiva: e compito del ruolo visivo.",
+  "candidati": [
+    {
+      "id": "F01",
+      "nome": "Signs",
+      "creatore": "DEPT® (entrante); team DEPT®/HELLO MONDAY; partner NVIDIA e American Society for Deaf Children (fonte DEPT)",
+      "categoria_ufficiale": "Accessibility & Inclusion (Apps, Software & Immersive, App Excellence); Accessible Technology (Websites and Mobile Sites, Responsible Technology)",
+      "edizione": "2026",
+      "tipo_premio": "Webby Winner (Accessibility & Inclusion); Webby Winner e People's Voice Winner (Accessible Technology)",
+      "scheda_premio_url": "https://winners.webbyawards.com/2026/apps-software-immersive/app-excellence/accessibility-inclusion/381065/signs ; https://winners.webbyawards.com/winners/websites-and-mobile-sites/responsible-technology/accessible-technology",
+      "motivazione_ufficiale": "motivazione individuale non disponibile (sezione About vuota). La descrizione della categoria Accessible Technology riguarda i prodotti che vanno oltre gli standard di conformita (riassunto, non citazione letterale).",
+      "prodotto_url": "https://signs-ai.com/",
+      "prodotto_esito": "HTTP 200 (curl, nessuna verifica anti-bot rilevata); letto con WebFetch",
+      "prodotto_descrizione_dichiarata": "Piattaforma AI che usa una comune webcam come coach di lingua dei segni (apprendimento con feedback in tempo reale, avatar 3D); raccolta di registrazioni di segni per un dataset; dataset «primarily and initially focuses» su mani e dita; espressioni del viso e movimenti della testa non ancora coperti; accesso al dataset su domanda; nessun output vocale descritto.",
+      "stato_verifica": "vittoria verificata su pagine ufficiali (due categorie, due pagine); prodotto aperto",
+      "compiti": [
+        "C5",
+        "C3",
+        "C6",
+        "C7"
+      ],
+      "perche_serve": "Mostra un prodotto reale con limiti dichiarati nel testo (mani prima di tutto, nessun segnale non manuale): riferimento per dire cosa il prodotto non fa. Tono semplice nel sito del prodotto.",
+      "non_prendere": "L'avatar 3D e il feedback in tempo reale sono dichiarati ma non spiegati: non copiare la promessa senza provarla. Le verifiche «by Deaf individuals» sono dichiarate dal sito, non verificate.",
+      "note": "Nella pagina Apps il premio e solo «Webby Winner»; nella pagina Accessible Technology compaiono «Webby Winner, People's Voice Winner» (non in conflitto: sono due categorie). Il link «View the work» della scheda porta al prodotto."
+    },
+    {
+      "id": "F02",
+      "nome": "Touch: Beyond Vision – AI for Blind",
+      "creatore": "Carveco LTD (entrante); nessun singolo autore indicato",
+      "categoria_ufficiale": "Belonging & Inclusion (AI Experiences & Applications); Experimental & Innovation (AI Features & Innovation); Public Service & Activism (AI)",
+      "edizione": "2026",
+      "tipo_premio": "Webby Winner (tre categorie, «3 Wins»)",
+      "scheda_premio_url": "https://winners.webbyawards.com/2026/ai/ai-experiences-applications/belonging-inclusion/361942/touch-beyond-vision--ai-for-blind ; https://winners.webbyawards.com/winners/ai/ai-features-innovation/experimental-innovation",
+      "motivazione_ufficiale": "motivazione individuale non disponibile (sezioni About vuote)",
+      "prodotto_url": "https://touch-beyond-vision.com/",
+      "prodotto_esito": "HTTP 200 (curl); letto con WebFetch",
+      "prodotto_descrizione_dichiarata": "Esposizione fisica, non un software: opere tattili in rilievo (Carveco), «audio descriptions, braille labels», evento del 15/09/2025 all'OXO Tower di Londra. Nessuna funzione vocale o TTS descritta.",
+      "stato_verifica": "vittoria verificata su pagina ufficiale; prodotto verificato, ma non e un software",
+      "compiti": [
+        "C7",
+        "C9",
+        "C6"
+      ],
+      "perche_serve": "Riferimento per un pubblico cieco o ipovedente: l'accesso per un altro senso e presentato con le sue alternative (descrizioni audio, braille).",
+      "non_prendere": "Il termine «AI» nel premio non e spiegato nel sito; non e un modello per interfacce software. Le date (2025) indicano un evento passato.",
+      "note": "Presente anche nelle nomination di marzo (TheWrap) e nella pagina di Carveco (5/5/2026): la vittoria e confermata dalle pagine ufficiali."
+    },
+    {
+      "id": "F03",
+      "nome": "My First Voice",
+      "creatore": "Monks (entrante); team sulla scheda: Ana Avasthi, Ananya Dixit, Rika Guite, Charlotte Mceleny, Rinmawia Khiangte, Subhash Singh, John Paite, Joao Flores. EastMojo: guidato da John V. Paite, realizzato con MediaMonks India e Centre for Community Initiative",
+      "categoria_ufficiale": "Experimental & Innovation (AI Features & Innovation)",
+      "edizione": "2026",
+      "tipo_premio": "People's Voice Winner",
+      "scheda_premio_url": "https://winners.webbyawards.com/2026/ai/ai-features-innovation/experimental-innovation/365148/my-first-voice (www.webbyawards.com/2026/...365148/my-first-voice: HTTP 404 con WebFetch)",
+      "motivazione_ufficiale": "motivazione individuale non disponibile (sezione About vuota)",
+      "prodotto_url": "non verificato: la scheda collega solo un video YouTube (youtube.com/watch?v=yAd_WTcAoeQ) e l'agenzia monks.com",
+      "prodotto_esito": "gap: nessun URL del prodotto trovato nelle fonti lette",
+      "prodotto_descrizione_dichiarata": "Da EastMojo (11/05/2026, secondario): app per bambini non parlanti; la voce nasce da versi e suoni del bambino e campioni di voce dei familiari; si sceglie una frase, un'icona o si scrive; gira su telefono o tablet. Pilota con 10 bambini (cifre del team, non verificate). Serve una «baseline level of cognitive and motor ability»; lingue limitate; nessuna partnership formale; non ancora gratuita.",
+      "stato_verifica": "vittoria verificata su pagina ufficiale; prodotto non verificato (gap)",
+      "compiti": [
+        "C2",
+        "C5",
+        "C6"
+      ],
+      "perche_serve": "Unico candidato di Gruppo A che produce una voce per chi non parla: mostra il rapporto fra voce, identita e limiti dichiarati (chi puo usarla, quanti bambini, quali lingue).",
+      "non_prendere": "«Endorsed by speech therapists», «30 media publications», «from days to minutes»: affermazioni del team riportate da un articolo. L'idea di un banco di voci donate e stata abbandonata nell'articolo.",
+      "note": "Nella lista di nomination (TheWrap, 31/3/2026) il titolo compare come nominee: la nomination e precedente alla vittoria del People's Voice, non c'e conflitto."
+    },
+    {
+      "id": "F04",
+      "nome": "ElevenAgents",
+      "creatore": "ElevenLabs (entrante); nessun singolo autore",
+      "categoria_ufficiale": "Best Use of AI Voice & Conversational Interface (AI Features & Innovation)",
+      "edizione": "2026",
+      "tipo_premio": "Webby Winner",
+      "scheda_premio_url": "https://winners.webbyawards.com/2026/ai/ai-features-innovation/best-use-of-ai-voice-conversational-interface/373131/elevenagents",
+      "motivazione_ufficiale": "motivazione individuale non disponibile (sezione About vuota)",
+      "prodotto_url": "https://elevenlabs.io/agents",
+      "prodotto_esito": "HTTP 200 (curl); letto con WebFetch",
+      "prodotto_descrizione_dichiarata": "Piattaforma per costruire, distribuire e monitorare agenti conversazionali vocali e in chat; voci in oltre 90 lingue; voice cloning e voice design; claim «natural, human-sounding agents»; «leading accuracy and ultra-low latency» senza numeri; obiettivo prevalente: aziende e call center; «17k+ voices» e «over 16,000 voices» sulla stessa pagina.",
+      "stato_verifica": "vittoria verificata su pagina ufficiale; prodotto aperto",
+      "compiti": [
+        "C2",
+        "C5",
+        "C8"
+      ],
+      "perche_serve": "Riferimento di voce sintetica di alta qualita presentata con test, guardrail e monitoraggio: come si mostra la voce a un pubblico tecnico.",
+      "non_prendere": "La clonazione vocale: incompatibile con il vincolo del progetto (la voce non si clona). I claim di precisione e latenza non quantificati. Il target aziendale (contact center) non e quello di Kalliope.",
+      "note": "Il premio Academy in questa categoria e ElevenAgents; la pagina ufficiale non lo afferma con parole esplicite, ma la label della scheda e «Webby Winner»."
+    },
+    {
+      "id": "F05",
+      "nome": "T-Mobile's AI Assistant",
+      "creatore": "T-Mobile (entrante); team sulla scheda: T-Mobile, Kettle, OpenAI (ruolo non specificato)",
+      "categoria_ufficiale": "Best Use of AI Voice & Conversational Interface (AI Features & Innovation)",
+      "edizione": "2026",
+      "tipo_premio": "People's Voice Winner",
+      "scheda_premio_url": "https://winners.webbyawards.com/2026/ai/ai-features-innovation/best-use-of-ai-voice-conversational-interface/373768/tmobiles-ai-assistant",
+      "motivazione_ufficiale": "motivazione individuale non disponibile (sezione About vuota)",
+      "prodotto_url": "non verificato: la scheda non collega un prodotto dedicato; t-mobile.com risponde HTTP 403 (curl) e non e stato letto",
+      "prodotto_esito": "gap: 403 sul sito dell'entrante",
+      "prodotto_descrizione_dichiarata": "Dalla scheda: nessuna descrizione delle funzioni. Da Shorty Awards (pagina «Kettle x T-Mobile»): assistente nell'app T-Life, voce e guida visiva, 57 lingue, passaggio all'operatore umano (dichiarazione dell'entrante, non verificata).",
+      "stato_verifica": "vittoria verificata su pagina ufficiale; prodotto gap; conflitto aperto su Kettle (vedi conflitti)",
+      "compiti": [
+        "C5",
+        "C2"
+      ],
+      "perche_serve": "Mostra un assistente vocale in un servizio reale (scelta fra AI e persona). Utile per C5 sul passaggio all'umano.",
+      "non_prendere": "«Voice AI now handles about half of customer service calls» (Entrepreneur, 5/5/2026): dichiarazione aziendale, non verificata.",
+      "note": "Code and Theory (non letto: HTTP 429) afferma che «Kettle won» in questa categoria, senza tipo di premio. La scheda ufficiale attribuisce il People's Voice a T-Mobile's AI Assistant; Kettle compare solo nel team."
+    },
+    {
+      "id": "F06",
+      "nome": "Flourish",
+      "creatore": "Flourish Science (entrante); team con Tapforce (sviluppo) e freelance (illustrazione), secondo la scheda",
+      "categoria_ufficiale": "Health & Wellness (AI Experiences & Applications)",
+      "edizione": "2026",
+      "tipo_premio": "People's Voice Winner",
+      "scheda_premio_url": "https://winners.webbyawards.com/2026/ai/ai-experiences-applications/health-wellness/380041/flourish-your-sciencebacked-wellness-buddy",
+      "motivazione_ufficiale": "motivazione individuale non disponibile (sezione About vuota)",
+      "prodotto_url": "https://www.myflourish.ai/",
+      "prodotto_esito": "HTTP 200 (curl); letto con WebFetch (solo banner cookie)",
+      "prodotto_descrizione_dichiarata": "«The leading AI mental wellness app. Developed by psychologists.» Chat con Sunnie; esercizi guidati; diario; «Voice mode» citata senza dettagli; claim di RCT e «Trained by Stanford scientists»; crisis protocol citato senza spiegazione; nessuna dichiarazione esplicita «non sostituisce la terapia» trovata; piano gratuito con limiti; prezzo Plus non indicato.",
+      "stato_verifica": "vittoria verificata su pagina ufficiale; prodotto aperto",
+      "compiti": [
+        "C5",
+        "C8",
+        "C9",
+        "C6"
+      ],
+      "perche_serve": "Mostra come un prodotto di salute mentale con AI dichiara prove, sicurezza e pubblico (persone, scuole, sanita). Esempio di C8 (fatti verificabili) e di confini da dichiarare.",
+      "non_prendere": "Rating 4.9, «recommended by ChatGPT, Perplexity and Gemini», loghi «Trusted by» (Harvard, Stanford, Crisis Text Line) senza spiegazione del rapporto: tutti auto-dichiarati. Il comunicato cita VERA-MH e RCT senza dettagli di metodo.",
+      "note": "Il comunicato Business Wire (VentureBeat, 11/05/2026) chiama la categoria «AI for Health & Wellness»: il nome ufficiale nella scheda e «Health & Wellness»."
+    },
+    {
+      "id": "F07",
+      "nome": "LALAL.AI, an AI-powered stem splitter",
+      "creatore": "LALAL.AI (entrante); nessun singolo autore",
+      "categoria_ufficiale": "Best Use of AI & Machine Learning (Apps, Software & Immersive, App Excellence); Creator, Creative, and Media Tools (Honoree)",
+      "edizione": "2026",
+      "tipo_premio": "People's Voice Winner (Best Use of AI & ML); Honoree (Creator, Creative, and Media Tools)",
+      "scheda_premio_url": "https://winners.webbyawards.com/2026/apps-software-immersive/app-excellence/best-use-of-ai-machine-learning/379810/lalalai-an-aipowered-stem-splitter",
+      "motivazione_ufficiale": "motivazione individuale non disponibile (sezioni About vuote)",
+      "prodotto_url": "https://www.lalal.ai/",
+      "prodotto_esito": "HTTP 200 (curl); letto con WebFetch senza sfida anti-bot visibile (nel sorgente HTML compare la stringa «Verify you are human», non verificata come sfida)",
+      "prodotto_descrizione_dichiarata": "Separazione di stem audio (voce, batteria, basso, piano); pulizia della voce; voice changer e voice cloner; piani Starter gratuito (10 minuti in coda Relaxed, file da 200 MB), Lite EUR 8,99/mese, Pro EUR 17,99/mese; modalita Fast con minuti non riportabili; abbonamento non rimborsabile.",
+      "stato_verifica": "vittoria verificata su pagina ufficiale e comunicato; prodotto aperto",
+      "compiti": [
+        "C2",
+        "C5"
+      ],
+      "perche_serve": "Strumento audio con limiti e attese dichiarati (coda, minuti, costi): esempio di come si scrivono limiti pratici e di come un prodotto sonoro si presenta a chi lo usa.",
+      "non_prendere": "«The #1 vocal remover» e «pro-level quality»: claim auto-dichiarati. La struttura di prezzo e le condizioni di rinnovo non sono un modello.",
+      "note": "Il premio e People's Voice (voto del pubblico), non giuria."
+    },
+    {
+      "id": "F08",
+      "nome": "Beeble AI | New era of video to VFX",
+      "creatore": "Beeble AI Inc. (entrante)",
+      "categoria_ufficiale": "Best Use of AI & Machine Learning (Apps, Software & Immersive, App Excellence)",
+      "edizione": "2026",
+      "tipo_premio": "Webby Winner",
+      "scheda_premio_url": "https://winners.webbyawards.com/2026/apps-software-immersive/app-excellence/best-use-of-ai-machine-learning/360992/beeble-ai--new-era-of-video-to-vfx",
+      "motivazione_ufficiale": "motivazione individuale non disponibile (sezione About vuota)",
+      "prodotto_url": "https://app.beeble.ai/home",
+      "prodotto_esito": "HTTP 200 (curl); WebFetch: solo il titolo «Beeble — AI VFX for Filmmakers», corpo non disponibile (lettura parziale)",
+      "prodotto_descrizione_dichiarata": "Solo il titolo: strumento AI per effetti visivi per cineasti.",
+      "stato_verifica": "vittoria verificata su pagina ufficiale; prodotto con lettura parziale",
+      "compiti": [],
+      "perche_serve": "Esempio di categoria «Best Use of AI & Machine Learning» per la query 4 (output da provare). Nessun compito C1-C9 diretto.",
+      "non_prendere": "Non valutato: lettura parziale.",
+      "note": "Bassa utilita per Kalliope; incluso per completare la categoria AI."
+    },
+    {
+      "id": "F09",
+      "nome": "Suno Studio",
+      "creatore": "Suno (entrante)",
+      "categoria_ufficiale": "Best Use of AI (Websites and Mobile Sites, Features & Design)",
+      "edizione": "2026",
+      "tipo_premio": "Webby Winner",
+      "scheda_premio_url": "https://winners.webbyawards.com/2026/websites-and-mobile-sites/features-design/best-use-of-ai/374416/suno-studio",
+      "motivazione_ufficiale": "motivazione individuale non disponibile; descrizione di categoria: «Sites that offer the best, most innovative use of artificial intelligence. Only use of AI is judged.»",
+      "prodotto_url": "https://suno.com/",
+      "prodotto_esito": "HTTP 200 (curl); letto con WebFetch",
+      "prodotto_descrizione_dichiarata": "Generatore di canzoni da testo; piano free fino a 10 canzoni al giorno; Pro 500 al mese; Premier 2.000 al mese; funzione Voices che usa una breve registrazione della propria voce per cantare testi scritti dall'utente; claim non verificati di recensioni e stampa.",
+      "stato_verifica": "vittoria verificata su pagina ufficiale; prodotto aperto",
+      "compiti": [
+        "C2",
+        "C5"
+      ],
+      "perche_serve": "Prodotto di audio generativo con limiti numerici dichiarati (quote giornaliere e mensili): esempio di C5 nella parte audio.",
+      "non_prendere": "La funzione Voices (uso della propria voce registrata): conflitto con il vincolo di Kalliope (non si clona la voce).",
+      "note": "Sito di musica, non di parlato: uso come riferimento di audio e di limiti, non di interfaccia."
+    },
+    {
+      "id": "F10",
+      "nome": "Waymo | Safety Hub",
+      "creatore": "Waymo (entrante); team: Trent Victor, Kristofer Kusano, John Scanlon (Waymo)",
+      "categoria_ufficiale": "Best Responsible AI Implementation (AI Features & Innovation); Travel, Transportation & Hospitality (AI Experiences & Applications)",
+      "edizione": "2026",
+      "tipo_premio": "Webby Winner (due categorie)",
+      "scheda_premio_url": "https://winners.webbyawards.com/2026/ai/ai-features-innovation/best-responsible-ai-implementation/383457/waymo--safety-hub",
+      "motivazione_ufficiale": "motivazione individuale non disponibile (sezioni About vuote)",
+      "prodotto_url": "https://waymo.com/safety/",
+      "prodotto_esito": "waymo.com HTTP 200 (curl); /safety/ letto con WebFetch",
+      "prodotto_descrizione_dichiarata": "Pagina di sicurezza: «95% Fewer serious injury or worse crashes (55 fewer)», «93% Fewer pedestrian crashes with injuries (87 fewer)», confronto con «an average human driver over the same distance»; «25 million miles»; FIA Road Safety Index 3 stelle. Periodo e metodo dei conteggi non indicati; baseline non definita; quasi tutte le cifre sono dell'azienda.",
+      "stato_verifica": "vittoria verificata su pagina ufficiale; prodotto letto",
+      "compiti": [
+        "C5",
+        "C8"
+      ],
+      "perche_serve": "Esempio di dichiarazione di sicurezza con cifre, e di cio che manca (periodo, base di confronto, fonte del dato): materiale per C8 e per la regola «dire i limiti prima della promessa».",
+      "non_prendere": "Percentuali senza periodo e senza baseline; l'interpretazione del rating FIA come «best practice» (la pagina lo afferma, il rating non lo dice).",
+      "note": "Il sito e un dominio aziendale: il prodotto (servizio di guida autonoma) non e un software di interfaccia."
+    },
+    {
+      "id": "F11",
+      "nome": "Human In The Loop (HITL)",
+      "creatore": "HITL, Inc (entrante); Kwaw Fletcher Frimpong, Philemon Kwesi Hini, Dominic Damoah, Michael Damoah, Lisa Mendita",
+      "categoria_ufficiale": "Best Responsible AI Implementation (AI Features & Innovation)",
+      "edizione": "2026",
+      "tipo_premio": "People's Voice Winner",
+      "scheda_premio_url": "https://winners.webbyawards.com/2026/ai/ai-features-innovation/best-responsible-ai-implementation/373931/human-in-the-loop",
+      "motivazione_ufficiale": "motivazione individuale non disponibile (sezione About vuota)",
+      "prodotto_url": "https://hitl.sh/",
+      "prodotto_esito": "HTTP 200 (curl); letto con WebFetch",
+      "prodotto_descrizione_dichiarata": "Servizio che fa chiedere a un agente AI una decisione a una persona (telefono, web, orologio, Telegram); canale di chiamata vocale; risposte a scelta, numero, nota; passaggio a una persona di riserva; risposta annullabile per pochi secondi; dichiarazione: «does not replace your own assessment or legal advice»; disponibilita dei canali non chiara; dati dimostrativi etichettati «HITL Official Demo».",
+      "stato_verifica": "vittoria verificata su pagina ufficiale; prodotto aperto",
+      "compiti": [
+        "C4",
+        "C5",
+        "C9"
+      ],
+      "perche_serve": "Mostra come una persona viene raggiunta in modo sicuro da un sistema AI, con risposta e ripresa: utile per C9 (instradare la persona giusta) e per dichiarare cosa non e il sistema.",
+      "non_prendere": "Loghi «Trusted by» (Google, Microsoft, Netflix, SpaceX) non spiegati; «Free to start» senza dettagli.",
+      "note": ""
+    },
+    {
+      "id": "F12",
+      "nome": "The Way Meditation App",
+      "creatore": "The Way (entrante); team sulla scheda: Jack Shukman (CEO), Henry Shukman, Emma Chapman, James Gadsby, Nina Fisher, Caitlin Spring, Kevin Holesh",
+      "categoria_ufficiale": "Best Visual Design - Function (Apps, Software & Immersive, App Excellence)",
+      "edizione": "2026",
+      "tipo_premio": "People's Voice Winner",
+      "scheda_premio_url": "https://winners.webbyawards.com/2026/apps-software-immersive/app-excellence/best-visual-design-function/373926/the-way-meditation-app",
+      "motivazione_ufficiale": "motivazione individuale non disponibile (sezione About vuota)",
+      "prodotto_url": "https://www.thewayapp.com/ ; App Store: https://apps.apple.com/us/app/the-way-guided-meditation/id6459996442 (HTTP 200, redirect a /the-way-meditation-zen/id6459996442, non letto)",
+      "prodotto_esito": "HTTP 200 (curl); letto con WebFetch",
+      "prodotto_descrizione_dichiarata": "Meditazione guidata con «one single path»: nessuna scelta per l'utente; «Enable audio»; nessun prezzo nella pagina; nessun disclaimer clinico; benefici descritti in generale e testimonianze non verificate.",
+      "stato_verifica": "vittoria verificata su pagina ufficiale; prodotto aperto",
+      "compiti": [
+        "C7",
+        "C6"
+      ],
+      "perche_serve": "Riduzione delle decisioni per l'utente (un solo percorso): riferimento per C7 (poche scelte, nessun gesto complesso) e per C6 (struttura semplice).",
+      "non_prendere": "Benefici di crescita personale e testimonianze come prova; mancanza di disclaimer su uso per la salute.",
+      "note": "Nella categoria Visual Design - Function, The Way e l'unico People's Voice; OURA (A More Intuitive OURA App) e Webby Winner."
+    },
+    {
+      "id": "F13",
+      "nome": "Through Sliding Doors",
+      "creatore": "Distil Immersive (entrante); team: Rosie's Place (cliente), Elizabeth Botté (illustrazione), Output Media (sound design)",
+      "categoria_ufficiale": "Charitable Organizations/Non-Profit (Websites and Mobile Sites, General Desktop & Mobile Sites)",
+      "edizione": "2026",
+      "tipo_premio": "Webby Winner",
+      "scheda_premio_url": "https://winners.webbyawards.com/2026/websites-and-mobile-sites/general-desktop-mobile-sites/charitable-organizationsnon-profit/385531/through-sliding-doors",
+      "motivazione_ufficiale": "motivazione individuale non disponibile (sezione About vuota; descrizione di categoria: siti per enti benefici e organizzazioni il cui scopo principale e aiutare le persone)",
+      "prodotto_url": "https://through-sliding-doors.rosiesplace.org.au/",
+      "prodotto_esito": "HTTP 200 (curl); letto con WebFetch",
+      "prodotto_descrizione_dichiarata": "Pagina di una graphic novel, presentata da Rosie's Place; avvertenza di contenuto («contain material that some readers may find confronting»); pulsante «Quick exit»; scelta di iniziare con o senza suono; linee di aiuto (Kids Helpline, 1800RESPECT); nessuna informativa privacy; nessuna funzione di accessibilita descritta oltre al suono.",
+      "stato_verifica": "vittoria verificata su pagina ufficiale; prodotto aperto",
+      "compiti": [
+        "C1",
+        "C9",
+        "C12"
+      ],
+      "perche_serve": "Schermata d'arrivo che avverte del contenuto prima di farlo sentire, con uscita rapida e scelta del suono: riferimento per C1 (capire subito), C9 (porte per pubblici diversi) e C12 (stati di non disponibilita).",
+      "non_prendere": "Il tema del contenuto (violenza sessuale): non e un tema da copiare; l'avvertenza e il modello, non il testo.",
+      "note": ""
+    },
+    {
+      "id": "F14",
+      "nome": "Maui Food Bank: Cultural Infrastructure for Community Resilience",
+      "creatore": "Technology Aloha (entrante); Jillyn Dillon (Founder & Executive Director), Shey Hernandez (Sr. Designer)",
+      "categoria_ufficiale": "Charitable Organizations/Non-Profit (Websites and Mobile Sites, General Desktop & Mobile Sites)",
+      "edizione": "2026",
+      "tipo_premio": "People's Voice Winner",
+      "scheda_premio_url": "https://winners.webbyawards.com/2026/websites-and-mobile-sites/general-desktop-mobile-sites/charitable-organizationsnon-profit/363807/maui-food-bank-cultural-infrastructure-for-community-resilience",
+      "motivazione_ufficiale": "motivazione individuale non disponibile (sezione About vuota); speech dell'entrante: «When Websites Work, People Eat.» (non e una motivazione)",
+      "prodotto_url": "https://mauifoodbank.org/",
+      "prodotto_esito": "HTTP 200 (curl, 619 KB); WebFetch: contenuto vuoto (lettura non riuscita)",
+      "prodotto_descrizione_dichiarata": "Non estratta.",
+      "stato_verifica": "vittoria verificata su pagina ufficiale; prodotto non letto (gap di lettura)",
+      "compiti": [
+        "C1",
+        "C9"
+      ],
+      "perche_serve": "Potenziale per C1 e C9 (sito di servizi per le persone); da leggere dal ruolo visivo.",
+      "non_prendere": "Non valutato.",
+      "note": "Candidato tenuto per la categoria non profit; il contenuto va letto prima dell'uso."
+    },
+    {
+      "id": "F15",
+      "nome": "Google Cloud: A Generative Web Experience",
+      "creatore": "Google (entrante); team di 17 persone sulla scheda",
+      "categoria_ufficiale": "Best Use of AI (Websites and Mobile Sites, Features & Design)",
+      "edizione": "2026",
+      "tipo_premio": "People's Voice Winner",
+      "scheda_premio_url": "https://winners.webbyawards.com/2026/websites-and-mobile-sites/features-design/best-use-of-ai/360388/google-cloud-a-generative-web-experience",
+      "motivazione_ufficiale": "motivazione individuale non disponibile (sezione About vuota; descrizione di categoria: «Only use of AI is judged»)",
+      "prodotto_url": "http://cloud.google.com/ (sito generico; l'esperienza specifica non e identificata)",
+      "prodotto_esito": "HTTP 200 (curl, 1,7 MB); non letto con WebFetch",
+      "prodotto_descrizione_dichiarata": "Non identificata.",
+      "stato_verifica": "vittoria verificata su pagina ufficiale; prodotto non identificato (gap)",
+      "compiti": [
+        "C9"
+      ],
+      "perche_serve": "Potenziale per C9 (una pagina che si adatta al pubblico con AI): da verificare.",
+      "non_prendere": "Non valutato.",
+      "note": "Riserva: bassa utilita finche l'esperienza non e identificata."
+    },
+    {
+      "id": "F16",
+      "nome": "Bedtime Donations",
+      "creatore": "INNOCEAN Worldwide Europe GmbH (entrante); nessun singolo autore; la scheda indica «Inclusion Is One Story Away» come speech",
+      "categoria_ufficiale": "Accessibility & Inclusion (Apps, Software & Immersive, App Excellence)",
+      "edizione": "2026",
+      "tipo_premio": "People's Voice Winner",
+      "scheda_premio_url": "https://winners.webbyawards.com/2026/apps-software-immersive/app-excellence/accessibility-inclusion/382319/bedtime-donations",
+      "motivazione_ufficiale": "motivazione individuale non disponibile (nessuna giuria sulla scheda)",
+      "prodotto_url": "non un prodotto: la scheda collega https://bedtime-donations.com/casefilm.html («View the work»), una pagina di campagna (HTTP 200)",
+      "prodotto_esito": "HTTP 200 (curl); letto con WebFetch: video non caricato",
+      "prodotto_descrizione_dichiarata": "«The bedtime story you read becomes a free audiobook that makes literacy accessible for blind children.» Nessuna descrizione della voce (sintetica o umana), nessun meccanismo di donazione descritto.",
+      "stato_verifica": "vittoria verificata su pagina ufficiale; prodotto non verificabile (pagina di campagna)",
+      "compiti": [
+        "C2",
+        "C6"
+      ],
+      "perche_serve": "Una lettura diventa audio per chi non vede: caso di accesso attraverso il suono e di lettura.",
+      "non_prendere": "Il modello di donazione non e descritto nella pagina; non copiarlo senza fonti.",
+      "note": "Il premio e People's Voice; non ci sono dettagli tecnici sulla voce."
+    },
+    {
+      "id": "F17",
+      "nome": "Where Should We Begin? with Esther Perel",
+      "creatore": "Vox Media (entrante); Esther Perel (host), Jesse Baker (EP), Eric Nuzum, Destry Sibley, Sabrina Farhi, Kristin Mueller, Paul Schneider (Magnificent Noise)",
+      "categoria_ufficiale": "Health, Wellness & Lifestyle (Podcasts, Shows)",
+      "edizione": "2026",
+      "tipo_premio": "Webby Winner",
+      "scheda_premio_url": "https://winners.webbyawards.com/2026/podcasts/shows/health-wellness-lifestyle/375055/where-should-we-begin-with-esther-perel",
+      "motivazione_ufficiale": "motivazione individuale non disponibile (nessuna giuria)",
+      "prodotto_url": "https://podcasts.voxmedia.com/show/where-should-we-begin-with-esther-perel",
+      "prodotto_esito": "HTTP 200 (curl, 18 KB); WebFetch: «Claude Code is unable to fetch» (lettura non riuscita)",
+      "prodotto_descrizione_dichiarata": "Non estratta.",
+      "stato_verifica": "vittoria verificata su pagina ufficiale; prodotto non letto (gap di lettura)",
+      "compiti": [
+        "C6",
+        "C2"
+      ],
+      "perche_serve": "Esempio del settore salute e benessere in forma audio (podcast) per la ricerca di tono; da leggere.",
+      "non_prendere": "Non valutato.",
+      "note": "Riserva: sezione podcast, non sito; il valore per Kalliope e limitato alla categoria."
+    },
+    {
+      "id": "F18",
+      "nome": "Joel Bervell – The 'Medical Mythbuster'",
+      "creatore": "Joel Bervell (creator); entrante Kensington Grey",
+      "categoria_ufficiale": "Fitness, Health & Wellness (Creators, Individual Creator)",
+      "edizione": "2026",
+      "tipo_premio": "Webby Winner",
+      "scheda_premio_url": "https://winners.webbyawards.com/2026/creators/individual-creator/fitness-health-wellness/371959/joel-bervell--the-medical-mythbuster",
+      "motivazione_ufficiale": "motivazione individuale non disponibile (nessuna giuria sulla scheda)",
+      "prodotto_url": "https://www.instagram.com/joelbervell/?hl=en (profilo social, non prodotto)",
+      "prodotto_esito": "WebFetch: solo il titolo del profilo; contenuto non letto",
+      "prodotto_descrizione_dichiarata": "Non estratta.",
+      "stato_verifica": "vittoria verificata su pagina ufficiale; contenuto non letto",
+      "compiti": [
+        "C8",
+        "C5"
+      ],
+      "perche_serve": "Divulgazione medica con fonti (miti sfatati): esempio di C8 (fatti verificabili) nel settore salute, da leggere.",
+      "non_prendere": "Non valutato.",
+      "note": "Non e un prodotto: l'indirizzo e un profilo social."
+    }
+  ],
+  "non_trovati_o_esclusi": [
+    {
+      "nome": "GoBoot",
+      "motivo": "Nominee (Accessibility & Inclusion), non vincitore"
+    },
+    {
+      "nome": "InnoCaption (AI feature per persone Deaf o con disabilita del parlato)",
+      "motivo": "Nominee (Accessibility & Inclusion), non vincitore"
+    },
+    {
+      "nome": "Spoony",
+      "motivo": "Nominee (Accessibility & Inclusion), non vincitore"
+    },
+    {
+      "nome": "Choiceworks",
+      "motivo": "Honoree (Accessibility & Inclusion): non e vittoria (regola: Webby Winner o People's Voice)"
+    },
+    {
+      "nome": "Dateability",
+      "motivo": "Honoree (Accessibility & Inclusion): non e vittoria"
+    },
+    {
+      "nome": "Accessibility Analyzer; Accessible Games Initiative; Atlantic Health System; NCOA",
+      "motivo": "Nominees (Accessible Technology)"
+    },
+    {
+      "nome": "Desmos Graphing Calculator; National Grid CO2 Calculator",
+      "motivo": "Honorees (Accessible Technology)"
+    },
+    {
+      "nome": "Krisp; VoiceAI by EliseAI; Project Jade (Niantic Spatial)",
+      "motivo": "Nominees (Best Use of AI Voice & Conversational Interface); Project Jade: scheda letta, prodotto non aperto"
+    },
+    {
+      "nome": "Better.com Betsy; LinkedIn Nursing & Healthcare role-play",
+      "motivo": "Honorees (Best Use of AI Voice & Conversational Interface)"
+    },
+    {
+      "nome": "Kettle (come vincitore)",
+      "motivo": "Non confermato: la scheda ufficiale lo elenca solo nel team di T-Mobile's AI Assistant; Code and Theory non letto (429)"
+    },
+    {
+      "nome": "Call a Pet (fischerAppelt AG)",
+      "motivo": "Riportato da Marketing Brew (categoria Best use of AI and machine learning, Craft): la pagina ufficiale della categoria non mostra voci. Non verificato"
+    },
+    {
+      "nome": "Vibrant Wellness (Noomo Agency)",
+      "motivo": "People's Voice, Health & Wellness (Websites): trovato in pagina ufficiale (U23), prodotto non aperto; non selezionato per il numero"
+    },
+    {
+      "nome": "Make New Zealand The Best Place In The World To Have Herpes (ED.)",
+      "motivo": "Webby Winner, Health & Wellness: trovato, non selezionato (sito satirico, non utile a Gruppo A)"
+    },
+    {
+      "nome": "Glisten.org (Madeo); Finding Freedom (Museum of the American Revolution)",
+      "motivo": "Webby Winner e People's Voice, DEI: trovati, non selezionati (nessun legame con voce o accessibilita)"
+    },
+    {
+      "nome": "Claude Code (Anthropic)",
+      "motivo": "Webby Winner e People's Voice, Best Product or Service (AI): trovato in pagina AI, non aperto, non selezionato"
+    },
+    {
+      "nome": "Take a Moment with Elmo and Jonathan Bailey",
+      "motivo": "Webby + People's Voice, Health & Wellness (Social video): trovato (TheWrap), non selezionato"
+    },
+    {
+      "nome": "Women's Health (Hearst)",
+      "motivo": "People's Voice, Health & Wellness (Social): letto, non selezionato (contenuto social)"
+    },
+    {
+      "nome": "Louder Than Cancer (Amazon Ads)",
+      "motivo": "People's Voice, Health, Wellness & Pharmaceutical (Branded Content): letto, non selezionato (pubblicita)"
+    },
+    {
+      "nome": "Categoria «Best Use of Voice Technology»",
+      "motivo": "Nel registro della skill (storico/MAPPA.md) compare solo nella colonna della prima edizione (2024); non risulta nel catalogo 2026 letto"
+    },
+    {
+      "nome": "Accessible Technology 2024: The Impossible Bedtime Story (Webby Winner); Daniel's Music Foundation (People's Voice)",
+      "motivo": "Edizione 2024: scartata per la regola di edizione conclusa piu recente (2026)"
+    },
+    {
+      "nome": "WWT app «Champions» (Special Olympics USA Games)",
+      "motivo": "Solo comunicato secondario: premio senza categoria ne tipo; nessun URL prodotto"
+    },
+    {
+      "nome": "Categoria 2026 per sottotitoli, trascrizione, speech therapy o sign language",
+      "motivo": "Nessuna categoria dedicata trovata nei cataloghi letti; Signs (F01) e l'unico candidato di lingua dei segni, My First Voice (F03) l'unico per voce a bambini non parlanti"
+    },
+    {
+      "nome": "Categorie sociali 2026 per AI",
+      "motivo": "La pagina Best Use of AI (Social) mostra solo 2025 e 2024"
+    }
+  ],
+  "categorie_esatte_trovate": {
+    "nota": "Nomi come nella pagina ufficiale winners.webbyawards.com (edizione 2026). Il registro della skill (storico/MAPPA.md, colonne 2024-2026) concorda con i nomi qui letti per Accessibility & Inclusion (nuova nel 2026), Best Use of AI & Machine Learning, Best Visual Design - Function, Best Visual Design - Aesthetic, Experimental & Innovation, Best Practices, Technical Achievement, Connected Products, Wearables, and IoT (rinominata nel 2026), Best Streaming or Media Service (rinominata nel 2026).",
+    "Apps, Software & Immersive (sezione)": [
+      "Accessibility & Inclusion",
+      "Arts, Fashion & Culture",
+      "Best Brand or Commerce Integration",
+      "Best Community Engagement",
+      "Best Immersive Storytelling",
+      "Best Immersive Technology Innovation",
+      "Best Practices"
+    ],
+    "App Excellence (gruppo di mestiere)": [
+      "Accessibility & Inclusion",
+      "Best Use of AI & Machine Learning",
+      "Best Visual Design - Function",
+      "Best Visual Design - Aesthetic",
+      "Experimental & Innovation",
+      "Connected Products, Wearables, and IoT",
+      "Best Streaming or Media Service",
+      "Technical Achievement"
+    ],
+    "Websites and Mobile Sites: General Desktop & Mobile Sites (alcuni)": [
+      "Charitable Organizations/Non-Profit",
+      "Charitable & Non-Profit: National & Global Organizations",
+      "Diversity, Equity, Inclusion & Belonging",
+      "Health & Wellness",
+      "Science",
+      "Education",
+      "Corporate Communications",
+      "Web Services & Applications",
+      "Government & Associations",
+      "Cultural Institutions",
+      "Sustainability & Environment"
+    ],
+    "Websites and Mobile Sites: Email Newsletters": [
+      "Business, News & Technology",
+      "Entertainment & Culture",
+      "Health, Wellness & Lifestyle",
+      "Independent Publishers"
+    ],
+    "Websites and Mobile Sites: Features & Design": [
+      "Best Data Visualization",
+      "Best Home Page",
+      "Best Navigation/Structure",
+      "Best Practices",
+      "Best Use of AI",
+      "Best Use of Animation or Motion Graphics",
+      "Best Use of Video or Moving Image",
+      "Best User Experience",
+      "Best User Interface",
+      "Best Visual Design - Aesthetic",
+      "Best Visual Design - Function",
+      "Best Writing (Editorial)",
+      "Technical Achievement"
+    ],
+    "Websites and Mobile Sites: Mobile Features & Design": [
+      "Best Mobile User Experience",
+      "Best Mobile Visual Design - Function",
+      "Best Responsive/Adaptive Design for Mobile",
+      "Mobile Innovation & Emerging Tech"
+    ],
+    "Websites and Mobile Sites: Responsible Technology": [
+      "Accessible Technology",
+      "Responsible AI",
+      "Responsible Information",
+      "Responsible Innovation"
+    ],
+    "AI: AI Experiences & Applications": [
+      "Arts, Culture & Events",
+      "Belonging & Inclusion",
+      "Consumer Application",
+      "Creative Tools",
+      "Creativity & Storytelling",
+      "Customer Experience or CRM",
+      "Data Visualization & Reporting",
+      "E-commerce & Retail",
+      "Education, Learning & Training",
+      "Energy & Sustainability",
+      "Entertainment & Media",
+      "Financial Services",
+      "Health & Wellness",
+      "Healthcare & Life Sciences",
+      "Marketing or Branding",
+      "Productivity & Work Tools",
+      "Public Service & Activism",
+      "Sales & Revenue",
+      "Travel, Transportation & Hospitality"
+    ],
+    "AI: AI Features & Innovation": [
+      "Best AI Agent",
+      "Best AI Technical Achievement",
+      "Best AI User Experience",
+      "Best Product or Service",
+      "Best Real-Time Engagement",
+      "Best Responsible AI Implementation",
+      "Best Use of AI Voice & Conversational Interface",
+      "Experimental & Innovation",
+      "Visual Design"
+    ],
+    "Advertising, Media & PR (esempi)": [
+      "Health, Wellness & Pharmaceutical (Branded Content)",
+      "Belonging & Inclusion (Branded Content; Individual Episode, Podcasts)",
+      "Best Use of Machine Learning (Craft; pagina senza voci)"
+    ],
+    "Creators (esempi)": [
+      "Fitness, Health & Wellness (General Creator; Individual Creator)",
+      "Social Impact (General Creator)"
+    ],
+    "Podcasts (esempi)": [
+      "Health, Wellness & Lifestyle (Shows)",
+      "Health, Science & Education (Limited-Series & Specials)"
+    ]
+  },
+  "conflitti": [
+    {
+      "tema": "Vincitore in Best Use of AI Voice & Conversational Interface",
+      "fonte_A": "Scheda ufficiale T-Mobile's AI Assistant: People's Voice Winner; team T-Mobile, Kettle, OpenAI (letto)",
+      "fonte_B": "Code and Theory (news): «Kettle won with T-Mobile and OpenAI... Best Use of AI Voice & Conversational Interface» senza tipo di premio (HTTP 429, non letto; citazione solo da snippet di ricerca)",
+      "stato": "non risolto; la scheda ufficiale e la fonte piu forte; Kettle non e confermato come vincitore; ElevenAgents e Webby Winner sulla scheda ufficiale"
+    },
+    {
+      "tema": "Signs: tipo di premio in Accessibility & Inclusion",
+      "fonte_A": "Pagina Apps: solo Webby Winner",
+      "fonte_B": "Pagina Accessible Technology: Webby Winner e People's Voice Winner; DEPT: Webby + People's Voice in Accessible Technology",
+      "stato": "non in conflitto: sono due categorie diverse"
+    },
+    {
+      "tema": "Nome della categoria di Flourish",
+      "fonte_A": "Scheda ufficiale: Health & Wellness (AI Experiences & Applications)",
+      "fonte_B": "VentureBeat/Business Wire: «AI for Health & Wellness»",
+      "stato": "usato il nome ufficiale"
+    },
+    {
+      "tema": "My First Voice: nomination o premio",
+      "fonte_A": "TheWrap 31/3/2026: nominee (lista prima dei premi)",
+      "fonte_B": "Scheda ufficiale e EastMojo: People's Voice Winner",
+      "stato": "coerente: nomination prima, premio poi"
+    },
+    {
+      "tema": "Carveco Touch: Beyond Vision",
+      "fonte_A": "Scheda ufficiale: tre Webby Winner (AI)",
+      "fonte_B": "TheWrap 21/4/2026: Webby 2026 in Belonging & Inclusion (AI)",
+      "stato": "coerente; il secondo elenca solo una delle tre"
+    }
+  ],
+  "lacune_accesso": [
+    {
+      "url": "https://www.codeandtheory.com/news/webby-awards-finalist-nominees (e variante single-page)",
+      "esito": "HTTP 429 ripetuto (WebFetch e curl)",
+      "effetto": "affermazione Kettle non verificata"
+    },
+    {
+      "url": "https://www.hollywoodreporter.com/business/digital/2026-webby-awards-winners-list-1236570024/ (e nominees 1236551621)",
+      "esito": "307 a tollbit.hollywoodreporter.com, che risponde 402 (gateway di licenza per bot). Non seguito, non aggirato",
+      "effetto": "lista HR non letta"
+    },
+    {
+      "url": "https://www.pulse.bot/... (3 articoli, U30, U37, U38)",
+      "esito": "WebFetch «Socket is closed» ripetuto; curl HTTP 000",
+      "effetto": "articoli non letti"
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20260511689949/en/",
+      "esito": "HTTP 403 (WebFetch e curl)",
+      "effetto": "comunicato non letto (solo la versione VentureBeat)"
+    },
+    {
+      "url": "https://www.appleinsider.com/articles/26/04/21/apple-pay-wins-at-the-webbys-as-a-messi-campaign-takes-the-spotlight",
+      "esito": "WebFetch 403 (con e senza www); curl risponde 200 ma il contenuto non e stato estratto per non aggirare il rifiuto",
+      "effetto": "articolo non letto; non rilevante"
+    },
+    {
+      "url": "https://gamesbeat.com/?p=321118",
+      "esito": "WebFetch 403; redirect a un articolo gia letto (U46)",
+      "effetto": "nessuno"
+    },
+    {
+      "url": "https://www.t-mobile.com/",
+      "esito": "HTTP 403 (curl)",
+      "effetto": "T-Mobile's AI Assistant senza prodotto verificato (F05)"
+    },
+    {
+      "url": "https://mauifoodbank.org/",
+      "esito": "WebFetch: contenuto vuoto; curl 200",
+      "effetto": "F14 senza lettura"
+    },
+    {
+      "url": "https://podcasts.voxmedia.com/show/where-should-we-begin-with-esther-perel",
+      "esito": "WebFetch rifiutato; curl 200",
+      "effetto": "F17 senza lettura"
+    },
+    {
+      "url": "https://app.beeble.ai/home",
+      "esito": "WebFetch: solo titolo",
+      "effetto": "F08 parziale"
+    },
+    {
+      "url": "https://www.instagram.com/joelbervell/?hl=en",
+      "esito": "WebFetch: solo titolo del profilo",
+      "effetto": "F18 senza contenuto"
+    },
+    {
+      "url": "https://www.webbyawards.com/2026/ai/ai-features-innovation/experimental-innovation/365148/my-first-voice",
+      "esito": "HTTP 404 con WebFetch",
+      "effetto": "usato il dominio winners.webbyawards.com"
+    },
+    {
+      "url": "https://www.webbyawards.com/winners (catalogo generale)",
+      "esito": "non aperto come indice generale; usate le pagine di categoria di winners.webbyawards.com",
+      "effetto": "elenco completo delle categorie non verificato in un unico passaggio"
+    },
+    {
+      "url": "https://www.dept.global/en-nl/case/ai-powered-sign-language-education-that-changes-lives/",
+      "esito": "HTTP 200 (curl), non letto: scheda dell'agenzia, non prodotto",
+      "effetto": "nessuno"
+    },
+    {
+      "url": "https://cislunarspace.cn/...; https://lifestyle.filmtelevisionauditions.com/?p=116981; https://virtualold.fapam.edu.br/...",
+      "esito": "DNS non risolto; 404; connessione rifiutata",
+      "effetto": "nessun dato"
+    }
+  ],
+  "copertura_query": {
+    "Q1 accessibilita (categorie)": "letta: Accessibility & Inclusion (Apps), Accessible Technology (Websites), DEI & Belonging (Websites), Belonging & Inclusion (AI, Advertising, Podcasts). Coperta sul catalogo ufficiale 2026.",
+    "Q2 settore (nomi esatti)": "letti: Health & Wellness, Health, Wellness & Lifestyle, Charitable Organizations/Non-Profit, Education, Science, Corporate Communications, Web Services & Applications. Non ci sono categorie «medicina» o «comunicazione e social» dedicate: si registra la mancanza.",
+    "Q3 voce, parlato, audio, sintesi": "letti: categoria Best Use of AI Voice & Conversational Interface (9 voci), Experimental & Innovation (AI), Responsible AI, Best Use of AI & ML (Apps). Nessuna categoria trascrizione o sottotitoli trovata; copertura non esaustiva.",
+    "Q4 AI con output da provare": "letti: Best Use of AI (Websites), Best Use of AI & ML (Apps), Responsible AI, Best AI Voice, Experimental & Innovation (AI), Best Product or Service (AI, solo indice).",
+    "Q5 app a un solo compito / installazione guidata": "parziale: Signs (webcam), The Way (percorso unico), Flourish (app). Non c'e una ricerca mirata su installazione guidata (C4): lacuna per Gruppo A, da coprire con Gruppo B/C."
+  }
+}

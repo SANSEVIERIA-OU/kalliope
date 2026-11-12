@@ -1,0 +1,665 @@
+{
+ "riferimenti": [
+  {
+   "id": "R05",
+   "nome": "LALAL.AI",
+   "url": "https://www.lalal.ai/",
+   "categoria": "Best Use of AI & Machine Learning (Apps, Software & Immersive, App Excellence); Creator, Creative, and Media Tools (Honoree)",
+   "anno": 2026,
+   "premio": "People's Voice Winner",
+   "motivazione_ufficiale": "motivazione individuale non disponibile (sezioni About vuote); scheda: https://winners.webbyawards.com/2026/apps-software-immersive/app-excellence/best-use-of-ai-machine-learning/379810/lalalai-an-aipowered-stem-splitter",
+   "gruppo": "A",
+   "osservazioni": [
+    {
+     "caratteristica": "proposta del primo schermo",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "parole": 20,
+      "frasi": 3
+     },
+     "descrizione": "Titolo «Remove Vocals and Instrumentals from Audio and Video» e sottotitolo «Vocal remover built for pro-level quality. Powered by AI and transformer technology.» Accanto, lo strumento: «Choose what to extract, then upload your file / Add up to 20 files in MP3, FLAC, MKV, MP4, and other formats». Parole = titolo + sottotitolo; frasi = titolo + 2 del sottotitolo.",
+     "evidenze": [
+      "prove/R05/002-clic.jpg",
+      "prove/R05/testo-body-computer.txt"
+     ]
+    },
+    {
+     "caratteristica": "proposta del primo schermo",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "parole": 20,
+      "frasi": 3
+     },
+     "descrizione": "Stesso testo a 430x932, ma dopo aver chiuso il prompt di Google e il dialogo cookie; sopra c'è la barra «LALAL.AI App · Exclusive batch upload feature for FREE! · Get». Il widget viene prima del sottotitolo.",
+     "evidenze": [
+      "prove/R05/telefono/004-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "comandi visibili al primo schermo",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "link": 8,
+      "pulsanti": 7,
+      "campi": 0
+     },
+     "descrizione": "Link: logo, Help, Blog, App Store, Google Play, macOS, Windows, Terms of Service. Pulsanti: Products, Pricing, lingua, Log In, rotella delle impostazioni, selettore del tipo di estrazione, Select Files (è un'etichetta per un campo file nascosto, non contato come campo). Conteggio da foto.",
+     "evidenze": [
+      "prove/R05/002-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "comandi visibili al primo schermo",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "link": 4,
+      "pulsanti": 8,
+      "campi": 0
+     },
+     "descrizione": "Link: logo, App Store, Google Play, Terms of Service. Pulsanti: chiudi e «Get» della barra app, menu, rotella, selettore, Select Files, bolla di assistenza, icona cookie. Conteggio da foto.",
+     "evidenze": [
+      "prove/R05/telefono/004-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "comando principale",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "posizione": "centro",
+      "fisso_allo_scorrimento": "no"
+     },
+     "descrizione": "«Select Files» (giallo, 546x98 px) nel widget a destra, tra i 462 e i 672 px dall'alto del primo schermo; non resta fermo allo scorrimento. Più avanti il pulsante «Download for Ubuntu» della pagina app è fisso (017-scorri.jpg).",
+     "evidenze": [
+      "prove/R05/002-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "comando principale",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "posizione": "centro",
+      "fisso_allo_scorrimento": "no"
+     },
+     "descrizione": "«Select Files» a 586-652 px su 932.",
+     "evidenze": [
+      "prove/R05/telefono/004-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "struttura della navigazione",
+     "ambito": "menu computer",
+     "stato": "presente",
+     "valore": {
+      "voci": 4,
+      "tipo": "menu_a_comparsa"
+     },
+     "descrizione": "Products (7 prodotti con una riga di descrizione + colonna Apps e Integrations) e Pricing sono menu a comparsa; Help e Blog sono link; poi lingua e Log In.",
+     "evidenze": [
+      "prove/R05/023-muovi.jpg"
+     ]
+    },
+    {
+     "caratteristica": "struttura della navigazione",
+     "ambito": "menu telefono",
+     "stato": "presente",
+     "valore": {
+      "voci": 6,
+      "tipo": "pannello"
+     },
+     "descrizione": "Pannello-scheda con Log In (giallo), Products, Plans & Extras, Enterprise Solution, Help, About, Blog e lingua.",
+     "evidenze": [
+      "prove/R05/telefono/005-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "apertura del menu",
+     "ambito": "menu telefono",
+     "stato": "presente",
+     "valore": {
+      "durata_ms": 200,
+      "direzione": "nessuna (dissolvenza con ombra)",
+      "curva": "ease"
+     },
+     "descrizione": "Il pannello passa da opacità 0 a 1 e da visibility hidden a visible in 200 ms, con ombra (box-shadow) in 200 ms; il velo dietro in 100 ms; il logo a testo bianco compare dopo 200 ms. Nessuno spostamento.",
+     "evidenze": [
+      "prove/R05/telefono/005-clic.jpg",
+      "prove/R05/telefono/005-clic.movimento.json"
+     ]
+    },
+    {
+     "caratteristica": "apertura del menu",
+     "ambito": "menu computer",
+     "stato": "presente",
+     "valore": {
+      "durata_ms": 200,
+      "direzione": "nessuna (dissolvenza)",
+      "curva": "ease"
+     },
+     "descrizione": "Corpo del menu opacità e visibility 200 ms; freccia ruotata da 180 a 0 gradi in 200 ms; colore della voce 100 ms.",
+     "evidenze": [
+      "prove/R05/023-muovi.jpg",
+      "prove/R05/023-muovi.movimento.json"
+     ]
+    },
+    {
+     "caratteristica": "segnale di posizione e di avanzamento",
+     "ambito": "scorrimento computer",
+     "stato": "assente",
+     "descrizione": "Percorsa tutta la pagina: nessuna barra, indice o numerazione. Solo l'intestazione che si compatta.",
+     "evidenze": [
+      "prove/R05/003-scorri.jpg",
+      "prove/R05/008-scorri.jpg",
+      "prove/R05/009-scorri.jpg",
+      "prove/R05/010-scorri.jpg",
+      "prove/R05/013-scorri.jpg"
+     ]
+    },
+    {
+     "caratteristica": "comando proprio «indietro»",
+     "ambito": "percorso principale",
+     "stato": "non_osservato",
+     "motivo": "Il percorso principale (caricare un file) richiede l'invio di un file ai server: non eseguito per regola; non c'è un percorso a passi da osservare prima di quel punto."
+    },
+    {
+     "caratteristica": "messaggio di errore",
+     "ambito": "errore",
+     "stato": "non_osservato",
+     "motivo": "Gli errori del prodotto (formato non supportato, file troppo grande, nessun file) richiedono di avviare il caricamento: non eseguito per regola (nessun invio). Il campo vuoto non produce messaggio finché non si carica."
+    },
+    {
+     "caratteristica": "pagina inesistente",
+     "ambito": "404",
+     "stato": "presente",
+     "valore": {
+      "utile": "sì",
+      "offre_ritorno": "sì"
+     },
+     "descrizione": "«Page not found.» / «We are sorry, it seems this page doesn't exist anymore. Please start from the Home page.» / «Return to Homepage ↗»; intestazione e footer intatti; grande punto interrogativo. Nessuna ricerca né collegamenti suggeriti; «Log In» sparisce nell'intestazione.",
+     "evidenze": [
+      "prove/R05/020-vai.jpg"
+     ]
+    },
+    {
+     "caratteristica": "attesa del caricamento",
+     "ambito": "rete lenta",
+     "stato": "presente",
+     "valore": {
+      "segnale": "scheletro",
+      "s_al_primo_testo": 5.6
+     },
+     "descrizione": "Slow 3G in Chromium (latenza 400 ms, 400 kbit/s): primo testo letto a 5,6 s; a ~10 s titolo e sottotitolo visibili e il widget è un blocco grigio con barre pulsanti; a ~25 s il widget è completo; DOMContentLoaded a 24,4 s, nessun load entro 30 s; 337 richieste partite. Le foto portano nel nome il secondo bersaglio, non l'istante reale.",
+     "evidenze": [
+      "prove/R05/rete-lenta-2/003-4s.jpg",
+      "prove/R05/rete-lenta-2/006-25s.jpg",
+      "prove/R05/riepilogo-senza-posto.json"
+     ]
+    },
+    {
+     "caratteristica": "comportamento senza JavaScript",
+     "ambito": "senza JavaScript",
+     "stato": "presente",
+     "valore": {
+      "contenuto": "parziale",
+      "comandi_essenziali": "no"
+     },
+     "non_misurati": [
+      "navigazione"
+     ],
+     "descrizione": "Testo, schede prodotto, FAQ (chiuse) e footer ci sono (16101 caratteri); il widget di caricamento resta uno scheletro grigio con «Your browser does not support JavaScript!», i piani di prezzo sono scheletri senza cifre, le immagini dei riquadri promozionali mancano, i riproduttori non suonano.",
+     "evidenze": [
+      "prove/R05/senza-js/001-arrivo.jpg",
+      "prove/R05/senza-js/002-pagina-intera.jpg",
+      "prove/R05/senza-js/foglio-pagina-intera.jpg"
+     ]
+    },
+    {
+     "caratteristica": "effetti con movimento ridotto",
+     "ambito": "movimento ridotto",
+     "stato": "presente",
+     "valore": {
+      "effetti": 7,
+      "tolti": 0,
+      "sostituiti": 0,
+      "invariati": 7
+     },
+     "descrizione": "matchMedia reduce = true. Invariati: scheletri (pulsar 2000 ms), spinner 3000 ms, dialogo cookie 500 ms, menu 200 ms, intestazione che si compatta 200 ms, voci a pillola 100 ms, indicatore di scheda. 1 regola prefers-reduced-motion nei 5 fogli leggibili su 30 (25 illeggibili, origine diversa): non è dimostrato dove si applichi.",
+     "evidenze": [
+      "prove/R05/ridotto/001-vai.movimento.json",
+      "prove/R05/ridotto/003-muovi.movimento.json",
+      "prove/R05/ridotto/004-scorri.movimento.json"
+     ]
+    },
+    {
+     "caratteristica": "percorso da tastiera",
+     "ambito": "tastiera",
+     "stato": "presente",
+     "valore": {
+      "tab_fino_al_comando_principale": 29,
+      "focus_visibile": "sì",
+      "salta_al_contenuto": "no",
+      "trappole": 0
+     },
+     "descrizione": "Da inizio pagina il 1° Tab è il logo e il 2° «Products» (poi tutte le voci del menu, una per una). «Select Files» è il 29° elemento in ordine di Tab (conteggio approssimato sul DOM; 119 in tutto). Focus: contorno predefinito del browser (outline auto 1 px). Nessun «salta al contenuto». Provati 14+12 Tab: nessuna trappola.",
+     "evidenze": [
+      "prove/R05/riepilogo-senza-posto.json",
+      "prove/R05/misura-accessibilita-meta-computer.json"
+     ]
+    },
+    {
+     "caratteristica": "testo al 200%",
+     "ambito": "testo 200%",
+     "stato": "presente",
+     "valore": {
+      "scroll_orizzontale": "no",
+      "contenuto_perso": "no"
+     },
+     "descrizione": "Con il corpo del browser a 32 px la pagina non cambia dimensione del testo (body 16 px, la pagina usa pixel): scrollWidth 1440 = larghezza; altezza da 5641 a 6541 px. Il testo del dialogo cookie non si ingrandisce.",
+     "evidenze": [
+      "prove/R05/carattere-200/001-vai.jpg"
+     ]
+    },
+    {
+     "caratteristica": "testo al 200%",
+     "ambito": "testo 200% · zoom",
+     "stato": "presente",
+     "valore": {
+      "scroll_orizzontale": "no",
+      "contenuto_perso": "sì"
+     },
+     "descrizione": "Zoom 200% (viewport 720x450): scrollWidth 720; il dialogo cookie occupa tutta l'altezza e nasconde la pagina; la riga degli interruttori è tagliata sotto i bottoni.",
+     "evidenze": [
+      "prove/R05/zoom-200/001-vai.jpg"
+     ]
+    },
+    {
+     "caratteristica": "albero di accessibilità (proxy)",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "punti_di_riferimento": 7,
+      "titoli": 20,
+      "immagini_senza_alternativa": 0,
+      "comandi_senza_nome": 6
+     },
+     "descrizione": "ariaSnapshot (proxy): banner 1, navigation 2, main 1, contentinfo 1, region 2; 60 link, 28 pulsanti, 58 immagini; 5 pulsanti e 1 link senza nome nell'albero (i pulsanti del riproduttore). Il mio conteggio nel DOM trovava 35 comandi senza testo né aria-label: fa fede l'albero.",
+     "evidenze": [
+      "prove/R05/albero-accessibilita/aria-snapshot-computer.yml",
+      "prove/R05/riepilogo-senza-posto.json"
+     ]
+    },
+    {
+     "caratteristica": "bersagli dei comandi principali",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "larghezza_min_px": 12,
+      "altezza_min_px": 12
+     },
+     "non_misurati": [
+      "distanza_min_px"
+     ],
+     "descrizione": "Su 65 comandi/etichette: «Select Files» 546x98, Products 166x32, voci di menu 401x68, link «Terms of Service» 90x16, pulsanti dei player 24x24, spunte 12-13 px (icone, non comandi). Distanza non misurata.",
+     "evidenze": [
+      "prove/R05/misura-bersagli-testo-computer.json"
+     ]
+    },
+    {
+     "caratteristica": "bersagli dei comandi principali",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "larghezza_min_px": 12,
+      "altezza_min_px": 12
+     },
+     "non_misurati": [
+      "distanza_min_px"
+     ],
+     "descrizione": "A 390x844: 82 comandi, 57 sotto 44x44 px; includono icone minuscole.",
+     "evidenze": [
+      "prove/R05/riepilogo-senza-posto.json"
+     ]
+    },
+    {
+     "caratteristica": "testo corrente",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "corpo_px": 18,
+      "interlinea": 1.33
+     },
+     "non_misurati": [
+      "caratteri_per_riga_max"
+     ],
+     "descrizione": "Roobert: 18/24 px per i testi di scheda (grigio rgb(141,140,141)), 24/32 per il testo introduttivo, 12/16 per le note legali; titolo 48/52 px.",
+     "evidenze": [
+      "prove/R05/misura-bersagli-testo-computer.json"
+     ]
+    },
+    {
+     "caratteristica": "testo corrente",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "corpo_px": 15,
+      "interlinea": 1.6
+     },
+     "non_misurati": [
+      "caratteri_per_riga_max"
+     ],
+     "descrizione": "A 390x844: 15/24 px; paragrafo largo 344 px.",
+     "evidenze": [
+      "prove/R05/riepilogo-senza-posto.json"
+     ]
+    },
+    {
+     "caratteristica": "richieste e terze parti",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "richieste": 250,
+      "domini_di_terzi": 3,
+      "caratteri_caricati": 4
+     },
+     "non_misurati": [
+      "kb"
+     ],
+     "descrizione": "A ricarica: 246 richieste da s.lalal.ai (altro sottodominio, byte non leggibili), consent.cookiebot.com, consentcdn.cookiebot.com, www.googletagmanager.com; fcp 340 ms, load 901 ms in headless. Quattro pesi di Roobert (300, 400, 500, 600).",
+     "evidenze": [
+      "prove/R05/misura-richieste-computer.json"
+     ]
+    },
+    {
+     "caratteristica": "avvio di audio e video",
+     "ambito": "media",
+     "stato": "presente",
+     "valore": {
+      "avvio_automatico": "no",
+      "controlli_nativi": "no",
+      "trascrizione": "no"
+     },
+     "non_misurati": [
+      "sottotitoli"
+     ],
+     "descrizione": "8 elementi audio, tutti in pausa all'arrivo, preload none, nessun controls nativo; i pulsanti di stem avviano la riproduzione al clic. Il video «Clarity is everything» ha un tasto play e non è avviato. Sottotitoli non applicabili al campione musicale.",
+     "evidenze": [
+      "prove/R05/003-scorri.jpg",
+      "prove/R05/004-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "media non caricato",
+     "ambito": "media",
+     "stato": "non_osservato",
+     "motivo": "Non ho bloccato i file audio né il video: la prova richiederebbe di bloccare le richieste con un browser mio mentre il posto era tenuto; non fatta."
+    },
+    {
+     "caratteristica": "anteprima del collegamento",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "titolo": "sì",
+      "immagine": "sì",
+      "descrizione": "sì"
+     },
+     "descrizione": "Meta: title, description, og:title, og:image, og:description, twitter:card presenti (lettura dei meta, non anteprima resa).",
+     "evidenze": [
+      "prove/R05/misura-accessibilita-meta-computer.json"
+     ]
+    },
+    {
+     "caratteristica": "stampa",
+     "ambito": "stampa",
+     "stato": "presente",
+     "valore": {
+      "leggibile": "no",
+      "comandi_inutili_nascosti": "no"
+     },
+     "descrizione": "Con emulateMedia print a 794x1123 il dialogo cookie copre la pagina e il fondo resta scuro; scrollWidth 922 > 794 (la pagina eccede la larghezza A4); PDF stimato di 8 pagine non guardato pagina per pagina.",
+     "evidenze": [
+      "prove/R05/stampa/001-stampa-prima-pagina.jpg",
+      "prove/R05/stampa/stampa.pdf",
+      "prove/R05/riepilogo-senza-posto.json"
+     ]
+    },
+    {
+     "caratteristica": "chi c'è dietro e le fonti",
+     "ambito": "fiducia",
+     "stato": "presente",
+     "valore": {
+      "firma": "sì",
+      "data": "sì",
+      "versione": "sì",
+      "fonti_collegate": "no"
+     },
+     "descrizione": "«© 2026 OmniSale GMBH»; «Latest Release: 2026-11-12» nella pagina dell'app; versione nell'indirizzo del file (2.21.0.807) ma non nell'etichetta; i riquadri «4x Training data», «40% Faster processing» e «#1 vocal remover» non hanno fonte collegata.",
+     "evidenze": [
+      "prove/R05/014-vai.jpg",
+      "prove/R05/testo-body-desktop-app.txt",
+      "prove/R05/015-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "stato e limiti dichiarati",
+     "ambito": "fiducia",
+     "stato": "presente",
+     "valore": {
+      "presente": "sì",
+      "prima_della_promessa": "no"
+     },
+     "descrizione": "Limiti nel testo dei piani (10 minuti, 200 MB di file, anteprime) e nelle FAQ; «downloading the full output requires a paid plan» solo nelle FAQ dell'app. Avviso «AI notice» accanto al pulsante.",
+     "evidenze": [
+      "prove/R05/002-clic.jpg",
+      "prove/R05/008-scorri.jpg",
+      "prove/R05/019-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "stato e limiti dichiarati",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "presente": "no",
+      "prima_della_promessa": "no"
+     },
+     "descrizione": "Al primo schermo c'è «AI notice: This feature uses AI technology to process your audio files.» ma non i limiti di durata, dimensione o scarico a pagamento.",
+     "evidenze": [
+      "prove/R05/002-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "corto subito, lungo a richiesta",
+     "ambito": "aiuto",
+     "stato": "presente",
+     "valore": {
+      "meccanismo": "apertura"
+     },
+     "descrizione": "FAQ a quattro schede (General, Features, Pricing, Minutes) con domande-aperture; sulla pagina dell'app altre quattro (General, Getting Started, Features, Account & Subscription).",
+     "evidenze": [
+      "prove/R05/010-scorri.jpg",
+      "prove/R05/012-clic.jpg",
+      "prove/R05/019-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "corto subito, lungo a richiesta",
+     "ambito": "percorso principale",
+     "stato": "presente",
+     "valore": {
+      "meccanismo": "finestra"
+     },
+     "descrizione": "La rotella «Processing settings» apre una finestra con rete neurale, livello di rumore e «Enhanced Processing» con spiegazione di una riga per opzione.",
+     "evidenze": [
+      "prove/R05/055-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "porte per pubblici diversi",
+     "ambito": "menu computer",
+     "stato": "presente",
+     "valore": {
+      "porte": 7,
+      "criterio": "compito"
+     },
+     "descrizione": "Il menu Products elenca 7 compiti (Vocal Remover, Stem Splitter, Voice Cleaner, Voice Changer, Voice Cloner, Echo & Reverb Remover, Lead/Back Splitter) e una colonna per piattaforma; nessuna porta per ruolo (musicista, podcaster, azienda) tranne «Enterprise Solution».",
+     "evidenze": [
+      "prove/R05/023-muovi.jpg"
+     ]
+    },
+    {
+     "caratteristica": "lunghezza e registro delle frasi",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "frasi_campione": 10,
+      "parole_per_frase_media": 13.3,
+      "persona": "mista"
+     },
+     "descrizione": "Prime 10 frasi di prosa dopo «What is LALAL.AI?»: 5-32 parole, media 13,3; «you» e «we».",
+     "evidenze": [
+      "prove/R05/testo-body-computer.txt"
+     ]
+    },
+    {
+     "caratteristica": "lunghezza e registro delle frasi",
+     "ambito": "aiuto",
+     "stato": "presente",
+     "valore": {
+      "frasi_campione": 10,
+      "parole_per_frase_media": 20.6,
+      "persona": "mista"
+     },
+     "descrizione": "Prime 10 frasi delle FAQ: 12-29 parole, media 20,6; imperativo per i passi («Click the settings icon…»).",
+     "evidenze": [
+      "prove/R05/testo-body-computer.txt"
+     ]
+    },
+    {
+     "caratteristica": "guida a passi con ripresa",
+     "ambito": "installazione",
+     "stato": "presente",
+     "valore": {
+      "passi": 4,
+      "indicatore": "no"
+     },
+     "non_misurati": [
+      "indietro",
+      "ripresa_dopo_chiusura"
+     ],
+     "descrizione": "Un paragrafo di FAQ: «Go to the LALAL.AI desktop app page and click the Download button for your operating system. Once the installer is downloaded, run it and follow the setup steps. After installation, open the app and log in with your LALAL.AI account email.» Quattro azioni non numerate, senza verifica del risultato; aggiornamento: «Check for Updates» dal profilo.",
+     "evidenze": [
+      "prove/R05/019-clic.jpg",
+      "prove/R05/testo-body-desktop-app.txt"
+     ]
+    },
+    {
+     "caratteristica": "comandi da copiare",
+     "ambito": "installazione",
+     "stato": "assente",
+     "descrizione": "La pagina offre installatori (dmg, exe, pacchetti Ubuntu) e nessun comando da copiare né verifica dell'impronta.",
+     "evidenze": [
+      "prove/R05/014-vai.jpg",
+      "prove/R05/testo-body-desktop-app.txt"
+     ]
+    },
+    {
+     "caratteristica": "scelta per sistema o versione",
+     "ambito": "installazione",
+     "stato": "presente",
+     "valore": {
+      "modo": "automatico"
+     },
+     "descrizione": "Il pulsante primario riconosce il sistema («Download for Ubuntu» con user agent Linux) e una tendina offre Ubuntu Portable, Windows x64, Windows x64 Portable, macOS. «Latest Release: 2026-11-12». Nella home, invece, il pulsante giallo era «macOS» (riconoscimento non coerente fra pagine).",
+     "evidenze": [
+      "prove/R05/014-vai.jpg",
+      "prove/R05/015-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "tabella di compatibilità",
+     "ambito": "aiuto",
+     "stato": "assente",
+     "descrizione": "I requisiti (macOS 10.15+, Windows 10/11, Ubuntu 22.04+, «No specific RAM requirements apply») sono in prosa in una FAQ, non in una tabella; nessuna colonna «non provato».",
+     "evidenze": [
+      "prove/R05/019-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "prodotto mostrato",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "tipo": "dimostrazione_viva",
+      "con_legenda": "sì"
+     },
+     "non_misurati": [
+      "con_alternativa"
+     ],
+     "descrizione": "Lo strumento vero è nel primo schermo (selettore + «Select Files»). La pagina /desktop-app/ mostra due schermate reali dell'app con i suoi stati (Uploading, Processing, Downloading, «Full»).",
+     "evidenze": [
+      "prove/R05/002-clic.jpg",
+      "prove/R05/014-vai.jpg"
+     ]
+    },
+    {
+     "caratteristica": "campione di suono",
+     "ambito": "media",
+     "stato": "presente",
+     "valore": {
+      "campioni": 8,
+      "simultanei_max": 1,
+      "testo_accanto": "no",
+      "durata_indicata": "no"
+     },
+     "descrizione": "8 file audio (traccia originale, vocals, instrumental, drums, bass, e tre del cloner), clip da 263,5 s; un solo elemento in riproduzione in ognuna delle 5 letture; nessun testo accanto né durata o posizione mostrati. Il passaggio fra clip non è misurabile qui (orologio dei media irreale).",
+     "evidenze": [
+      "prove/R05/003-scorri.jpg",
+      "prove/R05/004-clic.jpg",
+      "prove/R05/005-stato-player.jpg"
+     ]
+    },
+    {
+     "caratteristica": "numeri detti a parole",
+     "ambito": "dati",
+     "stato": "assente",
+     "descrizione": "Cifre di prezzo e quantità («10 Minutes», «€6.75/mo», «4x», «40%») senza frase che le traduca né metodo.",
+     "evidenze": [
+      "prove/R05/008-scorri.jpg",
+      "prove/R05/009-scorri.jpg"
+     ]
+    },
+    {
+     "caratteristica": "compromessi dichiarati nelle opzioni",
+     "ambito": "aiuto",
+     "stato": "presente",
+     "valore": {
+      "opzioni_con_spiegazione": 2
+     },
+     "descrizione": "Nella finestra «Settings»: «Clear Cut — Minimizes cross-bleeding between stems but may suppress finer details» e «Deep Extraction — Extracts more details but increases the chance of cross-bleeding.» (caratteristica non nel vocabolario di piano.md §8: aggiunta con nome nuovo).",
+     "evidenze": [
+      "prove/R05/055-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "sovrapposizione di messaggi al primo arrivo",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "messaggi_sovrapposti": 3
+     },
+     "descrizione": "Dialogo cookie quasi a schermo intero + prompt «Accedi all'app lalalai con le credenziali Google» (copre i bottoni del dialogo) + barra «LALAL.AI App · Get» (caratteristica non nel vocabolario: aggiunta con nome nuovo).",
+     "evidenze": [
+      "prove/R05/telefono/002-clic.jpg",
+      "prove/R05/telefono/004-clic.jpg",
+      "prove/R05/telefono-390/001-arrivo.jpg"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,692 @@
+{
+ "riferimenti": [
+  {
+   "id": "R01",
+   "nome": "Signs",
+   "url": "https://signs-ai.com/",
+   "categoria": "Accessibility & Inclusion (Apps, Software & Immersive · App Excellence); Accessible Technology (Websites and Mobile Sites · Responsible Technology)",
+   "anno": 2026,
+   "premio": "Webby Winner (Accessibility & Inclusion); Webby Winner e People's Voice Winner (Accessible Technology)",
+   "motivazione_ufficiale": "motivazione individuale non disponibile (sezione About vuota nelle schede del premio; fonte incarichi/ricerca-a/fonti-a.json, candidato F01, letta il 12/11/2026)",
+   "gruppo": "A",
+   "osservazioni": [
+    {
+     "caratteristica": "proposta del primo schermo",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "parole": 23,
+      "frasi": 2
+     },
+     "descrizione": "Wordmark «SIGNS» (non contato). Testo letterale: «Learn American Sign Language with your webcam and AI. Or help improve the platform by recording signs - and help us build a dataset.»",
+     "evidenze": [
+      "prove/R01/003-arrivo-desktop-dopo-attesa.jpg"
+     ]
+    },
+    {
+     "caratteristica": "proposta del primo schermo",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "parole": 23,
+      "frasi": 2
+     },
+     "descrizione": "Stesso testo del computer, a capo su quattro righe (390x844).",
+     "evidenze": [
+      "prove/R01/misure/telefono-390x844-dopo-tocco.png"
+     ]
+    },
+    {
+     "caratteristica": "comandi visibili al primo schermo",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "link": 0,
+      "pulsanti": 1,
+      "campi": 0
+     },
+     "descrizione": "Il solo comando è «Let's begin», un div con ruolo button.",
+     "evidenze": [
+      "prove/R01/misure/primo-schermo-R01.json",
+      "prove/R01/003-arrivo-desktop-dopo-attesa.jpg"
+     ]
+    },
+    {
+     "caratteristica": "comandi visibili al primo schermo",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "link": 0,
+      "pulsanti": 1,
+      "campi": 0
+     },
+     "evidenze": [
+      "prove/R01/misure/primo-schermo-R01.json",
+      "prove/R01/misure/telefono-390x844-dopo-tocco.png"
+     ]
+    },
+    {
+     "caratteristica": "comando principale",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "posizione": "centro"
+     },
+     "non_misurati": [
+      "fisso_allo_scorrimento"
+     ],
+     "descrizione": "Etichetta «Let's begin». La pagina non scorre, quindi il parametro «fisso allo scorrimento» non si applica.",
+     "evidenze": [
+      "prove/R01/003-arrivo-desktop-dopo-attesa.jpg"
+     ]
+    },
+    {
+     "caratteristica": "comando principale",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "posizione": "centro"
+     },
+     "non_misurati": [
+      "fisso_allo_scorrimento"
+     ],
+     "descrizione": "Etichetta «Let's begin». La pagina non scorre.",
+     "evidenze": [
+      "prove/R01/misure/telefono-390x844-dopo-tocco.png"
+     ]
+    },
+    {
+     "caratteristica": "struttura della navigazione",
+     "ambito": "menu computer",
+     "stato": "presente",
+     "valore": {
+      "voci": 1,
+      "tipo": "pannello"
+     },
+     "descrizione": "Solo «About», che apre un pannello a tutta pagina con «Close»; dal secondo passo anche una freccia indietro.",
+     "evidenze": [
+      "prove/R01/005-clic.jpg",
+      "prove/R01/013-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "struttura della navigazione",
+     "ambito": "menu telefono",
+     "stato": "presente",
+     "valore": {
+      "voci": 1,
+      "tipo": "pannello"
+     },
+     "descrizione": "Stesso «About» a una colonna, pannello alto 892 px.",
+     "evidenze": [
+      "prove/R01/varianti/mobile/003-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "segnale di posizione e di avanzamento",
+     "ambito": "percorso principale",
+     "stato": "assente",
+     "descrizione": "Percorsi Learn e Record fino al passo prima dell'invio: nessun indicatore di passi, indice o barra.",
+     "evidenze": [
+      "prove/R01/010-clic.jpg",
+      "prove/R01/011-clic.jpg",
+      "prove/R01/025-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "comando proprio «indietro»",
+     "ambito": "percorso principale",
+     "stato": "presente",
+     "valore": {
+      "presente": "sì"
+     },
+     "non_misurati": [
+      "conserva_i_dati"
+     ],
+     "descrizione": "Freccia in alto a sinistra dal secondo passo; riporta alla scelta fra le due carte.",
+     "evidenze": [
+      "prove/R01/010-clic.jpg",
+      "prove/R01/018-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "messaggio di errore",
+     "ambito": "errore",
+     "stato": "assente",
+     "descrizione": "Con webcam assente il riquadro resta nero senza messaggio; con ricerca senza risultati l'elenco resta vuoto senza messaggio.",
+     "evidenze": [
+      "prove/R01/011-clic.jpg",
+      "prove/R01/021-scrivi.jpg"
+     ]
+    },
+    {
+     "caratteristica": "pagina inesistente",
+     "ambito": "404",
+     "stato": "presente",
+     "valore": {
+      "utile": "sì",
+      "offre_ritorno": "sì"
+     },
+     "descrizione": "Testo: «404 / This page could not be found. / Back to Signs». Pagina generica del framework, fuori dall'identità del sito.",
+     "evidenze": [
+      "prove/R01/026-vai.jpg"
+     ]
+    },
+    {
+     "caratteristica": "attesa del caricamento",
+     "ambito": "rete lenta",
+     "stato": "presente",
+     "valore": {
+      "segnale": "spinner",
+      "s_al_primo_testo": 8.9
+     },
+     "descrizione": "1,6 Mbit/s e 562 ms: 5 s di gradiente vuoto, poi la mano animata con «Loading»; il valore è il First Contentful Paint (8936 ms), con la macchina carica.",
+     "evidenze": [
+      "prove/R01/misure/rete-lenta-05s.jpg",
+      "prove/R01/misure/rete-lenta-10s.jpg",
+      "prove/R01/misure/rete-lenta-20s.jpg",
+      "prove/R01/misure/misure-R01.json"
+     ]
+    },
+    {
+     "caratteristica": "comportamento senza JavaScript",
+     "ambito": "senza JavaScript",
+     "stato": "presente",
+     "valore": {
+      "contenuto": "nessuno",
+      "navigazione": "no",
+      "comandi_essenziali": "no"
+     },
+     "descrizione": "Solo il gradiente: il testo resta nel DOM (272 caratteri) ma con opacità 0 e le schermate nascoste.",
+     "evidenze": [
+      "prove/R01/misure/senza-javascript.jpg",
+      "prove/R01/misure/misure-R01.json"
+     ]
+    },
+    {
+     "caratteristica": "effetti con movimento ridotto",
+     "ambito": "movimento ridotto",
+     "stato": "presente",
+     "valore": {
+      "effetti": 2,
+      "tolti": 0,
+      "sostituiti": 0,
+      "invariati": 2
+     },
+     "descrizione": "Verificati in ridotto il passaggio del puntatore sul comando e l'uscita del testo al clic (50 e 20 px in circa 365 ms, identici). Zero occorrenze di prefers-reduced-motion nei file JS; una sola regola CSS globale che non tocca i tween.",
+     "evidenze": [
+      "prove/R01/varianti/ridotto/002-clic.movimento.json",
+      "prove/R01/fogli/ridotto-arrivo-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "percorso da tastiera",
+     "ambito": "tastiera",
+     "stato": "presente",
+     "valore": {
+      "tab_fino_al_comando_principale": 1,
+      "salta_al_contenuto": "no",
+      "trappole": 0
+     },
+     "non_misurati": [
+      "focus_visibile"
+     ],
+     "descrizione": "Al primo schermo il comando è tra gli elementi focalizzabili (calcolato dall'ordine del DOM). Dal secondo schermo le due carte e «About» non sono raggiungibili: Tab alterna un link vuoto 0x0 e body.",
+     "evidenze": [
+      "prove/R01/006-tasto.jpg",
+      "prove/R01/007-tasto.jpg",
+      "prove/R01/008-tasto.jpg",
+      "prove/R01/lettura-arrivo-desktop.json"
+     ]
+    },
+    {
+     "caratteristica": "testo al 200%",
+     "ambito": "testo 200%",
+     "stato": "presente",
+     "valore": {
+      "scroll_orizzontale": "no",
+      "contenuto_perso": "no"
+     },
+     "descrizione": "Il testo non cresce: i caratteri sono fissati in px e l'impostazione del browser è ignorata (pulsante 20 px invariato).",
+     "evidenze": [
+      "prove/R01/varianti/carattere200/002-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "zoom al 200%",
+     "ambito": "testo 200%",
+     "stato": "presente",
+     "valore": {
+      "scroll_orizzontale": "no",
+      "contenuto_perso": "sì"
+     },
+     "descrizione": "Viewport 720x450: il pulsante «Let's begin» (y 431-487) è tagliato dal bordo e lo scorrimento non lo porta in vista; si raggiunge cliccando la fetta visibile.",
+     "evidenze": [
+      "prove/R01/varianti/zoom200/001-vai.jpg",
+      "prove/R01/varianti/zoom200/005-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "albero di accessibilità (proxy)",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "punti_di_riferimento": 1,
+      "titoli": 0,
+      "immagini_senza_alternativa": 11,
+      "comandi_senza_nome": 1
+     },
+     "descrizione": "Proxy ariaSnapshot di Playwright, non un lettore di schermo. Solo il landmark main; nessun titolo.",
+     "evidenze": [
+      "prove/R01/misure/albero-accessibilita-R01.txt",
+      "prove/R01/misure/misure-R01.json"
+     ]
+    },
+    {
+     "caratteristica": "bersagli dei comandi principali",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "larghezza_min_px": 170,
+      "altezza_min_px": 56
+     },
+     "non_misurati": [
+      "distanza_min_px"
+     ],
+     "descrizione": "Un solo bersaglio.",
+     "evidenze": [
+      "prove/R01/misure/primo-schermo-R01.json"
+     ]
+    },
+    {
+     "caratteristica": "bersagli dei comandi principali",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "larghezza_min_px": 170,
+      "altezza_min_px": 56
+     },
+     "non_misurati": [
+      "distanza_min_px"
+     ],
+     "descrizione": "Un solo bersaglio.",
+     "evidenze": [
+      "prove/R01/misure/primo-schermo-R01.json"
+     ]
+    },
+    {
+     "caratteristica": "bersagli dei comandi principali",
+     "ambito": "percorso principale · passo 2 telefono",
+     "stato": "presente",
+     "valore": {
+      "larghezza_min_px": 87,
+      "altezza_min_px": 30
+     },
+     "non_misurati": [
+      "distanza_min_px"
+     ],
+     "descrizione": "Carte 390x183; «About» 87x30 (430x932).",
+     "evidenze": [
+      "prove/R01/bersagli-scelta-mobile.json"
+     ]
+    },
+    {
+     "caratteristica": "testo corrente",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "corpo_px": 18,
+      "interlinea": 1.5,
+      "caratteri_per_riga_max": 73
+     },
+     "evidenze": [
+      "prove/R01/misure/primo-schermo-R01.json"
+     ]
+    },
+    {
+     "caratteristica": "testo corrente",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "corpo_px": 14,
+      "interlinea": 1.5,
+      "caratteri_per_riga_max": 43
+     },
+     "evidenze": [
+      "prove/R01/misure/primo-schermo-R01.json"
+     ]
+    },
+    {
+     "caratteristica": "richieste e terze parti",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "richieste": 65,
+      "domini_di_terzi": 10,
+      "kb": 19057
+     },
+     "non_misurati": [
+      "caratteri_caricati"
+     ],
+     "descrizione": "Chromium senza cache, 10 s dopo il load. Terzi: Google Fonts (2 domini), Plausible, Cloudflare Insights, Firebase (2), Google Tag Manager, Google Identity Toolkit, jsDelivr, storage.googleapis.com. La FAQ dichiara «nessun cookie» e solo Plausible.",
+     "evidenze": [
+      "prove/R01/misure/misure-R01.json"
+     ]
+    },
+    {
+     "caratteristica": "anteprima del collegamento",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "titolo": "sì",
+      "immagine": "no",
+      "descrizione": "sì"
+     },
+     "descrizione": "Presenti title e meta description; nessun og:title, og:image o twitter:card.",
+     "evidenze": [
+      "prove/R01/misure/misure-R01.json"
+     ]
+    },
+    {
+     "caratteristica": "stampa",
+     "ambito": "stampa",
+     "stato": "presente",
+     "valore": {
+      "leggibile": "no",
+      "comandi_inutili_nascosti": "no"
+     },
+     "descrizione": "In media print resta un canvas animato a tutto schermo; PDF di una pagina. Giudizio sulla schermata in media print: il PDF non è stato rasterizzato.",
+     "evidenze": [
+      "prove/R01/misure/stampa-schermo.jpg",
+      "prove/R01/misure/stampa-R01.pdf"
+     ]
+    },
+    {
+     "caratteristica": "chi c'è dietro e le fonti",
+     "ambito": "fiducia",
+     "stato": "presente",
+     "valore": {
+      "firma": "sì",
+      "data": "no",
+      "versione": "no",
+      "fonti_collegate": "sì"
+     },
+     "descrizione": "Nel pannello About: NVIDIA, Hello Monday/DEPT®, American Society for Deaf Children, collegamenti ai partner, due e-mail di contatto.",
+     "evidenze": [
+      "prove/R01/013-clic.jpg",
+      "prove/R01/testo-about.txt"
+     ]
+    },
+    {
+     "caratteristica": "stato e limiti dichiarati",
+     "ambito": "fiducia",
+     "stato": "presente",
+     "valore": {
+      "presente": "sì",
+      "prima_della_promessa": "no"
+     },
+     "descrizione": "FAQ 02: il dataset «primarily and initially focuses» su mani e dita, senza espressioni del viso né movimenti della testa; collegamento «System Card». Compare solo nel pannello About, non al primo schermo.",
+     "evidenze": [
+      "prove/R01/testo-about.txt",
+      "prove/R01/015-scorri.jpg"
+     ]
+    },
+    {
+     "caratteristica": "corto subito, lungo a richiesta",
+     "ambito": "aiuto",
+     "stato": "presente",
+     "valore": {
+      "meccanismo": "finestra"
+     },
+     "descrizione": "Frase corta e carte con tre righe subito; pannello About numerato (15 voci, 4328 px di scorrimento interno) a richiesta.",
+     "evidenze": [
+      "prove/R01/013-clic.jpg",
+      "prove/R01/015-scorri.jpg"
+     ]
+    },
+    {
+     "caratteristica": "porte per pubblici diversi",
+     "ambito": "arrivo computer · dopo il primo comando",
+     "stato": "presente",
+     "valore": {
+      "porte": 2,
+      "criterio": "compito"
+     },
+     "descrizione": "«Learn ASL» e «Record Signs»; nel pannello About i due pubblici sono nominati «Learners» e «Contributors».",
+     "evidenze": [
+      "prove/R01/005-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "lunghezza e registro delle frasi",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "frasi_campione": 2,
+      "parole_per_frase_media": 11.5,
+      "persona": "seconda"
+     },
+     "evidenze": [
+      "prove/R01/003-arrivo-desktop-dopo-attesa.jpg"
+     ]
+    },
+    {
+     "caratteristica": "prodotto mostrato",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "tipo": "dimostrazione_viva",
+      "con_legenda": "no",
+      "con_alternativa": "no"
+     },
+     "descrizione": "Avatar 3D che firma in cicli dentro un canvas WebGL; nessuna legenda (il testo «Subtitles Goes Here» è un segnaposto non visibile) né alternativa testuale.",
+     "evidenze": [
+      "prove/R01/003-arrivo-desktop-dopo-attesa.jpg",
+      "prove/R01/misure/albero-accessibilita-R01.txt"
+     ]
+    },
+    {
+     "caratteristica": "avvio di audio e video",
+     "ambito": "media",
+     "stato": "assente",
+     "descrizione": "Nessun audio; due video nel DOM, entrambi del flusso webcam, inattivi senza webcam.",
+     "evidenze": [
+      "prove/R01/lettura-arrivo-desktop.json",
+      "prove/R01/011-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "campione di suono",
+     "ambito": "media",
+     "stato": "assente",
+     "descrizione": "0 elementi audio in tutte le schermate percorse.",
+     "evidenze": [
+      "prove/R01/lettura-arrivo-desktop.json"
+     ]
+    },
+    {
+     "caratteristica": "media non caricato",
+     "ambito": "media",
+     "stato": "non_osservato",
+     "motivo": "Richieste di media non bloccate in questa visita."
+    },
+    {
+     "caratteristica": "apertura del menu",
+     "ambito": "menu telefono",
+     "stato": "non_osservato",
+     "motivo": "Il pannello About al telefono è stato aperto senza sequenza di fotogrammi; la misura esiste solo al computer (013-clic.movimento.json)."
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "arrivo computer · caricamento mano e lettere",
+     "stato": "presente",
+     "valore": {
+      "trigger": "caricamento",
+      "proprieta": [
+       "rotate",
+       "opacity"
+      ]
+     },
+     "non_misurati": [
+      "durata_ms",
+      "curva"
+     ],
+     "descrizione": "Mano con dita che ruotano di ±20° e testo «Loading», poi «SIGN» lettera per lettera e wordmark: sequenza vista in 10 fotogrammi a 700 ms (⚠ LENTO).",
+     "evidenze": [
+      "prove/R01/varianti/caricamento/001-vai-seq-01.jpg",
+      "prove/R01/fogli/caricamento.jpg"
+     ]
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "arrivo computer · hover pulsante",
+     "stato": "presente",
+     "valore": {
+      "trigger": "passaggio",
+      "durata_ms": 280,
+      "proprieta": [
+       "width",
+       "background-color",
+       "border-color",
+       "transform",
+       "opacity"
+      ]
+     },
+     "non_misurati": [
+      "curva"
+     ],
+     "descrizione": "Larghezza 181→200 px, riempimento viola con freccia; tween in JS campionato per fotogramma.",
+     "evidenze": [
+      "prove/R01/004-muovi.movimento.json",
+      "prove/R01/fogli/004-hover-lets-begin.jpg"
+     ]
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "percorso principale · clic sul comando",
+     "stato": "presente",
+     "valore": {
+      "trigger": "clic",
+      "durata_ms": 370,
+      "proprieta": [
+       "opacity",
+       "transform"
+      ]
+     },
+     "non_misurati": [
+      "curva"
+     ],
+     "descrizione": "Il testo sale di 50 px (wordmark) o 20 px e sfuma; entrano la riga alta e le carte.",
+     "evidenze": [
+      "prove/R01/005-clic.movimento.json",
+      "prove/R01/fogli/005-clic-lets-begin.jpg"
+     ]
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "percorso principale · hover carta",
+     "stato": "presente",
+     "valore": {
+      "trigger": "passaggio",
+      "durata_ms": 597,
+      "proprieta": [
+       "background-color",
+       "border-color",
+       "color",
+       "transform"
+      ]
+     },
+     "non_misurati": [
+      "curva"
+     ],
+     "descrizione": "Gradiente 1200x1200 che segue il puntatore, bordo pieno, freccia che scorre.",
+     "evidenze": [
+      "prove/R01/009-muovi.movimento.json",
+      "prove/R01/fogli/009-hover-card-learn.jpg"
+     ]
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "percorso principale · apertura About",
+     "stato": "presente",
+     "valore": {
+      "trigger": "clic",
+      "durata_ms": 299,
+      "proprieta": [
+       "opacity",
+       "background-color",
+       "border-color"
+      ]
+     },
+     "non_misurati": [
+      "curva"
+     ],
+     "descrizione": "Il pannello copre la scena; la scena sfuma in circa 992 ms.",
+     "evidenze": [
+      "prove/R01/013-clic.movimento.json",
+      "prove/R01/fogli/013-clic-about.jpg"
+     ]
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "percorso principale · Search",
+     "stato": "presente",
+     "valore": {
+      "trigger": "clic",
+      "durata_ms": 188,
+      "proprieta": [
+       "opacity",
+       "transform",
+       "width"
+      ]
+     },
+     "non_misurati": [
+      "curva"
+     ],
+     "descrizione": "L'etichetta diventa campo e la freccia diventa ✕.",
+     "evidenze": [
+      "prove/R01/020-clic.movimento.json",
+      "prove/R01/021-scrivi.jpg"
+     ]
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "scorrimento computer",
+     "stato": "assente",
+     "descrizione": "La pagina non scorre (corpo con overflow hidden): nessun effetto legato allo scorrimento; il pannello About ha uno scorrimento interno normale.",
+     "evidenze": [
+      "prove/R01/varianti/zoom200/log/001.txt",
+      "prove/R01/misure/primo-schermo-R01.json"
+     ]
+    },
+    {
+     "caratteristica": "tenuta con colori forzati",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "testo_leggibile": "sì",
+      "elementi_scomparsi": "sì"
+     },
+     "descrizione": "Sfondo bianco; il wordmark SIGNS diventa lavanda pallido su bianco (contrasto calcolato 1,17:1). Caratteristica aggiunta, non in §8.",
+     "evidenze": [
+      "prove/R01/varianti/forzati/001-vai.jpg",
+      "prove/R01/fogli/scuro-forzati.jpg"
+     ]
+    },
+    {
+     "caratteristica": "zoom della pagina consentito dal meta viewport",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "user_scalable": "no",
+      "maximum_scale": 1
+     },
+     "descrizione": "Meta viewport: width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover. Caratteristica aggiunta, non in §8.",
+     "evidenze": [
+      "prove/R01/lettura-arrivo-desktop.json"
+     ]
+    }
+   ]
+  }
+ ]
+}

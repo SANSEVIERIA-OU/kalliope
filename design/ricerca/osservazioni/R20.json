@@ -1,0 +1,832 @@
+{
+ "riferimenti": [
+  {
+   "id": "R20",
+   "nome": "Ottografie (Otto van den Toorn)",
+   "url": "https://www.ottografie.nl/",
+   "categoria": "Best Navigation/Structure (Features & Design)",
+   "anno": 2026,
+   "premio": "Webby Winner",
+   "motivazione_ufficiale": "motivazione individuale non disponibile; criterio della categoria (letterale, scheda https://winners.webbyawards.com/2026/websites-and-mobile-sites/features-design/best-navigationstructure/363523/ottografie): «Sites that offer the best-possible user experience through superior navigation and site structure. Only information architecture will be judged.»",
+   "gruppo": "B",
+   "osservazioni": [
+    {
+     "caratteristica": "proposta del primo schermo",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "parole": 12,
+      "frasi": 1
+     },
+     "descrizione": "Dopo l'intro di caricamento (circa 10 s) il testo in alto, 14 px, dice «OTTO VAN DEN TOORN ↗ IS A BEAUTY & FASHION PHOTOGRAPHER FROM THE NETHERLANDS.» e il titolo di categoria «Beauty (09)» a 180 px. Conteggio senza ↗ e &.",
+     "evidenze": [
+      "prove/R20/desktop/003-arrivo-dopo-attesa.jpg"
+     ]
+    },
+    {
+     "caratteristica": "proposta del primo schermo",
+     "ambito": "arrivo telefono",
+     "stato": "assente",
+     "descrizione": "Al telefono (430×932) il primo schermo dopo l'intro mostra solo «(Info)», le didascalie dei progetti e la lettera «B (09)»: la frase che dice chi è Otto e cosa fa non compare (è nella pagina Info). Verificato su foto e testo della pagina.",
+     "evidenze": [
+      "prove/R20/mobile/003-home-telefono.jpg",
+      "prove/R20/mobile/003-home-telefono.movimento.json"
+     ]
+    },
+    {
+     "caratteristica": "comandi visibili al primo schermo",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "link": 4,
+      "pulsanti": 0,
+      "campi": 0
+     },
+     "descrizione": "Quattro collegamenti (Otto van den Toorn ↗, tre immagini di progetto). La pillola in basso è un div, non un collegamento né un pulsante, e non è contata.",
+     "evidenze": [
+      "prove/R20/desktop/003-arrivo-dopo-attesa.jpg",
+      "prove/R20/desktop/004-stato-arrivo.movimento.json"
+     ]
+    },
+    {
+     "caratteristica": "comandi visibili al primo schermo",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "link": 4,
+      "pulsanti": 0,
+      "campi": 0
+     },
+     "descrizione": "(Info), due progetti pienamente visibili e un terzo in parte. La pillola non è un pulsante nel DOM.",
+     "evidenze": [
+      "prove/R20/mobile/003-home-telefono.jpg"
+     ]
+    },
+    {
+     "caratteristica": "comando principale",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "posizione": "basso",
+      "fisso_allo_scorrimento": "sì"
+     },
+     "descrizione": "Non c'è un pulsante principale: l'azione è aprire un'immagine. L'elemento fisso è la pillola «isola» in basso al centro (position: fixed; bottom: 20px; z-index 10) con la categoria corrente.",
+     "evidenze": [
+      "prove/R20/desktop/003-arrivo-dopo-attesa.jpg",
+      "prove/R20/misure/029-css-pillola-about.json"
+     ]
+    },
+    {
+     "caratteristica": "comando principale",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "posizione": "basso",
+      "fisso_allo_scorrimento": "sì"
+     },
+     "descrizione": "Stessa pillola in basso, 255×60 px chiusa, 331×78 px aperta.",
+     "evidenze": [
+      "prove/R20/mobile/003-home-telefono.jpg",
+      "prove/R20/misure/m005-bersagli-pillola-aperta-telefono.json"
+     ]
+    },
+    {
+     "caratteristica": "struttura della navigazione",
+     "ambito": "menu computer",
+     "stato": "presente",
+     "valore": {
+      "voci": 4,
+      "tipo": "menu_a_comparsa"
+     },
+     "descrizione": "Quattro categorie (Beauty, Campaigns, Editorial, Celebrities) si scorrono con due frecce dentro la pillola aperta; «Info» è un collegamento a parte in alto. Nessuna voce è un collegamento tabulabile.",
+     "evidenze": [
+      "prove/R20/desktop/009-categoria-pillola-aperta.jpg",
+      "prove/R20/misure/009-dom-navigation-aperta.json"
+     ]
+    },
+    {
+     "caratteristica": "struttura della navigazione",
+     "ambito": "menu telefono",
+     "stato": "presente",
+     "valore": {
+      "voci": 4,
+      "tipo": "menu_a_comparsa"
+     },
+     "descrizione": "Stessa pillola; al tocco si espande con «Category» e le frecce ‹ › (37×37 px, div senza ruolo e con tabindex -1). Un tocco fuori la richiude.",
+     "evidenze": [
+      "prove/R20/mobile/005-clic.jpg",
+      "prove/R20/mobile/007-clic.jpg",
+      "prove/R20/misure/m005-bersagli-pillola-aperta-telefono.json"
+     ]
+    },
+    {
+     "caratteristica": "apertura del menu",
+     "ambito": "menu telefono",
+     "stato": "presente",
+     "valore": {
+      "durata_ms": 503,
+      "direzione": "in larghezza dal basso al centro"
+     },
+     "non_misurati": [
+      "curva"
+     ],
+     "descrizione": "Misura sui campioni di mutazione: la forma della pillola cambia in 503 ms; le immagini si riducono (scale 0,72-0,89) in circa 480 ms; la lettera del titolo e il fondo si sistemano in circa 970 ms. Il fondo diventa grigio (overlay). Orologio della pagina attendibile.",
+     "evidenze": [
+      "prove/R20/mobile/005-clic.jpg",
+      "prove/R20/mobile/005-clic.movimento.json",
+      "prove/R20/misure/m005-clic-durate.txt",
+      "prove/R20/fogli/m005-pillola-telefono.jpg"
+     ]
+    },
+    {
+     "caratteristica": "segnale di posizione e di avanzamento",
+     "ambito": "percorso principale · progetto",
+     "stato": "presente",
+     "valore": {
+      "tipo": "barra"
+     },
+     "descrizione": "In fondo a un progetto la pillola diventa «Next Project — Esqualo SS24» con un anello che conta da 24 a 100; a 100 la pagina passa da sola al progetto dopo (URL /campaigns/esqualo-ss24).",
+     "evidenze": [
+      "prove/R20/desktop/026-scorri.jpg",
+      "prove/R20/desktop/027-scorri.jpg",
+      "prove/R20/fogli/027-prossimo-caso.jpg"
+     ]
+    },
+    {
+     "caratteristica": "segnale di posizione e di avanzamento",
+     "ambito": "scorrimento computer",
+     "stato": "presente",
+     "valore": {
+      "tipo": "indice"
+     },
+     "descrizione": "Nella pagina Info l'etichetta della pillola cambia con la sezione (About, Background, Clients), il numero «(§1) (§2) (§3)» sta a sinistra e il colore di fondo cambia (arancio, blu, verde).",
+     "evidenze": [
+      "prove/R20/desktop/029-clic.jpg",
+      "prove/R20/fogli/031-033-about-scorrimento.jpg",
+      "prove/R20/fogli/034-037-about-fine.jpg"
+     ]
+    },
+    {
+     "caratteristica": "comando proprio «indietro»",
+     "ambito": "percorso principale",
+     "stato": "presente",
+     "valore": {
+      "presente": "sì"
+     },
+     "non_misurati": [
+      "conserva_i_dati"
+     ],
+     "descrizione": "Nel progetto e nella pagina Info compare un cerchio «×» accanto alla pillola: riporta alla categoria (URL /campaigns). Anche il tasto indietro del browser funziona: da /about a /campaigns, poi ai progetti, in ordine. Non si è misurato se la posizione di scorrimento si conserva.",
+     "evidenze": [
+      "prove/R20/desktop/028-clic.jpg",
+      "prove/R20/desktop/038-indietro.jpg",
+      "prove/R20/desktop/039-indietro.jpg",
+      "prove/R20/desktop/040-indietro.jpg"
+     ]
+    },
+    {
+     "caratteristica": "messaggio di errore",
+     "ambito": "errore",
+     "stato": "non_osservato",
+     "motivo": "Il sito non ha moduli né campi: nelle pagine percorse (home, quattro categorie, un progetto, Info) non c'è un campo in cui sbagliare.",
+     "evidenze": []
+    },
+    {
+     "caratteristica": "pagina inesistente",
+     "ambito": "404",
+     "stato": "presente",
+     "valore": {
+      "utile": "no",
+      "offre_ritorno": "sì"
+     },
+     "descrizione": "L'indirizzo inesistente risponde 404 (fetch) ma mostra la home «Beauty» con la pillola senza etichetta e senza il testo in alto: nessun messaggio dice che la pagina non esiste.",
+     "evidenze": [
+      "prove/R20/desktop/043-404-dopo-attesa.jpg",
+      "prove/R20/misure/041-stato-http-404.json"
+     ]
+    },
+    {
+     "caratteristica": "attesa del caricamento",
+     "ambito": "rete lenta",
+     "stato": "presente",
+     "valore": {
+      "segnale": "vuoto"
+     },
+     "non_misurati": [
+      "s_al_primo_testo"
+     ],
+     "descrizione": "A 1,6 Mbit/s e 150 ms di latenza lo schermo resta nero per oltre 20 s (foto a 15,8 s, 20,7 s, 20,8 s e 20,9 s); a 30 s compare il conteggio «37» dell'intro. Il testo c'è nel DOM dopo 0,47 s ma è sotto il nero. La foto a 0,8 s non è stata salvata (timeout dello scatto con la pagina occupata).",
+     "evidenze": [
+      "prove/R20/script/lenta-020-15814ms.png",
+      "prove/R20/script/lenta-150-20857ms.png",
+      "prove/R20/script/lenta-300-30000ms.png",
+      "prove/R20/script/lenta.json"
+     ]
+    },
+    {
+     "caratteristica": "comportamento senza JavaScript",
+     "ambito": "senza JavaScript",
+     "stato": "presente",
+     "valore": {
+      "contenuto": "nessuno",
+      "navigazione": "no",
+      "comandi_essenziali": "no"
+     },
+     "descrizione": "Senza JavaScript restano 77 caratteri e 39 collegamenti nel DOM (titoli, nomi dei progetti) ma lo schermo è tutto nero (1440×900 e 390×844): il contenuto visibile è nessuno. Il clic sui collegamenti nascosti non è stato provato.",
+     "evidenze": [
+      "prove/R20/script/nojs-1440.png",
+      "prove/R20/script/nojs-390.png",
+      "prove/R20/script/nojs-1440.json"
+     ]
+    },
+    {
+     "caratteristica": "effetti con movimento ridotto",
+     "ambito": "movimento ridotto",
+     "stato": "presente",
+     "valore": {
+      "effetti": 3,
+      "tolti": 0,
+      "sostituiti": 0,
+      "invariati": 3
+     },
+     "descrizione": "Con prefers-reduced-motion: reduce confrontati a fotogrammi: l'intro (contatore, scritta, immagini a pieno schermo), l'apertura della pillola e il titolo che si riduce alla lettera. Tutti e tre invariati. Nessuna regola @media di movimento ridotto al primo livello dei 23 fogli di stile (le regole dentro @layer non sono state lette). Campione di tre effetti, non tutti.",
+     "evidenze": [
+      "prove/R20/fogli/r001-arrivo-ridotto.jpg",
+      "prove/R20/fogli/r004-pillola-ridotto.jpg",
+      "prove/R20/misure/r003-regole-media-css.json"
+     ]
+    },
+    {
+     "caratteristica": "percorso da tastiera",
+     "ambito": "tastiera",
+     "stato": "presente",
+     "valore": {
+      "focus_visibile": "sì",
+      "salta_al_contenuto": "no",
+      "trappole": 0
+     },
+     "non_misurati": [
+      "tab_fino_al_comando_principale"
+     ],
+     "descrizione": "Il primo Tab porta a «Otto van den Toorn ↗» (anello 1 px #101010); il secondo torna al corpo della pagina. I 37 collegamenti dei progetti hanno tabindex=-1 e la pillola è un div: da tastiera non si apre nessun progetto né si cambia categoria. Frecce, PagEù e Spazio scorrono il feed; Esc chiude la pillola. «Skip» dell'intro non è un pulsante nel DOM.",
+     "evidenze": [
+      "prove/R20/desktop/046-tasto.jpg",
+      "prove/R20/fogli/046-055-tastiera.jpg",
+      "prove/R20/misure/046-tabindex-link-home.json"
+     ]
+    },
+    {
+     "caratteristica": "testo al 200%",
+     "ambito": "testo 200%",
+     "stato": "presente",
+     "valore": {
+      "scroll_orizzontale": "no",
+      "contenuto_perso": "no"
+     },
+     "descrizione": "Con il carattere al 200% (radice 32 px) la pagina non cambia: i testi sono in px (14 px resta 14 px). Con lo zoom al 200% (viewport 720×450) il layout si rimpicciolisce in proporzione e il testo piccolo diventa 7 px: nessuna perdita, ma nessun ingrandimento leggibile.",
+     "evidenze": [
+      "prove/R20/fogli/z001-testo-e-zoom-200.jpg",
+      "prove/R20/misure/home-carattere=200.json",
+      "prove/R20/misure/home-zoom=200.json"
+     ]
+    },
+    {
+     "caratteristica": "albero di accessibilità (proxy)",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "punti_di_riferimento": 0,
+      "titoli": 4,
+      "immagini_senza_alternativa": 85,
+      "comandi_senza_nome": 0
+     },
+     "descrizione": "85 immagini senza attributo alt (nessuna con alt=\"\"), nessun header/nav/main/footer/section, nessuna lingua dei punti di riferimento; 4 titoli h2 spezzati lettera per lettera in div (innerText «B\\ne\\na…»). Proxy dal DOM, non un lettore di schermo.",
+     "evidenze": [
+      "prove/R20/misure/meta-e-albero.json",
+      "prove/R20/misure/046-tabindex-link-home.json",
+      "prove/R20/desktop/003-arrivo-dopo-attesa.jpg"
+     ]
+    },
+    {
+     "caratteristica": "bersagli dei comandi principali",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "larghezza_min_px": 169,
+      "altezza_min_px": 18,
+      "distanza_min_px": 196
+     },
+     "descrizione": "Collegamenti nel DOM in vista: Info 169×18 px; le immagini-collegamento sono 217×289 o 335×447. La pillola (289×68) non è un collegamento.",
+     "evidenze": [
+      "prove/R20/script/bersagli-computer.json"
+     ]
+    },
+    {
+     "caratteristica": "bersagli dei comandi principali",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "larghezza_min_px": 40,
+      "altezza_min_px": 25,
+      "distanza_min_px": 37
+     },
+     "descrizione": "(Info) 40×25 px; le frecce della pillola aperta sono 37×37 px (passo, 430×932).",
+     "evidenze": [
+      "prove/R20/script/telefono-390.json",
+      "prove/R20/misure/m005-bersagli-pillola-aperta-telefono.json"
+     ]
+    },
+    {
+     "caratteristica": "testo corrente",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "corpo_px": 14,
+      "interlinea": 1.29,
+      "caratteri_per_riga_max": 42
+     },
+     "descrizione": "Testo in alto in Suisse Int'l 14/18 px maiuscolo; titoli in Big Caslon 180 px. Il corpo vero è nella pagina Info (vedi riga seguente).",
+     "evidenze": [
+      "prove/R20/desktop/003-arrivo-dopo-attesa.jpg",
+      "prove/R20/misure/about-scala-tipografica-desktop.json"
+     ]
+    },
+    {
+     "caratteristica": "testo corrente",
+     "ambito": "arrivo computer · pagina Info",
+     "stato": "presente",
+     "valore": {
+      "corpo_px": 32,
+      "interlinea": 1.06
+     },
+     "descrizione": "Big Caslon 32/34 px bianco su arancio, 572 px di colonna, letter-spacing 0,16 px; capoverso introduttivo a 64/66 px; titolo «Otto» 260/250 px, -7,8 px. Contrasto del bianco sui pixel: da 2,95 (arancio chiaro) a 7,19 (arancio scuro) in una JPEG, stima non CSS.",
+     "evidenze": [
+      "prove/R20/desktop/029-clic.jpg",
+      "prove/R20/misure/about-scala-tipografica-desktop.json",
+      "prove/R20/misure/contrasto-about-da-pixel.txt"
+     ]
+    },
+    {
+     "caratteristica": "richieste e terze parti",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "richieste": 124,
+      "domini_di_terzi": 2,
+      "kb": 7812,
+      "caratteri_caricati": 4
+     },
+     "descrizione": "80 immagini (6645 kB: le immagini di tutti i progetti, a 1440 px, caricate subito), 13 script (197 kB), 4 file di carattere (301 kB), 15 fetch. Esterni: a.storyblok.com (CDN delle immagini) e plausible.io (statistiche). Dopo lo scorrimento completo del feed 130 richieste e 8068 kB.",
+     "evidenze": [
+      "prove/R20/script/richieste.json",
+      "prove/R20/script/richieste-elenco.json"
+     ]
+    },
+    {
+     "caratteristica": "campione di suono",
+     "ambito": "media",
+     "stato": "assente",
+     "descrizione": "Nessun audio né video nelle pagine percorse (video: 0, canvas: 0 al conteggio di passo.mjs).",
+     "evidenze": [
+      "prove/R20/desktop/001-vai.movimento.json"
+     ]
+    },
+    {
+     "caratteristica": "avvio di audio e video",
+     "ambito": "media",
+     "stato": "assente",
+     "descrizione": "Nessun audio né video: nessun avvio.",
+     "evidenze": [
+      "prove/R20/desktop/001-vai.movimento.json"
+     ]
+    },
+    {
+     "caratteristica": "anteprima del collegamento",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "titolo": "sì",
+      "immagine": "sì",
+      "descrizione": "sì"
+     },
+     "descrizione": "og:title «Otto van den Toorn», og:image /img/og.png?v=1.1, og:description, twitter:card summary_large_image.",
+     "evidenze": [
+      "prove/R20/misure/meta-e-albero.json"
+     ]
+    },
+    {
+     "caratteristica": "stampa",
+     "ambito": "stampa",
+     "stato": "presente",
+     "valore": {
+      "comandi_inutili_nascosti": "no"
+     },
+     "non_misurati": [
+      "leggibile"
+     ],
+     "descrizione": "Con media print lo schermo resta quello del sito (home con pillola); nessuna regola @media print al primo livello dei fogli leggibili; il PDF A4 è di 1 pagina e 30 MB perché incorpora le immagini. Non si è potuto rasterizzare il PDF (manca Ghostscript): la leggibilità non è giudicata.",
+     "evidenze": [
+      "prove/R20/script/stampa-schermo.png",
+      "prove/R20/script/stampa.json"
+     ]
+    },
+    {
+     "caratteristica": "chi c'è dietro e le fonti",
+     "ambito": "fiducia",
+     "stato": "presente",
+     "valore": {
+      "firma": "sì",
+      "data": "no",
+      "versione": "no",
+      "fonti_collegate": "no"
+     },
+     "descrizione": "Firma: il fotografo (meta author, pagina Info con indirizzo e contatti). Ogni progetto elenca i crediti (modello, styling, trucco). Nessuna data né versione nelle pagine percorse.",
+     "evidenze": [
+      "prove/R20/desktop/018-clic.jpg",
+      "prove/R20/desktop/029-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "stato e limiti dichiarati",
+     "ambito": "fiducia",
+     "stato": "non_osservato",
+     "motivo": "Portfolio fotografico: non ha stato di prodotto né limiti da dichiarare; domanda non pertinente.",
+     "evidenze": []
+    },
+    {
+     "caratteristica": "corto subito, lungo a richiesta",
+     "ambito": "percorso principale",
+     "stato": "presente",
+     "valore": {
+      "meccanismo": "nessuno"
+     },
+     "descrizione": "Il progetto mostra titolo, immagini e crediti senza livelli; la pagina Info è una lettura breve in tre sezioni a scorrimento.",
+     "evidenze": [
+      "prove/R20/desktop/018-clic.jpg",
+      "prove/R20/fogli/034-037-about-fine.jpg"
+     ]
+    },
+    {
+     "caratteristica": "porte per pubblici diversi",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "porte": 4,
+      "criterio": "argomento"
+     },
+     "descrizione": "Quattro categorie per genere di lavoro (Beauty 9, Campaigns 8, Editorial 6, Celebrities 14 progetti); nessuna porta per ruolo (cliente, redazione).",
+     "evidenze": [
+      "prove/R20/desktop/003-arrivo-dopo-attesa.jpg",
+      "prove/R20/desktop/009-categoria-pillola-aperta.jpg"
+     ]
+    },
+    {
+     "caratteristica": "lunghezza e registro delle frasi",
+     "ambito": "arrivo computer · pagina Info",
+     "stato": "presente",
+     "valore": {
+      "frasi_campione": 5,
+      "parole_per_frase_media": 23.2,
+      "persona": "terza"
+     },
+     "descrizione": "Cinque frasi della pagina Info (13, 21, 19, 30, 33 parole); terza persona, inglese, nessun elenco.",
+     "evidenze": [
+      "prove/R20/desktop/029-clic.jpg",
+      "prove/R20/fogli/031-033-about-scorrimento.jpg"
+     ]
+    },
+    {
+     "caratteristica": "prodotto mostrato",
+     "ambito": "scorrimento computer",
+     "stato": "presente",
+     "valore": {
+      "tipo": "foto",
+      "con_legenda": "no",
+      "con_alternativa": "no"
+     },
+     "descrizione": "Le fotografie sono il contenuto. Il nome del progetto compare nella pillola solo al passaggio del mouse; nessuna delle 85 immagini ha l'attributo alt.",
+     "evidenze": [
+      "prove/R20/desktop/017-muovi.jpg",
+      "prove/R20/misure/046-tabindex-link-home.json"
+     ]
+    },
+    {
+     "caratteristica": "prodotto mostrato",
+     "ambito": "scorrimento telefono",
+     "stato": "presente",
+     "valore": {
+      "tipo": "foto",
+      "con_legenda": "sì",
+      "con_alternativa": "no"
+     },
+     "descrizione": "Al telefono sotto ogni immagine c'è il nome del progetto in maiuscolo (FOR THOSE WITH CHARACTER); nessun attributo alt.",
+     "evidenze": [
+      "prove/R20/mobile/003-home-telefono.jpg",
+      "prove/R20/fogli/m004-scorri-telefono.jpg"
+     ]
+    },
+    {
+     "caratteristica": "numeri detti a parole",
+     "ambito": "dati",
+     "stato": "non_osservato",
+     "motivo": "Portfolio: gli unici numeri sono i conteggi dei progetti «(09)» in cifre; domanda non pertinente.",
+     "evidenze": []
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "arrivo computer · intro",
+     "stato": "presente",
+     "valore": {
+      "trigger": "caricamento della pagina"
+     },
+     "non_misurati": [
+      "durata_ms",
+      "curva",
+      "proprieta"
+     ],
+     "descrizione": "Intro a schermo nero: i nomi delle categorie ai lati, contatore a due cifre 00→99 che scorre, scritta «Ottografie» con le lettere che salgono, poi sei fotografie a pieno schermo in sequenza con il pulsante «Skip»; infine tutto si riduce nel layout della home. Dura più di 6,2 s (frame ogni ~0,55 s, fine non fotografata) e meno di ~12 s.",
+     "evidenze": [
+      "prove/R20/desktop/056-vai.jpg",
+      "prove/R20/fogli/056-arrivo-preloader.jpg",
+      "prove/R20/desktop/056-vai.movimento.json"
+     ]
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "arrivo telefono · intro",
+     "stato": "presente",
+     "valore": {
+      "trigger": "caricamento della pagina"
+     },
+     "non_misurati": [
+      "durata_ms",
+      "curva",
+      "proprieta"
+     ],
+     "descrizione": "Stessa intro con i nomi delle categorie impilati in verticale; «Skip» in basso.",
+     "evidenze": [
+      "prove/R20/mobile/001-vai.jpg",
+      "prove/R20/fogli/m001-arrivo-telefono.jpg"
+     ]
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "scorrimento computer · cursore",
+     "stato": "presente",
+     "valore": {
+      "trigger": "movimento del mouse",
+      "proprieta": [
+       "transform"
+      ],
+      "fattore_per_fotogramma": 0.1
+     },
+     "non_misurati": [
+      "durata_ms"
+     ],
+     "descrizione": "Un cerchio scuro segue il mouse con translate3d: a ogni campione si copre il 10% della distanza residua (72 px su 720, poi 64,8 + …). Sopra un progetto contiene un «+». La curva è dedotta dai campioni, non letta dal codice.",
+     "evidenze": [
+      "prove/R20/desktop/005-scorri.movimento.json",
+      "prove/R20/desktop/017-muovi.jpg"
+     ]
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "scorrimento computer · elenco progetti",
+     "stato": "presente",
+     "valore": {
+      "trigger": "rotella",
+      "durata_ms": 2032,
+      "curva": "decadimento esponenziale",
+      "proprieta": [
+       "transform"
+      ],
+      "fattore_per_fotogramma": 0.1
+     },
+     "descrizione": "Lo scorrimento è virtuale (scrollHeight 900): ogni li si sposta con translate3d in y a velocità diversa (parallasse); su 300 px di rotella un li arriva a -150 px, con passi di un decimo della distanza residua. Si assesta in 2032 ms. Le immagini passano davanti al titolo.",
+     "evidenze": [
+      "prove/R20/desktop/005-scorri.jpg",
+      "prove/R20/desktop/005-scorri.movimento.json",
+      "prove/R20/fogli/005-scorri-seq.jpg",
+      "prove/R20/misure/005-scorri-durate.txt"
+     ]
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "scorrimento telefono · elenco progetti",
+     "stato": "presente",
+     "valore": {
+      "trigger": "trascinamento verticale"
+     },
+     "non_misurati": [
+      "durata_ms",
+      "curva",
+      "proprieta"
+     ],
+     "descrizione": "Stesso feed in verticale con parallasse; il titolo è ridotto alla lettera iniziale (206 px) e le immagini lo coprono.",
+     "evidenze": [
+      "prove/R20/mobile/004-scorri.jpg",
+      "prove/R20/fogli/m004-scorri-telefono.jpg"
+     ]
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "percorso principale · apertura isola (computer)",
+     "stato": "presente",
+     "valore": {
+      "trigger": "clic sulla pillola",
+      "durata_ms": 995,
+      "proprieta": [
+       "transform",
+       "scale",
+       "opacity"
+      ]
+     },
+     "non_misurati": [
+      "curva"
+     ],
+     "descrizione": "Il fondo diventa grigio (overlay), le immagini si riducono in 477 ms (scale 0,72-0,89 ciascuna), la pillola si allarga in 499 ms, le lettere «eauty» scendono dietro una maschera mentre la «B» scivola al centro in 843-995 ms. Esc chiude: già chiuso al primo fotogramma.",
+     "evidenze": [
+      "prove/R20/desktop/007-clic.jpg",
+      "prove/R20/desktop/007-clic.movimento.json",
+      "prove/R20/misure/007-clic-durate.txt",
+      "prove/R20/fogli/007-clic-pillola.jpg",
+      "prove/R20/misure/009-dom-h2-categoria-aperta.json"
+     ]
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "menu telefono · apertura isola",
+     "stato": "presente",
+     "valore": {
+      "trigger": "tocco sulla pillola",
+      "durata_ms": 971,
+      "proprieta": [
+       "transform",
+       "scale",
+       "opacity"
+      ]
+     },
+     "non_misurati": [
+      "curva"
+     ],
+     "descrizione": "Come al computer; 971 ms è la componente più lunga (lettera del titolo), la forma della pillola 503 ms, le immagini circa 480 ms.",
+     "evidenze": [
+      "prove/R20/mobile/005-clic.movimento.json",
+      "prove/R20/misure/m005-clic-durate.txt"
+     ]
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "percorso principale · cambio categoria",
+     "stato": "presente",
+     "valore": {
+      "trigger": "clic sulla freccia",
+      "durata_ms": 982,
+      "proprieta": [
+       "transform",
+       "scale",
+       "opacity"
+      ]
+     },
+     "non_misurati": [
+      "curva"
+     ],
+     "descrizione": "Il campo di immagini di Beauty sale e esce in alto, quello di Campaigns entra dal basso; «B» ↔ «C» e l'etichetta della pillola scorrono in verticale; le miniature sotto la pillola traslano di 8 px per livello. L'indirizzo cambia in /campaigns.",
+     "evidenze": [
+      "prove/R20/desktop/010-clic.jpg",
+      "prove/R20/desktop/010-clic.movimento.json",
+      "prove/R20/misure/010-clic-durate.txt",
+      "prove/R20/fogli/010-clic-freccia-avanti.jpg"
+     ]
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "percorso principale · apertura progetto",
+     "stato": "presente",
+     "valore": {
+      "trigger": "clic sull'immagine",
+      "durata_ms": 1031,
+      "proprieta": [
+       "transform",
+       "scale",
+       "opacity"
+      ]
+     },
+     "non_misurati": [
+      "curva"
+     ],
+     "descrizione": "L'immagine cliccata cresce fino a coprire la finestra e il titolo (180 px) entra in bianco; la pillola diventa «Eyecare 2025 ⌄» con un cerchio «×».",
+     "evidenze": [
+      "prove/R20/desktop/018-clic.jpg",
+      "prove/R20/desktop/018-clic.movimento.json",
+      "prove/R20/misure/018-clic-durate.txt",
+      "prove/R20/fogli/018-apri-progetto.jpg"
+     ]
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "percorso principale · prossimo progetto",
+     "stato": "presente",
+     "valore": {
+      "trigger": "scorrimento in fondo al progetto"
+     },
+     "non_misurati": [
+      "durata_ms",
+      "curva",
+      "proprieta"
+     ],
+     "descrizione": "In fondo compare «Next Case» a 180 px e l'immagine seguente cresce a pieno schermo mentre un anello nella pillola va da 24 a 100; a 100 il progetto cambia e la pagina si azzera.",
+     "evidenze": [
+      "prove/R20/desktop/026-scorri.jpg",
+      "prove/R20/desktop/027-scorri.jpg",
+      "prove/R20/fogli/023-026-fine-progetto.jpg"
+     ]
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "percorso principale · chiusura progetto",
+     "stato": "presente",
+     "valore": {
+      "trigger": "clic su ×",
+      "durata_ms": 1412,
+      "proprieta": [
+       "transform",
+       "opacity"
+      ]
+     },
+     "non_misurati": [
+      "curva"
+     ],
+     "descrizione": "L'immagine a pieno schermo e il titolo escono, la categoria riappare con le immagini in posizione di partenza.",
+     "evidenze": [
+      "prove/R20/desktop/028-clic.jpg",
+      "prove/R20/desktop/028-clic.movimento.json",
+      "prove/R20/misure/028-clic-durate.txt",
+      "prove/R20/fogli/028-chiudi-progetto.jpg"
+     ]
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "percorso principale · apertura pagina Info",
+     "stato": "presente",
+     "valore": {
+      "trigger": "clic su Info",
+      "durata_ms": 1606,
+      "proprieta": [
+       "clip-path",
+       "transform",
+       "opacity"
+      ]
+     },
+     "non_misurati": [
+      "curva"
+     ],
+     "descrizione": "Un pannello nero scende dall'alto (clip-path) e si apre sull'arancione della pagina Info; «Otto» a 260 px; ultimo campione a 1606 ms.",
+     "evidenze": [
+      "prove/R20/desktop/029-clic.jpg",
+      "prove/R20/desktop/029-clic.movimento.json",
+      "prove/R20/misure/029-clic-durate.txt",
+      "prove/R20/fogli/029-about-apertura.jpg"
+     ]
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "scorrimento computer · pagina Info",
+     "stato": "presente",
+     "valore": {
+      "trigger": "rotella"
+     },
+     "non_misurati": [
+      "durata_ms",
+      "curva",
+      "proprieta"
+     ],
+     "descrizione": "Tre sezioni a tutta pagina: ritratto fisso e testo che scorre; la sezione successiva entra dal basso come un pannello e cambia il colore di fondo (arancio, blu, verde) e il titolo (Otto, Story, Partners).",
+     "evidenze": [
+      "prove/R20/desktop/031-scorri.jpg",
+      "prove/R20/fogli/031-033-about-scorrimento.jpg",
+      "prove/R20/fogli/034-037-about-fine.jpg"
+     ]
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "percorso principale · passaggio sull'immagine",
+     "stato": "presente",
+     "valore": {
+      "trigger": "passaggio del mouse"
+     },
+     "non_misurati": [
+      "durata_ms",
+      "curva",
+      "proprieta"
+     ],
+     "descrizione": "La pillola mostra «View Project — Eyecare 2025 →» con la miniatura e il cursore diventa un cerchio scuro con «+». Non dipende dal passaggio del mouse per aprire: il clic funziona ovunque.",
+     "evidenze": [
+      "prove/R20/desktop/017-muovi.jpg",
+      "prove/R20/fogli/006-hover-pillola.jpg"
+     ]
+    }
+   ]
+  }
+ ]
+}

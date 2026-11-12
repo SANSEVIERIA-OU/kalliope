@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!-- SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 -->
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="text-scale" content="scale">
+<title>Kalliope: scrivi, e la voce parla per te nelle riunioni</title>
+<meta name="description" content="Kalliope dà voce a chi non può parlare: scrivi, e una voce italiana parla nel microfono delle app di riunione. Versione di prova, per Linux.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Kalliope">
+<meta property="og:title" content="Kalliope: scrivi, e la voce parla per te nelle riunioni">
+<meta property="og:description" content="Kalliope dà voce a chi non può parlare: scrivi, e una voce italiana parla nel microfono delle app di riunione. Versione di prova, per Linux.">
+<meta property="og:url" content="https://sansevieria-ou.github.io/kalliope/">
+<meta property="og:image" content="https://sansevieria-ou.github.io/kalliope/immagini/kalliope-finestra.png">
+<meta property="og:image:alt" content="La finestra di Kalliope: un campo dove scrivere, i pulsanti Parla e Ferma, la scelta della voce.">
+<link rel="canonical" href="https://sansevieria-ou.github.io/kalliope/">
+<link rel="icon" href="immagini/icona.svg" type="image/svg+xml">
+<link rel="stylesheet" href="stile/token.css">
+<link rel="stylesheet" href="stile/base.css">
+<link rel="stylesheet" href="stile/componenti.css">
+<script src="script/kalliope.js" defer></script>
+</head>
+<body data-prerelease="{{kalliope.prerelease}}" data-versione="{{kalliope.version}}">
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+<header class="sito-intestazione">
+<div class="pagina">
+<a class="marca" href="./" aria-label="Kalliope, pagina iniziale"><img src="immagini/icona.svg" alt="" width="40" height="40"><span>Kalliope</span></a>
+<nav class="nav" aria-label="Principale">
+<ul>
+<li><a href="./ascolta/">Ascolta</a></li><li><a href="./stato/">Stato e limiti</a></li><li><a href="./installa/">Installa</a></li><li><a href="./riunione/">In riunione</a></li><li><a href="./aiuto/">Aiuto</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="contenuto" tabindex="-1">
+<section class="apertura pagina" aria-labelledby="titolo-pagina">
+<div class="apertura__griglia">
+<div class="apertura__titolo">
+<h1 id="titolo-pagina">Scrivi, e Kalliope parla per te nella riunione.</h1>
+<p class="apertura__stato"><span class="solo-prova">Versione di prova: </span>solo per Linux, non ancora provata in una riunione vera.</p>
+</div>
+<div class="apertura__ascolto">
+<article class="ascolto ascolto--hero" id="ascolta" aria-labelledby="a3-titolo-hero">
+<h2 id="a3-titolo-hero" class="solo-lettore" data-qa-salta>Frase 3 di 3: un importo</h2>
+<div class="riga-testo">
+<span class="riga-testo__etichetta">Tu scrivi</span>
+<span class="scritto"><span class="frase" data-frase="1">Il preventivo è di <span class="cambia">1.250 € + IVA</span>, valido fino al <span class="cambia">31 dicembre</span>.</span></span>
+</div>
+<div class="riga-testo">
+<span class="riga-testo__etichetta">Kalliope dice</span>
+<span class="detto"><span class="frase" data-frase="1">Il preventivo è di <span class="cambia">milleduecentocinquanta euro più IVA</span>, valido fino al <span class="cambia">trentuno dicembre</span>.</span></span>
+</div>
+<div class="voci">
+<div class="voce" data-file="giulia-3" data-nome="Giulia" data-testo-avvia="Ascolta" data-testo-ferma="Ferma" data-testo-frase="frase" data-testo-di="di" data-testo-errore="Questo browser non riproduce il file. Usa il collegamento «Scarica il file» qui sotto.">
+<p class="voce__nome">Giulia · 6 secondi</p>
+<div class="voce__controlli"></div>
+<audio controls preload="none" aria-label="Giulia, frase 3 di 3, 6 secondi"><source src="voce/giulia-3.opus" type="audio/ogg; codecs=opus"><source src="voce/giulia-3.mp3" type="audio/mpeg">Il tuo browser non riproduce l'audio. <a href="voce/giulia-3.mp3">Scarica il file MP3</a>.</audio>
+<p class="voce__file"><a href="voce/giulia-3.mp3" download>Scarica il file (MP3, 6 secondi)</a></p>
+</div>
+</div>
+</article>
+<p class="apertura__altre"><a href="ascolta/">Altre frasi e la voce di Marco</a></p>
+</div>
+<p class="apertura__frase">Kalliope è un programma per il computer, per chi non può parlare o fa fatica a farlo. Scrivi una frase e premi Invio: una voce italiana la dice nel microfono delle app di riunione.</p>
+<aside class="avviso avviso--attenzione avviso--riga apertura__avviso" data-banner-sistema hidden
+ data-testo-windows="Kalliope oggi non funziona su Windows."
+ data-testo-macos="Kalliope oggi non funziona su macOS."
+ data-testo-telefono="Kalliope serve un computer Linux.">
+<div class="avviso__corpo"><span class="avviso__titolo" data-banner-testo></span> <a href="non-ancora/">Perché, e novità</a></div>
+<button type="button" class="btn btn--piccolo" data-banner-chiudi>Chiudi</button>
+</aside>
+<div class="apertura__stato-card">
+<section class="stato" aria-labelledby="stato-titolo-breve">
+<div class="stato__testa">
+<span class="barre barre--piccole" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+<h2 id="stato-titolo-breve">Com'è messo Kalliope oggi</h2>
+<span class="stato__versione solo-prova">Versione di prova {{kalliope.version}}</span>
+</div>
+<div class="stato__colonne">
+<div class="stato__col" data-tipo="provato">
+<h3><span class="stato__segno" aria-hidden="true">✓</span>Provato</h3>
+<p>La voce arriva al microfono «Kalliope». L'installazione è provata da uno script su Ubuntu, Fedora e Arch.</p>
+</div>
+<div class="stato__col" data-tipo="non-provato">
+<h3><span class="stato__segno" aria-hidden="true">?</span>Non ancora provato</h3>
+<p>Una riunione vera con Zoom, Teams o Meet su un computer di tutti i giorni.</p>
+</div>
+<div class="stato__col" data-tipo="non-esiste">
+<h3><span class="stato__segno" aria-hidden="true">×</span>Non esiste</h3>
+<p>Windows, macOS e telefono. Altre lingue oltre all'italiano.</p>
+</div>
+</div>
+<p class="stato__piede"><a href="stato/">Leggi tutto lo stato e i limiti</a></p>
+</section>
+</div>
+<div class="apertura__azioni">
+<div class="azioni">
+<a class="btn btn--primario" href="installa/">Scarica e installa</a>
+<a class="collegamento-forte" href="non-ancora/">Non uso Linux: cosa posso fare</a>
+</div>
+</div>
+</div>
+</section>
+<section class="sezione sezione--carta-2" aria-labelledby="porte-titolo">
+<div class="pagina testo">
+<h2 id="porte-titolo">Da dove vuoi cominciare?</h2>
+<ul class="porte">
+<li><a href="stato/#per-chi">Scrivo per parlare: fa per me?</a></li>
+<li><a href="stato/#detta-a-chi">Leggo per un'altra persona</a></li>
+<li><a href="stato/#controllare">Devo controllare cosa fa</a></li>
+<li><a href="installa/">Installo per un altro</a></li>
+</ul>
+</div>
+</section>
+<section class="sezione" aria-labelledby="serve-titolo">
+<div class="pagina testo">
+<div class="griglia-2">
+<div>
+<h2 id="serve-titolo">Cosa serve</h2>
+<ul>
+<li>Un computer Linux a 64 bit (x86_64) con PipeWire.</li>
+<li>53 MB di spazio per la voce. Si scarica una volta sola, con internet. Poi Kalliope funziona senza.</li>
+<li>Un'app di riunione che ti lasci scegliere il microfono.</li>
+</ul>
+<p>Il testo che scrivi resta sul tuo computer. Non c'è un account e non c'è un prezzo. L'uso personale è libero; <a href="stato/#controllare">le regole per un uso commerciale sono nella pagina Stato e limiti</a>.</p>
+<p>Kalliope non è un dispositivo medico e non sostituisce la valutazione di un logopedista.</p>
+</div>
+<div>
+<figure class="foto foto--piccola">
+<img src="immagini/kalliope-finestra.png" width="640" height="500" alt="La finestra di Kalliope. In alto una riga di stato: «Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono.» Sotto, un campo con la scritta «Scrivi qui e premi Invio per parlare» e i pulsanti Parla e Ferma. In basso la scelta della voce (Giulia), la casella «Senti anche tu» spuntata e il pulsante Informazioni.">
+<figcaption>La finestra di Kalliope, come si presenta con la voce pronta.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<div class="pagina">
+<nav class="avanti" aria-label="Indietro e avanti">
+<span></span>
+<a href="installa/"><small>Avanti</small>Scarica e installa</a>
+</nav>
+</div>
+</main>
+<footer class="sito-piede">
+<div class="pagina">
+<div>
+<h2>Kalliope</h2>
+<p>Un programma per scrivere e farsi sentire nelle riunioni. <span class="solo-prova">Versione di prova {{kalliope.version}}, pubblicata il {{kalliope.date}}.</span></p>
+<p>Codice sorgente disponibile, licenza SANSEVIERIA 1.0. Non è software «open source» nel senso dell'OSI. Prodotto da SANSEVIERIA OÜ.</p>
+<p>Questo sito non usa cookie, non ha statistiche e non carica nulla da altri siti. I file li serve GitHub Pages, che registra le richieste come ogni host.</p>
+</div>
+<div>
+<h2>Nel sito</h2>
+<ul>
+<li><a href="./non-ancora/">Windows e macOS: non ancora</a></li>
+<li><a href="./sistema/">Come è fatto questo sito</a></li>
+<li><a href="./aiuto/#segnala">Segnala un problema</a></li>
+</ul>
+</div>
+<div>
+<h2>Fuori da questo sito</h2>
+<ul>
+<li><a href="https://github.com/SANSEVIERIA-OU/kalliope">Codice sorgente su GitHub</a></li>
+<li><a href="{{kalliope.release.url}}">Pagina della versione {{kalliope.version}}</a></li>
+<li><a href="https://github.com/SANSEVIERIA-OU/kalliope/issues">Segnalazioni su GitHub (serve un account)</a></li>
+</ul>
+</div>
+</div>
+</footer>
+</body>
+</html>

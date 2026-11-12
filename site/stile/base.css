@@ -1,0 +1,86 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* Kalliope: base. Reset minimo, tipografia, collegamenti, anello di focus, struttura della pagina. Solo var(--…) da token.css. */
+
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-top: var(--s-5); }
+body {
+  margin: 0;
+  background: var(--carta);
+  color: var(--inchiostro);
+  font-family: var(--font-corpo);
+  font-size: var(--t-corpo);
+  line-height: var(--interlinea);
+  overflow-wrap: anywhere; /* a testo molto grande una parola lunga va a capo invece di far scorrere la pagina di lato */
+  min-height: var(--alto-pagina);
+  display: flex;
+  flex-direction: column;
+}
+main { flex: 1 0 auto; }
+img, svg { max-width: 100%; height: auto; }
+h1, h2, h3, h4 { line-height: var(--interlinea-titoli); margin: 0 0 var(--s-4); font-weight: var(--peso-forte); text-wrap: balance; }
+h1 { font-size: var(--t-h1); }
+h1, h2, h3, h4 { overflow-wrap: anywhere; }
+h2 { font-size: var(--t-h2); margin-top: var(--s-7); }
+h3 { font-size: var(--t-h3); margin-top: var(--s-5); }
+p, ul, ol, dl, figure, table, details, blockquote { margin: 0 0 var(--s-4); }
+ul, ol { padding-left: 1.4em; }
+li { margin-bottom: var(--s-2); }
+.testo > p, .testo > ul, .testo > ol, .testo > dl { max-width: var(--misura); }
+small, .piccolo { font-size: var(--t-piccolo); }
+strong { font-weight: var(--peso-forte); }
+hr { border: 0; border-top: var(--bordo) solid var(--linea); margin: var(--s-6) 0; }
+code, kbd, samp, pre { font-family: var(--font-fissa); font-size: var(--t-codice); overflow-wrap: anywhere; }
+.nowrap { white-space: nowrap; }
+kbd { background: var(--carta-2); border: var(--bordo) solid var(--linea); border-radius: var(--raggio-minimo); padding: 0 var(--s-2); }
+
+/* Collegamenti: sempre sottolineati, mai solo il colore (RG9, K3) */
+a { overflow-wrap: anywhere; color: var(--voce-scura); text-decoration: underline; text-decoration-thickness: 0.09em; text-underline-offset: 0.2em; transition: color var(--durata-1) var(--curva); }
+a:hover { color: var(--voce-molto-scura); text-decoration-thickness: 0.16em; }
+
+/* Anello di focus doppio: alone chiaro e anello scuro, visibile su carta e sul verde (D13) */
+:focus-visible {
+  outline: var(--bordo-forte) solid var(--focus);
+  outline-offset: var(--focus-distanza);
+  box-shadow: 0 0 0 var(--s-1) var(--focus-alone);
+}
+:focus:not(:focus-visible) { outline: none; }
+
+/* Salta al contenuto: primo Tab, visibile al focus (D13) */
+.salta {
+  position: absolute; left: var(--s-4); top: calc(-1 * var(--s-9) - var(--s-4)); z-index: 10; max-width: calc(100% - 2 * var(--s-4));
+  background: var(--inchiostro); color: var(--carta); padding: var(--s-3) var(--s-4); border-radius: var(--raggio-piccolo);
+  min-height: var(--bersaglio); display: inline-flex; align-items: center;
+}
+.salta:focus { top: var(--s-3); color: var(--carta); }
+
+/* Struttura */
+.pagina { width: 100%; max-width: var(--pagina); margin-inline: auto; padding-inline: var(--s-5); }
+@media (max-width: 30rem) { .pagina { padding-inline: var(--s-4); } }
+.sito-intestazione { border-bottom: var(--bordo) solid var(--linea); }
+.sito-intestazione .pagina { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-2) var(--s-5); padding-block: var(--s-3); }
+.marca { display: inline-flex; align-items: center; gap: var(--s-3); min-height: var(--bersaglio); color: var(--inchiostro); font-weight: var(--peso-forte); font-size: var(--t-marca); text-decoration: none; }
+.marca:hover { color: var(--inchiostro); }
+.marca img { width: var(--icona); height: var(--icona); }
+.solo-lettore { position: absolute; width: var(--px); height: var(--px); margin: calc(-1 * var(--px)); padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* Contenuti che valgono solo per certe versioni: il sito non scrive la versione, lo fa tools/site.py (RG11) */
+body[data-prerelease="false"] .solo-prova { display: none; }
+body:not([data-versione="0.1-rc.1"]) .solo-rc1 { display: none; }
+
+/* La pagina ha il testo per primo: nessuna attesa, nessun segnaposto animato (D20) */
+.sezione { padding-block: var(--s-6); }
+.sezione--carta-2 { background: var(--carta-2); }
+.griglia-2 { display: grid; gap: var(--s-6); grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 56rem) { .griglia-2 { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); align-items: start; } }
+
+@media (forced-colors: active) {
+  a { text-decoration-thickness: 0.12em; }
+  :focus-visible { outline-color: Highlight; box-shadow: none; }
+}
+
+.sezione h2:first-child { margin-top: 0; }
+.testo > h1:first-child, .pagina > h1:first-child { margin-top: var(--s-6); }
+
+/* Nelle tabelle a colonne le colonne non si restringono fino a spezzare le parole: si va a capo solo se la parola non sta */
+@media (min-width: 56rem) { .tabella, .tabella-token { overflow-wrap: break-word; } }

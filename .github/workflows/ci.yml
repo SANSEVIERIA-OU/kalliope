@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
 # Checks every change. Branches and pull requests: Linux only. main and runs started by hand:
-# also Windows and macOS, whose minutes count 2 and 10 times (see docs/releasing.md).
+# also Windows and macOS, which are slower and whose runners are scarcer (see docs/releasing.md).
 name: CI
 
 on:
@@ -66,7 +66,7 @@ jobs:
 
   windows-and-macos:
     if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
-    # Only once Linux passes: a change that fails there does not spend these dearer minutes.
+    # Only once Linux passes: a change that fails there does not wait for these slower runners.
     needs: linux
     strategy:
       fail-fast: false

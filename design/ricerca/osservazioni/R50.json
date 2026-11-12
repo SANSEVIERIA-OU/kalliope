@@ -1,0 +1,789 @@
+{
+ "riferimenti": [
+  {
+   "id": "R50",
+   "nome": "Text-to-Mic (Scorchsoft)",
+   "url": "https://www.scorchsoft.com/posts/text-to-mic-for-meetings",
+   "categoria": "Prodotto affine e concorrente diretto: testo scritto che diventa voce nel microfono di una riunione",
+   "anno": 2026,
+   "premio": "non Webby, gruppo C (prodotto affine; nessun riconoscimento trovato)",
+   "motivazione_ufficiale": "non applicabile: gruppo C, nessun premio",
+   "gruppo": "C",
+   "osservazioni": [
+    {
+     "caratteristica": "proposta del primo schermo",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/desktop/001-vai.jpg"
+     ],
+     "valore": {
+      "parole": 49,
+      "frasi": 3
+     },
+     "descrizione": "Titolo «Text-to-Mic», sottotitolo e paragrafo di quattro righe: «Type or record what you want to say, then play natural speech through your speakers, headset or a virtual microphone. Free, open-source software for Windows and Mac; bring an OpenAI API key for AI voices and transcription, or use system voices without one.» Il requisito (chiave OpenAI) sta nella seconda frase."
+    },
+    {
+     "caratteristica": "proposta del primo schermo",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/telefono/001-vai.jpg"
+     ],
+     "valore": {
+      "parole": 49,
+      "frasi": 3
+     },
+     "descrizione": "Stesso testo del computer, sei righe di paragrafo a 430 px."
+    },
+    {
+     "caratteristica": "comandi visibili al primo schermo",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/lettura-desktop.json",
+      "prove/R50/desktop/001-vai.jpg"
+     ],
+     "valore": {
+      "link": 13,
+      "pulsanti": 4,
+      "campi": 0
+     },
+     "descrizione": "Undici comandi sono della barra dell'agenzia (About, Solutions, Portfolio, Resources, Contact, Book a call, menu a freccia); il resto è briciole di pane, i tre pulsanti del prodotto e Play."
+    },
+    {
+     "caratteristica": "comandi visibili al primo schermo",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/script/misure-script.json",
+      "prove/R50/script/001-telefono-arrivo.png"
+     ],
+     "valore": {
+      "link": 7,
+      "pulsanti": 2,
+      "campi": 0
+     },
+     "descrizione": "Misura a 390x844."
+    },
+    {
+     "caratteristica": "comando principale",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/desktop/001-vai.jpg",
+      "prove/R50/desktop/002-scorri.jpg"
+     ],
+     "valore": {
+      "posizione": "centro",
+      "fisso_allo_scorrimento": "no"
+     },
+     "descrizione": "«Download for Windows», 267x60 px, rosso pieno, a sinistra sotto il paragrafo; scorrendo restano fissi solo la barra in alto e, nel passo 2-4, il riquadro «What you need»."
+    },
+    {
+     "caratteristica": "comando principale",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/telefono/001-vai.jpg"
+     ],
+     "valore": {
+      "posizione": "centro",
+      "fisso_allo_scorrimento": "no"
+     },
+     "descrizione": "«Download for Windows» a y=566 di 932 (430 px); sotto il bordo c'è una barra fissa dell'agenzia «Message / Free quote» che non è del prodotto."
+    },
+    {
+     "caratteristica": "struttura della navigazione",
+     "ambito": "menu computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/desktop/019-muovi.jpg"
+     ],
+     "valore": {
+      "voci": 5,
+      "tipo": "menu_a_comparsa"
+     },
+     "descrizione": "Barra dell'agenzia, non del prodotto: About, Solutions, Portfolio, Resources, Contact; Solutions apre al passaggio del mouse un pannello a quattro colonne."
+    },
+    {
+     "caratteristica": "struttura della navigazione",
+     "ambito": "menu telefono",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/telefono/002-clic.jpg"
+     ],
+     "valore": {
+      "voci": 7,
+      "tipo": "pannello"
+     },
+     "descrizione": "Pannello da destra: About, Services, Products, Capabilities, Portfolio, Resources, Contact (le voci con freccia si espandono)."
+    },
+    {
+     "caratteristica": "apertura del menu",
+     "ambito": "menu telefono",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/telefono/002-clic.jpg",
+      "prove/R50/effetti-misurati.tsv"
+     ],
+     "valore": {
+      "durata_ms": 300,
+      "direzione": "da destra"
+     },
+     "descrizione": "Velo opaco 300 ms cubic-bezier(0, 0, 0.2, 1); le voci entrano con opacità e traslazione di 16 px, 300 ms ciascuna, con ritardi 90, 130, 170, 210, 250, 290, 330 ms."
+    },
+    {
+     "caratteristica": "segnale di posizione e di avanzamento",
+     "ambito": "scorrimento computer",
+     "stato": "assente",
+     "evidenze": [
+      "prove/R50/desktop/003-scorri.jpg",
+      "prove/R50/desktop/007-scorri.jpg"
+     ],
+     "descrizione": "Nessuna barra di avanzamento né indice fisso; restano le briciole di pane in cima (Home > Free Tools > Text-to-Mic) e il riquadro «What you need» fermo nei passi."
+    },
+    {
+     "caratteristica": "segnale di posizione e di avanzamento",
+     "ambito": "percorso principale",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/desktop/003-scorri.jpg",
+      "prove/R50/desktop/004-scorri.jpg"
+     ],
+     "valore": {
+      "tipo": "passi"
+     },
+     "descrizione": "Quattro passi numerati in cerchi (Download and open the app, Configure voices and output, Select the meeting microphone, Type or record, then play), ciascuno con schermata vera."
+    },
+    {
+     "caratteristica": "comando proprio «indietro»",
+     "ambito": "percorso principale",
+     "stato": "non_osservato",
+     "motivo": "La pagina non ha un percorso a passi con invio: sono quattro paragrafi di istruzioni sulla stessa pagina; esiste solo il tasto del browser."
+    },
+    {
+     "caratteristica": "messaggio di errore",
+     "ambito": "errore",
+     "stato": "non_osservato",
+     "motivo": "Nessun modulo né campo sulla pagina del prodotto; non si è inviato nulla."
+    },
+    {
+     "caratteristica": "pagina inesistente",
+     "ambito": "404",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/desktop/038-vai.jpg"
+     ],
+     "valore": {
+      "utile": "no",
+      "offre_ritorno": "sì"
+     },
+     "descrizione": "«404 / This page could not be found. / Go home» sul modello predefinito del framework, con la barra e il piede dell'agenzia; nessuna ricerca né suggerimento."
+    },
+    {
+     "caratteristica": "attesa del caricamento",
+     "ambito": "rete lenta",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/script/007-rete-lenta-1_5s.png",
+      "prove/R50/script/008-rete-lenta-4s.png",
+      "prove/R50/script/misure-script.json"
+     ],
+     "valore": {
+      "segnale": "vuoto",
+      "s_al_primo_testo": 4.7
+     },
+     "descrizione": "Con 400 kbit/s e 400 ms di latenza, cache spenta, solo Chromium: a 1,5 s il corpo è vuoto; primo disegno a 4,7 s; pagina completa entro 14 s. Le foto «1_5s» sono state scattate dopo il campione e non mostrano il vuoto."
+    },
+    {
+     "caratteristica": "comportamento senza JavaScript",
+     "ambito": "senza JavaScript",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/script/005-senza-js-arrivo.png",
+      "prove/R50/script/006-senza-js-scroll.png",
+      "prove/R50/script/misure-script.json"
+     ],
+     "valore": {
+      "contenuto": "tutto"
+     },
+     "non_misurati": [
+      "navigazione",
+      "comandi_essenziali"
+     ],
+     "descrizione": "Stesso testo (7.749 caratteri) e stessa composizione; 142 collegamenti e 26 pulsanti nel codice. FAQ, galleria in finestra e menu a comparsa non provati senza JS."
+    },
+    {
+     "caratteristica": "effetti con movimento ridotto",
+     "ambito": "movimento ridotto",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/ridotto/001-vai.jpg",
+      "prove/R50/ridotto/003-clic.jpg",
+      "prove/R50/ridotto/004-muovi.jpg",
+      "prove/R50/effetti-misurati.tsv"
+     ],
+     "valore": {
+      "effetti": 5,
+      "tolti": 1,
+      "sostituiti": 0,
+      "invariati": 4
+     },
+     "descrizione": "Tolta la pulsazione del pulsante Play (0 animazioni all'arrivo contro 1); invariati ombra della barra, fisarmonica FAQ, pannello del menu, colore dei collegamenti. Menu telefono e finestra della galleria non provati con ridotto."
+    },
+    {
+     "caratteristica": "percorso da tastiera",
+     "ambito": "tastiera",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/desktop/037-tasto.jpg",
+      "prove/R50/desktop/024-tasto.jpg"
+     ],
+     "valore": {
+      "tab_fino_al_comando_principale": 14,
+      "focus_visibile": "debole",
+      "salta_al_contenuto": "no",
+      "trappole": 0
+     },
+     "descrizione": "Il 14° Tab arriva a «Download for Windows»; contorno 1 px «auto» a opacità 50% quasi invisibile sul rosso; sul logo compare un riquadro grigio sottile. Nessun <main>."
+    },
+    {
+     "caratteristica": "testo al 200%",
+     "ambito": "testo 200%",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/carattere200/001-vai.jpg",
+      "prove/R50/carattere200/002-scorri.jpg"
+     ],
+     "valore": {
+      "scroll_orizzontale": "no",
+      "contenuto_perso": "no"
+     },
+     "descrizione": "Base 32 px: il layout passa al formato stretto, scrollW 1440; pagina da 9.209 a 25.661 px. A zoom 200% (720x450) la barra fissa in basso occupa 68 px su 450."
+    },
+    {
+     "caratteristica": "albero di accessibilità (proxy)",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/lettura-desktop.json"
+     ],
+     "valore": {
+      "punti_di_riferimento": 9,
+      "titoli": 45,
+      "immagini_senza_alternativa": 0,
+      "comandi_senza_nome": 0
+     },
+     "descrizione": "header 1, nav 6, main 0, footer 1, aside 1; un solo H1; nessun «salta al contenuto»."
+    },
+    {
+     "caratteristica": "bersagli dei comandi principali",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/lettura-desktop.json"
+     ],
+     "valore": {
+      "larghezza_min_px": 16,
+      "altezza_min_px": 16
+     },
+     "non_misurati": [
+      "distanza_min_px"
+     ],
+     "descrizione": "Minimo sulle icone e sui chevron; il comando principale è 267x60."
+    },
+    {
+     "caratteristica": "bersagli dei comandi principali",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/script/misure-script.json"
+     ],
+     "valore": {
+      "larghezza_min_px": 16,
+      "altezza_min_px": 16
+     },
+     "non_misurati": [
+      "distanza_min_px"
+     ],
+     "descrizione": "Misura a 390x844."
+    },
+    {
+     "caratteristica": "testo corrente",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/lettura-desktop.json",
+      "prove/R50/desktop/001-vai.jpg"
+     ],
+     "valore": {
+      "corpo_px": 18,
+      "interlinea": 1.56
+     },
+     "non_misurati": [
+      "caratteri_per_riga_max"
+     ],
+     "descrizione": "Open Sans 18 px, colore rgb(51,65,85); titoli Poppins. Righe del paragrafo d'apertura di circa 65 caratteri (stima dalla foto)."
+    },
+    {
+     "caratteristica": "testo corrente",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/script/misure-script.json"
+     ],
+     "valore": {
+      "corpo_px": 18,
+      "interlinea": 1.56
+     },
+     "non_misurati": [
+      "caratteri_per_riga_max"
+     ],
+     "descrizione": "Misura a 390x844."
+    },
+    {
+     "caratteristica": "richieste e terze parti",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/script/misure-script.json"
+     ],
+     "valore": {
+      "richieste": 50,
+      "domini_di_terzi": 2,
+      "kb": 445,
+      "caratteri_caricati": 7
+     },
+     "descrizione": "Cache spenta, CDP. Terzi: Google Tag Manager e un bucket S3 (immagine di condivisione). YouTube solo come collegamento. La lettura con passo.mjs aveva contato 66 richieste (finestra di misura diversa)."
+    },
+    {
+     "caratteristica": "anteprima del collegamento",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/script/misure-script.json"
+     ],
+     "valore": {
+      "titolo": "sì",
+      "immagine": "sì",
+      "descrizione": "sì"
+     },
+     "descrizione": "og:title, og:description, og:image e canonical presenti."
+    },
+    {
+     "caratteristica": "stampa",
+     "ambito": "stampa",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/script/012-stampa-1.png",
+      "prove/R50/script/stampa.pdf",
+      "prove/R50/script/misure-script.json"
+     ],
+     "valore": {
+      "leggibile": "sì",
+      "comandi_inutili_nascosti": "no"
+     },
+     "descrizione": "PDF A4 di 11 pagine; la barra con i menu e i pulsanti restano nella stampa; nessun elemento fisso."
+    },
+    {
+     "caratteristica": "chi c'è dietro e le fonti",
+     "ambito": "fiducia",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/desktop/008-scorri.jpg",
+      "prove/R50/desktop/007-scorri.jpg",
+      "prove/R50/testo-pagina-desktop.txt"
+     ],
+     "valore": {
+      "firma": "sì",
+      "data": "sì",
+      "versione": "sì",
+      "fonti_collegate": "sì"
+     },
+     "descrizione": "Scorchsoft Ltd con indirizzo e numero d'impresa nel piede; «v1.4.1 · 18 Aug 2025» per Windows e «v1.0.5» senza data per Mac; SHA-256 troncato a 16 caratteri; collegamenti a GitHub, VB-Cable e documentazione OpenAI."
+    },
+    {
+     "caratteristica": "stato e limiti dichiarati",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/desktop/001-vai.jpg"
+     ],
+     "valore": {
+      "presente": "sì",
+      "prima_della_promessa": "no"
+     },
+     "descrizione": "«bring an OpenAI API key for AI voices and transcription, or use system voices without one» nel paragrafo d'apertura; sotto il pulsante «v1.4.1 · 72 MB · EXE»."
+    },
+    {
+     "caratteristica": "stato e limiti dichiarati",
+     "ambito": "fiducia",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/desktop/008-scorri.jpg",
+      "prove/R50/desktop/007-scorri.jpg"
+     ],
+     "valore": {
+      "presente": "sì",
+      "prima_della_promessa": "no"
+     },
+     "descrizione": "Avviso giallo: «Windows antivirus tools may flag an unsigned app that accesses the microphone and clipboard. You can inspect and build the open-source code yourself.»; versioni diverse per Windows e Mac dichiarate. Nessun limite su ritardo o qualità della voce; Teams e Zoom senza passi propri (schermata solo di Meet)."
+    },
+    {
+     "caratteristica": "corto subito, lungo a richiesta",
+     "ambito": "aiuto",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/desktop/011-clic.jpg",
+      "prove/R50/desktop/013-clic.jpg"
+     ],
+     "valore": {
+      "meccanismo": "apertura"
+     },
+     "descrizione": "FAQ a una domanda aperta alla volta e «Full history» che apre l'elenco delle versioni."
+    },
+    {
+     "caratteristica": "porte per pubblici diversi",
+     "ambito": "arrivo computer",
+     "stato": "assente",
+     "evidenze": [
+      "prove/R50/desktop/001-vai.jpg",
+      "prove/R50/desktop/019-muovi.jpg"
+     ],
+     "descrizione": "La navigazione è quella dell'agenzia (servizi, prodotti, capacità): nessuna porta per persona, familiare o tecnico."
+    },
+    {
+     "caratteristica": "lunghezza e registro delle frasi",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/campione-frasi-10.txt",
+      "prove/R50/testo-pagina-desktop.txt"
+     ],
+     "valore": {
+      "frasi_campione": 10,
+      "parole_per_frase_media": 16.4,
+      "persona": "seconda"
+     },
+     "descrizione": "Imperativi e «you» («Type a message…», «Choose voices…»); gergo: virtual audio cable, API key, metered, transcribe."
+    },
+    {
+     "caratteristica": "guida a passi con ripresa",
+     "ambito": "installazione",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/desktop/003-scorri.jpg",
+      "prove/R50/desktop/004-scorri.jpg"
+     ],
+     "valore": {
+      "passi": 4,
+      "indietro": "no",
+      "ripresa_dopo_chiusura": "no",
+      "indicatore": "sì"
+     },
+     "descrizione": "Quattro passi in colonna con numeri e schermate; nessuno stato salvato; il riquadro «What you need» (VB-Cable, chiave OpenAI) sta a sinistra e resta fermo."
+    },
+    {
+     "caratteristica": "comandi da copiare",
+     "ambito": "installazione",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/desktop/004-scorri.jpg"
+     ],
+     "valore": {
+      "comando_copiabile": "no",
+      "verifica_dopo": "no",
+      "sistema_selezionabile": "sì"
+     },
+     "descrizione": "Nessun comando di terminale: i tasti rapidi (Ctrl+Shift+0, Ctrl+Shift+8) sono mostrati come tasti; nessun passo di verifica dopo la scelta del microfono; Windows e macOS sono due schede di download."
+    },
+    {
+     "caratteristica": "scelta per sistema o versione",
+     "ambito": "installazione",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/desktop/008-scorri.jpg",
+      "prove/R50/desktop/001-vai.jpg"
+     ],
+     "valore": {
+      "modo": "manuale"
+     },
+     "descrizione": "Il pulsante principale dice «Download for Windows» anche con un browser Linux; macOS sta in «Other platforms» e nella sezione Download."
+    },
+    {
+     "caratteristica": "tabella di compatibilità",
+     "ambito": "dati",
+     "stato": "assente",
+     "evidenze": [
+      "prove/R50/desktop/008-scorri.jpg"
+     ],
+     "descrizione": "Nessuna tabella: due schede (Windows EXE/ZIP, macOS ZIP) e frasi su Teams, Zoom, Meet."
+    },
+    {
+     "caratteristica": "prodotto mostrato",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/desktop/001-vai.jpg"
+     ],
+     "valore": {
+      "tipo": "video",
+      "con_legenda": "no",
+      "con_alternativa": "sì"
+     },
+     "descrizione": "Poster illustrato (titolo grande sopra un portatile) con «Play video»; il video MP4 di 8:44 mostra il programma vero con una persona in un tondo."
+    },
+    {
+     "caratteristica": "prodotto mostrato",
+     "ambito": "scorrimento computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/desktop/003-scorri.jpg",
+      "prove/R50/desktop/004-scorri.jpg",
+      "prove/R50/desktop/005-scorri.jpg"
+     ],
+     "valore": {
+      "tipo": "schermata",
+      "con_legenda": "sì",
+      "con_alternativa": "sì"
+     },
+     "descrizione": "Schermate vere della finestra Windows (non ritoccate) nei passi e in una galleria di tre con didascalia e finestra di ingrandimento."
+    },
+    {
+     "caratteristica": "prodotto mostrato",
+     "ambito": "scorrimento telefono",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/telefono/foglio-scorrimento-1.jpg"
+     ],
+     "valore": {
+      "tipo": "schermata",
+      "con_legenda": "sì",
+      "con_alternativa": "sì"
+     },
+     "descrizione": "Le stesse schermate, ridotte alla larghezza."
+    },
+    {
+     "caratteristica": "campione di suono",
+     "ambito": "media",
+     "stato": "assente",
+     "evidenze": [
+      "prove/R50/desktop/022-clic.jpg",
+      "prove/R50/script/misure-script.json"
+     ],
+     "descrizione": "Nessun campione di voce a parte: la voce si sente solo nel video di 8:44 (non ascoltato: nessuna uscita audio)."
+    },
+    {
+     "caratteristica": "avvio di audio e video",
+     "ambito": "media",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/desktop/022-clic.jpg",
+      "prove/R50/lettura-desktop.json"
+     ],
+     "valore": {
+      "avvio_automatico": "no",
+      "controlli_nativi": "sì",
+      "trascrizione": "no",
+      "sottotitoli": "no"
+     },
+     "descrizione": "Video MP4 su dominio proprio (524,9 s): parte dopo il clic su Play; nessuna traccia di sottotitoli (0 textTracks)."
+    },
+    {
+     "caratteristica": "media non caricato",
+     "ambito": "media",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/script/013-media-bloccato-arrivo.png",
+      "prove/R50/script/misure-script.json"
+     ],
+     "valore": {
+      "alternativa_testuale": "sì",
+      "pagina_integra": "sì"
+     },
+     "descrizione": "Il video non si scarica finché non si preme Play (0 richieste da bloccare all'arrivo): restano poster, testo e schermate. Con il video bloccato dopo il clic non provato."
+    },
+    {
+     "caratteristica": "numeri detti a parole",
+     "ambito": "dati",
+     "stato": "assente",
+     "evidenze": [
+      "prove/R50/testo-pagina-desktop.txt"
+     ],
+     "descrizione": "Nessuna cifra di qualità o di tempo da leggere in frasi; solo versioni, dimensioni e date."
+    },
+    {
+     "caratteristica": "testimonianze di utenti",
+     "ambito": "fiducia",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/desktop/006-scorri.jpg"
+     ],
+     "valore": {
+      "numero": 1,
+      "con_foto": "no",
+      "con_ruolo": "sì"
+     },
+     "descrizione": "Una citazione lunga (circa 130 parole) di «Niko, Text-to-Mic user · Member of the mute community» che racconta glossectomia e perdita della laringe; perché esiste: «built when a team member lost their voice»."
+    },
+    {
+     "caratteristica": "finestra del consenso ai cookie",
+     "ambito": "arrivo computer",
+     "stato": "assente",
+     "evidenze": [
+      "prove/R50/desktop/001-vai.jpg"
+     ],
+     "descrizione": "Nessuna finestra al primo schermo; esiste «Cookie settings» nel piede."
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "arrivo computer · pulsazione del pulsante Play",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/effetti-misurati.tsv",
+      "prove/R50/desktop/001-vai.jpg"
+     ],
+     "valore": {
+      "trigger": "arrivo",
+      "durata_ms": 1800,
+      "curva": "ease-out",
+      "proprieta": "opacity 0,55→0 e scale 1→1,12"
+     },
+     "descrizione": "Anello che si espande dal pulsante Play, 3 ripetizioni dopo 600 ms di ritardo. L'orologio della pagina correva a 0,07x durante la misura: la durata è quella dei keyframe, non un tempo di orologio verificato."
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "scorrimento computer · ombra della barra fissa",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/effetti-misurati.tsv",
+      "prove/R50/desktop/002-scorri.jpg"
+     ],
+     "valore": {
+      "trigger": "scorrimento",
+      "durata_ms": 200,
+      "curva": "ease",
+      "proprieta": "box-shadow"
+     },
+     "descrizione": "La barra fissa in alto prende un'ombra scorrendo."
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "scorrimento computer · ombra delle schede",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/effetti-misurati.tsv",
+      "prove/R50/desktop/015-muovi.jpg"
+     ],
+     "valore": {
+      "trigger": "passaggio_mouse",
+      "durata_ms": 300,
+      "curva": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "proprieta": "box-shadow"
+     },
+     "descrizione": "Le tre schede «What it does» e le schede di download si sollevano con un'ombra."
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "scorrimento computer · ingrandimento di una schermata della galleria",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/effetti-misurati.tsv",
+      "prove/R50/desktop/015-muovi.jpg"
+     ],
+     "valore": {
+      "trigger": "passaggio_mouse",
+      "durata_ms": 200,
+      "curva": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "proprieta": "scale 1→1,02"
+     },
+     "descrizione": "Ingrandimento del 2% al passaggio; il clic apre la finestra (dialog) con ← → e Close; Esc la chiude e riporta il focus al pulsante."
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "percorso principale · apertura di una domanda FAQ",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/effetti-misurati.tsv",
+      "prove/R50/desktop/011-clic.jpg"
+     ],
+     "valore": {
+      "trigger": "clic",
+      "durata_ms": 200,
+      "curva": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "proprieta": "grid-template-rows + rotate 180°"
+     },
+     "descrizione": "Una domanda alla volta: aprendo la seconda si chiude la prima; il chevron ruota di 180°; sfondo del titolo 150 ms."
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "menu computer · pannello Solutions",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/effetti-misurati.tsv",
+      "prove/R50/desktop/019-muovi.jpg"
+     ],
+     "valore": {
+      "trigger": "passaggio_mouse",
+      "durata_ms": 200,
+      "curva": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "proprieta": "opacity 0→1 e rotate chevron"
+     },
+     "descrizione": "Il pannello a quattro colonne compare in dissolvenza; il colore del titolo cambia in 150 ms; resta aperto finché il puntatore non esce."
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "menu telefono · velo e voci del menu",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/effetti-misurati.tsv",
+      "prove/R50/telefono/002-clic.jpg"
+     ],
+     "valore": {
+      "trigger": "tocco",
+      "durata_ms": 300,
+      "curva": "cubic-bezier(0, 0, 0.2, 1)",
+      "proprieta": "opacity + translate 16px→0, ritardi 90-330 ms"
+     },
+     "descrizione": "Voci sfalsate di 40 ms."
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "percorso principale · finestra di ingrandimento della galleria",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/desktop/016-clic-seq-01.jpg",
+      "prove/R50/desktop/016-clic.jpg"
+     ],
+     "valore": {
+      "trigger": "clic"
+     },
+     "non_misurati": [
+      "durata_ms",
+      "curva",
+      "proprieta"
+     ],
+     "descrizione": "Il riquadro bianco compare prima dell'immagine (primo fotogramma vuoto, poi l'immagine); ← → e Close in basso."
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "percorso principale · apertura di «Full history»",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R50/desktop/013-clic.jpg"
+     ],
+     "valore": {
+      "trigger": "clic",
+      "durata_ms": 0,
+      "proprieta": "display (altezza della pagina +720 px)"
+     },
+     "non_misurati": [
+      "curva"
+     ],
+     "descrizione": "Nessuna transizione registrata: la pagina cresce da 8.489 a 9.209 px; il simbolo passa da + a −."
+    }
+   ]
+  }
+ ]
+}

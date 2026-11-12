@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<!-- SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 -->
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="text-scale" content="scale">
+<title>Come è fatto questo sito: il catalogo di Kalliope</title>
+<meta name="description" content="Il catalogo vivo del sito di Kalliope: token, componenti con stati e varianti, movimento, accessibilità, ricerca, confronto e decisioni.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Kalliope">
+<meta property="og:title" content="Come è fatto questo sito: il catalogo di Kalliope">
+<meta property="og:description" content="Il catalogo vivo del sito di Kalliope: token, componenti con stati e varianti, movimento, accessibilità, ricerca, confronto e decisioni.">
+<meta property="og:url" content="https://sansevieria-ou.github.io/kalliope/sistema/">
+<meta property="og:image" content="https://sansevieria-ou.github.io/kalliope/immagini/kalliope-finestra.png">
+<meta property="og:image:alt" content="La finestra di Kalliope: un campo dove scrivere, i pulsanti Parla e Ferma, la scelta della voce.">
+<link rel="canonical" href="https://sansevieria-ou.github.io/kalliope/sistema/">
+<link rel="icon" href="../immagini/icona.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../stile/token.css">
+<link rel="stylesheet" href="../stile/base.css">
+<link rel="stylesheet" href="../stile/componenti.css">
+<script src="../script/sistema.js" defer></script>
+<script src="../script/kalliope.js" defer></script>
+</head>
+<body data-prerelease="{{kalliope.prerelease}}" data-versione="{{kalliope.version}}">
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+<header class="sito-intestazione">
+<div class="pagina">
+<a class="marca" href="../" aria-label="Kalliope, pagina iniziale"><img src="../immagini/icona.svg" alt="" width="40" height="40"><span>Kalliope</span></a>
+<nav class="nav" aria-label="Principale">
+<ul>
+<li><a href="../ascolta/">Ascolta</a></li><li><a href="../stato/">Stato e limiti</a></li><li><a href="../installa/">Installa</a></li><li><a href="../riunione/">In riunione</a></li><li><a href="../aiuto/">Aiuto</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="contenuto" tabindex="-1">
+<div class="pagina testo">
+<h1>Come è fatto questo sito</h1>
+<p>Questo è il catalogo del sistema di Kalliope. Usa gli stessi fogli di stile delle pagine del sito, quindi ciò che vedi qui è ciò che è nel sito. È il <strong>primo percorso completo</strong>: mostra i token e i componenti usati, con stati e varianti, più la ricerca, il confronto e le decisioni. Non è ancora il catalogo completo.</p>
+<div class="avviso avviso--attenzione" role="note">
+<p class="avviso__titolo">Direzione non ancora approvata</p>
+<p>Il percorso è stato costruito per essere mostrato al proprietario. I token non sono congelati e la prova su tutti i dispositivi e tutti i motori parte dopo l'approvazione.</p>
+</div>
+<nav class="catalogo-indice" aria-label="Indice del catalogo">
+<ul>
+<li><a href="#identita">Identità e stato</a></li><li><a href="#persone">Persone e percorsi</a></li><li><a href="#anteprime">Anteprime</a></li>
+<li><a href="#token">Token</a></li><li><a href="#componenti">Componenti</a></li><li><a href="#movimento">Movimento</a></li>
+<li><a href="#accessibilita">Accessibilità</a></li><li><a href="#prestazioni">Prestazioni e canali</a></li>
+<li><a href="#provenienza">Ricerca e decisioni</a></li><li><a href="#prove">Prove</a></li>
+</ul>
+</nav>
+
+<h2 id="identita">Identità e stato</h2>
+<p><strong>Scopo.</strong> Spiegare Kalliope a chi non lo conosce, far sentire la voce, dire con onestà cosa è provato, portare chi può installarlo fino a una voce che esce in una riunione, dare i fatti a chi controlla. Solo italiano (<code>lang="it"</code>).</p>
+<p><strong>Direzione scelta: «Carta e voce».</strong> Carta calda e inchiostro verde scurissimo, il verde acqua dell'icona per comandi e barre, riquadri a bolla, cinque barre a capsula come unico motivo; ciò che si digita in carattere a spaziatura fissa, ciò che la voce dice nel carattere del corpo; un solo movimento espressivo, quello delle barre che seguono la voce. Tre direzioni sono state confrontate sugli stessi contenuti (una pagina narrata, un cammino a pagine per compito, porte per persona): <a href="ricerca/#T08">T08</a>. Il confronto è in <a href="https://github.com/SANSEVIERIA-OU/kalliope/blob/main/design/direzione.md">design/direzione.md</a>.</p>
+<h3>Criterio di ambizione</h3>
+<ul>
+<li><strong>A1.</strong> Mostra la frase scritta e la stessa frase detta, una accanto all&#x27;altra, con la voce vera: sotto ogni campione compare ciò che la persona digita («14/3», «15:30», «1.250 € + IVA») e ciò che la voce pronuncia («quattordici marzo», «quindici e trenta», «milleduecentocinquanta euro più IVA»), e la frase in corso si evidenzia mentre suona. Un solo ascolto per volta, mai automatico, sei registrazioni vere di Kalliope 0.1-rc.1 senza ritocchi.</li><li><strong>A2.</strong> Mette lo stato prima della promessa, con la prova: nella stessa schermata che dice cosa fa Kalliope, un cartellino a tre colonne dice che cosa è provato (voce fino al microfono, con un PipeWire privato), che cosa non è ancora provato (Zoom, Teams, Meet su un desktop reale) e che cosa non esiste (Windows, macOS, telefono, clonazione); chi non può usarlo ancora lo legge subito, con il motivo e un passo.</li><li><strong>A3.</strong> Riconosce le frasi che la finestra di Kalliope mostra: la pagina Aiuto è un indice delle frasi vere dell&#x27;app («Nessuna chiamata sta usando il microfono «Kalliope»…», «La voce è pronta, ma PipeWire is not available…»), ciascuna con la causa e l&#x27;azione; chi legge la frase la trova scrivendone una parte (con JavaScript) o scorrendo un elenco di soli collegamenti (senza).</li><li><strong>A4.</strong> Fa vedere la voce senza imporre movimento: le cinque barre dell&#x27;icona diventano l&#x27;indicatore del suono (si alzano seguendo la voce mentre suona, con JavaScript), e il ripiego per il movimento ridotto le sostituisce con la frase evidenziata e la posizione scritta («frase 1 di 2, 00:03»), perché porta la stessa informazione: dove siamo nella voce.</li><li><strong>A5.</strong> Guida l&#x27;installazione con comandi veri e un controllo dopo ogni passo: per Debian/Ubuntu, Fedora, Arch e le altre distribuzioni, ogni passo ha il comando copiabile, «come sai che è andata bene», «se non è andata» e il punto da cui riprendere; un familiare che si ferma al terminale sa che cosa fare.</li>
+</ul>
+<h3>Vincoli</h3>
+<ul>
+<li>HTML e CSS statici, nessun passo di build per pubblicare; JavaScript solo in aggiunta.</li>
+<li>Nessuna richiesta a terzi, nessun cookie, nessuna statistica, nessun carattere remoto.</li>
+<li>Dati della release solo con i segnaposto di <code>tools/site.py</code> (versione, nomi, dimensioni, impronte, collegamenti).</li>
+<li>Nessun materiale di persone reali; nessuna foto dei siti di riferimento nel sito pubblico (solo testo e collegamenti).</li>
+<li>Codebase, identità e meccanismi separati dalla sorella Kalipso.</li>
+</ul>
+<h3>Stato di adozione e superfici</h3>
+<p>Il sito è la prima superficie progettata di Kalliope. La finestra dell'app usa elementi standard del suo toolkit: non adotta questo sistema e non è deciso che lo farà. Restano uguali i nomi (Kalliope, «Scarica la voce», «Parla», «Ferma», «Senti anche tu», «Già detto», Giulia, Marco) e le frasi di stato citate.</p>
+<h3 id="provvisorie">Decisioni provvisorie, in attesa di conferma del proprietario</h3>
+<ul>
+<li><strong>A.</strong> Nessun indirizzo <span class="nowrap">e-mail</span> per ora: le segnalazioni passano dalle issue di GitHub.</li>
+<li><strong>B.</strong> Solo italiano, con una struttura che permette altre lingue (i testi sono nell'HTML, mai nel CSS; gli script leggono i loro testi da attributi <code>data-*</code>).</li>
+<li><strong>E.</strong> A chi ha Windows o macOS il sito dice «non ancora» e perché, e come seguire le novità; nessun prodotto di terzi consigliato.</li>
+<li><strong>F.</strong> Una frase: Kalliope non è un dispositivo medico e non sostituisce la valutazione di un logopedista.</li>
+<li><strong>G.</strong> I sei campioni sono l'uscita di Kalliope 0.1-rc.1 senza ritocchi, in MP3; Whisper li trascrive con circa una parola sbagliata su 45.</li>
+</ul>
+
+<h2 id="persone">Persone e percorsi</h2>
+<table class="tabella">
+<caption>Chi usa il sito e dove lo incontra</caption>
+<thead><tr><th scope="col">Chi</th><th scope="col">Cosa vuole</th><th scope="col">Dove nel sito</th></tr></thead>
+<tbody>
+<tr><th scope="row">F1 chi scrive per parlare</th><td data-etichetta="Cosa vuole">Intervenire in riunione senza dipendere da altri, con una voce accettabile.</td><td data-etichetta="Dove nel sito"><a href="../ascolta/">Ascolta</a>, <a href="../installa/">Installa</a>, <a href="../riunione/">In riunione</a>, <a href="../aiuto/">Aiuto</a></td></tr>
+<tr><th scope="row">F2 familiare, logopedista</th><td data-etichetta="Cosa vuole">Capire se è adatto, fidarsi, inoltrare il collegamento.</td><td data-etichetta="Dove nel sito"><a href="../">Pagina iniziale</a>, <a href="../stato/#detta-a-chi">la stessa cosa detta a ciascuno</a></td></tr>
+<tr><th scope="row">F3 chi controlla</th><td data-etichetta="Cosa vuole">Sapere cosa esce dal computer, cosa si installa, con quale licenza.</td><td data-etichetta="Dove nel sito"><a href="../stato/#controllare">Se devi controllare</a></td></tr>
+<tr><th scope="row">F4 chi installa</th><td data-etichetta="Cosa vuole">Comandi esatti, requisiti, impronte.</td><td data-etichetta="Dove nel sito"><a href="../installa/">Installa</a></td></tr>
+<tr><th scope="row">F5 chi guarda da fuori</th><td data-etichetta="Cosa vuole">Cos'è, a che punto è, cosa si può citare.</td><td data-etichetta="Dove nel sito"><a href="../stato/">Stato e limiti</a></td></tr>
+<tr><th scope="row">F6 chi amministra</th><td data-etichetta="Cosa vuole">Un sito allineato alla release.</td><td data-etichetta="Dove nel sito">Segnaposto di <code>tools/site.py</code>; <a href="#c-passi">frasi che dipendono dalla versione</a></td></tr>
+</tbody>
+</table>
+<p>Percorsi di <code>progetto.md</code> realizzati in questo primo percorso: P1 capire (pagina iniziale), P2 ascoltare, P3-P7 stato e limiti, P4 installare, P5 usare in riunione e aiuto, P6 chi non può ancora, P9 segnalare. P8 (contribuire) e il resto dei fatti per chi controlla arrivano dopo l'approvazione.</p>
+
+<h2 id="anteprime">Anteprime: le schermate del percorso</h2>
+<p>Le pagine reali, con contenuti veri, sono le anteprime. Le foto dei controlli sono in <code>design/prove-percorso/</code>.</p>
+<ul>
+<li><a href="../">Arrivo</a> (P1)</li><li><a href="../ascolta/">Ascolto della voce</a> (P2)</li><li><a href="../stato/">Stato e limiti</a> (P3, P7)</li>
+<li><a href="../installa/">Installazione</a> (P4)</li><li><a href="../riunione/">Scegli «Kalliope» come microfono</a> (P5)</li><li><a href="../aiuto/">Aiuto</a> (P5, P9)</li>
+<li><a href="../non-ancora/">Chi non può ancora</a> (P6)</li><li><a href="../questa-pagina-non-esiste/">Pagina 404</a></li>
+</ul>
+
+<h2 id="token">Token</h2>
+<p>Le tabelle sono generate da <code>site/stile/token.css</code>, la fonte unica dei valori (<code>design/strumenti/pagine/genera-catalogo.py</code>). I campioni sono vivi: usano le variabili. Il tema scuro segue il sistema.</p>
+<h3 id="t-colori">Colori e temi</h3>
+<table class="tabella-token" aria-label="Colori e temi: nome, valore, valore nel tema scuro, ruolo"><thead><tr><th scope="col">Nome</th><th scope="col">Valore</th><th scope="col">Scuro</th><th scope="col">Ruolo</th><th scope="col">Campione</th></tr></thead><tbody>
+<tr><th scope="row" data-etichetta="Nome"><code>--carta</code></th><td data-etichetta="Valore"><code>#f8f6f0</code></td><td data-etichetta="Valore nel tema scuro"><code>#10181a</code></td><td data-etichetta="Ruolo">sfondo della pagina</td><td data-etichetta="Campione"><span class="campione-token" style="background:var(--carta)" role="img" aria-label="campione di --carta"></span></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--carta-2</code></th><td data-etichetta="Valore"><code>#eeebe1</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">superfici: riquadri, codice, tabelle</td><td data-etichetta="Campione"><span class="campione-token" style="background:var(--carta-2)" role="img" aria-label="campione di --carta-2"></span></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--bianco</code></th><td data-etichetta="Valore"><code>#ffffff</code></td><td data-etichetta="Valore nel tema scuro"><code>#0b1112</code></td><td data-etichetta="Ruolo">campo di testo (come il campo della finestra)</td><td data-etichetta="Campione"><span class="campione-token" style="background:var(--bianco)" role="img" aria-label="campione di --bianco"></span></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--inchiostro</code></th><td data-etichetta="Valore"><code>#1b2623</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">testo: 14,4:1 su carta</td><td data-etichetta="Campione"><span class="campione-token" style="background:var(--inchiostro)" role="img" aria-label="campione di --inchiostro"></span></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--inchiostro-2</code></th><td data-etichetta="Valore"><code>#3c4945</code></td><td data-etichetta="Valore nel tema scuro"><code>#b4c2bd</code></td><td data-etichetta="Ruolo">testo secondario: 8,7:1 su carta, 7,9:1 su carta-2</td><td data-etichetta="Campione"><span class="campione-token" style="background:var(--inchiostro-2)" role="img" aria-label="campione di --inchiostro-2"></span></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--linea</code></th><td data-etichetta="Valore"><code>#b9b4a4</code></td><td data-etichetta="Valore nel tema scuro"><code>#4a5a56</code></td><td data-etichetta="Ruolo">filetti e bordi decorativi</td><td data-etichetta="Campione"><span class="campione-token" style="background:var(--linea)" role="img" aria-label="campione di --linea"></span></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--voce</code></th><td data-etichetta="Valore"><code>#16806f</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">barre e grafica, non testo: 4,5:1 su carta</td><td data-etichetta="Campione"><span class="campione-token" style="background:var(--voce)" role="img" aria-label="campione di --voce"></span></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--voce-scura</code></th><td data-etichetta="Valore"><code>#0a5347</code></td><td data-etichetta="Valore nel tema scuro"><code>#4fd1b6</code></td><td data-etichetta="Ruolo">testo, collegamenti e comandi: 8,3:1 su carta, 7,5:1 su carta-2, 9,0:1 con testo bianco</td><td data-etichetta="Campione"><span class="campione-token" style="background:var(--voce-scura)" role="img" aria-label="campione di --voce-scura"></span></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--voce-molto-scura</code></th><td data-etichetta="Valore"><code>#063a31</code></td><td data-etichetta="Valore nel tema scuro"><code>#7fe3cf</code></td><td data-etichetta="Ruolo">comando premuto o sotto il puntatore: 11,7:1 su carta</td><td data-etichetta="Campione"><span class="campione-token" style="background:var(--voce-molto-scura)" role="img" aria-label="campione di --voce-molto-scura"></span></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--su-voce</code></th><td data-etichetta="Valore"><code>#ffffff</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">testo su un comando pieno: 9,0:1 su voce scura</td><td data-etichetta="Campione"><span class="campione-token" style="background:var(--su-voce)" role="img" aria-label="campione di --su-voce"></span></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--voce-chiara</code></th><td data-etichetta="Valore"><code>#dff3ee</code></td><td data-etichetta="Valore nel tema scuro"><code>#14312c</code></td><td data-etichetta="Ruolo">riquadro «detto» e cartellino «provato»</td><td data-etichetta="Campione"><span class="campione-token" style="background:var(--voce-chiara)" role="img" aria-label="campione di --voce-chiara"></span></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--ambra</code></th><td data-etichetta="Valore"><code>#664000</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">testo «non ancora provato»: 8,5:1 su carta, 8,2:1 su fondo ambra</td><td data-etichetta="Campione"><span class="campione-token" style="background:var(--ambra)" role="img" aria-label="campione di --ambra"></span></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--ambra-chiara</code></th><td data-etichetta="Valore"><code>#fff1cf</code></td><td data-etichetta="Valore nel tema scuro"><code>#3a2e0d</code></td><td data-etichetta="Ruolo">fondo «non ancora provato»</td><td data-etichetta="Campione"><span class="campione-token" style="background:var(--ambra-chiara)" role="img" aria-label="campione di --ambra-chiara"></span></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--rosso</code></th><td data-etichetta="Valore"><code>#8f1717</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">testo di errore: 8,4:1 su carta</td><td data-etichetta="Campione"><span class="campione-token" style="background:var(--rosso)" role="img" aria-label="campione di --rosso"></span></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--evidenza</code></th><td data-etichetta="Valore"><code>#ffe9a8</code></td><td data-etichetta="Valore nel tema scuro"><code>#5b4a10</code></td><td data-etichetta="Ruolo">frase in corso mentre suona</td><td data-etichetta="Campione"><span class="campione-token" style="background:var(--evidenza)" role="img" aria-label="campione di --evidenza"></span></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--focus</code></th><td data-etichetta="Valore"><code>#1b2623</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">anello di focus</td><td data-etichetta="Campione"><span class="campione-token" style="background:var(--focus)" role="img" aria-label="campione di --focus"></span></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--focus-alone</code></th><td data-etichetta="Valore"><code>#f8f6f0</code></td><td data-etichetta="Valore nel tema scuro"><code>#10181a</code></td><td data-etichetta="Ruolo">alone fra elemento e anello</td><td data-etichetta="Campione"><span class="campione-token" style="background:var(--focus-alone)" role="img" aria-label="campione di --focus-alone"></span></td></tr>
+</tbody></table>
+<h3 id="t-tipografia">Tipografia</h3>
+<table class="tabella-token" aria-label="Tipografia: nome, valore, valore nel tema scuro, ruolo"><thead><tr><th scope="col">Nome</th><th scope="col">Valore</th><th scope="col">Scuro</th><th scope="col">Ruolo</th><th scope="col">Campione</th></tr></thead><tbody>
+<tr><th scope="row" data-etichetta="Nome"><code>--font-corpo</code></th><td data-etichetta="Valore"><code>system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, &quot;Liberation Sans&quot;, sans-serif</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo"></td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--t-corpo</code></th><td data-etichetta="Valore"><code>clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem)</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">18-20 px</td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--t-piccolo</code></th><td data-etichetta="Valore"><code>1rem</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">16 px: il minimo del sito</td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--t-xs</code></th><td data-etichetta="Valore"><code>0.875rem</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">numeri dentro un badge</td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--t-marca</code></th><td data-etichetta="Valore"><code>1.5rem</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo"></td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--t-badge</code></th><td data-etichetta="Valore"><code>1.375rem</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo"></td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--t-token</code></th><td data-etichetta="Valore"><code>0.9rem</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo"></td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--t-apertura</code></th><td data-etichetta="Valore"><code>clamp(1.75rem, 1.3rem + 1.6vw, 2.75rem)</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">titolo della pagina iniziale</td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--t-h3</code></th><td data-etichetta="Valore"><code>1.25rem</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo"></td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--t-h1</code></th><td data-etichetta="Valore"><code>clamp(1.5rem, 1.3rem + 2vw, 3rem)</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo"></td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--interlinea-titoli</code></th><td data-etichetta="Valore"><code>1.2</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo"></td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--peso-forte</code></th><td data-etichetta="Valore"><code>700</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">Spazi (T06): scala di 4 px</td><td data-etichetta="Campione"></td></tr>
+</tbody></table>
+<h3 id="t-spazi">Spazi e bersagli</h3>
+<table class="tabella-token" aria-label="Spazi e bersagli: nome, valore, valore nel tema scuro, ruolo"><thead><tr><th scope="col">Nome</th><th scope="col">Valore</th><th scope="col">Scuro</th><th scope="col">Ruolo</th><th scope="col">Campione</th></tr></thead><tbody>
+<tr><th scope="row" data-etichetta="Nome"><code>--s-1</code></th><td data-etichetta="Valore"><code>0.25rem</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo"></td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--s-3</code></th><td data-etichetta="Valore"><code>0.75rem</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo"></td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--s-5</code></th><td data-etichetta="Valore"><code>1.5rem</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo"></td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--s-7</code></th><td data-etichetta="Valore"><code>3rem</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo"></td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--s-9</code></th><td data-etichetta="Valore"><code>6rem</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo"></td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--alto-pagina</code></th><td data-etichetta="Valore"><code>100vh</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">il piede resta in fondo anche con poco testo</td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--icona</code></th><td data-etichetta="Valore"><code>2.5rem</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">l&#x27;icona nell&#x27;intestazione</td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--px</code></th><td data-etichetta="Valore"><code>1px</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">filetto minimo (stampa, testo per soli lettori di schermo)</td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--bersaglio-grande</code></th><td data-etichetta="Valore"><code>3rem</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">comando principale e campi di testo: 48 px</td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--bersaglio-porta</code></th><td data-etichetta="Valore"><code>3.5rem</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">collegamenti «Da dove vuoi cominciare?»</td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--badge</code></th><td data-etichetta="Valore"><code>1.75rem</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">numero della tappa</td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--badge-grande</code></th><td data-etichetta="Valore"><code>2.75rem</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">numero del passo</td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--larghezza-titolo</code></th><td data-etichetta="Valore"><code>20ch</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo"></td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--larghezza-audio</code></th><td data-etichetta="Valore"><code>28rem</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo"></td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--larghezza-filtro</code></th><td data-etichetta="Valore"><code>40rem</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo"></td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--larghezza-etichetta</code></th><td data-etichetta="Valore"><code>11rem</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">prima colonna delle tabelle</td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--larghezza-campo</code></th><td data-etichetta="Valore"><code>14rem</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">campo dell&#x27;indirizzo, ridotto fino a riempire la riga</td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--larghezza-pulsante-voce</code></th><td data-etichetta="Valore"><code>14.5rem</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">«Ascolta Giulia» e «Ferma Giulia» hanno la stessa larghezza</td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--larghezza-foto-piccola</code></th><td data-etichetta="Valore"><code>24rem</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo"></td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--campione-larghezza</code></th><td data-etichetta="Valore"><code>8rem</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo"></td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--campione-token-larghezza</code></th><td data-etichetta="Valore"><code>4rem</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo"></td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--bersaglio</code></th><td data-etichetta="Valore"><code>2.75rem</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">44 px: lato minimo di ogni comando (RG9)</td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--distanza-bersagli</code></th><td data-etichetta="Valore"><code>0.5rem</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">8 px fra comandi vicini</td><td data-etichetta="Campione"></td></tr>
+</tbody></table>
+<h3 id="t-forme">Forme e motivo</h3>
+<table class="tabella-token" aria-label="Forme e motivo: nome, valore, valore nel tema scuro, ruolo"><thead><tr><th scope="col">Nome</th><th scope="col">Valore</th><th scope="col">Scuro</th><th scope="col">Ruolo</th><th scope="col">Campione</th></tr></thead><tbody>
+<tr><th scope="row" data-etichetta="Nome"><code>--raggio-bolla</code></th><td data-etichetta="Valore"><code>18px</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">riquadri a fumetto, come l&#x27;icona</td><td data-etichetta="Campione"><span class="campione-token" style="background:var(--voce-chiara);border-radius:var(--raggio-bolla)" role="img" aria-label="campione di --raggio-bolla"></span></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--raggio-piccolo</code></th><td data-etichetta="Valore"><code>12px</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">bottoni e campi</td><td data-etichetta="Campione"><span class="campione-token" style="background:var(--voce-chiara);border-radius:var(--raggio-piccolo)" role="img" aria-label="campione di --raggio-piccolo"></span></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--raggio-barra</code></th><td data-etichetta="Valore"><code>999px</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">capsule delle barre</td><td data-etichetta="Campione"><span class="campione-token" style="background:var(--voce-chiara);border-radius:var(--raggio-barra)" role="img" aria-label="campione di --raggio-barra"></span></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--raggio-minimo</code></th><td data-etichetta="Valore"><code>4px</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">evidenziazioni e tasti</td><td data-etichetta="Campione"><span class="campione-token" style="background:var(--voce-chiara);border-radius:var(--raggio-minimo)" role="img" aria-label="campione di --raggio-minimo"></span></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--bordo</code></th><td data-etichetta="Valore"><code>2px</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo"></td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--focus-distanza</code></th><td data-etichetta="Valore"><code>3px</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">fra l&#x27;elemento e l&#x27;anello di focus</td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--bordo-laterale</code></th><td data-etichetta="Valore"><code>0.5rem</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">barra laterale di avvisi e misure</td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--barra-larghezza</code></th><td data-etichetta="Valore"><code>0.5rem</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">una barra del motivo</td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--barra-altezza</code></th><td data-etichetta="Valore"><code>2.25rem</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">altezza massima del motivo a cinque barre</td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--barra-altezza-piccola</code></th><td data-etichetta="Valore"><code>1.5rem</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo"></td><td data-etichetta="Campione"></td></tr>
+</tbody></table>
+<h3 id="t-movimento">Movimento</h3>
+<table class="tabella-token" aria-label="Movimento: nome, valore, valore nel tema scuro, ruolo"><thead><tr><th scope="col">Nome</th><th scope="col">Valore</th><th scope="col">Scuro</th><th scope="col">Ruolo</th><th scope="col">Campione</th></tr></thead><tbody>
+<tr><th scope="row" data-etichetta="Nome"><code>--durata-1</code></th><td data-etichetta="Valore"><code>100ms</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">stato dei comandi</td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--durata-2</code></th><td data-etichetta="Valore"><code>120ms</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">apertura di un dettaglio</td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--durata-3</code></th><td data-etichetta="Valore"><code>240ms</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo">massimo di ogni cambio di stato</td><td data-etichetta="Campione"></td></tr>
+<tr><th scope="row" data-etichetta="Nome"><code>--curva</code></th><td data-etichetta="Valore"><code>cubic-bezier(0.2, 0.7, 0.3, 1)</code></td><td data-etichetta="Valore nel tema scuro">uguale</td><td data-etichetta="Ruolo"></td><td data-etichetta="Campione"></td></tr>
+</tbody></table>
+<h3 id="t-parole">Parole</h3>
+<p>Frasi di 15-20 parole al massimo nei testi che chiedono un'azione; seconda persona nelle istruzioni; termine nuovo spiegato al primo uso con una frase sola. Le persone sono «persone»; mai «malato» o «paziente» per chi usa Kalliope (<a href="ricerca/#D31">D31</a>).</p>
+<table class="tabella">
+<caption>Parole usate nel sito</caption>
+<thead><tr><th scope="col">Parola</th><th scope="col">Cosa vuol dire qui</th></tr></thead>
+<tbody>
+<tr><th scope="row">microfono virtuale</th><td data-etichetta="Cosa vuol dire qui">Un microfono che esiste solo dentro il computer. Si chiama «Kalliope» e le app di riunione lo elencano accanto ai microfoni veri.</td></tr>
+<tr><th scope="row">PipeWire</th><td data-etichetta="Cosa vuol dire qui">Il sistema audio dei computer Linux recenti. Kalliope ne ha bisogno per creare il microfono.</td></tr>
+<tr><th scope="row">versione di prova</th><td data-etichetta="Cosa vuol dire qui">Una versione che si può usare ma non è ancora provata ovunque. Lo stato dice cosa è provato.</td></tr>
+<tr><th scope="row">impronta</th><td data-etichetta="Cosa vuol dire qui">Un numero (SHA-256) che dice se un file è proprio quello pubblicato.</td></tr>
+<tr><th scope="row">tu scrivi / Kalliope dice</th><td data-etichetta="Cosa vuol dire qui">Il testo come lo digiti, e il testo come la voce lo pronuncia dopo che Kalliope ha scritto in parole cifre, date e orari.</td></tr>
+</tbody>
+</table>
+
+<h2 id="componenti">Componenti</h2>
+<p>Ogni scheda dice cosa è, quando si usa, per chi, da dove viene (con la decisione che lo motiva), come si presenta negli stati e nelle varianti, come si muove e come è stato verificato.</p>
+
+<section class="catalogo-scheda" id="c-bottone" aria-labelledby="c-bottone-t">
+<h3 id="c-bottone-t">Bottone e collegamento forte</h3>
+<dl class="catalogo-dati">
+<dt>Identificatore</dt><dd><code>.btn</code>, <code>.btn--primario</code>, <code>.btn--piccolo</code>, <code>.collegamento-forte</code></dd>
+<dt>Regola e confini</dt><dd>Un comando che fa qualcosa o porta altrove. Un solo bottone primario per schermata. Bersaglio di almeno 44×44 px, etichetta con il verbo. Non si usa per navigare dentro la pagina corrente quando basta un collegamento nel testo.</dd>
+<dt>Persona e compito</dt><dd>F1, F4: premere con puntamento impreciso, interruttore o tastiera (P1-P6).</dd>
+<dt>Provenienza</dt><dd><a href="ricerca/#D03">D03</a>, <a href="ricerca/#D14">D14</a>, <a href="ricerca/#E14">E14</a>, <a href="ricerca/#T01">T01</a>, <a href="ricerca/#T04">T04</a></dd>
+<dt>Varianti</dt><dd>Primario, secondario, piccolo, collegamento forte; stati: riposo, sotto il puntatore, focus, premuto, disattivato.</dd>
+<dt>Movimento</dt><dd>Cambio di colore e bordo in 100 ms (<code>--durata-1</code>); istantaneo con movimento ridotto; il cambio non è mai l'unica informazione (il focus ha l'anello, il disattivato ha il bordo tratteggiato).</dd>
+<dt>Verifica e lacune</dt><dd>Prova tastiera e foto degli stati in Chromium; contrasto del testo del bottone primario 9,0:1. Lacuna: Firefox e WebKit dopo l'approvazione.</dd>
+</dl>
+<div class="catalogo-prova">
+<p class="catalogo-prova__titolo">Prova viva</p>
+<div class="catalogo-righe">
+<figure><a class="btn btn--primario" href="#c-bottone">Ascolta la voce</a><figcaption>primario, riposo</figcaption></figure>
+<figure><a class="btn btn--primario sim-hover" href="#c-bottone">Ascolta la voce</a><figcaption>primario, sotto il puntatore (simulato)</figcaption></figure>
+<figure><a class="btn btn--primario sim-focus" href="#c-bottone">Ascolta la voce</a><figcaption>primario, focus (simulato)</figcaption></figure>
+<figure><a class="btn btn--primario sim-premuto" href="#c-bottone">Ascolta la voce</a><figcaption>primario, premuto (simulato)</figcaption></figure>
+<figure><button class="btn btn--primario" type="button" disabled>Ascolta la voce</button><figcaption>primario, disattivato</figcaption></figure>
+</div>
+<div class="catalogo-righe">
+<figure><a class="btn" href="#c-bottone">Scarica e installa</a><figcaption>secondario, riposo</figcaption></figure>
+<figure><a class="btn sim-hover" href="#c-bottone">Scarica e installa</a><figcaption>secondario, sotto il puntatore</figcaption></figure>
+<figure><a class="btn btn--piccolo" href="#c-bottone">Copia il comando</a><figcaption>piccolo</figcaption></figure>
+<figure><a class="collegamento-forte" href="#c-bottone">Non uso Linux: cosa posso fare</a><figcaption>collegamento forte</figcaption></figure>
+</div>
+<p>Prova tu: premi Tab e guarda l'anello di focus; passa con il puntatore; premi. Gli stati marcati «simulato» usano le classi <code>.sim-*</code> solo per mostrarli fermi.</p>
+</div>
+</section>
+
+<section class="catalogo-scheda" id="c-nav" aria-labelledby="c-nav-t">
+<h3 id="c-nav-t">Navigazione principale</h3>
+<dl class="catalogo-dati">
+<dt>Identificatore</dt><dd><code>.nav</code> dentro <code>header.sito-intestazione</code></dd>
+<dt>Regola e confini</dt><dd>Cinque voci per compito sempre in vista, in un elenco di collegamenti; la voce corrente ha <code>aria-current="page"</code>, sottolineatura spessa e peso forte. Nessun menu a comparsa, nessuna barra fissa.</dd>
+<dt>Persona e compito</dt><dd>F1-F5: sapere dove andare con poche scelte (P1-P6).</dd>
+<dt>Provenienza</dt><dd><a href="ricerca/#D02">D02</a>, <a href="ricerca/#D04">D04</a>, <a href="ricerca/#D05">D05</a>, <a href="ricerca/#D43">D43</a>, <a href="ricerca/#E05">E05</a></dd>
+<dt>Varianti</dt><dd>Con la voce corrente; elenco «Da dove vuoi cominciare?» (<code>.porte</code>) nella pagina iniziale; a 390 px va a capo su due righe.</dd>
+<dt>Movimento</dt><dd>Soltanto il bordo inferiore cambia colore al passaggio, in 100 ms; nessun movimento oltre a questo.</dd>
+<dt>Verifica e lacune</dt><dd>Prova a testo 200% e a 390×844: va a capo senza scorrimento orizzontale. Prova senza JavaScript: identica.</dd>
+</dl>
+<div class="catalogo-prova">
+<p class="catalogo-prova__titolo">Prova viva</p>
+<div class="catalogo-righe"><nav class="nav" aria-label="Esempio di navigazione"><ul>
+<li><a href="#c-nav">Ascolta</a></li><li><a href="#c-nav" aria-current="page">Stato e limiti</a></li><li><a href="#c-nav">Installa</a></li><li><a href="#c-nav">In riunione</a></li><li><a href="#c-nav">Aiuto</a></li></ul></nav></div>
+<p>Variante: la home aggiunge, sotto la proposta, quattro collegamenti con parole della persona (<code>.porte</code>):</p>
+<ul class="porte"><li><a href="#c-nav">Scrivo per parlare: fa per me?</a></li><li><a href="#c-nav">Leggo per un'altra persona</a></li></ul>
+</div>
+</section>
+
+<section class="catalogo-scheda" id="c-percorso" aria-labelledby="c-percorso-t">
+<h3 id="c-percorso-t">Percorso: «Passo N di 5» e «Avanti»</h3>
+<dl class="catalogo-dati">
+<dt>Identificatore</dt><dd><code>.percorso</code>, <code>.avanti</code></dd>
+<dt>Regola e confini</dt><dd>Una riga in cima alle pagine del cammino («Passo 2 di 5: Stato e limiti») e, in fondo, «Indietro» e «Avanti» come collegamenti grandi. Non ripete l'elenco delle tappe: la barra principale ha già le stesse cinque voci (la revisione visiva ha misurato 318 px di doppia navigazione al telefono). È informazione fissa, senza transizioni.</dd>
+<dt>Persona e compito</dt><dd>F1, F2: sapere dove sono e cosa viene dopo, anche arrivando da un collegamento inoltrato.</dd>
+<dt>Provenienza</dt><dd><a href="ricerca/#D06">D06</a>, <a href="ricerca/#D07">D07</a>, <a href="ricerca/#E07">E07</a></dd>
+<dt>Varianti</dt><dd>Tappa corrente piena, altre con contorno; «Indietro» assente nella prima tappa, «Avanti» assente nell'ultima.</dd>
+<dt>Movimento</dt><dd>Nessuno. L'isola contestuale di R20 è attenuata a testo fisso (dichiarato in E07).</dd>
+<dt>Verifica e lacune</dt><dd>Misura al telefono: la riga occupa meno di 40 px (primo-schermo.mjs). Prova tastiera e senza JavaScript. Lacuna: nessuna misura con persone che usano un interruttore.</dd>
+</dl>
+<div class="catalogo-prova">
+<p class="catalogo-prova__titolo">Prova viva</p>
+<p class="percorso">Passo <b>2</b> di 5: <b>Stato e limiti</b></p>
+<nav class="avanti" aria-label="Esempio indietro e avanti"><a href="#c-percorso"><small>Indietro</small>Ascolta la voce</a><a href="#c-percorso"><small>Avanti</small>Installa</a></nav>
+</div>
+</section>
+
+<section class="catalogo-scheda" id="c-indice-pagina" aria-labelledby="c-indice-pagina-t">
+<h3 id="c-indice-pagina-t">Indice della pagina</h3>
+<dl class="catalogo-dati">
+<dt>Identificatore</dt><dd><code>.indice-pagina</code></dd>
+<dt>Regola e confini</dt><dd>Chip di collegamenti alle sezioni della stessa pagina, dentro un dettaglio chiuso («In questa pagina»), sotto l'introduzione delle pagine lunghe: al telefono costa una riga, non tre. Non fisso.</dd>
+<dt>Persona e compito</dt><dd>F1, F2, F4: raggiungere la sezione che serve senza scorrere (P3, P4, P7).</dd>
+<dt>Provenienza</dt><dd><a href="ricerca/#D06">D06</a>, <a href="ricerca/#D10">D10</a>, <a href="ricerca/#T08">T08</a></dd>
+<dt>Varianti</dt><dd>Un elenco di chip che va a capo; una sola riga di testo per chip.</dd>
+<dt>Movimento</dt><dd>Come i dettagli: dissolvenza di 120 ms all'apertura, istantanea con movimento ridotto; lo scorrimento alla sezione è quello nativo.</dd>
+<dt>Verifica e lacune</dt><dd>Prova tastiera e senza JavaScript. In stampa è nascosto.</dd>
+</dl>
+<div class="catalogo-prova">
+<p class="catalogo-prova__titolo">Prova viva</p>
+<nav class="indice-pagina" aria-label="Esempio di indice"><details class="dettagli"><summary>In questa pagina</summary><div class="dettagli__corpo"><ul><li><a href="#c-indice-pagina">Passo 1: scarica</a></li><li><a href="#c-indice-pagina">Passo 2: controlla il file</a></li><li><a href="#c-indice-pagina">Se ti sei fermato qui</a></li></ul></div></details></nav>
+</div>
+</section>
+
+<section class="catalogo-scheda" id="c-apertura" aria-labelledby="c-apertura-t">
+<h3 id="c-apertura-t">Apertura (composizione della pagina iniziale)</h3>
+<dl class="catalogo-dati">
+<dt>Identificatore</dt><dd><code>.apertura</code>, <code>.apertura__griglia</code> (aree: titolo, ascolto, frase, avviso, stato, azioni)</dd>
+<dt>Regola e confini</dt><dd>Titolo e riga di stato; il riquadro «Tu scrivi / Kalliope dice» con una voce e il comando d'ascolto; la frase che dice cosa fa e per chi è; il cartellino; le azioni. Sul computer il riquadro sta a destra e il comando d'ascolto è nel primo schermo; sul telefono l'ordine è titolo, stato, riquadro, frase, cartellino, «Scarica e installa». Non si mette testo sopra immagini.</dd>
+<dt>Persona e compito</dt><dd>F1, F2: capire in pochi secondi cosa fa, per chi è, cosa serve, e sentirlo (P1, P2).</dd>
+<dt>Provenienza</dt><dd><a href="ricerca/#D01">D01</a>, <a href="ricerca/#D02">D02</a>, <a href="ricerca/#D03">D03</a>, <a href="ricerca/#D33">D33</a>, <a href="ricerca/#T08">T08</a></dd>
+<dt>Varianti</dt><dd>A due colonne al computer; a una colonna sotto 56 rem, con la foto dopo i comandi.</dd>
+<dt>Movimento</dt><dd>Nessuno oltre a quello del riquadro (barre e frase evidenziata dopo il gesto).</dd>
+<dt>Verifica e lacune</dt><dd>Foto a 1440×900 e 390×844 in <code>design/prove-percorso/primo-schermo-*</code>. Limite: a 360×740 il comando d'ascolto sta 10-60 px sotto la piega.</dd>
+</dl>
+<div class="catalogo-prova">
+<p class="catalogo-prova__titolo">Prova viva</p>
+<p>La composizione è la <a href="../">pagina iniziale</a>. Le misure del primo schermo (comando d'ascolto e riga di stato interi a 1440×900 e 390×844, anche con l'avviso del sistema) sono nei controlli. Qui il suo cartellino di stato e il riquadro del primo schermo:</p><article class="ascolto ascolto--hero" aria-labelledby="a3-titolo-hero">
+<h4 id="a3-titolo-hero" class="solo-lettore" data-qa-salta>Frase 3 di 3: un importo</h4>
+<div class="riga-testo">
+<span class="riga-testo__etichetta">Tu scrivi</span>
+<span class="scritto"><span class="frase" data-frase="1">Il preventivo è di <span class="cambia">1.250 € + IVA</span>, valido fino al <span class="cambia">31 dicembre</span>.</span></span>
+</div>
+<div class="riga-testo">
+<span class="riga-testo__etichetta">Kalliope dice</span>
+<span class="detto"><span class="frase" data-frase="1">Il preventivo è di <span class="cambia">milleduecentocinquanta euro più IVA</span>, valido fino al <span class="cambia">trentuno dicembre</span>.</span></span>
+</div>
+<div class="voci">
+<div class="voce" data-file="giulia-3" data-nome="Giulia" data-testo-avvia="Ascolta" data-testo-ferma="Ferma" data-testo-frase="frase" data-testo-di="di" data-testo-errore="Questo browser non riproduce il file. Usa il collegamento «Scarica il file» qui sotto.">
+<p class="voce__nome">Giulia · 6 secondi</p>
+<div class="voce__controlli"></div>
+<audio controls preload="none" aria-label="Giulia, frase 3 di 3, 6 secondi"><source src="../voce/giulia-3.opus" type="audio/ogg; codecs=opus"><source src="../voce/giulia-3.mp3" type="audio/mpeg">Il tuo browser non riproduce l'audio. <a href="../voce/giulia-3.mp3">Scarica il file MP3</a>.</audio>
+<p class="voce__file"><a href="../voce/giulia-3.mp3" download>Scarica il file (MP3, 6 secondi)</a></p>
+</div>
+</div>
+</article>
+</div>
+</section>
+
+<section class="catalogo-scheda" id="c-stato" aria-labelledby="c-stato-t">
+<h3 id="c-stato-t">Cartellino di stato</h3>
+<dl class="catalogo-dati">
+<dt>Identificatore</dt><dd><code>.stato</code>, <code>.stato__col[data-tipo]</code>, <code>.stato__versione</code></dd>
+<dt>Regola e confini</dt><dd>Tre colonne: provato, non ancora provato, non esiste. Ogni colonna ha parola, simbolo e bordo diverso (pieno, tratteggiato, punteggiato): il colore non è l'unica informazione. Sta prima di ogni promessa, nella stessa schermata, senza ritardo né chiusura. Il numero di versione e «di prova» vengono dai segnaposto e da <code>data-prerelease</code>.</dd>
+<dt>Persona e compito</dt><dd>F1, F2, F3, F5: sapere cosa aspettarsi prima di decidere (P1, P3).</dd>
+<dt>Provenienza</dt><dd><a href="ricerca/#D24">D24</a>, <a href="ricerca/#D25">D25</a>, <a href="ricerca/#D27">D27</a>, <a href="ricerca/#T01">T01</a></dd>
+<dt>Varianti</dt><dd>Compatto (home) e completo (pagina Stato e limiti); colonne affiancate sopra 48 rem, impilate sotto; «di prova» e la versione compaiono solo per una prerelease.</dd>
+<dt>Movimento</dt><dd>Nessuno.</dd>
+<dt>Verifica e lacune</dt><dd>Contrasto-qa in tema chiaro e scuro; prova con colori forzati. Lacuna: non è stato letto con persone con difficoltà di lettura.</dd>
+</dl>
+<div class="catalogo-prova">
+<p class="catalogo-prova__titolo">Prova viva</p>
+<section class="stato" aria-labelledby="stato-titolo-breve">
+<div class="stato__testa">
+<span class="barre barre--piccole" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+<h3 id="stato-titolo-breve">Com'è messo Kalliope oggi</h3>
+<span class="stato__versione solo-prova">Versione di prova {{kalliope.version}}</span>
+</div>
+<div class="stato__colonne">
+<div class="stato__col" data-tipo="provato">
+<h4><span class="stato__segno" aria-hidden="true">✓</span>Provato</h4>
+<p>La voce arriva al microfono «Kalliope». L'installazione è provata da uno script su Ubuntu, Fedora e Arch.</p>
+</div>
+<div class="stato__col" data-tipo="non-provato">
+<h4><span class="stato__segno" aria-hidden="true">?</span>Non ancora provato</h4>
+<p>Una riunione vera con Zoom, Teams o Meet su un computer di tutti i giorni.</p>
+</div>
+<div class="stato__col" data-tipo="non-esiste">
+<h4><span class="stato__segno" aria-hidden="true">×</span>Non esiste</h4>
+<p>Windows, macOS e telefono. Altre lingue oltre all'italiano.</p>
+</div>
+</div>
+<p class="stato__piede"><a href="../stato/">Leggi tutto lo stato e i limiti</a></p>
+</section>
+<section class="stato" aria-labelledby="stato-titolo">
+<div class="stato__testa">
+<span class="barre barre--piccole" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+<h3 id="stato-titolo">Com'è messo Kalliope oggi</h3>
+<span class="stato__versione solo-prova">Versione di prova {{kalliope.version}}</span>
+</div>
+<div class="stato__colonne">
+<div class="stato__col" data-tipo="provato">
+<h4><span class="stato__segno" aria-hidden="true">✓</span>Provato</h4>
+<ul>
+<li>La voce arriva al microfono «Kalliope», con un sistema audio PipeWire preparato per la prova.</li>
+<li>L'installazione è provata da uno script su Ubuntu 24.04, Fedora e Arch.</li>
+<li>Parole sbagliate secondo Whisper sulla voce registrata dal microfono: 2,3% su 10 frasi di prova; circa una parola su 45 sui sei campioni di questo sito.</li>
+</ul>
+</div>
+<div class="stato__col" data-tipo="non-provato">
+<h4><span class="stato__segno" aria-hidden="true">?</span>Non ancora provato</h4>
+<ul>
+<li>Una riunione vera con Zoom, Teams o Meet su un computer di tutti i giorni.</li>
+<li>Il tempo fra il tasto Invio e il suono nella riunione.</li>
+<li>Lettori di schermo, puntamento oculare e interruttori.</li>
+<li>Computer diversi da quello su cui abbiamo fatto le misure.</li>
+</ul>
+</div>
+<div class="stato__col" data-tipo="non-esiste">
+<h4><span class="stato__segno" aria-hidden="true">×</span>Non esiste</h4>
+<ul>
+<li>Windows, macOS, telefono e tablet.</li>
+<li>Una voce clonata dalla tua. Oggi non c'è; se arriverà, sarà solo con il tuo consenso.</li>
+<li>Altre lingue oltre all'italiano.</li>
+<li>Frasi già pronte, pittogrammi e suggerimenti mentre scrivi.</li>
+<li>Sottotitoli della riunione: Kalliope non ascolta e non trascrive.</li>
+</ul>
+</div>
+</div>
+
+</section>
+</div>
+</section>
+
+<section class="catalogo-scheda" id="c-ascolto" aria-labelledby="c-ascolto-t">
+<h3 id="c-ascolto-t">Ascolto: scritto, detto, voce e barre</h3>
+<dl class="catalogo-dati">
+<dt>Identificatore</dt><dd><code>.ascolto</code>, <code>.scritto</code>, <code>.detto</code>, <code>.cambia</code>, <code>.frase</code>, <code>.voce</code>, <code>.barre</code></dd>
+<dt>Regola e confini</dt><dd>Una frase, una riga «Tu scrivi» (carattere a spaziatura fissa) e una «Kalliope dice» (carattere del corpo) con le cifre trasformate sottolineate; sotto, una riga per voce con pulsante (stessa larghezza in «Ascolta» e «Ferma»), barre e posizione («frase 1 di 2 · 0:00 / 0:09», durata arrotondata ai secondi come nel testo). Variante del primo schermo: una voce, titolo solo per i lettori di schermo. Un solo suono per volta, mai automatico, preload none, durata scritta. Senza JavaScript restano i controlli nativi dell'audio e il collegamento al file.</dd>
+<dt>Persona e compito</dt><dd>F1, F2, F3: capire come suona e se legge date, orari e importi (P2).</dd>
+<dt>Provenienza</dt><dd><a href="ricerca/#D33">D33</a>, <a href="ricerca/#D34">D34</a>, <a href="ricerca/#D35">D35</a>, <a href="ricerca/#D37">D37</a>, <a href="ricerca/#E19">E19</a>, <a href="ricerca/#D44">D44</a>, <a href="ricerca/#T05">T05</a></dd>
+<dt>Varianti</dt><dd>Con una voce o con due; con frase senza cifre (nota «Kalliope dice esattamente ciò che scrivi»); frase di una o due frasi; con e senza JavaScript.</dd>
+<dt>Movimento</dt><dd>Barre: sei campioni al secondo dell'inviluppo misurato dell'MP3 (60 ms), altezza da 14% a 100%, transizione di 100 ms lineare, solo mentre suona; frase evidenziata con cambio di sfondo in 100 ms. Interruzione: «Ferma» o un altro ascolto riportano le barre alla forma dell'icona. Movimento ridotto: le barre restano ferme e piene, la frase in corso resta evidenziata e la posizione è scritta («frase 1 di 2 · 0:03 / 0:09»).</dd>
+<dt>Verifica e lacune</dt><dd>Prova tastiera (Tab, Invio), senza JavaScript, movimento ridotto; riproduzione in Chromium. <strong>Lacune:</strong> Firefox e WebKit non provati (codec MP3 di sistema); nessuna prova con lettori di schermo veri.</dd>
+</dl>
+<div class="catalogo-prova">
+<p class="catalogo-prova__titolo">Prova viva</p>
+<article class="ascolto" aria-labelledby="a2-titolo">
+<h4 id="a2-titolo">Frase 2 di 3: una data e un orario</h4>
+<div class="riga-testo">
+<span class="riga-testo__etichetta">Tu scrivi</span>
+<span class="scritto"><span class="frase" data-frase="1">Sono d'accordo con Paola.</span> <span class="frase" data-frase="2">Però la consegna del <span class="cambia">14/3</span> mi sembra stretta: possiamo sentirci venerdì alle <span class="cambia">15:30</span>?</span></span>
+</div>
+<div class="riga-testo">
+<span class="riga-testo__etichetta">Kalliope dice</span>
+<span class="detto"><span class="frase" data-frase="1">Sono d'accordo con Paola.</span> <span class="frase" data-frase="2">Però la consegna del <span class="cambia">quattordici marzo</span> mi sembra stretta: possiamo sentirci venerdì alle <span class="cambia">quindici e trenta</span>?</span></span>
+</div>
+<div class="voci">
+<div class="voce" data-file="giulia-2" data-nome="Giulia" data-testo-avvia="Ascolta" data-testo-ferma="Ferma" data-testo-frase="frase" data-testo-di="di" data-testo-errore="Questo browser non riproduce il file. Usa il collegamento «Scarica il file» qui sotto.">
+<p class="voce__nome">Giulia · 9 secondi</p>
+<div class="voce__controlli"></div>
+<audio controls preload="none" aria-label="Giulia, frase 2 di 3, 9 secondi"><source src="../voce/giulia-2.opus" type="audio/ogg; codecs=opus"><source src="../voce/giulia-2.mp3" type="audio/mpeg">Il tuo browser non riproduce l'audio. <a href="../voce/giulia-2.mp3">Scarica il file MP3</a>.</audio>
+<p class="voce__file"><a href="../voce/giulia-2.mp3" download>Scarica il file (MP3, 9 secondi)</a></p>
+</div>
+<div class="voce" data-file="marco-2" data-nome="Marco" data-testo-avvia="Ascolta" data-testo-ferma="Ferma" data-testo-frase="frase" data-testo-di="di" data-testo-errore="Questo browser non riproduce il file. Usa il collegamento «Scarica il file» qui sotto.">
+<p class="voce__nome">Marco · 10 secondi</p>
+<div class="voce__controlli"></div>
+<audio controls preload="none" aria-label="Marco, frase 2 di 3, 10 secondi"><source src="../voce/marco-2.opus" type="audio/ogg; codecs=opus"><source src="../voce/marco-2.mp3" type="audio/mpeg">Il tuo browser non riproduce l'audio. <a href="../voce/marco-2.mp3">Scarica il file MP3</a>.</audio>
+<p class="voce__file"><a href="../voce/marco-2.mp3" download>Scarica il file (MP3, 10 secondi)</a></p>
+</div>
+</div>
+</article>
+<p>Stati fermi dell'ascolto, per confronto (il terzo è la simulazione senza audio nel paragrafo «Movimento»):</p>
+<div class="catalogo-righe">
+<figure><span class="barre" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><figcaption>a riposo: la forma dell'icona</figcaption></figure>
+<figure><span class="barre" aria-hidden="true"><i style="--h:.2"></i><i style="--h:.85"></i><i style="--h:.5"></i><i style="--h:1"></i><i style="--h:.3"></i></span><figcaption>in riproduzione: le barre seguono la voce</figcaption></figure>
+<figure><span class="scritto"><span class="frase in-corso">Sono d'accordo con Paola.</span> <span class="frase">Però…</span></span><figcaption>frase in corso evidenziata (anche con movimento ridotto)</figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="catalogo-scheda" id="c-passi" aria-labelledby="c-passi-t">
+<h3 id="c-passi-t">Passi, comando e controllo</h3>
+<dl class="catalogo-dati">
+<dt>Identificatore</dt><dd><code>.passi</code>, <code>.passo</code>, <code>.comando</code>, <code>.controllo</code>, <code>.se-non-va</code></dd>
+<dt>Regola e confini</dt><dd>Ogni passo ha un numero, il comando in un blocco selezionabile con un clic, «Come sai che è andata bene» e «Se non è andata». Il pulsante «Copia» è un'aggiunta con script. La ripresa è scritta a fine pagina perché il sito non salva nulla. Le frasi legate a una versione (<code>.solo-rc1</code>) si nascondono da sole quando la versione cambia.</dd>
+<dt>Persona e compito</dt><dd>F2, F4, F1: installare e sapere se è riuscito (P4).</dd>
+<dt>Provenienza</dt><dd><a href="ricerca/#D38">D38</a>, <a href="ricerca/#D39">D39</a>, <a href="ricerca/#D26">D26</a>, <a href="ricerca/#D10">D10</a></dd>
+<dt>Varianti</dt><dd>Con o senza «Copia»; «Come sai» e «Se non è andata» sempre presenti; frasi legate a una versione.</dd>
+<dt>Movimento</dt><dd>Il testo «Copiato.» compare senza movimento.</dd>
+<dt>Verifica e lacune</dt><dd>Comandi confrontati con <code>packaging/linux</code> e <code>docs/releasing.md</code>. Lacuna: i comandi non sono stati eseguiti su Fedora e Arch in questa sessione (provati dagli script di rilascio).</dd>
+</dl>
+<div class="catalogo-prova">
+<p class="catalogo-prova__titolo">Prova viva</p>
+<div class="comando">
+<pre><code>sha256sum {{kalliope.deb.name}}</code></pre>
+<div class="comando__barra"><button type="button" class="btn btn--piccolo" data-copia data-testo-ok="Copiato." data-testo-no="Non riesco a copiare da solo: seleziona il testo e copialo.">Copia il comando</button><span class="comando__stato" role="status"></span></div>
+</div><div class="controllo"><span class="controllo__titolo">Come sai che è andata bene</span>Il numero scritto dal terminale è identico a quello della pagina.</div><div class="se-non-va"><span class="se-non-va__titolo">Se non è andata</span>Non installare il file. Scaricalo di nuovo.</div>
+</div>
+</section>
+
+<section class="catalogo-scheda" id="c-scelta-sistema" aria-labelledby="c-scelta-sistema-t">
+<h3 id="c-scelta-sistema-t">Scelta della distribuzione</h3>
+<dl class="catalogo-dati">
+<dt>Identificatore</dt><dd><code>.scelta-sistema</code>, <code>.sistema</code>, attributo <code>data-sistema</code></dd>
+<dt>Regola e confini</dt><dd>Un indice di quattro collegamenti e quattro sezioni, ciascuna con cosa si guadagna e cosa costa. Con JavaScript scegliere una distribuzione tiene in vista solo i suoi blocchi nei passi 1-3 e compare «Mostra tutte»; la scelta non si salva sul dispositivo. Senza JavaScript sono tutte visibili. Con Windows, macOS o telefono compare un avviso compatto che manda alla pagina «Non ancora».</dd>
+<dt>Persona e compito</dt><dd>F4, F2: trovare il proprio formato e non attraversare i comandi delle altre distribuzioni (P4).</dd>
+<dt>Provenienza</dt><dd><a href="ricerca/#D26">D26</a>, <a href="ricerca/#D40">D40</a>, <a href="ricerca/#E09">E09</a>, <a href="ricerca/#E10">E10</a></dd>
+<dt>Varianti</dt><dd>Quattro sezioni: .deb, .rpm, PKGBUILD, archivio; ciascuna con file, scarica, guadagno e costo.</dd>
+<dt>Movimento</dt><dd>Il fondo dell'indice cambia in 100 ms al passaggio; nessun contenuto si muove.</dd>
+<dt>Verifica e lacune</dt><dd>Prova con scelta e «Mostra tutte», senza JavaScript e con user agent Windows e macOS (prova-stati.mjs). Il banner usa <code>navigator</code>: non riconosce la distribuzione, e non lo fa apposta.</dd>
+</dl>
+<div class="catalogo-prova">
+<p class="catalogo-prova__titolo">Prova viva</p>
+<nav class="scelta-sistema" aria-label="Scegli la distribuzione"><ul class="scelta-sistema__indice"><li><a href="#c-scelta-sistema">Debian e Ubuntu</a></li><li><a href="#c-scelta-sistema">Fedora</a></li><li><a href="#c-scelta-sistema">Arch</a></li><li><a href="#c-scelta-sistema">Altre distribuzioni</a></li></ul></nav>
+<section class="sistema"><h4>Fedora</h4><dl><dt>Cosa si guadagna</dt><dd>Si installa e si toglie con dnf.</dd><dt>Cosa costa</dt><dd>Chiede la password di amministratore. Il pacchetto non è firmato: dnf mostra un avviso.</dd></dl></section>
+<p>La scelta vera, con i comandi, è nella <a href="../installa/">pagina Installa</a>.</p>
+</div>
+</section>
+
+<section class="catalogo-scheda" id="c-filtro" aria-labelledby="c-filtro-t">
+<h3 id="c-filtro-t">Scheda-frase e filtro</h3>
+<dl class="catalogo-dati">
+<dt>Identificatore</dt><dd><code>.scheda-frase</code>, <code>.frase-finestra</code>, <code>.indice-frasi</code>, <code>.filtro</code></dd>
+<dt>Regola e confini</dt><dd>Per ogni frase della finestra: la frase vera (virgolettata), cosa significa, cosa fare. Un indice di soli collegamenti la raggiunge senza script; con script un campo restringe l'elenco delle sole frasi della finestra e dice quante restano (lo stesso numero delle voci mostrate). I tre casi «La mia frase non c'è» restano sempre in vista; senza risultati sparisce il gruppo e il messaggio rimanda a loro.</dd>
+<dt>Persona e compito</dt><dd>F1, F2, F4: trovare la causa partendo da ciò che la finestra dice (P5).</dd>
+<dt>Provenienza</dt><dd><a href="ricerca/#D09">D09</a>, <a href="ricerca/#E12">E12</a>, <a href="ricerca/#D30">D30</a></dd>
+<dt>Varianti</dt><dd>Senza risultati, con uno, con più frasi; senza JavaScript il filtro non compare.</dd>
+<dt>Movimento</dt><dd>Nessuno: l'elenco si aggiorna di colpo. Il numero di frasi è annunciato (<code>role="status"</code>).</dd>
+<dt>Verifica e lacune</dt><dd>Prova con campo vuoto, parziale e senza risultati; prova senza JavaScript (il campo non compare, l'elenco resta). Lacuna: lettore di schermo vero non disponibile.</dd>
+</dl>
+<div class="catalogo-prova">
+<p class="catalogo-prova__titolo">Prova viva</p>
+<div class="filtro" data-filtro data-testo-una="1 frase" data-testo-piu="frasi" data-testo-nessuna="Nessuna frase trovata. Prova una parola sola, per esempio «pronta» o «scarico». Oppure guarda i tre casi qui sotto, o segnala il problema." data-testo-tutte="Tutte le frasi."><label for="cerca-esempio">Scrivi una parte della frase (prova: «pipewire» o «curl»)</label><input id="cerca-esempio" type="search" autocomplete="off" spellcheck="false"><p class="filtro__stato" role="status"></p></div>
+<section data-gruppo-frasi><ul class="indice-frasi"><li><a href="#esempio-curl">«Per scaricare la voce serve il programma curl: …»</a></li><li><a href="#esempio-pipewire">«La voce è pronta, ma …: per ora nessuno ti sentirà nelle chiamate.»</a></li></ul>
+<article class="scheda-frase" id="esempio-curl"><h4><q class="frase-finestra">Per scaricare la voce serve il programma curl: …</q></h4><dl><dt>Cosa significa</dt><dd>Sul computer manca curl.</dd><dt>Cosa fare</dt><dd>Installa curl e premi di nuovo «Scarica la voce».</dd></dl></article>
+<article class="scheda-frase" id="esempio-pipewire"><h4><q class="frase-finestra">La voce è pronta, ma …: per ora nessuno ti sentirà nelle chiamate.</q></h4><dl><dt>Cosa significa</dt><dd>Il microfono «Kalliope» non si è creato.</dd><dt>Cosa fare</dt><dd>Controlla PipeWire.</dd></dl></article></section>
+<article class="scheda-frase" id="esempio-fisso"><h4>Caso fisso: «Kalliope» non compare fra i microfoni</h4><dl><dt>Cosa fare</dt><dd>Questo riquadro resta sempre visibile: sta fuori dal gruppo filtrato.</dd></dl></article>
+</div>
+</section>
+
+<section class="catalogo-scheda" id="c-disclosure" aria-labelledby="c-disclosure-t">
+<h3 id="c-disclosure-t">Dettagli: corto subito, lungo a richiesta</h3>
+<dl class="catalogo-dati">
+<dt>Identificatore</dt><dd><code>.dettagli</code> su <code>&lt;details&gt;</code></dd>
+<dt>Regola e confini</dt><dd>La risposta corta è sempre in vista; il «perché» e i dettagli tecnici stanno dentro. Mai informazione essenziale solo dentro un dettaglio chiuso. Il simbolo cambia da + a − e l'etichetta resta la stessa.</dd>
+<dt>Persona e compito</dt><dd>F1, F2: leggere il corto e aprire il lungo quando serve (P1-P5).</dd>
+<dt>Provenienza</dt><dd><a href="ricerca/#D30">D30</a>, <a href="ricerca/#E01">E01</a>, <a href="ricerca/#T07">T07</a></dd>
+<dt>Varianti</dt><dd>Chiuso, aperto, aperto all'arrivo (attributo <code>open</code>).</dd>
+<dt>Movimento</dt><dd>Trigger: clic o Invio sull'etichetta. Bersaglio: <code>.dettagli__corpo</code>. Proprietà: opacità 0→1, 120 ms (<code>--durata-2</code>), curva <code>--curva</code>, una volta, nessuna ripetizione. Interruzione: richiudere durante l'apertura ferma l'effetto. Movimento ridotto: durata 0, resta il cambio del simbolo.</dd>
+<dt>Verifica e lacune</dt><dd>Prova tastiera, senza JavaScript, movimento ridotto (durata computata 0).</dd>
+</dl>
+<div class="catalogo-prova">
+<p class="catalogo-prova__titolo">Prova viva</p>
+<div class="catalogo-controlli"><button type="button" class="btn btn--piccolo" data-sim-dettagli="dettagli-esempio" hidden>Apri o chiudi con un pulsante</button></div>
+<details class="dettagli" id="dettagli-esempio"><summary>Che cosa stai ascoltando</summary><div class="dettagli__corpo"><p>Sono l'uscita di Kalliope, senza ritocchi, convertita in MP3.</p></div></details>
+</div>
+</section>
+
+<section class="catalogo-scheda" id="c-tabella" aria-labelledby="c-tabella-t">
+<h3 id="c-tabella-t">Tabella e misura</h3>
+<dl class="catalogo-dati">
+<dt>Identificatore</dt><dd><code>.tabella</code>, <code>.misura</code>, <code>.segno</code></dd>
+<dt>Regola e confini</dt><dd>Per confrontare (provato / non provato, la stessa cosa detta a ciascuno) e per dire una cifra con la frase, il computer su cui è misurata e la fonte. Sotto 40 rem ogni riga diventa una scheda con le etichette. Nessun conteggio animato.</dd>
+<dt>Persona e compito</dt><dd>F3, F5, F2: leggere fatti con il metodo accanto (P3, P7).</dd>
+<dt>Provenienza</dt><dd><a href="ricerca/#D27">D27</a>, <a href="ricerca/#D29">D29</a>, <a href="ricerca/#E11">E11</a>, <a href="ricerca/#E13">E13</a></dd>
+<dt>Varianti</dt><dd>Tabella a colonne (computer) e a schede (sotto 40 rem); misura con cifra e fonte.</dd>
+<dt>Movimento</dt><dd>Nessuno.</dd>
+<dt>Verifica e lacune</dt><dd>Prova a 390×844 (schede) e a testo 200%. Lacuna: nessuna lettura con persone.</dd>
+</dl>
+<div class="catalogo-prova">
+<p class="catalogo-prova__titolo">Prova viva</p>
+<table class="tabella"><caption>Esempio: provato, app per app</caption><thead><tr><th scope="col">App</th><th scope="col">In una riunione vera</th></tr></thead><tbody><tr><th scope="row">Zoom</th><td data-etichetta="In una riunione vera"><span class="segno">Non provato</span></td></tr><tr><th scope="row">Browser</th><td data-etichetta="In una riunione vera"><span class="segno">Non provato</span></td></tr></tbody></table>
+<div class="misura"><b>2,3% di parole sbagliate</b>Su 10 frasi di prova, trascritte da Whisper. Fonte: README.</div>
+</div>
+</section>
+
+<section class="catalogo-scheda" id="c-avviso" aria-labelledby="c-avviso-t">
+<h3 id="c-avviso-t">Avviso</h3>
+<dl class="catalogo-dati">
+<dt>Identificatore</dt><dd><code>.avviso</code>, <code>.avviso--attenzione</code></dd>
+<dt>Regola e confini</dt><dd>Una nota fuori dal flusso del testo: informativa (verde, bordo pieno) o di attenzione (ambra, bordo tratteggiato). Variante «riga» per l'avviso del sistema: testo e collegamento a sinistra, «Chiudi» a destra, dentro la colonna del contenuto. Sempre testo; il bordo laterale e lo stile del bordo non sono il solo segno.</dd>
+<dt>Persona e compito</dt><dd>F1, F2: non perdere una cosa importante.</dd>
+<dt>Provenienza</dt><dd><a href="ricerca/#D24">D24</a>, <a href="ricerca/#D41">D41</a></dd>
+<dt>Varianti</dt><dd>Informativo e di attenzione.</dd>
+<dt>Movimento</dt><dd>Nessuno.</dd>
+<dt>Verifica e lacune</dt><dd>Contrasto-qa in tema chiaro e scuro.</dd>
+</dl>
+<div class="catalogo-prova">
+<p class="catalogo-prova__titolo">Prova viva</p>
+<div class="avviso" role="note"><p class="avviso__titolo">Se non puoi ascoltare</p><p>Il testo qui sotto dice la stessa cosa.</p></div>
+<div class="avviso avviso--attenzione" role="note"><p class="avviso__titolo">Non ancora provato in una riunione vera</p><p>Prima di una riunione importante fai una prova.</p></div>
+<div class="avviso avviso--attenzione avviso--riga" role="note"><div class="avviso__corpo"><span class="avviso__titolo">Kalliope serve un computer Linux.</span> <a href="#c-avviso">Perché, e novità</a></div><button type="button" class="btn btn--piccolo">Chiudi</button></div>
+</div>
+</section>
+
+<section class="catalogo-scheda" id="c-foto" aria-labelledby="c-foto-t">
+<h3 id="c-foto-t">Foto</h3>
+<dl class="catalogo-dati">
+<dt>Identificatore</dt><dd><code>.foto</code></dd>
+<dt>Regola e confini</dt><dd>Foto vera, mai simulata, con didascalia e testo alternativo che nomina i controlli. Dimensioni dichiarate (non sposta il testo). Variante piccola (24 rem): sotto «Cosa serve» nella pagina iniziale e al primo passo della pagina In riunione; non è più l'immagine più grande del primo schermo.</dd>
+<dt>Persona e compito</dt><dd>F1, F2, F3: vedere com'è fatto il prodotto (P1, P5).</dd>
+<dt>Provenienza</dt><dd><a href="ricerca/#D32">D32</a>, <a href="ricerca/#D12">D12</a></dd>
+<dt>Varianti</dt><dd>Foto con didascalia; la stessa foto ricompare nella pagina In riunione.</dd>
+<dt>Movimento</dt><dd>Nessuno.</dd>
+<dt>Verifica e lacune</dt><dd>Alternativa controllata con l'albero di accessibilità. Lacuna: manca la foto degli stati diversi dal caso felice (la finestra non li mostra in una sola schermata).</dd>
+</dl>
+<div class="catalogo-prova">
+<p class="catalogo-prova__titolo">Prova viva</p>
+<figure class="foto foto--piccola">
+<img src="../immagini/kalliope-finestra.png" width="640" height="500" alt="La finestra di Kalliope. In alto una riga di stato: «Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono.» Sotto, un campo con la scritta «Scrivi qui e premi Invio per parlare» e i pulsanti Parla e Ferma. In basso la scelta della voce (Giulia), la casella «Senti anche tu» spuntata e il pulsante Informazioni.">
+<figcaption>La finestra di Kalliope, come si presenta con la voce pronta.</figcaption>
+</figure>
+</div>
+</section>
+
+<section class="catalogo-scheda" id="c-condividi" aria-labelledby="c-condividi-t">
+<h3 id="c-condividi-t">Condividi</h3>
+<dl class="catalogo-dati">
+<dt>Identificatore</dt><dd><code>.condividi</code></dd>
+<dt>Regola e confini</dt><dd>Il campo con l'indirizzo della pagina, selezionabile, e con script il pulsante «Copia l'indirizzo». Nessuna icona di reti sociali.</dd>
+<dt>Persona e compito</dt><dd>F2: inoltrare il collegamento a chi installerà (P3).</dd>
+<dt>Provenienza</dt><dd><a href="ricerca/#E16">E16</a>, <a href="ricerca/#D11">D11</a></dd>
+<dt>Varianti</dt><dd>Con e senza il pulsante (JavaScript).</dd>
+<dt>Movimento</dt><dd>Nessuno.</dd>
+<dt>Verifica e lacune</dt><dd>Prova senza JavaScript (il pulsante non compare, il campo resta).</dd>
+</dl>
+<div class="catalogo-prova">
+<p class="catalogo-prova__titolo">Prova viva</p>
+<div class="condividi"><label for="indirizzo-esempio">Indirizzo di questa pagina</label><div class="condividi__riga"><input id="indirizzo-esempio" type="text" readonly value="https://sansevieria-ou.github.io/kalliope/sistema/"><button type="button" class="btn" data-copia data-testo-ok="Copiato." data-testo-no="Non riesco a copiare: seleziona l'indirizzo e premi Ctrl+C.">Copia l'indirizzo</button><span class="comando__stato" role="status"></span></div></div>
+</div>
+</section>
+
+<section class="catalogo-scheda" id="c-piede" aria-labelledby="c-piede-t">
+<h3 id="c-piede-t">Piede del sito</h3>
+<dl class="catalogo-dati">
+<dt>Identificatore</dt><dd><code>.sito-piede</code></dd>
+<dt>Regola e confini</dt><dd>Chi c'è dietro, la licenza («codice sorgente disponibile», non «open source»), la dichiarazione «nessun cookie, nessuna statistica, nulla da altri siti», i collegamenti al repository. Versione e data dai segnaposto.</dd>
+<dt>Persona e compito</dt><dd>F3, F5: chi risponde e dove si verifica (P7).</dd>
+<dt>Provenienza</dt><dd><a href="ricerca/#D23">D23</a>, <a href="ricerca/#D41">D41</a>, <a href="ricerca/#D21">D21</a></dd>
+<dt>Varianti</dt><dd>Tre colonne sopra 48 rem, una sotto; la riga di versione è nascosta per una versione stabile (<code>.solo-prova</code>).</dd>
+<dt>Movimento</dt><dd>Nessuno.</dd>
+<dt>Verifica e lacune</dt><dd>Lettura; segnaposto sostituiti da <code>tools/site.py</code> (la costruzione fallisce se ne manca uno).</dd>
+</dl>
+<div class="catalogo-prova">
+<p class="catalogo-prova__titolo">Prova viva</p>
+<p>Il piede è quello di questa stessa pagina, in fondo.</p>
+</div>
+</section>
+
+<h2 id="movimento">Movimento</h2>
+<p>Inventario di ogni effetto del sito. Regola: nessun movimento che la persona non ha provocato; ogni movimento porta un'informazione e dura al più 240 ms, salvo quello legato al suono; con movimento ridotto è sostituito, non solo tolto (<a href="ricerca/#D44">D44</a>, <a href="ricerca/#T07">T07</a>). Gli effetti dei riferimenti non trasferiti sono nelle decisioni E02-E21 con il loro motivo.</p>
+<div class="catalogo-controlli">
+<button type="button" class="btn" data-attiva-ridotto aria-pressed="false" hidden>Simula il movimento ridotto</button>
+<span data-stato-ridotto role="status"></span>
+</div>
+<section class="catalogo-scheda" id="c-movimento" aria-labelledby="c-movimento-t">
+<h3 id="c-movimento-t">Barre e frase evidenziata (senza audio)</h3>
+<div class="catalogo-prova" data-sim-barre>
+<p class="catalogo-prova__titolo">Prova viva: riproduce l'inviluppo misurato di «Giulia, frase 2»</p>
+<p class="scritto"><span class="frase" data-frase="1">Sono d'accordo con Paola.</span> <span class="frase" data-frase="2">Però la consegna del <span class="cambia">14/3</span> mi sembra stretta: possiamo sentirci venerdì alle <span class="cambia">15:30</span>?</span></p>
+<div class="voce__controlli voce__controlli--sim"><span class="barre" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="voce__posizione" data-sim-posizione>fermo</span></div>
+<div class="catalogo-controlli"><button type="button" class="btn btn--piccolo" data-sim-avvia hidden>Riproduci</button><button type="button" class="btn btn--piccolo" data-sim-inverti hidden>Inverti</button><button type="button" class="btn btn--piccolo" data-sim-ferma hidden>Ferma</button></div>
+</div>
+<dl class="catalogo-dati">
+<dt>Effetto</dt><dd>Barre dell'icona che seguono il livello della voce; frase in corso evidenziata (E19).</dd>
+<dt>Trigger</dt><dd>Il pulsante «Ascolta» (gesto della persona). Mai al caricamento.</dd>
+<dt>Bersagli e proprietà</dt><dd><code>.barre i</code>: <code>transform: scaleY(var(--h))</code>, <code>--h</code> da 0,14 a 1 aggiornato a ogni fotogramma; <code>.frase.in-corso</code>: sfondo e sottolineatura.</dd>
+<dt>Tempi e curva</dt><dd>Transizione di 100 ms lineare sulle barre; 100 ms lineare sullo sfondo della frase; la durata complessiva è quella del suono. Coreografia: le cinque barre mostrano le ultime cinque misure (60 ms ciascuna): una piccola forma d'onda che scorre da sinistra a destra.</dd>
+<dt>Ripetizione e interruzione</dt><dd>Nessuna ripetizione. «Ferma», la fine del suono o l'avvio di un altro ascolto riportano le barre alla forma dell'icona e tolgono l'evidenza.</dd>
+<dt>Movimento ridotto</dt><dd>Sostituzione: le barre restano ferme e piene; la frase in corso resta evidenziata e la posizione è scritta («frase 1 di 2 · 3,0 s / 9,3 s»). Attiva il pulsante qui sopra e riproduci di nuovo per confrontare.</dd>
+<dt>Fonte e differenze</dt><dd>R06 (barrette dell'interruttore del suono, la porta legata al titolo) per l'idea di legare il gesto al tema; il livello vero della voce, la frase in corso e la sostituzione sono scelte di Kalliope. Dichiarato in E19: la scenografia della porta è attenuata a una sola animazione.</dd>
+</dl>
+</section>
+<section class="catalogo-scheda" aria-labelledby="mov2-t">
+<h3 id="mov2-t">Altri effetti del sito</h3>
+<table class="tabella"><caption>Gli effetti del sito oltre alle barre</caption>
+<thead><tr><th scope="col">Effetto</th><th scope="col">Trigger</th><th scope="col">Proprietà e tempo</th><th scope="col">Ridotto</th><th scope="col">Fonte</th></tr></thead>
+<tbody>
+<tr><th scope="row">Apertura di un dettaglio</th><td data-etichetta="Trigger">Clic o Invio su <code>summary</code></td><td data-etichetta="Proprietà e tempo">opacità 0→1, 120 ms, <code>--curva</code></td><td data-etichetta="Ridotto">istantaneo, cambia il simbolo</td><td data-etichetta="Fonte"><a href="ricerca/#E01">E01</a></td></tr>
+<tr><th scope="row">Stato dei comandi</th><td data-etichetta="Trigger">Passaggio, focus, pressione</td><td data-etichetta="Proprietà e tempo">colore, sfondo e bordo, 100 ms</td><td data-etichetta="Ridotto">istantaneo; l'anello di focus resta</td><td data-etichetta="Fonte"><a href="ricerca/#E14">E14</a></td></tr>
+<tr><th scope="row">Evidenza della frase</th><td data-etichetta="Trigger">Il suono entra nella frase</td><td data-etichetta="Proprietà e tempo">sfondo, 100 ms lineare</td><td data-etichetta="Ridotto">invariata: porta l'informazione</td><td data-etichetta="Fonte"><a href="ricerca/#E19">E19</a>, <a href="ricerca/#D44">D44</a></td></tr>
+</tbody></table>
+<p>Nessun altro movimento: niente comparse allo scorrimento, cicli infiniti, parallasse, carosello, contatori, intestazione che si trasforma (<a href="ricerca/#E02">E02</a>, <a href="ricerca/#E03">E03</a>, <a href="ricerca/#E04">E04</a>, <a href="ricerca/#E05">E05</a>, <a href="ricerca/#E09">E09</a>, <a href="ricerca/#E11">E11</a>). Controllo: nessuna animazione infinita nel sito.</p>
+</section>
+
+<h2 id="accessibilita">Accessibilità e interazioni</h2>
+<section class="catalogo-scheda" id="c-focus" aria-labelledby="c-focus-t"><h3 id="c-focus-t">Focus e tastiera</h3>
+<p>Primo Tab: «Vai al contenuto». Anello di focus: 3 px nel colore dell'inchiostro con alone chiaro, visibile su carta e sul verde (<a href="ricerca/#D13">D13</a>). Ordine di Tab uguale all'ordine visivo. Nessun comando dipende dal passaggio del mouse, dal tempo o da un gesto complesso. <a class="btn btn--piccolo sim-focus" href="#c-focus">Anello di focus (simulato)</a></p></section>
+<section class="catalogo-scheda" id="c-semantica" aria-labelledby="c-semantica-t"><h3 id="c-semantica-t">Struttura per lettori di schermo</h3>
+<p>Un H1 per pagina, titoli in ordine, punti di riferimento (intestazione, navigazione, contenuto principale, piè di pagina), foto con alternativa, audio con etichetta (<a href="ricerca/#D12">D12</a>). Verifica con l'albero di accessibilità (proxy). <strong>Lacuna:</strong> Orca, NVDA e VoiceOver non sono disponibili in questo ambiente.</p></section>
+<section class="catalogo-scheda" id="c-senza-js" aria-labelledby="c-senza-js-t"><h3 id="c-senza-js-t">Senza JavaScript</h3>
+<p>Ogni pagina è documento completo. Gli script aggiungono quattro cose, ognuna con il suo equivalente: ascolto con barre (controlli nativi dell'audio), filtro (elenco completo), «Copia» (testo selezionabile), avviso sul sistema (collegamento fisso «Non uso Linux») (<a href="ricerca/#D19">D19</a>).</p></section>
+<section class="catalogo-scheda" id="c-forzati" aria-labelledby="c-forzati-t"><h3 id="c-forzati-t">Colori forzati e tema scuro</h3>
+<p>Bordi reali su bottoni, cartellini e riquadri; le barre usano i colori di sistema; la variante scura mantiene i rapporti di contrasto (<a href="ricerca/#D18">D18</a>, <a href="ricerca/#D42">D42</a>, <a href="ricerca/#T02">T02</a>). Il tema segue il sistema: nessun interruttore.</p></section>
+
+<h2 id="prestazioni">Prestazioni e canali</h2>
+<section class="catalogo-scheda" id="c-prestazioni" aria-labelledby="c-prestazioni-t"><h3 id="c-prestazioni-t">Peso e dipendenze</h3>
+<p>Budget: al più 200 kB di HTML, CSS e script per pagina, 0 domini esterni, audio escluso (<a href="ricerca/#D20">D20</a>, <a href="ricerca/#D21">D21</a>, <a href="ricerca/#D22">D22</a>). Carattere di sistema, nessuna immagine oltre alla foto della finestra e all'icona. L'audio si carica solo al gesto. I valori misurati sono nel paragrafo «Prove».</p></section>
+<section class="catalogo-scheda" id="c-meta" aria-labelledby="c-meta-t"><h3 id="c-meta-t">Anteprima del collegamento e viewport</h3>
+<p>Ogni pagina ha titolo, descrizione, Open Graph e indirizzo canonico (<a href="ricerca/#D11">D11</a>); il meta viewport non limita lo zoom (<a href="ricerca/#D17">D17</a>).</p></section>
+<section class="catalogo-scheda" id="c-stampa" aria-labelledby="c-stampa-t"><h3 id="c-stampa-t">Stampa</h3>
+<p>In stampa spariscono navigazione, tappe e pulsanti; i collegamenti mostrano l'indirizzo; i comandi restano con il bordo; colori a nero (<a href="ricerca/#D10">D10</a>).</p></section>
+<section class="catalogo-scheda" id="c-404" aria-labelledby="c-404-t"><h3 id="c-404-t">Pagina 404</h3>
+<p>Una frase senza colpa e sei collegamenti; senza ricerca perché il sito è piccolo (<a href="ricerca/#D08">D08</a>). Provala: <a href="../questa-pagina-non-esiste/">un indirizzo che non esiste</a> (il server di GitHub Pages mostra la 404 del sito).</p></section>
+<p>Canali: il sito gira in qualsiasi browser; questo percorso è provato soltanto in Chromium senza finestra (simulato). Non è stato provato su dispositivi reali né in Firefox e WebKit; l'elenco di 15 dispositivi e la matrice per tre motori seguono l'approvazione.</p>
+
+<h2 id="provenienza">Ricerca, confronto e decisioni</h2>
+<p>Tredici riferimenti visitati (nove vincitori Webby e quattro prodotti affini), quattro pagine italiane di registro, 141 righe di confronto più gli effetti, nessuna caratteristica identica in tutti i riferimenti, 16 meccanismi comuni con varianti, 432 varianti con destinazione o esclusione. Tutto è generato dalle stesse osservazioni.</p>
+<ul>
+<li><a href="ricerca/">Riferimenti, matrice dei compiti e decisioni (vista completa)</a></li>
+<li><a href="https://github.com/SANSEVIERIA-OU/kalliope/blob/main/design/confronto.md">Confronto completo: identico, varianti, peculiarità (design/confronto.md)</a></li>
+<li><a href="https://github.com/SANSEVIERIA-OU/kalliope/blob/main/design/copertura.md">Copertura dei compiti (design/copertura.md)</a></li>
+<li><a href="https://github.com/SANSEVIERIA-OU/kalliope/blob/main/design/direzione.md">Direzione, alternative e regole (design/direzione.md)</a></li>
+<li><a href="https://github.com/SANSEVIERIA-OU/kalliope/blob/main/design/ricerca/schede/">Schede dei riferimenti</a> e <a href="https://github.com/SANSEVIERIA-OU/kalliope/blob/main/design/ricerca/movimento/">inventari del movimento</a></li>
+</ul>
+<p>Il sito non mostra foto dei siti di riferimento (diritti d'autore): solo testo e collegamenti.</p>
+
+<h2 id="prove">Prove</h2>
+<p>Data: 12/11/2026. Motore: Chromium senza finestra (1440×900 e 390×844; l&#x27;impaginazione anche 360×760 e 820×1180), Firefox 150 e WebKit in un giro veloce (1440×900 e 390×844). Una simulazione non è una prova su un dispositivo reale.</p><table class="tabella"><caption>Esiti dei controlli</caption><thead><tr><th scope="col">N.</th><th scope="col">Controllo</th><th scope="col">Esito</th><th scope="col">Dove sono le prove</th><th scope="col">Data</th></tr></thead><tbody><tr><th scope="row">1</th><td data-etichetta="Controllo">Metodo della direzione (controlla-direzione.mjs con il confronto)</td><td data-etichetta="Esito">nessun errore, nessun punto da rivedere; 73 decisioni, 432 su 432 varianti con destinazione o esclusione; A1 passa nel primo schermo (direzione.md §3)</td><td data-etichetta="Dove">design/direzione.md §9</td><td data-etichetta="Data">12/11/2026</td></tr><tr><th scope="row">2</th><td data-etichetta="Controllo">Pagine statiche (controlla-pagine.py) e fonte unica dei valori (controlla-sorgenti.mjs)</td><td data-etichetta="Esito">10 pagine, 0 errori (intestazione e piede uguali, collegamenti e ancore, nessuna risorsa da terzi, un H1, lingua, alternative, token definiti, nessuna versione scritta a mano, nessuna regola :visited con colore); la copia guastata apposta è riconosciuta 4 difetti su 4; i valori stanno solo nei token (&quot;Sorgenti in ordine&quot;)</td><td data-etichetta="Dove">design/strumenti/controlla-pagine.py</td><td data-etichetta="Data">12/11/2026</td></tr><tr><th scope="row">3</th><td data-etichetta="Controllo">Primo schermo misurato (primo-schermo.mjs): comando d&#x27;ascolto e riga di stato interi, «Scarica e installa» dopo il cartellino al telefono, avviso del sistema su poche righe, nessuna sporgenza</td><td data-etichetta="Esito">Chromium 23 su 23, Firefox 23 su 23, WebKit 23 su 23 controlli, a 1440×900, 1280×720, 390×844 (anche con l&#x27;avviso) e sulla pagina Ascolta; a 360×740 il comando d&#x27;ascolto resta 10-60 px sotto la piega (informativo)</td><td data-etichetta="Dove">design/prove-percorso/primo-schermo-finale/</td><td data-etichetta="Data">12/11/2026</td></tr><tr><th scope="row">4</th><td data-etichetta="Controllo">Contrasto del testo reso (contrasto-qa.mjs, 390×844 e 1440×900, tema chiaro e scuro, minimo 7:1 e 4,5:1 per il grande)</td><td data-etichetta="Esito">tutti i testi sopra il minimo: home 240, Ascolta 288, Stato 660, Installa 752, In riunione 312, Aiuto 604, Non ancora 200, 404 92; ricerca 1690 (computer); catalogo 4018 (computer) e 3578 (telefono)</td><td data-etichetta="Dove">/tmp/metodo-qa-kalliope/contrasto (rilanciabile)</td><td data-etichetta="Data">12/11/2026</td></tr><tr><th scope="row">5</th><td data-etichetta="Controllo">Impaginazione (esame-impaginazione.mjs chromium tutti: 360×760, 820×1180, 1440×900; testo 100-200%; zoom 125-200%)</td><td data-etichetta="Esito">210 combinazioni, 148 pulite. Nessuna pagina scorre di lato né esce dalla finestra (a 360 px con testo al 200% nemmeno). Nelle pagine del percorso a testo 100-125% restano soltanto «31 dicembre» che va a capo e «milleduecentocinquanta» spezzata a 360 px; a 150-200% su 360 px parole lunghe spezzate e colonne strette. Le date della release («12 novembre 2026») non vanno più a capo: lo spazio non separabile di tools/site.py funziona</td><td data-etichetta="Dove">/tmp/metodo-qa-kalliope/esame/chromium</td><td data-etichetta="Data">12/11/2026</td></tr><tr><th scope="row">6</th><td data-etichetta="Controllo">Collegamenti dentro una frase riconoscibili (link-spenti-qa.mjs)</td><td data-etichetta="Esito">ogni link dentro una frase si vede</td><td data-etichetta="Dove">strumento della skill</td><td data-etichetta="Data">12/11/2026</td></tr><tr><th scope="row">7</th><td data-etichetta="Controllo">Ascolto: pulsante, barre, frase evidenziata, un solo suono per volta, movimento ridotto, senza JavaScript, file assente, riproduzione vera dell&#x27;MP3 (prova-ascolto.mjs)</td><td data-etichetta="Esito">Chromium 24 su 24, Firefox 23 su 24, WebKit 22 su 22. In Firefox 150 di questo ambiente l&#x27;MP3 non si decodifica (errore 3, nessun decoder di sistema): il sito mostra il messaggio e il collegamento al file; Ogg e Opus risultano riproducibili. In WebKit senza riproduzione vera né file assente (limite dell&#x27;ambiente, vedi lacune); su copie guastate apposta le prove falliscono</td><td data-etichetta="Dove">design/prove-percorso/ascolto-finale/</td><td data-etichetta="Data">12/11/2026</td></tr><tr><th scope="row">8</th><td data-etichetta="Controllo">Stati e ripieghi: tastiera e focus, movimento ridotto, stampa, colori forzati, filtro dell&#x27;Aiuto (frasi e tre casi fissi), scelta della distribuzione, 404, avviso sul sistema, copia, rete, bersagli dei collegamenti isolati (prova-stati.mjs)</td><td data-etichetta="Esito">Chromium 42 su 42, Firefox 40 su 40, WebKit 40 su 40 (copia e PDF solo in Chromium); su copie guastate apposta le prove falliscono</td><td data-etichetta="Dove">design/prove-percorso/stati-finale/</td><td data-etichetta="Data">12/11/2026</td></tr><tr><th scope="row">9</th><td data-etichetta="Controllo">Peso e dipendenze (misura-pagine.mjs)</td><td data-etichetta="Esito">ogni pagina fino a 185 kB senza l&#x27;audio (il catalogo, la più pesante), 6-10 richieste, 0 domini esterni, nessun cookie, nessuna memoria locale, nessuna animazione infinita, nessun video né canvas</td><td data-etichetta="Dove">design/prove-percorso/misure-pagine.json</td><td data-etichetta="Data">12/11/2026</td></tr><tr><th scope="row">10</th><td data-etichetta="Controllo">Foto viste a occhio a grandezza utile</td><td data-etichetta="Esito">primo schermo della pagina iniziale a 1440×900, 390×844 e con l&#x27;avviso (iPhone); Aiuto senza risultato; scelta della distribuzione; riquadro dell&#x27;ascolto in tutti gli stati (prima giro); pagine e catalogo del giro precedente</td><td data-etichetta="Dove">design/prove-percorso/primo-schermo-*, prova-stati-34, giro-*</td><td data-etichetta="Data">12/11/2026</td></tr></tbody></table><table class="tabella"><caption>Peso delle pagine (Chromium, rete locale, senza audio)</caption><thead><tr><th scope="col">Pagina</th><th scope="col">Richieste</th><th scope="col">Byte (HTML, CSS, script, immagini)</th><th scope="col">Domini esterni</th></tr></thead><tbody><tr><th scope="row">home</th><td data-etichetta="Richieste">8</td><td data-etichetta="Byte">93,9 kB</td><td data-etichetta="Domini esterni">0</td></tr><tr><th scope="row">ascolta</th><td data-etichetta="Richieste">7</td><td data-etichetta="Byte">70,5 kB</td><td data-etichetta="Domini esterni">0</td></tr><tr><th scope="row">stato</th><td data-etichetta="Richieste">6</td><td data-etichetta="Byte">70,9 kB</td><td data-etichetta="Domini esterni">0</td></tr><tr><th scope="row">installa</th><td data-etichetta="Richieste">6</td><td data-etichetta="Byte">76,5 kB</td><td data-etichetta="Domini esterni">0</td></tr><tr><th scope="row">riunione</th><td data-etichetta="Richieste">7</td><td data-etichetta="Byte">89,5 kB</td><td data-etichetta="Domini esterni">0</td></tr><tr><th scope="row">aiuto</th><td data-etichetta="Richieste">6</td><td data-etichetta="Byte">70,5 kB</td><td data-etichetta="Domini esterni">0</td></tr><tr><th scope="row">non-ancora</th><td data-etichetta="Richieste">6</td><td data-etichetta="Byte">61,5 kB</td><td data-etichetta="Domini esterni">0</td></tr><tr><th scope="row">404</th><td data-etichetta="Richieste">6</td><td data-etichetta="Byte">58,7 kB</td><td data-etichetta="Domini esterni">0</td></tr><tr><th scope="row">sistema</th><td data-etichetta="Richieste">10</td><td data-etichetta="Byte">185,2 kB</td><td data-etichetta="Domini esterni">0</td></tr><tr><th scope="row">sistema-ricerca</th><td data-etichetta="Richieste">6</td><td data-etichetta="Byte">123,5 kB</td><td data-etichetta="Domini esterni">0</td></tr></tbody></table><h3>Difetti ancora aperti</h3><p>Dalla revisione visiva e dai controlli: non corretti in questo giro.</p><ul><li>Un riquadro del catalogo e le tabelle fitte (ricerca) restano densi a 360 px con testo grande; il catalogo non è stato rivisto in questo giro oltre ai componenti cambiati.</li><li>Piede, terza colonna: le voci a capo hanno distanze diverse (M2 della revisione).</li><li>Stato, telefono: la tabella app per app resta sei schede quasi identiche; la parola «Non ancora provato» è ora la stessa del cartellino e c&#x27;è una frase sopra, ma non è stata accorciata (M3).</li><li>Tema scuro: la foto della finestra resta un blocco chiaro (M7). Colori forzati: «Ascolta» e «Scarica e installa» ora si distinguono per il riempimento di sistema.</li><li>Dopo «Ferma» la posizione resta all&#x27;ultimo valore: non è verificato con l&#x27;audio vero se il prossimo «Ascolta» riprende o riparte (M10).</li><li>Arch: la ricetta compare nel passo 1 come pulsante e il passo 3 la scarica da solo (M4, seconda parte): detto nel testo, non unificato.</li><li>«31 dicembre» nel testo digitato va a capo a 360 px (il testo deve restare identico carattere per carattere); a 360 px con testo da 125% la parola «milleduecentocinquanta» si spezza; i titoli dei passi si spezzano a 150-200%.</li><li>Il comando d&#x27;ascolto a 360×740 sta 10-60 px sotto la piega (a 390×844 è intero).</li><li>In Firefox 150 di questo ambiente l&#x27;MP3 non si riproduce (nessun decoder di sistema); per chi ha lo stesso problema restano il messaggio e il file. Un secondo formato (Ogg o Opus) lo risolverebbe: da decidere con il coordinatore, perché richiede di rifare i sei file.</li><li>Il riconoscimento di iPadOS (che si presenta come Mac) usa il numero di punti di contatto: non verificabile qui (M11).</li></ul><h3>Lacune dichiarate</h3><ul><li>Chromium senza finestra per tutto; Firefox e WebKit in un giro veloce a 1440×900 e 390×844. I 15 dispositivi dell&#x27;elenco, le tre matrici e l&#x27;hardware reale parte dopo l&#x27;approvazione.</li><li>WebKit di questo ambiente si blocca con qualsiasi &lt;audio&gt; che abbia una sorgente (anche fuori dal sito): è un limite della prova, non un difetto del sito. In WebKit le pagine con audio si provano togliendo src dagli elementi: l&#x27;audio nativo di WebKit e il ripiego senza JavaScript in WebKit non sono visti.</li><li>Il suono di Chromium senza finestra scorre più veloce del tempo reale: la riproduzione vera dell&#x27;MP3 è provata in Chromium (parte, arriva alla fine, senza errori), il tempo dell&#x27;interfaccia (barre e frase evidenziata) con un orologio simulato. Il suono non è stato ascoltato.</li><li>Lettori di schermo (Orca, NVDA, VoiceOver), puntamento oculare e interruttori non sono disponibili: si usano l&#x27;albero di accessibilità e la tastiera come proxy.</li><li>La 404 è provata su un server locale che imita GitHub Pages (404.html con stato 404); non su Pages.</li><li>Nessuna prova di lettura o di compito con persone reali.</li></ul>
+</div>
+</main>
+<footer class="sito-piede">
+<div class="pagina">
+<div>
+<h2>Kalliope</h2>
+<p>Un programma per scrivere e farsi sentire nelle riunioni. <span class="solo-prova">Versione di prova {{kalliope.version}}, pubblicata il {{kalliope.date}}.</span></p>
+<p>Codice sorgente disponibile, licenza SANSEVIERIA 1.0. Non è software «open source» nel senso dell'OSI. Prodotto da SANSEVIERIA OÜ.</p>
+<p>Questo sito non usa cookie, non ha statistiche e non carica nulla da altri siti. I file li serve GitHub Pages, che registra le richieste come ogni host.</p>
+</div>
+<div>
+<h2>Nel sito</h2>
+<ul>
+<li><a href="../non-ancora/">Windows e macOS: non ancora</a></li>
+<li><a href="../sistema/">Come è fatto questo sito</a></li>
+<li><a href="../aiuto/#segnala">Segnala un problema</a></li>
+</ul>
+</div>
+<div>
+<h2>Fuori da questo sito</h2>
+<ul>
+<li><a href="https://github.com/SANSEVIERIA-OU/kalliope">Codice sorgente su GitHub</a></li>
+<li><a href="{{kalliope.release.url}}">Pagina della versione {{kalliope.version}}</a></li>
+<li><a href="https://github.com/SANSEVIERIA-OU/kalliope/issues">Segnalazioni su GitHub (serve un account)</a></li>
+</ul>
+</div>
+</div>
+</footer>
+</body>
+</html>

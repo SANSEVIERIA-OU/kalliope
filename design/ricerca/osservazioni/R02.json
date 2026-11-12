@@ -1,0 +1,625 @@
+{
+ "riferimenti": [
+  {
+   "id": "R02",
+   "nome": "Touch: Beyond Vision",
+   "url": "https://touch-beyond-vision.com/",
+   "categoria": "Belonging & Inclusion (AI Experiences & Applications); Experimental & Innovation (AI Features & Innovation); Public Service & Activism (AI)",
+   "anno": 2026,
+   "premio": "Webby Winner (tre categorie, «3 Wins»)",
+   "motivazione_ufficiale": "motivazione individuale non disponibile (sezioni About vuote; fonte incarichi/ricerca-a/fonti-a.json, candidato F02)",
+   "gruppo": "A",
+   "osservazioni": [
+    {
+     "caratteristica": "proposta del primo schermo",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "parole": 8,
+      "frasi": 2
+     },
+     "descrizione": "Titolo H1 «Touch: Beyond Vision» (non contato). Frase letterale: «Art you can feel. Stories you can touch.» Sotto la piega: «OXO2London OXO TowerSeptember 15th, 2025» (senza separatore).",
+     "evidenze": [
+      "prove/R02/001-vai.jpg"
+     ]
+    },
+    {
+     "caratteristica": "proposta del primo schermo",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "parole": 8,
+      "frasi": 2
+     },
+     "descrizione": "Stesso testo, a capo su tre righe.",
+     "evidenze": [
+      "prove/R02/misure/telefono-390x844-arrivo.png"
+     ]
+    },
+    {
+     "caratteristica": "comandi visibili al primo schermo",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "link": 4,
+      "pulsanti": 0,
+      "campi": 0
+     },
+     "descrizione": "Marchio a punti braille e tre voci di menu; nessun pulsante.",
+     "evidenze": [
+      "prove/R02/misure/primo-schermo-R02.json"
+     ]
+    },
+    {
+     "caratteristica": "comandi visibili al primo schermo",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "link": 1,
+      "pulsanti": 1,
+      "campi": 0
+     },
+     "descrizione": "Marchio e «Toggle menu» (div con ruolo button, 92x114).",
+     "evidenze": [
+      "prove/R02/misure/primo-schermo-R02.json"
+     ]
+    },
+    {
+     "caratteristica": "comando principale",
+     "ambito": "arrivo computer",
+     "stato": "assente",
+     "descrizione": "Nessun pulsante o invito nel primo schermo; l'azione «Register your interest» sta a 5955 px dall'alto.",
+     "evidenze": [
+      "prove/R02/001-vai.jpg"
+     ]
+    },
+    {
+     "caratteristica": "comando principale",
+     "ambito": "arrivo telefono",
+     "stato": "assente",
+     "descrizione": "Nessun pulsante nel primo schermo.",
+     "evidenze": [
+      "prove/R02/varianti/mobile/001-vai.jpg"
+     ]
+    },
+    {
+     "caratteristica": "struttura della navigazione",
+     "ambito": "menu computer",
+     "stato": "presente",
+     "valore": {
+      "voci": 3,
+      "tipo": "barra"
+     },
+     "descrizione": "Explore The Artworks, Webby Winners 2026 (collegamento esterno), Contact Us; marchio a sinistra.",
+     "evidenze": [
+      "prove/R02/001-vai.jpg"
+     ]
+    },
+    {
+     "caratteristica": "struttura della navigazione",
+     "ambito": "menu telefono",
+     "stato": "presente",
+     "valore": {
+      "voci": 3,
+      "tipo": "pannello"
+     },
+     "descrizione": "Pannello bianco da destra con le stesse tre voci e una X.",
+     "evidenze": [
+      "prove/R02/varianti/mobile/002-clic-seq-06.jpg"
+     ]
+    },
+    {
+     "caratteristica": "apertura del menu",
+     "ambito": "menu telefono",
+     "stato": "presente",
+     "valore": {
+      "durata_ms": 600,
+      "direzione": "da destra",
+      "curva": "cubic-bezier(0.785, 0.135, 0.15, 0.86)"
+     },
+     "descrizione": "Proprietà right da −430 px a 0 con ombra rgba(0,0,0,0.5); outline del pulsante 3 px→0 in 300 ms ease. Transizione CSS letta dal runtime.",
+     "evidenze": [
+      "prove/R02/varianti/mobile/002-clic.movimento.json",
+      "prove/R02/fogli/mobile-menu.jpg"
+     ]
+    },
+    {
+     "caratteristica": "segnale di posizione e di avanzamento",
+     "ambito": "percorso principale",
+     "stato": "assente",
+     "descrizione": "Percorso Home → Artworks → categoria: nessun indice, passi o barra; solo un tasto «torna su» in basso a destra.",
+     "evidenze": [
+      "prove/R02/012-clic.jpg",
+      "prove/R02/015-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "comando proprio «indietro»",
+     "ambito": "percorso principale",
+     "stato": "assente",
+     "descrizione": "Nessuna briciola né comando «indietro»: si torna con il menu o il marchio.",
+     "evidenze": [
+      "prove/R02/012-clic.jpg",
+      "prove/R02/015-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "messaggio di errore",
+     "ambito": "errore",
+     "stato": "non_osservato",
+     "motivo": "I due moduli (registrazione e contatto) non sono stati inviati nemmeno vuoti, per la regola «nessun modulo»; non sono stati innescati errori."
+    },
+    {
+     "caratteristica": "pagina inesistente",
+     "ambito": "404",
+     "stato": "presente",
+     "valore": {
+      "utile": "sì",
+      "offre_ritorno": "sì"
+     },
+     "descrizione": "Testo: «404 / Page not found / The resource you are looking for doesn't exist, or might have been removed. / Back Homepage», con il menu del sito.",
+     "evidenze": [
+      "prove/R02/024-vai.jpg"
+     ]
+    },
+    {
+     "caratteristica": "attesa del caricamento",
+     "ambito": "rete lenta",
+     "stato": "presente",
+     "valore": {
+      "segnale": "vuoto"
+     },
+     "non_misurati": [
+      "s_al_primo_testo"
+     ],
+     "descrizione": "1,6 Mbit/s e 562 ms: dalla prima foto (2 s) c'è la barra di menu, ma nessun contenuto del primo schermo fino a 20 s. Il PerformanceObserver segna first-contentful-paint a 21 s: incongruente con la foto a 2 s, quindi non lo uso.",
+     "evidenze": [
+      "prove/R02/misure/rete-lenta-02s.jpg",
+      "prove/R02/misure/rete-lenta-10s.jpg",
+      "prove/R02/misure/rete-lenta-20s.jpg"
+     ]
+    },
+    {
+     "caratteristica": "comportamento senza JavaScript",
+     "ambito": "senza JavaScript",
+     "stato": "presente",
+     "valore": {
+      "contenuto": "nessuno",
+      "navigazione": "no",
+      "comandi_essenziali": "no"
+     },
+     "descrizione": "Schermata scura vuota: il DOM contiene 2667 caratteri e 21 link, ma titolo, frase e blocchi hanno opacità 0 e il menu non è visibile; un noscript riporta a opacità 1 solo la classe wpb_animate_when_almost_visible.",
+     "evidenze": [
+      "prove/R02/misure/senza-javascript.jpg",
+      "prove/R02/misure/misure-R02.json"
+     ]
+    },
+    {
+     "caratteristica": "effetti con movimento ridotto",
+     "ambito": "movimento ridotto",
+     "stato": "presente",
+     "valore": {
+      "effetti": 2,
+      "tolti": 0,
+      "sostituiti": 0,
+      "invariati": 2
+     },
+     "descrizione": "In ridotto l'animazione alpha-in dura ancora 1000 ms e la dissolvenza del titolo legata allo scorrimento resta identica; media query verificata come attiva.",
+     "evidenze": [
+      "prove/R02/varianti/ridotto2/001-vai.movimento.json",
+      "prove/R02/varianti/ridotto/002-scorri.jpg"
+     ]
+    },
+    {
+     "caratteristica": "percorso da tastiera",
+     "ambito": "tastiera",
+     "stato": "presente",
+     "valore": {
+      "tab_fino_al_comando_principale": 18,
+      "focus_visibile": "no",
+      "salta_al_contenuto": "no",
+      "trappole": 0
+     },
+     "descrizione": "Il conto 18 è calcolato dall'ordine del DOM (21 elementi tabbabili); le prime quattro pressioni sono misurate: marchio, Explore, Webby, Contact. outline none, 0 px: l'unico segnale è che il testo si attenua al 50%.",
+     "evidenze": [
+      "prove/R02/020-tasto.jpg",
+      "prove/R02/021-tasto.jpg",
+      "prove/R02/023-tasto.jpg",
+      "prove/R02/fogli/tastiera-menu.png"
+     ]
+    },
+    {
+     "caratteristica": "testo al 200%",
+     "ambito": "testo 200%",
+     "stato": "presente",
+     "valore": {
+      "scroll_orizzontale": "no",
+      "contenuto_perso": "no"
+     },
+     "descrizione": "Dimensioni invariate (H1 125 px, corpo 15 px): impostazione ignorata.",
+     "evidenze": [
+      "prove/R02/varianti/carattere200/001-vai.jpg"
+     ]
+    },
+    {
+     "caratteristica": "zoom al 200%",
+     "ambito": "testo 200%",
+     "stato": "presente",
+     "valore": {
+      "scroll_orizzontale": "no",
+      "contenuto_perso": "no"
+     },
+     "descrizione": "Viewport 720x450: menu a hamburger, pagina di 10833 px senza scorrimento orizzontale.",
+     "evidenze": [
+      "prove/R02/varianti/zoom200/001-vai.jpg",
+      "prove/R02/varianti/zoom200/002-scorri.jpg"
+     ]
+    },
+    {
+     "caratteristica": "albero di accessibilità (proxy)",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "punti_di_riferimento": 3,
+      "titoli": 11,
+      "immagini_senza_alternativa": 1,
+      "comandi_senza_nome": 3
+     },
+     "descrizione": "Proxy ariaSnapshot. H1 unico; banner, navigation, main; nessun contentinfo. Le immagini dei contenuti hanno alt descrittivi.",
+     "evidenze": [
+      "prove/R02/misure/albero-accessibilita-R02.txt",
+      "prove/R02/misure/misure-R02.json"
+     ]
+    },
+    {
+     "caratteristica": "bersagli dei comandi principali",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "larghezza_min_px": 38,
+      "altezza_min_px": 60,
+      "distanza_min_px": 4
+     },
+     "evidenze": [
+      "prove/R02/misure/primo-schermo-R02.json"
+     ]
+    },
+    {
+     "caratteristica": "bersagli dei comandi principali",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "larghezza_min_px": 38,
+      "altezza_min_px": 60,
+      "distanza_min_px": 224
+     },
+     "evidenze": [
+      "prove/R02/misure/primo-schermo-R02.json"
+     ]
+    },
+    {
+     "caratteristica": "testo corrente",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "corpo_px": 15,
+      "interlinea": 1.75,
+      "caratteri_per_riga_max": 68
+     },
+     "descrizione": "Primo paragrafo di corpo della pagina (sezione Webby, sotto la piega); colore #777 (4,48:1 su bianco) nelle didascalie delle opere.",
+     "evidenze": [
+      "prove/R02/misure/primo-schermo-R02.json"
+     ]
+    },
+    {
+     "caratteristica": "testo corrente",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "corpo_px": 15,
+      "interlinea": 1.75,
+      "caratteri_per_riga_max": 43
+     },
+     "evidenze": [
+      "prove/R02/misure/primo-schermo-R02.json"
+     ]
+    },
+    {
+     "caratteristica": "richieste e terze parti",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "richieste": 51,
+      "domini_di_terzi": 4,
+      "kb": 11244
+     },
+     "non_misurati": [
+      "caratteri_caricati"
+     ],
+     "descrizione": "Terzi: Google Fonts (2 domini), Google Tag Manager, YouTube.",
+     "evidenze": [
+      "prove/R02/misure/misure-R02.json"
+     ]
+    },
+    {
+     "caratteristica": "anteprima del collegamento",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "titolo": "sì",
+      "immagine": "sì",
+      "descrizione": "sì"
+     },
+     "descrizione": "og:image 1200x630, twitter:card summary_large_image.",
+     "evidenze": [
+      "prove/R02/lettura-arrivo-desktop.txt"
+     ]
+    },
+    {
+     "caratteristica": "stampa",
+     "ambito": "stampa",
+     "stato": "presente",
+     "valore": {
+      "comandi_inutili_nascosti": "no"
+     },
+     "non_misurati": [
+      "leggibile"
+     ],
+     "descrizione": "PDF di 18 pagine A4; menu e tasti restano in stampa. La leggibilità del PDF non è stata verificata (nessun rasterizzatore).",
+     "evidenze": [
+      "prove/R02/misure/stampa-schermo.jpg",
+      "prove/R02/misure/stampa-R02.pdf"
+     ]
+    },
+    {
+     "caratteristica": "chi c'è dietro e le fonti",
+     "ambito": "fiducia",
+     "stato": "presente",
+     "valore": {
+      "firma": "sì",
+      "data": "sì",
+      "versione": "no",
+      "fonti_collegate": "sì"
+     },
+     "descrizione": "«Presented by: Carveco», data e luogo dell'evento, collegamenti a Webby, Carveco, mappe e YouTube.",
+     "evidenze": [
+      "prove/R02/009-scorri.jpg",
+      "prove/R02/018-vai.jpg"
+     ]
+    },
+    {
+     "caratteristica": "stato e limiti dichiarati",
+     "ambito": "fiducia",
+     "stato": "presente",
+     "valore": {
+      "presente": "sì",
+      "prima_della_promessa": "no"
+     },
+     "descrizione": "La home invita ancora a «Register your interest»; solo la pagina /register/ dice «Thanks for your interest. The event has now ended.» (evento del 15/09/2025).",
+     "evidenze": [
+      "prove/R02/018-vai.jpg",
+      "prove/R02/005-scorri.jpg"
+     ]
+    },
+    {
+     "caratteristica": "porte per pubblici diversi",
+     "ambito": "arrivo computer",
+     "stato": "assente",
+     "descrizione": "Nessuna porta per ruolo o compito nel menu; i pubblici sono nominati solo in un blocco di testo «Who's It For?» a metà pagina.",
+     "evidenze": [
+      "prove/R02/001-vai.jpg",
+      "prove/R02/007-scorri.jpg"
+     ]
+    },
+    {
+     "caratteristica": "lunghezza e registro delle frasi",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "frasi_campione": 2,
+      "parole_per_frase_media": 4,
+      "persona": "seconda"
+     },
+     "evidenze": [
+      "prove/R02/001-vai.jpg"
+     ]
+    },
+    {
+     "caratteristica": "prodotto mostrato",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "tipo": "foto",
+      "con_legenda": "no",
+      "con_alternativa": "no"
+     },
+     "descrizione": "Foto di una mano su un tessuto con filtro «pittura a olio», come immagine di sfondo (nessun testo alternativo).",
+     "evidenze": [
+      "prove/R02/001-vai.jpg"
+     ]
+    },
+    {
+     "caratteristica": "prodotto mostrato",
+     "ambito": "scorrimento computer",
+     "stato": "presente",
+     "valore": {
+      "tipo": "foto",
+      "con_legenda": "sì",
+      "con_alternativa": "sì"
+     },
+     "descrizione": "Foto di mani su rilievi in gesso e rendering gialli dei modelli 3D con titolo e due righe di testo; alt descrittivi (es. «An electric guitar neck, a coiled lead, and a towel laid out on a wooden floor»).",
+     "evidenze": [
+      "prove/R02/fogli/artwork-music.jpg",
+      "prove/R02/fogli/scorrimento-b.jpg"
+     ]
+    },
+    {
+     "caratteristica": "avvio di audio e video",
+     "ambito": "media",
+     "stato": "presente",
+     "valore": {
+      "avvio_automatico": "no",
+      "controlli_nativi": "sì"
+     },
+     "non_misurati": [
+      "trascrizione",
+      "sottotitoli"
+     ],
+     "descrizione": "Un video YouTube incorporato (iframe) con anteprima e tasto play; nessun audio proprio nel sito.",
+     "evidenze": [
+      "prove/R02/fogli/scorrimento-a.jpg"
+     ]
+    },
+    {
+     "caratteristica": "campione di suono",
+     "ambito": "media",
+     "stato": "assente",
+     "descrizione": "0 elementi audio. Le «audio description» dell'esposizione sono descritte in testo («Each artwork is accompanied by: An audio description, A Braille label, A member of our exhibition team») ma non sono ascoltabili sul sito.",
+     "evidenze": [
+      "prove/R02/lettura-arrivo-desktop.txt"
+     ]
+    },
+    {
+     "caratteristica": "media non caricato",
+     "ambito": "media",
+     "stato": "non_osservato",
+     "motivo": "Richieste di media non bloccate in questa visita."
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "arrivo computer · contenuto del hero",
+     "stato": "presente",
+     "valore": {
+      "trigger": "caricamento",
+      "durata_ms": 1000,
+      "curva": "ease",
+      "proprieta": [
+       "opacity"
+      ]
+     },
+     "descrizione": "Animazione CSS alpha-in sul blocco del titolo.",
+     "evidenze": [
+      "prove/R02/001-vai.movimento.json"
+     ]
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "arrivo computer · sfondo del hero",
+     "stato": "presente",
+     "valore": {
+      "trigger": "caricamento",
+      "durata_ms": 500,
+      "curva": "ease",
+      "proprieta": [
+       "opacity"
+      ]
+     },
+     "descrizione": "Transizione con ritardo 200 ms.",
+     "evidenze": [
+      "prove/R02/001-vai.movimento.json"
+     ]
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "scorrimento computer · dissolvenza del hero",
+     "stato": "presente",
+     "valore": {
+      "trigger": "scorrimento",
+      "curva": "none",
+      "proprieta": [
+       "opacity"
+      ]
+     },
+     "non_misurati": [
+      "durata_ms"
+     ],
+     "descrizione": "GSAP fromTo con ScrollTrigger scrub true, start «top top»: opacità 1→0,8356 (144 px), 0,6689 (294), 0,5022 (444), 0,3356 (594), 0,1689 (744): lineare, zero a circa 900 px. Valori letti con valuta.",
+     "evidenze": [
+      "prove/R02/varianti/scrub/003-scorri.jpg",
+      "prove/R02/fogli/scrub-hero.jpg",
+      "prove/R02/001-vai.movimento.json"
+     ]
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "scorrimento computer · tessera di categoria",
+     "stato": "presente",
+     "valore": {
+      "trigger": "passaggio",
+      "durata_ms": 300,
+      "curva": "cubic-bezier(0.57, 0.21, 0.69, 1)",
+      "proprieta": [
+       "transform"
+      ]
+     },
+     "descrizione": "Immagine scale 1→1,05; uscita da 1,03→1 in 180 ms con la stessa curva.",
+     "evidenze": [
+      "prove/R02/010-muovi.movimento.json"
+     ]
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "menu telefono · pannello",
+     "stato": "presente",
+     "valore": {
+      "trigger": "clic",
+      "durata_ms": 600,
+      "curva": "cubic-bezier(0.785, 0.135, 0.15, 0.86)",
+      "proprieta": [
+       "right",
+       "box-shadow"
+      ]
+     },
+     "evidenze": [
+      "prove/R02/varianti/mobile/002-clic.movimento.json"
+     ]
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "scorrimento computer · pagina in generale",
+     "stato": "presente",
+     "valore": {
+      "trigger": "scorrimento",
+      "durata_ms": 1,
+      "proprieta": [
+       "scroll"
+      ]
+     },
+     "non_misurati": [
+      "curva"
+     ],
+     "descrizione": "Libreria Lenis rilevata (durata 1); il passaggio da una pagina all'altra è un ricaricamento intero, senza transizione.",
+     "evidenze": [
+      "prove/R02/001-vai.movimento.json"
+     ]
+    },
+    {
+     "caratteristica": "tenuta con colori forzati",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "testo_leggibile": "sì",
+      "elementi_scomparsi": "no"
+     },
+     "descrizione": "Il testo prende un riquadro di sistema e i link diventano blu; la foto resta. Caratteristica aggiunta, non in §8.",
+     "evidenze": [
+      "prove/R02/varianti/forzati/001-vai.jpg",
+      "prove/R02/fogli/varianti-desktop.jpg"
+     ]
+    },
+    {
+     "caratteristica": "zoom della pagina consentito dal meta viewport",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "user_scalable": "sì"
+     },
+     "descrizione": "Meta viewport: width=device-width, initial-scale=1 (nessun blocco). Caratteristica aggiunta, non in §8.",
+     "evidenze": [
+      "prove/R02/lettura-arrivo-desktop.txt"
+     ]
+    }
+   ]
+  }
+ ]
+}

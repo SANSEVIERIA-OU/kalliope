@@ -1,0 +1,52 @@
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# Publishes the website (site/) on GitHub Pages: https://sansevieria-ou.github.io/kalliope/
+# tools/site.py fills in the release to download, so the site is rebuilt whenever the pages change
+# and after every release.
+name: Website
+
+on:
+  push:
+    branches: [main]
+    paths: ["site/**", "tools/site.py", ".github/workflows/pages.yml"]
+  # A release made by the Release workflow does not send a release event (GitHub never starts a
+  # workflow from one made with its own token), so the site follows that workflow instead.
+  workflow_run:
+    workflows: [Release]
+    types: [completed]
+  # Releases edited, published or deleted by hand on GitHub.
+  release:
+    types: [published, edited, deleted]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Build the site for the current release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 -I tools/site.py --out _site
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v5

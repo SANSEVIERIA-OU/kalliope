@@ -25,7 +25,8 @@
     </ul>
   </description>
   <launchable type="desktop-id">io.github.sansevieria_ou.kalliope.desktop</launchable>
-  <url type="homepage">https://github.com/SANSEVIERIA-OU/kalliope</url>
+  <url type="homepage">https://sansevieria-ou.github.io/kalliope/</url>
+  <url type="vcs-browser">https://github.com/SANSEVIERIA-OU/kalliope</url>
   <url type="bugtracker">https://github.com/SANSEVIERIA-OU/kalliope/issues</url>
   <provides>
     <binary>kalliope</binary>

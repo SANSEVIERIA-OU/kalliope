@@ -1,0 +1,675 @@
+{
+ "riferimenti": [
+  {
+   "id": "R53",
+   "nome": "Voiceitt",
+   "url": "https://voiceitt.com/",
+   "categoria": "Prodotto affine: riconoscimento del parlato non standard (voce, dettatura, sottotitoli in riunione)",
+   "anno": 2026,
+   "premio": "non Webby, gruppo C (sulla home un elenco di riconoscimenti senza anno né dettaglio, non verificati)",
+   "motivazione_ufficiale": "non applicabile: gruppo C, nessun premio",
+   "gruppo": "C",
+   "osservazioni": [
+    {
+     "caratteristica": "proposta del primo schermo",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/desktop/001-vai.jpg"
+     ],
+     "valore": {
+      "parole": 42,
+      "frasi": 3
+     },
+     "descrizione": "H1 «Inclusive Voice AI with Impact.» con «with Impact.» in turchese leggero; la frase dice per chi (disabilità del parlato, anziani, accenti) ma la promessa è tecnica («speech recognition for non-standard speech»)."
+    },
+    {
+     "caratteristica": "proposta del primo schermo",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/telefono/001-vai.jpg"
+     ],
+     "valore": {
+      "parole": 42,
+      "frasi": 3
+     },
+     "descrizione": "Stesso testo; la finestra del consenso copre quasi metà schermata."
+    },
+    {
+     "caratteristica": "comandi visibili al primo schermo",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/lettura-desktop.json"
+     ],
+     "valore": {
+      "link": 5,
+      "pulsanti": 1,
+      "campi": 0
+     },
+     "descrizione": "Logo, «CONTACT US», «START YOUR FREE TRIAL TODAY», «LEARN MORE»; i comandi della finestra del consenso hanno il focus per primi."
+    },
+    {
+     "caratteristica": "comandi visibili al primo schermo",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/script/misure-script.json"
+     ],
+     "valore": {
+      "link": 4,
+      "pulsanti": 3,
+      "campi": 4
+     },
+     "descrizione": "Misura a 390x844: comprende i comandi della finestra del consenso (quattro interruttori, tre pulsanti)."
+    },
+    {
+     "caratteristica": "comando principale",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/desktop/001-vai.jpg"
+     ],
+     "valore": {
+      "posizione": "basso",
+      "fisso_allo_scorrimento": "no"
+     },
+     "descrizione": "«START YOUR FREE TRIAL TODAY» (339x52, azzurro pieno) a y=784 di 900; «CONTACT US» in alto a destra resta fisso (e sovrappone il testo scorrendo)."
+    },
+    {
+     "caratteristica": "comando principale",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/telefono/001-vai.jpg",
+      "prove/R53/telefono/002-clic.jpg"
+     ],
+     "valore": {
+      "posizione": "centro",
+      "fisso_allo_scorrimento": "no"
+     },
+     "descrizione": "A y=516 di 932 (430 px), sotto il testo; «CONTACT US» fisso in alto."
+    },
+    {
+     "caratteristica": "struttura della navigazione",
+     "ambito": "menu computer",
+     "stato": "assente",
+     "evidenze": [
+      "prove/R53/desktop/001-vai.jpg"
+     ],
+     "descrizione": "Nessuna barra di navigazione: solo logo e «CONTACT US»; nessun <nav> (punti: header 3, main 1, footer 1)."
+    },
+    {
+     "caratteristica": "struttura della navigazione",
+     "ambito": "menu telefono",
+     "stato": "assente",
+     "evidenze": [
+      "prove/R53/telefono/002-clic.jpg"
+     ],
+     "descrizione": "Nessun menu al telefono: logo e «CONTACT US»."
+    },
+    {
+     "caratteristica": "segnale di posizione e di avanzamento",
+     "ambito": "scorrimento computer",
+     "stato": "assente",
+     "evidenze": [
+      "prove/R53/desktop/003-scorri.jpg",
+      "prove/R53/desktop/009-scorri.jpg"
+     ],
+     "descrizione": "Nessun indicatore per la pagina lunga (~10.000 px); la FAQ ha un indice di otto sezioni con collegamenti interni."
+    },
+    {
+     "caratteristica": "comando proprio «indietro»",
+     "ambito": "percorso principale",
+     "stato": "non_osservato",
+     "motivo": "Pagina informativa; la prova gratuita si chiede per e-mail (non inviata)."
+    },
+    {
+     "caratteristica": "messaggio di errore",
+     "ambito": "errore",
+     "stato": "non_osservato",
+     "motivo": "Nessun modulo compilato né inviato (e-mail di supporto per la prova)."
+    },
+    {
+     "caratteristica": "pagina inesistente",
+     "ambito": "404",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/desktop/022-vai.jpg"
+     ],
+     "valore": {
+      "utile": "no",
+      "offre_ritorno": "sì"
+     },
+     "descrizione": "«404 Page not found / To return to the homepage, click here» e il piede; senza ricerca né suggerimenti."
+    },
+    {
+     "caratteristica": "attesa del caricamento",
+     "ambito": "rete lenta",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/script/misure-script.json"
+     ],
+     "valore": {
+      "segnale": "vuoto",
+      "s_al_primo_testo": 2.5
+     },
+     "descrizione": "400 kbit/s, 400 ms: corpo vuoto a 1,5 s, primo disegno a 2,5 s; a 22 s il documento era ancora «loading» (video e immagini); la foto a 1,5 s è andata in timeout (30 s). Solo Chromium."
+    },
+    {
+     "caratteristica": "comportamento senza JavaScript",
+     "ambito": "senza JavaScript",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/script/005-senza-js-arrivo.png",
+      "prove/R53/script/006-senza-js-scroll.png",
+      "prove/R53/script/misure-script.json"
+     ],
+     "valore": {
+      "contenuto": "nessuno"
+     },
+     "non_misurati": [
+      "navigazione",
+      "comandi_essenziali"
+     ],
+     "descrizione": "Il testo è nel codice (12.282 caratteri, 118 collegamenti, 0 pulsanti) ma resta invisibile: il primo schermo mostra solo logo e «CONTACT US» e lo scorrimento mostra blocchi di colore vuoti (le sezioni partono con opacità 0 finché non gira JS)."
+    },
+    {
+     "caratteristica": "effetti con movimento ridotto",
+     "ambito": "movimento ridotto",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/ridotto/001-vai.jpg",
+      "prove/R53/ridotto/003-scorri.jpg",
+      "prove/R53/effetti-misurati.tsv"
+     ],
+     "valore": {
+      "effetti": 3,
+      "tolti": 1,
+      "sostituiti": 0,
+      "invariati": 2
+     },
+     "descrizione": "Gli 8 video di sottofondo risultano in pausa (t≈0,3-0,7 s) con ridotto; l'entrata della finestra del consenso (400 ms) resta; le comparse di sezione pilotate da JS compaiono ancora nei campioni di mutazione (stessi valori di partenza): durata non confrontata. Il foglio di stile non ha regole prefers-reduced-motion: il ripiego è fatto dal JS."
+    },
+    {
+     "caratteristica": "percorso da tastiera",
+     "ambito": "tastiera",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/tastiera/004-tasto.jpg"
+     ],
+     "valore": {
+      "focus_visibile": "sì",
+      "salta_al_contenuto": "no",
+      "trappole": 0
+     },
+     "non_misurati": [
+      "tab_fino_al_comando_principale"
+     ],
+     "descrizione": "Il focus parte dai quattro interruttori della finestra del consenso (dopo 3 Tab è sul terzo, «Measurement»): il pulsante principale è terzo nel codice ma non si raggiunge prima di aver deciso. Contorno 2 px azzurro chiaro."
+    },
+    {
+     "caratteristica": "testo al 200%",
+     "ambito": "testo 200%",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/carattere200/001-vai.jpg",
+      "prove/R53/foglio-varianti-1.jpg",
+      "prove/R53/foglio-varianti-zoom.jpg"
+     ],
+     "valore": {
+      "scroll_orizzontale": "no",
+      "contenuto_perso": "sì"
+     },
+     "descrizione": "Base 32 px: il logo si sovrappone al titolo «Voice AI» e «START YOUR FREE TRIAL TODAY» si sovrappone al paragrafo; a zoom 200% (720x450) la finestra del consenso copre due terzi della larghezza e tutta l'altezza e il suo testo è tagliato («Learn more in our Privacy Policy»)."
+    },
+    {
+     "caratteristica": "albero di accessibilità (proxy)",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/lettura-desktop.json"
+     ],
+     "valore": {
+      "punti_di_riferimento": 5,
+      "titoli": 33,
+      "immagini_senza_alternativa": 0,
+      "comandi_senza_nome": 46
+     },
+     "descrizione": "header 3, main 1, footer 1; due H1; 128 immagini su 129 con alt vuoto; 46 link senza nome (loghi di partner, stampa e investitori, profili LinkedIn); html lang vuoto."
+    },
+    {
+     "caratteristica": "bersagli dei comandi principali",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/lettura-desktop.json"
+     ],
+     "valore": {
+      "larghezza_min_px": 48,
+      "altezza_min_px": 15
+     },
+     "non_misurati": [
+      "distanza_min_px"
+     ],
+     "descrizione": "Minimo nel primo schermo; nella pagina 21x11 (link di testo e loghi)."
+    },
+    {
+     "caratteristica": "bersagli dei comandi principali",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/script/misure-script.json"
+     ],
+     "valore": {
+      "larghezza_min_px": 48,
+      "altezza_min_px": 24
+     },
+     "non_misurati": [
+      "distanza_min_px"
+     ],
+     "descrizione": "Misura a 390x844."
+    },
+    {
+     "caratteristica": "testo corrente",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/lettura-desktop.json"
+     ],
+     "valore": {
+      "corpo_px": 20,
+      "interlinea": 1.5
+     },
+     "non_misurati": [
+      "caratteri_per_riga_max"
+     ],
+     "descrizione": "Ppmori 20 px su blu notte; titoli Ppneuemachina."
+    },
+    {
+     "caratteristica": "testo corrente",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/script/misure-script.json"
+     ],
+     "valore": {
+      "corpo_px": 16,
+      "interlinea": 1.5
+     },
+     "non_misurati": [
+      "caratteri_per_riga_max"
+     ],
+     "descrizione": "Misura a 390x844."
+    },
+    {
+     "caratteristica": "richieste e terze parti",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/script/misure-script.json"
+     ],
+     "valore": {
+      "richieste": 65,
+      "domini_di_terzi": 15,
+      "kb": 13618,
+      "caratteri_caricati": 4
+     },
+     "descrizione": "Il conteggio dei terzi comprende il CDN del sito di costruzione (website-files.com) e Google reCAPTCHA Enterprise, Iubenda (consenso), HubSpot, jsDelivr, geojs; i video di sottofondo portano il totale a 13,6 MB. La lettura con passo.mjs aveva contato 128 richieste e 17 domini."
+    },
+    {
+     "caratteristica": "anteprima del collegamento",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/script/misure-script.json"
+     ],
+     "valore": {
+      "titolo": "sì",
+      "immagine": "sì",
+      "descrizione": "sì"
+     },
+     "descrizione": "og:title, og:description, og:image, twitter:title; nessun canonical."
+    },
+    {
+     "caratteristica": "stampa",
+     "ambito": "stampa",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/script/012-stampa-1.png",
+      "prove/R53/script/stampa.pdf",
+      "prove/R53/script/misure-script.json"
+     ],
+     "valore": {
+      "leggibile": "no",
+      "comandi_inutili_nascosti": "no"
+     },
+     "descrizione": "PDF A4 di 13 pagine; la finestra del consenso e «CONTACT US» (elementi fissi) restano sopra il testo."
+    },
+    {
+     "caratteristica": "chi c'è dietro e le fonti",
+     "ambito": "fiducia",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/desktop/foglio-d.jpg",
+      "prove/R53/desktop/foglio-e.jpg"
+     ],
+     "valore": {
+      "firma": "sì",
+      "data": "no",
+      "versione": "no",
+      "fonti_collegate": "sì"
+     },
+     "descrizione": "Management con foto, nome e ruolo (sei persone), «Media & Press» con dieci card verso testate, investitori e premi come loghi; nessuna data di pubblicazione."
+    },
+    {
+     "caratteristica": "stato e limiti dichiarati",
+     "ambito": "arrivo computer",
+     "stato": "assente",
+     "evidenze": [
+      "prove/R53/desktop/001-vai.jpg"
+     ],
+     "descrizione": "Primo schermo senza limiti."
+    },
+    {
+     "caratteristica": "stato e limiti dichiarati",
+     "ambito": "fiducia",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/desktop/foglio-b.jpg",
+      "prove/R53/testo-faq-desktop.txt"
+     ],
+     "valore": {
+      "presente": "sì",
+      "prima_della_promessa": "no"
+     },
+     "descrizione": "«We can't promise you 100% accuracy, but what we CAN promise is that we can improve your recognition with training and will be honest when we can't help you. We are still learning the potential and limitations of this technology.»; FAQ: «most effective for individuals with mild to moderate speech impairments»; solo inglese; Teams «COMING SOON!» mentre il testo accanto lo dà per disponibile; il testo di Zoom parla di Teams (copia)."
+    },
+    {
+     "caratteristica": "corto subito, lungo a richiesta",
+     "ambito": "aiuto",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/desktop/021-clic.jpg",
+      "prove/R53/desktop/019-scorri.jpg"
+     ],
+     "valore": {
+      "meccanismo": "apertura"
+     },
+     "descrizione": "FAQ di circa 3.700 parole, otto sezioni con indice, domande in fisarmonica chiuse; «What to expect?» e «What to do first?» come blocchi di testo sulla home."
+    },
+    {
+     "caratteristica": "porte per pubblici diversi",
+     "ambito": "arrivo computer",
+     "stato": "assente",
+     "evidenze": [
+      "prove/R53/desktop/001-vai.jpg",
+      "prove/R53/desktop/003-scorri.jpg"
+     ],
+     "descrizione": "Un solo percorso; il pubblico delle imprese (IVR, API) e quello delle persone sono affiancati senza porte."
+    },
+    {
+     "caratteristica": "lunghezza e registro delle frasi",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/campione-frasi-10.txt",
+      "prove/R53/testo-home-desktop.txt"
+     ],
+     "valore": {
+      "frasi_campione": 10,
+      "parole_per_frase_media": 15.0,
+      "persona": "terza"
+     },
+     "descrizione": "Frasi brevi («Generic speech recognition fails them. Standard APIs don't work.») accanto a periodi di 24-32 parole; termini: IVR, API, dysarthria, non-standard speech, AAC, AT."
+    },
+    {
+     "caratteristica": "guida a passi con ripresa",
+     "ambito": "installazione",
+     "stato": "assente",
+     "evidenze": [
+      "prove/R53/testo-faq-desktop.txt"
+     ],
+     "descrizione": "Nessuna installazione: «Voiceitt is an online app available on any device with internet access and the ability to open a web browser»."
+    },
+    {
+     "caratteristica": "tabella di compatibilità",
+     "ambito": "dati",
+     "stato": "assente",
+     "evidenze": [
+      "prove/R53/testo-faq-desktop.txt"
+     ],
+     "descrizione": "La compatibilità è una risposta di FAQ in frasi («any device connected to the internet that can open a web browser»), non una tabella."
+    },
+    {
+     "caratteristica": "prodotto mostrato",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/desktop/001-vai.jpg"
+     ],
+     "valore": {
+      "tipo": "illustrazione",
+      "con_legenda": "no"
+     },
+     "non_misurati": [
+      "con_alternativa"
+     ],
+     "descrizione": "Raggi turchesi che partono da un punto (grafica sonora), senza il prodotto."
+    },
+    {
+     "caratteristica": "prodotto mostrato",
+     "ambito": "scorrimento computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/desktop/foglio-a.jpg",
+      "prove/R53/desktop/015-clic.jpg",
+      "prove/R53/desktop/016-tasto.jpg"
+     ],
+     "valore": {
+      "tipo": "video",
+      "con_legenda": "no",
+      "con_alternativa": "no"
+     },
+     "descrizione": "Otto video muti in ciclo con persone vere e schermate d'uso (browser con il pannello «Voiceitt Dictation» e il testo «Use your voice», foto 016-tasto); il Play apre il video intero su YouTube. Nessuna schermata ferma del programma con didascalia."
+    },
+    {
+     "caratteristica": "campione di suono",
+     "ambito": "media",
+     "stato": "assente",
+     "evidenze": [
+      "prove/R53/desktop/foglio-a.jpg"
+     ],
+     "descrizione": "Nessun campione di voce a parte: la voce sintetica di «Speak» è descritta a parole."
+    },
+    {
+     "caratteristica": "avvio di audio e video",
+     "ambito": "media",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/lettura-desktop.json",
+      "prove/R53/desktop/015-clic.jpg"
+     ],
+     "valore": {
+      "avvio_automatico": "sì",
+      "controlli_nativi": "no",
+      "trascrizione": "no",
+      "sottotitoli": "no"
+     },
+     "descrizione": "Otto video di sottofondo senza audio, in ciclo, senza controlli né tracce; con ridotto restano in pausa. Il video del riquadro (YouTube via Embedly) non parte da solo."
+    },
+    {
+     "caratteristica": "media non caricato",
+     "ambito": "media",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/script/013-media-bloccato-arrivo.png",
+      "prove/R53/script/misure-script.json"
+     ],
+     "valore": {
+      "alternativa_testuale": "sì",
+      "pagina_integra": "sì"
+     },
+     "descrizione": "16 richieste di media bloccate: pagina e testo restano identici."
+    },
+    {
+     "caratteristica": "numeri detti a parole",
+     "ambito": "dati",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/testo-faq-desktop.txt"
+     ],
+     "valore": {
+      "presente": "sì"
+     },
+     "descrizione": "«up to three times better recognition rates compared to standard recognition software» (senza condizioni); «50 recordings», «about two hours»."
+    },
+    {
+     "caratteristica": "testimonianze di utenti",
+     "ambito": "fiducia",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/desktop/foglio-b.jpg",
+      "prove/R53/testo-home-desktop.txt"
+     ],
+     "valore": {
+      "numero": 11,
+      "con_foto": "sì",
+      "con_ruolo": "sì"
+     },
+     "descrizione": "Carosello di undici citazioni con nome, ruolo e luogo (commissario dello Stato del Tennessee, utenti/ambasciatori, genitori, ricercatori); una è firmata da un dipendente dell'azienda come utente."
+    },
+    {
+     "caratteristica": "finestra del consenso ai cookie",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/desktop/001-vai.jpg",
+      "prove/R53/tastiera/004-tasto.jpg"
+     ],
+     "valore": {
+      "copre_il_primo_schermo": "in_parte",
+      "rifiuto_con_un_clic": "sì"
+     },
+     "descrizione": "Riquadro «Essential Technologies Notice» in basso a destra: solo cookie essenziali, 4 interruttori spenti, «Decline» / «Accept» / «Learn more»; riceve il focus per primo; riappare a ogni nuova sessione."
+    },
+    {
+     "caratteristica": "finestra del consenso ai cookie",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/telefono/001-vai.jpg"
+     ],
+     "valore": {
+      "copre_il_primo_schermo": "in_parte",
+      "rifiuto_con_un_clic": "sì"
+     },
+     "descrizione": "Copre circa metà della prima schermata a 430 px."
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "arrivo computer · entrata della finestra del consenso",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/effetti-misurati.tsv",
+      "prove/R53/desktop/001-vai.jpg"
+     ],
+     "valore": {
+      "trigger": "arrivo",
+      "durata_ms": 400,
+      "curva": "ease",
+      "proprieta": "opacity 0→1 + translateY(48px)→0"
+     },
+     "descrizione": "Misurata anche con movimento ridotto (invariata)."
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "scorrimento computer · comparse di sezione guidate da JS",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/desktop/003-scorri.movimento.json",
+      "prove/R53/ridotto/003-scorri.movimento.json"
+     ],
+     "valore": {
+      "trigger": "scorrimento",
+      "proprieta": "opacity + translate 25px→0; immagini scale 2→1"
+     },
+     "non_misurati": [
+      "durata_ms",
+      "curva"
+     ],
+     "descrizione": "Campioni di mutazione (will-change: opacity, transform; translate3d(0,25px,0) e opacità 0 verso la posizione finale; immagini da scala 2 e opacità 0,19): paragrafi e blocchi partono da 25 px di sfasamento e opacità 0, le immagini da scala 2. Durata e curva non esposte (animazione scritta da script, non CSS/WAAPI)."
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "scorrimento computer · video di sottofondo in ciclo",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/lettura-desktop.json",
+      "prove/R53/ridotto/001-vai.jpg"
+     ],
+     "valore": {
+      "trigger": "arrivo",
+      "proprieta": "video muto in ciclo (8)"
+     },
+     "non_misurati": [
+      "durata_ms",
+      "curva"
+     ],
+     "descrizione": "Otto clip di persone vere; con ridotto in pausa."
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "media · riquadro del video (lightbox)",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/effetti-misurati.tsv",
+      "prove/R53/desktop/015-clic.jpg"
+     ],
+     "valore": {
+      "trigger": "clic",
+      "durata_ms": 300,
+      "curva": "ease",
+      "proprieta": "opacity 0→1 del velo"
+     },
+     "descrizione": "Spinner rotate 360° in 800 ms lineare, infinito, durante il caricamento; Esc e «close lightbox» chiudono; il contorno dei comandi passa da 3 a 2 px in 300 ms."
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "percorso principale · apertura di una domanda FAQ",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/desktop/021-clic.jpg",
+      "prove/R53/desktop/021-clic.movimento.json"
+     ],
+     "valore": {
+      "trigger": "clic",
+      "proprieta": "height 0→auto + rotazione dell'indicatore"
+     },
+     "non_misurati": [
+      "durata_ms",
+      "curva"
+     ],
+     "descrizione": "Altezza animata da script (will-change); l'indicatore diventa un cerchio verde con triangolo verso il basso."
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "scorrimento computer · bordo dei collegamenti LinkedIn",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R53/effetti-misurati.tsv",
+      "prove/R53/desktop/008-scorri.jpg"
+     ],
+     "valore": {
+      "trigger": "passaggio_mouse",
+      "durata_ms": 150,
+      "curva": "ease",
+      "proprieta": "border-color e border-width 3→2 px"
+     },
+     "descrizione": "Sulle foto del team al passaggio del puntatore."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,723 @@
+{
+ "riferimenti": [
+  {
+   "id": "R51",
+   "nome": "Proloquo2Go / Proloquo (AssistiveWare)",
+   "url": "https://www.assistiveware.com/products/proloquo2go",
+   "categoria": "Prodotto affine: comunicazione aumentativa e alternativa (CAA) con voce, per iPad e iPhone",
+   "anno": 2026,
+   "premio": "non Webby, gruppo C (fonti-c: honoree Webby 2013 per Proloquo2Go da comunicato dell'azienda; App Store Award 2023 «Cultural Impact» di Apple per Proloquo; sul sito solo «award-winning»)",
+   "motivazione_ufficiale": "motivazione individuale non disponibile",
+   "gruppo": "C",
+   "osservazioni": [
+    {
+     "caratteristica": "proposta del primo schermo",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/desktop/001-vai.jpg"
+     ],
+     "valore": {
+      "parole": 57,
+      "frasi": 4
+     },
+     "descrizione": "Titolo «The world's most popular AAC app for iPad and iPhone» (affermazione del produttore) e paragrafo che nomina chi la usa («nonspeaking children and adults»)."
+    },
+    {
+     "caratteristica": "proposta del primo schermo",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/telefono/001-vai.jpg"
+     ],
+     "valore": {
+      "parole": 57,
+      "frasi": 4
+     },
+     "descrizione": "Stesso testo; la foto è ridotta a una fascia, icona e titolo sono nella prima schermata."
+    },
+    {
+     "caratteristica": "comandi visibili al primo schermo",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/lettura-desktop.json"
+     ],
+     "valore": {
+      "link": 6,
+      "pulsanti": 4,
+      "campi": 0
+     },
+     "descrizione": "Barra globale (Products, Support, AAC Resources, Blog, About Us, ricerca, lingua, Log in) più «Download on the App Store» e «See pricing» sotto il bordo."
+    },
+    {
+     "caratteristica": "comandi visibili al primo schermo",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/script/misure-script.json"
+     ],
+     "valore": {
+      "link": 4,
+      "pulsanti": 1,
+      "campi": 0
+     },
+     "descrizione": "Misura a 390x844."
+    },
+    {
+     "caratteristica": "comando principale",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/desktop/001-vai.jpg",
+      "prove/R51/desktop/003-scorri.jpg"
+     ],
+     "valore": {
+      "posizione": "basso",
+      "fisso_allo_scorrimento": "sì"
+     },
+     "descrizione": "Il badge «Download on the App Store» e «See pricing» stanno sotto il paragrafo; dopo lo scroll in giù una barra di prodotto fissa porta «See pricing»."
+    },
+    {
+     "caratteristica": "comando principale",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/telefono/001-vai.jpg",
+      "prove/R51/telefono/foglio-2.jpg"
+     ],
+     "valore": {
+      "posizione": "basso",
+      "fisso_allo_scorrimento": "sì"
+     },
+     "descrizione": "Badge e «See pricing» a y≈737 di 932 (430 px); dopo lo scroll «See pricing» diventa una barra fissa a tutta larghezza."
+    },
+    {
+     "caratteristica": "struttura della navigazione",
+     "ambito": "menu computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/desktop/015-clic.jpg"
+     ],
+     "valore": {
+      "voci": 5,
+      "tipo": "menu_a_comparsa"
+     },
+     "descrizione": "Products, Support, AAC Resources, Blog, About Us; Products si apre con un clic: tre colonne (app didattiche, app di CAA, altre app), ciascuna voce con il nome e una riga di spiegazione («Proloquo4Text · Text-to-speech AAC app»)."
+    },
+    {
+     "caratteristica": "struttura della navigazione",
+     "ambito": "menu telefono",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/telefono/009-clic.jpg"
+     ],
+     "valore": {
+      "voci": 5,
+      "tipo": "pannello"
+     },
+     "descrizione": "Pannello da destra con le cinque voci, ricerca, lingua e Log in."
+    },
+    {
+     "caratteristica": "apertura del menu",
+     "ambito": "menu telefono",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/telefono/009-clic.jpg",
+      "prove/R51/effetti-misurati.tsv"
+     ],
+     "valore": {
+      "durata_ms": 300,
+      "direzione": "da destra"
+     },
+     "descrizione": "transform translate(100%)→none 300 ms ease-in-out; velo opacità 0→0,9 in 150 ms lineare; scorrimento del corpo bloccato."
+    },
+    {
+     "caratteristica": "segnale di posizione e di avanzamento",
+     "ambito": "scorrimento computer",
+     "stato": "assente",
+     "evidenze": [
+      "prove/R51/desktop/003-scorri.jpg",
+      "prove/R51/desktop/009-scorri.jpg"
+     ],
+     "descrizione": "Nessuna barra di avanzamento; la barra di prodotto fissa dice dove si è («Proloquo2Go») ma non quanto manca."
+    },
+    {
+     "caratteristica": "comando proprio «indietro»",
+     "ambito": "percorso principale",
+     "stato": "non_osservato",
+     "motivo": "Pagina informativa senza percorso a passi; «Start the AAC App Guide» (guida a domande per scegliere l'app) non è stata aperta."
+    },
+    {
+     "caratteristica": "messaggio di errore",
+     "ambito": "errore · ricerca senza risultati",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/desktop/031-tasto.jpg"
+     ],
+     "valore": {
+      "sotto_il_campo": "sì",
+      "dice_come_rimediare": "no",
+      "mantiene_i_dati": "sì"
+     },
+     "descrizione": "«No results found» sotto il campo (che conserva «zzzqqq») e «Did you find what you were looking for? Yes / No»; nessun suggerimento."
+    },
+    {
+     "caratteristica": "pagina inesistente",
+     "ambito": "404",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/desktop/027-vai.jpg"
+     ],
+     "valore": {
+      "utile": "sì",
+      "offre_ritorno": "sì"
+     },
+     "descrizione": "«Hmm, it seems this page doesn't exist... We all get lost sometimes. Let's get back on track and explore the world of AAC together.» con campo di ricerca, «Popular products» e «Support»."
+    },
+    {
+     "caratteristica": "attesa del caricamento",
+     "ambito": "rete lenta",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/script/misure-script.json",
+      "prove/R51/script/008-rete-lenta-4s.png"
+     ],
+     "valore": {
+      "segnale": "vuoto",
+      "s_al_primo_testo": 4.2
+     },
+     "descrizione": "400 kbit/s, 400 ms: corpo vuoto a 1,5 s, primo disegno a 4,2 s, completa entro 14 s; solo Chromium."
+    },
+    {
+     "caratteristica": "comportamento senza JavaScript",
+     "ambito": "senza JavaScript",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/script/005-senza-js-arrivo.png",
+      "prove/R51/script/006-senza-js-scroll.png",
+      "prove/R51/script/misure-script.json"
+     ],
+     "valore": {
+      "contenuto": "tutto"
+     },
+     "non_misurati": [
+      "navigazione",
+      "comandi_essenziali"
+     ],
+     "descrizione": "Foto di arrivo, testo e schede visibili come con JS. I campioni di voce sono pulsanti con indirizzo del file in data-url: richiedono JS (non provato)."
+    },
+    {
+     "caratteristica": "effetti con movimento ridotto",
+     "ambito": "movimento ridotto",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/ridotto/001-vai.jpg",
+      "prove/R51/ridotto/003-scorri.jpg",
+      "prove/R51/effetti-misurati.tsv"
+     ],
+     "valore": {
+      "effetti": 1,
+      "tolti": 0,
+      "sostituiti": 0,
+      "invariati": 1
+     },
+     "descrizione": "Il foglio di stile ha 33 regole prefers-reduced-motion ma all'arrivo non c'è nessuna animazione da togliere; la barra di prodotto continua a scorrere in 280 ms. Menu, schede e finestra di ricerca non provati con ridotto."
+    },
+    {
+     "caratteristica": "percorso da tastiera",
+     "ambito": "tastiera",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/tastiera/011-tasto.jpg"
+     ],
+     "valore": {
+      "tab_fino_al_comando_principale": 10,
+      "focus_visibile": "sì",
+      "salta_al_contenuto": "no",
+      "trappole": 0
+     },
+     "descrizione": "Il 10° Tab arriva a «Download now» (badge dello store); contorno pieno di 2 px bordeaux, offset 2 px. Nessun «salta al contenuto»."
+    },
+    {
+     "caratteristica": "testo al 200%",
+     "ambito": "testo 200%",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/carattere200/001-vai.jpg",
+      "prove/R51/foglio-varianti-c200-forzati.jpg"
+     ],
+     "valore": {
+      "scroll_orizzontale": "no",
+      "contenuto_perso": "sì"
+     },
+     "descrizione": "Base 32 px: la barra in alto non diventa menu; «Products» è tagliato a sinistra («ucts») e «About Us» e «Log in» vanno a capo. Pagina da 8.523 a 21.262 px."
+    },
+    {
+     "caratteristica": "albero di accessibilità (proxy)",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/lettura-desktop.json"
+     ],
+     "valore": {
+      "punti_di_riferimento": 7,
+      "titoli": 23,
+      "immagini_senza_alternativa": 0,
+      "comandi_senza_nome": 0
+     },
+     "descrizione": "header 1, nav 4, main 1, footer 1; 57 immagini con alt; i badge dello store hanno il nome dall'alt dell'immagine."
+    },
+    {
+     "caratteristica": "bersagli dei comandi principali",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/lettura-desktop.json"
+     ],
+     "valore": {
+      "larghezza_min_px": 24,
+      "altezza_min_px": 16
+     },
+     "non_misurati": [
+      "distanza_min_px"
+     ],
+     "descrizione": "Minimo sui collegamenti di testo; i pulsanti voce sono 44x44."
+    },
+    {
+     "caratteristica": "bersagli dei comandi principali",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/script/misure-script.json"
+     ],
+     "valore": {
+      "larghezza_min_px": 69,
+      "altezza_min_px": 16
+     },
+     "non_misurati": [
+      "distanza_min_px"
+     ],
+     "descrizione": "Misura a 390x844."
+    },
+    {
+     "caratteristica": "testo corrente",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/lettura-desktop.json"
+     ],
+     "valore": {
+      "corpo_px": 20,
+      "interlinea": 1.5
+     },
+     "non_misurati": [
+      "caratteri_per_riga_max"
+     ],
+     "descrizione": "Carattere proprio «FS Me» 20 px, rgb(60,75,88) su bianco."
+    },
+    {
+     "caratteristica": "testo corrente",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/script/misure-script.json"
+     ],
+     "valore": {
+      "corpo_px": 18,
+      "interlinea": 1.5
+     },
+     "non_misurati": [
+      "caratteri_per_riga_max"
+     ],
+     "descrizione": "Misura a 390x844."
+    },
+    {
+     "caratteristica": "richieste e terze parti",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/script/misure-script.json"
+     ],
+     "valore": {
+      "richieste": 26,
+      "domini_di_terzi": 3,
+      "kb": 515,
+      "caratteri_caricati": 2
+     },
+     "descrizione": "Terzi: Google Tag Manager, chimpstatic (Mailchimp), api.ipinfodb.com (localizzazione dall'IP); YouTube solo dopo il clic su «See in action»; reCAPTCHA nel modulo del piede."
+    },
+    {
+     "caratteristica": "anteprima del collegamento",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/script/misure-script.json"
+     ],
+     "valore": {
+      "titolo": "sì",
+      "immagine": "sì",
+      "descrizione": "sì"
+     },
+     "descrizione": "og:title, og:description, og:image con og:image:alt, canonical."
+    },
+    {
+     "caratteristica": "stampa",
+     "ambito": "stampa",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/script/012-stampa-1.png",
+      "prove/R51/script/stampa.pdf",
+      "prove/R51/script/misure-script.json"
+     ],
+     "valore": {
+      "leggibile": "sì",
+      "comandi_inutili_nascosti": "no"
+     },
+     "descrizione": "PDF A4 di 9 pagine; resta visibile la barra delle briciole in posizione fissa."
+    },
+    {
+     "caratteristica": "chi c'è dietro e le fonti",
+     "ambito": "fiducia",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/testo-pagina-desktop.txt",
+      "prove/R51/desktop/009-scorri.jpg"
+     ],
+     "valore": {
+      "firma": "sì",
+      "data": "no",
+      "versione": "sì",
+      "fonti_collegate": "no"
+     },
+     "descrizione": "«Copyright 2026 AssistiveWare B.V.»; compatibilità iOS 18 / watchOS 11 dichiarata; «Featured on» (BBC, CNN, Guardian, Fox) senza collegamenti; «award-winning» senza nome né anno; prezzo senza data."
+    },
+    {
+     "caratteristica": "stato e limiti dichiarati",
+     "ambito": "arrivo computer",
+     "stato": "assente",
+     "evidenze": [
+      "prove/R51/desktop/001-vai.jpg"
+     ],
+     "descrizione": "Primo schermo senza limiti né stato."
+    },
+    {
+     "caratteristica": "stato e limiti dichiarati",
+     "ambito": "fiducia",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/testo-pagina-desktop.txt",
+      "prove/R51/desktop/017-scorri.jpg"
+     ],
+     "valore": {
+      "presente": "sì",
+      "prima_della_promessa": "no"
+     },
+     "descrizione": "Solo requisiti e prezzo: «Compatible with iOS 18 and watchOS 11 or later», «Apple Watch version … must be paired with an iPhone», USD 249,99. Nessun limite d'uso né cosa il prodotto non fa."
+    },
+    {
+     "caratteristica": "corto subito, lungo a richiesta",
+     "ambito": "aiuto",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/desktop/004-scorri.jpg",
+      "prove/R51/desktop/018-clic.jpg"
+     ],
+     "valore": {
+      "meccanismo": "pagina_a_parte"
+     },
+     "descrizione": "Cos'è la CAA è spiegato in 3 frasi nella pagina e il resto sta in articoli a parte («What is AAC?» 6 minuti di lettura) e nella guida a domande; schede iOS/macOS per il prezzo."
+    },
+    {
+     "caratteristica": "porte per pubblici diversi",
+     "ambito": "menu computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/desktop/015-clic.jpg"
+     ],
+     "valore": {
+      "porte": 3,
+      "criterio": "argomento"
+     },
+     "descrizione": "Il menu Products divide per tipo di app (didattiche, CAA, altre); le persone (utente, genitore, logopedista) si riconoscono solo nel testo e nelle testimonianze; la pagina /products/proloquo ha «Proloquo Coach» per famiglie e insegnanti."
+    },
+    {
+     "caratteristica": "lunghezza e registro delle frasi",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/campione-frasi-10.txt",
+      "prove/R51/testo-pagina-desktop.txt"
+     ],
+     "valore": {
+      "frasi_campione": 10,
+      "parole_per_frase_media": 16.3,
+      "persona": "mista"
+     },
+     "descrizione": "«We all use AAC - think about texting on your mobile, gestures, or facial expressions.» spiega prima cos'è la CAA; termini del dominio (core words, keyguards, Crescendo™, Thinking Space™)."
+    },
+    {
+     "caratteristica": "guida a passi con ripresa",
+     "ambito": "installazione",
+     "stato": "non_osservato",
+     "motivo": "L'installazione avviene dall'App Store: la pagina non ha passi di installazione."
+    },
+    {
+     "caratteristica": "tabella di compatibilità",
+     "ambito": "dati",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/desktop/017-scorri.jpg",
+      "prove/R51/desktop/018-clic.jpg"
+     ],
+     "valore": {
+      "righe": 2,
+      "dichiara_non_provato": "no"
+     },
+     "descrizione": "Schede «For iOS / For macOS» con prezzo, dispositivi e versioni minime; nessuna riga «non provato»."
+    },
+    {
+     "caratteristica": "prodotto mostrato",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/desktop/001-vai.jpg"
+     ],
+     "valore": {
+      "tipo": "foto",
+      "con_legenda": "no",
+      "con_alternativa": "sì"
+     },
+     "descrizione": "Foto a tutta larghezza di una persona che tocca un iPad in una custodia rosa; l'icona e il nome della app sotto."
+    },
+    {
+     "caratteristica": "prodotto mostrato",
+     "ambito": "scorrimento computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/desktop/005-scorri.jpg",
+      "prove/R51/desktop/009-scorri.jpg"
+     ],
+     "valore": {
+      "tipo": "schermata",
+      "con_legenda": "sì",
+      "con_alternativa": "sì"
+     },
+     "descrizione": "«Meet Proloquo2Go»: schermata annotata con etichette collegate (Buttons to speak, Folders for more words, Quick access to search and volume, Keyboard, Home, Adjust buttons and folders, Customization and accessibility options); poi tutti i dispositivi."
+    },
+    {
+     "caratteristica": "prodotto mostrato",
+     "ambito": "scorrimento telefono",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/telefono/foglio-2.jpg"
+     ],
+     "valore": {
+      "tipo": "schermata",
+      "con_legenda": "sì",
+      "con_alternativa": "sì"
+     },
+     "descrizione": "Le stesse schermate a una colonna."
+    },
+    {
+     "caratteristica": "campione di suono",
+     "ambito": "media",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/desktop/006-scorri.jpg",
+      "prove/R51/desktop/007-clic.jpg",
+      "prove/R51/desktop/foglio-voci-ritaglio.jpg"
+     ],
+     "valore": {
+      "campioni": 4,
+      "testo_accanto": "no",
+      "durata_indicata": "no"
+     },
+     "non_misurati": [
+      "simultanei_max"
+     ],
+     "descrizione": "Quattro pulsanti rotondi 44x44 con il nome (Rosie, Josh, Peter, Lily); nel codice 20 pulsanti (15 voci diverse) in un carosello. Il testo detto non è mostrato. In questo browser senza uscita audio il pulsante restava «Play …» dopo il clic: se parta, si fermi o suonino due insieme non è osservato."
+    },
+    {
+     "caratteristica": "avvio di audio e video",
+     "ambito": "media",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/desktop/034-clic.jpg",
+      "prove/R51/lettura-desktop.json"
+     ],
+     "valore": {
+      "avvio_automatico": "no",
+      "controlli_nativi": "sì",
+      "trascrizione": "no",
+      "sottotitoli": "sì"
+     },
+     "descrizione": "«See Proloquo2Go in action» apre un riquadro con un incorporamento YouTube (autoplay=1 dopo il clic, cc_load_policy=1, 0:51); nessun iframe prima del clic; Esc e «Close» chiudono."
+    },
+    {
+     "caratteristica": "media non caricato",
+     "ambito": "media",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/script/013-media-bloccato-arrivo.png",
+      "prove/R51/script/misure-script.json"
+     ],
+     "valore": {
+      "alternativa_testuale": "sì",
+      "pagina_integra": "sì"
+     },
+     "descrizione": "Nessuna richiesta di media all'arrivo (0 bloccate): video e voci si caricano al clic. Con YouTube o gli mp3 bloccati dopo il clic non provato."
+    },
+    {
+     "caratteristica": "numeri detti a parole",
+     "ambito": "dati",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/testo-pagina-desktop.txt"
+     ],
+     "valore": {
+      "presente": "sì"
+     },
+     "descrizione": "«Trusted by hundreds of thousands worldwide»; «more than 27,000 symbols»; «research-based … data from over 10,000 AAC users» (pagina Proloquo): senza fonte né metodo."
+    },
+    {
+     "caratteristica": "testimonianze di utenti",
+     "ambito": "fiducia",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/desktop/009-scorri.jpg",
+      "prove/R51/desktop/017-scorri.jpg"
+     ],
+     "valore": {
+      "numero": 3,
+      "con_foto": "sì",
+      "con_ruolo": "sì"
+     },
+     "descrizione": "Tre schede con foto tonda, nome e ruolo (madre di una utente CAA, utente e autore di campagne, madre); frasi di 20-30 parole."
+    },
+    {
+     "caratteristica": "finestra del consenso ai cookie",
+     "ambito": "arrivo computer",
+     "stato": "assente",
+     "evidenze": [
+      "prove/R51/desktop/001-vai.jpg"
+     ],
+     "descrizione": "Nessuna finestra di consenso visibile al primo arrivo in questa sessione."
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "scorrimento computer · barra di prodotto fissa",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/effetti-misurati.tsv",
+      "prove/R51/desktop/003-scorri.jpg"
+     ],
+     "valore": {
+      "trigger": "scorrimento",
+      "durata_ms": 280,
+      "curva": "ease",
+      "proprieta": "opacity 0→1 (250 ms) + translateY(-100%)→0"
+     },
+     "descrizione": "Sostituisce la barra globale scorrendo in giù; scorrendo in su torna la barra globale (inverso, 250/280 ms). Con movimento ridotto resta uguale."
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "scorrimento computer · schede iOS / macOS",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/effetti-misurati.tsv",
+      "prove/R51/desktop/018-clic.jpg"
+     ],
+     "valore": {
+      "trigger": "clic",
+      "durata_ms": 150,
+      "curva": "linear",
+      "proprieta": "opacity 0→1 del pannello"
+     },
+     "descrizione": "Colore dell'etichetta 150 ms ease-in-out."
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "scorrimento computer · anello di focus dei pulsanti voce",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/effetti-misurati.tsv",
+      "prove/R51/desktop/foglio-voci-ritaglio.jpg"
+     ],
+     "valore": {
+      "trigger": "clic",
+      "durata_ms": 150,
+      "curva": "ease-in-out",
+      "proprieta": "box-shadow (anello 2 px + bordo bianco interno)"
+     },
+     "descrizione": "Compare al clic e al Tab; il pulsante non cambia icona."
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "menu telefono · pannello del menu",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/effetti-misurati.tsv",
+      "prove/R51/telefono/009-clic.jpg"
+     ],
+     "valore": {
+      "trigger": "tocco",
+      "durata_ms": 300,
+      "curva": "ease-in-out",
+      "proprieta": "transform translate(100%)→none + velo opacity 0→0,9"
+     },
+     "descrizione": "Velo 150 ms lineare; scorrimento del corpo bloccato."
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "errore · finestra di ricerca",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/effetti-misurati.tsv",
+      "prove/R51/desktop/029-clic.jpg"
+     ],
+     "valore": {
+      "trigger": "clic",
+      "durata_ms": 300,
+      "curva": "ease-out",
+      "proprieta": "transform translateY(-50px)→0 + velo opacity 150 ms lineare"
+     },
+     "descrizione": "Si apre dalla lente con campo, «Popular products» e «Support»."
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "arrivo computer · colore dei collegamenti",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/effetti-misurati.tsv",
+      "prove/R51/desktop/001-vai.jpg"
+     ],
+     "valore": {
+      "trigger": "passaggio_mouse",
+      "durata_ms": 150,
+      "curva": "ease-in-out",
+      "proprieta": "color"
+     },
+     "descrizione": "Voci della barra: dal blu notte al bordeaux."
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "menu computer · pannello Products",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R51/desktop/015-clic.jpg"
+     ],
+     "valore": {
+      "trigger": "clic"
+     },
+     "non_misurati": [
+      "durata_ms",
+      "curva",
+      "proprieta"
+     ],
+     "descrizione": "Si apre al clic (bottone); la comparsa del pannello non è stata registrata come animazione."
+    }
+   ]
+  }
+ ]
+}

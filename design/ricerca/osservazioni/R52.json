@@ -1,0 +1,678 @@
+{
+ "riferimenti": [
+  {
+   "id": "R52",
+   "nome": "Grid (Smartbox)",
+   "url": "https://smartboxaac.com/ukie/grid-software/",
+   "categoria": "Prodotto affine: comunicazione aumentativa e alternativa (CAA) per computer con puntamento oculare e interruttori; documentazione su hub.smartboxaac.com",
+   "anno": 2026,
+   "premio": "non Webby, gruppo C",
+   "motivazione_ufficiale": "non applicabile: gruppo C, nessun premio",
+   "gruppo": "C",
+   "osservazioni": [
+    {
+     "caratteristica": "proposta del primo schermo",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/desktop/001-vai.jpg"
+     ],
+     "valore": {
+      "parole": 63,
+      "frasi": 4
+     },
+     "descrizione": "Logo «Grid» molto grande e «Communicate, connect, and take control»; due paragrafi; il secondo («Finding the right AAC setup is personal…») dice che la scelta è personale e che c'è un gruppo di persone che aiuta."
+    },
+    {
+     "caratteristica": "proposta del primo schermo",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/telefono/001-vai.jpg"
+     ],
+     "valore": {
+      "parole": 63,
+      "frasi": 4
+     },
+     "descrizione": "Stesso testo; carosello e logo gigante precedono il titolo; il pulsante della chat copre l'ultima riga del paragrafo."
+    },
+    {
+     "caratteristica": "comandi visibili al primo schermo",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/lettura-desktop.json"
+     ],
+     "valore": {
+      "link": 4,
+      "pulsanti": 21,
+      "campi": 0
+     },
+     "descrizione": "Il conteggio dei pulsanti comprende le due frecce e gli otto punti del carosello e i comandi della barra (tema, lingua, ricerca)."
+    },
+    {
+     "caratteristica": "comandi visibili al primo schermo",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/script/misure-script.json"
+     ],
+     "valore": {
+      "link": 1,
+      "pulsanti": 15,
+      "campi": 0
+     },
+     "descrizione": "Misura a 390x844: comprende frecce e punti del carosello."
+    },
+    {
+     "caratteristica": "comando principale",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/desktop/001-vai.jpg"
+     ],
+     "valore": {
+      "posizione": "basso",
+      "fisso_allo_scorrimento": "no"
+     },
+     "descrizione": "«Request a quote» (pieno scuro) e «Try Grid» (contorno) a y=766 di 900, sotto il testo; fissi restano la barra in alto e il pulsante «Let's chat»."
+    },
+    {
+     "caratteristica": "comando principale",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/telefono/001-vai.jpg",
+      "prove/R52/telefono/foglio-1.jpg"
+     ],
+     "valore": {
+      "posizione": "basso",
+      "fisso_allo_scorrimento": "no"
+     },
+     "descrizione": "Fuori dal primo schermo: carosello, logo e titolo occupano la prima schermata."
+    },
+    {
+     "caratteristica": "struttura della navigazione",
+     "ambito": "menu computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/desktop/014-clic.jpg"
+     ],
+     "valore": {
+      "voci": 5,
+      "tipo": "menu_a_comparsa"
+     },
+     "descrizione": "Products, How to try, Training and Support, About, Contact; Products si apre al clic con voci annidate a fisarmonica (Devices, Grid software, Grid for Schools, Look software, Communication Boards)."
+    },
+    {
+     "caratteristica": "struttura della navigazione",
+     "ambito": "menu telefono",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/telefono/010-clic.jpg"
+     ],
+     "valore": {
+      "voci": 5,
+      "tipo": "pannello"
+     },
+     "descrizione": "Pannello a tutta pagina con le cinque voci e chevron."
+    },
+    {
+     "caratteristica": "apertura del menu",
+     "ambito": "menu telefono",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/telefono/010-clic.jpg",
+      "prove/R52/effetti-misurati.tsv"
+     ],
+     "valore": {
+      "durata_ms": 500,
+      "direzione": "da destra"
+     },
+     "descrizione": "transform translate(100%)→0, 500 ms cubic-bezier(0.4, 0, 0.2, 1)."
+    },
+    {
+     "caratteristica": "segnale di posizione e di avanzamento",
+     "ambito": "scorrimento computer",
+     "stato": "assente",
+     "evidenze": [
+      "prove/R52/desktop/003-scorri.jpg",
+      "prove/R52/desktop/008-scorri.jpg"
+     ],
+     "descrizione": "Nessun indicatore sulla pagina del prodotto."
+    },
+    {
+     "caratteristica": "segnale di posizione e di avanzamento",
+     "ambito": "percorso principale",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/desktop/020-clic.jpg"
+     ],
+     "valore": {
+      "tipo": "indice"
+     },
+     "descrizione": "Nell'hub, briciole di pane a pillole (Product information > Access > Eye gaze > General > titolo) e menu laterale per tipo di articolo."
+    },
+    {
+     "caratteristica": "comando proprio «indietro»",
+     "ambito": "percorso principale",
+     "stato": "non_osservato",
+     "motivo": "Pagine informative senza percorso a passi con invio; «Try Grid» e «Request a quote» portano a moduli, non aperti."
+    },
+    {
+     "caratteristica": "messaggio di errore",
+     "ambito": "errore · ricerca senza risultati",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/desktop/021-vai.jpg"
+     ],
+     "valore": {
+      "sotto_il_campo": "sì",
+      "dice_come_rimediare": "sì",
+      "mantiene_i_dati": "sì"
+     },
+     "descrizione": "Hub: «No results found. Please search for a new term or select different filters.»; il termine resta nel campo e i filtri restano visibili."
+    },
+    {
+     "caratteristica": "pagina inesistente",
+     "ambito": "404",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/desktop/022-vai.jpg"
+     ],
+     "valore": {
+      "utile": "sì",
+      "offre_ritorno": "sì"
+     },
+     "descrizione": "«Oops! That page can't be found. It looks like this page could not be found! Please try one of the links below or search for something new!» con illustrazione, campo di ricerca e elenco di prodotti, supporto e chi siamo."
+    },
+    {
+     "caratteristica": "attesa del caricamento",
+     "ambito": "rete lenta",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/script/misure-script.json"
+     ],
+     "valore": {
+      "segnale": "vuoto",
+      "s_al_primo_testo": 3.3
+     },
+     "descrizione": "400 kbit/s, 400 ms: corpo vuoto a 1,5 s, primo disegno a 3,3 s; a 22 s il documento risultava ancora «loading» (immagini e media in arrivo); solo Chromium."
+    },
+    {
+     "caratteristica": "comportamento senza JavaScript",
+     "ambito": "senza JavaScript",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/script/005-senza-js-arrivo.png",
+      "prove/R52/script/006-senza-js-scroll.png",
+      "prove/R52/script/misure-script.json"
+     ],
+     "valore": {
+      "contenuto": "parziale"
+     },
+     "non_misurati": [
+      "navigazione",
+      "comandi_essenziali"
+     ],
+     "descrizione": "Titolo, testi e schede visibili; il carosello non c'è nella prima schermata e le schede della sezione «Key features» diventano elenco; 5.437 caratteri contro 7.378 con JS."
+    },
+    {
+     "caratteristica": "effetti con movimento ridotto",
+     "ambito": "movimento ridotto",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/ridotto/001-vai.jpg",
+      "prove/R52/ridotto/002-scorri.jpg",
+      "prove/R52/effetti-misurati.tsv"
+     ],
+     "valore": {
+      "effetti": 2,
+      "tolti": 2,
+      "sostituiti": 0,
+      "invariati": 0
+     },
+     "descrizione": "Tolti il cross-fade infinito della bandiera (2 livelli) e la comparsa delle sezioni (0 animazioni all'arrivo e allo scorrimento). Carosello e cambio di tema non provati con ridotto."
+    },
+    {
+     "caratteristica": "percorso da tastiera",
+     "ambito": "tastiera",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/tastiera/012-tasto.jpg"
+     ],
+     "valore": {
+      "tab_fino_al_comando_principale": 11,
+      "focus_visibile": "sì",
+      "salta_al_contenuto": "sì",
+      "trappole": 0
+     },
+     "descrizione": "«Skip to content» è il primo Tab; l'11° arriva a «Request a quote» con contorno pieno di 2 px azzurro (rgb 0,150,214), offset 2 px."
+    },
+    {
+     "caratteristica": "testo al 200%",
+     "ambito": "testo 200%",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/carattere200/001-vai.jpg",
+      "prove/R52/foglio-varianti-1.jpg",
+      "prove/R52/foglio-varianti-2.jpg"
+     ],
+     "valore": {
+      "scroll_orizzontale": "sì",
+      "contenuto_perso": "sì"
+     },
+     "descrizione": "scrollW 1784 contro 1440; la barra non diventa menu: «Smartbox» si sovrappone a «Products», «How to try» e «Training and Support» vanno su tre righe, «Contact» è tagliato."
+    },
+    {
+     "caratteristica": "albero di accessibilità (proxy)",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/lettura-desktop.json"
+     ],
+     "valore": {
+      "punti_di_riferimento": 6,
+      "titoli": 19,
+      "immagini_senza_alternativa": 0,
+      "comandi_senza_nome": 1
+     },
+     "descrizione": "header 1, nav 2, main 1, footer 1, search 1; 16 immagini con alt vuoto su 50; il campo e-mail della newsletter senza nome."
+    },
+    {
+     "caratteristica": "bersagli dei comandi principali",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/lettura-desktop.json"
+     ],
+     "valore": {
+      "larghezza_min_px": 12,
+      "altezza_min_px": 12
+     },
+     "non_misurati": [
+      "distanza_min_px"
+     ],
+     "descrizione": "Minimo sui punti del carosello (8 in fila, passo 24 px)."
+    },
+    {
+     "caratteristica": "bersagli dei comandi principali",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/script/misure-script.json"
+     ],
+     "valore": {
+      "larghezza_min_px": 12,
+      "altezza_min_px": 12
+     },
+     "non_misurati": [
+      "distanza_min_px"
+     ],
+     "descrizione": "Misura a 390x844."
+    },
+    {
+     "caratteristica": "testo corrente",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/lettura-desktop.json"
+     ],
+     "valore": {
+      "corpo_px": 20,
+      "interlinea": 1.4
+     },
+     "non_misurati": [
+      "caratteri_per_riga_max"
+     ],
+     "descrizione": "Quicksand 20 px peso leggero, rgb(60,60,59) su bianco."
+    },
+    {
+     "caratteristica": "testo corrente",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/script/misure-script.json"
+     ],
+     "valore": {
+      "corpo_px": 18,
+      "interlinea": 1.56
+     },
+     "non_misurati": [
+      "caratteri_per_riga_max"
+     ],
+     "descrizione": "Misura a 390x844."
+    },
+    {
+     "caratteristica": "richieste e terze parti",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/script/misure-script.json"
+     ],
+     "valore": {
+      "richieste": 65,
+      "domini_di_terzi": 3,
+      "kb": 4368,
+      "caratteri_caricati": 3
+     },
+     "descrizione": "Terzi: challenges.cloudflare.com (verifica nel modulo), Cloudflare Insights, Google Tag Manager; immagini da media.smartboxaac.com (32 richieste). Cache spenta."
+    },
+    {
+     "caratteristica": "anteprima del collegamento",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/script/misure-script.json"
+     ],
+     "valore": {
+      "titolo": "sì",
+      "immagine": "sì",
+      "descrizione": "sì"
+     },
+     "descrizione": "og:title, og:description, og:image (2560x1708); nessun canonical."
+    },
+    {
+     "caratteristica": "stampa",
+     "ambito": "stampa",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/script/012-stampa-1.png",
+      "prove/R52/script/stampa.pdf",
+      "prove/R52/script/misure-script.json"
+     ],
+     "valore": {
+      "leggibile": "sì",
+      "comandi_inutili_nascosti": "no"
+     },
+     "descrizione": "PDF A4 di 11 pagine (14,5 MB); nella stampa restano il pulsante «Let's chat» e un elemento fisso in alto a destra."
+    },
+    {
+     "caratteristica": "chi c'è dietro e le fonti",
+     "ambito": "fiducia",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/testo-pagina-desktop.txt"
+     ],
+     "valore": {
+      "firma": "sì",
+      "data": "no",
+      "versione": "no",
+      "fonti_collegate": "no"
+     },
+     "descrizione": "Smartbox (sito UK/IE) senza data né numero di versione; «Over 20 million words are spoken…» è del produttore e non è nella pagina letta."
+    },
+    {
+     "caratteristica": "stato e limiti dichiarati",
+     "ambito": "arrivo computer",
+     "stato": "assente",
+     "evidenze": [
+      "prove/R52/desktop/001-vai.jpg"
+     ],
+     "descrizione": "Primo schermo senza limiti né stato."
+    },
+    {
+     "caratteristica": "corto subito, lungo a richiesta",
+     "ambito": "aiuto",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/desktop/016-vai.jpg",
+      "prove/R52/desktop/019-tasto.jpg"
+     ],
+     "valore": {
+      "meccanismo": "pagina_a_parte"
+     },
+     "descrizione": "La pagina di prodotto manda alla Smartbox Hub («Find everything you need to get started with Grid… support articles, manuals and tutorial videos»), con ricerca, filtri per categoria e tipo (Resources, How to use, Troubleshooting) e articoli titolati a domanda."
+    },
+    {
+     "caratteristica": "porte per pubblici diversi",
+     "ambito": "menu computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/desktop/014-clic.jpg"
+     ],
+     "valore": {
+      "porte": 5,
+      "criterio": "compito"
+     },
+     "descrizione": "Products, How to try, Training and Support, About, Contact; la pagina chiama persone (storie di una ragazza, di una scuola, di un adulto) ma non ha porte per ruolo."
+    },
+    {
+     "caratteristica": "lunghezza e registro delle frasi",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/campione-frasi-10.txt",
+      "prove/R52/testo-pagina-desktop.txt"
+     ],
+     "valore": {
+      "frasi_campione": 10,
+      "parole_per_frase_media": 14.8,
+      "persona": "mista"
+     },
+     "descrizione": "Inglese britannico; «Finding the right AAC setup is personal.» (5 parole) accanto a frasi di 25; termini poco spiegati (keyguard, scanning, calibrate)."
+    },
+    {
+     "caratteristica": "guida a passi con ripresa",
+     "ambito": "installazione",
+     "stato": "non_osservato",
+     "motivo": "Le istruzioni di installazione stanno nel Hub (non seguite) e nei moduli «Try Grid», non aperti."
+    },
+    {
+     "caratteristica": "tabella di compatibilità",
+     "ambito": "dati",
+     "stato": "assente",
+     "evidenze": [
+      "prove/R52/desktop/004-scorri.jpg"
+     ],
+     "descrizione": "Nessuna tabella nella pagina: «Available on Windows and iPad» con due paragrafi e due pulsanti di prova; la compatibilità sta nel Hub."
+    },
+    {
+     "caratteristica": "prodotto mostrato",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/desktop/001-vai.jpg",
+      "prove/R52/desktop/011-clic.jpg"
+     ],
+     "valore": {
+      "tipo": "schermata",
+      "con_legenda": "no"
+     },
+     "non_misurati": [
+      "con_alternativa"
+     ],
+     "descrizione": "Carosello di otto schermate vere di Grid dentro la cornice di un tablet (griglia di app, griglie di simboli, tastiera)."
+    },
+    {
+     "caratteristica": "prodotto mostrato",
+     "ambito": "scorrimento computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/desktop/003-scorri.jpg",
+      "prove/R52/desktop/007-scorri.jpg"
+     ],
+     "valore": {
+      "tipo": "schermata",
+      "con_legenda": "no"
+     },
+     "non_misurati": [
+      "con_alternativa"
+     ],
+     "descrizione": "Tre tablet per vocabolari (simboli, testo con «NEW! AI tools», app), tastiera con previsione, foto di persone e di dispositivi con puntamento oculare."
+    },
+    {
+     "caratteristica": "campione di suono",
+     "ambito": "media",
+     "stato": "assente",
+     "evidenze": [
+      "prove/R52/desktop/003-scorri.jpg"
+     ],
+     "descrizione": "Nessun campione di voce; «Voice activation» e «Audio feedback» sono descritti a parole."
+    },
+    {
+     "caratteristica": "avvio di audio e video",
+     "ambito": "media",
+     "stato": "non_osservato",
+     "motivo": "Le tre storie video («Meet Milly», «Meet the Oasis Academy», «Meet Claire») hanno un poster con Play; non sono state avviate."
+    },
+    {
+     "caratteristica": "media non caricato",
+     "ambito": "media",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/script/013-media-bloccato-arrivo.png",
+      "prove/R52/script/misure-script.json"
+     ],
+     "valore": {
+      "alternativa_testuale": "sì",
+      "pagina_integra": "sì"
+     },
+     "descrizione": "Nessuna richiesta di media all'arrivo (0 bloccate): i poster sono immagini."
+    },
+    {
+     "caratteristica": "numeri detti a parole",
+     "ambito": "dati",
+     "stato": "assente",
+     "evidenze": [
+      "prove/R52/testo-pagina-desktop.txt"
+     ],
+     "descrizione": "Cifre solo come durate di prova («60-day», «30-day»)."
+    },
+    {
+     "caratteristica": "testimonianze di utenti",
+     "ambito": "fiducia",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/desktop/foglio-a.jpg"
+     ],
+     "valore": {
+      "numero": 3,
+      "con_foto": "sì",
+      "con_ruolo": "no"
+     },
+     "descrizione": "Tre storie con poster video e titolo «Meet …» (Milly, Oasis Academy, Claire); nessuna frase scritta."
+    },
+    {
+     "caratteristica": "finestra del consenso ai cookie",
+     "ambito": "arrivo computer",
+     "stato": "assente",
+     "evidenze": [
+      "prove/R52/desktop/001-vai.jpg"
+     ],
+     "descrizione": "Nessuna finestra visibile al primo arrivo in questa sessione."
+    },
+    {
+     "caratteristica": "tema scelto dalla persona",
+     "ambito": "menu computer",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/desktop/012-clic.jpg",
+      "prove/R52/scuro/001-vai.jpg"
+     ],
+     "valore": {
+      "interruttore": "sì",
+      "segue_il_sistema": "sì"
+     },
+     "descrizione": "Pulsante sole/luna nella barra (stato in localStorage «sb-theme»); con prefers-color-scheme scuro il sito si apre scuro (foto scuro/001-vai.jpg); il pulsante di chat diventa giallo."
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "arrivo computer · cross-fade della bandiera UK/IE",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/effetti-misurati.tsv",
+      "prove/R52/desktop/001-vai.jpg"
+     ],
+     "valore": {
+      "trigger": "arrivo",
+      "durata_ms": 5000,
+      "curva": "ease-in-out",
+      "proprieta": "opacity (2 livelli sfalsati di 2500 ms), infinito"
+     },
+     "descrizione": "Animazione infinita nella barra in alto; tolta con movimento ridotto."
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "scorrimento computer · comparsa delle sezioni",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/effetti-misurati.tsv",
+      "prove/R52/desktop/003-scorri.jpg"
+     ],
+     "valore": {
+      "trigger": "scorrimento",
+      "durata_ms": 600,
+      "curva": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "proprieta": "opacity 0→1 + transform"
+     },
+     "descrizione": "Ogni sezione entra quando compare; tolta con movimento ridotto."
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "arrivo computer · scorrimento del carosello",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/effetti-misurati.tsv",
+      "prove/R52/desktop/011-clic.jpg"
+     ],
+     "valore": {
+      "trigger": "clic",
+      "durata_ms": 400,
+      "curva": "cubic-bezier(0.25, 1, 0.5, 1)",
+      "proprieta": "transform translateX"
+     },
+     "descrizione": "Libreria Splide (id splide01-list); frecce e punti."
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "menu computer · cambio tema chiaro/scuro",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/effetti-misurati.tsv",
+      "prove/R52/desktop/012-clic.jpg"
+     ],
+     "valore": {
+      "trigger": "clic",
+      "durata_ms": 300,
+      "curva": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "proprieta": "color + background-color (150-300 ms)"
+     },
+     "descrizione": "Le icone sole/luna si scambiano con opacità 300 ms; il corpo cambia sfondo in 200 ms ease."
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "menu computer · sottomenu Products",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/effetti-misurati.tsv",
+      "prove/R52/desktop/014-clic.jpg"
+     ],
+     "valore": {
+      "trigger": "clic",
+      "durata_ms": 300,
+      "curva": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "proprieta": "height 0→313 px"
+     },
+     "descrizione": "Pannello che si apre in altezza; in parallelo width 200 ms e opacity 300 ms."
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "menu telefono · pannello del menu",
+     "stato": "presente",
+     "evidenze": [
+      "prove/R52/effetti-misurati.tsv",
+      "prove/R52/telefono/010-clic.jpg"
+     ],
+     "valore": {
+      "trigger": "tocco",
+      "durata_ms": 500,
+      "curva": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "proprieta": "transform translate(100%)→0"
+     },
+     "descrizione": "Pannello da destra."
+    }
+   ]
+  }
+ ]
+}

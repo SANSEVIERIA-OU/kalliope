@@ -1,0 +1,577 @@
+{
+ "riferimenti": [
+  {
+   "id": "R04",
+   "nome": "Waymo | Safety Hub",
+   "url": "https://waymo.com/safety/ (e https://waymo.com/safety/impact)",
+   "categoria": "Best Responsible AI Implementation (AI Features & Innovation); Travel, Transportation & Hospitality (AI Experiences & Applications)",
+   "anno": 2026,
+   "premio": "Webby Winner",
+   "motivazione_ufficiale": "motivazione individuale non disponibile (sezioni About vuote); scheda: https://winners.webbyawards.com/2026/ai/ai-features-innovation/best-responsible-ai-implementation/383457/waymo--safety-hub",
+   "gruppo": "A",
+   "osservazioni": [
+    {
+     "caratteristica": "proposta del primo schermo",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "parole": 75,
+      "frasi": 3
+     },
+     "descrizione": "Titolo «Safety», sottotitolo «Our Approach to Safety» e un paragrafo di 71 parole: «The data to date shows Waymo is already making streets safer in the cities where we operate. Backed by industry-leading safety practices, the Waymo Driver is always alert, follows speed limits, promotes seat belt use, and operates some of the safest vehicles on the road. We are committed to driving real progress toward what many cities are striving for: Vision Zero, the global effort to eliminate traffic deaths and serious injuries.» Parole = titolo + sottotitolo + paragrafo; le frasi sono quelle del paragrafo.",
+     "evidenze": [
+      "prove/R04/005-clic.jpg",
+      "prove/R04/testo-main-computer.txt"
+     ]
+    },
+    {
+     "caratteristica": "proposta del primo schermo",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "parole": 4,
+      "frasi": 0
+     },
+     "descrizione": "A 430x932 si vedono per intero il titolo «Safety» (1 parola) e il sottotitolo «Our Approach to Safety» (3 parole); il paragrafo comincia sotto la piega. Banner cookie sul primo arrivo (telefono/001-vai.jpg).",
+     "evidenze": [
+      "prove/R04/telefono/004-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "comandi visibili al primo schermo",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "link": 11,
+      "pulsanti": 2,
+      "campi": 0
+     },
+     "descrizione": "Dopo aver chiuso il banner: logo, 6 voci di intestazione, 3 collegamenti nel testo («data», «Waymo's Safety Framework», «Safety Case»), «Explore our safety dashboard»; pulsanti: ricerca e play del video (la didascalia «Explore our Safety Case Framework» è contata con il play). Conteggio da foto e dall'elenco dei link di main.",
+     "evidenze": [
+      "prove/R04/005-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "comandi visibili al primo schermo",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "link": 1,
+      "pulsanti": 3,
+      "campi": 0
+     },
+     "descrizione": "Logo; pulsanti: ricerca, menu (hamburger) e play del video. Conteggio da foto.",
+     "evidenze": [
+      "prove/R04/telefono/004-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "comando principale",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "posizione": "basso",
+      "fisso_allo_scorrimento": "no"
+     },
+     "descrizione": "«Explore our safety dashboard» (collegamento con freccia in cerchio) in fondo al primo schermo; ripetuto «Explore more in our safety dashboard» dopo le statistiche.",
+     "evidenze": [
+      "prove/R04/005-clic.jpg",
+      "prove/R04/014-scorri.jpg"
+     ]
+    },
+    {
+     "caratteristica": "comando principale",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "posizione": "basso",
+      "fisso_allo_scorrimento": "no"
+     },
+     "descrizione": "Sotto la piega: dopo il testo; «Explore more in our safety dashboard» compare dopo le sei statistiche.",
+     "evidenze": [
+      "prove/R04/telefono/005-scorri.jpg"
+     ]
+    },
+    {
+     "caratteristica": "struttura della navigazione",
+     "ambito": "menu computer",
+     "stato": "presente",
+     "valore": {
+      "voci": 6,
+      "tipo": "menu_a_comparsa"
+     },
+     "descrizione": "Rides, Technology, About, Safety, Community, Careers; ognuna apre un pannello con sottovoci e un'immagine; ricerca a parte.",
+     "evidenze": [
+      "prove/R04/017-muovi.jpg"
+     ]
+    },
+    {
+     "caratteristica": "struttura della navigazione",
+     "ambito": "menu telefono",
+     "stato": "presente",
+     "valore": {
+      "voci": 6,
+      "tipo": "pannello"
+     },
+     "descrizione": "Pannello a tutto schermo con le stesse 6 voci, freccia a destra di ciascuna; ricerca e chiusura in alto.",
+     "evidenze": [
+      "prove/R04/telefono/003-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "apertura del menu",
+     "ambito": "menu telefono",
+     "stato": "presente",
+     "valore": {
+      "durata_ms": 250,
+      "direzione": "altezza da 0 a 852 px",
+      "curva": "ease"
+     },
+     "descrizione": "Il pannello cresce in altezza; le voci compaiono con opacità 0 a 1 in 100 ms dopo 100 ms di ritardo; il filetto sotto l'intestazione passa da scaleX 0 a 1 in 200 ms.",
+     "evidenze": [
+      "prove/R04/telefono/003-clic.jpg",
+      "prove/R04/telefono/003-clic.movimento.json"
+     ]
+    },
+    {
+     "caratteristica": "apertura del menu",
+     "ambito": "menu computer",
+     "stato": "presente",
+     "valore": {
+      "durata_ms": 150,
+      "direzione": "altezza da 0 a 248 px",
+      "curva": "ease"
+     },
+     "descrizione": "Pannello sotto l'intestazione (altezza 150 ms); il contenuto entra in 200 ms dopo 100 ms di ritardo; un velo scuro sul resto della pagina (opacità 0 a 1, 200 ms); chiusura con le stesse durate invertite (018-muovi.movimento.json).",
+     "evidenze": [
+      "prove/R04/017-muovi.jpg",
+      "prove/R04/017-muovi.movimento.json"
+     ]
+    },
+    {
+     "caratteristica": "segnale di posizione e di avanzamento",
+     "ambito": "scorrimento computer",
+     "stato": "assente",
+     "descrizione": "Percorsa tutta la vetrina dall'inizio al fondo: nessuna barra, indice o numerazione di sezione. Nell'hub /safety/impact solo i numeri delle FAQ (043-scorri.jpg).",
+     "evidenze": [
+      "prove/R04/006-scorri.jpg",
+      "prove/R04/007-scorri.jpg",
+      "prove/R04/008-scorri.jpg",
+      "prove/R04/009-scorri.jpg",
+      "prove/R04/011-scorri.jpg",
+      "prove/R04/013-scorri.jpg",
+      "prove/R04/014-scorri.jpg"
+     ]
+    },
+    {
+     "caratteristica": "comando proprio «indietro»",
+     "ambito": "percorso principale",
+     "stato": "non_osservato",
+     "motivo": "La vetrina e l'hub sono pagine, non un percorso a passi: non esiste un comando «indietro» del sito da osservare; si usa il tasto del browser, non provato in questa visita."
+    },
+    {
+     "caratteristica": "messaggio di errore",
+     "ambito": "errore",
+     "stato": "non_osservato",
+     "evidenze": [
+      "prove/R04/055-clic.jpg",
+      "prove/R04/057-tasto.jpg",
+      "prove/R04/058-tasto.jpg"
+     ],
+     "motivo": "Il solo campo con errori possibili è il modulo «Keep in touch» (form novalidate, POST a /form-submit/submit con reCAPTCHA): per regola non è stato inviato, nemmeno vuoto. Il passaggio da un campo obbligatorio vuoto al successivo non mostra errori in linea (057, 058)."
+    },
+    {
+     "caratteristica": "pagina inesistente",
+     "ambito": "404",
+     "stato": "presente",
+     "valore": {
+      "utile": "sì",
+      "offre_ritorno": "sì"
+     },
+     "descrizione": "«THIS PAGE DOES NOT EXIST» / «Oops! Looks like you got lost.» / «Don't worry, getting people where they need to go is our specialty.»; tasto «Back to Waymo.com» e tre collegamenti (Get a ride, Find a dream job, Contact us); intestazione completa e illustrazione.",
+     "evidenze": [
+      "prove/R04/035-vai.jpg"
+     ]
+    },
+    {
+     "caratteristica": "attesa del caricamento",
+     "ambito": "rete lenta",
+     "stato": "presente",
+     "valore": {
+      "segnale": "testo",
+      "s_al_primo_testo": 0.9
+     },
+     "descrizione": "Slow 3G (latenza 400 ms, 400 kbit/s) in Chromium: il testo è letto nel DOM a 934 ms, DOMContentLoaded a 12,3 s, nessun evento load entro 30 s; a 25 s la pagina è disegnata (foto). Nessuno scheletro né spinner. Le altre foto della sequenza non sono riuscite durante il caricamento.",
+     "evidenze": [
+      "prove/R04/rete-lenta-2/006-25s.jpg",
+      "prove/R04/riepilogo-senza-posto.json"
+     ]
+    },
+    {
+     "caratteristica": "comportamento senza JavaScript",
+     "ambito": "senza JavaScript",
+     "stato": "presente",
+     "valore": {
+      "contenuto": "parziale"
+     },
+     "non_misurati": [
+      "navigazione",
+      "comandi_essenziali"
+     ],
+     "descrizione": "La pagina si disegna e i sei numeri sono già finali con barre piene; i blocchi che entrano allo scorrimento («Because Safety is Urgent™» con i 4 numeri, due titoli e «Safety Research») restano vuoti. Link e pulsanti presenti nell'HTML (riepilogo-senza-posto.json), ma l'apertura dei menu e delle voci senza JavaScript non è stata provata.",
+     "evidenze": [
+      "prove/R04/senza-js/001-arrivo.jpg",
+      "prove/R04/senza-js/002-pagina-intera.jpg",
+      "prove/R04/senza-js/foglio-pagina-intera.jpg"
+     ]
+    },
+    {
+     "caratteristica": "effetti con movimento ridotto",
+     "ambito": "movimento ridotto",
+     "stato": "presente",
+     "valore": {
+      "effetti": 8,
+      "tolti": 0,
+      "sostituiti": 0,
+      "invariati": 7
+     },
+     "descrizione": "matchMedia(prefers-reduced-motion: reduce) = true. Invariati nelle durate e curve: menu a comparsa (150/200 ms), modale video (300 ms, cubic-bezier(0.83,0,0.17,1)), icone +/-, intestazione, banner. Un effetto cambia di momento: le entrate allo scorrimento e il conteggio di 1500 ms vengono registrati tutti all'arrivo (34 transizioni) invece che allo scorrimento, e a scroll 1600 i valori sono già finali: non tolti ma anticipati. Effetti contati: entrata, conteggio, barre, intestazione, menu, modale, icone +/-, banner.",
+     "evidenze": [
+      "prove/R04/ridotto/001-vai.movimento.json",
+      "prove/R04/ridotto/003-scorri.jpg",
+      "prove/R04/ridotto/005-muovi.movimento.json",
+      "prove/R04/ridotto/007-clic.movimento.json"
+     ]
+    },
+    {
+     "caratteristica": "percorso da tastiera",
+     "ambito": "tastiera",
+     "stato": "presente",
+     "valore": {
+      "tab_fino_al_comando_principale": 28,
+      "focus_visibile": "sì",
+      "salta_al_contenuto": "sì",
+      "trappole": 0
+     },
+     "descrizione": "Primo Tab: «Skip to main content» (617,20, 207x58). Anello di focus: 4 px pieno rgb(0,232,157). 71 elementi in ordine di Tab (calcolo approssimato) e «Explore our safety dashboard» è il 28°: ogni sottovoce dei menu è un punto di sosta. Trappole non incontrate nei 12 Tab provati; la finestra video restituisce il fuoco al play con Esc (021-tasto.jpg). Il conteggio completo degli altri Tab non è stato fatto uno per uno.",
+     "evidenze": [
+      "prove/R04/023-tasto.jpg",
+      "prove/R04/riepilogo-senza-posto.json",
+      "prove/R04/misura-bersagli-testo-computer.json"
+     ]
+    },
+    {
+     "caratteristica": "testo al 200%",
+     "ambito": "testo 200%",
+     "stato": "presente",
+     "valore": {
+      "scroll_orizzontale": "no",
+      "contenuto_perso": "no"
+     },
+     "descrizione": "Testo 200% (corpo a 32 px): scrollWidth 1440 = larghezza, pagina da 5322 a 9813 px; l'intestazione contiene ancora le 6 voci ma a fatica. Zoom 200% (viewport 720x450): scrollWidth 720; il banner cookie occupa circa 280 px su 450 in altezza (zoom-200/003-scorri.jpg).",
+     "evidenze": [
+      "prove/R04/carattere-200/001-vai.jpg",
+      "prove/R04/carattere-200/003-scorri.jpg",
+      "prove/R04/zoom-200/003-scorri.jpg"
+     ]
+    },
+    {
+     "caratteristica": "albero di accessibilità (proxy)",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "punti_di_riferimento": 5,
+      "titoli": 14,
+      "immagini_senza_alternativa": 0,
+      "comandi_senza_nome": 0
+     },
+     "descrizione": "ariaSnapshot (proxy): banner 1, navigation 2, main 1, contentinfo 1 (più il dialogo cookie); 14 titoli; 40 link, 8 pulsanti, 25 immagini, nessuna senza alt (6 con alt vuoto, decorative). Il mio conteggio nel DOM trovava 11 comandi senza testo né aria-label (icone con nome altrove): fa fede l'albero.",
+     "evidenze": [
+      "prove/R04/albero-accessibilita/aria-snapshot-computer.yml",
+      "prove/R04/riepilogo-senza-posto.json"
+     ]
+    },
+    {
+     "caratteristica": "bersagli dei comandi principali",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "larghezza_min_px": 20,
+      "altezza_min_px": 16
+     },
+     "non_misurati": [
+      "distanza_min_px"
+     ],
+     "descrizione": "Su 72 comandi visibili: voci di menu a comparsa 350x20, link in linea 18 px d'altezza, voci d'intestazione 32-68x90, cerchio play ~80x80. Distanza minima non misurata.",
+     "evidenze": [
+      "prove/R04/misura-bersagli-testo-computer.json"
+     ]
+    },
+    {
+     "caratteristica": "bersagli dei comandi principali",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "larghezza_min_px": 13,
+      "altezza_min_px": 16
+     },
+     "non_misurati": [
+      "distanza_min_px"
+     ],
+     "descrizione": "A 430x932 il conteggio include elementi del pannello menu chiuso (calcolo approssimativo); a 390x844: 89 comandi, 72 sotto 44x44 px (riepilogo-senza-posto.json). Le frecce del menu telefono («Enter Rides menu») sono 13x22 px nel riquadro dell'elemento.",
+     "evidenze": [
+      "prove/R04/telefono/misura-bersagli-testo-telefono.json",
+      "prove/R04/riepilogo-senza-posto.json"
+     ]
+    },
+    {
+     "caratteristica": "testo corrente",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "corpo_px": 16,
+      "interlinea": 1.5,
+      "caratteri_per_riga_max": 58
+     },
+     "descrizione": "GT-Walsheim 400, 16/24 px, colonna 461 px; i caratteri per riga sono una stima (larghezza / 0,5 em), non un conteggio sul testo reso. Titoli 120/50/40 px.",
+     "evidenze": [
+      "prove/R04/misura-bersagli-testo-computer.json"
+     ]
+    },
+    {
+     "caratteristica": "testo corrente",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "corpo_px": 16,
+      "interlinea": 1.5
+     },
+     "non_misurati": [
+      "caratteri_per_riga_max"
+     ],
+     "descrizione": "Corpo 16/24 px; paragrafo largo 348 px a 430 e 318 px a 390.",
+     "evidenze": [
+      "prove/R04/telefono/misura-bersagli-testo-telefono.json",
+      "prove/R04/riepilogo-senza-posto.json"
+     ]
+    },
+    {
+     "caratteristica": "richieste e terze parti",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "richieste": 82,
+      "domini_di_terzi": 3,
+      "kb": 1582
+     },
+     "non_misurati": [
+      "caratteri_caricati"
+     ],
+     "descrizione": "A ricarica (cache attiva): waymo.com 58, storage.googleapis.com 10, lh3.googleusercontent.com 12 (486 kB), fonts.googleapis.com 1; 494 kB trasferiti; fcp 716 ms in headless. kB = byte codificati. Caratteri caricati: GT-Walsheim e Simplon Mono (il numero di file non è stato contato). YouTube non viene richiesto prima del clic.",
+     "evidenze": [
+      "prove/R04/misura-richieste-computer.json"
+     ]
+    },
+    {
+     "caratteristica": "avvio di audio e video",
+     "ambito": "media",
+     "stato": "presente",
+     "valore": {
+      "avvio_automatico": "no"
+     },
+     "non_misurati": [
+      "controlli_nativi",
+      "trascrizione",
+      "sottotitoli"
+     ],
+     "descrizione": "Il cerchio-collage mostra un tasto play; il clic apre una finestra con YouTube «Waymo's Approach to Building a Safe Waymo Driver» (4:02) che non parte da solo nelle foto (0:00, rotella di caricamento). Controlli nativi, trascrizione e sottotitoli: il lettore non si è caricato, quindi non osservati.",
+     "evidenze": [
+      "prove/R04/020-clic.jpg",
+      "prove/R04/021-tasto.jpg"
+     ]
+    },
+    {
+     "caratteristica": "media non caricato",
+     "ambito": "media",
+     "stato": "non_osservato",
+     "motivo": "Non ho bloccato la richiesta del video né delle immagini: la finestra con il lettore YouTube resta in caricamento nell'ambiente (020-clic.jpg), ma non è una prova di cosa resti senza il media."
+    },
+    {
+     "caratteristica": "anteprima del collegamento",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "titolo": "sì",
+      "immagine": "sì",
+      "descrizione": "sì"
+     },
+     "descrizione": "Meta: title «Safety – Waymo», description, og:title, og:image, og:description e twitter:card presenti (lettura dei meta, non anteprima resa).",
+     "evidenze": [
+      "prove/R04/riepilogo-senza-posto.json"
+     ]
+    },
+    {
+     "caratteristica": "stampa",
+     "ambito": "stampa",
+     "stato": "presente",
+     "valore": {
+      "leggibile": "sì",
+      "comandi_inutili_nascosti": "no"
+     },
+     "descrizione": "Con emulateMedia print a 794x1123: il banner cookie e lo sfondo scuro restano; PDF stimato di 4 pagine. «Leggibile sì» dal solo screenshot della prima pagina; le pagine successive del PDF non sono state guardate una a una.",
+     "evidenze": [
+      "prove/R04/stampa/001-stampa-prima-pagina.jpg",
+      "prove/R04/stampa/stampa.pdf",
+      "prove/R04/riepilogo-senza-posto.json"
+     ]
+    },
+    {
+     "caratteristica": "chi c'è dietro e le fonti",
+     "ambito": "fiducia",
+     "stato": "presente",
+     "valore": {
+      "firma": "sì",
+      "data": "sì",
+      "versione": "no",
+      "fonti_collegate": "sì"
+     },
+     "descrizione": "Partner di ricerca citati con nome e ruolo (IIHS, UMTRI, VTTI, Swiss Re); riferimenti bibliografici collegati (Kusano et al. 2023, Blincoe et al. 2023, Nelson 1970); dati «through June 2026»; vetrina: Swiss Re e FIA collegati nel testo. Nessun numero di versione dei dati.",
+     "evidenze": [
+      "prove/R04/043-scorri.jpg",
+      "prove/R04/044-clic.jpg",
+      "prove/R04/045-scorri.jpg"
+     ]
+    },
+    {
+     "caratteristica": "stato e limiti dichiarati",
+     "ambito": "fiducia",
+     "stato": "presente",
+     "valore": {
+      "presente": "sì",
+      "prima_della_promessa": "no"
+     },
+     "descrizione": "Il limite sta in una voce chiusa in fondo all'hub: «There is no perfect “apples-to-apples” comparison between human and AV data available today.» La promessa («95% fewer serious injury or worse crashes») è nel primo schermo della vetrina; l'hub apre con «The data to date indicate the Waymo Driver is already making roads safer…».",
+     "evidenze": [
+      "prove/R04/044-clic.jpg",
+      "prove/R04/037-vai.jpg"
+     ]
+    },
+    {
+     "caratteristica": "stato e limiti dichiarati",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "presente": "no",
+      "prima_della_promessa": "no"
+     },
+     "descrizione": "Nella vetrina, accanto alle 6 percentuali non compaiono periodo, base di confronto né fonte; sopra c'è solo «Compared to an average human driver over the same distance in our operating cities, the Waymo Driver had».",
+     "evidenze": [
+      "prove/R04/005-clic.jpg",
+      "prove/R04/007-scorri.jpg"
+     ]
+    },
+    {
+     "caratteristica": "corto subito, lungo a richiesta",
+     "ambito": "aiuto",
+     "stato": "presente",
+     "valore": {
+      "meccanismo": "apertura"
+     },
+     "descrizione": "Aperture «+/–» per l'impegno (3 voci), la metodologia (4 voci) e le FAQ numerate (con «Copy link» e «Export to PDF»); «Learn about our methodology» salta alla sezione.",
+     "evidenze": [
+      "prove/R04/012-clic.jpg",
+      "prove/R04/044-clic.jpg",
+      "prove/R04/043-scorri.jpg"
+     ]
+    },
+    {
+     "caratteristica": "corto subito, lungo a richiesta",
+     "ambito": "percorso principale",
+     "stato": "presente",
+     "valore": {
+      "meccanismo": "apertura"
+     },
+     "descrizione": "Nella vetrina: carosello con frecce per le 4 affermazioni e 3 aperture per le tre ragioni dell'impegno.",
+     "evidenze": [
+      "prove/R04/010-clic.jpg",
+      "prove/R04/012-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "porte per pubblici diversi",
+     "ambito": "arrivo computer",
+     "stato": "assente",
+     "descrizione": "Nessuna porta per ruolo, compito o argomento dichiarato al primo schermo né nel menu; le tre vie (guardare, controllare, iscriversi) sono implicite nella pagina.",
+     "evidenze": [
+      "prove/R04/001-vai.jpg",
+      "prove/R04/005-clic.jpg",
+      "prove/R04/017-muovi.jpg"
+     ]
+    },
+    {
+     "caratteristica": "lunghezza e registro delle frasi",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "frasi_campione": 10,
+      "parole_per_frase_media": 20.9,
+      "persona": "mista"
+     },
+     "descrizione": "Campione delle prime 10 frasi in prosa della vetrina (11-33 parole, media 20,9) e dell'hub (8-39 parole, media 20,9); «we», «our» e «you» insieme. Solo inglese.",
+     "evidenze": [
+      "prove/R04/testo-main-computer.txt",
+      "prove/R04/testo-main-impact-computer.txt"
+     ]
+    },
+    {
+     "caratteristica": "prodotto mostrato",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "tipo": "foto",
+      "con_legenda": "sì",
+      "con_alternativa": "sì"
+     },
+     "descrizione": "Il prodotto è un servizio di guida: foto del veicolo e delle strade in un collage circolare, video dietro un tasto, illustrazioni a linea per le affermazioni; didascalia «Explore our Safety Case Framework» vicino al video. 0 immagini senza alt.",
+     "evidenze": [
+      "prove/R04/001-vai.jpg",
+      "prove/R04/012-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "numeri detti a parole",
+     "ambito": "dati",
+     "stato": "presente",
+     "valore": {
+      "presente": "sì"
+     },
+     "descrizione": "«95% Fewer serious injury or worse crashes (55 fewer)» è nel DOM come frase accanto alla percentuale e al numero assoluto; l'hub ripete il confronto in frase («Compared to an average human driver over the same distance in our operating cities, the Waymo Driver had») e nelle tabelle.",
+     "evidenze": [
+      "prove/R04/007-scorri.jpg",
+      "prove/R04/testo-main-computer.txt"
+     ]
+    },
+    {
+     "caratteristica": "campione di suono",
+     "ambito": "media",
+     "stato": "assente",
+     "descrizione": "Percorse vetrina e hub fino al fondo, desktop e telefono: nessun audio, solo il video YouTube a richiesta (senza suono dimostrabile in questo ambiente).",
+     "evidenze": [
+      "prove/R04/001-vai.jpg",
+      "prove/R04/014-scorri.jpg",
+      "prove/R04/045-scorri.jpg"
+     ]
+    },
+    {
+     "caratteristica": "tabella di compatibilità",
+     "ambito": "dati",
+     "stato": "assente",
+     "descrizione": "Non è un prodotto da installare: nessuna tabella di compatibilità; l'equivalente sono le tabelle di confronto con i benchmark, senza una colonna «non provato» (usa «N/A» dove manca il dato).",
+     "evidenze": [
+      "prove/R04/045-scorri.jpg"
+     ]
+    }
+   ]
+  }
+ ]
+}

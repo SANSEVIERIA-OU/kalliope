@@ -86,11 +86,10 @@ re-run the failed jobs from the workflow run.
    (`actions/attest-build-provenance`), and creates the GitHub release with every file. A tag with
    a `-` makes a prerelease; any other tag is marked as the latest release.
 
-Build provenance attestations are free for public repositories. For private repositories they need
-GitHub Enterprise Cloud; SANSEVIERIA-OU is on GitHub Free, so while Kalliope is private this step
-fails with a warning and the release goes ahead without it. Once the repository is public, it works
-without changes, and anyone can check a file with
-`gh attestation verify <file> -R SANSEVIERIA-OU/kalliope`.
+Build provenance attestations are free for public repositories, and Kalliope is public since
+12 November 2026: from v0.1-rc.2 on, anyone can check that a file was built by this workflow with
+`gh attestation verify <file> -R SANSEVIERIA-OU/kalliope`. (v0.1-rc.1 was published while the
+repository was private, without attestations.)
 
 ## What is in a release
 
@@ -147,8 +146,8 @@ is not published on AUR yet. To publish a version:
    repository (`ssh://aur@aur.archlinux.org/kalliope-bin.git`).
 2. Run `makepkg --printsrcinfo > .SRCINFO`, commit both files and push.
 
-This needs an AUR account with an SSH key. The tarball must also be downloadable without signing
-in, so AUR only works once releases are public: the PKGBUILD downloads it from the GitHub release.
+This needs an AUR account with an SSH key. The PKGBUILD downloads the tarball from the GitHub
+release, which anyone can do now that the repository is public.
 
 ## CI
 
@@ -167,24 +166,35 @@ push to a branch cancels the run it replaces. Compiled dependencies are cached w
 
 ## Cost
 
-The repository is private, so its Actions minutes come from the organisation's free quota of
-2,000 minutes a month. A Linux minute counts once, a Windows minute twice and a macOS minute ten
-times. Each job is rounded up to a whole minute. Measured on 12 November 2026, with the app:
+The repository is public, so GitHub's standard runners cost nothing, on Linux, Windows and macOS
+alike. Workflow artifacts are kept for 7 days. Windows and macOS still run only on `main` and by
+hand: they take longer, and macOS runners are sometimes all busy (on 12 November 2026 a macOS job
+was cancelled twice after GitHub found no free runner), which would hold up every branch.
 
-| Run | Jobs | Counted minutes | After a change to `Cargo.lock` or to Rust |
+Measured on 12 November 2026, with the app, in minutes of runner time:
+
+| Run | Jobs | Minutes | After a change to `Cargo.lock` or to Rust |
 | --- | --- | --- | --- |
 | CI on a branch or pull request | Linux | 2 | 8 |
-| CI on `main`, or by hand | Linux, Windows, macOS | 16 (2 + 2 × 2 + 1 × 10) | 44 (8 + 8 × 2 + 2 × 10) |
+| CI on `main`, or by hand | Linux, Windows, macOS | about 5 | about 18 |
 | Release, or Release by hand | Linux packages, publish | 9 (8 + 1; by hand: 8) | the same: releases use no cache |
+| Website | build and deploy | under 1 | the same |
 
 The right-hand column is the first run after the cache stops matching: every dependency (mostly
 Slint) is compiled again. That happens when `Cargo.lock` changes and when GitHub's runners get a
 new Rust, about every six weeks. A branch uses `main`'s cache when it has none of its own.
 
-For example, 60 pushes to branches, 20 merges to `main` and 4 releases in a month count about
-120 + 320 + 36 = 476 minutes, before cold runs. macOS is the dearest part: that is why it runs only
-on `main`. Workflow artifacts are kept for 7 days and count towards the organisation's 500 MB of
-storage.
+## Website
+
+`site/` is published on GitHub Pages at https://sansevieria-ou.github.io/kalliope/ by
+`.github/workflows/pages.yml`, on every change to `site/` on `main`, after every Release run and
+after a release is edited by hand. `tools/site.py` copies the pages and fills in the version, the
+links, sizes and fingerprints of the packages of the newest release (the newest prerelease while
+there is no release), so the pages never name a version by hand. To see the site locally:
+
+```sh
+python3 -I tools/site.py --out /tmp/kalliope-site && python3 -m http.server -d /tmp/kalliope-site
+```
 
 ## Not done yet
 

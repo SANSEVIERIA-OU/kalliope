@@ -15,7 +15,7 @@ a real desktop. Windows and macOS builds compile and pass tests, but have no vir
 
 1. Install the package for your system from the [releases page](https://github.com/SANSEVIERIA-OU/kalliope/releases)
    and open **Kalliope**.
-2. The first time, press **Scarica la voce**: the voice (52 MB) is downloaded once and checked,
+2. The first time, press **Scarica la voce**: the voice (53 MB) is downloaded once and checked,
    and Kalliope then works offline.
 3. In Zoom, Teams, Meet, Webex, Jitsi or your browser, choose **Kalliope** as the microphone.
 4. Type and press Enter. **Ferma** stops; earlier phrases stay in the list, ready to repeat.
@@ -60,8 +60,11 @@ export KALLIOPE_ORT_LIB=/path/to/libonnxruntime.so KALLIOPE_MODEL_DIR=/path/to/k
 
 ## Releases
 
-There is no release yet. Each version will be published on the
-[releases page](https://github.com/SANSEVIERIA-OU/kalliope/releases) for every supported system. The
-first is Linux x86_64: a `.deb` for Debian 13 and Ubuntu 24.04 or newer, an `.rpm` for Fedora, and a
-`.tar.gz` for any other distribution. [CHANGELOG.md](CHANGELOG.md) says what each version brings;
+Website: https://sansevieria-ou.github.io/kalliope/
+
+The first test version, [0.1-rc.1](https://github.com/SANSEVIERIA-OU/kalliope/releases/tag/v0.1-rc.1),
+is a prerelease. Each version is published on the
+[releases page](https://github.com/SANSEVIERIA-OU/kalliope/releases). For now it is Linux x86_64:
+a `.deb` for Debian 13 and Ubuntu 24.04 or newer, an `.rpm` for Fedora, a `.tar.gz` for any other
+distribution and a PKGBUILD for Arch. [CHANGELOG.md](CHANGELOG.md) says what each version brings;
 [docs/releasing.md](docs/releasing.md) explains how versions and releases are made.

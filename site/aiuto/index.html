@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<!-- SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 -->
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="text-scale" content="scale">
+<title>Aiuto di Kalliope: cerca la frase che vedi nella finestra</title>
+<meta name="description" content="Ogni frase che la finestra di Kalliope mostra, con cosa significa e cosa fare. Come scegliere il microfono, cosa controllare e come segnalare un problema.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Kalliope">
+<meta property="og:title" content="Aiuto di Kalliope: cerca la frase che vedi nella finestra">
+<meta property="og:description" content="Ogni frase che la finestra di Kalliope mostra, con cosa significa e cosa fare. Come scegliere il microfono, cosa controllare e come segnalare un problema.">
+<meta property="og:url" content="https://sansevieria-ou.github.io/kalliope/aiuto/">
+<meta property="og:image" content="https://sansevieria-ou.github.io/kalliope/immagini/kalliope-finestra.png">
+<meta property="og:image:alt" content="La finestra di Kalliope: un campo dove scrivere, i pulsanti Parla e Ferma, la scelta della voce.">
+<link rel="canonical" href="https://sansevieria-ou.github.io/kalliope/aiuto/">
+<link rel="icon" href="../immagini/icona.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../stile/token.css">
+<link rel="stylesheet" href="../stile/base.css">
+<link rel="stylesheet" href="../stile/componenti.css">
+<script src="../script/kalliope.js" defer></script>
+</head>
+<body data-prerelease="{{kalliope.prerelease}}" data-versione="{{kalliope.version}}">
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+<header class="sito-intestazione">
+<div class="pagina">
+<a class="marca" href="../" aria-label="Kalliope, pagina iniziale"><img src="../immagini/icona.svg" alt="" width="40" height="40"><span>Kalliope</span></a>
+<nav class="nav" aria-label="Principale">
+<ul>
+<li><a href="../ascolta/">Ascolta</a></li><li><a href="../stato/">Stato e limiti</a></li><li><a href="../installa/">Installa</a></li><li><a href="../riunione/">In riunione</a></li><li><a href="../aiuto/" aria-current="page">Aiuto</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="contenuto" tabindex="-1">
+<div class="pagina testo">
+<p class="percorso">Passo <b>5</b> di 5: <b>Aiuto</b></p>
+<h1>Aiuto: cerca la frase che vedi</h1>
+<p>La finestra di Kalliope dice sempre cosa sta succedendo. Qui trovi ogni frase con la sua spiegazione.</p>
+<div class="filtro" data-filtro data-testo-una="1 frase" data-testo-piu="frasi" data-testo-nessuna="Nessuna frase trovata. Prova una parola sola, per esempio «pronta» o «scarico». Oppure guarda i tre casi qui sotto, o segnala il problema." data-testo-tutte="Tutte le frasi.">
+<label for="cerca-frase">Scrivi una parte della frase</label>
+<input id="cerca-frase" type="search" autocomplete="off" spellcheck="false">
+<p class="filtro__stato" role="status"></p>
+</div>
+<section data-gruppo-frasi aria-labelledby="frasi-titolo">
+<h2 id="frasi-titolo">Le frasi della finestra</h2>
+<ul class="indice-frasi">
+<li><a href="#f-scarica">«Per parlare, Kalliope deve scaricare la voce: 53 MB, una volta sola. Poi funziona senza internet.»</a></li>
+<li><a href="#f-scarico">«Scarico la voce… N di 53 MB»</a></li>
+<li><a href="#f-annullato">«Download annullato.»</a></li>
+<li><a href="#f-curl">«Per scaricare la voce serve il programma curl: …»</a></li>
+<li><a href="#f-non-riuscito">«Download non riuscito: …»</a></li>
+<li><a href="#f-impronta">«Il file … scaricato non corrisponde all'impronta attesa: l'ho scartato.»</a></li>
+<li><a href="#f-preparo">«Preparo la voce…»</a></li>
+<li><a href="#f-pronta">«Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono.»</a></li>
+<li><a href="#f-senza-microfono">«La voce è pronta, ma …: per ora nessuno ti sentirà nelle chiamate.»</a></li>
+<li><a href="#f-parlo">«Sto parlando…»</a></li>
+<li><a href="#f-nessuna-chiamata">«Nessuna chiamata sta usando il microfono «Kalliope»: sceglilo come microfono nell'app della riunione.»</a></li>
+<li><a href="#f-errori">«Non riesco a preparare la voce: …»</a></li>
+</ul>
+<article class="scheda-frase" id="f-scarica" data-parole="primo avvio scaricare voce">
+<h3><q class="frase-finestra">Per parlare, Kalliope deve scaricare la voce: 53 MB, una volta sola. Poi funziona senza internet.</q></h3>
+<dl>
+<dt>Cosa significa</dt><dd>È la prima volta: la voce non è ancora sul computer. Il campo di testo è spento.</dd>
+<dt>Cosa fare</dt><dd>Premi «Scarica la voce» e aspetta. Serve internet solo adesso.</dd>
+</dl>
+</article>
+<article class="scheda-frase" id="f-scarico" data-parole="scarico in corso barra">
+<h3><q class="frase-finestra">Scarico la voce… N di 53 MB</q></h3>
+<dl>
+<dt>Cosa significa</dt><dd>Lo scarico è in corso. Al posto di N vedi i megabyte già scaricati.</dd>
+<dt>Cosa fare</dt><dd>Aspetta. Puoi premere «Annulla». Se si ferma, cerca la frase che compare dopo.</dd>
+</dl>
+</article>
+<article class="scheda-frase" id="f-annullato" data-parole="annulla interrotto">
+<h3><q class="frase-finestra">Download annullato.</q></h3>
+<dl>
+<dt>Cosa significa</dt><dd>Hai premuto «Annulla», oppure lo scarico si è interrotto.</dd>
+<dt>Cosa fare</dt><dd>Premi di nuovo «Scarica la voce». Lo scarico riparte da capo.</dd>
+</dl>
+</article>
+<article class="scheda-frase" id="f-curl" data-parole="curl manca programma">
+<h3><q class="frase-finestra">Per scaricare la voce serve il programma curl: …</q></h3>
+<dl>
+<dt>Cosa significa</dt><dd>Sul computer manca il programma curl, che Kalliope usa per scaricare la voce.</dd>
+<dt>Cosa fare</dt><dd>Installa curl, poi premi di nuovo «Scarica la voce». Scrivi il comando della tua distribuzione.<p><strong>Debian e Ubuntu</strong></p><div class="comando">
+<pre><code>sudo apt install curl</code></pre>
+<div class="comando__barra"><button type="button" class="btn btn--piccolo" data-copia data-testo-ok="Copiato." data-testo-no="Non riesco a copiare da solo: seleziona il testo e copialo.">Copia il comando</button><span class="comando__stato" role="status"></span></div>
+</div><p><strong>Fedora</strong></p><div class="comando">
+<pre><code>sudo dnf install curl</code></pre>
+<div class="comando__barra"><button type="button" class="btn btn--piccolo" data-copia data-testo-ok="Copiato." data-testo-no="Non riesco a copiare da solo: seleziona il testo e copialo.">Copia il comando</button><span class="comando__stato" role="status"></span></div>
+</div><p><strong>Arch</strong></p><div class="comando">
+<pre><code>sudo pacman -S curl</code></pre>
+<div class="comando__barra"><button type="button" class="btn btn--piccolo" data-copia data-testo-ok="Copiato." data-testo-no="Non riesco a copiare da solo: seleziona il testo e copialo.">Copia il comando</button><span class="comando__stato" role="status"></span></div>
+</div></dd>
+</dl>
+</article>
+<article class="scheda-frase" id="f-non-riuscito" data-parole="rete errore scarico">
+<h3><q class="frase-finestra">Download non riuscito: …</q></h3>
+<dl>
+<dt>Cosa significa</dt><dd>La rete non ha risposto o il server ha rifiutato. Dopo i due punti c'è la causa, spesso in inglese.</dd>
+<dt>Cosa fare</dt><dd>Controlla la connessione e premi di nuovo «Scarica la voce».</dd>
+</dl>
+<details class="dettagli"><summary>Se si ripete</summary><div class="dettagli__corpo">
+<p>Segnalalo con la frase intera, compresa la causa dopo i due punti. Vedi <a href="#segnala">come segnalare</a>.</p>
+</div></details>
+</article>
+<article class="scheda-frase" id="f-impronta" data-parole="impronta sha file scartato">
+<h3><q class="frase-finestra">Il file … scaricato non corrisponde all'impronta attesa: l'ho scartato.</q></h3>
+<dl>
+<dt>Cosa significa</dt><dd>Il file scaricato era incompleto o diverso da quello previsto. Kalliope lo ha scartato per sicurezza.</dd>
+<dt>Cosa fare</dt><dd>Premi di nuovo «Scarica la voce». Se succede ancora, <a href="#segnala">segnalalo</a>. Non cercare di aggirare il controllo.</dd>
+</dl>
+</article>
+<article class="scheda-frase" id="f-preparo" data-parole="caricamento avvio">
+<h3><q class="frase-finestra">Preparo la voce…</q></h3>
+<dl>
+<dt>Cosa significa</dt><dd>La voce si sta caricando in memoria. Succede a ogni avvio. Il campo di testo resta spento.</dd>
+<dt>Cosa fare</dt><dd>Aspetta. Non abbiamo misurato quanto dura.</dd>
+</dl>
+</article>
+<article class="scheda-frase" id="f-pronta" data-parole="tutto bene">
+<h3><q class="frase-finestra">Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono.</q></h3>
+<dl>
+<dt>Cosa significa</dt><dd>Tutto a posto: Kalliope può parlare.</dd>
+<dt>Cosa fare</dt><dd>Nell'app della riunione scegli «Kalliope» come microfono. <a href="../riunione/">I passi sono nella pagina In riunione</a>.</dd>
+</dl>
+</article>
+<article class="scheda-frase" id="f-senza-microfono" data-parole="pipewire microfono non disponibile non risponde">
+<h3><q class="frase-finestra">La voce è pronta, ma …: per ora nessuno ti sentirà nelle chiamate.</q></h3>
+<dl>
+<dt>Cosa significa</dt><dd>La voce funziona, ma il microfono «Kalliope» non si è creato. Al posto dei puntini c'è la causa, spesso in inglese.</dd>
+<dt>Cosa fare</dt><dd>Se la causa dice <code>PipeWire is not running</code>, avvia PipeWire con questo comando:<div class="comando">
+<pre><code>systemctl --user start pipewire pipewire-pulse wireplumber</code></pre>
+<div class="comando__barra"><button type="button" class="btn btn--piccolo" data-copia data-testo-ok="Copiato." data-testo-no="Non riesco a copiare da solo: seleziona il testo e copialo.">Copia il comando</button><span class="comando__stato" role="status"></span></div>
+</div><p>Se dice <code>PipeWire is not available</code>, manca la libreria: installa <code>pipewire</code> e <code>pipewire-pulse</code>. Se il computer usa solo PulseAudio, il microfono di Kalliope oggi non è disponibile.</p></dd>
+</dl>
+<details class="dettagli"><summary>Dopo aver sistemato</summary><div class="dettagli__corpo">
+<p>Chiudi e riapri Kalliope. Non abbiamo provato se serva, ma è il modo più semplice per cominciare da capo.</p>
+</div></details>
+</article>
+<article class="scheda-frase" id="f-parlo" data-parole="parla coda ferma">
+<h3><q class="frase-finestra">Sto parlando…</q></h3>
+<dl>
+<dt>Cosa significa</dt><dd>Kalliope sta dicendo la frase.</dd>
+<dt>Cosa fare</dt><dd>«Ferma» interrompe subito e svuota la coda. Il testo che scrivi nel frattempo si mette in coda.</dd>
+</dl>
+</article>
+<article class="scheda-frase" id="f-nessuna-chiamata" data-parole="chiamata nessuno ascolta senti anche tu">
+<h3><q class="frase-finestra">Nessuna chiamata sta usando il microfono «Kalliope»: sceglilo come microfono nell'app della riunione.</q></h3>
+<dl>
+<dt>Cosa significa</dt><dd>Nessuna app sta registrando dal microfono «Kalliope», quindi gli altri non ti sentono. Il suono viene scartato, come per un microfono vero. La frase compare solo se «Senti anche tu» è spento.</dd>
+<dt>Cosa fare</dt><dd>Nell'app della riunione scegli «Kalliope» come microfono. Se lo hai già scelto, controlla che nell'app il microfono non sia disattivato. Kalliope è il microfono predefinito del computer solo se è l'unico: altrimenti va scelto in ogni app.</dd>
+</dl>
+</article>
+<article class="scheda-frase" id="f-errori" data-parole="errore voce cambiare non riesco">
+<h3><q class="frase-finestra">Non riesco a preparare la voce: …</q></h3>
+<dl>
+<dt>Cosa significa</dt><dd>Qualcosa non va nel programma o nei file della voce. Lo stesso vale per «Errore della voce: …» e «Non riesco a cambiare voce: …».</dd>
+<dt>Cosa fare</dt><dd>Chiudi e riapri Kalliope. Se la frase ricompare, <a href="#segnala">segnalala</a> intera, compreso ciò che segue i due punti. Non abbiamo una soluzione provata per questi errori.</dd>
+</dl>
+</article>
+</section>
+<h2 id="mia-frase">La mia frase non c'è</h2>
+<article class="scheda-frase" id="non-compare">
+<h3>«Kalliope» non compare fra i microfoni dell'app</h3>
+<dl>
+<dt>Cosa fare</dt><dd>Kalliope deve essere aperto, con la riga «Pronta» in alto. Poi scrivi in un terminale <code>pactl list short sources</code>: deve esserci una riga con <code>kalliope</code>. Se non c'è, vedi la frase «La voce è pronta, ma …». Se c'è ma l'app non lo mostra, chiudi e riapri l'elenco dei microfoni dell'app; non abbiamo provato se serva riavviare l'app.</dd>
+</dl>
+</article>
+<article class="scheda-frase" id="non-mi-sentono">
+<h3>Gli altri non mi sentono</h3>
+<dl>
+<dt>Cosa fare</dt><dd>Segui i tre controlli della <a href="../riunione/#passo-3">pagina In riunione</a>. Ricorda che «Senti anche tu» fa sentire la voce a te, non all'app.</dd>
+</dl>
+</article>
+<article class="scheda-frase" id="a-scatti">
+<h3>La voce va a scatti nella riunione</h3>
+<dl>
+<dt>Cosa fare</dt><dd>Prova ad abbassare la soppressione del rumore nelle impostazioni audio dell'app. Non l'abbiamo provato: se ti aiuta, o se non cambia nulla, <a href="#segnala">dicci come è andata</a>.</dd>
+</dl>
+</article>
+<h2 id="segnala">Segnala un problema, o dicci come è andata</h2>
+<p>Non c'è un indirizzo <span class="nowrap">e-mail</span>. Le segnalazioni passano dalle issue di GitHub, che richiedono un account GitHub.</p>
+<p><a class="btn btn--primario" href="https://github.com/SANSEVIERIA-OU/kalliope/issues/new">Apri una segnalazione su GitHub</a></p>
+<p>Una segnalazione utile dice:</p>
+<ul>
+<li>quale app di riunione usi, e quale versione;</li>
+<li>la tua distribuzione Linux e la sua versione (<code>cat /etc/os-release</code>);</li>
+<li>la versione di PipeWire (<code>pipewire --version</code>) e quella di Kalliope (<code>kalliope --version</code>);</li>
+<li>la frase che la finestra di Kalliope mostrava, intera;</li>
+<li>che cosa hai fatto, e che cosa è successo.</li>
+</ul>
+<div class="avviso avviso--attenzione" role="note">
+<p class="avviso__titolo">Non incollare le frasi che hai detto</p>
+<p>Sono private. Per una segnalazione bastano la frase della finestra e i passi che hai fatto.</p>
+</div>
+<nav class="avanti" aria-label="Indietro e avanti">
+<a href="../riunione/"><small>Indietro</small>Usalo in una riunione</a>
+</nav>
+</div>
+</main>
+<footer class="sito-piede">
+<div class="pagina">
+<div>
+<h2>Kalliope</h2>
+<p>Un programma per scrivere e farsi sentire nelle riunioni. <span class="solo-prova">Versione di prova {{kalliope.version}}, pubblicata il {{kalliope.date}}.</span></p>
+<p>Codice sorgente disponibile, licenza SANSEVIERIA 1.0. Non è software «open source» nel senso dell'OSI. Prodotto da SANSEVIERIA OÜ.</p>
+<p>Questo sito non usa cookie, non ha statistiche e non carica nulla da altri siti. I file li serve GitHub Pages, che registra le richieste come ogni host.</p>
+</div>
+<div>
+<h2>Nel sito</h2>
+<ul>
+<li><a href="../non-ancora/">Windows e macOS: non ancora</a></li>
+<li><a href="../sistema/">Come è fatto questo sito</a></li>
+<li><a href="../aiuto/#segnala">Segnala un problema</a></li>
+</ul>
+</div>
+<div>
+<h2>Fuori da questo sito</h2>
+<ul>
+<li><a href="https://github.com/SANSEVIERIA-OU/kalliope">Codice sorgente su GitHub</a></li>
+<li><a href="{{kalliope.release.url}}">Pagina della versione {{kalliope.version}}</a></li>
+<li><a href="https://github.com/SANSEVIERIA-OU/kalliope/issues">Segnalazioni su GitHub (serve un account)</a></li>
+</ul>
+</div>
+</div>
+</footer>
+</body>
+</html>

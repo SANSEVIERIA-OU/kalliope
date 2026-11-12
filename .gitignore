@@ -8,3 +8,9 @@ models/
 artifacts/
 .venv/
 __pycache__/
+# Design research: screenshots and downloads of third-party sites stay local (their authors' rights)
+/design/ricerca/prove/
+/design/prove-percorso/
+# Worker areas: only their notes and results are kept, not raw downloads, logs and page captures
+/design/incarichi/*/*/
+/design/metodo-capacita.json

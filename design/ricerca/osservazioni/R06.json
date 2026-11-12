@@ -1,0 +1,552 @@
+{
+ "riferimenti": [
+  {
+   "id": "R06",
+   "nome": "Through Sliding Doors",
+   "url": "https://through-sliding-doors.rosiesplace.org.au/",
+   "categoria": "Charitable Organizations/Non-Profit (Websites and Mobile Sites, General Desktop & Mobile Sites)",
+   "anno": 2026,
+   "premio": "Webby Winner",
+   "motivazione_ufficiale": "motivazione individuale non disponibile (sezione About vuota; descrizione di categoria: siti per enti benefici e organizzazioni il cui scopo principale è aiutare le persone); scheda: https://winners.webbyawards.com/2026/websites-and-mobile-sites/general-desktop-mobile-sites/charitable-organizationsnon-profit/385531/through-sliding-doors",
+   "gruppo": "A",
+   "osservazioni": [
+    {
+     "caratteristica": "proposta del primo schermo",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "parole": 35,
+      "frasi": 1
+     },
+     "descrizione": "«These stories are inspired by the real experiences of young people shared with us at Rosie's Place, stories of challenge, courage, and searching for doors that lead away from harm and toward safety and dignity.» Non dice che cosa sono (un fumetto in 5 capitoli) né per chi precisamente; lo dicono il titolo della scheda del browser («A graphic novel by Distil Immersive and Elizabeth Botté») e, dopo l'ingresso, «Stories of struggle and strength for young people.».",
+     "evidenze": [
+      "prove/R06/001-vai.jpg",
+      "prove/R06/026-aspetta.jpg"
+     ]
+    },
+    {
+     "caratteristica": "proposta del primo schermo",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "parole": 35,
+      "frasi": 1
+     },
+     "descrizione": "Stesso testo a 430x932; l'avvertenza occupa una striscia a tutta larghezza in basso.",
+     "evidenze": [
+      "prove/R06/telefono/001-vai.jpg"
+     ]
+    },
+    {
+     "caratteristica": "comandi visibili al primo schermo",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "link": 4,
+      "pulsanti": 3,
+      "campi": 0
+     },
+     "descrizione": "Link: «Rosie's Place» nel testo, «Kids Helpline», «1800 RESPECT», «QUICK EXIT» (questi tre nel pannello di avvertenza, che compare con ritardo). Pulsanti: START WITH SOUND, NO SOUND THANKS, THANKS, I UNDERSTAND. Conteggio da foto.",
+     "evidenze": [
+      "prove/R06/026-aspetta.jpg"
+     ]
+    },
+    {
+     "caratteristica": "comandi visibili al primo schermo",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "link": 4,
+      "pulsanti": 3,
+      "campi": 0
+     },
+     "descrizione": "Gli stessi elementi, con il pannello di avvertenza in basso a tutta larghezza.",
+     "evidenze": [
+      "prove/R06/telefono/001-vai.jpg"
+     ]
+    },
+    {
+     "caratteristica": "comando principale",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "posizione": "centro",
+      "fisso_allo_scorrimento": "no"
+     },
+     "descrizione": "Due scelte alla pari al centro: «START WITH SOUND» e «NO SOUND THANKS» (pillole a contorno, 193x38 e 192x38 circa). Nessuna è predefinita né evidenziata.",
+     "evidenze": [
+      "prove/R06/001-vai.jpg"
+     ]
+    },
+    {
+     "caratteristica": "comando principale",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "posizione": "centro",
+      "fisso_allo_scorrimento": "no"
+     },
+     "descrizione": "Le stesse due pillole, in colonna, al centro di 430x932.",
+     "evidenze": [
+      "prove/R06/telefono/001-vai.jpg"
+     ]
+    },
+    {
+     "caratteristica": "struttura della navigazione",
+     "ambito": "menu computer",
+     "stato": "presente",
+     "valore": {
+      "voci": 3,
+      "tipo": "barra"
+     },
+     "descrizione": "Barra superiore della scena con «Stories of struggle and strength for young people.», FACILITATORS' GUIDE (collegamento esterno), SOUND (interruttore con barrette) e ABOUT THE PROJECT (a pillola), più il logo «Rosie's Place Inc» al centro e Previous/Next ai lati.",
+     "evidenze": [
+      "prove/R06/003-aspetta.jpg"
+     ]
+    },
+    {
+     "caratteristica": "struttura della navigazione",
+     "ambito": "menu telefono",
+     "stato": "non_osservato",
+     "evidenze": [
+      "prove/R06/telefono/003-aspetta.jpg",
+      "prove/R06/telefono-390/002-dopo-consenso.jpg"
+     ],
+     "motivo": "Nelle foto a 430x932 e 390x844 della scena non compaiono né un pannello né un pulsante di menu né le voci FACILITATORS' GUIDE / ABOUT; i collegamenti esistono nel DOM ma la loro visibilità al telefono non è stata verificata."
+    },
+    {
+     "caratteristica": "apertura del menu",
+     "ambito": "menu telefono",
+     "stato": "non_osservato",
+     "motivo": "Nessun menu telefono trovato nelle foto (vedi struttura della navigazione, menu telefono)."
+    },
+    {
+     "caratteristica": "segnale di posizione e di avanzamento",
+     "ambito": "percorso principale",
+     "stato": "non_osservato",
+     "evidenze": [
+      "prove/R06/telefono/005-scorri.jpg",
+      "prove/R06/telefono/006-scorri.jpg"
+     ],
+     "motivo": "Capitolo 1 al telefono scorso solo per 3000 px su 21063 e /about per 1200 px su 4178: nelle viste fatte nessun indicatore (le barrette accanto a SOUND sono l'indicatore del suono, non dell'avanzamento), ma l'assenza non è verificata su tutta la lunghezza."
+    },
+    {
+     "caratteristica": "comando proprio «indietro»",
+     "ambito": "percorso principale",
+     "stato": "non_osservato",
+     "motivo": "Non ho percorso più capitoli né il ritorno dalla pagina di un capitolo alla scena; al computer non sono entrato in alcun capitolo (4-5 fps in software)."
+    },
+    {
+     "caratteristica": "messaggio di errore",
+     "ambito": "errore",
+     "stato": "non_osservato",
+     "motivo": "Il sito non ha campi o moduli: nessun errore di compilazione da provocare."
+    },
+    {
+     "caratteristica": "pagina inesistente",
+     "ambito": "404",
+     "stato": "presente",
+     "valore": {
+      "utile": "no",
+      "offre_ritorno": "no"
+     },
+     "descrizione": "«404» (24 px) e «This page could not be found.» (14 px) hanno colore rgb(0,0,0) su una scena con luminosità 0-22 su 255 (rapporto ≈ 1,2:1 calcolato): nella foto non si vedono; compare prima la soglia del sito. Nessun collegamento di ritorno nel messaggio, solo l'intestazione e il logo «Home».",
+     "evidenze": [
+      "prove/R06/029-vai.jpg",
+      "prove/R06/030-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "attesa del caricamento",
+     "ambito": "rete lenta",
+     "stato": "presente",
+     "valore": {
+      "segnale": "vuoto"
+     },
+     "non_misurati": [
+      "s_al_primo_testo"
+     ],
+     "descrizione": "Slow 3G in Chromium (400 ms, 400 kbit/s): il testo è già nel DOM a 1,3 s ma la foto a ~10 s e a ~25 s mostra solo il fondo azzurro senza testo né bottoni (opacità 0 fino al caricamento dei font o degli script); DOMContentLoaded a 1,9 s, load a 14,2 s. Il momento in cui il testo diventa visibile non è stato raggiunto nei 25 s fotografati.",
+     "evidenze": [
+      "prove/R06/rete-lenta-2/003-4s.jpg",
+      "prove/R06/rete-lenta-2/006-25s.jpg",
+      "prove/R06/riepilogo-senza-posto.json"
+     ]
+    },
+    {
+     "caratteristica": "comportamento senza JavaScript",
+     "ambito": "senza JavaScript",
+     "stato": "presente",
+     "valore": {
+      "contenuto": "nessuno",
+      "navigazione": "no",
+      "comandi_essenziali": "no"
+     },
+     "descrizione": "Schermata azzurra vuota: il testo (692 caratteri: frase, bottoni, avvertenza, linee di aiuto, voci) è nell'HTML ma non visibile; nessun capitolo.",
+     "evidenze": [
+      "prove/R06/senza-js/001-arrivo.jpg",
+      "prove/R06/senza-js/foglio-pagina-intera.jpg"
+     ]
+    },
+    {
+     "caratteristica": "effetti con movimento ridotto",
+     "ambito": "movimento ridotto",
+     "stato": "presente",
+     "valore": {
+      "effetti": 3,
+      "tolti": 0,
+      "sostituiti": 0,
+      "invariati": 3
+     },
+     "descrizione": "matchMedia reduce = true. Con ridotto le dissolvenze di soglia (300/500 ms), la comparsa dei controlli (1000 ms) e la scena (translateX del treno e delle carte, 27 campioni) continuano uguali: nessun adattamento osservato. Non provato nei capitoli.",
+     "evidenze": [
+      "prove/R06/ridotto/001-vai.movimento.json",
+      "prove/R06/ridotto/002-clic.movimento.json",
+      "prove/R06/ridotto/003-aspetta.jpg"
+     ]
+    },
+    {
+     "caratteristica": "percorso da tastiera",
+     "ambito": "tastiera",
+     "stato": "presente",
+     "valore": {
+      "focus_visibile": "parziale",
+      "salta_al_contenuto": "no",
+      "trappole": 0
+     },
+     "non_misurati": [
+      "tab_fino_al_comando_principale"
+     ],
+     "descrizione": "Dopo la scelta del suono i primi 4 Tab vanno su Kids Helpline, 1800 RESPECT, «Thanks, I understand» e Quick exit nel pannello che **non è visibile** (opacità 0); poi Home, sito Rosie's Place, Facilitators' guide, interruttore Toggle sound (13x13 px, opacità 0). I link hanno `outline: none` (3 px bianco ma stile none); il pulsante e le carte mostrano un anello (012-tasto.jpg: anello azzurro sulla carta e sull'ABOUT). Le carte-capitolo sono `tabindex -1`: non raggiungibili con Tab. Conteggio fino al comando principale non misurato.",
+     "evidenze": [
+      "prove/R06/012-tasto.jpg",
+      "prove/R06/021-tasto.jpg",
+      "prove/R06/albero-accessibilita/aria-snapshot-computer.yml"
+     ]
+    },
+    {
+     "caratteristica": "testo al 200%",
+     "ambito": "testo 200%",
+     "stato": "presente",
+     "valore": {
+      "scroll_orizzontale": "no",
+      "contenuto_perso": "no"
+     },
+     "descrizione": "Testo a 200% del browser: il paragrafo passa a 28 px e il corpo a 17,5 px; scrollWidth 1440 = larghezza; su /about il testo si ingrandisce e il layout regge.",
+     "evidenze": [
+      "prove/R06/carattere-200/001-vai.jpg",
+      "prove/R06/carattere-200/002-clic.jpg",
+      "prove/R06/fogli/carattere-zoom-200.jpg"
+     ]
+    },
+    {
+     "caratteristica": "testo al 200%",
+     "ambito": "testo 200% · zoom",
+     "stato": "presente",
+     "valore": {
+      "scroll_orizzontale": "no",
+      "contenuto_perso": "sì"
+     },
+     "descrizione": "Zoom 200% (viewport 720x450): il pannello di avvertenza occupa il 40% dell'altezza e **nasconde «NO SOUND THANKS»**; il clic dove il bottone sarebbe cade sul pannello (002-clic.jpg); dopo «THANKS, I UNDERSTAND» (003-clic.jpg) le due scelte compaiono. Contenuto nascosto ma recuperabile.",
+     "evidenze": [
+      "prove/R06/zoom-200/001-vai.jpg",
+      "prove/R06/zoom-200/002-clic.jpg",
+      "prove/R06/zoom-200/003-clic.jpg",
+      "prove/R06/fogli/carattere-zoom-200.jpg"
+     ]
+    },
+    {
+     "caratteristica": "albero di accessibilità (proxy)",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "punti_di_riferimento": 1,
+      "titoli": 0,
+      "immagini_senza_alternativa": 14,
+      "comandi_senza_nome": 0
+     },
+     "descrizione": "ariaSnapshot (proxy): 1 navigation, nessun main/banner/contentinfo, 0 titoli, 7 link, 5 pulsanti con nome (Start with sound, No sound thanks, Thanks I understand, Previous, Next), 14 img senza nome, un `alert`; le carte-capitolo compaiono come testo «Chapter 1 Carly's Story» seguito da img, non come link né pulsanti.",
+     "evidenze": [
+      "prove/R06/albero-accessibilita/aria-snapshot-computer.yml",
+      "prove/R06/riepilogo-senza-posto.json"
+     ]
+    },
+    {
+     "caratteristica": "bersagli dei comandi principali",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "larghezza_min_px": 62,
+      "altezza_min_px": 16
+     },
+     "non_misurati": [
+      "distanza_min_px"
+     ],
+     "descrizione": "QUICK EXIT 62x16, Kids Helpline 85x19, 1800 RESPECT 92x19, Facilitators' guide 114x16, Thanks I understand 169x34; l'interruttore del suono è 13x13 px (opacità 0). Distanza non misurata.",
+     "evidenze": [
+      "prove/R06/misura-bersagli-testo-meta-about-computer.json"
+     ]
+    },
+    {
+     "caratteristica": "bersagli dei comandi principali",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "larghezza_min_px": 42,
+      "altezza_min_px": 15
+     },
+     "non_misurati": [
+      "distanza_min_px"
+     ],
+     "descrizione": "A 390x844 (scena con avvertenza chiusa): 9 comandi, 8 sotto 44x44 px.",
+     "evidenze": [
+      "prove/R06/riepilogo-senza-posto.json"
+     ]
+    },
+    {
+     "caratteristica": "testo corrente",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "corpo_px": 23.3,
+      "interlinea": 1.5
+     },
+     "non_misurati": [
+      "caratteri_per_riga_max"
+     ],
+     "descrizione": "Lettura su /about: freight-macro-pro 23,3/35 px, colonna 766 px (circa 66 caratteri per riga: stima non misurata); soglia 28/42 px; avvertenza 14,9/18,6 px.",
+     "evidenze": [
+      "prove/R06/misura-bersagli-testo-meta-about-computer.json"
+     ]
+    },
+    {
+     "caratteristica": "testo corrente",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "corpo_px": 21.3,
+      "interlinea": 1.5
+     },
+     "non_misurati": [
+      "caratteri_per_riga_max"
+     ],
+     "descrizione": "A 390x844 la soglia ha 21,3/32 px, paragrafo largo 342 px.",
+     "evidenze": [
+      "prove/R06/riepilogo-senza-posto.json"
+     ]
+    },
+    {
+     "caratteristica": "richieste e terze parti",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "richieste": 76,
+      "domini_di_terzi": 4,
+      "kb": 9915,
+      "caratteri_caricati": 8
+     },
+     "descrizione": "Dall'arrivo senza scegliere il suono: 71 richieste dello stesso dominio (9656 kB), googletagmanager.com, use.typekit.net, fonts.googleapis.com, cdn.jsdelivr.net (257 kB: basis_transcoder.wasm); tra i file grandi 3 mp3 (3133, 938 e 259 kB) e 4 PNG da ~1 MB. fcp 296 ms, load 442 ms in headless. Otto file di caratteri.",
+     "evidenze": [
+      "prove/R06/misura-richieste-computer.json"
+     ]
+    },
+    {
+     "caratteristica": "avvio di audio e video",
+     "ambito": "media",
+     "stato": "presente",
+     "valore": {
+      "avvio_automatico": "no"
+     },
+     "non_misurati": [
+      "controlli_nativi",
+      "trascrizione",
+      "sottotitoli"
+     ],
+     "descrizione": "La soglia chiede il suono prima di entrare con due scelte alla pari; nessun suono parte da solo. I file audio sono scaricati all'arrivo, prima della scelta. L'ascolto non è stato provato: nessuna scheda audio, ho scelto «No sound thanks». Controlli: interruttore SOUND in intestazione con barrette (13x13 px).",
+     "evidenze": [
+      "prove/R06/001-vai.jpg",
+      "prove/R06/misura-richieste-computer.json"
+     ]
+    },
+    {
+     "caratteristica": "media non caricato",
+     "ambito": "media",
+     "stato": "non_osservato",
+     "motivo": "Non ho bloccato audio, texture o WebGL: la prova avrebbe richiesto un browser mio con richieste bloccate mentre il posto era tenuto; non fatta. Su rete lenta la soglia resta vuota (vedi attesa del caricamento)."
+    },
+    {
+     "caratteristica": "anteprima del collegamento",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "titolo": "sì",
+      "immagine": "no",
+      "descrizione": "sì"
+     },
+     "descrizione": "Letti dall'HTML scaricato con curl: title «Through Sliding Doors — Rosie's Place — A graphic novel by Distil Immersive and Elizabeth Botté» e description identica al titolo; nessun og:image, og:description né twitter:card.",
+     "evidenze": [
+      "prove/R06/html-home-curl.html",
+      "prove/R06/misura-bersagli-testo-meta-about-computer.json"
+     ]
+    },
+    {
+     "caratteristica": "stampa",
+     "ambito": "stampa",
+     "stato": "presente",
+     "valore": {
+      "leggibile": "no",
+      "comandi_inutili_nascosti": "no"
+     },
+     "descrizione": "Con emulateMedia print a 794x1123 si stampa solo la soglia (frase e due bottoni in bianco su azzurro, contrasto stimato ≈ 2,8:1 [C]); PDF di 1 pagina; i capitoli non sono nella stampa.",
+     "evidenze": [
+      "prove/R06/stampa/001-stampa-prima-pagina.jpg",
+      "prove/R06/stampa/stampa.pdf",
+      "prove/R06/riepilogo-senza-posto.json"
+     ]
+    },
+    {
+     "caratteristica": "chi c'è dietro e le fonti",
+     "ambito": "fiducia",
+     "stato": "presente",
+     "valore": {
+      "firma": "sì",
+      "data": "sì",
+      "versione": "no",
+      "fonti_collegate": "sì"
+     },
+     "descrizione": "/about: «Through Sliding Doors ©Rosie's Place 2025 and ©Distil Immersive 2025»; finanziamento «NSW Government under the Sexual Violence Grants Fund»; elenco di persone e ruoli (team di progetto, consulenti, gruppo consultivo, illustratrice, studio, sound design, co-progettisti giovani); riferimento a «The Boat» (SBS, 2015); collegamenti a botte.com.au e distil.im.",
+     "evidenze": [
+      "prove/R06/testo-about-computer.txt",
+      "prove/R06/028-scorri.jpg"
+     ]
+    },
+    {
+     "caratteristica": "stato e limiti dichiarati",
+     "ambito": "fiducia",
+     "stato": "presente",
+     "valore": {
+      "presente": "sì",
+      "prima_della_promessa": "no"
+     },
+     "descrizione": "«These stories contain material that some readers may find confronting and unsettling. Words or images may bring up feelings of sadness or discomfort, especially for people who have been subjected to sexual harm. If you need support, you can contact: Kids Helpline (24/7) 1800 55 1800 or 1800 RESPECT (24/7) 1800 737 732». Compare con ritardo variabile dopo la frase della soglia, come pannello in basso a destra (telefono: striscia in basso). Con la scelta del suono sparisce senza conferma.",
+     "evidenze": [
+      "prove/R06/026-aspetta.jpg",
+      "prove/R06/telefono/001-vai.jpg"
+     ]
+    },
+    {
+     "caratteristica": "stato e limiti dichiarati",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "presente": "sì",
+      "prima_della_promessa": "no"
+     },
+     "descrizione": "La frase della soglia è già a schermo quando l'avvertenza non c'è ancora; nella mia prima visita (001-vai.jpg, 5 s di attesa) il pannello non era ancora visibile.",
+     "evidenze": [
+      "prove/R06/026-aspetta.jpg"
+     ]
+    },
+    {
+     "caratteristica": "avvertenza sui contenuti con uscita rapida",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "avvertenza": "sì",
+      "uscita_rapida": "sì",
+      "resta_dopo_la_scelta": "no"
+     },
+     "descrizione": "Avvertenza + due comandi: «THANKS, I UNDERSTAND» e «QUICK EXIT» (link a rosiesplace.org.au). Dopo «No sound thanks» il pannello è invisibile (opacità 0) ma i suoi controlli restano nell'ordine di Tab. Il «Quick exit» non è stato seguito. Caratteristica non nel vocabolario di piano.md §8: aggiunta con nome nuovo.",
+     "evidenze": [
+      "prove/R06/026-aspetta.jpg",
+      "prove/R06/zoom-200/003-clic.jpg"
+     ]
+    },
+    {
+     "caratteristica": "scelta del suono prima di entrare",
+     "ambito": "media",
+     "stato": "presente",
+     "valore": {
+      "scelta_prima_di_entrare": "sì",
+      "predefinito": "nessuno"
+     },
+     "descrizione": "START WITH SOUND / NO SOUND THANKS alla pari prima della scena; dopo, l'interruttore SOUND permette di cambiare. Caratteristica non nel vocabolario di piano.md §8: aggiunta con nome nuovo.",
+     "evidenze": [
+      "prove/R06/001-vai.jpg",
+      "prove/R06/telefono/001-vai.jpg"
+     ]
+    },
+    {
+     "caratteristica": "corto subito, lungo a richiesta",
+     "ambito": "aiuto",
+     "stato": "presente",
+     "valore": {
+      "meccanismo": "pagina_a_parte"
+     },
+     "descrizione": "La guida per chi accompagna è «FACILITATORS' GUIDE», collegamento fisso a una pagina esterna (rosiesplace.org.au/cse); il sostegno è un'avvertenza di tre righe con due numeri; l'approfondimento sul progetto è la pagina /about.",
+     "evidenze": [
+      "prove/R06/026-aspetta.jpg",
+      "prove/R06/003-aspetta.jpg"
+     ]
+    },
+    {
+     "caratteristica": "porte per pubblici diversi",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "porte": 3,
+      "criterio": "ruolo"
+     },
+     "descrizione": "Dopo l'ingresso: le storie (carte), «FACILITATORS' GUIDE» (per chi accompagna) e «ABOUT THE PROJECT»; la soglia stessa non dice a chi sono rivolte le porte. Criterio misto: una porta per ruolo (facilitatori) e le altre per argomento.",
+     "evidenze": [
+      "prove/R06/003-aspetta.jpg"
+     ]
+    },
+    {
+     "caratteristica": "lunghezza e registro delle frasi",
+     "ambito": "aiuto",
+     "stato": "presente",
+     "valore": {
+      "frasi_campione": 10,
+      "parole_per_frase_media": 20.5,
+      "persona": "prima"
+     },
+     "descrizione": "Prime 10 frasi in prosa di /about: 11-29 parole, media 20,5; «we», «us», «our» (Rosie's Place che parla).",
+     "evidenze": [
+      "prove/R06/testo-about-computer.txt"
+     ]
+    },
+    {
+     "caratteristica": "prodotto mostrato",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "tipo": "illustrazione",
+      "con_legenda": "sì",
+      "con_alternativa": "no"
+     },
+     "descrizione": "Illustrazioni a china (scena notturna, carte dei capitoli con numero e nome); 14 img senza nome nell'albero di accessibilità. Il prodotto è il racconto, non un software.",
+     "evidenze": [
+      "prove/R06/003-aspetta.jpg",
+      "prove/R06/fogli/007-sequenza-avvio.jpg"
+     ]
+    },
+    {
+     "caratteristica": "campione di suono",
+     "ambito": "media",
+     "stato": "non_osservato",
+     "motivo": "Ho scelto «No sound thanks» e in questo ambiente non c'è una scheda audio: il suono (effetti, musica, parlato) non è stato né avviato né ascoltato."
+    },
+    {
+     "caratteristica": "compromessi dichiarati nelle opzioni",
+     "ambito": "aiuto",
+     "stato": "assente",
+     "descrizione": "Non applicabile: il sito non ha opzioni con compromessi, solo la scelta del suono.",
+     "evidenze": [
+      "prove/R06/001-vai.jpg"
+     ]
+    }
+   ]
+  }
+ ]
+}

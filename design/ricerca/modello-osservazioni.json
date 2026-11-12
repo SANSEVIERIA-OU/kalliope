@@ -1,0 +1,61 @@
+{
+  "_nota": "MODELLO da copiare in osservazioni/<ID>.json, non un riferimento del campione. Il riferimento R00 è fittizio: sostituire id, fonte e osservazioni. Caratteristiche e ambiti vengono dal §8 di piano.md.",
+  "riferimenti": [
+    {
+      "id": "R00",
+      "nome": "Modello (non è un sito)",
+      "url": "https://example.invalid/",
+      "categoria": "da compilare: nome esatto del catalogo ufficiale",
+      "anno": 2026,
+      "premio": "Webby Winner | People's Voice",
+      "motivazione_ufficiale": "testo letterale con URL, oppure: motivazione individuale non disponibile",
+      "gruppo": "A | B | C",
+      "osservazioni": [
+        {
+          "caratteristica": "proposta del primo schermo",
+          "ambito": "arrivo telefono",
+          "stato": "presente",
+          "valore": {"parole": 14, "frasi": 1},
+          "descrizione": "una sola frase dice cosa fa; il testo letterale va qui",
+          "evidenze": ["prove/R00/001-arrivo-telefono.png"]
+        },
+        {
+          "caratteristica": "comandi visibili al primo schermo",
+          "ambito": "arrivo telefono",
+          "stato": "presente",
+          "valore": {"link": 3, "pulsanti": 1, "campi": 0},
+          "evidenze": ["prove/R00/001-arrivo-telefono.png"]
+        },
+        {
+          "caratteristica": "percorso da tastiera",
+          "ambito": "tastiera",
+          "stato": "presente",
+          "valore": {"tab_fino_al_comando_principale": 4, "focus_visibile": "sì", "salta_al_contenuto": "no", "trappole": 0},
+          "evidenze": ["prove/R00/014-tastiera-4.png"]
+        },
+        {
+          "caratteristica": "apertura del menu",
+          "ambito": "menu telefono",
+          "stato": "presente",
+          "valore": {"durata_ms": 320, "direzione": "dal basso"},
+          "non_misurati": ["curva"],
+          "descrizione": "il pannello sale e le voci entrano una dopo l'altra",
+          "evidenze": ["prove/R00/009-menu-telefono.png"]
+        },
+        {
+          "caratteristica": "campione di suono",
+          "ambito": "media",
+          "stato": "assente",
+          "descrizione": "percorse tutte le sezioni al computer e al telefono: nessun suono né video",
+          "evidenze": ["prove/R00/020-scorrimento-fine.png"]
+        },
+        {
+          "caratteristica": "stampa",
+          "ambito": "stampa",
+          "stato": "non_osservato",
+          "motivo": "sito bloccato dalla verifica anti-bot nella variante di stampa: schermata prove/R00/031-blocco.png"
+        }
+      ]
+    }
+  ]
+}

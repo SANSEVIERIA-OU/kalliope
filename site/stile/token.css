@@ -1,0 +1,157 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* Kalliope: fonte unica dei valori (token). Ogni altro foglio di stile usa var(--…); nessun valore di colore, spazio o durata fuori di qui.
+   Decisioni: T01 colore, T02 carta e inchiostro, T03 tipografia, T04 forma, T05 motivo, T06 spazi, T07 movimento (design/direzione.md).
+   Il catalogo (sistema/) genera la sua tabella da questo file con design/strumenti/genera-token.py. */
+
+:root {
+  /* Colore: ruoli (T01, T02). Rapporti di contrasto verificati con contrasto-qa e con il calcolo di design/direzione.md. */
+  --carta: #f8f6f0;            /* sfondo della pagina */
+  --carta-2: #eeebe1;          /* superfici: riquadri, codice, tabelle */
+  --bianco: #ffffff;           /* campo di testo (come il campo della finestra) */
+  --inchiostro: #1b2623;       /* testo: 14,4:1 su carta */
+  --inchiostro-2: #3c4945;     /* testo secondario: 8,7:1 su carta, 7,9:1 su carta-2 */
+  --linea: #b9b4a4;            /* filetti e bordi decorativi */
+  --voce: #16806f;             /* barre e grafica, non testo: 4,5:1 su carta */
+  --voce-scura: #0a5347;       /* testo, collegamenti e comandi: 8,3:1 su carta, 7,5:1 su carta-2, 9,0:1 con testo bianco */
+  --voce-molto-scura: #063a31; /* comando premuto o sotto il puntatore: 11,7:1 su carta */
+  --su-voce: #ffffff;          /* testo su un comando pieno: 9,0:1 su voce scura */
+  --voce-chiara: #dff3ee;      /* riquadro «detto» e cartellino «provato» */
+  --ambra: #664000;            /* testo «non ancora provato»: 8,5:1 su carta, 8,2:1 su fondo ambra */
+  --ambra-chiara: #fff1cf;     /* fondo «non ancora provato» */
+  --rosso: #8f1717;            /* testo di errore: 8,4:1 su carta */
+  --evidenza: #ffe9a8;         /* frase in corso mentre suona */
+  --focus: #1b2623;            /* anello di focus */
+  --focus-alone: #f8f6f0;      /* alone fra elemento e anello */
+
+  /* Tipografia (T03): carattere di sistema, nessun carattere ospitato né remoto */
+  --font-corpo: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  --font-fissa: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", "DejaVu Sans Mono", monospace;
+  --t-corpo: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);  /* 18-20 px */
+  --t-piccolo: 1rem;                                       /* 16 px: il minimo del sito */
+  --t-xs: 0.875rem;                                        /* numeri dentro un badge */
+  --t-marca: 1.5rem;
+  --t-grande: 1.5rem;
+  --t-badge: 1.375rem;
+  --t-codice: 0.95em;
+  --t-token: 0.9rem;
+  --t-nota: 0.85em;
+  --t-apertura: clamp(1.75rem, 1.3rem + 1.6vw, 2.75rem);   /* titolo della pagina iniziale */
+  --t-h3: 1.25rem;
+  --t-h2: clamp(1.5rem, 1.3rem + 0.8vw, 1.875rem);
+  --t-h1: clamp(1.5rem, 1.3rem + 2vw, 3rem);
+  --interlinea: 1.6;
+  --interlinea-titoli: 1.2;
+  --misura: 62ch;                                          /* larghezza massima di una riga di testo */
+  --peso-forte: 700;
+
+  /* Spazi (T06): scala di 4 px */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+  --s-8: 4rem;
+  --s-9: 6rem;
+  --pagina: 72rem;             /* larghezza massima del contenuto */
+  --alto-pagina: 100vh;        /* il piede resta in fondo anche con poco testo */
+  --icona: 2.5rem;             /* l'icona nell'intestazione */
+  --px: 1px;                   /* filetto minimo (stampa, testo per soli lettori di schermo) */
+  --bersaglio-grande: 3rem;    /* comando principale e campi di testo: 48 px */
+  --bersaglio-porta: 3.5rem;   /* collegamenti «Da dove vuoi cominciare?» */
+  --badge: 1.75rem;            /* numero della tappa */
+  --badge-grande: 2.75rem;     /* numero del passo */
+  --larghezza-titolo: 20ch;
+  --larghezza-frase: 42ch;
+  --larghezza-audio: 28rem;
+  --larghezza-comando: 46rem;
+  --larghezza-filtro: 40rem;
+  --larghezza-scheda: 52rem;
+  --larghezza-etichetta: 11rem; /* prima colonna delle tabelle */
+  --larghezza-campo: 14rem;     /* campo dell'indirizzo, ridotto fino a riempire la riga */
+  --larghezza-pulsante-voce: 14.5rem; /* «Ascolta Giulia» e «Ferma Giulia» hanno la stessa larghezza */
+  --larghezza-foto-piccola: 24rem;
+  --posizione-larga: 14ch;      /* «frase 1 di 2 · 0:03 / 0:09» non salta mentre cambia */
+  --campione-larghezza: 8rem;
+  --campione-altezza: 4rem;
+  --campione-token-larghezza: 4rem;
+  --campione-token-altezza: 2.5rem;
+  --bersaglio: 2.75rem;        /* 44 px: lato minimo di ogni comando (RG9) */
+  --distanza-bersagli: 0.5rem; /* 8 px fra comandi vicini */
+
+  /* Forma (T04, T05) */
+  --raggio-bolla: 18px;        /* riquadri a fumetto, come l'icona */
+  --raggio-piccolo: 12px;      /* bottoni e campi */
+  --raggio-barra: 999px;       /* capsule delle barre */
+  --raggio-minimo: 4px;        /* evidenziazioni e tasti */
+  --bordo: 2px;
+  --bordo-forte: 3px;
+  --focus-distanza: 3px;       /* fra l'elemento e l'anello di focus */
+  --bordo-laterale: 0.5rem;    /* barra laterale di avvisi e misure */
+  --barra-larghezza: 0.5rem;   /* una barra del motivo */
+  --barra-altezza: 2.25rem;    /* altezza massima del motivo a cinque barre */
+  --barra-altezza-piccola: 1.5rem;
+  --barra-larghezza-piccola: 0.3125rem;
+  --barre-riposo: 0.33 0.7 1 0.63 0.41; /* altezze relative delle cinque barre dell'icona (18, 38, 54, 34, 22 su 54) */
+
+  /* Movimento (T07, RG6): durate in ms; con movimento ridotto vanno tutte a 0 */
+  --durata-1: 100ms;           /* stato dei comandi */
+  --durata-2: 120ms;           /* apertura di un dettaglio */
+  --durata-3: 240ms;           /* massimo di ogni cambio di stato */
+  --curva: cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --carta: #10181a;
+    --carta-2: #182326;
+    --bianco: #0b1112;
+    --inchiostro: #e9efec;       /* 15,4:1 su carta scura */
+    --inchiostro-2: #b4c2bd;     /* 9,8:1 */
+    --linea: #4a5a56;
+    --voce: #2fb39a;             /* barre: 6,9:1 */
+    --voce-scura: #4fd1b6;       /* testo e comandi: 9,5:1 */
+    --voce-molto-scura: #7fe3cf;
+    --su-voce: #0b1112;          /* testo su un comando pieno: 10:1 */
+    --voce-chiara: #14312c;
+    --ambra: #f0c36b;            /* 10,9:1 */
+    --ambra-chiara: #3a2e0d;
+    --rosso: #ff9b93;
+    --evidenza: #5b4a10;
+    --focus: #e9efec;
+    --focus-alone: #10181a;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --durata-1: 0ms;
+    --durata-2: 0ms;
+    --durata-3: 0ms;
+  }
+}
+/* Il catalogo può simulare il movimento ridotto per confrontarlo con il normale (attributo data-ridotto sull'elemento radice) */
+:root[data-ridotto] {
+  --durata-1: 0ms;
+  --durata-2: 0ms;
+  --durata-3: 0ms;
+}
+
+/* Stampa (D10): tutto a nero su bianco, senza riempimenti */
+@media print {
+  :root {
+    --carta: #ffffff;
+    --carta-2: #ffffff;
+    --bianco: #ffffff;
+    --inchiostro: #000000;
+    --inchiostro-2: #000000;
+    --voce-scura: #000000;
+    --voce-molto-scura: #000000;
+    --voce-chiara: #ffffff;
+    --ambra: #000000;
+    --ambra-chiara: #ffffff;
+    --linea: #000000;
+    --evidenza: #ffffff;
+  }
+}

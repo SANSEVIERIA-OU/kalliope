@@ -1,0 +1,662 @@
+{
+ "riferimenti": [
+  {
+   "id": "R21",
+   "nome": "Lonely Planet, «Beat the Crowds: How to Navigate Venice's Overtourism Problem»",
+   "url": "https://www.lonelyplanet.com/articles/venice-overtourism",
+   "categoria": "Best Writing (Editorial) (Features & Design)",
+   "anno": 2026,
+   "premio": "People's Voice Winner",
+   "motivazione_ufficiale": "motivazione individuale non disponibile; discorso di accettazione (non è motivazione): «Real Writing Will Always Matter.» Scheda: https://winners.webbyawards.com/2026/websites-and-mobile-sites/features-design/best-writing-editorial/362789/lonely-planets-guide-to-overtourism-in-venice",
+   "gruppo": "B",
+   "osservazioni": [
+    {
+     "caratteristica": "proposta del primo schermo",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "parole": 9,
+      "frasi": 1
+     },
+     "descrizione": "Titolo (H1, 48 px): «Beat the Crowds: How to Navigate Venice's Overtourism Problem»; sotto «Aug 11, 2026 • 12 MIN READ», l'autrice e il riquadro «HIGHLIGHTS — SUMMARIZED BY AI» con quattro punti («Writer Virginia DiGaetano offers seven tips for visiting Venice beyond the tourist crush.»). A destra una fotografia a metà pagina.",
+     "evidenze": [
+      "prove/R21/desktop/001-vai.jpg"
+     ]
+    },
+    {
+     "caratteristica": "proposta del primo schermo",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "parole": 9,
+      "frasi": 1
+     },
+     "descrizione": "Stesso titolo a 40 px, sotto data, tempo di lettura e «ADD US ON G»; la fotografia viene dopo il titolo; in basso il pannello giallo con la biografia dell'autrice (con «CLOSE»).",
+     "evidenze": [
+      "prove/R21/mobile/001-vai.jpg"
+     ]
+    },
+    {
+     "caratteristica": "comandi visibili al primo schermo",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "link": 17,
+      "pulsanti": 2,
+      "campi": 0
+     },
+     "descrizione": "Tra le voci: logo, 6 voci di menu, cerca, carrello, 5 briciole di pane, «ADD US ON G», autrice, «Summarized by AI»; pulsanti «Sign in» e «Share». Il collegamento «Skip to Main Content» esiste ma compare solo con il focus.",
+     "evidenze": [
+      "prove/R21/desktop/001-vai.jpg"
+     ]
+    },
+    {
+     "caratteristica": "comandi visibili al primo schermo",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "link": 10,
+      "pulsanti": 3,
+      "campi": 0
+     },
+     "descrizione": "Logo, cerca, carrello, 5 briciole, «ADD US ON», autrice; pulsanti «Open main menu», «Share», «CLOSE».",
+     "evidenze": [
+      "prove/R21/mobile/001-vai.jpg"
+     ]
+    },
+    {
+     "caratteristica": "comando principale",
+     "ambito": "arrivo computer",
+     "stato": "assente",
+     "descrizione": "Pagina di lettura: non c'è un comando principale, l'azione è leggere. Intestazione in alto non fissa (position: relative: sparisce allo scorrimento, verificato in 11 passi di scorrimento).",
+     "evidenze": [
+      "prove/R21/desktop/001-vai.jpg",
+      "prove/R21/desktop/003-scorri.jpg"
+     ]
+    },
+    {
+     "caratteristica": "comando principale",
+     "ambito": "arrivo telefono",
+     "stato": "assente",
+     "descrizione": "Come al computer: nessun comando principale; l'intestazione scorre via (header relative). Il pannello giallo della biografia resta sotto la foto, non fisso.",
+     "evidenze": [
+      "prove/R21/mobile/001-vai.jpg",
+      "prove/R21/mobile/004-scorri.jpg"
+     ]
+    },
+    {
+     "caratteristica": "struttura della navigazione",
+     "ambito": "menu computer",
+     "stato": "presente",
+     "valore": {
+      "voci": 6,
+      "tipo": "menu_a_comparsa"
+     },
+     "descrizione": "Destinations, Books, Trips, Travel Advice, Best in Travel, App. Il passaggio del mouse o il focus apre un pannello largo (Destinations: 7 raggruppamenti e 21 luoghi; «OUR FAVORITE PLACES», invito «START DISCOVERING») e scurisce la pagina; il clic sulla voce porta a /destinations.",
+     "evidenze": [
+      "prove/R21/desktop/014-muovi.jpg",
+      "prove/R21/desktop/015-clic.jpg",
+      "prove/R21/desktop/019-tasto.jpg"
+     ]
+    },
+    {
+     "caratteristica": "struttura della navigazione",
+     "ambito": "menu telefono",
+     "stato": "presente",
+     "valore": {
+      "voci": 6,
+      "tipo": "pannello"
+     },
+     "descrizione": "Il pulsante «Open main menu» (hamburger → X) apre un pannello a tutta larghezza sotto l'intestazione: Destinations, Books, Trips, Travel Advice con freccia, Best in Travel e App senza, e «SIGN IN» in basso.",
+     "evidenze": [
+      "prove/R21/mobile/002-clic.jpg",
+      "prove/R21/fogli/m002-menu-telefono.jpg"
+     ]
+    },
+    {
+     "caratteristica": "apertura del menu",
+     "ambito": "menu telefono",
+     "stato": "presente",
+     "valore": {
+      "durata_ms": 180,
+      "direzione": "da destra"
+     },
+     "descrizione": "WAAPI `transform: translateX(100%) → translateX(0px)`, durata 180 ms, ritardo 0, easing `ease-out` (letto da `timing.easing`), pannello 430×799 px sotto l'intestazione. A 300 ms dal tocco il pannello è già completo nelle foto.",
+     "evidenze": [
+      "prove/R21/mobile/002-clic.movimento.json",
+      "prove/R21/mobile/002-clic.jpg",
+      "prove/R21/misure/movimento-voci-estratte.txt"
+     ]
+    },
+    {
+     "caratteristica": "segnale di posizione e di avanzamento",
+     "ambito": "percorso principale",
+     "stato": "presente",
+     "valore": {
+      "tipo": "indice"
+     },
+     "descrizione": "Briciole di pane «STORIES > EUROPE > ITALY > THE VENETO > VENICE»; i sette titoli numerati «1. … 7.» scandiscono l'articolo; «12 MIN READ» dice quanto dura. Nessuna barra di avanzamento.",
+     "evidenze": [
+      "prove/R21/desktop/001-vai.jpg",
+      "prove/R21/fogli/002-007-scorrimento-computer.jpg"
+     ]
+    },
+    {
+     "caratteristica": "comando proprio «indietro»",
+     "ambito": "percorso principale",
+     "stato": "presente",
+     "valore": {
+      "presente": "sì"
+     },
+     "non_misurati": [
+      "conserva_i_dati"
+     ],
+     "descrizione": "Briciole di pane risalgono per luogo; il tasto indietro del browser funziona (le pagine sono indirizzi veri). Il clic su «Destinations» porta a /destinations e indietro riporta all'articolo.",
+     "evidenze": [
+      "prove/R21/desktop/015-clic.jpg",
+      "prove/R21/desktop/016-vai.jpg"
+     ]
+    },
+    {
+     "caratteristica": "messaggio di errore",
+     "ambito": "errore",
+     "stato": "non_osservato",
+     "motivo": "L'unico campo in vista è «Email address» del modulo newsletter in fondo (non inviato per regola) e la pagina di ricerca /search (aperta, non si è digitata una ricerca senza risultati).",
+     "evidenze": []
+    },
+    {
+     "caratteristica": "pagina inesistente",
+     "ambito": "404",
+     "stato": "presente",
+     "valore": {
+      "utile": "sì",
+      "offre_ritorno": "sì"
+     },
+     "descrizione": "HTTP 404 con titolo «404 Page Not Found - Lonely Planet»: «We're Sorry. The page you're looking for doesn't exist, but we've got a lot of ideas for your next trip.» e il collegamento «BACK TO THE HOMEPAGE»; intestazione e piè di pagina restano.",
+     "evidenze": [
+      "prove/R21/desktop/023-vai.jpg",
+      "prove/R21/misure/023-stato-http-404.json"
+     ]
+    },
+    {
+     "caratteristica": "attesa del caricamento",
+     "ambito": "rete lenta",
+     "stato": "presente",
+     "valore": {
+      "segnale": "testo",
+      "s_al_primo_testo": 0.37
+     },
+     "descrizione": "A 1,6 Mbit/s e 150 ms di latenza il testo (17313 caratteri) c'è dopo 0,37 s (primo testo di almeno 40 caratteri), la prima pittura a 0,83 s, la fotografia grande a 4,5 s (LCP 4528 ms): le immagini arrivano senza scheletro né spinner (2 su 26 complete a 0,8 s). Misure del 12/11 con la macchina condivisa.",
+     "evidenze": [
+      "prove/R21/script/lenta.json",
+      "prove/R21/script/lenta-008-800ms.png",
+      "prove/R21/script/lenta-040-4777ms.png"
+     ]
+    },
+    {
+     "caratteristica": "comportamento senza JavaScript",
+     "ambito": "senza JavaScript",
+     "stato": "presente",
+     "valore": {
+      "contenuto": "tutto",
+      "navigazione": "funziona",
+      "comandi_essenziali": "funzionano"
+     },
+     "descrizione": "Senza JavaScript restano 17013 caratteri e 931 collegamenti: l'articolo intero, titoli, didascalie, piè di pagina. Al telefono (390×844) il menu appare già aperto sopra il titolo (voci e «SIGN IN» in elenco). Non si è provato il clic sui collegamenti; il pannello a comparsa e il pulsante «Share» non possono funzionare.",
+     "evidenze": [
+      "prove/R21/script/nojs-1440.png",
+      "prove/R21/script/nojs-390.png",
+      "prove/R21/script/nojs-1440.json",
+      "prove/R21/script/nojs-390.json"
+     ]
+    },
+    {
+     "caratteristica": "effetti con movimento ridotto",
+     "ambito": "movimento ridotto",
+     "stato": "presente",
+     "valore": {
+      "effetti": 1,
+      "tolti": 1,
+      "sostituiti": 0,
+      "invariati": 0
+     },
+     "descrizione": "Con prefers-reduced-motion: reduce il passaggio del mouse su «Destinations» apre lo stesso pannello ma senza l'animazione `nav-pin` (opacità e traslazione di 8 px, 160 ms): 0 voci di movimento contro 3 senza riduzione. Campione di un solo effetto. Nessuna regola @media trovata al primo livello dei fogli leggibili (le regole dentro @layer non sono state lette).",
+     "evidenze": [
+      "prove/R21/desktop/014-muovi.movimento.json",
+      "prove/R21/ridotto/002-muovi.movimento.json",
+      "prove/R21/ridotto/002-muovi.jpg"
+     ]
+    },
+    {
+     "caratteristica": "percorso da tastiera",
+     "ambito": "tastiera",
+     "stato": "presente",
+     "valore": {
+      "tab_fino_al_comando_principale": 1,
+      "focus_visibile": "sì",
+      "salta_al_contenuto": "sì"
+     },
+     "non_misurati": [
+      "trappole"
+     ],
+     "descrizione": "Il primo Tab porta a «Skip to Main Content» (pillola nera 251×48 px in alto a sinistra, href #main-content); poi logo e voci di menu, con anello 2 px pieno (oklch 0,44 0,193 261°) a -3 px. Il focus su «Destinations» apre il pannello a comparsa. Trappole: non provate oltre i primi tre Tab; Esc sul pannello non provato.",
+     "evidenze": [
+      "prove/R21/desktop/017-tasto.jpg",
+      "prove/R21/desktop/018-tasto.jpg",
+      "prove/R21/desktop/019-tasto.jpg",
+      "prove/R21/misure/013-tastiera-primi-tab.txt",
+      "prove/R21/fogli/017-019-tastiera.jpg"
+     ]
+    },
+    {
+     "caratteristica": "testo al 200%",
+     "ambito": "testo 200%",
+     "stato": "presente",
+     "valore": {
+      "scroll_orizzontale": "sì",
+      "contenuto_perso": "no"
+     },
+     "descrizione": "Con il carattere al 200% (radice 32 px) il testo di corpo va a 32 px e il titolo a 80 px, ma la pagina larga 1440 ha scrollWidth 1800 (scorrimento orizzontale): la barra in alto mostra fino a «APP» e la lente, mentre «CART» e «SIGN IN» finiscono fuori vista (raggiungibili scorrendo di lato). Con lo zoom al 200% (720×450) passa alla struttura da telefono senza scorrimento laterale.",
+     "evidenze": [
+      "prove/R21/fogli/z001-testo-zoom-forzati.jpg",
+      "prove/R21/misure/home-carattere=200.json",
+      "prove/R21/misure/home-zoom=200.json"
+     ]
+    },
+    {
+     "caratteristica": "albero di accessibilità (proxy)",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "punti_di_riferimento": 10,
+      "titoli": 9,
+      "immagini_senza_alternativa": 0
+     },
+     "non_misurati": [
+      "comandi_senza_nome"
+     ],
+     "descrizione": "main 1, nav 7 con nome («Global Navigation», «Breadcrumbs», «Social media links»…), footer 1, header globale; 9 titoli (H1 + 7 H2 numerati + «Why I love Venice»); 26 immagini, tutte con attributo alt (3 vuoti, decorative); collegamento «Skip to Main Content». I nomi dei 196 pulsanti non sono stati letti. Proxy dal DOM.",
+     "evidenze": [
+      "prove/R21/misure/meta-e-albero.json",
+      "prove/R21/misure/001-albero-accessibilita.json"
+     ]
+    },
+    {
+     "caratteristica": "bersagli dei comandi principali",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "larghezza_min_px": 14,
+      "altezza_min_px": 14,
+      "distanza_min_px": 0
+     },
+     "descrizione": "Il più piccolo è «Share» (il pulsante misura 14×14 px dentro un cerchio di 46×46); briciole di pane alte 14 px; voci di menu alte 73 px. Collegamenti vicini a contatto (distanza 0).",
+     "evidenze": [
+      "prove/R21/script/bersagli-computer.json",
+      "prove/R22/misure/testo-corrente-e-share-script.json"
+     ]
+    },
+    {
+     "caratteristica": "bersagli dei comandi principali",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "larghezza_min_px": 14,
+      "altezza_min_px": 14,
+      "distanza_min_px": 8
+     },
+     "descrizione": "Telefono 390×844: «Share» 14×14 (in un cerchio 46×46), briciole di pane 14 px di altezza, «Add us on Google» 138×40; pulsanti dell'intestazione circa 57×60 px (stima dalle posizioni nelle foto).",
+     "evidenze": [
+      "prove/R21/script/telefono-390.json",
+      "prove/R21/misure/m004-testo-e-bersagli-telefono.json"
+     ]
+    },
+    {
+     "caratteristica": "testo corrente",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "corpo_px": 18,
+      "interlinea": 1.5,
+      "caratteri_per_riga_max": 104
+     },
+     "descrizione": "Corpo ABC Monument Grotesk 18/27 px, colonna di 893 px (mediana 91 caratteri per riga, massimo 104): più lunga dei 75 caratteri consigliati. Titoli di sezione ABC Arizona Flare 36 px maiuscolo; H1 American Grotesk 700 48/55 px. Link blu sottolineati.",
+     "evidenze": [
+      "prove/R21/script/bersagli-computer.json",
+      "prove/R21/misure/002-testo-corrente-computer.json",
+      "prove/R22/misure/testo-corrente-e-share-script.json"
+     ]
+    },
+    {
+     "caratteristica": "testo corrente",
+     "ambito": "arrivo telefono",
+     "stato": "presente",
+     "valore": {
+      "corpo_px": 18,
+      "interlinea": 1.5,
+      "caratteri_per_riga_max": 48
+     },
+     "descrizione": "Colonna di 358 px a 390 px: mediana 42 caratteri per riga, massimo 48; scrollWidth = larghezza (nessuno scorrimento orizzontale).",
+     "evidenze": [
+      "prove/R21/script/telefono-390.json",
+      "prove/R22/misure/testo-corrente-e-share-script.json"
+     ]
+    },
+    {
+     "caratteristica": "richieste e terze parti",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "richieste": 49,
+      "domini_di_terzi": 8,
+      "kb": 941,
+      "caratteri_caricati": 6
+     },
+     "descrizione": "941 kB e 49 richieste fino a 4 s dopo il load (32 script, 263 kB di JS; 6 file di carattere, 270 kB; 4 immagini, 271 kB). Domini esterni: newrelic, Google Tag Manager, AppsFlyer, Google News, Cohesion (servizi di terzi) e staticlp.com, cloudfront.net, imgix.net (CDN dei propri file, dedotto dai nomi). Dopo lo scorrimento completo: 71 richieste e 2424 kB (cdn.shopify.com per i libri).",
+     "evidenze": [
+      "prove/R21/script/richieste.json",
+      "prove/R21/script/richieste-elenco.json"
+     ]
+    },
+    {
+     "caratteristica": "campione di suono",
+     "ambito": "media",
+     "stato": "assente",
+     "descrizione": "Nessun audio né video nella pagina (video 0, audio 0, canvas 0).",
+     "evidenze": [
+      "prove/R21/misure/meta-e-albero.json"
+     ]
+    },
+    {
+     "caratteristica": "avvio di audio e video",
+     "ambito": "media",
+     "stato": "assente",
+     "descrizione": "Nessun audio né video: nessun avvio.",
+     "evidenze": [
+      "prove/R21/misure/meta-e-albero.json"
+     ]
+    },
+    {
+     "caratteristica": "media non caricato",
+     "ambito": "media",
+     "stato": "presente",
+     "valore": {
+      "alternativa_testuale": "sì",
+      "pagina_integra": "sì"
+     },
+     "descrizione": "In rete lenta il testo c'è intero (17313 caratteri) quando le immagini sono 2 su 26; le 26 immagini hanno alt (3 vuoti) e didascalie con il credito. Non si è bloccato il caricamento delle immagini: dato dedotto dalla rete lenta.",
+     "evidenze": [
+      "prove/R21/script/lenta.json",
+      "prove/R21/script/lenta-008-800ms.png",
+      "prove/R21/misure/meta-e-albero.json"
+     ]
+    },
+    {
+     "caratteristica": "anteprima del collegamento",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "titolo": "sì",
+      "immagine": "sì",
+      "descrizione": "sì"
+     },
+     "descrizione": "og:title «Guide to navigating overtourism in Venice - Lonely Planet», og:description, og:image 1200×630 con og:image:alt, twitter:card summary_large_image.",
+     "evidenze": [
+      "prove/R21/misure/meta-e-albero.json"
+     ]
+    },
+    {
+     "caratteristica": "stampa",
+     "ambito": "stampa",
+     "stato": "presente",
+     "valore": {
+      "comandi_inutili_nascosti": "no"
+     },
+     "non_misurati": [
+      "leggibile"
+     ],
+     "descrizione": "Con media print lo schermo resta quello normale con intestazione, pannelli e piè di pagina (solo 4 elementi di navigazione su 323 sono nascosti); il PDF A4 è di 7 pagine e 3,3 MB. Il PDF non si è potuto rasterizzare (manca Ghostscript): la leggibilità in carta non è giudicata.",
+     "evidenze": [
+      "prove/R21/script/stampa-schermo.png",
+      "prove/R21/script/stampa.json"
+     ]
+    },
+    {
+     "caratteristica": "chi c'è dietro e le fonti",
+     "ambito": "fiducia",
+     "stato": "presente",
+     "valore": {
+      "firma": "sì",
+      "data": "sì",
+      "versione": "no",
+      "fonti_collegate": "sì"
+     },
+     "descrizione": "Autrice «VIRGINIA DIGAETANO — WRITER» con foto e biografia in prima persona; data «Aug 11, 2026»; collegamenti a fonti e luoghi (conteggio dei residenti, Peggy Guggenheim, sito del Comune). Nessuna versione né data di aggiornamento.",
+     "evidenze": [
+      "prove/R21/desktop/001-vai.jpg",
+      "prove/R21/desktop/002-scorri.jpg",
+      "prove/R21/fogli/002-007-scorrimento-computer.jpg"
+     ]
+    },
+    {
+     "caratteristica": "stato e limiti dichiarati",
+     "ambito": "fiducia",
+     "stato": "presente",
+     "valore": {
+      "presente": "sì",
+      "prima_della_promessa": "sì"
+     },
+     "descrizione": "Sopra il riassunto: «SUMMARIZED BY AI»; prima del testo: «Lonely Planet may earn a commission from affiliate links on our site. All recommendations and reviews reflect our own independent opinions.»",
+     "evidenze": [
+      "prove/R21/desktop/001-vai.jpg",
+      "prove/R21/desktop/002-scorri.jpg"
+     ]
+    },
+    {
+     "caratteristica": "corto subito, lungo a richiesta",
+     "ambito": "percorso principale",
+     "stato": "presente",
+     "valore": {
+      "meccanismo": "nessuno"
+     },
+     "descrizione": "Il corto è sempre in vista: il riquadro «Highlights» (quattro punti, etichettato come riassunto dell'IA) sopra le 12 minuti di lettura; nessun controllo per aprire o chiudere. Al telefono solo la biografia ha «CLOSE».",
+     "evidenze": [
+      "prove/R21/desktop/001-vai.jpg",
+      "prove/R21/mobile/004-scorri.jpg"
+     ]
+    },
+    {
+     "caratteristica": "porte per pubblici diversi",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "porte": 6,
+      "criterio": "argomento"
+     },
+     "descrizione": "Sei voci per argomento o prodotto (Destinations, Books, Trips, Travel Advice, Best in Travel, App); nessuna per ruolo di chi legge.",
+     "evidenze": [
+      "prove/R21/desktop/001-vai.jpg",
+      "prove/R21/desktop/014-muovi.jpg"
+     ]
+    },
+    {
+     "caratteristica": "lunghezza e registro delle frasi",
+     "ambito": "arrivo computer",
+     "stato": "presente",
+     "valore": {
+      "frasi_campione": 10,
+      "parole_per_frase_media": 21.6,
+      "persona": "mista"
+     },
+     "descrizione": "Dieci frasi trascritte dall'inizio dell'articolo (15, 27, 33, 29, 6, 17, 18, 39, 18, 14 parole): lunghezza molto variabile, frasi corte per i dati («The current count is just 47,652.»); terza persona nel racconto, «you» nei consigli, «I» nella biografia.",
+     "evidenze": [
+      "prove/R21/fogli/002-007-scorrimento-computer.jpg",
+      "prove/R21/desktop/002-scorri.jpg",
+      "prove/R21/desktop/003-scorri.jpg"
+     ]
+    },
+    {
+     "caratteristica": "prodotto mostrato",
+     "ambito": "scorrimento computer",
+     "stato": "presente",
+     "valore": {
+      "tipo": "foto",
+      "con_legenda": "sì",
+      "con_alternativa": "sì"
+     },
+     "descrizione": "Fotografie a larghezza di colonna con didascalia e credito («A vaporetto (ferry) transporting passengers in Venice. frantic00/Shutterstock»); gli alt ci sono (tre vuoti, decorativi).",
+     "evidenze": [
+      "prove/R21/fogli/002-007-scorrimento-computer.jpg",
+      "prove/R21/misure/meta-e-albero.json"
+     ]
+    },
+    {
+     "caratteristica": "prodotto mostrato",
+     "ambito": "scorrimento telefono",
+     "stato": "presente",
+     "valore": {
+      "tipo": "foto",
+      "con_legenda": "sì",
+      "con_alternativa": "sì"
+     },
+     "descrizione": "Come al computer; sopra la prima fotografia la didascalia con il credito.",
+     "evidenze": [
+      "prove/R21/mobile/001-vai.jpg",
+      "prove/R21/fogli/m004-scorrimento-telefono.jpg"
+     ]
+    },
+    {
+     "caratteristica": "numeri detti a parole",
+     "ambito": "dati",
+     "stato": "presente",
+     "valore": {
+      "presente": "sì"
+     },
+     "descrizione": "«Every year, as many as 30 million people visit Venice … roughly 53 visitors for every Venetian.»; «in 1971, Venice's population stood at just under 109,000; by 2023 it had dipped below 50,000».",
+     "evidenze": [
+      "prove/R21/fogli/002-007-scorrimento-computer.jpg",
+      "prove/R21/desktop/002-scorri.jpg"
+     ]
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "menu computer · pannello Destinations",
+     "stato": "presente",
+     "valore": {
+      "trigger": "passaggio del mouse o focus da tastiera",
+      "durata_ms": 160,
+      "curva": "ease-out",
+      "proprieta": [
+       "opacity",
+       "transform"
+      ]
+     },
+     "descrizione": "Animazione CSS `nav-pin` su ::before e ::after della voce: opacità 0→1 e `translateY(-8px)→0`, 160 ms, easing `ease-out` per keyframe (timing lineare), un solo ciclo, fill none. Il pannello a comparsa e la pagina scurita compaiono senza animazione misurata. Con movimento ridotto l'animazione non c'è.",
+     "evidenze": [
+      "prove/R21/desktop/014-muovi.movimento.json",
+      "prove/R21/desktop/019-tasto.movimento.json",
+      "prove/R21/desktop/014-muovi.jpg"
+     ]
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "scorrimento computer · link nel testo",
+     "stato": "presente",
+     "valore": {
+      "trigger": "passaggio del mouse",
+      "durata_ms": 49.36,
+      "curva": "cubic-bezier(0, 0, 0.2, 1)",
+      "proprieta": [
+       "text-decoration-color"
+      ]
+     },
+     "descrizione": "Transizione CSS del colore della sottolineatura (da rgba(31,37,40,0.33) a trasparente) sui collegamenti: 49,36 ms.",
+     "evidenze": [
+      "prove/R21/desktop/014-muovi.movimento.json"
+     ]
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "percorso principale · focus da tastiera",
+     "stato": "presente",
+     "valore": {
+      "trigger": "focus da tastiera",
+      "durata_ms": 150,
+      "curva": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "proprieta": [
+       "border-width"
+      ]
+     },
+     "descrizione": "Transizione CSS dello spessore del bordo da 0 a 1 px su 15 proprietà (bordi) quando il focus arriva sul collegamento «Skip» e sul logo.",
+     "evidenze": [
+      "prove/R21/desktop/017-tasto.movimento.json",
+      "prove/R21/desktop/018-tasto.movimento.json"
+     ]
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "menu telefono · apertura del pannello",
+     "stato": "presente",
+     "valore": {
+      "trigger": "tocco sul pulsante «Open main menu»",
+      "durata_ms": 180,
+      "curva": "ease-out",
+      "proprieta": [
+       "transform"
+      ]
+     },
+     "descrizione": "Pannello che entra da destra: translateX(100%)→0, 180 ms.",
+     "evidenze": [
+      "prove/R21/mobile/002-clic.movimento.json"
+     ]
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "arrivo telefono · icone del menu",
+     "stato": "presente",
+     "valore": {
+      "trigger": "caricamento della pagina",
+      "durata_ms": 150,
+      "curva": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "proprieta": [
+       "rotate"
+      ]
+     },
+     "descrizione": "Quattro frecce (chevron) del menu ruotano da 180° a 0 in 150 ms al caricamento (transizione CSS di `rotate`); funzione: stato iniziale del menu.",
+     "evidenze": [
+      "prove/R21/mobile/001-vai.movimento.json"
+     ]
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "percorso principale · condivisione",
+     "stato": "presente",
+     "valore": {
+      "trigger": "clic su «Share»"
+     },
+     "non_misurati": [
+      "durata_ms",
+      "curva",
+      "proprieta"
+     ],
+     "descrizione": "Il cerchio «Share» si allarga in una fila di sei icone (copia link, X, e-mail, Pinterest, Reddit, Facebook); durata non misurata.",
+     "evidenze": [
+      "prove/R21/desktop/021-clic.jpg",
+      "prove/R21/fogli/021-022-condividi-cerca.jpg"
+     ]
+    },
+    {
+     "caratteristica": "effetto o animazione",
+     "ambito": "scorrimento computer",
+     "stato": "assente",
+     "descrizione": "Undici gesti di scorrimento (850-1800 px) sulla pagina intera con zero animazioni e zero mutazioni registrate: nessuna rivelazione allo scorrimento, nessuna parallasse, nessun effetto legato alla posizione.",
+     "evidenze": [
+      "prove/R21/desktop/002-scorri.movimento.json",
+      "prove/R21/desktop/012-scorri.movimento.json",
+      "prove/R21/fogli/002-007-scorrimento-computer.jpg"
+     ]
+    }
+   ]
+  }
+ ]
+}
