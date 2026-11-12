@@ -44,8 +44,8 @@ disagree.
    python3 tools/version.py set "$(python3 tools/version.py next)"
    ```
 
-A commit whose message contains `[skip ci]` starts no workflow, not even for a tag pushed on it:
-tag a commit without it.
+GitHub starts no workflow for a commit whose message contains `[skip ci]` anywhere, not even for a
+tag pushed on it. Tag a commit without it.
 
 A release candidate needs only step 3, with a tag like `v0.1-rc.1`: it is published as a
 prerelease, its packages say `0.1~rc.1`, which sorts before `0.1`, and `kalliope --version` says
@@ -169,17 +169,22 @@ push to a branch cancels the run it replaces. Compiled dependencies are cached w
 
 The repository is private, so its Actions minutes come from the organisation's free quota of
 2,000 minutes a month. A Linux minute counts once, a Windows minute twice and a macOS minute ten
-times. Each job is rounded up to a whole minute. Measured on these workflows:
+times. Each job is rounded up to a whole minute. Measured on 12 November 2026, with the app:
 
-| Run | Jobs | Counted minutes |
-| --- | --- | --- |
-| CI on a branch or pull request | Linux | MEASURE |
-| CI on `main`, or by hand | Linux, Windows (×2), macOS (×10) | MEASURE |
-| Release, or Release by hand | build and test (Linux), publish (Linux) | MEASURE |
+| Run | Jobs | Counted minutes | After a change to `Cargo.lock` or to Rust |
+| --- | --- | --- | --- |
+| CI on a branch or pull request | Linux | 2 | 8 |
+| CI on `main`, or by hand | Linux, Windows, macOS | 16 (2 + 2 × 2 + 1 × 10) | 44 (8 + 8 × 2 + 2 × 10) |
+| Release, or Release by hand | Linux packages, publish | 9 (8 + 1; by hand: 8) | the same: releases use no cache |
 
-The first run after `Cargo.lock` changes compiles every dependency again and takes longer. macOS is
-by far the dearest part: that is why it runs only on `main`. Workflow artifacts are kept for 7 days
-and count towards the organisation's 500 MB of storage.
+The right-hand column is the first run after the cache stops matching: every dependency (mostly
+Slint) is compiled again. That happens when `Cargo.lock` changes and when GitHub's runners get a
+new Rust, about every six weeks. A branch uses `main`'s cache when it has none of its own.
+
+For example, 60 pushes to branches, 20 merges to `main` and 4 releases in a month count about
+120 + 320 + 36 = 476 minutes, before cold runs. macOS is the dearest part: that is why it runs only
+on `main`. Workflow artifacts are kept for 7 days and count towards the organisation's 500 MB of
+storage.
 
 ## Not done yet
 
