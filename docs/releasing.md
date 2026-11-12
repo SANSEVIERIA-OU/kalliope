@@ -44,6 +44,9 @@ disagree.
    python3 tools/version.py set "$(python3 tools/version.py next)"
    ```
 
+A commit whose message contains `[skip ci]` starts no workflow, not even for a tag pushed on it:
+tag a commit without it.
+
 A release candidate needs only step 3, with a tag like `v0.1-rc.1`: it is published as a
 prerelease, its packages say `0.1~rc.1`, which sorts before `0.1`, and `kalliope --version` says
 `0.1`.
