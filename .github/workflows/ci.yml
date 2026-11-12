@@ -64,21 +64,14 @@ jobs:
           sys.exit(0 if 1.5 < seconds < 6 else "expected 1.5 to 6 seconds")
           EOF
 
-  other-systems:
-    name: ${{ matrix.name }}
+  windows-and-macos:
     if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
     # Only once Linux passes: a change that fails there does not spend these dearer minutes.
     needs: linux
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - name: Windows
-            os: windows-latest
-            python: python
-          - name: macOS
-            os: macos-latest
-            python: python3
+        os: [windows-latest, macos-latest]
     runs-on: ${{ matrix.os }}
     timeout-minutes: 30
     defaults:
@@ -94,7 +87,8 @@ jobs:
           key: assets-${{ runner.os }}-${{ hashFiles('tools/fetch_assets.py') }}
       - name: ONNX Runtime and the Klein model
         run: |
-          ${{ matrix.python }} tools/fetch_assets.py onnxruntime .ci-assets >> "$GITHUB_ENV"
-          ${{ matrix.python }} tools/fetch_assets.py model .ci-assets >> "$GITHUB_ENV"
+          python=$([ "$RUNNER_OS" = Windows ] && echo python || echo python3)
+          $python tools/fetch_assets.py onnxruntime .ci-assets >> "$GITHUB_ENV"
+          $python tools/fetch_assets.py model .ci-assets >> "$GITHUB_ENV"
       - name: Tests, with the model
         run: cargo test --workspace --locked

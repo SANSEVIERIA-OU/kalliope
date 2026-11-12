@@ -39,3 +39,11 @@ Runtime 1.16 or newer works.
 
 See [benchmarks/engines](benchmarks/engines/README.md) for why Klein was chosen, and
 [CONTRIBUTING.md](CONTRIBUTING.md) for the layout and the licence terms.
+
+## Releases
+
+There is no release yet. Each version will be published on the
+[releases page](https://github.com/SANSEVIERIA-OU/kalliope/releases) for every supported system. The
+first is Linux x86_64: a `.deb` for Debian 13 and Ubuntu 24.04 or newer, an `.rpm` for Fedora, and a
+`.tar.gz` for any other distribution. [CHANGELOG.md](CHANGELOG.md) says what each version brings;
+[docs/releasing.md](docs/releasing.md) explains how versions and releases are made.

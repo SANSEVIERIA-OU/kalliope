@@ -110,10 +110,10 @@ gone "$tmp/prefix/bin/kalliope" "$tmp/prefix/lib/kalliope" "$tmp/prefix/share/do
 
 if command -v apt-get >/dev/null; then
     echo "=== .deb"
-    $sudo apt-get install -y -q "$dist/kalliope-$version-amd64.deb" >/dev/null
+    $sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y -q "$dist/kalliope-$version-amd64.deb" >/dev/null
     dpkg -s kalliope | grep -E '^(Version|Depends|Recommends):'
     check /usr/bin /usr/lib/kalliope/libonnxruntime.so.1
-    $sudo apt-get remove -y -q kalliope >/dev/null
+    $sudo env DEBIAN_FRONTEND=noninteractive apt-get remove -y -q kalliope >/dev/null
     gone /usr/bin/kalliope /usr/bin/kalliope-cli /usr/lib/kalliope
 else
     echo "=== .deb: skipped (no apt-get)"

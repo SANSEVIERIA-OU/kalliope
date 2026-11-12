@@ -41,6 +41,16 @@ cargo build --release
 cargo test --workspace            # model tests run when KALLIOPE_MODEL_DIR and KALLIOPE_ORT_LIB are set
 cargo clippy --workspace --all-targets -- -D warnings
 cargo fmt --all --check
+python3 tools/version.py check    # the version is the same in every file that states it
 ```
+
+`python3 tools/fetch_assets.py onnxruntime DIR` and `python3 tools/fetch_assets.py model DIR`
+download the ONNX Runtime and Klein model that CI uses, and print the two variables to set. ONNX
+Runtime is `libonnxruntime.so` on Linux, `libonnxruntime.dylib` on macOS and `onnxruntime.dll` on
+Windows.
+
+CI runs these checks on Linux for every push, and also on Windows and macOS for `main`. The Linux
+packages are made by `packaging/linux/build-packages.sh`; [docs/releasing.md](docs/releasing.md)
+explains versions, releases and what CI costs.
 
 Every source file starts with `SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0`.
