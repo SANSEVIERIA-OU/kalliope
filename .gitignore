@@ -1,0 +1,10 @@
+# Build output
+/build*/
+/target/
+# Downloaded models, generated audio and local environments: never committed
+*.onnx
+*.wav
+/models/
+/artifacts/
+.venv/
+__pycache__/
