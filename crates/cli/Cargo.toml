@@ -1,0 +1,16 @@
+[package]
+name = "kalliope-cli"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "kalliope"
+path = "src/main.rs"
+
+[dependencies]
+kalliope-text.workspace = true
+kalliope-phonemes.workspace = true
+kalliope-voice.workspace = true

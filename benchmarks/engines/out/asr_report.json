@@ -1,0 +1,487 @@
+{
+ "piper-serena-med-t1": {
+  "wer": 0.03816793893129771,
+  "errors": 5,
+  "words": 131,
+  "details": [
+   {
+    "i": 4,
+    "errors": 3,
+    "hyp": "il preventivo è di 1.250 euro, i vuoi scusa, da saldare entro il 15 marzo 2027."
+   },
+   {
+    "i": 5,
+    "errors": 1,
+    "hyp": "La nave ha gettato l'ancora nel porto. Ancora una volta siamo arrivati tardi."
+   },
+   {
+    "i": 6,
+    "errors": 1,
+    "hyp": "Perché non ne parliamo giovedì alle 10 e 30, dopo la riunione con l'ufficio tecnico?"
+   }
+  ]
+ },
+ "piper-paola-med-t1": {
+  "wer": 0.16030534351145037,
+  "errors": 21,
+  "words": 131,
+  "details": [
+   {
+    "i": 0,
+    "errors": 2,
+    "hyp": "Buongiorno a tutti, scusate il vita albo, avevo un problema con la connessione."
+   },
+   {
+    "i": 1,
+    "errors": 2,
+    "hyp": "Passo a fare una domanda, non ho capito bene l'ultimo punto della presentazione."
+   },
+   {
+    "i": 2,
+    "errors": 2,
+    "hyp": "Contastico, esattamente quello che speravamo di ottenere."
+   },
+   {
+    "i": 4,
+    "errors": 5,
+    "hyp": "Il preventivo è di 1.250 euro, il Vice Cousin da saldare Antwerp 15 marzo 2027."
+   },
+   {
+    "i": 5,
+    "errors": 3,
+    "hyp": "La nave ha aggittato l'ancora nel puoto. Ancora una volta siamo arrivati tardi."
+   },
+   {
+    "i": 6,
+    "errors": 2,
+    "hyp": "Perché non ne parlieramo giovedì alle 10.30 dopo la riunione con l'officio tecnico?"
+   },
+   {
+    "i": 7,
+    "errors": 4,
+    "hyp": "Attenzione, il documento va inviato Marco, Giulia Estefanuento stasera."
+   },
+   {
+    "i": 8,
+    "errors": 1,
+    "hyp": "Secondo me dovremmo rivedere le priorità del progetto, concentrandoci prima sulle funzioni  essenziali e rimandando il resto alla prossima versione, così da rispettare la scadenza  senza certificare la qualità."
+   }
+  ]
+ },
+ "piper-riccardo-xlow-t1": {
+  "wer": 0.15267175572519084,
+  "errors": 20,
+  "words": 131,
+  "details": [
+   {
+    "i": 0,
+    "errors": 1,
+    "hyp": "Buongiorno a tutti, scusate il ritardo, arrivo un problema con la connessione."
+   },
+   {
+    "i": 4,
+    "errors": 7,
+    "hyp": "Il preventivo ed i 1.250 euro di VA esplosa va a saldare entro il 15 marzo 2027."
+   },
+   {
+    "i": 5,
+    "errors": 1,
+    "hyp": "La nave ha gettato l'ancola nel porto. Ancora una volta siamo arrivati tardi."
+   },
+   {
+    "i": 6,
+    "errors": 2,
+    "hyp": "Perché non ne parliamo giovedì alle 10 e 30 dopo la riunione con un ufficio tecnico."
+   },
+   {
+    "i": 7,
+    "errors": 3,
+    "hyp": "Attenzione.  Il documento va inviato a Marco, Giulia e Stefano in tutta sera."
+   },
+   {
+    "i": 8,
+    "errors": 6,
+    "hyp": "Secondo me dovremmo vi vedere le priorità del progetto, concentandoci prima sulle funzioni  essenziali e rimandando il testo alla prossima versione, così da dispettare la scalenza  senza sacrificare la qualità."
+   }
+  ]
+ },
+ "piper-serena-high-t1": {
+  "wer": 0.05343511450381679,
+  "errors": 7,
+  "words": 131,
+  "details": [
+   {
+    "i": 0,
+    "errors": 2,
+    "hyp": "Buongiorno a tutti, scusate lei tardo, avevo un problema con la connessione"
+   },
+   {
+    "i": 4,
+    "errors": 2,
+    "hyp": "Il preventivo è di 1.250 euro, i vuoi esclusa da saldare entro il 15 marzo 2027."
+   },
+   {
+    "i": 5,
+    "errors": 2,
+    "hyp": "La nave ha gettato l'ancora nel porto.  Ancora una volta siamo arrivati tati."
+   },
+   {
+    "i": 6,
+    "errors": 1,
+    "hyp": "Perché non ne parliamo giovedì alle 10.30, dopo la riunione con ufficio tecnico?"
+   }
+  ]
+ },
+ "klein-giulia-t2": {
+  "wer": 0.05343511450381679,
+  "errors": 7,
+  "words": 131,
+  "details": [
+   {
+    "i": 4,
+    "errors": 4,
+    "hyp": "Il preventivo è di 1,250 euro, i vuoi esclusa da saldare entro il 15 marzo 2027."
+   },
+   {
+    "i": 5,
+    "errors": 1,
+    "hyp": "La nave ha gettato l'ancora nel porto, ancora una volta siamo arrivati tardi."
+   },
+   {
+    "i": 9,
+    "errors": 2,
+    "hyp": "Siva bene!"
+   }
+  ]
+ },
+ "klein-marco-t2": {
+  "wer": 0.04580152671755725,
+  "errors": 6,
+  "words": 131,
+  "details": [
+   {
+    "i": 4,
+    "errors": 4,
+    "hyp": "Il preventivo è di 1,250 euro, i vuoi esclusa, da saldare entro il 15 marzo 2027."
+   },
+   {
+    "i": 5,
+    "errors": 1,
+    "hyp": "La nave ha gettato l'ancora nel porto, ancora una volta siamo arrivati tardi."
+   },
+   {
+    "i": 9,
+    "errors": 1,
+    "hyp": "Si va bene."
+   }
+  ]
+ },
+ "kokoro-sara-fp32-t2": {
+  "wer": 0.03816793893129771,
+  "errors": 5,
+  "words": 131,
+  "details": [
+   {
+    "i": 4,
+    "errors": 4,
+    "hyp": "Il preventivo è di uno 250 euro, evo a esclusa, da saldare entro il 15 marzo 2027."
+   },
+   {
+    "i": 5,
+    "errors": 1,
+    "hyp": "La nave ha gettato l'ancora nel porto, ancora una volta siamo arrivati tardi."
+   }
+  ]
+ },
+ "kokoro-sara-int8-t2": {
+  "wer": 0.03816793893129771,
+  "errors": 5,
+  "words": 131,
+  "details": [
+   {
+    "i": 4,
+    "errors": 2,
+    "hyp": "Il preventivo è di uno 250 euro, IVA esclusa, da saldare entro il 15 marzo 2027."
+   },
+   {
+    "i": 5,
+    "errors": 1,
+    "hyp": "La nave ha gettato l'ancora nel porto, ancora una volta siamo arrivati tardi."
+   },
+   {
+    "i": 6,
+    "errors": 2,
+    "hyp": "Perché non ne parliamo giovedì alle dieci, trenta dopo la riunione con l'ufficio tecnico."
+   }
+  ]
+ },
+ "kokoro-nicola-fp32-t2": {
+  "wer": 0.05343511450381679,
+  "errors": 7,
+  "words": 131,
+  "details": [
+   {
+    "i": 2,
+    "errors": 1,
+    "hyp": "fantastico e esattamente quello che speravamo di ottenere."
+   },
+   {
+    "i": 4,
+    "errors": 4,
+    "hyp": "Il preventivo è di 1 250 euro, i vuoi esclusa, da saldare entro il 15 marzo 2027."
+   },
+   {
+    "i": 5,
+    "errors": 1,
+    "hyp": "La nave ha gettato l'ancora nel porto, ancora una volta siamo arrivati tardi."
+   },
+   {
+    "i": 9,
+    "errors": 1,
+    "hyp": "Si va bene."
+   }
+  ]
+ },
+ "pocket-it-int8-t2": {
+  "wer": 0.16030534351145037,
+  "errors": 21,
+  "words": 131,
+  "details": [
+   {
+    "i": 0,
+    "errors": 1,
+    "hyp": "Buongiorno a tutti, scusate, in ritardo avevo un problema con la connessione."
+   },
+   {
+    "i": 4,
+    "errors": 5,
+    "hyp": "Il più preventivo è di l'1. 12.80 euro, IVA esclusa da saldare entro il 15 marzo 2027."
+   },
+   {
+    "i": 5,
+    "errors": 6,
+    "hyp": "Che lale ha gettato lale ancora nel porto va ancora una volta e siamo arrivati tardi."
+   },
+   {
+    "i": 6,
+    "errors": 2,
+    "hyp": "Non ne parliamo giovedì alle 10 da 30, dopo la riunione con l'ufficio tecnico."
+   },
+   {
+    "i": 7,
+    "errors": 2,
+    "hyp": "Attenzione, due al documento va inviato a Marco, Giulia e Stefano entro stasera."
+   },
+   {
+    "i": 8,
+    "errors": 2,
+    "hyp": "Seconda me dovremmo rivedere le priorità del progetto, concentrandoci prima sulle funzioni  essenziali e rimandando il resto alla prossima versione, ma così da rispettare la scadenza  senza sacrificare la qualità."
+   },
+   {
+    "i": 9,
+    "errors": 3,
+    "hyp": "Vabbè"
+   }
+  ]
+ },
+ "pocket-it-fp32-t2": {
+  "wer": 0.1297709923664122,
+  "errors": 17,
+  "words": 131,
+  "details": [
+   {
+    "i": 0,
+    "errors": 3,
+    "hyp": "Buongiorno a tutti, scusate, in ritardo a Tove avevo un problema con la connessione"
+   },
+   {
+    "i": 3,
+    "errors": 1,
+    "hyp": "Direi che possiamo procedere, se siete tutti d'accordo."
+   },
+   {
+    "i": 4,
+    "errors": 4,
+    "hyp": "Il preventivo è di di 1.20.50 euro, IVA esclusa, da saldare entro il 15 marzo 2027."
+   },
+   {
+    "i": 5,
+    "errors": 3,
+    "hyp": "La navia ha gettato l'ancora nel porto parto, ancora una volta siamo arrivati tardi."
+   },
+   {
+    "i": 6,
+    "errors": 2,
+    "hyp": "Perché non ne parliamo giovedì alle 10-2 a 30, dopo la riunione con l'ufficio tecnico?"
+   },
+   {
+    "i": 7,
+    "errors": 2,
+    "hyp": "Intenzionete, il documento va inviato a Marco, Giulia e Stefano entrò stasera."
+   },
+   {
+    "i": 9,
+    "errors": 2,
+    "hyp": "Sì."
+   }
+  ]
+ },
+ "pocket-it24l-int8-t4": {
+  "wer": 0.10687022900763359,
+  "errors": 14,
+  "words": 131,
+  "details": [
+   {
+    "i": 0,
+    "errors": 1,
+    "hyp": "Buongiorno a tutti, scusate e ritardo avevo un problema con la connessione."
+   },
+   {
+    "i": 2,
+    "errors": 1,
+    "hyp": "È esattamente quello che speravamo di ottenere."
+   },
+   {
+    "i": 4,
+    "errors": 3,
+    "hyp": "il preventivo è di 1,250 euro, eva esclusa, da saldare entro il 15 marzo 2027."
+   },
+   {
+    "i": 5,
+    "errors": 1,
+    "hyp": "La nave ha gettato l'ancora nel porto, ancora una volta siamo arrivati tardi."
+   },
+   {
+    "i": 6,
+    "errors": 1,
+    "hyp": "che non ne parliamo giovedì alle 10.30, dopo la riunione con l'ufficio tecnico."
+   },
+   {
+    "i": 7,
+    "errors": 2,
+    "hyp": "Il documento va inviato a Marco, Giulia e Stefano intro stasera."
+   },
+   {
+    "i": 8,
+    "errors": 4,
+    "hyp": "Secondo me dovremmo rivedere le priorità del progetto concentrandoci prima su le funzioni essenziali e rimandando il resto alla prossima versione, un dosi da rispettare la scadenza, senza sacrificare la qualità."
+   },
+   {
+    "i": 9,
+    "errors": 1,
+    "hyp": "Va bene."
+   }
+  ]
+ },
+ "supertonic-F1-5step-t2": {
+  "wer": 0.05343511450381679,
+  "errors": 7,
+  "words": 131,
+  "details": [
+   {
+    "i": 4,
+    "errors": 3,
+    "hyp": "Il preventivo è di un minimum 250 euro, IVA esclusa, da saldare entro il 15 marzo 2027."
+   },
+   {
+    "i": 5,
+    "errors": 1,
+    "hyp": "La nave ha gettato l'ancora nel porto. Ancora una volta siamo arrivati tardi."
+   },
+   {
+    "i": 8,
+    "errors": 1,
+    "hyp": "Secondo me dovremmo rivedere le priorità del progetto, concentrandoci prima sulle funzioni essenziali e rimandando il resto la prossima versione, così da rispettare la scadenza senza sacrificare la qualità."
+   },
+   {
+    "i": 9,
+    "errors": 2,
+    "hyp": "Siva bene!"
+   }
+  ]
+ },
+ "supertonic-F1-2step-t2": {
+  "wer": 0.3893129770992366,
+  "errors": 51,
+  "words": 131,
+  "details": [
+   {
+    "i": 0,
+    "errors": 1,
+    "hyp": "Buongiorno a tutti. Scusate, ritardo. Avevo un problema con la connessione."
+   },
+   {
+    "i": 1,
+    "errors": 1,
+    "hyp": "Posso fare una domanda? Non capito bene l'ultimo punto della presentazione."
+   },
+   {
+    "i": 2,
+    "errors": 1,
+    "hyp": "Fantastico, esattamente quello che speravamo di ottenere."
+   },
+   {
+    "i": 3,
+    "errors": 3,
+    "hyp": "Allora, direi che possiamo procedere, siete con gli accordo."
+   },
+   {
+    "i": 4,
+    "errors": 13,
+    "hyp": "il preventivo e l'introquintice mass of the universe."
+   },
+   {
+    "i": 5,
+    "errors": 3,
+    "hyp": "La nave ha detto di l'angolo nel porto. Ancora una volta siamo arrivati tardi."
+   },
+   {
+    "i": 6,
+    "errors": 9,
+    "hyp": "Perchè non ne papiamo le rilivili del 20-30 dopo l'alignone con l'officio tecnico?"
+   },
+   {
+    "i": 7,
+    "errors": 4,
+    "hyp": "Attenzione, il documento va in bilanmo da Marco Giulia Stefano entro stasera."
+   },
+   {
+    "i": 8,
+    "errors": 16,
+    "hyp": "Secondo me non mi è venuta bene che tu mi hai...  ...con presentandoci prima sulle funzioni essenziali...  ...e rimandando il resto alla massimazione...  ...così da aspettare questa sidenza senza sacrificare la qualità."
+   }
+  ]
+ },
+ "supertonic-M1-5step-t2": {
+  "wer": 0.061068702290076333,
+  "errors": 8,
+  "words": 131,
+  "details": [
+   {
+    "i": 2,
+    "errors": 1,
+    "hyp": "Fantástico! È esattamente quello che speravamo di ottenere."
+   },
+   {
+    "i": 4,
+    "errors": 4,
+    "hyp": "Il preventivo è di un di unirno 250 euro, IVA esclusa da saldare entro il 15 marzo 2027."
+   },
+   {
+    "i": 5,
+    "errors": 1,
+    "hyp": "La nave ha gettato l'ancora nel porto. Ancora una volta siamo arrivati tardi."
+   },
+   {
+    "i": 7,
+    "errors": 1,
+    "hyp": "Attenzione, il documento va inviato a Marco, Giulia Stefano, entro stasera."
+   },
+   {
+    "i": 9,
+    "errors": 1,
+    "hyp": "Si va bene."
+   }
+  ]
+ }
+}

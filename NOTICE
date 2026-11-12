@@ -1,0 +1,42 @@
+KALLIOPE — LICENSING NOTICE
+
+Project: Kalliope
+Steward: SANSEVIERIA OÜ
+Original author: Davide Briani; other authors retain their respective rights.
+Official source: https://github.com/SANSEVIERIA-OU/kalliope
+Licensing contact: https://github.com/SANSEVIERIA-OU/kalliope/issues
+
+The original application, libraries, tools, benchmarks and documentation in
+this source revision use SANSEVIERIA License 1.0, except for the separately
+licensed material below. The complete, unchanged licence is supplied as LICENSE
+and as LICENSES/LicenseRef-SANSEVIERIA-1.0.txt. LicenseRef-SANSEVIERIA-1.0 is a
+local identifier for this custom licence, not an OSI approval or SPDX-list
+entry. This licence applies to the copies and revisions expressly offered under
+it. No provision revokes any valid permissions previously granted under another
+licence, if such permissions were granted.
+
+Separately licensed components remain under their existing terms:
+- crates/phonemes/data/lexicon.tsv and crates/phonemes/data/suffixes.tsv:
+  derived from Wiktionary, CC BY-SA 4.0; see crates/phonemes/data/README.md.
+  They are compiled into the phonemizer as separate data. The share-alike terms
+  apply to these data files and their adaptations, not to Kalliope's code.
+- Third-party libraries, voice models and data: their own terms; see
+  THIRD_PARTY_NOTICES.md. Voice models are downloaded, not stored in this
+  repository.
+- Development tools may run espeak-ng (GPL-3.0-or-later) as a separate program,
+  only to compare pronunciations. espeak-ng is not linked into, bundled with or
+  required by any Kalliope build or distribution.
+
+Existing copyright, licence and attribution notices must be preserved. No
+copyright assignment to the Steward is implied by this notice.
+
+Corresponding source is this version's complete source tree, including build
+instructions in README.md and CONTRIBUTING.md and required scripts and
+dependency information. When distributing a binary or providing external
+network use, supply the matching source or maintain the source offer required
+by section 5; a moving branch URL alone is not a substitute for identifying and
+retaining the matching source revision.
+
+Commercial authorizations must satisfy section 7 of LICENSE. This notice is not
+such an authorization. Contributions to covered code require the express assent
+described in CONTRIBUTING.md.
