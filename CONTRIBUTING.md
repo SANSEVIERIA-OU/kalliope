@@ -26,7 +26,7 @@ are official. Submission does not guarantee acceptance.
 | `crates/text` | Italian text normalizer (`kalliope-text`) |
 | `crates/phonemes` | Italian phonemizer (`kalliope-phonemes`); `data/` is CC BY-SA, see its README |
 | `crates/voice` | Klein voice through ONNX Runtime, with its own minimal C API binding (`kalliope-voice`) |
-| `crates/cli` | `kalliope` development command line |
+| `crates/cli` | `kalliope-cli` development command line |
 | `tools/` | Development-only Python helpers: espeak-ng reference phonemes, Whisper WER, phonemizer data build |
 | `benchmarks/engines` | The November 2026 engine benchmark that chose the voice |
 

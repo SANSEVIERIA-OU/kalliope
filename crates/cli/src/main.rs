@@ -12,8 +12,8 @@ use kalliope_voice::{Voice, VoiceOptions};
 
 const USAGE: &str = "\
 usage:
-  kalliope say [options] TEXT...    speak TEXT into a WAV file
-  kalliope phonemes TEXT...         print each normalized sentence and its phonemes
+  kalliope-cli say [options] TEXT...    speak TEXT into a WAV file
+  kalliope-cli phonemes TEXT...         print each normalized sentence and its phonemes
 
 options for say:
   --model-dir DIR   Klein model folder (default: $KALLIOPE_MODEL_DIR, else models/klein)

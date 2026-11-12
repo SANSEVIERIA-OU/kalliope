@@ -30,8 +30,8 @@ dependencies.
 ```sh
 cargo build --release
 export KALLIOPE_ORT_LIB=/path/to/libonnxruntime.so KALLIOPE_MODEL_DIR=/path/to/klein/onnx
-./target/release/kalliope say -o ciao.wav "Buongiorno a tutti, scusate il ritardo."
-./target/release/kalliope phonemes "Il preventivo è di 1.250 €, IVA esclusa."
+./target/release/kalliope-cli say -o ciao.wav "Buongiorno a tutti, scusate il ritardo."
+./target/release/kalliope-cli phonemes "Il preventivo è di 1.250 €, IVA esclusa."
 ```
 
 The model comes from https://huggingface.co/klein-ml/Klein-TTS-X1.5-Pro (`onnx/` folder). ONNX

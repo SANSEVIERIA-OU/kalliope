@@ -7,7 +7,7 @@ license.workspace = true
 publish.workspace = true
 
 [[bin]]
-name = "kalliope"
+name = "kalliope-cli"
 path = "src/main.rs"
 
 [dependencies]
