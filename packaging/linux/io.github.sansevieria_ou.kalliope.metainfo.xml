@@ -38,7 +38,7 @@
   <releases>
     <release version="0.1" date="2026-11-12" type="development">
       <description>
-        <p>First version: the voice, the text reader and the command line. The virtual microphone and the app window are still being written.</p>
+        <p>The first version, for Linux: the Kalliope window, the virtual microphone called “Kalliope” (with PipeWire), and the Klein voice, made on your computer.</p>
       </description>
     </release>
   </releases>

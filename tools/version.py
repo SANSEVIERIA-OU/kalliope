@@ -228,6 +228,29 @@ def tag_info(tag):
     print(f"test={'true' if test else 'false'}")
 
 
+def unwrap(markdown):
+    """Joins wrapped lines: GitHub shows every line break in release notes."""
+    lines = []
+    fenced = False
+    for line in markdown.splitlines():
+        if line.startswith("```"):
+            fenced = not fenced
+        continuation = (
+            not fenced
+            and lines
+            and lines[-1].strip()
+            and not lines[-1].startswith(("#", "```", "|"))
+            and line.strip()
+            and not line.lstrip().startswith(("- ", "* ", "#", "```", "|"))
+            and not re.match(r"\s*\d+\. ", line)
+        )
+        if continuation:
+            lines[-1] += " " + line.strip()
+        else:
+            lines.append(line)
+    return "\n".join(lines)
+
+
 def notes(tag):
     match = TAG.fullmatch(tag)
     if not match:
@@ -238,7 +261,7 @@ def notes(tag):
         return
     for found, _, body in changelog_sections(read(CHANGELOG)):
         if found == version:
-            print(body)
+            print(unwrap(body))
             return
     fail(f"CHANGELOG.md has no section ## {version}")
 

@@ -116,9 +116,9 @@ pinning, and cannot work out library dependencies; `dpkg-shlibdeps` and rpm do t
 
 The binaries are built on Ubuntu 24.04, so they need glibc 2.39 or newer. The libraries they link
 are found by `dpkg-shlibdeps` and by rpm: glibc, libgcc, fontconfig, and libstdc++ for ONNX Runtime.
-The others are loaded at run time and listed by hand. They were found by building the app's Slint
-setup (winit, software renderer, system fonts, AccessKit) and listing the library names in the
-program:
+The others are loaded at run time and listed by hand. They were found by listing the library names
+in the app's program (Slint with winit, the software renderer, system fonts and AccessKit; the
+PipeWire microphone):
 
 | Library | When | `.deb` | `.rpm` |
 | --- | --- | --- | --- |
@@ -126,12 +126,13 @@ program:
 | libwayland-client | Wayland | Depends (or libX11), Recommends | Requires (or libX11), Recommends |
 | libX11, libX11-xcb, libxcb, libXcursor, libXi, libxkbcommon-x11 | X11 | Recommends | Recommends |
 | libpipewire-0.3 | the virtual microphone | Recommends | Recommends |
+| curl (the program) | downloading the voice at first start | Depends | Requires `/usr/bin/curl` |
 
 No OpenGL or EGL library is needed: the app draws with Slint's software renderer. Any desktop
 already has all of these. When the app changes its Slint features, check the list again:
 ```sh
 readelf -d target/release/kalliope | grep NEEDED
-strings target/release/kalliope | grep -oE 'lib[A-Za-z0-9_+-]+\.so(\.[0-9]+)*' | sort -u
+strings target/release/kalliope | grep -oE 'lib[A-Za-z0-9_.+-]+\.so(\.[0-9]+)*' | sort -u
 ```
 
 ## Arch Linux (AUR)

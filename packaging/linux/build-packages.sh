@@ -67,7 +67,8 @@ tar -C "$work" --sort=name --owner=0 --group=0 --numeric-owner --mtime="@$SOURCE
     -cf - "$name" | gzip -9n > "$out/$name.tar.gz"
 
 # .deb, with dpkg-deb. Linked libraries come from dpkg-shlibdeps; the ones loaded at run time
-# are listed by hand (see docs/releasing.md for how they were found).
+# are listed by hand (see docs/releasing.md for how they were found), and so is curl, which the
+# app runs to download the voice.
 deb=$work/debian/kalliope
 stage "$deb/usr" lib/kalliope
 mkdir -p "$deb/DEBIAN"
@@ -86,7 +87,7 @@ Version: $package_version
 Architecture: amd64
 Maintainer: Kalliope contributors <https://github.com/SANSEVIERIA-OU/kalliope/issues>
 Installed-Size: $(du -sk --exclude=DEBIAN "$deb" | cut -f1)
-Depends: $shlibs, libxkbcommon0, libwayland-client0 | libx11-6
+Depends: $shlibs, libxkbcommon0, libwayland-client0 | libx11-6, curl
 Recommends: libpipewire-0.3-0t64 | libpipewire-0.3-0, libwayland-client0, libx11-6, libx11-xcb1, libxcb1, libxcursor1, libxi6, libxkbcommon-x11-0
 Section: sound
 Priority: optional

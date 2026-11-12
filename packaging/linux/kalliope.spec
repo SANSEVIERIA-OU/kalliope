@@ -14,6 +14,8 @@ ExclusiveArch:  x86_64
 # These are loaded at run time: xkbcommon always, then Wayland or X11 for the window.
 Requires:       libxkbcommon%{?_isa}
 Requires:       (libwayland-client%{?_isa} or libX11%{?_isa})
+# The app runs curl to download the voice; curl or curl-minimal provides it.
+Requires:       /usr/bin/curl
 # The virtual microphone.
 Recommends:     pipewire-libs%{?_isa}
 Recommends:     libwayland-client%{?_isa}

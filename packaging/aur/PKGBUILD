@@ -15,8 +15,9 @@ arch=('x86_64')
 url='https://github.com/SANSEVIERIA-OU/kalliope'
 license=('LicenseRef-SANSEVIERIA-1.0')
 # Linked: glibc, gcc-libs, fontconfig. Loaded at run time: libxkbcommon always, then wayland or
-# the X11 libraries for the window, and libpipewire for the virtual microphone.
-depends=('glibc' 'gcc-libs' 'fontconfig' 'libxkbcommon')
+# the X11 libraries for the window, and libpipewire for the virtual microphone. curl downloads
+# the voice the first time Kalliope starts.
+depends=('glibc' 'gcc-libs' 'fontconfig' 'libxkbcommon' 'curl')
 optdepends=(
   'libpipewire: the virtual microphone'
   'wayland: the window on Wayland'
