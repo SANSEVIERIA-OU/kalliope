@@ -1,0 +1,211 @@
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// Kalliope's window: write, press Enter, and the virtual microphone speaks.
+
+import { Button, LineEdit, ComboBox, CheckBox, ListView, ProgressIndicator, AboutSlint, VerticalBox, HorizontalBox, ScrollView } from "std-widgets.slint";
+
+export enum Phase { loading, ready, speaking, error, needs-model, downloading }
+
+export component AppWindow inherits Window {
+    title: "Kalliope";
+    preferred-width: 560px;
+    preferred-height: 460px;
+    min-width: 360px;
+    min-height: 320px;
+    default-font-size: 16px;
+    forward-focus: input;
+
+    in property <Phase> phase: Phase.loading;
+    in property <string> status: "Preparo la voce…";
+    in property <bool> warning: false;
+    in property <float> progress: 0;
+    in property <[string]> history;
+    in property <[string]> voices: ["Giulia", "Marco"];
+    in-out property <int> voice-index: 0;
+    in-out property <bool> monitor: true;
+    in property <string> version: "0.1";
+    in-out property <string> draft;
+
+    callback speak(string);
+    callback stop();
+    callback voice-changed(int);
+    callback monitor-changed(bool);
+    callback download();
+    callback cancel-download();
+    // Empty when the download succeeded, else the reason.
+    callback download-done(string);
+
+    property <bool> about-open: false;
+    property <bool> can-speak: root.phase == Phase.ready || root.phase == Phase.speaking;
+
+    VerticalBox {
+        status-box := Rectangle {
+            background: root.warning ? #fff4e5 : (root.phase == Phase.speaking ? #e8f5e9 : #eef3fb);
+            border-radius: 6px;
+            vertical-stretch: 0;
+            height: status-text.preferred-height + 20px;
+            status-text := Text {
+                x: 10px;
+                y: 10px;
+                width: parent.width - 20px;
+                text: root.status;
+                wrap: word-wrap;
+                color: #1d1d1f;
+                accessible-role: text;
+            }
+        }
+
+        if root.phase == Phase.needs-model || root.phase == Phase.downloading: VerticalBox {
+            padding: 0;
+            if root.phase == Phase.downloading: ProgressIndicator {
+                progress: root.progress;
+                height: 8px;
+            }
+            HorizontalBox {
+                padding: 0;
+                alignment: start;
+                Button {
+                    text: root.phase == Phase.downloading ? "Annulla" : "Scarica la voce";
+                    primary: root.phase == Phase.needs-model;
+                    clicked => {
+                        if (root.phase == Phase.downloading) {
+                            root.cancel-download();
+                        } else {
+                            root.download();
+                        }
+                    }
+                }
+            }
+        }
+
+        HorizontalBox {
+            padding: 0;
+            input := LineEdit {
+                placeholder-text: "Scrivi qui e premi Invio per parlare";
+                text <=> root.draft;
+                enabled: root.can-speak;
+                accessible-label: "Testo da dire";
+                accepted(text) => {
+                    root.speak(text);
+                    root.draft = "";
+                }
+            }
+            Button {
+                text: "Parla";
+                primary: true;
+                enabled: root.can-speak && root.draft != "";
+                clicked => {
+                    root.speak(root.draft);
+                    root.draft = "";
+                    input.focus();
+                }
+            }
+            Button {
+                text: "Ferma";
+                enabled: root.phase == Phase.speaking;
+                clicked => {
+                    root.stop();
+                    input.focus();
+                }
+            }
+        }
+
+        Text {
+            text: root.history.length > 0 ? "Già detto: scegli una frase per ripeterla" : "Le frasi che dici restano qui, per ripeterle.";
+            color: #5f6368;
+            font-size: 13px;
+        }
+
+        ListView {
+            vertical-stretch: 1;
+            for phrase in root.history: HorizontalBox {
+                padding-top: 2px;
+                padding-bottom: 2px;
+                Button {
+                    text: phrase;
+                    enabled: root.can-speak;
+                    accessible-label: "Ripeti: " + phrase;
+                    clicked => {
+                        root.speak(phrase);
+                        input.focus();
+                    }
+                }
+            }
+        }
+
+        HorizontalBox {
+            padding: 0;
+            Text {
+                text: "Voce";
+                vertical-alignment: center;
+            }
+            ComboBox {
+                model: root.voices;
+                current-index <=> root.voice-index;
+                accessible-label: "Voce";
+                selected => {
+                    root.voice-changed(self.current-index);
+                }
+            }
+            CheckBox {
+                text: "Senti anche tu";
+                checked <=> root.monitor;
+                toggled => {
+                    root.monitor-changed(self.checked);
+                }
+            }
+            Rectangle {
+                horizontal-stretch: 1;
+            }
+            Button {
+                text: "Informazioni";
+                clicked => {
+                    root.about-open = true;
+                }
+            }
+        }
+    }
+
+    if root.about-open: Rectangle {
+        background: #000000a0;
+        TouchArea { }
+        Rectangle {
+            width: min(parent.width - 32px, 480px);
+            height: min(parent.height - 32px, about.preferred-height);
+            background: white;
+            border-radius: 8px;
+            ScrollView {
+                about := VerticalBox {
+                    Text {
+                        text: "Kalliope " + root.version;
+                        font-size: 22px;
+                        font-weight: 700;
+                    }
+                    Text {
+                        text: "Scrivi e fatti sentire nelle videochiamate. La voce viene creata su questo computer: nessun testo lascia la tua macchina.";
+                        wrap: word-wrap;
+                    }
+                    Text {
+                        text: "© SANSEVIERIA OÜ. Licenza SANSEVIERIA 1.0. Voce: Klein-TTS-X1.5-Pro (Apache-2.0). ONNX Runtime (MIT). Dati di pronuncia da Wiktionary (CC BY-SA 4.0).";
+                        wrap: word-wrap;
+                        font-size: 13px;
+                        color: #5f6368;
+                    }
+                    AboutSlint {
+                        preferred-height: 140px;
+                    }
+                    HorizontalBox {
+                        alignment: end;
+                        Button {
+                            text: "Chiudi";
+                            primary: true;
+                            clicked => {
+                                root.about-open = false;
+                                input.focus();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
