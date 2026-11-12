@@ -90,5 +90,6 @@ jobs:
           python=$([ "$RUNNER_OS" = Windows ] && echo python || echo python3)
           $python tools/fetch_assets.py onnxruntime .ci-assets >> "$GITHUB_ENV"
           $python tools/fetch_assets.py model .ci-assets >> "$GITHUB_ENV"
+      # Not the examples: crates/voice/examples/measure.rs measures with Linux-only calls.
       - name: Tests, with the model
-        run: cargo test --workspace --locked
+        run: cargo test --workspace --lib --bins --tests --locked
