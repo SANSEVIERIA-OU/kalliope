@@ -53,6 +53,7 @@ cp -a %{staging}/. %{buildroot}/
 %dir /usr/share/doc/kalliope
 %license /usr/share/doc/kalliope/LICENSE
 %license /usr/share/doc/kalliope/onnxruntime/
+%license /usr/share/doc/kalliope/THIRD_PARTY_LICENSES.txt
 %doc /usr/share/doc/kalliope/NOTICE
 %doc /usr/share/doc/kalliope/THIRD_PARTY_NOTICES.md
 %doc /usr/share/doc/kalliope/CHANGELOG.md
