@@ -1,12 +1,16 @@
 // SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
-//! Minimal binding to the ONNX Runtime C API, loaded at run time with `dlopen`.
+//! Minimal binding to the ONNX Runtime C API, loaded at run time: with `dlopen` on Linux and
+//! macOS, with `LoadLibraryW` on Windows.
 //!
 //! Only the calls Kalliope needs. Function pointers are read from the `OrtApi` table by index:
 //! the table is append-only, so an index never changes between releases. The indices below were
 //! computed with `offsetof(OrtApi, Name) / sizeof(void*)` against `onnxruntime_c_api.h` of
 //! ONNX Runtime 1.31.1. Every function used exists since long before [`API_VERSION`].
+//!
+//! Function pointers use `extern "system"`: the header declares them `ORT_API_CALL`, which is
+//! `__stdcall` on 32-bit Windows. Everywhere else `"system"` is the plain C convention.
 
-use std::ffi::{CStr, CString, c_char, c_int, c_void};
+use std::ffi::{CStr, OsStr, c_char, c_int, c_void};
 use std::marker::PhantomData;
 use std::path::Path;
 use std::ptr;
@@ -53,21 +57,31 @@ const MEM_TYPE_DEFAULT: c_int = 0;
 const ELEMENT_FLOAT: c_int = 1;
 const ELEMENT_INT64: c_int = 7;
 
-const RTLD_NOW: c_int = 2;
-
 type Status = *mut c_void;
 type Handle = *mut c_void;
 
-unsafe extern "C" {
-    fn dlopen(filename: *const c_char, flags: c_int) -> *mut c_void;
-    fn dlsym(handle: *mut c_void, symbol: *const c_char) -> *mut c_void;
-    fn dlerror() -> *const c_char;
-}
+/// ONNX Runtime's `ORTCHAR_T`, the character type of model paths: UTF-16 on Windows.
+#[cfg(windows)]
+type OrtChar = u16;
+#[cfg(not(windows))]
+type OrtChar = c_char;
+
+/// Library names tried, in order, when no path is given.
+#[cfg(windows)]
+const DEFAULT_NAMES: &[&str] = &["onnxruntime.dll"];
+/// Homebrew on Apple Silicon installs into /opt/homebrew/lib, which `dlopen` does not search.
+#[cfg(target_os = "macos")]
+const DEFAULT_NAMES: &[&str] = &[
+    "libonnxruntime.dylib",
+    "/opt/homebrew/lib/libonnxruntime.dylib",
+];
+#[cfg(not(any(windows, target_os = "macos")))]
+const DEFAULT_NAMES: &[&str] = &["libonnxruntime.so.1", "libonnxruntime.so"];
 
 #[repr(C)]
 struct OrtApiBase {
-    get_api: unsafe extern "C" fn(version: u32) -> *const *const c_void,
-    get_version_string: unsafe extern "C" fn() -> *const c_char,
+    get_api: unsafe extern "system" fn(version: u32) -> *const *const c_void,
+    get_version_string: unsafe extern "system" fn() -> *const c_char,
 }
 
 /// The loaded library's function table. Loaded once per process and never unloaded.
@@ -88,27 +102,25 @@ pub fn load(path: Option<&Path>) -> Result<&'static Api, Error> {
     if let Some(api) = API.get() {
         return Ok(api);
     }
-    let candidates: Vec<String> = match path {
-        Some(p) => vec![p.to_string_lossy().into_owned()],
-        None => vec!["libonnxruntime.so.1".into(), "libonnxruntime.so".into()],
+    let candidates: Vec<&OsStr> = match path {
+        Some(p) => vec![p.as_os_str()],
+        None => DEFAULT_NAMES.iter().map(OsStr::new).collect(),
     };
     let mut last_error = String::new();
-    for name in &candidates {
-        let c_name =
-            CString::new(name.as_str()).map_err(|_| Error::new("library path contains NUL"))?;
-        // SAFETY: plain dlopen/dlsym calls with valid NUL-terminated strings.
-        let handle = unsafe { dlopen(c_name.as_ptr(), RTLD_NOW) };
-        if handle.is_null() {
-            last_error = unsafe { dl_error() };
-            continue;
+    for path in candidates {
+        let name = path.to_string_lossy();
+        if name.contains('\0') {
+            return Err(Error::new("library path contains NUL"));
         }
-        let symbol = unsafe { dlsym(handle, c"OrtGetApiBase".as_ptr()) };
-        if symbol.is_null() {
-            last_error = format!("{name}: OrtGetApiBase not found");
-            continue;
-        }
+        let symbol = match library::open(path) {
+            Ok(symbol) => symbol,
+            Err(e) => {
+                last_error = e;
+                continue;
+            }
+        };
         // SAFETY: OrtGetApiBase has this signature in every ONNX Runtime release.
-        let get_base: unsafe extern "C" fn() -> *const OrtApiBase =
+        let get_base: unsafe extern "system" fn() -> *const OrtApiBase =
             unsafe { std::mem::transmute(symbol) };
         let base = unsafe { &*get_base() };
         let version = unsafe { CStr::from_ptr((base.get_version_string)()) }
@@ -128,13 +140,99 @@ pub fn load(path: Option<&Path>) -> Result<&'static Api, Error> {
     )))
 }
 
-unsafe fn dl_error() -> String {
-    let e = unsafe { dlerror() };
-    if e.is_null() {
-        "unknown dlopen error".into()
-    } else {
-        unsafe { CStr::from_ptr(e) }.to_string_lossy().into_owned()
+/// Opening the shared library and finding `OrtGetApiBase` in it. The library is never unloaded.
+#[cfg(not(windows))]
+mod library {
+    use std::ffi::{CStr, CString, OsStr, c_char, c_int, c_void};
+
+    const RTLD_NOW: c_int = 2;
+
+    unsafe extern "C" {
+        fn dlopen(filename: *const c_char, flags: c_int) -> *mut c_void;
+        fn dlsym(handle: *mut c_void, symbol: *const c_char) -> *mut c_void;
+        fn dlerror() -> *const c_char;
     }
+
+    /// The address of `OrtGetApiBase` in the library at `path`, or why it could not be found.
+    pub fn open(path: &OsStr) -> Result<*mut c_void, String> {
+        let name = path.to_string_lossy();
+        let c_name =
+            CString::new(name.as_bytes()).map_err(|_| "library path contains NUL".to_string())?;
+        // SAFETY: plain dlopen/dlsym calls with valid NUL-terminated strings.
+        let handle = unsafe { dlopen(c_name.as_ptr(), RTLD_NOW) };
+        if handle.is_null() {
+            return Err(unsafe { dl_error() });
+        }
+        let symbol = unsafe { dlsym(handle, c"OrtGetApiBase".as_ptr()) };
+        if symbol.is_null() {
+            return Err(format!("{name}: OrtGetApiBase not found"));
+        }
+        Ok(symbol)
+    }
+
+    unsafe fn dl_error() -> String {
+        let e = unsafe { dlerror() };
+        if e.is_null() {
+            "unknown dlopen error".into()
+        } else {
+            unsafe { CStr::from_ptr(e) }.to_string_lossy().into_owned()
+        }
+    }
+}
+
+/// Opening the shared library and finding `OrtGetApiBase` in it. The library is never unloaded.
+#[cfg(windows)]
+mod library {
+    use std::ffi::{OsStr, c_char, c_void};
+    use std::os::windows::ffi::OsStrExt;
+
+    #[link(name = "kernel32")]
+    unsafe extern "system" {
+        fn LoadLibraryW(name: *const u16) -> *mut c_void;
+        fn GetProcAddress(module: *mut c_void, name: *const c_char) -> *mut c_void;
+        fn GetLastError() -> u32;
+    }
+
+    /// The address of `OrtGetApiBase` in the library at `path`, or why it could not be found.
+    pub fn open(path: &OsStr) -> Result<*mut c_void, String> {
+        let name = path.to_string_lossy();
+        let wide: Vec<u16> = path.encode_wide().chain(Some(0)).collect();
+        // SAFETY: plain LoadLibraryW/GetProcAddress calls with valid NUL-terminated strings;
+        // GetLastError right after the failed call, on the same thread.
+        let module = unsafe { LoadLibraryW(wide.as_ptr()) };
+        if module.is_null() {
+            let code = unsafe { GetLastError() };
+            let hint = match code {
+                126 => ": the library, or one it needs, was not found",
+                193 => ": not a library for this processor",
+                _ => "",
+            };
+            return Err(format!("{name}: Windows error {code}{hint}"));
+        }
+        let symbol = unsafe { GetProcAddress(module, c"OrtGetApiBase".as_ptr()) };
+        if symbol.is_null() {
+            return Err(format!("{name}: OrtGetApiBase not found"));
+        }
+        Ok(symbol)
+    }
+}
+
+/// `path` as ONNX Runtime's model path string (`ORTCHAR_T`): UTF-16 on Windows.
+#[cfg(windows)]
+fn model_path(path: &Path) -> Result<Vec<OrtChar>, Error> {
+    use std::os::windows::ffi::OsStrExt;
+    let wide: Vec<u16> = path.as_os_str().encode_wide().collect();
+    if wide.contains(&0) {
+        return Err(Error::new("model path contains NUL"));
+    }
+    Ok(wide.into_iter().chain(Some(0)).collect())
+}
+
+/// `path` as ONNX Runtime's model path string (`ORTCHAR_T`): bytes outside Windows.
+#[cfg(not(windows))]
+fn model_path(path: &Path) -> Result<std::ffi::CString, Error> {
+    std::ffi::CString::new(path.to_string_lossy().as_bytes())
+        .map_err(|_| Error::new("model path contains NUL"))
 }
 
 impl Api {
@@ -155,7 +253,8 @@ impl Api {
             return Ok(());
         }
         unsafe {
-            let message: unsafe extern "C" fn(Status) -> *const c_char = self.f(GET_ERROR_MESSAGE);
+            let message: unsafe extern "system" fn(Status) -> *const c_char =
+                self.f(GET_ERROR_MESSAGE);
             let text = CStr::from_ptr(message(status))
                 .to_string_lossy()
                 .into_owned();
@@ -167,7 +266,7 @@ impl Api {
     unsafe fn release(&self, index: usize, handle: Handle) {
         if !handle.is_null() {
             unsafe {
-                let release: unsafe extern "C" fn(Handle) = self.f(index);
+                let release: unsafe extern "system" fn(Handle) = self.f(index);
                 release(handle);
             }
         }
@@ -209,14 +308,14 @@ impl Env {
         let mut env = ptr::null_mut();
         let mut memory = ptr::null_mut();
         unsafe {
-            let create_env: unsafe extern "C" fn(c_int, *const c_char, *mut Handle) -> Status =
+            let create_env: unsafe extern "system" fn(c_int, *const c_char, *mut Handle) -> Status =
                 api.f(CREATE_ENV);
             api.check(create_env(
                 LOGGING_LEVEL_WARNING,
                 c"kalliope".as_ptr(),
                 &mut env,
             ))?;
-            let create_memory: unsafe extern "C" fn(c_int, c_int, *mut Handle) -> Status =
+            let create_memory: unsafe extern "system" fn(c_int, c_int, *mut Handle) -> Status =
                 api.f(CREATE_CPU_MEMORY_INFO);
             if let Err(e) = api.check(create_memory(
                 DEVICE_ALLOCATOR,
@@ -237,30 +336,31 @@ impl Env {
     /// Loads the model at `path` with Kalliope's session settings.
     pub fn session(&self, path: &Path, config: SessionConfig) -> Result<Session, Error> {
         let api = self.0.api;
-        let c_path = CString::new(path.to_string_lossy().as_bytes())
-            .map_err(|_| Error::new("model path contains NUL"))?;
+        let c_path = model_path(path)?;
         let threads = c_int::try_from(config.threads.max(1)).unwrap_or(1);
         let mut options = ptr::null_mut();
         let mut session = ptr::null_mut();
         unsafe {
-            let create_options: unsafe extern "C" fn(*mut Handle) -> Status =
+            let create_options: unsafe extern "system" fn(*mut Handle) -> Status =
                 api.f(CREATE_SESSION_OPTIONS);
             api.check(create_options(&mut options))?;
             let result = (|| {
-                let set_threads: unsafe extern "C" fn(Handle, c_int) -> Status =
+                let set_threads: unsafe extern "system" fn(Handle, c_int) -> Status =
                     api.f(SET_INTRA_OP_NUM_THREADS);
                 api.check(set_threads(options, threads))?;
-                let set_inter: unsafe extern "C" fn(Handle, c_int) -> Status =
+                let set_inter: unsafe extern "system" fn(Handle, c_int) -> Status =
                     api.f(SET_INTER_OP_NUM_THREADS);
                 api.check(set_inter(options, 1))?;
-                let set_level: unsafe extern "C" fn(Handle, c_int) -> Status =
+                let set_level: unsafe extern "system" fn(Handle, c_int) -> Status =
                     api.f(SET_GRAPH_OPTIMIZATION_LEVEL);
                 api.check(set_level(options, GRAPH_OPTIMIZATION_ALL))?;
-                let no_arena: unsafe extern "C" fn(Handle) -> Status = api.f(DISABLE_CPU_MEM_ARENA);
+                let no_arena: unsafe extern "system" fn(Handle) -> Status =
+                    api.f(DISABLE_CPU_MEM_ARENA);
                 api.check(no_arena(options))?;
-                let no_pattern: unsafe extern "C" fn(Handle) -> Status = api.f(DISABLE_MEM_PATTERN);
+                let no_pattern: unsafe extern "system" fn(Handle) -> Status =
+                    api.f(DISABLE_MEM_PATTERN);
                 api.check(no_pattern(options))?;
-                let add_entry: unsafe extern "C" fn(
+                let add_entry: unsafe extern "system" fn(
                     Handle,
                     *const c_char,
                     *const c_char,
@@ -275,9 +375,9 @@ impl Env {
                     c"session.inter_op.allow_spinning".as_ptr(),
                     c"0".as_ptr(),
                 ))?;
-                let create_session: unsafe extern "C" fn(
+                let create_session: unsafe extern "system" fn(
                     Handle,
-                    *const c_char,
+                    *const OrtChar,
                     Handle,
                     *mut Handle,
                 ) -> Status = api.f(CREATE_SESSION);
@@ -357,7 +457,7 @@ impl<'a> Tensor<'a> {
         let api = env.api();
         let mut value = ptr::null_mut();
         unsafe {
-            let create: unsafe extern "C" fn(
+            let create: unsafe extern "system" fn(
                 Handle,
                 *mut c_void,
                 usize,
@@ -404,7 +504,7 @@ impl Session {
         let output_names: Vec<*const c_char> = outputs.iter().map(|n| n.as_ptr()).collect();
         let mut values: Vec<Handle> = vec![ptr::null_mut(); outputs.len()];
         unsafe {
-            let run: unsafe extern "C" fn(
+            let run: unsafe extern "system" fn(
                 Handle,
                 *const c_void,
                 *const *const c_char,
@@ -439,12 +539,12 @@ impl Session {
 unsafe fn read_float(api: &'static Api, value: Handle) -> Result<Output, Error> {
     unsafe {
         let mut info = ptr::null_mut();
-        let type_and_shape: unsafe extern "C" fn(Handle, *mut Handle) -> Status =
+        let type_and_shape: unsafe extern "system" fn(Handle, *mut Handle) -> Status =
             api.f(GET_TENSOR_TYPE_AND_SHAPE);
         api.check(type_and_shape(value, &mut info))?;
         let described = (|| {
             let mut kind: c_int = 0;
-            let element_type: unsafe extern "C" fn(Handle, *mut c_int) -> Status =
+            let element_type: unsafe extern "system" fn(Handle, *mut c_int) -> Status =
                 api.f(GET_TENSOR_ELEMENT_TYPE);
             api.check(element_type(info, &mut kind))?;
             if kind != ELEMENT_FLOAT {
@@ -453,15 +553,15 @@ unsafe fn read_float(api: &'static Api, value: Handle) -> Result<Output, Error> 
                 )));
             }
             let mut rank = 0usize;
-            let dims_count: unsafe extern "C" fn(Handle, *mut usize) -> Status =
+            let dims_count: unsafe extern "system" fn(Handle, *mut usize) -> Status =
                 api.f(GET_DIMENSIONS_COUNT);
             api.check(dims_count(info, &mut rank))?;
             let mut shape = vec![0i64; rank];
-            let dims: unsafe extern "C" fn(Handle, *mut i64, usize) -> Status =
+            let dims: unsafe extern "system" fn(Handle, *mut i64, usize) -> Status =
                 api.f(GET_DIMENSIONS);
             api.check(dims(info, shape.as_mut_ptr(), rank))?;
             let mut count = 0usize;
-            let element_count: unsafe extern "C" fn(Handle, *mut usize) -> Status =
+            let element_count: unsafe extern "system" fn(Handle, *mut usize) -> Status =
                 api.f(GET_TENSOR_SHAPE_ELEMENT_COUNT);
             api.check(element_count(info, &mut count))?;
             Ok((shape, count))
@@ -469,7 +569,7 @@ unsafe fn read_float(api: &'static Api, value: Handle) -> Result<Output, Error> 
         api.release(RELEASE_TENSOR_TYPE_AND_SHAPE_INFO, info);
         let (shape, count) = described?;
         let mut data_ptr: *mut c_void = ptr::null_mut();
-        let mutable_data: unsafe extern "C" fn(Handle, *mut *mut c_void) -> Status =
+        let mutable_data: unsafe extern "system" fn(Handle, *mut *mut c_void) -> Status =
             api.f(GET_TENSOR_MUTABLE_DATA);
         api.check(mutable_data(value, &mut data_ptr))?;
         let data = if count == 0 {
