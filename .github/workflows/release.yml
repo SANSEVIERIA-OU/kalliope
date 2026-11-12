@@ -1,0 +1,122 @@
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# Builds the Linux packages and installs, runs and removes each one. For a tag vX.Y it then
+# publishes them as a GitHub release. Started by hand (Actions → Release → Run workflow), it only
+# builds and tests the packages. See docs/releasing.md.
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+# A release is never cancelled half-way.
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  linux:
+    name: Linux packages
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      prerelease: ${{ steps.version.outputs.prerelease }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Version
+        id: version
+        run: |
+          if [ "$GITHUB_REF_TYPE" != tag ]; then
+            python3 tools/version.py check
+            echo "version=$(python3 tools/version.py)" | tee -a "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          python3 tools/version.py tag "$GITHUB_REF_NAME" | tee -a "$GITHUB_OUTPUT"
+          # Releases are made from main; test tags (v0.0-test.N) may point anywhere.
+          if ! grep -qx test=true "$GITHUB_OUTPUT" &&
+            ! git merge-base --is-ancestor "$GITHUB_SHA" origin/main; then
+            echo "::error::$GITHUB_REF_NAME is not on main"
+            exit 1
+          fi
+      - name: Build tools
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q --no-install-recommends \
+            rpm libfontconfig-dev desktop-file-utils appstream
+      - name: Check the desktop file and the AppStream metadata
+        run: |
+          desktop-file-validate packaging/linux/io.github.sansevieria_ou.kalliope.desktop
+          appstreamcli validate --no-net packaging/linux/io.github.sansevieria_ou.kalliope.metainfo.xml
+      # No cache: release files are built from scratch.
+      - name: Build
+        run: cargo build --release --workspace --locked
+      - name: ONNX Runtime
+        run: python3 tools/fetch_assets.py onnxruntime "$RUNNER_TEMP/assets" >> "$GITHUB_ENV"
+      - name: Packages
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: packaging/linux/build-packages.sh "$VERSION" target/release "$KALLIOPE_ORT_LIB" dist
+      - name: Install, run and remove each package
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          model=$(python3 tools/fetch_assets.py model "$RUNNER_TEMP/assets" | sed -n 's/^KALLIOPE_MODEL_DIR=//p')
+          packaging/linux/test-packages.sh dist "$VERSION" "$(python3 tools/version.py)" "$model"
+      - name: Checksums and release notes
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          (cd dist && sha256sum -- * > SHA256SUMS && cat SHA256SUMS)
+          {
+            python3 tools/version.py notes "v$VERSION"
+            sed "s/@VERSION@/$VERSION/g" packaging/release-notes.md
+          } > notes.md
+          cat notes.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: linux-packages
+          path: |
+            dist/
+            notes.md
+          retention-days: 7
+          if-no-files-found: error
+
+  publish:
+    name: Publish
+    if: github.ref_type == 'tag'
+    needs: linux
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      id-token: write
+      attestations: write
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: linux-packages
+      # Free for public repositories; private ones need GitHub Enterprise Cloud, so there a
+      # failure only leaves a warning.
+      - name: Attest where each file was built
+        uses: actions/attest-build-provenance@v4
+        continue-on-error: ${{ github.event.repository.private }}
+        with:
+          subject-path: dist/*
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ needs.linux.outputs.version }}
+          PRERELEASE: ${{ needs.linux.outputs.prerelease }}
+        run: |
+          flags=(--verify-tag --title "Kalliope $VERSION" --notes-file notes.md)
+          if [ "$PRERELEASE" = true ]; then flags+=(--prerelease); else flags+=(--latest); fi
+          gh release create "$GITHUB_REF_NAME" dist/* "${flags[@]}" --repo "$GITHUB_REPOSITORY"

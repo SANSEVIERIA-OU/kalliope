@@ -1,0 +1,15 @@
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+[Desktop Entry]
+Type=Application
+Name=Kalliope
+GenericName=Speech for video calls
+GenericName[it]=Voce per le videochiamate
+Comment=Type, and be heard in video calls
+Comment[it]=Scrivi e fatti sentire nelle videochiamate
+Exec=kalliope
+Icon=io.github.sansevieria_ou.kalliope
+Terminal=false
+Categories=Utility;Accessibility;
+Keywords=text to speech;speech;voice;microphone;video call;mute;AAC;
+Keywords[it]=sintesi vocale;voce;parlare;microfono;videochiamata;muto;CAA;
+StartupNotify=true

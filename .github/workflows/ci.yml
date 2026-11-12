@@ -1,0 +1,95 @@
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# Checks every change. Branches and pull requests: Linux only. main and runs started by hand:
+# also Windows and macOS, whose minutes count 2 and 10 times (see docs/releasing.md).
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+# A newer push to the same branch cancels the run it makes obsolete.
+concurrency:
+  group: ci-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  CARGO_TERM_COLOR: always
+  CARGO_INCREMENTAL: 0
+  RUSTFLAGS: -D warnings
+
+jobs:
+  linux:
+    name: Linux
+    # A pull request from a branch of this repository was already checked when it was pushed.
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.fork
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - name: Versions agree
+        run: python3 tools/version.py check
+      - name: Format
+        run: cargo fmt --all --check
+      - name: Libraries the app links at build time
+        run: |
+          pkg-config --exists fontconfig ||
+            { sudo apt-get update -q && sudo apt-get install -y -q --no-install-recommends libfontconfig-dev; }
+      - uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2.9.3
+      - name: Clippy
+        run: cargo clippy --workspace --all-targets --locked -- -D warnings
+      - name: Cache ONNX Runtime and the Klein model
+        uses: actions/cache@v6
+        with:
+          path: .ci-assets
+          key: assets-${{ runner.os }}-${{ hashFiles('tools/fetch_assets.py') }}
+      - name: ONNX Runtime and the Klein model
+        run: |
+          python3 tools/fetch_assets.py onnxruntime .ci-assets >> "$GITHUB_ENV"
+          python3 tools/fetch_assets.py model .ci-assets >> "$GITHUB_ENV"
+      - name: Tests, with the model
+        run: cargo test --workspace --locked
+      - name: kalliope-cli says a sentence
+        run: |
+          cargo run -q -p kalliope-cli --locked -- say -o say.wav "Buongiorno a tutti, scusate il ritardo."
+          python3 - say.wav <<'EOF'
+          import sys, wave
+          with wave.open(sys.argv[1]) as w:
+              seconds = w.getnframes() / w.getframerate()
+          print(f"{seconds:.2f} s of speech")
+          sys.exit(0 if 1.5 < seconds < 6 else "expected 1.5 to 6 seconds")
+          EOF
+
+  windows-and-macos:
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+    # Only once Linux passes: a change that fails there does not spend these dearer minutes.
+    needs: linux
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v7
+      - uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2.9.3
+      - name: Cache ONNX Runtime and the Klein model
+        uses: actions/cache@v6
+        with:
+          path: .ci-assets
+          key: assets-${{ runner.os }}-${{ hashFiles('tools/fetch_assets.py') }}
+      - name: ONNX Runtime and the Klein model
+        run: |
+          python=$([ "$RUNNER_OS" = Windows ] && echo python || echo python3)
+          $python tools/fetch_assets.py onnxruntime .ci-assets >> "$GITHUB_ENV"
+          $python tools/fetch_assets.py model .ci-assets >> "$GITHUB_ENV"
+      # Not the examples: crates/voice/examples/measure.rs measures with Linux-only calls.
+      - name: Tests, with the model
+        run: cargo test --workspace --lib --bins --tests --locked

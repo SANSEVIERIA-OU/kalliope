@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SPDX-License-Identifier: CC0-1.0 -->
+<component type="desktop-application">
+  <id>io.github.sansevieria_ou.kalliope</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-SANSEVIERIA-1.0</project_license>
+  <name>Kalliope</name>
+  <summary>Type, and be heard in video calls</summary>
+  <summary xml:lang="it">Scrivi e fatti sentire nelle videochiamate</summary>
+  <developer id="io.github.sansevieria_ou">
+    <name>Davide Briani and contributors</name>
+  </developer>
+  <description>
+    <p>Kalliope is for people who cannot speak, or find speaking hard. Type during a video call, and Kalliope says it aloud with a natural voice. The voice goes into a virtual microphone that Zoom, Teams, Meet, Jitsi and other call apps can select.</p>
+    <p xml:lang="it">Kalliope è per chi non può parlare o fa fatica a farlo. Scrivi durante una videochiamata e Kalliope lo dice ad alta voce, con una voce naturale. La voce entra in un microfono virtuale che Zoom, Teams, Meet, Jitsi e le altre app per chiamate possono scegliere.</p>
+    <ul>
+      <li>The voice is made on your computer. It is downloaded once, the first time Kalliope starts.</li>
+      <li>Numbers, dates, times, money, abbreviations and chat shorthand are read the way people say them.</li>
+      <li>Punctuation shapes the voice: questions sound like questions, and commas make pauses.</li>
+      <li>Italian first.</li>
+      <li xml:lang="it">La voce è creata sul tuo computer. Si scarica una volta sola, al primo avvio di Kalliope.</li>
+      <li xml:lang="it">Numeri, date, orari, importi, abbreviazioni e sigle da chat sono letti come li direbbe una persona.</li>
+      <li xml:lang="it">La punteggiatura dà forma alla voce: le domande suonano come domande e le virgole fanno pause.</li>
+      <li xml:lang="it">Prima di tutto in italiano.</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">io.github.sansevieria_ou.kalliope.desktop</launchable>
+  <url type="homepage">https://github.com/SANSEVIERIA-OU/kalliope</url>
+  <url type="bugtracker">https://github.com/SANSEVIERIA-OU/kalliope/issues</url>
+  <provides>
+    <binary>kalliope</binary>
+  </provides>
+  <supports>
+    <control>keyboard</control>
+    <control>pointing</control>
+  </supports>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.1" date="2026-11-12" type="development">
+      <description>
+        <p>The first version, for Linux: the Kalliope window, the virtual microphone called “Kalliope” (with PipeWire), and the Klein voice, made on your computer.</p>
+      </description>
+    </release>
+  </releases>
+</component>
