@@ -29,7 +29,10 @@ pub enum Event {
     /// Speaking, but no app is listening to the microphone and the monitor is off.
     NotHeard,
     Idle,
+    /// The voice cannot be used at all.
     Error(String),
+    /// Something failed, but Kalliope can still speak.
+    Warning(String),
 }
 
 pub struct Engine {
@@ -122,12 +125,14 @@ fn run(config: Config, rx: Receiver<Command>, on_event: impl Fn(Event)) {
             }
             Some(Command::Voice(name)) => match load(&config, &name) {
                 Ok(v) => voice = v,
-                Err(e) => on_event(Event::Error(format!("Non riesco a cambiare voce: {e}"))),
+                Err(e) => on_event(Event::Warning(format!(
+                    "Non riesco a cambiare voce ({e}): continuo con quella di prima."
+                ))),
             },
             Some(Command::Monitor(on)) => {
                 monitor = on;
                 if let Err(e) = output.set_monitor(on) {
-                    on_event(Event::Error(e));
+                    on_event(Event::Warning(format!("Attenzione: {e}.")));
                 }
             }
             None => {}
@@ -154,7 +159,9 @@ fn run(config: Config, rx: Receiver<Command>, on_event: impl Fn(Event)) {
                         });
                     }
                 }
-                Err(e) => on_event(Event::Error(format!("Errore della voce: {e}"))),
+                Err(e) => on_event(Event::Warning(format!(
+                    "Non sono riuscita a dire questa frase: {e}"
+                ))),
             }
         }
         if speaking && pending.is_empty() && output.queued_seconds() <= 0.0 {

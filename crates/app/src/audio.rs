@@ -72,7 +72,10 @@ impl Output for kalliope_mic::VirtualMic {
         kalliope_mic::VirtualMic::queued_seconds(self)
     }
     fn set_monitor(&self, on: bool) -> Result<(), String> {
-        kalliope_mic::VirtualMic::set_monitor(self, on).map_err(|e| e.to_string())
+        kalliope_mic::VirtualMic::set_monitor(self, on).map_err(|e| {
+            eprintln!("kalliope: monitor: {e}");
+            "non riesco a farti sentire la voce dalle casse".to_string()
+        })
     }
     fn in_use(&self) -> bool {
         kalliope_mic::VirtualMic::in_use(self)
@@ -82,9 +85,28 @@ impl Output for kalliope_mic::VirtualMic {
     }
 }
 
-/// Opens the virtual microphone "Kalliope". Returns the reason when it is not available.
+/// Opens the virtual microphone "Kalliope". When it is not available, returns the reason in
+/// Italian, to complete "La voce è pronta, ma …"; the technical details go to standard error.
 pub fn open(rate: u32) -> Result<Box<dyn Output>, String> {
     kalliope_mic::VirtualMic::open("kalliope", "Kalliope", rate)
         .map(|mic| Box::new(mic) as Box<dyn Output>)
-        .map_err(|e| format!("il microfono virtuale non si è aperto ({e})"))
+        .map_err(|e| {
+            eprintln!("kalliope: virtual microphone: {e}");
+            explain(e.kind()).to_string()
+        })
+}
+
+fn explain(kind: kalliope_mic::ErrorKind) -> &'static str {
+    use kalliope_mic::ErrorKind;
+    match kind {
+        ErrorKind::Unavailable if cfg!(target_os = "linux") => {
+            "il microfono «Kalliope» ha bisogno di PipeWire, che su questo computer manca o è troppo vecchio \
+             (pacchetti pipewire e pipewire-pulse)"
+        }
+        ErrorKind::Unavailable => "su questo sistema il microfono «Kalliope» non c'è ancora",
+        ErrorKind::NotRunning => {
+            "PipeWire, il servizio audio del computer, non risponde (prova a riavviare la sessione)"
+        }
+        _ => "il microfono «Kalliope» non si è aperto",
+    }
 }

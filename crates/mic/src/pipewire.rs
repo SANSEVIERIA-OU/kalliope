@@ -21,9 +21,9 @@ use std::sync::atomic::{AtomicBool, AtomicI32, AtomicPtr, Ordering};
 use std::sync::{Mutex, MutexGuard, OnceLock, PoisonError};
 use std::time::{Duration, Instant};
 
-use crate::Error;
 use crate::pod::AudioFormat;
 use crate::queue::Queue;
+use crate::{Error, ErrorKind};
 
 const LIBRARY: &CStr = c"libpipewire-0.3.so.0";
 const RTLD_NOW: c_int = 2;
@@ -265,15 +265,22 @@ fn load() -> Result<&'static Loaded, Error> {
     // SAFETY: plain dlopen with a valid NUL-terminated name.
     let handle = unsafe { dlopen(LIBRARY.as_ptr(), RTLD_NOW) };
     if handle.is_null() {
-        return Err(Error::new(format!(
-            "PipeWire is not available: {}. The Kalliope microphone needs PipeWire, the sound \
+        return Err(Error::with_kind(
+            ErrorKind::Unavailable,
+            format!(
+                "PipeWire is not available: {}. The Kalliope microphone needs PipeWire, the sound \
              server of current Linux desktops (packages pipewire and pipewire-pulse).",
-            unsafe { dl_error() }
-        )));
+                unsafe { dl_error() }
+            ),
+        ));
     }
     // SAFETY: the handle is libpipewire-0.3.
-    let lib = unsafe { Lib::resolve(handle) }
-        .map_err(|e| Error::new(format!("PipeWire is not usable: {e} (version too old?)")))?;
+    let lib = unsafe { Lib::resolve(handle) }.map_err(|e| {
+        Error::with_kind(
+            ErrorKind::Unavailable,
+            format!("PipeWire is not usable: {e} (version too old?)"),
+        )
+    })?;
     // SAFETY: returns a static NUL-terminated string.
     let version = unsafe { CStr::from_ptr((lib.library_version)()) }.to_string_lossy();
     let has_requested = version_at_least(&version, (0, 3, 49));
@@ -440,11 +447,14 @@ impl Mic {
         let guard = LoopLock::new(shared);
         mic.core = unsafe { (lib.context_connect)(mic.context, ptr::null_mut(), 0) };
         if mic.core.is_null() {
-            return Err(Error::new(format!(
-                "PipeWire is not running: could not connect to it ({}). Start it with \
+            return Err(Error::with_kind(
+                ErrorKind::NotRunning,
+                format!(
+                    "PipeWire is not running: could not connect to it ({}). Start it with \
                  `systemctl --user start pipewire pipewire-pulse wireplumber`.",
-                std::io::Error::last_os_error()
-            )));
+                    std::io::Error::last_os_error()
+                ),
+            ));
         }
         let props = [
             (c"media.type", c"Audio"),
@@ -475,7 +485,10 @@ impl Mic {
                 _ => break,
             }
             if Instant::now() >= deadline {
-                return Err(Error::new("PipeWire did not answer within 5 seconds"));
+                return Err(Error::with_kind(
+                    ErrorKind::NotRunning,
+                    "PipeWire did not answer within 5 seconds",
+                ));
             }
             // SAFETY: called with the lock held; releases it while waiting.
             unsafe { (lib.thread_loop_timed_wait)(shared.thread_loop, 1) };

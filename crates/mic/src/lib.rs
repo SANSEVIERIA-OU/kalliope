@@ -29,19 +29,47 @@ use unsupported as platform;
 
 use std::fmt;
 
-/// A user-readable error, for example "PipeWire is not available: …".
+/// What went wrong, for apps that explain it in their own words.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[non_exhaustive]
+pub enum ErrorKind {
+    /// No virtual microphone on this system: PipeWire is missing or too old, or the system is
+    /// not supported yet.
+    Unavailable,
+    /// PipeWire is installed but its server is not running or does not answer.
+    NotRunning,
+    /// Anything else; the message has the details.
+    Other,
+}
+
+/// A developer-readable error in English, for example "PipeWire is not available: …", with its
+/// [`ErrorKind`].
 #[derive(Debug, Clone)]
-pub struct Error(String);
+pub struct Error {
+    kind: ErrorKind,
+    message: String,
+}
 
 impl Error {
     pub fn new(message: impl Into<String>) -> Error {
-        Error(message.into())
+        Error::with_kind(ErrorKind::Other, message)
+    }
+
+    pub fn with_kind(kind: ErrorKind, message: impl Into<String>) -> Error {
+        Error {
+            kind,
+            message: message.into(),
+        }
+    }
+
+    pub fn kind(&self) -> ErrorKind {
+        self.kind
     }
 }
 
 impl fmt::Display for Error {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        f.write_str(&self.0)
+        f.write_str(&self.message)
     }
 }
 
@@ -121,6 +149,7 @@ mod tests {
             .err()
             .unwrap();
         assert!(name.to_string().contains("one word"), "{name}");
+        assert_eq!(name.kind(), ErrorKind::Other);
         let rate = VirtualMic::open("kalliope", "Kalliope", 1_000)
             .err()
             .unwrap();

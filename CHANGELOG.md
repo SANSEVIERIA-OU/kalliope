@@ -15,7 +15,8 @@ The first version, for Linux. Still being finished.
 - **A microphone called "Kalliope".** In Zoom, Teams, Meet, Jitsi or the browser, choose
   "Kalliope" as the microphone, and the call hears what you type. It sends sound only while an
   app is listening, like a real microphone, and costs nothing while nobody is. On Linux it uses
-  PipeWire; Windows and macOS do not have it yet.
+  PipeWire; Windows and macOS do not have it yet. When the microphone cannot open, Kalliope
+  says why in plain Italian (for example, that PipeWire does not answer).
 - **The voice is made on your computer.** No text leaves it. The voice is Klein, a natural neural
   voice, and uses little power: about 0.07 seconds of processor time for each second of speech.
   Kalliope downloads it (about 53 MB) the first time it starts.

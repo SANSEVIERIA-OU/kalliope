@@ -76,7 +76,7 @@ fn say(text: &str) -> ExitCode {
                 std::thread::sleep(std::time::Duration::from_millis(1000));
                 return ExitCode::SUCCESS;
             }
-            Event::Error(e) => {
+            Event::Error(e) | Event::Warning(e) => {
                 eprintln!("{e}");
                 return ExitCode::FAILURE;
             }
@@ -180,6 +180,12 @@ impl App {
     }
 }
 
+thread_local! {
+    /// The microphone could not be opened: its warning stays until Kalliope restarts. Other
+    /// warnings stay until the next sentence starts.
+    static MIC_PROBLEM: std::cell::Cell<bool> = const { std::cell::Cell::new(false) };
+}
+
 /// Reflects an engine event in the window.
 fn show(ui: &AppWindow, event: Event) {
     match event {
@@ -190,6 +196,7 @@ fn show(ui: &AppWindow, event: Event) {
         }
         Event::Ready { microphone } => {
             ui.set_phase(Phase::Ready);
+            MIC_PROBLEM.set(microphone.is_err());
             match microphone {
                 Ok(()) => {
                     ui.set_warning(false);
@@ -208,7 +215,8 @@ fn show(ui: &AppWindow, event: Event) {
         }
         Event::Speaking => {
             ui.set_phase(Phase::Speaking);
-            if !ui.get_warning() {
+            if !MIC_PROBLEM.get() {
+                ui.set_warning(false);
                 ui.set_status("Sto parlando…".into());
             }
         }
@@ -227,6 +235,10 @@ fn show(ui: &AppWindow, event: Event) {
         }
         Event::Error(e) => {
             ui.set_phase(Phase::Error);
+            ui.set_warning(true);
+            ui.set_status(e.into());
+        }
+        Event::Warning(e) => {
             ui.set_warning(true);
             ui.set_status(e.into());
         }

@@ -1,18 +1,21 @@
 // SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
 //! Systems without a virtual microphone backend yet: `open` always fails.
 
-use crate::Error;
+use crate::{Error, ErrorKind};
 
 /// Cannot exist: no value is ever created on these systems.
 pub enum Mic {}
 
 impl Mic {
     pub fn open(_name: &str, _description: &str, _rate: u32) -> Result<Mic, Error> {
-        Err(Error::new(format!(
-            "the Kalliope microphone is not supported on this system yet ({}); it works on \
+        Err(Error::with_kind(
+            ErrorKind::Unavailable,
+            format!(
+                "the Kalliope microphone is not supported on this system yet ({}); it works on \
              Linux with PipeWire",
-            std::env::consts::OS
-        )))
+                std::env::consts::OS
+            ),
+        ))
     }
 
     pub fn play(&self, _samples: &[f32]) {
