@@ -38,6 +38,9 @@ work=$(mktemp -d)
 trap 'rm -rf "$work"' EXIT
 mkdir -p "$out"
 out=$(cd "$out" && pwd)
+# Licence notices of the Rust crates compiled into the programs (MIT, Apache-2.0 and others
+# require them next to the binaries).
+(cd "$root" && python3 tools/third_party_licenses.py) > "$work/THIRD_PARTY_LICENSES.txt"
 # Same input, same files: timestamps come from the last commit.
 export SOURCE_DATE_EPOCH=${SOURCE_DATE_EPOCH:-$(git -C "$root" log -1 --format=%ct 2>/dev/null || date +%s)}
 
@@ -53,7 +56,8 @@ stage() {
     install -Dm644 -t "$prefix/share/icons/hicolor/scalable/apps" "$root/packaging/linux/$id.svg"
     install -Dm644 -t "$prefix/share/metainfo" "$root/packaging/linux/$id.metainfo.xml"
     install -Dm644 -t "$prefix/share/doc/kalliope" \
-        "$root/LICENSE" "$root/NOTICE" "$root/THIRD_PARTY_NOTICES.md" "$root/CHANGELOG.md"
+        "$root/LICENSE" "$root/NOTICE" "$root/THIRD_PARTY_NOTICES.md" "$root/CHANGELOG.md" \
+        "$work/THIRD_PARTY_LICENSES.txt"
     # ONNX Runtime is MIT-licensed and bundles other code: its notices travel with it.
     install -Dm644 -t "$prefix/share/doc/kalliope/onnxruntime" \
         "$ort_dir/LICENSE" "$ort_dir/ThirdPartyNotices.txt"

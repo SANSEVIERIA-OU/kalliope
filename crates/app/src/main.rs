@@ -6,7 +6,6 @@ mod catalog;
 mod download;
 mod engine;
 mod paths;
-mod runtime;
 mod settings;
 mod sha256;
 
@@ -55,7 +54,7 @@ fn say(text: &str) -> ExitCode {
             model_dir: catalog::model_dir(),
             voice: settings.voice,
             monitor: settings.monitor,
-            ort_lib: runtime::onnxruntime(),
+            ort_lib: kalliope_voice::find_runtime(),
         },
         move |e| {
             let _ = tx.send(e);
@@ -104,7 +103,7 @@ impl App {
                 model_dir: catalog::model_dir(),
                 voice: settings.voice.clone(),
                 monitor: settings.monitor,
-                ort_lib: runtime::onnxruntime(),
+                ort_lib: kalliope_voice::find_runtime(),
             },
             move |event| {
                 let weak = weak.clone();
@@ -236,6 +235,8 @@ fn show(ui: &AppWindow, event: Event) {
 
 fn run_window() -> Result<(), slint::PlatformError> {
     let ui = AppWindow::new()?;
+    // Matches the .desktop file, so desktops show the right icon and name for the window.
+    let _ = slint::set_xdg_app_id("io.github.sansevieria_ou.kalliope");
     let settings = Settings::load();
     ui.set_version(version().into());
     ui.set_voices(ModelRc::new(VecModel::from(
@@ -306,7 +307,7 @@ fn run_window() -> Result<(), slint::PlatformError> {
         ui.set_status(
             format!(
                 "Per parlare, Kalliope deve scaricare la voce: {} MB, una volta sola. Poi funziona senza internet.",
-                catalog::total_size() / 1_000_000
+                (catalog::total_size() + 500_000) / 1_000_000
             )
             .into(),
         );
@@ -336,7 +337,7 @@ fn main() -> ExitCode {
                 let step = done * 10 / total.max(1);
                 if step != last.get() {
                     last.set(step);
-                    eprintln!("{} di {} MB", done / 1_000_000, total / 1_000_000);
+                    eprintln!("{} di {} MB", done / 1_000_000, (total + 500_000) / 1_000_000);
                 }
             });
             match result {

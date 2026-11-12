@@ -203,10 +203,7 @@ impl Voice {
                 names.join(", ")
             ))
         })?;
-        let lib = options
-            .ort_lib
-            .clone()
-            .or_else(|| std::env::var_os("KALLIOPE_ORT_LIB").map(PathBuf::from));
+        let lib = options.ort_lib.clone().or_else(find_runtime);
         let env = Env::new(ort::load(lib.as_deref())?)?;
         let config = SessionConfig {
             threads: options.threads,
@@ -418,6 +415,41 @@ fn split_after<'a>(s: &'a str, marks: &[char]) -> Vec<&'a str> {
         .map(str::trim)
         .filter(|p| !p.is_empty())
         .collect()
+}
+
+/// Where to load ONNX Runtime from: `KALLIOPE_ORT_LIB`, then next to the program
+/// (`../lib/kalliope`, `../lib`, the program's folder, as Kalliope's packages install it).
+/// `None` lets the system's library search decide.
+pub fn find_runtime() -> Option<PathBuf> {
+    if let Some(p) = std::env::var_os("KALLIOPE_ORT_LIB") {
+        return Some(PathBuf::from(p));
+    }
+    let matches = |name: &str| {
+        if cfg!(target_os = "windows") {
+            name.eq_ignore_ascii_case("onnxruntime.dll")
+        } else if cfg!(target_os = "macos") {
+            name.starts_with("libonnxruntime") && name.ends_with(".dylib")
+        } else {
+            name.starts_with("libonnxruntime.so")
+        }
+    };
+    let exe = std::env::current_exe().ok()?;
+    let bin = exe.parent()?;
+    [
+        bin.join("../lib/kalliope"),
+        bin.join("../lib"),
+        bin.to_path_buf(),
+    ]
+    .iter()
+    .find_map(|dir| {
+        let mut found: Vec<PathBuf> = std::fs::read_dir(dir)
+            .ok()?
+            .filter_map(|e| e.ok().map(|e| e.path()))
+            .filter(|p| p.file_name().and_then(|n| n.to_str()).is_some_and(matches))
+            .collect();
+        found.sort();
+        found.into_iter().next()
+    })
 }
 
 #[cfg(test)]

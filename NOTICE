@@ -20,6 +20,11 @@ Separately licensed components remain under their existing terms:
   derived from Wiktionary, CC BY-SA 4.0; see crates/phonemes/data/README.md.
   They are compiled into the phonemizer as separate data. The share-alike terms
   apply to these data files and their adaptations, not to Kalliope's code.
+- packaging/linux/io.github.sansevieria_ou.kalliope.metainfo.xml (AppStream
+  metadata): CC0-1.0, as marked in its metadata_license field.
+- Slint (the window toolkit): used under the Slint Royalty-free Desktop,
+  Mobile, and Web Applications License 2.0; the About dialog shows the
+  AboutSlint attribution it requires.
 - Third-party libraries, voice models and data: their own terms; see
   THIRD_PARTY_NOTICES.md. Voice models are downloaded, not stored in this
   repository.
