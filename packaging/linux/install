@@ -1,0 +1,49 @@
+#!/bin/sh
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# Installs Kalliope from this folder for you alone, under ~/.local (no administrator needed).
+#
+#   ./install             install, or update an earlier copy
+#   ./install --remove    remove it again (your settings and the downloaded voice stay)
+#   ./install [--remove] PREFIX    the same, under PREFIX instead of ~/.local
+set -eu
+
+here=$(cd "$(dirname "$0")" && pwd)
+remove=false
+if [ "${1:-}" = "--remove" ]; then
+    remove=true
+    shift
+fi
+prefix=${1:-$HOME/.local}
+id=io.github.sansevieria_ou.kalliope
+
+if $remove; then
+    rm -f "$prefix/bin/kalliope" "$prefix/bin/kalliope-cli" \
+        "$prefix/share/applications/$id.desktop" \
+        "$prefix/share/icons/hicolor/scalable/apps/$id.svg" \
+        "$prefix/share/metainfo/$id.metainfo.xml"
+    rm -rf "$prefix/lib/kalliope" "$prefix/share/doc/kalliope"
+    echo "Kalliope is removed from $prefix."
+    exit 0
+fi
+
+mkdir -p "$prefix/bin" "$prefix/lib/kalliope" "$prefix/share/applications" \
+    "$prefix/share/icons/hicolor/scalable/apps" "$prefix/share/metainfo" "$prefix/share/doc"
+cp "$here/bin/kalliope" "$here/bin/kalliope-cli" "$prefix/bin/"
+rm -f "$prefix"/lib/kalliope/libonnxruntime.so*
+cp -P "$here"/lib/libonnxruntime.so* "$prefix/lib/kalliope/"
+# The menu entry names the program by its full path: ~/.local/bin is not always in PATH.
+sed "s|^Exec=kalliope\$|Exec=\"$prefix/bin/kalliope\"|" "$here/share/applications/$id.desktop" \
+    > "$prefix/share/applications/$id.desktop"
+cp "$here/share/icons/hicolor/scalable/apps/$id.svg" "$prefix/share/icons/hicolor/scalable/apps/"
+cp "$here/share/metainfo/$id.metainfo.xml" "$prefix/share/metainfo/"
+rm -rf "$prefix/share/doc/kalliope"
+cp -R "$here/share/doc/kalliope" "$prefix/share/doc/"
+if command -v update-desktop-database >/dev/null 2>&1; then
+    update-desktop-database -q "$prefix/share/applications" || true
+fi
+
+echo "Kalliope is installed in $prefix. Start it from the applications menu."
+case ":$PATH:" in
+*":$prefix/bin:"*) ;;
+*) echo "To start it from a terminal, run $prefix/bin/kalliope ($prefix/bin is not in PATH)." ;;
+esac
