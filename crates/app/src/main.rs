@@ -337,7 +337,11 @@ fn main() -> ExitCode {
                 let step = done * 10 / total.max(1);
                 if step != last.get() {
                     last.set(step);
-                    eprintln!("{} di {} MB", done / 1_000_000, (total + 500_000) / 1_000_000);
+                    eprintln!(
+                        "{} di {} MB",
+                        done / 1_000_000,
+                        (total + 500_000) / 1_000_000
+                    );
                 }
             });
             match result {
