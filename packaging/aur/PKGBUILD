@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 # Maintainer: Davide Briani <116493713+brianidavide@users.noreply.github.com>
 #
 # Kalliope from a published release, already built: unpacks the Linux tarball, compiles nothing.
@@ -13,7 +13,7 @@ pkgrel=1
 pkgdesc='Type, and be heard in video calls: a local voice through a virtual microphone'
 arch=('x86_64')
 url='https://github.com/SANSEVIERIA-OU/kalliope'
-license=('LicenseRef-SANSEVIERIA-1.0')
+license=('LicenseRef-SANSEVIERIA-1.1')
 # Linked: glibc, gcc-libs, fontconfig. Loaded at run time: libxkbcommon always, then wayland or
 # the X11 libraries for the window, and libpipewire for the virtual microphone. curl downloads
 # the voice the first time Kalliope starts.

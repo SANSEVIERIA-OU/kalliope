@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! Pronunciation data compiled into the binary: a lexicon of words whose stress, vowel quality
 //! or z voicing the rules get wrong, and a table of word endings that predict stress.
 //!

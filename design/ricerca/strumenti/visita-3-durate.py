@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 # Riassume i campioni di mutazione di un <gesto>.movimento.json: per ogni bersaglio+proprietà, t iniziale e finale (ms di pagina
 # dal primo campione del gesto), numero di campioni, valore prima/dopo. Sono campioni di mutazioni, non una misura delle curve.
 import json, sys

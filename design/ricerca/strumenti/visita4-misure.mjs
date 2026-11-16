@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 // Script del worker visita-4: telefono 390x844, senza JavaScript, rete lenta, stampa, richieste/peso e media bloccato.
 // Un solo browser Chromium senza finestra (nessun posto di passo.mjs aperto mentre gira). Uso:
 //   env -u DISPLAY -u WAYLAND_DISPLAY PLAYWRIGHT=/workspace/test-playwright/node_modules/playwright/index.mjs \

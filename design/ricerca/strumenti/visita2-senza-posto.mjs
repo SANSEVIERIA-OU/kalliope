@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 // Strumento del worker visita-2 (incarico visita-2.md): le prove che passo.mjs non fa, lanciate SENZA un posto aperto.
 // Per un riferimento (R04, R05, R06): senza JavaScript, rete lenta (CDP, solo Chromium), stampa, albero di accessibilita'
 // (ariaSnapshot di Playwright, proxy: NON sostituisce Orca/NVDA/VoiceOver) e telefono 390x844 (la misura «Telefono» di

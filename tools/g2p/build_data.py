@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Development only: build the phonemizer's data files from Wiktionary pronunciations and
 measure how well the phonemizer predicts words it has never seen.
 

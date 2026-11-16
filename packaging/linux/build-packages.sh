@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 # Makes Kalliope's Linux x86_64 packages from a release build:
 #   kalliope-VERSION-linux-x86_64.tar.gz, kalliope-VERSION-amd64.deb, kalliope-VERSION-x86_64.rpm
 #   and kalliope-bin.PKGBUILD (packaging/aur/PKGBUILD with the tarball's checksum).

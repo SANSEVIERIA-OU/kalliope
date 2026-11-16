@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! Virtual microphone: makes synthesized speech reach video-call apps as if it came from a
 //! microphone.
 //!

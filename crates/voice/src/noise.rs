@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! Decoder noise: seeded standard-normal samples.
 //!
 //! The decoder takes 9 noise channels at audio rate, so about 216,000 samples per second of

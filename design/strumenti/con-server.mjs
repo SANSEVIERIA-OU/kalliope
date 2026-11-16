@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 // Serve una cartella costruita con un server statico (solo 127.0.0.1), lancia un comando con ANTEPRIMA=<indirizzo> e chiude il server
 // quando il comando finisce: nessun server resta acceso. Come GitHub Pages: un indirizzo mancante dà 404.html con stato 404.
 // Uso: node con-server.mjs /tmp/kalliope-anteprima/1 node altro-script.mjs ...   (la cartella contiene «kalliope/», il sito sotto /kalliope/)

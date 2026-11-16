@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! PipeWire backend: a minimal binding to libpipewire-0.3, loaded at run time with `dlopen`.
 //!
 //! Only the calls Kalliope needs. Struct layouts and constants were checked against the headers

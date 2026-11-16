@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 // Foto delle pagine del sito a più misure e in più stati (solo Chromium senza finestra), per la revisione a occhio.
 // Uso: node design/strumenti/con-server.mjs /tmp/kalliope-anteprima/NOME node design/strumenti/foto-pagine.mjs CARTELLA [filtro-pagina] [misure 1440x900,390x844] [stato]
 // stati: normale · ridotto · scuro · forzati · senzajs · testo200 · stampa

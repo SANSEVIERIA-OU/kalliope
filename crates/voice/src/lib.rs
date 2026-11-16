@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! Neural voice: phonemes → audio samples.
 //!
 //! Runs Klein-TTS (an encoder that predicts phoneme durations and features, and a decoder that

@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! Minimal binding to the ONNX Runtime C API, loaded at run time: with `dlopen` on Linux and
 //! macOS, with `LoadLibraryW` on Windows.
 //!

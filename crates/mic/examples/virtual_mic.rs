@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! Manual test of the virtual microphone: creates "Kalliope" and reads commands from standard
 //! input, one per line, so it can be driven by hand or by a script.
 //!

@@ -1,5 +1,5 @@
 #!/bin/bash
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 # Scorciatoia del worker visita-3: lancia passo.mjs col posto in uso, senza DISPLAY, e riassume l'uscita.
 # Uso: visita-3-p.sh <comando> [args…]   (valuta e avvia/libera/stato: uscita intera)
 # L'uscita va in un file (non in una pipe): node tronca a 64 KB lo stdout di una pipe se il processo termina subito.

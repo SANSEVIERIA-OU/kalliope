@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 # Salva per intero un testo letto dalla pagina con "valuta" (che taglia a 6000 caratteri): lo chiede a pezzi di 5500.
 # Uso: POSTO=l4:xxxx visita4-testo.py <destinazione.txt> "<espressione JS che dà una stringa>"
 import sys, json, subprocess, os

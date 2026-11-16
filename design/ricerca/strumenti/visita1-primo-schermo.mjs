@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 // Primo schermo, computer 1440x900 e telefono 390x844: comandi visibili, bersagli (dimensione e distanza), testo corrente
 // (corpo, interlinea, caratteri per riga misurati sulle righe reali). Un solo browser, nessun posto passo.
 // Uso: PLAYWRIGHT=... node visita1-primo-schermo.mjs <ID> <url> <attesa-ms> <file-uscita.json>

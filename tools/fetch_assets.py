@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Downloads the pinned ONNX Runtime and Klein model for CI and release builds. Stdlib only.
 
   fetch_assets.py onnxruntime DIR   ONNX Runtime for this system; prints KALLIOPE_ORT_LIB=…

@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! Italian spelling → phonemes, one word at a time.
 //!
 //! The output follows the notation the voice models were trained on (espeak-ng IPA as fed by

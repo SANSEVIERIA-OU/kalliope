@@ -1,5 +1,5 @@
 #!/bin/bash
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 # Percorso da tastiera (V13): quante pressioni di Tab dal caricamento al comando principale, con foto del focus.
 # Uso: POSTO=l4:xxxx visita4-tab.sh <ID> <url> <espressione-regolare-del-testo-del-comando>
 ID="$1"; URL="$2"; RE="$3"

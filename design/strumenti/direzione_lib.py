@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Funzioni comuni per costruire design/direzione.json dalle righe di design/confronto.json (nessun dato scritto a mano)."""
 import json, re
 

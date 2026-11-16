@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """DEVELOPMENT ONLY: reference Italian phonemes from espeak-ng.
 
 espeak-ng is GPL-3.0. This script calls it (through the `phonemizer` Python package) only as a

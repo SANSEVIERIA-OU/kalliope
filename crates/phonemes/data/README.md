@@ -8,7 +8,7 @@
 Both files are derived from Wiktionary pronunciations, as extracted by kaikki.org (wiktextract), and
 are licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Attribution:
 Wiktionary contributors, https://en.wiktionary.org. These two files are separately licensed
-material. The Kalliope code that reads them stays under SANSEVIERIA License 1.0.
+material. The Kalliope code that reads them stays under SANSEVIERIA License 1.1.
 
 ## Rebuild
 

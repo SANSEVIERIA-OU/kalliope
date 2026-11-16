@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! The speaking thread: normalizes, phonemizes and synthesizes one sentence at a time and queues
 //! it on the audio output, so speech starts after the first sentence and the window never waits.
 

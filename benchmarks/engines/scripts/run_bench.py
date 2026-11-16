@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Orchestrate the benchmark: power sampling + one worker process per configuration.
 
 Energy source: amdgpu hwmon 'PPT' (whole APU package power: CPU cores + iGPU + SoC),

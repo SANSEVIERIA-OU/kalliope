@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 (() => {
   const vis = e => { const r = e.getBoundingClientRect(); const cs = getComputedStyle(e); return r.width > 0 && r.height > 0 && cs.visibility !== 'hidden' && cs.display !== 'none'; };
   const nome = e => (e.getAttribute('aria-label') || e.innerText || e.value || e.getAttribute('title') || e.alt || '').trim().replace(/\s+/g, ' ').slice(0, 60);

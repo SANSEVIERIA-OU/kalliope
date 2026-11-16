@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! Downloads the voice model with the system's `curl` (present on current Linux, macOS and
 //! Windows 10+), shows progress from the growing file, and keeps nothing whose fingerprint does
 //! not match.

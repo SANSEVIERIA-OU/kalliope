@@ -19,7 +19,7 @@ con una voce italiana naturale. In Zoom, Teams, Meet, Webex, Jitsi o nel browser
 microfono, e gli altri partecipanti sentono la voce come se parlasse lei. Tutto avviene sul suo computer: niente
 server, niente account, il testo non esce `[P][R]`.
 
-È un prodotto di SANSEVIERIA OÜ, con licenza SANSEVIERIA 1.0 (codice sorgente disponibile) `[P][R NOTICE]`. Oggi è una
+È un prodotto di SANSEVIERIA OÜ, con licenza SANSEVIERIA 1.1 (codice sorgente disponibile) `[P][R NOTICE]`. Oggi è una
 versione di prova (0.1-rc.1) per Linux x86_64 con PipeWire; la voce è stata provata fino al microfono virtuale con
 PipeWire privato, **non ancora** in una riunione vera con Zoom, Teams o Meet; Windows e macOS non hanno ancora il
 microfono virtuale `[P][R README]`.
@@ -210,7 +210,7 @@ pubblico lo usino **non si sa** `[L]`.
 |---|---|---|---|---|---|
 | Cosa fa | Una frase: «scrivi, e la tua voce parla nella riunione» | Come a lei, più «per chi è» | Per chi è e per chi no; cosa non è | Catena e microfono PipeWire | Cosa fa e cosa non fa, con fonte |
 | Cosa succede al testo | «Resta sul tuo computer» | Come a lei | Stesso, con la conferma che non si salva | Nessuna rete dopo lo scarico; dove stanno i file | Elenco dei flussi di rete (uno solo) e dei file scritti |
-| Costo | «Nessun prezzo; uso personale libero» | Come a lei | Come a lei | Licenza SANSEVIERIA 1.0 | Testo della licenza, uso aziendale interno, autorizzazione commerciale `[R LICENSE §2, §4, §7]` |
+| Costo | «Nessun prezzo; uso personale libero» | Come a lei | Come a lei | Licenza SANSEVIERIA 1.1 | Testo della licenza, uso aziendale interno, autorizzazione commerciale `[R LICENSE §2, §4, §7]` |
 | Cosa serve oggi | Un computer Linux; se non ce l'hai, dillo subito | Idem + chi lo installa | Idem | Distribuzioni, PipeWire, glibc 2.39 | Piattaforme e dipendenze |
 | È provato? | Provato fino al microfono, non in riunione vera | Idem, con cosa significa per lei | Idem | Cosa è stato provato e come | Prove, cifre, metodo |
 | Come si installa | Chiedi a chi ti aiuta (fornire loro la pagina) | Passi con comandi copiabili | Link da inoltrare | Comandi esatti, impronte | Impronte e provenienza |
@@ -324,7 +324,7 @@ lettura e di compito con persone reali, e con le segnalazioni che arrivano (P9):
 | Materiale vero già pronto: sei campioni (`site/voce/{giulia,marco}-{1,2,3}.mp3`) e la foto della finestra (`site/immagini/kalliope-finestra.png`, 640×500) | `[C]` | Si usa questo; non si simula la voce né la finestra |
 | Testi dei campioni, scritti esattamente così: 1. «Buongiorno a tutti! Scrivo invece di parlare, ma vi seguo benissimo.» 2. «Sono d'accordo con Paola. Però la consegna del 14/3 mi sembra stretta: possiamo sentirci venerdì alle 15:30?» 3. «Il preventivo è di 1.250 € + IVA, valido fino al 31 dicembre.» | `[C]` | Il testo mostrato accanto al suono è identico, carattere per carattere |
 | Codebase, identità e meccanismi separati dalla sorella Kalipso | `comune.md` | Nessuna copia di codice, identità o meccanismi; solo ciò che si conosce per esistenza |
-| Licenza SANSEVIERIA 1.0: sorgente disponibile, non «open source» | `[P]`, `NOTICE` | Parole del sito sulla licenza |
+| Licenza SANSEVIERIA 1.1: sorgente disponibile, non «open source» | `[P]`, `NOTICE` | Parole del sito sulla licenza |
 | Clonazione della propria voce: non c'è | `[P]` | Non compare fra le funzioni; al massimo «forse in futuro, solo con consenso» |
 | Nessun invio di moduli, nessun account, nessun server | `[P]` | Il sito non ha moduli; i contatti passano da canali esterni (§12, dubbio A) |
 | Esclusi per ora | Windows, macOS, telefono, altre lingue, clonazione, pittogrammi, sottotitoli | Spiegati, non nascosti |
@@ -450,7 +450,7 @@ Ogni percorso: **persona → bisogno → ingresso → azioni e dati → regole �
 - **Ingresso.** Collegamento dal menu o dal piè di pagina; README; link inoltrato da chi ne ha parlato.
 - **Azioni e dati.** Legge risposte brevi, ciascuna con fonte: cosa esce (nulla del testo; unico traffico: scarico della
   voce da `huggingface.co`, revisione fissata, impronte); cosa si installa e dove; permessi (nessun account); licenze
-  (SANSEVIERIA 1.0; ONNX Runtime MIT; Klein Apache-2.0; Slint; Wiktionary CC BY-SA 4.0); impronte dei file e
+  (SANSEVIERIA 1.1; ONNX Runtime MIT; Klein Apache-2.0; Slint; Wiktionary CC BY-SA 4.0); impronte dei file e
   attestazione di provenienza (`gh attestation verify <file> -R SANSEVIERIA-OU/kalliope`: **la v0.1-rc.1 non ce l'ha**, perché
   fu pubblicata quando il repository era ancora privato; l'interrogazione dell'API con l'impronta vera del `.tar.gz` dà
   «Not Found», 12/11/2026; le release future sì, `releasing.md`); sorgente e istruzioni di

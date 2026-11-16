@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! Italian number words: cardinals, ordinals, digit-by-digit reading.
 //!
 //! Large numbers are split where speech puts a stress: thousands, hundreds and the rest become

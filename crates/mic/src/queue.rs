@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! The sample queue between app threads and PipeWire's realtime thread.
 //!
 //! The realtime side never blocks, allocates or frees memory. It only *tries* the lock (one

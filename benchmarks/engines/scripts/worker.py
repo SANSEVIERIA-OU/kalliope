@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Run ONE engine configuration in a fresh process and print a JSON result line.
 
 Measures: load time, RSS (before/after load, peak), time-to-first-audio,

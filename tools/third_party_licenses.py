@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Writes the licence notices of every Rust crate compiled into Kalliope's programs.
 
 MIT, Apache-2.0 and similar licences require their text and copyright lines to travel with the

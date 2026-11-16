@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! SHA-256 (FIPS 180-4), to check downloaded files against pinned fingerprints.
 
 const K: [u32; 64] = [

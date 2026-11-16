@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 # Statistiche di registro sui testi delle fonti G01-G04 (worker visita-4). Uso: visita4-registro.py <file.txt>...
 # Considera solo i paragrafi lunghi (>= 8 parole): il resto è menu, etichette e pulsanti.
 import sys, re, json

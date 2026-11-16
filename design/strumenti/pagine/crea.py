@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import pagine_a, pagine_b

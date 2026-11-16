@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Intelligibility check: transcribe generated WAVs with Whisper and compute word error rate.
 
 ASR is robust to accent, so this catches gross problems (skipped/truncated words,

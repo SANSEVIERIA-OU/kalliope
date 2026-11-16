@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! Italian text normalization: turns what a user types into the words a reader would say.
 //!
 //! "Il preventivo è di 1.250 €, IVA esclusa." becomes

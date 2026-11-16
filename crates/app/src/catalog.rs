@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! The voice model Kalliope downloads at first start, pinned to one revision and fingerprint.
 
 use std::path::PathBuf;
