@@ -18,6 +18,10 @@ Metodo: skill vibe-next `design-system-generator` 0.46.1, ruoli nativi di Claude
     ricerca della frase vista nella finestra; il vecchio indirizzo di `aiuto/` rimanda alla sua parte.
   - La finestra dell'applicazione nella direzione 2: due varianti da confrontare (la sala scura della home e una
     chiara, nel colore della bolla).
+- Fatti per «non ancora», decisi da chi coordina sulle risposte del proprietario (16/11): lo stato «non ancora
+  provata in una riunione vera» si dice; Kalliope non è un servizio online né un'estensione (non «non ancora»); per
+  macOS vale `progetto.md` [P] (account sviluppatore Apple); la propria voce non va in questa pagina (la risposta «la
+  mettiamo subito» è da chiarire con il proprietario); dubbio E: «non ancora», nessun consiglio né alternativa.
 - Rinviati finché il proprietario non ne riparla: clonazione della voce, Windows e macOS, il cursore nel campo con
   testo arabo (limite di Slint), la piattaforma dei traduttori, i messaggi da terminale.
 
@@ -26,11 +30,13 @@ Metodo: skill vibe-next `design-system-generator` 0.46.1, ruoli nativi di Claude
 | Fase | Stato | Ruolo e modello | Tempi | Esito / prossimo passo |
 |---|---|---|---|---|
 | R. Ricerca lingue, Slint, sito, CSS, caratteri | fatta | research ×6 (haiku) | 16/11 | `ricerca/lingue.md` |
-| 1. Lingue nel sito: struttura e specchio senza cambiare l'aspetto | in corso | design-build (sonnet) | 16/11 → | incarico `incarichi/1-lingue-sito.md` |
-| 2. Lingue nel design system: aspetto da destra a sinistra, caratteri per scrittura, scelta della lingua | da fare | design-direction (opus) → design-build → design-judge | | dopo la 1 |
+| 1. Lingue nel sito: struttura e specchio senza cambiare l'aspetto | fatta, commit `341a841` | design-build (sonnet) | 16/11, 102 min, 741k token | `1-lingue-sito/progresso.md`, `versi.md`; italiano identico in tre motori; verificato da chi coordina (costruzione, controlli, foto) |
+| 2. Lingue nel design system: aspetto da destra a sinistra, caratteri per scrittura, scelta della lingua | in corso | design-direction (opus) → design-build → design-judge | 16/11 → | `incarichi/2-lingue-aspetto.md` |
 | 3. Pagine nella direzione 2: non ancora, stato, installa, in riunione (con aiuto), 404 | in corso | per pagina: direzione → giudice → correzione → costruzione → proprietario | | una alla volta, ciascuna mostrata al proprietario |
 | 3a. «non ancora»: aspetto e movimento | fatta | design-direction (opus) | 16/11, 42 min, 544k token | `3a-non-ancora/` (PIANO, CONTENUTI, sequenze, confronti); 4 componenti nuovi, 24 token; controlla-sorgenti verde; solo Chromium |
-| 3a-g. «non ancora»: giudizio | in corso | design-judge (opus) | 16/11 → | `incarichi/3a-non-ancora-giudizio.md` |
+| 3a-g. «non ancora»: giudizio | fatto | design-judge (opus) | 16/11, 35 min, 351k token | `3a-non-ancora/giudizio/GIUDIZIO.md`: 0 bloccanti, 6 importanti (I1 stato della prova, I2 «non ancora» per ciò che non è, I3 feed come unica decisione, I4 catalogo, I5 schermi bassi senza comandi, I6 tratto fermo), 8 minori |
+| 3a-c. «non ancora»: correzioni d'aspetto e contenuti | in corso | design-direction (opus), lo stesso worker | 16/11 → | I1, I2, I3, I5, I6 e i fatti decisi da chi coordina (sotto) |
+| 2. (avviata) Lingue nel design system | in corso | design-direction (opus) | 16/11 → | `incarichi/2-lingue-aspetto.md` |
 | 4. Applicazione: token per Slint, prova delle scritture, `@tr`, finestra nella direzione 2 (due varianti) | da fare | design-build, design-direction, design-judge | | dopo il sito |
 | 5. Matrice completa (15 dispositivi × 3 motori) e pulizia di `website/stile/`, `script/`, `sistema/` | da fare | design-build | | alla fine |
 
