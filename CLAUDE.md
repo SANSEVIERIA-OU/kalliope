@@ -20,15 +20,17 @@ come si lavora.
 - **Il design system è `design-system/`**, fuori dal sito: token, base, componenti, caratteri, catalogo vivo,
   `SISTEMA.md` e `TOKEN.md`. Oggi lo usa solo la home.
 - **In linea c'è ancora il sito di prima** finché il proprietario non dice di pubblicare.
+- **Il lavoro in corso** (dal 16/11/2026: lingue, poi le altre pagine, poi l'applicazione) è in `design/lavoro/`:
+  `STATO.md` dice fasi, decisioni prese a lavoro avviato e incarichi; `ricerca/lingue.md` i fatti con le fonti.
 
 **«Riprendiamo dal sito» vuol dire questo, e non altro:** rifare le altre pagine nella direzione 2, sopra
 `design-system/`, partendo dalla home nuova. Non vuol dire riprendere il lavoro del 12/11/2026.
 
 1. Leggi, in quest'ordine: `design/direzione-2/LEGGIMI.md`, `design-system/SISTEMA.md`,
    `design/direzione-2/CONTENUTI.md`, `design/direzione-2/D2.md`.
-2. Prima di rendere una pagina, i contenuti: `CONTENUTI.md` elenca 15 voci del documento di progetto che nella
-   home si sono perse e 8 da chiedere al proprietario; fra le mancanze che lui ha visto c'è la parte sulla
-   campionatura della propria voce. Che cosa dice il sito lo decide il proprietario: si chiede, non si inventa.
+2. ~~Prima di rendere una pagina, i contenuti~~: superato dalla decisione del 16/11/2026 qui sotto («Pronti per
+   le traduzioni»): i testi si rifanno da capo, quindi le domande di `CONTENUTI.md` non sono il lavoro di adesso.
+   Resta vero che il sito non inventa funzioni che il programma non ha.
 3. Ogni pagina si costruisce con i token e i componenti di `design-system/`. Ciò che manca si aggiunge lì, con il
    suo ruolo, e il catalogo cresce con la pagina: nessun valore scritto a mano nella pagina, nessun secondo
    sistema. Il metodo è la skill `design-system-generator` del plugin vibe-next, con i suoi ruoli.
@@ -54,12 +56,33 @@ all'applicazione)».
   il via. Un colore, un carattere o una misura nuovi scritti a mano nell'applicazione sono un errore.
 - Ciò che serve all'applicazione e nel sistema manca si aggiunge al sistema, non all'applicazione.
 
+## Pronti per le traduzioni
+
+Decisione del proprietario del 16/11/2026: «chissenefrega dei testi tanto anno rifatti da capo: preoccupati solo di
+rendere predisposto sito e applicazione per essere tradotta nelle lingue dell'UE + prime dieci lingueparlate al
+mondo.»
+
+- I testi di oggi, del sito e dell'applicazione, verranno riscritti da capo: non si perde tempo a rifinirli né a
+  chiedere contenuti.
+- Il lavoro è la predisposizione: sito, applicazione e design system devono poter ricevere le traduzioni nelle
+  lingue ufficiali dell'UE e nelle dieci lingue più parlate al mondo, comprese scritture non latine e da destra a
+  sinistra. Sono 30 (ricerca del 16/11/2026: le 24 dell'UE da europa.eu; le dieci per parlanti totali da Ethnologue
+  2026, letto attraverso Wikipedia perché il sito di Ethnologue era bloccato): bg cs da de el en es et fi fr ga hr hu
+  it lt lv mt nl pl pt ro sk sl sv, più zh hi ar bn id ur. Scritture: latina, greca, cirillica (bg), cinese,
+  devanagari, bengali, araba (ar, ur; da destra a sinistra; l'urdu di solito in nastaliq).
+- Come farlo non è ancora deciso: prima la ricerca, poi la proposta al proprietario, poi il via.
+
 ## Come si costruisce e si pubblica il sito
 
 - `python3 -I tools/site.py --out DIR` costruisce il sito: copia `website/`, ci mette `design-system/` e riempie i
   segnaposto della versione (`{{kalliope.version}}` e gli altri). Le pagine non scrivono mai una versione a mano.
 - La home è completa solo nel sito costruito: i suoi stili arrivano da `design-system/`. Per vederla:
   `docs/releasing.md`, «Website».
+- **Una cartella per lingua** (dal 16/11/2026): `/` è la scelta della lingua, `/it/`, `/en/`… le pagine; i vecchi
+  indirizzi rimandano a `/it/…`. Aggiungere una lingua vuol dire aggiungere `website/lingue/<xx>.po`
+  (`docs/translating.md`); una lingua con voci mancanti o da rivedere non si pubblica. I testi da tradurre si segnano
+  nell'HTML con `data-t`; `tools/translations.py check`, `tools/css_logico.py` (niente sinistra/destra nel CSS) e
+  `tools/test_translations.py` girano in CI. Le pseudo-lingue `en-XA` e `ar-XB` si costruiscono solo per le prove.
 - **Un push su `main` che tocca `website/`, `design-system/` o `tools/site.py` ripubblica il sito.** Il push si fa
   solo su autorizzazione esplicita del proprietario, ogni volta.
 

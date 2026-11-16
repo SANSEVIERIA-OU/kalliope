@@ -23,8 +23,8 @@
 .app-griglia .riquadro { border-radius: var(--app-griglia-riquadro-raggio); }
 .app-griglia .barre { height: var(--misura-21); gap: var(--spazio-4); }
 .app-griglia .barre i { width: var(--misura-3); border-radius: var(--raggio-2); }
-.app-griglia .nome { left: var(--spazio-6); top: var(--spazio-6); font-size: var(--corpo-3); line-height: var(--interlinea-2); padding: var(--spazi-8); }
-.riunione-app.vivo .tu .nome::after { content: " · microfono «Kalliope»"; }
+.app-griglia .nome { inset-inline-start: var(--spazio-6); top: var(--spazio-6); font-size: var(--corpo-3); line-height: var(--interlinea-2); padding: var(--spazi-8); }
+.riunione-app.vivo .tu .nome::after { content: " " attr(data-lungo); }
 /* l'etichetta si completa quando «Kalliope» è scelto */
 .riunione-app.vivo .tu .barre i { background: var(--voce); }
 .riunione-app.vivo .tu .bordo { animation: lampo var(--durata-riunione-app-bordo) var(--curva-uscita) 1 both; }
@@ -42,7 +42,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--spazio-8);
-  padding: var(--microfono-spazio-interno);
+  padding-block: var(--microfono-spazio-interno-blocco); padding-inline: var(--microfono-spazio-interno-inline);
   border-radius: var(--raggio-pillola);
   background: var(--velo-comando);
   border: var(--filetto-sottile) solid var(--bordo-pannello);
@@ -79,10 +79,10 @@
     font-size: var(--corpo-1);
     line-height: var(--interlinea-1);
     padding: var(--app-griglia-nome-spazio-interno-telefono);
-    left: var(--spazio-4);
+    inset-inline-start: var(--spazio-4);
     top: var(--spazio-4);
   }
-  .microfono { gap: var(--spazio-5); font-size: var(--microfono-grandezza-telefono); padding: var(--microfono-spazio-interno-telefono); }
+  .microfono { gap: var(--spazio-5); font-size: var(--microfono-grandezza-telefono); padding-block: var(--microfono-spazio-interno-telefono-blocco); padding-inline: var(--microfono-spazio-interno-telefono-inline); }
   .microfono-titolo { gap: var(--spazio-4); }
   .app-icona { width: var(--misura-10); height: var(--misura-10); }
   .app-icona::before { inset: var(--spazio-4); }

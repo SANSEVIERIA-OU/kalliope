@@ -5,6 +5,9 @@
    uguali hanno lo stesso ruolo restano due token (vedi «Da decidere» in SISTEMA.md). Ruoli e usi: TOKEN.md. */
 :root {
 
+  /* Direzione di scrittura */
+  --verso: 1;   /* 1 con la scrittura da sinistra a destra, −1 da destra a sinistra (la cambia :root:dir(rtl), più sotto). Ciò che ha un verso (uno spostamento orizzontale, l'origine di una crescita, l'asse di una barra) la moltiplica; scena.js la legge da qui */
+
   /* Colori e materiali */
   --azione: #ff5c8d;   /* l'unico colore di ciò che si preme per scegliere */
   --fondo: #420017;   /* la stanza: il fondo di tutta la pagina */
@@ -336,8 +339,10 @@
   --collegamento-freccia-sopra-sposta-x: 4px;
   --collegamento-sottolineatura-spessore: 1.5px;
   --pillola-spazio-interno: 0 30px;
-  --pillola-spazio-interno-2: 0 24px 0 8px;
-  --pillola-spazio-interno-telefono: 0 20px 0 5px;
+  --pillola-spazio-interno-2-blocco: 0;
+  --pillola-spazio-interno-2-inline: 8px 24px;   /* inizio e fine */
+  --pillola-spazio-interno-telefono-blocco: 0;
+  --pillola-spazio-interno-telefono-inline: 5px 20px;   /* inizio e fine */
   --tondo-prima-triangolo: 14px;
   --tondo-prima-triangolo-2: 8px;
   /* · Il primo schermo: titolo, comandi, palco */
@@ -394,7 +399,7 @@
   --tavolo-margine: 0 0 52px;
   /* · La finestra di Kalliope ricostruita */
   --avvio-piede-larghezza: calc(100% - 520px);
-  --f-cursore-margine-sinistra: 1px;
+  --f-cursore-margine-inizio: 1px;
   --f-nota-margine: 10px 0 2px;
   --f-pulsante-spazio-interno: 0 12px;
   --f-stato-spazio-interno: 9px 10px;
@@ -410,8 +415,10 @@
   --app-griglia-nome-spazio-interno-telefono: 2px 7px;
   --app-griglia-righe: 104px 104px;
   --app-griglia-righe-telefono: 78px 78px;
-  --microfono-spazio-interno: 4px 4px 4px 6px;
-  --microfono-spazio-interno-telefono: 3px 3px 3px 4px;
+  --microfono-spazio-interno-blocco: 4px;
+  --microfono-spazio-interno-inline: 6px 4px;   /* inizio e fine */
+  --microfono-spazio-interno-telefono-blocco: 3px;
+  --microfono-spazio-interno-telefono-inline: 4px 3px;   /* inizio e fine */
   --microfono-titolo-spazio-interno: 2px 4px;
   --riunione-app-larghezza: min(480px, 100%);
   --riunione-app-larghezza-telefono: calc(100% - 28px);
@@ -424,7 +431,8 @@
   --fila-ascolto-altezza-minima: 112px;
   --frase-spazio-interno-telefono: 0 11px;
   --voce-altezza-minima: 46px;
-  --voce-spazio-interno: 0 18px 0 6px;
+  --voce-spazio-interno-blocco: 0;
+  --voce-spazio-interno-inline: 6px 18px;   /* inizio e fine */
   --voce-tondo-prima-triangolo: 12px;
   --voce-tondo-prima-triangolo-2: 7px;
   /* · I messaggi d'errore */
@@ -439,17 +447,20 @@
   --ascolto-voce-spazio-sotto: calc(var(--sovrap) - 26px);
   --ascolto-voce-voci-filo-margine-sopra: 28px;
   --detto-riga-larghezza-massima: 560px;
-  --detto-riga-margine: 14px 0 0 4px;
+  --detto-riga-margine-blocco: 14px 0;
+  --detto-riga-margine-inline: 4px 0;   /* inizio e fine */
   --filo-colonne: minmax(0, 1fr) 118px;
   --messaggio-larghezza-massima: 360px;
   --messaggio-sotto-distanza: 10px 16px;
-  --messaggio-sotto-pillola-spazio-interno: 0 20px 0 5px;
+  --messaggio-sotto-pillola-spazio-interno-blocco: 0;
+  --messaggio-sotto-pillola-spazio-interno-inline: 5px 20px;   /* inizio e fine */
   /* · La strada della voce */
   --computer-altezza: 236px;
   --computer-altezza-telefono: 352px;
   --esito-margine: 0 0 10px;
-  --esito-spazio-interno: 0 34px 0 22px;
-  --impulso-margine-sinistra: -9px;
+  --esito-spazio-interno-blocco: 0;
+  --esito-spazio-interno-inline: 22px 34px;   /* inizio e fine */
+  --impulso-margine-inizio: -9px;
   --impulso-sopra: 93px;
   --impulso-sopra-telefono: 79px;
   --linea-altezza-telefono: 200px;
@@ -457,13 +468,16 @@
   --nodo-altri-larghezza: 128px;
   --non-esiste-distanza: 10px 26px;
   --non-esiste-margine-sopra: 64px;
-  --riservato-margine: 34px 0 0 22px;
-  --scoppio-margine: -40px 0 0 -40px;
+  --riservato-margine-blocco: 34px 0;
+  --riservato-margine-inline: 22px 0;   /* inizio e fine */
+  --scoppio-margine-blocco: -40px 0;
+  --scoppio-margine-inline: -40px 0;   /* inizio e fine */
   --strada-esito-sposta-y: 14px;
   --strada-riservato-sposta-y: 14px;
   --tappa-nome-larghezza-massima: 170px;
   --tappe-spazio-interno: 62px 0 0;
-  --tappe-spazio-interno-telefono: 50px 0 0 18px;
+  --tappe-spazio-interno-telefono-blocco: 50px 0;
+  --tappe-spazio-interno-telefono-inline: 18px 0;   /* inizio e fine */
   /* · Tratti e scene */
   --chiusura-avvertenza-margine: 14px 0 0;
   --chiusura-luce-tratto-altezza: 1000px;
@@ -476,8 +490,8 @@
   --entra-finestra-sposta-y: 16px;
   --entra-titolo-sposta-y: 20px;
   --luce-altezza: 1150px;
-  --luce-sinistra: calc(50% + 310px);
-  --luce-sinistra-medio: calc(50% + 230px);
+  --luce-inizio: calc(50% + 310px);
+  --luce-inizio-medio: calc(50% + 230px);
   --luce-sopra: 470px;
   --luce-sopra-tavoletta: 860px;
   --luce-sopra-telefono: 520px;
@@ -486,8 +500,8 @@
   --mondo-altezza-minima: 100vh;
   --scena-entra-da-ritaglio: inset(0 min(4.5vw, 64px, calc(var(--margine) - 2px)) round calc(var(--raggio-scena) * 1.6) calc(var(--raggio-scena) * 1.6) 0 0);
   --serve-colonne: minmax(0, 1fr) 400px;
-  --tratto-scena-notte-spazio-destra: max(var(--margine), calc(50% - 720px + var(--margine)));
-  --tratto-scena-notte-spazio-sinistra: max(var(--margine), calc(50% - 720px + var(--margine)));
+  --tratto-scena-notte-spazio-fine: max(var(--margine), calc(50% - 720px + var(--margine)));
+  --tratto-scena-notte-spazio-inizio: max(var(--margine), calc(50% - 720px + var(--margine)));
   --tratto-scena-notte-spazio-sopra: 112px;
   --tratto-scena-notte-spazio-sopra-telefono: 76px;
   --tratto-scena-notte-spazio-sotto: calc(128px + var(--sovrap));
@@ -896,6 +910,9 @@
   font-weight: 400;
   font-display: swap;
 }
+
+/* La direzione di scrittura è quella dell'attributo dir dell'html (<html dir="rtl">), non una proprietà di questo foglio: :dir() la guarda. */
+:root:dir(rtl) { --verso: -1; }
 
 /* I token che cambiano con la larghezza, come nel foglio consegnato */
 @media (min-width: 1000px) and (max-width: 1180px) {

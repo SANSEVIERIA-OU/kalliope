@@ -16,14 +16,14 @@
 }
 /* correzioni (P10): la barra compatta è piena, senza sfocatura: niente macchie di ciò che le scorre sotto */
 .barra.compatta { background: var(--barra-piena); box-shadow: var(--barra-compatto-ombra); clip-path: var(--barra-compatto-ritaglio); }
-.menu { margin-left: auto; transition: transform var(--durata-menu) var(--entra) var(--ritardo-menu); }
+.menu { margin-inline-start: auto; transition: transform var(--durata-menu) var(--entra) var(--ritardo-menu); }
 /* tornando, il menu aspetta che l'azione sia sparita */
 /* correzioni (P1): a riposo l'azione non occupa posto, la navigazione sta dove stava nel primo schermo scelto («Aiuto»
    finisce sul margine destro). Quando l'azione compare, il menu le fa posto scivolando a sinistra e lei entra dopo. */
 .barra .barra-azione {
   position: absolute;
   top: 50%;
-  right: var(--margine);
+  inset-inline-end: var(--margine);
   margin-top: var(--spazio-meno-1);
   min-height: var(--misura-21);
   padding: var(--spazi-4);
@@ -78,8 +78,7 @@
     display: block;
     position: absolute;
     top: var(--spazio-28);
-    left: var(--spazio-10);
-    right: var(--spazio-10);
+    inset-inline: var(--spazio-10);
     z-index: var(--livello-menu-aperto);
     background: var(--pannello-menu);
     border: var(--filetto-sottile) solid var(--bordo-pannello);
@@ -109,7 +108,7 @@
     padding: var(--spazi-2);
     font-size: var(--corpo-5);
   }
-  .pulsante-menu { margin-left: auto; }
+  .pulsante-menu { margin-inline-start: auto; }
 }
 /* correzioni 6b: senza script la classe «compatta» non arriva mai, e la barra (testo chiaro) resterebbe trasparente sopra la scena
    chiara, illeggibile. Qui è piena da sé; dove il browser sa legare l'animazione allo scorrimento, lo diventa solo dopo 24 px,
@@ -153,7 +152,7 @@ html:not(.js) .barra { background: var(--barra-piena); box-shadow: var(--barra-o
 }
 @media (max-width: 360px) {
   .barra { gap: var(--spazio-7); }
-  .barra .barra-azione { padding-left: var(--spazio-10); padding-right: var(--spazio-10); font-size: var(--corpo-4); }
+  .barra .barra-azione { padding-inline-start: var(--spazio-10); padding-inline-end: var(--spazio-10); font-size: var(--corpo-4); }
   .pulsante-menu { padding: var(--spazi-2); font-size: var(--corpo-6); }
 }
 @media (max-width: 959px) {
@@ -186,11 +185,11 @@ html:not(.js) .barra { background: var(--barra-piena); box-shadow: var(--barra-o
   }
   /* l'azione non occupa posto: sta a sinistra di «Menu», sopra il posto della parola del marchio (che al telefono stretto
        sparisce prima che lei entri). Così né «Menu» né il marchio si spostano */
-  .barra .barra-azione { right: calc(var(--margine) + var(--largo-menu, var(--barra-azione-largo-menu-base)) + var(--spazio-7)); }
-  .pulsante-menu { margin-left: auto; }
+  .barra .barra-azione { inset-inline-end: calc(var(--margine) + var(--largo-menu, var(--barra-azione-largo-menu-base)) + var(--spazio-7)); }
+  .pulsante-menu { margin-inline-start: auto; }
 }
 @media (min-width: 761px) and (max-width: 959px) {
-  .js .menu.aperto { top: var(--menu-aperto-sopra-tavoletta-stretta); right: var(--margine); width: var(--menu-aperto-larghezza); }
+  .js .menu.aperto { top: var(--menu-aperto-sopra-tavoletta-stretta); inset-inline-end: var(--margine); width: var(--menu-aperto-larghezza); }
 }
 @media (max-width: 959px) {
   .js .menu.aperto {

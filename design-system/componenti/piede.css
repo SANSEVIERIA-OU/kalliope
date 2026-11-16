@@ -30,8 +30,8 @@
   max-width: none;
   margin-inline: 0;
   overflow: clip;
-  padding-left: var(--tratto-scena-notte-spazio-sinistra);
-  padding-right: var(--tratto-scena-notte-spazio-destra);
+  padding-inline-start: var(--tratto-scena-notte-spazio-inizio);
+  padding-inline-end: var(--tratto-scena-notte-spazio-fine);
   border-radius: var(--raggio-scena) var(--raggio-scena) 0 0;
 }
 /* il piede è basso: sale solo del raggio sulla chiusura (ai suoi lati, entrando, si vede la stanza, il colore della chiusura) */

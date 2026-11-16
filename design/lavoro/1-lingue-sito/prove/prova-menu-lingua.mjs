@@ -1,0 +1,13 @@
+const SKILL = '/home/dev/.claude/plugins/cache/vibe-next/vibe-next/0.46.1/skills/design-system-generator/scripts';
+const {avvia} = await import(`${SKILL}/lib/comune.mjs`);
+const {servi} = await import(`${SKILL}/lib/servi.mjs`);
+const server = await servi(process.argv[2], {porta: 0});
+const b = await avvia(process.argv[3] || 'chromium');
+const p = await b.newPage({viewport: {width: 390, height: 844}, reducedMotion: 'reduce'});
+await p.goto(`http://127.0.0.1:${server.address().port}/it/`, {waitUntil: 'load'}); await p.waitForTimeout(1200);
+await p.click('.pulsante-menu'); await p.waitForTimeout(400);
+const aperto = await p.evaluate(() => document.querySelector('#menu').classList.contains('aperto'));
+await p.click('#menu a[lang]'); await p.waitForTimeout(900);
+const r = await p.evaluate(() => ({aperto: document.querySelector('#menu').classList.contains('aperto'), y: scrollY, rect: document.querySelector('#lingue').getBoundingClientRect().toJSON(), h: innerHeight, hash: location.hash}));
+console.log(JSON.stringify({apertoPrima: aperto, ...r}), r.aperto === false && r.rect.top >= 0 && r.rect.bottom <= r.h + 1 ? 'ok: il menu si chiude e l\'elenco delle lingue è in vista' : 'NO');
+await b.close(); server.close();

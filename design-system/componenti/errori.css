@@ -18,7 +18,7 @@
   border: var(--filetto-comando) solid var(--bordo-evidente);
   font-size: var(--corpo-6);
   line-height: var(--interlinea-6);
-  text-align: left;
+  text-align: start;
   animation: sale12 var(--durata-errore-ascolto) var(--entra) backwards;
 }
 .errore-ascolto p { margin: 0; text-wrap: pretty; }

@@ -187,17 +187,32 @@ new Rust, about every six weeks. A branch uses `main`'s cache when it has none o
 ## Website
 
 `website/` is published on GitHub Pages at https://sansevieria-ou.github.io/kalliope/ by
-`.github/workflows/pages.yml`, on every change to `website/` or `design-system/` on `main`, after
+`.github/workflows/pages.yml`, on every change to `website/`, `design-system/` or the site tools on `main`, after
 every Release run and after a release is edited by hand. The design system (tokens, base,
 components, fonts, living catalogue) lives in `design-system/`, outside the site, because the
 application will use it too; the build copies it into the site as `design-system/`, so a page is
 complete only once built. `tools/site.py` copies the pages and fills in the version, the
 links, sizes and fingerprints of the packages of the newest release (the newest prerelease while
-there is no release), so the pages never name a version by hand. To see the site locally:
+there is no release), so the pages never name a version by hand.
+
+The site has one folder per language (`/it/`, `/en/` …) with the same pages under the same names, and the top address is the
+page where a visitor chooses the language. The build makes only the languages whose catalogue, `website/lingue/<xx>.po`,
+is complete and checked, and says in its log which it left out and why; Italian, the language of the pages, is always
+built. Dates and sizes are written in the language of each page from Unicode CLDR (`tools/data/cldr.json`). The old
+addresses (`/installa/` …) are pages that send to `/it/…`. How to add a language, change a text, build the
+pseudo-languages and run the check: [translating.md](translating.md).
+
+To see the site locally:
 
 ```sh
 python3 -I tools/site.py --out /tmp/kalliope-site && python3 -m http.server -d /tmp/kalliope-site
 ```
+
+`--release-json FILE` builds offline from a saved answer of the releases API; `--pseudo` adds `en-XA` and `ar-XB`, the
+test languages (accented and 40% longer; right to left), never published.
+
+CI (`ci.yml`, Linux job) runs `tools/translations.py extract --check` and `check`, `tools/css_logico.py` and the tests of the
+tools (`python3 -I -m unittest discover -s tools -p 'test_*.py'`).
 
 ## Not done yet
 

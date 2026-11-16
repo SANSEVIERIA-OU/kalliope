@@ -14,3 +14,8 @@ __pycache__/
 # Worker areas: only their notes and results are kept, not raw downloads, logs and page captures
 /design/incarichi/*/*/
 /design/metodo-capacita.json
+# Work areas of the 16/11/2026 work: notes, plans and test programs are kept; page captures and videos stay local
+/design/lavoro/**/*.png
+/design/lavoro/**/*.jpg
+/design/lavoro/**/*.webm
+/design/lavoro/**/*.mp4

@@ -1,0 +1,46 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 -->
+<!-- La pagina di scelta della lingua: la costruzione (tools/site.py) la pubblica come indirizzo principale, `/`, e ci mette l'elenco
+     delle lingue (ogni lingua nel proprio nome, con il proprio lang) al posto dell'elemento con data-lingue="elenco".
+     Non ha un testo da tradurre: il nome del prodotto e i nomi delle lingue. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kalliope</title>
+<meta name="theme-color" content="#420017">
+<link rel="icon" href="immagini/icona.svg" type="image/svg+xml">
+<link rel="stylesheet" href="design-system/token.css">
+<link rel="stylesheet" href="design-system/base.css">
+<link rel="stylesheet" href="design-system/componenti/barra.css">
+<link rel="stylesheet" href="design-system/componenti/pulsanti.css">
+<link rel="stylesheet" href="design-system/componenti/apertura.css">
+<link rel="stylesheet" href="design-system/componenti/tratti.css">
+<link rel="stylesheet" href="design-system/componenti/piede.css">
+<script src="lingua.js"></script>
+</head>
+<body>
+<div class="mondo">
+  <header class="barra">
+    <a class="marchio" href="./" aria-label="Kalliope">
+      <svg width="36" height="36" viewBox="0 0 128 128" aria-hidden="true" focusable="false"><defs><linearGradient id="icona-bolla" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2fb39a"/><stop offset="1" stop-color="#16806f"/></linearGradient></defs><path d="M30 14h68a22 22 0 0 1 22 22v40a22 22 0 0 1-22 22H62l-25.4 19.6A3.5 3.5 0 0 1 31 114.8V98h-1A22 22 0 0 1 8 76V36a22 22 0 0 1 22-22z" fill="url(#icona-bolla)"/><g fill="#fff"><rect x="29.5" y="47" width="9" height="18" rx="4.5"/><rect x="44.5" y="37" width="9" height="38" rx="4.5"/><rect x="59.5" y="29" width="9" height="54" rx="4.5"/><rect x="74.5" y="39" width="9" height="34" rx="4.5"/><rect x="89.5" y="45" width="9" height="22" rx="4.5"/></g></svg>
+      <span>Kalliope</span>
+    </a>
+  </header>
+  <main id="contenuto">
+    <div class="scena">
+      <section class="apertura" aria-labelledby="titolo">
+        <h1 id="titolo">Kalliope</h1>
+      </section>
+    </div>
+  </main>
+  <footer class="piede scena-notte">
+    <nav aria-label="Language">
+      <ul data-lingue="elenco">
+        <li><a data-lingua href="#">English</a></li>
+      </ul>
+    </nav>
+  </footer>
+</div>
+</body>
+</html>

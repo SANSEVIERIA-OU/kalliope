@@ -47,15 +47,15 @@
   mask: var(--collegamento-freccia-maschera);
 }
 .collegamento:hover .freccia, .collegamento:focus-visible .freccia { transform: translateX(var(--collegamento-freccia-sopra-sposta-x)); }
-.pillola.voce-chiara { background: var(--testo); color: var(--bordeaux); padding: var(--pillola-spazio-interno-2); }
+.pillola.voce-chiara { background: var(--testo); color: var(--bordeaux); padding-block: var(--pillola-spazio-interno-2-blocco); padding-inline: var(--pillola-spazio-interno-2-inline); }
 .pillola.voce-chiara:hover { background: var(--bianco); }
 .tondo { position: relative; width: var(--misura-19); height: var(--misura-19); border-radius: 50%; background: var(--bordeaux); flex: none; }
 .tondo::before {
   content: "";
   position: absolute;
-  left: var(--spazio-13);
+  left: var(--spazio-13); /* fisico: disegno del triangolo di riproduzione (▶): non si specchia */
   top: var(--spazio-10);
-  border-left: var(--tondo-prima-triangolo) solid var(--testo);
+  border-left: var(--tondo-prima-triangolo) solid var(--testo); /* fisico: disegno del triangolo di riproduzione (▶): non si specchia */
   border-top: var(--tondo-prima-triangolo-2) solid transparent;
   border-bottom: var(--tondo-prima-triangolo-2) solid transparent;
 }
@@ -72,9 +72,9 @@
 .chiudi:hover { border-color: var(--testo); }
 @media (max-width: 760px) {
   .collegamento { justify-content: center; min-height: var(--misura-21); font-size: var(--corpo-7); }
-  .pillola.voce-chiara { min-height: var(--misura-22); font-size: var(--corpo-7); padding: var(--pillola-spazio-interno-telefono); }
+  .pillola.voce-chiara { min-height: var(--misura-22); font-size: var(--corpo-7); padding-block: var(--pillola-spazio-interno-telefono-blocco); padding-inline: var(--pillola-spazio-interno-telefono-inline); }
   .tondo { width: var(--misura-18); height: var(--misura-18); }
-  .tondo::before { left: var(--spazio-12); top: var(--spazio-9); }
+  .tondo::before { left: var(--spazio-12); top: var(--spazio-9); } /* fisico: disegno del triangolo di riproduzione (▶): non si specchia */
 }
 .rivedi {
   grid-column: 1;

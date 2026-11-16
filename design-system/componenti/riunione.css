@@ -37,7 +37,7 @@
   --corpo: var(--anna-corpo);
   background: var(--anna-fondo);
 }
-.figura { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 88%; }
+.figura { position: absolute; inset-inline: 0; bottom: 0; width: 100%; height: 88%; }
 .figura .pelle { fill: var(--pelle); }
 .figura .collo { fill: var(--ombra); }
 .figura .capelli, .figura .capelli-dietro { fill: var(--capelli); }
@@ -74,7 +74,7 @@
 .anna .occhi ellipse { animation: batte var(--durata-anna-occhi) var(--curva-dolce) var(--ritardo-anna-occhi) 1 backwards; }
 .nome {
   position: absolute;
-  left: var(--spazio-8);
+  inset-inline-start: var(--spazio-8);
   top: var(--spazio-8);
   z-index: var(--livello-nome);
   padding: var(--nome-spazio-interno);
@@ -87,7 +87,7 @@
 }
 .barre {
   position: absolute;
-  left: 50%;
+  left: 50%; /* fisico: centratura con translate(-50%, -50%): simmetrica, giusta in entrambe le direzioni */
   top: 54%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -126,7 +126,7 @@
   .griglia { gap: var(--spazio-4); }
   .riquadro { border-radius: var(--raggio-6); }
   .nome {
-    left: var(--spazio-5);
+    inset-inline-start: var(--spazio-5);
     top: var(--spazio-5);
     font-size: var(--corpo-2);
     line-height: var(--nome-interlinea-telefono);
@@ -157,7 +157,7 @@
 .riunione-filo .barre { height: var(--misura-24); gap: var(--spazio-5); }
 .riunione-filo .barre i { width: var(--riunione-filo-barre-larghezza); border-radius: var(--raggio-3); }
 .riunione-filo .nome {
-  left: var(--spazio-7);
+  inset-inline-start: var(--spazio-7);
   top: var(--spazio-7);
   font-size: var(--corpo-3);
   line-height: var(--interlinea-2);
@@ -173,7 +173,7 @@
   display: block;
 }
 .riunione-filo .riquadro.tu { overflow: visible; }
-.tavolo { position: relative; width: var(--tavolo-larghezza); margin: var(--tavolo-margine); text-align: left; }
+.tavolo { position: relative; width: var(--tavolo-larghezza); margin: var(--tavolo-margine); text-align: start; }
 .tavolo-cornice {
   position: relative;
   display: grid;
@@ -208,7 +208,7 @@
   .riunione-filo .riquadro { border-radius: var(--raggio-5); }
   .riunione-filo .nome-lungo { display: none; }
   .riunione-filo .nome {
-    left: var(--spazio-3);
+    inset-inline-start: var(--spazio-3);
     top: var(--spazio-3);
     font-size: var(--corpo-1);
     line-height: var(--interlinea-1);
@@ -220,7 +220,7 @@
   .tavolo { width: 100%; margin-bottom: var(--spazio-21); }
   .tavolo-cornice { height: var(--tavolo-cornice-altezza-telefono); gap: var(--spazio-4); padding: var(--spazio-4); border-radius: var(--raggio-9); }
   .tavolo .riquadro { border-radius: var(--raggio-5); }
-  .tavolo .nome { left: var(--spazio-3); top: var(--spazio-3); font-size: var(--corpo-1); line-height: var(--interlinea-1); padding: var(--spazi-6); }
+  .tavolo .nome { inset-inline-start: var(--spazio-3); top: var(--spazio-3); font-size: var(--corpo-1); line-height: var(--interlinea-1); padding: var(--spazi-6); }
   .tavolo .barre { height: var(--misura-12); gap: var(--spazio-2); }
   .tavolo .barre i { width: var(--misura-2); border-radius: var(--raggio-1); }
   .onde-chiusa { border-radius: var(--raggio-9) !important; }
@@ -229,7 +229,7 @@
   .riunione-filo { max-width: var(--misura-30); }
 }
 @media (min-width: 761px) {
-  .riunione-filo .nome-tu::after { content: " · microfono «Kalliope»"; }
+  .riunione-filo .nome-tu::after { content: " " attr(data-lungo); }
 }
 @media (max-width: 760px) {
   /* la riunione si aggancia sotto la barra: quando è agganciata la sua fascia prende il colore della barra (una sola mensola in

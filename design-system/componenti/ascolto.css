@@ -6,8 +6,7 @@
 .fila-ascolto { position: relative; margin-top: var(--spazio-14); min-height: var(--fila-ascolto-altezza-minima); }
 .ascolto {
   position: absolute;
-  left: 0;
-  right: 0;
+  inset-inline: 0;
   top: 0;
   z-index: var(--livello-ascolto);
   transform-origin: 0 0;
@@ -27,7 +26,7 @@
   align-items: center;
   gap: var(--spazio-8);
   min-height: var(--voce-altezza-minima);
-  padding: var(--voce-spazio-interno);
+  padding-block: var(--voce-spazio-interno-blocco); padding-inline: var(--voce-spazio-interno-inline);
   border-radius: var(--raggio-pillola);
   cursor: pointer;
   font-size: var(--corpo-7);
@@ -40,14 +39,14 @@
 .voce-tondo::before {
   content: "";
   position: absolute;
-  left: var(--spazio-11);
+  left: var(--spazio-11); /* fisico: disegno del triangolo di riproduzione (▶): non si specchia */
   top: var(--spazio-8);
-  border-left: var(--voce-tondo-prima-triangolo) solid var(--bordeaux);
+  border-left: var(--voce-tondo-prima-triangolo) solid var(--bordeaux); /* fisico: disegno del triangolo di riproduzione (▶): non si specchia */
   border-top: var(--voce-tondo-prima-triangolo-2) solid transparent;
   border-bottom: var(--voce-tondo-prima-triangolo-2) solid transparent;
 }
 .voce.suona .voce-tondo::before {
-  left: var(--spazio-9);
+  left: var(--spazio-9); /* fisico: disegno del triangolo di riproduzione (▶): non si specchia */
   top: var(--spazio-8);
   width: var(--misura-6);
   height: var(--misura-7);
@@ -86,7 +85,7 @@
   .ascolto { position: relative; }
   .fila-ascolto.aperta > .pillola { display: none !important; }
   .ascolto-dentro { padding: var(--spazio-7); }
-  .voce { min-height: var(--misura-21); font-size: var(--corpo-6); padding-right: var(--spazio-12); }
+  .voce { min-height: var(--misura-21); font-size: var(--corpo-6); padding-inline-end: var(--spazio-12); }
   .frase { font-size: var(--corpo-4); padding: var(--frase-spazio-interno-telefono); min-height: var(--misura-19); }
 }
 .voce, .frase {
@@ -133,7 +132,7 @@
 .voce:hover, .voce:focus-visible { border-color: var(--testo); background: var(--velo-sopra); }
 .voce[aria-pressed="true"] { background: var(--testo); color: var(--bordeaux); border-color: var(--testo); box-shadow: var(--voce-scelta-ombra); }
 .voce[aria-pressed="true"] .voce-tondo { background: var(--bordeaux); }
-.voce[aria-pressed="true"] .voce-tondo::before { border-left-color: var(--testo); }
+.voce[aria-pressed="true"] .voce-tondo::before { border-left-color: var(--testo); } /* fisico: disegno del triangolo di riproduzione (▶): non si specchia */
 /* nella scheda in alto lo stato dell'ascolto sta sulla frase che suona */
 .frase { display: inline-flex; align-items: center; gap: var(--spazio-7); }
 .frase::before {
@@ -164,7 +163,7 @@
 /* a 320-350 px le due voci e «Chiudi» non stanno su una riga (343 px contro 304): senza andare a capo allargavano la scheda oltre lo
    schermo e «Chiudi» e le frasi uscivano a destra. «Chiudi» va sotto le voci, sempre a destra */
 .ascolto-riga { flex-wrap: wrap; row-gap: var(--spazio-7); }
-.ascolto-riga .chiudi { margin-left: auto; }
+.ascolto-riga .chiudi { margin-inline-start: auto; }
 @media (min-width: 761px) and (max-height: 802px) {
   .palco:has(.fila-ascolto.aperta:not(.chiudendo)) .sotto {
     height: 0;

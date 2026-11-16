@@ -1,0 +1,1772 @@
+{
+ "fonte": {
+  "generato_da": "tools/cldr_data.py",
+  "indirizzo": "https://github.com/unicode-org/cldr-json/tree/49.0.0",
+  "licenza": "Unicode License v3, https://www.unicode.org/license.txt",
+  "nome": "Unicode CLDR (JSON)",
+  "tag": "49.0.0",
+  "versione": "49.0.0"
+ },
+ "lingue": {
+  "ar": {
+   "bcp47": "ar",
+   "data": {
+    "lungo": "d MMMM y",
+    "mesi": [
+     "يناير",
+     "فبراير",
+     "مارس",
+     "أبريل",
+     "مايو",
+     "يونيو",
+     "يوليو",
+     "أغسطس",
+     "سبتمبر",
+     "أكتوبر",
+     "نوفمبر",
+     "ديسمبر"
+    ],
+    "mesiIsolati": [
+     "يناير",
+     "فبراير",
+     "مارس",
+     "أبريل",
+     "مايو",
+     "يونيو",
+     "يوليو",
+     "أغسطس",
+     "سبتمبر",
+     "أكتوبر",
+     "نوفمبر",
+     "ديسمبر"
+    ]
+   },
+   "direzione": "rtl",
+   "megabyte": "{0} م.ب",
+   "nome": "العربية",
+   "nomeElenco": "العربية",
+   "numeri": {
+    "cifre": "0123456789",
+    "decimale": ".",
+    "gruppo": ",",
+    "minimoGruppo": 1,
+    "modello": "#,##0.###",
+    "sistema": "latn"
+   },
+   "plurali": {
+    "forme": [
+     "zero",
+     "one",
+     "two",
+     "few",
+     "many",
+     "other"
+    ],
+    "intestazione": "nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : (n%100>=3 && n%100<=10) ? 3 : (n%100>=11 && n%100<=99) ? 4 : 5);",
+    "regole": {
+     "few": "n % 100 = 3..10 @integer 3~10, 103~110, 1003, … @decimal 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 103.0, 1003.0, …",
+     "many": "n % 100 = 11..99 @integer 11~26, 111, 1011, … @decimal 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 111.0, 1011.0, …",
+     "one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+     "other": "@integer 100~102, 200~202, 300~302, 400~402, 500~502, 600, 1000, 10000, 100000, 1000000, … @decimal 0.1~0.9, 1.1~1.7, 10.1, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …",
+     "two": "n = 2 @integer 2 @decimal 2.0, 2.00, 2.000, 2.0000",
+     "zero": "n = 0 @integer 0 @decimal 0.0, 0.00, 0.000, 0.0000"
+    }
+   }
+  },
+  "bg": {
+   "bcp47": "bg",
+   "data": {
+    "lungo": "d MMMM y 'г'.",
+    "mesi": [
+     "януари",
+     "февруари",
+     "март",
+     "април",
+     "май",
+     "юни",
+     "юли",
+     "август",
+     "септември",
+     "октомври",
+     "ноември",
+     "декември"
+    ],
+    "mesiIsolati": [
+     "януари",
+     "февруари",
+     "март",
+     "април",
+     "май",
+     "юни",
+     "юли",
+     "август",
+     "септември",
+     "октомври",
+     "ноември",
+     "декември"
+    ]
+   },
+   "direzione": "ltr",
+   "megabyte": "{0} MB",
+   "nome": "български",
+   "nomeElenco": "български",
+   "numeri": {
+    "cifre": "0123456789",
+    "decimale": ",",
+    "gruppo": " ",
+    "minimoGruppo": 2,
+    "modello": "#,##0.###",
+    "sistema": "latn"
+   },
+   "plurali": {
+    "forme": [
+     "one",
+     "other"
+    ],
+    "intestazione": "nplurals=2; plural=(n==1 ? 0 : 1);",
+    "regole": {
+     "one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+     "other": "@integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
+    }
+   }
+  },
+  "bn": {
+   "bcp47": "bn",
+   "data": {
+    "lungo": "d MMMM, y",
+    "mesi": [
+     "জানুয়ারি",
+     "ফেব্রুয়ারি",
+     "মার্চ",
+     "এপ্রিল",
+     "মে",
+     "জুন",
+     "জুলাই",
+     "আগস্ট",
+     "সেপ্টেম্বর",
+     "অক্টোবর",
+     "নভেম্বর",
+     "ডিসেম্বর"
+    ],
+    "mesiIsolati": [
+     "জানুয়ারি",
+     "ফেব্রুয়ারি",
+     "মার্চ",
+     "এপ্রিল",
+     "মে",
+     "জুন",
+     "জুলাই",
+     "আগস্ট",
+     "সেপ্টেম্বর",
+     "অক্টোবর",
+     "নভেম্বর",
+     "ডিসেম্বর"
+    ]
+   },
+   "direzione": "ltr",
+   "megabyte": "{0} MB",
+   "nome": "বাংলা",
+   "nomeElenco": "বাংলা",
+   "numeri": {
+    "cifre": "০১২৩৪৫৬৭৮৯",
+    "decimale": ".",
+    "gruppo": ",",
+    "minimoGruppo": 1,
+    "modello": "#,##,##0.###",
+    "sistema": "beng"
+   },
+   "plurali": {
+    "forme": [
+     "one",
+     "other"
+    ],
+    "intestazione": "nplurals=2; plural=(n==0 || n==1 ? 0 : 1);",
+    "regole": {
+     "one": "i = 0 or n = 1 @integer 0, 1 @decimal 0.0~1.0, 0.00~0.04",
+     "other": "@integer 2~17, 100, 1000, 10000, 100000, 1000000, … @decimal 1.1~2.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
+    }
+   }
+  },
+  "cs": {
+   "bcp47": "cs",
+   "data": {
+    "lungo": "d. MMMM y",
+    "mesi": [
+     "ledna",
+     "února",
+     "března",
+     "dubna",
+     "května",
+     "června",
+     "července",
+     "srpna",
+     "září",
+     "října",
+     "listopadu",
+     "prosince"
+    ],
+    "mesiIsolati": [
+     "leden",
+     "únor",
+     "březen",
+     "duben",
+     "květen",
+     "červen",
+     "červenec",
+     "srpen",
+     "září",
+     "říjen",
+     "listopad",
+     "prosinec"
+    ]
+   },
+   "direzione": "ltr",
+   "megabyte": "{0} MB",
+   "nome": "čeština",
+   "nomeElenco": "Čeština",
+   "numeri": {
+    "cifre": "0123456789",
+    "decimale": ",",
+    "gruppo": " ",
+    "minimoGruppo": 1,
+    "modello": "#,##0.###",
+    "sistema": "latn"
+   },
+   "plurali": {
+    "forme": [
+     "one",
+     "few",
+     "many",
+     "other"
+    ],
+    "intestazione": "nplurals=4; plural=(n==1 ? 0 : (n>=2 && n<=4) ? 1 : 3);",
+    "regole": {
+     "few": "i = 2..4 and v = 0 @integer 2~4",
+     "many": "v != 0   @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …",
+     "one": "i = 1 and v = 0 @integer 1",
+     "other": "@integer 0, 5~19, 100, 1000, 10000, 100000, 1000000, …"
+    }
+   }
+  },
+  "da": {
+   "bcp47": "da",
+   "data": {
+    "lungo": "d. MMMM y",
+    "mesi": [
+     "januar",
+     "februar",
+     "marts",
+     "april",
+     "maj",
+     "juni",
+     "juli",
+     "august",
+     "september",
+     "oktober",
+     "november",
+     "december"
+    ],
+    "mesiIsolati": [
+     "januar",
+     "februar",
+     "marts",
+     "april",
+     "maj",
+     "juni",
+     "juli",
+     "august",
+     "september",
+     "oktober",
+     "november",
+     "december"
+    ]
+   },
+   "direzione": "ltr",
+   "megabyte": "{0} MB",
+   "nome": "dansk",
+   "nomeElenco": "Dansk",
+   "numeri": {
+    "cifre": "0123456789",
+    "decimale": ",",
+    "gruppo": ".",
+    "minimoGruppo": 1,
+    "modello": "#,##0.###",
+    "sistema": "latn"
+   },
+   "plurali": {
+    "forme": [
+     "one",
+     "other"
+    ],
+    "intestazione": "nplurals=2; plural=(n==1 ? 0 : 1);",
+    "regole": {
+     "one": "n = 1 or t != 0 and i = 0,1 @integer 1 @decimal 0.1~1.6",
+     "other": "@integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0, 2.0~3.4, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
+    }
+   }
+  },
+  "de": {
+   "bcp47": "de",
+   "data": {
+    "lungo": "d. MMMM y",
+    "mesi": [
+     "Januar",
+     "Februar",
+     "März",
+     "April",
+     "Mai",
+     "Juni",
+     "Juli",
+     "August",
+     "September",
+     "Oktober",
+     "November",
+     "Dezember"
+    ],
+    "mesiIsolati": [
+     "Januar",
+     "Februar",
+     "März",
+     "April",
+     "Mai",
+     "Juni",
+     "Juli",
+     "August",
+     "September",
+     "Oktober",
+     "November",
+     "Dezember"
+    ]
+   },
+   "direzione": "ltr",
+   "megabyte": "{0} MB",
+   "nome": "Deutsch",
+   "nomeElenco": "Deutsch",
+   "numeri": {
+    "cifre": "0123456789",
+    "decimale": ",",
+    "gruppo": ".",
+    "minimoGruppo": 1,
+    "modello": "#,##0.###",
+    "sistema": "latn"
+   },
+   "plurali": {
+    "forme": [
+     "one",
+     "other"
+    ],
+    "intestazione": "nplurals=2; plural=(n==1 ? 0 : 1);",
+    "regole": {
+     "one": "i = 1 and v = 0 @integer 1",
+     "other": "@integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
+    }
+   }
+  },
+  "el": {
+   "bcp47": "el",
+   "data": {
+    "lungo": "d MMMM y",
+    "mesi": [
+     "Ιανουαρίου",
+     "Φεβρουαρίου",
+     "Μαρτίου",
+     "Απριλίου",
+     "Μαΐου",
+     "Ιουνίου",
+     "Ιουλίου",
+     "Αυγούστου",
+     "Σεπτεμβρίου",
+     "Οκτωβρίου",
+     "Νοεμβρίου",
+     "Δεκεμβρίου"
+    ],
+    "mesiIsolati": [
+     "Ιανουάριος",
+     "Φεβρουάριος",
+     "Μάρτιος",
+     "Απρίλιος",
+     "Μάιος",
+     "Ιούνιος",
+     "Ιούλιος",
+     "Αύγουστος",
+     "Σεπτέμβριος",
+     "Οκτώβριος",
+     "Νοέμβριος",
+     "Δεκέμβριος"
+    ]
+   },
+   "direzione": "ltr",
+   "megabyte": "{0} MB",
+   "nome": "Ελληνικά",
+   "nomeElenco": "Ελληνικά",
+   "numeri": {
+    "cifre": "0123456789",
+    "decimale": ",",
+    "gruppo": ".",
+    "minimoGruppo": 1,
+    "modello": "#,##0.###",
+    "sistema": "latn"
+   },
+   "plurali": {
+    "forme": [
+     "one",
+     "other"
+    ],
+    "intestazione": "nplurals=2; plural=(n==1 ? 0 : 1);",
+    "regole": {
+     "one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+     "other": "@integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
+    }
+   }
+  },
+  "en": {
+   "bcp47": "en",
+   "data": {
+    "lungo": "MMMM d, y",
+    "mesi": [
+     "January",
+     "February",
+     "March",
+     "April",
+     "May",
+     "June",
+     "July",
+     "August",
+     "September",
+     "October",
+     "November",
+     "December"
+    ],
+    "mesiIsolati": [
+     "January",
+     "February",
+     "March",
+     "April",
+     "May",
+     "June",
+     "July",
+     "August",
+     "September",
+     "October",
+     "November",
+     "December"
+    ]
+   },
+   "direzione": "ltr",
+   "megabyte": "{0} MB",
+   "nome": "English",
+   "nomeElenco": "English",
+   "numeri": {
+    "cifre": "0123456789",
+    "decimale": ".",
+    "gruppo": ",",
+    "minimoGruppo": 1,
+    "modello": "#,##0.###",
+    "sistema": "latn"
+   },
+   "plurali": {
+    "forme": [
+     "one",
+     "other"
+    ],
+    "intestazione": "nplurals=2; plural=(n==1 ? 0 : 1);",
+    "regole": {
+     "one": "i = 1 and v = 0 @integer 1",
+     "other": "@integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
+    }
+   }
+  },
+  "es": {
+   "bcp47": "es",
+   "data": {
+    "lungo": "d 'de' MMMM 'de' y",
+    "mesi": [
+     "enero",
+     "febrero",
+     "marzo",
+     "abril",
+     "mayo",
+     "junio",
+     "julio",
+     "agosto",
+     "septiembre",
+     "octubre",
+     "noviembre",
+     "diciembre"
+    ],
+    "mesiIsolati": [
+     "enero",
+     "febrero",
+     "marzo",
+     "abril",
+     "mayo",
+     "junio",
+     "julio",
+     "agosto",
+     "septiembre",
+     "octubre",
+     "noviembre",
+     "diciembre"
+    ]
+   },
+   "direzione": "ltr",
+   "megabyte": "{0} MB",
+   "nome": "español",
+   "nomeElenco": "Español",
+   "numeri": {
+    "cifre": "0123456789",
+    "decimale": ",",
+    "gruppo": ".",
+    "minimoGruppo": 2,
+    "modello": "#,##0.###",
+    "sistema": "latn"
+   },
+   "plurali": {
+    "forme": [
+     "one",
+     "many",
+     "other"
+    ],
+    "intestazione": "nplurals=3; plural=(n==1 ? 0 : n!=0 && n%1000000==0 ? 1 : 2);",
+    "regole": {
+     "many": "e = 0 and i != 0 and i % 1000000 = 0 and v = 0 or e != 0..5 @integer 1000000, 1c6, 2c6, 3c6, 4c6, 5c6, 6c6, … @decimal 1.0000001c6, 1.1c6, 2.0000001c6, 2.1c6, 3.0000001c6, 3.1c6, …",
+     "one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+     "other": "@integer 0, 2~16, 100, 1000, 10000, 100000, 1c3, 2c3, 3c3, 4c3, 5c3, 6c3, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, 1.0001c3, 1.1c3, 2.0001c3, 2.1c3, 3.0001c3, 3.1c3, …"
+    }
+   }
+  },
+  "et": {
+   "bcp47": "et",
+   "data": {
+    "lungo": "d. MMMM y",
+    "mesi": [
+     "jaanuar",
+     "veebruar",
+     "märts",
+     "aprill",
+     "mai",
+     "juuni",
+     "juuli",
+     "august",
+     "september",
+     "oktoober",
+     "november",
+     "detsember"
+    ],
+    "mesiIsolati": [
+     "jaanuar",
+     "veebruar",
+     "märts",
+     "aprill",
+     "mai",
+     "juuni",
+     "juuli",
+     "august",
+     "september",
+     "oktoober",
+     "november",
+     "detsember"
+    ]
+   },
+   "direzione": "ltr",
+   "megabyte": "{0} MB",
+   "nome": "eesti",
+   "nomeElenco": "eesti",
+   "numeri": {
+    "cifre": "0123456789",
+    "decimale": ",",
+    "gruppo": " ",
+    "minimoGruppo": 2,
+    "modello": "#,##0.###",
+    "sistema": "latn"
+   },
+   "plurali": {
+    "forme": [
+     "one",
+     "other"
+    ],
+    "intestazione": "nplurals=2; plural=(n==1 ? 0 : 1);",
+    "regole": {
+     "one": "i = 1 and v = 0 @integer 1",
+     "other": "@integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
+    }
+   }
+  },
+  "fi": {
+   "bcp47": "fi",
+   "data": {
+    "lungo": "d. MMMM y",
+    "mesi": [
+     "tammikuuta",
+     "helmikuuta",
+     "maaliskuuta",
+     "huhtikuuta",
+     "toukokuuta",
+     "kesäkuuta",
+     "heinäkuuta",
+     "elokuuta",
+     "syyskuuta",
+     "lokakuuta",
+     "marraskuuta",
+     "joulukuuta"
+    ],
+    "mesiIsolati": [
+     "tammikuu",
+     "helmikuu",
+     "maaliskuu",
+     "huhtikuu",
+     "toukokuu",
+     "kesäkuu",
+     "heinäkuu",
+     "elokuu",
+     "syyskuu",
+     "lokakuu",
+     "marraskuu",
+     "joulukuu"
+    ]
+   },
+   "direzione": "ltr",
+   "megabyte": "{0} Mt",
+   "nome": "suomi",
+   "nomeElenco": "Suomi",
+   "numeri": {
+    "cifre": "0123456789",
+    "decimale": ",",
+    "gruppo": " ",
+    "minimoGruppo": 1,
+    "modello": "#,##0.###",
+    "sistema": "latn"
+   },
+   "plurali": {
+    "forme": [
+     "one",
+     "other"
+    ],
+    "intestazione": "nplurals=2; plural=(n==1 ? 0 : 1);",
+    "regole": {
+     "one": "i = 1 and v = 0 @integer 1",
+     "other": "@integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
+    }
+   }
+  },
+  "fr": {
+   "bcp47": "fr",
+   "data": {
+    "lungo": "d MMMM y",
+    "mesi": [
+     "janvier",
+     "février",
+     "mars",
+     "avril",
+     "mai",
+     "juin",
+     "juillet",
+     "août",
+     "septembre",
+     "octobre",
+     "novembre",
+     "décembre"
+    ],
+    "mesiIsolati": [
+     "janvier",
+     "février",
+     "mars",
+     "avril",
+     "mai",
+     "juin",
+     "juillet",
+     "août",
+     "septembre",
+     "octobre",
+     "novembre",
+     "décembre"
+    ]
+   },
+   "direzione": "ltr",
+   "megabyte": "{0} Mo",
+   "nome": "français",
+   "nomeElenco": "Français",
+   "numeri": {
+    "cifre": "0123456789",
+    "decimale": ",",
+    "gruppo": " ",
+    "minimoGruppo": 1,
+    "modello": "#,##0.###",
+    "sistema": "latn"
+   },
+   "plurali": {
+    "forme": [
+     "one",
+     "many",
+     "other"
+    ],
+    "intestazione": "nplurals=3; plural=((n>=0 && n<=1) ? 0 : n!=0 && n%1000000==0 ? 1 : 2);",
+    "regole": {
+     "many": "e = 0 and i != 0 and i % 1000000 = 0 and v = 0 or e != 0..5 @integer 1000000, 1c6, 2c6, 3c6, 4c6, 5c6, 6c6, … @decimal 1.0000001c6, 1.1c6, 2.0000001c6, 2.1c6, 3.0000001c6, 3.1c6, …",
+     "one": "i = 0..1 @integer 0, 1 @decimal 0.0~1.5",
+     "other": "@integer 2~17, 100, 1000, 10000, 100000, 1c3, 2c3, 3c3, 4c3, 5c3, 6c3, … @decimal 2.0~3.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, 1.0001c3, 1.1c3, 2.0001c3, 2.1c3, 3.0001c3, 3.1c3, …"
+    }
+   }
+  },
+  "ga": {
+   "bcp47": "ga",
+   "data": {
+    "lungo": "d MMMM y",
+    "mesi": [
+     "Eanáir",
+     "Feabhra",
+     "Márta",
+     "Aibreán",
+     "Bealtaine",
+     "Meitheamh",
+     "Iúil",
+     "Lúnasa",
+     "Meán Fómhair",
+     "Deireadh Fómhair",
+     "Samhain",
+     "Nollaig"
+    ],
+    "mesiIsolati": [
+     "Eanáir",
+     "Feabhra",
+     "Márta",
+     "Aibreán",
+     "Bealtaine",
+     "Meitheamh",
+     "Iúil",
+     "Lúnasa",
+     "Meán Fómhair",
+     "Deireadh Fómhair",
+     "Samhain",
+     "Nollaig"
+    ]
+   },
+   "direzione": "ltr",
+   "megabyte": "{0} MB",
+   "nome": "Gaeilge",
+   "nomeElenco": "Gaeilge",
+   "numeri": {
+    "cifre": "0123456789",
+    "decimale": ".",
+    "gruppo": ",",
+    "minimoGruppo": 1,
+    "modello": "#,##0.###",
+    "sistema": "latn"
+   },
+   "plurali": {
+    "forme": [
+     "one",
+     "two",
+     "few",
+     "many",
+     "other"
+    ],
+    "intestazione": "nplurals=5; plural=(n==1 ? 0 : n==2 ? 1 : (n>=3 && n<=6) ? 2 : (n>=7 && n<=10) ? 3 : 4);",
+    "regole": {
+     "few": "n = 3..6 @integer 3~6 @decimal 3.0, 4.0, 5.0, 6.0, 3.00, 4.00, 5.00, 6.00, 3.000, 4.000, 5.000, 6.000, 3.0000, 4.0000, 5.0000, 6.0000",
+     "many": "n = 7..10 @integer 7~10 @decimal 7.0, 8.0, 9.0, 10.0, 7.00, 8.00, 9.00, 10.00, 7.000, 8.000, 9.000, 10.000, 7.0000, 8.0000, 9.0000, 10.0000",
+     "one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+     "other": "@integer 0, 11~25, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.1, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …",
+     "two": "n = 2 @integer 2 @decimal 2.0, 2.00, 2.000, 2.0000"
+    }
+   }
+  },
+  "hi": {
+   "bcp47": "hi",
+   "data": {
+    "lungo": "d MMMM y",
+    "mesi": [
+     "जनवरी",
+     "फ़रवरी",
+     "मार्च",
+     "अप्रैल",
+     "मई",
+     "जून",
+     "जुलाई",
+     "अगस्त",
+     "सितंबर",
+     "अक्टूबर",
+     "नवंबर",
+     "दिसंबर"
+    ],
+    "mesiIsolati": [
+     "जनवरी",
+     "फ़रवरी",
+     "मार्च",
+     "अप्रैल",
+     "मई",
+     "जून",
+     "जुलाई",
+     "अगस्त",
+     "सितंबर",
+     "अक्टूबर",
+     "नवंबर",
+     "दिसंबर"
+    ]
+   },
+   "direzione": "ltr",
+   "megabyte": "{0} MB",
+   "nome": "हिन्दी",
+   "nomeElenco": "हिन्दी",
+   "numeri": {
+    "cifre": "0123456789",
+    "decimale": ".",
+    "gruppo": ",",
+    "minimoGruppo": 1,
+    "modello": "#,##,##0.###",
+    "sistema": "latn"
+   },
+   "plurali": {
+    "forme": [
+     "one",
+     "other"
+    ],
+    "intestazione": "nplurals=2; plural=(n==0 || n==1 ? 0 : 1);",
+    "regole": {
+     "one": "i = 0 or n = 1 @integer 0, 1 @decimal 0.0~1.0, 0.00~0.04",
+     "other": "@integer 2~17, 100, 1000, 10000, 100000, 1000000, … @decimal 1.1~2.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
+    }
+   }
+  },
+  "hr": {
+   "bcp47": "hr",
+   "data": {
+    "lungo": "d. MMMM y.",
+    "mesi": [
+     "siječnja",
+     "veljače",
+     "ožujka",
+     "travnja",
+     "svibnja",
+     "lipnja",
+     "srpnja",
+     "kolovoza",
+     "rujna",
+     "listopada",
+     "studenoga",
+     "prosinca"
+    ],
+    "mesiIsolati": [
+     "siječanj",
+     "veljača",
+     "ožujak",
+     "travanj",
+     "svibanj",
+     "lipanj",
+     "srpanj",
+     "kolovoz",
+     "rujan",
+     "listopad",
+     "studeni",
+     "prosinac"
+    ]
+   },
+   "direzione": "ltr",
+   "megabyte": "{0} MB",
+   "nome": "hrvatski",
+   "nomeElenco": "Hrvatski",
+   "numeri": {
+    "cifre": "0123456789",
+    "decimale": ",",
+    "gruppo": ".",
+    "minimoGruppo": 1,
+    "modello": "#,##0.###",
+    "sistema": "latn"
+   },
+   "plurali": {
+    "forme": [
+     "one",
+     "few",
+     "other"
+    ],
+    "intestazione": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : (n%10>=2 && n%10<=4) && !(n%100>=12 && n%100<=14) ? 1 : 2);",
+    "regole": {
+     "few": "v = 0 and i % 10 = 2..4 and i % 100 != 12..14 or f % 10 = 2..4 and f % 100 != 12..14 @integer 2~4, 22~24, 32~34, 42~44, 52~54, 62, 102, 1002, … @decimal 0.2~0.4, 1.2~1.4, 2.2~2.4, 3.2~3.4, 4.2~4.4, 5.2, 10.2, 100.2, 1000.2, …",
+     "one": "v = 0 and i % 10 = 1 and i % 100 != 11 or f % 10 = 1 and f % 100 != 11 @integer 1, 21, 31, 41, 51, 61, 71, 81, 101, 1001, … @decimal 0.1, 1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 10.1, 100.1, 1000.1, …",
+     "other": "@integer 0, 5~19, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0, 0.5~1.0, 1.5~2.0, 2.5~2.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
+    }
+   }
+  },
+  "hu": {
+   "bcp47": "hu",
+   "data": {
+    "lungo": "y. MMMM d.",
+    "mesi": [
+     "január",
+     "február",
+     "március",
+     "április",
+     "május",
+     "június",
+     "július",
+     "augusztus",
+     "szeptember",
+     "október",
+     "november",
+     "december"
+    ],
+    "mesiIsolati": [
+     "január",
+     "február",
+     "március",
+     "április",
+     "május",
+     "június",
+     "július",
+     "augusztus",
+     "szeptember",
+     "október",
+     "november",
+     "december"
+    ]
+   },
+   "direzione": "ltr",
+   "megabyte": "{0} MB",
+   "nome": "magyar",
+   "nomeElenco": "magyar",
+   "numeri": {
+    "cifre": "0123456789",
+    "decimale": ",",
+    "gruppo": " ",
+    "minimoGruppo": 2,
+    "modello": "#,##0.###",
+    "sistema": "latn"
+   },
+   "plurali": {
+    "forme": [
+     "one",
+     "other"
+    ],
+    "intestazione": "nplurals=2; plural=(n==1 ? 0 : 1);",
+    "regole": {
+     "one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+     "other": "@integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
+    }
+   }
+  },
+  "id": {
+   "bcp47": "id",
+   "data": {
+    "lungo": "d MMMM y",
+    "mesi": [
+     "Januari",
+     "Februari",
+     "Maret",
+     "April",
+     "Mei",
+     "Juni",
+     "Juli",
+     "Agustus",
+     "September",
+     "Oktober",
+     "November",
+     "Desember"
+    ],
+    "mesiIsolati": [
+     "Januari",
+     "Februari",
+     "Maret",
+     "April",
+     "Mei",
+     "Juni",
+     "Juli",
+     "Agustus",
+     "September",
+     "Oktober",
+     "November",
+     "Desember"
+    ]
+   },
+   "direzione": "ltr",
+   "megabyte": "{0} MB",
+   "nome": "Indonesia",
+   "nomeElenco": "Indonesia",
+   "numeri": {
+    "cifre": "0123456789",
+    "decimale": ",",
+    "gruppo": ".",
+    "minimoGruppo": 1,
+    "modello": "#,##0.###",
+    "sistema": "latn"
+   },
+   "plurali": {
+    "forme": [
+     "other"
+    ],
+    "intestazione": "nplurals=1; plural=0;",
+    "regole": {
+     "other": "@integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
+    }
+   }
+  },
+  "it": {
+   "bcp47": "it",
+   "data": {
+    "lungo": "d MMMM y",
+    "mesi": [
+     "gennaio",
+     "febbraio",
+     "marzo",
+     "aprile",
+     "maggio",
+     "giugno",
+     "luglio",
+     "agosto",
+     "settembre",
+     "ottobre",
+     "novembre",
+     "dicembre"
+    ],
+    "mesiIsolati": [
+     "gennaio",
+     "febbraio",
+     "marzo",
+     "aprile",
+     "maggio",
+     "giugno",
+     "luglio",
+     "agosto",
+     "settembre",
+     "ottobre",
+     "novembre",
+     "dicembre"
+    ]
+   },
+   "direzione": "ltr",
+   "megabyte": "{0} MB",
+   "nome": "italiano",
+   "nomeElenco": "Italiano",
+   "numeri": {
+    "cifre": "0123456789",
+    "decimale": ",",
+    "gruppo": ".",
+    "minimoGruppo": 2,
+    "modello": "#,##0.###",
+    "sistema": "latn"
+   },
+   "plurali": {
+    "forme": [
+     "one",
+     "many",
+     "other"
+    ],
+    "intestazione": "nplurals=3; plural=(n==1 ? 0 : n!=0 && n%1000000==0 ? 1 : 2);",
+    "regole": {
+     "many": "e = 0 and i != 0 and i % 1000000 = 0 and v = 0 or e != 0..5 @integer 1000000, 1c6, 2c6, 3c6, 4c6, 5c6, 6c6, … @decimal 1.0000001c6, 1.1c6, 2.0000001c6, 2.1c6, 3.0000001c6, 3.1c6, …",
+     "one": "i = 1 and v = 0 @integer 1",
+     "other": "@integer 0, 2~16, 100, 1000, 10000, 100000, 1c3, 2c3, 3c3, 4c3, 5c3, 6c3, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, 1.0001c3, 1.1c3, 2.0001c3, 2.1c3, 3.0001c3, 3.1c3, …"
+    }
+   }
+  },
+  "lt": {
+   "bcp47": "lt",
+   "data": {
+    "lungo": "y 'm'. MMMM d 'd'.",
+    "mesi": [
+     "sausio",
+     "vasario",
+     "kovo",
+     "balandžio",
+     "gegužės",
+     "birželio",
+     "liepos",
+     "rugpjūčio",
+     "rugsėjo",
+     "spalio",
+     "lapkričio",
+     "gruodžio"
+    ],
+    "mesiIsolati": [
+     "sausis",
+     "vasaris",
+     "kovas",
+     "balandis",
+     "gegužė",
+     "birželis",
+     "liepa",
+     "rugpjūtis",
+     "rugsėjis",
+     "spalis",
+     "lapkritis",
+     "gruodis"
+    ]
+   },
+   "direzione": "ltr",
+   "megabyte": "{0} MB",
+   "nome": "lietuvių",
+   "nomeElenco": "lietuvių",
+   "numeri": {
+    "cifre": "0123456789",
+    "decimale": ",",
+    "gruppo": " ",
+    "minimoGruppo": 1,
+    "modello": "#,##0.###",
+    "sistema": "latn"
+   },
+   "plurali": {
+    "forme": [
+     "one",
+     "few",
+     "many",
+     "other"
+    ],
+    "intestazione": "nplurals=4; plural=(n%10==1 && !(n%100>=11 && n%100<=19) ? 0 : (n%10>=2 && n%10<=9) && !(n%100>=11 && n%100<=19) ? 1 : 3);",
+    "regole": {
+     "few": "n % 10 = 2..9 and n % 100 != 11..19 @integer 2~9, 22~29, 102, 1002, … @decimal 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 22.0, 102.0, 1002.0, …",
+     "many": "f != 0   @decimal 0.1~0.9, 1.1~1.7, 10.1, 100.1, 1000.1, …",
+     "one": "n % 10 = 1 and n % 100 != 11..19 @integer 1, 21, 31, 41, 51, 61, 71, 81, 101, 1001, … @decimal 1.0, 21.0, 31.0, 41.0, 51.0, 61.0, 71.0, 81.0, 101.0, 1001.0, …",
+     "other": "@integer 0, 10~20, 30, 40, 50, 60, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
+    }
+   }
+  },
+  "lv": {
+   "bcp47": "lv",
+   "data": {
+    "lungo": "y. 'gada' d. MMMM",
+    "mesi": [
+     "janvāris",
+     "februāris",
+     "marts",
+     "aprīlis",
+     "maijs",
+     "jūnijs",
+     "jūlijs",
+     "augusts",
+     "septembris",
+     "oktobris",
+     "novembris",
+     "decembris"
+    ],
+    "mesiIsolati": [
+     "janvāris",
+     "februāris",
+     "marts",
+     "aprīlis",
+     "maijs",
+     "jūnijs",
+     "jūlijs",
+     "augusts",
+     "septembris",
+     "oktobris",
+     "novembris",
+     "decembris"
+    ]
+   },
+   "direzione": "ltr",
+   "megabyte": "{0} MB",
+   "nome": "latviešu",
+   "nomeElenco": "latviešu",
+   "numeri": {
+    "cifre": "0123456789",
+    "decimale": ",",
+    "gruppo": " ",
+    "minimoGruppo": 2,
+    "modello": "#,##0.###",
+    "sistema": "latn"
+   },
+   "plurali": {
+    "forme": [
+     "zero",
+     "one",
+     "other"
+    ],
+    "intestazione": "nplurals=3; plural=(n%10==0 || ((n%100>=11 && n%100<=19)) ? 0 : n%10==1 && n%100!=11 ? 1 : 2);",
+    "regole": {
+     "one": "n % 10 = 1 and n % 100 != 11 or v = 2 and f % 10 = 1 and f % 100 != 11 or v != 2 and f % 10 = 1 @integer 1, 21, 31, 41, 51, 61, 71, 81, 101, 1001, … @decimal 0.1, 1.0, 1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 10.1, 100.1, 1000.1, …",
+     "other": "@integer 2~9, 22~29, 102, 1002, … @decimal 0.2~0.9, 1.2~1.9, 10.2, 100.2, 1000.2, …",
+     "zero": "n % 10 = 0 or n % 100 = 11..19 or v = 2 and f % 100 = 11..19 @integer 0, 10~20, 30, 40, 50, 60, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
+    }
+   }
+  },
+  "mt": {
+   "bcp47": "mt",
+   "data": {
+    "lungo": "d 'ta'’ MMMM y",
+    "mesi": [
+     "Jannar",
+     "Frar",
+     "Marzu",
+     "April",
+     "Mejju",
+     "Ġunju",
+     "Lulju",
+     "Awwissu",
+     "Settembru",
+     "Ottubru",
+     "Novembru",
+     "Diċembru"
+    ],
+    "mesiIsolati": [
+     "Jannar",
+     "Frar",
+     "Marzu",
+     "April",
+     "Mejju",
+     "Ġunju",
+     "Lulju",
+     "Awwissu",
+     "Settembru",
+     "Ottubru",
+     "Novembru",
+     "Diċembru"
+    ]
+   },
+   "direzione": "ltr",
+   "megabyte": "{0} MB",
+   "nome": "Malti",
+   "nomeElenco": "Malti",
+   "numeri": {
+    "cifre": "0123456789",
+    "decimale": ".",
+    "gruppo": ",",
+    "minimoGruppo": 1,
+    "modello": "#,##0.###",
+    "sistema": "latn"
+   },
+   "plurali": {
+    "forme": [
+     "one",
+     "two",
+     "few",
+     "many",
+     "other"
+    ],
+    "intestazione": "nplurals=5; plural=(n==1 ? 0 : n==2 ? 1 : n==0 || ((n%100>=3 && n%100<=10)) ? 2 : (n%100>=11 && n%100<=19) ? 3 : 4);",
+    "regole": {
+     "few": "n = 0 or n % 100 = 3..10 @integer 0, 3~10, 103~109, 1003, … @decimal 0.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 103.0, 1003.0, …",
+     "many": "n % 100 = 11..19 @integer 11~19, 111~117, 1011, … @decimal 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 111.0, 1011.0, …",
+     "one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+     "other": "@integer 20~35, 100, 1000, 10000, 100000, 1000000, … @decimal 0.1~0.9, 1.1~1.7, 10.1, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …",
+     "two": "n = 2 @integer 2 @decimal 2.0, 2.00, 2.000, 2.0000"
+    }
+   }
+  },
+  "nl": {
+   "bcp47": "nl",
+   "data": {
+    "lungo": "d MMMM y",
+    "mesi": [
+     "januari",
+     "februari",
+     "maart",
+     "april",
+     "mei",
+     "juni",
+     "juli",
+     "augustus",
+     "september",
+     "oktober",
+     "november",
+     "december"
+    ],
+    "mesiIsolati": [
+     "januari",
+     "februari",
+     "maart",
+     "april",
+     "mei",
+     "juni",
+     "juli",
+     "augustus",
+     "september",
+     "oktober",
+     "november",
+     "december"
+    ]
+   },
+   "direzione": "ltr",
+   "megabyte": "{0} MB",
+   "nome": "Nederlands",
+   "nomeElenco": "Nederlands",
+   "numeri": {
+    "cifre": "0123456789",
+    "decimale": ",",
+    "gruppo": ".",
+    "minimoGruppo": 1,
+    "modello": "#,##0.###",
+    "sistema": "latn"
+   },
+   "plurali": {
+    "forme": [
+     "one",
+     "other"
+    ],
+    "intestazione": "nplurals=2; plural=(n==1 ? 0 : 1);",
+    "regole": {
+     "one": "i = 1 and v = 0 @integer 1",
+     "other": "@integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
+    }
+   }
+  },
+  "pl": {
+   "bcp47": "pl",
+   "data": {
+    "lungo": "d MMMM y",
+    "mesi": [
+     "stycznia",
+     "lutego",
+     "marca",
+     "kwietnia",
+     "maja",
+     "czerwca",
+     "lipca",
+     "sierpnia",
+     "września",
+     "października",
+     "listopada",
+     "grudnia"
+    ],
+    "mesiIsolati": [
+     "styczeń",
+     "luty",
+     "marzec",
+     "kwiecień",
+     "maj",
+     "czerwiec",
+     "lipiec",
+     "sierpień",
+     "wrzesień",
+     "październik",
+     "listopad",
+     "grudzień"
+    ]
+   },
+   "direzione": "ltr",
+   "megabyte": "{0} MB",
+   "nome": "polski",
+   "nomeElenco": "polski",
+   "numeri": {
+    "cifre": "0123456789",
+    "decimale": ",",
+    "gruppo": " ",
+    "minimoGruppo": 2,
+    "modello": "#,##0.###",
+    "sistema": "latn"
+   },
+   "plurali": {
+    "forme": [
+     "one",
+     "few",
+     "many",
+     "other"
+    ],
+    "intestazione": "nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && !(n%100>=12 && n%100<=14) ? 1 : (n!=1 && (n%10>=0 && n%10<=1)) || ((n%10>=5 && n%10<=9)) || ((n%100>=12 && n%100<=14)) ? 2 : 3);",
+    "regole": {
+     "few": "v = 0 and i % 10 = 2..4 and i % 100 != 12..14 @integer 2~4, 22~24, 32~34, 42~44, 52~54, 62, 102, 1002, …",
+     "many": "v = 0 and i != 1 and i % 10 = 0..1 or v = 0 and i % 10 = 5..9 or v = 0 and i % 100 = 12..14 @integer 0, 5~19, 100, 1000, 10000, 100000, 1000000, …",
+     "one": "i = 1 and v = 0 @integer 1",
+     "other": "@decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
+    }
+   }
+  },
+  "pt": {
+   "bcp47": "pt",
+   "data": {
+    "lungo": "d 'de' MMMM 'de' y",
+    "mesi": [
+     "janeiro",
+     "fevereiro",
+     "março",
+     "abril",
+     "maio",
+     "junho",
+     "julho",
+     "agosto",
+     "setembro",
+     "outubro",
+     "novembro",
+     "dezembro"
+    ],
+    "mesiIsolati": [
+     "janeiro",
+     "fevereiro",
+     "março",
+     "abril",
+     "maio",
+     "junho",
+     "julho",
+     "agosto",
+     "setembro",
+     "outubro",
+     "novembro",
+     "dezembro"
+    ]
+   },
+   "direzione": "ltr",
+   "megabyte": "{0} MB",
+   "nome": "português",
+   "nomeElenco": "Português",
+   "numeri": {
+    "cifre": "0123456789",
+    "decimale": ",",
+    "gruppo": ".",
+    "minimoGruppo": 1,
+    "modello": "#,##0.###",
+    "sistema": "latn"
+   },
+   "plurali": {
+    "forme": [
+     "one",
+     "many",
+     "other"
+    ],
+    "intestazione": "nplurals=3; plural=((n>=0 && n<=1) ? 0 : n!=0 && n%1000000==0 ? 1 : 2);",
+    "regole": {
+     "many": "e = 0 and i != 0 and i % 1000000 = 0 and v = 0 or e != 0..5 @integer 1000000, 1c6, 2c6, 3c6, 4c6, 5c6, 6c6, … @decimal 1.0000001c6, 1.1c6, 2.0000001c6, 2.1c6, 3.0000001c6, 3.1c6, …",
+     "one": "i = 0..1 @integer 0, 1 @decimal 0.0~1.5",
+     "other": "@integer 2~17, 100, 1000, 10000, 100000, 1c3, 2c3, 3c3, 4c3, 5c3, 6c3, … @decimal 2.0~3.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, 1.0001c3, 1.1c3, 2.0001c3, 2.1c3, 3.0001c3, 3.1c3, …"
+    }
+   }
+  },
+  "ro": {
+   "bcp47": "ro",
+   "data": {
+    "lungo": "d MMMM y",
+    "mesi": [
+     "ianuarie",
+     "februarie",
+     "martie",
+     "aprilie",
+     "mai",
+     "iunie",
+     "iulie",
+     "august",
+     "septembrie",
+     "octombrie",
+     "noiembrie",
+     "decembrie"
+    ],
+    "mesiIsolati": [
+     "ianuarie",
+     "februarie",
+     "martie",
+     "aprilie",
+     "mai",
+     "iunie",
+     "iulie",
+     "august",
+     "septembrie",
+     "octombrie",
+     "noiembrie",
+     "decembrie"
+    ]
+   },
+   "direzione": "ltr",
+   "megabyte": "{0} MB",
+   "nome": "română",
+   "nomeElenco": "română",
+   "numeri": {
+    "cifre": "0123456789",
+    "decimale": ",",
+    "gruppo": ".",
+    "minimoGruppo": 1,
+    "modello": "#,##0.###",
+    "sistema": "latn"
+   },
+   "plurali": {
+    "forme": [
+     "one",
+     "few",
+     "other"
+    ],
+    "intestazione": "nplurals=3; plural=(n==1 ? 0 : n==0 || (n!=1 && (n%100>=1 && n%100<=19)) ? 1 : 2);",
+    "regole": {
+     "few": "v != 0 or n = 0 or n != 1 and n % 100 = 1..19 @integer 0, 2~16, 101, 1001, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …",
+     "one": "i = 1 and v = 0 @integer 1",
+     "other": "@integer 20~35, 100, 1000, 10000, 100000, 1000000, …"
+    }
+   }
+  },
+  "sk": {
+   "bcp47": "sk",
+   "data": {
+    "lungo": "d. MMMM y",
+    "mesi": [
+     "januára",
+     "februára",
+     "marca",
+     "apríla",
+     "mája",
+     "júna",
+     "júla",
+     "augusta",
+     "septembra",
+     "októbra",
+     "novembra",
+     "decembra"
+    ],
+    "mesiIsolati": [
+     "január",
+     "február",
+     "marec",
+     "apríl",
+     "máj",
+     "jún",
+     "júl",
+     "august",
+     "september",
+     "október",
+     "november",
+     "december"
+    ]
+   },
+   "direzione": "ltr",
+   "megabyte": "{0} MB",
+   "nome": "slovenčina",
+   "nomeElenco": "Slovenčina",
+   "numeri": {
+    "cifre": "0123456789",
+    "decimale": ",",
+    "gruppo": " ",
+    "minimoGruppo": 1,
+    "modello": "#,##0.###",
+    "sistema": "latn"
+   },
+   "plurali": {
+    "forme": [
+     "one",
+     "few",
+     "many",
+     "other"
+    ],
+    "intestazione": "nplurals=4; plural=(n==1 ? 0 : (n>=2 && n<=4) ? 1 : 3);",
+    "regole": {
+     "few": "i = 2..4 and v = 0 @integer 2~4",
+     "many": "v != 0   @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …",
+     "one": "i = 1 and v = 0 @integer 1",
+     "other": "@integer 0, 5~19, 100, 1000, 10000, 100000, 1000000, …"
+    }
+   }
+  },
+  "sl": {
+   "bcp47": "sl",
+   "data": {
+    "lungo": "d. MMMM y",
+    "mesi": [
+     "januar",
+     "februar",
+     "marec",
+     "april",
+     "maj",
+     "junij",
+     "julij",
+     "avgust",
+     "september",
+     "oktober",
+     "november",
+     "december"
+    ],
+    "mesiIsolati": [
+     "januar",
+     "februar",
+     "marec",
+     "april",
+     "maj",
+     "junij",
+     "julij",
+     "avgust",
+     "september",
+     "oktober",
+     "november",
+     "december"
+    ]
+   },
+   "direzione": "ltr",
+   "megabyte": "{0} MB",
+   "nome": "slovenščina",
+   "nomeElenco": "slovenščina",
+   "numeri": {
+    "cifre": "0123456789",
+    "decimale": ",",
+    "gruppo": ".",
+    "minimoGruppo": 2,
+    "modello": "#,##0.###",
+    "sistema": "latn"
+   },
+   "plurali": {
+    "forme": [
+     "one",
+     "two",
+     "few",
+     "other"
+    ],
+    "intestazione": "nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : (n%100>=3 && n%100<=4) ? 2 : 3);",
+    "regole": {
+     "few": "v = 0 and i % 100 = 3..4 or v != 0 @integer 3, 4, 103, 104, 203, 204, 303, 304, 403, 404, 503, 504, 603, 604, 703, 704, 1003, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …",
+     "one": "v = 0 and i % 100 = 1 @integer 1, 101, 201, 301, 401, 501, 601, 701, 1001, …",
+     "other": "@integer 0, 5~19, 100, 1000, 10000, 100000, 1000000, …",
+     "two": "v = 0 and i % 100 = 2 @integer 2, 102, 202, 302, 402, 502, 602, 702, 1002, …"
+    }
+   }
+  },
+  "sv": {
+   "bcp47": "sv",
+   "data": {
+    "lungo": "d MMMM y",
+    "mesi": [
+     "januari",
+     "februari",
+     "mars",
+     "april",
+     "maj",
+     "juni",
+     "juli",
+     "augusti",
+     "september",
+     "oktober",
+     "november",
+     "december"
+    ],
+    "mesiIsolati": [
+     "januari",
+     "februari",
+     "mars",
+     "april",
+     "maj",
+     "juni",
+     "juli",
+     "augusti",
+     "september",
+     "oktober",
+     "november",
+     "december"
+    ]
+   },
+   "direzione": "ltr",
+   "megabyte": "{0} MB",
+   "nome": "svenska",
+   "nomeElenco": "Svenska",
+   "numeri": {
+    "cifre": "0123456789",
+    "decimale": ",",
+    "gruppo": " ",
+    "minimoGruppo": 1,
+    "modello": "#,##0.###",
+    "sistema": "latn"
+   },
+   "plurali": {
+    "forme": [
+     "one",
+     "other"
+    ],
+    "intestazione": "nplurals=2; plural=(n==1 ? 0 : 1);",
+    "regole": {
+     "one": "i = 1 and v = 0 @integer 1",
+     "other": "@integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
+    }
+   }
+  },
+  "ur": {
+   "bcp47": "ur",
+   "data": {
+    "lungo": "d MMMM، y",
+    "mesi": [
+     "جنوری",
+     "فروری",
+     "مارچ",
+     "اپریل",
+     "مئی",
+     "جون",
+     "جولائی",
+     "اگست",
+     "ستمبر",
+     "اکتوبر",
+     "نومبر",
+     "دسمبر"
+    ],
+    "mesiIsolati": [
+     "جنوری",
+     "فروری",
+     "مارچ",
+     "اپریل",
+     "مئی",
+     "جون",
+     "جولائی",
+     "اگست",
+     "ستمبر",
+     "اکتوبر",
+     "نومبر",
+     "دسمبر"
+    ]
+   },
+   "direzione": "rtl",
+   "megabyte": "{0} MB",
+   "nome": "اردو",
+   "nomeElenco": "اردو",
+   "numeri": {
+    "cifre": "0123456789",
+    "decimale": ".",
+    "gruppo": ",",
+    "minimoGruppo": 1,
+    "modello": "#,##0.###",
+    "sistema": "latn"
+   },
+   "plurali": {
+    "forme": [
+     "one",
+     "other"
+    ],
+    "intestazione": "nplurals=2; plural=(n==1 ? 0 : 1);",
+    "regole": {
+     "one": "i = 1 and v = 0 @integer 1",
+     "other": "@integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
+    }
+   }
+  },
+  "zh": {
+   "bcp47": "zh-Hans",
+   "data": {
+    "lungo": "y年M月d日",
+    "mesi": [
+     "一月",
+     "二月",
+     "三月",
+     "四月",
+     "五月",
+     "六月",
+     "七月",
+     "八月",
+     "九月",
+     "十月",
+     "十一月",
+     "十二月"
+    ],
+    "mesiIsolati": [
+     "一月",
+     "二月",
+     "三月",
+     "四月",
+     "五月",
+     "六月",
+     "七月",
+     "八月",
+     "九月",
+     "十月",
+     "十一月",
+     "十二月"
+    ]
+   },
+   "direzione": "ltr",
+   "megabyte": "{0} MB",
+   "nome": "中文",
+   "nomeElenco": "中文",
+   "numeri": {
+    "cifre": "0123456789",
+    "decimale": ".",
+    "gruppo": ",",
+    "minimoGruppo": 1,
+    "modello": "#,##0.###",
+    "sistema": "latn"
+   },
+   "plurali": {
+    "forme": [
+     "other"
+    ],
+    "intestazione": "nplurals=1; plural=0;",
+    "regole": {
+     "other": "@integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
+    }
+   }
+  }
+ }
+}

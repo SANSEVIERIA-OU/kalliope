@@ -15,7 +15,7 @@
 .filo { position: relative; grid-template-columns: var(--filo-colonne); column-gap: var(--spazio-25); align-items: center; }
 .messaggi { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--spazio-24); }
 .messaggio { position: relative; }
-.messaggio:nth-child(2) { margin-left: var(--spazio-28); }
+.messaggio:nth-child(2) { margin-inline-start: var(--spazio-28); }
 .filo-bolla .bolla-testo { font-size: var(--corpo-11); line-height: var(--interlinea-13); }
 .messaggio[data-frase="3"] .filo-bolla .bolla-testo { font-size: var(--filo-bolla-bolla-testo-grandezza-2); line-height: var(--interlinea-14); }
 .filo-bolla .bolla-corpo { transition: box-shadow var(--durata-filo-bolla-bolla-corpo) var(--curva-dolce); }
@@ -26,13 +26,13 @@
   flex-wrap: wrap;
   gap: var(--messaggio-sotto-distanza);
   margin-top: var(--spazio-19);
-  padding-left: var(--spazio-3);
+  padding-inline-start: var(--spazio-3);
 }
-.messaggio-sotto .pillola { min-height: var(--misura-22); font-size: var(--corpo-7); padding: var(--messaggio-sotto-pillola-spazio-interno); }
+.messaggio-sotto .pillola { min-height: var(--misura-22); font-size: var(--corpo-7); padding-block: var(--messaggio-sotto-pillola-spazio-interno-blocco); padding-inline: var(--messaggio-sotto-pillola-spazio-interno-inline); }
 .messaggio-sotto .tondo { width: var(--misura-18); height: var(--misura-18); }
-.messaggio-sotto .tondo::before { left: var(--spazio-12); top: var(--spazio-9); }
+.messaggio-sotto .tondo::before { left: var(--spazio-12); top: var(--spazio-9); } /* fisico: disegno del triangolo di riproduzione (▶): non si specchia */
 .suona-frase.suona .tondo::before {
-  left: var(--spazio-11);
+  left: var(--spazio-11); /* fisico: disegno del triangolo di riproduzione (▶): non si specchia */
   top: var(--spazio-10);
   width: var(--misura-6);
   height: var(--misura-7);
@@ -49,7 +49,7 @@
 }
 .js .messaggio audio, .js .altra-voce { display: none; }
 .detto-riga {
-  margin: var(--detto-riga-margine);
+  margin-block: var(--detto-riga-margine-blocco); margin-inline: var(--detto-riga-margine-inline);
   max-width: var(--detto-riga-larghezza-massima);
   font-size: var(--corpo-7);
   line-height: var(--interlinea-7);
@@ -64,7 +64,7 @@
   .ascolto-voce { display: flex; flex-direction: column; }
   .ascolto-voce .tratto-testo { position: static; }
   .filo { grid-template-columns: minmax(0, 1fr); row-gap: var(--spazio-21); }
-  .messaggio:nth-child(2) { margin-left: var(--spazio-15); }
+  .messaggio:nth-child(2) { margin-inline-start: var(--spazio-15); }
   .filo-bolla .bolla-testo { font-size: var(--corpo-8); line-height: var(--interlinea-7); }
   .messaggio[data-frase="3"] .filo-bolla .bolla-testo { font-size: var(--corpo-10); line-height: var(--interlinea-10); }
 }
@@ -103,7 +103,7 @@
   .ascolto-voce {  }
   .ascolto-voce .tratto-testo { position: static; }
 }
-.ascolto-voce .luce-tratto { left: 62%; top: 50%; }
+.ascolto-voce .luce-tratto { left: 62%; top: 50%; } /* fisico: posizione fisica in coppia con translate(-50%, -50%): le due cose si decidono insieme (elenco dei versi) */
 .filo { display: block; }
 .ascolto-voce .voci-filo { margin-top: var(--ascolto-voce-voci-filo-margine-sopra); }
 @media (max-height: 819px) and (min-width: 1181px) {
@@ -161,5 +161,5 @@
   .ascolto-voce .filo { grid-area: frasi; margin-top: var(--spazio-22); }
   .filo-bolla .bolla-testo { font-size: var(--filo-bolla-bolla-testo-grandezza-tavoletta-filo); line-height: var(--interlinea-9); }
   .messaggio[data-frase="3"] .filo-bolla .bolla-testo { font-size: var(--corpo-11); line-height: var(--interlinea-13); }
-  .messaggio:nth-child(2) { margin-left: var(--spazio-18); }
+  .messaggio:nth-child(2) { margin-inline-start: var(--spazio-18); }
 }

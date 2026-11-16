@@ -21,7 +21,7 @@ button { font: inherit; color: inherit; }
 :focus-visible { outline: var(--filetto-forte) solid var(--voce); outline-offset: var(--fuoco-scarto); }
 .salta {
   position: absolute;
-  left: var(--spazio-14);
+  inset-inline-start: var(--spazio-14);
   top: var(--salta-sopra);
   z-index: var(--livello-salta);
   background: var(--testo);

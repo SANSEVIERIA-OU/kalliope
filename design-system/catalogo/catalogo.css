@@ -26,7 +26,7 @@ main.cat { max-width: 90em; margin-inline: auto; padding: 0 var(--margine) 6em; 
 .cat-quadro.largo { width: 100%; }
 .cat-quadro.chiaro { background: var(--testo); color: var(--scuro); }
 .cat-tabella { width: 100%; border-collapse: collapse; font-size: smaller; }
-.cat-tabella th, .cat-tabella td { text-align: left; padding: 0.45em 0.7em; vertical-align: top; border-bottom: var(--filetto-sottile) solid var(--bordo-sezione); }
+.cat-tabella th, .cat-tabella td { text-align: start; padding: 0.45em 0.7em; vertical-align: top; border-bottom: var(--filetto-sottile) solid var(--bordo-sezione); }
 .cat-tabella th { font-weight: var(--peso-forte); color: var(--testo-didascalia); position: sticky; top: 0; background: var(--fondo); z-index: 2; }
 .cat-tabella td.n { font-family: var(--font-app); white-space: nowrap; }
 .cat-tabella td.v { font-family: var(--font-app); color: var(--testo-secondario); max-width: 28em; overflow-wrap: anywhere; }

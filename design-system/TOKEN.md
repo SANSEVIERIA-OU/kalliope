@@ -1,15 +1,23 @@
 # TOKEN · i valori del design system di Kalliope, con il loro ruolo
 
-Questo file è stato generato quando il sistema è stato ricavato dal foglio di stile della home, senza cambiare un valore: **705 token**, tutti in `token.css`. Non si rigenera da solo: quando un token cambia, questa pagina si aggiorna a mano.
+Questo file è stato generato quando il sistema è stato ricavato dal foglio di stile della home, senza cambiare un valore: **717 token** (705 alla nascita; vedi sotto, «Specchio»), tutti in `token.css`. Non si rigenera da solo: quando un token cambia, questa pagina si aggiorna a mano.
 Per ogni token: il valore, il ruolo e dove è usato (componente, selettore, proprietà, condizione). «Valori della pagina ricondotti»: il valore del token è il valore
 scritto nella pagina, identico; un token riunisce tutti gli usi di quel valore **dentro lo stesso ruolo**. Dove due valori quasi uguali potrebbero essere lo stesso ruolo
 restano due token: sono elencati in «Da decidere» (non li ho uniti, perché cambierebbe l'aspetto).
+
+**Specchio (16/11/2026).** Per poter specchiare la pagina da destra a sinistra, i fogli usano proprietà logiche (`margin-inline-start`, `inset-inline-end`, `padding-block`…) e i token non dicono più «sinistra» o «destra»: `--f-cursore-margine-inizio`, `--impulso-margine-inizio`, `--luce-inizio`, `--luce-inizio-medio`, `--tratto-scena-notte-spazio-inizio` e `-fine` (prima `-sinistra` e `-destra`). Le 11 scorciatoie con il lato sinistro diverso dal destro (`padding: 0 24px 0 8px`) sono due token, uno per l'altezza e uno per la riga: `--pillola-spazio-interno-2-blocco` (alto e basso) e `--pillola-spazio-interno-2-inline` (inizio e fine, nell'ordine: `8px 24px`). `--verso` è nuovo. I valori sono quelli di prima: in italiano la pagina è identica, pixel per pixel. `tools/css_logico.py` controlla che nessuna proprietà fisica, nessuna scorciatoia asimmetrica e nessun testo scritto nel CSS rientri.
 
 Come leggere i nomi: i colori, i materiali e i ruoli del movimento hanno un nome per ruolo (`--bordo-cornice`, `--luce-voce-centro`, `--durata-pillola`). Una misura che sta
 in un solo componente ha il nome del componente e della proprietà (`--bolla-corpo-spazio-interno`; con un suffisso quando cambia con la larghezza: `-telefono`, `-medio`,
 `-basso-802`…). Un valore uguale che compare in più componenti nella stessa famiglia (grandezze e interlinee del testo, raggi, spazi, misure) è un **gradino di scala**
 numerato in ordine di valore (`--corpo-7`, `--spazio-12`): il numero è il posto nella scala, non il valore, e il ruolo sta nell'elenco degli usi qui sotto.
 
+
+## Direzione di scrittura (1)
+
+| Token | Valore | Ruolo | Dove è usato |
+|---|---|---|---|
+| `--verso` | `1` | 1 con la scrittura da sinistra a destra, −1 da destra a sinistra: la cambia `:root:dir(rtl)` (token.css), cioè `<html dir="rtl">`. Ciò che ha un verso la moltiplica; `scena.js` la legge con `Testi.verso()` | usato da `componenti/riunione-ferma.css` (pagine interne); `scena.js` la legge e per ora non la usa: l'elenco dei punti della home che hanno un verso è in `design/lavoro/1-lingue-sito/versi.md` |
 
 ## Colori e materiali (128)
 
@@ -38,7 +46,7 @@ numerato in ordine di valore (`--corpo-7`, `--spazio-12`): il numero è il posto
 | `--bordo-rivedi-chiaro` | `rgba(91, 1, 35, 0.35)` | il bordo di «Rivedi» sulla scena chiara | 1 uso: `.scena-chiara .rivedi` border-color |
 | `--ombra-azione` | `rgba(255, 92, 141, 0.7)` | l'ombra dell'azione | 1 uso: `.pillola.azione` box-shadow |
 | `--sottolineatura` | `rgba(255, 219, 225, 0.55)` | la sottolineatura dei collegamenti | 2 usi in 2 componenti: `.collegamento` text-decoration-color; `.scarica-file` text-decoration-color |
-| `--bordo-evidente` | `rgba(255, 219, 225, 0.4)` | il bordo che si nota: la riga dello stato, il messaggio d'errore, l'alone di una frase in voce | 3 usi in 3 componenti: `.stato` border-left; `.errore-ascolto` border; `.messaggio.in-voce .filo-bolla .bol…` box-shadow |
+| `--bordo-evidente` | `rgba(255, 219, 225, 0.4)` | il bordo che si nota: la riga dello stato, il messaggio d'errore, l'alone di una frase in voce | 3 usi in 3 componenti: `.stato` border-inline-start; `.errore-ascolto` border; `.messaggio.in-voce .filo-bolla .bol…` box-shadow |
 | `--testo-didascalia` | `rgba(255, 237, 239, 0.78)` | la didascalia e il titolo del microfono | 2 usi in 2 componenti: `.didascalia` color; `.microfono-titolo` color |
 | `--testo-spiegazione` | `rgba(255, 237, 239, 0.88)` | la spiegazione sotto un titolo: stato, testo del tratto, esiti | 3 usi in 3 componenti: `.stato` color; `.esito p` color; `.tratto-testo p` color |
 | `--ombra-bolla` | `rgba(20, 2, 8, 0.85)` | ombra della bolla | 3 usi in 2 componenti: `.bolla-corpo` box-shadow; `.messaggio.in-voce .filo-bolla .bol…` box-shadow; `.messaggio.in-pausa .filo-bolla .bo…` box-shadow |
@@ -237,7 +245,7 @@ numerato in ordine di valore (`--corpo-7`, `--spazio-12`): il numero è il posto
 | `--spazi-11` | `26px 0 0` | gradino di scala (spazi): lo stesso valore in più componenti | 2 usi in 2 componenti: `.didascalia` margin; `.riservato` margin ((max-width: 760px)) |
 | `--spazi-12` | `30px 0 0` | gradino di scala (spazi): lo stesso valore in più componenti | 2 usi: `.requisiti` margin; `.fatti` margin |
 
-## Misure (254)
+## Misure (265)
 
 | Token | Valore | Ruolo | Dove è usato |
 |---|---|---|---|
@@ -284,32 +292,32 @@ numerato in ordine di valore (`--corpo-7`, `--spazio-12`): il numero è il posto
 | `--spazio-meno-1` | `-22px` | gradino di scala (spazio): lo stesso valore in più componenti | 2 usi in 2 componenti: `.barra .barra-azione` margin-top; `.riunione-app` margin-top |
 | `--spazio-1` | `2px` | gradino di scala (spazio): lo stesso valore in più componenti | 6 usi in 3 componenti: `.menu ul` gap; `.microfono-scelte` gap; `.ascolto-dentro > .errore-ascolto` margin-top; +3 |
 | `--spazio-2` | `3px` | gradino di scala (spazio): lo stesso valore in più componenti | 6 usi in 4 componenti: `.requisiti li::before, .requisiti l…` top; `.requisiti li::before, .requisiti l…` bottom; `.riunione-filo .barre` gap ((max-width: 760px)); +3 |
-| `--spazio-3` | `4px` | gradino di scala (spazio): lo stesso valore in più componenti | 13 usi in 8 componenti: `.ascolto-dentro > .errore-ascolto .…` margin-top; `.scarica-file` text-underline-offset; `.messaggio-sotto` padding-left; +10 |
+| `--spazio-3` | `4px` | gradino di scala (spazio): lo stesso valore in più componenti | 13 usi in 8 componenti: `.ascolto-dentro > .errore-ascolto .…` margin-top; `.scarica-file` text-underline-offset; `.messaggio-sotto` padding-inline-start; +10 |
 | `--spazio-4` | `5px` | gradino di scala (spazio): lo stesso valore in più componenti | 12 usi in 2 componenti: `.app-griglia .barre` gap; `.chiamata` padding ((max-width: 760px)); `.griglia` gap ((max-width: 760px)); +9 |
 | `--spazio-5` | `6px` | gradino di scala (spazio): lo stesso valore in più componenti | 19 usi in 6 componenti: `.collegamento` text-underline-offset; `.riunione-filo` padding; `.riunione-filo .griglia` gap; +16 |
-| `--spazio-6` | `7px` | gradino di scala (spazio): lo stesso valore in più componenti | 5 usi in 3 componenti: `.tavolo .barre` gap; `.riunione-app` padding; `.app-griglia .nome` left; +2 |
+| `--spazio-6` | `7px` | gradino di scala (spazio): lo stesso valore in più componenti | 5 usi in 3 componenti: `.tavolo .barre` gap; `.riunione-app` padding; `.app-griglia .nome` inset-inline-start; +2 |
 | `--spazio-7` | `8px` | gradino di scala (spazio): lo stesso valore in più componenti | 20 usi in 7 componenti: `.collegamento` gap; `.chiamata` padding; `.griglia` gap; +17 |
-| `--spazio-8` | `10px` | gradino di scala (spazio): lo stesso valore in più componenti | 15 usi in 8 componenti: `.rivedi` margin-top; `.nome` left; `.nome` top; +12 |
+| `--spazio-8` | `10px` | gradino di scala (spazio): lo stesso valore in più componenti | 15 usi in 8 componenti: `.rivedi` margin-top; `.nome` inset-inline-start; `.nome` top; +12 |
 | `--spazio-9` | `11px` | gradino di scala (spazio): lo stesso valore in più componenti | 3 usi in 3 componenti: `.voce.suona .voce-tondo::before` left; `.messaggio-sotto .tondo::before` top; `.tondo::before` top ((max-width: 760px)) |
 | `--spazio-10` | `12px` | gradino di scala (spazio): lo stesso valore in più componenti | 16 usi in 10 componenti: `.salta:focus` top; `.marchio` gap; `.pillola` gap; +13 |
 | `--spazio-11` | `13px` | gradino di scala (spazio): lo stesso valore in più componenti | 2 usi in 2 componenti: `.voce-tondo::before` left; `.suona-frase.suona .tondo::before` left |
-| `--spazio-12` | `14px` | gradino di scala (spazio): lo stesso valore in più componenti | 12 usi in 7 componenti: `.stato` padding-left; `.ascolto-dentro > .errore-ascolto` scroll-margin-bottom; `.ascolto` scroll-margin-bottom; +9 |
+| `--spazio-12` | `14px` | gradino di scala (spazio): lo stesso valore in più componenti | 12 usi in 7 componenti: `.stato` padding-inline-start; `.ascolto-dentro > .errore-ascolto` scroll-margin-bottom; `.ascolto` scroll-margin-bottom; +9 |
 | `--spazio-13` | `15px` | gradino di scala (spazio): lo stesso valore in più componenti | 2 usi in 2 componenti: `.tondo::before` left; `.bolla-vecchia` top |
-| `--spazio-14` | `16px` | gradino di scala (spazio): lo stesso valore in più componenti | 10 usi in 7 componenti: `.salta` left; `.barra` gap; `.didascalia` padding-left; +7 |
-| `--spazio-15` | `18px` | gradino di scala (spazio): lo stesso valore in più componenti | 5 usi in 3 componenti: `.bolla` bottom; `.computer-nome` top; `.messaggio:nth-child(2)` margin-left ((max-width: 760px)); +2 |
+| `--spazio-14` | `16px` | gradino di scala (spazio): lo stesso valore in più componenti | 10 usi in 7 componenti: `.salta` inset-inline-start; `.barra` gap; `.didascalia` padding-inline-start; +7 |
+| `--spazio-15` | `18px` | gradino di scala (spazio): lo stesso valore in più componenti | 5 usi in 3 componenti: `.bolla` bottom; `.computer-nome` top; `.messaggio:nth-child(2)` margin-inline-start ((max-width: 760px)); +2 |
 | `--spazio-16` | `20px` | gradino di scala (spazio): lo stesso valore in più componenti | 2 usi: `.apertura` padding-top ((min-width: 761px) and (max-wi); `.apertura .stato` margin-top ((min-width: 761px) and (max-he) |
-| `--spazio-17` | `22px` | gradino di scala (spazio): lo stesso valore in più componenti | 5 usi in 5 componenti: `.bolla-vecchia` left ((min-width: 1000px) and (max-w); `.computer-nome` left; `.requisiti` gap; +2 |
-| `--spazio-18` | `24px` | gradino di scala (spazio): lo stesso valore in più componenti | 2 usi in 2 componenti: `.messaggio:nth-child(2)` margin-left ((min-width: 761px) and (max-wi); `.tappe` row-gap ((max-width: 760px)) |
-| `--spazio-19` | `26px` | gradino di scala (spazio): lo stesso valore in più componenti | 5 usi in 4 componenti: `.messaggio-sotto` margin-top; `.requisiti li` padding-left; `.bolla .coda` left ((max-width: 760px)); +2 |
+| `--spazio-17` | `22px` | gradino di scala (spazio): lo stesso valore in più componenti | 5 usi in 5 componenti: `.bolla-vecchia` inset-inline-start ((min-width: 1000px) and (max-w); `.computer-nome` inset-inline-start; `.requisiti` gap; +2 |
+| `--spazio-18` | `24px` | gradino di scala (spazio): lo stesso valore in più componenti | 2 usi in 2 componenti: `.messaggio:nth-child(2)` margin-inline-start ((min-width: 761px) and (max-wi); `.tappe` row-gap ((max-width: 760px)) |
+| `--spazio-19` | `26px` | gradino di scala (spazio): lo stesso valore in più componenti | 5 usi in 4 componenti: `.messaggio-sotto` margin-top; `.requisiti li` padding-inline-start; `.bolla .coda` inset-inline-start ((max-width: 760px)); +2 |
 | `--spazio-20` | `30px` | gradino di scala (spazio): lo stesso valore in più componenti | 4 usi in 3 componenti: `.riunione-filo` margin-top; `.voci-filo` margin-top; `.non-esiste` padding-top; +1 |
 | `--spazio-21` | `34px` | gradino di scala (spazio): lo stesso valore in più componenti | 3 usi in 3 componenti: `.tavolo` margin-bottom ((max-width: 760px)); `.filo` row-gap ((max-width: 760px)); `.ascolto-voce, .serve` gap ((max-width: 760px)) |
 | `--spazio-22` | `36px` | gradino di scala (spazio): lo stesso valore in più componenti | 5 usi in 4 componenti: `.chiusura .comandi` margin-top; `.banda-riunione` margin-top ((min-width: 761px) and (max-wi); `.ascolto-voce` column-gap ((min-width: 761px) and (max-wi); +2 |
-| `--spazio-23` | `38px` | gradino di scala (spazio): lo stesso valore in più componenti | 2 usi: `.scoppio` left ((max-width: 760px)); `.scoppio` top ((max-width: 760px)) |
-| `--spazio-24` | `40px` | gradino di scala (spazio): lo stesso valore in più componenti | 7 usi in 4 componenti: `.apertura` padding-top; `.bolla .coda` left; `.messaggi` gap; +4 |
+| `--spazio-23` | `38px` | gradino di scala (spazio): lo stesso valore in più componenti | 2 usi: `.scoppio` inset-inline-start ((max-width: 760px)); `.scoppio` top ((max-width: 760px)) |
+| `--spazio-24` | `40px` | gradino di scala (spazio): lo stesso valore in più componenti | 7 usi in 4 componenti: `.apertura` padding-top; `.bolla .coda` inset-inline-start; `.messaggi` gap; +4 |
 | `--spazio-25` | `44px` | gradino di scala (spazio): lo stesso valore in più componenti | 3 usi in 2 componenti: `.filo` column-gap; `.esiti` margin-top; `.non-esiste` margin-top ((max-width: 760px)) |
-| `--spazio-26` | `48px` | gradino di scala (spazio): lo stesso valore in più componenti | 4 usi in 3 componenti: `.esito-forse` padding-left; `.chiamata .riquadro.tu .barre` top ((min-width: 761px) and (max-he); `.ascolto-voce, .serve` row-gap ((min-width: 761px) and (max-wi); +1 |
-| `--spazio-27` | `54px` | gradino di scala (spazio): lo stesso valore in più componenti | 3 usi: `.linea` left ((max-width: 760px)); `.linea-fatta` left ((max-width: 760px)); `.linea-forse` left ((max-width: 760px)) |
-| `--spazio-28` | `56px` | gradino di scala (spazio): lo stesso valore in più componenti | 5 usi in 5 componenti: `.messaggio:nth-child(2)` margin-left; `.piede.scena-notte` padding-top; `.js .menu.aperto` top ((max-width: 760px)); +2 |
+| `--spazio-26` | `48px` | gradino di scala (spazio): lo stesso valore in più componenti | 4 usi in 3 componenti: `.esito-forse` padding-inline-start; `.chiamata .riquadro.tu .barre` top ((min-width: 761px) and (max-he); `.ascolto-voce, .serve` row-gap ((min-width: 761px) and (max-wi); +1 |
+| `--spazio-27` | `54px` | gradino di scala (spazio): lo stesso valore in più componenti | 3 usi: `.linea` inset-inline-start ((max-width: 760px)); `.linea-fatta` inset-inline-start ((max-width: 760px)); `.linea-forse` inset-inline-start ((max-width: 760px)) |
+| `--spazio-28` | `56px` | gradino di scala (spazio): lo stesso valore in più componenti | 5 usi in 5 componenti: `.messaggio:nth-child(2)` margin-inline-start; `.piede.scena-notte` padding-top; `.js .menu.aperto` top ((max-width: 760px)); +2 |
 | `--spazio-29` | `60px` | gradino di scala (spazio): lo stesso valore in più componenti | 2 usi in 2 componenti: `.scena` column-gap; `.strada` margin-top |
 | `--spazio-30` | `80px` | gradino di scala (spazio): lo stesso valore in più componenti | 2 usi in 2 componenti: `.ascolto-voce` column-gap; `.serve` column-gap |
 | `--spazio-31` | `88px` | gradino di scala (spazio): lo stesso valore in più componenti | 2 usi in 2 componenti: `html` scroll-padding-top; `.linea` top ((max-width: 760px)) |
@@ -319,7 +327,7 @@ numerato in ordine di valore (`--corpo-7`, `--spazio-12`): il numero è il posto
 | `--salta-spazio-interno` | `12px 18px` | misura del componente «Base: caratteri, ripristino, fuoco, utilità» | 1 uso: `.salta` padding |
 | `--solo-lettori-margine` | `-1px` | misura del componente «Base: caratteri, ripristino, fuoco, utilità» | 1 uso: `.solo-lettori` margin |
 | `--barra-altezza` | `72px` | misura del componente «Barra e menu» | 1 uso: `.barra` height |
-| `--barra-azione-largo-menu-base` | `92px` | misura del componente «Barra e menu» | 1 uso: `.barra .barra-azione` right ((max-width: 959px)) |
+| `--barra-azione-largo-menu-base` | `92px` | misura del componente «Barra e menu» | 1 uso: `.barra .barra-azione` inset-inline-end ((max-width: 959px)) |
 | `--barra-azione-margine-sopra-telefono` | `-20px` | misura del componente «Barra e menu» | 1 uso: `.barra .barra-azione` margin-top ((max-width: 760px)) |
 | `--barra-azione-sposta-x` | `12px` | misura del componente «Barra e menu» | 1 uso: `.barra .barra-azione` transform |
 | `--barra-compatto-ritaglio` | `inset(0 -100vmax -1px)` | misura del componente «Barra e menu» | 1 uso: `.barra.compatta` clip-path |
@@ -339,8 +347,10 @@ numerato in ordine di valore (`--corpo-7`, `--spazio-12`): il numero è il posto
 | `--collegamento-freccia-sopra-sposta-x` | `4px` | misura del componente «Pulsanti e pillole» | 1 uso: `.collegamento:hover .freccia, .coll…` transform |
 | `--collegamento-sottolineatura-spessore` | `1.5px` | misura del componente «Pulsanti e pillole» | 1 uso: `.collegamento` text-decoration-thickness |
 | `--pillola-spazio-interno` | `0 30px` | misura del componente «Pulsanti e pillole» | 1 uso: `.pillola` padding |
-| `--pillola-spazio-interno-2` | `0 24px 0 8px` | misura del componente «Pulsanti e pillole» | 1 uso: `.pillola.voce-chiara` padding |
-| `--pillola-spazio-interno-telefono` | `0 20px 0 5px` | misura del componente «Pulsanti e pillole» | 1 uso: `.pillola.voce-chiara` padding ((max-width: 760px)) |
+| `--pillola-spazio-interno-2-blocco` | `0` | misura del componente «Pulsanti e pillole» | 1 uso: `.pillola.voce-chiara` padding-block |
+| `--pillola-spazio-interno-2-inline` | `8px 24px` | misura del componente «Pulsanti e pillole», inizio e fine | 1 uso: `.pillola.voce-chiara` padding-inline |
+| `--pillola-spazio-interno-telefono-blocco` | `0` | misura del componente «Pulsanti e pillole» | 1 uso: `.pillola.voce-chiara` padding-block ((max-width: 760px)) |
+| `--pillola-spazio-interno-telefono-inline` | `5px 20px` | misura del componente «Pulsanti e pillole», inizio e fine | 1 uso: `.pillola.voce-chiara` padding-inline ((max-width: 760px)) |
 | `--tondo-prima-triangolo` | `14px` | misura del componente «Pulsanti e pillole» | 1 uso: `.tondo::before` border-left |
 | `--tondo-prima-triangolo-2` | `8px` | misura del componente «Pulsanti e pillole» | 2 usi: `.tondo::before` border-top; `.tondo::before` border-bottom |
 | `--comandi-distanza` | `10px 22px` | misura del componente «Il primo schermo: titolo, comandi, palco» | 1 uso: `.comandi` gap |
@@ -393,7 +403,7 @@ numerato in ordine di valore (`--corpo-7`, `--spazio-12`): il numero è il posto
 | `--tavolo-larghezza` | `min(820px, 100%)` | misura del componente «I riquadri della riunione» | 1 uso: `.tavolo` width |
 | `--tavolo-margine` | `0 0 52px` | misura del componente «I riquadri della riunione» | 1 uso: `.tavolo` margin |
 | `--avvio-piede-larghezza` | `calc(100% - 520px)` | misura del componente «La finestra di Kalliope ricostruita» | 1 uso: `.avvio-piede` width ((min-width: 791px)) |
-| `--f-cursore-margine-sinistra` | `1px` | misura del componente «La finestra di Kalliope ricostruita» | 1 uso: `.f-cursore` margin-left |
+| `--f-cursore-margine-inizio` | `1px` | misura del componente «La finestra di Kalliope ricostruita» | 1 uso: `.f-cursore` margin-inline-start |
 | `--f-nota-margine` | `10px 0 2px` | misura del componente «La finestra di Kalliope ricostruita» | 1 uso: `.avvio .f-nota` margin |
 | `--f-pulsante-spazio-interno` | `0 12px` | misura del componente «La finestra di Kalliope ricostruita» | 1 uso: `.f-pulsante` padding |
 | `--f-stato-spazio-interno` | `9px 10px` | misura del componente «La finestra di Kalliope ricostruita» | 1 uso: `.f-stato` padding |
@@ -408,8 +418,10 @@ numerato in ordine di valore (`--corpo-7`, `--spazio-12`): il numero è il posto
 | `--app-griglia-nome-spazio-interno-telefono` | `2px 7px` | misura del componente «La riunione ricostruita, con il microfono» | 1 uso: `.app-griglia .nome` padding ((max-width: 760px)) |
 | `--app-griglia-righe` | `104px 104px` | misura del componente «La riunione ricostruita, con il microfono» | 1 uso: `.app-griglia` grid-template-rows |
 | `--app-griglia-righe-telefono` | `78px 78px` | misura del componente «La riunione ricostruita, con il microfono» | 1 uso: `.app-griglia` grid-template-rows ((max-width: 760px)) |
-| `--microfono-spazio-interno` | `4px 4px 4px 6px` | misura del componente «La riunione ricostruita, con il microfono» | 1 uso: `.microfono` padding |
-| `--microfono-spazio-interno-telefono` | `3px 3px 3px 4px` | misura del componente «La riunione ricostruita, con il microfono» | 1 uso: `.microfono` padding ((max-width: 760px)) |
+| `--microfono-spazio-interno-blocco` | `4px` | misura del componente «La riunione ricostruita, con il microfono» | 1 uso: `.microfono` padding-block |
+| `--microfono-spazio-interno-inline` | `6px 4px` | misura del componente «La riunione ricostruita, con il microfono», inizio e fine | 1 uso: `.microfono` padding-inline |
+| `--microfono-spazio-interno-telefono-blocco` | `3px` | misura del componente «La riunione ricostruita, con il microfono» | 1 uso: `.microfono` padding-block ((max-width: 760px)) |
+| `--microfono-spazio-interno-telefono-inline` | `4px 3px` | misura del componente «La riunione ricostruita, con il microfono», inizio e fine | 1 uso: `.microfono` padding-inline ((max-width: 760px)) |
 | `--microfono-titolo-spazio-interno` | `2px 4px` | misura del componente «La riunione ricostruita, con il microfono» | 1 uso: `.microfono-titolo` padding ((max-width: 420px)) |
 | `--riunione-app-larghezza` | `min(480px, 100%)` | misura del componente «La riunione ricostruita, con il microfono» | 1 uso: `.riunione-app` width |
 | `--riunione-app-larghezza-telefono` | `calc(100% - 28px)` | misura del componente «La riunione ricostruita, con il microfono» | 1 uso: `.riunione-app` width ((max-width: 760px)) |
@@ -421,7 +433,8 @@ numerato in ordine di valore (`--corpo-7`, `--spazio-12`): il numero è il posto
 | `--fila-ascolto-altezza-minima` | `112px` | misura del componente «La scheda dell'ascolto» | 1 uso: `.fila-ascolto` min-height |
 | `--frase-spazio-interno-telefono` | `0 11px` | misura del componente «La scheda dell'ascolto» | 1 uso: `.frase` padding ((max-width: 760px)) |
 | `--voce-altezza-minima` | `46px` | misura del componente «La scheda dell'ascolto» | 1 uso: `.voce` min-height |
-| `--voce-spazio-interno` | `0 18px 0 6px` | misura del componente «La scheda dell'ascolto» | 1 uso: `.voce` padding |
+| `--voce-spazio-interno-blocco` | `0` | misura del componente «La scheda dell'ascolto» | 1 uso: `.voce` padding-block |
+| `--voce-spazio-interno-inline` | `6px 18px` | misura del componente «La scheda dell'ascolto», inizio e fine | 1 uso: `.voce` padding-inline |
 | `--voce-tondo-prima-triangolo` | `12px` | misura del componente «La scheda dell'ascolto» | 1 uso: `.voce-tondo::before` border-left |
 | `--voce-tondo-prima-triangolo-2` | `7px` | misura del componente «La scheda dell'ascolto» | 2 usi: `.voce-tondo::before` border-top; `.voce-tondo::before` border-bottom |
 | `--errore-ascolto-spazio-interno` | `14px 18px 16px` | misura del componente «I messaggi d'errore» | 1 uso: `.errore-ascolto` padding |
@@ -434,16 +447,19 @@ numerato in ordine di valore (`--corpo-7`, `--spazio-12`): il numero è il posto
 | `--ascolto-voce-spazio-sotto` | `calc(var(--sovrap) - 26px)` | misura del componente «Le frasi del filo» | 1 uso: `.tratto.ascolto-voce.scena-notte` padding-bottom ((max-width: 760px)) |
 | `--ascolto-voce-voci-filo-margine-sopra` | `28px` | misura del componente «Le frasi del filo» | 1 uso: `.ascolto-voce .voci-filo` margin-top |
 | `--detto-riga-larghezza-massima` | `560px` | misura del componente «Le frasi del filo» | 1 uso: `.detto-riga` max-width |
-| `--detto-riga-margine` | `14px 0 0 4px` | misura del componente «Le frasi del filo» | 1 uso: `.detto-riga` margin |
+| `--detto-riga-margine-blocco` | `14px 0` | misura del componente «Le frasi del filo» | 1 uso: `.detto-riga` margin-block |
+| `--detto-riga-margine-inline` | `4px 0` | misura del componente «Le frasi del filo», inizio e fine | 1 uso: `.detto-riga` margin-inline |
 | `--filo-colonne` | `minmax(0, 1fr) 118px` | misura del componente «Le frasi del filo» | 1 uso: `.filo` grid-template-columns |
 | `--messaggio-larghezza-massima` | `360px` | misura del componente «Le frasi del filo» | 1 uso: `.messaggio audio` max-width |
 | `--messaggio-sotto-distanza` | `10px 16px` | misura del componente «Le frasi del filo» | 1 uso: `.messaggio-sotto` gap |
-| `--messaggio-sotto-pillola-spazio-interno` | `0 20px 0 5px` | misura del componente «Le frasi del filo» | 1 uso: `.messaggio-sotto .pillola` padding |
+| `--messaggio-sotto-pillola-spazio-interno-blocco` | `0` | misura del componente «Le frasi del filo» | 1 uso: `.messaggio-sotto .pillola` padding-block |
+| `--messaggio-sotto-pillola-spazio-interno-inline` | `5px 20px` | misura del componente «Le frasi del filo», inizio e fine | 1 uso: `.messaggio-sotto .pillola` padding-inline |
 | `--computer-altezza` | `236px` | misura del componente «La strada della voce» | 1 uso: `.computer` height |
 | `--computer-altezza-telefono` | `352px` | misura del componente «La strada della voce» | 1 uso: `.computer` height ((max-width: 760px)) |
 | `--esito-margine` | `0 0 10px` | misura del componente «La strada della voce» | 1 uso: `.esito h3` margin |
-| `--esito-spazio-interno` | `0 34px 0 22px` | misura del componente «La strada della voce» | 1 uso: `.esito` padding |
-| `--impulso-margine-sinistra` | `-9px` | misura del componente «La strada della voce» | 1 uso: `.impulso` margin-left ((max-width: 760px)) |
+| `--esito-spazio-interno-blocco` | `0` | misura del componente «La strada della voce» | 1 uso: `.esito` padding-block |
+| `--esito-spazio-interno-inline` | `22px 34px` | misura del componente «La strada della voce», inizio e fine | 1 uso: `.esito` padding-inline |
+| `--impulso-margine-inizio` | `-9px` | misura del componente «La strada della voce» | 1 uso: `.impulso` margin-inline-start ((max-width: 760px)) |
 | `--impulso-sopra` | `93px` | misura del componente «La strada della voce» | 1 uso: `.impulso` top |
 | `--impulso-sopra-telefono` | `79px` | misura del componente «La strada della voce» | 1 uso: `.impulso` top ((max-width: 760px)) |
 | `--linea-altezza-telefono` | `200px` | misura del componente «La strada della voce» | 1 uso: `.linea` height ((max-width: 760px)) |
@@ -451,13 +467,16 @@ numerato in ordine di valore (`--corpo-7`, `--spazio-12`): il numero è il posto
 | `--nodo-altri-larghezza` | `128px` | misura del componente «La strada della voce» | 1 uso: `.nodo-altri` width |
 | `--non-esiste-distanza` | `10px 26px` | misura del componente «La strada della voce» | 1 uso: `.non-esiste` gap |
 | `--non-esiste-margine-sopra` | `64px` | misura del componente «La strada della voce» | 1 uso: `.non-esiste` margin-top |
-| `--riservato-margine` | `34px 0 0 22px` | misura del componente «La strada della voce» | 1 uso: `.riservato` margin |
-| `--scoppio-margine` | `-40px 0 0 -40px` | misura del componente «La strada della voce» | 1 uso: `.scoppio` margin |
+| `--riservato-margine-blocco` | `34px 0` | misura del componente «La strada della voce» | 1 uso: `.riservato` margin-block |
+| `--riservato-margine-inline` | `22px 0` | misura del componente «La strada della voce», inizio e fine | 1 uso: `.riservato` margin-inline |
+| `--scoppio-margine-blocco` | `-40px 0` | misura del componente «La strada della voce» | 1 uso: `.scoppio` margin-block |
+| `--scoppio-margine-inline` | `-40px 0` | misura del componente «La strada della voce», inizio e fine | 1 uso: `.scoppio` margin-inline |
 | `--strada-esito-sposta-y` | `14px` | misura del componente «La strada della voce» | 1 uso: `.js .strada:not(.fatto) .esito` transform |
 | `--strada-riservato-sposta-y` | `14px` | misura del componente «La strada della voce» | 1 uso: `.js .strada:not(.fatto) .riservato` transform |
 | `--tappa-nome-larghezza-massima` | `170px` | misura del componente «La strada della voce» | 1 uso: `.tappa-nome` max-width |
 | `--tappe-spazio-interno` | `62px 0 0` | misura del componente «La strada della voce» | 1 uso: `.tappe` padding |
-| `--tappe-spazio-interno-telefono` | `50px 0 0 18px` | misura del componente «La strada della voce» | 1 uso: `.tappe` padding ((max-width: 760px)) |
+| `--tappe-spazio-interno-telefono-blocco` | `50px 0` | misura del componente «La strada della voce» | 1 uso: `.tappe` padding-block ((max-width: 760px)) |
+| `--tappe-spazio-interno-telefono-inline` | `18px 0` | misura del componente «La strada della voce», inizio e fine | 1 uso: `.tappe` padding-inline ((max-width: 760px)) |
 | `--chiusura-avvertenza-margine` | `14px 0 0` | misura del componente «Tratti e scene» | 1 uso: `.chiusura .avvertenza` margin |
 | `--chiusura-luce-tratto-altezza` | `1000px` | misura del componente «Tratti e scene» | 1 uso: `.chiusura .luce-tratto` height |
 | `--chiusura-spazio-sopra` | `104px` | misura del componente «Tratti e scene» | 1 uso: `.chiusura` padding-top |
@@ -469,8 +488,8 @@ numerato in ordine di valore (`--corpo-7`, `--spazio-12`): il numero è il posto
 | `--entra-finestra-sposta-y` | `16px` | misura del componente «Tratti e scene» | 1 uso: `.js .entra-finestra` transform |
 | `--entra-titolo-sposta-y` | `20px` | misura del componente «Tratti e scene» | 1 uso: `.js .entra-titolo` transform |
 | `--luce-altezza` | `1150px` | misura del componente «Tratti e scene» | 1 uso: `.luce, .luce-voce` height |
-| `--luce-sinistra` | `calc(50% + 310px)` | misura del componente «Tratti e scene» | 1 uso: `.luce, .luce-voce` left |
-| `--luce-sinistra-medio` | `calc(50% + 230px)` | misura del componente «Tratti e scene» | 1 uso: `.luce, .luce-voce` left ((min-width: 1000px) and (max-w) |
+| `--luce-inizio` | `calc(50% + 310px)` | misura del componente «Tratti e scene» | 1 uso: `.luce, .luce-voce` left (fisico: in coppia con translate(-50%, -50%); elenco dei versi) |
+| `--luce-inizio-medio` | `calc(50% + 230px)` | misura del componente «Tratti e scene» | 1 uso: `.luce, .luce-voce` left (fisico: in coppia con translate(-50%, -50%); elenco dei versi) ((min-width: 1000px) and (max-w) |
 | `--luce-sopra` | `470px` | misura del componente «Tratti e scene» | 1 uso: `.luce, .luce-voce` top |
 | `--luce-sopra-tavoletta` | `860px` | misura del componente «Tratti e scene» | 1 uso: `.luce, .luce-voce` top ((min-width: 761px) and (max-wi) |
 | `--luce-sopra-telefono` | `520px` | misura del componente «Tratti e scene» | 1 uso: `.luce, .luce-voce` top ((max-width: 760px)) |
@@ -479,8 +498,8 @@ numerato in ordine di valore (`--corpo-7`, `--spazio-12`): il numero è il posto
 | `--mondo-altezza-minima` | `100vh` | misura del componente «Tratti e scene» | 1 uso: `.mondo` min-height |
 | `--scena-entra-da-ritaglio` | `inset(0 min(4.5vw, 64px, calc(var(--margine) - 2px)) round calc(var(--raggio-scena) * 1…` | misura del componente «Tratti e scene» | 1 uso: `@keyframes scena-entra from` clip-path |
 | `--serve-colonne` | `minmax(0, 1fr) 400px` | misura del componente «Tratti e scene» | 1 uso: `.serve` grid-template-columns |
-| `--tratto-scena-notte-spazio-destra` | `max(var(--margine), calc(50% - 720px + var(--margine)))` | misura del componente «Tratti e scene» | 1 uso: `.tratto.scena-notte, .tratto.scena-…` padding-right |
-| `--tratto-scena-notte-spazio-sinistra` | `max(var(--margine), calc(50% - 720px + var(--margine)))` | misura del componente «Tratti e scene» | 1 uso: `.tratto.scena-notte, .tratto.scena-…` padding-left |
+| `--tratto-scena-notte-spazio-fine` | `max(var(--margine), calc(50% - 720px + var(--margine)))` | misura del componente «Tratti e scene» | 1 uso: `.tratto.scena-notte, .tratto.scena-…` padding-inline-end |
+| `--tratto-scena-notte-spazio-inizio` | `max(var(--margine), calc(50% - 720px + var(--margine)))` | misura del componente «Tratti e scene» | 1 uso: `.tratto.scena-notte, .tratto.scena-…` padding-inline-start |
 | `--tratto-scena-notte-spazio-sopra` | `112px` | misura del componente «Tratti e scene» | 1 uso: `.tratto.scena-notte, .tratto.scena-…` padding-top |
 | `--tratto-scena-notte-spazio-sopra-telefono` | `76px` | misura del componente «Tratti e scene» | 1 uso: `.tratto.scena-notte, .tratto.scena-…` padding-top ((max-width: 760px)) |
 | `--tratto-scena-notte-spazio-sotto` | `calc(128px + var(--sovrap))` | misura del componente «Tratti e scene» | 1 uso: `.tratto.scena-notte, .tratto.scena-…` padding-bottom |
@@ -529,7 +548,7 @@ numerato in ordine di valore (`--corpo-7`, `--spazio-12`): il numero è il posto
 |---|---|---|---|
 | `--filetto-forte` | `3px` | misura del componente «Base: caratteri, ripristino, fuoco, utilità» | 2 usi in 2 componenti: `:focus-visible` outline; `.scoppio` border |
 | `--filetto-comando` | `1.5px` | misura del componente «Pulsanti e pillole» | 6 usi in 4 componenti: `.chiudi` border; `.rivedi` border; `.frase` border; +3 |
-| `--filetto-medio` | `2px` | misura del componente «Il primo schermo: titolo, comandi, palco» | 11 usi in 5 componenti: `.stato` border-left; `.f-campo.fuoco` border-bottom; `.voce.suona .voce-tondo::after` border; +8 |
+| `--filetto-medio` | `2px` | misura del componente «Il primo schermo: titolo, comandi, palco» | 11 usi in 5 componenti: `.stato` border-inline-start; `.f-campo.fuoco` border-bottom; `.voce.suona .voce-tondo::after` border; +8 |
 | `--filetto-sottile` | `1px` | misura del componente «I riquadri della riunione» | 12 usi in 7 componenti: `.chiamata` border; `.riunione-filo` border; `.tavolo-cornice` border; +9 |
 
 ## Ombre (24)

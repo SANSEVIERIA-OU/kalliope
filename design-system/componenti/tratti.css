@@ -6,7 +6,7 @@
 .mondo { position: relative; overflow-x: clip; min-height: var(--mondo-altezza-minima); }
 .luce, .luce-voce {
   position: absolute;
-  left: var(--luce-sinistra);
+  left: var(--luce-inizio); /* fisico: posizione fisica in coppia con translate(-50%, -50%): le due cose si decidono insieme (elenco dei versi) */
   top: var(--luce-sopra);
   width: var(--misura-34);
   height: var(--luce-altezza);
@@ -19,13 +19,13 @@
 .avvertenza { font-size: var(--corpo-6) !important; color: var(--testo-avvertenza) !important; }
 .luce { animation: accende var(--durata-luce) var(--curva-dolce) backwards; }
 @media (min-width: 1000px) and (max-width: 1180px) {
-  .luce, .luce-voce { left: var(--luce-sinistra-medio); }
+  .luce, .luce-voce { left: var(--luce-inizio-medio); } /* fisico: posizione fisica in coppia con translate(-50%, -50%): le due cose si decidono insieme (elenco dei versi) */
 }
 @media (min-width: 761px) and (max-width: 999px) {
-  .luce, .luce-voce { left: 50%; top: var(--luce-sopra-tavoletta); }
+  .luce, .luce-voce { left: 50%; top: var(--luce-sopra-tavoletta); } /* fisico: posizione fisica in coppia con translate(-50%, -50%): le due cose si decidono insieme (elenco dei versi) */
 }
 @media (max-width: 760px) {
-  .luce, .luce-voce { left: 50%; top: var(--luce-sopra-telefono); width: var(--misura-33); height: var(--misura-33); }
+  .luce, .luce-voce { left: 50%; top: var(--luce-sopra-telefono); width: var(--misura-33); height: var(--misura-33); } /* fisico: posizione fisica in coppia con translate(-50%, -50%): le due cose si decidono insieme (elenco dei versi) */
 }
 .tratto { position: relative; z-index: var(--livello-tratto); max-width: var(--misura-35); margin-inline: auto; padding: var(--tratto-spazio-interno); }
 .tratto h2 {
@@ -57,11 +57,11 @@
    Due finestre vicine come sul desktop (progetto.md §2.5: «tiene vicine la finestra della riunione e quella di Kalliope»):
    Kalliope scarica la voce; nella riunione si sceglie «Kalliope» come microfono e il tuo riquadro si accende. */
 .serve { display: grid; grid-template-columns: var(--serve-colonne); column-gap: var(--spazio-30); align-items: center; }
-.serve .luce-tratto { left: 34%; top: 50%; }
+.serve .luce-tratto { left: 34%; top: 50%; } /* fisico: posizione fisica in coppia con translate(-50%, -50%): le due cose si decidono insieme (elenco dei versi) */
 .requisiti { list-style: none; margin: var(--spazi-12); padding: 0; display: grid; gap: var(--spazio-17); }
 .requisiti li {
   position: relative;
-  padding-left: var(--spazio-19);
+  padding-inline-start: var(--spazio-19);
   font-size: var(--corpo-10);
   line-height: var(--interlinea-12);
   transition: opacity var(--durata-requisiti) var(--curva-dolce);
@@ -70,7 +70,7 @@
 .requisiti li::before, .requisiti li::after {
   content: "";
   position: absolute;
-  left: 0;
+  inset-inline-start: 0;
   top: var(--spazio-2);
   bottom: var(--spazio-2);
   width: var(--misura-2);
@@ -119,8 +119,8 @@
   max-width: none;
   margin-inline: 0;
   overflow: clip;
-  padding-left: var(--tratto-scena-notte-spazio-sinistra);
-  padding-right: var(--tratto-scena-notte-spazio-destra);
+  padding-inline-start: var(--tratto-scena-notte-spazio-inizio);
+  padding-inline-end: var(--tratto-scena-notte-spazio-fine);
   border-radius: var(--raggio-scena) var(--raggio-scena) 0 0;
 }
 .tratto.scena-notte, .tratto.scena-stanza, .tratto.scena-chiara {
@@ -164,7 +164,7 @@
 }
 .chiusura { padding-top: var(--chiusura-spazio-sopra); }
 .chiusura .luce-tratto {
-  left: 50%;
+  left: 50%; /* fisico: posizione fisica in coppia con translate(-50%, -50%): le due cose si decidono insieme (elenco dei versi) */
   top: 36%;
   width: var(--misura-34);
   height: var(--chiusura-luce-tratto-altezza);

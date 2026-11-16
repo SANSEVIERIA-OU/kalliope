@@ -12,6 +12,16 @@
   const ridotto = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const telefono = matchMedia('(max-width: 760px)');
   const ENTRA = 'cubic-bezier(0.19,1,0.22,1)';
+  // I file della voce (voce/…) stanno accanto allo script, non accanto alla pagina: la stessa pagina esiste in più cartelle, una per lingua.
+  const RADICE = new URL('./', document.currentScript && document.currentScript.src ? document.currentScript.src : location.href);
+  // I testi che lo script mostra o fa leggere non stanno qui: stanno nella pagina, tradotti con lei (testi.js, docs/translating.md).
+  const {testo: T, formato: fmt} = window.Testi;
+  // Il verso della scrittura: 1 da sinistra a destra, −1 da destra a sinistra (design-system/token.css, --verso). Ciò che la scena fa
+  // in orizzontale e ha un verso (elenco in design/lavoro/1-lingue-sito/versi.md) lo moltiplica; per ora lo leggono solo le prove.
+  const verso = window.Testi.verso;
+  // il nome di una voce è quello scritto nei suoi pulsanti; il testo «Pronta…» della finestra, quello che la pagina mostra all'arrivo
+  const nomeVoce = v => $(`.voce[data-voce="${v}"]`).textContent.trim();
+  const TESTO_PRONTA = $('.sotto .f-stato').textContent;
 
   // ---------- il tempo della scena ----------
   // Tutto ciò che la pagina fa da sola (arrivo, strada, primo avvio, onde) segue questo orologio, che si ferma quando la
@@ -36,26 +46,57 @@
   function annuncia(testo) { annuncio.textContent = ''; setTimeout(() => { annuncio.textContent = testo; }, 60); }
 
   // ---------- le tre frasi, carattere per carattere come l'audio ----------
-  // d = forma detta (solo frase 3, l'unica data); g = gruppo che cambia tutto insieme (nessun simbolo orfano né buco);
-  // len = lunghezza detta usata solo per i tempi, dove la forma detta non è verificata («14/3», «15:30»);
-  // u = unità che non va a capo nel mezzo («alle 15:30», «31 dicembre»): stesse parole e stessi spazi, cambia solo dove la riga può spezzarsi.
+  // Il testo di ogni frase è quello della pagina, il suo messaggio tradotto: la bolla del filo, `.messaggio[data-frase] .bolla-testo`.
+  // Ciò che le parole da sole non dicono lo dicono i testi dello script (<template id="testi-scena">), scritti nella lingua della pagina:
+  //   · class «unita» nel testo = un'unità che non va a capo nel mezzo («alle 15:30», «31 dicembre»): stesse parole e stessi spazi,
+  //     cambia solo dove la riga può spezzarsi;
+  //   · frase.N.gruppo.G e frase.N.detto.G = un gruppo di parole che cambiano in un colpo quando la voce lo raggiunge («1.250 € +»
+  //     diventa «milleduecentocinquanta euro più»): le parole scritte e le parole dette, una per una;
+  //   · frase.N.chi.NOME = la parola che è il nome di una persona: quando la voce la dice, quella persona si gira;
+  //   · data-lunghezze sul <li> = quanto dura a voce una parola scritta (per i tempi della registrazione italiana, dove la forma detta
+  //     non è verificata: «14/3=17 15:30?=18»).
+  // Le parole si dividono agli spazi (dove non ce ne sono, come in cinese, con Intl.Segmenter); le parti finiscono dove finisce una frase.
   const w = (s, x = {}) => ({s, ...x});
-  const FRASI = {
-    1: {testo: 'Buongiorno a tutti! Scrivo invece di parlare, ma vi seguo benissimo.', annuisce: 'paola',
-      parti: [[w('Buongiorno'), w('a'), w('tutti!')],
-        [w('Scrivo'), w('invece'), w('di'), w('parlare,'), w('ma'), w('vi'), w('seguo'), w('benissimo.')]]},
-    2: {testo: "Sono d'accordo con Paola. Però la consegna del 14/3 mi sembra stretta: possiamo sentirci venerdì alle 15:30?", annuisce: 'luca',
-      parti: [[w('Sono'), w("d'accordo"), w('con'), w('Paola.', {chi: 'paola'})],
-        [w('Però'), w('la'), w('consegna'), w('del'), w('14/3', {len: 17}), w('mi'), w('sembra'), w('stretta:'),
-          w('possiamo'), w('sentirci'), w('venerdì'), w('alle', {u: 'ora'}), w('15:30?', {len: 18, u: 'ora'})]]},
-    3: {testo: 'Il preventivo è di 1.250 € + IVA, valido fino al 31 dicembre.', annuisce: 'anna',
-      parti: [[w('Il'), w('preventivo'), w('è'), w('di'), w('1.250', {d: 'milleduecentocinquanta', g: 1, u: 'prezzo'}), w('€', {d: 'euro', g: 1, u: 'prezzo'}),
-        w('+', {d: 'più', g: 1, u: 'prezzo'}), w('IVA,'), w('valido'), w('fino'), w('al'), w('31', {d: 'trentuno', g: 2, u: 'data'}), w('dicembre.', {u: 'data'})]]},
-  };
+  const FINE_FRASE = /[.!?…。！？؟۔।][»”’)\]"']*$/;
+  const SENZA_SPAZI = /^(zh|ja|ko|th|lo|km|my)(-|$)/i;
+  function paroleDi(testo) {
+    if (SENZA_SPAZI.test(document.documentElement.lang) && window.Intl && Intl.Segmenter) {
+      const out = [];
+      for (const {segment, isWordLike} of new Intl.Segmenter(document.documentElement.lang, {granularity: 'word'}).segment(testo)) {
+        if (!segment.trim()) continue;
+        if (isWordLike || !out.length) out.push(segment); else out[out.length - 1] += segment;
+      }
+      return out;
+    }
+    return testo.split(/\s+/).filter(Boolean);
+  }
+  function leggiFrase(n) {
+    const li = $(`.messaggio[data-frase="${n}"]`), radice = $('.bolla-testo', li), tok = [];
+    const lunghezze = Object.fromEntries((li.dataset.lunghezze || '').split(/\s+/).filter(Boolean).map(x => x.split('=')).map(([parola, len]) => [parola, +len]));
+    let unita = 0;
+    const visita = (nodo, u) => {
+      for (const c of nodo.childNodes) {
+        if (c.nodeType === 3) { for (const s of paroleDi(c.textContent)) tok.push(w(s, {...(u ? {u} : {}), ...(lunghezze[s] ? {len: lunghezze[s]} : {})})); }
+        else if (c.nodeType === 1) visita(c, c.classList.contains('unita') ? `u${++unita}` : u);
+      }
+    };
+    visita(radice, null);
+    const trova = scritte => { for (let i = 0; i + scritte.length <= tok.length; i++) if (scritte.every((s, k) => tok[i + k].s === s)) return i; return -1; };
+    for (const chiave of window.Testi.chiavi(`frase.${n}.gruppo.`)) {
+      const g = +chiave.split('.').pop(), scritte = paroleDi(T(chiave)), dette = paroleDi(T(`frase.${n}.detto.${g}`)), i = trova(scritte);
+      // se le parole scritte non ci sono, o non tornano con quelle dette, il gruppo resta com'è scritto
+      if (i >= 0 && scritte.length === dette.length) dette.forEach((d, k) => Object.assign(tok[i + k], {g, d}));
+    }
+    for (const chiave of window.Testi.chiavi(`frase.${n}.chi.`)) { const i = trova([T(chiave)]); if (i >= 0) tok[i].chi = chiave.split('.').pop(); }
+    const parti = [[]];
+    tok.forEach((t, i) => { parti.at(-1).push(t); if (FINE_FRASE.test(t.s) && i < tok.length - 1) parti.push([]); });
+    return {testo: radice.textContent.replace(/\s+/g, ' ').trim(), annuisce: li.dataset.annuisce, parti};
+  }
+  const FRASI = {1: leggiFrase(1), 2: leggiFrase(2), 3: leggiFrase(3)};
 
   // ---------- i tempi ----------
   let TEMPI = window.TEMPI_RISERVA || null;
-  const pronti = fetch('voce/tempi.json').then(r => r.ok ? r.json() : Promise.reject()).then(j => { TEMPI = j; }).catch(() => {});
+  const pronti = fetch(new URL('voce/tempi.json', RADICE)).then(r => r.ok ? r.json() : Promise.reject()).then(j => { TEMPI = j; }).catch(() => {});
   // se non c'è nessun file dei tempi (né tempi.json né la riserva) si ricavano dalla durata dell'audio: le parole si
   // accendono in proporzione, senza onde e senza intensità (vale per la frase che sta suonando)
   function assicuraTempi(file, durata) {
@@ -100,7 +141,7 @@
     }
     return out;
   }
-  const mmss = s => `${Math.floor(s / 60)}:${String(Math.round(s % 60)).padStart(2, '0')}`;
+  const mmss = window.Testi.minuti;
 
   // ---------- una frase dentro una bolla ----------
   // i pezzi di una frase, uno dopo l'altro; quelli della stessa unità (u) stanno insieme in un contenitore che non va a capo
@@ -179,9 +220,9 @@
     const posto = $('.posto-bolla'), bolla = $('.palco .bolla'), corpo = $('.bolla-corpo', bolla), testo = $('.bolla-testo', bolla);
     const finestra = $('.sotto .finestra'), fStato = $('.f-stato', finestra), campo = $('.f-campo', finestra), ferma = $('.f-ferma', finestra);
     const luceVoce = $('.luce-voce');
-    const PRONTA = 'Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono.';
+    const PRONTA = TESTO_PRONTA;
     function statoFinestra(parlando) {
-      fStato.textContent = parlando ? 'Sto parlando…' : PRONTA;
+      fStato.textContent = parlando ? T('finestra.parlando') : PRONTA;
       fStato.classList.toggle('parla', parlando);
       ferma.disabled = !parlando;
     }
@@ -464,7 +505,7 @@
     const d = discorso; if (!d || !d.audio || d.stato === 'pausa') return;
     d.stato = 'pausa'; d.audio._nostra = true; d.audio.pause();
     if (TEMPI && TEMPI.file[d.file]) d.palco.env(0, d.orologio(), d.file);
-    aggiornaBottoni(); annuncia('In pausa.');
+    aggiornaBottoni(); annuncia(T('annuncio.pausa'));
   }
   function riprendi() {
     const d = discorso; if (!d || d.stato !== 'pausa') return;
@@ -475,12 +516,7 @@
   }
 
   // ---------- quando va storto: un messaggio vicino al comando, con «Riprova» e il file da scaricare ----------
-  const MESSAGGI = {
-    caricamento: 'Non riesco a caricare la registrazione. Controlla la connessione e riprova, oppure scaricala.',
-    interrotta: 'La registrazione si è interrotta. Riprova, oppure scaricala.',
-    permesso: 'Il browser non ha fatto partire il suono. Premi «Riprova»: il suono parte solo con un tuo gesto.',
-    lento: 'Il caricamento è lento. Puoi aspettare, riprovare o scaricare la registrazione.',
-  };
+  const MESSAGGI = causa => T(`errore.${causa}`);   // caricamento, interrotta, permesso, lento
   let nota = null, lentoT = 0;
   function togliNota() {
     clearTimeout(lentoT);
@@ -494,12 +530,12 @@
     togliNota();
     const file = `${voce}-${n}`, el = document.createElement('div'), p = document.createElement('p'), az = document.createElement('div');
     el.className = 'errore-ascolto'; el.setAttribute('role', causa === 'lento' ? 'status' : 'alert');
-    p.textContent = MESSAGGI[causa];
+    p.textContent = MESSAGGI(causa);
     az.className = 'errore-azioni';
-    const riprova = document.createElement('button'); riprova.type = 'button'; riprova.className = 'riprova'; riprova.textContent = 'Riprova';
+    const riprova = document.createElement('button'); riprova.type = 'button'; riprova.className = 'riprova'; riprova.textContent = T('errore.riprova');
     riprova.addEventListener('click', () => suona(palco, n));
-    const scarica = document.createElement('a'); scarica.className = 'scarica-file'; scarica.href = `voce/${file}.mp3`; scarica.setAttribute('download', '');
-    scarica.textContent = `Scarica la registrazione (${voce === 'marco' ? 'Marco' : 'Giulia'}, mp3)`;
+    const scarica = document.createElement('a'); scarica.className = 'scarica-file'; scarica.href = new URL(`voce/${file}.mp3`, RADICE).href; scarica.setAttribute('download', '');
+    scarica.textContent = fmt(T('errore.scarica'), {voce: nomeVoce(voce)});
     az.append(riprova, scarica); el.append(p, az);
     (palco === eroe ? $('.ascolto-dentro') : $(`.messaggio[data-frase="${n}"]`)).append(el);
     nota = el;
@@ -555,7 +591,7 @@
     if (discorso) ferma(false);
     togliNota();
     if (audio) fermaAudio(audio);
-    const id = ++gettone, file = `${voce}-${n}`, fonti = opus === 'opus' ? [`voce/${file}.opus`, `voce/${file}.mp3`] : [`voce/${file}.mp3`];
+    const id = ++gettone, file = `${voce}-${n}`, fonti = (opus === 'opus' ? [`voce/${file}.opus`, `voce/${file}.mp3`] : [`voce/${file}.mp3`]).map(f => new URL(f, RADICE).href);
     const a = audio = new Audio(), gestite = new Set();
     let i = 0, avviato = false, m = 0, ultimo = null;
     const vivo = () => id === gettone && discorso && discorso.audio === a;
@@ -599,9 +635,9 @@
       // davvero (se non parte, parla l'avviso dell'errore). Nel filo anche la frase; in alto lo dice già la finestra («Sto parlando…»)
       if (prima === 'carica' && !discorso.annunciato) {
         discorso.annunciato = true;
-        const nome = voce === 'marco' ? 'Marco' : 'Giulia';
-        if (palco === filo) annuncia(dallaVoce ? `Voce scelta: ${nome}. Sto leggendo la frase ${n}.` : `Sto leggendo la frase ${n}, voce di ${nome}.`);
-        else if (dallaVoce) annuncia(`Voce scelta: ${nome}.`);
+        const nome = nomeVoce(voce), num = window.Testi.numero(n);
+        if (palco === filo) annuncia(fmt(T(dallaVoce ? 'annuncio.voce-frase' : 'annuncio.frase'), {voce: nome, n: num}));
+        else if (dallaVoce) annuncia(fmt(T('annuncio.voce'), {voce: nome}));
       }
     };
     a.addEventListener('playing', parte);
@@ -672,8 +708,10 @@
   link.hidden = true; pillola.hidden = false; $('.voci-filo').hidden = false; suonaFilo.forEach(b => { b.hidden = false; });
   let ultima = 3;
   // stati del comando di una frase nel filo: fermo, in caricamento, in riproduzione, in pausa, fatto (sentita fino in fondo)
-  const VERBO = {fermo: 'Ascolta', carica: 'Carico…', suona: 'Pausa', pausa: 'Riprendi', fatto: 'Riascolta'};
-  const AZIONE = {fermo: 'Ascolta', carica: 'Carico la registrazione, premi per annullare', suona: 'Metti in pausa', pausa: 'Riprendi', fatto: 'Riascolta'};
+  const STATI = ['fermo', 'carica', 'suona', 'pausa', 'fatto'];
+  const VERBO = Object.fromEntries(STATI.map(k => [k, T(`ascolto.verbo.${k}`)]));
+  const AZIONE = Object.fromEntries(STATI.map(k => [k, T(`ascolto.azione.${k}`)]));
+  const etichetta = (stato, n) => fmt(T('ascolto.azione.formato'), {azione: AZIONE[stato], frase: FRASI[n].testo});
   function aggiornaBottoni() {
     const d = discorso, conAudio = d && d.audio, st = conAudio ? d.stato : null;
     [...vociEroe, ...vociFilo].forEach(b => b.setAttribute('aria-pressed', String(b.dataset.voce === voce)));
@@ -681,6 +719,7 @@
     frasiEroe.forEach(b => {
       const mia = !!(conAudio && d.palco === eroe && d.n === +b.dataset.frase);
       b.setAttribute('aria-current', String(+b.dataset.frase === ultima));
+      b.setAttribute('aria-label', etichetta('fermo', +b.dataset.frase));
       b.classList.toggle('suona', mia && st === 'suona');
       b.classList.toggle('carica', mia && st === 'carica');
     });
@@ -689,10 +728,11 @@
       const stato = mia ? st : finite.has(n) ? 'fatto' : 'fermo';
       ['suona', 'carica', 'pausa', 'fatto'].forEach(k => b.classList.toggle(k === 'fatto' ? 'fatta' : k, stato === k));
       $('.etichetta-suona', b).textContent = VERBO[stato];
-      b.setAttribute('aria-label', `${AZIONE[stato]}: ${FRASI[n].testo}`);
+      b.setAttribute('aria-label', etichetta(stato, n));
     });
     $$('.messaggio').forEach(m => m.classList.toggle('in-pausa', !!(conAudio && d.palco === filo && d.stato === 'pausa' && +m.dataset.frase === d.n)));
   }
+  aggiornaBottoni();   // le etichette dei pulsanti delle frasi (aria-label) le scrive lo script: nella pagina non ci sono
   // la scheda nasce dalla pillola chiara, sotto la finestra di Kalliope
   let aperta = false;
   const morph = (da, a) => `translate(${da.left - a.left}px, ${da.top - a.top}px) scale(${da.width / a.width}, ${da.height / a.height})`;
@@ -844,8 +884,7 @@
   const aBottone = $('.f-primario', avvio), scelte = $$('.scelta', avvioBox), rivedi = $('.rivedi', avvioBox);
   const app = $('.riunione-app', avvioBox);
   const requisiti = $('.requisiti'), req = $$('li', requisiti);
-  const PRIMO = 'Per parlare, Kalliope deve scaricare la voce: 53 MB, una volta sola. Poi funziona senza internet.';
-  const PRONTA = 'Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono.';
+  const PRIMO = aStato.textContent, SCARICA = aBottone.textContent, PRONTA = TESTO_PRONTA;   // i testi che la pagina mostra all'arrivo
   let agendaAvvio = [], corsaAvvio = 0;
   function requisito(k, ms) {   // k = requisito del momento; quelli prima sono fatti; ms = quanto dura il suo momento
     req.forEach((li, i) => { li.classList.toggle('fatto', i < k || k >= req.length); li.classList.toggle('attivo', i === k); });
@@ -859,7 +898,7 @@
     annulla(agendaAvvio);
     const corsa = ++corsaAvvio;
     avvio.classList.remove('scarica', 'prepara', 'pronta');
-    aStato.textContent = PRIMO; aBottone.textContent = 'Scarica la voce'; aBottone.classList.remove('f-annulla', 'premuto');
+    aStato.textContent = PRIMO; aBottone.textContent = SCARICA; aBottone.classList.remove('f-annulla', 'premuto');
     aBarra.style.transform = 'scaleX(0)';
     microfonoScelto(false);
     rivedi.classList.add('in-scena');
@@ -869,17 +908,17 @@
     quando(700, () => aBottone.classList.add('premuto'));
     quando(860, () => {
       requisito(1, 3440);
-      aBottone.classList.remove('premuto'); aBottone.textContent = 'Annulla'; aBottone.classList.add('f-annulla'); avvio.classList.add('scarica');
+      aBottone.classList.remove('premuto'); aBottone.textContent = T('avvio.annulla'); aBottone.classList.add('f-annulla'); avvio.classList.add('scarica');
       const t0 = tScena(), D = 2400;
       const passo = () => {
         if (corsa !== corsaAvvio) return;
         const q = Math.min(1, (tScena() - t0) / D), mb = Math.round(53 * q);
-        aStato.textContent = `Scarico la voce… ${mb} di 53 MB`; aBarra.style.transform = `scaleX(${q.toFixed(3)})`;
+        aStato.textContent = fmt(T('avvio.scarico'), {mb: window.Testi.numero(mb)}); aBarra.style.transform = `scaleX(${q.toFixed(3)})`;
         if (q < 1 && avvio.classList.contains('scarica')) requestAnimationFrame(passo);
       };
       requestAnimationFrame(passo);
     });
-    quando(3400, () => { avvio.classList.remove('scarica'); avvio.classList.add('prepara'); aStato.textContent = 'Preparo la voce…'; });
+    quando(3400, () => { avvio.classList.remove('scarica'); avvio.classList.add('prepara'); aStato.textContent = T('avvio.preparo'); });
     quando(4300, () => { avvio.classList.remove('prepara'); avvio.classList.add('pronta'); aStato.textContent = PRONTA; requisito(2, 1400); });
     quando(4700, () => { scelte[1].classList.add('puntata'); });
     quando(5050, () => { scelte[1].classList.add('premuta'); });
@@ -1012,6 +1051,8 @@
     else if (r.top < c.top + margine) menu.scrollTop -= (c.top + margine) - r.top;
   });
   addEventListener('keydown', e => { if (e.key === 'Escape' && menu.classList.contains('aperto')) chiudiMenu(true); });
+  // un collegamento dentro la pagina (la lingua, che sta in fondo) chiude il menu: si apre per andare altrove, e resterebbe aperto sopra il piede
+  menu.addEventListener('click', e => { if (e.target.closest && e.target.closest('a[href^="#"]') && menu.classList.contains('aperto')) chiudiMenu(false); });
   document.addEventListener('click', e => { if (menu.classList.contains('aperto') && !menu.contains(e.target) && !pm.contains(e.target)) chiudiMenu(false); });
   document.addEventListener('focusin', e => { if (menu.classList.contains('aperto') && !menu.contains(e.target) && e.target !== pm) chiudiMenu(false); });
   stretto.addEventListener('change', () => chiudiMenu(false));

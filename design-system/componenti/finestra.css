@@ -48,7 +48,7 @@
   width: var(--misura-1);
   height: var(--misura-9);
   background: var(--app-testo);
-  margin-left: var(--f-cursore-margine-sinistra);
+  margin-inline-start: var(--f-cursore-margine-inizio);
   flex: none;
 }
 .f-campo.fuoco .f-cursore { display: block; animation: lampeggia var(--durata-f-campo-f-cursore) var(--curva-a-scatti) infinite; }

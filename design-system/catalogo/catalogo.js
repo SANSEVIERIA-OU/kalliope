@@ -1,6 +1,6 @@
 /* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
 // Il catalogo vivo. Non ha stili né markup suoi per i componenti: legge token.css (la tabella dei token è generata dal file), copia i componenti
-// dalla home vera (website/index.html, che nel sito costruito è ../../index.html) e li mostra con le classi e gli stati del sistema. Gli stati «al passaggio», «fuoco» e «premuto» si
+// dalla home vera (website/index.html, che nel sito costruito, in italiano, è ../../it/index.html) e li mostra con le classi e gli stati del sistema. Gli stati «al passaggio», «fuoco» e «premuto» si
 // forzano riscrivendo le regole del sistema stesso (.voce:hover → .voce.sim-sopra): nessuna regola in più, solo le stesse con una classe.
 (async () => {
   const $ = (s, r = document) => r.querySelector(s);
@@ -36,7 +36,7 @@
   const fSim = new CSSStyleSheet(); fSim.replaceSync(forzati.join('\n')); document.adoptedStyleSheets = [...document.adoptedStyleSheets, fSim];
 
   // ---------- la home vera, da cui si copiano i componenti ----------
-  const home = new DOMParser().parseFromString(await (await fetch('../../index.html')).text(), 'text/html');
+  const home = new DOMParser().parseFromString(await (await fetch('../../it/index.html')).text(), 'text/html');
   const da = (sel, n = 0) => { const e = home.querySelectorAll(sel)[n]; if (!e) throw new Error('nella home manca ' + sel); const c = e.cloneNode(true); c.removeAttribute('id'); c.querySelectorAll('[id]').forEach(x => x.removeAttribute('id')); return c; };
   const sblocca = n => { n.querySelectorAll('[hidden]').forEach(x => x.removeAttribute('hidden')); return n; };
   const html = s => { const t = document.createElement('template'); t.innerHTML = s.trim(); return t.content.firstElementChild; };
@@ -112,7 +112,7 @@
     s.append(scheda({nome: 'Barra e menu', id: '<code>.barra</code> <code>.marchio</code> <code>.menu</code> <code>.barra-azione</code> <code>.pulsante-menu</code> (stile/componenti/barra.css)',
       regola: 'La barra resta in alto; a riposo è trasparente sulla stanza, scorrendo diventa piena (<code>.compatta</code>) e l\'azione «Scarica e installa» le entra accanto (<code>.con-azione</code>), il menu le fa posto. Sotto 960 px le cinque voci stanno dietro «Menu».',
       confine: 'Non per navigazioni interne a un tratto; l\'azione in barra è una sola.', persona: 'Chi arriva e vuole sapere dove andare o scaricare, a ogni larghezza.', provenienza: 'Direzione D2 (primo schermo scelto) e correzioni 6a/8b della home: barra compatta piena, menu a una riga da 960 px.',
-      prove: [['a riposo, in cima (la home viva)', 0], ['scorrendo: barra piena con l\'azione in barra', 700]].map(([n, y]) => prova1(n, el('iframe', {class: 'cat-anteprima', src: '../../index.html', title: n, style: 'height: 6em', onload: ev => { try { ev.target.contentWindow.scrollTo(0, y); } catch (e) { /* stessa origine: non succede */ } }}), 'largo'))}));
+      prove: [['a riposo, in cima (la home viva)', 0], ['scorrendo: barra piena con l\'azione in barra', 700]].map(([n, y]) => prova1(n, el('iframe', {class: 'cat-anteprima', src: '../../it/index.html', title: n, style: 'height: 6em', onload: ev => { try { ev.target.contentWindow.scrollTo(0, y); } catch (e) { /* stessa origine: non succede */ } }}), 'largo'))}));
     // --- pulsanti e pillole
     const cp = [['Pillola d\'azione', 'pillola azione', 'Scarica e installa', ''], ['Pillola chiara con tondo', 'pillola voce-chiara', 'Ascolta Giulia', '<span class="tondo" aria-hidden="true"></span>'], ['Pulsante con contorno', 'chiudi', 'Chiudi', ''], ['Pulsante «Rivedi»', 'rivedi', 'Rivedi il primo avvio', '']];
     s.append(scheda({nome: 'Pulsanti e pillole', id: '<code>.pillola</code> <code>.pillola.azione</code> <code>.pillola.voce-chiara</code> <code>.chiudi</code> <code>.rivedi</code> <code>.collegamento</code> <code>.tondo</code> (pulsanti.css)',
@@ -198,7 +198,7 @@
     const s = apri('anteprime', 'Anteprime e dispositivi', 'La home vera, viva, a tre larghezze (iframe della stessa pagina). Non sono i quindici dispositivi del sistema: le simulazioni complete non sono ancora in questo catalogo (vedi «Non ancora»).');
     const misure = [[390, 760, 'Telefono 390'], [820, 700, 'Tavoletta 820'], [1366, 640, 'Computer 1366×640']];
     const barra = el('div', {class: 'cat-misure'}); const cont = el('div', {}); s.append(barra, cont);
-    for (const [w, h, n] of misure) barra.append(el('button', {type: 'button', 'aria-pressed': 'false', testo: n, onclick: ev => { barra.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', 'false')); ev.target.setAttribute('aria-pressed', 'true'); cont.replaceChildren(el('iframe', {class: 'cat-anteprima', src: '../../index.html', title: n, width: w, height: h, style: 'max-width: 100%'})); }}));
+    for (const [w, h, n] of misure) barra.append(el('button', {type: 'button', 'aria-pressed': 'false', testo: n, onclick: ev => { barra.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', 'false')); ev.target.setAttribute('aria-pressed', 'true'); cont.replaceChildren(el('iframe', {class: 'cat-anteprima', src: '../../it/index.html', title: n, width: w, height: h, style: 'max-width: 100%'})); }}));
   });
 
   prova('tabella', () => {

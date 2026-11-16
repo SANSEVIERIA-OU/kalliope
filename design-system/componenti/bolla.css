@@ -8,7 +8,7 @@
 /* correzioni (P7): la bolla in volo passa sopra il bordo di «Tu» (4) e la finestra (5) */
 .bolla {
   position: absolute;
-  left: 0;
+  inset-inline-start: 0;
   bottom: var(--spazio-15);
   width: max-content;
   max-width: 100%;
@@ -32,7 +32,7 @@
 }
 .bolla .coda {
   position: absolute;
-  left: var(--spazio-24);
+  inset-inline-start: var(--spazio-24);
   top: var(--bolla-coda-sopra);
   width: var(--misura-15);
   height: var(--misura-11);
@@ -54,9 +54,9 @@
   .bolla { bottom: var(--spazio-14); }
   .bolla-corpo { padding: var(--bolla-corpo-spazio-interno-telefono); border-radius: var(--raggio-8); }
   .bolla-testo { font-size: var(--corpo-6); line-height: var(--interlinea-5); }
-  .bolla .coda { left: var(--spazio-19); width: var(--misura-11); height: var(--misura-9); }
+  .bolla .coda { inset-inline-start: var(--spazio-19); width: var(--misura-11); height: var(--misura-9); }
 }
-.bolla.filo-bolla { position: relative; left: auto; bottom: auto; max-width: 100%; transform-origin: var(--bolla-filo-bolla-origine); }
+.bolla.filo-bolla { position: relative; inset-inline-start: auto; bottom: auto; max-width: 100%; transform-origin: var(--bolla-filo-bolla-origine); }
 .posto-bolla-chiusa { height: var(--misura-28); }
 .bolla-chiusa .bolla-testo { font-size: var(--corpo-11); line-height: var(--interlinea-13); }
 .bolla-chiusa { max-width: var(--bolla-chiusa-larghezza-massima); }
@@ -69,12 +69,12 @@
 }
 /* punto 1: all'ascolto le parole vecchie sfumano dentro la stessa bolla mentre prende la misura nuova */
 .palco .bolla-corpo { position: relative; }
-.bolla-vecchia { position: absolute; left: var(--spazio-17); top: var(--spazio-13); margin: 0; pointer-events: none; }
+.bolla-vecchia { position: absolute; inset-inline-start: var(--spazio-17); top: var(--spazio-13); margin: 0; pointer-events: none; }
 @media (max-width: 760px) {
-  .bolla-vecchia { left: var(--spazio-12); top: var(--spazio-8); }
+  .bolla-vecchia { inset-inline-start: var(--spazio-12); top: var(--spazio-8); }
 }
 @media (min-width: 1000px) and (max-width: 1180px) {
-  .bolla-vecchia { left: var(--spazio-17); }
+  .bolla-vecchia { inset-inline-start: var(--spazio-17); }
 }
 @media (min-width: 761px) and (max-height: 699px) {
   .posto-bolla { height: var(--misura-28); }
