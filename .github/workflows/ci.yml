@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 # Checks every change. Branches and pull requests: Linux only. main and runs started by hand:
 # also Windows and macOS, which are slower and whose runners are scarcer (see docs/releasing.md).
 name: CI

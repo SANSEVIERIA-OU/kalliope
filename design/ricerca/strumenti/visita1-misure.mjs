@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 // Misure del worker visita-1 (nessun posto passo.mjs tenuto: un solo browser, lanciato dopo `libera`).
 // Per un ID: telefono 390x844, richieste e terze parti all'arrivo (computer), senza JavaScript, rete lenta (CDP,
 // solo Chromium), stampa, albero di accessibilita' (ariaSnapshot) e meta di condivisione.

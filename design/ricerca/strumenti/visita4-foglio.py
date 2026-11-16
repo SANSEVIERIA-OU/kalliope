@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 # Affianca N foto in una sola immagine per la revisione (nessun browser). Uso: visita4-foglio.py <uscita.jpg> <foto1> <foto2> ...
 import sys
 from PIL import Image

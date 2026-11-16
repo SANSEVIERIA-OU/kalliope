@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Controlli deterministici delle pagine di site/ (nessun browser): intestazione e piede uguali, collegamenti interni e ancore che esistono,
 nessuna risorsa da terzi, un H1, lingua, alternative delle immagini, segnaposto al posto di versioni scritte a mano, token usati e definiti.
 Uso: python3 -I design/strumenti/controlla-pagine.py     Uscita 1 se ci sono errori. Prova di controllo: --guasta applica un difetto a una copia in memoria e deve fallire."""

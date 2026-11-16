@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! Where synthesized speech goes: the virtual microphone, or, where none exists yet, a silent
 //! stand-in that keeps time so the app behaves the same.
 

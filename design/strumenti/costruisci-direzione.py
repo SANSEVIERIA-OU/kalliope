@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Costruisce design/direzione.json (e, con --md, design/direzione.md) da direzione_dati.py e confronto.json.
 Uso: python3 -I design/strumenti/costruisci-direzione.py [--md]   (dalla cartella design/strumenti o con il percorso)
 """

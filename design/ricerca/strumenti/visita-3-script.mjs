@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 // Worker visita-3. Prove che passo.mjs non ha: senza JavaScript, rete lenta, stampa, richieste e peso, telefono 390×844.
 // Si lancia SOLO quando il worker non tiene un posto di passo.mjs (un browser per worker: browser.md).
 //   PLAYWRIGHT=/workspace/test-playwright/node_modules/playwright/index.mjs \

@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 // R22: indirizzo inesistente (stato HTTP, schermata, testo). Posto libero, Chromium.
 import fs from 'node:fs';
 const pw = await import(process.env.PLAYWRIGHT); const chromium = pw.chromium || pw.default.chromium;

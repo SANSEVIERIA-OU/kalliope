@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! Character clean-up before tokenizing: one form per character, no emoji, no quotes.
 
 /// Precomposed vowel for a vowel followed by a combining grave or acute accent.

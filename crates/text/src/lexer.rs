@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! Splits cleaned text into tokens: words, numbers, punctuation, symbols, addresses,
 //! abbreviations and line breaks.
 

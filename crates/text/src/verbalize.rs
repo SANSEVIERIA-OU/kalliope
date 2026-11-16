@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! Turns tokens into spoken words, looking at the tokens around each one.
 
 use crate::lexer::{Kind, Token};

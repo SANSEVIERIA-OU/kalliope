@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! CPU cost of normalization: `cargo run --release -p kalliope-text --example throughput`.
 
 use std::time::Instant;

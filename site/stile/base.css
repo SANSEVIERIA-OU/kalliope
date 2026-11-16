@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 /* Kalliope: base. Reset minimo, tipografia, collegamenti, anello di focus, struttura della pagina. Solo var(--…) da token.css. */
 
 *, *::before, *::after { box-sizing: border-box; }

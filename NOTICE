@@ -7,13 +7,20 @@ Official source: https://github.com/SANSEVIERIA-OU/kalliope
 Licensing contact: https://github.com/SANSEVIERIA-OU/kalliope/issues
 
 The original application, libraries, tools, benchmarks and documentation in
-this source revision use SANSEVIERIA License 1.0, except for the separately
+this source revision use SANSEVIERIA License 1.1, except for the separately
 licensed material below. The complete, unchanged licence is supplied as LICENSE
-and as LICENSES/LicenseRef-SANSEVIERIA-1.0.txt. LicenseRef-SANSEVIERIA-1.0 is a
+and as LICENSES/LicenseRef-SANSEVIERIA-1.1.txt. LicenseRef-SANSEVIERIA-1.1 is a
 local identifier for this custom licence, not an OSI approval or SPDX-list
 entry. This licence applies to the copies and revisions expressly offered under
 it. No provision revokes any valid permissions previously granted under another
 licence, if such permissions were granted.
+
+Acceptance: this notice and the complete licence text are supplied so that they
+can be examined and retained in advance. Modifying, distributing or otherwise
+making available the covered software, enabling External Network Use of it, or
+using it in a Commercial Offering constitutes acceptance of SANSEVIERIA License
+1.1 under its section 9. Viewing the code or merely receiving a copy is not
+acceptance.
 
 Separately licensed components remain under their existing terms:
 - crates/phonemes/data/lexicon.tsv and crates/phonemes/data/suffixes.tsv:

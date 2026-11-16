@@ -1,5 +1,5 @@
 #!/bin/bash
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 # Scorciatoia del worker visita-4: lancia passo.mjs col posto in $POSTO, senza DISPLAY, salva l'uscita completa in
 # design/incarichi/visita-4/log e stampa un riassunto.
 # Uso: POSTO=l4:xxxx visita4-p.sh <ID> <comando passo...>   (LUNGO=n per più testo; RAW=1 per l'uscita intera)

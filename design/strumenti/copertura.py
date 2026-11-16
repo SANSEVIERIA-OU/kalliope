@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Matrice di copertura compito (C1-C14 di design/ricerca/piano.md §1) x riferimento, da design/confronto.json.
 
 Uso: python3 -I design/strumenti/copertura.py design/confronto.json [--json]

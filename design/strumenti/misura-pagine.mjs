@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 // Peso e dipendenze di ogni pagina in Chromium senza finestra: richieste, byte trasferiti (corpo non compresso dei file HTML, CSS, script, immagini; audio escluso),
 // domini diversi da quello del sito, elementi video e canvas, animazioni infinite. Scrive JSON su stdout e, con un argomento, su file.
 // Uso: node design/strumenti/con-server.mjs DIR node design/strumenti/misura-pagine.mjs [file.json]

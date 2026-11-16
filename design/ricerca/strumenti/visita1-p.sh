@@ -1,5 +1,5 @@
 #!/bin/bash
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 # Wrapper del worker visita-1: lancia passo.mjs con il posto in $POSTO, salva l'uscita completa in $LOGDIR
 # e stampa solo la parte utile (testo prima del JSON, JSON senza il dettaglio "movimento", riassunto del movimento).
 # Uso: POSTO=l3:xxxx LOGDIR=/percorso/log visita1-p.sh <comando passo...>

@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 /* Kalliope: fonte unica dei valori (token). Ogni altro foglio di stile usa var(--…); nessun valore di colore, spazio o durata fuori di qui.
    Decisioni: T01 colore, T02 carta e inchiostro, T03 tipografia, T04 forma, T05 motivo, T06 spazi, T07 movimento (design/direzione.md).
    Il catalogo (sistema/) genera la sua tabella da questo file con design/strumenti/genera-token.py. */

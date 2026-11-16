@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Development only: extract Italian word → IPA pairs from a kaikki.org Wiktionary dump.
 
 Usage: python3 -I extract_wiktionary.py kaikki.org-dictionary-Italian.jsonl.gz out.tsv

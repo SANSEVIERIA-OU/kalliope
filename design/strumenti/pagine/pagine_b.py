@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 from layout import pagina, percorso, avanti, indice, REPO, BASE_URL
 from comp import ascolto, stato_card, foto, comando, controllo, se_non_va, dettagli
 

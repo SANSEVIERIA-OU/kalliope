@@ -1,6 +1,6 @@
 # Third-party notices
 
-Kalliope's own code is under [SANSEVIERIA License 1.0](LICENSE). The components below keep their own
+Kalliope's own code is under [SANSEVIERIA License 1.1](LICENSE). The components below keep their own
 licences. This list covers what a Kalliope build uses or downloads; development-only tools are listed
 separately.
 

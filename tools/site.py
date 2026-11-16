@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Build the website: copy site/ and fill in the release that visitors should download.
 
     python3 -I tools/site.py --out DIR [--release-json FILE]

@@ -1,5 +1,5 @@
 #!/bin/bash
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 # Estrae il testo (innerText) di un selettore con `passo.mjs valuta`, a pezzi da 5000 caratteri (valuta taglia a 6000),
 # e lo salva in un file. Uso: POSTO=<posto:segno> visita2-testo.sh <selettore> <file-uscita>
 SK=/home/dev/.claude/plugins/cache/vibe-next/vibe-next/0.45.0/skills/design-system-generator/scripts

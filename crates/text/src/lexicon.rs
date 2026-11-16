@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! Word lists: abbreviations, acronyms, chat shorthand, missing accents, units, months.
 
 /// When an abbreviation applies.

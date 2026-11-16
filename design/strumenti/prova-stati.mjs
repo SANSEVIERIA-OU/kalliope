@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 // Prove degli stati e dei ripieghi in Chromium senza finestra: tastiera, focus, movimento ridotto, stampa, colori forzati, filtro, 404, tema.
 // Uso: node design/strumenti/con-server.mjs DIR node design/strumenti/prova-stati.mjs CARTELLA
 import {mkdirSync, writeFileSync} from 'node:fs';

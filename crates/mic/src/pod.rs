@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! The one SPA pod Kalliope sends to PipeWire: the audio format of a stream, built by hand.
 //!
 //! Binary layout (spa/include/spa/pod/pod.h): every pod starts with `struct spa_pod { uint32_t

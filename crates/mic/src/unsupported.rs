@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! Systems without a virtual microphone backend yet: `open` always fails.
 
 use crate::{Error, ErrorKind};

@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! End-to-end check with the real model. Runs only when KALLIOPE_MODEL_DIR (the Klein folder)
 //! and KALLIOPE_ORT_LIB (the ONNX Runtime library) are set; otherwise it passes without work.
 

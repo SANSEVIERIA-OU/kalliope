@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 // Configurazione degli strumenti del metodo per il sito di Kalliope (modello: config.esempio.mjs della skill).
 // Il sito è servito sotto /kalliope/ come su GitHub Pages: gli indirizzi delle pagine sono relativi a quella base.
 // Uso: node design/strumenti/con-server.mjs /tmp/kalliope-anteprima/NOME node <skill>/scripts/esame-impaginazione.mjs chromium tutti

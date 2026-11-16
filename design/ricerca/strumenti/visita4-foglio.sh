@@ -1,5 +1,5 @@
 #!/bin/bash
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 # Affianca N foto in un'immagine sola per la revisione (ImageMagick, nessun browser).
 # Uso: [RID=60] visita4-foglio.sh <uscita.jpg> <foto1> <foto2> ...   (RID = percentuale di riduzione, default 100)
 OUT="$1"; shift

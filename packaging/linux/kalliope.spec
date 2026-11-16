@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 # Packs the files that packaging/linux/build-packages.sh has already built and put in
 # the staging folder; nothing is compiled here.
 
@@ -6,7 +6,7 @@ Name:           kalliope
 Version:        %{pkg_version}
 Release:        1
 Summary:        Type, and be heard in video calls
-License:        LicenseRef-SANSEVIERIA-1.0
+License:        LicenseRef-SANSEVIERIA-1.1
 URL:            https://github.com/SANSEVIERIA-OU/kalliope
 ExclusiveArch:  x86_64
 

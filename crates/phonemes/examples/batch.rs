@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! Development tool: phonemes for many words, one per input line.
 //!
 //! `word`             full pipeline (lexicon, endings, rules)

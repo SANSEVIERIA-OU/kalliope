@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Struttura comune delle pagine: intestazione, piede, meta. Una tantum: le pagine in site/ sono poi la fonte."""
 BASE_URL = 'https://sansevieria-ou.github.io/kalliope/'
 REPO = 'https://github.com/SANSEVIERIA-OU/kalliope'
@@ -76,7 +76,7 @@ def pagina(slug, titolo, descrizione, corpo, corrente=None, extra_head='', profo
 </div>
 </header>'''
     return f'''<!DOCTYPE html>
-<!-- SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 -->
+<!-- SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 -->
 <html lang="it">
 <head>
 <meta charset="utf-8">
@@ -117,7 +117,7 @@ def piede(Pn):
 <div>
 <h2>Kalliope</h2>
 <p>Un programma per scrivere e farsi sentire nelle riunioni. <span class="solo-prova">Versione di prova {{{{kalliope.version}}}}, pubblicata il {{{{kalliope.date}}}}.</span></p>
-<p>Codice sorgente disponibile, licenza SANSEVIERIA 1.0. Non è software «open source» nel senso dell'OSI. Prodotto da SANSEVIERIA OÜ.</p>
+<p>Codice sorgente disponibile, licenza SANSEVIERIA 1.1. Non è software «open source» nel senso dell'OSI. Prodotto da SANSEVIERIA OÜ.</p>
 <p>Questo sito non usa cookie, non ha statistiche e non carica nulla da altri siti. I file li serve GitHub Pages, che registra le richieste come ogni host.</p>
 </div>
 <div>

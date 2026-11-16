@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 /* Kalliope: componenti. Ogni componente è definito una volta qui e riusato; il catalogo (sistema/) li mostra vivi con gli stessi fogli di stile.
    Solo var(--…) da token.css. Nome del componente = classe base (.btn, .nav, .percorso, .apertura, .stato, .ascolto, …). */
 

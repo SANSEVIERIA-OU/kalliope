@@ -1,5 +1,5 @@
 #!/bin/sh
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 # Installs Kalliope from this folder for you alone, under ~/.local (no administrator needed).
 #
 #   ./install             install, or update an earlier copy

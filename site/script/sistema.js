@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 /* Catalogo (sistema/): controlli facoltativi per provare il movimento. Senza script il catalogo mostra tutto, solo senza i pulsanti. */
 (function () {
   'use strict';

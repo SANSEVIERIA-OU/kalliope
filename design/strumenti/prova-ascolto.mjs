@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 // Prova dell'ascolto in Chromium senza finestra: pulsante, barre, frase evidenziata, un solo suono per volta, movimento ridotto, errore del file.
 // Uso: node design/strumenti/con-server.mjs DIR node design/strumenti/prova-ascolto.mjs CARTELLA_FOTO
 import {mkdirSync, writeFileSync} from 'node:fs';
