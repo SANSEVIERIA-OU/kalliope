@@ -1017,3 +1017,37 @@ Stesso selettore, stesse condizioni, stessa proprietà: la pagina le sovrascrive
 Nessun elemento di `index.html` né di `scena.js` ha queste classi (sezioni di una versione precedente: «campioni», «oggi», il lettore, gli ascoltatori). Restano nel foglio di stile di partenza, che non è in questo repository.
 
 `.campioni` · `.campioni-capo` · `.campioni h2, .oggi h2` · `.campioni-capo p` · `.campioni-elenco` · `.campione` · `.campione-scritto` · `.campione-detto` · `.campione-detto span` · `.campione audio` · `.lettore` · `.lettore .pillola` · `.lettore .tondo` · `.lettore .suona .tondo::before` · `.lettore-tempo` · `.campione-altra` · `.campione-altra a` · `.oggi` · `.oggi-colonne` · `.oggi-colonne > div` · `.oggi-colonne > div:nth-child(2)` · `.oggi-colonne > div:nth-child(3)` · `.oggi h3` · `.oggi p` · `.oggi-fatti` · `.oggi-fatti strong` · `.campioni, .oggi` · `.campioni-elenco, .oggi-colonne` · `.ascoltatori` · `.ascoltatore` · `.ascoltatore .figura` · `.ascoltatore .lume` · `.ascoltatore .nome` · `.ascoltatori .guarda .testa` · `.ascoltatori .guarda .occhi`
+
+## Pagine interne: la cornice e «non ancora» (incarico 3a, 16/11/2026)
+
+Valori aggiunti per la prima pagina interna rifatta nella direzione 2 (`../website/non-ancora/`), in un blocco a parte in
+fondo a `token.css`. Dove il ruolo è lo stesso di un valore della home il token lo richiama (`var(--…)`), così le due
+pagine si muovono allo stesso modo. Componenti nuovi: `componenti/pagina.css` (la cornice delle pagine interne),
+`riunione-ferma.css` (la riunione in cui la tua voce non arriva), `strada-ferma.css` (la strada che si ferma a una tappa
+vuota), `versioni.css` (l'elenco delle versioni con il posto della prossima).
+
+| Token | Valore | Ruolo | Dove |
+|---|---|---|---|
+| `--pagina-scena-spazio-sotto` | `96px` | aria sotto il primo schermo di una pagina interna | `pagina.css` `.scena-pagina` |
+| `--pagina-primo-tratto-margine` | `0px` | la prima scena comincia subito sotto il primo schermo | `pagina.css` |
+| `--coppia-colonne` | `minmax(0, 1fr) minmax(0, 480px)` | un tratto con il testo e un oggetto della scena | `pagina.css` `.tratto.coppia` |
+| `--testo-spiegazione-chiara` | `var(--testo-requisiti-chiara)` | la spiegazione sotto un titolo sulla scena chiara | `pagina.css` |
+| `--chiamata-ferma-altezza` | `clamp(200px, calc(100vh - 380px), 362px)` | i riquadri sopra la barra del microfono, interi a 1366×640 | `riunione-ferma.css` |
+| `--chiamata-ferma-altezza-telefono` | `176px` | i riquadri al telefono | `riunione-ferma.css` |
+| `--chiamata-ferma-barra-spazio-interno` | `6px 0 4px` | la barra del microfono nella cornice | `riunione-ferma.css` |
+| `--barre-ferme-scala-y` | `0.14` | la voce piatta nel posto vuoto | `riunione-ferma.css` |
+| `--bolla-nasce-scala` | `var(--messaggio-filo-bolla-scala)` | la bolla nasce dalla coda | `riunione-ferma.css`, `non-ancora.js` |
+| `--durata-bolla-nasce` | `var(--durata-messaggio-filo-bolla-trasforma)` | idem | idem |
+| `--ritardo-bolla-ferma` | `1900ms` | la bolla nasce dopo l'ultimo riquadro | `riunione-ferma.css` |
+| `--durata-cerca`, `--ritardo-cerca` | `1300ms`, `2500ms` | il puntatore resta sul posto vuoto di «Kalliope» | `riunione-ferma.css` |
+| `--durata-urto`, `--ritardo-urto` | `900ms`, `2780ms` | l'onda tratteggiata del posto vuoto (la durata delle onde della home) | `riunione-ferma.css`, `strada-ferma.css`, `non-ancora.js` |
+| `--urto-scala` | `1.18` | fin dove si allarga l'onda del posto vuoto | idem |
+| `--durata-mancante-nota`, `--ritardo-mancante-nota` | `var(--durata-scelta-testo)`, `2900ms` | «non c'è» accanto a «Kalliope» | `riunione-ferma.css` |
+| `--opacita-tappa-spenta` | `0.42` | le tappe che la voce non raggiunge | `strada-ferma.css` |
+| `--versioni-titolo-margine` | `2px 4px 10px` | il titolo dell'elenco delle versioni | `versioni.css` |
+| `--versione-spazio-interno` | `12px 16px 13px` | una riga dell'elenco | `versioni.css` |
+| `--durata-respira`, `--ritardo-respira`, `--respira-scala` | `1400ms`, `520ms`, `1.015` | il posto della prossima versione respira una volta | `versioni.css` |
+
+Non ancora nei token (come in `scena.js` per la home, «Da decidere» in `SISTEMA.md`): i tempi della strada e i parametri
+delle onde dentro `../website/non-ancora/non-ancora.js` (gli stessi numeri di `scena.js`). Il catalogo non mostra ancora i
+quattro componenti nuovi: lo farà il ruolo di costruzione (durante l'incarico 3a il catalogo era in lavorazione dall'incarico 1).

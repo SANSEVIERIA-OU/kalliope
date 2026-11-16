@@ -1,112 +1,294 @@
-<!DOCTYPE html>
+<!doctype html>
 <!-- SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 -->
 <html lang="it">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light dark">
-<meta name="text-scale" content="scale">
 <title>Kalliope per Windows e macOS: non ancora, e perché</title>
-<meta name="description" content="Oggi Kalliope funziona solo su Linux. Perché non ancora su Windows, macOS e telefono, cosa manca e come seguire le novità senza lasciare dati.">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="it_IT">
-<meta property="og:site_name" content="Kalliope">
-<meta property="og:title" content="Kalliope per Windows e macOS: non ancora, e perché">
-<meta property="og:description" content="Oggi Kalliope funziona solo su Linux. Perché non ancora su Windows, macOS e telefono, cosa manca e come seguire le novità senza lasciare dati.">
-<meta property="og:url" content="https://sansevieria-ou.github.io/kalliope/non-ancora/">
-<meta property="og:image" content="https://sansevieria-ou.github.io/kalliope/immagini/kalliope-finestra.png">
-<meta property="og:image:alt" content="La finestra di Kalliope: un campo dove scrivere, i pulsanti Parla e Ferma, la scelta della voce.">
+<meta name="description" content="Oggi Kalliope funziona solo su Linux. Perché non ancora su Windows, macOS e telefono, che cosa manca e come saperlo quando arriva, senza lasciare dati.">
+<meta name="theme-color" content="#420017">
 <link rel="canonical" href="https://sansevieria-ou.github.io/kalliope/non-ancora/">
 <link rel="icon" href="../immagini/icona.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../stile/token.css">
-<link rel="stylesheet" href="../stile/base.css">
-<link rel="stylesheet" href="../stile/componenti.css">
-<script src="../script/kalliope.js" defer></script>
+<link rel="preload" href="../design-system/caratteri/lexend/Lexend-wght-latino.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../design-system/token.css">
+<link rel="stylesheet" href="../design-system/base.css">
+<link rel="stylesheet" href="../design-system/componenti/barra.css">
+<link rel="stylesheet" href="../design-system/componenti/pulsanti.css">
+<link rel="stylesheet" href="../design-system/componenti/apertura.css">
+<link rel="stylesheet" href="../design-system/componenti/bolla.css">
+<link rel="stylesheet" href="../design-system/componenti/riunione.css">
+<link rel="stylesheet" href="../design-system/componenti/riunione-app.css">
+<link rel="stylesheet" href="../design-system/componenti/filo.css">
+<link rel="stylesheet" href="../design-system/componenti/strada.css">
+<link rel="stylesheet" href="../design-system/componenti/tratti.css">
+<link rel="stylesheet" href="../design-system/componenti/piede.css">
+<link rel="stylesheet" href="../design-system/componenti/arrivo.css">
+<link rel="stylesheet" href="../design-system/componenti/pagina.css">
+<link rel="stylesheet" href="../design-system/componenti/riunione-ferma.css">
+<link rel="stylesheet" href="../design-system/componenti/strada-ferma.css">
+<link rel="stylesheet" href="../design-system/componenti/versioni.css">
+<script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.__pagina)document.documentElement.classList.remove('js')},4000)</script>
+<script src="../cornice.js" defer></script>
+<script src="non-ancora.js" defer></script>
 </head>
-<body data-prerelease="{{kalliope.prerelease}}" data-versione="{{kalliope.version}}">
+<body>
 <a class="salta" href="#contenuto">Vai al contenuto</a>
-<header class="sito-intestazione">
-<div class="pagina">
-<a class="marca" href="../" aria-label="Kalliope, pagina iniziale"><img src="../immagini/icona.svg" alt="" width="40" height="40"><span>Kalliope</span></a>
-<nav class="nav" aria-label="Principale">
-<ul>
-<li><a href="../ascolta/">Ascolta</a></li><li><a href="../stato/">Stato e limiti</a></li><li><a href="../installa/">Installa</a></li><li><a href="../riunione/">In riunione</a></li><li><a href="../aiuto/">Aiuto</a></li>
-</ul>
-</nav>
+
+<div class="mondo">
+  <div class="luce" aria-hidden="true"></div>
+
+  <header class="barra">
+    <a class="marchio" href="../" aria-label="Kalliope, pagina iniziale">
+      <svg width="36" height="36" viewBox="0 0 128 128" aria-hidden="true" focusable="false"><defs><linearGradient id="icona-bolla" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2fb39a"/><stop offset="1" stop-color="#16806f"/></linearGradient></defs><path d="M30 14h68a22 22 0 0 1 22 22v40a22 22 0 0 1-22 22H62l-25.4 19.6A3.5 3.5 0 0 1 31 114.8V98h-1A22 22 0 0 1 8 76V36a22 22 0 0 1 22-22z" fill="url(#icona-bolla)"/><g fill="#fff"><rect x="29.5" y="47" width="9" height="18" rx="4.5"/><rect x="44.5" y="37" width="9" height="38" rx="4.5"/><rect x="59.5" y="29" width="9" height="54" rx="4.5"/><rect x="74.5" y="39" width="9" height="34" rx="4.5"/><rect x="89.5" y="45" width="9" height="22" rx="4.5"/></g></svg>
+      <span>Kalliope</span>
+    </a>
+    <nav class="menu" id="menu" aria-label="Sezioni del sito">
+      <ul>
+        <li><a href="../ascolta/">Ascolta</a></li>
+        <li><a href="../stato/">Stato e limiti</a></li>
+        <li><a href="../installa/">Installa</a></li>
+        <li><a href="../riunione/">In riunione</a></li>
+        <li><a href="../aiuto/">Aiuto</a></li>
+        <li><a href="#lingue" data-lingua-corrente title="Cambia lingua">Italiano</a></li>
+      </ul>
+    </nav>
+    <a class="pulsante-menu" href="#piede-sezioni" aria-controls="menu">Menu</a>
+  </header>
+
+  <main id="contenuto">
+    <div class="scena scena-pagina">
+      <section class="apertura" aria-labelledby="titolo">
+        <h1 id="titolo">
+          <span class="riga">Su Windows</span>
+          <span class="riga">e macOS:</span>
+          <span class="riga">non ancora.</span>
+        </h1>
+        <p class="presentazione">Kalliope, il programma che dice nella riunione la frase che scrivi, oggi funziona solo su Linux. Qui trovi perché, che cosa manca e come saperlo quando arriva.</p>
+        <div class="comandi" id="comandi-apertura">
+          <a class="pillola azione" href="#quando">Come saperlo quando arriva</a>
+          <a class="collegamento" href="#ascolta">Intanto, senti la voce<span class="freccia" aria-hidden="true"></span></a>
+        </div>
+        <p class="stato"><strong>Oggi:</strong> versione di prova {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Per telefono e tablet Kalliope non esiste.</p>
+        <p class="didascalia">Ricostruzione<span class="d-lunga"> · su Windows e macOS «Kalliope» non compare fra i microfoni dell'app di riunione</span></p>
+      </section>
+
+      <section class="palco palco-fermo" aria-label="Ricostruzione: su Windows e macOS, nell'app della riunione, il microfono «Kalliope» non c'è e la tua frase resta senza voce">
+        <div class="posto-bolla posto-bolla-ferma">
+          <div class="bolla bolla-ferma" aria-hidden="true">
+            <div class="bolla-corpo"><p class="bolla-testo">Buongiorno a tutti! Scrivo invece di parlare, ma vi seguo benissimo.</p></div>
+            <svg class="coda" viewBox="0 0 32 24" aria-hidden="true"><path d="M0 0h31L7.6 21.6A3.5 3.5 0 0 1 2 18.8V0z"/></svg>
+          </div>
+        </div>
+
+        <div class="chiamata chiamata-ferma" aria-hidden="true">
+          <div class="griglia">
+            <div class="riquadro tu assente">
+              <span class="bordo"></span>
+              <span class="barre"><i></i><i></i><i></i><i></i><i></i></span>
+              <span class="nome">Tu<span class="nome-lungo"> · senza voce</span></span>
+            </div>
+            <div class="riquadro persona paola">
+              <svg class="figura" viewBox="0 0 200 120" preserveAspectRatio="xMidYMax meet">
+                <path class="capelli-dietro" d="M75 56C74 30 126 30 125 56L128 98C118 104 82 104 72 98Z"/>
+                <path class="corpo" d="M50 120C50 95 73 84 100 84C127 84 150 95 150 120Z"/>
+                <rect class="collo" x="92" y="72" width="16" height="17" rx="6"/>
+                <g class="cenno"><g class="testa">
+                  <ellipse class="pelle" cx="100" cy="55" rx="21" ry="24"/>
+                  <path class="capelli" d="M78 52C78 30 122 28 122 52C118 41 104 36 92 39C86 41 81 45 78 52Z"/>
+                  <g class="occhi"><ellipse cx="92" cy="58" rx="2.4" ry="3.1"/><ellipse cx="108" cy="58" rx="2.4" ry="3.1"/></g><path class="bocca" d="M95.5 67.5Q100 70.5 104.5 67.5"/>
+                </g></g>
+              </svg>
+              <span class="lume"></span><span class="nome">Paola</span>
+            </div>
+            <div class="riquadro persona luca">
+              <svg class="figura" viewBox="0 0 200 120" preserveAspectRatio="xMidYMax meet">
+                <path class="corpo" d="M48 120C48 94 72 83 100 83C128 83 152 94 152 120Z"/>
+                <rect class="collo" x="92" y="71" width="16" height="17" rx="6"/>
+                <g class="cenno"><g class="testa">
+                  <ellipse class="pelle" cx="100" cy="54" rx="21" ry="24"/>
+                  <path class="capelli" d="M79 51C77 31 123 29 121 51C117 42 108 39 100 39C91 39 83 42 79 51Z"/>
+                  <path class="cuffia" d="M76 58C74 26 126 26 124 58" fill="none"/>
+                  <rect class="cuffia-pad" x="71" y="50" width="8" height="15" rx="4"/><rect class="cuffia-pad" x="121" y="50" width="8" height="15" rx="4"/>
+                  <path class="cuffia" d="M75 63C76 74 84 78 92 78" fill="none"/>
+                  <g class="occhi"><ellipse cx="92" cy="57" rx="2.4" ry="3.1"/><ellipse cx="108" cy="57" rx="2.4" ry="3.1"/></g><path class="bocca" d="M95.5 66.5Q100 69.5 104.5 66.5"/>
+                </g></g>
+              </svg>
+              <span class="lume"></span><span class="nome">Luca</span>
+            </div>
+            <div class="riquadro persona anna">
+              <svg class="figura" viewBox="0 0 200 120" preserveAspectRatio="xMidYMax meet">
+                <path class="corpo" d="M52 120C52 96 74 85 100 85C126 85 148 96 148 120Z"/>
+                <rect class="collo" x="92" y="73" width="16" height="17" rx="6"/>
+                <g class="cenno"><g class="testa">
+                  <circle class="capelli" cx="100" cy="27" r="10"/>
+                  <ellipse class="pelle" cx="100" cy="56" rx="20" ry="23"/>
+                  <path class="capelli" d="M80 54C78 33 122 31 120 54C114 44 106 40 100 40C93 40 85 44 80 54Z"/>
+                  <g class="occhi"><ellipse cx="92" cy="59" rx="2.3" ry="3"/><ellipse cx="108" cy="59" rx="2.3" ry="3"/></g><path class="bocca" d="M96 68Q100 70.8 104 68"/>
+                </g></g>
+              </svg>
+              <span class="lume"></span><span class="nome">Anna</span>
+            </div>
+          </div>
+          <div class="app-comandi">
+            <div class="microfono">
+              <span class="microfono-titolo"><span class="app-icona"></span>Microfono</span>
+              <ul class="microfono-scelte">
+                <li class="scelta scelto">Microfono del computer</li>
+                <li class="scelta mancante"><span class="mancante-nome">Kalliope</span><span class="mancante-nota"> · non c'è</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="tratto scena-notte perche" id="perche" aria-labelledby="perche-titolo">
+      <span class="luce-tratto" aria-hidden="true"></span>
+      <div class="tratto-testo">
+        <h2 id="perche-titolo" class="entra entra-titolo">Si ferma al microfono.</h2>
+        <p>Su Windows e macOS Kalliope si costruisce e supera i test, ma non ha ancora il suo microfono. Senza, nessuna app di riunione può sentire la voce.</p>
+      </div>
+      <div class="strada strada-ferma entra">
+        <div class="computer" aria-hidden="true"><span class="computer-nome">Su Windows e macOS, oggi</span></div>
+        <span class="linea linea-fatta" aria-hidden="true"></span>
+        <span class="impulso" aria-hidden="true"></span>
+        <ol class="tappe">
+          <li class="tappa fatta"><span class="nodo" aria-hidden="true"><svg viewBox="0 0 40 40"><rect x="6" y="13" width="28" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M11 20h9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M24 16v8" stroke="currentColor" stroke-width="2"/></svg></span><span class="tappa-nome">Scrivi la frase</span></li>
+          <li class="tappa fatta"><span class="nodo" aria-hidden="true"><svg viewBox="0 0 40 40"><g fill="currentColor"><rect x="8" y="16" width="4" height="8" rx="2"/><rect x="14" y="12" width="4" height="16" rx="2"/><rect x="20" y="8" width="4" height="24" rx="2"/><rect x="26" y="13" width="4" height="14" rx="2"/><rect x="32" y="16.5" width="4" height="7" rx="2"/></g></svg></span><span class="tappa-nome">La voce nasce qui</span></li>
+          <li class="tappa ferma"><span class="nodo" aria-hidden="true"><svg viewBox="0 0 40 40"><rect x="15" y="6" width="10" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M10 19a10 10 0 0 0 20 0M20 29v5M14 34h12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span><span class="tappa-nome">Microfono «Kalliope»<span class="solo-lettori">: non c'è ancora</span></span></li>
+          <li class="tappa spenta"><span class="nodo" aria-hidden="true"><svg viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="2.4"><rect x="6" y="9" width="12.5" height="10" rx="2.5"/><rect x="21.5" y="9" width="12.5" height="10" rx="2.5"/><rect x="6" y="22" width="12.5" height="10" rx="2.5"/><rect x="21.5" y="22" width="12.5" height="10" rx="2.5"/></g></svg></span><span class="tappa-nome">Zoom, Teams, Meet</span></li>
+          <li class="tappa spenta tappa-altri"><span class="nodo nodo-altri" aria-hidden="true"><span class="mini paola"><svg class="figura" viewBox="54 14 92 106" preserveAspectRatio="xMidYMax meet">
+                <path class="capelli-dietro" d="M75 56C74 30 126 30 125 56L128 98C118 104 82 104 72 98Z"/>
+                <path class="corpo" d="M50 120C50 95 73 84 100 84C127 84 150 95 150 120Z"/>
+                <rect class="collo" x="92" y="72" width="16" height="17" rx="6"/>
+                <g class="cenno"><g class="testa">
+                  <ellipse class="pelle" cx="100" cy="55" rx="21" ry="24"/>
+                  <path class="capelli" d="M78 52C78 30 122 28 122 52C118 41 104 36 92 39C86 41 81 45 78 52Z"/>
+                  <g class="occhi"><ellipse cx="92" cy="58" rx="2.4" ry="3.1"/><ellipse cx="108" cy="58" rx="2.4" ry="3.1"/></g><path class="bocca" d="M95.5 67.5Q100 70.5 104.5 67.5"/>
+                </g></g>
+              </svg></span><span class="mini luca"><svg class="figura" viewBox="54 14 92 106" preserveAspectRatio="xMidYMax meet">
+                <path class="corpo" d="M48 120C48 94 72 83 100 83C128 83 152 94 152 120Z"/>
+                <rect class="collo" x="92" y="71" width="16" height="17" rx="6"/>
+                <g class="cenno"><g class="testa">
+                  <ellipse class="pelle" cx="100" cy="54" rx="21" ry="24"/>
+                  <path class="capelli" d="M79 51C77 31 123 29 121 51C117 42 108 39 100 39C91 39 83 42 79 51Z"/>
+                  <path class="cuffia" d="M76 58C74 26 126 26 124 58" fill="none"/>
+                  <rect class="cuffia-pad" x="71" y="50" width="8" height="15" rx="4"/><rect class="cuffia-pad" x="121" y="50" width="8" height="15" rx="4"/>
+                  <path class="cuffia" d="M75 63C76 74 84 78 92 78" fill="none"/>
+                  <g class="occhi"><ellipse cx="92" cy="57" rx="2.4" ry="3.1"/><ellipse cx="108" cy="57" rx="2.4" ry="3.1"/></g><path class="bocca" d="M95.5 66.5Q100 69.5 104.5 66.5"/>
+                </g></g>
+              </svg></span><span class="mini anna"><svg class="figura" viewBox="54 14 92 106" preserveAspectRatio="xMidYMax meet">
+                <path class="corpo" d="M52 120C52 96 74 85 100 85C126 85 148 96 148 120Z"/>
+                <rect class="collo" x="92" y="73" width="16" height="17" rx="6"/>
+                <g class="cenno"><g class="testa">
+                  <circle class="capelli" cx="100" cy="27" r="10"/>
+                  <ellipse class="pelle" cx="100" cy="56" rx="20" ry="23"/>
+                  <path class="capelli" d="M80 54C78 33 122 31 120 54C114 44 106 40 100 40C93 40 85 44 80 54Z"/>
+                  <g class="occhi"><ellipse cx="92" cy="59" rx="2.3" ry="3"/><ellipse cx="108" cy="59" rx="2.3" ry="3"/></g><path class="bocca" d="M96 68Q100 70.8 104 68"/>
+                </g></g>
+              </svg></span></span><span class="tappa-nome">Gli altri ti sentono</span></li>
+        </ol>
+        <div class="esiti">
+          <div class="esito esito-fatto"><h3>C'è già</h3><p>Il programma si costruisce e supera i test anche su Windows e macOS: la voce nasce.</p></div>
+          <div class="esito esito-manca"><h3>Manca il microfono</h3><p><strong>Windows</strong> chiede un driver audio con una firma valida; <strong>macOS</strong> un componente audio approvato da Apple. Nessuno dei due c'è ancora, e mancano anche i pacchetti da installare, con la loro firma.</p></div>
+        </div>
+      </div>
+      <div class="non-esiste">
+        <p><strong>Non esiste ancora</strong> per telefono e tablet, né come servizio online o estensione del browser: Kalliope è un programma per il computer. Parla solo italiano. E non parla con la tua voce: forse in futuro, solo con il tuo consenso.</p>
+      </div>
+    </section>
+
+    <section class="tratto scena-chiara coppia quando" id="quando" aria-labelledby="quando-titolo">
+      <span class="luce-tratto" aria-hidden="true"></span>
+      <div class="tratto-testo">
+        <h2 id="quando-titolo" class="entra entra-titolo">Non promettiamo date.</h2>
+        <p>Quando ci sarà una versione per Windows o macOS, comparirà in cima alla pagina delle versioni di Kalliope e nel suo feed: un lettore di feed te lo segnala, senza account e senza che tu ci lasci dati.</p>
+        <p>Non raccogliamo indirizzi e-mail e non abbiamo un elenco d'attesa.</p>
+        <div class="comandi">
+          <a class="pillola azione" href="https://github.com/SANSEVIERIA-OU/kalliope/releases.atom">Segui le versioni (feed)</a>
+          <a class="collegamento" href="https://github.com/SANSEVIERIA-OU/kalliope/releases">La pagina delle versioni<span class="freccia" aria-hidden="true"></span></a>
+        </div>
+      </div>
+      <div class="versioni entra entra-finestra" role="img" aria-label="Ricostruzione dell'elenco delle versioni di Kalliope: in cima, il posto della prossima, ancora vuoto; sotto, la versione {{kalliope.version}} del {{kalliope.date}}, solo per Linux">
+        <p class="versioni-titolo" aria-hidden="true">Versioni di Kalliope</p>
+        <ol class="versioni-elenco" aria-hidden="true">
+          <li class="versione prossima"><span class="versione-nome">La prossima</span><span class="versione-nota">quando ci sarà, compare qui</span></li>
+          <li class="versione"><span class="versione-nome">Kalliope {{kalliope.version}}</span><span class="versione-data">{{kalliope.date}}</span><span class="versione-nota">Versione di prova · solo Linux</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="tratto chiusura scena-stanza" id="ascolta" aria-labelledby="ascolta-titolo">
+      <span class="luce-tratto" aria-hidden="true"></span><span class="luce-tratto luce-chiusa" aria-hidden="true"></span>
+      <h2 id="ascolta-titolo" class="entra entra-titolo">Intanto, senti come suona.</h2>
+      <p class="sotto-titolo">La frase di prima, detta con la registrazione vera di Kalliope 0.1. Il suono parte solo se premi.</p>
+      <div class="tavolo entra" aria-hidden="true">
+        <div class="posto-bolla posto-bolla-chiusa">
+          <div class="bolla bolla-chiusa bolla-ferma"><div class="bolla-corpo"><p class="bolla-testo">Buongiorno a tutti! Scrivo invece di parlare, ma vi seguo benissimo.</p></div><svg class="coda" viewBox="0 0 32 24"><path d="M0 0h31L7.6 21.6A3.5 3.5 0 0 1 2 18.8V0z"/></svg></div>
+        </div>
+        <div class="tavolo-cornice">
+          <div class="riquadro tu"><span class="alone"></span><span class="bordo"></span><span class="barre"><i></i><i></i><i></i><i></i><i></i></span><span class="nome">Tu</span></div>
+          <div class="riquadro persona paola"><svg class="figura" viewBox="0 0 200 120" preserveAspectRatio="xMidYMax meet">
+                <path class="capelli-dietro" d="M75 56C74 30 126 30 125 56L128 98C118 104 82 104 72 98Z"/>
+                <path class="corpo" d="M50 120C50 95 73 84 100 84C127 84 150 95 150 120Z"/>
+                <rect class="collo" x="92" y="72" width="16" height="17" rx="6"/>
+                <g class="cenno"><g class="testa">
+                  <ellipse class="pelle" cx="100" cy="55" rx="21" ry="24"/>
+                  <path class="capelli" d="M78 52C78 30 122 28 122 52C118 41 104 36 92 39C86 41 81 45 78 52Z"/>
+                  <g class="occhi"><ellipse cx="92" cy="58" rx="2.4" ry="3.1"/><ellipse cx="108" cy="58" rx="2.4" ry="3.1"/></g><path class="bocca" d="M95.5 67.5Q100 70.5 104.5 67.5"/>
+                </g></g>
+              </svg><span class="lume"></span><span class="nome">Paola</span></div>
+          <div class="riquadro persona luca"><svg class="figura" viewBox="0 0 200 120" preserveAspectRatio="xMidYMax meet">
+                <path class="corpo" d="M48 120C48 94 72 83 100 83C128 83 152 94 152 120Z"/>
+                <rect class="collo" x="92" y="71" width="16" height="17" rx="6"/>
+                <g class="cenno"><g class="testa">
+                  <ellipse class="pelle" cx="100" cy="54" rx="21" ry="24"/>
+                  <path class="capelli" d="M79 51C77 31 123 29 121 51C117 42 108 39 100 39C91 39 83 42 79 51Z"/>
+                  <path class="cuffia" d="M76 58C74 26 126 26 124 58" fill="none"/>
+                  <rect class="cuffia-pad" x="71" y="50" width="8" height="15" rx="4"/><rect class="cuffia-pad" x="121" y="50" width="8" height="15" rx="4"/>
+                  <path class="cuffia" d="M75 63C76 74 84 78 92 78" fill="none"/>
+                  <g class="occhi"><ellipse cx="92" cy="57" rx="2.4" ry="3.1"/><ellipse cx="108" cy="57" rx="2.4" ry="3.1"/></g><path class="bocca" d="M95.5 66.5Q100 69.5 104.5 66.5"/>
+                </g></g>
+              </svg><span class="lume"></span><span class="nome">Luca</span></div>
+          <div class="riquadro persona anna"><svg class="figura" viewBox="0 0 200 120" preserveAspectRatio="xMidYMax meet">
+                <path class="corpo" d="M52 120C52 96 74 85 100 85C126 85 148 96 148 120Z"/>
+                <rect class="collo" x="92" y="73" width="16" height="17" rx="6"/>
+                <g class="cenno"><g class="testa">
+                  <circle class="capelli" cx="100" cy="27" r="10"/>
+                  <ellipse class="pelle" cx="100" cy="56" rx="20" ry="23"/>
+                  <path class="capelli" d="M80 54C78 33 122 31 120 54C114 44 106 40 100 40C93 40 85 44 80 54Z"/>
+                  <g class="occhi"><ellipse cx="92" cy="59" rx="2.3" ry="3"/><ellipse cx="108" cy="59" rx="2.3" ry="3"/></g><path class="bocca" d="M96 68Q100 70.8 104 68"/>
+                </g></g>
+              </svg><span class="lume"></span><span class="nome">Anna</span></div>
+          <canvas class="onde onde-chiusa"></canvas>
+        </div>
+      </div>
+      <div class="comandi comandi-ascolto">
+        <button class="pillola voce-chiara suona-frase ascolta-ferma" type="button" aria-pressed="false" hidden><span class="tondo" aria-hidden="true"></span><span class="se-fermo">Ascolta Giulia</span><span class="se-suona">Pausa</span><span class="se-pausa">Riprendi</span></button>
+        <audio class="lettore-ferma" controls preload="none" src="../voce/giulia-1.mp3"></audio>
+        <a class="collegamento" href="../ascolta/">Tutte le frasi, anche con Marco<span class="freccia" aria-hidden="true"></span></a>
+      </div>
+      <p class="fatti">Non consigliamo altri prodotti: non li abbiamo provati. Se una persona vicina a te ha un computer Linux, Kalliope si può <a href="../installa/">installare lì</a>. Che cosa è provato e che cosa no: <a href="../stato/">stato e limiti</a>.</p>
+    </section>
+  </main>
+
+  <footer class="piede scena-notte">
+    <nav aria-label="Sezioni del sito, in fondo" id="piede-sezioni">
+      <ul>
+        <li><a href="../ascolta/">Ascolta</a></li>
+        <li><a href="../stato/">Stato e limiti</a></li>
+        <li><a href="../installa/">Installa</a></li>
+        <li><a href="../riunione/">In riunione</a></li>
+        <li><a href="../aiuto/">Aiuto</a></li>
+      </ul>
+    </nav>
+    <nav class="lingue" id="lingue" aria-label="Lingue">
+      <ul data-lingue="elenco">
+        <li><a data-lingua href="#">Italiano</a></li>
+      </ul>
+    </nav>
+    <p>Versione {{kalliope.version}} del {{kalliope.date}}. Codice sorgente disponibile, licenza SANSEVIERIA 1.0 (non «open source» nel senso dell'OSI). Prodotto da SANSEVIERIA OÜ. Questo sito non usa cookie né statistiche.</p>
+  </footer>
 </div>
-</header>
-<main id="contenuto" tabindex="-1">
-<div class="pagina testo">
-<span class="barre" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
-<h1>Windows, macOS e telefono: non ancora</h1>
-<p>Oggi Kalliope funziona solo su Linux, su computer a 64 bit con PipeWire. Se usi Windows, macOS o un telefono, per ora non puoi usarlo. Ti diciamo perché.</p>
-<section class="stato" aria-labelledby="stato-titolo-breve">
-<div class="stato__testa">
-<span class="barre barre--piccole" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
-<h2 id="stato-titolo-breve">Com'è messo Kalliope oggi</h2>
-<span class="stato__versione solo-prova">Versione di prova {{kalliope.version}}</span>
-</div>
-<div class="stato__colonne">
-<div class="stato__col" data-tipo="provato">
-<h3><span class="stato__segno" aria-hidden="true">✓</span>Provato</h3>
-<p>La voce arriva al microfono «Kalliope». L'installazione è provata da uno script su Ubuntu, Fedora e Arch.</p>
-</div>
-<div class="stato__col" data-tipo="non-provato">
-<h3><span class="stato__segno" aria-hidden="true">?</span>Non ancora provato</h3>
-<p>Una riunione vera con Zoom, Teams o Meet su un computer di tutti i giorni.</p>
-</div>
-<div class="stato__col" data-tipo="non-esiste">
-<h3><span class="stato__segno" aria-hidden="true">×</span>Non esiste</h3>
-<p>Windows, macOS e telefono. Altre lingue oltre all'italiano.</p>
-</div>
-</div>
-<p class="stato__piede"><a href="../stato/">Leggi tutto lo stato e i limiti</a></p>
-</section>
-<h2>Perché non su Windows</h2>
-<p>Kalliope parla in un microfono che esiste solo dentro il computer. Su Windows, per creare un microfono così serve un driver audio con una firma valida. Quel driver non c'è ancora.</p>
-<h2>Perché non su macOS</h2>
-<p>Su macOS serve un componente audio approvato da Apple. Anche questo non c'è ancora.</p>
-<h2>Cosa c'è già</h2>
-<ul>
-<li>Il programma si costruisce e supera i test anche su Windows e macOS.</li>
-<li>Manca il microfono: senza, nessuna app di riunione sente la voce.</li>
-<li>Mancano anche i pacchetti da installare, uno per sistema, e la loro firma.</li>
-</ul>
-<h2>Telefono, tablet, altre lingue</h2>
-<p>Kalliope non esiste per telefoni e tablet. Parla solo italiano.</p>
-<h2>Come seguire le novità</h2>
-<p>Non promettiamo date. Per sapere quando arriva una nuova versione puoi seguire le pubblicazioni su GitHub, senza account, con un lettore di feed: <a href="https://github.com/SANSEVIERIA-OU/kalliope/releases.atom">le versioni di Kalliope (feed)</a>. Oppure guarda la <a href="https://github.com/SANSEVIERIA-OU/kalliope/releases">pagina delle versioni</a>.</p>
-<p>Non raccogliamo indirizzi <span class="nowrap">e-mail</span> e non abbiamo un elenco d'attesa.</p>
-<h2>E nel frattempo?</h2>
-<p>Non consigliamo altri prodotti: non li abbiamo provati. Se una persona vicina a te ha un computer Linux, Kalliope può essere installato lì: <a href="../installa/">leggi la pagina Installa</a>.</p>
-<p><a class="collegamento-forte" href="../stato/">Leggi tutto lo stato e i limiti</a></p>
-</div>
-</main>
-<footer class="sito-piede">
-<div class="pagina">
-<div>
-<h2>Kalliope</h2>
-<p>Un programma per scrivere e farsi sentire nelle riunioni. <span class="solo-prova">Versione di prova {{kalliope.version}}, pubblicata il {{kalliope.date}}.</span></p>
-<p>Codice sorgente disponibile, licenza SANSEVIERIA 1.0. Non è software «open source» nel senso dell'OSI. Prodotto da SANSEVIERIA OÜ.</p>
-<p>Questo sito non usa cookie, non ha statistiche e non carica nulla da altri siti. I file li serve GitHub Pages, che registra le richieste come ogni host.</p>
-</div>
-<div>
-<h2>Nel sito</h2>
-<ul>
-<li><a href="../non-ancora/">Windows e macOS: non ancora</a></li>
-<li><a href="../sistema/">Come è fatto questo sito</a></li>
-<li><a href="../aiuto/#segnala">Segnala un problema</a></li>
-</ul>
-</div>
-<div>
-<h2>Fuori da questo sito</h2>
-<ul>
-<li><a href="https://github.com/SANSEVIERIA-OU/kalliope">Codice sorgente su GitHub</a></li>
-<li><a href="{{kalliope.release.url}}">Pagina della versione {{kalliope.version}}</a></li>
-<li><a href="https://github.com/SANSEVIERIA-OU/kalliope/issues">Segnalazioni su GitHub (serve un account)</a></li>
-</ul>
-</div>
-</div>
-</footer>
 </body>
 </html>

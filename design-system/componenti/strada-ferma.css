@@ -1,0 +1,50 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* Componente · La strada che si ferma
+   La strada della voce della home (strada.css), dove manca una tappa: la voce nasce, arriva al punto in cui dovrebbe
+   esserci il microfono, lo trova vuoto e si ferma. Le tappe dopo restano spente. Sotto la parte che funziona sta ciò che
+   c'è già; sotto il punto in cui si ferma, ciò che manca e perché.
+   Senza JavaScript e con «riduci movimento» la strada è già disegnata, con la tappa vuota. Ogni valore viene da ../token.css. */
+
+.tappa.ferma .nodo {
+  border-style: dashed;
+  border-color: var(--tratteggio);
+  background: var(--riquadro-scuro);   /* pieno: la linea della voce arriva al bordo tratteggiato e lì si ferma */
+  color: var(--testo-spento);
+}
+.tappa.spenta { opacity: var(--opacita-tappa-spenta); }
+.tappa.spenta .tappa-nome { font-weight: var(--peso-medio); }
+
+/* ciò che c'è già sotto le prime due tappe, ciò che manca sotto la tappa vuota e quelle spente */
+.strada-ferma .esiti { grid-template-columns: 2fr 3fr; }
+.esito-manca { padding-inline-start: var(--spazio-26); }
+.esito-manca h3::before { background: var(--esito-forse-prima-fondo); }
+.esito-manca p { max-width: var(--misura-30); }
+.esito-manca strong { font-weight: var(--peso-forte); color: var(--testo); }
+
+/* con JavaScript: «Manca» compare quando la voce si ferma; la tappa vuota risponde con un'onda tratteggiata che si spegne */
+.js .strada-ferma:not(.fatto) .esito-manca { opacity: 0; transform: translateY(var(--strada-esito-sposta-y)); }
+.js .strada-ferma.fermata .esito-manca { opacity: 1; transform: none; }
+.urto {
+  position: absolute;
+  inset-inline-start: 50%;
+  top: var(--spazio-24);
+  width: var(--misura-26);
+  height: var(--misura-26);
+  margin-block: var(--scoppio-margine-blocco);
+  margin-inline: var(--scoppio-margine-inline);
+  border-radius: var(--raggio-12);
+  border: var(--filetto-medio) dashed var(--voce);
+  pointer-events: none;
+  opacity: 0;
+}
+.tappa.ferma.urtata .nodo { animation: nodo-urto var(--durata-urto) var(--curva-dolce) 1; }
+@keyframes nodo-urto {
+  0%, 100% { border-color: var(--tratteggio); color: var(--testo-spento); }
+  25% { border-color: var(--voce); color: var(--testo); }
+}
+
+@media (max-width: 760px) {
+  .strada-ferma .esiti { grid-template-columns: minmax(0, 1fr); }
+  .esito-manca { padding: 0; }
+  .urto { inset-inline-start: var(--spazio-23); top: var(--spazio-23); border-radius: var(--raggio-11); }
+}

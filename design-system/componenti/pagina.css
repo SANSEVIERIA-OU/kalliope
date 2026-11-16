@@ -1,0 +1,65 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* Componente · La cornice delle pagine interne
+   Ciò che una pagina interna (non ancora, stato, installa, in riunione, 404) aggiunge all'impianto della home: il primo schermo
+   con lo stesso titolo, la stessa riunione e lo stesso arrivo (apertura.css), i tratti come scene della stessa riunione
+   (tratti.css), un tratto con il testo e un oggetto della scena affiancati, la chiusura con un comando che si prova.
+   Prima pagina che la usa: website/non-ancora/. Ogni valore viene da ../token.css. */
+
+/* il primo schermo di una pagina interna finisce dove comincia la prima scena, che vi sale sopra come nella home */
+.scena-pagina { padding-bottom: var(--pagina-scena-spazio-sotto); }
+.scena-pagina + .tratto { margin-top: var(--pagina-primo-tratto-margine); }
+
+/* un tratto con il testo da una parte e un oggetto della scena dall'altra (una finestra, un elenco): l'oggetto sta dalla
+   parte dove finisce la riga, il testo dove comincia; sotto i 1180 px l'oggetto va sotto il testo */
+.tratto.coppia { display: grid; grid-template-columns: var(--coppia-colonne); column-gap: var(--spazio-30); align-items: center; }
+.tratto-testo .comandi { margin-top: var(--spazio-22); }
+.tratto-testo p + p { margin-top: var(--spazio-14); }
+@media (min-width: 761px) and (max-width: 1180px) {
+  .tratto.coppia { grid-template-columns: minmax(0, 1fr); row-gap: var(--spazio-26); }
+  .tratto.coppia > :last-child { max-width: var(--misura-31); }
+}
+@media (max-width: 760px) {
+  .tratto.coppia { display: flex; flex-direction: column; align-items: stretch; gap: var(--spazio-21); }
+  .tratto-testo .comandi { flex-direction: column; align-items: stretch; gap: var(--spazio-5); }
+  .tratto-testo .comandi .pillola { width: 100%; min-height: var(--misura-22); font-size: var(--corpo-8); }
+}
+
+/* la chiusura di una pagina interna: sotto il titolo una frase, poi il comando da provare e i rimandi */
+.chiusura .sotto-titolo {
+  margin: var(--spazi-10);
+  max-width: var(--misura-30);
+  font-size: var(--corpo-9);
+  line-height: var(--interlinea-9);
+  color: var(--testo-spiegazione);
+  text-wrap: balance;
+}
+.chiusura .fatti a { font-weight: var(--peso-forte); text-underline-offset: var(--spazio-3); text-decoration-color: var(--sottolineatura); }
+.chiusura .fatti a:hover { text-decoration-color: var(--testo); }
+@media (max-width: 760px) {
+  .chiusura .sotto-titolo { font-size: var(--corpo-7); line-height: var(--interlinea-7); }
+}
+
+/* al telefono lo script porta i comandi e lo stato dopo la riunione (l'ordine del fuoco è quello che si vede): spostandoli a
+   pagina già disegnata non ripetono l'arrivo */
+.comandi.senza-arrivo, .comandi > .senza-arrivo, .stato.senza-arrivo { animation: none; }
+
+/* il comando da provare della chiusura: con lo script un pulsante della pagina; senza, o se il suono non parte, il lettore
+   del browser con il file */
+.lettore-ferma { width: 100%; max-width: var(--messaggio-larghezza-massima); color-scheme: dark; }
+.js .lettore-ferma { display: none; }
+.js .comandi-ascolto.ripiego .lettore-ferma { display: block; }
+.ascolta-ferma .se-suona, .ascolta-ferma .se-pausa { display: none; }
+.ascolta-ferma.suona .se-fermo, .ascolta-ferma.carica .se-fermo, .ascolta-ferma.pausa .se-fermo { display: none; }
+.ascolta-ferma.suona .se-suona, .ascolta-ferma.carica .se-suona, .ascolta-ferma.pausa .se-pausa { display: inline; }
+
+/* la scena chiara: il testo dei tratti scuro, come i requisiti della home sulla stessa scena; i collegamenti con la loro riga */
+.scena-chiara .tratto-testo p { color: var(--testo-spiegazione-chiara); }
+.scena-chiara .collegamento { text-decoration-color: var(--bordo-rivedi-chiaro); }
+.scena-chiara .collegamento:hover { text-decoration-color: var(--bordeaux); }
+
+/* «Non esiste ancora» quando è più di una riga: la misura di una riga leggibile */
+.tratto .non-esiste p { max-width: var(--misura-33); }
+
+/* nella chiusura il titolo sta sopra la riunione e il comando subito sotto: chi preme vede la frase che si accende */
+.chiusura .sotto-titolo + .tavolo { margin-top: var(--spazio-26); margin-bottom: 0; }
+.chiusura .tavolo + .comandi { margin-top: var(--spazio-21); }

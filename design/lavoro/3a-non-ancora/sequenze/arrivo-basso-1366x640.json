@@ -1,0 +1,48 @@
+{
+ "pagina": "http://127.0.0.1:35915/it/non-ancora/",
+ "misura": "1366x640",
+ "sequenza": "arrivo-basso",
+ "gesto": null,
+ "ridotto": false,
+ "lento": 1,
+ "istanti": [
+  0,
+  1,
+  2,
+  3.5
+ ],
+ "fotogrammi": [
+  {
+   "file": "arrivo-basso-1366x640-f01.jpg",
+   "chiesto": 0,
+   "scattato": 0,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-basso-1366x640-f02.jpg",
+   "chiesto": 1,
+   "scattato": 1,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-basso-1366x640-f03.jpg",
+   "chiesto": 2,
+   "scattato": 2,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-basso-1366x640-f04.jpg",
+   "chiesto": 3.5,
+   "scattato": 3.5,
+   "scorrimento": 0
+  }
+ ],
+ "foglio": "arrivo-basso-1366x640-foglio.jpg",
+ "video": "arrivo-basso-1366x640.webm",
+ "orologio": {
+  "pagina": 1,
+  "media": []
+ },
+ "errori": [],
+ "misurato": "2026-11-16T22:58:11.566Z"
+}

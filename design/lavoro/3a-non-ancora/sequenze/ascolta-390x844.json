@@ -1,0 +1,125 @@
+{
+ "pagina": "http://127.0.0.1:46123/it/non-ancora/",
+ "misura": "390x844",
+ "sequenza": "ascolta",
+ "gesto": "premi:.ascolta-ferma",
+ "ridotto": false,
+ "lento": 1,
+ "istanti": [
+  0,
+  0.4,
+  0.8,
+  1.2,
+  1.6,
+  2,
+  2.5,
+  3,
+  3.5,
+  4,
+  4.5,
+  5,
+  5.6,
+  6.5,
+  7.5
+ ],
+ "fotogrammi": [
+  {
+   "file": "ascolta-390x844-f01.jpg",
+   "chiesto": 0,
+   "scattato": 0,
+   "scorrimento": 3325
+  },
+  {
+   "file": "ascolta-390x844-f02.jpg",
+   "chiesto": 0.4,
+   "scattato": 0.4,
+   "scorrimento": 3325
+  },
+  {
+   "file": "ascolta-390x844-f03.jpg",
+   "chiesto": 0.8,
+   "scattato": 0.8,
+   "scorrimento": 3325
+  },
+  {
+   "file": "ascolta-390x844-f04.jpg",
+   "chiesto": 1.2,
+   "scattato": 1.2,
+   "scorrimento": 3325
+  },
+  {
+   "file": "ascolta-390x844-f05.jpg",
+   "chiesto": 1.6,
+   "scattato": 1.6,
+   "scorrimento": 3325
+  },
+  {
+   "file": "ascolta-390x844-f06.jpg",
+   "chiesto": 2,
+   "scattato": 2,
+   "scorrimento": 3325
+  },
+  {
+   "file": "ascolta-390x844-f07.jpg",
+   "chiesto": 2.5,
+   "scattato": 2.5,
+   "scorrimento": 3325
+  },
+  {
+   "file": "ascolta-390x844-f08.jpg",
+   "chiesto": 3,
+   "scattato": 3,
+   "scorrimento": 3325
+  },
+  {
+   "file": "ascolta-390x844-f09.jpg",
+   "chiesto": 3.5,
+   "scattato": 3.5,
+   "scorrimento": 3325
+  },
+  {
+   "file": "ascolta-390x844-f10.jpg",
+   "chiesto": 4,
+   "scattato": 4,
+   "scorrimento": 3325
+  },
+  {
+   "file": "ascolta-390x844-f11.jpg",
+   "chiesto": 4.5,
+   "scattato": 4.5,
+   "scorrimento": 3325
+  },
+  {
+   "file": "ascolta-390x844-f12.jpg",
+   "chiesto": 5,
+   "scattato": 5,
+   "scorrimento": 3325
+  },
+  {
+   "file": "ascolta-390x844-f13.jpg",
+   "chiesto": 5.6,
+   "scattato": 5.6,
+   "scorrimento": 3325
+  },
+  {
+   "file": "ascolta-390x844-f14.jpg",
+   "chiesto": 6.5,
+   "scattato": 6.5,
+   "scorrimento": 3325
+  },
+  {
+   "file": "ascolta-390x844-f15.jpg",
+   "chiesto": 7.5,
+   "scattato": 7.5,
+   "scorrimento": 3325
+  }
+ ],
+ "foglio": "ascolta-390x844-foglio.jpg",
+ "video": "ascolta-390x844.webm",
+ "orologio": {
+  "pagina": 1,
+  "media": []
+ },
+ "errori": [],
+ "misurato": "2026-11-16T22:58:06.042Z"
+}

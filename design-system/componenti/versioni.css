@@ -1,0 +1,56 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* Componente · L'elenco delle versioni
+   Le versioni di Kalliope come le mostrano la pagina delle versioni e il suo feed, disegnate nel nostro mondo (nessuna
+   pagina copiata): in cima il posto della prossima, tratteggiato e vuoto; sotto le versioni che ci sono, con i dati della
+   release (segnaposto di tools/site.py, mai scritti a mano). Arrivando sullo schermo, il posto vuoto respira una volta:
+   è lì che comparirà la novità. Ogni valore viene da ../token.css. */
+
+.versioni {
+  position: relative;
+  padding: var(--spazio-12);
+  border-radius: var(--raggio-10);
+  background: var(--riquadro-scuro);
+  border: var(--filetto-sottile) solid var(--bordo-sezione);
+  box-shadow: var(--riunione-app-ombra);
+  color: var(--testo);
+}
+.versioni-titolo {
+  margin: var(--versioni-titolo-margine);
+  font-size: var(--corpo-5);
+  line-height: var(--interlinea-3);
+  font-weight: var(--peso-forte);
+  color: var(--testo-didascalia);
+}
+.versioni-elenco { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--spazio-7); }
+.versione {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: var(--spazio-10);
+  row-gap: var(--spazio-1);
+  padding: var(--versione-spazio-interno);
+  border-radius: var(--raggio-7);
+  background: var(--velo-comando);
+}
+.versione-nome { font-size: var(--corpo-8); line-height: var(--interlinea-8); font-weight: var(--peso-forte); }
+.versione-data { margin-inline-start: auto; font-size: var(--corpo-5); color: var(--testo-didascalia); white-space: nowrap; }
+.versione-nota { flex-basis: 100%; font-size: var(--corpo-5); line-height: var(--interlinea-4); color: var(--testo-spiegazione); }
+.versione.prossima { background: transparent; }
+.versione.prossima::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: var(--filetto-medio) dashed var(--tratteggio);
+  pointer-events: none;
+}
+.versione.prossima .versione-nota { color: var(--testo-spento); }
+.js .versioni.visto .versione.prossima::before { animation: respira var(--durata-respira) var(--curva-dolce-doppia) var(--ritardo-respira) 1 both; }
+@keyframes respira {
+  0%, 100% { border-color: var(--tratteggio); transform: none; }
+  45% { border-color: var(--voce); transform: scale(var(--respira-scala)); }
+}
+@media (max-width: 760px) {
+  .versione-nome { font-size: var(--corpo-7); line-height: var(--interlinea-7); }
+}

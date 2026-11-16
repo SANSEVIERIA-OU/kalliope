@@ -1,0 +1,125 @@
+{
+ "pagina": "http://127.0.0.1:46123/it/non-ancora/",
+ "misura": "1440x900",
+ "sequenza": "ascolta",
+ "gesto": "premi:.ascolta-ferma",
+ "ridotto": false,
+ "lento": 1,
+ "istanti": [
+  0,
+  0.4,
+  0.8,
+  1.2,
+  1.6,
+  2,
+  2.5,
+  3,
+  3.5,
+  4,
+  4.5,
+  5,
+  5.6,
+  6.5,
+  7.5
+ ],
+ "fotogrammi": [
+  {
+   "file": "ascolta-1440x900-f01.jpg",
+   "chiesto": 0,
+   "scattato": 0,
+   "scorrimento": 2654
+  },
+  {
+   "file": "ascolta-1440x900-f02.jpg",
+   "chiesto": 0.4,
+   "scattato": 0.4,
+   "scorrimento": 2654
+  },
+  {
+   "file": "ascolta-1440x900-f03.jpg",
+   "chiesto": 0.8,
+   "scattato": 0.8,
+   "scorrimento": 2654
+  },
+  {
+   "file": "ascolta-1440x900-f04.jpg",
+   "chiesto": 1.2,
+   "scattato": 1.2,
+   "scorrimento": 2654
+  },
+  {
+   "file": "ascolta-1440x900-f05.jpg",
+   "chiesto": 1.6,
+   "scattato": 1.6,
+   "scorrimento": 2654
+  },
+  {
+   "file": "ascolta-1440x900-f06.jpg",
+   "chiesto": 2,
+   "scattato": 2,
+   "scorrimento": 2654
+  },
+  {
+   "file": "ascolta-1440x900-f07.jpg",
+   "chiesto": 2.5,
+   "scattato": 2.5,
+   "scorrimento": 2654
+  },
+  {
+   "file": "ascolta-1440x900-f08.jpg",
+   "chiesto": 3,
+   "scattato": 3.03,
+   "scorrimento": 2654
+  },
+  {
+   "file": "ascolta-1440x900-f09.jpg",
+   "chiesto": 3.5,
+   "scattato": 3.5,
+   "scorrimento": 2654
+  },
+  {
+   "file": "ascolta-1440x900-f10.jpg",
+   "chiesto": 4,
+   "scattato": 4,
+   "scorrimento": 2654
+  },
+  {
+   "file": "ascolta-1440x900-f11.jpg",
+   "chiesto": 4.5,
+   "scattato": 4.5,
+   "scorrimento": 2654
+  },
+  {
+   "file": "ascolta-1440x900-f12.jpg",
+   "chiesto": 5,
+   "scattato": 5.28,
+   "scorrimento": 2654
+  },
+  {
+   "file": "ascolta-1440x900-f13.jpg",
+   "chiesto": 5.6,
+   "scattato": 5.6,
+   "scorrimento": 2654
+  },
+  {
+   "file": "ascolta-1440x900-f14.jpg",
+   "chiesto": 6.5,
+   "scattato": 6.5,
+   "scorrimento": 2654
+  },
+  {
+   "file": "ascolta-1440x900-f15.jpg",
+   "chiesto": 7.5,
+   "scattato": 7.5,
+   "scorrimento": 2654
+  }
+ ],
+ "foglio": "ascolta-1440x900-foglio.jpg",
+ "video": "ascolta-1440x900.webm",
+ "orologio": {
+  "pagina": 1,
+  "media": []
+ },
+ "errori": [],
+ "misurato": "2026-11-16T22:57:54.202Z"
+}

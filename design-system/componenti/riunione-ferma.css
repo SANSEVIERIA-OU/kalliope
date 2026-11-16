@@ -1,0 +1,85 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* Componente · La riunione in cui la tua voce non arriva
+   La stessa riunione della home (riunione.css) con la barra del microfono dell'app (riunione-app.css): qui fra i microfoni
+   «Kalliope» non c'è. Il tuo riquadro è un posto tratteggiato e silenzioso, la tua frase resta nella bolla senza voce.
+   All'arrivo il puntatore va sul posto di «Kalliope», lo trova vuoto e torna: si vede dove si ferma la voce.
+   Serve a «non ancora» (Windows, macOS) e potrà servire all'aiuto («se non ti sentono»). Ogni valore viene da ../token.css. */
+
+/* la cornice della riunione tiene anche la barra del microfono, sotto i riquadri */
+.chiamata-ferma { display: flex; flex-direction: column; gap: var(--spazio-5); height: auto; }
+.chiamata-ferma .griglia { height: var(--chiamata-ferma-altezza); }
+.chiamata-ferma .app-comandi { height: auto; padding: var(--chiamata-ferma-barra-spazio-interno); }
+.chiamata-ferma .microfono { font-size: var(--corpo-5); }
+
+/* il tuo posto: tratteggiato, senza fondo, con la voce piatta */
+.riquadro.tu.assente { background: transparent; }
+.riquadro.tu.assente::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: var(--filetto-medio) dashed var(--tratteggio);
+  pointer-events: none;
+}
+.riquadro.tu.assente .barre i { transform: scaleY(var(--barre-ferme-scala-y)); }
+
+/* nella barra del microfono il posto di «Kalliope» è vuoto: tratteggiato, spento */
+.scelta.mancante {
+  position: relative;
+  border: var(--filetto-sottile) dashed var(--tratteggio);
+  color: var(--testo-spento);
+}
+.scelta.mancante::after {
+  content: "";
+  position: absolute;
+  inset: calc(-1 * var(--filetto-sottile));
+  border-radius: inherit;
+  border: var(--filetto-medio) dashed var(--voce);
+  opacity: 0;
+  pointer-events: none;
+}
+.mancante-nota { color: var(--testo-didascalia); }
+
+/* la frase scritta e non detta: nella bolla, al passo delle parole che aspettano la voce */
+.bolla-ferma:not(.divisa) .bolla-testo { opacity: var(--opacita-bolla-2); }
+
+/* ---------- l'arrivo, solo CSS (vale anche senza JavaScript; con «riduci movimento» resta lo stato finale) ----------
+   la bolla nasce dalla coda quando il tuo riquadro è entrato; poi il puntatore cerca «Kalliope» (la scelta puntata),
+   il posto vuoto risponde con un'onda tratteggiata che non arriva a nessuno, il tuo bordo si accende e si spegne */
+.posto-bolla-ferma { animation: none; }
+.posto-bolla-ferma .bolla {
+  transform-origin: calc(50% + (var(--spazio-24) - 50%) * var(--verso)) 100%;
+  animation: nasce var(--durata-bolla-nasce) var(--entra) var(--ritardo-bolla-ferma) backwards;
+}
+@keyframes nasce {
+  from { opacity: 0; transform: scale(var(--bolla-nasce-scala)); }
+  to { opacity: 1; transform: none; }
+}
+.chiamata-ferma .scelta.mancante { animation: cerca var(--durata-cerca) var(--curva-dolce) var(--ritardo-cerca) both; }
+@keyframes cerca {
+  0%, 100% { background-color: transparent; }
+  18%, 72% { background-color: var(--velo-puntata); }
+}
+.chiamata-ferma .scelta.mancante::after { animation: urto var(--durata-urto) var(--curva-uscita) var(--ritardo-urto) both; }
+@keyframes urto {
+  0% { opacity: 0; transform: scale(1); }
+  20% { opacity: 1; }
+  100% { opacity: 0; transform: scale(var(--urto-scala)); }
+}
+.chiamata-ferma .mancante-nota { animation: appare var(--durata-mancante-nota) var(--curva-dolce) var(--ritardo-mancante-nota) backwards; }
+.chiamata-ferma .riquadro.tu.assente::before { animation: tu-cerca var(--durata-urto) var(--curva-dolce) var(--ritardo-urto) both; }
+@keyframes tu-cerca {
+  0%, 100% { border-color: var(--tratteggio); }
+  30% { border-color: var(--voce); }
+}
+
+@media (max-width: 760px) {
+  .chiamata-ferma { gap: var(--spazio-3); }
+  .chiamata-ferma .griglia { height: var(--chiamata-ferma-altezza-telefono); }
+  .chiamata-ferma .microfono { font-size: var(--microfono-grandezza-telefono); }
+  .riquadro.tu.assente::before { border-width: var(--filetto-comando); }
+}
+
+/* con un testo più lungo (un'altra lingua) le voci della barra vanno a capo invece di uscire dalla cornice */
+.chiamata-ferma .microfono { flex-wrap: wrap; justify-content: center; max-width: 100%; }
+.chiamata-ferma .microfono-scelte { flex-wrap: wrap; justify-content: center; }
