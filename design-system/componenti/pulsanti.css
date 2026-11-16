@@ -1,0 +1,116 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* Componente · Pulsanti e pillole
+   Le regole di questo componente, nell'ordine in cui la pagina le dava.
+   Ogni valore viene da ../token.css (o ../../token.css): qui non ce n'è nessuno scritto a mano. */
+
+/* le pillole: una sola azione piena; il chiaro è il colore della voce */
+.pillola {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spazio-10);
+  min-height: var(--misura-23);
+  padding: var(--pillola-spazio-interno);
+  border-radius: var(--raggio-pillola);
+  border: 0;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: var(--corpo-9);
+  font-weight: var(--peso-forte);
+  text-decoration: none;
+  transition: background-color var(--durata-pillola) var(--curva-dolce), box-shadow var(--durata-pillola) var(--curva-dolce), transform var(--durata-pillola) var(--entra);
+}
+.pillola.azione { background: var(--azione); color: var(--azione-testo); box-shadow: var(--pillola-ombra); }
+.pillola.azione:hover { background: var(--azione-sopra); }
+.pillola:active { transform: scale(var(--pillola-premuto-scala)); }
+.collegamento {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spazio-7);
+  min-height: var(--misura-22);
+  padding: var(--spazi-5);
+  font-size: var(--corpo-8);
+  font-weight: var(--peso-medio);
+  text-decoration: underline;
+  text-decoration-thickness: var(--collegamento-sottolineatura-spessore);
+  text-underline-offset: var(--spazio-5);
+  text-decoration-color: var(--sottolineatura);
+}
+.collegamento:hover { text-decoration-color: var(--testo); }
+.collegamento .freccia {
+  width: var(--misura-8);
+  height: var(--misura-8);
+  background: currentColor;
+  transition: transform var(--durata-collegamento-freccia) var(--entra);
+  -webkit-mask: var(--collegamento-freccia-maschera);
+  mask: var(--collegamento-freccia-maschera);
+}
+.collegamento:hover .freccia, .collegamento:focus-visible .freccia { transform: translateX(var(--collegamento-freccia-sopra-sposta-x)); }
+.pillola.voce-chiara { background: var(--testo); color: var(--bordeaux); padding: var(--pillola-spazio-interno-2); }
+.pillola.voce-chiara:hover { background: var(--bianco); }
+.tondo { position: relative; width: var(--misura-19); height: var(--misura-19); border-radius: 50%; background: var(--bordeaux); flex: none; }
+.tondo::before {
+  content: "";
+  position: absolute;
+  left: var(--spazio-13);
+  top: var(--spazio-10);
+  border-left: var(--tondo-prima-triangolo) solid var(--testo);
+  border-top: var(--tondo-prima-triangolo-2) solid transparent;
+  border-bottom: var(--tondo-prima-triangolo-2) solid transparent;
+}
+.chiudi {
+  min-height: var(--misura-21);
+  padding: var(--spazi-3);
+  border-radius: var(--raggio-pillola);
+  cursor: pointer;
+  font-size: var(--corpo-6);
+  font-weight: var(--peso-forte);
+  background: transparent;
+  border: var(--filetto-comando) solid var(--bordo-comando-quieto);
+}
+.chiudi:hover { border-color: var(--testo); }
+@media (max-width: 760px) {
+  .collegamento { justify-content: center; min-height: var(--misura-21); font-size: var(--corpo-7); }
+  .pillola.voce-chiara { min-height: var(--misura-22); font-size: var(--corpo-7); padding: var(--pillola-spazio-interno-telefono); }
+  .tondo { width: var(--misura-18); height: var(--misura-18); }
+  .tondo::before { left: var(--spazio-12); top: var(--spazio-9); }
+}
+.rivedi {
+  grid-column: 1;
+  grid-row: 4;
+  justify-self: start;
+  margin-top: var(--spazio-8);
+  min-height: var(--misura-21);
+  padding: var(--spazi-3);
+  border-radius: var(--raggio-pillola);
+  cursor: pointer;
+  font-size: var(--corpo-6);
+  font-weight: var(--peso-forte);
+  background: transparent;
+  border: var(--filetto-comando) solid var(--bordo-comando-quieto);
+}
+.rivedi:hover { border-color: var(--testo); }
+.js .rivedi.in-scena:not(:focus) { opacity: 0; pointer-events: none; }
+.chiudi, .rivedi {
+  transition: border-color var(--durata-voce-bordo) var(--curva-dolce), background-color var(--durata-voce-sfondo) var(--curva-dolce), transform var(--durata-voce-trasforma) var(--entra);
+}
+.chiudi:active, .rivedi:active { transform: scale(var(--voce-premuto-scala)); }
+.collegamento {
+  transition: text-decoration-color var(--durata-collegamento-sottolineatura), transform var(--durata-collegamento-trasforma) var(--entra);
+}
+.collegamento:active { transform: scale(var(--collegamento-premuto-scala)); }
+.chiudi:focus-visible, .rivedi:focus-visible { border-color: var(--rosa); }
+.chiudi:disabled, .rivedi:disabled, .pillola:disabled { opacity: var(--opacita-spento); cursor: not-allowed; }
+@media (max-width: 349px) {
+  .collegamento { font-size: var(--corpo-6); }
+}
+.scena-chiara .rivedi { color: var(--bordeaux); border-color: var(--bordo-rivedi-chiaro); }
+.scena-chiara .rivedi:hover { border-color: var(--bordeaux); }
+.scena-chiara .rivedi:focus-visible { border-color: var(--bordeaux); }
+@media (max-width: 760px) {
+  .rivedi { margin-top: var(--spazio-10); }
+}
+@media (min-width: 350px) and (max-width: 374px) {
+  .collegamento { font-size: var(--corpo-6); }
+}

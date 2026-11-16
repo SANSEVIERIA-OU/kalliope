@@ -14,6 +14,13 @@ separately.
 | Klein-TTS-X1.5-Pro | Voice model (downloaded, not in this repository) | Apache-2.0 | https://huggingface.co/klein-ml/Klein-TTS-X1.5-Pro |
 | Wiktionary pronunciations (via kaikki.org) | `crates/phonemes/data/`: stress, vowel quality and z voicing of Italian words | CC BY-SA 4.0 | https://en.wiktionary.org, https://kaikki.org |
 
+## Used by the website and the design system
+
+| Component | Use | Licence | Source |
+| --- | --- | --- | --- |
+| Lexend (variable font, and a Latin subset of it) | Text of the home page; files in `design-system/caratteri/lexend/` | SIL Open Font License 1.1 (`OFL.txt` beside the files) | https://github.com/googlefonts/lexend |
+| DejaVu Sans (complete, and a Latin subset of it) | Text of the reconstructed app window on the home page; files in `design-system/caratteri/dejavu/` | Bitstream Vera licence, DejaVu changes in the public domain (`LICENZA-copyright.txt` beside the files) | https://dejavu-fonts.github.io/ |
+
 ## Development only (never part of a build or distribution)
 
 | Component | Use | Licence |

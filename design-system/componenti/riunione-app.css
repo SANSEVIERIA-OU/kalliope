@@ -1,0 +1,100 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* Componente · La riunione ricostruita, con il microfono
+   Le regole di questo componente, nell'ordine in cui la pagina le dava.
+   Ogni valore viene da ../token.css (o ../../token.css): qui non ce n'è nessuno scritto a mano. */
+
+/* la riunione: la stessa stanza del primo schermo, in una finestra; il menu del microfono è un'interfaccia generica
+   disegnata nel nostro mondo (nessuna app copiata) */
+.riunione-app {
+  grid-column: 1;
+  grid-row: 2;
+  justify-self: end;
+  position: relative;
+  z-index: var(--livello-riunione-app);
+  width: var(--riunione-app-larghezza);
+  margin-top: var(--spazio-meno-1);
+  padding: var(--spazio-6);
+  border-radius: var(--raggio-10);
+  background: var(--riquadro-scuro);
+  border: var(--filetto-sottile) solid var(--bordo-sezione);
+  box-shadow: var(--riunione-app-ombra);
+}
+.app-griglia { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: var(--app-griglia-righe); gap: var(--spazio-5); }
+.app-griglia .riquadro { border-radius: var(--app-griglia-riquadro-raggio); }
+.app-griglia .barre { height: var(--misura-21); gap: var(--spazio-4); }
+.app-griglia .barre i { width: var(--misura-3); border-radius: var(--raggio-2); }
+.app-griglia .nome { left: var(--spazio-6); top: var(--spazio-6); font-size: var(--corpo-3); line-height: var(--interlinea-2); padding: var(--spazi-8); }
+.riunione-app.vivo .tu .nome::after { content: " · microfono «Kalliope»"; }
+/* l'etichetta si completa quando «Kalliope» è scelto */
+.riunione-app.vivo .tu .barre i { background: var(--voce); }
+.riunione-app.vivo .tu .bordo { animation: lampo var(--durata-riunione-app-bordo) var(--curva-uscita) 1 both; }
+@keyframes lampo {
+  0% { opacity: 0; }
+  25% { opacity: 1; }
+  100% { opacity: var(--opacita-lampo-100); }
+}
+@container (max-width: 790px) {
+  .riunione-app { margin-top: var(--spazio-10); }
+}
+/* la barra della riunione: la scelta del microfono si vede sempre (le due voci e quella scelta), e passa a «Kalliope» */
+.app-comandi { display: flex; justify-content: center; align-items: center; height: var(--misura-24); }
+.microfono {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spazio-8);
+  padding: var(--microfono-spazio-interno);
+  border-radius: var(--raggio-pillola);
+  background: var(--velo-comando);
+  border: var(--filetto-sottile) solid var(--bordo-pannello);
+  color: var(--testo);
+  font-size: var(--corpo-4);
+}
+.microfono-titolo { display: inline-flex; align-items: center; gap: var(--spazio-7); font-weight: var(--peso-medio); color: var(--testo-didascalia); }
+.app-icona { width: var(--misura-13); height: var(--misura-13); border-radius: 50%; background: var(--testo); position: relative; flex: none; }
+.app-icona::before {
+  content: "";
+  position: absolute;
+  inset: var(--spazio-5);
+  background: var(--bordeaux);
+  -webkit-mask: var(--app-icona-prima-maschera);
+  mask: var(--app-icona-prima-maschera);
+}
+.microfono-scelte { list-style: none; margin: 0; padding: 0; display: flex; gap: var(--spazio-1); }
+.scelta {
+  padding: var(--scelta-spazio-interno);
+  border-radius: var(--raggio-pillola);
+  white-space: nowrap;
+  transition: background-color var(--durata-scelta-sfondo) var(--curva-dolce), color var(--durata-scelta-testo) var(--curva-dolce), transform var(--durata-scelta-trasforma) var(--curva-dolce);
+}
+.scelta.scelto { background: var(--testo); color: var(--bordeaux); font-weight: var(--peso-forte); }
+.scelta.puntata { background: var(--velo-puntata); }
+.scelta.premuta { transform: scale(var(--scelta-scala)); }
+.js .riunione-app.entra-finestra { transform-origin: 100% 0; --ritardo: var(--riunione-app-entra-finestra-ritardo); }
+@media (max-width: 760px) {
+  .riunione-app { width: var(--riunione-app-larghezza-telefono); margin-top: 0; }
+  .app-griglia { grid-template-rows: var(--app-griglia-righe-telefono); gap: var(--spazio-4); }
+  .app-griglia .barre { height: var(--misura-14); gap: var(--spazio-2); }
+  .app-griglia .barre i { width: var(--app-griglia-barre-larghezza-telefono); }
+  .app-griglia .nome {
+    font-size: var(--corpo-1);
+    line-height: var(--interlinea-1);
+    padding: var(--app-griglia-nome-spazio-interno-telefono);
+    left: var(--spazio-4);
+    top: var(--spazio-4);
+  }
+  .microfono { gap: var(--spazio-5); font-size: var(--microfono-grandezza-telefono); padding: var(--microfono-spazio-interno-telefono); }
+  .microfono-titolo { gap: var(--spazio-4); }
+  .app-icona { width: var(--misura-10); height: var(--misura-10); }
+  .app-icona::before { inset: var(--spazio-4); }
+  .scelta { padding: var(--scelta-spazio-interno-telefono); }
+}
+.riunione-app { color: var(--testo); }
+/* la riunione resta nel suo mondo scuro anche dentro la scena chiara */
+@media (max-width: 420px) {
+  /* al telefono stretto le due voci della scelta stanno una sotto l'altra: nulla esce dallo schermo, con ogni carattere */
+  .app-comandi { height: auto; padding: var(--app-comandi-spazio-interno); }
+  .microfono { flex-direction: column; align-items: stretch; gap: var(--spazio-3); padding: var(--spazio-5); border-radius: var(--raggio-7); width: 100%; }
+  .microfono-titolo { padding: var(--microfono-titolo-spazio-interno); }
+  .microfono-scelte { flex-direction: column; }
+  .scelta { white-space: normal; }
+}

@@ -1,0 +1,230 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* Componente · Barra e menu
+   Le regole di questo componente, nell'ordine in cui la pagina le dava.
+   Ogni valore viene da ../token.css (o ../../token.css): qui non ce n'è nessuno scritto a mano. */
+
+.barra {
+  position: sticky;
+  top: 0;
+  z-index: var(--livello-barra);
+  height: var(--barra-altezza);
+  padding: 0 var(--margine);
+  display: flex;
+  align-items: center;
+  gap: var(--spazio-14);
+  transition: background-color var(--durata-barra) var(--curva-dolce), box-shadow var(--durata-barra) var(--curva-dolce);
+}
+/* correzioni (P10): la barra compatta è piena, senza sfocatura: niente macchie di ciò che le scorre sotto */
+.barra.compatta { background: var(--barra-piena); box-shadow: var(--barra-compatto-ombra); clip-path: var(--barra-compatto-ritaglio); }
+.menu { margin-left: auto; transition: transform var(--durata-menu) var(--entra) var(--ritardo-menu); }
+/* tornando, il menu aspetta che l'azione sia sparita */
+/* correzioni (P1): a riposo l'azione non occupa posto, la navigazione sta dove stava nel primo schermo scelto («Aiuto»
+   finisce sul margine destro). Quando l'azione compare, il menu le fa posto scivolando a sinistra e lei entra dopo. */
+.barra .barra-azione {
+  position: absolute;
+  top: 50%;
+  right: var(--margine);
+  margin-top: var(--spazio-meno-1);
+  min-height: var(--misura-21);
+  padding: var(--spazi-4);
+  font-size: var(--corpo-6);
+  box-shadow: none;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(var(--barra-azione-sposta-x)) scale(var(--barra-azione-scala));
+  transition: opacity var(--durata-barra-azione-opacita) var(--curva-dolce), transform var(--durata-barra-azione-trasforma) var(--entra), visibility 0s var(--curva-lineare) var(--ritardo-barra-azione-visibilita);
+}
+.barra.con-azione .barra-azione {
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+  transition: opacity var(--durata-barra-azione-opacita-2) var(--curva-dolce) var(--ritardo-barra-azione-opacita), transform var(--durata-barra-azione-trasforma-2) var(--entra) var(--ritardo-barra-azione-trasforma), visibility 0s;
+}
+.barra.con-azione .menu { transform: translateX(calc(-1 * var(--posto-azione, var(--barra-menu-posto-azione-base)))); transition-delay: 0ms; }
+.marchio {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spazio-10);
+  text-decoration: none;
+  font-size: var(--corpo-11);
+  font-weight: var(--peso-titolo);
+  letter-spacing: var(--spaziatura-marchio);
+  min-height: var(--misura-21);
+  border-radius: var(--raggio-6);
+}
+.marchio svg { width: var(--misura-17); height: var(--misura-17); }
+.menu ul { list-style: none; margin: 0; padding: 0; display: flex; gap: var(--spazio-1); }
+.menu a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--misura-21);
+  padding: var(--menu-spazio-interno);
+  border-radius: var(--raggio-pillola);
+  font-size: var(--corpo-7);
+  font-weight: var(--peso-medio);
+  text-decoration: none;
+  transition: background-color var(--durata-menu-2);
+}
+.menu a:hover { background: var(--velo-menu-sopra); }
+.pulsante-menu { display: none; }
+.barra-azione { animation: none; }
+.barra { max-width: var(--misura-35); margin-inline: auto; }
+@media (max-width: 760px) {
+  .barra { height: var(--misura-23); }
+  .marchio { font-size: var(--corpo-10); gap: var(--spazio-8); }
+  .marchio svg { width: var(--misura-14); height: var(--misura-14); }
+  .menu { display: none; }
+  .js .menu.aperto {
+    display: block;
+    position: absolute;
+    top: var(--spazio-28);
+    left: var(--spazio-10);
+    right: var(--spazio-10);
+    z-index: var(--livello-menu-aperto);
+    background: var(--pannello-menu);
+    border: var(--filetto-sottile) solid var(--bordo-pannello);
+    border-radius: var(--raggio-10);
+    padding: var(--spazio-7);
+    -webkit-backdrop-filter: var(--menu-aperto-sfocatura);
+    backdrop-filter: var(--menu-aperto-sfocatura);
+  }
+  .menu.aperto ul { flex-direction: column; }
+  .menu.aperto a { width: 100%; min-height: var(--menu-aperto-altezza-minima); font-size: var(--corpo-9); }
+  .pulsante-menu {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--misura-21);
+    padding: var(--spazi-3);
+    border-radius: var(--raggio-pillola);
+    cursor: pointer;
+    background: var(--velo-comando);
+    border: var(--filetto-comando) solid var(--bordo-comando);
+    text-decoration: none;
+    font-size: var(--corpo-7);
+    font-weight: var(--peso-forte);
+  }
+  .barra .barra-azione {
+    min-height: var(--misura-19);
+    margin-top: var(--barra-azione-margine-sopra-telefono);
+    padding: var(--spazi-2);
+    font-size: var(--corpo-5);
+  }
+  .pulsante-menu { margin-left: auto; }
+}
+/* correzioni 6b: senza script la classe «compatta» non arriva mai, e la barra (testo chiaro) resterebbe trasparente sopra la scena
+   chiara, illeggibile. Qui è piena da sé; dove il browser sa legare l'animazione allo scorrimento, lo diventa solo dopo 24 px,
+   come con lo script, e in cima resta com'è nel primo schermo scelto */
+html:not(.js) .barra { background: var(--barra-piena); box-shadow: var(--barra-ombra); clip-path: var(--barra-ritaglio); }
+@supports (animation-timeline: scroll()) {
+  @keyframes barra-piena {
+    from { background-color: transparent; box-shadow: var(--barra-piena-da-ombra); }
+  }
+}
+@supports (animation-timeline: scroll()) {
+  html:not(.js) .barra { animation: barra-piena var(--curva-lineare) both; animation-timeline: scroll(root); animation-range: var(--barra-intervallo); }
+}
+.pulsante-menu {
+  transition: border-color var(--durata-voce-bordo) var(--curva-dolce), background-color var(--durata-voce-sfondo) var(--curva-dolce), transform var(--durata-voce-trasforma) var(--entra);
+}
+.pulsante-menu:active { transform: scale(var(--voce-premuto-scala)); }
+.menu a:active { background: var(--velo-menu-premuto); }
+.marchio:active { transform: scale(var(--collegamento-premuto-scala)); }
+.pulsante-menu:hover { background: var(--velo-scelto); }
+.marchio span {
+  display: inline-block;
+  max-width: var(--marchio-larghezza-massima);
+  overflow: hidden;
+  white-space: nowrap;
+  transition: opacity var(--durata-marchio) var(--curva-dolce) var(--ritardo-marchio-opacita), max-width 0s;
+}
+@media (max-width: 440px) {
+  /* correzioni (P11): con l'azione in barra, del marchio resta il disegno. La parola non si taglia lettera per lettera:
+       sparisce intera (160 ms) e solo dopo l'azione entra al suo posto; tornando in cima, il contrario */
+  .barra.con-azione .marchio span {
+    opacity: 0;
+    max-width: 0;
+    transition: opacity var(--durata-barra-marchio) var(--curva-dolce), max-width 0s var(--curva-lineare) var(--ritardo-barra-marchio-larghezza);
+  }
+  /* il posto sparisce quando la parola è già invisibile */
+  .barra.con-azione .marchio { gap: 0; transition: gap 0s var(--curva-lineare) var(--ritardo-barra-marchio); }
+  .barra.con-azione .barra-azione {
+    transition: opacity var(--durata-barra-azione-opacita-stretto) var(--curva-dolce) var(--ritardo-barra-azione-opacita-stretto), transform var(--durata-barra-azione-trasforma-stretto) var(--entra) var(--ritardo-barra-azione-trasforma-stretto), visibility 0s;
+  }
+}
+@media (max-width: 360px) {
+  .barra { gap: var(--spazio-7); }
+  .barra .barra-azione { padding-left: var(--spazio-10); padding-right: var(--spazio-10); font-size: var(--corpo-4); }
+  .pulsante-menu { padding: var(--spazi-2); font-size: var(--corpo-6); }
+}
+@media (max-width: 959px) {
+  .menu { display: none; }
+  .js .menu.aperto {
+    display: block;
+    position: absolute;
+    z-index: var(--livello-menu-aperto);
+    background: var(--pannello-menu);
+    border: var(--filetto-sottile) solid var(--bordo-pannello);
+    border-radius: var(--raggio-10);
+    padding: var(--spazio-7);
+    -webkit-backdrop-filter: var(--menu-aperto-sfocatura);
+    backdrop-filter: var(--menu-aperto-sfocatura);
+  }
+  .menu.aperto ul { flex-direction: column; }
+  .menu.aperto a { width: 100%; min-height: var(--menu-aperto-altezza-minima); font-size: var(--corpo-9); }
+  .pulsante-menu {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--misura-21);
+    padding: var(--spazi-3);
+    border-radius: var(--raggio-pillola);
+    cursor: pointer;
+    background: var(--velo-comando);
+    border: var(--filetto-comando) solid var(--bordo-comando);
+    text-decoration: none;
+    font-size: var(--corpo-7);
+    font-weight: var(--peso-forte);
+  }
+  /* l'azione non occupa posto: sta a sinistra di «Menu», sopra il posto della parola del marchio (che al telefono stretto
+       sparisce prima che lei entri). Così né «Menu» né il marchio si spostano */
+  .barra .barra-azione { right: calc(var(--margine) + var(--largo-menu, var(--barra-azione-largo-menu-base)) + var(--spazio-7)); }
+  .pulsante-menu { margin-left: auto; }
+}
+@media (min-width: 761px) and (max-width: 959px) {
+  .js .menu.aperto { top: var(--menu-aperto-sopra-tavoletta-stretta); right: var(--margine); width: var(--menu-aperto-larghezza); }
+}
+@media (max-width: 959px) {
+  .js .menu.aperto {
+    max-height: var(--menu-aperto-altezza-massima);
+    max-height: var(--menu-aperto-altezza-massima-menu-chiuso);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+}
+@supports (animation-timeline: scroll()) {
+  /* un velo del colore del menu, fermo sul bordo basso: il menu resta pieno (la pagina non traspare), sfumano solo le voci */
+  /* 8f (chi costruisce): il velo si spegne a 12 px dal fondo dello scorrimento, non al 94% di esso: con la tastiera il fuoco porta l'ultima voce a
+       8 px dal bordo (il riempimento del menu), e con uno scorrimento di 30-44 px (326×326, 768×340) il 6% sono 2 px: «Aiuto» restava sotto il velo */
+  @keyframes menu-ancora {
+    0%, 60% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+}
+@supports (animation-timeline: scroll()) {
+  @media (max-width: 959px) {
+    .js .menu.aperto::after {
+      content: "";
+      display: block;
+      position: sticky;
+      bottom: 0;
+      height: var(--misura-19);
+      margin-top: var(--menu-aperto-dopo-margine-sopra);
+      pointer-events: none;
+      opacity: 0;
+      background: var(--menu-aperto-dopo-fondo);
+      border-radius: var(--menu-aperto-dopo-raggio);
+      animation: menu-ancora var(--curva-lineare) both;
+      animation-timeline: scroll(nearest);
+      animation-range: var(--menu-aperto-dopo-intervallo);
+    }
+  }
+}

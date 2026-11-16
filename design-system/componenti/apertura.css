@@ -1,0 +1,134 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* Componente · Il primo schermo: titolo, comandi, palco
+   Le regole di questo componente, nell'ordine in cui la pagina le dava.
+   Ogni valore viene da ../token.css (o ../../token.css): qui non ce n'è nessuno scritto a mano. */
+
+.scena {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--scena-colonne);
+  column-gap: var(--spazio-29);
+  align-items: start;
+  padding: var(--scena-spazio-interno);
+}
+.apertura { padding-top: var(--spazio-24); }
+h1 {
+  margin: 0;
+  font-size: var(--h1-grandezza);
+  line-height: var(--h1-interlinea);
+  font-weight: var(--peso-titolo);
+  letter-spacing: var(--spaziatura-h1);
+}
+h1 .riga { display: block; }
+.presentazione {
+  margin: var(--presentazione-margine);
+  font-size: var(--corpo-10);
+  line-height: var(--interlinea-12);
+  max-width: var(--misura-30);
+  text-wrap: pretty;
+}
+.comandi { display: flex; flex-wrap: wrap; align-items: center; gap: var(--comandi-distanza); margin-top: var(--comandi-margine-sopra); }
+.stato {
+  margin: var(--stato-margine);
+  max-width: var(--stato-larghezza-massima);
+  font-size: var(--corpo-6);
+  line-height: var(--interlinea-6);
+  color: var(--testo-spiegazione);
+  padding-left: var(--spazio-12);
+  border-left: var(--filetto-medio) solid var(--bordo-evidente);
+  text-wrap: pretty;
+}
+.stato strong { font-weight: var(--peso-forte); color: var(--testo); }
+.palco { position: relative; display: flex; flex-direction: column; min-width: 0; }
+.didascalia {
+  margin: var(--spazi-11);
+  max-width: var(--didascalia-larghezza-massima);
+  padding-left: var(--spazio-14);
+  font-size: var(--corpo-4);
+  line-height: var(--interlinea-4);
+  color: var(--testo-didascalia);
+  text-wrap: pretty;
+}
+/* 8b: 0,78 come nella direzione scelta (era 0,7) */
+h1 .riga { animation: sale var(--durata-riga) var(--entra) backwards; }
+h1 .riga:nth-child(1) { animation-delay: var(--ritardo-riga-1); }
+h1 .riga:nth-child(2) { animation-delay: var(--ritardo-riga-2); }
+h1 .riga:nth-child(3) { animation-delay: var(--ritardo-riga-3); }
+h1 .riga:nth-child(4) { animation-delay: var(--ritardo-riga-4); }
+.presentazione { animation: sale12 var(--durata-presentazione) var(--entra) var(--ritardo-presentazione) backwards; }
+.comandi > * { animation: sale12 var(--durata-comandi) var(--entra) backwards; }
+.comandi > :nth-child(1) { animation-delay: var(--ritardo-comandi-1); }
+.comandi > :nth-child(2) { animation-delay: var(--ritardo-comandi-2); }
+.stato { animation: sale12 var(--durata-stato) var(--entra) var(--ritardo-stato) backwards; }
+.didascalia { animation: appare var(--durata-didascalia) var(--curva-dolce) var(--ritardo-didascalia) backwards; }
+.scena { max-width: var(--misura-35); margin-inline: auto; }
+@media (min-width: 1000px) and (max-width: 1180px) {
+  .scena { grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); column-gap: var(--spazio-24); }
+  h1 { font-size: var(--h1-grandezza-medio); line-height: var(--h1-interlinea-medio); }
+  .presentazione { font-size: var(--corpo-9); line-height: var(--interlinea-9); }
+}
+@media (min-width: 761px) and (max-width: 999px) {
+  .scena { grid-template-columns: minmax(0, 1fr); row-gap: var(--spazio-24); }
+  .apertura { padding-top: var(--spazio-16); }
+  h1 .riga { display: inline; }
+  h1 .riga:nth-child(2)::after { content: "\A"; white-space: pre; }
+  .palco { max-width: var(--misura-33); }
+}
+@media (max-width: 760px) {
+  .scena { display: flex; flex-direction: column; align-items: stretch; padding: var(--scena-spazio-interno-telefono); }
+  .apertura { display: contents; }
+  h1 { order: 1; font-size: var(--h1-grandezza-telefono); line-height: var(--h1-interlinea-telefono); }
+  h1 .riga { display: inline; }
+  h1 .riga:nth-child(2)::after, h1 .riga:nth-child(3)::after { content: "\A"; white-space: pre; }
+  .presentazione { order: 2; margin-top: var(--spazio-8); font-size: var(--corpo-6); line-height: var(--interlinea-6); }
+  .palco { order: 3; }
+  .comandi#comandi-apertura { order: 4; margin-top: var(--spazio-12); flex-direction: column; align-items: stretch; gap: 0; }
+  .comandi .pillola { width: 100%; min-height: var(--misura-22); font-size: var(--corpo-8); }
+  .stato {
+    order: 5;
+    margin-top: var(--spazio-7);
+    font-size: var(--stato-grandezza-telefono);
+    line-height: var(--interlinea-3);
+    padding-left: var(--spazio-10);
+  }
+  .didascalia {  }
+  .d-lunga, .d-piu { display: none; }
+  .didascalia {
+    order: 3;
+    margin: var(--didascalia-margine-telefono);
+    padding-left: 0;
+    font-size: var(--corpo-3);
+    line-height: var(--didascalia-interlinea-telefono);
+  }
+}
+@media (min-width: 761px) and (max-width: 999px) {
+  h1 .riga:nth-child(3)::after { content: "\A"; white-space: pre; }
+  /* «ti sentono.» non resta in due pezzi */
+}
+@media (max-width: 349px) {
+  h1 { font-size: var(--corpo-12); line-height: var(--interlinea-11); }
+  /* «In riunione, alla pari.» sta su una riga */
+}
+.scena { z-index: var(--livello-scena); }
+/* la scheda dell'ascolto, quando è aperta, resta sopra la scena che segue */
+@media (max-width: 760px) {
+  .palco { margin-top: 0; }
+}
+@media (min-width: 761px) and (max-height: 799px) {
+  .apertura { padding-top: var(--spazio-14); }
+  /* anche la colonna di sinistra sale un poco: la didascalia resta intera a 1024×768 */
+}
+@media (min-width: 761px) and (max-height: 759px) {
+  .presentazione { margin-top: var(--spazio-14); }
+  .comandi#comandi-apertura { margin-top: var(--spazio-17); }
+  .apertura .stato { margin-top: var(--spazio-16); }
+  .didascalia { margin-top: var(--spazio-12); }
+}
+@media (min-width: 761px) and (max-height: 699px) {
+  /* sotto i 700 px cede spazio ciò che si può: la riga di stato della finestra (come al telefono nella direzione scelta:
+       restano il campo, «Parla» e «Ferma»), un po' di bolla e di margine. Così la riunione resta alta e le figure persone */
+  .scena { padding-top: var(--spazio-12); }
+}
+@media (min-width: 350px) and (max-width: 374px) {
+  h1 { font-size: var(--corpo-12); line-height: var(--interlinea-11); }
+}

@@ -1,0 +1,272 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* Componente · I riquadri della riunione
+   Le regole di questo componente, nell'ordine in cui la pagina le dava.
+   Ogni valore viene da ../token.css (o ../../token.css): qui non ce n'è nessuno scritto a mano. */
+
+.chiamata {
+  position: relative;
+  height: var(--chiamata-altezza);
+  padding: var(--spazio-7);
+  border-radius: var(--raggio-13);
+  background: var(--vetro-cornice);
+  border: var(--filetto-sottile) solid var(--bordo-cornice);
+  box-shadow: var(--chiamata-ombra);
+}
+.griglia { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: var(--spazio-7); height: 100%; }
+.riquadro { position: relative; border-radius: var(--raggio-8); overflow: hidden; min-width: 0; }
+.riquadro.tu { overflow: visible; background: var(--riquadro-fondo); }
+.paola {
+  --pelle: var(--paola-pelle);
+  --ombra: var(--paola-ombra);
+  --capelli: var(--paola-capelli);
+  --corpo: var(--paola-corpo);
+  background: var(--paola-fondo);
+}
+.luca {
+  --pelle: var(--luca-pelle);
+  --ombra: var(--luca-ombra);
+  --capelli: var(--luca-capelli);
+  --corpo: var(--luca-corpo);
+  --cuffia: var(--luca-cuffia);
+  background: var(--luca-fondo);
+}
+.anna {
+  --pelle: var(--anna-pelle);
+  --ombra: var(--anna-ombra);
+  --capelli: var(--anna-capelli);
+  --corpo: var(--anna-corpo);
+  background: var(--anna-fondo);
+}
+.figura { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 88%; }
+.figura .pelle { fill: var(--pelle); }
+.figura .collo { fill: var(--ombra); }
+.figura .capelli, .figura .capelli-dietro { fill: var(--capelli); }
+.figura .corpo { fill: var(--corpo); }
+.figura .occhi { fill: var(--scuro); }
+.figura .bocca { fill: none; stroke: var(--scuro); stroke-width: 1.7; stroke-linecap: round; opacity: var(--opacita-figura-bocca); }
+.figura .cuffia { stroke: var(--cuffia); stroke-width: 4; stroke-linecap: round; }
+.figura .cuffia-pad { fill: var(--cuffia); }
+.figura .testa, .figura .occhi, .figura .cenno, .figura .occhi ellipse { transform-box: fill-box; }
+.figura .testa { transform-origin: 50% 100%; transition: transform var(--durata-figura-testa) var(--entra); }
+.figura .occhi { transform-origin: 50% 50%; transition: transform var(--durata-figura-occhi) var(--entra); }
+.figura .occhi ellipse { transform-origin: 50% 50%; }
+.figura .cenno { transform-origin: 50% 100%; }
+/* quando la voce li raggiunge, si girano verso di te (il tuo riquadro è in alto a sinistra) */
+.paola.guarda .testa { transform: translateX(var(--paola-testa-sposta-x)) rotate(var(--paola-testa-rotazione)); }
+.paola.guarda .occhi { transform: translateX(var(--paola-occhi-sposta-x)); }
+.luca.guarda .testa { transform: translateY(var(--luca-testa-sposta-y)) rotate(var(--luca-testa-rotazione)); }
+.luca.guarda .occhi { transform: translate(var(--luca-occhi-sposta-x), var(--luca-occhi-sposta-y)); }
+.anna.guarda .testa { transform: translate(var(--anna-testa-sposta-x), var(--anna-testa-sposta-y)) rotate(var(--anna-testa-rotazione)); }
+.anna.guarda .occhi { transform: translate(var(--anna-occhi-sposta-x), var(--anna-occhi-sposta-y)); }
+.annuisce .cenno { animation: annuisce var(--durata-annuisce-cenno) var(--curva-dolce-doppia) 1; }
+@keyframes annuisce {
+  0%, 100% { transform: none; }
+  25% { transform: translateY(var(--annuisce-25-sposta-y)); }
+  50% { transform: none; }
+  72% { transform: translateY(var(--annuisce-72-sposta-y)); }
+}
+@keyframes batte {
+  0%, 100% { transform: none; }
+  50% { transform: scaleY(var(--batte-50-scala-y)); }
+}
+.paola .occhi ellipse { animation: batte var(--durata-paola-occhi) var(--curva-dolce) var(--ritardo-paola-occhi) 1 backwards; }
+.luca .occhi ellipse { animation: batte var(--durata-luca-occhi) var(--curva-dolce) var(--ritardo-luca-occhi) 1 backwards; }
+.anna .occhi ellipse { animation: batte var(--durata-anna-occhi) var(--curva-dolce) var(--ritardo-anna-occhi) 1 backwards; }
+.nome {
+  position: absolute;
+  left: var(--spazio-8);
+  top: var(--spazio-8);
+  z-index: var(--livello-nome);
+  padding: var(--nome-spazio-interno);
+  border-radius: var(--raggio-pillola);
+  background: var(--vetro-nome);
+  font-size: var(--corpo-4);
+  line-height: var(--interlinea-3);
+  font-weight: var(--peso-medio);
+  white-space: nowrap;
+}
+.barre {
+  position: absolute;
+  left: 50%;
+  top: 54%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: var(--spazio-8);
+  height: var(--barre-altezza);
+  z-index: var(--livello-barre);
+}
+.barre i {
+  display: block;
+  width: var(--barre-larghezza);
+  height: 100%;
+  border-radius: var(--barre-raggio);
+  background: var(--barre-spente);
+  transition: background-color var(--durata-barre) var(--curva-dolce);
+}
+.barre i:nth-child(1) { transform: scaleY(var(--barre-1-scala-y)); }
+.barre i:nth-child(2) { transform: scaleY(var(--barre-2-scala-y)); }
+.barre i:nth-child(3) { transform: scaleY(1); }
+.barre i:nth-child(4) { transform: scaleY(var(--barre-4-scala-y)); }
+.barre i:nth-child(5) { transform: scaleY(var(--barre-5-scala-y)); }
+.tu.parla .barre i { background: var(--voce); }
+.lume, .alone, .bordo { position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; }
+.lume { box-shadow: var(--lume-ombra); z-index: var(--livello-lume); }
+.bordo { box-shadow: var(--bordo-ombra); z-index: var(--livello-bordo); transition: opacity var(--durata-bordo) var(--curva-dolce); }
+.alone { box-shadow: var(--alone-ombra); z-index: var(--livello-alone); }
+.onde { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: var(--livello-onde); border-radius: var(--raggio-13); }
+.chiamata { animation: appare var(--durata-chiamata) var(--curva-dolce) var(--ritardo-chiamata) backwards; }
+.riquadro { animation: entra var(--durata-riquadro) var(--entra) backwards; }
+.riquadro.paola { animation-delay: var(--ritardo-riquadro-paola); }
+.riquadro.luca { animation-delay: var(--ritardo-riquadro-luca); }
+.riquadro.anna { animation-delay: var(--ritardo-riquadro-anna); }
+.riquadro.tu { animation-delay: var(--ritardo-riquadro); }
+@media (max-width: 760px) {
+  .chiamata { height: var(--chiamata-altezza-telefono); padding: var(--spazio-4); border-radius: var(--raggio-9); }
+  .griglia { gap: var(--spazio-4); }
+  .riquadro { border-radius: var(--raggio-6); }
+  .nome {
+    left: var(--spazio-5);
+    top: var(--spazio-5);
+    font-size: var(--corpo-2);
+    line-height: var(--nome-interlinea-telefono);
+    padding: var(--nome-spazio-interno-telefono);
+  }
+  .barre { height: var(--misura-19); gap: var(--spazio-3); top: 56%; }
+  .barre i { width: var(--barre-larghezza-telefono); border-radius: var(--barre-raggio-telefono); }
+}
+@media (max-width: 349px) {
+  .nome-lungo { display: none; }
+  /* l'etichetta di «Tu» non si sovrappone a «Paola» */
+}
+@media (min-width: 761px) and (max-width: 1010px) {
+  .riunione-filo {  }
+}
+.riunione-filo {
+  position: relative;
+  margin-top: var(--spazio-20);
+  height: var(--riunione-filo-altezza);
+  padding: var(--spazio-5);
+  border-radius: var(--raggio-11);
+  background: var(--vetro-riunione-filo);
+  border: var(--filetto-sottile) solid var(--bordo-cornice);
+  box-shadow: var(--riunione-filo-ombra);
+}
+.riunione-filo .griglia { gap: var(--spazio-5); }
+.riunione-filo .riquadro { border-radius: var(--riunione-filo-riquadro-raggio); }
+.riunione-filo .barre { height: var(--misura-24); gap: var(--spazio-5); }
+.riunione-filo .barre i { width: var(--riunione-filo-barre-larghezza); border-radius: var(--raggio-3); }
+.riunione-filo .nome {
+  left: var(--spazio-7);
+  top: var(--spazio-7);
+  font-size: var(--corpo-3);
+  line-height: var(--interlinea-2);
+  padding: var(--spazi-8);
+}
+.riunione-filo .onde-filo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--raggio-11);
+  z-index: var(--livello-riunione-filo-onde-filo);
+  display: block;
+}
+.riunione-filo .riquadro.tu { overflow: visible; }
+.tavolo { position: relative; width: var(--tavolo-larghezza); margin: var(--tavolo-margine); text-align: left; }
+.tavolo-cornice {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--spazio-7);
+  height: var(--tavolo-cornice-altezza);
+  padding: var(--spazio-7);
+  border-radius: var(--raggio-13);
+  background: var(--vetro-cornice);
+  border: var(--filetto-sottile) solid var(--bordo-cornice);
+  box-shadow: var(--tavolo-cornice-ombra);
+}
+.tavolo .riquadro { border-radius: var(--raggio-8); animation: none; }
+.tavolo .barre { height: var(--tavolo-barre-altezza); gap: var(--spazio-6); }
+.tavolo .barre i { width: var(--misura-5); border-radius: var(--raggio-3); }
+.tavolo .riquadro.tu.parla .barre i, .riunione-filo .riquadro.tu.parla .barre i { background: var(--voce); }
+.js .tavolo:not(.visto) .riquadro, .js .riunione-filo:not(.visto) .riquadro { opacity: 0; }
+.js .tavolo.visto .riquadro, .js .riunione-filo.visto .riquadro { animation: entra var(--durata-tavolo-riquadro) var(--entra) backwards; }
+.js .tavolo.visto .riquadro:nth-child(2), .js .riunione-filo.visto .riquadro:nth-child(2) { animation-delay: 0ms; }
+.js .tavolo.visto .riquadro:nth-child(3), .js .riunione-filo.visto .riquadro:nth-child(3) { animation-delay: var(--ritardo-tavolo-riquadro-3); }
+.js .tavolo.visto .riquadro:nth-child(4), .js .riunione-filo.visto .riquadro:nth-child(4) { animation-delay: var(--ritardo-tavolo-riquadro-4); }
+.js .tavolo.visto .riquadro.tu, .js .riunione-filo.visto .riquadro.tu { animation-delay: var(--ritardo-tavolo-riquadro); }
+.js .tavolo.entra, .js .riunione-filo.entra { opacity: 1; }
+.js .mostrato .riquadro { animation: none !important; opacity: 1 !important; }
+@media (max-width: 760px) {
+  .riunione-filo { height: auto; padding: var(--spazio-4); border-radius: var(--raggio-7); }
+  .riunione-filo .griglia {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: var(--riunione-filo-griglia-righe);
+    gap: var(--spazio-4);
+  }
+  .riunione-filo .riquadro { border-radius: var(--raggio-5); }
+  .riunione-filo .nome-lungo { display: none; }
+  .riunione-filo .nome {
+    left: var(--spazio-3);
+    top: var(--spazio-3);
+    font-size: var(--corpo-1);
+    line-height: var(--interlinea-1);
+    padding: var(--spazi-6);
+  }
+  .riunione-filo .barre { height: var(--misura-12); gap: var(--spazio-2); }
+  .riunione-filo .barre i { width: var(--misura-2); border-radius: var(--raggio-1); }
+  .riunione-filo .onde-filo { border-radius: var(--raggio-7); }
+  .tavolo { width: 100%; margin-bottom: var(--spazio-21); }
+  .tavolo-cornice { height: var(--tavolo-cornice-altezza-telefono); gap: var(--spazio-4); padding: var(--spazio-4); border-radius: var(--raggio-9); }
+  .tavolo .riquadro { border-radius: var(--raggio-5); }
+  .tavolo .nome { left: var(--spazio-3); top: var(--spazio-3); font-size: var(--corpo-1); line-height: var(--interlinea-1); padding: var(--spazi-6); }
+  .tavolo .barre { height: var(--misura-12); gap: var(--spazio-2); }
+  .tavolo .barre i { width: var(--misura-2); border-radius: var(--raggio-1); }
+  .onde-chiusa { border-radius: var(--raggio-9) !important; }
+}
+@media (min-width: 761px) and (max-width: 1180px) {
+  .riunione-filo { max-width: var(--misura-30); }
+}
+@media (min-width: 761px) {
+  .riunione-filo .nome-tu::after { content: " · microfono «Kalliope»"; }
+}
+@media (max-width: 760px) {
+  /* la riunione si aggancia sotto la barra: quando è agganciata la sua fascia prende il colore della barra (una sola mensola in
+       alto, nessuna fessura dove passa il testo); prima di agganciarsi la fascia è trasparente e la riunione sta nel filo */
+  .banda-riunione {
+    position: sticky;
+    top: var(--spazio-28);
+    z-index: var(--livello-banda-riunione);
+    margin: var(--banda-riunione-margine);
+    padding: var(--banda-riunione-spazio-interno);
+    transition: background-color var(--durata-banda-riunione) var(--curva-dolce), box-shadow var(--durata-banda-riunione) var(--curva-dolce);
+  }
+  .banda-riunione.agganciata { background: var(--barra-piena); box-shadow: var(--banda-riunione-ombra); }
+  .riunione-filo { margin-top: 0; }
+}
+@media (min-width: 761px) {
+  .chiamata { height: var(--chiamata-altezza-computer); }
+  .chiamata .riquadro.tu .barre { height: var(--riquadro-barre-altezza); }
+}
+@media (min-width: 761px) and (max-height: 802px) {
+  /* le barre si appoggiano sotto l'etichetta (che finisce a ~38 px) e crescono con il riquadro, con 14 px di aria in basso;
+       anche al massimo della voce (scala 1,1) restano dentro */
+  .chiamata .riquadro.tu .barre { top: var(--spazio-26); bottom: var(--spazio-14); height: auto; transform: translateX(-50%); }
+}
+@media (min-width: 761px) and (max-height: 699px) {
+  /* «Ascolta Giulia» finisce 336 px sotto l'altezza della riunione: 16 px di aria dal bordo */
+  .chiamata { height: var(--chiamata-altezza-basso-699); }
+}
+@media (min-width: 350px) and (max-width: 374px) {
+  .nome-lungo { display: none; }
+}
+@media (min-width: 1181px) and (max-width: 1209px) {
+  .chiamata .nome { font-size: var(--corpo-3); padding: var(--chiamata-nome-spazio-interno); }
+}
+@media (min-width: 761px) and (max-width: 1010px) {
+  .banda-riunione { grid-area: riunione; align-self: start; position: sticky; top: var(--spazio-32); margin-top: var(--spazio-22); }
+  .riunione-filo { max-width: none; height: var(--riunione-filo-altezza-tavoletta-filo); margin-top: 0; }
+  .riunione-filo .nome-tu::after { content: none; }
+  /* nella colonna stretta l'etichetta lunga toccherebbe «Paola» */
+}

@@ -1,0 +1,192 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* Componente · La strada della voce
+   Le regole di questo componente, nell'ordine in cui la pagina le dava.
+   Ogni valore viene da ../token.css (o ../../token.css): qui non ce n'è nessuno scritto a mano. */
+
+/* correzioni (P4): le onde del filo stanno dentro la cornice della riunione, come nel primo schermo */
+.strada-voce .luce-tratto { left: 40%; top: 55%; }
+.strada { position: relative; margin-top: var(--spazio-29); }
+.computer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 60%;
+  height: var(--computer-altezza);
+  border-radius: var(--computer-raggio);
+  background: var(--velo-computer);
+  border: var(--filetto-sottile) solid var(--bordo-pannello);
+}
+.computer-nome {
+  position: absolute;
+  left: var(--spazio-17);
+  top: var(--spazio-15);
+  font-size: var(--corpo-5);
+  font-weight: var(--peso-forte);
+  letter-spacing: var(--spaziatura-computer-nome);
+  color: var(--testo-secondario);
+}
+.tappe {
+  position: relative;
+  z-index: var(--livello-tappe);
+  list-style: none;
+  margin: 0;
+  padding: var(--tappe-spazio-interno);
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+.tappa { display: flex; flex-direction: column; align-items: center; gap: var(--spazio-14); text-align: center; }
+.nodo {
+  display: grid;
+  place-items: center;
+  width: var(--misura-26);
+  height: var(--misura-26);
+  background: var(--riquadro-scuro);
+  border: var(--filetto-medio) solid var(--bordo-comando);
+  color: var(--testo-spento);
+  transition: background-color var(--durata-nodo-sfondo) var(--curva-dolce), color var(--durata-nodo-testo) var(--curva-dolce), border-color var(--durata-nodo-bordo) var(--curva-dolce), box-shadow var(--durata-nodo-ombra) var(--curva-dolce), transform var(--durata-nodo-trasforma) var(--entra);
+}
+.nodo svg { width: var(--misura-19); height: var(--misura-19); }
+.tappa.forse .nodo { border-style: dashed; border-color: var(--bordo-tappa-forse); background: var(--riquadro-scuro-forse); }
+.tappa.fatta.acceso .nodo { background: var(--voce); color: var(--bordeaux); border-color: var(--voce); box-shadow: var(--tappa-nodo-ombra); }
+.tappa.forse.raggiunta .nodo { color: var(--testo); border-color: var(--bordo-tappa-raggiunta); }
+.tappa-nome {
+  font-size: var(--corpo-8);
+  line-height: var(--tappa-nome-interlinea);
+  font-weight: var(--peso-forte);
+  max-width: var(--tappa-nome-larghezza-massima);
+}
+.tappa.forse .tappa-nome { color: var(--testo-secondario); }
+.linea {
+  position: absolute;
+  z-index: var(--livello-linea);
+  top: var(--spazio-32);
+  height: var(--misura-2);
+  border-radius: var(--raggio-1);
+  transform-origin: 0 50%;
+}
+.linea-fatta { left: 10%; width: 40%; background: var(--voce); box-shadow: var(--linea-fatta-ombra); }
+.linea-forse { left: 50%; width: 40%; background: var(--linea-forse-fondo); }
+.impulso {
+  position: absolute;
+  z-index: var(--livello-impulso);
+  left: 10%;
+  top: var(--impulso-sopra);
+  width: var(--misura-9);
+  height: var(--misura-9);
+  margin-left: var(--impulso-margine-sinistra);
+  border-radius: 50%;
+  opacity: 0;
+  background: var(--bianco);
+  box-shadow: var(--impulso-ombra);
+}
+.esiti { position: relative; display: grid; grid-template-columns: 3fr 2fr; margin-top: var(--spazio-25); }
+.esito { padding: var(--esito-spazio-interno); }
+.esito-forse { padding-left: var(--spazio-26); }
+.esito h3 {
+  display: flex;
+  align-items: center;
+  gap: var(--spazio-10);
+  margin: var(--esito-margine);
+  font-size: var(--corpo-11);
+  line-height: var(--interlinea-10);
+  font-weight: var(--peso-titolo);
+}
+.esito h3::before { content: ""; width: var(--misura-14); height: var(--misura-2); border-radius: var(--raggio-1); background: var(--voce); }
+.esito-forse h3::before { background: var(--esito-forse-prima-fondo); }
+.esito p { margin: 0; max-width: var(--misura-30); font-size: var(--corpo-8); line-height: var(--interlinea-8); color: var(--testo-spiegazione); }
+.non-esiste {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: var(--non-esiste-margine-sopra);
+  padding-top: var(--spazio-20);
+  border-top: var(--filetto-sottile) solid var(--bordo-sezione);
+}
+.non-esiste p { margin: 0; font-size: var(--corpo-9); line-height: var(--interlinea-9); color: var(--testo-nota); }
+.non-esiste p strong { font-weight: var(--peso-forte); color: var(--testo); }
+.non-esiste .collegamento { margin-left: auto; }
+/* senza JavaScript la strada è già disegnata e accesa; con JavaScript si disegna quando arriva sullo schermo */
+.js .strada:not(.fatto) .linea { transform: scaleX(0); }
+.js .strada:not(.fatto) .esito { opacity: 0; transform: translateY(var(--strada-esito-sposta-y)); }
+.tappa.fatta .nodo { background: var(--voce); color: var(--bordeaux); border-color: var(--voce); }
+.js .tappa.fatta:not(.acceso) .nodo { background: var(--riquadro-scuro); color: var(--testo-spento); border-color: var(--bordo-comando); }
+.esito { transition: opacity var(--durata-esito-opacita) var(--curva-dolce), transform var(--durata-esito-trasforma) var(--entra); }
+@media (max-width: 760px) {
+  .strada { margin-top: var(--spazio-24); }
+  .computer { width: 100%; height: var(--computer-altezza-telefono); border-radius: var(--raggio-12); }
+  .computer-nome { left: var(--spazio-15); top: var(--spazio-12); }
+  .tappe { grid-template-columns: minmax(0, 1fr); row-gap: var(--spazio-18); padding: var(--tappe-spazio-interno-telefono); }
+  .tappa { flex-direction: row; gap: var(--spazio-15); text-align: left; }
+  .nodo { width: var(--misura-25); height: var(--misura-25); flex: none; }
+  .tappa-nome { max-width: none; font-size: var(--corpo-9); }
+  .linea { top: var(--spazio-31); left: var(--spazio-27); width: var(--misura-2); height: var(--linea-altezza-telefono); transform-origin: 50% 0; }
+  .linea-fatta { left: var(--spazio-27); width: var(--misura-2); }
+  .linea-forse { top: var(--linea-forse-sopra); left: var(--spazio-27); width: var(--misura-2); background: var(--linea-forse-fondo-telefono); }
+  .js .strada:not(.fatto) .linea { transform: scaleY(0); }
+  .impulso { left: var(--spazio-28); top: var(--impulso-sopra-telefono); margin-left: var(--impulso-margine-sinistra); }
+  .esiti { grid-template-columns: minmax(0, 1fr); row-gap: var(--spazio-19); margin-top: var(--spazio-22); }
+  .esito, .esito-forse { padding: 0; }
+  .non-esiste { margin-top: var(--spazio-25); }
+  .non-esiste .collegamento { margin-left: 0; }
+}
+.scoppio {
+  position: absolute;
+  left: 50%;
+  top: var(--spazio-24);
+  width: var(--misura-26);
+  height: var(--misura-26);
+  margin: var(--scoppio-margine);
+  border-radius: 50%;
+  border: var(--filetto-forte) solid var(--voce);
+  pointer-events: none;
+  opacity: 0;
+}
+.tappa { position: relative; }
+@media (max-width: 760px) {
+  .scoppio { left: var(--spazio-23); top: var(--spazio-23); }
+}
+.nodo { border-radius: var(--raggio-12); }
+.tappa.fatta.acceso .nodo { transform: scale(var(--tappa-nodo-scala)); }
+.nodo-altri {
+  width: var(--nodo-altri-larghezza);
+  height: var(--misura-26);
+  display: flex;
+  gap: var(--spazio-3);
+  padding: var(--spazio-6);
+  align-items: stretch;
+  overflow: hidden;
+}
+.nodo-altri .mini {
+  position: relative;
+  flex: 1;
+  border-radius: var(--nodo-altri-mini-raggio);
+  overflow: hidden;
+  opacity: var(--opacita-spento);
+  filter: var(--nodo-altri-mini-filtro);
+  transition: opacity var(--durata-nodo-altri-mini) var(--curva-dolce), filter var(--durata-nodo-altri-mini) var(--curva-dolce);
+}
+.nodo-altri .mini .figura { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 86%; }
+.tappa-altri.raggiunta .mini { opacity: var(--opacita-tappa-altri-mini); filter: var(--tappa-altri-mini-filtro); }
+/* la voce ci arriva tenue: non ancora provato */
+.riservato {
+  margin: var(--riservato-margine);
+  max-width: var(--misura-33);
+  font-size: var(--corpo-9);
+  line-height: var(--interlinea-9);
+  color: var(--testo-forte);
+  padding-left: var(--spazio-14);
+  border-left: var(--filetto-medio) solid var(--voce);
+}
+.non-esiste { gap: var(--non-esiste-distanza); }
+@media (max-width: 760px) {
+  .nodo { border-radius: var(--raggio-11); }
+  .nodo-altri { width: var(--misura-25); height: var(--misura-25); gap: var(--spazio-2); padding: var(--spazio-5); }
+  .nodo-altri .mini { border-radius: var(--raggio-4); }
+  .riservato { margin: var(--spazi-11); font-size: var(--corpo-7); line-height: var(--interlinea-7); }
+}
+/* correzioni: le scritte della strada seguono il racconto. «Provato» e la riservatezza compaiono quando la voce arriva al
+   microfono, «Non ancora provato» quando l'impulso si spegne nel tratteggio (prima comparivano insieme alla fine, e la
+   frase della riservatezza restava sola sotto un vuoto) */
+.riservato { transition: opacity var(--durata-riservato-opacita) var(--curva-dolce), transform var(--durata-riservato-trasforma) var(--entra); }
+.js .strada:not(.fatto) .riservato { opacity: 0; transform: translateY(var(--strada-riservato-sposta-y)); }
+.js .strada.provato .esito-fatto, .js .strada.provato .riservato { opacity: 1; transform: none; }

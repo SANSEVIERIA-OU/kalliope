@@ -1,0 +1,64 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* L'impaginazione del catalogo: nessun valore proprio. I colori, i caratteri, i pesi e le forme sono i token del sistema (../token.css);
+   le distanze sono relative al testo (em), così crescono con lui. I componenti mostrati sono quelli veri (../componenti). */
+body { background: var(--fondo); color: var(--testo); font-family: var(--font-testo); font-weight: var(--peso-testo); line-height: 1.5; }
+.cat-intesta { padding: 2em var(--margine) 1em; max-width: 90em; margin-inline: auto; }
+.cat-intesta h1 { margin: 0 0 0.3em; font-weight: var(--peso-titolo); font-size: xxx-large; line-height: 1.1; letter-spacing: -0.02em; }
+.cat-intesta p { margin: 0.4em 0; max-width: 60em; color: var(--testo-spiegazione); }
+.cat-indice { display: flex; flex-wrap: wrap; gap: 0.5em; margin: 1.2em 0 0; padding: 0; list-style: none; }
+.cat-indice a { display: inline-block; padding: 0.35em 0.9em; border-radius: var(--raggio-pillola); border: var(--filetto-sottile) solid var(--bordo-pannello); text-decoration: none; font-weight: var(--peso-medio); }
+.cat-indice a:hover { background: var(--velo-comando); }
+main.cat { max-width: 90em; margin-inline: auto; padding: 0 var(--margine) 6em; }
+.cat-sezione { margin-top: 3.5em; }
+.cat-sezione > h2 { margin: 0 0 0.4em; font-size: xx-large; font-weight: var(--peso-titolo); letter-spacing: -0.015em; }
+.cat-sezione > .cat-nota { margin: 0 0 1.4em; max-width: 60em; color: var(--testo-spiegazione); }
+.cat-sezione h3 { margin: 2em 0 0.5em; font-size: larger; font-weight: var(--peso-forte); }
+.cat-scheda { margin: 1.4em 0 2em; padding: 1.2em 1.4em 1.4em; border-radius: 1.2em; background: var(--vetro-cornice); border: var(--filetto-sottile) solid var(--bordo-cornice); }
+.cat-scheda > h3 { margin: 0 0 0.2em; }
+.cat-scheda dl { display: grid; grid-template-columns: 9em 1fr; gap: 0.2em 1em; margin: 0.6em 0 1em; font-size: smaller; color: var(--testo-secondario); }
+.cat-scheda dt { font-weight: var(--peso-forte); color: var(--testo); }
+.cat-scheda dd { margin: 0; }
+.cat-scheda code, .cat-tabella code, .cat-nota code { font-family: var(--font-app); font-size: smaller; padding: 0.1em 0.35em; border-radius: 0.3em; background: var(--velo-comando); }
+.cat-prove { display: flex; flex-wrap: wrap; gap: 1.2em; align-items: flex-start; }
+.cat-prova { display: flex; flex-direction: column; gap: 0.5em; align-items: flex-start; min-width: 0; }
+.cat-prova > .cat-et { font-size: smaller; letter-spacing: 0.03em; color: var(--testo-didascalia); }
+.cat-quadro { position: relative; padding: 1em; border-radius: 0.8em; background: var(--velo-computer); border: var(--filetto-sottile) dashed var(--bordo-sezione); max-width: 100%; }
+.cat-quadro.largo { width: 100%; }
+.cat-quadro.chiaro { background: var(--testo); color: var(--scuro); }
+.cat-tabella { width: 100%; border-collapse: collapse; font-size: smaller; }
+.cat-tabella th, .cat-tabella td { text-align: left; padding: 0.45em 0.7em; vertical-align: top; border-bottom: var(--filetto-sottile) solid var(--bordo-sezione); }
+.cat-tabella th { font-weight: var(--peso-forte); color: var(--testo-didascalia); position: sticky; top: 0; background: var(--fondo); z-index: 2; }
+.cat-tabella td.n { font-family: var(--font-app); white-space: nowrap; }
+.cat-tabella td.v { font-family: var(--font-app); color: var(--testo-secondario); max-width: 28em; overflow-wrap: anywhere; }
+.cat-campione { display: inline-block; vertical-align: middle; min-width: 3em; height: 1.6em; border-radius: 0.3em; border: var(--filetto-sottile) solid var(--bordo-pannello); }
+.cat-griglia-colori { display: grid; grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); gap: 0.8em; }
+.cat-colore { display: grid; grid-template-columns: 3.2em 1fr; gap: 0.7em; align-items: center; padding: 0.5em; border-radius: 0.6em; background: var(--velo-computer); font-size: smaller; }
+.cat-colore .cat-campione { width: 3.2em; height: 3.2em; background-image: linear-gradient(45deg, var(--velo-comando) 25%, transparent 25% 75%, var(--velo-comando) 75%); }
+.cat-colore .cat-campione > i { display: block; width: 100%; height: 100%; border-radius: 0.3em; }
+.cat-colore b { display: block; font-family: var(--font-app); font-weight: var(--peso-medio); overflow-wrap: anywhere; }
+.cat-colore span { color: var(--testo-secondario); }
+.cat-scala { display: grid; gap: 0.35em; }
+.cat-barra { height: 0.9em; border-radius: 0.2em; background: var(--azione); }
+.cat-riga-scala { display: grid; grid-template-columns: 10em 7em 1fr; gap: 0.8em; align-items: center; font-size: smaller; }
+.cat-riga-scala code { background: none; padding: 0; }
+.cat-forma { display: inline-block; width: 6em; height: 4em; background: var(--azione); }
+.cat-ombra { display: inline-block; width: 7em; height: 4.5em; border-radius: 0.8em; background: var(--riquadro-scuro); }
+.cat-movimento { display: grid; grid-template-columns: 1fr; gap: 1em; }
+.cat-effetto { display: grid; grid-template-columns: minmax(0, 22em) minmax(0, 1fr) auto; gap: 1em 1.4em; align-items: center; padding: 0.9em 1.1em; border-radius: 1em; background: var(--vetro-cornice); border: var(--filetto-sottile) solid var(--bordo-cornice); }
+.cat-effetto h4 { margin: 0; font-weight: var(--peso-forte); }
+.cat-effetto p { margin: 0.2em 0 0; font-size: smaller; color: var(--testo-secondario); }
+.cat-effetto .cat-campo { min-height: 5em; display: flex; align-items: center; min-width: 0; }
+.cat-controlli { display: flex; gap: 0.5em; }
+.cat-controlli button { font: inherit; font-size: smaller; padding: 0.4em 1em; border-radius: var(--raggio-pillola); cursor: pointer; background: transparent; color: var(--testo); border: var(--filetto-comando) solid var(--bordo-comando-quieto); }
+.cat-controlli button:hover { border-color: var(--testo); }
+.cat-anteprima { width: 100%; border: var(--filetto-sottile) solid var(--bordo-cornice); border-radius: 0.8em; background: var(--fondo); }
+.cat-misure { display: flex; gap: 0.5em; margin: 0 0 0.8em; }
+.cat-misure button { font: inherit; padding: 0.35em 0.9em; border-radius: var(--raggio-pillola); cursor: pointer; background: transparent; color: var(--testo); border: var(--filetto-comando) solid var(--bordo-comando-quieto); }
+.cat-misure button[aria-pressed="true"] { background: var(--testo); color: var(--bordeaux); }
+.cat-non-ancora li { margin: 0.5em 0; }
+.cat-non-ancora b { font-weight: var(--peso-forte); }
+.cat-cerca { font: inherit; padding: 0.5em 1em; width: 100%; max-width: 30em; border-radius: var(--raggio-pillola); background: var(--velo-comando); color: var(--testo); border: var(--filetto-comando) solid var(--bordo-comando-quieto); margin: 0 0 1em; }
+.cat-frame-barra { contain: paint; clip-path: inset(0); isolation: isolate; position: relative; height: 12em; overflow: auto; border-radius: 0.8em; background: var(--fondo); border: var(--filetto-sottile) dashed var(--bordo-sezione); width: 100%; }
+.cat-frame-barra > .cat-spazio { height: 40em; }
+.cat-quadro.alto { padding-bottom: 9em; }
+.cat-prova.intero { flex: 1 1 100%; }

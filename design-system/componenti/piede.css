@@ -1,0 +1,44 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* Componente · Il piede
+   Le regole di questo componente, nell'ordine in cui la pagina le dava.
+   Ogni valore viene da ../token.css (o ../../token.css): qui non ce n'è nessuno scritto a mano. */
+
+.piede {
+  position: relative;
+  z-index: var(--livello-piede);
+  padding: var(--piede-spazio-interno);
+  border-top: var(--filetto-sottile) solid var(--bordo-cornice);
+}
+.piede ul { list-style: none; margin: var(--piede-margine); padding: 0; display: flex; flex-wrap: wrap; gap: var(--piede-distanza); }
+.piede a {
+  display: inline-flex;
+  min-height: var(--misura-21);
+  align-items: center;
+  font-weight: var(--peso-forte);
+  text-underline-offset: var(--spazio-3);
+}
+.piede p {
+  margin: 0;
+  font-size: var(--corpo-6);
+  line-height: var(--interlinea-6);
+  max-width: var(--piede-larghezza-massima);
+  color: var(--testo-secondario);
+}
+.piede { max-width: var(--misura-35); margin-inline: auto; }
+.piede a:active { transform: scale(var(--collegamento-premuto-scala)); }
+.piede.scena-notte {
+  max-width: none;
+  margin-inline: 0;
+  overflow: clip;
+  padding-left: var(--tratto-scena-notte-spazio-sinistra);
+  padding-right: var(--tratto-scena-notte-spazio-destra);
+  border-radius: var(--raggio-scena) var(--raggio-scena) 0 0;
+}
+/* il piede è basso: sale solo del raggio sulla chiusura (ai suoi lati, entrando, si vede la stanza, il colore della chiusura) */
+main + .piede { margin-top: calc(-1 * var(--raggio-scena)); }
+.piede.scena-notte { border-top: 0; padding-top: var(--spazio-28); position: relative; z-index: var(--livello-piede); }
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .js .piede.scena-notte { animation: scena-entra var(--curva-lineare) both; animation-timeline: view(); animation-range: entry 0% entry 35%; }
+  }
+}

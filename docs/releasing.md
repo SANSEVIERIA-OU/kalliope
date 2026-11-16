@@ -186,9 +186,12 @@ new Rust, about every six weeks. A branch uses `main`'s cache when it has none o
 
 ## Website
 
-`site/` is published on GitHub Pages at https://sansevieria-ou.github.io/kalliope/ by
-`.github/workflows/pages.yml`, on every change to `site/` on `main`, after every Release run and
-after a release is edited by hand. `tools/site.py` copies the pages and fills in the version, the
+`website/` is published on GitHub Pages at https://sansevieria-ou.github.io/kalliope/ by
+`.github/workflows/pages.yml`, on every change to `website/` or `design-system/` on `main`, after
+every Release run and after a release is edited by hand. The design system (tokens, base,
+components, fonts, living catalogue) lives in `design-system/`, outside the site, because the
+application will use it too; the build copies it into the site as `design-system/`, so a page is
+complete only once built. `tools/site.py` copies the pages and fills in the version, the
 links, sizes and fingerprints of the packages of the newest release (the newest prerelease while
 there is no release), so the pages never name a version by hand. To see the site locally:
 

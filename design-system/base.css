@@ -1,0 +1,67 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* Base · Base: caratteri, ripristino, fuoco, utilità
+   I caratteri, il ripristino degli elementi, il fuoco e le utilità senza un componente.
+   Ogni valore viene da ../token.css (o ../../token.css): qui non ce n'è nessuno scritto a mano. */
+
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; background: var(--fondo); }
+body {
+  margin: 0;
+  font-family: var(--font-testo);
+  font-weight: var(--peso-testo);
+  color: var(--testo);
+  background: var(--fondo);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { color: inherit; }
+img, svg, canvas { display: block; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: var(--filetto-forte) solid var(--voce); outline-offset: var(--fuoco-scarto); }
+.salta {
+  position: absolute;
+  left: var(--spazio-14);
+  top: var(--salta-sopra);
+  z-index: var(--livello-salta);
+  background: var(--testo);
+  color: var(--bordeaux);
+  padding: var(--salta-spazio-interno);
+  border-radius: var(--raggio-pillola);
+  font-weight: var(--peso-forte);
+  text-decoration: none;
+}
+.salta:focus { top: var(--spazio-10); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: var(--durata-movimento-ridotto) !important;
+    animation-delay: 0ms !important;
+    transition-duration: var(--durata-movimento-ridotto) !important;
+  }
+}
+html { scroll-padding-top: var(--spazio-31); }
+/* il fuoco e i collegamenti interni non finiscono sotto la barra */
+.solo-lettori {
+  position: absolute;
+  width: var(--misura-1);
+  height: var(--misura-1);
+  margin: var(--solo-lettori-margine);
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+/* senza JavaScript la frase parla dei lettori e del collegamento a Marco, non di comandi che non ci sono */
+.js .senza-js, html:not(.js) .con-js { display: none; }
+/* «Rivedi il primo avvio»: senza script non fa nulla e non c'è. Con lo script sta sempre nell'ordine di Tab; finché la scena gira
+   non si vede, e se il fuoco ci arriva compare (come a fine scena) */
+html:not(.js) .rivedi { display: none; }
+/* un giorno con il mese, un orario con «alle», un prezzo con la valuta non vanno a capo nel mezzo («31 / dicembre», «alle / 15:30»):
+   stesse parole e stessi spazi, cambia solo dove la riga può spezzarsi. Anche il gruppo scritto «1.250 € +» sta insieme. */
+.unita { white-space: nowrap; }
+/* 8f (chi costruisce): quando la voce arriva alla forma detta di una frase del filo («1.250 € +» diventa «milleduecentocinquanta euro più») la bolla può
+   crescere di una o due righe (a 820 px: da 94 a 156 px; a 390 px: da 78 a 134). Chromium e Firefox, per tenere fermo ciò che sta sotto, scorrono la
+   pagina di metà della crescita (31 px a 820×1180, 28 a 390×844) mentre la voce parla: un secondo movimento, non voluto, anche con la riunione ferma.
+   WebKit non lo fa. Senza ancoraggio la bolla cresce in basso e la pagina sta ferma (provato: `html`, non `#campioni` né `.filo`: scelgono un'altra àncora). */
+html { overflow-anchor: none; }

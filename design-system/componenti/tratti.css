@@ -1,0 +1,204 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* Componente · Tratti e scene
+   Le regole di questo componente, nell'ordine in cui la pagina le dava.
+   Ogni valore viene da ../token.css (o ../../token.css): qui non ce n'è nessuno scritto a mano. */
+
+.mondo { position: relative; overflow-x: clip; min-height: var(--mondo-altezza-minima); }
+.luce, .luce-voce {
+  position: absolute;
+  left: var(--luce-sinistra);
+  top: var(--luce-sopra);
+  width: var(--misura-34);
+  height: var(--luce-altezza);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: var(--livello-luce);
+}
+.luce { background: var(--luce-fondo); }
+.luce-voce { background: var(--luce-voce-fondo); opacity: 0; }
+.avvertenza { font-size: var(--corpo-6) !important; color: var(--testo-avvertenza) !important; }
+.luce { animation: accende var(--durata-luce) var(--curva-dolce) backwards; }
+@media (min-width: 1000px) and (max-width: 1180px) {
+  .luce, .luce-voce { left: var(--luce-sinistra-medio); }
+}
+@media (min-width: 761px) and (max-width: 999px) {
+  .luce, .luce-voce { left: 50%; top: var(--luce-sopra-tavoletta); }
+}
+@media (max-width: 760px) {
+  .luce, .luce-voce { left: 50%; top: var(--luce-sopra-telefono); width: var(--misura-33); height: var(--misura-33); }
+}
+.tratto { position: relative; z-index: var(--livello-tratto); max-width: var(--misura-35); margin-inline: auto; padding: var(--tratto-spazio-interno); }
+.tratto h2 {
+  margin: 0;
+  font-size: var(--tratto-grandezza);
+  line-height: var(--tratto-interlinea);
+  font-weight: var(--peso-titolo);
+  letter-spacing: var(--spaziatura-tratto);
+  text-wrap: balance;
+}
+.tratto-testo p {
+  margin: var(--spazi-10);
+  max-width: var(--tratto-testo-larghezza-massima);
+  font-size: var(--corpo-10);
+  line-height: var(--interlinea-12);
+  color: var(--testo-spiegazione);
+  text-wrap: pretty;
+}
+.luce-tratto {
+  position: absolute;
+  z-index: var(--livello-luce-tratto);
+  pointer-events: none;
+  width: var(--luce-tratto-larghezza);
+  height: var(--luce-tratto-altezza);
+  transform: translate(-50%, -50%);
+  background: var(--luce-tratto-fondo);
+}
+/* ---------- 3. che cosa serve: il primo avvio vero, vicino alla riunione (correzioni P9) ----------
+   Due finestre vicine come sul desktop (progetto.md §2.5: «tiene vicine la finestra della riunione e quella di Kalliope»):
+   Kalliope scarica la voce; nella riunione si sceglie «Kalliope» come microfono e il tuo riquadro si accende. */
+.serve { display: grid; grid-template-columns: var(--serve-colonne); column-gap: var(--spazio-30); align-items: center; }
+.serve .luce-tratto { left: 34%; top: 50%; }
+.requisiti { list-style: none; margin: var(--spazi-12); padding: 0; display: grid; gap: var(--spazio-17); }
+.requisiti li {
+  position: relative;
+  padding-left: var(--spazio-19);
+  font-size: var(--corpo-10);
+  line-height: var(--interlinea-12);
+  transition: opacity var(--durata-requisiti) var(--curva-dolce);
+}
+/* correzioni (P9): niente spunte; ogni requisito ha una riga che si riempie mentre il racconto del primo avvio arriva lì */
+.requisiti li::before, .requisiti li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: var(--spazio-2);
+  bottom: var(--spazio-2);
+  width: var(--misura-2);
+  border-radius: var(--raggio-1);
+}
+.requisiti li::before { background: var(--requisito-traccia); }
+.requisiti li::after { background: var(--magenta); transform-origin: 50% 0; }
+.requisiti strong { font-weight: var(--peso-forte); }
+.chiusura { display: flex; flex-direction: column; align-items: center; text-align: center; padding-bottom: var(--chiusura-spazio-sotto); }
+.chiusura .luce-tratto {  }
+.chiusura h2 { font-size: var(--chiusura-grandezza); line-height: var(--chiusura-interlinea); }
+.chiusura .comandi { justify-content: center; margin-top: var(--spazio-22); }
+.fatti {
+  margin: var(--spazi-12);
+  max-width: var(--misura-32);
+  font-size: var(--corpo-8);
+  line-height: var(--interlinea-8);
+  color: var(--testo-dettaglio);
+  text-wrap: balance;
+}
+.chiusura .avvertenza {
+  margin: var(--chiusura-avvertenza-margine);
+  max-width: var(--misura-32);
+  font-size: var(--corpo-5) !important;
+  line-height: var(--interlinea-5);
+  color: var(--testo-avvertenza-chiusura) !important;
+}
+@media (min-width: 761px) and (max-width: 1180px) {
+  .serve { grid-template-columns: minmax(0, 1fr); row-gap: var(--spazio-26); }
+  .serve .tratto-testo { order: -1; }
+}
+@media (max-width: 760px) {
+  .tratto { padding: var(--tratto-spazio-interno-telefono); }
+  .tratto h2 { font-size: var(--tratto-grandezza-telefono); line-height: var(--interlinea-14); }
+  .tratto-testo p { font-size: var(--corpo-8); line-height: var(--tratto-testo-interlinea-telefono); }
+  .serve { display: flex; flex-direction: column; gap: var(--spazio-21); }
+  .requisiti li {  }
+  .chiusura h2 { font-size: var(--chiusura-grandezza-telefono); line-height: var(--chiusura-interlinea-telefono); }
+  .chiusura .comandi { flex-direction: column; align-items: stretch; width: 100%; }
+  .chiusura .comandi .pillola { width: 100%; }
+  .serve .tratto-testo { order: -1; }
+  .tratto.chiusura { padding-bottom: var(--chiusura-spazio-sotto-telefono); }
+  /* sotto «logopedista.» c'è aria prima del piede */
+}
+.tratto.scena-notte, .tratto.scena-stanza, .tratto.scena-chiara {
+  max-width: none;
+  margin-inline: 0;
+  overflow: clip;
+  padding-left: var(--tratto-scena-notte-spazio-sinistra);
+  padding-right: var(--tratto-scena-notte-spazio-destra);
+  border-radius: var(--raggio-scena) var(--raggio-scena) 0 0;
+}
+.tratto.scena-notte, .tratto.scena-stanza, .tratto.scena-chiara {
+  padding-top: var(--tratto-scena-notte-spazio-sopra);
+  padding-bottom: var(--tratto-scena-notte-spazio-sotto);
+}
+.tratto + .tratto { margin-top: calc(-1 * var(--sovrap)); }
+.tratto.chiusura.scena-stanza { padding-bottom: var(--chiusura-spazio-sotto-2); }
+@media (max-width: 760px) {
+  .tratto.chiusura.scena-stanza { padding-bottom: var(--chiusura-spazio-sotto-telefono-2); }
+}
+.scena-notte { background: var(--notte); }
+.scena-stanza { background: var(--fondo); }
+.scena-chiara { background: var(--scena-chiara-fondo); color: var(--scuro); }
+@keyframes scena-entra {
+  /* correzioni 6b: il ritaglio ai lati non supera il margine della pagina (a 445-760 px e a 1068-1180 px era più largo e tagliava le prime lettere di ogni riga mentre il pannello entrava) */
+  from { clip-path: var(--scena-entra-da-ritaglio); }
+  to { clip-path: inset(0 0 round var(--raggio-scena) var(--raggio-scena) 0 0); }
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    /* entrando, la scena si allarga dai lati fino al bordo, come il riquadro di chi parla che viene in primo piano */
+    .js .tratto.scena-notte, .js .tratto.scena-stanza, .js .tratto.scena-chiara {
+      animation: scena-entra var(--curva-lineare) both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 35%;
+    }
+  }
+}
+.scena-chiara h2 { color: var(--bordeaux); }
+.scena-chiara :focus-visible { outline-color: var(--bordeaux); }
+.scena-chiara .luce-tratto { background: var(--luce-tratto-fondo-2); }
+.requisiti li { color: var(--testo-requisiti-chiara); }
+.requisiti strong { color: var(--bordeaux); }
+/* i requisiti seguono il racconto: quello del momento è pieno e la sua riga si riempie; alla fine sono tutti pieni */
+.js .requisiti.in-scena li:not(.attivo):not(.fatto) { opacity: var(--opacita-requisiti); }
+.js .requisiti.in-scena li:not(.fatto)::after { transform: scaleY(0); }
+.js .requisiti.in-scena li.attivo::after {
+  transform: scaleY(1);
+  transition: transform var(--durata, var(--durata-requisiti-dopo-base)) var(--curva-lineare);
+}
+.chiusura { padding-top: var(--chiusura-spazio-sopra); }
+.chiusura .luce-tratto {
+  left: 50%;
+  top: 36%;
+  width: var(--misura-34);
+  height: var(--chiusura-luce-tratto-altezza);
+  background: var(--chiusura-luce-tratto-fondo);
+}
+.chiusura .luce-chiusa { background: var(--chiusura-luce-chiusa-fondo); opacity: 0; }
+@media (max-width: 760px) {
+  /* al telefono i requisiti stanno sopra le finestre: non si accendono con il racconto, restano pieni */
+  .js .requisiti.in-scena li { opacity: 1 !important; }
+  .js .requisiti.in-scena li::after { transform: none !important; transition: none !important; }
+}
+.js .entra-titolo { opacity: 0; transform: translateY(var(--entra-titolo-sposta-y)); }
+/* i titoli salgono come le righe del titolo in alto */
+.js .entra-titolo.visto {
+  opacity: 1;
+  transform: none;
+  transition: opacity var(--durata-entra-titolo) var(--curva-dolce) var(--ritardo, 0ms), transform var(--durata-entra-titolo) var(--entra) var(--ritardo, 0ms);
+}
+.js .entra-finestra { opacity: 0; transform: translateY(var(--entra-finestra-sposta-y)) scale(var(--entra-finestra-scala)); transform-origin: 0 0; }
+/* le finestre si aprono */
+.js .entra-finestra.visto {
+  opacity: 1;
+  transform: none;
+  transition: opacity var(--durata-entra-finestra-opacita) var(--curva-dolce) var(--ritardo, 0ms), transform var(--durata-entra-finestra-trasforma) var(--entra) var(--ritardo, 0ms);
+}
+/* il fuoco che arriva in un tratto lo mostra subito, senza aspettare l'entrata */
+.js .subito, .js .subito * { transition: none !important; }
+@media (max-width: 760px) {
+  .tratto.scena-notte, .tratto.scena-stanza, .tratto.scena-chiara {
+    padding-top: var(--tratto-scena-notte-spazio-sopra-telefono);
+    padding-bottom: var(--tratto-scena-notte-spazio-sotto-telefono);
+  }
+  .serve { align-items: stretch; }
+  /* le colonne prendono la larghezza dello schermo, non quella della frase più lunga */
+  .requisiti li { font-size: var(--corpo-9); line-height: var(--interlinea-9); }
+  .chiusura { padding-top: var(--chiusura-spazio-sopra-telefono); }
+}

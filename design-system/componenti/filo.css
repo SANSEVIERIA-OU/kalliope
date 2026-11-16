@@ -1,0 +1,165 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* Componente · Le frasi del filo
+   Le regole di questo componente, nell'ordine in cui la pagina le dava.
+   Ogni valore viene da ../token.css (o ../../token.css): qui non ce n'è nessuno scritto a mano. */
+
+/* l'arrivo sullo schermo: stessa salita del primo schermo (20 px, curva d'entrata), solo con JavaScript */
+/* secondo giro (punto 6): la dissolvenza uguale per tutti i blocchi non superava la prova della rimozione (solo morbidezza,
+   nessun carattere): i testi e i comandi ci sono quando la scena arriva. Entrano soltanto gli oggetti della scena, a modo loro
+   (vedi «CORREZIONI 6a» in fondo): titoli, bolle, riquadri, finestre; la strada si disegna da sé. */
+.ascolto-voce { display: grid; align-items: start; }
+.ascolto-voce .luce-tratto {  }
+.ascolto-voce .luce-filo { background: var(--ascolto-voce-luce-filo-fondo); opacity: 0; }
+.ascolto-voce .tratto-testo { position: sticky; }
+.voci-filo { margin-top: var(--spazio-20); }
+.filo { position: relative; grid-template-columns: var(--filo-colonne); column-gap: var(--spazio-25); align-items: center; }
+.messaggi { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--spazio-24); }
+.messaggio { position: relative; }
+.messaggio:nth-child(2) { margin-left: var(--spazio-28); }
+.filo-bolla .bolla-testo { font-size: var(--corpo-11); line-height: var(--interlinea-13); }
+.messaggio[data-frase="3"] .filo-bolla .bolla-testo { font-size: var(--filo-bolla-bolla-testo-grandezza-2); line-height: var(--interlinea-14); }
+.filo-bolla .bolla-corpo { transition: box-shadow var(--durata-filo-bolla-bolla-corpo) var(--curva-dolce); }
+.messaggio.in-voce .filo-bolla .bolla-corpo { box-shadow: var(--filo-bolla-bolla-corpo-ombra); }
+.messaggio-sotto {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--messaggio-sotto-distanza);
+  margin-top: var(--spazio-19);
+  padding-left: var(--spazio-3);
+}
+.messaggio-sotto .pillola { min-height: var(--misura-22); font-size: var(--corpo-7); padding: var(--messaggio-sotto-pillola-spazio-interno); }
+.messaggio-sotto .tondo { width: var(--misura-18); height: var(--misura-18); }
+.messaggio-sotto .tondo::before { left: var(--spazio-12); top: var(--spazio-9); }
+.suona-frase.suona .tondo::before {
+  left: var(--spazio-11);
+  top: var(--spazio-10);
+  width: var(--misura-6);
+  height: var(--misura-7);
+  border: 0;
+  background: var(--suona-frase-tondo-prima-fondo);
+}
+.durata { font-size: var(--corpo-5); color: var(--testo-durata); font-variant-numeric: tabular-nums; }
+.messaggio audio { width: 100%; max-width: var(--messaggio-larghezza-massima); color-scheme: dark; }
+.altra-voce {
+  font-size: var(--corpo-6);
+  font-weight: var(--peso-forte);
+  text-underline-offset: var(--spazio-3);
+  text-decoration-color: var(--tratto-lieve);
+}
+.js .messaggio audio, .js .altra-voce { display: none; }
+.detto-riga {
+  margin: var(--detto-riga-margine);
+  max-width: var(--detto-riga-larghezza-massima);
+  font-size: var(--corpo-7);
+  line-height: var(--interlinea-7);
+  color: var(--testo-nota);
+}
+.detto-riga span { font-weight: var(--peso-forte); color: var(--testo); }
+@media (min-width: 761px) and (max-width: 1180px) {
+  .ascolto-voce { grid-template-columns: minmax(0, 1fr); row-gap: var(--spazio-26); }
+  .ascolto-voce .tratto-testo {  }
+}
+@media (max-width: 760px) {
+  .ascolto-voce { display: flex; flex-direction: column; }
+  .ascolto-voce .tratto-testo { position: static; }
+  .filo { grid-template-columns: minmax(0, 1fr); row-gap: var(--spazio-21); }
+  .messaggio:nth-child(2) { margin-left: var(--spazio-15); }
+  .filo-bolla .bolla-testo { font-size: var(--corpo-8); line-height: var(--interlinea-7); }
+  .messaggio[data-frase="3"] .filo-bolla .bolla-testo { font-size: var(--corpo-10); line-height: var(--interlinea-10); }
+}
+.altra-voce:active { transform: scale(var(--collegamento-premuto-scala)); }
+.suona-frase.carica .tondo::after {
+  content: "";
+  position: absolute;
+  inset: var(--spazio-meno-2);
+  border-radius: 50%;
+  border: var(--filetto-medio) dotted var(--bordeaux);
+  animation: gira var(--durata-suona-frase-tondo-dopo) var(--curva-lineare) infinite;
+}
+.suona-frase.suona .tondo::after {
+  content: "";
+  position: absolute;
+  inset: var(--spazio-meno-2);
+  border-radius: 50%;
+  border: var(--filetto-medio) solid var(--bordeaux);
+  animation: anello var(--durata-suona-frase-tondo-dopo-2) var(--curva-uscita) infinite;
+}
+.suona-frase.pausa .tondo::after {
+  content: "";
+  position: absolute;
+  inset: var(--spazio-meno-3);
+  border-radius: 50%;
+  border: var(--filetto-medio) solid var(--bordeaux);
+  opacity: var(--opacita-suona-frase-tondo-dopo);
+}
+.messaggio.in-pausa .filo-bolla .bolla-corpo { box-shadow: var(--filo-bolla-bolla-corpo-ombra-2); }
+.tratto.ascolto-voce { margin-top: var(--ascolto-voce-margine-sopra); }
+/* il primo pannello comincia sotto la piega del primo schermo scelto (1440×900), anche quando
+   «Sto parlando…» accorcia la finestra di Kalliope di una riga (19 px) */
+.ascolto-voce { grid-template-columns: var(--ascolto-voce-colonne); column-gap: var(--spazio-30); }
+.ascolto-voce .tratto-testo { top: var(--spazio-32); }
+@media (min-width: 761px) and (max-width: 1010px) {
+  .ascolto-voce {  }
+  .ascolto-voce .tratto-testo { position: static; }
+}
+.ascolto-voce .luce-tratto { left: 62%; top: 50%; }
+.filo { display: block; }
+.ascolto-voce .voci-filo { margin-top: var(--ascolto-voce-voci-filo-margine-sopra); }
+@media (max-height: 819px) and (min-width: 1181px) {
+  .ascolto-voce .tratto-testo { position: static; }
+}
+.js .messaggio.entra { opacity: 1; }
+/* le tue frasi nascono dalla coda, come la bolla in alto */
+.js .messaggio.entra .filo-bolla {
+  opacity: 0;
+  transform: scale(var(--messaggio-filo-bolla-scala));
+  transform-origin: var(--messaggio-filo-bolla-origine);
+}
+.js .messaggio.entra .messaggio-sotto, .js .messaggio.entra .detto-riga { opacity: 0; }
+.js .messaggio.entra.visto .filo-bolla {
+  opacity: 1;
+  transform: none;
+  transition: opacity var(--durata-messaggio-filo-bolla-opacita) var(--curva-dolce) var(--ritardo, 0ms), transform var(--durata-messaggio-filo-bolla-trasforma) var(--entra) var(--ritardo, 0ms);
+}
+.js .messaggio.entra.visto .messaggio-sotto, .js .messaggio.entra.visto .detto-riga {
+  opacity: 1;
+  transition: opacity var(--durata-messaggio-sotto) var(--curva-dolce) calc(var(--ritardo, 0ms) + var(--ritardo-messaggio-sotto-in-piu));
+}
+@media (max-width: 760px) {
+  .tratto.ascolto-voce { margin-top: var(--spazio-26); }
+  .ascolto-voce { align-items: stretch; }
+  .ascolto-voce .voci-filo {  }
+}
+@media (min-width: 761px) and (max-width: 1180px) {
+  .ascolto-voce .tratto-testo { position: static; }
+}
+@media (max-width: 760px) {
+  .ascolto-voce { gap: 0; }
+  .ascolto-voce > .tratto-testo { display: contents; }
+  .ascolto-voce .voci-filo { margin-top: var(--spazio-17); }
+  .ascolto-voce .filo { margin-top: var(--spazio-20); }
+  /* il fuoco e i salti interni non finiscono sotto la barra e la riunione ferma */
+  .ascolto-voce .messaggio, .ascolto-voce .messaggio * { scroll-margin-top: var(--ascolto-voce-messaggio-scorrimento-margine); }
+  /* in fondo al filo la riunione agganciata si posa su uno spazio vuoto, non sopra «Detto: …» (l'ultima riga del tratto);
+       lo spazio sotto si accorcia di altrettanto: la distanza dalla scena seguente resta di 84 px */
+  .ascolto-voce::after { content: ""; flex: none; height: var(--ascolto-voce-dopo-altezza); }
+  .tratto.ascolto-voce.scena-notte { padding-bottom: var(--ascolto-voce-spazio-sotto); }
+}
+@media (min-width: 761px) and (max-width: 1010px) {
+  .ascolto-voce {
+    display: grid;
+    grid-template-columns: var(--ascolto-voce-colonne-tavoletta-filo);
+    column-gap: var(--spazio-22);
+    row-gap: 0;
+    grid-template-areas: "titolo titolo" "testo testo" "voci voci" "riunione frasi";
+  }
+  .ascolto-voce > .tratto-testo { display: contents; }
+  #campioni-titolo { grid-area: titolo; }
+  .ascolto-voce .tratto-testo > p { grid-area: testo; max-width: var(--misura-31); }
+  .ascolto-voce .voci-filo { grid-area: voci; margin-top: var(--spazio-19); }
+  .ascolto-voce .filo { grid-area: frasi; margin-top: var(--spazio-22); }
+  .filo-bolla .bolla-testo { font-size: var(--filo-bolla-bolla-testo-grandezza-tavoletta-filo); line-height: var(--interlinea-9); }
+  .messaggio[data-frase="3"] .filo-bolla .bolla-testo { font-size: var(--corpo-11); line-height: var(--interlinea-13); }
+  .messaggio:nth-child(2) { margin-left: var(--spazio-18); }
+}

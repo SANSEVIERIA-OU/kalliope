@@ -1,0 +1,219 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* Componente · La scheda dell'ascolto
+   Le regole di questo componente, nell'ordine in cui la pagina le dava.
+   Ogni valore viene da ../token.css (o ../../token.css): qui non ce n'è nessuno scritto a mano. */
+
+.fila-ascolto { position: relative; margin-top: var(--spazio-14); min-height: var(--fila-ascolto-altezza-minima); }
+.ascolto {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: var(--livello-ascolto);
+  transform-origin: 0 0;
+  border-radius: var(--raggio-11);
+  background: var(--pannello-ascolto);
+  border: var(--filetto-sottile) solid var(--bordo-pannello);
+  -webkit-backdrop-filter: var(--ascolto-sfocatura);
+  backdrop-filter: var(--ascolto-sfocatura);
+  box-shadow: var(--ascolto-ombra);
+}
+.ascolto-dentro { padding: var(--ascolto-dentro-spazio-interno); display: grid; gap: var(--spazio-7); }
+.ascolto-riga { display: flex; align-items: center; justify-content: space-between; gap: var(--spazio-10); }
+.voci { display: flex; gap: var(--spazio-7); }
+/* i pulsanti-voce con il nome e lo stato (R51: un tratto solo) */
+.voce {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spazio-8);
+  min-height: var(--voce-altezza-minima);
+  padding: var(--voce-spazio-interno);
+  border-radius: var(--raggio-pillola);
+  cursor: pointer;
+  font-size: var(--corpo-7);
+  font-weight: var(--peso-forte);
+  transition: border-color var(--durata-voce) var(--curva-dolce), background-color var(--durata-voce) var(--curva-dolce);
+}
+.voce:hover, .voce:focus-visible {  }
+.voce[aria-pressed="true"] {  }
+.voce-tondo { position: relative; width: var(--misura-16); height: var(--misura-16); border-radius: 50%; background: var(--testo); flex: none; }
+.voce-tondo::before {
+  content: "";
+  position: absolute;
+  left: var(--spazio-11);
+  top: var(--spazio-8);
+  border-left: var(--voce-tondo-prima-triangolo) solid var(--bordeaux);
+  border-top: var(--voce-tondo-prima-triangolo-2) solid transparent;
+  border-bottom: var(--voce-tondo-prima-triangolo-2) solid transparent;
+}
+.voce.suona .voce-tondo::before {
+  left: var(--spazio-9);
+  top: var(--spazio-8);
+  width: var(--misura-6);
+  height: var(--misura-7);
+  border: 0;
+  background: var(--voce-tondo-prima-fondo);
+}
+.voce.suona .voce-tondo::after {
+  content: "";
+  position: absolute;
+  inset: var(--spazio-meno-2);
+  border-radius: 50%;
+  border: var(--filetto-medio) solid var(--voce);
+  animation: anello var(--durata-voce-tondo-dopo) var(--curva-uscita) infinite;
+}
+@keyframes anello {
+  from { transform: scale(var(--anello-da-scala)); opacity: 1; }
+  to { transform: scale(var(--anello-a-scala)); opacity: 0; }
+}
+.frasi { display: flex; gap: var(--spazio-7); flex-wrap: wrap; }
+.frase {
+  min-height: var(--misura-20);
+  padding: var(--spazi-2);
+  border-radius: var(--raggio-pillola);
+  cursor: pointer;
+  font-size: var(--corpo-5);
+  font-weight: var(--peso-medio);
+  background: transparent;
+  border: var(--filetto-comando) solid var(--bordo-frase);
+  white-space: nowrap;
+}
+.frase:hover { border-color: var(--rosa); }
+.frase[aria-current="true"] { background: var(--velo-scelto); border-color: var(--voce); }
+.fila-ascolto > .pillola { animation: appare var(--durata-fila-ascolto-pillola) var(--curva-dolce) var(--ritardo-fila-ascolto-pillola) backwards; }
+@media (max-width: 760px) {
+  .fila-ascolto { margin-top: var(--spazio-8); min-height: var(--misura-22); }
+  .ascolto { position: relative; }
+  .fila-ascolto.aperta > .pillola { display: none !important; }
+  .ascolto-dentro { padding: var(--spazio-7); }
+  .voce { min-height: var(--misura-21); font-size: var(--corpo-6); padding-right: var(--spazio-12); }
+  .frase { font-size: var(--corpo-4); padding: var(--frase-spazio-interno-telefono); min-height: var(--misura-19); }
+}
+.voce, .frase {
+  transition: border-color var(--durata-voce-bordo) var(--curva-dolce), background-color var(--durata-voce-sfondo) var(--curva-dolce), transform var(--durata-voce-trasforma) var(--entra);
+}
+.voce:active, .frase:active { transform: scale(var(--voce-premuto-scala)); }
+.frase:focus-visible { border-color: var(--rosa); }
+.voce:disabled, .frase:disabled { opacity: var(--opacita-spento); cursor: not-allowed; }
+@keyframes gira {
+  to { transform: rotate(var(--gira-a-rotazione)); }
+}
+.voce.carica .voce-tondo::after {
+  content: "";
+  position: absolute;
+  inset: var(--spazio-meno-2);
+  border-radius: 50%;
+  border: var(--filetto-medio) dotted var(--voce);
+  animation: gira var(--durata-voce-tondo-dopo-2) var(--curva-lineare) infinite;
+}
+.voce.pausa .voce-tondo::after {
+  content: "";
+  position: absolute;
+  inset: var(--spazio-meno-3);
+  border-radius: 50%;
+  border: var(--filetto-medio) solid var(--voce);
+  opacity: var(--opacita-spento);
+}
+.ascolto-dentro > .errore-ascolto { margin-top: var(--spazio-1); max-width: none; }
+/* correzioni 6b (P6): in alto l'errore sta nella scheda al posto delle frasi (tornano con «Riprova», con una voce o con «Chiudi»):
+   senza riquadro dentro il riquadro, così a 1440×900 e a 390×844 il messaggio, «Riprova» e il collegamento stanno interi nello schermo */
+.ascolto.con-errore .frasi { display: none; }
+.ascolto.con-errore .ascolto-dentro { gap: var(--spazio-1); }
+.ascolto-dentro > .errore-ascolto {
+  margin: 0;
+  padding: var(--ascolto-dentro-errore-ascolto-spazio-interno);
+  background: none;
+  border: 0;
+  border-radius: 0;
+  scroll-margin-bottom: var(--spazio-12);
+}
+.ascolto-dentro > .errore-ascolto .errore-azioni { margin-top: var(--spazio-3); }
+/* più alta dello schermo: non si ferma */
+.voce { background: transparent; border: var(--filetto-comando) solid var(--bordo-voce); color: var(--testo); }
+.voce:hover, .voce:focus-visible { border-color: var(--testo); background: var(--velo-sopra); }
+.voce[aria-pressed="true"] { background: var(--testo); color: var(--bordeaux); border-color: var(--testo); box-shadow: var(--voce-scelta-ombra); }
+.voce[aria-pressed="true"] .voce-tondo { background: var(--bordeaux); }
+.voce[aria-pressed="true"] .voce-tondo::before { border-left-color: var(--testo); }
+/* nella scheda in alto lo stato dell'ascolto sta sulla frase che suona */
+.frase { display: inline-flex; align-items: center; gap: var(--spazio-7); }
+.frase::before {
+  content: "";
+  width: var(--misura-4);
+  height: var(--misura-4);
+  border-radius: 50%;
+  background: var(--frase-punto);
+  flex: none;
+  transition: background-color var(--durata-frase-prima) var(--curva-dolce);
+}
+.frase[aria-current="true"]::before { background: var(--voce); }
+.frase.suona::before { background: var(--voce); animation: pulsa var(--durata-frase-prima-2) var(--curva-dolce-doppia) infinite; }
+.frase.carica::before {
+  background: transparent;
+  border: var(--filetto-medio) dotted var(--voce);
+  width: var(--misura-5);
+  height: var(--misura-5);
+  animation: gira var(--durata-frase-prima-3) var(--curva-lineare) infinite;
+}
+.frase.suona { border-color: var(--voce); }
+@keyframes pulsa {
+  0%, 100% { transform: scale(1); box-shadow: var(--pulsa-0-100-ombra); }
+  50% { transform: scale(var(--pulsa-50-scala)); box-shadow: var(--pulsa-50-ombra); }
+}
+/* la scheda dell'ascolto in alto, sugli schermi bassi, si porta in vista da sé (scena.js, `inVista`) con un po' d'aria sotto */
+.ascolto { scroll-margin-bottom: var(--spazio-12); }
+/* a 320-350 px le due voci e «Chiudi» non stanno su una riga (343 px contro 304): senza andare a capo allargavano la scheda oltre lo
+   schermo e «Chiudi» e le frasi uscivano a destra. «Chiudi» va sotto le voci, sempre a destra */
+.ascolto-riga { flex-wrap: wrap; row-gap: var(--spazio-7); }
+.ascolto-riga .chiudi { margin-left: auto; }
+@media (min-width: 761px) and (max-height: 802px) {
+  .palco:has(.fila-ascolto.aperta:not(.chiudendo)) .sotto {
+    height: 0;
+    margin-top: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: visibility 0s var(--curva-lineare) var(--ritardo-sotto-aperto);
+  }
+  /* 8d: «visibility: hidden», con il ritardo dell'apertura (la finestra sfuma e si chiude, poi sparisce): senza, «Ferma» restava
+       nell'ordine di Tab, invisibile, e Maiusc+Tab dalla prima voce ci portava il fuoco mentre la voce parlava */
+  .ascolto-dentro { padding: var(--spazi-9); gap: var(--spazio-5); }
+  .ascolto .voce { min-height: var(--misura-20); }
+  .ascolto .chiudi { min-height: var(--misura-19); }
+  .ascolto .frasi { flex-wrap: wrap; gap: var(--spazio-5); }
+  /* 8d: wrap (non nowrap): dove le tre frasi stanno su una riga ci stanno comunque; a 1181-1250 px la scheda è stretta e «Chiudi» e la prima frase uscivano dalla scheda */
+  .ascolto .frase { min-height: var(--misura-17); padding: var(--spazi-1); font-size: var(--corpo-4); gap: var(--spazio-5); }
+  .ascolto .frase::before { width: var(--misura-3); height: var(--misura-3); }
+}
+@media (min-width: 761px) and (max-height: 840px) {
+  .ascolto-dentro > .errore-ascolto { font-size: var(--corpo-4); line-height: var(--interlinea-3); padding: var(--spazi-5); }
+  .ascolto-dentro > .errore-ascolto .errore-azioni { margin-top: var(--spazio-1); gap: var(--spazi-7); }
+  .ascolto .riprova { min-height: var(--misura-19); padding: var(--spazi-3); font-size: var(--corpo-5); }
+  .ascolto .scarica-file { font-size: var(--corpo-5); }
+}
+/* 8d: la modalità compatta dell'ascolto (la finestra di Kalliope lascia il posto alla scheda, la scheda e l'errore si fanno compatti) non
+   dipende più soltanto dall'altezza dello schermo: la sceglie scena.js quando, con la finestra al suo posto, la scheda dentro lo schermo e
+   la bolla sotto la barra non ci stanno insieme (classe `compatta` sul palco, finché la scheda è aperta). Misurato: a 1280 px di larghezza
+   succede fino a circa 880 px d'altezza, e a 761-886 px di larghezza anche a 900 (primo schermo a una colonna). Stesse regole di 8c. */
+.palco.compatta:has(.fila-ascolto.aperta:not(.chiudendo)) .sotto {
+  height: 0;
+  margin-top: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: visibility 0s var(--curva-lineare) var(--ritardo-sotto-compatto-aperto);
+}
+/* 8d: «visibility: hidden», con il ritardo dell'apertura (la finestra sfuma e si chiude, poi sparisce): senza, «Ferma» restava
+     nell'ordine di Tab, invisibile, e Maiusc+Tab dalla prima voce ci portava il fuoco mentre la voce parlava */
+.palco.compatta .ascolto-dentro { padding: var(--spazi-9); gap: var(--spazio-5); }
+.palco.compatta .ascolto .voce { min-height: var(--misura-20); }
+.palco.compatta .ascolto .chiudi { min-height: var(--misura-19); }
+.palco.compatta .ascolto .frasi { flex-wrap: wrap; gap: var(--spazio-5); }
+/* 8d: wrap (non nowrap): dove le tre frasi stanno su una riga ci stanno comunque; a 1181-1250 px la scheda è stretta e «Chiudi» e la prima frase uscivano dalla scheda */
+.palco.compatta .ascolto .frase { min-height: var(--misura-17); padding: var(--spazi-1); font-size: var(--corpo-4); gap: var(--spazio-5); }
+.palco.compatta .ascolto .frase::before { width: var(--misura-3); height: var(--misura-3); }
+.palco.compatta .ascolto-dentro > .errore-ascolto { font-size: var(--corpo-4); line-height: var(--interlinea-3); padding: var(--spazi-5); }
+.palco.compatta .ascolto-dentro > .errore-ascolto .errore-azioni { margin-top: var(--spazio-1); gap: var(--spazi-7); }
+.palco.compatta .ascolto .riprova { min-height: var(--misura-19); padding: var(--spazi-3); font-size: var(--corpo-5); }
+.palco.compatta .ascolto .scarica-file { font-size: var(--corpo-5); }

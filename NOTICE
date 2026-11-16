@@ -25,6 +25,12 @@ Separately licensed components remain under their existing terms:
 - Slint (the window toolkit): used under the Slint Royalty-free Desktop,
   Mobile, and Web Applications License 2.0; the About dialog shows the
   AboutSlint attribution it requires.
+- design-system/caratteri/lexend (the Lexend typeface, as a variable font and
+  as a Latin subset of it): SIL Open Font License 1.1; see OFL.txt beside the
+  files.
+- design-system/caratteri/dejavu (DejaVu Sans, complete and as a Latin subset
+  of it): the Bitstream Vera licence, with DejaVu's changes in the public
+  domain; see LICENZA-copyright.txt beside the files.
 - Third-party libraries, voice models and data: their own terms; see
   THIRD_PARTY_NOTICES.md. Voice models are downloaded, not stored in this
   repository.

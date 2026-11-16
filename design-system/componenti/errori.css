@@ -1,0 +1,43 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* Componente · I messaggi d'errore
+   Le regole di questo componente, nell'ordine in cui la pagina le dava.
+   Ogni valore viene da ../token.css (o ../../token.css): qui non ce n'è nessuno scritto a mano. */
+
+.riprova {
+  transition: border-color var(--durata-voce-bordo) var(--curva-dolce), background-color var(--durata-voce-sfondo) var(--curva-dolce), transform var(--durata-voce-trasforma) var(--entra);
+}
+.riprova:active { transform: scale(var(--voce-premuto-scala)); }
+.scarica-file:active { transform: scale(var(--collegamento-premuto-scala)); }
+.riprova:disabled { opacity: var(--opacita-spento); cursor: not-allowed; }
+.errore-ascolto {
+  margin-top: var(--spazio-12);
+  max-width: var(--misura-30);
+  padding: var(--errore-ascolto-spazio-interno);
+  border-radius: var(--raggio-9);
+  background: var(--pannello-errore);
+  border: var(--filetto-comando) solid var(--bordo-evidente);
+  font-size: var(--corpo-6);
+  line-height: var(--interlinea-6);
+  text-align: left;
+  animation: sale12 var(--durata-errore-ascolto) var(--entra) backwards;
+}
+.errore-ascolto p { margin: 0; text-wrap: pretty; }
+.errore-azioni { display: flex; flex-wrap: wrap; align-items: center; gap: var(--errore-azioni-distanza); margin-top: var(--spazio-10); }
+.riprova {
+  min-height: var(--misura-21);
+  padding: var(--spazi-4);
+  border-radius: var(--raggio-pillola);
+  border: 0;
+  cursor: pointer;
+  background: var(--testo);
+  color: var(--bordeaux);
+  font-size: var(--corpo-6);
+  font-weight: var(--peso-forte);
+}
+.riprova:hover { background: var(--bianco); }
+.scarica-file {
+  font-size: var(--corpo-6);
+  font-weight: var(--peso-forte);
+  text-underline-offset: var(--spazio-3);
+  text-decoration-color: var(--sottolineatura);
+}

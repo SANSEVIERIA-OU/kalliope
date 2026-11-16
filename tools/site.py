@@ -1,9 +1,9 @@
 # SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
-"""Build the website: copy site/ and fill in the release that visitors should download.
+"""Build the website: copy website/ and design-system/, and fill in the release to download.
 
     python3 -I tools/site.py --out DIR [--release-json FILE]
 
-The pages under site/ never write a version or a package name by hand. They use these markers,
+The pages under website/ never write a version or a package name by hand. They use these markers,
 replaced in every .html, .xml, .txt and .webmanifest file:
 
     {{kalliope.version}}        0.1-rc.1
@@ -25,6 +25,11 @@ prerelease; while there is none, the newest prerelease. Release data comes from 
 API (GH_TOKEN or GITHUB_TOKEN is used when set, to avoid the anonymous rate limit), or from
 --release-json, a saved answer of `GET /repos/SANSEVIERIA-OU/kalliope/releases`, to work offline.
 
+The design system (tokens, base, components, fonts and its living catalogue) has its own folder,
+design-system/, because the application will use it too. The build copies it into the site as
+design-system/, without its Markdown documents and tool configuration; pages link to it as
+design-system/token.css, so they are complete only once built.
+
 The build fails when a marker is unknown or a package is missing from the release, so a typo
 never reaches visitors. No dependencies beyond the Python standard library.
 """
@@ -38,7 +43,9 @@ import urllib.request
 
 REPO = "SANSEVIERIA-OU/kalliope"
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-SITE = ROOT / "site"
+SITE = ROOT / "website"
+SYSTEM = ROOT / "design-system"
+SYSTEM_IN_SITE = "design-system"
 TEXT_SUFFIXES = {".html", ".xml", ".txt", ".webmanifest"}
 MARKER = re.compile(r"\{\{kalliope\.([a-z0-9.]+)\}\}")
 MONTHS = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto",
@@ -108,6 +115,10 @@ def build(out, v):
     if out.exists():
         shutil.rmtree(out)
     shutil.copytree(SITE, out)
+    if (out / SYSTEM_IN_SITE).exists():
+        sys.exit(f"site.py: website/{SYSTEM_IN_SITE} would be overwritten by the design system")
+    shutil.copytree(SYSTEM, out / SYSTEM_IN_SITE,
+                    ignore=shutil.ignore_patterns("*.md", "metodo.config.mjs"))
     unknown = set()
     for path in out.rglob("*"):
         if path.suffix not in TEXT_SUFFIXES or not path.is_file():
@@ -133,8 +144,9 @@ def main():
     if "--out" not in args:
         sys.exit(__doc__)
     out = pathlib.Path(args[args.index("--out") + 1]).resolve()
-    if out == SITE or SITE in out.parents:
-        sys.exit("site.py: --out must be outside site/")
+    for source in (SITE, SYSTEM):
+        if out == source or source in out.parents:
+            sys.exit("site.py: --out must be outside website/ and design-system/")
     if "--release-json" in args:
         releases = json.loads(pathlib.Path(args[args.index("--release-json") + 1]).read_text())
     else:

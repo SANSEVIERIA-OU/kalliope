@@ -1,0 +1,47 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 -->
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="text-scale" content="scale">
+<title>Catalogo · il design system della home di Kalliope</title>
+<link rel="stylesheet" href="../token.css">
+<link rel="stylesheet" href="../base.css">
+<link rel="stylesheet" href="../componenti/barra.css">
+<link rel="stylesheet" href="../componenti/pulsanti.css">
+<link rel="stylesheet" href="../componenti/apertura.css">
+<link rel="stylesheet" href="../componenti/bolla.css">
+<link rel="stylesheet" href="../componenti/riunione.css">
+<link rel="stylesheet" href="../componenti/finestra.css">
+<link rel="stylesheet" href="../componenti/riunione-app.css">
+<link rel="stylesheet" href="../componenti/ascolto.css">
+<link rel="stylesheet" href="../componenti/errori.css">
+<link rel="stylesheet" href="../componenti/filo.css">
+<link rel="stylesheet" href="../componenti/strada.css">
+<link rel="stylesheet" href="../componenti/tratti.css">
+<link rel="stylesheet" href="../componenti/piede.css">
+<link rel="stylesheet" href="../componenti/arrivo.css">
+<link rel="stylesheet" href="catalogo.css">
+</head>
+<body>
+<header class="cat-intesta">
+  <h1>Catalogo del sistema di Kalliope</h1>
+  <p>Il design system della home «In riunione, alla pari» (direzione 2), ricavato dalla pagina consegnata senza cambiarne l'aspetto. Tutto ciò che vedi usa soltanto <code>token.css</code>, la base e i componenti veri (<code>base.css</code>, <code>componenti/</code>): nessuno stile parallelo. La tabella dei token è letta da <code>token.css</code> mentre la pagina si apre; i componenti sono copiati dalla home vera (<code>website/index.html</code>).</p>
+  <p id="stato-catalogo">Carico i token e la home…</p>
+  <ul class="cat-indice" id="indice"></ul>
+</header>
+<main class="cat" id="cat">
+  <section class="cat-sezione" id="identita"></section>
+  <section class="cat-sezione" id="colori"></section>
+  <section class="cat-sezione" id="caratteri"></section>
+  <section class="cat-sezione" id="forme"></section>
+  <section class="cat-sezione" id="componenti"></section>
+  <section class="cat-sezione" id="movimento"></section>
+  <section class="cat-sezione" id="anteprime"></section>
+  <section class="cat-sezione" id="tabella"></section>
+  <section class="cat-sezione" id="non-ancora"></section>
+</main>
+<script src="catalogo.js"></script>
+</body>
+</html>
