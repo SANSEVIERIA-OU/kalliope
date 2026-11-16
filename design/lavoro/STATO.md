@@ -36,7 +36,6 @@ Metodo: skill vibe-next `design-system-generator` 0.46.1, ruoli nativi di Claude
 | 3a. «non ancora»: aspetto e movimento | fatta | design-direction (opus) | 16/11, 42 min, 544k token | `3a-non-ancora/` (PIANO, CONTENUTI, sequenze, confronti); 4 componenti nuovi, 24 token; controlla-sorgenti verde; solo Chromium |
 | 3a-g. «non ancora»: giudizio | fatto | design-judge (opus) | 16/11, 35 min, 351k token | `3a-non-ancora/giudizio/GIUDIZIO.md`: 0 bloccanti, 6 importanti (I1 stato della prova, I2 «non ancora» per ciò che non è, I3 feed come unica decisione, I4 catalogo, I5 schermi bassi senza comandi, I6 tratto fermo), 8 minori |
 | 3a-c. «non ancora»: correzioni d'aspetto e contenuti | in corso | design-direction (opus), lo stesso worker | 16/11 → | I1, I2, I3, I5, I6 e i fatti decisi da chi coordina (sotto) |
-| 2. (avviata) Lingue nel design system | in corso | design-direction (opus) | 16/11 → | `incarichi/2-lingue-aspetto.md` |
 | 4. Applicazione: token per Slint, prova delle scritture, `@tr`, finestra nella direzione 2 (due varianti) | da fare | design-build, design-direction, design-judge | | dopo il sito |
 | 5. Matrice completa (15 dispositivi × 3 motori) e pulizia di `website/stile/`, `script/`, `sistema/` | da fare | design-build | | alla fine |
 
