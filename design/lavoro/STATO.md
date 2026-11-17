@@ -62,6 +62,7 @@ Sulle tre domande lasciate da «non ancora»:
 | 2-f. Cornice, lingue e «non ancora»: i difetti del secondo sguardo (menu che salta in Chromium, L1–L3, P1, `svh`, pulizia della barra) | in corso | design-build (sonnet) | 17/11 → | `incarichi/2-3a-correzioni-cornice.md` |
 | 3b-g. «stato»: giudizio | in corso | design-judge (opus) | 17/11 → | `incarichi/3b-stato-giudizio.md`; poi correzione della direzione |
 | V. La voce di chi usa Kalliope: ricerca | fatta | research ×5 (haiku) | 17/11, 1 087k token | modelli che clonano dal testo, conversione della voce, voice banking per chi perde la parola, adattare una voce piccola, regole UE e filigrana → `ricerca/voce/SINTESI.md`; tre strade proposte al proprietario il 17/11, con la proposta di misurarle prima di scegliere |
+| V-m. La voce di chi usa Kalliope: misurare le tre strade | in corso (via del proprietario: «ok», 17/11) | general-purpose (opus) | 17/11 → | `incarichi/V-misure-voce.md`; campioni d'ascolto al proprietario, poi la scelta; il programma non si tocca prima |
 | 4. Applicazione: token per Slint, prova delle scritture, `@tr`, finestra nella direzione 2 (due varianti) | da fare | design-build, design-direction, design-judge | | dopo il sito |
 | 5. Matrice completa (15 dispositivi × 3 motori) e pulizia di `website/stile/`, `script/`, `sistema/` | da fare | design-build | | alla fine |
 
