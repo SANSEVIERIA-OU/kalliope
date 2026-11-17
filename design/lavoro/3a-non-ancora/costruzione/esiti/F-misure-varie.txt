@@ -1,0 +1,88 @@
+# F-misure-varie · 17/11/2026 01:55 · sito: /tmp/lavoro-3ab-sito-G · esame-impaginazione.mjs chromium normale non-ancora 360x640,390x667,375x812,412x915,915x412,320x568,1024x600,820x1180,1366x640,861x609,421x616,951x669,466x678
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+non-ancora · 360×640 · testo 100%: pulito
+non-ancora-menu · 360×640 · testo 100%: pulito
+non-ancora-errore-audio · 360×640 · testo 100%: pulito
+non-ancora-ascolto · 360×640 · testo 100%: pulito
+non-ancora-copia-fatta · 360×640 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 360×640 · testo 100%: pulito
+non-ancora · 390×667 · testo 100%: pulito
+non-ancora-menu · 390×667 · testo 100%: pulito
+non-ancora-errore-audio · 390×667 · testo 100%: pulito
+non-ancora-ascolto · 390×667 · testo 100%: pulito
+non-ancora-copia-fatta · 390×667 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 390×667 · testo 100%: pulito
+non-ancora · 375×812 · testo 100%: pulito
+non-ancora-menu · 375×812 · testo 100%: pulito
+non-ancora-errore-audio · 375×812 · testo 100%: pulito
+non-ancora-ascolto · 375×812 · testo 100%: pulito
+non-ancora-copia-fatta · 375×812 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 375×812 · testo 100%: pulito
+non-ancora · 412×915 · testo 100%: pulito
+non-ancora-menu · 412×915 · testo 100%: pulito
+non-ancora-errore-audio · 412×915 · testo 100%: pulito
+non-ancora-ascolto · 412×915 · testo 100%: pulito
+non-ancora-copia-fatta · 412×915 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 412×915 · testo 100%: pulito
+non-ancora · 915×412 · testo 100%: pulito
+non-ancora-menu · 915×412 · testo 100%: pulito
+non-ancora-errore-audio · 915×412 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA div.bolla.bolla-chiusa: 122 px sopra (schermo 915×412) · schermo basso: la bolla, i riquadri, il comando e il messaggio d'errore non stanno insieme; vincono il comando e il messaggio (PIANO.md, «La cornice»; scena.js 8c)
+non-ancora-ascolto · 915×412 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA button.pillola.voce-chiara: 36 px sotto (schermo 915×412) · telefono girato e schermo quadrato: la bolla dove le parole si accendono e il comando non stanno insieme (la riunione sola è alta quasi come lo schermo); vince la bolla, il comando «Pausa» resta sotto il bordo (a 326 px per 2 px). Scelta della costruzione, diversa da scena.js 8c (lì vince il comando): da decidere alla direzione (foto in costruzione/foto-difetti/)
+non-ancora-copia-fatta · 915×412 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 915×412 · testo 100%: pulito
+non-ancora · 320×568 · testo 100%: pulito
+non-ancora-menu · 320×568 · testo 100%: pulito
+non-ancora-errore-audio · 320×568 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA div.bolla.bolla-chiusa: 10 px sopra (schermo 320×568) · schermo basso: la bolla, i riquadri, il comando e il messaggio d'errore non stanno insieme; vincono il comando e il messaggio (PIANO.md, «La cornice»; scena.js 8c)
+non-ancora-ascolto · 320×568 · testo 100%: pulito
+non-ancora-copia-fatta · 320×568 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 320×568 · testo 100%: pulito
+non-ancora-menu · 1024×600 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1024×600 · testo 100%: pulito
+non-ancora-errore-audio · 1024×600 · testo 100%: pulito
+non-ancora-ascolto · 1024×600 · testo 100%: pulito
+non-ancora-copia-fatta · 1024×600 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1024×600 · testo 100%: pulito
+non-ancora · 820×1180 · testo 100%: pulito
+non-ancora-menu · 820×1180 · testo 100%: pulito
+non-ancora-ascolto · 820×1180 · testo 100%: pulito
+non-ancora-errore-audio · 820×1180 · testo 100%: pulito
+non-ancora-copia-fatta · 820×1180 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 820×1180 · testo 100%: pulito
+non-ancora-menu · 1366×640 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1366×640 · testo 100%: pulito
+non-ancora-errore-audio · 1366×640 · testo 100%: pulito
+non-ancora-ascolto · 1366×640 · testo 100%: pulito
+non-ancora-copia-fatta · 1366×640 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1366×640 · testo 100%: pulito
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+non-ancora · 861×609 · testo 100%: pulito
+non-ancora-menu · 861×609 · testo 100%: pulito
+non-ancora-errore-audio · 861×609 · testo 100%: pulito
+non-ancora-ascolto · 861×609 · testo 100%: pulito
+non-ancora-copia-fatta · 861×609 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 861×609 · testo 100%: pulito
+non-ancora · 421×616 · testo 100%: pulito
+non-ancora-menu · 421×616 · testo 100%: pulito
+non-ancora-errore-audio · 421×616 · testo 100%: pulito
+non-ancora-ascolto · 421×616 · testo 100%: pulito
+non-ancora-copia-fatta · 421×616 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 421×616 · testo 100%: pulito
+non-ancora · 951×669 · testo 100%: pulito
+non-ancora-menu · 951×669 · testo 100%: pulito
+non-ancora-errore-audio · 951×669 · testo 100%: pulito
+non-ancora-ascolto · 951×669 · testo 100%: pulito
+non-ancora-copia-fatta · 951×669 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 951×669 · testo 100%: pulito
+non-ancora · 466×678 · testo 100%: pulito
+non-ancora-menu · 466×678 · testo 100%: pulito
+non-ancora-errore-audio · 466×678 · testo 100%: pulito
+non-ancora-ascolto · 466×678 · testo 100%: pulito
+non-ancora-copia-fatta · 466×678 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 466×678 · testo 100%: pulito
+
+
+Tutto pulito; 3 limiti dichiarati, elencati a parte e non contati (foto in /tmp/lavoro-3ab-qa-F-misure-varie/esame/chromium)
+# uscita: 0

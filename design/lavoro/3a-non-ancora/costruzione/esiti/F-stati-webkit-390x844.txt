@@ -1,0 +1,30 @@
+# F-stati-webkit-390x844 · 17/11/2026 02:11 · node prove/stati.mjs /tmp/lavoro-3ab-sito-G /tmp/lavoro-3ab-F-stati webkit 390x844 tutti
+
+== ascolto · webkit 390x844
+
+== errore · webkit 390x844
+
+== lento · webkit 390x844
+
+== attesa · webkit 390x844
+stati nel tempo: carica → suona → fermo
+NV   l'audio aspetta dati a metà: «Carico…» e poi riparte · in webkit il file a goccia non lo fa mai aspettare (carica → suona → fermo): provato solo in Chromium
+
+== nascosto · webkit 390x844
+
+== copia · webkit 390x844
+
+== copia-no · webkit 390x844
+
+== tentativo · webkit 390x844
+
+== tentativo-ridimensiona · webkit 390x844
+
+== tentativo-altezza · webkit 390x844
+
+== tentativo-nascosto · webkit 390x844
+
+== tentativo-nascosto-da-subito · webkit 390x844
+
+56/56 ok
+# uscita: 0

@@ -1,0 +1,15 @@
+# dispositivi-bassi · 17/11/2026 01:06 · sito: /tmp/lavoro-3ab-sito-6 · dispositivi-qa.mjs chromium non-ancora Telefono girato
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+ok  non-ancora · Telefono girato 844×390
+ok  non-ancora-menu · Telefono girato 844×390
+ok  non-ancora-errore-audio · Telefono girato 844×390
+  LIMITE DICHIARATO FUORI VISTA div.bolla.bolla-chiusa: 144 px sopra (schermo 844×390) · schermo basso: la bolla, i riquadri, il comando e il messaggio d'errore non stanno insieme; vincono il comando e il messaggio (PIANO.md, «La cornice»; scena.js 8c)
+ok  non-ancora-ascolto · Telefono girato 844×390
+  LIMITE DICHIARATO FUORI VISTA div.bolla.bolla-chiusa: 101 px sopra (schermo 844×390) · telefono girato: la bolla, i riquadri e il comando non stanno insieme; vince il comando («Pausa»), la bolla resta in parte sotto la barra (PIANO.md, «La cornice»; scena.js 8c)
+ok  non-ancora-copia-fatta · Telefono girato 844×390
+ok  non-ancora-copia-non-riuscita · Telefono girato 844×390
+
+6 casi puliti (6 in questo giro; foto in /tmp/lavoro-3ab-qa-dispositivi-bassi/dispositivi/chromium). Sono simulazioni, non telefoni veri.
+  2 limiti dichiarati, elencati a parte e non contati
+  129 casi della matrice non eseguiti (filtro o giro interrotto: --continua li riprende)
+# uscita: 0

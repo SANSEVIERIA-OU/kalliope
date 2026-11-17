@@ -1,0 +1,39 @@
+# V-pseudo-esame-en-XA · 17/11/2026 03:01 · sito: /tmp/lavoro-3ab-sito-vivo-3 · esame-impaginazione.mjs chromium normale non-ancora 390x844,1366x640,1440x900
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+non-ancora · 390×844 · testo 100%: pulito
+non-ancora-menu · 390×844 · testo 100%: pulito
+non-ancora-errore-audio · 390×844 · testo 100%: pulito
+non-ancora-ascolto · 390×844 · testo 100%: pulito
+non-ancora-copia-fatta · 390×844 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 390×844 · testo 100%: pulito
+non-ancora-menu · 1366×640 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1366×640 · testo 100%: 
+  STRETTO a «[Åšçöļţá Ĺö]» largo 96px, circa 10 caratteri, su 2 righe
+  STRETTO a «[Îñšţáļļá Ĺöŕ]» largo 105px, circa 11 caratteri, su 2 righe
+  STRETTO a «[Åîûţö Ĺ]» largo 69px, circa 7 caratteri, su 2 righe
+non-ancora-errore-audio · 1366×640 · testo 100%: 
+  STRETTO a «[Åšçöļţá Ĺö]» largo 96px, circa 10 caratteri, su 2 righe
+  STRETTO a «[Îñšţáļļá Ĺöŕ]» largo 105px, circa 11 caratteri, su 2 righe
+  STRETTO a «[Åîûţö Ĺ]» largo 69px, circa 7 caratteri, su 2 righe
+non-ancora-ascolto · 1366×640 · testo 100%: 
+  STRETTO a «[Åšçöļţá Ĺö]» largo 96px, circa 10 caratteri, su 2 righe
+  STRETTO a «[Îñšţáļļá Ĺöŕ]» largo 105px, circa 11 caratteri, su 2 righe
+  STRETTO a «[Åîûţö Ĺ]» largo 69px, circa 7 caratteri, su 2 righe
+non-ancora-copia-fatta · 1366×640 · testo 100%: 
+  STRETTO a «[Åšçöļţá Ĺö]» largo 96px, circa 10 caratteri, su 2 righe
+  STRETTO a «[Îñšţáļļá Ĺöŕ]» largo 105px, circa 11 caratteri, su 2 righe
+  STRETTO a «[Åîûţö Ĺ]» largo 69px, circa 7 caratteri, su 2 righe
+non-ancora-copia-non-riuscita · 1366×640 · testo 100%: 
+  STRETTO a «[Åšçöļţá Ĺö]» largo 96px, circa 10 caratteri, su 2 righe
+  STRETTO a «[Îñšţáļļá Ĺöŕ]» largo 105px, circa 11 caratteri, su 2 righe
+  STRETTO a «[Åîûţö Ĺ]» largo 69px, circa 7 caratteri, su 2 righe
+non-ancora-menu · 1440×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1440×900 · testo 100%: pulito
+non-ancora-errore-audio · 1440×900 · testo 100%: pulito
+non-ancora-ascolto · 1440×900 · testo 100%: pulito
+non-ancora-copia-fatta · 1440×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1440×900 · testo 100%: pulito
+
+STRETTO: 15
+15 cose da guardare (foto in /tmp/lavoro-3ab-qa-V-pseudo-esame-en-XA/esame/chromium)
+# uscita: 1

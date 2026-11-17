@@ -1,0 +1,8 @@
+# confronta-scelta · non-ancora 0cf5c64 (scelta della direzione) contro adesso (sito-7) · 17/11/2026 01:33
+CONFRONTO 1440×900: uguale su 43 cose nello schermo · pixel diversi 0%
+CONFRONTO 390×844: uguale su 35 cose nello schermo · pixel diversi 0%
+CONFRONTO 1366×640: uguale su 42 cose nello schermo · pixel diversi 0%
+CONFRONTO 844×390: uguale su 12 cose nello schermo · pixel diversi 0%
+CONFRONTO 360×640: uguale su 27 cose nello schermo · pixel diversi 0%
+Uguale alla scelta, salvo le differenze ammesse (foto in /tmp/lavoro-3ab-confronto-1)
+# uscita 0

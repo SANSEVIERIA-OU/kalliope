@@ -1,0 +1,99 @@
+# altezze-bisezione-3 · 17/11/2026 01:03 · sito: /tmp/lavoro-3ab-sito-6 · esame-impaginazione.mjs chromium normale non-ancora 844x390,326x326,1366x500,1366x520,1366x540,1366x560,1366x580,390x500,390x540,390x580,390x620,1440x500,844x500
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+non-ancora · 844×390 · testo 100%: pulito
+non-ancora-menu · 844×390 · testo 100%: pulito
+non-ancora-errore-audio · 844×390 · testo 100%: 
+  FUORI VISTA div.bolla.bolla-chiusa: 144 px sopra (schermo 844×390)
+non-ancora-ascolto · 844×390 · testo 100%: 
+  FUORI VISTA div.bolla.bolla-chiusa: 101 px sopra (schermo 844×390)
+non-ancora-copia-fatta · 844×390 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 844×390 · testo 100%: pulito
+non-ancora · 326×326 · testo 100%: pulito
+non-ancora-menu · 326×326 · testo 100%: pulito
+non-ancora-errore-audio · 326×326 · testo 100%: 
+  FUORI VISTA div.bolla.bolla-chiusa: 252 px sopra (schermo 326×326)
+  FUORI VISTA button.pillola.voce-chiara: 36 px sopra (schermo 326×326)
+non-ancora-ascolto · 326×326 · testo 100%: 
+  COPERTO DOPO IL GESTO div.bolla.bolla-chiusa: sopra c'è a.marchio
+non-ancora-copia-fatta · 326×326 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 326×326 · testo 100%: pulito
+non-ancora-menu · 1366×500 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1366×500 · testo 100%: pulito
+non-ancora-errore-audio · 1366×500 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA div.bolla.bolla-chiusa: 34 px sopra (schermo 1366×500) · a 500 px d'altezza la bolla, i riquadri, il comando e il messaggio d'errore non stanno insieme: vincono il comando e il messaggio, la riunione scorre sotto la barra (design/lavoro/3a-non-ancora/PIANO.md, «La cornice»: «quando l'altezza manca, vince il comando»; come nella home, telefono girato). Da confermare dalla direzione
+non-ancora-ascolto · 1366×500 · testo 100%: pulito
+non-ancora-copia-fatta · 1366×500 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1366×500 · testo 100%: pulito
+non-ancora-menu · 1366×520 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1366×520 · testo 100%: pulito
+non-ancora-errore-audio · 1366×520 · testo 100%: 
+  FUORI VISTA div.bolla.bolla-chiusa: 14 px sopra (schermo 1366×520)
+non-ancora-ascolto · 1366×520 · testo 100%: pulito
+non-ancora-copia-fatta · 1366×520 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1366×520 · testo 100%: pulito
+non-ancora-menu · 1366×540 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1366×540 · testo 100%: pulito
+non-ancora-errore-audio · 1366×540 · testo 100%: 
+  COPERTO DOPO IL GESTO div.bolla.bolla-chiusa: sopra c'è header.barra.compatta
+non-ancora-ascolto · 1366×540 · testo 100%: pulito
+non-ancora-copia-fatta · 1366×540 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1366×540 · testo 100%: pulito
+non-ancora-menu · 1366×560 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1366×560 · testo 100%: pulito
+non-ancora-errore-audio · 1366×560 · testo 100%: 
+  COPERTO DOPO IL GESTO div.bolla.bolla-chiusa: sopra c'è header.barra.compatta
+non-ancora-ascolto · 1366×560 · testo 100%: pulito
+non-ancora-copia-fatta · 1366×560 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1366×560 · testo 100%: pulito
+non-ancora-menu · 1366×580 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1366×580 · testo 100%: pulito
+non-ancora-errore-audio · 1366×580 · testo 100%: 
+  COPERTO DOPO IL GESTO div.bolla.bolla-chiusa: sopra c'è header.barra.compatta
+non-ancora-ascolto · 1366×580 · testo 100%: pulito
+non-ancora-copia-fatta · 1366×580 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1366×580 · testo 100%: pulito
+non-ancora · 390×500 · testo 100%: pulito
+non-ancora-menu · 390×500 · testo 100%: pulito
+non-ancora-errore-audio · 390×500 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA div.bolla.bolla-chiusa: 12 px sopra (schermo 390×500) · a 500 px d'altezza la bolla, i riquadri, il comando e il messaggio d'errore non stanno insieme: vincono il comando e il messaggio, la riunione scorre sotto la barra (design/lavoro/3a-non-ancora/PIANO.md, «La cornice»: «quando l'altezza manca, vince il comando»; come nella home, telefono girato). Da confermare dalla direzione
+non-ancora-ascolto · 390×500 · testo 100%: pulito
+non-ancora-copia-fatta · 390×500 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 390×500 · testo 100%: pulito
+non-ancora · 390×540 · testo 100%: pulito
+non-ancora-menu · 390×540 · testo 100%: pulito
+non-ancora-errore-audio · 390×540 · testo 100%: 
+  COPERTO DOPO IL GESTO div.bolla.bolla-chiusa: sopra c'è svg
+non-ancora-ascolto · 390×540 · testo 100%: pulito
+non-ancora-copia-fatta · 390×540 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 390×540 · testo 100%: pulito
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+non-ancora · 390×580 · testo 100%: pulito
+non-ancora-menu · 390×580 · testo 100%: pulito
+non-ancora-errore-audio · 390×580 · testo 100%: pulito
+non-ancora-ascolto · 390×580 · testo 100%: pulito
+non-ancora-copia-fatta · 390×580 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 390×580 · testo 100%: pulito
+non-ancora · 390×620 · testo 100%: pulito
+non-ancora-menu · 390×620 · testo 100%: pulito
+non-ancora-errore-audio · 390×620 · testo 100%: pulito
+non-ancora-ascolto · 390×620 · testo 100%: pulito
+non-ancora-copia-fatta · 390×620 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 390×620 · testo 100%: pulito
+non-ancora-menu · 1440×500 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1440×500 · testo 100%: pulito
+non-ancora-errore-audio · 1440×500 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA div.bolla.bolla-chiusa: 34 px sopra (schermo 1440×500) · a 500 px d'altezza la bolla, i riquadri, il comando e il messaggio d'errore non stanno insieme: vincono il comando e il messaggio, la riunione scorre sotto la barra (design/lavoro/3a-non-ancora/PIANO.md, «La cornice»: «quando l'altezza manca, vince il comando»; come nella home, telefono girato). Da confermare dalla direzione
+non-ancora-ascolto · 1440×500 · testo 100%: pulito
+non-ancora-copia-fatta · 1440×500 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1440×500 · testo 100%: pulito
+non-ancora · 844×500 · testo 100%: pulito
+non-ancora-menu · 844×500 · testo 100%: pulito
+non-ancora-errore-audio · 844×500 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA div.bolla.bolla-chiusa: 34 px sopra (schermo 844×500) · a 500 px d'altezza la bolla, i riquadri, il comando e il messaggio d'errore non stanno insieme: vincono il comando e il messaggio, la riunione scorre sotto la barra (design/lavoro/3a-non-ancora/PIANO.md, «La cornice»: «quando l'altezza manca, vince il comando»; come nella home, telefono girato). Da confermare dalla direzione
+non-ancora-ascolto · 844×500 · testo 100%: pulito
+non-ancora-copia-fatta · 844×500 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 844×500 · testo 100%: pulito
+
+FUORI VISTA: 5 · COPERTO DOPO IL GESTO: 5
+10 cose da guardare; 4 limiti dichiarati, elencati a parte e non contati (foto in /tmp/lavoro-3ab-qa-altezze-bisezione-3/esame/chromium)
+# uscita: 1

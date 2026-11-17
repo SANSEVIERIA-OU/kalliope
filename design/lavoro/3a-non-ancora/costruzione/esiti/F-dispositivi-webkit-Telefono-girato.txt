@@ -1,0 +1,14 @@
+# F-dispositivi-webkit-Telefono-girato · 17/11/2026 02:01 · sito: /tmp/lavoro-3ab-sito-G · dispositivi-qa.mjs webkit non-ancora Telefono girato
+ok  non-ancora · Telefono girato 844×390
+ok  non-ancora-menu · Telefono girato 844×390
+ok  non-ancora-errore-audio · Telefono girato 844×390
+  LIMITE DICHIARATO FUORI VISTA div.bolla.bolla-chiusa: 139 px sopra (schermo 844×390) · schermo basso: la bolla, i riquadri, il comando e il messaggio d'errore non stanno insieme; vincono il comando e il messaggio (PIANO.md, «La cornice»; scena.js 8c)
+ok  non-ancora-ascolto · Telefono girato 844×390
+  LIMITE DICHIARATO FUORI VISTA button.pillola.voce-chiara: tutto sotto il bordo (schermo 844×390) · telefono girato e schermo quadrato: la bolla dove le parole si accendono e il comando non stanno insieme (la riunione sola è alta quasi come lo schermo); vince la bolla, il comando «Pausa» resta sotto il bordo (a 326 px per 2 px). Scelta della costruzione, diversa da scena.js 8c (lì vince il comando): da decidere alla direzione (foto in costruzione/foto-difetti/)
+ok  non-ancora-copia-fatta · Telefono girato 844×390
+ok  non-ancora-copia-non-riuscita · Telefono girato 844×390
+
+6 casi puliti (6 in questo giro; foto in /tmp/lavoro-3ab-qa-F-dispositivi-webkit-Telefono-girato/dispositivi/webkit). Sono simulazioni, non telefoni veri.
+  2 limiti dichiarati, elencati a parte e non contati
+  129 casi della matrice non eseguiti (filtro o giro interrotto: --continua li riprende)
+# uscita: 0

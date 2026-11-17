@@ -1,0 +1,35 @@
+# altezze-bisezione · 17/11/2026 00:59 · sito: /tmp/lavoro-3ab-sito-5 · esame-impaginazione.mjs chromium normale non-ancora-errore 1366x503,1366x510,1366x520,1366x530,1366x534,1366x540,1366x560,1366x600,1366x640,390x510,390x520,390x530,390x540,390x560,390x600,390x640,390x667
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+non-ancora-errore-audio · 1366×503 · testo 100%: 
+  FUORI VISTA div.bolla.bolla-chiusa: 31 px sopra (schermo 1366×503)
+non-ancora-errore-audio · 1366×510 · testo 100%: 
+  FUORI VISTA div.bolla.bolla-chiusa: 24 px sopra (schermo 1366×510)
+non-ancora-errore-audio · 1366×520 · testo 100%: 
+  FUORI VISTA div.bolla.bolla-chiusa: 14 px sopra (schermo 1366×520)
+non-ancora-errore-audio · 1366×530 · testo 100%: 
+  FUORI VISTA div.bolla.bolla-chiusa: 4 px sopra (schermo 1366×530)
+non-ancora-errore-audio · 1366×534 · testo 100%: 
+  COPERTO DOPO IL GESTO div.bolla.bolla-chiusa: sopra c'è header.barra.compatta
+non-ancora-errore-audio · 1366×540 · testo 100%: 
+  COPERTO DOPO IL GESTO div.bolla.bolla-chiusa: sopra c'è header.barra.compatta
+non-ancora-errore-audio · 1366×560 · testo 100%: 
+  COPERTO DOPO IL GESTO div.bolla.bolla-chiusa: sopra c'è header.barra.compatta
+non-ancora-errore-audio · 1366×600 · testo 100%: pulito
+non-ancora-errore-audio · 1366×640 · testo 100%: pulito
+non-ancora-errore-audio · 390×510 · testo 100%: 
+  FUORI VISTA div.bolla.bolla-chiusa: 2 px sopra (schermo 390×510)
+non-ancora-errore-audio · 390×520 · testo 100%: 
+  COPERTO DOPO IL GESTO div.bolla.bolla-chiusa: sopra c'è svg
+non-ancora-errore-audio · 390×530 · testo 100%: 
+  COPERTO DOPO IL GESTO div.bolla.bolla-chiusa: sopra c'è path
+non-ancora-errore-audio · 390×540 · testo 100%: 
+  COPERTO DOPO IL GESTO div.bolla.bolla-chiusa: sopra c'è svg
+non-ancora-errore-audio · 390×560 · testo 100%: 
+  COPERTO DOPO IL GESTO div.bolla.bolla-chiusa: sopra c'è header.barra.compatta
+non-ancora-errore-audio · 390×600 · testo 100%: pulito
+non-ancora-errore-audio · 390×640 · testo 100%: pulito
+non-ancora-errore-audio · 390×667 · testo 100%: pulito
+
+FUORI VISTA: 5 · COPERTO DOPO IL GESTO: 7
+12 cose da guardare (foto in /tmp/lavoro-3ab-qa-altezze-bisezione/esame/chromium)
+# uscita: 1

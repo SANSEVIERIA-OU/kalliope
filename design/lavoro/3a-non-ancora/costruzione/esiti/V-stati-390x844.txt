@@ -1,0 +1,20 @@
+# V-stati-390x844 · 17/11/2026 02:58 · node prove/stati.mjs /tmp/lavoro-3ab-sito-vivo-3 /tmp/lavoro-3ab-V-stati chromium 390x844 ascolto,errore,lento,copia,copia-no,tentativo,tentativo-ridimensiona,tentativo-nascosto
+
+== ascolto · chromium 390x844
+
+== errore · chromium 390x844
+
+== lento · chromium 390x844
+
+== copia · chromium 390x844
+
+== copia-no · chromium 390x844
+
+== tentativo · chromium 390x844
+
+== tentativo-ridimensiona · chromium 390x844
+
+== tentativo-nascosto · chromium 390x844
+
+47/47 ok
+# uscita: 0

@@ -93,3 +93,6 @@
   0%, 100% { border-color: var(--tratteggio); }
   30% { border-color: var(--voce); }
 }
+
+/* il contorno del fuoco dentro il pannello scuro, anche quando il pannello sta su una scena chiara (che dà ai suoi comandi il contorno bordeaux, invisibile sul fondo scuro) */
+.scena-chiara .versioni :focus-visible { outline-color: var(--voce); }

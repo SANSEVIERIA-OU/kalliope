@@ -1,0 +1,3 @@
+# altezze-bisezione-2 · 17/11/2026 00:59 · sito: /tmp/lavoro-3ab-sito-5 · esame-impaginazione.mjs chromium non-ancora-errore 1366x503,1366x505,1366x508,1366x510,1366x512,1366x515,1366x518
+Nessuna pagina: controlla «pagine» in metodo.config.mjs e il filtro
+# uscita: 2

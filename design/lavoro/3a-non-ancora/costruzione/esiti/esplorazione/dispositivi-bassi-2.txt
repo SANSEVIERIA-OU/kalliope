@@ -1,0 +1,16 @@
+# dispositivi-bassi-2 · 17/11/2026 01:08 · sito: /tmp/lavoro-3ab-sito-7 · dispositivi-qa.mjs chromium non-ancora Pura X chiuso
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+ok  non-ancora · Huawei Pura X chiuso 326×326
+ok  non-ancora-menu · Huawei Pura X chiuso 326×326
+ok  non-ancora-errore-audio · Huawei Pura X chiuso 326×326
+  LIMITE DICHIARATO FUORI VISTA div.bolla.bolla-chiusa: 252 px sopra (schermo 326×326) · schermo basso: la bolla, i riquadri, il comando e il messaggio d'errore non stanno insieme; vincono il comando e il messaggio (PIANO.md, «La cornice»; scena.js 8c)
+  LIMITE DICHIARATO FUORI VISTA button.pillola.voce-chiara: 36 px sopra (schermo 326×326) · schermo quadrato da 326 px: il messaggio d'errore (con «Riprova» e il file) vince sul comando «Ascolta», che resta sopra il bordo (PIANO.md, «La cornice»; scena.js 8c)
+ok  non-ancora-ascolto · Huawei Pura X chiuso 326×326
+  LIMITE DICHIARATO FUORI VISTA button.pillola.voce-chiara: 2 px sotto (schermo 326×326) · telefono girato e schermo quadrato: la bolla dove le parole si accendono e il comando non stanno insieme (la riunione sola è alta quasi come lo schermo); vince la bolla, il comando «Pausa» resta sotto il bordo (a 326 px per 2 px). Scelta della costruzione, diversa da scena.js 8c (lì vince il comando): da decidere alla direzione (foto in costruzione/foto-difetti/)
+ok  non-ancora-copia-fatta · Huawei Pura X chiuso 326×326
+ok  non-ancora-copia-non-riuscita · Huawei Pura X chiuso 326×326
+
+6 casi puliti (6 in questo giro; foto in /tmp/lavoro-3ab-qa-dispositivi-bassi-2/dispositivi/chromium). Sono simulazioni, non telefoni veri.
+  3 limiti dichiarati, elencati a parte e non contati
+  129 casi della matrice non eseguiti (filtro o giro interrotto: --continua li riprende)
+# uscita: 0

@@ -1,0 +1,11 @@
+# F-dispositivi-webkit-Computer · 17/11/2026 02:02 · sito: /tmp/lavoro-3ab-sito-G · dispositivi-qa.mjs webkit non-ancora Computer
+--  non-ancora-menu · Computer 1440×900: lo stato non c'è a questa misura
+ok  non-ancora · Computer 1440×900
+ok  non-ancora-errore-audio · Computer 1440×900
+ok  non-ancora-ascolto · Computer 1440×900
+ok  non-ancora-copia-fatta · Computer 1440×900
+ok  non-ancora-copia-non-riuscita · Computer 1440×900
+
+5 casi puliti (5 in questo giro; foto in /tmp/lavoro-3ab-qa-F-dispositivi-webkit-Computer/dispositivi/webkit). Sono simulazioni, non telefoni veri.
+  129 casi della matrice non eseguiti (filtro o giro interrotto: --continua li riprende)
+# uscita: 0

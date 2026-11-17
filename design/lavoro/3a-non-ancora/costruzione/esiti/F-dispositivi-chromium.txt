@@ -1,0 +1,103 @@
+# F-dispositivi-chromium · 17/11/2026 01:56 · sito: /tmp/lavoro-3ab-sito-G · dispositivi-qa.mjs chromium non-ancora
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+ok  non-ancora · Telefono 390×844
+ok  non-ancora-menu · Telefono 390×844
+ok  non-ancora-errore-audio · Telefono 390×844
+ok  non-ancora-ascolto · Telefono 390×844
+ok  non-ancora-copia-fatta · Telefono 390×844
+ok  non-ancora-copia-non-riuscita · Telefono 390×844
+ok  non-ancora · Telefono piccolo 360×740
+ok  non-ancora-menu · Telefono piccolo 360×740
+ok  non-ancora-errore-audio · Telefono piccolo 360×740
+ok  non-ancora-ascolto · Telefono piccolo 360×740
+ok  non-ancora-copia-fatta · Telefono piccolo 360×740
+ok  non-ancora-copia-non-riuscita · Telefono piccolo 360×740
+ok  non-ancora · Telefono girato 844×390
+ok  non-ancora-menu · Telefono girato 844×390
+ok  non-ancora-errore-audio · Telefono girato 844×390
+  LIMITE DICHIARATO FUORI VISTA div.bolla.bolla-chiusa: 144 px sopra (schermo 844×390) · schermo basso: la bolla, i riquadri, il comando e il messaggio d'errore non stanno insieme; vincono il comando e il messaggio (PIANO.md, «La cornice»; scena.js 8c)
+ok  non-ancora-ascolto · Telefono girato 844×390
+  LIMITE DICHIARATO FUORI VISTA button.pillola.voce-chiara: tutto sotto il bordo (schermo 844×390) · telefono girato e schermo quadrato: la bolla dove le parole si accendono e il comando non stanno insieme (la riunione sola è alta quasi come lo schermo); vince la bolla, il comando «Pausa» resta sotto il bordo (a 326 px per 2 px). Scelta della costruzione, diversa da scena.js 8c (lì vince il comando): da decidere alla direzione (foto in costruzione/foto-difetti/)
+ok  non-ancora-copia-fatta · Telefono girato 844×390
+ok  non-ancora-copia-non-riuscita · Telefono girato 844×390
+ok  non-ancora · Galaxy Z Fold chiuso 412×915
+ok  non-ancora-menu · Galaxy Z Fold chiuso 412×915
+ok  non-ancora-errore-audio · Galaxy Z Fold chiuso 412×915
+ok  non-ancora-ascolto · Galaxy Z Fold chiuso 412×915
+ok  non-ancora-copia-fatta · Galaxy Z Fold chiuso 412×915
+ok  non-ancora-copia-non-riuscita · Galaxy Z Fold chiuso 412×915
+ok  non-ancora · Galaxy Z Fold aperto 750×832
+ok  non-ancora-menu · Galaxy Z Fold aperto 750×832
+ok  non-ancora-errore-audio · Galaxy Z Fold aperto 750×832
+ok  non-ancora-ascolto · Galaxy Z Fold aperto 750×832
+ok  non-ancora-copia-fatta · Galaxy Z Fold aperto 750×832
+ok  non-ancora-copia-non-riuscita · Galaxy Z Fold aperto 750×832
+ok  non-ancora · iPhone Duo chiuso 466×678
+ok  non-ancora-menu · iPhone Duo chiuso 466×678
+ok  non-ancora-errore-audio · iPhone Duo chiuso 466×678
+ok  non-ancora-ascolto · iPhone Duo chiuso 466×678
+ok  non-ancora-copia-fatta · iPhone Duo chiuso 466×678
+ok  non-ancora-copia-non-riuscita · iPhone Duo chiuso 466×678
+ok  non-ancora · iPhone Duo aperto 951×669
+ok  non-ancora-menu · iPhone Duo aperto 951×669
+ok  non-ancora-ascolto · iPhone Duo aperto 951×669
+ok  non-ancora-errore-audio · iPhone Duo aperto 951×669
+ok  non-ancora-copia-fatta · iPhone Duo aperto 951×669
+ok  non-ancora-copia-non-riuscita · iPhone Duo aperto 951×669
+ok  non-ancora · Huawei Pura X chiuso 326×326
+ok  non-ancora-menu · Huawei Pura X chiuso 326×326
+ok  non-ancora-errore-audio · Huawei Pura X chiuso 326×326
+  LIMITE DICHIARATO FUORI VISTA div.bolla.bolla-chiusa: 252 px sopra (schermo 326×326) · schermo basso: la bolla, i riquadri, il comando e il messaggio d'errore non stanno insieme; vincono il comando e il messaggio (PIANO.md, «La cornice»; scena.js 8c)
+  LIMITE DICHIARATO FUORI VISTA button.pillola.voce-chiara: 36 px sopra (schermo 326×326) · schermo quadrato da 326 px: il messaggio d'errore (con «Riprova» e il file) vince sul comando «Ascolta», che resta sopra il bordo (PIANO.md, «La cornice»; scena.js 8c)
+ok  non-ancora-ascolto · Huawei Pura X chiuso 326×326
+  LIMITE DICHIARATO FUORI VISTA button.pillola.voce-chiara: 2 px sotto (schermo 326×326) · telefono girato e schermo quadrato: la bolla dove le parole si accendono e il comando non stanno insieme (la riunione sola è alta quasi come lo schermo); vince la bolla, il comando «Pausa» resta sotto il bordo (a 326 px per 2 px). Scelta della costruzione, diversa da scena.js 8c (lì vince il comando): da decidere alla direzione (foto in costruzione/foto-difetti/)
+ok  non-ancora-copia-fatta · Huawei Pura X chiuso 326×326
+ok  non-ancora-copia-non-riuscita · Huawei Pura X chiuso 326×326
+ok  non-ancora · Huawei Pura X aperto 440×706
+ok  non-ancora-menu · Huawei Pura X aperto 440×706
+ok  non-ancora-errore-audio · Huawei Pura X aperto 440×706
+ok  non-ancora-ascolto · Huawei Pura X aperto 440×706
+ok  non-ancora-copia-fatta · Huawei Pura X aperto 440×706
+ok  non-ancora-copia-non-riuscita · Huawei Pura X aperto 440×706
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+ok  non-ancora · Huawei Pura X View 440×744
+ok  non-ancora-menu · Huawei Pura X View 440×744
+ok  non-ancora-errore-audio · Huawei Pura X View 440×744
+ok  non-ancora-ascolto · Huawei Pura X View 440×744
+ok  non-ancora-copia-fatta · Huawei Pura X View 440×744
+ok  non-ancora-copia-non-riuscita · Huawei Pura X View 440×744
+ok  non-ancora · Huawei Pura X Max chiuso 421×616
+ok  non-ancora-menu · Huawei Pura X Max chiuso 421×616
+ok  non-ancora-errore-audio · Huawei Pura X Max chiuso 421×616
+ok  non-ancora-ascolto · Huawei Pura X Max chiuso 421×616
+ok  non-ancora-copia-fatta · Huawei Pura X Max chiuso 421×616
+ok  non-ancora-copia-non-riuscita · Huawei Pura X Max chiuso 421×616
+ok  non-ancora · Huawei Pura X Max aperto 861×609
+ok  non-ancora-menu · Huawei Pura X Max aperto 861×609
+ok  non-ancora-errore-audio · Huawei Pura X Max aperto 861×609
+ok  non-ancora-ascolto · Huawei Pura X Max aperto 861×609
+ok  non-ancora-copia-fatta · Huawei Pura X Max aperto 861×609
+ok  non-ancora-copia-non-riuscita · Huawei Pura X Max aperto 861×609
+ok  non-ancora · Tablet 820×1180
+ok  non-ancora-menu · Tablet 820×1180
+ok  non-ancora-errore-audio · Tablet 820×1180
+ok  non-ancora-ascolto · Tablet 820×1180
+ok  non-ancora-copia-fatta · Tablet 820×1180
+ok  non-ancora-copia-non-riuscita · Tablet 820×1180
+--  non-ancora-menu · Tablet girato 1180×820: lo stato non c'è a questa misura
+ok  non-ancora · Tablet girato 1180×820
+ok  non-ancora-errore-audio · Tablet girato 1180×820
+ok  non-ancora-ascolto · Tablet girato 1180×820
+ok  non-ancora-copia-fatta · Tablet girato 1180×820
+ok  non-ancora-copia-non-riuscita · Tablet girato 1180×820
+--  non-ancora-menu · Computer 1440×900: lo stato non c'è a questa misura
+ok  non-ancora · Computer 1440×900
+ok  non-ancora-errore-audio · Computer 1440×900
+ok  non-ancora-ascolto · Computer 1440×900
+ok  non-ancora-copia-fatta · Computer 1440×900
+ok  non-ancora-copia-non-riuscita · Computer 1440×900
+
+88 casi puliti (88 in questo giro; foto in /tmp/lavoro-3ab-qa-F-dispositivi-chromium/dispositivi/chromium). Sono simulazioni, non telefoni veri.
+  5 limiti dichiarati, elencati a parte e non contati
+  45 casi della matrice non eseguiti (filtro o giro interrotto: --continua li riprende)
+# uscita: 0

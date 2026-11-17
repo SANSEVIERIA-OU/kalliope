@@ -1,0 +1,37 @@
+# F-stati-firefox-1440x900 · 17/11/2026 02:13 · node prove/stati.mjs /tmp/lavoro-3ab-sito-G /tmp/lavoro-3ab-F-stati firefox 1440x900 tutti
+
+== ascolto · firefox 1440x900
+NV   pausa: etichetta «Riprendi», nome «Riprendi» · Firefox senza uscita audio, il suono non può partire
+NV   ripreso: «Pausa» · Firefox senza uscita audio, il suono non può partire
+NV   a fine: frase detta (bolla tenue, parole nere), comando di nuovo «Ascolta Giulia» · Firefox senza uscita audio, il suono non può partire
+
+== errore · firefox 1440x900
+NV   Riprova: il messaggio sparisce e il suono parte · Firefox senza uscita audio, il suono non può partire
+
+== lento · firefox 1440x900
+NV   arrivato il file: il messaggio sparisce e il suono suona · Firefox senza uscita audio, il suono non può partire
+
+== attesa · firefox 1440x900
+stati nel tempo: carica → suona → fermo+nota
+NV   l'audio aspetta dati a metà: «Carico…» e poi riparte · in firefox il file a goccia non lo fa mai aspettare (carica → suona → fermo+nota): provato solo in Chromium
+
+== nascosto · firefox 1440x900
+NV   con la scheda in secondo piano il suono va in pausa · Firefox senza uscita audio, il suono non può partire
+NV   al ritorno si riprende da dove si era · Firefox senza uscita audio, il suono non può partire
+
+== copia · firefox 1440x900
+
+== copia-no · firefox 1440x900
+
+== tentativo · firefox 1440x900
+
+== tentativo-ridimensiona · firefox 1440x900
+
+== tentativo-altezza · firefox 1440x900
+
+== tentativo-nascosto · firefox 1440x900
+
+== tentativo-nascosto-da-subito · firefox 1440x900
+
+56/56 ok
+# uscita: 0

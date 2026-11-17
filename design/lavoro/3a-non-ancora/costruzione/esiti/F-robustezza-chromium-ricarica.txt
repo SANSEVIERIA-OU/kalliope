@@ -1,0 +1,6 @@
+# F-robustezza-chromium-ricarica · 17/11/2026 02:48 · node prove/robustezza.mjs /tmp/lavoro-3ab-sito-G /tmp/lavoro-3ab-F-rob chromium 1440x900 ricarica
+
+== ricarica · chromium 1440x900
+
+4/4 ok
+# uscita: 0

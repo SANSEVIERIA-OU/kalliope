@@ -1,0 +1,38 @@
+# pseudo-ar-XB · 17/11/2026 01:12 · sito: /tmp/lavoro-3ab-sito-7 · esame-impaginazione.mjs chromium normale non-ancora 390x844,1440x900,844x390,360x640,1366x640
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+non-ancora · 390×844 · testo 100%: pulito
+non-ancora-menu · 390×844 · testo 100%: pulito
+non-ancora-errore-audio · 390×844 · testo 100%: pulito
+non-ancora-ascolto · 390×844 · testo 100%: pulito
+non-ancora-copia-fatta · 390×844 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 390×844 · testo 100%: pulito
+non-ancora-menu · 1440×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1440×900 · testo 100%: pulito
+non-ancora-errore-audio · 1440×900 · testo 100%: pulito
+non-ancora-ascolto · 1440×900 · testo 100%: pulito
+non-ancora-copia-fatta · 1440×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1440×900 · testo 100%: pulito
+non-ancora · 844×390 · testo 100%: pulito
+non-ancora-menu · 844×390 · testo 100%: pulito
+non-ancora-errore-audio · 844×390 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA div.bolla.bolla-chiusa: 144 px sopra (schermo 844×390) · schermo basso: la bolla, i riquadri, il comando e il messaggio d'errore non stanno insieme; vincono il comando e il messaggio (PIANO.md, «La cornice»; scena.js 8c)
+non-ancora-ascolto · 844×390 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA button.pillola.voce-chiara: tutto sotto il bordo (schermo 844×390) · telefono girato e schermo quadrato: la bolla dove le parole si accendono e il comando non stanno insieme (la riunione sola è alta quasi come lo schermo); vince la bolla, il comando «Pausa» resta sotto il bordo (a 326 px per 2 px). Scelta della costruzione, diversa da scena.js 8c (lì vince il comando): da decidere alla direzione (foto in costruzione/foto-difetti/)
+non-ancora-copia-fatta · 844×390 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 844×390 · testo 100%: pulito
+non-ancora · 360×640 · testo 100%: pulito
+non-ancora-menu · 360×640 · testo 100%: pulito
+non-ancora-errore-audio · 360×640 · testo 100%: pulito
+non-ancora-ascolto · 360×640 · testo 100%: pulito
+non-ancora-copia-fatta · 360×640 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 360×640 · testo 100%: pulito
+non-ancora-menu · 1366×640 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1366×640 · testo 100%: pulito
+non-ancora-errore-audio · 1366×640 · testo 100%: pulito
+non-ancora-ascolto · 1366×640 · testo 100%: pulito
+non-ancora-copia-fatta · 1366×640 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1366×640 · testo 100%: pulito
+
+
+Tutto pulito; 2 limiti dichiarati, elencati a parte e non contati (foto in /tmp/lavoro-3ab-qa-pseudo-ar-XB/esame/chromium)
+# uscita: 0

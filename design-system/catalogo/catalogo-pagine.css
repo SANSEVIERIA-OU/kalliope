@@ -1,0 +1,7 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* Il catalogo delle pagine interne (catalogo-pagine.js): i riquadri delle pagine vive. Nessun valore proprio: i colori e le linee sono i token del
+   sistema (../token.css), le distanze sono relative al testo (em), come in catalogo.css. */
+/* una pagina viva a una misura: la pagina sta nel suo schermo vero (width e height dell'iframe) e il riquadro la rimpicciolisce per starci */
+.cap-schermo { position: relative; overflow: hidden; max-width: 100%; border-radius: 0.8em; border: var(--filetto-sottile) solid var(--bordo-cornice); background: var(--fondo); }
+.cap-schermo > iframe { position: absolute; inset-block-start: 0; inset-inline-start: 0; border: 0; transform-origin: 0 0; background: var(--fondo); }
+.cap-stati .cat-prove + .cat-prove { margin-top: 1.2em; }

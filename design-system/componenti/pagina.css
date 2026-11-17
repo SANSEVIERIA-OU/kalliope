@@ -47,14 +47,18 @@
    pagina già disegnata non ripetono l'arrivo */
 .comandi.senza-arrivo, .comandi > .senza-arrivo, .stato.senza-arrivo { animation: none; }
 
-/* il comando da provare della chiusura: con lo script un pulsante della pagina; senza, o se il suono non parte, il lettore
-   del browser con il file */
+/* il comando da provare della chiusura: con lo script un pulsante della pagina; senza, il lettore del browser con il file. Se il suono
+   non parte il pulsante resta e sotto compare il messaggio d'errore (errori.css), con «Riprova» e il file da scaricare */
 .lettore-ferma { width: 100%; max-width: var(--messaggio-larghezza-massima); color-scheme: dark; }
 .js .lettore-ferma { display: none; }
-.js .comandi-ascolto.ripiego .lettore-ferma { display: block; }
-.ascolta-ferma .se-suona, .ascolta-ferma .se-pausa { display: none; }
-.ascolta-ferma.suona .se-fermo, .ascolta-ferma.carica .se-fermo, .ascolta-ferma.pausa .se-fermo { display: none; }
-.ascolta-ferma.suona .se-suona, .ascolta-ferma.carica .se-suona, .ascolta-ferma.pausa .se-pausa { display: inline; }
+/* le etichette del pulsante (ascolta, carica, pausa, riprendi) stanno una sopra l'altra nella stessa cella: il pulsante ha la larghezza
+   della più lunga, in qualunque lingua, e non cambia fra gli stati né sposta ciò che gli sta accanto. Quella dello stato si vede,
+   le altre restano (invisibili) a dargli la misura. */
+.ascolta-ferma .etichette { display: inline-grid; justify-items: start; }
+.ascolta-ferma .etichette > span { grid-area: 1 / 1; visibility: hidden; }
+.ascolta-ferma .etichette > .se-fermo { visibility: visible; }
+.ascolta-ferma.carica .etichette > .se-fermo, .ascolta-ferma.suona .etichette > .se-fermo, .ascolta-ferma.pausa .etichette > .se-fermo { visibility: hidden; }
+.ascolta-ferma.carica .etichette > .se-carica, .ascolta-ferma.suona .etichette > .se-suona, .ascolta-ferma.pausa .etichette > .se-pausa { visibility: visible; }
 
 /* la scena chiara: il testo dei tratti scuro, come i requisiti della home sulla stessa scena; i collegamenti con la loro riga */
 .scena-chiara .tratto-testo p { color: var(--testo-spiegazione-chiara); }

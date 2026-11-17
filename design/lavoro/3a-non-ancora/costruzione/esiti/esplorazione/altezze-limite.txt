@@ -1,0 +1,26 @@
+# altezze-limite · 17/11/2026 00:58 · sito: /tmp/lavoro-3ab-sito-5 · esame-impaginazione.mjs chromium normale non-ancora-errore 390x500,390x501,844x500,844x501,1366x500,1366x501,1440x500,1440x501,390x502,1366x502
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+non-ancora-errore-audio · 390×500 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA div.bolla.bolla-chiusa: 12 px sopra (schermo 390×500) · a 500 px d'altezza la bolla, i riquadri, il comando e il messaggio d'errore non stanno insieme: vincono il comando e il messaggio, la riunione scorre sotto la barra (design/lavoro/3a-non-ancora/PIANO.md, «La cornice»: «quando l'altezza manca, vince il comando»; come nella home, telefono girato). Da confermare dalla direzione
+non-ancora-errore-audio · 390×501 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA div.bolla.bolla-chiusa: 11 px sopra (schermo 390×501) · a 500 px d'altezza la bolla, i riquadri, il comando e il messaggio d'errore non stanno insieme: vincono il comando e il messaggio, la riunione scorre sotto la barra (design/lavoro/3a-non-ancora/PIANO.md, «La cornice»: «quando l'altezza manca, vince il comando»; come nella home, telefono girato). Da confermare dalla direzione
+non-ancora-errore-audio · 844×500 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA div.bolla.bolla-chiusa: 34 px sopra (schermo 844×500) · a 500 px d'altezza la bolla, i riquadri, il comando e il messaggio d'errore non stanno insieme: vincono il comando e il messaggio, la riunione scorre sotto la barra (design/lavoro/3a-non-ancora/PIANO.md, «La cornice»: «quando l'altezza manca, vince il comando»; come nella home, telefono girato). Da confermare dalla direzione
+non-ancora-errore-audio · 844×501 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA div.bolla.bolla-chiusa: 33 px sopra (schermo 844×501) · a 500 px d'altezza la bolla, i riquadri, il comando e il messaggio d'errore non stanno insieme: vincono il comando e il messaggio, la riunione scorre sotto la barra (design/lavoro/3a-non-ancora/PIANO.md, «La cornice»: «quando l'altezza manca, vince il comando»; come nella home, telefono girato). Da confermare dalla direzione
+non-ancora-errore-audio · 1366×500 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA div.bolla.bolla-chiusa: 34 px sopra (schermo 1366×500) · a 500 px d'altezza la bolla, i riquadri, il comando e il messaggio d'errore non stanno insieme: vincono il comando e il messaggio, la riunione scorre sotto la barra (design/lavoro/3a-non-ancora/PIANO.md, «La cornice»: «quando l'altezza manca, vince il comando»; come nella home, telefono girato). Da confermare dalla direzione
+non-ancora-errore-audio · 1366×501 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA div.bolla.bolla-chiusa: 33 px sopra (schermo 1366×501) · a 500 px d'altezza la bolla, i riquadri, il comando e il messaggio d'errore non stanno insieme: vincono il comando e il messaggio, la riunione scorre sotto la barra (design/lavoro/3a-non-ancora/PIANO.md, «La cornice»: «quando l'altezza manca, vince il comando»; come nella home, telefono girato). Da confermare dalla direzione
+non-ancora-errore-audio · 1440×500 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA div.bolla.bolla-chiusa: 34 px sopra (schermo 1440×500) · a 500 px d'altezza la bolla, i riquadri, il comando e il messaggio d'errore non stanno insieme: vincono il comando e il messaggio, la riunione scorre sotto la barra (design/lavoro/3a-non-ancora/PIANO.md, «La cornice»: «quando l'altezza manca, vince il comando»; come nella home, telefono girato). Da confermare dalla direzione
+non-ancora-errore-audio · 1440×501 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA div.bolla.bolla-chiusa: 33 px sopra (schermo 1440×501) · a 500 px d'altezza la bolla, i riquadri, il comando e il messaggio d'errore non stanno insieme: vincono il comando e il messaggio, la riunione scorre sotto la barra (design/lavoro/3a-non-ancora/PIANO.md, «La cornice»: «quando l'altezza manca, vince il comando»; come nella home, telefono girato). Da confermare dalla direzione
+non-ancora-errore-audio · 390×502 · testo 100%: 
+  FUORI VISTA div.bolla.bolla-chiusa: 10 px sopra (schermo 390×502)
+non-ancora-errore-audio · 1366×502 · testo 100%: 
+  FUORI VISTA div.bolla.bolla-chiusa: 32 px sopra (schermo 1366×502)
+
+FUORI VISTA: 2
+2 cose da guardare; 8 limiti dichiarati, elencati a parte e non contati (foto in /tmp/lavoro-3ab-qa-altezze-limite/esame/chromium)
+# uscita: 1

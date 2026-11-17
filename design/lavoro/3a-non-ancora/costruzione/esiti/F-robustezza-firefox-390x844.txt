@@ -1,0 +1,29 @@
+# F-robustezza-firefox-390x844 · 17/11/2026 02:43 · node prove/robustezza.mjs /tmp/lavoro-3ab-sito-G /tmp/lavoro-3ab-F-rob firefox 390x844 tutti
+
+== tastiera · firefox 390x844
+   soste: Vai al contenuto → Kalliope, pagina iniziale → Menu → Come saperlo quando arriva → Intanto, senti la voce → Copia l'indirizzo di questa pagina → feed delle versioni → pagina delle versioni su GitHub → Ascolta GiuliaCarico…PausaRiprendi → Tutte le frasi, anche con Marco → stato e limiti → Ascolta → Stato e limiti → Installa → In riunione → Aiuto → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano
+NO   ogni sosta ha il comando in vista, opaco e non sotto la barra · In riunione (op 1.00, fuori vista), Aiuto (op 1.00, fuori vista)
+
+== tastiera-veloce · firefox 390x844
+   soste: Vai al contenuto → Kalliope, pagina iniziale → Menu → Come saperlo quando arriva → Intanto, senti la voce → Copia l'indirizzo di questa pagina → feed delle versioni → pagina delle versioni su GitHub → Ascolta GiuliaCarico…PausaRiprendi → Tutte le frasi, anche con Marco → stato e limiti → Ascolta → Stato e limiti → Installa → In riunione → Aiuto → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano → Italiano
+
+== senza-js · firefox 390x844
+
+== senza-stili · firefox 390x844
+
+== senza-token · firefox 390x844
+NV   il suono funziona lo stesso · Firefox senza uscita audio, il suono non può partire
+
+== ridotto · firefox 390x844
+NV   con «riduci movimento» il suono c'è e la frase si accende · Firefox senza uscita audio, il suono non può partire
+
+== scorrimento · firefox 390x844
+
+== ritorno · firefox 390x844
+NV   si suonava prima di andare · Firefox senza uscita audio, il suono non può partire
+NV   dopo il ritorno si può ascoltare di nuovo · Firefox senza uscita audio, il suono non può partire
+
+== ricarica · firefox 390x844
+
+42/43 ok
+# uscita: 1

@@ -1,0 +1,6 @@
+# F-robustezza-webkit-ricarica · 17/11/2026 02:48 · node prove/robustezza.mjs /tmp/lavoro-3ab-sito-G /tmp/lavoro-3ab-F-rob webkit 390x844 ricarica
+
+== ricarica · webkit 390x844
+
+4/4 ok
+# uscita: 0

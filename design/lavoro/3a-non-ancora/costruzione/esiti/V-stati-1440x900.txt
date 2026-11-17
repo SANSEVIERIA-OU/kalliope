@@ -1,0 +1,20 @@
+# V-stati-1440x900 · 17/11/2026 02:57 · node prove/stati.mjs /tmp/lavoro-3ab-sito-vivo-3 /tmp/lavoro-3ab-V-stati chromium 1440x900 ascolto,errore,lento,copia,copia-no,tentativo,tentativo-ridimensiona,tentativo-nascosto
+
+== ascolto · chromium 1440x900
+
+== errore · chromium 1440x900
+
+== lento · chromium 1440x900
+
+== copia · chromium 1440x900
+
+== copia-no · chromium 1440x900
+
+== tentativo · chromium 1440x900
+
+== tentativo-ridimensiona · chromium 1440x900
+
+== tentativo-nascosto · chromium 1440x900
+
+47/47 ok
+# uscita: 0

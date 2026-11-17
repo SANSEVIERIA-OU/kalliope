@@ -1,0 +1,12 @@
+# controlli sulla copia di lavoro (istantanea dell'albero vivo) 17/11/2026 01:44
+it: 153/153 entries ready
+translations.py: 153 messages, catalogues up to date
+it: 153/153 entries ready
+css_logico.py: ok, no physical left/right, no asymmetric shorthand, no text in CSS (24 style sheets; 10 physical declarations kept on purpose)
+
+OK
+translations.py: 153 messages, catalogues up to date
+it: 153/153 entries ready
+Sorgenti in ordine: 23 fogli di stile, valori solo nei token
+Ran 49 tests in 1.398s
+OK

@@ -1,0 +1,18 @@
+# F-stati-chromium-844x390 · 17/11/2026 02:06 · node prove/stati.mjs /tmp/lavoro-3ab-sito-G /tmp/lavoro-3ab-F-stati chromium 844x390 ascolto,errore,copia,copia-no,tentativo,tentativo-ridimensiona,tentativo-nascosto
+
+== ascolto · chromium 844x390
+
+== errore · chromium 844x390
+
+== copia · chromium 844x390
+
+== copia-no · chromium 844x390
+
+== tentativo · chromium 844x390
+
+== tentativo-ridimensiona · chromium 844x390
+
+== tentativo-nascosto · chromium 844x390
+
+42/42 ok
+# uscita: 0

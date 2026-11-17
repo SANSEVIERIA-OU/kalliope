@@ -1,0 +1,13 @@
+# V-robustezza-1440x900 · 17/11/2026 02:59 · node prove/robustezza.mjs /tmp/lavoro-3ab-sito-vivo-3 /tmp/lavoro-3ab-V-rob chromium 1440x900 tastiera-veloce,senza-js,scorrimento,ritorno
+
+== tastiera-veloce · chromium 1440x900
+   soste: Vai al contenuto → Kalliope, pagina iniziale → Ascolta → Stato e limiti → Installa → In riunione → Aiuto → Italiano → Come saperlo quando arriva → Intanto, senti la voce → Copia l'indirizzo di questa pagina → feed delle versioni → pagina delle versioni su GitHub → Ascolta GiuliaCarico…PausaRiprendi → Tutte le frasi, anche con Marco → stato e limiti → Ascolta → Stato e limiti → Installa → In riunione → Aiuto → Italiano
+
+== senza-js · chromium 1440x900
+
+== scorrimento · chromium 1440x900
+
+== ritorno · chromium 1440x900
+
+23/23 ok
+# uscita: 0

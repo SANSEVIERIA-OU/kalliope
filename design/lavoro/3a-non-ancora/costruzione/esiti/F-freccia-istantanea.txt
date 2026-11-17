@@ -1,0 +1,2 @@
+ok   freccia in it: transform none
+ok   freccia in ar-XB: transform matrix(-1, 0, 0, 1, 0, 0)

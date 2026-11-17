@@ -1,0 +1,24 @@
+# F-robustezza-webkit-1440x900 · 17/11/2026 02:25 · node prove/robustezza.mjs /tmp/lavoro-3ab-sito-G /tmp/lavoro-3ab-F-rob webkit 1440x900 tutti
+
+== tastiera · webkit 1440x900
+   soste: Vai al contenuto → Kalliope, pagina iniziale → Ascolta → Stato e limiti → Installa → In riunione → Aiuto → Italiano → Come saperlo quando arriva → Intanto, senti la voce → Copia l'indirizzo di questa pagina → feed delle versioni → pagina delle versioni su GitHub → Ascolta GiuliaCarico…PausaRiprendi → Tutte le frasi, anche con Marco → stato e limiti → Ascolta → Stato e limiti → Installa → In riunione → Aiuto → Italiano
+
+== tastiera-veloce · webkit 1440x900
+   soste: Vai al contenuto → Kalliope, pagina iniziale → Ascolta → Stato e limiti → Installa → In riunione → Aiuto → Italiano → Come saperlo quando arriva → Intanto, senti la voce → Copia l'indirizzo di questa pagina → feed delle versioni → pagina delle versioni su GitHub → Ascolta GiuliaCarico…PausaRiprendi → Tutte le frasi, anche con Marco → stato e limiti → Ascolta → Stato e limiti → Installa → In riunione → Aiuto → Italiano
+
+== senza-js · webkit 1440x900
+
+== senza-stili · webkit 1440x900
+
+== senza-token · webkit 1440x900
+
+== ridotto · webkit 1440x900
+
+== scorrimento · webkit 1440x900
+
+== ritorno · webkit 1440x900
+
+== ricarica · webkit 1440x900
+
+42/42 ok
+# uscita: 0

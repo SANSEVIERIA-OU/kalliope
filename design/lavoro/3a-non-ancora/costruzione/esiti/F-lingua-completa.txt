@@ -1,0 +1,24 @@
+# Nota: le «traduzioni» sono il testo italiano preceduto da [codice]; i frammenti che l'elenco finale chiama «ancora in italiano» sono le parti di un messaggio dopo un tag (<strong>, <span>), non messaggi non segnati: la prova è che la pagina si costruisce, ha lang e dir giusti e check --complete passa.
+translations.py: website/lingue/de.po started with 153 empty entries (Deutsch, 2 plural form(s))
+check de --complete: exit 0 · de: 153/153 entries ready
+translations.py: website/lingue/ar.po started with 153 empty entries (العربية, 6 plural form(s))
+check ar --complete: exit 0 · ar: 153/153 entries ready
+site built in /tmp/lavoro-3ab-sito-lingue-G for v0.1-rc.1 (prerelease); languages: it (9 pages), ar (2 pages), de (2 pages); 8 old addresses send to /it/
+de: la pagina c'è, lang=de, dir=ltr; testi non cambiati: 12
+   ancora in italiano: document.documentElement.classList.add('js');setTimeout(function(){if(!window.__pagina)doc
+   ancora in italiano:  versione di prova 0.1-rc.1, solo per Linux (x86_64 con PipeWire). Non ancora provata in u
+   ancora in italiano:  · senza voce
+   ancora in italiano: : non c'è ancora
+   ancora in italiano:  serve un driver audio con una firma valida; su 
+   ancora in italiano: , per firmare il componente audio, un account sviluppatore Apple. Nessuno dei due c'è anco
+   ancora in italiano: Non esiste ancora
+   ancora in italiano: 12. November 2026
+ar: la pagina c'è, lang=ar, dir=rtl; testi non cambiati: 11
+   ancora in italiano: document.documentElement.classList.add('js');setTimeout(function(){if(!window.__pagina)doc
+   ancora in italiano:  versione di prova 0.1-rc.1, solo per Linux (x86_64 con PipeWire). Non ancora provata in u
+   ancora in italiano:  · senza voce
+   ancora in italiano: : non c'è ancora
+   ancora in italiano:  serve un driver audio con una firma valida; su 
+   ancora in italiano: , per firmare il componente audio, un account sviluppatore Apple. Nessuno dei due c'è anco
+   ancora in italiano: Non esiste ancora
+   ancora in italiano: feed delle versioni

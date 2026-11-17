@@ -1,0 +1,498 @@
+[
+ {
+  "misura": "320x900",
+  "scrollW": 320,
+  "sovrapposti": [],
+  "tagliati": [
+   ": non c'è ancora"
+  ],
+  "fuori": [
+   "Microfono «Kalliope»\n: non c'è ancora [132..369]",
+   ": non c'è ancora [225..369]"
+  ],
+  "cta": {
+   "top": 711,
+   "bottom": 759,
+   "intero": true
+  },
+  "alto": 4868,
+  "err": []
+ },
+ {
+  "misura": "349x900",
+  "scrollW": 349,
+  "sovrapposti": [],
+  "tagliati": [
+   ": non c'è ancora"
+  ],
+  "fuori": [
+   "Microfono «Kalliope»\n: non c'è ancora [132..466]",
+   ": non c'è ancora [322..466]"
+  ],
+  "cta": {
+   "top": 689,
+   "bottom": 737,
+   "intero": true
+  },
+  "alto": 4684,
+  "err": []
+ },
+ {
+  "misura": "350x900",
+  "scrollW": 350,
+  "sovrapposti": [],
+  "tagliati": [
+   ": non c'è ancora"
+  ],
+  "fuori": [
+   "Microfono «Kalliope»\n: non c'è ancora [132..466]",
+   ": non c'è ancora [322..466]"
+  ],
+  "cta": {
+   "top": 689,
+   "bottom": 737,
+   "intero": true
+  },
+  "alto": 4684,
+  "err": []
+ },
+ {
+  "misura": "360x900",
+  "scrollW": 360,
+  "sovrapposti": [],
+  "tagliati": [
+   ": non c'è ancora"
+  ],
+  "fuori": [
+   "Microfono «Kalliope»\n: non c'è ancora [132..466]",
+   ": non c'è ancora [322..466]"
+  ],
+  "cta": {
+   "top": 689,
+   "bottom": 737,
+   "intero": true
+  },
+  "alto": 4658,
+  "err": []
+ },
+ {
+  "misura": "375x900",
+  "scrollW": 375,
+  "sovrapposti": [
+   "Su Windows ⟂ non ancora."
+  ],
+  "tagliati": [
+   ": non c'è ancora"
+  ],
+  "fuori": [
+   "Microfono «Kalliope»\n: non c'è ancora [132..466]",
+   ": non c'è ancora [322..466]"
+  ],
+  "cta": {
+   "top": 697,
+   "bottom": 745,
+   "intero": true
+  },
+  "alto": 4599,
+  "err": []
+ },
+ {
+  "misura": "420x900",
+  "scrollW": 420,
+  "sovrapposti": [
+   "Su Windows ⟂ non ancora."
+  ],
+  "tagliati": [
+   ": non c'è ancora"
+  ],
+  "fuori": [
+   "Microfono «Kalliope»\n: non c'è ancora [132..466]",
+   ": non c'è ancora [322..466]"
+  ],
+  "cta": {
+   "top": 697,
+   "bottom": 745,
+   "intero": true
+  },
+  "alto": 4416,
+  "err": []
+ },
+ {
+  "misura": "441x900",
+  "scrollW": 441,
+  "sovrapposti": [
+   "Su Windows ⟂ non ancora."
+  ],
+  "tagliati": [
+   ": non c'è ancora"
+  ],
+  "fuori": [
+   "Microfono «Kalliope»\n: non c'è ancora [132..466]",
+   ": non c'è ancora [322..466]"
+  ],
+  "cta": {
+   "top": 610,
+   "bottom": 658,
+   "intero": true
+  },
+  "alto": 4266,
+  "err": []
+ },
+ {
+  "misura": "600x900",
+  "scrollW": 600,
+  "sovrapposti": [
+   "Su Windows ⟂ non ancora."
+  ],
+  "tagliati": [
+   ": non c'è ancora"
+  ],
+  "fuori": [],
+  "cta": {
+   "top": 610,
+   "bottom": 658,
+   "intero": true
+  },
+  "alto": 3976,
+  "err": []
+ },
+ {
+  "misura": "760x900",
+  "scrollW": 760,
+  "sovrapposti": [
+   "Su Windows ⟂ non ancora."
+  ],
+  "tagliati": [
+   ": non c'è ancora"
+  ],
+  "fuori": [],
+  "cta": {
+   "top": 610,
+   "bottom": 658,
+   "intero": true
+  },
+  "alto": 3949,
+  "err": []
+ },
+ {
+  "misura": "761x900",
+  "scrollW": 761,
+  "sovrapposti": [
+   "Su Windows ⟂ e macOS:",
+   "e macOS: ⟂ non ancora.",
+   "Microfono «Kalliope»\n: non c'è ancora ⟂ Zoom, Teams, Meet",
+   ": non c'è ancora ⟂ Zoom, Teams, Meet"
+  ],
+  "tagliati": [
+   ": non c'è ancora"
+  ],
+  "fuori": [],
+  "cta": {
+   "top": 490,
+   "bottom": 546,
+   "intero": true
+  },
+  "alto": 4727,
+  "err": []
+ },
+ {
+  "misura": "860x900",
+  "scrollW": 860,
+  "sovrapposti": [
+   "Su Windows ⟂ non ancora.",
+   "Microfono «Kalliope»\n: non c'è ancora ⟂ Zoom, Teams, Meet",
+   ": non c'è ancora ⟂ Zoom, Teams, Meet"
+  ],
+  "tagliati": [
+   ": non c'è ancora"
+  ],
+  "fuori": [],
+  "cta": {
+   "top": 426,
+   "bottom": 482,
+   "intero": true
+  },
+  "alto": 4588,
+  "err": []
+ },
+ {
+  "misura": "959x900",
+  "scrollW": 959,
+  "sovrapposti": [
+   "Su Windows ⟂ non ancora.",
+   "Microfono «Kalliope»\n: non c'è ancora ⟂ Zoom, Teams, Meet"
+  ],
+  "tagliati": [
+   ": non c'è ancora"
+  ],
+  "fuori": [],
+  "cta": {
+   "top": 426,
+   "bottom": 482,
+   "intero": true
+  },
+  "alto": 4494,
+  "err": []
+ },
+ {
+  "misura": "1000x900",
+  "scrollW": 1000,
+  "sovrapposti": [
+   "Su Windows ⟂ e macOS:",
+   "e macOS: ⟂ non ancora.",
+   "Microfono «Kalliope»\n: non c'è ancora ⟂ Zoom, Teams, Meet"
+  ],
+  "tagliati": [
+   ": non c'è ancora"
+  ],
+  "fuori": [],
+  "cta": {
+   "top": 459,
+   "bottom": 515,
+   "intero": true
+  },
+  "alto": 3977,
+  "err": []
+ },
+ {
+  "misura": "1010x900",
+  "scrollW": 1010,
+  "sovrapposti": [
+   "Su Windows ⟂ e macOS:",
+   "e macOS: ⟂ non ancora.",
+   "Microfono «Kalliope»\n: non c'è ancora ⟂ Zoom, Teams, Meet"
+  ],
+  "tagliati": [
+   ": non c'è ancora"
+  ],
+  "fuori": [],
+  "cta": {
+   "top": 459,
+   "bottom": 515,
+   "intero": true
+  },
+  "alto": 3977,
+  "err": []
+ },
+ {
+  "misura": "1180x900",
+  "scrollW": 1180,
+  "sovrapposti": [
+   "Su Windows ⟂ e macOS:",
+   "e macOS: ⟂ non ancora.",
+   "Microfono «Kalliope»\n: non c'è ancora ⟂ Zoom, Teams, Meet"
+  ],
+  "tagliati": [
+   ": non c'è ancora"
+  ],
+  "fuori": [],
+  "cta": {
+   "top": 432,
+   "bottom": 488,
+   "intero": true
+  },
+  "alto": 3938,
+  "err": []
+ },
+ {
+  "misura": "1210x900",
+  "scrollW": 1210,
+  "sovrapposti": [
+   "Su Windows ⟂ e macOS:",
+   "e macOS: ⟂ non ancora.",
+   "Microfono «Kalliope»\n: non c'è ancora ⟂ Zoom, Teams, Meet"
+  ],
+  "tagliati": [
+   ": non c'è ancora"
+  ],
+  "fuori": [],
+  "cta": {
+   "top": 510,
+   "bottom": 566,
+   "intero": true
+  },
+  "alto": 3830,
+  "err": []
+ },
+ {
+  "misura": "1920x1080",
+  "scrollW": 1920,
+  "sovrapposti": [
+   "Su Windows ⟂ e macOS:",
+   "e macOS: ⟂ non ancora.",
+   "Microfono «Kalliope»\n: non c'è ancora ⟂ Zoom, Teams, Meet"
+  ],
+  "tagliati": [
+   ": non c'è ancora"
+  ],
+  "fuori": [],
+  "cta": {
+   "top": 510,
+   "bottom": 566,
+   "intero": true
+  },
+  "alto": 3688,
+  "err": []
+ },
+ {
+  "misura": "1280x700",
+  "scrollW": 1280,
+  "sovrapposti": [
+   "Su Windows ⟂ e macOS:",
+   "e macOS: ⟂ non ancora.",
+   "Microfono «Kalliope»\n: non c'è ancora ⟂ Zoom, Teams, Meet"
+  ],
+  "tagliati": [
+   ": non c'è ancora"
+  ],
+  "fuori": [],
+  "cta": {
+   "top": 468,
+   "bottom": 524,
+   "intero": true
+  },
+  "alto": 3692,
+  "err": []
+ },
+ {
+  "misura": "1366x768",
+  "scrollW": 1366,
+  "sovrapposti": [
+   "Su Windows ⟂ e macOS:",
+   "e macOS: ⟂ non ancora.",
+   "Microfono «Kalliope»\n: non c'è ancora ⟂ Zoom, Teams, Meet"
+  ],
+  "tagliati": [
+   ": non c'è ancora"
+  ],
+  "fuori": [],
+  "cta": {
+   "top": 486,
+   "bottom": 542,
+   "intero": true
+  },
+  "alto": 3678,
+  "err": []
+ },
+ {
+  "misura": "1440x760",
+  "scrollW": 1440,
+  "sovrapposti": [
+   "Su Windows ⟂ e macOS:",
+   "e macOS: ⟂ non ancora.",
+   "Microfono «Kalliope»\n: non c'è ancora ⟂ Zoom, Teams, Meet"
+  ],
+  "tagliati": [
+   ": non c'è ancora"
+  ],
+  "fuori": [],
+  "cta": {
+   "top": 486,
+   "bottom": 542,
+   "intero": true
+  },
+  "alto": 3678,
+  "err": []
+ },
+ {
+  "misura": "1024x768",
+  "scrollW": 1024,
+  "sovrapposti": [
+   "Su Windows ⟂ e macOS:",
+   "e macOS: ⟂ non ancora.",
+   "Microfono «Kalliope»\n: non c'è ancora ⟂ Zoom, Teams, Meet"
+  ],
+  "tagliati": [
+   ": non c'è ancora"
+  ],
+  "fuori": [],
+  "cta": {
+   "top": 435,
+   "bottom": 491,
+   "intero": true
+  },
+  "alto": 3976,
+  "err": []
+ },
+ {
+  "misura": "360x640",
+  "scrollW": 360,
+  "sovrapposti": [],
+  "tagliati": [
+   ": non c'è ancora"
+  ],
+  "fuori": [
+   "Microfono «Kalliope»\n: non c'è ancora [132..466]",
+   ": non c'è ancora [322..466]"
+  ],
+  "cta": {
+   "top": 689,
+   "bottom": 737,
+   "intero": false
+  },
+  "alto": 4658,
+  "err": []
+ },
+ {
+  "misura": "390x667",
+  "scrollW": 390,
+  "sovrapposti": [
+   "Su Windows ⟂ non ancora."
+  ],
+  "tagliati": [
+   ": non c'è ancora"
+  ],
+  "fuori": [
+   "Microfono «Kalliope»\n: non c'è ancora [132..466]",
+   ": non c'è ancora [322..466]"
+  ],
+  "cta": {
+   "top": 697,
+   "bottom": 745,
+   "intero": false
+  },
+  "alto": 4503,
+  "err": []
+ },
+ {
+  "misura": "844x390",
+  "scrollW": 844,
+  "sovrapposti": [
+   "Su Windows ⟂ non ancora.",
+   "Microfono «Kalliope»\n: non c'è ancora ⟂ Zoom, Teams, Meet",
+   ": non c'è ancora ⟂ Zoom, Teams, Meet"
+  ],
+  "tagliati": [
+   ": non c'è ancora"
+  ],
+  "fuori": [],
+  "cta": {
+   "top": 388,
+   "bottom": 444,
+   "intero": false
+  },
+  "alto": 4364,
+  "err": []
+ },
+ {
+  "misura": "768x1024",
+  "scrollW": 768,
+  "sovrapposti": [
+   "Su Windows ⟂ e macOS:",
+   "e macOS: ⟂ non ancora.",
+   "Microfono «Kalliope»\n: non c'è ancora ⟂ Zoom, Teams, Meet",
+   ": non c'è ancora ⟂ Zoom, Teams, Meet"
+  ],
+  "tagliati": [
+   ": non c'è ancora"
+  ],
+  "fuori": [],
+  "cta": {
+   "top": 490,
+   "bottom": 546,
+   "intero": true
+  },
+  "alto": 4700,
+  "err": []
+ }
+]

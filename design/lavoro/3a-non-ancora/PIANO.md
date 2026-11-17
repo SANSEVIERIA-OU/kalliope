@@ -125,3 +125,15 @@ vanno a capo dentro il pannello (`flex-wrap`), da riprovare dal ruolo di costruz
 - Il feed `releases.atom` non riaperto in questo giro (verificato il 16/11: 200, una voce, note in inglese).
 - `confronta-scelta.mjs` sulla home non rifatto: in questo giro non ho toccato la home né componenti condivisi (solo i miei
   quattro, `cornice.js` e il mio blocco di token); la home la stanno cambiando gli incarichi 1 e 2.
+
+## Completato dalla costruzione (17/11/2026, incarico 3a-b: `costruzione/progresso.md`)
+
+Senza ridisegnare: colori, caratteri, composizione, curve e durate come prima (a riposo la pagina è identica, 0 pixel, a 5 misure; `costruzione/esiti/confronta-scelta-*.txt`). Le scelte che la costruzione ha dovuto fare dove la direzione non aveva deciso, da confermare:
+- **«Carico…»** è l'etichetta del comando mentre carica e quando l'audio aspetta dati (come la home: `ascolto.verbo.carica`); prima durante il caricamento diceva «Pausa», ma premere annullava.
+- **Etichette alla stessa cella** (M2): il comando ha la larghezza della più lunga e l'etichetta dello stato sta all'inizio, accanto al tondo; la larghezza non cambia fra gli stati, in nessuna lingua.
+- **Schermi bassi, mentre si ascolta o c'è un errore** (non c'era una regola): il messaggio d'errore sta sempre intero nello schermo, vicino al comando (vince sulla bolla); mentre suona vince la bolla dove le parole si accendono (il testo che accompagna il suono) sul comando «Pausa». Dove non ci stanno insieme (844×390, 915×412, 326×326, 320×568, altezze 500-501) il limite è dichiarato in `design-system/metodo.config.mjs`, con le foto in `costruzione/foto-difetti/`: alla direzione decidere se vince sempre il comando (come la home, `scena.js` 8c).
+- **Scheda in secondo piano**: il suono va in pausa (si riprende), l'orologio della scena e le animazioni si fermano; il tentativo di «Kalliope» riparte da dov'era. Il tentativo si interrompe solo se cambia la larghezza (la barra del browser che si nasconde cambia l'altezza e non conta).
+- **«Copia»**: la risposta si dice a ogni pressione e viene portata in vista; se gli appunti non ci sono, resta la frase dei preferiti (niente comando che non c'è).
+- **Premere prima che la scena sia entrata** (M5): la scena arriva subito intera e il suono parte; non si aspetta.
+- Il catalogo (I4): `design-system/catalogo/catalogo-pagine.js`, sezione «Pagine interne».
+- Non fatto: i tempi della strada e i parametri delle onde in `non-ancora.js` non sono ancora token (come in `scena.js`); `<meta name="text-scale">` non messa (come la home).

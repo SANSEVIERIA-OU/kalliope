@@ -1,0 +1,79 @@
+# larghezze-1 · 17/11/2026 00:43 · sito: /tmp/lavoro-3ab-sito-4 · esame-impaginazione.mjs chromium normale non-ancora 320x900,334x900,349x900,350x900,355x900,360x900,361x900,367x900,374x900,375x900,397x900,420x900
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+non-ancora · 320×900 · testo 100%: pulito
+non-ancora-menu · 320×900 · testo 100%: pulito
+non-ancora-errore-audio · 320×900 · testo 100%: pulito
+non-ancora-ascolto · 320×900 · testo 100%: pulito
+non-ancora-copia-fatta · 320×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 320×900 · testo 100%: pulito
+non-ancora · 334×900 · testo 100%: pulito
+non-ancora-menu · 334×900 · testo 100%: pulito
+non-ancora-errore-audio · 334×900 · testo 100%: pulito
+non-ancora-ascolto · 334×900 · testo 100%: pulito
+non-ancora-copia-fatta · 334×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 334×900 · testo 100%: pulito
+non-ancora · 349×900 · testo 100%: pulito
+non-ancora-menu · 349×900 · testo 100%: pulito
+non-ancora-errore-audio · 349×900 · testo 100%: pulito
+non-ancora-ascolto · 349×900 · testo 100%: pulito
+non-ancora-copia-fatta · 349×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 349×900 · testo 100%: pulito
+non-ancora · 350×900 · testo 100%: pulito
+non-ancora-menu · 350×900 · testo 100%: pulito
+non-ancora-errore-audio · 350×900 · testo 100%: pulito
+non-ancora-ascolto · 350×900 · testo 100%: pulito
+non-ancora-copia-fatta · 350×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 350×900 · testo 100%: pulito
+non-ancora · 355×900 · testo 100%: pulito
+non-ancora-menu · 355×900 · testo 100%: pulito
+non-ancora-errore-audio · 355×900 · testo 100%: pulito
+non-ancora-ascolto · 355×900 · testo 100%: pulito
+non-ancora-copia-fatta · 355×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 355×900 · testo 100%: pulito
+non-ancora · 360×900 · testo 100%: pulito
+non-ancora-menu · 360×900 · testo 100%: pulito
+non-ancora-errore-audio · 360×900 · testo 100%: pulito
+non-ancora-ascolto · 360×900 · testo 100%: pulito
+non-ancora-copia-fatta · 360×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 360×900 · testo 100%: pulito
+non-ancora · 361×900 · testo 100%: pulito
+non-ancora-menu · 361×900 · testo 100%: pulito
+non-ancora-errore-audio · 361×900 · testo 100%: pulito
+non-ancora-ascolto · 361×900 · testo 100%: pulito
+non-ancora-copia-fatta · 361×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 361×900 · testo 100%: pulito
+non-ancora · 367×900 · testo 100%: pulito
+non-ancora-menu · 367×900 · testo 100%: pulito
+non-ancora-errore-audio · 367×900 · testo 100%: pulito
+non-ancora-ascolto · 367×900 · testo 100%: pulito
+non-ancora-copia-fatta · 367×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 367×900 · testo 100%: pulito
+non-ancora · 374×900 · testo 100%: pulito
+non-ancora-menu · 374×900 · testo 100%: pulito
+non-ancora-errore-audio · 374×900 · testo 100%: pulito
+non-ancora-ascolto · 374×900 · testo 100%: pulito
+non-ancora-copia-fatta · 374×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 374×900 · testo 100%: pulito
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+non-ancora · 375×900 · testo 100%: pulito
+non-ancora-menu · 375×900 · testo 100%: pulito
+non-ancora-errore-audio · 375×900 · testo 100%: pulito
+non-ancora-ascolto · 375×900 · testo 100%: pulito
+non-ancora-copia-fatta · 375×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 375×900 · testo 100%: pulito
+non-ancora · 397×900 · testo 100%: pulito
+non-ancora-menu · 397×900 · testo 100%: pulito
+non-ancora-errore-audio · 397×900 · testo 100%: pulito
+non-ancora-ascolto · 397×900 · testo 100%: pulito
+non-ancora-copia-fatta · 397×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 397×900 · testo 100%: pulito
+non-ancora · 420×900 · testo 100%: pulito
+non-ancora-menu · 420×900 · testo 100%: pulito
+non-ancora-errore-audio · 420×900 · testo 100%: pulito
+non-ancora-ascolto · 420×900 · testo 100%: pulito
+non-ancora-copia-fatta · 420×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 420×900 · testo 100%: pulito
+
+
+Tutto pulito (foto in /tmp/lavoro-3ab-qa-larghezze-1/esame/chromium)
+# uscita: 0

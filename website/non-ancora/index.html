@@ -4,8 +4,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kalliope per Windows e macOS: non ancora, e perché</title>
-<meta name="description" content="Oggi Kalliope funziona solo su Linux. Perché non ancora su Windows, macOS e telefono, che cosa manca e come saperlo quando arriva, senza lasciare dati.">
+<title data-t="na.titolo">Kalliope per Windows e macOS: non ancora, e perché</title>
+<meta name="description" content="Oggi Kalliope funziona solo su Linux. Perché non ancora su Windows, macOS e telefono, che cosa manca e come saperlo quando arriva, senza lasciare dati." data-t-content="na.descrizione">
 <meta name="theme-color" content="#420017">
 <link rel="canonical" href="https://sansevieria-ou.github.io/kalliope/non-ancora/">
 <link rel="icon" href="../immagini/icona.svg" type="image/svg+xml">
@@ -22,61 +22,64 @@
 <link rel="stylesheet" href="../design-system/componenti/strada.css">
 <link rel="stylesheet" href="../design-system/componenti/tratti.css">
 <link rel="stylesheet" href="../design-system/componenti/piede.css">
+<link rel="stylesheet" href="../design-system/componenti/errori.css">
 <link rel="stylesheet" href="../design-system/componenti/arrivo.css">
 <link rel="stylesheet" href="../design-system/componenti/pagina.css">
 <link rel="stylesheet" href="../design-system/componenti/riunione-ferma.css">
 <link rel="stylesheet" href="../design-system/componenti/strada-ferma.css">
 <link rel="stylesheet" href="../design-system/componenti/versioni.css">
 <script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.__pagina)document.documentElement.classList.remove('js')},4000)</script>
+<script src="../testi.js" defer></script>
 <script src="../cornice.js" defer></script>
 <script src="non-ancora.js" defer></script>
 </head>
 <body>
-<a class="salta" href="#contenuto">Vai al contenuto</a>
+<a class="salta" href="#contenuto" data-t="salta">Vai al contenuto</a>
+<p class="solo-lettori" id="annuncio" role="status" aria-live="polite"></p>
 
 <div class="mondo">
   <div class="luce" aria-hidden="true"></div>
 
   <header class="barra">
-    <a class="marchio" href="../" aria-label="Kalliope, pagina iniziale">
+    <a class="marchio" href="../" aria-label="Kalliope, pagina iniziale" data-t-aria-label="barra.marchio">
       <svg width="36" height="36" viewBox="0 0 128 128" aria-hidden="true" focusable="false"><defs><linearGradient id="icona-bolla" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2fb39a"/><stop offset="1" stop-color="#16806f"/></linearGradient></defs><path d="M30 14h68a22 22 0 0 1 22 22v40a22 22 0 0 1-22 22H62l-25.4 19.6A3.5 3.5 0 0 1 31 114.8V98h-1A22 22 0 0 1 8 76V36a22 22 0 0 1 22-22z" fill="url(#icona-bolla)"/><g fill="#fff"><rect x="29.5" y="47" width="9" height="18" rx="4.5"/><rect x="44.5" y="37" width="9" height="38" rx="4.5"/><rect x="59.5" y="29" width="9" height="54" rx="4.5"/><rect x="74.5" y="39" width="9" height="34" rx="4.5"/><rect x="89.5" y="45" width="9" height="22" rx="4.5"/></g></svg>
-      <span>Kalliope</span>
+      <span data-t="marchio.nome" data-t-nota="The name of the program. Keep it, or write it in the script of the language.">Kalliope</span>
     </a>
-    <nav class="menu" id="menu" aria-label="Sezioni del sito">
+    <nav class="menu" id="menu" aria-label="Sezioni del sito" data-t-aria-label="barra.sezioni">
       <ul>
-        <li><a href="../ascolta/">Ascolta</a></li>
-        <li><a href="../stato/">Stato e limiti</a></li>
-        <li><a href="../installa/">Installa</a></li>
-        <li><a href="../riunione/">In riunione</a></li>
-        <li><a href="../aiuto/">Aiuto</a></li>
-        <li><a href="#lingue" data-lingua-corrente title="Cambia lingua">Italiano</a></li>
+        <li><a href="../ascolta/" data-t="menu.ascolta">Ascolta</a></li>
+        <li><a href="../stato/" data-t="menu.stato">Stato e limiti</a></li>
+        <li><a href="../installa/" data-t="menu.installa">Installa</a></li>
+        <li><a href="../riunione/" data-t="menu.riunione">In riunione</a></li>
+        <li><a href="../aiuto/" data-t="menu.aiuto">Aiuto</a></li>
+        <li><a href="#lingue" data-lingua-corrente data-t-no="il nome della lingua lo mette la costruzione, dai dati CLDR" data-t-title="barra.lingua" title="Cambia lingua">Italiano</a></li>
       </ul>
     </nav>
-    <a class="pulsante-menu" href="#piede-sezioni" aria-controls="menu">Menu</a>
+    <a class="pulsante-menu" href="#piede-sezioni" aria-controls="menu" data-t="barra.menu">Menu</a>
   </header>
 
   <main id="contenuto">
     <div class="scena scena-pagina">
       <section class="apertura" aria-labelledby="titolo">
-        <h1 id="titolo">
+        <h1 id="titolo" data-t="na.apertura.titolo" data-t-nota="Three lines, one under the other: words can move from one line to another, but there must still be three lines. The answer to the question of the page comes first: not yet.">
           <span class="riga">Su Windows</span>
           <span class="riga">e macOS:</span>
           <span class="riga">non ancora.</span>
         </h1>
-        <p class="presentazione">Kalliope, il programma che dice nella riunione la frase che scrivi, oggi funziona solo su Linux. Qui trovi perché, che cosa manca e come saperlo quando arriva.</p>
+        <p class="presentazione" data-t="na.apertura.presentazione">Kalliope, il programma che dice nella riunione la frase che scrivi, oggi funziona solo su Linux. Qui trovi perché, che cosa manca e come saperlo quando arriva.</p>
         <div class="comandi" id="comandi-apertura">
-          <a class="pillola azione" href="#quando">Come saperlo quando arriva</a>
-          <a class="collegamento" href="#ascolta">Intanto, senti la voce<span class="freccia" aria-hidden="true"></span></a>
+          <a class="pillola azione" href="#quando" data-t="na.apertura.quando">Come saperlo quando arriva</a>
+          <a class="collegamento" href="#ascolta" data-t="na.apertura.ascolta">Intanto, senti la voce<span class="freccia" aria-hidden="true"></span></a>
         </div>
-        <p class="stato"><strong>Oggi:</strong> versione di prova {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Non ancora provata in una riunione vera con Zoom, Teams o Meet.</p>
-        <p class="didascalia">Ricostruzione<span class="d-lunga"> · su Windows e macOS «Kalliope» non compare fra i microfoni dell'app di riunione</span></p>
+        <p class="stato" data-t="apertura.stato"><strong>Oggi:</strong> versione di prova {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Non ancora provata in una riunione vera con Zoom, Teams o Meet.</p>
+        <p class="didascalia" data-t="na.apertura.didascalia" data-t-nota="The part in tag 1 is the long one and is dropped on narrow screens: the rest must read well without it.">Ricostruzione<span class="d-lunga"> · su Windows e macOS «Kalliope» non compare fra i microfoni dell'app di riunione</span></p>
       </section>
 
-      <section class="palco palco-fermo" aria-label="Ricostruzione: su Windows e macOS, nell'app della riunione, il microfono «Kalliope» non c'è e la tua frase resta senza voce">
+      <section class="palco palco-fermo" aria-label="Ricostruzione: su Windows e macOS, nell'app della riunione, il microfono «Kalliope» non c'è e la tua frase resta senza voce" data-t-aria-label="na.palco.etichetta">
         <div class="posto-bolla posto-bolla-ferma">
           <div class="bolla bolla-ferma" aria-hidden="true">
-            <div class="bolla-corpo"><p class="bolla-testo">Buongiorno a tutti! Scrivo invece di parlare, ma vi seguo benissimo.</p></div>
-            <svg class="coda" viewBox="0 0 32 24" aria-hidden="true"><path d="M0 0h31L7.6 21.6A3.5 3.5 0 0 1 2 18.8V0z"/></svg>
+            <div class="bolla-corpo"><p class="bolla-testo" data-t="frase.1">Buongiorno a tutti! Scrivo invece di parlare, ma vi seguo benissimo.</p></div>
+            <svg class="coda" width="32" height="24" viewBox="0 0 32 24" aria-hidden="true"><path d="M0 0h31L7.6 21.6A3.5 3.5 0 0 1 2 18.8V0z"/></svg>
           </div>
         </div>
 
@@ -85,10 +88,10 @@
             <div class="riquadro tu assente">
               <span class="bordo"></span>
               <span class="barre"><i></i><i></i><i></i><i></i><i></i></span>
-              <span class="nome">Tu<span class="nome-lungo"> · senza voce</span></span>
+              <span class="nome" data-t="na.tu-senza-voce" data-t-nota="The name on the tile of the person who writes, who has no voice here. The part in tag 1 is the long one and is dropped on narrow screens.">Tu<span class="nome-lungo"> · senza voce</span></span>
             </div>
             <div class="riquadro persona paola">
-              <svg class="figura" viewBox="0 0 200 120" preserveAspectRatio="xMidYMax meet">
+              <svg class="figura" width="200" height="120" viewBox="0 0 200 120" preserveAspectRatio="xMidYMax meet">
                 <path class="capelli-dietro" d="M75 56C74 30 126 30 125 56L128 98C118 104 82 104 72 98Z"/>
                 <path class="corpo" d="M50 120C50 95 73 84 100 84C127 84 150 95 150 120Z"/>
                 <rect class="collo" x="92" y="72" width="16" height="17" rx="6"/>
@@ -98,10 +101,10 @@
                   <g class="occhi"><ellipse cx="92" cy="58" rx="2.4" ry="3.1"/><ellipse cx="108" cy="58" rx="2.4" ry="3.1"/></g><path class="bocca" d="M95.5 67.5Q100 70.5 104.5 67.5"/>
                 </g></g>
               </svg>
-              <span class="lume"></span><span class="nome">Paola</span>
+              <span class="lume"></span><span class="nome" data-t="persona.paola">Paola</span>
             </div>
             <div class="riquadro persona luca">
-              <svg class="figura" viewBox="0 0 200 120" preserveAspectRatio="xMidYMax meet">
+              <svg class="figura" width="200" height="120" viewBox="0 0 200 120" preserveAspectRatio="xMidYMax meet">
                 <path class="corpo" d="M48 120C48 94 72 83 100 83C128 83 152 94 152 120Z"/>
                 <rect class="collo" x="92" y="71" width="16" height="17" rx="6"/>
                 <g class="cenno"><g class="testa">
@@ -113,10 +116,10 @@
                   <g class="occhi"><ellipse cx="92" cy="57" rx="2.4" ry="3.1"/><ellipse cx="108" cy="57" rx="2.4" ry="3.1"/></g><path class="bocca" d="M95.5 66.5Q100 69.5 104.5 66.5"/>
                 </g></g>
               </svg>
-              <span class="lume"></span><span class="nome">Luca</span>
+              <span class="lume"></span><span class="nome" data-t="persona.luca">Luca</span>
             </div>
             <div class="riquadro persona anna">
-              <svg class="figura" viewBox="0 0 200 120" preserveAspectRatio="xMidYMax meet">
+              <svg class="figura" width="200" height="120" viewBox="0 0 200 120" preserveAspectRatio="xMidYMax meet">
                 <path class="corpo" d="M52 120C52 96 74 85 100 85C126 85 148 96 148 120Z"/>
                 <rect class="collo" x="92" y="73" width="16" height="17" rx="6"/>
                 <g class="cenno"><g class="testa">
@@ -126,16 +129,16 @@
                   <g class="occhi"><ellipse cx="92" cy="59" rx="2.3" ry="3"/><ellipse cx="108" cy="59" rx="2.3" ry="3"/></g><path class="bocca" d="M96 68Q100 70.8 104 68"/>
                 </g></g>
               </svg>
-              <span class="lume"></span><span class="nome">Anna</span>
+              <span class="lume"></span><span class="nome" data-t="persona.anna">Anna</span>
             </div>
           </div>
           <div class="app-comandi">
             <div class="microfono">
               <span class="segno-scelta"></span>
-              <span class="microfono-titolo"><span class="app-icona"></span>Microfono</span>
+              <span class="microfono-titolo" data-t="app.microfono"><span class="app-icona"></span>Microfono</span>
               <ul class="microfono-scelte">
-                <li class="scelta scelto">Microfono del computer</li>
-                <li class="scelta mancante"><span class="mancante-nome">Kalliope</span><span class="mancante-nota"> · non c'è</span></li>
+                <li class="scelta scelto" data-t="app.scelta.computer">Microfono del computer</li>
+                <li class="scelta mancante" data-t="na.scelta.mancante" data-t-nota="The name of the virtual microphone as a meeting app lists it (keep it as it is), and what follows it where the program is not installed: the part in tag 2 appears when the person tries to choose it."><span class="mancante-nome">Kalliope</span><span class="mancante-nota"> · non c'è</span></li>
               </ul>
             </div>
           </div>
@@ -146,19 +149,19 @@
     <section class="tratto scena-notte perche" id="perche" aria-labelledby="perche-titolo">
       <span class="luce-tratto" aria-hidden="true"></span>
       <div class="tratto-testo">
-        <h2 id="perche-titolo" class="entra entra-titolo">Si ferma al microfono.</h2>
-        <p>Su Windows e macOS Kalliope si costruisce e supera i test, ma non ha ancora il suo microfono. Senza, nessuna app di riunione può sentire la voce.</p>
+        <h2 id="perche-titolo" class="entra entra-titolo" data-t="na.perche.titolo">Si ferma al microfono.</h2>
+        <p data-t="na.perche.testo">Su Windows e macOS Kalliope si costruisce e supera i test, ma non ha ancora il suo microfono. Senza, nessuna app di riunione può sentire la voce.</p>
       </div>
       <div class="strada strada-ferma entra">
-        <div class="computer" aria-hidden="true"><span class="computer-nome">Su Windows e macOS, oggi</span></div>
+        <div class="computer" aria-hidden="true"><span class="computer-nome" data-t="na.strada.computer">Su Windows e macOS, oggi</span></div>
         <span class="linea linea-fatta" aria-hidden="true"></span>
         <span class="impulso" aria-hidden="true"></span>
         <ol class="tappe">
-          <li class="tappa fatta"><span class="nodo" aria-hidden="true"><svg viewBox="0 0 40 40"><rect x="6" y="13" width="28" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M11 20h9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M24 16v8" stroke="currentColor" stroke-width="2"/></svg></span><span class="tappa-nome">Scrivi la frase</span></li>
-          <li class="tappa fatta"><span class="nodo" aria-hidden="true"><svg viewBox="0 0 40 40"><g fill="currentColor"><rect x="8" y="16" width="4" height="8" rx="2"/><rect x="14" y="12" width="4" height="16" rx="2"/><rect x="20" y="8" width="4" height="24" rx="2"/><rect x="26" y="13" width="4" height="14" rx="2"/><rect x="32" y="16.5" width="4" height="7" rx="2"/></g></svg></span><span class="tappa-nome">La voce nasce qui</span></li>
-          <li class="tappa ferma"><span class="nodo" aria-hidden="true"><svg viewBox="0 0 40 40"><rect x="15" y="6" width="10" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M10 19a10 10 0 0 0 20 0M20 29v5M14 34h12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span><span class="tappa-nome">Microfono «Kalliope»<span class="solo-lettori">: non c'è ancora</span></span></li>
-          <li class="tappa forse spenta"><span class="nodo" aria-hidden="true"><svg viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="2.4"><rect x="6" y="9" width="12.5" height="10" rx="2.5"/><rect x="21.5" y="9" width="12.5" height="10" rx="2.5"/><rect x="6" y="22" width="12.5" height="10" rx="2.5"/><rect x="21.5" y="22" width="12.5" height="10" rx="2.5"/></g></svg></span><span class="tappa-nome">Zoom, Teams, Meet</span></li>
-          <li class="tappa forse spenta tappa-altri"><span class="nodo nodo-altri" aria-hidden="true"><span class="mini paola"><svg class="figura" viewBox="54 14 92 106" preserveAspectRatio="xMidYMax meet">
+          <li class="tappa fatta"><span class="nodo" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 40 40"><rect x="6" y="13" width="28" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M11 20h9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M24 16v8" stroke="currentColor" stroke-width="2"/></svg></span><span class="tappa-nome" data-t="strada.tappa.1">Scrivi la frase</span></li>
+          <li class="tappa fatta"><span class="nodo" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 40 40"><g fill="currentColor"><rect x="8" y="16" width="4" height="8" rx="2"/><rect x="14" y="12" width="4" height="16" rx="2"/><rect x="20" y="8" width="4" height="24" rx="2"/><rect x="26" y="13" width="4" height="14" rx="2"/><rect x="32" y="16.5" width="4" height="7" rx="2"/></g></svg></span><span class="tappa-nome" data-t="strada.tappa.2">La voce nasce qui</span></li>
+          <li class="tappa ferma"><span class="nodo" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 40 40"><rect x="15" y="6" width="10" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M10 19a10 10 0 0 0 20 0M20 29v5M14 34h12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span><span class="tappa-nome" data-t="na.strada.tappa.3" data-t-nota="The part in tag 1 is read by screen readers and not shown: the step is drawn dashed and empty, and this says what the drawing says.">Microfono «Kalliope»<span class="solo-lettori">: non c'è ancora</span></span></li>
+          <li class="tappa forse spenta"><span class="nodo" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="2.4"><rect x="6" y="9" width="12.5" height="10" rx="2.5"/><rect x="21.5" y="9" width="12.5" height="10" rx="2.5"/><rect x="6" y="22" width="12.5" height="10" rx="2.5"/><rect x="21.5" y="22" width="12.5" height="10" rx="2.5"/></g></svg></span><span class="tappa-nome" data-t="strada.tappa.4">Zoom, Teams, Meet</span></li>
+          <li class="tappa forse spenta tappa-altri"><span class="nodo nodo-altri" aria-hidden="true"><span class="mini paola"><svg class="figura" width="92" height="106" viewBox="54 14 92 106" preserveAspectRatio="xMidYMax meet">
                 <path class="capelli-dietro" d="M75 56C74 30 126 30 125 56L128 98C118 104 82 104 72 98Z"/>
                 <path class="corpo" d="M50 120C50 95 73 84 100 84C127 84 150 95 150 120Z"/>
                 <rect class="collo" x="92" y="72" width="16" height="17" rx="6"/>
@@ -167,7 +170,7 @@
                   <path class="capelli" d="M78 52C78 30 122 28 122 52C118 41 104 36 92 39C86 41 81 45 78 52Z"/>
                   <g class="occhi"><ellipse cx="92" cy="58" rx="2.4" ry="3.1"/><ellipse cx="108" cy="58" rx="2.4" ry="3.1"/></g><path class="bocca" d="M95.5 67.5Q100 70.5 104.5 67.5"/>
                 </g></g>
-              </svg></span><span class="mini luca"><svg class="figura" viewBox="54 14 92 106" preserveAspectRatio="xMidYMax meet">
+              </svg></span><span class="mini luca"><svg class="figura" width="92" height="106" viewBox="54 14 92 106" preserveAspectRatio="xMidYMax meet">
                 <path class="corpo" d="M48 120C48 94 72 83 100 83C128 83 152 94 152 120Z"/>
                 <rect class="collo" x="92" y="71" width="16" height="17" rx="6"/>
                 <g class="cenno"><g class="testa">
@@ -178,7 +181,7 @@
                   <path class="cuffia" d="M75 63C76 74 84 78 92 78" fill="none"/>
                   <g class="occhi"><ellipse cx="92" cy="57" rx="2.4" ry="3.1"/><ellipse cx="108" cy="57" rx="2.4" ry="3.1"/></g><path class="bocca" d="M95.5 66.5Q100 69.5 104.5 66.5"/>
                 </g></g>
-              </svg></span><span class="mini anna"><svg class="figura" viewBox="54 14 92 106" preserveAspectRatio="xMidYMax meet">
+              </svg></span><span class="mini anna"><svg class="figura" width="92" height="106" viewBox="54 14 92 106" preserveAspectRatio="xMidYMax meet">
                 <path class="corpo" d="M52 120C52 96 74 85 100 85C126 85 148 96 148 120Z"/>
                 <rect class="collo" x="92" y="73" width="16" height="17" rx="6"/>
                 <g class="cenno"><g class="testa">
@@ -187,51 +190,51 @@
                   <path class="capelli" d="M80 54C78 33 122 31 120 54C114 44 106 40 100 40C93 40 85 44 80 54Z"/>
                   <g class="occhi"><ellipse cx="92" cy="59" rx="2.3" ry="3"/><ellipse cx="108" cy="59" rx="2.3" ry="3"/></g><path class="bocca" d="M96 68Q100 70.8 104 68"/>
                 </g></g>
-              </svg></span></span><span class="tappa-nome">Gli altri ti sentono</span></li>
+              </svg></span></span><span class="tappa-nome" data-t="strada.tappa.5">Gli altri ti sentono</span></li>
         </ol>
         <div class="esiti">
-          <div class="esito esito-fatto"><h3>C'è già</h3><p>Il programma si costruisce e supera i test anche su Windows e macOS: la voce nasce.</p></div>
-          <div class="esito esito-manca"><h3>Manca il microfono</h3><p>Su <strong>Windows</strong> serve un driver audio con una firma valida; su <strong>macOS</strong>, per firmare il componente audio, un account sviluppatore Apple. Nessuno dei due c'è ancora, e mancano anche i pacchetti da installare, con la loro firma.</p></div>
+          <div class="esito esito-fatto"><h3 data-t="na.esito.fatto.titolo">C'è già</h3><p data-t="na.esito.fatto.testo">Il programma si costruisce e supera i test anche su Windows e macOS: la voce nasce.</p></div>
+          <div class="esito esito-manca"><h3 data-t="na.esito.manca.titolo">Manca il microfono</h3><p data-t="na.esito.manca.testo">Su <strong>Windows</strong> serve un driver audio con una firma valida; su <strong>macOS</strong>, per firmare il componente audio, un account sviluppatore Apple. Nessuno dei due c'è ancora, e mancano anche i pacchetti da installare, con la loro firma.</p></div>
         </div>
       </div>
       <div class="non-esiste">
-        <p><strong>Non esiste ancora</strong> per telefono e tablet, e per ora parla solo italiano. Kalliope è un programma per il computer: non è un servizio online né un'estensione del browser.</p>
+        <p data-t="na.non-esiste"><strong>Non esiste ancora</strong> per telefono e tablet, e per ora parla solo italiano. Kalliope è un programma per il computer: non è un servizio online né un'estensione del browser.</p>
       </div>
     </section>
 
     <section class="tratto scena-chiara coppia quando" id="quando" aria-labelledby="quando-titolo">
       <span class="luce-tratto" aria-hidden="true"></span>
       <div class="tratto-testo">
-        <h2 id="quando-titolo" class="entra entra-titolo">Non promettiamo date.</h2>
-        <p>Quando ci sarà una versione per Windows o macOS, comparirà in cima a questo elenco. L'elenco si aggiorna da solo a ogni nuova versione di Kalliope: tieni l'indirizzo di questa pagina e ripassa quando vuoi.</p>
-        <p>Non raccogliamo indirizzi e-mail e non abbiamo un elenco d'attesa.</p>
+        <h2 id="quando-titolo" class="entra entra-titolo" data-t="na.quando.titolo">Non promettiamo date.</h2>
+        <p data-t="na.quando.testo">Quando ci sarà una versione per Windows o macOS, comparirà in cima a questo elenco. L'elenco si aggiorna da solo a ogni nuova versione di Kalliope: tieni l'indirizzo di questa pagina e ripassa quando vuoi.</p>
+        <p data-t="na.quando.nessuna-email">Non raccogliamo indirizzi e-mail e non abbiamo un elenco d'attesa.</p>
       </div>
       <div class="versioni coppia-oggetto entra">
-        <p class="versioni-titolo">Versioni di Kalliope</p>
+        <p class="versioni-titolo" data-t="na.versioni.titolo">Versioni di Kalliope</p>
         <ol class="versioni-elenco">
-          <li class="versione prossima"><span class="versione-nome">Windows e macOS</span><span class="versione-nota">compariranno qui, in cima · nessuna data</span></li>
-          <li class="versione ultima"><span class="versione-nome">Kalliope {{kalliope.version}}</span><span class="versione-data">{{kalliope.date}}</span><span class="versione-nota">Versione di prova · solo Linux</span></li>
+          <li class="versione prossima"><span class="versione-nome" data-t="na.versioni.prossima.nome">Windows e macOS</span><span class="versione-nota" data-t="na.versioni.prossima.nota">compariranno qui, in cima · nessuna data</span></li>
+          <li class="versione ultima"><span class="versione-nome" data-t="na.versioni.ultima.nome">Kalliope {{kalliope.version}}</span><span class="versione-data" data-t-no="la data la scrive la costruzione, dai dati CLDR">{{kalliope.date}}</span><span class="versione-nota" data-t="na.versioni.ultima.nota">Versione di prova · solo Linux</span></li>
         </ol>
         <div class="versioni-piede">
-          <button class="pillola azione copia-indirizzo" type="button" hidden>Copia l'indirizzo di questa pagina</button>
-          <p class="copia-esito" role="status"><span class="copia-fatto" hidden>Copiato: incollalo nelle note o in un messaggio, e ripassa da qui.</span><span class="copia-errore" hidden>Non riesco a copiarlo: salva la pagina tra i preferiti del browser.</span></p>
-          <p class="senza-js">Salva questa pagina tra i preferiti del browser e ripassa da qui.</p>
+          <button class="pillola azione copia-indirizzo" type="button" hidden data-t="na.copia.pulsante">Copia l'indirizzo di questa pagina</button>
+          <p class="copia-esito" role="status"><span class="copia-fatto" hidden data-t="na.copia.fatto">Copiato: incollalo nelle note o in un messaggio, e ripassa da qui.</span><span class="copia-errore" hidden data-t="na.copia.errore">Non riesco a copiarlo: salva la pagina tra i preferiti del browser.</span></p>
+          <p class="senza-js" data-t="na.copia.senza-js">Salva questa pagina tra i preferiti del browser e ripassa da qui.</p>
         </div>
       </div>
-      <p class="nota coppia-nota">Usi un lettore di feed, un programma che ti avvisa quando un sito pubblica qualcosa? Il <a href="https://github.com/SANSEVIERIA-OU/kalliope/releases.atom">feed delle versioni</a> segnala ogni nuova versione, anche quelle solo per Linux, ed è in inglese, come la <a href="https://github.com/SANSEVIERIA-OU/kalliope/releases">pagina delle versioni su GitHub</a>.</p>
+      <p class="nota coppia-nota" data-t="na.quando.feed">Usi un lettore di feed, un programma che ti avvisa quando un sito pubblica qualcosa? Il <a href="https://github.com/SANSEVIERIA-OU/kalliope/releases.atom">feed delle versioni</a> segnala ogni nuova versione, anche quelle solo per Linux, ed è in inglese, come la <a href="https://github.com/SANSEVIERIA-OU/kalliope/releases">pagina delle versioni su GitHub</a>.</p>
     </section>
 
     <section class="tratto chiusura scena-stanza" id="ascolta" aria-labelledby="ascolta-titolo">
       <span class="luce-tratto" aria-hidden="true"></span><span class="luce-tratto luce-chiusa" aria-hidden="true"></span>
-      <h2 id="ascolta-titolo" class="entra entra-titolo">Intanto, senti come suona.</h2>
-      <p class="sotto-titolo">La frase di prima, detta con la registrazione vera di Kalliope 0.1. Il suono parte solo se premi.</p>
+      <h2 id="ascolta-titolo" class="entra entra-titolo" data-t="na.ascolta.titolo">Intanto, senti come suona.</h2>
+      <p class="sotto-titolo" data-t="na.ascolta.sotto">La frase di prima, detta con la registrazione vera di Kalliope 0.1. Il suono parte solo se premi.</p>
       <div class="tavolo entra" aria-hidden="true">
         <div class="posto-bolla posto-bolla-chiusa">
-          <div class="bolla bolla-chiusa bolla-ferma"><div class="bolla-corpo"><p class="bolla-testo">Buongiorno a tutti! Scrivo invece di parlare, ma vi seguo benissimo.</p></div><svg class="coda" viewBox="0 0 32 24"><path d="M0 0h31L7.6 21.6A3.5 3.5 0 0 1 2 18.8V0z"/></svg></div>
+          <div class="bolla bolla-chiusa bolla-ferma"><div class="bolla-corpo"><p class="bolla-testo" data-t="frase.1">Buongiorno a tutti! Scrivo invece di parlare, ma vi seguo benissimo.</p></div><svg class="coda" width="32" height="24" viewBox="0 0 32 24"><path d="M0 0h31L7.6 21.6A3.5 3.5 0 0 1 2 18.8V0z"/></svg></div>
         </div>
         <div class="tavolo-cornice">
-          <div class="riquadro tu"><span class="alone"></span><span class="bordo"></span><span class="barre"><i></i><i></i><i></i><i></i><i></i></span><span class="nome">Tu</span></div>
-          <div class="riquadro persona paola"><svg class="figura" viewBox="0 0 200 120" preserveAspectRatio="xMidYMax meet">
+          <div class="riquadro tu"><span class="alone"></span><span class="bordo"></span><span class="barre"><i></i><i></i><i></i><i></i><i></i></span><span class="nome" data-t="riunione.tu">Tu</span></div>
+          <div class="riquadro persona paola"><svg class="figura" width="200" height="120" viewBox="0 0 200 120" preserveAspectRatio="xMidYMax meet">
                 <path class="capelli-dietro" d="M75 56C74 30 126 30 125 56L128 98C118 104 82 104 72 98Z"/>
                 <path class="corpo" d="M50 120C50 95 73 84 100 84C127 84 150 95 150 120Z"/>
                 <rect class="collo" x="92" y="72" width="16" height="17" rx="6"/>
@@ -240,8 +243,8 @@
                   <path class="capelli" d="M78 52C78 30 122 28 122 52C118 41 104 36 92 39C86 41 81 45 78 52Z"/>
                   <g class="occhi"><ellipse cx="92" cy="58" rx="2.4" ry="3.1"/><ellipse cx="108" cy="58" rx="2.4" ry="3.1"/></g><path class="bocca" d="M95.5 67.5Q100 70.5 104.5 67.5"/>
                 </g></g>
-              </svg><span class="lume"></span><span class="nome">Paola</span></div>
-          <div class="riquadro persona luca"><svg class="figura" viewBox="0 0 200 120" preserveAspectRatio="xMidYMax meet">
+              </svg><span class="lume"></span><span class="nome" data-t="persona.paola">Paola</span></div>
+          <div class="riquadro persona luca"><svg class="figura" width="200" height="120" viewBox="0 0 200 120" preserveAspectRatio="xMidYMax meet">
                 <path class="corpo" d="M48 120C48 94 72 83 100 83C128 83 152 94 152 120Z"/>
                 <rect class="collo" x="92" y="71" width="16" height="17" rx="6"/>
                 <g class="cenno"><g class="testa">
@@ -252,8 +255,8 @@
                   <path class="cuffia" d="M75 63C76 74 84 78 92 78" fill="none"/>
                   <g class="occhi"><ellipse cx="92" cy="57" rx="2.4" ry="3.1"/><ellipse cx="108" cy="57" rx="2.4" ry="3.1"/></g><path class="bocca" d="M95.5 66.5Q100 69.5 104.5 66.5"/>
                 </g></g>
-              </svg><span class="lume"></span><span class="nome">Luca</span></div>
-          <div class="riquadro persona anna"><svg class="figura" viewBox="0 0 200 120" preserveAspectRatio="xMidYMax meet">
+              </svg><span class="lume"></span><span class="nome" data-t="persona.luca">Luca</span></div>
+          <div class="riquadro persona anna"><svg class="figura" width="200" height="120" viewBox="0 0 200 120" preserveAspectRatio="xMidYMax meet">
                 <path class="corpo" d="M52 120C52 96 74 85 100 85C126 85 148 96 148 120Z"/>
                 <rect class="collo" x="92" y="73" width="16" height="17" rx="6"/>
                 <g class="cenno"><g class="testa">
@@ -262,36 +265,50 @@
                   <path class="capelli" d="M80 54C78 33 122 31 120 54C114 44 106 40 100 40C93 40 85 44 80 54Z"/>
                   <g class="occhi"><ellipse cx="92" cy="59" rx="2.3" ry="3"/><ellipse cx="108" cy="59" rx="2.3" ry="3"/></g><path class="bocca" d="M96 68Q100 70.8 104 68"/>
                 </g></g>
-              </svg><span class="lume"></span><span class="nome">Anna</span></div>
+              </svg><span class="lume"></span><span class="nome" data-t="persona.anna">Anna</span></div>
           <canvas class="onde onde-chiusa"></canvas>
         </div>
       </div>
       <div class="comandi comandi-ascolto">
-        <button class="pillola voce-chiara suona-frase ascolta-ferma" type="button" aria-pressed="false" hidden><span class="tondo" aria-hidden="true"></span><span class="se-fermo">Ascolta Giulia</span><span class="se-suona">Pausa</span><span class="se-pausa">Riprendi</span></button>
-        <audio class="lettore-ferma" controls preload="none" src="../voce/giulia-1.mp3"></audio>
-        <a class="collegamento" href="../ascolta/">Tutte le frasi, anche con Marco<span class="freccia" aria-hidden="true"></span></a>
+        <button class="pillola voce-chiara suona-frase ascolta-ferma" type="button" hidden><span class="tondo" aria-hidden="true"></span><span class="etichette"><span class="se-fermo" data-t="na.ascolta.fermo" data-t-nota="The part in tag 1 is the name of the voice, written as it is in the second line of the page: the script reads it from here for what it says aloud and for the file to download.">Ascolta <span class="nome-voce">Giulia</span></span><span class="se-carica" data-t="ascolto.verbo.carica">Carico…</span><span class="se-suona" data-t="ascolto.verbo.suona">Pausa</span><span class="se-pausa" data-t="ascolto.verbo.pausa">Riprendi</span></span></button>
+        <audio class="lettore-ferma" controls preload="none" aria-label="Ascolta la frase con la voce di Giulia" data-t-aria-label="na.ascolta.lettore"><source src="../voce/giulia-1.opus" type="audio/ogg; codecs=opus"><source src="../voce/giulia-1.mp3" type="audio/mpeg"><a href="../voce/giulia-1.mp3" data-t="campioni.scarica-audio">Scarica l'audio (Giulia)</a></audio>
+        <a class="collegamento" href="../ascolta/" data-t="na.ascolta.tutte">Tutte le frasi, anche con Marco<span class="freccia" aria-hidden="true"></span></a>
       </div>
-      <p class="fatti">Che cosa è provato e che cosa no, anche su Linux: <a href="../stato/">stato e limiti</a>.</p>
+      <p class="fatti" data-t="na.ascolta.fatti">Che cosa è provato e che cosa no, anche su Linux: <a href="../stato/">stato e limiti</a>.</p>
     </section>
   </main>
 
   <footer class="piede scena-notte">
-    <nav aria-label="Sezioni del sito, in fondo" id="piede-sezioni">
+    <nav aria-label="Sezioni del sito, in fondo" id="piede-sezioni" data-t-aria-label="piede.sezioni">
       <ul>
-        <li><a href="../ascolta/">Ascolta</a></li>
-        <li><a href="../stato/">Stato e limiti</a></li>
-        <li><a href="../installa/">Installa</a></li>
-        <li><a href="../riunione/">In riunione</a></li>
-        <li><a href="../aiuto/">Aiuto</a></li>
+        <li><a href="../ascolta/" data-t="menu.ascolta">Ascolta</a></li>
+        <li><a href="../stato/" data-t="menu.stato">Stato e limiti</a></li>
+        <li><a href="../installa/" data-t="menu.installa">Installa</a></li>
+        <li><a href="../riunione/" data-t="menu.riunione">In riunione</a></li>
+        <li><a href="../aiuto/" data-t="menu.aiuto">Aiuto</a></li>
       </ul>
     </nav>
-    <nav class="lingue" id="lingue" aria-label="Lingue">
+    <nav class="lingue" id="lingue" aria-label="Lingue" data-t-aria-label="piede.lingue">
       <ul data-lingue="elenco">
-        <li><a data-lingua href="#">Italiano</a></li>
+        <li><a data-lingua data-t-no="il nome della lingua lo mette la costruzione, dai dati CLDR" href="#">Italiano</a></li>
       </ul>
     </nav>
-    <p>Versione {{kalliope.version}} del {{kalliope.date}}. Codice sorgente disponibile, licenza SANSEVIERIA 1.0 (non «open source» nel senso dell'OSI). Prodotto da SANSEVIERIA OÜ. Questo sito non usa cookie né statistiche.</p>
+    <p data-t="piede.testo">Versione {{kalliope.version}} del {{kalliope.date}}. Codice sorgente disponibile, licenza SANSEVIERIA 1.0 (non «open source» nel senso dell'OSI). Prodotto da SANSEVIERIA OÜ. Questo sito non usa cookie né statistiche.</p>
   </footer>
 </div>
+
+<template id="testi-pagina">
+  <p data-t="annuncio.pausa" data-t-nota="Read by screen readers when listening is paused.">In pausa.</p>
+  <p data-t="na.annuncio.parte" data-t-nota="Read by screen readers when the voice starts speaking the sentence of the page. {voce} is the name of the voice, written as in the button.">Sto leggendo la frase, voce di {voce}.</p>
+  <p data-t="errore.caricamento">Non riesco a caricare la registrazione. Controlla la connessione e riprova, oppure scaricala.</p>
+  <p data-t="errore.interrotta">La registrazione si è interrotta. Riprova, oppure scaricala.</p>
+  <p data-t="errore.permesso">Il browser non ha fatto partire il suono. Premi «Riprova»: il suono parte solo con un tuo gesto.</p>
+  <p data-t="errore.lento">Il caricamento è lento. Puoi aspettare, riprovare o scaricare la registrazione.</p>
+  <p data-t="errore.riprova">Riprova</p>
+  <p data-t="errore.scarica" data-t-nota="{voce} is the name of the voice (Giulia or Marco), written as in the voice buttons.">Scarica la registrazione ({voce}, mp3)</p>
+  <p data-t="ascolto.azione.carica">Carico la registrazione, premi per annullare</p>
+  <p data-t="ascolto.azione.suona">Metti in pausa</p>
+  <p data-t="ascolto.azione.pausa">Riprendi</p>
+</template>
 </body>
 </html>

@@ -1,0 +1,18 @@
+# impronte 17/11/2026 02:56:19
+## i file di questo incarico, nella copia di lavoro (/tmp/lavoro-3ab-lavoro/radice-F) e nell'albero vivo (/workspace/kalliope): se le due colonne coincidono la copia è quella viva
+869edfeebd6a8891  869edfeebd6a8891  =  website/non-ancora/index.html
+7c58ed2a9bfc7e2b  7c58ed2a9bfc7e2b  =  website/non-ancora/non-ancora.js
+09007c7fd0fc98b8  09007c7fd0fc98b8  =  website/cornice.js
+99eead94116ace97  99eead94116ace97  =  design-system/componenti/pagina.css
+fe44a385a58c6e0b  fe44a385a58c6e0b  =  design-system/componenti/riunione-ferma.css
+b11c1389eab74861  b11c1389eab74861  =  design-system/componenti/strada-ferma.css
+7362680b7cab558d  7362680b7cab558d  =  design-system/componenti/versioni.css
+8075220ed8820318  8075220ed8820318  =  design-system/catalogo/catalogo-pagine.js
+cfffbde516c2d652  cfffbde516c2d652  =  design-system/catalogo/catalogo-pagine.css
+890c29e8b824247f  890c29e8b824247f  =  design-system/metodo.config.mjs
+0b5c1d072ff2b06d  0b5c1d072ff2b06d  =  website/lingue/site.pot
+50484136ff77049c  50484136ff77049c  =  website/lingue/it.po
+## la copia di lavoro intera (website, design-system, tools): una sola impronta
+ab407cfedd9c82fb07b9ce995dc88c1c
+## il sito costruito (/tmp/lavoro-3ab-sito-G): una sola impronta
+06f3e150231e0bf17951e00ea99f34e3

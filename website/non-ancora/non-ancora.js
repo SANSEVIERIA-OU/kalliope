@@ -1,22 +1,56 @@
 /* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
 // «Non ancora» nella direzione 2: la riunione è pronta, la tua voce non ancora.
-// Il primo schermo si muove da sé con il solo CSS (componenti/riunione-ferma.css). Qui: la strada che si ferma al microfono
-// quando arriva sullo schermo; la bolla della chiusura che nasce; e il solo suono della pagina, la frase della chiusura detta
-// con la registrazione vera, che parte soltanto se la persona preme. Le parole si accendono sui tempi di voce/tempi.json,
-// le onde partono da «Tu» e chi ascolta si gira. Nessun testo e nessun colore qui: i testi stanno nella pagina, i valori
-// in design-system/token.css. Con «riduci movimento» ogni scena è al suo stato finale; il suono c'è comunque, a richiesta.
+// Il primo schermo si muove da sé con il solo CSS (componenti/riunione-ferma.css). Qui: il tentativo su «Kalliope»; la strada che si
+// ferma al microfono quando arriva sullo schermo; la bolla della chiusura che nasce; e il solo suono della pagina, la frase della
+// chiusura detta con la registrazione vera, che parte soltanto se la persona preme. Le parole si accendono sui tempi di
+// voce/tempi.json, le onde partono da «Tu» e chi ascolta si gira. Nessun testo e nessun colore qui: i testi stanno nella pagina
+// (anche quelli di <template id="testi-pagina">, che dà testi.js), i valori in design-system/token.css.
+// Con «riduci movimento» ogni scena è al suo stato finale; il suono c'è comunque, a richiesta. Se i fogli di stile non sono arrivati
+// (i token mancano) la pagina resta com'è, ferma, e il suono funziona lo stesso.
+// Con la scheda in secondo piano si ferma tutto insieme (l'orologio della scena, le animazioni in corso, l'ascolto) e al ritorno si
+// riparte da dove si era, come nella home (scena.js, «La scheda in secondo piano»).
 (() => {
   'use strict';
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-  const ridotto = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const verticale = () => matchMedia('(max-width: 760px)').matches;
+  const {testo: T, formato: fmt} = window.Testi;
   // la voce sta in cima al sito (voce/…), accanto agli altri file condivisi: questo script sta in non-ancora/
   const RADICE = new URL('../', document.currentScript.src);
   const radice = getComputedStyle(document.documentElement);
   const tok = n => radice.getPropertyValue(n).trim();
-  const tempo = n => { const v = tok(n); return v.endsWith('ms') ? parseFloat(v) : parseFloat(v) * 1000; };
+  // i token non ci sono se un foglio di stile non è arrivato: la pagina resta ferma, come con «riduci movimento»
+  const senzaStili = !tok('--entra');
+  const ridotto = matchMedia('(prefers-reduced-motion: reduce)').matches || senzaStili;
+  const verticale = () => matchMedia('(max-width: 760px)').matches;
+  const tempo = n => { const v = tok(n), t = v.endsWith('ms') ? parseFloat(v) : parseFloat(v) * 1000; return isFinite(t) ? t : 0; };
   const ENTRA = tok('--entra');
+
+  // =================================================================================================================
+  // L'OROLOGIO DELLA SCENA: cammina solo con la scheda in vista; ciò che si fa «dopo tanti ms» aspetta con lui
+  // =================================================================================================================
+  let fermoTot = 0, nascostoDa = document.hidden ? performance.now() : null;
+  const tScena = () => (nascostoDa === null ? performance.now() : nascostoDa) - fermoTot;
+  const agenda = [];
+  let giraAgenda = 0;
+  function dopo(ms, f) {
+    const e = {t: tScena() + ms, f};
+    agenda.push(e);
+    if (!giraAgenda) giraAgenda = requestAnimationFrame(passoAgenda);
+    return e;
+  }
+  function passoAgenda() {
+    giraAgenda = 0;
+    const t = tScena();
+    for (let i = 0; i < agenda.length;) {
+      const e = agenda[i];
+      if (e.annullato) agenda.splice(i, 1);
+      else if (e.t <= t) { agenda.splice(i, 1); e.f(); } else i++;
+    }
+    if (agenda.length) giraAgenda = requestAnimationFrame(passoAgenda);
+  }
+  // un annuncio per i lettori di schermo, solo per ciò che non si vede da sé (l'ascolto)
+  const annuncio = $('#annuncio');
+  function annuncia(testoAnnuncio) { if (!annuncio) return; annuncio.textContent = ''; setTimeout(() => { annuncio.textContent = testoAnnuncio; }, 60); }
 
   // =================================================================================================================
   // IL PRIMO SCHERMO: il tentativo su «Kalliope». Il segno della scelta lascia «Microfono del computer», va sul posto di
@@ -37,9 +71,17 @@
     if (!chiamata || !segno || ridotto) return;
     chiamata.classList.add('prova');
     let finita = false;
-    const ferma = () => { finita = true; segno.getAnimations().forEach(a => a.cancel()); chiamata.classList.remove('con-segno', 'segno-via'); chiamata.classList.add('non-c-e'); };
-    addEventListener('resize', ferma, {once: true});
-    setTimeout(() => {
+    // il tentativo interrotto (le misure della barra cambiano) va al suo stato finale: «non c'è» scritto, il segno non c'è più
+    const ferma = () => {
+      finita = true; segno.getAnimations().forEach(a => a.cancel());
+      chiamata.classList.remove('con-segno', 'segno-via', 'segno-va'); sceltaK.classList.remove('urtata');
+      chiamata.classList.add('non-c-e');
+    };
+    // conta la larghezza: l'altezza cambia anche quando la barra del browser si nasconde scorrendo, e non sposta niente qui
+    const larghezza = innerWidth;
+    const alRidimensionamento = () => { if (innerWidth === larghezza) return; removeEventListener('resize', alRidimensionamento); ferma(); };
+    addEventListener('resize', alRidimensionamento);
+    dopo(Math.max(0, tempo('--ritardo-segno') - tScena()), () => {
       if (finita) return;
       const da = forma(sceltaPc), a = forma(sceltaK);
       Object.assign(segno.style, da); chiamata.classList.add('con-segno');
@@ -52,16 +94,16 @@
           segno.animate([{...a, opacity: 1}, {...a, opacity: vuoto}], {duration: tempo('--durata-scelta-sfondo'), easing: 'ease', fill: 'forwards'});
           chiamata.classList.remove('segno-va');
           sceltaK.classList.add('urtata'); tuFermo.classList.add('urtato'); chiamata.classList.add('non-c-e');
-          setTimeout(() => {
+          dopo(tempo('--attesa-segno'), () => {
             if (finita) return;
             sceltaK.classList.remove('urtata');
             const torna = tempo('--durata-segno-torna');
             segno.animate([{...a, opacity: vuoto}, {...da, opacity: 1}], {duration: torna, easing: ENTRA, fill: 'forwards'});
-            setTimeout(() => { if (!finita) chiamata.classList.remove('segno-via'); }, torna * 0.2);   // il testo torna scuro quando il segno gli è già sotto (la curva d'entrata arriva presto)
-          }, tempo('--attesa-segno'));
+            dopo(torna * 0.2, () => { if (!finita) chiamata.classList.remove('segno-via'); });   // il testo torna scuro quando il segno gli è già sotto (la curva d'entrata arriva presto)
+          });
         }, () => {});
       });
-    }, Math.max(0, tempo('--ritardo-segno') - performance.now()));
+    });
   }
   provaKalliope();
 
@@ -69,17 +111,27 @@
   // QUANDO ARRIVA: tenere l'indirizzo di questa pagina, che si aggiorna da sola a ogni versione
   // =================================================================================================================
   const copia = $('.copia-indirizzo'), copiato = $('.copia-fatto'), noCopia = $('.copia-errore');
+  // la risposta si dice a ogni pressione, anche la seconda con le stesse parole: per i lettori di schermo il testo cambia
+  function rispondi(si) {
+    const [mostra, nascondi] = si ? [copiato, noCopia] : [noCopia, copiato];
+    nascondi.hidden = true; mostra.hidden = true;
+    setTimeout(() => { mostra.hidden = false; mostraInsieme(copia, copiato.parentElement); }, 60);
+  }
   if (copia && navigator.clipboard && window.isSecureContext) {
     copia.hidden = false;
     copia.addEventListener('click', () => {
       navigator.clipboard.writeText(location.href.split('#')[0])
         .then(() => {
-          copiato.hidden = false; noCopia.hidden = true;
+          rispondi(true);
           const posto = $('.versione.prossima');   // il posto da tenere d'occhio si accende una volta
           if (posto && !ridotto) { posto.classList.remove('ricordata'); void posto.offsetWidth; posto.classList.add('ricordata'); }
-        }, () => { copiato.hidden = true; noCopia.hidden = false; });
+        }, () => rispondi(false));
     });
-  } else if (noCopia) noCopia.hidden = false;
+  } else {
+    // gli appunti non si possono usare (indirizzo non sicuro, browser vecchio): resta la frase di chi non ha lo script, senza un comando che non c'è
+    const frase = $('.versioni-piede .senza-js');
+    if (frase) frase.classList.remove('senza-js');
+  }
 
   // =================================================================================================================
   // LA STRADA CHE SI FERMA: la voce nasce, arriva dove dovrebbe esserci il microfono, lo trova vuoto
@@ -102,15 +154,15 @@
       {opacity: 0, transform: tr(centri[0])}, {opacity: 1, transform: tr(centri[0]), offset: 0.1},
       {opacity: 1, transform: tr(centri[2]), offset: 0.8}, {opacity: 0, transform: tr(centri[2], 0.3)}],
     {duration: 1620, easing: 'linear', fill: 'forwards'});
-    setTimeout(() => { tappe[1].classList.add('acceso'); strada.classList.add('provato'); }, 760);   // «C'è già» quando la voce nasce
-    setTimeout(() => {   // la voce arriva al posto del microfono e non trova niente: un'onda tratteggiata che non va oltre
+    dopo(760, () => { tappe[1].classList.add('acceso'); strada.classList.add('provato'); });   // «C'è già» quando la voce nasce
+    dopo(1300, () => {   // la voce arriva al posto del microfono e non trova niente: un'onda tratteggiata che non va oltre
       tappe[2].classList.add('urtata');
       const u = document.createElement('span'); u.className = 'urto'; u.setAttribute('aria-hidden', 'true'); tappe[2].append(u);
       u.animate([{transform: 'scale(1)', opacity: 0.9}, {transform: `scale(${tok('--urto-scala')})`, opacity: 0}],
         {duration: tempo('--durata-urto'), easing: 'ease-out', fill: 'both'}).finished.then(() => u.remove(), () => u.remove());
       strada.classList.add('fermata');
-    }, 1300);
-    setTimeout(finale, 2300);
+    });
+    dopo(2300, finale);
   }
 
   // =================================================================================================================
@@ -124,6 +176,7 @@
   const bottone = $('.ascolta-ferma'), comandi = $('.comandi-ascolto');
   const BASE = [1, 2, 3, 4, 5].map(k => (k === 3 ? 1 : parseFloat(tok(`--barre-${k}-scala-y`)) || 1)), RITARDO = [0.08, 0.04, 0, 0.04, 0.08];
   const FILE = 'giulia-1';
+  const nomeVoce = () => { const n = bottone && $('.nome-voce', bottone); return n ? n.textContent.trim() : ''; };
 
   // la frase della pagina, in parti (dove finisce una frase) e parole (agli spazi; dove non ce ne sono, con Intl.Segmenter)
   let parti = null;
@@ -215,33 +268,38 @@
     ctx.restore();
   }
 
-  // ---------- un ascolto alla volta: carica, suona; premere ancora ferma ----------
+  // ---------- un ascolto alla volta: carica, suona, pausa; premere ferma o riprende ----------
   let discorso = null, ritorno = 0;
   const opus = document.createElement('audio').canPlayType('audio/ogg; codecs=opus') ? 'opus' : 'mp3';
+  // lo stato è nelle classi del comando (le etichette si cambiano con il CSS, a larghezza ferma) e nel nome che dice ai lettori che cosa fa premerlo
   function stato(s) {
     ['carica', 'suona', 'pausa'].forEach(k => bottone.classList.toggle(k, s === k));
-    bottone.setAttribute('aria-pressed', String(s === 'carica' || s === 'suona'));
+    if (s === 'fermo') bottone.removeAttribute('aria-label'); else bottone.setAttribute('aria-label', T(`ascolto.azione.${s}`));
     if (discorso) discorso.stato = s;
   }
+  // quando il suono si ferma o aspetta, la voce di «Tu» si spegne (barre e alone) finché non riparte
+  function quieto() { if (alone) alone.style.opacity = 0; barre.forEach(b => { b.style.transform = ''; }); }
   // premere mentre suona mette in pausa (come le frasi della home); premere in pausa riprende da dove era
   function pausa() {
     const d = discorso; if (!d || d.stato !== 'suona') return;
     d.audio._nostra = true; d.audio.pause(); d.ultimo = null;
-    if (alone) alone.style.opacity = 0; barre.forEach(b => { b.style.transform = ''; });
-    stato('pausa');
+    quieto(); stato('pausa'); annuncia(T('annuncio.pausa'));
   }
   function riprendi() {
     const d = discorso; if (!d || d.stato !== 'pausa') return;
     d.audio._nostra = false;
     const g = d.audio.play();
-    if (g && g.catch) g.catch(() => { if (discorso === d) { ferma(false); comandi.classList.add('ripiego'); } });
+    if (g && g.catch) g.catch(e => { if (discorso === d && !(e && e.name === 'AbortError')) fallisci('permesso'); });
     d.ultimo = performance.now(); stato('suona'); giro();
   }
+  // ferma: finita = la frase è stata detta fino in fondo (la bolla resta come detta); altrimenti la voce non ha parlato (errore,
+  // annullato, scheda in secondo piano) e la bolla torna com'era, la frase scritta e non detta
   function ferma(finita) {
     const d = discorso; if (!d) return;
     discorso = null;
     d.audio._nostra = true; d.audio.pause();
-    dividi().flat().forEach(p => p.classList.remove('attesa'));
+    clearTimeout(lentoT); clearTimeout(attesaT);
+    dividi().flat().forEach(p => p.classList.toggle('attesa', !finita));
     if (bordo) bordo.style.opacity = ''; if (alone) alone.style.opacity = '';
     tu.classList.remove('parla'); barre.forEach(b => { b.style.transform = ''; });
     bolla.classList.toggle('detta', !!finita);
@@ -249,16 +307,60 @@
     ritorno = setTimeout(() => persone.forEach(p => p.classList.remove('guarda')), finita ? 1700 : 0);
     stato('fermo');
   }
-  // dove lo schermo è basso o la pagina è in fondo, premendo la riunione viene in vista da sé (come nella home, 8c)
-  function inVista() {
-    const r = tavolo.getBoundingClientRect(), barra = document.querySelector('.barra'), alto = (barra ? barra.offsetHeight : 0) + 12;
-    if (r.top >= alto && r.bottom <= innerHeight) return;
-    scrollBy({top: r.top - alto, behavior: ridotto ? 'instant' : 'smooth'});
+
+  // ---------- quando va storto: un messaggio vicino al comando, con «Riprova» e il file da scaricare ----------
+  let nota = null, lentoT = 0, attesaT = 0;
+  function togliNota() {
+    clearTimeout(lentoT);
+    if (!nota) return;
+    // «Riprova» sparisce premendolo: il fuoco torna al comando invece di cadere sulla pagina
+    const ritornoFuoco = nota.contains(document.activeElement);
+    nota.remove(); nota = null;
+    if (ritornoFuoco) bottone.focus({preventScroll: true});
+  }
+  function mostraNota(causa) {
+    togliNota();
+    const el = document.createElement('div'), p = document.createElement('p'), az = document.createElement('div');
+    el.className = 'errore-ascolto'; el.setAttribute('role', causa === 'lento' ? 'status' : 'alert');
+    p.textContent = T(`errore.${causa}`);
+    az.className = 'errore-azioni';
+    const riprova = document.createElement('button'); riprova.type = 'button'; riprova.className = 'riprova'; riprova.textContent = T('errore.riprova');
+    riprova.addEventListener('click', () => suona());
+    const scarica = document.createElement('a'); scarica.className = 'scarica-file'; scarica.href = new URL(`voce/${FILE}.mp3`, RADICE).href; scarica.setAttribute('download', '');
+    scarica.textContent = fmt(T('errore.scarica'), {voce: nomeVoce()});
+    az.append(riprova, scarica); el.append(p, az);
+    comandi.after(el); nota = el;
+    mostraInsieme(bolla, el);
+  }
+  // Ciò che un gesto apre sta nello schermo, sotto la barra: dall'inizio (la bolla dove si accendono le parole, o il comando) al fondo (il comando, il
+  // messaggio d'errore, la risposta di «Copia»). Se non ci stanno insieme (schermi bassi) vince uno dei due: il fondo (il messaggio d'errore sta per
+  // intero nello schermo, vicino al comando che l'ha causato, e la riunione scorre sotto la barra) o l'inizio (mentre suona, la bolla con le parole
+  // che si accendono: il testo che accompagna il suono).
+  function mostraInsieme(inizio, fondo, vince = 'fondo') {
+    requestAnimationFrame(() => {
+      if (!inizio.isConnected || !fondo.isConnected) return;
+      const barraEl = $('.barra'), alto = (barraEl ? barraEl.getBoundingClientRect().bottom : 0) + 8;
+      const giu = Math.max(0, fondo.getBoundingClientRect().bottom - (innerHeight - 8));   // quanto scorrere perché il fondo si veda
+      const su = inizio.getBoundingClientRect().top - alto;                                   // quanto scorrere perché l'inizio stia sotto la barra (negativo: verso l'alto)
+      const dy = giu <= su ? Math.min(Math.max(0, giu), su) : vince === 'inizio' ? su : giu;
+      if (Math.abs(dy) > 1) scrollBy({top: dy, behavior: ridotto ? 'instant' : 'smooth'});
+    });
+  }
+  function fallisci(causa) {
+    ferma(false);
+    mostraNota(causa);
+  }
+
+  // premendo prima che la riunione sia entrata, arriva subito intera: il suono non parte mentre i riquadri entrano ancora
+  function scenaSubito() {
+    if (!tavolo.classList.contains('visto') && window.Cornice) window.Cornice.rivela(tavolo);
+    nasceBolla(0);
+    tavolo.getAnimations({subtree: true}).forEach(x => { const t = x.effect && x.effect.getComputedTiming(); if (t && isFinite(t.endTime)) x.finish(); });
   }
   function suona() {
     if (discorso) { if (discorso.stato === 'suona') pausa(); else if (discorso.stato === 'pausa') riprendi(); else ferma(false); return; }
-    clearTimeout(ritorno);
-    inVista(); nasceBolla(0);
+    clearTimeout(ritorno); togliNota();
+    scenaSubito(); mostraInsieme(bolla, comandi, 'inizio');   // dove lo schermo è basso o la pagina è in fondo, premendo la riunione viene in vista da sé (come nella home, 8c); se col comando non ci sta, vince la bolla, dove le parole si accendono
     const parole = dividi().flat();
     parole.forEach(p => p.classList.add('attesa'));
     bolla.classList.remove('detta');
@@ -266,29 +368,50 @@
     const a = new Audio(); let i = 0;
     const d = discorso = {audio: a, parole, f: null, tp: null, pk: [], prossimo: 0, m: 0, ultimo: null, avviato: false};
     const vivo = () => discorso === d;
-    const sbagliata = () => {
-      if (!vivo()) return;
-      if (!d.avviato && i + 1 < fonti.length) { i++; prova(); return; }
-      ferma(false); comandi.classList.add('ripiego');   // il suono non va: resta il lettore del browser, con il file
+    const gestite = new Set();
+    // una fonte che non va (formato, file mancante, rete) fa passare alla successiva; l'ultima dà il messaggio.
+    // k è il tentativo a cui il segnale appartiene: l'evento «error» e il rifiuto del play() arrivano entrambi, uno solo conta
+    const sbagliata = (k = i) => {
+      if (!vivo() || k !== i || gestite.has(k)) return;
+      gestite.add(k);
+      if (d.avviato || a.currentTime > 0.2) fallisci('interrotta');
+      else if (i + 1 < fonti.length) { i++; prova(); } else fallisci('caricamento');
     };
     const prova = () => {
       a.src = fonti[i];
-      const g = a.play();
-      if (g && g.catch) g.catch(e => { if (vivo() && !(e && e.name === 'AbortError')) sbagliata(); });
+      const k = i, g = a.play();
+      if (g && g.catch) g.catch(e => {
+        if (!vivo() || k !== i || (e && e.name === 'AbortError')) return;
+        if (e && e.name === 'NotAllowedError') fallisci('permesso'); else sbagliata(k);
+      });
     };
-    a.addEventListener('playing', () => {
-      if (!vivo() || d.avviato) return;
+    const lento = () => { clearTimeout(lentoT); lentoT = setTimeout(() => { if (vivo() && d.stato === 'carica') mostraNota('lento'); }, 6000); };
+    // il suono è partito (la prima volta) o è ripartito dopo aver aspettato dati
+    const parte = () => {
+      if (!vivo()) return;
+      clearTimeout(lentoT); clearTimeout(attesaT); if (nota && nota.getAttribute('role') === 'status') togliNota();
+      if (d.avviato) { if (d.stato === 'carica') { d.ultimo = performance.now(); stato('suona'); giro(); } return; }
       d.avviato = true; d.ultimo = performance.now();
       tempiPronti.then(() => {
         if (!vivo()) return;
         d.f = datiFile(a.duration); d.tp = tempiParole(d.f); d.pk = picchi(d.f);
         if (bordo) bordo.style.opacity = 1; tu.classList.add('parla');
-        stato('suona'); giro();
+        d.ultimo = performance.now(); stato('suona'); giro();
+        annuncia(fmt(T('na.annuncio.parte'), {voce: nomeVoce()}));   // per i lettori di schermo: la voce è partita (se non parte, parla l'avviso dell'errore)
       });
+    };
+    a.addEventListener('playing', parte);
+    a.addEventListener('timeupdate', () => { if (!d.avviato && a.currentTime > 0) parte(); });
+    // l'audio aspetta dati: il movimento aspetta con lui (l'orologio non supera l'audio); se l'attesa dura più di un attimo il comando
+    // torna a «Carico…» (un'attesa di pochi millisecondi, che i browser segnalano anche suonando bene, non cambia niente), e se tarda la pagina lo dice
+    a.addEventListener('waiting', () => {
+      if (!vivo() || !d.avviato || d.stato !== 'suona') return;
+      clearTimeout(attesaT);
+      attesaT = setTimeout(() => { if (vivo() && d.stato === 'suona' && !a.paused && a.readyState < 3) { d.ultimo = null; quieto(); stato('carica'); lento(); } }, 250);
     });
     a.addEventListener('pause', () => { if (vivo() && !a._nostra && !a.ended) pausa(); });
-    a.addEventListener('error', sbagliata);
-    stato('carica');
+    a.addEventListener('error', () => sbagliata());
+    stato('carica'); lento();
     prova();
   }
   // l'orologio del movimento cammina al tempo vero mentre suona e non supera mai l'audio (se aspetta dati, aspetta anche lui)
@@ -321,8 +444,6 @@
   if (bottone && tavolo) {
     bottone.hidden = false;
     bottone.addEventListener('click', suona);
-    document.addEventListener('visibilitychange', () => { if (document.hidden && discorso) ferma(false); });
-    addEventListener('pagehide', () => { if (discorso) ferma(false); });
   }
 
   // =================================================================================================================
@@ -337,11 +458,32 @@
   }
   document.addEventListener('rivelato', e => {
     const el = e.target;
-    if (el.classList.contains('strada-ferma')) setTimeout(() => animaStrada(el), ridotto ? 0 : 250);
+    if (el.classList.contains('strada-ferma')) dopo(ridotto ? 0 : 250, () => animaStrada(el));
     if (el === tavolo) nasceBolla();
   });
   // senza osservatore o se il tratto è già stato rivelato prima di questo script
   $$('.entra.visto').forEach(el => el.dispatchEvent(new CustomEvent('rivelato', {bubbles: true})));
+
+  // =================================================================================================================
+  // LA SCHEDA IN SECONDO PIANO
+  // =================================================================================================================
+  // Si ferma tutto insieme: l'orologio della scena (ciò che aspetta il suo tempo), le animazioni in corso e l'ascolto (se suona va in
+  // pausa e si può riprendere; se carica si annulla). Al ritorno si riparte da dove si era, senza salti e senza ripetizioni.
+  let sospese = [];
+  function nascondi() {
+    if (nascostoDa === null) nascostoDa = performance.now();
+    sospese = document.getAnimations().filter(a => a.timeline === document.timeline && a.playState === 'running'); sospese.forEach(a => a.pause());
+    if (discorso) { if (discorso.stato === 'suona') pausa(); else if (discorso.stato === 'carica') ferma(false); }
+  }
+  function mostra() {
+    if (nascostoDa !== null) { fermoTot += performance.now() - nascostoDa; nascostoDa = null; }
+    sospese.forEach(a => { if (a.playState === 'paused') a.play(); }); sospese = [];
+    if (agenda.length && !giraAgenda) giraAgenda = requestAnimationFrame(passoAgenda);
+  }
+  document.addEventListener('visibilitychange', () => { if (document.hidden) nascondi(); else mostra(); });
+  // lasciando la pagina (un collegamento, «indietro») il suono si ferma: tornando, la frase è com'era
+  addEventListener('pagehide', () => { if (discorso) ferma(false); });
+  if (document.hidden) nascondi();
 
   window.__pagina = true;
 })();

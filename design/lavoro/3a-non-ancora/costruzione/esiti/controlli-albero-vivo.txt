@@ -1,0 +1,12 @@
+# controlli sull'albero vivo 17/11/2026 02:56
+it: 153/153 entries ready
+translations.py: 153 messages, catalogues up to date
+css_logico.py: ok, no physical left/right, no asymmetric shorthand, no text in CSS (24 style sheets; 10 physical declarations kept on purpose)
+Ran 49 tests in 1.229s
+OK
+Sorgenti in ordine: 23 fogli di stile, valori solo nei token
+site built in /tmp/lavoro-3ab-sito-vivo-2 for v0.1-rc.1 (prerelease); languages: it (9 pages); for tests only: en-XA, ar-XB; 8 old addresses send to /it/
+Files /tmp/lavoro-3ab-sito-vivo-2/design-system/componenti/barra.css and /tmp/lavoro-3ab-sito-G/design-system/componenti/barra.css differ
+Files /tmp/lavoro-3ab-sito-vivo-2/design-system/componenti/lingue.css and /tmp/lavoro-3ab-sito-G/design-system/componenti/lingue.css differ
+Files /tmp/lavoro-3ab-sito-vivo-2/design-system/componenti/riunione.css and /tmp/lavoro-3ab-sito-G/design-system/componenti/riunione.css differ
+Files /tmp/lavoro-3ab-sito-vivo-2/scena.js and /tmp/lavoro-3ab-sito-G/scena.js differ

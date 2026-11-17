@@ -1,0 +1,81 @@
+# F-altezze-4 · 17/11/2026 01:53 · sito: /tmp/lavoro-3ab-sito-G · esame-impaginazione.mjs chromium normale non-ancora 1440x500,1440x501,1440x699,1440x700,1440x759,1440x760,1440x799,1440x800,1440x802,1440x803,1440x819,1440x820
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+non-ancora-menu · 1440×500 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1440×500 · testo 100%: pulito
+non-ancora-errore-audio · 1440×500 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA div.bolla.bolla-chiusa: 34 px sopra (schermo 1440×500) · schermo basso: la bolla, i riquadri, il comando e il messaggio d'errore non stanno insieme; vincono il comando e il messaggio (PIANO.md, «La cornice»; scena.js 8c)
+non-ancora-ascolto · 1440×500 · testo 100%: pulito
+non-ancora-copia-fatta · 1440×500 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1440×500 · testo 100%: pulito
+non-ancora-menu · 1440×501 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1440×501 · testo 100%: pulito
+non-ancora-errore-audio · 1440×501 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA div.bolla.bolla-chiusa: 33 px sopra (schermo 1440×501) · schermo basso: la bolla, i riquadri, il comando e il messaggio d'errore non stanno insieme; vincono il comando e il messaggio (PIANO.md, «La cornice»; scena.js 8c)
+non-ancora-ascolto · 1440×501 · testo 100%: pulito
+non-ancora-copia-fatta · 1440×501 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1440×501 · testo 100%: pulito
+non-ancora-menu · 1440×699 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1440×699 · testo 100%: pulito
+non-ancora-errore-audio · 1440×699 · testo 100%: pulito
+non-ancora-ascolto · 1440×699 · testo 100%: pulito
+non-ancora-copia-fatta · 1440×699 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1440×699 · testo 100%: pulito
+non-ancora-menu · 1440×700 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1440×700 · testo 100%: pulito
+non-ancora-errore-audio · 1440×700 · testo 100%: pulito
+non-ancora-ascolto · 1440×700 · testo 100%: pulito
+non-ancora-copia-fatta · 1440×700 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1440×700 · testo 100%: pulito
+non-ancora-menu · 1440×759 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1440×759 · testo 100%: pulito
+non-ancora-errore-audio · 1440×759 · testo 100%: pulito
+non-ancora-ascolto · 1440×759 · testo 100%: pulito
+non-ancora-copia-fatta · 1440×759 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1440×759 · testo 100%: pulito
+non-ancora-menu · 1440×760 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1440×760 · testo 100%: pulito
+non-ancora-errore-audio · 1440×760 · testo 100%: pulito
+non-ancora-ascolto · 1440×760 · testo 100%: pulito
+non-ancora-copia-fatta · 1440×760 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1440×760 · testo 100%: pulito
+non-ancora-menu · 1440×799 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1440×799 · testo 100%: pulito
+non-ancora-errore-audio · 1440×799 · testo 100%: pulito
+non-ancora-ascolto · 1440×799 · testo 100%: pulito
+non-ancora-copia-fatta · 1440×799 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1440×799 · testo 100%: pulito
+non-ancora-menu · 1440×800 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1440×800 · testo 100%: pulito
+non-ancora-errore-audio · 1440×800 · testo 100%: pulito
+non-ancora-ascolto · 1440×800 · testo 100%: pulito
+non-ancora-copia-fatta · 1440×800 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1440×800 · testo 100%: pulito
+non-ancora-menu · 1440×802 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1440×802 · testo 100%: pulito
+non-ancora-errore-audio · 1440×802 · testo 100%: pulito
+non-ancora-ascolto · 1440×802 · testo 100%: pulito
+non-ancora-copia-fatta · 1440×802 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1440×802 · testo 100%: pulito
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+non-ancora-menu · 1440×803 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1440×803 · testo 100%: pulito
+non-ancora-errore-audio · 1440×803 · testo 100%: pulito
+non-ancora-ascolto · 1440×803 · testo 100%: pulito
+non-ancora-copia-fatta · 1440×803 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1440×803 · testo 100%: pulito
+non-ancora-menu · 1440×819 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1440×819 · testo 100%: pulito
+non-ancora-errore-audio · 1440×819 · testo 100%: pulito
+non-ancora-ascolto · 1440×819 · testo 100%: pulito
+non-ancora-copia-fatta · 1440×819 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1440×819 · testo 100%: pulito
+non-ancora-menu · 1440×820 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1440×820 · testo 100%: pulito
+non-ancora-errore-audio · 1440×820 · testo 100%: pulito
+non-ancora-ascolto · 1440×820 · testo 100%: pulito
+non-ancora-copia-fatta · 1440×820 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1440×820 · testo 100%: pulito
+
+
+Tutto pulito; 2 limiti dichiarati, elencati a parte e non contati (foto in /tmp/lavoro-3ab-qa-F-altezze-4/esame/chromium)
+# uscita: 0

@@ -1,0 +1,24 @@
+# F-robustezza-chromium-390x844 · 17/11/2026 02:19 · node prove/robustezza.mjs /tmp/lavoro-3ab-sito-G /tmp/lavoro-3ab-F-rob chromium 390x844 tutti
+
+== tastiera · chromium 390x844
+   soste: Vai al contenuto → Kalliope, pagina iniziale → Menu → Come saperlo quando arriva → Intanto, senti la voce → Copia l'indirizzo di questa pagina → feed delle versioni → pagina delle versioni su GitHub → Ascolta GiuliaCarico…PausaRiprendi → Tutte le frasi, anche con Marco → stato e limiti → Ascolta → Stato e limiti → Installa → In riunione → Aiuto → Italiano
+
+== tastiera-veloce · chromium 390x844
+   soste: Vai al contenuto → Kalliope, pagina iniziale → Menu → Come saperlo quando arriva → Intanto, senti la voce → Copia l'indirizzo di questa pagina → feed delle versioni → pagina delle versioni su GitHub → Ascolta GiuliaCarico…PausaRiprendi → Tutte le frasi, anche con Marco → stato e limiti → Ascolta → Stato e limiti → Installa → In riunione → Aiuto → Italiano
+
+== senza-js · chromium 390x844
+
+== senza-stili · chromium 390x844
+
+== senza-token · chromium 390x844
+
+== ridotto · chromium 390x844
+
+== scorrimento · chromium 390x844
+
+== ritorno · chromium 390x844
+
+== ricarica · chromium 390x844
+
+43/43 ok
+# uscita: 0

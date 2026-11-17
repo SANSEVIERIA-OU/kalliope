@@ -82,5 +82,6 @@
     $$('.entra').forEach(el => vedi.observe(el));
   } else $$('.entra').forEach(rivela);
 
-  window.Cornice = {telefono};
+  // lo script di una pagina può rivelare un tratto quando serve (chi preme prima che sia entrato)
+  window.Cornice = {telefono, rivela};
 })();

@@ -1,0 +1,328 @@
+{
+ "senzajs-1440": {
+  "scrollW": 1440,
+  "w": 1440,
+  "nascosti": [],
+  "nNascosti": 0,
+  "bottone": {
+   "hidden": true,
+   "vis": false
+  },
+  "lettore": {
+   "vis": true,
+   "controls": true,
+   "src": "http://127.0.0.1:8792/voce/giulia-1.mp3"
+  },
+  "err": []
+ },
+ "senzascript-1440": {
+  "scrollW": 1440,
+  "w": 1440,
+  "nascosti": [],
+  "nNascosti": 0,
+  "bottone": {
+   "hidden": true,
+   "vis": false
+  },
+  "lettore": {
+   "vis": true,
+   "controls": true,
+   "src": "http://127.0.0.1:8792/voce/giulia-1.mp3"
+  },
+  "err": [
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED"
+  ]
+ },
+ "senzaaudio-1440": {
+  "scrollW": 1440,
+  "w": 1440,
+  "nascosti": [],
+  "nNascosti": 0,
+  "bottone": {
+   "hidden": false,
+   "vis": true
+  },
+  "lettore": {
+   "vis": false,
+   "controls": true,
+   "src": "http://127.0.0.1:8792/voce/giulia-1.mp3"
+  },
+  "dopoPremuto": {
+   "testo": "Ascolta Giulia",
+   "cls": "pillola voce-chiara suona-frase ascolta-ferma",
+   "pressed": "false",
+   "comandiCls": "comandi comandi-ascolto ripiego",
+   "lettoreVis": true
+  },
+  "err": [
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED"
+  ]
+ },
+ "senzatempi-1440": {
+  "scrollW": 1440,
+  "w": 1440,
+  "nascosti": [],
+  "nNascosti": 0,
+  "bottone": {
+   "hidden": false,
+   "vis": true
+  },
+  "lettore": {
+   "vis": false,
+   "controls": true,
+   "src": "http://127.0.0.1:8792/voce/giulia-1.mp3"
+  },
+  "dopoPremuto": {
+   "testo": "Pausa",
+   "cls": "pillola voce-chiara suona-frase ascolta-ferma suona",
+   "pressed": "true",
+   "comandiCls": "comandi comandi-ascolto",
+   "lettoreVis": false
+  },
+  "err": [
+   "console: Failed to load resource: net::ERR_FAILED"
+  ]
+ },
+ "senzacaratteri-1440": {
+  "scrollW": 1440,
+  "w": 1440,
+  "nascosti": [],
+  "nNascosti": 0,
+  "bottone": {
+   "hidden": false,
+   "vis": true
+  },
+  "lettore": {
+   "vis": false,
+   "controls": true,
+   "src": "http://127.0.0.1:8792/voce/giulia-1.mp3"
+  },
+  "err": [
+   "console: Failed to load resource: net::ERR_FAILED"
+  ]
+ },
+ "senzacss-1440": {
+  "scrollW": 1440,
+  "w": 1440,
+  "nascosti": [],
+  "nNascosti": 0,
+  "bottone": {
+   "hidden": false,
+   "vis": true
+  },
+  "lettore": {
+   "vis": true,
+   "controls": true,
+   "src": "http://127.0.0.1:8792/voce/giulia-1.mp3"
+  },
+  "err": [
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED",
+   "pageerror: Failed to execute 'animate' on 'Element': duration must be non-negative or auto",
+   "pageerror: Failed to execute 'animate' on 'Element': duration must be non-negative or auto"
+  ]
+ },
+ "ridotto-1440": {
+  "scrollW": 1440,
+  "w": 1440,
+  "nascosti": [],
+  "nNascosti": 0,
+  "bottone": {
+   "hidden": false,
+   "vis": true
+  },
+  "lettore": {
+   "vis": false,
+   "controls": true,
+   "src": "http://127.0.0.1:8792/voce/giulia-1.mp3"
+  },
+  "dopoPremuto": {
+   "testo": "Pausa",
+   "cls": "pillola voce-chiara suona-frase ascolta-ferma suona",
+   "pressed": "true",
+   "comandiCls": "comandi comandi-ascolto",
+   "lettoreVis": false
+  },
+  "err": []
+ },
+ "senzajs-390": {
+  "scrollW": 390,
+  "w": 390,
+  "nascosti": [],
+  "nNascosti": 0,
+  "bottone": {
+   "hidden": true,
+   "vis": false
+  },
+  "lettore": {
+   "vis": true,
+   "controls": true,
+   "src": "http://127.0.0.1:8792/voce/giulia-1.mp3"
+  },
+  "err": []
+ },
+ "senzascript-390": {
+  "scrollW": 390,
+  "w": 390,
+  "nascosti": [],
+  "nNascosti": 0,
+  "bottone": {
+   "hidden": true,
+   "vis": false
+  },
+  "lettore": {
+   "vis": true,
+   "controls": true,
+   "src": "http://127.0.0.1:8792/voce/giulia-1.mp3"
+  },
+  "err": [
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED"
+  ]
+ },
+ "senzaaudio-390": {
+  "scrollW": 390,
+  "w": 390,
+  "nascosti": [],
+  "nNascosti": 0,
+  "bottone": {
+   "hidden": false,
+   "vis": true
+  },
+  "lettore": {
+   "vis": false,
+   "controls": true,
+   "src": "http://127.0.0.1:8792/voce/giulia-1.mp3"
+  },
+  "dopoPremuto": {
+   "testo": "Ascolta Giulia",
+   "cls": "pillola voce-chiara suona-frase ascolta-ferma",
+   "pressed": "false",
+   "comandiCls": "comandi comandi-ascolto ripiego",
+   "lettoreVis": true
+  },
+  "err": [
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED"
+  ]
+ },
+ "senzatempi-390": {
+  "scrollW": 390,
+  "w": 390,
+  "nascosti": [],
+  "nNascosti": 0,
+  "bottone": {
+   "hidden": false,
+   "vis": true
+  },
+  "lettore": {
+   "vis": false,
+   "controls": true,
+   "src": "http://127.0.0.1:8792/voce/giulia-1.mp3"
+  },
+  "dopoPremuto": {
+   "testo": "Pausa",
+   "cls": "pillola voce-chiara suona-frase ascolta-ferma suona",
+   "pressed": "true",
+   "comandiCls": "comandi comandi-ascolto",
+   "lettoreVis": false
+  },
+  "err": [
+   "console: Failed to load resource: net::ERR_FAILED"
+  ]
+ },
+ "senzacaratteri-390": {
+  "scrollW": 390,
+  "w": 390,
+  "nascosti": [],
+  "nNascosti": 0,
+  "bottone": {
+   "hidden": false,
+   "vis": true
+  },
+  "lettore": {
+   "vis": false,
+   "controls": true,
+   "src": "http://127.0.0.1:8792/voce/giulia-1.mp3"
+  },
+  "err": [
+   "console: Failed to load resource: net::ERR_FAILED"
+  ]
+ },
+ "senzacss-390": {
+  "scrollW": 390,
+  "w": 390,
+  "nascosti": [],
+  "nNascosti": 0,
+  "bottone": {
+   "hidden": false,
+   "vis": true
+  },
+  "lettore": {
+   "vis": true,
+   "controls": true,
+   "src": "http://127.0.0.1:8792/voce/giulia-1.mp3"
+  },
+  "err": [
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED",
+   "console: Failed to load resource: net::ERR_FAILED",
+   "pageerror: Failed to execute 'animate' on 'Element': duration must be non-negative or auto",
+   "pageerror: Failed to execute 'animate' on 'Element': duration must be non-negative or auto"
+  ]
+ },
+ "ridotto-390": {
+  "scrollW": 390,
+  "w": 390,
+  "nascosti": [],
+  "nNascosti": 0,
+  "bottone": {
+   "hidden": false,
+   "vis": true
+  },
+  "lettore": {
+   "vis": false,
+   "controls": true,
+   "src": "http://127.0.0.1:8792/voce/giulia-1.mp3"
+  },
+  "dopoPremuto": {
+   "testo": "Pausa",
+   "cls": "pillola voce-chiara suona-frase ascolta-ferma suona",
+   "pressed": "true",
+   "comandiCls": "comandi comandi-ascolto",
+   "lettoreVis": false
+  },
+  "err": []
+ }
+}

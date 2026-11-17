@@ -1,0 +1,12 @@
+# F-catalogo-chromium · 17/11/2026 02:49 · node prove/catalogo.mjs /tmp/lavoro-3ab-sito-G /tmp/lavoro-3ab-F-catalogo chromium 1440x900
+   errori pagine: []
+    Telefono alto 390×844 | fino a 234 px | 661–753 px, dopo la scena, nello schermo | fino a 815 px, nello schermo | 2 comandi nel primo schermo, fuoco in ordine di posizione: sì
+    Telefono basso 390×667 | fino a 234 px | 246–338 px, prima della scena, nello schermo | fino a 833 px, sotto il bordo | 2 comandi nel primo schermo, fuoco in ordine di posizione: sì
+    Telefono piccolo 360×640 | fino a 226 px | 238–330 px, prima della scena, nello schermo | fino a 825 px, sotto il bordo | 2 comandi nel primo schermo, fuoco in ordine di posizione: sì
+    Telefono girato 844×390 | fino a 228 px | 242–298 px, prima della scena, nello schermo | fino a 378 px, nello schermo | 2 comandi nel primo schermo, fuoco in ordine di posizione: sì
+    Computer basso 1366×640 | fino a 430 px | 452–508 px, accanto alla scena, nello schermo | fino a 594 px, nello schermo | 2 comandi nel primo schermo, fuoco in ordine di posizione: sì
+    Computer 1440×900 | fino a 478 px | 510–566 px, accanto alla scena, nello schermo | fino a 660 px, nello schermo | 2 comandi nel primo schermo, fuoco in ordine di posizione: sì
+    larghezza del comando misurata in tutti gli stati mostrati: 211 px (la stessa: le etichette stanno nella stessa cella, vale la più lunga)
+
+9/9 ok
+# uscita: 0

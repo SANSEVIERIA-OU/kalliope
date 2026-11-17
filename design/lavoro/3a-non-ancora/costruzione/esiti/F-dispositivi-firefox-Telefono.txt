@@ -1,0 +1,28 @@
+# F-dispositivi-firefox-Telefono · 17/11/2026 01:59 · sito: /tmp/lavoro-3ab-sito-G · dispositivi-qa.mjs firefox non-ancora Telefono
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+ok  non-ancora · Telefono 390×844
+ok  non-ancora-menu · Telefono 390×844
+ok  non-ancora-errore-audio · Telefono 390×844
+ok  non-ancora-ascolto · Telefono 390×844
+ok  non-ancora-copia-fatta · Telefono 390×844
+ok  non-ancora-copia-non-riuscita · Telefono 390×844
+ok  non-ancora · Telefono piccolo 360×740
+ok  non-ancora-menu · Telefono piccolo 360×740
+ok  non-ancora-errore-audio · Telefono piccolo 360×740
+ok  non-ancora-ascolto · Telefono piccolo 360×740
+ok  non-ancora-copia-fatta · Telefono piccolo 360×740
+ok  non-ancora-copia-non-riuscita · Telefono piccolo 360×740
+ok  non-ancora · Telefono girato 844×390
+ok  non-ancora-menu · Telefono girato 844×390
+ok  non-ancora-errore-audio · Telefono girato 844×390
+  LIMITE DICHIARATO FUORI VISTA div.bolla.bolla-chiusa: 144 px sopra (schermo 844×390) · schermo basso: la bolla, i riquadri, il comando e il messaggio d'errore non stanno insieme; vincono il comando e il messaggio (PIANO.md, «La cornice»; scena.js 8c)
+NO  non-ancora-ascolto · Telefono girato 844×390
+  FUORI VISTA div.bolla.bolla-chiusa: 122 px sopra (schermo 844×390)
+ok  non-ancora-copia-fatta · Telefono girato 844×390
+ok  non-ancora-copia-non-riuscita · Telefono girato 844×390
+LIMITE NON USATO FUORI VISTA «button.pillola.voce-chiara» (non-ancora-ascolto a 844x390, 915x412, 326x326): alle misure provate la segnalazione non c'è più. Togli la voce: coprirebbe un difetto nuovo.
+
+1 cose da guardare su 18 casi (18 in questo giro; foto in /tmp/lavoro-3ab-qa-F-dispositivi-firefox-Telefono/dispositivi/firefox). Sono simulazioni, non telefoni veri.
+  un limite dichiarato, elencato a parte e non contato
+  117 casi della matrice non eseguiti (filtro o giro interrotto: --continua li riprende)
+# uscita: 1
