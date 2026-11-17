@@ -65,6 +65,11 @@ fino al microfono, in riunione non ancora. Piano dei tratti e fonti: `design/lav
   sono token (`--pacco-corsa-*`, `--varco-fascia-*`, `--curva-domanda`, `--gesto-aria`); **ciò che un gesto apre resta in vista** (regola della cornice): la bolla della risposta, i dettagli
   aperti e la conferma della copia (`inVista` in `stato.js`); **la scelta dei dettagli** al telefono si ricorda passando al computer e tornando; l'etichetta di «Tu» conta le righe vere
   (`componenti.js`) e resta su una riga anche senza i caratteri del sito; una tappa che comincia già sopra il bordo alto si accende ferma.
+- **Rifinitura dopo il secondo sguardo** (incarico 3b-r, 17/11/2026; prove in `design/lavoro/3b-stato/rifinitura/`): **la bolla della risposta non resta appiccicata quando non ci sta**: se la risposta è più alta dello spazio
+  sotto la barra (844×390: tre risposte) sta accanto alla sua domanda, dov'era, e scorre con la pagina (`.domande-bolla.scorre`, `adatta()` in `stato.js`; la scritta non cambia); **l'anello del fuoco delle fonti** è l'anello di
+  sistema attorno alla pillola intera (tondo), il nome che ha il fuoco prende la linea piena (`catena.css`, `.fonte:has(a:focus-visible)`); **le etichette dei file** del riquadro «Sul disco» vanno a capo dentro la pillola dove non
+  ci stanno (`varco.css`, `--varco-disco-aria-lato`); **le cifre con la virgola decimale** in arabo e urdu («0,07 s») restano dentro la parte latina isolata (`tools/site.py`, `PARTE_LATINA`); **il catalogo** mostra gli
+  esemplari della tappa uno per riga, larghi come nella pagina (`catalogo-stato.css`).
 
 ## Come si usa per un'altra pagina
 

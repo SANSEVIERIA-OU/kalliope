@@ -1,0 +1,17 @@
+# r8-domanda-it · 17/11/2026 19:55 · sito: /tmp/lavoro-3br-sito-r8-10 · albero: /tmp/lavoro-3br-radice-r8-10 · esame-impaginazione.mjs chromium normale stato-domanda 844x390,915x412,326x326,390x844,1440x900,1366x640,861x609,360x640,1180x820
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+stato-domanda · 844×390 · testo 100%: 
+  FUORI VISTA div#domande-risposta: 56 px sotto (schermo 844×390)
+stato-domanda · 915×412 · testo 100%: pulito
+stato-domanda · 326×326 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA button.domanda-bottone: 10 px sopra (schermo 326×326) · schermo quadrato: la bolla sta tutta nello schermo (234 px) ma con la domanda premuta sopra non ci sta (246 px di spazio sotto la barra): vince la bolla, che ripete la domanda in testa (3b-b, da confermare)
+stato-domanda · 390×844 · testo 100%: pulito
+stato-domanda · 1440×900 · testo 100%: pulito
+stato-domanda · 1366×640 · testo 100%: pulito
+stato-domanda · 861×609 · testo 100%: pulito
+stato-domanda · 360×640 · testo 100%: pulito
+stato-domanda · 1180×820 · testo 100%: pulito
+
+FUORI VISTA: 1
+1 cose da guardare; un limite dichiarato, elencato a parte e non contato (foto in /tmp/lavoro-3br-qa-r8-domanda-it/esame/chromium)
+# uscita: 1

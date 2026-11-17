@@ -70,13 +70,14 @@ export default {
       perche: 'come sopra: la bolla scorre sotto la barra (la si vede in parte) perché il messaggio d\'errore stia per intero nello schermo (PIANO.md, «La cornice»)'},
     {pagina: 'non-ancora-errore-audio', misure: '326x326', che: 'FUORI VISTA', cosa: 'button.pillola.voce-chiara',
       perche: 'schermo quadrato da 326 px: il messaggio d\'errore (con «Riprova» e il file) vince sul comando «Ascolta», che resta sopra il bordo (PIANO.md, «La cornice»)'},
-    // «stato», la risposta nella bolla: dove lo spazio sotto la barra non basta per la bolla (scritta grande, quanto la frase della riunione) vince la sua parte alta, con la
-    // domanda ripetuta in testa; il resto si legge scorrendo (la bolla è appiccicosa al computer). Limiti scritti da chi ha costruito (incarico 3b-b): da confermare alla direzione,
-    // che può invece abbassare la scritta della bolla sugli schermi bassi (foto-difetti/domanda-844x390.png).
+    // «stato», la risposta nella bolla. A 326×326 la bolla sta tutta nello schermo (234 px) ma con la domanda premuta sopra non c'è spazio (246 px sotto la barra): vince la bolla, che ripete la
+    // domanda in testa (confermato dal giudice, secondo sguardo, questione 2).
+    // A 844×390 tre risposte («E se scrivere è difficile?», «Ha frasi pronte o simboli?», «Chi c'è dietro?»: 328, 362 e 362 px) sono più alte dello spazio sotto la barra (306 px). Il limite di
+    // prima (bolla appiccicata che ne mostrava sempre la stessa parte, e la domanda premuta fuori vista) non c'è più (rifinitura 3b-r, stato.js `adatta()`): la bolla non si appiccica, sta accanto
+    // alla sua domanda e scorre con la pagina, e si legge intera (`prove/domande-lettura.mjs`). Lo strumento segnala ancora il fondo, perché chiede che una cosa non più alta dello schermo
+    // (390 px) ci stia tutta e questa, con la barra, non può: la parte alta sta in vista. Una voce sola, per la sola bolla.
     {pagina: 'stato-domanda', misure: '844x390', che: 'FUORI VISTA', cosa: 'div#domande-risposta',
-      perche: 'telefono girato: le due risposte più lunghe («Ha frasi pronte o simboli?» e «Chi c\'è dietro?», 362 px) sono più alte dello spazio sotto la barra (306 px): ne comincia la parte alta; il fondo si legge scorrendo (3b-b, da confermare)'},
-    {pagina: 'stato-domanda', misure: '844x390', che: 'FUORI VISTA', cosa: 'button.domanda-bottone',
-      perche: 'come sopra: la domanda premuta, in fondo all\'elenco, sta sotto la bolla che comincia in alto; la bolla la ripete in testa (3b-b, da confermare)'},
+      perche: 'telefono girato: la bolla più alta dello spazio sotto la barra (362 contro 306 px) non è appiccicata: scorre con la pagina accanto alla sua domanda, comincia in vista e il fondo si legge scorrendo (3b-r)'},
     {pagina: 'stato-domanda', misure: '326x326', che: 'FUORI VISTA', cosa: 'button.domanda-bottone',
       perche: 'schermo quadrato: la bolla sta tutta nello schermo (234 px) ma con la domanda premuta sopra non ci sta (246 px di spazio sotto la barra): vince la bolla, che ripete la domanda in testa (3b-b, da confermare)'},
   ],

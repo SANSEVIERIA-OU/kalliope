@@ -1,0 +1,8 @@
+# source env.sh — ambiente delle prove dell'incarico 3b-r (nessuna finestra: niente DISPLAY né WAYLAND_DISPLAY). Cartelle /tmp/lavoro-3br-*, porte 8910-8919.
+unset DISPLAY WAYLAND_DISPLAY
+export PLAYWRIGHT=/workspace/test-playwright/node_modules/playwright/index.mjs
+export PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS=1
+export LD_LIBRARY_PATH=/tmp/metodo-motori/ff/radice/usr/lib/x86_64-linux-gnu
+export SKILL=/home/dev/.claude/plugins/cache/vibe-next/vibe-next/0.46.1/skills/design-system-generator
+export P3BR=/workspace/kalliope/design/lavoro/3b-stato/rifinitura/prove
+export ESITI=/workspace/kalliope/design/lavoro/3b-stato/rifinitura/esiti

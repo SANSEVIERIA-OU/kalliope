@@ -1,0 +1,8 @@
+NO  390: 25 tappe negli esemplari, 50 cose: colonna di 135 px (nella pagina 254), 17 caratteri per riga: «Uno script installa ogni p» in «la catena intera, accesa (senza JavaScript: tutto in vista; » | colonna di 135 px (nella pagina 254), 9 caratteri per 
+NO  760: 25 tappe negli esemplari, 41 cose: colonna di 505 px (nella pagina 620), 60 caratteri per riga: «Uno script installa ogni p» in «la catena intera, accesa (senza JavaScript: tutto in vista; » | colonna di 505 px (nella pagina 620), 19 caratteri per
+NO  761: 25 tappe negli esemplari, 48 cose: colonna di 392 px (nella pagina 511), 40 caratteri per riga: «Uno script installa ogni p» in «la catena intera, accesa (senza JavaScript: tutto in vista; » | colonna di 392 px (nella pagina 511), 25 caratteri per
+NO  1000: 25 tappe negli esemplari, 1 cose: esce dallo schermo di 125 px: span.luce-tratto in «a riposo, con lo script: il comando c'è, nessuna risposta»
+NO  1181: 25 tappe negli esemplari, 36 cose: colonna di 160 px (nella pagina 279), 20 caratteri per riga: «Uno script installa ogni p» in «la catena intera, accesa (senza JavaScript: tutto in vista; » | colonna di 160 px (nella pagina 279), 16 caratteri pe
+NO  1440: 25 tappe negli esemplari, 14 cose: colonna di 67 px (nella pagina 300), 7 caratteri per riga: «La voce parte dopo la prim» in «una tappa provata, spenta e accesa (.anello.fatto, .acceso):» | colonna di 67 px (nella pagina 300), 7 caratteri per ri
+
+0/6 larghezze in cui ogni esemplare si legge

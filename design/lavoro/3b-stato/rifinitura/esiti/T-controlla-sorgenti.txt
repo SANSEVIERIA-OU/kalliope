@@ -1,0 +1,2 @@
+# controlla-sorgenti.mjs · albero T-10 (= file vivi, impronte uguali) · 17/11/2026 21:32
+Sorgenti in ordine: 29 fogli di stile, valori solo nei token

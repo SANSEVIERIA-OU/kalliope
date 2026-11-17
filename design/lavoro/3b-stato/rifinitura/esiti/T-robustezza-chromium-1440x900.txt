@@ -1,0 +1,63 @@
+
+== tastiera · chromium 1440x900
+   soste: 54 Vai al contenuto → Kalliope, pagina iniziale → Ascolta → Stato e limiti → Installa → In riunione → Aiuto → Per chi è, e per chi no → Se devi controllare → README → docs/releasing.md → README → CHANGELOG.md → README → engine.rs → benchmarks/engines → README → README → docs/virtual-microphone.md → Dicci come è andata, su GitHub (se → È per chi non può parlare? → E se scrivere è difficile? → Quanto costa? → Chi lo installa? → Funziona su Windows, Mac o telefon → Parla con la sua voce? → Fa i sottotitoli? → Ha frasi pronte o simboli? → È un servizio online? → Chi c'è dietro? → Da mandare a chi ti aiuta: lo stat → main.rs → download.rs → catalog.rs → docs/releasing.md → settings.rs → paths.rs → main.rs → packaging/linux → docs/releasing.md → LICENSE → NOTICE → NOTICE → THIRD_PARTY_NOTICES.md → pagina Installa → SHA256SUMS → repository su GitHub → Copia il messaggio → Come si installa → Ascolt
+ok   il giro tocca ogni comando una volta, in un ordine · 54 soste
+ok   le dieci domande sono nell'ordine del fuoco · 10
+ok   le fonti si raggiungono con la tastiera (tutte le 23 collegate) · 23: README, docs/releasing.md, README, CHANGELOG.md, README, engine.rs, benchmarks/engines, README, README, docs/virtual-microphone.md, main.rs, download.rs, catalog.rs, docs/releasing.md, settings.rs, paths.rs, main.rs, packaging/linux, docs/releasing.md, LICENSE, NOTICE, NOTICE, THIRD_PARTY_NOTICES.md
+NO   l'anello del fuoco di ogni fonte è tondo, sta sulla pillola intera (non su un rettangolo attorno al nome) e si vede · NOTICE, THIRD_PARTY_NOTICES.md
+ok   «Copia il messaggio» è nell'ordine del fuoco
+ok   ogni sosta ha il comando in vista, opaco e non sotto la barra
+ok   nessuna sosta sta sotto la barra
+ok   il contorno del fuoco si vede su ogni sosta
+ok   il contorno del fuoco si distingue dal fondo su cui sta (almeno 1,8 : 1 dove il fondo è pieno) · 54 soste misurate
+ok   l'ordine del fuoco va dall'alto in basso (e da una colonna alla seguente: prima quella all'inizio della riga)
+ok   console pulita
+
+== tastiera-veloce · chromium 1440x900
+   soste: 54 Vai al contenuto → Kalliope, pagina iniziale → Ascolta → Stato e limiti → Installa → In riunione → Aiuto → Per chi è, e per chi no → Se devi controllare → README → docs/releasing.md → README → CHANGELOG.md → README → engine.rs → benchmarks/engines → README → README → docs/virtual-microphone.md → Dicci come è andata, su GitHub (se → È per chi non può parlare? → E se scrivere è difficile? → Quanto costa? → Chi lo installa? → Funziona su Windows, Mac o telefon → Parla con la sua voce? → Fa i sottotitoli? → Ha frasi pronte o simboli? → È un servizio online? → Chi c'è dietro? → Da mandare a chi ti aiuta: lo stat → main.rs → download.rs → catalog.rs → docs/releasing.md → settings.rs → paths.rs → main.rs → packaging/linux → docs/releasing.md → LICENSE → NOTICE → NOTICE → THIRD_PARTY_NOTICES.md → pagina Installa → SHA256SUMS → repository su GitHub → Copia il messaggio → Come si installa → Ascolt
+ok   il giro tocca ogni comando una volta, in un ordine · 54 soste
+ok   le dieci domande sono nell'ordine del fuoco · 10
+ok   le fonti si raggiungono con la tastiera (tutte le 23 collegate) · 23: README, docs/releasing.md, README, CHANGELOG.md, README, engine.rs, benchmarks/engines, README, README, docs/virtual-microphone.md, main.rs, download.rs, catalog.rs, docs/releasing.md, settings.rs, paths.rs, main.rs, packaging/linux, docs/releasing.md, LICENSE, NOTICE, NOTICE, THIRD_PARTY_NOTICES.md
+NO   l'anello del fuoco di ogni fonte è tondo, sta sulla pillola intera (non su un rettangolo attorno al nome) e si vede · NOTICE, THIRD_PARTY_NOTICES.md
+ok   «Copia il messaggio» è nell'ordine del fuoco
+ok   a passo svelto il giro è lo stesso · Per chi è, e per chi no (op 0.00, in vista, top 586, bottom 642), Se devi controllare (op 0.00, in vista, top 590, bottom 638)
+ok   nessuna sosta sta sotto la barra
+ok   il contorno del fuoco si vede su ogni sosta
+ok   il contorno del fuoco si distingue dal fondo su cui sta (almeno 1,8 : 1 dove il fondo è pieno) · 54 soste misurate
+ok   l'ordine del fuoco va dall'alto in basso (e da una colonna alla seguente: prima quella all'inizio della riga)
+ok   console pulita
+
+== domande · chromium 1440x900
+ok   dieci domande, una sola aperta, la risposta è una regione che si annuncia · {"bottoni":10,"aperte":1,"regione":"region/polite","controls":true}
+ok   Tab porta alla domanda seguente · d-installa
+ok   Invio apre la risposta, il fuoco resta sul pulsante, la risposta è annunciata · {"fuoco":"d-installa","aria":"true","chiede":"Chi lo installa?","annuncio":"Risposta: Chi lo installa?","bollaTop":412,"bollaBottom":610,"barra":72,"vh":900,"prec":""}
+ok   al computer la bolla sta in vista sotto la barra · {"fuoco":"d-installa","aria":"true","chiede":"Chi lo installa?","annuncio":"Risposta: Chi lo installa?","bollaTop":412,"bollaBottom":610,"barra":72,"vh":900,"prec":""}
+ok   al computer Tab dalla domanda va alla domanda seguente (la bolla sta dopo l'elenco) · {"tag":"button","nome":"Funziona su Windows, Mac o tel","dentro":false}
+ok   Spazio cambia la risposta: una sola domanda aperta, il fuoco resta, annuncio nuovo · {"chiede":"Quanto costa?","aperte":["Quanto costa?"],"fuoco":"d-costa","annuncio":"Risposta: Quanto costa?"}
+ok   premere la domanda già aperta non la chiude e non cambia la risposta
+ok   ogni risposta: la bolla comincia sotto la barra e, se ci sta, sta tutta nello schermo · 10 risposte, la più alta 232 px
+ok   «Da mandare a chi ti aiuta» porta al messaggio: titolo sotto la barra, opaco, bolla visibile (se è nello schermo) · {"titolo":200,"barra":72,"op":1,"bolla":1,"bollaInVista":true,"hash":"#inoltra"}
+ok   cambiando misura con il fuoco su un collegamento della risposta, il fuoco non va perso · {"prime":{"tag":"a","dentro":true,"href":"../installa/"},"dopoMisura":{"tag":"a","dentro":true,"href":"../installa/"}}
+ok   console pulita
+
+== dettagli · chromium 1440x900
+ok   al computer i dettagli sono tutti aperti · 5 blocchi: 11111
+ok   al computer le tappe non mostrano «I dettagli e le fonti» e il titolo delle licenze non è una sosta del fuoco · {"tappe":["none","none","none"],"licenze":[-1,-1]}
+ok   cliccare il titolo delle licenze al computer non chiude il blocco
+ok   dal computer al telefono i dettagli si chiudono (nessuna scelta fatta) · 00000
+ok   e tornando al computer sono di nuovo tutti aperti
+ok   la parentesi «non misurato» va dal nodo di «Scrivi la frase» a quello di «Gli altri ti sentono» (a meno di 2 px) anche dopo il giro · {"inizio":0,"fine":0}
+ok   console pulita
+
+== scorrimento · chromium 1440x900
+ok   saltando in fondo con End ciò che è in vista entra · subito: 1 spenti
+ok   dopo una scorsa veloce la catena non resta indietro: le tappe passate sono accese e quelle in vista si accendono entro un secondo · in 3 ms; accese 111111
+ok   le tappe in vista sono accese e il loro testo è pieno
+ok   risalendo in cima: la catena resta accesa, il primo schermo c'è · {"y":0,"acceso":"111111","titolo":1,"fatta":true}
+ok   l'ancora #per-chi porta al tratto: titolo sotto la barra, opaco · {"titolo":200,"op":1,"barra":72,"vh":900}
+ok   l'ancora #controllare porta al tratto: titolo sotto la barra, opaco · {"titolo":200,"op":1,"barra":72,"vh":900}
+ok   dopo una scorsa veloce sotto l'ultimo passo il computer mostra tutto e le impronte non restano a metà · {"passo":"tutto","sotto":true,"pacchi":"0","animazioni":0}
+ok   portando ogni passo a metà dello spazio libero il computer mostra quel passo (dalla stessa posizione, in su e in giù) · {"testo":"testo","scarico":"scarico","disco":"disco","chiudi":"chiudi"}
+ok   console pulita
+
+47/49 ok

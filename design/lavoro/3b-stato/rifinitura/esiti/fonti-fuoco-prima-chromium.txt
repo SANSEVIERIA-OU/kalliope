@@ -1,0 +1,8 @@
+NO  chromium README della cifra (scena scura): l'anello sta sulla nome (3px, scarto 3px, rgb(255, 219, 225)), angoli 0 px, non copre il nome accanto, linea del nome 1px
+NO  chromium main.rs (scena chiara): l'anello sta sulla nome (3px, scarto 3px, rgb(91, 1, 35)), angoli 0 px, non copre il nome accanto, linea del nome 1px
+NO  chromium LICENSE (due nomi): l'anello sta sulla nome (3px, scarto 3px, rgb(91, 1, 35)), angoli 0 px, non copre il nome accanto, linea del nome 1px
+NO  chromium NOTICE (due nomi): l'anello sta sulla nome (3px, scarto 3px, rgb(91, 1, 35)), angoli 0 px, non copre il nome accanto, linea del nome 1px
+NO  chromium engine.rs (due nomi, scena scura): l'anello sta sulla nome (3px, scarto 3px, rgb(255, 219, 225)), angoli 0 px, non copre il nome accanto, linea del nome 1px
+NO  chromium benchmarks/engines (due nomi, scena scura): l'anello sta sulla nome (3px, scarto 3px, rgb(255, 219, 225)), angoli 0 px, non copre il nome accanto, linea del nome 1px
+
+0/6 fonti con l'anello sulla pillola, tondo, senza coprire il nome accanto

@@ -1,0 +1,22 @@
+ok  it 390x844: 4 cifre, tutte da sinistra a destra
+ok  it 1440x900: 4 cifre, tutte da sinistra a destra
+ok  ar 390x844: 4 cifre, tutte da sinistra a destra
+ok  ar 1440x900: 4 cifre, tutte da sinistra a destra
+ok  ur 390x844: 4 cifre, tutte da sinistra a destra
+ok  ur 1440x900: 4 cifre, tutte da sinistra a destra
+ok  de 390x844: 4 cifre, tutte da sinistra a destra
+ok  de 1440x900: 4 cifre, tutte da sinistra a destra
+ok  fi 390x844: 4 cifre, tutte da sinistra a destra
+ok  fi 1440x900: 4 cifre, tutte da sinistra a destra
+ok  el 390x844: 4 cifre, tutte da sinistra a destra
+ok  el 1440x900: 4 cifre, tutte da sinistra a destra
+ok  bg 390x844: 4 cifre, tutte da sinistra a destra
+ok  bg 1440x900: 4 cifre, tutte da sinistra a destra
+ok  hi 390x844: 4 cifre, tutte da sinistra a destra
+ok  hi 1440x900: 4 cifre, tutte da sinistra a destra
+ok  bn 390x844: 4 cifre, tutte da sinistra a destra
+ok  bn 1440x900: 4 cifre, tutte da sinistra a destra
+ok  zh 390x844: 4 cifre, tutte da sinistra a destra
+ok  zh 1440x900: 4 cifre, tutte da sinistra a destra
+
+tutte le cifre da sinistra a destra

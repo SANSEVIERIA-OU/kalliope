@@ -1,0 +1,6 @@
+ok  390: 25 tappe negli esemplari, tutto si legge
+ok  761: 25 tappe negli esemplari, tutto si legge
+ok  1181: 25 tappe negli esemplari, tutto si legge
+ok  1440: 25 tappe negli esemplari, tutto si legge
+
+4/4 larghezze in cui ogni esemplare si legge

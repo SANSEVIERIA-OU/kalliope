@@ -1,0 +1,8 @@
+ok  it 390x844: 4 cifre, tutte da sinistra a destra
+ok  it 1440x900: 4 cifre, tutte da sinistra a destra
+NO  ar 390x844: 4 cifre, rovesciate: «gramma: 10,6 MB co» x=232,239,228,60 | «0,07 s» x=265,254,176,202 | «irca lo 0,26% di u» x=282,221,192,200
+NO  ar 1440x900: 4 cifre, rovesciate: «gramma: 10,6 MB co» x=1212,1219,1208,1040 | «0,07 s» x=1197,1181,1071,1107 | «irca lo 0,26% di u» x=667,474,443,452
+NO  ur 390x844: 4 cifre, rovesciate: «gramma: 10,6 MB co» x=232,239,228,60 | «0,07 s» x=265,254,176,202 | «irca lo 0,26% di u» x=282,221,192,200
+NO  ur 1440x900: 4 cifre, rovesciate: «gramma: 10,6 MB co» x=1212,1219,1208,1040 | «0,07 s» x=1197,1181,1071,1107 | «irca lo 0,26% di u» x=667,474,443,452
+
+4 misure con cifre rovesciate

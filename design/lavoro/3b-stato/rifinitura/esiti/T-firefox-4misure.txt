@@ -1,0 +1,31 @@
+# T-firefox-4misure · 17/11/2026 21:37 · sito: /tmp/lavoro-3br-sito-T-it · albero: /tmp/lavoro-3br-radice-T-10 · esame-impaginazione.mjs firefox normale stato 390x844,844x390,915x412,1440x900
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+stato · 390×844 · testo 100%: pulito
+stato-menu · 390×844 · testo 100%: pulito
+stato-dettagli · 390×844 · testo 100%: pulito
+stato-domanda · 390×844 · testo 100%: pulito
+stato-copia-fatta · 390×844 · testo 100%: pulito
+stato-copia-non-riuscita · 390×844 · testo 100%: pulito
+stato · 844×390 · testo 100%: pulito
+stato-dettagli · 844×390 · testo 100%: lo stato non c'è a questa misura
+stato-menu · 844×390 · testo 100%: pulito
+stato-domanda · 844×390 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA div#domande-risposta: 56 px sotto (schermo 844×390) · telefono girato: la bolla più alta dello spazio sotto la barra (362 contro 306 px) non è appiccicata: scorre con la pagina accanto alla sua domanda, comincia in vista e il fondo si legge scorrendo (3b-r)
+stato-copia-fatta · 844×390 · testo 100%: pulito
+stato-copia-non-riuscita · 844×390 · testo 100%: pulito
+stato · 915×412 · testo 100%: pulito
+stato-dettagli · 915×412 · testo 100%: lo stato non c'è a questa misura
+stato-menu · 915×412 · testo 100%: pulito
+stato-domanda · 915×412 · testo 100%: pulito
+stato-copia-fatta · 915×412 · testo 100%: pulito
+stato-copia-non-riuscita · 915×412 · testo 100%: pulito
+stato-menu · 1440×900 · testo 100%: lo stato non c'è a questa misura
+stato · 1440×900 · testo 100%: pulito
+stato-dettagli · 1440×900 · testo 100%: lo stato non c'è a questa misura
+stato-domanda · 1440×900 · testo 100%: pulito
+stato-copia-fatta · 1440×900 · testo 100%: pulito
+stato-copia-non-riuscita · 1440×900 · testo 100%: pulito
+
+
+Tutto pulito; un limite dichiarato, elencato a parte e non contato (foto in /tmp/lavoro-3br-qa-T-firefox-4misure/esame/firefox)
+# uscita: 0

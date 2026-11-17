@@ -374,3 +374,11 @@
 /* una traduzione più lunga non allarga la tappa: il titolo «I dettagli e le fonti» (largo quanto il suo testo) stava in una colonna che prendeva la sua misura e portava fuori
    dal bordo anche i paragrafi e le fonti (en-XA a 326 e 360 px). La colonna è larga quanto la tappa e il testo va a capo */
 .anello-dettagli { grid-template-columns: minmax(0, 1fr); }
+
+/* ---------- Rifinitura (incarico 3b-r, 17/11/2026) ---------- */
+/* N6: l'anello del fuoco delle fonti segue la forma della fonte. Era un rettangolo attorno al solo nome, che tagliava il bordo tondo della pillola e, con due nomi
+   («LICENSE, NOTICE»), copriva la virgola. Ora è l'anello di sistema (base.css, :focus-visible) attorno alla pillola intera, tondo come quello degli altri comandi;
+   il nome che ha il fuoco prende la linea piena e più spessa, così dentro la pillola si vede quale dei due è. Sulla scena chiara l'anello è bordeaux (tratti.css) */
+.fonte a:focus-visible { outline: none; text-decoration-color: currentColor; text-decoration-thickness: var(--filetto-medio); }
+.fonte:has(a:focus-visible) { outline: var(--filetto-forte) solid var(--voce); outline-offset: var(--fuoco-scarto); }
+.scena-chiara .fonte:has(a:focus-visible) { outline-color: var(--bordeaux); }

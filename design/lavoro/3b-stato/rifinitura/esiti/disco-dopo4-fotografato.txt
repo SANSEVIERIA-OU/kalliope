@@ -1,0 +1,22 @@
+ok   it 326x326: tutto dentro · riquadri {"disco":114,"finestra":136,"bordo":286} · file 25/41/25 px di altezza
+ok   it 390x844: tutto dentro · riquadri {"disco":143,"finestra":171,"bordo":350} · file 25/25/25 px di altezza
+ok   it 800x900: tutto dentro · riquadri {"disco":154,"finestra":184,"bordo":400} · file 25/25/25 px di altezza
+ok   it 1000x900: tutto dentro · riquadri {"disco":154,"finestra":184,"bordo":400} · file 25/25/25 px di altezza
+ok   it 1440x900: tutto dentro · riquadri {"disco":245,"finestra":293,"bordo":600} · file 25/25/25 px di altezza
+ok   en-XA 326x326: tutto dentro · riquadri {"disco":114,"finestra":136,"bordo":286} · file 57/41/25 px di altezza
+ok   en-XA 390x844: tutto dentro · riquadri {"disco":143,"finestra":171,"bordo":350} · file 41/41/25 px di altezza
+ok   en-XA 800x900: tutto dentro · riquadri {"disco":154,"finestra":184,"bordo":400} · file 41/41/25 px di altezza
+ok   en-XA 1000x900: tutto dentro · riquadri {"disco":154,"finestra":184,"bordo":400} · file 41/41/25 px di altezza
+ok   en-XA 1440x900: tutto dentro · riquadri {"disco":245,"finestra":293,"bordo":600} · file 25/25/25 px di altezza
+ok   ar-XB 326x326: tutto dentro · riquadri {"disco":114,"finestra":136,"bordo":286} · file 27/46/27 px di altezza
+ok   ar-XB 390x844: tutto dentro · riquadri {"disco":143,"finestra":171,"bordo":350} · file 27/27/27 px di altezza
+ok   ar-XB 800x900: tutto dentro · riquadri {"disco":154,"finestra":184,"bordo":400} · file 27/27/27 px di altezza
+ok   ar-XB 1000x900: tutto dentro · riquadri {"disco":154,"finestra":184,"bordo":400} · file 27/27/27 px di altezza
+ok   ar-XB 1440x900: tutto dentro · riquadri {"disco":245,"finestra":293,"bordo":600} · file 27/27/27 px di altezza
+ok   ur 326x326: tutto dentro · riquadri {"disco":114,"finestra":136,"bordo":286} · file 35/60/35 px di altezza
+ok   ur 390x844: tutto dentro · riquadri {"disco":143,"finestra":171,"bordo":350} · file 35/35/35 px di altezza
+ok   ur 800x900: tutto dentro · riquadri {"disco":154,"finestra":184,"bordo":400} · file 35/35/35 px di altezza
+ok   ur 1000x900: tutto dentro · riquadri {"disco":154,"finestra":184,"bordo":400} · file 35/35/35 px di altezza
+ok   ur 1440x900: tutto dentro · riquadri {"disco":245,"finestra":293,"bordo":600} · file 35/35/35 px di altezza
+
+20/20 senza etichette fuori dal riquadro

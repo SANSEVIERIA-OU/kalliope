@@ -1,0 +1,18 @@
+ESCE it 326x326: la voce · 53 MB 3.7px · riquadri {"disco":114,"finestra":136,"bordo":286} · file 25/25/25 px di altezza
+ok   it 390x844: tutto dentro · riquadri {"disco":143,"finestra":171,"bordo":350} · file 25/25/25 px di altezza
+ok   it 1000x900: tutto dentro · riquadri {"disco":154,"finestra":184,"bordo":400} · file 25/25/25 px di altezza
+ok   it 1440x900: tutto dentro · riquadri {"disco":245,"finestra":293,"bordo":600} · file 25/25/25 px di altezza
+ESCE en-XA 326x326: [îļ þŕöĝŕáḿḿá Ĺöŕé 20.7px, [ļá ṽöçé · 53 Ḿß Ĺ 32.7px · riquadri {"disco":114,"finestra":136,"bordo":286} · file 25/25/25 px di altezza
+ESCE en-XA 390x844: [îļ þŕöĝŕáḿḿá Ĺöŕé 6.1px, [ļá ṽöçé · 53 Ḿß Ĺ 18.1px · riquadri {"disco":143,"finestra":171,"bordo":350} · file 25/25/25 px di altezza
+ESCE en-XA 1000x900: [îļ þŕöĝŕáḿḿá Ĺöŕé 0.7px, [ļá ṽöçé · 53 Ḿß Ĺ 12.7px · riquadri {"disco":154,"finestra":184,"bordo":400} · file 25/25/25 px di altezza
+ok   en-XA 1440x900: tutto dentro · riquadri {"disco":245,"finestra":293,"bordo":600} · file 25/25/25 px di altezza
+ESCE ar-XB 326x326: ‮la voce · 53 MB‬ 3.7px · riquadri {"disco":114,"finestra":136,"bordo":286} · file 27/27/27 px di altezza
+ok   ar-XB 390x844: tutto dentro · riquadri {"disco":143,"finestra":171,"bordo":350} · file 27/27/27 px di altezza
+ok   ar-XB 1000x900: tutto dentro · riquadri {"disco":154,"finestra":184,"bordo":400} · file 27/27/27 px di altezza
+ok   ar-XB 1440x900: tutto dentro · riquadri {"disco":245,"finestra":293,"bordo":600} · file 27/27/27 px di altezza
+ESCE ur 326x326: ⁦la voce⁩ · ⁦53 MB 3.7px · riquadri {"disco":114,"finestra":136,"bordo":286} · file 35/35/35 px di altezza
+ok   ur 390x844: tutto dentro · riquadri {"disco":143,"finestra":171,"bordo":350} · file 35/35/35 px di altezza
+ok   ur 1000x900: tutto dentro · riquadri {"disco":154,"finestra":184,"bordo":400} · file 35/35/35 px di altezza
+ok   ur 1440x900: tutto dentro · riquadri {"disco":245,"finestra":293,"bordo":600} · file 35/35/35 px di altezza
+
+10/16 senza etichette fuori dal riquadro

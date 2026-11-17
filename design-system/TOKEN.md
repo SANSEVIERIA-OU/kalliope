@@ -1256,3 +1256,13 @@ Tredici token nuovi in fondo a `token.css` (blocco «Costruzione di «stato»»)
 | `--varco-fascia-sopra-telefono`, `--varco-fascia-sotto-telefono` | `0.56`, `0.24` | la stessa, al telefono (sotto il computer agganciato) |
 | `--gesto-aria` | `12px` | ciò che un gesto apre (bolla della risposta, dettagli aperti, conferma della copia) resta in vista con questa aria sotto la barra e sotto il bordo |
 | `--domande-bolla-sopra-basso` | `calc(var(--barra-altezza) + var(--gesto-aria))` | sugli schermi bassi del computer (altezza ≤ 500 px) la bolla appiccicosa sta a ridosso della barra: ci stanno risposte più alte (domande.css) |
+
+## Rifinitura di «stato» (incarico 3b-r, 17/11/2026)
+
+Un token nuovo in fondo a `token.css` (blocco «Rifinitura di «stato»»); nessun valore di quelli che c'erano è cambiato.
+
+| Token | Valore | Ruolo |
+|---|---|---|
+| `--varco-disco-aria-lato` | `16px` | l'aria ai lati del riquadro «Sul disco»: `--varco-disco-spazio-interno` ora la nomina (`14px var(--varco-disco-aria-lato) 16px`, lo stesso valore di prima) e le etichette dei file possono occuparla fino al bordo del riquadro (`varco.css`, `.varco-file`) |
+
+Variabile data dallo script: `--scorre-sposta` (`stato.js`, sulla `.domande-bolla.scorre`: dove sta, accanto alla domanda).

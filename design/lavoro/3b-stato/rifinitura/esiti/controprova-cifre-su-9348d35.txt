@@ -1,0 +1,12 @@
+FAIL: test_la_virgola_decimale_resta_dentro_la_parte_latina (test_translations.DaDestraASinistra.test_la_virgola_decimale_resta_dentro_la_parte_latina)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/lavoro-3br-lavoro/ctrl-tools/tools/test_translations.py", line 790, in test_la_virgola_decimale_resta_dentro_la_parte_latina
+    self.assertIn("\u20660,07 s\u2069", fuori)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '\u20660,07 s\u2069' not found in '<html lang="ar" dir="rtl"><body><p>لكل ثانية 0,\u206607 s\u2069 من المعالج وحوالي 10,\u20666 MB\u2069</p></body></html>'
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.004s
+
+FAILED (failures=1)

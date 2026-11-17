@@ -112,3 +112,8 @@
 @media (min-width: 761px) and (max-height: 500px) {
   .domande-bolla { top: var(--domande-bolla-sopra-basso); }
 }
+
+/* ---------- Rifinitura (incarico 3b-r, 17/11/2026) ---------- */
+/* N2: una risposta più alta dello spazio sotto la barra non si appiccica (stato.js, adatta()): sta accanto alla sua domanda, dove sta adesso, e scorre con la pagina, così si legge
+   intera. La scritta, i tempi e il resto restano quelli di prima */
+.domande-bolla.scorre { position: static; margin-block-start: var(--scorre-sposta, 0px); }

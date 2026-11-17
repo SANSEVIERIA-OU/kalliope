@@ -1,0 +1,34 @@
+
+== 915x412 webkit
+ok  d-adatto       alta 294 px, spazio 316 px: sticky · sale di 270 px in 3 colpi · fondo letto · salto bolla 0 px, pagina 0 px in 0 fotogrammi (al più 0 px) morbida · scritta 24px/34px
+ok  d-costa        alta 226 px, spazio 316 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px in 0 fotogrammi (al più 0 px) morbida · scritta 24px/34px
+ok  d-chi          alta 294 px, spazio 316 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 124 px in 2 fotogrammi (al più 99 px) morbida · scritta 24px/34px
+ok  d-frasi        alta 294 px, spazio 316 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px in 0 fotogrammi (al più 0 px) morbida · scritta 24px/34px
+ok  d-voce         alta 158 px, spazio 316 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px in 0 fotogrammi (al più 0 px) morbida · scritta 24px/34px
+ok  d-scrivere     alta 328 px, spazio 316 px: static (scorre) · sale di 90 px in 1 colpi · fondo letto · salto bolla 0 px, pagina 210 px in 4 fotogrammi (al più 95 px) morbida · scritta 24px/34px
+ok  d-sottotitoli  alta 192 px, spazio 316 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px in 0 fotogrammi (al più 0 px) morbida · scritta 24px/34px
+ok  d-chi          alta 294 px, spazio 316 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 124 px in 2 fotogrammi (al più 67 px) morbida · scritta 24px/34px
+ok  d-installa     alta 260 px, spazio 316 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px in 0 fotogrammi (al più 0 px) morbida · scritta 24px/34px
+ok  d-dove         alta 192 px, spazio 316 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px in 0 fotogrammi (al più 0 px) morbida · scritta 24px/34px
+ok  d-online       alta 226 px, spazio 316 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px in 0 fotogrammi (al più 0 px) morbida · scritta 24px/34px
+ok  d-frasi        alta 294 px, spazio 316 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px in 0 fotogrammi (al più 0 px) morbida · scritta 24px/34px
+ok  la scritta è una sola per tutte le risposte: 24px/34px
+ok  console pulita
+
+== 844x390 webkit
+ok  d-adatto       alta 328 px, spazio 294 px: static (scorre) · sale di 360 px in 4 colpi · fondo letto · salto bolla 0 px, pagina 0 px in 0 fotogrammi (al più 0 px) morbida · scritta 24px/34px
+ok  d-costa        alta 226 px, spazio 294 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px in 0 fotogrammi (al più 0 px) morbida · scritta 24px/34px
+ok  d-chi          alta 362 px, spazio 294 px: static (scorre) · sale di 90 px in 1 colpi · fondo letto · salto bolla 0 px, pagina 67 px in 1 fotogrammi (al più 67 px) morbida · scritta 24px/34px
+ok  d-frasi        alta 362 px, spazio 294 px: static (scorre) · sale di 90 px in 1 colpi · fondo letto · salto bolla 0 px, pagina 127 px in 2 fotogrammi (al più 89 px) morbida · scritta 24px/34px
+ok  d-voce         alta 158 px, spazio 294 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px in 0 fotogrammi (al più 0 px) morbida · scritta 24px/34px
+ok  d-scrivere     alta 328 px, spazio 294 px: static (scorre) · sale di 90 px in 1 colpi · fondo letto · salto bolla 0 px, pagina 188 px in 3 fotogrammi (al più 104 px) morbida · scritta 24px/34px
+ok  d-sottotitoli  alta 192 px, spazio 294 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px in 0 fotogrammi (al più 0 px) morbida · scritta 24px/34px
+ok  d-chi          alta 362 px, spazio 294 px: static (scorre) · sale di 90 px in 1 colpi · fondo letto · salto bolla 0 px, pagina 33 px in 1 fotogrammi (al più 33 px) morbida · scritta 24px/34px
+ok  d-installa     alta 294 px, spazio 294 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px in 0 fotogrammi (al più 0 px) morbida · scritta 24px/34px
+ok  d-dove         alta 226 px, spazio 294 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px in 0 fotogrammi (al più 0 px) morbida · scritta 24px/34px
+ok  d-online       alta 260 px, spazio 294 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 39 px in 1 fotogrammi (al più 39 px) morbida · scritta 24px/34px
+ok  d-frasi        alta 362 px, spazio 294 px: static (scorre) · sale di 90 px in 1 colpi · fondo letto · salto bolla 0 px, pagina 0 px in 0 fotogrammi (al più 0 px) morbida · scritta 24px/34px
+ok  la scritta è una sola per tutte le risposte: 24px/34px
+ok  console pulita
+
+tutto ok

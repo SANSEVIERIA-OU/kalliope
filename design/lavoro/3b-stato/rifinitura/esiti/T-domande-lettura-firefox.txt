@@ -1,0 +1,34 @@
+
+== 844x390 firefox
+ok  d-adatto       alta 328 px, spazio 294 px: static (scorre) · sale di 180 px in 2 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  d-costa        alta 226 px, spazio 294 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  d-chi          alta 362 px, spazio 294 px: static (scorre) · sale di 91 px in 1 colpi · fondo letto · salto bolla 0 px, pagina 12 px/fotogramma · scritta 24px/34px
+ok  d-frasi        alta 362 px, spazio 294 px: static (scorre) · sale di 90 px in 1 colpi · fondo letto · salto bolla 0 px, pagina 18 px/fotogramma · scritta 24px/34px
+ok  d-voce         alta 158 px, spazio 294 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  d-scrivere     alta 328 px, spazio 294 px: static (scorre) · sale di 90 px in 1 colpi · fondo letto · salto bolla 0 px, pagina 12 px/fotogramma · scritta 24px/34px
+ok  d-sottotitoli  alta 192 px, spazio 294 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  d-chi          alta 362 px, spazio 294 px: static (scorre) · sale di 91 px in 1 colpi · fondo letto · salto bolla 0 px, pagina 4 px/fotogramma · scritta 24px/34px
+ok  d-installa     alta 294 px, spazio 294 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  d-dove         alta 226 px, spazio 294 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  d-online       alta 260 px, spazio 294 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 7 px/fotogramma · scritta 24px/34px
+ok  d-frasi        alta 362 px, spazio 294 px: static (scorre) · sale di 90 px in 1 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  la scritta è una sola per tutte le risposte: 24px/34px
+ok  console pulita
+
+== 915x412 firefox
+ok  d-adatto       alta 294 px, spazio 316 px: sticky · sale di 138 px in 2 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  d-costa        alta 226 px, spazio 316 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  d-chi          alta 294 px, spazio 316 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 23 px/fotogramma · scritta 24px/34px
+ok  d-frasi        alta 294 px, spazio 316 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  d-voce         alta 158 px, spazio 316 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  d-scrivere     alta 328 px, spazio 316 px: static (scorre) · sale di 90 px in 1 colpi · fondo letto · salto bolla 0 px, pagina 13 px/fotogramma · scritta 24px/34px
+ok  d-sottotitoli  alta 192 px, spazio 316 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  d-chi          alta 294 px, spazio 316 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 17 px/fotogramma · scritta 24px/34px
+ok  d-installa     alta 260 px, spazio 316 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  d-dove         alta 192 px, spazio 316 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  d-online       alta 226 px, spazio 316 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  d-frasi        alta 294 px, spazio 316 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  la scritta è una sola per tutte le risposte: 24px/34px
+ok  console pulita
+
+tutto ok

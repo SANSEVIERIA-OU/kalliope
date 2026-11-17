@@ -1,0 +1,12 @@
+ok  390: 25 tappe negli esemplari, tutto si legge · la sezione scorre di lato (396 contro 390)
+ok  600: 25 tappe negli esemplari, tutto si legge
+ok  760: 25 tappe negli esemplari, tutto si legge
+ok  761: 25 tappe negli esemplari, tutto si legge
+ok  900: 25 tappe negli esemplari, tutto si legge
+ok  1000: 25 tappe negli esemplari, tutto si legge
+ok  1180: 25 tappe negli esemplari, tutto si legge
+ok  1181: 25 tappe negli esemplari, tutto si legge
+ok  1440: 25 tappe negli esemplari, tutto si legge
+ok  1920: 25 tappe negli esemplari, tutto si legge
+
+10/10 larghezze in cui ogni esemplare si legge

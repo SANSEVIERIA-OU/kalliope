@@ -1,0 +1,12 @@
+NO  390: 25 tappe negli esemplari, 9 cose: fonte su 3 righe (nella pagina 1) «engine.rs, benchmarks/engines» in «la catena intera, accesa (senza JavaScript: tutto in vista; » | fonte su 3 righe (nella pagina 1) «engine.rs, benchmarks/e
+ok  600: 25 tappe negli esemplari, tutto si legge
+ok  760: 25 tappe negli esemplari, tutto si legge
+ok  761: 25 tappe negli esemplari, tutto si legge
+ok  900: 25 tappe negli esemplari, tutto si legge
+ok  1000: 25 tappe negli esemplari, tutto si legge
+ok  1180: 25 tappe negli esemplari, tutto si legge
+NO  1181: 25 tappe negli esemplari, 5 cose: fonte su 3 righe (nella pagina 1) «docs/releasing.md e un'altra f» in «testo più lungo (un'altra lingua): titoli, cifre e fonti van» | fonte su 4 righe (nella pagina 1) «README, CHANGELOG.md
+ok  1440: 25 tappe negli esemplari, tutto si legge
+ok  1920: 25 tappe negli esemplari, tutto si legge
+
+8/10 larghezze in cui ogni esemplare si legge

@@ -159,16 +159,36 @@
       if (telefono.matches) v.after(bolla); else domande.append(bolla);
       if (attivo) attivo.focus({preventScroll: true});
     }
-    // al telefono la bolla sta sotto la domanda premuta e restano in vista insieme (se ci stanno); al computer la bolla sta accanto all'elenco e segue lo scorrimento
-    const inizioBolla = v => (telefono.matches ? $('.domanda-bottone', v) : bolla);
+    // al telefono la bolla sta sotto la domanda premuta e restano in vista insieme (se ci stanno); al computer la bolla sta accanto all'elenco e segue lo scorrimento,
+    // salvo quando scorre con la pagina accanto alla sua domanda (adatta(), qui sotto): allora restano in vista insieme come al telefono
+    const inizioBolla = v => (telefono.matches || bolla.classList.contains('scorre') ? $('.domanda-bottone', v) : bolla);
+    // Al computer la bolla è appiccicosa: scorrendo l'elenco resta in vista sotto la barra. Una risposta più alta dello spazio che c'è sotto la barra non può starci
+    // intera: appiccicata ne mostrerebbe sempre la stessa parte e la sua fine si leggerebbe soltanto a fine elenco (secondo sguardo, N2: «E se scrivere è difficile?»,
+    // «Ha frasi pronte o simboli?» e «Chi c'è dietro?» a 844×390). Allora non si appiccica: sta accanto alla sua domanda, dove sta adesso (nessun salto), e scorre con la
+    // pagina, così si legge intera. La scritta è la stessa. Si decide a ogni risposta, a misura nuova e quando cambia la finestra
+    const postoBolla = () => bolla.getBoundingClientRect().top - domande.getBoundingClientRect().top;   // dove sta nella colonna (appiccicata: dove l'ha portata lo scorrimento)
+    function adatta(v, altezza, dove = postoBolla()) {
+      if (telefono.matches) { bolla.classList.remove('scorre'); bolla.style.removeProperty('--scorre-sposta'); return; }
+      const scorreva = bolla.classList.contains('scorre');
+      // dove sta, o dove andrà accanto alla sua domanda: si misura prima di toccare la classe
+      const y = scorreva ? v.getBoundingClientRect().top - domande.getBoundingClientRect().top : dove;
+      // dove si appiccica (token --domande-bolla-sopra, e il suo basso sugli schermi bassi): da appiccicata (da ferma, un motore dice «auto» e non la misura che avrebbe)
+      if (scorreva) bolla.classList.remove('scorre');
+      const sopra = parseFloat(getComputedStyle(bolla).top);
+      const scorre = isFinite(sopra) && altezza > innerHeight - sopra - num('--gesto-aria');
+      // appiccicata resta dove stava un attimo prima, con la risposta di prima (nessun salto: con la risposta nuova, più alta, il fondo dell'elenco la spingerebbe su);
+      // se già scorreva, va accanto alla domanda premuta
+      if (scorre) bolla.style.setProperty('--scorre-sposta', `${Math.max(0, y).toFixed(1)}px`); else bolla.style.removeProperty('--scorre-sposta');
+      bolla.classList.toggle('scorre', scorre);
+    }
     function scegli(v, gesto) {
       if (v === scelta) return;
-      const prima = scelta;
+      const prima = scelta, dove = telefono.matches ? 0 : postoBolla();   // (dove sta la bolla, prima che la risposta cambi)
       scelta = v;
       voci.forEach(x => $('.domanda-bottone', x).setAttribute('aria-expanded', String(x === v)));
       const spostata = telefono.matches && bolla.previousElementSibling !== v;
       if (!gesto || ridotto || !prima || spostata) {
-        posto(v); riempi(v);
+        posto(v); riempi(v); adatta(v, corpo.offsetHeight, dove);
         // (si guarda quando la bolla ha la sua misura: mentre nasce è rimpicciolita e il suo rettangolo non è quello che resta)
         if (gesto && !ridotto && spostata) bolla.animate([{opacity: 0, transform: `scale(${tok('--bolla-nasce-scala')})`}, {opacity: 1, transform: 'none'}], {duration: tempo('--durata-bolla-nasce'), easing: ENTRA}).finished.then(() => inVista(bolla, inizioBolla(v)), () => {});
         else if (gesto) inVista(bolla, inizioBolla(v));
@@ -187,6 +207,7 @@
           contenuto.animate([{opacity: 0}, {opacity: 1}], {duration: tempo('--durata-domanda-arriva'), easing: CURVA_DOMANDA, fill: 'backwards'});
           via.cancel();
           const h1 = corpo.getBoundingClientRect().height;
+          adatta(v, corpo.offsetHeight, dove);   // appiccicata o no, a seconda dell'altezza che la risposta nuova ha davvero (offsetHeight: non cambia con la scala di una bolla che nasce)
           // a misura nuova la bolla può essere diventata più alta (la sua parte alta resta sotto la barra) o più bassa: si guarda quando l'ha presa, non a metà
           corpo.animate([{height: `${h0}px`}, {height: `${h1}px`}], {duration: tempo('--durata-domanda-misura'), easing: ENTRA}).finished.then(() => inVista(bolla, inizioBolla(v)), () => {});
         }, () => {});
@@ -203,7 +224,10 @@
     });
     domande.classList.add('viva');
     scegli(voci[0], false);
-    telefono.addEventListener('change', () => { if (scelta) posto(scelta); });
+    const riadatta = () => { if (scelta) adatta(scelta, corpo.offsetHeight); };
+    telefono.addEventListener('change', () => { if (scelta) { posto(scelta); riadatta(); } });
+    addEventListener('resize', riadatta);   // l'altezza dello schermo (il telefono che gira, la finestra) cambia lo spazio sotto la barra
+    if (document.fonts) document.fonts.ready.then(riadatta);   // e i caratteri, quando arrivano, l'altezza della risposta
   }
 
   // =================================================================================================================

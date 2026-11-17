@@ -1282,7 +1282,7 @@
   --varco-altezza-minima: 340px;   /* il computer ha presenza accanto ai passi (al telefono no: sta agganciato e piccolo) */
   --varco-colonne: minmax(0, 1.2fr) minmax(0, 1fr);
   --varco-finestra-spazio-interno: 14px 16px 18px;
-  --varco-disco-spazio-interno: 14px 16px 16px;
+  --varco-disco-spazio-interno: 14px var(--varco-disco-aria-lato) 16px;   /* (il lato è nel token qui sopra: stesso valore di prima, 16px) */
   --varco-filo-fine: 148px;   /* il filo da cui entra la voce scende sopra il centro del disco (dalla fine del computer: margine e metà della colonna) */
   --varco-filo-sopra: 26px;   /* parte sotto «huggingface.co» */
   --varco-filo-altezza: 64px;   /* e arriva al disco, attraverso il bordo del computer */
@@ -1371,4 +1371,9 @@
   /* · Ciò che un gesto apre resta in vista (regola della cornice, pagina.css): la bolla della risposta, i dettagli aperti, la conferma della copia. L'aria che resta sotto la barra e sotto il bordo */
   --gesto-aria: 12px;
   --domande-bolla-sopra-basso: calc(var(--barra-altezza) + var(--gesto-aria));   /* sugli schermi bassi la bolla appiccicosa sta più su: ci stanno risposte più alte (844×390: fino a 306 px, non 274) */
+}
+
+/* ---------- Rifinitura di «stato» (incarico 3b-r, 17/11/2026) ---------- */
+:root {
+  --varco-disco-aria-lato: 16px;   /* l'aria ai lati del riquadro «Sul disco»: è la stessa di --varco-disco-spazio-interno (che ora la nomina); le etichette dei file possono occuparla (a 390 px e a 326 l'italiano la occupa quasi tutta: il riquadro intero è il loro limite) */
 }

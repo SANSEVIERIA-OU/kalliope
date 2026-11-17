@@ -779,6 +779,31 @@ class DaDestraASinistra(unittest.TestCase):
         self.assertIn('href="x/"', fuori)
         self.assertEqual(sito_py.isola_latino(fuori), fuori)   # due volte è come una
 
+    # Cifre con la virgola decimale (secondo sguardo su «stato», N7): «0,07 s» fra due parti latine isolate si leggeva «07 s,0» in arabo e in urdu, perché la virgola
+    # non faceva parte della parte isolata e il 0 restava fuori, da solo. La virgola fra due cifre resta dentro; il punto delle migliaia c'era già; una virgola seguita
+    # da uno spazio, o fra lettere, separa (è la punteggiatura della frase).
+    def isolate(self, testo):
+        return sito_py.isola_latino(f'<html lang="ar" dir="rtl"><body><p>{testo}</p></body></html>')
+
+    def test_la_virgola_decimale_resta_dentro_la_parte_latina(self):
+        fuori = self.isolate("لكل ثانية 0,07 s من المعالج وحوالي 10,6 MB")
+        self.assertIn("\u20660,07 s\u2069", fuori)
+        self.assertIn("\u206610,6 MB\u2069", fuori)
+        self.assertNotIn("\u2066s\u2069", fuori)   # nessun pezzo spaiato
+        self.assertNotIn(",\u2066", fuori.replace("0,07 s", "").replace("10,6 MB", ""))
+
+    def test_il_punto_delle_migliaia_resta_dentro_la_parte_latina(self):
+        fuori = self.isolate("حجم 1.250 MB للتحميل")
+        self.assertIn("\u20661.250 MB\u2069", fuori)
+
+    def test_una_virgola_seguita_da_uno_spazio_separa(self):
+        fuori = self.isolate("Linux, 10 MB")
+        self.assertIn("\u2066Linux\u2069, \u206610 MB\u2069", fuori)
+        fuori = self.isolate("x86_64,Linux")   # fra lettere non è decimale: separa
+        self.assertIn("\u2066x86_64\u2069,\u2066Linux\u2069", fuori)
+        fuori = self.isolate("10,MB")   # una cifra, una virgola e una lettera: non è un decimale
+        self.assertEqual(fuori.count("\u2066"), 1)
+
     def test_la_costruzione_isola_solo_da_destra_a_sinistra(self):
         guasta = self.PAGINA.replace("\u2066", "")
         self.assertNotEqual(sito_py.isola_latino(guasta), guasta)

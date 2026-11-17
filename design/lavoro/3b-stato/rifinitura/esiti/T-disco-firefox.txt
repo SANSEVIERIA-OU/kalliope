@@ -1,0 +1,14 @@
+ok   firefox it 326x326: tutto dentro · riquadri {"disco":114,"finestra":136,"bordo":286} · file 25/41/25 px di altezza
+ok   firefox it 390x844: tutto dentro · riquadri {"disco":143,"finestra":171,"bordo":350} · file 25/25/25 px di altezza
+ok   firefox it 1000x900: tutto dentro · riquadri {"disco":154,"finestra":184,"bordo":400} · file 25/25/25 px di altezza
+ok   firefox ur 326x326: tutto dentro · riquadri {"disco":114,"finestra":136,"bordo":286} · file 35/60/35 px di altezza
+ok   firefox ur 390x844: tutto dentro · riquadri {"disco":143,"finestra":171,"bordo":350} · file 35/35/35 px di altezza
+ok   firefox ur 1000x900: tutto dentro · riquadri {"disco":154,"finestra":184,"bordo":400} · file 35/35/35 px di altezza
+ok   firefox ar-XB 326x326: tutto dentro · riquadri {"disco":114,"finestra":136,"bordo":286} · file 27/46/27 px di altezza
+ok   firefox ar-XB 390x844: tutto dentro · riquadri {"disco":143,"finestra":171,"bordo":350} · file 27/27/27 px di altezza
+ok   firefox ar-XB 1000x900: tutto dentro · riquadri {"disco":154,"finestra":184,"bordo":400} · file 27/27/27 px di altezza
+ok   firefox en-XA 326x326: tutto dentro · riquadri {"disco":114,"finestra":136,"bordo":286} · file 57/41/25 px di altezza
+ok   firefox en-XA 390x844: tutto dentro · riquadri {"disco":143,"finestra":171,"bordo":350} · file 41/41/25 px di altezza
+ok   firefox en-XA 1000x900: tutto dentro · riquadri {"disco":154,"finestra":184,"bordo":400} · file 41/41/25 px di altezza
+
+12/12 senza etichette fuori dal riquadro

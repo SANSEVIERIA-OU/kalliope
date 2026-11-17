@@ -1,0 +1,12 @@
+ok  390: 25 tappe negli esemplari, tutto si legge
+ok  600: 25 tappe negli esemplari, tutto si legge
+ok  760: 25 tappe negli esemplari, tutto si legge
+ok  761: 25 tappe negli esemplari, tutto si legge
+ok  900: 25 tappe negli esemplari, tutto si legge
+ok  1000: 25 tappe negli esemplari, tutto si legge
+ok  1180: 25 tappe negli esemplari, tutto si legge
+NO  1181: 25 tappe negli esemplari, 11 cose: fonte su 28 righe (nella pagina 1) «engine.rs, benchmarks/engines» in «una tappa provata, spenta e accesa (.anello.fatto, .acceso):» | fonte su 6 righe (nella pagina 1) «README» in «la riga delle parole e la 
+NO  1440: 25 tappe negli esemplari, 14 cose: colonna di 67 px (nella pagina 300), 7 caratteri per riga: «La voce parte dopo la prim» in «una tappa provata, spenta e accesa (.anello.fatto, .acceso):» | colonna di 67 px (nella pagina 300), 7 caratteri per ri
+NO  1920: 25 tappe negli esemplari, 14 cose: colonna di 67 px (nella pagina 300), 7 caratteri per riga: «La voce parte dopo la prim» in «una tappa provata, spenta e accesa (.anello.fatto, .acceso):» | colonna di 67 px (nella pagina 300), 7 caratteri per ri
+
+7/10 larghezze in cui ogni esemplare si legge

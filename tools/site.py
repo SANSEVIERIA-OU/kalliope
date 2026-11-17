@@ -495,7 +495,10 @@ def passo_struttura(testo, rel, lingua, reali, sito, senza_selettore, base_url, 
 # una parte isolata («Kalliope») prendono così il verso del testo. Non tocca i segnaposti dello script ({voce}), le entità, gli
 # script e gli stili.
 LATINO = "A-Za-z\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u024F"
-PARTE_LATINA = re.compile(rf"[{LATINO}0-9](?:[{LATINO}0-9.\-_/:+]*[{LATINO}0-9])?(?: [{LATINO}0-9](?:[{LATINO}0-9.\-_/:+]*[{LATINO}0-9])?)*")
+# Dentro una parte latina ci sono lettere, cifre e i segni . - _ / : + ; una virgola ci sta soltanto fra due cifre («0,07 s», «10,6 MB»: la virgola decimale): una virgola
+# seguita da uno spazio, o fra lettere, è la punteggiatura della frase e separa. Senza, «0,07 s» in arabo si leggeva «07 s,0» (secondo sguardo su «stato», N7).
+_UNITA = rf"[{LATINO}0-9](?:(?:[{LATINO}0-9.\-_/:+]|(?<=[0-9]),(?=[0-9]))*[{LATINO}0-9])?"
+PARTE_LATINA = re.compile(rf"{_UNITA}(?: {_UNITA})*")
 DA_NON_TOCCARE = re.compile(r"(\{[A-Za-z_][A-Za-z0-9_]*\}|&[#A-Za-z0-9]+;|[\u2066-\u2068][^\u2069]*\u2069)")   # un isolamento già messo resta com'è
 LRI, PDI = "\u2066", "\u2069"
 

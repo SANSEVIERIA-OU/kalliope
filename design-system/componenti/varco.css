@@ -226,3 +226,9 @@
   }
   .licenze-blocco[open] > summary h3::after { transform: rotate(calc(-1 * var(--dettagli-segno-rotazione))); }
 }
+
+/* ---------- Rifinitura (incarico 3b-r, 17/11/2026) ---------- */
+/* N3: le etichette dei file stanno dentro il riquadro «Sul disco» in ogni lingua. Possono occupare l'aria ai lati (a 390 px l'italiano la occupa: lì non cambia niente), non uscire dal riquadro:
+   dove il testo non ci sta (en-XA: fino a 32 px fuori; a 326 px anche «la voce · 53 MB» in italiano, di 3,7 px) va a capo dentro la pillola (come un testo: «la voce ·» e «53 MB»). Una larghezza propria
+   (max-content) perché in una colonna flessibile quella data dallo spazio che resta sarebbe la larghezza della sola area interna, e a 390 px l'italiano andrebbe a capo */
+.varco-file { width: max-content; max-width: calc(100% + 2 * var(--varco-disco-aria-lato)); white-space: normal; text-align: center; overflow-wrap: anywhere; }

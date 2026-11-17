@@ -1,0 +1,34 @@
+
+== 915x412 chromium
+ok  d-adatto       alta 294 px, spazio 316 px: sticky · sale di 138 px in 2 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  d-costa        alta 226 px, spazio 316 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  d-chi          alta 294 px, spazio 316 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 42 px/fotogramma · scritta 24px/34px
+ok  d-frasi        alta 294 px, spazio 316 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  d-voce         alta 158 px, spazio 316 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+NO  d-scrivere     alta 328 px, spazio 316 px: sticky · sale di 8 px in 3 colpi · fondo letto · salto bolla 0 px, pagina 27 px/fotogramma · scritta 24px/34px [giusta false, coerente true]
+ok  d-sottotitoli  alta 192 px, spazio 316 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  d-chi          alta 294 px, spazio 316 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 42 px/fotogramma · scritta 24px/34px
+ok  d-installa     alta 260 px, spazio 316 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  d-dove         alta 192 px, spazio 316 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  d-online       alta 226 px, spazio 316 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 5 px/fotogramma · scritta 24px/34px
+ok  d-frasi        alta 294 px, spazio 316 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  la scritta è una sola per tutte le risposte: 24px/34px
+ok  console pulita
+
+== 1440x900 chromium
+ok  d-adatto       alta 198 px, spazio 784 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  d-costa        alta 164 px, spazio 784 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  d-chi          alta 198 px, spazio 784 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  d-frasi        alta 232 px, spazio 784 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  d-voce         alta 130 px, spazio 784 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  d-scrivere     alta 198 px, spazio 784 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  d-sottotitoli  alta 164 px, spazio 784 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  d-chi          alta 198 px, spazio 784 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  d-installa     alta 198 px, spazio 784 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  d-dove         alta 164 px, spazio 784 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  d-online       alta 164 px, spazio 784 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  d-frasi        alta 232 px, spazio 784 px: sticky · sale di 0 px in 0 colpi · fondo letto · salto bolla 0 px, pagina 0 px/fotogramma · scritta 24px/34px
+ok  la scritta è una sola per tutte le risposte: 24px/34px
+ok  console pulita
+
+1 NO
