@@ -9,8 +9,8 @@
 .inoltra { width: var(--inoltra-larghezza); max-width: 100%; margin-top: var(--spazio-26); text-align: start; }
 .bolla-inoltra { position: relative; inset-inline-start: auto; bottom: auto; width: auto; max-width: 100%; margin-bottom: var(--misura-11); transform-origin: var(--origine-inizio-x) 100%; }
 .bolla-inoltra .bolla-corpo { padding: var(--inoltra-spazio-interno); }
-.inoltra-testo { font-size: var(--corpo-11) !important; line-height: var(--interlinea-13) !important; user-select: all; }
-.inoltra-indirizzo { margin: var(--spazio-10) 0 0; font-size: var(--corpo-6); line-height: var(--interlinea-6); font-weight: var(--peso-forte); color: var(--magenta); user-select: all; overflow-wrap: anywhere; }
+.inoltra-testo { font-size: var(--corpo-11) !important; line-height: var(--interlinea-13) !important; -webkit-user-select: all; user-select: all; }
+.inoltra-indirizzo { margin: var(--spazio-10) 0 0; font-size: var(--corpo-6); line-height: var(--interlinea-6); font-weight: var(--peso-forte); color: var(--magenta); -webkit-user-select: all; user-select: all; overflow-wrap: anywhere; }
 .comandi-inoltra { margin-top: var(--spazio-10) !important; }
 .inoltra-esito { min-height: var(--interlinea-8); margin: var(--spazio-12) 0 0; font-size: var(--corpo-7); line-height: var(--interlinea-8); color: var(--testo-spiegazione); text-wrap: balance; }
 .inoltra-tratto .senza-js { color: var(--testo-nota); }

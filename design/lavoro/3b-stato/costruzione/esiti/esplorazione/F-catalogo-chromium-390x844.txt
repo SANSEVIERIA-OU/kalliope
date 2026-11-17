@@ -1,0 +1,77 @@
+ok   il catalogo principale si costruisce senza errori · {"errori":[]}
+ok   le pagine interne si costruiscono senza errori · {"errori":[],"schermi":8}
+ok   la sezione «stato» si costruisce senza errori · {"errori":[],"schermi":11}
+ok   cinque schede: riunione provata, catena, domande, varco, messaggio · 5 schede, 44 prove, 11 pagine vive: La riunione con il confine del provato | La strada vista da vicino: la catena e le sue tappe | Le domande, e la risposta nella bolla | Il varco: che cosa entra nel computer, che cosa resta | Il messaggio da inoltrare
+ok   la sezione sta nell'indice e dopo quella delle pagine interne · pagina-stato
+ok   ogni scheda ha le cinque voci e almeno cinque prove · [10,10,6,10,8]
+ok   il catalogo non scorre di lato · {"pagina":1030,"finestra":1030}
+ok   i comandi «Riproduci» ci sono · 26 comandi
+ok   i cinque passi del varco si scelgono · tutto,testo,scarico,disco,chiudi
+ok   varco, passo «tutto»: il computer e il passo accanto · {"passo":"tutto","qui":null,"js":true}
+ok   varco, passo «testo»: il computer e il passo accanto · {"passo":"testo","qui":"testo","js":true}
+ok   varco, passo «scarico»: il computer e il passo accanto · {"passo":"scarico","qui":"scarico","js":true}
+ok   varco, passo «disco»: il computer e il passo accanto · {"passo":"disco","qui":"disco","js":true}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('#pagina-stato .cat-misure button').filter({ hasText: /^chiudi$/ })[22m
+[2m    - locator resolved to <button type="button" aria-pressed="false" title="quando chiudi: la finestra si chiude, il microfono sparisce, il disco resta">chiudi</button>[22m
+[2m  - attempting click action[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <button type="button" aria-pressed="true" title="che cosa scrive sul disco: il programma, la voce, le preferenze">disco</button> intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m    - waiting 20ms[22m
+[2m    - waiting for element to be visible, enabled and stable[22m
+[2m    - element is visible, enabled and stable[22m
+[2m    - scrolling into view if needed[22m
+[2m    - done scrolling[22m
+[2m    - <dd>…</dd> from <dl>…</dl> subtree intercepts pointer events[22m
+[2m  2 × retrying click action[22m
+[2m      - waiting 100ms[22m
+[2m      - waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <article class="cat-scheda">…</article> intercepts pointer events[22m
+[2m  11 × retrying click action[22m
+[2m       - waiting 500ms[22m
+[2m       - waiting for element to be visible, enabled and stable[22m
+[2m       - element is visible, enabled and stable[22m
+[2m       - scrolling into view if needed[22m
+[2m       - done scrolling[22m
+[2m       - <button type="button" aria-pressed="true" title="che cosa scrive sul disco: il programma, la voce, le preferenze">disco</button> intercepts pointer events[22m
+[2m     - retrying click action[22m
+[2m       - waiting 500ms[22m
+[2m       - waiting for element to be visible, enabled and stable[22m
+[2m       - element is visible, enabled and stable[22m
+[2m       - scrolling into view if needed[22m
+[2m       - done scrolling[22m
+[2m       - <dd>…</dd> from <dl>…</dl> subtree intercepts pointer events[22m
+[2m     - retrying click action[22m
+[2m       - waiting 500ms[22m
+[2m       - waiting for element to be visible, enabled and stable[22m
+[2m       - element is visible, enabled and stable[22m
+[2m       - scrolling into view if needed[22m
+[2m       - done scrolling[22m
+[2m       - <article class="cat-scheda">…</article> intercepts pointer events[22m
+[2m     - retrying click action[22m
+[2m       - waiting 500ms[22m
+[2m       - waiting for element to be visible, enabled and stable[22m
+[2m       - element is visible, enabled and stable[22m
+[2m       - scrolling into view if needed[22m
+[2m       - done scrolling[22m
+[2m       - <article class="cat-scheda">…</article> intercepts pointer events[22m
+[2m  - retrying click action[22m
+[2m    - waiting 500ms[22m
+
+    at /workspace/kalliope/design/lavoro/3b-stato/costruzione/prove/catalogo.mjs:46:58 {
+  name: 'TimeoutError'
+}
+
+Node.js v24.22.3

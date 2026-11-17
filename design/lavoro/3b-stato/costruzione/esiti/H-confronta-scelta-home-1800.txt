@@ -1,0 +1,4 @@
+# confronta-scelta home scorsa di 1800 px · scelta c8d2aa3 contro H, con «riduci movimento»
+CONFRONTO 1440×900 a 1800 px: uguale su 46 cose nello schermo · pixel diversi 0%
+CONFRONTO 390×844 a 1800 px: uguale su 46 cose nello schermo · pixel diversi 0%
+Uguale alla scelta, salvo le differenze ammesse (foto in /tmp/lavoro-3bb-scelta-home-1800)

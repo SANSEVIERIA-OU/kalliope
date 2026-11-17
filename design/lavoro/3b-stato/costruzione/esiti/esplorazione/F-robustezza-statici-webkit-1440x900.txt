@@ -1,0 +1,59 @@
+
+== domande · webkit 1440x900
+ok   dieci domande, una sola aperta, la risposta è una regione che si annuncia · {"bottoni":10,"aperte":1,"regione":"region/polite","controls":true}
+ok   Tab porta alla domanda seguente · d-installa
+ok   Invio apre la risposta, il fuoco resta sul pulsante, la risposta è annunciata · {"fuoco":"d-installa","aria":"true","chiede":"Chi lo installa?","annuncio":"Risposta: Chi lo installa?","bollaTop":412,"bollaBottom":610,"barra":72,"vh":900,"prec":""}
+ok   al computer la bolla sta in vista sotto la barra · {"fuoco":"d-installa","aria":"true","chiede":"Chi lo installa?","annuncio":"Risposta: Chi lo installa?","bollaTop":412,"bollaBottom":610,"barra":72,"vh":900,"prec":""}
+ok   al computer Tab dalla domanda va alla domanda seguente (la bolla sta dopo l'elenco) · {"tag":"button","nome":"Funziona su Windows, Mac o tel","dentro":false}
+ok   Spazio cambia la risposta: una sola domanda aperta, il fuoco resta, annuncio nuovo · {"chiede":"Quanto costa?","aperte":["Quanto costa?"],"fuoco":"d-costa","annuncio":"Risposta: Quanto costa?"}
+ok   premere la domanda già aperta non la chiude e non cambia la risposta
+ok   ogni risposta: la bolla comincia sotto la barra e, se ci sta, sta tutta nello schermo · 10 risposte, la più alta 232 px
+ok   «Da mandare a chi ti aiuta» porta al messaggio: titolo sotto la barra, opaco, bolla visibile (se è nello schermo) · {"titolo":200,"barra":72,"op":1,"bolla":1,"bollaInVista":true,"hash":"#inoltra"}
+ok   cambiando misura con il fuoco su un collegamento della risposta, il fuoco non va perso · {"prime":{"tag":"a","dentro":true,"href":"../installa/"},"dopoMisura":{"tag":"a","dentro":true,"href":"../installa/"}}
+ok   console pulita
+
+== dettagli · webkit 1440x900
+ok   al computer i dettagli sono tutti aperti · 5 blocchi: 11111
+ok   al computer le tappe non mostrano «I dettagli e le fonti» e il titolo delle licenze non è una sosta del fuoco · {"tappe":["none","none","none"],"licenze":[-1,-1]}
+ok   cliccare il titolo delle licenze al computer non chiude il blocco
+ok   dal computer al telefono i dettagli si chiudono (nessuna scelta fatta) · 00000
+ok   e tornando al computer sono di nuovo tutti aperti
+ok   la parentesi «non misurato» va dal nodo di «Scrivi la frase» a quello di «Gli altri ti sentono» (a meno di 2 px) anche dopo il giro · {"inizio":0,"fine":0}
+ok   console pulita
+
+== copia · webkit 1440x900
+ok   la copia riesce: il testo copiato è quello della bolla e finisce con l'indirizzo · "Kalliope: scrivi una frase e una voce italiana la dice nella riunione. Oggi è una versione di prova, solo per Linux, provata fino al microfono e non ancora in una riunione vera. Senza account e senza prezzo; il testo resta sul computer.\nhttps://sansevieria-ou.github.io/kalliope/it/stato/"
+ok   l'indirizzo mostrato, quello copiato e il canonical sono lo stesso (nella cartella della lingua) · https://sansevieria-ou.github.io/kalliope/it/stato/ | https://sansevieria-ou.github.io/kalliope/it/stato/
+ok   l'indirizzo si legge da sinistra a destra: comincia con «https» e finisce con la barra · {"primo":"h","ultimo":"/","aSinistra":true}
+ok   la copia riesce: la risposta compare, l'errore no, la bolla ha l'anello, il posto della risposta è uno stato annunciato · {"fatto":true,"errore":true,"anello":true,"stato":"status"}
+ok   la risposta sta nello schermo, sotto la barra, vicino al comando · {"top":693,"bottom":713,"comando":680,"vh":900,"barra":72}
+ok   premendo ancora la risposta si annuncia di nuovo (sparisce e ricompare) · nascosta,visibile
+ok   console pulita
+ok   la copia non riesce: l'errore dice cosa fare, nessuna conferma, nessun anello sulla bolla · {"errore":true,"fatto":true,"anello":false,"top":693,"bottom":713,"vh":900,"barra":72,"testo":"Non riesco a copiarlo: seleziona il testo della bolla e copialo, o manda l'indirizzo di questa pagina."}
+ok   il messaggio d'errore sta nello schermo per intero, sotto la barra · {"errore":true,"fatto":true,"anello":false,"top":693,"bottom":713,"vh":900,"barra":72,"testo":"Non riesco a copiarlo: seleziona il testo della bolla e copialo, o manda l'indirizzo di questa pagina."}
+NO   un clic sulla bolla seleziona il testo da copiare a mano (messaggio intero)
+ok   dopo un errore, riprovando e riuscendo, resta solo la conferma
+ok   console pulita
+ok   senza appunti: il comando non c'è e la frase per copiare a mano sì · {"comando":"none","hidden":true,"frase":"block","classe":true}
+ok   console pulita
+
+== senza-js · webkit 1440x900
+ok   senza JavaScript: niente classe «js»
+ok   senza JavaScript il comando di copia non c'è e la frase per copiare a mano sì · {"copia":"none","frase":"block"}
+ok   ogni domanda ha la sua risposta sotto (niente comandi, dieci risposte in vista) · {"domande":0,"risposte":10}
+ok   i dettagli sono aperti e senza il comando · ["none","none","none"]
+ok   la scena è allo stato finale: voce, tratteggio, titoli, bolle e riquadri visibili · {"riquadri":"1,1,1,1","titoli":0,"bolla":"1","bollaP":"1"}
+ok   il computer del varco ha tutto in vista, e le impronte non si vedono (fermi) · 1/1/1 pacchi 0
+ok   la catena è accesa e le quote sono piene · none
+ok   l'indirizzo c'è (lo scrive la costruzione), nessuno scorrimento di lato · https://sansevieria-ou.github.io/kalliope/it/stato/, 1440 contro 1440
+ok   senza JavaScript il giro di tastiera arriva a ogni collegamento (barra, fonti, domande con i loro collegamenti, piede) · 47 soste
+ok   console pulita
+
+== ridotto · webkit 1440x900
+ok   «riduci movimento»: il primo schermo è già al suo stato finale e la catena accesa · {"fatta":true,"acceso":"truetruetruetruetruetrue"}
+ok   con «riduci movimento» la risposta cambia subito, senza dissolvenza · {"op":1,"chiede":"Quanto costa?","animazioni":0}
+ok   con «riduci movimento» il passo cambia, le impronte non scendono · {"passo":"scarico","anim":0,"pacchi":"0"}
+ok   con «riduci movimento» la copia risponde e la bolla non fa l'anello animato · {"fatto":true,"anello":false}
+ok   console pulita
+
+46/47 ok

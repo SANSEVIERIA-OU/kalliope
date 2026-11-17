@@ -1,0 +1,11 @@
+# H-dispositivi-webkit-Computer · 17/11/2026 16:52 · sito: /tmp/lavoro-3bb-sito-H-it · albero: /tmp/lavoro-3bb-radice-H-10 · dispositivi-qa.mjs webkit stato Computer
+--  stato-menu · Computer 1440×900: lo stato non c'è a questa misura
+ok  stato · Computer 1440×900
+--  stato-dettagli · Computer 1440×900: lo stato non c'è a questa misura
+ok  stato-domanda · Computer 1440×900
+ok  stato-copia-fatta · Computer 1440×900
+ok  stato-copia-non-riuscita · Computer 1440×900
+
+4 casi puliti (4 in questo giro; foto in /tmp/lavoro-3bb-qa-H-dispositivi-webkit-Computer/dispositivi/webkit). Sono simulazioni, non telefoni veri.
+  219 casi della matrice non eseguiti (filtro o giro interrotto: --continua li riprende)
+# uscita: 0

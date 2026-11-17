@@ -8,6 +8,7 @@ a wrong plural header, text the page did not mark, a physical left/right in a st
 """
 import json
 import pathlib
+import re
 import shutil
 import sys
 import tempfile
@@ -834,6 +835,93 @@ class DataRelease(unittest.TestCase):
         pagine, tutti, errori = catalogo.raccogli(tmp)
         self.assertEqual(errori, [])
         self.assertTrue({"nota.prova", "nota.stabile", "frase"} <= set(tutti))   # chi traduce vede tutte e due: la costruzione ne sceglie una
+
+
+class FontiEIndirizzo(unittest.TestCase):
+    """Le fonti dei fatti si aprono sul file alla versione mostrata, e l'indirizzo della pagina lo scrive la costruzione (incarico 3b-b, M5 e M7)."""
+    PAGINA = """<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><title data-t="t">Prova</title>
+<link rel="canonical" href="https://sansevieria-ou.github.io/kalliope/stato/"></head>
+<body>
+<p data-t="fatto">Un fatto. <span class="fonte"><a href="{{kalliope.source.url}}/README.md" title="README.md" data-t-no="un percorso">README</a>, <a href="{{kalliope.source.url}}/crates/app/src/non-c-e.rs" title="x" data-t-no="un percorso">non-c-e.rs</a>, <a href="{{kalliope.tree.url}}/packaging/linux" title="x" data-t-no="un percorso">packaging/linux</a></span></p>
+<p class="indirizzo" data-t-no="l'indirizzo">{{kalliope.page.url}}</p>
+</body></html>
+"""
+    # i file e le cartelle del repository alla versione, com'è (git ls-tree): una cartella (tree) non è un file (blob)
+    ALBERO = {"README.md": "blob", "crates": "tree", "crates/app": "tree", "crates/app/src": "tree", "crates/app/src/main.rs": "blob", "packaging": "tree", "packaging/linux": "tree"}
+
+    def costruisci(self, percorsi, pagina_html=None, di_prova=False):
+        tmp = pathlib.Path(tempfile.mkdtemp(prefix="lavoro-3bb-fonti-"))
+        self.addCleanup(shutil.rmtree, tmp, True)
+        w = tmp / "website"
+        (w / "stato").mkdir(parents=True)
+        (w / "stato" / "index.html").write_text(pagina_html or self.PAGINA, encoding="utf-8")
+        (w / "lingue.html").write_text(SCELTA, encoding="utf-8")
+        (w / "lingua.js").write_text("//", encoding="utf-8")
+        (tmp / "design-system").mkdir()
+        (tmp / "design-system" / "token.css").write_text(":root{}", encoding="utf-8")
+        v, grezzi = sito_py.values({**RILASCIO, "prerelease": di_prova})
+        opzioni = {"pseudo": False, "senza_selettore": False, "base_url": "https://esempio.test/k/", "lingue": None, "website": w, "system": tmp / "design-system",
+                   "percorsi_versione": percorsi}
+        _, giornale, _, _ = sito_py.build(tmp / "out", v, grezzi, opzioni)
+        return (tmp / "out" / "it" / "stato" / "index.html").read_text(encoding="utf-8"), giornale
+
+    def test_gli_indirizzi_dei_file_vengono_dalla_versione(self):
+        v, _ = sito_py.values(RILASCIO)
+        self.assertEqual(v["source.url"], "https://github.com/SANSEVIERIA-OU/kalliope/blob/v0.1")
+        self.assertEqual(v["tree.url"], "https://github.com/SANSEVIERIA-OU/kalliope/tree/v0.1")
+
+    def test_una_fonte_che_c_e_resta_un_collegamento_al_file_di_quella_versione(self):
+        html, _ = self.costruisci(None)
+        self.assertIn('href="https://github.com/SANSEVIERIA-OU/kalliope/blob/v0.1/README.md"', html)
+        self.assertIn('href="https://github.com/SANSEVIERIA-OU/kalliope/tree/v0.1/packaging/linux"', html)
+        html, _ = self.costruisci(self.ALBERO)
+        self.assertIn('href="https://github.com/SANSEVIERIA-OU/kalliope/blob/v0.1/README.md"', html)
+        self.assertIn('href="https://github.com/SANSEVIERIA-OU/kalliope/tree/v0.1/packaging/linux"', html)
+
+    def test_una_fonte_che_a_quella_versione_non_c_e_resta_il_suo_nome_senza_collegamento(self):
+        html, giornale = self.costruisci(self.ALBERO)
+        self.assertNotIn("non-c-e.rs</a>", html)
+        self.assertNotIn("blob/v0.1/crates/app/src/non-c-e.rs", html)   # il collegamento è tolto, non soltanto l'etichetta
+        self.assertIn("non-c-e.rs, ", html)   # il nome resta nel testo
+        self.assertTrue(any("crates/app/src/non-c-e.rs" in r and "without a link" in r for r in giornale), giornale)
+        self.assertEqual(html.count("<a "), 2, html)   # README e packaging/linux: gli altri due link restano
+
+    def test_la_prova_riconosce_una_copia_guasta(self):
+        # con il controllo spento (la copia di prima) il collegamento rotto arriva ai visitatori: è ciò che la prova sopra deve vedere
+        html, _ = self.costruisci(None)
+        self.assertIn("non-c-e.rs</a>", html)
+        # e una cartella scritta come file (o un file come cartella) non è la stessa cosa
+        html, giornale = self.costruisci({**self.ALBERO, "packaging/linux": "blob"})
+        self.assertEqual(html.count("<a "), 1)
+        self.assertTrue(any("packaging/linux" in r for r in giornale))
+
+    def test_l_indirizzo_della_pagina_e_quello_del_suo_canonical(self):
+        html, _ = self.costruisci(None)
+        self.assertIn('<p class="indirizzo" data-t-no="l\'indirizzo">https://esempio.test/k/it/stato/</p>', html)
+        self.assertIn('<link rel="canonical" href="https://esempio.test/k/it/stato/">', html)
+
+    def test_l_indirizzo_segue_la_lingua_della_pagina(self):
+        self.assertEqual(sito_py.indirizzo_pagina("https://esempio.test/k/", "de", "stato/"), "https://esempio.test/k/de/stato/")
+
+    def test_un_percorso_che_nessuno_puo_elencare_lascia_i_collegamenti(self):
+        # senza rete e senza il tag nella copia (--release-json) la costruzione non può sapere: non toglie niente e lo dice nel suo avviso di partenza
+        self.assertIsNone(sito_py.percorsi_della_versione("v0-non-c-e-in-nessun-repository", False))
+
+    def test_le_fonti_della_pagina_stato_esistono_nel_repository(self):
+        # nessun errore di battitura: ogni fonte della pagina vera è un file (o una cartella) che il repository ha (alla versione mostrata lo dice la costruzione)
+        testo = (RADICE / "website" / "stato" / "index.html").read_text(encoding="utf-8")
+        trovate = re.findall(r'href="\{\{kalliope\.(source|tree)\.url\}\}/([^"#?]+)"', testo)
+        self.assertGreaterEqual(len(trovate), 14, trovate)
+        for tipo, percorso in trovate:
+            f = RADICE / percorso
+            self.assertTrue(f.is_dir() if tipo == "tree" else f.is_file(), f"{tipo}: {percorso}")
+
+    def test_la_pagina_stato_non_scrive_l_indirizzo_a_mano(self):
+        testo = (RADICE / "website" / "stato" / "index.html").read_text(encoding="utf-8")
+        self.assertIn("{{kalliope.page.url}}", testo)
+        self.assertNotIn("github.io/kalliope/stato/</p>", testo)
+        self.assertNotIn("location.href", (RADICE / "website" / "stato" / "stato.js").read_text(encoding="utf-8"))   # il messaggio copiato non dipende da dov'è aperta la pagina
 
 
 class Repository(unittest.TestCase):

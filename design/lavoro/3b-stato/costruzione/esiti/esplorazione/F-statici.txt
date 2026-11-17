@@ -1,0 +1,24 @@
+## translations extract --check
+translations.py: 260 messages, catalogues up to date
+## translations check --complete (albero vivo: it)
+it: 260/260 entries ready
+## translations check --complete (F-10: it + nove lingue)
+ar: 260/260 entries ready
+bg: 260/260 entries ready
+bn: 260/260 entries ready
+de: 260/260 entries ready
+el: 260/260 entries ready
+fi: 260/260 entries ready
+hi: 260/260 entries ready
+it: 260/260 entries ready
+ur: 260/260 entries ready
+zh: 260/260 entries ready
+## css_logico
+css_logico.py: ok, no physical left/right, no asymmetric shorthand, no text in CSS (30 style sheets; 10 physical declarations kept on purpose)
+## unittest
+Ran 81 tests in 4.041s
+
+OK
+translations.py: 260 messages, catalogues up to date
+it: 260/260 entries ready
+Sorgenti in ordine: 29 fogli di stile, valori solo nei token

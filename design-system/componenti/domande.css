@@ -106,3 +106,9 @@
   .domande-poi { margin-top: var(--spazio-12); }
   .domande-poi .collegamento { justify-content: flex-start; text-align: start; }
 }
+
+/* ---------- Costruzione (incarico 3b-b, 17/11/2026) ---------- */
+/* ciò che il gesto apre resta in vista: sugli schermi bassi del computer (844×390) la bolla appiccicosa sta a ridosso della barra, perché ci stia la risposta più alta possibile */
+@media (min-width: 761px) and (max-height: 500px) {
+  .domande-bolla { top: var(--domande-bolla-sopra-basso); }
+}

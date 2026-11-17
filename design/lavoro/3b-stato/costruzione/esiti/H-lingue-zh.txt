@@ -1,0 +1,74 @@
+# H-lingue-zh · 17/11/2026 17:04 · sito: /tmp/lavoro-3bb-sito-H-10 · albero: /tmp/lavoro-3bb-radice-H-10 · esame-impaginazione.mjs chromium normale zh_ 390x844,360x640,844x390,1440x900,326x326,1366x640
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+zh_st · 390×844 · testo 100%: 
+  SPEZZATA «的真实会议中测试» in p.stato
+  SPEZZATA «源代码公开» in p
+  SPEZZATA «本网站不使用» in p
+zh_st_menu · 390×844 · testo 100%: 
+  SPEZZATA «的真实会议中测试» in p.stato
+  SPEZZATA «源代码公开» in p
+  SPEZZATA «本网站不使用» in p
+zh_st_dettagli · 390×844 · testo 100%: 
+  SPEZZATA «的真实会议中测试» in p.stato
+  SPEZZATA «源代码公开» in p
+  SPEZZATA «本网站不使用» in p
+zh_st_domanda · 390×844 · testo 100%: 
+  SPEZZATA «的真实会议中测试» in p.stato
+  SPEZZATA «源代码公开» in p
+  SPEZZATA «本网站不使用» in p
+zh_st_copia · 390×844 · testo 100%: 
+  SPEZZATA «的真实会议中测试» in p.stato
+  SPEZZATA «源代码公开» in p
+  SPEZZATA «本网站不使用» in p
+zh_st · 360×640 · testo 100%: 
+  SPEZZATA «的真实会议中测试» in p.stato
+  SPEZZATA «源代码公开» in p
+  SPEZZATA «所定义的» in p
+zh_st_menu · 360×640 · testo 100%: 
+  SPEZZATA «的真实会议中测试» in p.stato
+  SPEZZATA «源代码公开» in p
+  SPEZZATA «所定义的» in p
+zh_st_dettagli · 360×640 · testo 100%: 
+  SPEZZATA «的真实会议中测试» in p.stato
+  SPEZZATA «源代码公开» in p
+  SPEZZATA «所定义的» in p
+zh_st_domanda · 360×640 · testo 100%: 
+  SPEZZATA «的真实会议中测试» in p.stato
+  SPEZZATA «源代码公开» in p
+  SPEZZATA «所定义的» in p
+zh_st_copia · 360×640 · testo 100%: 
+  SPEZZATA «的真实会议中测试» in p.stato
+  SPEZZATA «源代码公开» in p
+  SPEZZATA «所定义的» in p
+zh_st · 844×390 · testo 100%: 
+  SPEZZATA «开源» in p
+zh_st_dettagli · 844×390 · testo 100%: lo stato non c'è a questa misura
+zh_st_menu · 844×390 · testo 100%: 
+  SPEZZATA «开源» in p
+zh_st_domanda · 844×390 · testo 100%: 
+  SPEZZATA «开源» in p
+  LIMITE DICHIARATO FUORI VISTA button.domanda-bottone: tutto sotto il bordo (schermo 844×390) · come sopra: la domanda premuta, in fondo all'elenco, sta sotto la bolla che comincia in alto; la bolla la ripete in testa (3b-b, da confermare)
+zh_st_copia · 844×390 · testo 100%: 
+  SPEZZATA «开源» in p
+zh_st_menu · 1440×900 · testo 100%: lo stato non c'è a questa misura
+zh_st · 1440×900 · testo 100%: pulito
+zh_st_dettagli · 1440×900 · testo 100%: lo stato non c'è a questa misura
+zh_st_domanda · 1440×900 · testo 100%: pulito
+zh_st_copia · 1440×900 · testo 100%: pulito
+zh_st · 326×326 · testo 100%: pulito
+zh_st_menu · 326×326 · testo 100%: pulito
+zh_st_dettagli · 326×326 · testo 100%: 
+  FUORI VISTA p «Negli ascolti di verific»: 19 px sotto (schermo 326×326)
+zh_st_domanda · 326×326 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA button.domanda-bottone: 10 px sopra (schermo 326×326) · schermo quadrato: la bolla sta tutta nello schermo (234 px) ma con la domanda premuta sopra non ci sta (246 px di spazio sotto la barra): vince la bolla, che ripete la domanda in testa (3b-b, da confermare)
+zh_st_copia · 326×326 · testo 100%: pulito
+zh_st_menu · 1366×640 · testo 100%: lo stato non c'è a questa misura
+zh_st · 1366×640 · testo 100%: pulito
+zh_st_dettagli · 1366×640 · testo 100%: lo stato non c'è a questa misura
+zh_st_domanda · 1366×640 · testo 100%: pulito
+zh_st_copia · 1366×640 · testo 100%: pulito
+
+SPEZZATA: 34 · FUORI VISTA: 1
+LIMITE NON USATO FUORI VISTA «div#domande-risposta» (zh_st_domanda a 844x390): alle misure provate la segnalazione non c'è più. Togli la voce: coprirebbe un difetto nuovo.
+35 cose da guardare; 2 limiti dichiarati, elencati a parte e non contati (foto in /tmp/lavoro-3bb-qa-lingue/esame/chromium)
+# uscita: 1

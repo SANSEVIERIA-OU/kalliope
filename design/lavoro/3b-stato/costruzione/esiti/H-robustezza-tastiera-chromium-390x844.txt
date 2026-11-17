@@ -1,0 +1,28 @@
+
+== tastiera · chromium 390x844
+   soste: 42 Vai al contenuto → Kalliope, pagina iniziale → Menu → Per chi è, e per chi no → Se devi controllare → README → docs/releasing.md → I dettagli e le fonti → README → I dettagli e le fonti → README → I dettagli e le fonti → Dicci come è andata, su GitHub (se → È per chi non può parlare? → E se scrivere è difficile? → Quanto costa? → Chi lo installa? → Funziona su Windows, Mac o telefon → Parla con la sua voce? → Fa i sottotitoli? → Ha frasi pronte o simboli? → È un servizio online? → Chi c'è dietro? → Da mandare a chi ti aiuta: lo stat → main.rs → download.rs → catalog.rs → docs/releasing.md → settings.rs → paths.rs → main.rs → packaging/linux → docs/releasing.md → Licenze → Impronte e provenienza → Copia il messaggio → Come si installa → Ascolta → Stato e limiti → Installa → In riunione → Aiuto
+ok   il giro tocca ogni comando una volta, in un ordine · 42 soste
+ok   le dieci domande sono nell'ordine del fuoco · 10
+ok   al telefono le fonti dentro i dettagli chiusi non sono nell'ordine del fuoco (restano le 13 fuori dai dettagli) · 13: README, docs/releasing.md, README, README, main.rs, download.rs, catalog.rs, docs/releasing.md, settings.rs, paths.rs, main.rs, packaging/linux, docs/releasing.md
+ok   «Copia il messaggio» è nell'ordine del fuoco
+ok   ogni sosta ha il comando in vista, opaco e non sotto la barra
+ok   nessuna sosta sta sotto la barra
+ok   il contorno del fuoco si vede su ogni sosta
+ok   il contorno del fuoco si distingue dal fondo su cui sta (almeno 1,8 : 1 dove il fondo è pieno) · 42 soste misurate
+ok   l'ordine del fuoco va dall'alto in basso (e da una colonna alla seguente: prima quella all'inizio della riga)
+ok   console pulita
+
+== tastiera-veloce · chromium 390x844
+   soste: 42 Vai al contenuto → Kalliope, pagina iniziale → Menu → Per chi è, e per chi no → Se devi controllare → README → docs/releasing.md → I dettagli e le fonti → README → I dettagli e le fonti → README → I dettagli e le fonti → Dicci come è andata, su GitHub (se → È per chi non può parlare? → E se scrivere è difficile? → Quanto costa? → Chi lo installa? → Funziona su Windows, Mac o telefon → Parla con la sua voce? → Fa i sottotitoli? → Ha frasi pronte o simboli? → È un servizio online? → Chi c'è dietro? → Da mandare a chi ti aiuta: lo stat → main.rs → download.rs → catalog.rs → docs/releasing.md → settings.rs → paths.rs → main.rs → packaging/linux → docs/releasing.md → Licenze → Impronte e provenienza → Copia il messaggio → Come si installa → Ascolta → Stato e limiti → Installa → In riunione → Aiuto
+ok   il giro tocca ogni comando una volta, in un ordine · 42 soste
+ok   le dieci domande sono nell'ordine del fuoco · 10
+ok   al telefono le fonti dentro i dettagli chiusi non sono nell'ordine del fuoco (restano le 13 fuori dai dettagli) · 13: README, docs/releasing.md, README, README, main.rs, download.rs, catalog.rs, docs/releasing.md, settings.rs, paths.rs, main.rs, packaging/linux, docs/releasing.md
+ok   «Copia il messaggio» è nell'ordine del fuoco
+ok   a passo svelto il giro è lo stesso · Per chi è, e per chi no (op 0.00, in vista, top 776, bottom 824), Se devi controllare (op 0.00, in vista, top 800, bottom 844)
+ok   nessuna sosta sta sotto la barra
+ok   il contorno del fuoco si vede su ogni sosta
+ok   il contorno del fuoco si distingue dal fondo su cui sta (almeno 1,8 : 1 dove il fondo è pieno) · 42 soste misurate
+ok   l'ordine del fuoco va dall'alto in basso (e da una colonna alla seguente: prima quella all'inizio della riga)
+ok   console pulita
+
+20/20 ok

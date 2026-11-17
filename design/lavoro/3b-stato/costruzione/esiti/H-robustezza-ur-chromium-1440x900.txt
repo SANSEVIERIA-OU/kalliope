@@ -1,0 +1,74 @@
+
+== domande · chromium 1440x900 · da destra a sinistra
+ok   dieci domande, una sola aperta, la risposta è una regione che si annuncia · {"bottoni":10,"aperte":1,"regione":"region/polite","controls":true}
+ok   Tab porta alla domanda seguente · d-installa
+ok   Invio apre la risposta, il fuoco resta sul pulsante, la risposta è annunciata · {"fuoco":"d-installa","aria":"true","chiede":"Chi lo installa?","annuncio":"Risposta: Chi lo installa?","bollaTop":480,"bollaBottom":773,"barra":72,"vh":900,"prec":""}
+ok   al computer la bolla sta in vista sotto la barra · {"fuoco":"d-installa","aria":"true","chiede":"Chi lo installa?","annuncio":"Risposta: Chi lo installa?","bollaTop":480,"bollaBottom":773,"barra":72,"vh":900,"prec":""}
+ok   al computer Tab dalla domanda va alla domanda seguente (la bolla sta dopo l'elenco) · {"tag":"button","nome":"⁦Funziona su Windows⁩, ⁦Mac o ","dentro":false}
+ok   Spazio cambia la risposta: una sola domanda aperta, il fuoco resta, annuncio nuovo · {"chiede":"Quanto costa?","aperte":["Quanto costa?"],"fuoco":"d-costa","annuncio":"Risposta: Quanto costa?"}
+ok   premere la domanda già aperta non la chiude e non cambia la risposta
+ok   ogni risposta: la bolla comincia sotto la barra e, se ci sta, sta tutta nello schermo · 10 risposte, la più alta 347 px
+ok   «Da mandare a chi ti aiuta» porta al messaggio: titolo sotto la barra, opaco, bolla visibile (se è nello schermo) · {"titolo":200,"barra":72,"op":1,"bolla":1,"bollaInVista":true,"hash":"#inoltra"}
+ok   cambiando misura con il fuoco su un collegamento della risposta, il fuoco non va perso · {"prime":{"tag":"a","dentro":true,"href":"../../it/installa/"},"dopoMisura":{"tag":"a","dentro":true,"href":"../../it/installa/"}}
+ok   console pulita
+
+== dettagli · chromium 1440x900 · da destra a sinistra
+ok   al computer i dettagli sono tutti aperti · 5 blocchi: 11111
+ok   al computer le tappe non mostrano «I dettagli e le fonti» e il titolo delle licenze non è una sosta del fuoco · {"tappe":["none","none","none"],"licenze":[-1,-1]}
+ok   cliccare il titolo delle licenze al computer non chiude il blocco
+ok   dal computer al telefono i dettagli si chiudono (nessuna scelta fatta) · 00000
+ok   e tornando al computer sono di nuovo tutti aperti
+ok   la parentesi «non misurato» va dal nodo di «Scrivi la frase» a quello di «Gli altri ti sentono» (a meno di 2 px) anche dopo il giro · {"inizio":0,"fine":0}
+ok   console pulita
+
+== copia · chromium 1440x900 · da destra a sinistra
+ok   la copia riesce: il testo copiato è quello della bolla e finisce con l'indirizzo · "Kalliope: scrivi una frase e una voce italiana la dice nella riunione. Oggi è una versione di prova, solo per Linux, provata fino al microfono e non ancora in una riunione vera. Senza account e senza prezzo; il testo resta sul computer.\nhttps://sansevieria-ou.github.io/kalliope/ur/stato/"
+ok   l'indirizzo mostrato, quello copiato e il canonical sono lo stesso (nella cartella della lingua) · https://sansevieria-ou.github.io/kalliope/ur/stato/ | https://sansevieria-ou.github.io/kalliope/ur/stato/
+ok   l'indirizzo si legge da sinistra a destra: comincia con «https» e finisce con la barra · {"primo":"h","ultimo":"/","aSinistra":true}
+ok   la copia riesce: la risposta compare, l'errore no, la bolla ha l'anello, il posto della risposta è uno stato annunciato · {"fatto":true,"errore":true,"anello":true,"stato":"status"}
+ok   la risposta sta nello schermo, sotto la barra, vicino al comando · {"top":838,"bottom":858,"comando":818,"vh":900,"barra":72}
+ok   premendo ancora la risposta si annuncia di nuovo (sparisce e ricompare) · nascosta,visibile
+ok   console pulita
+ok   la copia non riesce: l'errore dice cosa fare, nessuna conferma, nessun anello sulla bolla · {"errore":true,"fatto":true,"anello":false,"top":838,"bottom":858,"vh":900,"barra":72,"testo":"⁦Non riesco a copiarlo⁩: ⁦seleziona il testo della bolla e copialo⁩, ⁦o manda l⁩'⁦indirizzo di questa pagina⁩."}
+ok   il messaggio d'errore sta nello schermo per intero, sotto la barra · {"errore":true,"fatto":true,"anello":false,"top":838,"bottom":858,"vh":900,"barra":72,"testo":"⁦Non riesco a copiarlo⁩: ⁦seleziona il testo della bolla e copialo⁩, ⁦o manda l⁩'⁦indirizzo di questa pagina⁩."}
+ok   un clic sulla bolla seleziona il testo da copiare a mano (messaggio intero) · ⁦Kalliope⁩: ⁦scrivi una frase e una voce italiana la dice ne
+ok   dopo un errore, riprovando e riuscendo, resta solo la conferma
+ok   console pulita
+ok   senza appunti: il comando non c'è e la frase per copiare a mano sì · {"comando":"none","hidden":true,"frase":"block","classe":true}
+ok   console pulita
+ok   con gli appunti veri il testo copiato finisce con l'indirizzo mostrato e non ha segni di verso · "il testo resta sul computer.\nhttps://sansevieria-ou.github.io/kalliope/ur/stato/"
+ok   console pulita
+
+== senza-js · chromium 1440x900 · da destra a sinistra
+ok   senza JavaScript: niente classe «js»
+ok   senza JavaScript il comando di copia non c'è e la frase per copiare a mano sì · {"copia":"none","frase":"block"}
+ok   ogni domanda ha la sua risposta sotto (niente comandi, dieci risposte in vista) · {"domande":0,"risposte":10}
+ok   i dettagli sono aperti e senza il comando · ["none","none","none"]
+ok   la scena è allo stato finale: voce, tratteggio, titoli, bolle e riquadri visibili · {"riquadri":"1,1,1,1","titoli":0,"bolla":"1","bollaP":"1"}
+ok   il computer del varco ha tutto in vista, e le impronte non si vedono (fermi) · 1/1/1 pacchi 0
+ok   la catena è accesa e le quote sono piene · none
+ok   l'indirizzo c'è (lo scrive la costruzione), nessuno scorrimento di lato · https://sansevieria-ou.github.io/kalliope/ur/stato/, 1440 contro 1440
+ok   senza JavaScript il giro di tastiera arriva a ogni collegamento (barra, fonti, domande con i loro collegamenti, piede) · 58 soste
+ok   console pulita
+
+== ridotto · chromium 1440x900 · da destra a sinistra
+ok   «riduci movimento»: il primo schermo è già al suo stato finale e la catena accesa · {"fatta":true,"acceso":"truetruetruetruetruetrue"}
+ok   con «riduci movimento» la risposta cambia subito, senza dissolvenza · {"op":1,"chiede":"Quanto costa?","animazioni":0}
+ok   con «riduci movimento» il passo cambia, le impronte non scendono · {"passo":"scarico","anim":0,"pacchi":"0"}
+ok   con «riduci movimento» la copia risponde e la bolla non fa l'anello animato · {"fatto":true,"anello":false}
+ok   console pulita
+
+== tastiera-veloce · chromium 1440x900 · da destra a sinistra
+   soste: 65 مواد پر جائیں → Kalliope، مرکزی صفحہ → سنیں → حالت اور حدود → انسٹال کریں → میٹنگ میں → مدد → زبان بدلیں: اردو → Per chi è, e per chi no → Se devi controllare → README → docs/releasing.md → README → CHANGELOG.md → README → engine.rs → benchmarks/engines → README → README → docs/virtual-microphone.md → Dicci come è andata, su GitHub (se → È per chi non può parlare? → E se scrivere è difficile? → Quanto costa? → Chi lo installa? → Funziona su Windows, Mac o telefon → Parla con la sua voce? → Fa i sottotitoli? → Ha frasi pronte o simboli? → È un servizio online? → Chi c'è dietro? → Da mandare a chi ti aiuta: lo stat → main.rs → download.rs → catalog.rs → docs/releasing.md → settings.rs → paths.rs → main.rs → packaging/linux → docs/releasing.md → LICENSE → NOTICE → NOTICE → THIRD_PARTY_NOTICES.md → pagina Installa → SHA256SUMS → repository su GitHub → Copia il messaggio → Come si installa → 
+ok   il giro tocca ogni comando una volta, in un ordine · 65 soste
+ok   le dieci domande sono nell'ordine del fuoco · 10
+ok   le fonti si raggiungono con la tastiera (tutte le 23 collegate) · 23: README, docs/releasing.md, README, CHANGELOG.md, README, engine.rs, benchmarks/engines, README, README, docs/virtual-microphone.md, main.rs, download.rs, catalog.rs, docs/releasing.md, settings.rs, paths.rs, main.rs, packaging/linux, docs/releasing.md, LICENSE, NOTICE, NOTICE, THIRD_PARTY_NOTICES.md
+ok   «Copia il messaggio» è nell'ordine del fuoco
+ok   a passo svelto il giro è lo stesso · Per chi è, e per chi no (op 0.98, in vista, top 713, bottom 769), Se devi controllare (op 0.93, in vista, top 717, bottom 765)
+ok   nessuna sosta sta sotto la barra
+ok   il contorno del fuoco si vede su ogni sosta
+ok   il contorno del fuoco si distingue dal fondo su cui sta (almeno 1,8 : 1 dove il fondo è pieno) · 65 soste misurate
+ok   l'ordine del fuoco va dall'alto in basso (e da una colonna alla seguente: prima quella all'inizio della riga)
+ok   console pulita
+
+59/59 ok

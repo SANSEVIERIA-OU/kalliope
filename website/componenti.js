@@ -81,12 +81,12 @@
   const etichette = $$('.riquadro.tu .nome');
   function misuraEtichette() {
     for (const n of etichette) {
-      const r = n.closest('.riquadro'), prima = n.style.whiteSpace;
-      r.classList.remove('nome-corto'); n.style.whiteSpace = 'nowrap';
-      const testo = document.createRange(); testo.selectNodeContents(n);   // la larghezza del testo in una riga (scrollWidth non vede ciò che esce a sinistra, da destra a sinistra)
-      const pad = px(getComputedStyle(n).paddingInlineStart) + px(getComputedStyle(n).paddingInlineEnd);
-      const troppo = testo.getBoundingClientRect().width > n.clientWidth - pad + 1;
-      n.style.whiteSpace = prima; r.classList.toggle('nome-corto', troppo);
+      const r = n.closest('.riquadro');
+      r.classList.remove('nome-corto');
+      // sta in una riga? Si contano le righe vere dell'etichetta, a capo compreso (come per l'azione della barra): la larghezza del testo contro quella del riquadro
+      // si confrontava a meno di un pixel, e con un carattere di riserva più largo di quello del sito (se non arriva) l'etichetta andava su due righe sopra le
+      // barre della voce senza che la misura lo vedesse (giudizio di «stato», M11). Righe e non larghezze: non dipendono da come si arrotonda né da una scala d'entrata
+      r.classList.toggle('nome-corto', righeDi(n) > 1);
     }
   }
 

@@ -1,0 +1,36 @@
+## firefox it/stato/
+ok  firefox 390x844 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 151×19, tocca le barre: true, font caricati: 2
+ok  firefox 390x844 SENZA caratteri · 1 riga/e, corto (Tu · microfono «Kalliope»), 30×19, tocca le barre: false, font caricati: 2
+ok  firefox 360x740 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 28×19, tocca le barre: false, font caricati: 2
+ok  firefox 360x740 SENZA caratteri · 1 riga/e, lungo (Tu · microfono «Kalliope»), 30×19, tocca le barre: false, font caricati: 2
+ok  firefox 326x326 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 28×19, tocca le barre: false, font caricati: 2
+ok  firefox 326x326 SENZA caratteri · 1 riga/e, lungo (Tu · microfono «Kalliope»), 30×19, tocca le barre: false, font caricati: 2
+ok  firefox 1440x900 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 182×26, tocca le barre: false, font caricati: 2
+ok  firefox 1440x900 SENZA caratteri · 1 riga/e, lungo (Tu · microfono «Kalliope»), 187×26, tocca le barre: false, font caricati: 2
+## firefox it/
+ok  firefox 390x844 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 151×19, tocca le barre: true, font caricati: 2
+ok  firefox 390x844 SENZA caratteri · 1 riga/e, corto (Tu · microfono «Kalliope»), 30×19, tocca le barre: false, font caricati: 2
+ok  firefox 360x740 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 28×19, tocca le barre: false, font caricati: 2
+ok  firefox 360x740 SENZA caratteri · 1 riga/e, lungo (Tu · microfono «Kalliope»), 30×19, tocca le barre: false, font caricati: 2
+ok  firefox 326x326 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 28×19, tocca le barre: false, font caricati: 2
+ok  firefox 326x326 SENZA caratteri · 1 riga/e, lungo (Tu · microfono «Kalliope»), 30×19, tocca le barre: false, font caricati: 2
+ok  firefox 1440x900 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 182×26, tocca le barre: false, font caricati: 2
+ok  firefox 1440x900 SENZA caratteri · 1 riga/e, lungo (Tu · microfono «Kalliope»), 187×26, tocca le barre: false, font caricati: 2
+## webkit it/stato/
+ok  webkit 390x844 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 151×19, tocca le barre: true, font caricati: 3
+ok  webkit 390x844 SENZA caratteri · 1 riga/e, corto (Tu · microfono «Kalliope»), 30×19, tocca le barre: false, font caricati: 1
+ok  webkit 360x740 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 28×19, tocca le barre: false, font caricati: 3
+ok  webkit 360x740 SENZA caratteri · 1 riga/e, lungo (Tu · microfono «Kalliope»), 30×19, tocca le barre: false, font caricati: 1
+ok  webkit 326x326 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 28×19, tocca le barre: false, font caricati: 3
+ok  webkit 326x326 SENZA caratteri · 1 riga/e, lungo (Tu · microfono «Kalliope»), 30×19, tocca le barre: false, font caricati: 1
+ok  webkit 1440x900 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 182×26, tocca le barre: false, font caricati: 3
+ok  webkit 1440x900 SENZA caratteri · 1 riga/e, lungo (Tu · microfono «Kalliope»), 187×26, tocca le barre: false, font caricati: 1
+## webkit it/
+ok  webkit 390x844 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 151×19, tocca le barre: true, font caricati: 2
+ok  webkit 390x844 SENZA caratteri · 1 riga/e, corto (Tu · microfono «Kalliope»), 30×19, tocca le barre: false, font caricati: 1
+ok  webkit 360x740 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 28×19, tocca le barre: false, font caricati: 2
+ok  webkit 360x740 SENZA caratteri · 1 riga/e, lungo (Tu · microfono «Kalliope»), 30×19, tocca le barre: false, font caricati: 1
+ok  webkit 326x326 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 28×19, tocca le barre: false, font caricati: 2
+ok  webkit 326x326 SENZA caratteri · 1 riga/e, lungo (Tu · microfono «Kalliope»), 30×19, tocca le barre: false, font caricati: 1
+ok  webkit 1440x900 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 182×26, tocca le barre: false, font caricati: 2
+ok  webkit 1440x900 SENZA caratteri · 1 riga/e, lungo (Tu · microfono «Kalliope»), 187×26, tocca le barre: false, font caricati: 1

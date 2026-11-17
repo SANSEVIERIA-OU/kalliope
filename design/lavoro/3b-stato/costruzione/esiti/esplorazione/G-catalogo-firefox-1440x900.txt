@@ -1,0 +1,21 @@
+ok   il catalogo principale si costruisce senza errori · {"errori":[]}
+ok   le pagine interne si costruiscono senza errori · {"errori":[],"schermi":8}
+ok   la sezione «stato» si costruisce senza errori · {"errori":[],"schermi":11}
+ok   cinque schede: riunione provata, catena, domande, varco, messaggio · 5 schede, 44 prove, 11 pagine vive: La riunione con il confine del provato | La strada vista da vicino: la catena e le sue tappe | Le domande, e la risposta nella bolla | Il varco: che cosa entra nel computer, che cosa resta | Il messaggio da inoltrare
+ok   la sezione sta nell'indice e dopo quella delle pagine interne · pagina-stato
+ok   ogni scheda ha le cinque voci e almeno cinque prove · [10,10,6,10,8]
+ok   il catalogo non scorre di lato · {"pagina":1440,"finestra":1440}
+ok   i comandi «Riproduci» ci sono · 26 comandi
+ok   i cinque passi del varco si scelgono · tutto,testo,scarico,disco,chiudi
+ok   varco, passo «tutto»: il computer e il passo accanto · {"passo":"tutto","qui":null,"js":true}
+ok   varco, passo «testo»: il computer e il passo accanto · {"passo":"testo","qui":"testo","js":true}
+ok   varco, passo «scarico»: il computer e il passo accanto · {"passo":"scarico","qui":"scarico","js":true}
+ok   varco, passo «disco»: il computer e il passo accanto · {"passo":"disco","qui":"disco","js":true}
+ok   varco, passo «chiudi»: il computer e il passo accanto · {"passo":"chiudi","qui":"chiudi","js":true}
+ok   il comando del catalogo preme la domanda vera nel riquadro · {"chiede":"Chi c'è dietro?","aperta":"Chi c'è dietro?"}
+ok   «Riproduci» dell'arrivo: la voce parla poi la scena si ferma allo stato finale · durante: true, fine: true
+ok   «Riproduci» della catena accende tutte le tappe, a cascata · {"acceso":6,"tutte":6}
+ok   la parentesi «non misurato» va da un nodo all'altro (misurata) e non è alta quanto tutta la catena · {"da":"386.5px","a":"1839.5px","h":1453,"alta":1974}
+ok   console pulita
+
+19/19 ok

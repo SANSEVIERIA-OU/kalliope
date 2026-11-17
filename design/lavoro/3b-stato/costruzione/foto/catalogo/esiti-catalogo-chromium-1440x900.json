@@ -1,0 +1,97 @@
+[
+ {
+  "nome": "il catalogo principale si costruisce senza errori",
+  "ok": true,
+  "dettaglio": "{\"errori\":[]}"
+ },
+ {
+  "nome": "le pagine interne si costruiscono senza errori",
+  "ok": true,
+  "dettaglio": "{\"errori\":[],\"schermi\":8}"
+ },
+ {
+  "nome": "la sezione «stato» si costruisce senza errori",
+  "ok": true,
+  "dettaglio": "{\"errori\":[],\"schermi\":11}"
+ },
+ {
+  "nome": "cinque schede: riunione provata, catena, domande, varco, messaggio",
+  "ok": true,
+  "dettaglio": "5 schede, 44 prove, 11 pagine vive: La riunione con il confine del provato | La strada vista da vicino: la catena e le sue tappe | Le domande, e la risposta nella bolla | Il varco: che cosa entra nel computer, che cosa resta | Il messaggio da inoltrare"
+ },
+ {
+  "nome": "la sezione sta nell'indice e dopo quella delle pagine interne",
+  "ok": true,
+  "dettaglio": "pagina-stato"
+ },
+ {
+  "nome": "ogni scheda ha le cinque voci e almeno cinque prove",
+  "ok": true,
+  "dettaglio": "[10,10,6,10,8]"
+ },
+ {
+  "nome": "il catalogo non scorre di lato",
+  "ok": true,
+  "dettaglio": "{\"pagina\":1440,\"finestra\":1440}"
+ },
+ {
+  "nome": "i comandi «Riproduci» ci sono",
+  "ok": true,
+  "dettaglio": "27 comandi"
+ },
+ {
+  "nome": "i cinque passi del varco si scelgono",
+  "ok": true,
+  "dettaglio": "tutto,testo,scarico,disco,chiudi"
+ },
+ {
+  "nome": "varco, passo «tutto»: il computer e il passo accanto",
+  "ok": true,
+  "dettaglio": "{\"passo\":\"tutto\",\"qui\":null,\"js\":true}"
+ },
+ {
+  "nome": "varco, passo «testo»: il computer e il passo accanto",
+  "ok": true,
+  "dettaglio": "{\"passo\":\"testo\",\"qui\":\"testo\",\"js\":true}"
+ },
+ {
+  "nome": "varco, passo «scarico»: il computer e il passo accanto",
+  "ok": true,
+  "dettaglio": "{\"passo\":\"scarico\",\"qui\":\"scarico\",\"js\":true}"
+ },
+ {
+  "nome": "varco, passo «disco»: il computer e il passo accanto",
+  "ok": true,
+  "dettaglio": "{\"passo\":\"disco\",\"qui\":\"disco\",\"js\":true}"
+ },
+ {
+  "nome": "varco, passo «chiudi»: il computer e il passo accanto",
+  "ok": true,
+  "dettaglio": "{\"passo\":\"chiudi\",\"qui\":\"chiudi\",\"js\":true}"
+ },
+ {
+  "nome": "il comando del catalogo preme la domanda vera nel riquadro",
+  "ok": true,
+  "dettaglio": "{\"chiede\":\"Chi c'è dietro?\",\"aperta\":\"Chi c'è dietro?\"}"
+ },
+ {
+  "nome": "«Riproduci» dell'arrivo: la voce parla poi la scena si ferma allo stato finale",
+  "ok": true,
+  "dettaglio": "durante: true, fine: true"
+ },
+ {
+  "nome": "«Riproduci» della catena accende tutte le tappe, a cascata",
+  "ok": true,
+  "dettaglio": "{\"acceso\":6,\"tutte\":6}"
+ },
+ {
+  "nome": "la parentesi «non misurato» va da un nodo all'altro (misurata) e non è alta quanto tutta la catena",
+  "ok": true,
+  "dettaglio": "{\"da\":\"386.0px\",\"a\":\"1838.9px\",\"h\":1453,\"alta\":1973}"
+ },
+ {
+  "nome": "console pulita",
+  "ok": true,
+  "dettaglio": ""
+ }
+]

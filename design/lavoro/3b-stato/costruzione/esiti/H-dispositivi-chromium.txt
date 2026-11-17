@@ -1,0 +1,101 @@
+# H-dispositivi-chromium · 17/11/2026 16:47 · sito: /tmp/lavoro-3bb-sito-H-it · albero: /tmp/lavoro-3bb-radice-H-10 · dispositivi-qa.mjs chromium stato
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+ok  stato · Telefono 390×844
+ok  stato-dettagli · Telefono 390×844
+ok  stato-menu · Telefono 390×844
+ok  stato-domanda · Telefono 390×844
+ok  stato-copia-fatta · Telefono 390×844
+ok  stato-copia-non-riuscita · Telefono 390×844
+ok  stato · Telefono piccolo 360×740
+ok  stato-menu · Telefono piccolo 360×740
+ok  stato-dettagli · Telefono piccolo 360×740
+ok  stato-domanda · Telefono piccolo 360×740
+ok  stato-copia-fatta · Telefono piccolo 360×740
+ok  stato-copia-non-riuscita · Telefono piccolo 360×740
+ok  stato · Telefono girato 844×390
+--  stato-dettagli · Telefono girato 844×390: lo stato non c'è a questa misura
+ok  stato-menu · Telefono girato 844×390
+ok  stato-domanda · Telefono girato 844×390
+  LIMITE DICHIARATO FUORI VISTA button.domanda-bottone: tutto sotto il bordo (schermo 844×390) · come sopra: la domanda premuta, in fondo all'elenco, sta sotto la bolla che comincia in alto; la bolla la ripete in testa (3b-b, da confermare)
+  LIMITE DICHIARATO FUORI VISTA div#domande-risposta: 55 px sotto (schermo 844×390) · telefono girato: le due risposte più lunghe («Ha frasi pronte o simboli?» e «Chi c'è dietro?», 362 px) sono più alte dello spazio sotto la barra (306 px): ne comincia la parte alta; il fondo si legge scorrendo (3b-b, da confermare)
+ok  stato-copia-fatta · Telefono girato 844×390
+ok  stato-copia-non-riuscita · Telefono girato 844×390
+ok  stato · Galaxy Z Fold chiuso 412×915
+ok  stato-menu · Galaxy Z Fold chiuso 412×915
+ok  stato-domanda · Galaxy Z Fold chiuso 412×915
+ok  stato-dettagli · Galaxy Z Fold chiuso 412×915
+ok  stato-copia-fatta · Galaxy Z Fold chiuso 412×915
+ok  stato-copia-non-riuscita · Galaxy Z Fold chiuso 412×915
+ok  stato · Galaxy Z Fold aperto 750×832
+ok  stato-menu · Galaxy Z Fold aperto 750×832
+ok  stato-domanda · Galaxy Z Fold aperto 750×832
+ok  stato-dettagli · Galaxy Z Fold aperto 750×832
+ok  stato-copia-fatta · Galaxy Z Fold aperto 750×832
+ok  stato-copia-non-riuscita · Galaxy Z Fold aperto 750×832
+ok  stato · iPhone Duo chiuso 466×678
+ok  stato-menu · iPhone Duo chiuso 466×678
+ok  stato-domanda · iPhone Duo chiuso 466×678
+ok  stato-dettagli · iPhone Duo chiuso 466×678
+ok  stato-copia-fatta · iPhone Duo chiuso 466×678
+ok  stato-copia-non-riuscita · iPhone Duo chiuso 466×678
+ok  stato · iPhone Duo aperto 951×669
+--  stato-dettagli · iPhone Duo aperto 951×669: lo stato non c'è a questa misura
+ok  stato-menu · iPhone Duo aperto 951×669
+ok  stato-domanda · iPhone Duo aperto 951×669
+ok  stato-copia-fatta · iPhone Duo aperto 951×669
+ok  stato-copia-non-riuscita · iPhone Duo aperto 951×669
+ok  stato · Huawei Pura X chiuso 326×326
+ok  stato-menu · Huawei Pura X chiuso 326×326
+ok  stato-dettagli · Huawei Pura X chiuso 326×326
+ok  stato-domanda · Huawei Pura X chiuso 326×326
+  LIMITE DICHIARATO FUORI VISTA button.domanda-bottone: 10 px sopra (schermo 326×326) · schermo quadrato: la bolla sta tutta nello schermo (234 px) ma con la domanda premuta sopra non ci sta (246 px di spazio sotto la barra): vince la bolla, che ripete la domanda in testa (3b-b, da confermare)
+ok  stato-copia-fatta · Huawei Pura X chiuso 326×326
+ok  stato-copia-non-riuscita · Huawei Pura X chiuso 326×326
+ok  stato · Huawei Pura X aperto 440×706
+ok  stato-menu · Huawei Pura X aperto 440×706
+ok  stato-dettagli · Huawei Pura X aperto 440×706
+ok  stato-domanda · Huawei Pura X aperto 440×706
+ok  stato-copia-fatta · Huawei Pura X aperto 440×706
+ok  stato-copia-non-riuscita · Huawei Pura X aperto 440×706
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+ok  stato · Huawei Pura X View 440×744
+ok  stato-menu · Huawei Pura X View 440×744
+ok  stato-dettagli · Huawei Pura X View 440×744
+ok  stato-domanda · Huawei Pura X View 440×744
+ok  stato-copia-fatta · Huawei Pura X View 440×744
+ok  stato-copia-non-riuscita · Huawei Pura X View 440×744
+ok  stato · Huawei Pura X Max chiuso 421×616
+ok  stato-menu · Huawei Pura X Max chiuso 421×616
+ok  stato-dettagli · Huawei Pura X Max chiuso 421×616
+ok  stato-domanda · Huawei Pura X Max chiuso 421×616
+ok  stato-copia-fatta · Huawei Pura X Max chiuso 421×616
+ok  stato-copia-non-riuscita · Huawei Pura X Max chiuso 421×616
+--  stato-dettagli · Huawei Pura X Max aperto 861×609: lo stato non c'è a questa misura
+ok  stato · Huawei Pura X Max aperto 861×609
+ok  stato-menu · Huawei Pura X Max aperto 861×609
+ok  stato-domanda · Huawei Pura X Max aperto 861×609
+ok  stato-copia-fatta · Huawei Pura X Max aperto 861×609
+ok  stato-copia-non-riuscita · Huawei Pura X Max aperto 861×609
+ok  stato · Tablet 820×1180
+--  stato-dettagli · Tablet 820×1180: lo stato non c'è a questa misura
+ok  stato-menu · Tablet 820×1180
+ok  stato-domanda · Tablet 820×1180
+ok  stato-copia-fatta · Tablet 820×1180
+ok  stato-copia-non-riuscita · Tablet 820×1180
+--  stato-menu · Tablet girato 1180×820: lo stato non c'è a questa misura
+ok  stato · Tablet girato 1180×820
+--  stato-dettagli · Tablet girato 1180×820: lo stato non c'è a questa misura
+ok  stato-domanda · Tablet girato 1180×820
+ok  stato-copia-fatta · Tablet girato 1180×820
+ok  stato-copia-non-riuscita · Tablet girato 1180×820
+--  stato-menu · Computer 1440×900: lo stato non c'è a questa misura
+ok  stato · Computer 1440×900
+--  stato-dettagli · Computer 1440×900: lo stato non c'è a questa misura
+ok  stato-domanda · Computer 1440×900
+ok  stato-copia-fatta · Computer 1440×900
+ok  stato-copia-non-riuscita · Computer 1440×900
+
+82 casi puliti (82 in questo giro; foto in /tmp/lavoro-3bb-qa-H-dispositivi-chromium/dispositivi/chromium). Sono simulazioni, non telefoni veri.
+  3 limiti dichiarati, elencati a parte e non contati
+  135 casi della matrice non eseguiti (filtro o giro interrotto: --continua li riprende)
+# uscita: 0

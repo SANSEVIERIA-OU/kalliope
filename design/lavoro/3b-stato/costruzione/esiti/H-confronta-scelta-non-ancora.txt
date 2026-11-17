@@ -1,0 +1,7 @@
+# confronta-scelta non-ancora · scelta c8d2aa3 (/tmp/lavoro-3bb-sito-base-it) contro i file finali H (/tmp/lavoro-3bb-sito-H-it), con «riduci movimento»
+CONFRONTO 1440×900: uguale su 42 cose nello schermo · pixel diversi 0%
+CONFRONTO 1366×640: uguale su 41 cose nello schermo · pixel diversi 0%
+CONFRONTO 390×844: uguale su 36 cose nello schermo · pixel diversi 0%
+CONFRONTO 844×390: uguale su 12 cose nello schermo · pixel diversi 0%
+CONFRONTO 360×640: uguale su 27 cose nello schermo · pixel diversi 0%
+Uguale alla scelta, salvo le differenze ammesse (foto in /tmp/lavoro-3bb-scelta-non-ancora)

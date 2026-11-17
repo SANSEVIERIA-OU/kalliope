@@ -1,0 +1,73 @@
+# H-misure-2 · 17/11/2026 16:33 · sito: /tmp/lavoro-3bb-sito-H-it · albero: /tmp/lavoro-3bb-radice-H-10 · esame-impaginazione.mjs chromium normale stato 861x609,820x1180,1180x820,1440x900,360x640,390x667,375x812,320x568,1024x600,915x412,1366x640
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+stato · 861×609 · testo 100%: pulito
+stato-dettagli · 861×609 · testo 100%: lo stato non c'è a questa misura
+stato-menu · 861×609 · testo 100%: pulito
+stato-domanda · 861×609 · testo 100%: pulito
+stato-copia-fatta · 861×609 · testo 100%: pulito
+stato-copia-non-riuscita · 861×609 · testo 100%: pulito
+stato · 820×1180 · testo 100%: pulito
+stato-dettagli · 820×1180 · testo 100%: lo stato non c'è a questa misura
+stato-menu · 820×1180 · testo 100%: pulito
+stato-domanda · 820×1180 · testo 100%: pulito
+stato-copia-fatta · 820×1180 · testo 100%: pulito
+stato-copia-non-riuscita · 820×1180 · testo 100%: pulito
+stato-menu · 1180×820 · testo 100%: lo stato non c'è a questa misura
+stato · 1180×820 · testo 100%: pulito
+stato-dettagli · 1180×820 · testo 100%: lo stato non c'è a questa misura
+stato-domanda · 1180×820 · testo 100%: pulito
+stato-copia-fatta · 1180×820 · testo 100%: pulito
+stato-copia-non-riuscita · 1180×820 · testo 100%: pulito
+stato-menu · 1440×900 · testo 100%: lo stato non c'è a questa misura
+stato-dettagli · 1440×900 · testo 100%: lo stato non c'è a questa misura
+stato · 1440×900 · testo 100%: pulito
+stato-domanda · 1440×900 · testo 100%: pulito
+stato-copia-fatta · 1440×900 · testo 100%: pulito
+stato-copia-non-riuscita · 1440×900 · testo 100%: pulito
+stato · 360×640 · testo 100%: pulito
+stato-menu · 360×640 · testo 100%: pulito
+stato-domanda · 360×640 · testo 100%: pulito
+stato-dettagli · 360×640 · testo 100%: pulito
+stato-copia-fatta · 360×640 · testo 100%: pulito
+stato-copia-non-riuscita · 360×640 · testo 100%: pulito
+stato · 390×667 · testo 100%: pulito
+stato-menu · 390×667 · testo 100%: pulito
+stato-dettagli · 390×667 · testo 100%: pulito
+stato-domanda · 390×667 · testo 100%: pulito
+stato-copia-fatta · 390×667 · testo 100%: pulito
+stato-copia-non-riuscita · 390×667 · testo 100%: pulito
+stato · 375×812 · testo 100%: pulito
+stato-menu · 375×812 · testo 100%: pulito
+stato-dettagli · 375×812 · testo 100%: pulito
+stato-domanda · 375×812 · testo 100%: pulito
+stato-copia-fatta · 375×812 · testo 100%: pulito
+stato-copia-non-riuscita · 375×812 · testo 100%: pulito
+stato-dettagli · 320×568 · testo 100%: pulito
+stato-domanda · 320×568 · testo 100%: pulito
+stato · 320×568 · testo 100%: pulito
+stato-menu · 320×568 · testo 100%: pulito
+stato-copia-fatta · 320×568 · testo 100%: pulito
+stato-copia-non-riuscita · 320×568 · testo 100%: pulito
+stato-menu · 1024×600 · testo 100%: lo stato non c'è a questa misura
+stato · 1024×600 · testo 100%: pulito
+stato-dettagli · 1024×600 · testo 100%: lo stato non c'è a questa misura
+stato-domanda · 1024×600 · testo 100%: pulito
+stato-copia-fatta · 1024×600 · testo 100%: pulito
+stato-copia-non-riuscita · 1024×600 · testo 100%: pulito
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+stato · 915×412 · testo 100%: pulito
+stato-dettagli · 915×412 · testo 100%: lo stato non c'è a questa misura
+stato-menu · 915×412 · testo 100%: pulito
+stato-domanda · 915×412 · testo 100%: pulito
+stato-copia-fatta · 915×412 · testo 100%: pulito
+stato-copia-non-riuscita · 915×412 · testo 100%: pulito
+stato-menu · 1366×640 · testo 100%: lo stato non c'è a questa misura
+stato · 1366×640 · testo 100%: pulito
+stato-dettagli · 1366×640 · testo 100%: lo stato non c'è a questa misura
+stato-domanda · 1366×640 · testo 100%: pulito
+stato-copia-fatta · 1366×640 · testo 100%: pulito
+stato-copia-non-riuscita · 1366×640 · testo 100%: pulito
+
+
+Tutto pulito (foto in /tmp/lavoro-3bb-qa-H-misure-2/esame/chromium)
+# uscita: 0

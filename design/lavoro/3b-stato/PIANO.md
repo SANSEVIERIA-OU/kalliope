@@ -120,6 +120,10 @@ file di questa correzione (`/tmp/lavoro-3b-copia-mia/`), perché l'incarico 2-f 
 
 ## Da completare a chi costruisce
 
+**Fatto nella costruzione 3b-b** (`costruzione/progresso.md`): I3, I5, M5, M7, M11, i moltiplicatori nei token, le traduzioni di prova, stati,
+larghezze, tre motori e lingue. Restano le voci non provate scritte lì (lettori di schermo, telefoni veri, testo grande e zoom). L'elenco qui
+sotto è quello consegnato alla costruzione.
+
 **Dal giudizio** (`giudizio/GIUDIZIO.md`), non della direzione:
 - I3 (la cornice che nasconde pezzi se `cornice.js` non arriva): lo corregge l'incarico 2-f; da riprovare su questa pagina dopo di lui (titoli dei
   tratti, frase riscritta, bolla della risposta, bolla del messaggio).

@@ -171,7 +171,7 @@
         <div class="catena-misura"><p class="catena-misura-testo" data-t="st.catena.misura">Dal tasto Invio al suono nella riunione: <strong>non misurato</strong></p></div>
         <div class="catena-computer">
           <p class="catena-computer-nome" data-t="st.catena.computer">Le cifre: su un solo computer, un portatile con Ryzen 5 PRO 6650U. Su altri non le conosciamo.</p>
-          <p class="catena-programma" data-t="st.catena.programma">Il programma: 10,6 MB con la sola finestra, circa 117 MB con la voce caricata, 0% di processore quando è fermo. <span class="fonte">README</span></p>
+          <p class="catena-programma" data-t="st.catena.programma">Il programma: 10,6 MB con la sola finestra, circa 117 MB con la voce caricata, 0% di processore quando è fermo. <span class="fonte"><a href="{{kalliope.source.url}}/README.md" title="README.md" data-t-no="il percorso di un file del repository">README</a></span></p>
         </div>
         <ol class="catena-tappe">
           <li class="anello fatto nel-computer entra" data-anello="installa">
@@ -184,7 +184,7 @@
                 <li data-t-no="nome di un formato di pacchetto">PKGBUILD · Arch</li>
                 <li data-t-no="nome di un formato di pacchetto">.tar.gz · ./install</li>
               </ul>
-              <p data-t="st.installa.fatto">Uno script installa ogni pacchetto, apre Kalliope e gli fa dire una frase con la voce; poi lo toglie. <span class="fonte">docs/releasing.md</span></p>
+              <p data-t="st.installa.fatto">Uno script installa ogni pacchetto, apre Kalliope e gli fa dire una frase con la voce; poi lo toglie. <span class="fonte"><a href="{{kalliope.source.url}}/docs/releasing.md" title="docs/releasing.md" data-t-no="il percorso di un file del repository">docs/releasing.md</a></span></p>
             </div>
           </li>
           <li class="anello fatto nel-computer entra" data-anello="scrivi">
@@ -193,7 +193,7 @@
             <div class="anello-fatti">
               <p class="riscrive" aria-hidden="true"><span class="riscrive-da" data-t="st.riscrive.da">cmq ci vediamo dmn alle 10:30</span><span class="riscrive-a" data-t="st.riscrive.a">comunque ci vediamo domani alle dieci e trenta</span></p>
               <p data-t="st.scrivi.breve">Numeri, date, orari, importi e sigle diventano parole da dire.</p>
-              <details class="anello-dettagli" open><summary data-t="st.dettagli.apri">I dettagli e le fonti</summary><p data-t="st.scrivi.fatto">Anche le abbreviazioni, e gli accenti mancanti tornano: «cmq ci vediamo dmn alle 10:30» si dice «comunque ci vediamo domani alle dieci e trenta». Circa 11 µs a frase. <span class="fonte">README, CHANGELOG.md</span></p></details>
+              <details class="anello-dettagli" open><summary data-t="st.dettagli.apri">I dettagli e le fonti</summary><p data-t="st.scrivi.fatto">Anche le abbreviazioni, e gli accenti mancanti tornano: «cmq ci vediamo dmn alle 10:30» si dice «comunque ci vediamo domani alle dieci e trenta». Circa 11 µs a frase. <span class="fonte"><a href="{{kalliope.source.url}}/README.md" title="README.md" data-t-no="il percorso di un file del repository">README</a>, <a href="{{kalliope.source.url}}/CHANGELOG.md" title="CHANGELOG.md" data-t-no="il percorso di un file del repository">CHANGELOG.md</a></span></p></details>
               <p class="anello-forse" data-t="st.scrivi.forse">Con la tastiera. Con un lettore di schermo, il puntamento oculare o gli interruttori: <strong>non ancora provato</strong>.</p>
             </div>
           </li>
@@ -204,9 +204,9 @@
               <div class="cifra">
                 <p class="cifra-numero" data-t="st.voce.cifra">0,07 s</p>
                 <span class="quota quota-voce" aria-hidden="true"><i></i></span>
-                <p class="cifra-detto" data-t="st.voce.cifra-detto">di processore per ogni secondo di voce, con un solo thread. <span class="fonte">README</span></p>
+                <p class="cifra-detto" data-t="st.voce.cifra-detto">di processore per ogni secondo di voce, con un solo thread. <span class="fonte"><a href="{{kalliope.source.url}}/README.md" title="README.md" data-t-no="il percorso di un file del repository">README</a></span></p>
               </div>
-              <details class="anello-dettagli" open><summary data-t="st.dettagli.apri">I dettagli e le fonti</summary><p data-t="st.voce.fatto">La voce parte dopo la prima frase; mentre una suona si prepara la successiva. La pronuncia viene da regole e da un lessico di 7.920 parole. Nel banco di prova dei motori il primo suono arriva in meno di 160 ms: è uno strumento in Python, non il programma. <span class="fonte">engine.rs, benchmarks/engines</span></p></details>
+              <details class="anello-dettagli" open><summary data-t="st.dettagli.apri">I dettagli e le fonti</summary><p data-t="st.voce.fatto">La voce parte dopo la prima frase; mentre una suona si prepara la successiva. La pronuncia viene da regole e da un lessico di 7.920 parole. Nel banco di prova dei motori il primo suono arriva in meno di 160 ms: è uno strumento in Python, non il programma. <span class="fonte"><a href="{{kalliope.source.url}}/crates/app/src/engine.rs" title="crates/app/src/engine.rs" data-t-no="il percorso di un file del repository">engine.rs</a>, <a href="{{kalliope.tree.url}}/benchmarks/engines" title="benchmarks/engines" data-t-no="il percorso di un file del repository">benchmarks/engines</a></span></p></details>
               <p class="anello-forse" data-t="st.voce.forse">Quanto dura «Preparo la voce…» a ogni avvio: <strong>non misurato</strong>.</p>
             </div>
           </li>
@@ -217,9 +217,9 @@
               <div class="cifra">
                 <p class="cifra-numero" data-t="st.microfono.cifra">2,3%</p>
                 <span class="parole-segni" aria-hidden="true"></span>
-                <p class="cifra-detto" data-t="st.microfono.cifra-breve">di parole sbagliate secondo Whisper, sulla voce registrata da questo microfono come la sentirebbe una riunione: 10 frasi di prova. <span class="fonte">README</span></p>
+                <p class="cifra-detto" data-t="st.microfono.cifra-breve">di parole sbagliate secondo Whisper, sulla voce registrata da questo microfono come la sentirebbe una riunione: 10 frasi di prova. <span class="fonte"><a href="{{kalliope.source.url}}/README.md" title="README.md" data-t-no="il percorso di un file del repository">README</a></span></p>
               </div>
-              <details class="anello-dettagli" open><summary data-t="st.dettagli.apri">I dettagli e le fonti</summary><p data-t="st.microfono.differenze">Negli ascolti di verifica le differenze che restano sono soprattutto di scrittura: «10 e 30» per «10:30», «ancora» per «àncora». Sui sei campioni di questo sito, una misura a parte: circa una parola su 45. <span class="fonte">README</span></p><p data-t="st.microfono.fatto">Provato con un PipeWire preparato per la prova. Se nessuna app ascolta non usa il processore, e ciò che si dice va perso, come con un microfono vero; mentre un'app registra usa circa lo 0,26% di un core, con un ritardo di circa 21 ms. <span class="fonte">docs/virtual-microphone.md</span></p></details>
+              <details class="anello-dettagli" open><summary data-t="st.dettagli.apri">I dettagli e le fonti</summary><p data-t="st.microfono.differenze">Negli ascolti di verifica le differenze che restano sono soprattutto di scrittura: «10 e 30» per «10:30», «ancora» per «àncora». Sui sei campioni di questo sito, una misura a parte: circa una parola su 45. <span class="fonte"><a href="{{kalliope.source.url}}/README.md" title="README.md" data-t-no="il percorso di un file del repository">README</a></span></p><p data-t="st.microfono.fatto">Provato con un PipeWire preparato per la prova. Se nessuna app ascolta non usa il processore, e ciò che si dice va perso, come con un microfono vero; mentre un'app registra usa circa lo 0,26% di un core, con un ritardo di circa 21 ms. <span class="fonte"><a href="{{kalliope.source.url}}/docs/virtual-microphone.md" title="docs/virtual-microphone.md" data-t-no="il percorso di un file del repository">docs/virtual-microphone.md</a></span></p></details>
             </div>
           </li>
           <li class="anello forse entra" data-anello="app">
@@ -361,38 +361,38 @@
         <ol class="varco-passi">
           <li class="varco-passo" data-passo="testo">
             <h3 data-t="st.passo.testo.titolo">Il testo che scrivi: nessun invio.</h3>
-            <p data-t="st.passo.testo.testo">Non viene mandato da nessuna parte e non viene salvato. Kalliope non usa il microfono vero e non chiede di accedervi. Alla riunione arriva soltanto la voce, attraverso l'app della riunione. <span class="fonte">main.rs</span></p>
+            <p data-t="st.passo.testo.testo">Non viene mandato da nessuna parte e non viene salvato. Kalliope non usa il microfono vero e non chiede di accedervi. Alla riunione arriva soltanto la voce, attraverso l'app della riunione. <span class="fonte"><a href="{{kalliope.source.url}}/crates/app/src/main.rs" title="crates/app/src/main.rs" data-t-no="il percorso di un file del repository">main.rs</a></span></p>
           </li>
           <li class="varco-passo" data-passo="scarico">
             <h3 data-t="st.passo.scarico.titolo">Una sola connessione, una volta.</h3>
-            <p data-t="st.passo.scarico.testo">Al primo avvio Kalliope scarica la voce con il programma curl, da huggingface.co, a una revisione fissata: tre file, 53 MB. Controlla l'impronta SHA-256 di ciascuno e scarta quello che non corrisponde. Poi funziona senza internet. <span class="fonte">download.rs, catalog.rs</span></p>
+            <p data-t="st.passo.scarico.testo">Al primo avvio Kalliope scarica la voce con il programma curl, da huggingface.co, a una revisione fissata: tre file, 53 MB. Controlla l'impronta SHA-256 di ciascuno e scarta quello che non corrisponde. Poi funziona senza internet. <span class="fonte"><a href="{{kalliope.source.url}}/crates/app/src/download.rs" title="crates/app/src/download.rs" data-t-no="il percorso di un file del repository">download.rs</a>, <a href="{{kalliope.source.url}}/crates/app/src/catalog.rs" title="crates/app/src/catalog.rs" data-t-no="il percorso di un file del repository">catalog.rs</a></span></p>
           </li>
           <li class="varco-passo" data-passo="disco">
             <h3 data-t="st.passo.disco.titolo">Che cosa scrive sul disco.</h3>
-            <p data-t="st.passo.disco.testo">Il programma: con il pacchetto .deb o .rpm in /usr, e servono i permessi di amministratore; con l'archivio e ./install in ~/.local, senza. Poi la voce scelta e «Senti anche tu» in un file di preferenze, settings.conf, e la voce scaricata in una cartella dell'utente. Fuori dalle sue cartelle non modifica niente. Le frasi dette restano in un elenco, fino a 30, solo finché la finestra è aperta. Nessun account. <span class="fonte">docs/releasing.md, settings.rs, paths.rs, main.rs</span></p>
+            <p data-t="st.passo.disco.testo">Il programma: con il pacchetto .deb o .rpm in /usr, e servono i permessi di amministratore; con l'archivio e ./install in ~/.local, senza. Poi la voce scelta e «Senti anche tu» in un file di preferenze, settings.conf, e la voce scaricata in una cartella dell'utente. Fuori dalle sue cartelle non modifica niente. Le frasi dette restano in un elenco, fino a 30, solo finché la finestra è aperta. Nessun account. <span class="fonte"><a href="{{kalliope.source.url}}/docs/releasing.md" title="docs/releasing.md" data-t-no="il percorso di un file del repository">docs/releasing.md</a>, <a href="{{kalliope.source.url}}/crates/app/src/settings.rs" title="crates/app/src/settings.rs" data-t-no="il percorso di un file del repository">settings.rs</a>, <a href="{{kalliope.source.url}}/crates/app/src/paths.rs" title="crates/app/src/paths.rs" data-t-no="il percorso di un file del repository">paths.rs</a>, <a href="{{kalliope.source.url}}/crates/app/src/main.rs" title="crates/app/src/main.rs" data-t-no="il percorso di un file del repository">main.rs</a></span></p>
           </li>
           <li class="varco-passo" data-passo="chiudi">
             <h3 data-t="st.passo.chiudi.titolo">Quando chiudi la finestra, si chiude.</h3>
-            <p data-t="st.passo.chiudi.testo">Kalliope non si avvia da solo e non lascia un servizio acceso: con la finestra sparisce l'elenco delle frasi, e il microfono «Kalliope» sparisce dall'elenco dei microfoni. Si toglie con ./install --remove o togliendo il pacchetto; se così si toglie anche la voce scaricata, non l'abbiamo verificato. <span class="fonte">packaging/linux, docs/releasing.md</span></p>
+            <p data-t="st.passo.chiudi.testo">Kalliope non si avvia da solo e non lascia un servizio acceso: con la finestra sparisce l'elenco delle frasi, e il microfono «Kalliope» sparisce dall'elenco dei microfoni. Si toglie con ./install --remove o togliendo il pacchetto; se così si toglie anche la voce scaricata, non l'abbiamo verificato. <span class="fonte"><a href="{{kalliope.tree.url}}/packaging/linux" title="packaging/linux" data-t-no="il percorso di un file del repository">packaging/linux</a>, <a href="{{kalliope.source.url}}/docs/releasing.md" title="docs/releasing.md" data-t-no="il percorso di un file del repository">docs/releasing.md</a></span></p>
           </li>
         </ol>
       </div>
       <div class="licenze entra">
         <details class="licenze-blocco" open>
           <summary><h3 data-t="st.licenze.titolo">Licenze</h3></summary>
-          <p data-t="st.licenze.testo">Kalliope: licenza SANSEVIERIA 1.0, codice sorgente disponibile; non è «open source» nel senso dell'OSI. Uso personale, di ricerca e interno a un'azienda: senza compenso. Per offrirlo a pagamento serve l'autorizzazione scritta di SANSEVIERIA OÜ; chi lo distribuisce o lo offre in rete deve dare il sorgente. <span class="fonte">LICENSE, NOTICE</span></p>
+          <p data-t="st.licenze.testo">Kalliope: licenza SANSEVIERIA 1.0, codice sorgente disponibile; non è «open source» nel senso dell'OSI. Uso personale, di ricerca e interno a un'azienda: senza compenso. Per offrirlo a pagamento serve l'autorizzazione scritta di SANSEVIERIA OÜ; chi lo distribuisce o lo offre in rete deve dare il sorgente. <span class="fonte"><a href="{{kalliope.source.url}}/LICENSE" title="LICENSE" data-t-no="il percorso di un file del repository">LICENSE</a>, <a href="{{kalliope.source.url}}/NOTICE" title="NOTICE" data-t-no="il percorso di un file del repository">NOTICE</a></span></p>
           <ul class="licenze-parti">
             <li><span data-t-no="nome di un componente">ONNX Runtime</span> <span data-t-no="nome di una licenza">MIT</span></li>
             <li><span data-t-no="nome di un componente">Klein-TTS-X1.5-Pro</span> <span data-t-no="nome di una licenza">Apache-2.0</span></li>
             <li><span data-t-no="nome di un componente">Slint 1.18</span> <span data-t-no="nome di una licenza">Slint Royalty-free 2.0</span></li>
             <li><span data-t="st.licenze.lessico">Lessico da Wiktionary</span> <span data-t-no="nome di una licenza">CC BY-SA 4.0</span></li>
           </ul>
-          <p class="licenze-nota" data-t="st.licenze.nota">L'elenco completo è nei file NOTICE e THIRD_PARTY_NOTICES.md del codice.</p>
+          <p class="licenze-nota" data-t="st.licenze.nota">L'elenco completo è nei file <a href="{{kalliope.source.url}}/NOTICE" title="NOTICE" data-t-no="il percorso di un file del repository">NOTICE</a> e <a href="{{kalliope.source.url}}/THIRD_PARTY_NOTICES.md" title="THIRD_PARTY_NOTICES.md" data-t-no="il percorso di un file del repository">THIRD_PARTY_NOTICES.md</a> del codice.</p>
         </details>
         <details class="licenze-blocco" open>
           <summary><h3 data-t="st.impronte.titolo">Impronte e provenienza</h3></summary>
           <p data-t="st.impronte.testo">Le impronte dei file sono nella <a href="../installa/">pagina Installa</a> e nel file <a href="{{kalliope.sums.url}}">SHA256SUMS</a> della versione. L'attestazione di dove è stato costruito ogni file (<span class="comando" data-t-no="un comando">gh attestation verify</span>) c'è per le versioni pubblicate da quando il codice è pubblico: la 0.1-rc.1, pubblicata prima, non ce l'ha. Non c'è un audit indipendente che possiamo citare.</p>
-          <p data-t="st.sito.testo">Questo sito lo servono le pagine di GitHub (GitHub Pages), che registrano le richieste come ogni server; il sito non usa cookie né statistiche e non carica niente da altri siti. <span class="fonte">.github/workflows/pages.yml</span></p>
+          <p data-t="st.sito.testo">Questo sito lo servono le pagine di GitHub (GitHub Pages), che registrano le richieste come ogni server; il sito non usa cookie né statistiche e non carica niente da altri siti. <span class="fonte"><a href="{{kalliope.source.url}}/.github/workflows/pages.yml" title=".github/workflows/pages.yml" data-t-no="il percorso di un file del repository">.github/workflows/pages.yml</a></span></p>
           <p data-t="st.codice.testo">Il codice, le istruzioni per compilarlo, la storia delle versioni e come contribuire: nel <a href="https://github.com/SANSEVIERIA-OU/kalliope">repository su GitHub</a>, in inglese.</p>
         </details>
       </div>
@@ -407,7 +407,7 @@
           <div class="bolla-corpo">
             <p class="bolla-testo inoltra-testo" data-release="prova" data-t="st.inoltra.messaggio">Kalliope: scrivi una frase e una voce italiana la dice nella riunione. Oggi è una versione di prova, solo per Linux, provata fino al microfono e non ancora in una riunione vera. Senza account e senza prezzo; il testo resta sul computer.</p>
             <p class="bolla-testo inoltra-testo" data-release="stabile" data-t="st.inoltra.messaggio-stabile">Kalliope: scrivi una frase e una voce italiana la dice nella riunione. Oggi è solo per Linux, provata fino al microfono e non ancora in una riunione vera. Senza account e senza prezzo; il testo resta sul computer.</p>
-            <p class="inoltra-indirizzo" data-t-no="l'indirizzo della pagina">sansevieria-ou.github.io/kalliope/stato/</p>
+            <p class="inoltra-indirizzo" data-t-no="l'indirizzo della pagina, lo scrive la costruzione dai dati del sito"><span dir="ltr">{{kalliope.page.url}}</span></p>
           </div>
           <svg class="coda" width="32" height="24" viewBox="0 0 32 24" aria-hidden="true"><path d="M0 0h31L7.6 21.6A3.5 3.5 0 0 1 2 18.8V0z"/></svg>
         </div>

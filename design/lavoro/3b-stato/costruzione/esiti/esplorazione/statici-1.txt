@@ -1,0 +1,13 @@
+## translations extract --check
+translations.py: 260 messages, catalogues up to date
+## translations check
+it: 260/260 entries ready
+## css_logico
+css_logico.py: ok, no physical left/right, no asymmetric shorthand, no text in CSS (30 style sheets; 10 physical declarations kept on purpose)
+## unittest
+----------------------------------------------------------------------
+Ran 81 tests in 7.156s
+
+OK
+translations.py: 260 messages, catalogues up to date
+it: 260/260 entries ready

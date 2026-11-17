@@ -1169,10 +1169,11 @@ msgstr ""
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <span class="fonte">
+#.   <2> = <a href="{{kalliope.source.url}}/README.md" title="README.md" data-t-no="il percorso di un
 #: stato/index.html
 #, kalliope-markup
 msgctxt "st.catena.programma"
-msgid "Il programma: 10,6 MB con la sola finestra, circa 117 MB con la voce caricata, 0% di processore quando è fermo. <1>README</1>"
+msgid "Il programma: 10,6 MB con la sola finestra, circa 117 MB con la voce caricata, 0% di processore quando è fermo. <1><2>README</2></1>"
 msgstr ""
 
 #: stato/index.html
@@ -1189,10 +1190,11 @@ msgstr ""
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <span class="fonte">
+#.   <2> = <a href="{{kalliope.source.url}}/docs/releasing.md" title="docs/releasing.md" data-t-no="i
 #: stato/index.html
 #, kalliope-markup
 msgctxt "st.installa.fatto"
-msgid "Uno script installa ogni pacchetto, apre Kalliope e gli fa dire una frase con la voce; poi lo toglie. <1>docs/releasing.md</1>"
+msgid "Uno script installa ogni pacchetto, apre Kalliope e gli fa dire una frase con la voce; poi lo toglie. <1><2>docs/releasing.md</2></1>"
 msgstr ""
 
 #: stato/index.html
@@ -1227,10 +1229,12 @@ msgstr ""
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <span class="fonte">
+#.   <2> = <a href="{{kalliope.source.url}}/README.md" title="README.md" data-t-no="il percorso di un
+#.   <3> = <a href="{{kalliope.source.url}}/CHANGELOG.md" title="CHANGELOG.md" data-t-no="il percorso
 #: stato/index.html
 #, kalliope-markup
 msgctxt "st.scrivi.fatto"
-msgid "Anche le abbreviazioni, e gli accenti mancanti tornano: «cmq ci vediamo dmn alle 10:30» si dice «comunque ci vediamo domani alle dieci e trenta». Circa 11 µs a frase. <1>README, CHANGELOG.md</1>"
+msgid "Anche le abbreviazioni, e gli accenti mancanti tornano: «cmq ci vediamo dmn alle 10:30» si dice «comunque ci vediamo domani alle dieci e trenta». Circa 11 µs a frase. <1><2>README</2>, <3>CHANGELOG.md</3></1>"
 msgstr ""
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
@@ -1255,18 +1259,21 @@ msgstr ""
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <span class="fonte">
+#.   <2> = <a href="{{kalliope.source.url}}/README.md" title="README.md" data-t-no="il percorso di un
 #: stato/index.html
 #, kalliope-markup
 msgctxt "st.voce.cifra-detto"
-msgid "di processore per ogni secondo di voce, con un solo thread. <1>README</1>"
+msgid "di processore per ogni secondo di voce, con un solo thread. <1><2>README</2></1>"
 msgstr ""
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <span class="fonte">
+#.   <2> = <a href="{{kalliope.source.url}}/crates/app/src/engine.rs" title="crates/app/src/engine.rs
+#.   <3> = <a href="{{kalliope.tree.url}}/benchmarks/engines" title="benchmarks/engines" data-t-no="i
 #: stato/index.html
 #, kalliope-markup
 msgctxt "st.voce.fatto"
-msgid "La voce parte dopo la prima frase; mentre una suona si prepara la successiva. La pronuncia viene da regole e da un lessico di 7.920 parole. Nel banco di prova dei motori il primo suono arriva in meno di 160 ms: è uno strumento in Python, non il programma. <1>engine.rs, benchmarks/engines</1>"
+msgid "La voce parte dopo la prima frase; mentre una suona si prepara la successiva. La pronuncia viene da regole e da un lessico di 7.920 parole. Nel banco di prova dei motori il primo suono arriva in meno di 160 ms: è uno strumento in Python, non il programma. <1><2>engine.rs</2>, <3>benchmarks/engines</3></1>"
 msgstr ""
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
@@ -1291,26 +1298,29 @@ msgstr ""
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <span class="fonte">
+#.   <2> = <a href="{{kalliope.source.url}}/README.md" title="README.md" data-t-no="il percorso di un
 #: stato/index.html
 #, kalliope-markup
 msgctxt "st.microfono.cifra-breve"
-msgid "di parole sbagliate secondo Whisper, sulla voce registrata da questo microfono come la sentirebbe una riunione: 10 frasi di prova. <1>README</1>"
+msgid "di parole sbagliate secondo Whisper, sulla voce registrata da questo microfono come la sentirebbe una riunione: 10 frasi di prova. <1><2>README</2></1>"
 msgstr ""
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <span class="fonte">
+#.   <2> = <a href="{{kalliope.source.url}}/README.md" title="README.md" data-t-no="il percorso di un
 #: stato/index.html
 #, kalliope-markup
 msgctxt "st.microfono.differenze"
-msgid "Negli ascolti di verifica le differenze che restano sono soprattutto di scrittura: «10 e 30» per «10:30», «ancora» per «àncora». Sui sei campioni di questo sito, una misura a parte: circa una parola su 45. <1>README</1>"
+msgid "Negli ascolti di verifica le differenze che restano sono soprattutto di scrittura: «10 e 30» per «10:30», «ancora» per «àncora». Sui sei campioni di questo sito, una misura a parte: circa una parola su 45. <1><2>README</2></1>"
 msgstr ""
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <span class="fonte">
+#.   <2> = <a href="{{kalliope.source.url}}/docs/virtual-microphone.md" title="docs/virtual-microphon
 #: stato/index.html
 #, kalliope-markup
 msgctxt "st.microfono.fatto"
-msgid "Provato con un PipeWire preparato per la prova. Se nessuna app ascolta non usa il processore, e ciò che si dice va perso, come con un microfono vero; mentre un'app registra usa circa lo 0,26% di un core, con un ritardo di circa 21 ms. <1>docs/virtual-microphone.md</1>"
+msgid "Provato con un PipeWire preparato per la prova. Se nessuna app ascolta non usa il processore, e ciò che si dice va perso, come con un microfono vero; mentre un'app registra usa circa lo 0,26% di un core, con un ritardo di circa 21 ms. <1><2>docs/virtual-microphone.md</2></1>"
 msgstr ""
 
 #: stato/index.html
@@ -1593,10 +1603,11 @@ msgstr ""
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <span class="fonte">
+#.   <2> = <a href="{{kalliope.source.url}}/crates/app/src/main.rs" title="crates/app/src/main.rs" da
 #: stato/index.html
 #, kalliope-markup
 msgctxt "st.passo.testo.testo"
-msgid "Non viene mandato da nessuna parte e non viene salvato. Kalliope non usa il microfono vero e non chiede di accedervi. Alla riunione arriva soltanto la voce, attraverso l'app della riunione. <1>main.rs</1>"
+msgid "Non viene mandato da nessuna parte e non viene salvato. Kalliope non usa il microfono vero e non chiede di accedervi. Alla riunione arriva soltanto la voce, attraverso l'app della riunione. <1><2>main.rs</2></1>"
 msgstr ""
 
 #: stato/index.html
@@ -1607,10 +1618,12 @@ msgstr ""
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <span class="fonte">
+#.   <2> = <a href="{{kalliope.source.url}}/crates/app/src/download.rs" title="crates/app/src/downloa
+#.   <3> = <a href="{{kalliope.source.url}}/crates/app/src/catalog.rs" title="crates/app/src/catalog.
 #: stato/index.html
 #, kalliope-markup
 msgctxt "st.passo.scarico.testo"
-msgid "Al primo avvio Kalliope scarica la voce con il programma curl, da huggingface.co, a una revisione fissata: tre file, 53 MB. Controlla l'impronta SHA-256 di ciascuno e scarta quello che non corrisponde. Poi funziona senza internet. <1>download.rs, catalog.rs</1>"
+msgid "Al primo avvio Kalliope scarica la voce con il programma curl, da huggingface.co, a una revisione fissata: tre file, 53 MB. Controlla l'impronta SHA-256 di ciascuno e scarta quello che non corrisponde. Poi funziona senza internet. <1><2>download.rs</2>, <3>catalog.rs</3></1>"
 msgstr ""
 
 #: stato/index.html
@@ -1621,10 +1634,14 @@ msgstr ""
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <span class="fonte">
+#.   <2> = <a href="{{kalliope.source.url}}/docs/releasing.md" title="docs/releasing.md" data-t-no="i
+#.   <3> = <a href="{{kalliope.source.url}}/crates/app/src/settings.rs" title="crates/app/src/setting
+#.   <4> = <a href="{{kalliope.source.url}}/crates/app/src/paths.rs" title="crates/app/src/paths.rs" 
+#.   <5> = <a href="{{kalliope.source.url}}/crates/app/src/main.rs" title="crates/app/src/main.rs" da
 #: stato/index.html
 #, kalliope-markup
 msgctxt "st.passo.disco.testo"
-msgid "Il programma: con il pacchetto .deb o .rpm in /usr, e servono i permessi di amministratore; con l'archivio e ./install in ~/.local, senza. Poi la voce scelta e «Senti anche tu» in un file di preferenze, settings.conf, e la voce scaricata in una cartella dell'utente. Fuori dalle sue cartelle non modifica niente. Le frasi dette restano in un elenco, fino a 30, solo finché la finestra è aperta. Nessun account. <1>docs/releasing.md, settings.rs, paths.rs, main.rs</1>"
+msgid "Il programma: con il pacchetto .deb o .rpm in /usr, e servono i permessi di amministratore; con l'archivio e ./install in ~/.local, senza. Poi la voce scelta e «Senti anche tu» in un file di preferenze, settings.conf, e la voce scaricata in una cartella dell'utente. Fuori dalle sue cartelle non modifica niente. Le frasi dette restano in un elenco, fino a 30, solo finché la finestra è aperta. Nessun account. <1><2>docs/releasing.md</2>, <3>settings.rs</3>, <4>paths.rs</4>, <5>main.rs</5></1>"
 msgstr ""
 
 #: stato/index.html
@@ -1635,10 +1652,12 @@ msgstr ""
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <span class="fonte">
+#.   <2> = <a href="{{kalliope.tree.url}}/packaging/linux" title="packaging/linux" data-t-no="il perc
+#.   <3> = <a href="{{kalliope.source.url}}/docs/releasing.md" title="docs/releasing.md" data-t-no="i
 #: stato/index.html
 #, kalliope-markup
 msgctxt "st.passo.chiudi.testo"
-msgid "Kalliope non si avvia da solo e non lascia un servizio acceso: con la finestra sparisce l'elenco delle frasi, e il microfono «Kalliope» sparisce dall'elenco dei microfoni. Si toglie con ./install --remove o togliendo il pacchetto; se così si toglie anche la voce scaricata, non l'abbiamo verificato. <1>packaging/linux, docs/releasing.md</1>"
+msgid "Kalliope non si avvia da solo e non lascia un servizio acceso: con la finestra sparisce l'elenco delle frasi, e il microfono «Kalliope» sparisce dall'elenco dei microfoni. Si toglie con ./install --remove o togliendo il pacchetto; se così si toglie anche la voce scaricata, non l'abbiamo verificato. <1><2>packaging/linux</2>, <3>docs/releasing.md</3></1>"
 msgstr ""
 
 #: stato/index.html
@@ -1649,10 +1668,12 @@ msgstr ""
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <span class="fonte">
+#.   <2> = <a href="{{kalliope.source.url}}/LICENSE" title="LICENSE" data-t-no="il percorso di un fil
+#.   <3> = <a href="{{kalliope.source.url}}/NOTICE" title="NOTICE" data-t-no="il percorso di un file 
 #: stato/index.html
 #, kalliope-markup
 msgctxt "st.licenze.testo"
-msgid "Kalliope: licenza SANSEVIERIA 1.0, codice sorgente disponibile; non è «open source» nel senso dell'OSI. Uso personale, di ricerca e interno a un'azienda: senza compenso. Per offrirlo a pagamento serve l'autorizzazione scritta di SANSEVIERIA OÜ; chi lo distribuisce o lo offre in rete deve dare il sorgente. <1>LICENSE, NOTICE</1>"
+msgid "Kalliope: licenza SANSEVIERIA 1.0, codice sorgente disponibile; non è «open source» nel senso dell'OSI. Uso personale, di ricerca e interno a un'azienda: senza compenso. Per offrirlo a pagamento serve l'autorizzazione scritta di SANSEVIERIA OÜ; chi lo distribuisce o lo offre in rete deve dare il sorgente. <1><2>LICENSE</2>, <3>NOTICE</3></1>"
 msgstr ""
 
 #: stato/index.html
@@ -1661,10 +1682,13 @@ msgctxt "st.licenze.lessico"
 msgid "Lessico da Wiktionary"
 msgstr ""
 
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="{{kalliope.source.url}}/NOTICE" title="NOTICE" data-t-no="il percorso di un file 
+#.   <2> = <a href="{{kalliope.source.url}}/THIRD_PARTY_NOTICES.md" title="THIRD_PARTY_NOTICES.md" da
 #: stato/index.html
 #, kalliope-markup
 msgctxt "st.licenze.nota"
-msgid "L'elenco completo è nei file NOTICE e THIRD_PARTY_NOTICES.md del codice."
+msgid "L'elenco completo è nei file <1>NOTICE</1> e <2>THIRD_PARTY_NOTICES.md</2> del codice."
 msgstr ""
 
 #: stato/index.html
@@ -1685,10 +1709,11 @@ msgstr ""
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <span class="fonte">
+#.   <2> = <a href="{{kalliope.source.url}}/.github/workflows/pages.yml" title=".github/workflows/pag
 #: stato/index.html
 #, kalliope-markup
 msgctxt "st.sito.testo"
-msgid "Questo sito lo servono le pagine di GitHub (GitHub Pages), che registrano le richieste come ogni server; il sito non usa cookie né statistiche e non carica niente da altri siti. <1>.github/workflows/pages.yml</1>"
+msgid "Questo sito lo servono le pagine di GitHub (GitHub Pages), che registrano le richieste come ogni server; il sito non usa cookie né statistiche e non carica niente da altri siti. <1><2>.github/workflows/pages.yml</2></1>"
 msgstr ""
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):

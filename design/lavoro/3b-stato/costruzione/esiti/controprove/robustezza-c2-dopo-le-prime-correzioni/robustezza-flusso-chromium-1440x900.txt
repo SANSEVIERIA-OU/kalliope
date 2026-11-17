@@ -1,0 +1,33 @@
+
+== scorrimento · chromium 1440x900
+ok   saltando in fondo con End ciò che è in vista entra · subito: 1 spenti
+ok   dopo una scorsa veloce la catena non resta indietro: le tappe passate sono accese e quelle in vista si accendono entro un secondo · in 176 ms; accese 111111
+ok   le tappe in vista sono accese e il loro testo è pieno
+ok   risalendo in cima: la catena resta accesa, il primo schermo c'è · {"y":0,"acceso":"111111","titolo":1,"fatta":true}
+ok   l'ancora #per-chi porta al tratto: titolo sotto la barra, opaco · {"titolo":200,"op":1,"barra":72,"vh":900}
+ok   l'ancora #controllare porta al tratto: titolo sotto la barra, opaco · {"titolo":200,"op":1,"barra":72,"vh":900}
+ok   dopo una scorsa veloce sotto l'ultimo passo il computer mostra tutto e le impronte non restano a metà · {"passo":"tutto","sotto":true,"pacchi":"0","animazioni":0}
+ok   portando ogni passo a metà dello spazio libero il computer mostra quel passo (dalla stessa posizione, in su e in giù) · {"testo":"testo","scarico":"scarico","disco":"disco","chiudi":"chiudi"}
+ok   console pulita
+
+== secondo-piano · chromium 1440x900
+ok   con la scheda in secondo piano l'arrivo non va avanti · {"fatta":false,"parla":false,"oltre":false}
+ok   tornando alla scheda l'arrivo riparte da dov'era e arriva allo stato finale · 3523 ms dopo il ritorno
+ok   con la scheda in secondo piano durante lo scarico, tornando le impronte finiscono e non restano a metà · {"passo":"scarico","pacchi":"0","anim":0}
+ok   una tappa che arriva con la scheda nascosta si accende quando si torna · 347 ms
+ok   console pulita
+
+== ritorno · chromium 1440x900
+ok   il collegamento porta alla pagina Installa · http://127.0.0.1:8911/it/installa/
+ok   tornando indietro si è dove si era, il messaggio si vede e la copia è come all'arrivo (nessuna risposta vecchia) · {"url":"/it/stato/","js":true,"y":6306,"titolo":1,"bolla":1,"bottone":true,"esito":true,"scelta":"È per chi non può parlare?","fatta":false,"acceso":"000000"}
+NO   tornando indietro le tappe sopra la posizione sono accese · 000000
+ok   dopo il ritorno la copia funziona di nuovo
+ok   console pulita
+
+== ricarica · chromium 1440x900
+NO   ricaricando a metà catena si resta lì, la tappa in vista si legge, le tappe sopra e quella in vista sono accese · {"prima":1781,"y":1781,"nome":1,"testo":1,"acceso":"101110","parentesi":"1471.0px","js":true,"titolo":0}
+ok   ricaricando durante l'arrivo la pagina riparte da capo e arriva allo stato finale · {"c":"chiamata chiamata-ferma chiamata-provata microfono-acceso oltre-segnato fatta","nota":"1"}
+ok   ricaricando con una domanda scelta si riparte dalla prima (nessuna scelta vecchia)
+ok   console pulita
+
+21/23 ok

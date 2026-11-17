@@ -1,0 +1,30 @@
+
+== senza-js · chromium 1440x900
+ok   senza JavaScript: niente classe «js»
+ok   senza JavaScript il comando di copia non c'è e la frase per copiare a mano sì · {"copia":"none","frase":"block"}
+ok   ogni domanda ha la sua risposta sotto (niente comandi, dieci risposte in vista) · {"domande":0,"risposte":10}
+ok   i dettagli sono aperti e senza il comando · ["none","none","none"]
+NO   la scena è allo stato finale: voce, tratteggio, titoli, bolle e riquadri visibili · {"riquadri":"0.352527,0.999601,0.991534,0.941781","titoli":0,"bolla":"1","bollaP":"1"}
+ok   il computer del varco ha tutto in vista, e le impronte non si vedono (fermi) · 1/1/1 pacchi 0
+ok   la catena è accesa e le quote sono piene · none
+ok   l'indirizzo c'è (lo scrive la costruzione), nessuno scorrimento di lato · https://sansevieria-ou.github.io/kalliope/it/stato/, 1440 contro 1440
+NO   senza JavaScript il giro di tastiera arriva a ogni collegamento (barra, fonti, domande con i loro collegamenti, piede) · 6 soste
+ok   console pulita
+
+== senza-stili · chromium 1440x900
+ok   senza i fogli di stile la pagina non diventa enorme (nessun disegno più largo di 300 px, pagina sotto i 20.000 px) · {"alto":5294,"svg":200,"pagina":true,"varcoViva":false,"domande":10}
+ok   nessun errore dello script
+
+== senza-token · chromium 1440x900
+ok   senza token.css lo script riconosce che manca e la pagina si carica (il varco non parte) · {"alto":1544,"svg":720,"pagina":true,"varcoViva":false,"domande":10}
+ok   nessun errore dello script
+ok   senza token le domande funzionano lo stesso
+
+== ridotto · chromium 1440x900
+ok   «riduci movimento»: il primo schermo è già al suo stato finale e la catena accesa · {"fatta":true,"acceso":"truetruetruetruetruetrue"}
+ok   con «riduci movimento» la risposta cambia subito, senza dissolvenza · {"op":1,"chiede":"Quanto costa?","animazioni":0}
+ok   con «riduci movimento» il passo cambia, le impronte non scendono · {"passo":"scarico","anim":0,"pacchi":"0"}
+ok   con «riduci movimento» la copia risponde e la bolla non fa l'anello animato · {"fatto":true,"anello":false}
+ok   console pulita
+
+18/20 ok

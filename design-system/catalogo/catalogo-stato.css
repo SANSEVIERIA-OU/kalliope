@@ -1,0 +1,17 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* Il catalogo della pagina «stato» (catalogo-stato.js): i fondi delle scene in cui stanno i pezzi copiati, e l'impaginazione delle prove. Nessun valore
+   proprio: i colori e le linee sono i token del sistema (../token.css), le distanze sono relative al testo (em), come in catalogo.css. */
+.cat-notte, .cat-chiara { padding: 1.2em; border-radius: 0.8em; max-width: 100%; }
+.cat-notte .catena { margin-top: 0; }
+.cat-coppia { display: flex; flex-wrap: wrap; gap: 1.4em; align-items: flex-start; }
+.cat-coppia > .js { flex: 1 1 24em; min-width: 0; }
+.cat-coppia .catena { grid-template-columns: minmax(0, 1fr); }
+.cat-coppia .catena-misura { display: none; }
+.cat-fonti { display: flex; flex-wrap: wrap; gap: 1.4em; align-items: center; }
+.cat-fonti .fonte { margin: 0; }
+.cat-domande-stati { display: flex; flex-wrap: wrap; gap: 0.8em; }
+.cat-domande-stati .domande { margin: 0; min-width: 15em; }
+.cat-varco-solo.varco-scena { grid-template-columns: minmax(0, var(--varco-larghezza)); }
+.cat-varco-solo .varco { grid-column: 1; position: relative; top: auto; }
+.cat-quadro.scena-chiara { background: var(--scena-chiara-fondo); color: var(--scuro); }   /* la scena chiara dentro il quadro del catalogo (che ha il suo fondo scuro): vale anche per le regole «.scena-chiara …» dei fogli */
+.cat-passi { flex-wrap: wrap; }   /* i cinque passi del varco vanno a capo su una finestra stretta */

@@ -360,3 +360,17 @@
   .anello { padding-block: var(--anello-spazio-blocco-telefono); }
   .anello:not(:first-child) { --anello-spazio-sopra-nodo: var(--anello-spazio-blocco-telefono); }
 }
+
+/* ---------- Costruzione (incarico 3b-b, 17/11/2026) ---------- */
+/* M7: la fonte si apre. Ogni nome di file dell'etichetta è un collegamento al file del repository alla versione che la pagina mostra
+   (la costruzione scrive l'indirizzo dai dati della versione). L'etichetta resta com'era: il nome prende la linea dei collegamenti e,
+   al passaggio e al fuoco, si fa più forte. Il tocco ha più altezza del carattere (il padding dell'elemento in riga non sposta niente). */
+.fonte a { padding-block: var(--spazio-4); color: inherit; text-decoration: underline; text-decoration-color: var(--sottolineatura); text-decoration-thickness: var(--filetto-sottile); text-underline-offset: var(--spazio-2); }
+.fonte a:hover { color: var(--testo); text-decoration-color: currentColor; }
+.scena-chiara .fonte a { text-decoration-color: var(--bordo-rivedi-chiaro); }
+.scena-chiara .fonte a:hover { color: var(--bordeaux); text-decoration-color: currentColor; }
+/* nel blocco delle licenze i collegamenti sono in grassetto e bordeaux (varco.css): l'etichetta della fonte resta com'era */
+.licenze .fonte a { color: inherit; font-weight: inherit; text-decoration-color: var(--bordo-rivedi-chiaro); text-underline-offset: var(--spazio-2); }
+/* una traduzione più lunga non allarga la tappa: il titolo «I dettagli e le fonti» (largo quanto il suo testo) stava in una colonna che prendeva la sua misura e portava fuori
+   dal bordo anche i paragrafi e le fonti (en-XA a 326 e 360 px). La colonna è larga quanto la tappa e il testo va a capo */
+.anello-dettagli { grid-template-columns: minmax(0, 1fr); }

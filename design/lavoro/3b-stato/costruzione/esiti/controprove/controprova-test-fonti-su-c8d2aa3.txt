@@ -1,0 +1,25 @@
+  it/stato/index.html: {{kalliope.source.url}}
+  it/stato/index.html: {{kalliope.tree.url}}
+
+======================================================================
+FAIL: test_la_pagina_stato_non_scrive_l_indirizzo_a_mano (test_translations.FontiEIndirizzo.test_la_pagina_stato_non_scrive_l_indirizzo_a_mano)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/lavoro-3bb-lavoro/controprova-tools/tools/test_translations.py", line 922, in test_la_pagina_stato_non_scrive_l_indirizzo_a_mano
+    self.assertIn("{{kalliope.page.url}}", testo)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{{kalliope.page.url}}' not found in '<!doctype html>\n<!-- SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 -->\n<html lang="it">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=
+
+======================================================================
+FAIL: test_le_fonti_della_pagina_stato_esistono_nel_repository (test_translations.FontiEIndirizzo.test_le_fonti_della_pagina_stato_esistono_nel_repository)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/lavoro-3bb-lavoro/controprova-tools/tools/test_translations.py", line 915, in test_le_fonti_della_pagina_stato_esistono_nel_repository
+    self.assertGreaterEqual(len(trovate), 14, trovate)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 not greater than or equal to 14 : []
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.080s
+
+FAILED (failures=2, errors=7)

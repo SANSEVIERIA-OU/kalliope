@@ -1,0 +1,29 @@
+# impronte 17/11/2026 16:22:30
+## i file di questo incarico, nella copia provata (/tmp/lavoro-3bb-radice-H-10) e nell'albero vivo (/workspace/kalliope): se le due colonne coincidono la copia è quella viva (primi 16 caratteri di sha256)
+f729c2481dc88cb6  f729c2481dc88cb6  =  website/stato/index.html
+0f7d38986c3e27b5  0f7d38986c3e27b5  =  website/stato/stato.js
+59245a4f24e4ce11  59245a4f24e4ce11  =  website/componenti.js
+09007c7fd0fc98b8  09007c7fd0fc98b8  =  website/cornice.js
+c7e8c7d5b85eee99  c7e8c7d5b85eee99  =  design-system/token.css
+6d58c1c1f8569b09  6d58c1c1f8569b09  =  design-system/componenti/catena.css
+e08c244e1bf89dc3  e08c244e1bf89dc3  =  design-system/componenti/domande.css
+cb4ba72ef1ec37d5  cb4ba72ef1ec37d5  =  design-system/componenti/varco.css
+0daf5089e292533d  0daf5089e292533d  =  design-system/componenti/inoltra.css
+07b658969129ec61  07b658969129ec61  =  design-system/componenti/riunione-provata.css
+7d5624b8b0212bb7  7d5624b8b0212bb7  =  design-system/componenti/pagina.css
+0055fcc46c0ae03e  0055fcc46c0ae03e  =  design-system/catalogo/catalogo-stato.js
+379ea5893cc98164  379ea5893cc98164  =  design-system/catalogo/catalogo-stato.css
+297d4d272089939c  297d4d272089939c  =  design-system/catalogo/index.html
+8576214ca043cc96  8576214ca043cc96  =  design-system/metodo.config.mjs
+61808a80d2fcc366  61808a80d2fcc366  =  design-system/SISTEMA.md
+ee016ce7a5b98815  ee016ce7a5b98815  =  design-system/TOKEN.md
+b2b96f751f7c5b28  b2b96f751f7c5b28  =  tools/site.py
+b121aec73f0f026e  b121aec73f0f026e  =  tools/test_translations.py
+e1dcb4d466284622  e1dcb4d466284622  =  website/lingue/site.pot
+f16afc9b148e35db  f16afc9b148e35db  =  website/lingue/it.po
+## la copia provata intera (website, design-system, tools): una sola impronta
+2a8181e1e6a0aad186b3dfd59ee242fc
+## il sito costruito (/tmp/lavoro-3bb-sito-H-it): una sola impronta
+4829c296d707fa2d99f564490bcb2d0f
+## il sito costruito (/tmp/lavoro-3bb-sito-H-10): una sola impronta
+e0a4a85fbb03420c63feb799eb03da80

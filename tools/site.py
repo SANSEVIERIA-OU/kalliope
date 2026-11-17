@@ -38,6 +38,8 @@ and .webmanifest file, in the language of the page:
     {{kalliope.aur.url}}        the AUR recipe (kalliope-bin.PKGBUILD)
     {{kalliope.sums.url}}       SHA256SUMS
     {{kalliope.sha256.deb}}     {{kalliope.sha256.rpm}}   {{kalliope.sha256.tar}}
+    {{kalliope.source.url}}     the files of the repository AT THE VERSION OFFERED (…/blob/<tag>); {{kalliope.tree.url}} its folders (…/tree/<tag>)
+    {{kalliope.page.url}}       the address of the page being built, in its language (the one of its canonical link)
 
 What depends on the release being a prerelease or not is written twice in the page and chosen by the build: an element with
 data-release="prova" is kept only when the release offered is a prerelease, one with data-release="stabile" only when it is not
@@ -63,6 +65,11 @@ The design system (tokens, base, components, fonts and its living catalogue) has
 the application will use it too. The build copies it into the site as design-system/, without its Markdown documents and
 tool configuration; pages link to it as design-system/token.css, so they are complete only once built.
 
+A source named next to a fact (a file of the repository) is a link built from {{kalliope.source.url}} or {{kalliope.tree.url}}, so it
+opens the file as it is in the version the page shows. The build asks the repository (the local one when it has the tag, else
+the public API) which files that version has: a source that is not there is shown as its name, without a link, and the build says
+so (a link that leads nowhere never reaches visitors). Without a way to ask (offline, with --release-json and no local tag) the links stay.
+
 The build fails when a marker is unknown, a package is missing from the release, a page marks its texts wrongly, or a link
 of a translated page does not lead anywhere, so a typo never reaches visitors. Standard library only.
 """
@@ -72,7 +79,9 @@ import pathlib
 import posixpath
 import re
 import shutil
+import subprocess
 import sys
+import urllib.parse
 import urllib.request
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
@@ -125,6 +134,9 @@ def values(release):
         "date.iso": day,
         "prerelease": "true" if release.get("prerelease") else "false",
         "release.url": release["html_url"],
+        # the files of the repository at the version the page shows: a link to a source opens it as it was in that release
+        "source.url": f"https://github.com/{REPO}/blob/{urllib.parse.quote(tag)}",
+        "tree.url": f"https://github.com/{REPO}/tree/{urllib.parse.quote(tag)}",
     }
     grezzi = {"date": (y, m, d)}
     assets = {a["name"]: a for a in release.get("assets", [])}
@@ -165,6 +177,39 @@ def riempi(testo, v, dove, sconosciuti):
             return m.group(0)
         return v[key]
     return MARKER.sub(fill, testo)
+
+
+def percorsi_della_versione(tag, in_rete):
+    """{percorso: "blob" | "tree"}: i file e le cartelle del repository alla versione `tag`, per sapere se la fonte di un fatto si apre.
+
+    Dal repository di questa copia, se ha il tag; altrimenti (la costruzione che pubblica parte da una copia senza i tag) dall'API pubblica,
+    se `in_rete`. None se non si può sapere (senza rete, con --release-json e senza il tag nella copia): le fonti restano collegamenti."""
+    try:
+        uscita = subprocess.run(["git", "-C", str(ROOT), "ls-tree", "-r", "-t", "-z", tag], capture_output=True, timeout=60, check=True).stdout
+        elenco = {}
+        for voce in uscita.decode("utf-8").split("\0"):
+            if voce:
+                info, _, percorso = voce.partition("\t")
+                elenco[percorso] = "tree" if info.split()[1] == "tree" else "blob"
+        if elenco:
+            return elenco
+    except (OSError, subprocess.SubprocessError, UnicodeDecodeError, IndexError):
+        pass
+    if not in_rete:
+        return None
+    req = urllib.request.Request(f"https://api.github.com/repos/{REPO}/git/trees/{urllib.parse.quote(tag)}?recursive=1",
+                                 headers={"Accept": "application/vnd.github+json", "User-Agent": "kalliope-site-build"})
+    token = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
+    if token:
+        req.add_header("Authorization", f"Bearer {token}")
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            dati = json.load(resp)
+    except (OSError, ValueError):
+        return None
+    if dati.get("truncated"):
+        return None
+    return {x["path"]: "tree" if x["type"] == "tree" else "blob" for x in dati.get("tree", [])}
 
 
 # ---------- le lingue ----------
@@ -375,6 +420,11 @@ def _spazio_prima(testo, offset):
     return m.group(1) if m else ""
 
 
+def indirizzo_pagina(base_url, codice, indirizzo):
+    """L'indirizzo di una pagina nella sua lingua, com'è nel suo canonical e nel segnaposto {{kalliope.page.url}}."""
+    return f"{base_url}{codice}/{indirizzo}"
+
+
 def passo_struttura(testo, rel, lingua, reali, sito, senza_selettore, base_url, nella_radice=False):
     """<html lang dir>, l'elenco delle lingue, canonical e hreflang."""
     radice = pagina.leggi(testo)
@@ -429,7 +479,7 @@ def passo_struttura(testo, rel, lingua, reali, sito, senza_selettore, base_url, 
             righe.append('<meta name="robots" content="noindex">')
         elif nella_radice or rel in sito.traducibili:
             if not ha_canonical:
-                righe.append(f'<link rel="canonical" href="{base_url}{"" if nella_radice else lingua.codice + "/"}{indirizzo}">')
+                righe.append(f'<link rel="canonical" href="{base_url + indirizzo if nella_radice else indirizzo_pagina(base_url, lingua.codice, indirizzo)}">')
             righe.extend(f'<link rel="alternate" hreflang="{l.bcp47}" href="{base_url}{l.codice}/{indirizzo}">' for l in in_vista)
             righe.append(f'<link rel="alternate" hreflang="x-default" href="{base_url}">')
         if righe:
@@ -567,6 +617,30 @@ def passo_release(testo, v, rel):
     return pagina.applica(testo, mod)
 
 
+def passo_fonti(testo, v, percorsi, mancanti):
+    """Le fonti (…/blob/<tag>/<file>, …/tree/<tag>/<cartella>) portano a ciò che esiste alla versione mostrata dalla pagina. Una fonte che
+    a quella versione non c'è resta il suo nome, senza collegamento: si toglie solo il <a>, il testo resta. `mancanti` raccoglie i percorsi."""
+    if percorsi is None:
+        return testo
+    radice = pagina.leggi(testo)
+    basi = ((v["source.url"] + "/", "blob"), (v["tree.url"] + "/", "tree"))
+    mod = []
+    for n in pagina.cammina(radice):
+        if not isinstance(n, pagina.Nodo) or n.tag != "a":
+            continue
+        href = n.attr("href") or ""
+        base = next(((b, tipo) for b, tipo in basi if href.startswith(b)), None)
+        if base is None:
+            continue
+        percorso = re.split(r"[?#]", href[len(base[0]):])[0].rstrip("/")
+        if percorsi.get(percorso) == base[1]:
+            continue
+        mancanti.add(percorso)
+        if n.cf is not None:
+            mod += [(n.s, n.se, ""), (n.ce, n.cf, "")]
+    return pagina.applica(testo, mod)
+
+
 def costruisci_pagina(rel, testo, lingua, reali, sito, disponibile, v_lingua, sconosciuti, avvisi, opzioni):
     """L'HTML di una pagina in una lingua."""
     if rel in sito.traducibili:
@@ -579,7 +653,10 @@ def costruisci_pagina(rel, testo, lingua, reali, sito, disponibile, v_lingua, sc
     # prima gli indirizzi scritti nella pagina, poi ciò che la costruzione aggiunge (che è già scritto per la cartella della lingua)
     testo = passo_indirizzi(testo, rel, lingua.codice, sito, disponibile, avvisi, opzioni["base_url"])
     testo = passo_struttura(testo, rel, lingua, reali, sito, opzioni["senza_selettore"], opzioni["base_url"])
-    testo = riempi(testo, v_lingua, f"{lingua.codice}/{rel}", sconosciuti)
+    # l'indirizzo della pagina in questa lingua è lo stesso del suo canonical: chi lo mostra e chi lo copia lo prendono da qui
+    v_pagina = {**v_lingua, "page.url": indirizzo_pagina(opzioni["base_url"], lingua.codice, sito.indirizzo(rel))}
+    testo = riempi(testo, v_pagina, f"{lingua.codice}/{rel}", sconosciuti)
+    testo = passo_fonti(testo, v_lingua, opzioni.get("percorsi_versione"), opzioni.setdefault("fonti_mancanti", set()))
     file = opzioni.get("caratteri", {}).get(lingua.codice)
     if file and rel in sito.traducibili and not lingua.finta:   # una pseudo-lingua non ha lettere della scrittura: il file non servirebbe
         testo = precarica_carattere(testo, rel, lingua, file)
@@ -611,7 +688,7 @@ def esempi_per_il_catalogo(out, sito, reali, v_lingue, sconosciuti, opzioni):
         tutte[codice] = Lingua(codice, info["bcp47"], info["direzione"], info["nomeElenco"], pubblicata=True)
     tutte[SORGENTE] = Lingua(it.codice, it.bcp47, it.direzione, it.nome, it.tradotte, True, False, it.plurale, it.numero, it.forme)
     disponibile = {c: (set(sito.pagine) if c == SORGENTE else set(sito.traducibili)) for c in tutte}
-    opz = {**opzioni, "senza_selettore": False, "caratteri": {}}
+    opz = {**opzioni, "senza_selettore": False, "caratteri": {}, "fonti_mancanti": set()}
 
     def per_il_catalogo(html, base):
         html = re.sub(r'<link rel="(?:canonical|alternate)"[^>]*>\n?', "", html)   # non sono pagine del sito: né canonical né hreflang
@@ -666,7 +743,8 @@ def build(out, v, grezzi, opzioni):
         opzioni = {**opzioni, "senza_selettore": True}
     # il file del carattere di ogni scrittura, da precaricare (token.css dice quale)
     tutti_i_caratteri = caratteri_per_lingua((opzioni["system"] / "token.css").read_text(encoding="utf-8"))
-    opzioni = {**opzioni, "caratteri": {c: f.removeprefix("caratteri/") for c, f in da_precaricare(tutti_i_caratteri, opzioni["system"]).items()}}
+    opzioni = {**opzioni, "caratteri": {c: f.removeprefix("caratteri/") for c, f in da_precaricare(tutti_i_caratteri, opzioni["system"]).items()},
+               "fonti_mancanti": set()}
     # le pagine di ogni lingua: le traducibili in ogni lingua, le altre soltanto in italiano
     disponibile = {c: (set(sito.pagine) if c == SORGENTE else set(sito.traducibili)) for c in reali}
     sconosciuti, avvisi = set(), []
@@ -723,6 +801,7 @@ def build(out, v, grezzi, opzioni):
     if rotti:
         sys.exit("site.py: links that lead nowhere in translated pages:\n  " + "\n  ".join(rotti))
     giornale.extend(f"warning, as before: {a}" for a in sorted(set(avvisi) - set(rotti)))
+    giornale.extend(f"source {m} is not in the repository at {v['tag']}: shown as its name, without a link" for m in sorted(opzioni["fonti_mancanti"]))
     return reali, giornale, contate, rimandi
 
 
@@ -743,7 +822,10 @@ def main():
     base_url = args[args.index("--base-url") + 1] if "--base-url" in args else BASE_URL
     if not base_url.endswith("/"):
         base_url += "/"
-    opzioni = {"pseudo": "--pseudo" in args, "senza_selettore": "--no-selector" in args, "base_url": base_url,
+    percorsi = percorsi_della_versione(v["tag"], "--release-json" not in args)
+    if percorsi is None:
+        print(f"site.py: warning, the files of {v['tag']} could not be listed: the links to the sources are not checked")
+    opzioni = {"percorsi_versione": percorsi, "pseudo": "--pseudo" in args, "senza_selettore": "--no-selector" in args, "base_url": base_url,
                "website": pathlib.Path(args[args.index("--website") + 1]).resolve() if "--website" in args else SITE,
                "system": pathlib.Path(args[args.index("--system") + 1]).resolve() if "--system" in args else SYSTEM,
                "lingue": set(args[args.index("--languages") + 1].split(",")) if "--languages" in args else None}

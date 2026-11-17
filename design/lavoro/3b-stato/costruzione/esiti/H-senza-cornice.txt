@@ -1,0 +1,8 @@
+ok  chromium it/stato/ 1440x900: senza JavaScript 3 invisibili; con cornice.js bloccato 3 (classe js tolta)
+ok  chromium it/stato/ 390x844: senza JavaScript 3 invisibili; con cornice.js bloccato 3 (classe js tolta)
+ok  firefox it/stato/ 1440x900: senza JavaScript 3 invisibili; con cornice.js bloccato 3 (classe js tolta)
+ok  firefox it/stato/ 390x844: senza JavaScript 3 invisibili; con cornice.js bloccato 3 (classe js tolta)
+ok  webkit it/stato/ 1440x900: senza JavaScript 3 invisibili; con cornice.js bloccato 3 (classe js tolta)
+ok  webkit it/stato/ 390x844: senza JavaScript 3 invisibili; con cornice.js bloccato 3 (classe js tolta)
+# prima: la copia di c8d2aa3 (stato, senza il giro di 2-f? la rete di sicurezza c'è già)
+ok  chromium it/stato/ 1440x900: senza JavaScript 3 invisibili; con cornice.js bloccato 3 (classe js tolta)

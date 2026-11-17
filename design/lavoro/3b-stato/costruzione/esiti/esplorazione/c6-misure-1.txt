@@ -1,0 +1,16 @@
+# c6-misure-1 · 17/11/2026 15:32 · sito: /tmp/lavoro-3bb-sito-c6 · albero: /tmp/lavoro-3bb-radice-c6 · esame-impaginazione.mjs chromium normale stato-domanda 844x390,326x326,915x412,861x609,320x568,466x678,360x740
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+stato-domanda · 844×390 · testo 100%: 
+  FUORI VISTA button.domanda-bottone: tutto sotto il bordo (schermo 844×390)
+  FUORI VISTA div#domande-risposta: 56 px sotto (schermo 844×390)
+stato-domanda · 326×326 · testo 100%: 
+  FUORI VISTA button.domanda-bottone: 10 px sopra (schermo 326×326)
+stato-domanda · 915×412 · testo 100%: pulito
+stato-domanda · 861×609 · testo 100%: pulito
+stato-domanda · 320×568 · testo 100%: pulito
+stato-domanda · 466×678 · testo 100%: pulito
+stato-domanda · 360×740 · testo 100%: pulito
+
+FUORI VISTA: 3
+3 cose da guardare (foto in /tmp/lavoro-3bb-qa-c6-misure-1/esame/chromium)
+# uscita: 1

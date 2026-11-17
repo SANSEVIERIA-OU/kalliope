@@ -52,11 +52,19 @@ fino al microfono, in riunione non ancora. Piano dei tratti e fonti: `design/lav
 - **`inoltra.css`**: il messaggio da inoltrare nella bolla, con «Copia il messaggio» e le due risposte.
 - In `pagina.css` una regola aggiunta: un titolo di quattro righe sugli schermi bassi del computer prende la misura del tablet (quelli di tre
   righe non cambiano). I token: blocco «La pagina «stato»» in fondo a `token.css`, documentati in fondo a `TOKEN.md`.
-- Non ancora nel catalogo (lo fa il ruolo di costruzione, come per «non ancora»); gli stati della pagina sono già in `metodo.config.mjs`.
+- Nel catalogo dall'incarico 3b-b (sezione «Pagina «stato»», `catalogo/catalogo-stato.js` e `.css`): le cinque schede con varianti e stati, i dettagli a richiesta, la parentesi «non misurato», le fonti; gli stati della pagina sono in `metodo.config.mjs`.
 - **Dopo il giudizio** (incarico 3b-c): la tappa della catena si legge subito e si accende quando arriva (niente coda); la risposta delle domande
   entra una volta sola; al telefono i dettagli delle tappe, le licenze e le impronte si aprono a richiesta (`<details>`, aperti al computer e
   senza script) e dopo le domande un collegamento porta al messaggio da inoltrare. **La barra segna la pagina in cui sei**: regola in fondo
   a `barra.css` (`.menu a[aria-current="page"]`), per ogni pagina che ha la sua voce nel menu.
+
+- **Completata dalla costruzione** (incarico 3b-b, 17/11/2026; prove in `design/lavoro/3b-stato/costruzione/`): le **fonti si aprono** (`.fonte a`, in `catena.css`): ogni nome di file è un
+  collegamento al file del repository alla versione che la pagina mostra, scritto dalla costruzione da `{{kalliope.source.url}}` e `{{kalliope.tree.url}}` (`tools/site.py` verifica che il file
+  ci sia a quella versione; se non c'è la fonte resta il suo nome); **l'indirizzo** che la bolla del messaggio mostra e copia è `{{kalliope.page.url}}`, lo stesso del `canonical`, e si legge
+  da sinistra a destra anche da destra a sinistra; **i moltiplicatori** della discesa delle impronte, le fasce del passo che conta, la curva delle dissolvenze e l'aria di ciò che un gesto apre
+  sono token (`--pacco-corsa-*`, `--varco-fascia-*`, `--curva-domanda`, `--gesto-aria`); **ciò che un gesto apre resta in vista** (regola della cornice): la bolla della risposta, i dettagli
+  aperti e la conferma della copia (`inVista` in `stato.js`); **la scelta dei dettagli** al telefono si ricorda passando al computer e tornando; l'etichetta di «Tu» conta le righe vere
+  (`componenti.js`) e resta su una riga anche senza i caratteri del sito; una tappa che comincia già sopra il bordo alto si accende ferma.
 
 ## Come si usa per un'altra pagina
 

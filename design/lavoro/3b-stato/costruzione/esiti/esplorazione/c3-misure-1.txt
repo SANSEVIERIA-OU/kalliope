@@ -1,0 +1,85 @@
+# c3-misure-1 · 17/11/2026 15:11 · sito: /tmp/lavoro-3bb-sito-c3 · albero: /tmp/lavoro-3bb-radice-c3 · esame-impaginazione.mjs chromium normale stato 390x844,360x740,844x390,412x915,750x832,466x678,951x669,326x326,440x706,440x744,421x616
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+stato · 390×844 · testo 100%: pulito
+stato-menu · 390×844 · testo 100%: pulito
+stato-domanda · 390×844 · testo 100%: pulito
+stato-dettagli · 390×844 · testo 100%: pulito
+stato-copia-fatta · 390×844 · testo 100%: pulito
+stato-copia-non-riuscita · 390×844 · testo 100%: pulito
+stato · 360×740 · testo 100%: pulito
+stato-menu · 360×740 · testo 100%: pulito
+stato-dettagli · 360×740 · testo 100%: pulito
+stato-domanda · 360×740 · testo 100%: pulito
+stato-copia-fatta · 360×740 · testo 100%: 
+  FUORI VISTA span.copia-fatto: tutto sotto il bordo (schermo 360×740)
+stato-copia-non-riuscita · 360×740 · testo 100%: 
+  FUORI VISTA span.copia-errore: tutto sotto il bordo (schermo 360×740)
+stato · 844×390 · testo 100%: pulito
+stato-dettagli · 844×390 · testo 100%: lo stato non c'è a questa misura
+stato-menu · 844×390 · testo 100%: pulito
+stato-domanda · 844×390 · testo 100%: 
+  FUORI VISTA div#domande-risposta: 119 px sopra (schermo 844×390)
+stato-copia-fatta · 844×390 · testo 100%: pulito
+stato-copia-non-riuscita · 844×390 · testo 100%: pulito
+stato · 412×915 · testo 100%: pulito
+stato-menu · 412×915 · testo 100%: pulito
+stato-domanda · 412×915 · testo 100%: pulito
+stato-dettagli · 412×915 · testo 100%: pulito
+stato-copia-fatta · 412×915 · testo 100%: pulito
+stato-copia-non-riuscita · 412×915 · testo 100%: pulito
+stato · 750×832 · testo 100%: pulito
+stato-menu · 750×832 · testo 100%: pulito
+stato-dettagli · 750×832 · testo 100%: pulito
+stato-domanda · 750×832 · testo 100%: pulito
+stato-copia-fatta · 750×832 · testo 100%: pulito
+stato-copia-non-riuscita · 750×832 · testo 100%: pulito
+stato · 466×678 · testo 100%: pulito
+stato-menu · 466×678 · testo 100%: pulito
+stato-dettagli · 466×678 · testo 100%: pulito
+stato-domanda · 466×678 · testo 100%: pulito
+stato-copia-fatta · 466×678 · testo 100%: 
+  FUORI VISTA span.copia-fatto: 2 px sotto (schermo 466×678)
+stato-copia-non-riuscita · 466×678 · testo 100%: 
+  FUORI VISTA span.copia-errore: 24 px sotto (schermo 466×678)
+stato · 951×669 · testo 100%: pulito
+stato-dettagli · 951×669 · testo 100%: lo stato non c'è a questa misura
+stato-menu · 951×669 · testo 100%: pulito
+stato-domanda · 951×669 · testo 100%: pulito
+stato-copia-fatta · 951×669 · testo 100%: 
+  FUORI VISTA span.copia-fatto: tutto sotto il bordo (schermo 951×669)
+stato-copia-non-riuscita · 951×669 · testo 100%: 
+  FUORI VISTA span.copia-errore: tutto sotto il bordo (schermo 951×669)
+stato · 326×326 · testo 100%: pulito
+stato-menu · 326×326 · testo 100%: pulito
+stato-dettagli · 326×326 · testo 100%: 
+  FUORI VISTA p «Negli ascolti di verific»: 117 px sotto (schermo 326×326)
+stato-domanda · 326×326 · testo 100%: 
+  FUORI VISTA button.domanda-bottone: 93 px sopra (schermo 326×326)
+  FUORI VISTA div#domande-risposta: 15 px sopra (schermo 326×326)
+stato-copia-fatta · 326×326 · testo 100%: pulito
+stato-copia-non-riuscita · 326×326 · testo 100%: pulito
+stato · 440×706 · testo 100%: pulito
+stato-menu · 440×706 · testo 100%: pulito
+stato-dettagli · 440×706 · testo 100%: pulito
+stato-domanda · 440×706 · testo 100%: pulito
+stato-copia-fatta · 440×706 · testo 100%: pulito
+stato-copia-non-riuscita · 440×706 · testo 100%: 
+  FUORI VISTA span.copia-errore: 18 px sotto (schermo 440×706)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+stato · 440×744 · testo 100%: pulito
+stato-menu · 440×744 · testo 100%: pulito
+stato-dettagli · 440×744 · testo 100%: pulito
+stato-domanda · 440×744 · testo 100%: pulito
+stato-copia-fatta · 440×744 · testo 100%: pulito
+stato-copia-non-riuscita · 440×744 · testo 100%: pulito
+stato · 421×616 · testo 100%: pulito
+stato-menu · 421×616 · testo 100%: pulito
+stato-dettagli · 421×616 · testo 100%: 
+  FUORI VISTA p «Negli ascolti di verific»: 25 px sotto (schermo 421×616)
+stato-domanda · 421×616 · testo 100%: pulito
+stato-copia-fatta · 421×616 · testo 100%: pulito
+stato-copia-non-riuscita · 421×616 · testo 100%: pulito
+
+FUORI VISTA: 12
+12 cose da guardare (foto in /tmp/lavoro-3bb-qa-c3-misure-1/esame/chromium)
+# uscita: 1

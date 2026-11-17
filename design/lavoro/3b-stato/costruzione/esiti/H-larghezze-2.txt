@@ -1,0 +1,79 @@
+# H-larghezze-2 · 17/11/2026 16:24 · sito: /tmp/lavoro-3bb-sito-H-it · albero: /tmp/lavoro-3bb-radice-H-10 · esame-impaginazione.mjs chromium normale stato 421x900,430x900,440x900,441x900,600x900,760x900,761x900,860x900,959x900,960x900,979x900,999x900
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+stato · 421×900 · testo 100%: pulito
+stato-menu · 421×900 · testo 100%: pulito
+stato-dettagli · 421×900 · testo 100%: pulito
+stato-domanda · 421×900 · testo 100%: pulito
+stato-copia-fatta · 421×900 · testo 100%: pulito
+stato-copia-non-riuscita · 421×900 · testo 100%: pulito
+stato · 430×900 · testo 100%: pulito
+stato-menu · 430×900 · testo 100%: pulito
+stato-dettagli · 430×900 · testo 100%: pulito
+stato-domanda · 430×900 · testo 100%: pulito
+stato-copia-fatta · 430×900 · testo 100%: pulito
+stato-copia-non-riuscita · 430×900 · testo 100%: pulito
+stato · 440×900 · testo 100%: pulito
+stato-menu · 440×900 · testo 100%: pulito
+stato-dettagli · 440×900 · testo 100%: pulito
+stato-domanda · 440×900 · testo 100%: pulito
+stato-copia-fatta · 440×900 · testo 100%: pulito
+stato-copia-non-riuscita · 440×900 · testo 100%: pulito
+stato · 441×900 · testo 100%: pulito
+stato-menu · 441×900 · testo 100%: pulito
+stato-dettagli · 441×900 · testo 100%: pulito
+stato-domanda · 441×900 · testo 100%: pulito
+stato-copia-fatta · 441×900 · testo 100%: pulito
+stato-copia-non-riuscita · 441×900 · testo 100%: pulito
+stato · 600×900 · testo 100%: pulito
+stato-menu · 600×900 · testo 100%: pulito
+stato-dettagli · 600×900 · testo 100%: pulito
+stato-domanda · 600×900 · testo 100%: pulito
+stato-copia-fatta · 600×900 · testo 100%: pulito
+stato-copia-non-riuscita · 600×900 · testo 100%: pulito
+stato · 760×900 · testo 100%: pulito
+stato-menu · 760×900 · testo 100%: pulito
+stato-dettagli · 760×900 · testo 100%: pulito
+stato-domanda · 760×900 · testo 100%: pulito
+stato-copia-fatta · 760×900 · testo 100%: pulito
+stato-copia-non-riuscita · 760×900 · testo 100%: pulito
+stato · 761×900 · testo 100%: pulito
+stato-dettagli · 761×900 · testo 100%: lo stato non c'è a questa misura
+stato-menu · 761×900 · testo 100%: pulito
+stato-domanda · 761×900 · testo 100%: pulito
+stato-copia-fatta · 761×900 · testo 100%: pulito
+stato-copia-non-riuscita · 761×900 · testo 100%: pulito
+stato · 860×900 · testo 100%: pulito
+stato-menu · 860×900 · testo 100%: pulito
+stato-dettagli · 860×900 · testo 100%: lo stato non c'è a questa misura
+stato-domanda · 860×900 · testo 100%: pulito
+stato-copia-fatta · 860×900 · testo 100%: pulito
+stato-copia-non-riuscita · 860×900 · testo 100%: pulito
+stato · 959×900 · testo 100%: pulito
+stato-menu · 959×900 · testo 100%: pulito
+stato-dettagli · 959×900 · testo 100%: lo stato non c'è a questa misura
+stato-domanda · 959×900 · testo 100%: pulito
+stato-copia-fatta · 959×900 · testo 100%: pulito
+stato-copia-non-riuscita · 959×900 · testo 100%: pulito
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+stato-menu · 960×900 · testo 100%: lo stato non c'è a questa misura
+stato · 960×900 · testo 100%: pulito
+stato-dettagli · 960×900 · testo 100%: lo stato non c'è a questa misura
+stato-domanda · 960×900 · testo 100%: pulito
+stato-copia-fatta · 960×900 · testo 100%: pulito
+stato-copia-non-riuscita · 960×900 · testo 100%: pulito
+stato-menu · 979×900 · testo 100%: lo stato non c'è a questa misura
+stato · 979×900 · testo 100%: pulito
+stato-dettagli · 979×900 · testo 100%: lo stato non c'è a questa misura
+stato-domanda · 979×900 · testo 100%: pulito
+stato-copia-fatta · 979×900 · testo 100%: pulito
+stato-copia-non-riuscita · 979×900 · testo 100%: pulito
+stato-menu · 999×900 · testo 100%: lo stato non c'è a questa misura
+stato · 999×900 · testo 100%: pulito
+stato-dettagli · 999×900 · testo 100%: lo stato non c'è a questa misura
+stato-domanda · 999×900 · testo 100%: pulito
+stato-copia-fatta · 999×900 · testo 100%: pulito
+stato-copia-non-riuscita · 999×900 · testo 100%: pulito
+
+
+Tutto pulito (foto in /tmp/lavoro-3bb-qa-H-larghezze-2/esame/chromium)
+# uscita: 0

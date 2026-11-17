@@ -197,6 +197,13 @@ there is no release), so the pages never name a version by hand. What depends on
 number, the words «of test» in a sentence) is written for both cases in the page and chosen by the build (`data-release`, see
 [translating.md](translating.md)): the first release that is not a prerelease changes those words by itself.
 
+A file of the repository named next to a fact (the source of a figure on «Stato e limiti») is a link to that file **as it is in the version the
+page shows**: the page writes `{{kalliope.source.url}}/path/to/file` (a folder: `{{kalliope.tree.url}}/path`), the build fills in the repository
+address and the tag of the release it shows. The build asks the repository which files that version has (the local one when it has the tag,
+else the public API) and a source that is not there is left as its name, without a link, with a line in the build log; offline, with
+`--release-json` and no local tag, the links stay unchecked (the build says so). The address a page shows of itself (the message to forward
+on «Stato e limiti») is `{{kalliope.page.url}}`, built like the page's `canonical`, so what is shown, what is copied and the canonical are one address.
+
 The site has one folder per language (`/it/`, `/en/` …) with the same pages under the same names, and the top address is the
 page where a visitor chooses the language. The build makes only the languages whose catalogue, `website/lingue/<xx>.po`,
 is complete and checked, and says in its log which it left out and why; Italian, the language of the pages, is always

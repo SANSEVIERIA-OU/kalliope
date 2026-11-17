@@ -1,0 +1,32 @@
+# H-esame-firefox · 17/11/2026 17:10 · sito: /tmp/lavoro-3bb-sito-H-it · albero: /tmp/lavoro-3bb-radice-H-10 · esame-impaginazione.mjs firefox normale stato 390x844,1440x900,844x390,360x640
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+stato · 390×844 · testo 100%: pulito
+stato-menu · 390×844 · testo 100%: pulito
+stato-domanda · 390×844 · testo 100%: pulito
+stato-dettagli · 390×844 · testo 100%: pulito
+stato-copia-fatta · 390×844 · testo 100%: pulito
+stato-copia-non-riuscita · 390×844 · testo 100%: pulito
+stato-menu · 1440×900 · testo 100%: lo stato non c'è a questa misura
+stato · 1440×900 · testo 100%: pulito
+stato-dettagli · 1440×900 · testo 100%: lo stato non c'è a questa misura
+stato-domanda · 1440×900 · testo 100%: pulito
+stato-copia-fatta · 1440×900 · testo 100%: pulito
+stato-copia-non-riuscita · 1440×900 · testo 100%: pulito
+stato · 844×390 · testo 100%: pulito
+stato-dettagli · 844×390 · testo 100%: lo stato non c'è a questa misura
+stato-menu · 844×390 · testo 100%: pulito
+stato-domanda · 844×390 · testo 100%: pulito, con 2 limiti dichiarati
+  LIMITE DICHIARATO FUORI VISTA button.domanda-bottone: tutto sotto il bordo (schermo 844×390) · come sopra: la domanda premuta, in fondo all'elenco, sta sotto la bolla che comincia in alto; la bolla la ripete in testa (3b-b, da confermare)
+  LIMITE DICHIARATO FUORI VISTA div#domande-risposta: 56 px sotto (schermo 844×390) · telefono girato: le due risposte più lunghe («Ha frasi pronte o simboli?» e «Chi c'è dietro?», 362 px) sono più alte dello spazio sotto la barra (306 px): ne comincia la parte alta; il fondo si legge scorrendo (3b-b, da confermare)
+stato-copia-fatta · 844×390 · testo 100%: pulito
+stato-copia-non-riuscita · 844×390 · testo 100%: pulito
+stato · 360×640 · testo 100%: pulito
+stato-menu · 360×640 · testo 100%: pulito
+stato-domanda · 360×640 · testo 100%: pulito
+stato-dettagli · 360×640 · testo 100%: pulito
+stato-copia-fatta · 360×640 · testo 100%: pulito
+stato-copia-non-riuscita · 360×640 · testo 100%: pulito
+
+
+Tutto pulito; 2 limiti dichiarati, elencati a parte e non contati (foto in /tmp/lavoro-3bb-qa-H-esame-firefox/esame/firefox)
+# uscita: 0

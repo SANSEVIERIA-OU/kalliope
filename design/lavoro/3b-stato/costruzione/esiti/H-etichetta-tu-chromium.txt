@@ -1,0 +1,63 @@
+## it/stato/
+ok  chromium 390x844 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 153×19, tocca le barre: true, font caricati: 3
+ok  chromium 390x844 SENZA caratteri · 1 riga/e, corto (Tu · microfono «Kalliope»), 30×19, tocca le barre: false, font caricati: 2
+ok  chromium 360x740 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 29×19, tocca le barre: false, font caricati: 3
+ok  chromium 360x740 SENZA caratteri · 1 riga/e, lungo (Tu · microfono «Kalliope»), 30×19, tocca le barre: false, font caricati: 2
+ok  chromium 375x812 con i caratteri  · 1 riga/e, corto (Tu · microfono «Kalliope»), 29×19, tocca le barre: false, font caricati: 3
+ok  chromium 375x812 SENZA caratteri · 1 riga/e, corto (Tu · microfono «Kalliope»), 30×19, tocca le barre: false, font caricati: 2
+ok  chromium 412x915 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 153×19, tocca le barre: true, font caricati: 3
+ok  chromium 412x915 SENZA caratteri · 1 riga/e, lungo (Tu · microfono «Kalliope»), 156×19, tocca le barre: true, font caricati: 2
+ok  chromium 326x326 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 29×19, tocca le barre: false, font caricati: 3
+ok  chromium 326x326 SENZA caratteri · 1 riga/e, lungo (Tu · microfono «Kalliope»), 30×19, tocca le barre: false, font caricati: 2
+ok  chromium 440x706 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 153×19, tocca le barre: true, font caricati: 3
+ok  chromium 440x706 SENZA caratteri · 1 riga/e, lungo (Tu · microfono «Kalliope»), 156×19, tocca le barre: true, font caricati: 2
+ok  chromium 466x678 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 153×19, tocca le barre: true, font caricati: 3
+ok  chromium 466x678 SENZA caratteri · 1 riga/e, lungo (Tu · microfono «Kalliope»), 156×19, tocca le barre: true, font caricati: 2
+ok  chromium 350x700 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 29×19, tocca le barre: false, font caricati: 3
+ok  chromium 350x700 SENZA caratteri · 1 riga/e, lungo (Tu · microfono «Kalliope»), 30×19, tocca le barre: false, font caricati: 2
+ok  chromium 334x700 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 29×19, tocca le barre: false, font caricati: 3
+ok  chromium 334x700 SENZA caratteri · 1 riga/e, lungo (Tu · microfono «Kalliope»), 30×19, tocca le barre: false, font caricati: 2
+ok  chromium 1440x900 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 184×26, tocca le barre: false, font caricati: 3
+ok  chromium 1440x900 SENZA caratteri · 1 riga/e, lungo (Tu · microfono «Kalliope»), 187×26, tocca le barre: false, font caricati: 2
+## it/
+ok  chromium 390x844 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 153×19, tocca le barre: true, font caricati: 2
+ok  chromium 390x844 SENZA caratteri · 1 riga/e, corto (Tu · microfono «Kalliope»), 30×19, tocca le barre: false, font caricati: 2
+ok  chromium 360x740 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 29×19, tocca le barre: false, font caricati: 2
+ok  chromium 360x740 SENZA caratteri · 1 riga/e, lungo (Tu · microfono «Kalliope»), 30×19, tocca le barre: false, font caricati: 2
+ok  chromium 375x812 con i caratteri  · 1 riga/e, corto (Tu · microfono «Kalliope»), 29×19, tocca le barre: false, font caricati: 2
+ok  chromium 375x812 SENZA caratteri · 1 riga/e, corto (Tu · microfono «Kalliope»), 30×19, tocca le barre: false, font caricati: 2
+ok  chromium 412x915 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 153×19, tocca le barre: true, font caricati: 2
+ok  chromium 412x915 SENZA caratteri · 1 riga/e, lungo (Tu · microfono «Kalliope»), 156×19, tocca le barre: true, font caricati: 2
+ok  chromium 326x326 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 29×19, tocca le barre: false, font caricati: 2
+ok  chromium 326x326 SENZA caratteri · 1 riga/e, lungo (Tu · microfono «Kalliope»), 30×19, tocca le barre: false, font caricati: 2
+ok  chromium 440x706 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 153×19, tocca le barre: true, font caricati: 2
+ok  chromium 440x706 SENZA caratteri · 1 riga/e, lungo (Tu · microfono «Kalliope»), 156×19, tocca le barre: true, font caricati: 2
+ok  chromium 466x678 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 153×19, tocca le barre: true, font caricati: 2
+ok  chromium 466x678 SENZA caratteri · 1 riga/e, lungo (Tu · microfono «Kalliope»), 156×19, tocca le barre: true, font caricati: 2
+ok  chromium 350x700 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 29×19, tocca le barre: false, font caricati: 2
+ok  chromium 350x700 SENZA caratteri · 1 riga/e, lungo (Tu · microfono «Kalliope»), 30×19, tocca le barre: false, font caricati: 2
+ok  chromium 334x700 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 29×19, tocca le barre: false, font caricati: 2
+ok  chromium 334x700 SENZA caratteri · 1 riga/e, lungo (Tu · microfono «Kalliope»), 30×19, tocca le barre: false, font caricati: 2
+ok  chromium 1440x900 con i caratteri  · 1 riga/e, lungo (Tu · microfono «Kalliope»), 184×26, tocca le barre: false, font caricati: 2
+ok  chromium 1440x900 SENZA caratteri · 1 riga/e, lungo (Tu · microfono «Kalliope»), 187×26, tocca le barre: false, font caricati: 2
+## it/non-ancora/
+ok  chromium 390x844 con i caratteri  · 1 riga/e, lungo (Tu · senza voce), 97×19, tocca le barre: true, font caricati: 1
+ok  chromium 390x844 SENZA caratteri · 1 riga/e, lungo (Tu · senza voce), 102×19, tocca le barre: true, font caricati: 2
+ok  chromium 360x740 con i caratteri  · 1 riga/e, lungo (Tu · senza voce), 29×19, tocca le barre: false, font caricati: 1
+ok  chromium 360x740 SENZA caratteri · 1 riga/e, lungo (Tu · senza voce), 30×19, tocca le barre: false, font caricati: 2
+ok  chromium 375x812 con i caratteri  · 1 riga/e, lungo (Tu · senza voce), 97×19, tocca le barre: true, font caricati: 1
+ok  chromium 375x812 SENZA caratteri · 1 riga/e, lungo (Tu · senza voce), 102×19, tocca le barre: true, font caricati: 2
+ok  chromium 412x915 con i caratteri  · 1 riga/e, lungo (Tu · senza voce), 97×19, tocca le barre: true, font caricati: 1
+ok  chromium 412x915 SENZA caratteri · 1 riga/e, lungo (Tu · senza voce), 102×19, tocca le barre: true, font caricati: 2
+ok  chromium 326x326 con i caratteri  · 1 riga/e, lungo (Tu · senza voce), 29×19, tocca le barre: false, font caricati: 1
+ok  chromium 326x326 SENZA caratteri · 1 riga/e, lungo (Tu · senza voce), 30×19, tocca le barre: false, font caricati: 2
+ok  chromium 440x706 con i caratteri  · 1 riga/e, lungo (Tu · senza voce), 97×19, tocca le barre: true, font caricati: 1
+ok  chromium 440x706 SENZA caratteri · 1 riga/e, lungo (Tu · senza voce), 102×19, tocca le barre: true, font caricati: 2
+ok  chromium 466x678 con i caratteri  · 1 riga/e, lungo (Tu · senza voce), 97×19, tocca le barre: true, font caricati: 1
+ok  chromium 466x678 SENZA caratteri · 1 riga/e, lungo (Tu · senza voce), 102×19, tocca le barre: true, font caricati: 2
+ok  chromium 350x700 con i caratteri  · 1 riga/e, lungo (Tu · senza voce), 29×19, tocca le barre: false, font caricati: 1
+ok  chromium 350x700 SENZA caratteri · 1 riga/e, lungo (Tu · senza voce), 30×19, tocca le barre: false, font caricati: 2
+ok  chromium 334x700 con i caratteri  · 1 riga/e, lungo (Tu · senza voce), 29×19, tocca le barre: false, font caricati: 1
+ok  chromium 334x700 SENZA caratteri · 1 riga/e, lungo (Tu · senza voce), 30×19, tocca le barre: false, font caricati: 2
+ok  chromium 1440x900 con i caratteri  · 1 riga/e, lungo (Tu · senza voce), 120×26, tocca le barre: false, font caricati: 1
+ok  chromium 1440x900 SENZA caratteri · 1 riga/e, lungo (Tu · senza voce), 127×26, tocca le barre: false, font caricati: 2

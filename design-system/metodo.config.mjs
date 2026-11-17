@@ -23,14 +23,17 @@ const statiNonAncora = [
 ];
 
 // «stato» (incarico 3b): la pagina a riposo e gli stati che ne cambiano l'impaginazione. La risposta nella bolla (al telefono si apre sotto la
-// domanda premuta) e la copia del messaggio da inoltrare (gli appunti si simulano, come per «non ancora»).
+// domanda premuta), i dettagli a richiesta (al telefono), il menu aperto e la copia del messaggio da inoltrare (gli appunti si simulano, come per «non ancora»).
 const ST = 'it/stato/';
 const alleDomande = async p => { await p.evaluate(() => document.querySelector('#per-chi').scrollIntoView({block: 'start'})); await p.waitForTimeout(900); };
 const allInoltra = async p => { await p.evaluate(() => document.querySelector('#inoltra').scrollIntoView({block: 'start'})); await p.waitForTimeout(900); };
+const allaCatena = async p => { await p.evaluate(() => document.querySelector('.anello[data-anello=microfono]').scrollIntoView({block: 'center'})); await p.waitForTimeout(900); };
 const statiStato = [
   {nome: 'stato', url: ST},
   {nome: 'stato-menu', url: ST, dopo: async p => { if (!await p.isVisible('.pulsante-menu')) return false; await p.click('.pulsante-menu'); await p.waitForTimeout(500); }, inVista: '#menu.aperto'},
   {nome: 'stato-domanda', url: ST, dopo: async p => { await alleDomande(p); await p.click('#d-chi .domanda-bottone'); await p.waitForTimeout(900); }, inVista: '#d-chi .domanda-bottone, .domande-bolla'},
+  // i dettagli a richiesta (al telefono: «I dettagli e le fonti» della tappa del microfono); dove non c'è il comando (al computer sono sempre aperti) lo stato è saltato
+  {nome: 'stato-dettagli', url: ST, dopo: async p => { await allaCatena(p); const s = await p.$('.anello[data-anello=microfono] .anello-dettagli > summary'); if (!s || !await s.isVisible()) return false; await s.click(); await p.waitForTimeout(700); }, inVista: '.anello[data-anello=microfono] .anello-dettagli[open] > summary, .anello[data-anello=microfono] .anello-dettagli[open] > p:first-of-type'},
   {nome: 'stato-copia-fatta', url: ST, dopo: async p => { await p.evaluate(() => { navigator.clipboard.writeText = () => Promise.resolve(); }); await allInoltra(p); if (!await p.isVisible('.copia-messaggio')) return false; await p.click('.copia-messaggio'); await p.waitForTimeout(700); }, inVista: '.copia-messaggio, .inoltra-esito .copia-fatto'},
   {nome: 'stato-copia-non-riuscita', url: ST, dopo: async p => { await p.evaluate(() => { navigator.clipboard.writeText = () => Promise.reject(new Error('no')); }); await allInoltra(p); if (!await p.isVisible('.copia-messaggio')) return false; await p.click('.copia-messaggio'); await p.waitForTimeout(700); }, inVista: '.copia-messaggio, .inoltra-esito .copia-errore'},
 ];
@@ -67,6 +70,15 @@ export default {
       perche: 'come sopra: la bolla scorre sotto la barra (la si vede in parte) perché il messaggio d\'errore stia per intero nello schermo (PIANO.md, «La cornice»)'},
     {pagina: 'non-ancora-errore-audio', misure: '326x326', che: 'FUORI VISTA', cosa: 'button.pillola.voce-chiara',
       perche: 'schermo quadrato da 326 px: il messaggio d\'errore (con «Riprova» e il file) vince sul comando «Ascolta», che resta sopra il bordo (PIANO.md, «La cornice»)'},
+    // «stato», la risposta nella bolla: dove lo spazio sotto la barra non basta per la bolla (scritta grande, quanto la frase della riunione) vince la sua parte alta, con la
+    // domanda ripetuta in testa; il resto si legge scorrendo (la bolla è appiccicosa al computer). Limiti scritti da chi ha costruito (incarico 3b-b): da confermare alla direzione,
+    // che può invece abbassare la scritta della bolla sugli schermi bassi (foto-difetti/domanda-844x390.png).
+    {pagina: 'stato-domanda', misure: '844x390', che: 'FUORI VISTA', cosa: 'div#domande-risposta',
+      perche: 'telefono girato: le due risposte più lunghe («Ha frasi pronte o simboli?» e «Chi c\'è dietro?», 362 px) sono più alte dello spazio sotto la barra (306 px): ne comincia la parte alta; il fondo si legge scorrendo (3b-b, da confermare)'},
+    {pagina: 'stato-domanda', misure: '844x390', che: 'FUORI VISTA', cosa: 'button.domanda-bottone',
+      perche: 'come sopra: la domanda premuta, in fondo all\'elenco, sta sotto la bolla che comincia in alto; la bolla la ripete in testa (3b-b, da confermare)'},
+    {pagina: 'stato-domanda', misure: '326x326', che: 'FUORI VISTA', cosa: 'button.domanda-bottone',
+      perche: 'schermo quadrato: la bolla sta tutta nello schermo (234 px) ma con la domanda premuta sopra non ci sta (246 px di spazio sotto la barra): vince la bolla, che ripete la domanda in testa (3b-b, da confermare)'},
   ],
   // il testo che si legge e non si vede (.solo-lettori) è ritagliato apposta
   escludi: '.solo-lettori',

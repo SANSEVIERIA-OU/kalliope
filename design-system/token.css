@@ -1350,3 +1350,25 @@
   --barre-scala-minima: 0.4;   /* quanto possono rimpicciolirsi le barre perché l'etichetta non le tocchi */
   --barre-voce-scala-massima: 1.1;   /* la massima altezza che la voce dà a una barra rispetto alla sua altezza di riposo (non-ancora.js: 0,3 + 0,8 di inviluppo) */
 }
+
+/* ---------- Costruzione di «stato» (incarico 3b-b, 17/11/2026) ---------- */
+/* I moltiplicatori e le fasce che stato.js teneva scritti nel codice: nessun valore resta fuori da questo file. Numeri senza unità (si leggono con parseFloat). */
+:root {
+  /* · La discesa delle impronte nel varco (stato.js, scendono(): ogni file scende dal varco al bordo del disco) */
+  --pacco-corsa-durata: 1.8;   /* la corsa dura 1,8 volte --durata-pacco (il tratto del filo e quello fino al disco, in una sola animazione) */
+  --pacco-corsa-ritardo: 0.6;   /* parte dopo 0,6 volte --durata-pacco: il filo ha già portato il file al varco */
+  --pacco-corsa-pieno-da: 0.2;   /* il file è pieno da un quinto della corsa */
+  --pacco-corsa-pieno-a: 0.8;   /* fino ai quattro quinti, poi si spegne */
+  --pacco-corsa-strada: 0.85;   /* a quel punto ha fatto l'85% della strada dal filo al bordo del disco */
+  --pacco-corsa-scala-fine: 0.7;   /* si spegne entrando nel disco, rimpicciolendo */
+  /* · Le dissolvenze della risposta nella bolla delle domande: lineari, come la dissolvenza della frase delle cifre della home */
+  --curva-domanda: linear;
+  /* · Il passo del varco che conta: la fascia dello schermo, in frazione dell'altezza (stato.js, fascia()): quanto resta fuori sopra e sotto */
+  --varco-fascia-sopra: 0.42;   /* al computer il passo a metà schermo */
+  --varco-fascia-sotto: 0.42;
+  --varco-fascia-sopra-telefono: 0.56;   /* al telefono sotto il computer agganciato */
+  --varco-fascia-sotto-telefono: 0.24;
+  /* · Ciò che un gesto apre resta in vista (regola della cornice, pagina.css): la bolla della risposta, i dettagli aperti, la conferma della copia. L'aria che resta sotto la barra e sotto il bordo */
+  --gesto-aria: 12px;
+  --domande-bolla-sopra-basso: calc(var(--barra-altezza) + var(--gesto-aria));   /* sugli schermi bassi la bolla appiccicosa sta più su: ci stanno risposte più alte (844×390: fino a 306 px, non 274) */
+}

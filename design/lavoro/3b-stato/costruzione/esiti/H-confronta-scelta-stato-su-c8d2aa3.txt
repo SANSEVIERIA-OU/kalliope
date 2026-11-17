@@ -1,0 +1,44 @@
+# confronta-scelta stato · c8d2aa3 contro H · y=0
+CONFRONTO 1440×900: uguale su 46 cose nello schermo · pixel diversi 0%
+CONFRONTO 390×844: uguale su 38 cose nello schermo · pixel diversi 0%
+Uguale alla scelta, salvo le differenze ammesse (foto in /tmp/lavoro-3bb-scelta-stato-0)
+# confronta-scelta stato · c8d2aa3 contro H · y=2300
+CONFRONTO 1440×900 a 2300 px: 4 differenze su 37 cose nello schermo · pixel diversi 0,01%
+  MANCA span «README»: era a 403,37, 69×19
+  MANCA span «docs/virtual-microphone.md»: era a 784,78, 187×19
+  IN PIÙ a «README»: a 412,33, 51×25
+  IN PIÙ a «docs/virtual-microphone.md»: a 793,74, 169×25
+CONFRONTO 390×844 a 2300 px: 10 differenze su 36 cose nello schermo · pixel diversi 0,02%
+  MANCA span «README»: era a 160,24, 69×19
+  MANCA span «engine.rs, benchmarks/engines»: era a 103,294, 203×19
+  MANCA span «README» #2: era a 153,413, 69×19
+  MANCA span «README» #3: era a 148,639, 69×19
+  IN PIÙ a «README»: a 169,20, 51×25
+  IN PIÙ span «,»: a 103,294, 203×19
+  IN PIÙ a «engine.rs»: a 112,290, 54×25
+  IN PIÙ a «benchmarks/engines»: a 173,290, 124×25
+  IN PIÙ a «README» #2: a 162,409, 51×25
+  IN PIÙ a «README» #3: a 157,635, 51×25
+Il confronto con la scelta non regge a 2 misure (foto e differenze in /tmp/lavoro-3bb-scelta-stato-2300)
+# confronta-scelta stato · c8d2aa3 contro H · y=6200
+CONFRONTO 1440×900 a 6200 px: 2 differenze su 24 cose nello schermo · pixel diversi 0,2%
+  MANCA p «sansevieria-ou.github.io/kalliope/stato/»: era a 386,650, 668×22
+  IN PIÙ span «https://sansevieria-ou.github.io/kalliope/it/sta»: a 386,651, 388×19
+CONFRONTO 390×844 a 6200 px: 16 differenze su 36 cose nello schermo · pixel diversi 0,06%
+  MANCA span «docs/releasing.md, settings.rs, paths.rs, main.r»: era a 53,145, 304×19
+  MANCA span «packaging/linux, docs/releasing.md»: era a 53,459, 235×19
+  MANCA span «LICENSE, NOTICE»: era a 24,778, 129×19
+  MISURA section#inoltra: 390×796 → 390×818
+  SPOSTATO span.luce-tratto: y 537.5→545.5 (+8)
+  IN PIÙ span «, , ,»: a 53,145, 304×19
+  IN PIÙ a «docs/releasing.md»: a 62,141, 111×25
+  IN PIÙ a «settings.rs»: a 180,141, 62×25
+  IN PIÙ a «paths.rs»: a 249,141, 48×25
+  IN PIÙ a «main.rs»: a 304,141, 44×25
+  IN PIÙ span «,»: a 53,459, 235×19
+  IN PIÙ a «packaging/linux»: a 62,455, 99×25
+  IN PIÙ a «docs/releasing.md» #2: a 168,455, 111×25
+  IN PIÙ span «,» #2: a 24,778, 129×19
+  IN PIÙ a «LICENSE»: a 33,774, 55×25
+  IN PIÙ a «NOTICE»: a 95,774, 49×25
+Il confronto con la scelta non regge a 2 misure (foto e differenze in /tmp/lavoro-3bb-scelta-stato-6200)

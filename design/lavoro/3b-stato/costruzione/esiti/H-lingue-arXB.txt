@@ -1,0 +1,41 @@
+# H-lingue-arXB · 17/11/2026 16:59 · sito: /tmp/lavoro-3bb-sito-H-10 · albero: /tmp/lavoro-3bb-radice-H-10 · esame-impaginazione.mjs chromium normale arXB_ 390x844,360x640,844x390,1440x900,326x326,1366x640
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+arXB_st · 390×844 · testo 100%: pulito
+arXB_st_menu · 390×844 · testo 100%: pulito
+arXB_st_dettagli · 390×844 · testo 100%: pulito
+arXB_st_domanda · 390×844 · testo 100%: pulito
+arXB_st_copia · 390×844 · testo 100%: pulito
+arXB_st · 360×640 · testo 100%: pulito
+arXB_st_menu · 360×640 · testo 100%: pulito
+arXB_st_dettagli · 360×640 · testo 100%: pulito
+arXB_st_domanda · 360×640 · testo 100%: pulito
+arXB_st_copia · 360×640 · testo 100%: pulito
+arXB_st · 844×390 · testo 100%: pulito
+arXB_st_dettagli · 844×390 · testo 100%: lo stato non c'è a questa misura
+arXB_st_menu · 844×390 · testo 100%: pulito
+arXB_st_domanda · 844×390 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA button.domanda-bottone: tutto sotto il bordo (schermo 844×390) · come sopra: la domanda premuta, in fondo all'elenco, sta sotto la bolla che comincia in alto; la bolla la ripete in testa (3b-b, da confermare)
+arXB_st_copia · 844×390 · testo 100%: pulito
+arXB_st_menu · 1440×900 · testo 100%: lo stato non c'è a questa misura
+arXB_st_dettagli · 1440×900 · testo 100%: lo stato non c'è a questa misura
+arXB_st · 1440×900 · testo 100%: pulito
+arXB_st_domanda · 1440×900 · testo 100%: pulito
+arXB_st_copia · 1440×900 · testo 100%: pulito
+arXB_st · 326×326 · testo 100%: pulito
+arXB_st_menu · 326×326 · testo 100%: pulito
+arXB_st_dettagli · 326×326 · testo 100%: 
+  FUORI VISTA p «‮Negli ascolti di verifi»: 30 px sotto (schermo 326×326)
+arXB_st_domanda · 326×326 · testo 100%: 
+  FUORI VISTA div#domande-risposta: 7 px sotto (schermo 326×326)
+  LIMITE DICHIARATO FUORI VISTA button.domanda-bottone: 10 px sopra (schermo 326×326) · schermo quadrato: la bolla sta tutta nello schermo (234 px) ma con la domanda premuta sopra non ci sta (246 px di spazio sotto la barra): vince la bolla, che ripete la domanda in testa (3b-b, da confermare)
+arXB_st_copia · 326×326 · testo 100%: 
+  A CAPO NEL MEZZO «ar-XB» in span
+arXB_st_menu · 1366×640 · testo 100%: lo stato non c'è a questa misura
+arXB_st · 1366×640 · testo 100%: pulito
+arXB_st_dettagli · 1366×640 · testo 100%: lo stato non c'è a questa misura
+arXB_st_domanda · 1366×640 · testo 100%: pulito
+arXB_st_copia · 1366×640 · testo 100%: pulito
+
+FUORI VISTA: 2 · A CAPO NEL MEZZO: 1
+3 cose da guardare; 2 limiti dichiarati, elencati a parte e non contati (foto in /tmp/lavoro-3bb-qa-lingue/esame/chromium)
+# uscita: 1

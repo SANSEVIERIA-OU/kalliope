@@ -1239,3 +1239,20 @@ su un telefono con la barra del browser visibile). Nessun valore dei token che c
 Regole (non token) che cambiano: in `barra.css` le due regole del menu che stavano in `lingue.css` e `html:has(.barra:focus-within) { scroll-padding-top: 0 }` (il fuoco dentro la barra non muove la pagina); in `lingue.css` il titolo della pagina della scelta
 sopra la luce (`z-index: var(--livello-scena)`) e la barra della pagina della scelta senza fondo a riposo (`@keyframes barra-scelta-piena`); in `versioni.css` il posto per la risposta di «Copia» (`.copia-esito` in griglia, `.vuoto` invisibile).
 
+
+## Costruzione di «stato» (incarico 3b-b, 17/11/2026)
+
+Tredici token nuovi in fondo a `token.css` (blocco «Costruzione di «stato»»): i numeri che `stato.js` teneva scritti nel codice. Nessun valore di quelli che c'erano è cambiato. Numeri senza unità si leggono con `parseFloat`.
+
+| Token | Valore | Ruolo |
+|---|---|---|
+| `--pacco-corsa-durata` | `1.8` | la discesa di un'impronta dura 1,8 volte `--durata-pacco` (il filo e il tratto fino al disco in un'animazione sola) |
+| `--pacco-corsa-ritardo` | `0.6` | parte dopo 0,6 volte `--durata-pacco`: il filo ha già portato il file al varco |
+| `--pacco-corsa-pieno-da`, `--pacco-corsa-pieno-a` | `0.2`, `0.8` | l'impronta è piena da un quinto ai quattro quinti della corsa |
+| `--pacco-corsa-strada` | `0.85` | a quel punto ha fatto l'85% della strada fino al bordo del disco |
+| `--pacco-corsa-scala-fine` | `0.7` | si spegne entrando nel disco, rimpicciolendo |
+| `--curva-domanda` | `linear` | le dissolvenze della risposta nella bolla delle domande |
+| `--varco-fascia-sopra`, `--varco-fascia-sotto` | `0.42`, `0.42` | la fascia dello schermo (frazione dell'altezza) in cui un passo del varco «conta», al computer |
+| `--varco-fascia-sopra-telefono`, `--varco-fascia-sotto-telefono` | `0.56`, `0.24` | la stessa, al telefono (sotto il computer agganciato) |
+| `--gesto-aria` | `12px` | ciò che un gesto apre (bolla della risposta, dettagli aperti, conferma della copia) resta in vista con questa aria sotto la barra e sotto il bordo |
+| `--domande-bolla-sopra-basso` | `calc(var(--barra-altezza) + var(--gesto-aria))` | sugli schermi bassi del computer (altezza ≤ 500 px) la bolla appiccicosa sta a ridosso della barra: ci stanno risposte più alte (domande.css) |
