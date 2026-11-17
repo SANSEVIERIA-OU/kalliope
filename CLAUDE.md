@@ -110,6 +110,10 @@ motivazione, a nessun livello.
 **Ricerca e qualità della soluzione**
 - Prima di scegliere o implementare, cerca lo stato dell'arte nelle fonti ufficiali, mai a memoria.
 - Il risultato deve essere il migliore per tecnologia, modalità ed efficienza, non «funziona e basta».
+- **Sempre l'ultimissima versione di ogni dipendenza** (modelli, librerie, programmi, esportazioni; decisione del
+  proprietario del 17/11/2026: «devi sempre usare l'ultimissima versione di qualunque dipendenza usi»). Prima di usarne
+  una, verifica nelle fonti ufficiali che sia l'ultima alla data di oggi. Se l'ultima non si può avere (serve un account,
+  manca un'esportazione, una licenza lo vieta), lo si dice subito al proprietario: non si lavora in silenzio su una vecchia.
 - La prima idea non è necessariamente la migliore: almeno due alternative, smonta la preferita, poi conferma con
   una motivazione.
 
