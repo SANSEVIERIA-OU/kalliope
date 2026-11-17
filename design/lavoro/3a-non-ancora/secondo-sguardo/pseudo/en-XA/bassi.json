@@ -1,0 +1,198 @@
+[
+ {
+  "misura": "1440x900",
+  "primo": {
+   "azione": {
+    "top": 540,
+    "bottom": 596,
+    "visibile": true
+   },
+   "collegamento": {
+    "top": 606,
+    "bottom": 654,
+    "visibile": true
+   },
+   "titolo": {
+    "top": 142,
+    "bottom": 334,
+    "visibile": true
+   },
+   "nonce": {
+    "top": 678,
+    "bottom": 712,
+    "visibile": true
+   },
+   "stato": {
+    "top": 682,
+    "bottom": 748,
+    "visibile": true
+   },
+   "sw": 1440
+  },
+  "ascolto": {
+   "barra": 72,
+   "bolla": {
+    "top": 148,
+    "bottom": 242,
+    "visibile": true
+   },
+   "riquadri": {
+    "top": 260,
+    "bottom": 432,
+    "visibile": true
+   },
+   "pulsante": {
+    "top": 466,
+    "bottom": 522,
+    "visibile": true
+   },
+   "etichetta": "[Þáûšá Ĺ]",
+   "y": 3101
+  },
+  "errori": []
+ },
+ {
+  "misura": "390x844",
+  "primo": {
+   "azione": null,
+   "collegamento": null,
+   "titolo": {
+    "top": 70,
+    "bottom": 169,
+    "visibile": true
+   },
+   "nonce": {
+    "top": 631,
+    "bottom": 660,
+    "visibile": true
+   },
+   "stato": null,
+   "sw": 390
+  },
+  "ascolto": {
+   "barra": 56,
+   "bolla": {
+    "top": 226,
+    "bottom": 314,
+    "visibile": true
+   },
+   "riquadri": {
+    "top": 330,
+    "bottom": 408,
+    "visibile": true
+   },
+   "pulsante": {
+    "top": 442,
+    "bottom": 490,
+    "visibile": true
+   },
+   "etichetta": "[Þáûšá Ĺ]",
+   "y": 4000
+  },
+  "errori": []
+ },
+ {
+  "misura": "390x667",
+  "primo": {
+   "azione": {
+    "top": 301,
+    "bottom": 349,
+    "visibile": true
+   },
+   "collegamento": {
+    "top": 349,
+    "bottom": 393,
+    "visibile": true
+   },
+   "titolo": {
+    "top": 70,
+    "bottom": 169,
+    "visibile": true
+   },
+   "nonce": {
+    "top": 755,
+    "bottom": 784,
+    "visibile": false
+   },
+   "stato": {
+    "top": 834,
+    "bottom": 906,
+    "visibile": false
+   },
+   "sw": 390
+  },
+  "ascolto": {
+   "barra": 56,
+   "bolla": {
+    "top": 137,
+    "bottom": 225,
+    "visibile": true
+   },
+   "riquadri": {
+    "top": 241,
+    "bottom": 319,
+    "visibile": true
+   },
+   "pulsante": {
+    "top": 353,
+    "bottom": 401,
+    "visibile": true
+   },
+   "etichetta": "[Þáûšá Ĺ]",
+   "y": 4107
+  },
+  "errori": []
+ },
+ {
+  "misura": "844x390",
+  "primo": {
+   "azione": {
+    "top": 264,
+    "bottom": 320,
+    "visibile": true
+   },
+   "collegamento": {
+    "top": 330,
+    "bottom": 378,
+    "visibile": true
+   },
+   "titolo": {
+    "top": 86,
+    "bottom": 152,
+    "visibile": true
+   },
+   "nonce": {
+    "top": 900,
+    "bottom": 934,
+    "visibile": false
+   },
+   "stato": {
+    "top": 392,
+    "bottom": 458,
+    "visibile": false
+   },
+   "sw": 844
+  },
+  "ascolto": {
+   "barra": 72,
+   "bolla": {
+    "top": 80,
+    "bottom": 168,
+    "visibile": true
+   },
+   "riquadri": {
+    "top": 186,
+    "bottom": 358,
+    "visibile": true
+   },
+   "pulsante": {
+    "top": 392,
+    "bottom": 448,
+    "visibile": false
+   },
+   "etichetta": "[Þáûšá Ĺ]",
+   "y": 3927
+  },
+  "errori": []
+ }
+]

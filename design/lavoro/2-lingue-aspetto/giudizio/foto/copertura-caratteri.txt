@@ -1,0 +1,12 @@
+ar: 58 pezzi, 0 da un carattere di sistema. famiglie: Lexend, "Lexend esteso", "Readex Pro Kalliope", "Lexend riserva", system-ui, sans-serif
+   
+ur: 55 pezzi, 0 da un carattere di sistema. famiglie: Lexend, "Lexend esteso", "Noto Nastaliq Urdu Kalliope", system-ui, sans-serif
+   
+hi: 71 pezzi, 0 da un carattere di sistema. famiglie: Lexend, "Lexend esteso", "Noto Sans Devanagari Kalliope", system-ui, sans-serif
+   
+bn: 70 pezzi, 0 da un carattere di sistema. famiglie: Lexend, "Lexend esteso", "Noto Sans Bengali Kalliope", system-ui, sans-serif
+   
+el: 67 pezzi, 0 da un carattere di sistema. famiglie: Lexend, "Lexend esteso", "Geologica Kalliope", "Lexend riserva", system-ui, sans-serif
+   
+bg: 60 pezzi, 0 da un carattere di sistema. famiglie: Lexend, "Lexend esteso", "Geologica Kalliope", "Lexend riserva", system-ui, sans-serif
+   

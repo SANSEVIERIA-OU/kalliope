@@ -4,7 +4,7 @@
 # pagine di adesso) alla copia di website/lingue/ e costruisce in /tmp/lavoro-2-sito-<nome>/. Cartelle nuove a ogni corsa.
 set -euo pipefail
 nome="${1:?nome della corsa}"; shift || true
-R=/workspace/kalliope; Q=$R/design/lavoro/2-lingue-aspetto
+R="${R:-/workspace/kalliope}"; Q=/workspace/kalliope/design/lavoro/2-lingue-aspetto
 rad="/tmp/lavoro-2-radice-$nome"; out="/tmp/lavoro-2-sito-$nome"
 [ -e "$rad" ] && { echo "$rad esiste già: usa un altro nome"; exit 1; }
 mkdir -p "$rad"

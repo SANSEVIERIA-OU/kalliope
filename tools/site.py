@@ -414,6 +414,45 @@ def passo_struttura(testo, rel, lingua, reali, sito, senza_selettore, base_url, 
     return pagina.applica(testo, mod)
 
 
+# ---------- da destra a sinistra: le parti latine restano nel loro verso ----------
+# In una pagina da destra a sinistra una versione («0.1-rc.1»), un nome di pacchetto o di programma («x86_64», «Kalliope 0.1»)
+# fatti di lettere latine, cifre e punti si leggerebbero rovesciati («rc.1-0.1»): l'algoritmo bidirezionale di Unicode spezza
+# la stringa ai punti e ai trattini. La costruzione chiude ogni parte latina fra LRI (U+2066) e PDI (U+2069), l'isolamento che
+# W3C consiglia per il testo di verso opposto (inline-bidi-markup), nel testo e negli attributi tradotti. Le virgolette attorno a
+# una parte isolata («Kalliope») prendono così il verso del testo. Non tocca i segnaposti dello script ({voce}), le entità, gli
+# script e gli stili.
+LATINO = "A-Za-z\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u024F"
+PARTE_LATINA = re.compile(rf"[{LATINO}0-9](?:[{LATINO}0-9.\-_/:+]*[{LATINO}0-9])?(?: [{LATINO}0-9](?:[{LATINO}0-9.\-_/:+]*[{LATINO}0-9])?)*")
+DA_NON_TOCCARE = re.compile(r"(\{[A-Za-z_][A-Za-z0-9_]*\}|&[#A-Za-z0-9]+;|[\u2066-\u2068][^\u2069]*\u2069)")   # un isolamento già messo resta com'è
+LRI, PDI = "\u2066", "\u2069"
+
+
+def _isola(raw):
+    pezzi = DA_NON_TOCCARE.split(raw)
+    for i in range(0, len(pezzi), 2):   # i pezzi dispari sono segnaposti, entità o isolamenti già messi
+        pezzi[i] = PARTE_LATINA.sub(lambda m: LRI + m.group(0) + PDI if re.search(f"[{LATINO}]", m.group(0)) else m.group(0), pezzi[i])
+    return "".join(pezzi)
+
+
+def isola_latino(testo):
+    radice = pagina.leggi(testo)
+    mod = []
+    for n in pagina.cammina(radice):
+        if isinstance(n, pagina.Testo):
+            if n.padre is not None and n.padre.tag in pagina.TESTO_PURO:
+                continue
+            nuovo = _isola(n.raw)
+            if nuovo != n.raw:
+                mod.append((n.s, n.e, nuovo))
+        elif isinstance(n, pagina.Nodo):
+            for nome, raw, _val, vs, ve in n.attrs:
+                if nome in pagina.ATTRIBUTI and raw and n.ha(f"data-t-{nome}"):   # soltanto gli attributi tradotti (non il content del viewport)
+                    nuovo = _isola(testo[vs:ve])
+                    if nuovo != testo[vs:ve]:
+                        mod.append((vs, ve, nuovo))
+    return pagina.applica(testo, mod)
+
+
 def costruisci_pagina(rel, testo, lingua, reali, sito, disponibile, v_lingua, sconosciuti, avvisi, opzioni):
     """L'HTML di una pagina in una lingua."""
     if rel in sito.traducibili:
@@ -425,7 +464,8 @@ def costruisci_pagina(rel, testo, lingua, reali, sito, disponibile, v_lingua, sc
     # prima gli indirizzi scritti nella pagina, poi ciò che la costruzione aggiunge (che è già scritto per la cartella della lingua)
     testo = passo_indirizzi(testo, rel, lingua.codice, sito, disponibile, avvisi, opzioni["base_url"])
     testo = passo_struttura(testo, rel, lingua, reali, sito, opzioni["senza_selettore"], opzioni["base_url"])
-    return riempi(testo, v_lingua, f"{lingua.codice}/{rel}", sconosciuti)
+    testo = riempi(testo, v_lingua, f"{lingua.codice}/{rel}", sconosciuti)
+    return isola_latino(testo) if lingua.direzione == "rtl" and not lingua.finta else testo
 
 
 def pagina_scelta(testo, reali, sito, v_it, sconosciuti, opzioni):

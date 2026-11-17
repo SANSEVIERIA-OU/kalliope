@@ -1,0 +1,93 @@
+{
+ "url": "https://www.apple.com/ae-ar/",
+ "quando": "2026-11-17T02:22:14.766Z",
+ "misure": {
+  "390": {
+   "final": "https://www.apple.com/ae-ar/",
+   "titolo": "‏Apple (الإمارات)",
+   "lang": "ar-AE",
+   "dir": "rtl",
+   "h1": {
+    "testo": "Apple (الإمارات)",
+    "fam": "\"SF Pro AR Text\", \"SF Pro Gulf\", \"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helve",
+    "w": "600",
+    "size": "34px",
+    "lh": "50px",
+    "ls": "normal"
+   },
+   "h2": {
+    "testo": "اكتشف Mac",
+    "fam": "\"SF Pro AR Text\", \"SF Pro Gulf\", \"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helve",
+    "w": "400",
+    "size": "17px",
+    "lh": "21.0012px",
+    "ls": "normal"
+   },
+   "p": {
+    "testo": "ميزة استشعار معدل نبض القلب الأكثر دقة في جهاز قابل للارتداء",
+    "fam": "\"SF Pro AR Display\", \"SF Pro Gulf\", \"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", He",
+    "w": "400",
+    "size": "19px",
+    "lh": "23px",
+    "ls": "normal"
+   },
+   "alt": 6484,
+   "caratteri": [
+    "SF Pro AR Text 400",
+    "SF Pro AR Text 600",
+    "SF Pro AR Text 700",
+    "SF Pro AR Display 400",
+    "SF Pro AR Display 600",
+    "SF Pro Display 400",
+    "SF Pro Display 600",
+    "SF Pro Text 300",
+    "SF Pro Text 400",
+    "SF Pro Icons 300"
+   ]
+  },
+  "1440": {
+   "final": "https://www.apple.com/ae-ar/",
+   "titolo": "‏Apple (الإمارات)",
+   "lang": "ar-AE",
+   "dir": "rtl",
+   "h1": {
+    "testo": "Apple (الإمارات)",
+    "fam": "\"SF Pro AR Text\", \"SF Pro Gulf\", \"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helve",
+    "w": "600",
+    "size": "34px",
+    "lh": "50px",
+    "ls": "normal"
+   },
+   "h2": {
+    "testo": "اكتشف Mac",
+    "fam": "\"SF Pro AR Text\", \"SF Pro Gulf\", \"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helve",
+    "w": "400",
+    "size": "12px",
+    "lh": "16.0005px",
+    "ls": "normal"
+   },
+   "p": {
+    "testo": "ميزة استشعار معدل نبض القلب الأكثر دقة في جهاز قابل للارتداء",
+    "fam": "\"SF Pro AR Display\", \"SF Pro Gulf\", \"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", He",
+    "w": "400",
+    "size": "21px",
+    "lh": "25px",
+    "ls": "normal"
+   },
+   "alt": 5414,
+   "caratteri": [
+    "SF Pro AR Text 400",
+    "SF Pro AR Text 600",
+    "SF Pro AR Display 400",
+    "SF Pro AR Display 600",
+    "SF Pro AR Display 700",
+    "SF Pro Display 400",
+    "SF Pro Display 600",
+    "SF Pro Display 700",
+    "SF Pro Text 300",
+    "SF Pro Text 400",
+    "SF Pro Icons 300"
+   ]
+  }
+ }
+}

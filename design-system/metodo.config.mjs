@@ -35,7 +35,7 @@ export default {
     // gli stili dentro le pagine (<style>)
     pagine: ['../website/index.html', '../website/lingue.html', 'catalogo/index.html', '../website/non-ancora/index.html'],
     // gli script che mettono variabili sugli elementi (setProperty('--x', …)): la scena e il catalogo
-    script: ['../website/scena.js', '../website/testi.js', '../website/lingua.js', 'catalogo/*.js', '../website/cornice.js', '../website/non-ancora/non-ancora.js'],
+    script: ['../website/scena.js', '../website/testi.js', '../website/lingua.js', '../website/componenti.js', 'catalogo/*.js', '../website/cornice.js', '../website/non-ancora/non-ancora.js'],
     perElemento: [],
     // le larghezze a cui la pagina cambia impaginazione (@media, @container): non si leggono da una variabile
     soglie: ['349px', '350px', '360px', '374px', '420px', '440px', '500px', '699px', '759px', '760px', '761px', '790px', '791px', '799px', '802px', '819px', '840px', '959px', '999px', '1000px', '1010px', '1180px', '1181px', '1209px'],

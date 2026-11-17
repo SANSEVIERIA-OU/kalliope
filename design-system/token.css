@@ -1019,16 +1019,10 @@
   unicode-range: U+0980-09FF, U+0964-0965;
 }
 /* I nomi delle lingue: per ogni scrittura un file con le sole lettere del nome della lingua («العربية», «हिन्दी», «Čeština»…), per
-   l'elenco delle lingue che sta in ogni pagina e per la pagina della scelta. Il latino di base è lo stesso file di Lexend (nessuna
-   richiesta in più); il cinese («中文») è disegnato dal carattere di sistema. Tutte le facce hanno lo stesso intervallo di pesi: con
+   l'elenco delle lingue che sta in ogni pagina e per la pagina della scelta. Il latino di base lo disegna Lexend, prima nella pila
+   (correzione dopo il giudizio: come faccia di questa famiglia lo stesso file si scaricava due volte); il cinese («中文») è disegnato
+   dal carattere di sistema. Tutte le facce hanno lo stesso intervallo di pesi: con
    intervalli diversi il browser ne sceglie un gruppo solo e le altre scritture cadono sul carattere di sistema (provato). */
-@font-face {
-  font-family: "Kalliope nomi delle lingue";
-  src: url("caratteri/lexend/Lexend-wght-latino.woff2") format("woff2");
-  font-weight: 100 900;
-  font-display: swap;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212;
-}
 @font-face {
   font-family: "Kalliope nomi delle lingue";
   src: url("caratteri/lexend/Lexend-wght-nomi.woff2") format("woff2");
@@ -1075,13 +1069,15 @@
 :root {
   /* · Le scritture: il carattere di ognuna dopo Lexend, e quanto le sue righe si allontanano (1 = come in latino) */
   --font-cinese: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "WenQuanYi Micro Hei";   /* il carattere di sistema, scelto: nessun file da scaricare (motivo in caratteri/LEGGIMI.md) */
-  --font-nomi-lingue: "Kalliope nomi delle lingue", var(--font-cinese), system-ui, sans-serif;   /* ogni nome di lingua nella sua scrittura, con file piccolissimi */
+  --font-nomi-lingue: "Lexend", "Kalliope nomi delle lingue", var(--font-cinese), system-ui, sans-serif;   /* ogni nome di lingua nella sua scrittura, con file piccolissimi */
   --grandezza-titoli-scrittura: 1;   /* moltiplica la grandezza dei titoli (h1, tratti, chiusura) e con lei la loro interlinea */
   --interlinea-titoli-scrittura: 1;   /* moltiplica le interlinee dei titoli (h1, tratti, chiusura) */
   /* · Il verso: i punti di partenza che cambiano lato con la scrittura (con --verso, in cima) */
   --origine-inizio-x: calc(50% - 50% * var(--verso));   /* il bordo d'inizio della riga: 0% (sinistra) da sinistra a destra, 100% da destra a sinistra */
   --origine-fine-x: calc(50% + 50% * var(--verso));   /* il bordo di fine della riga */
   --interlinea-testo-scrittura: 1;   /* moltiplica tutte le altre interlinee */
+  --sottolineatura-posizione: auto;   /* dove sta la linea dei collegamenti: «auto» come prima; in arabo e urdu dalla misura del carattere */
+  --titolo-caratteristiche: normal;   /* le caratteristiche OpenType dei titoli: nessuna; in cinese «halt» */
   --tratto-interlinea-telefono: calc(37px * var(--grandezza-titoli-scrittura) * var(--interlinea-titoli-scrittura));   /* il titolo di un tratto al telefono (prima era --interlinea-14, lo stesso valore) */
   --h1-grandezza-stretto: calc(25px * var(--grandezza-titoli-scrittura));   /* il titolo sotto i 375 px (prima era --corpo-12, lo stesso valore) */
   --h1-interlinea-stretto: calc(29px * var(--grandezza-titoli-scrittura) * var(--interlinea-titoli-scrittura));   /* il titolo sotto i 375 px (prima era --interlinea-11, lo stesso valore) */
@@ -1100,9 +1096,9 @@
 }
 /* urdu: nastaliq, la scrittura in cui si legge l'urdu; le righe si allontanano molto (le lettere scendono in diagonale) */
 :lang(ur) {
-  --font-testo: "Lexend", "Lexend esteso", "Noto Nastaliq Urdu Kalliope", system-ui, sans-serif;
+  --font-testo: "Lexend", "Lexend esteso", "Noto Nastaliq Urdu Kalliope", "Noto Nastaliq Urdu", "Urdu Typesetting", "Jameel Noori Nastaleeq", "Noto Naskh Arabic", "Segoe UI", system-ui, sans-serif;   /* correzione dopo il giudizio (M7): se il file non arriva, un urdu del sistema (Android, macOS e Linux con Noto; Windows: Urdu Typesetting, Segoe UI) prima del ripiego generico */
   --font-app: "DejaVu Sans Kalliope", "Noto Nastaliq Urdu Kalliope", sans-serif;
-  --font-nomi-lingue: "Kalliope nomi delle lingue urdu", "Kalliope nomi delle lingue", var(--font-cinese), system-ui, sans-serif;
+  --font-nomi-lingue: "Lexend", "Kalliope nomi delle lingue urdu", "Kalliope nomi delle lingue", var(--font-cinese), system-ui, sans-serif;
   --grandezza-titoli-scrittura: 0.72;
   --interlinea-titoli-scrittura: 1.75;
   --interlinea-testo-scrittura: 1.6;
@@ -1127,6 +1123,14 @@
   --interlinea-titoli-scrittura: 1.1;
   --interlinea-testo-scrittura: 1.1;
 }
+/* correzione dopo il giudizio (M3): il nome di una lingua nel disegno della sua scrittura anche dentro la pagina urdu (che per i suoi
+   nomi prende il nastaliq): fuori dall'urdu i nomi tornano ai file dei nomi */
+[lang]:not(:lang(ur)) { --font-nomi-lingue: "Lexend", "Kalliope nomi delle lingue", var(--font-cinese), system-ui, sans-serif; }
+/* correzione dopo il giudizio (M5): in arabo e in urdu la sottolineatura dalla misura del carattere (con «auto» faceva uno scalino fra la
+   parte araba e quella latina) */
+:lang(ar), :lang(ur) { --sottolineatura-posizione: from-font; }
+/* correzione dopo il giudizio (M6): nei titoli cinesi la virgola e il punto pieni a metà larghezza, senza il buco */
+:lang(zh) { --titolo-caratteristiche: "halt"; }
 /* le scritture legate (arabo, urdu, devanagari, bengali) e il cinese non si spaziano: le lettere si staccherebbero (CSS Text 4 §8.2.1) */
 :lang(ar), :lang(ur), :lang(hi), :lang(bn), :lang(zh) {
   --spaziatura-h1: 0em;
@@ -1149,28 +1153,27 @@
   --lingue-pannello-colonne-telefono: repeat(2, minmax(0, 1fr));
   --lingue-pannello-altezza-massima: calc(100vh - 96px);   /* sugli schermi bassi il pannello scorre dentro di sé */
   --lingue-pannello-sposta-y: -6px;   /* aprendosi scende di poco dal nome */
-  /* · La pagina della scelta: la bolla con le lingue e il tuo riquadro */
-  --scelta-lingua-spazio-interno: 56px var(--margine) 96px;
-  --scelta-lingua-spazio-interno-telefono: 24px var(--margine) 64px;
-  --scelta-bolla-larghezza-massima: 980px;   /* trenta nomi in quattro o cinque righe al computer */
-  --scelta-altezza-minima: calc(100vh - var(--barra-altezza));   /* la bolla e il riquadro stanno a metà dello schermo, sotto la barra */
-  --scelta-luce-inizio: 34%;   /* la luce della stanza dietro la bolla */
-  --scelta-luce-sopra: 46%;
+  --lingue-piede-altezza-stimata: 96px;   /* l'elenco nel piede prima di impaginarlo (content-visibility): due righe di nomi */
+  /* · La pagina della scelta: il nome del prodotto e la riunione, con la bolla delle lingue (correzione dopo il giudizio, I3) */
+  --scelta-lingua-spazio-interno: 32px var(--margine) 72px;
+  --scelta-lingua-spazio-interno-telefono: 20px var(--margine) 48px;
+  --scelta-lingua-spazio-interno-basso: 12px var(--margine) 24px;   /* un telefono girato: poco spazio sopra e sotto */
+  --scelta-larghezza: min(980px, 100%);   /* la bolla e la fila della riunione, larghe uguali: trenta nomi in cinque righe al computer */
+  --scelta-distanza: var(--spazio-21);   /* fra il nome del prodotto e la riunione */
+  --scelta-coda-spazio: var(--misura-11);   /* sotto la bolla, la coda: poi la fila */
+  --scelta-tavolo-altezza: clamp(96px, calc(100vh - 540px), 172px);   /* la fila della chiusura; sugli schermi bassi si accorcia, i nomi restano interi */
+  --scelta-tavolo-altezza-basso: 60px;   /* la fila in un telefono girato: sta nello schermo con il nome e la bolla */
+  --scelta-altezza-minima: calc(100vh - var(--barra-altezza));   /* il nome e la riunione stanno a metà dello schermo, sotto la barra */
+  --scelta-luce-inizio: 50%;   /* la luce della stanza dietro la riunione, al centro */
+  --scelta-luce-sopra: 52%;
   --scelta-bolla-spazio-interno: var(--bolla-corpo-spazio-interno);
   --bordo-lingua-in-bolla: var(--bordo-rivedi-chiaro);   /* il bordo di un comando sul chiaro (come «Rivedi» sulla scena chiara) */
   --velo-lingua-in-bolla: rgba(91, 1, 35, 0.07);   /* un nome al passaggio, sul chiaro della bolla */
   --lingua-preferita-ombra: 0 10px 22px -12px rgba(91, 1, 35, 0.6);   /* la lingua del browser, accesa: l'ombra della voce scelta, in scuro sul chiaro */
-  --scelta-tu-larghezza: 220px;
-  --scelta-tu-altezza: 128px;
-  --scelta-tu-larghezza-telefono: 148px;
-  --scelta-tu-altezza-telefono: 88px;
-  --scelta-tu-scarto: var(--spazio-14);   /* il riquadro sta sotto la coda della bolla */
-  --scelta-tu-scarto-telefono: var(--spazio-8);
   --scelta-barre-scala-y: var(--barre-1-scala-y);   /* le barre di «Tu» fra un nome e l'altro */
   /* · L'arrivo della pagina della scelta */
-  --ritardo-scelta-tu: 0ms;   /* il tuo riquadro entra per primo */
-  --ritardo-scelta-bolla: 380ms;   /* la bolla nasce dalla coda quando il riquadro è quasi fermo */
-  --ritardo-scelta-nomi: 820ms;   /* i nomi cominciano ad accendersi quando la bolla è nata */
+  --ritardo-scelta-bolla: 760ms;   /* la bolla nasce dalla coda quando «Tu», l'ultimo a entrare (400 ms + 520), è quasi fermo */
+  --ritardo-scelta-nomi: 1200ms;   /* i nomi cominciano ad accendersi quando la bolla è nata; Paola, Luca e Anna si girano (lingua.js) */
   --passo-scelta-nomi: 34ms;   /* un nome dopo l'altro, al passo della scrittura del primo schermo (33 ms a lettera) */
   --durata-scelta-nome: 300ms;
   --durata-scelta-barre: 260ms;

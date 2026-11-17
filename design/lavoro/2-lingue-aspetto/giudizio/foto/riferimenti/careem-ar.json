@@ -1,0 +1,66 @@
+{
+ "url": "https://www.careem.com/ar-AE/",
+ "quando": "2026-11-17T02:22:53.908Z",
+ "misure": {
+  "390": {
+   "final": "https://www.careem.com/ar-ae/",
+   "titolo": "التنقل والطعام والمزيد في الإمارات | كريم",
+   "lang": "ar-AE",
+   "dir": "rtl",
+   "h1": null,
+   "h2": {
+    "testo": "كريم واحد، كل يوم",
+    "fam": "\"Careem Sans\", Inter, \"SF Arabic\", \"Geeza Pro\", \"Segoe UI\", Tahoma, \"Noto Sans Arabic\", sa",
+    "w": "700",
+    "size": "40px",
+    "lh": "48px",
+    "ls": "normal"
+   },
+   "p": {
+    "testo": "نستخدم ملفات تعريف الارتباط لتحسين تجربتك وتحليل الزيارات وت",
+    "fam": "\"Careem Sans\", Inter, \"SF Arabic\", \"Geeza Pro\", \"Segoe UI\", Tahoma, \"Noto Sans Arabic\", sa",
+    "w": "400",
+    "size": "12px",
+    "lh": "16px",
+    "ls": "normal"
+   },
+   "alt": 4253,
+   "caratteri": [
+    "Careem Sans 300",
+    "Careem Sans 400",
+    "Careem Sans 600",
+    "Careem Sans 700"
+   ]
+  },
+  "1440": {
+   "final": "https://www.careem.com/ar-ae/",
+   "titolo": "التنقل والطعام والمزيد في الإمارات | كريم",
+   "lang": "ar-AE",
+   "dir": "rtl",
+   "h1": null,
+   "h2": {
+    "testo": "كريم واحد، كل يوم",
+    "fam": "\"Careem Sans\", Inter, \"SF Arabic\", \"Geeza Pro\", \"Segoe UI\", Tahoma, \"Noto Sans Arabic\", sa",
+    "w": "700",
+    "size": "40px",
+    "lh": "48px",
+    "ls": "normal"
+   },
+   "p": {
+    "testo": "نستخدم ملفات تعريف الارتباط لتحسين تجربتك وتحليل الزيارات وت",
+    "fam": "\"Careem Sans\", Inter, \"SF Arabic\", \"Geeza Pro\", \"Segoe UI\", Tahoma, \"Noto Sans Arabic\", sa",
+    "w": "400",
+    "size": "12px",
+    "lh": "16px",
+    "ls": "normal"
+   },
+   "alt": 2535,
+   "caratteri": [
+    "Careem Sans 300",
+    "Careem Sans 400",
+    "Careem Sans 600",
+    "Careem Sans 700"
+   ]
+  }
+ }
+}

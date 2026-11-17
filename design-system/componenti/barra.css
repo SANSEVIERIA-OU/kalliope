@@ -66,6 +66,8 @@
   transition: background-color var(--durata-menu-2);
 }
 .menu a:hover { background: var(--velo-menu-sopra); }
+/* correzione dopo il giudizio (B1): una voce non va a capo dentro la barra; se le voci non ci stanno la barra si raccoglie (componenti.js) */
+.menu > ul > li > a, .menu .lingua-scelta > summary { white-space: nowrap; }
 .pulsante-menu { display: none; }
 .barra-azione { animation: none; }
 .barra { max-width: var(--misura-35); margin-inline: auto; }
@@ -239,3 +241,46 @@ html:not(.js) .barra { background: var(--barra-piena); box-shadow: var(--barra-o
     }
   }
 }
+
+/* ---------- La barra raccolta (correzione dopo il giudizio, B1, 17/11/2026) ----------
+   Sul computer, quando le voci del menu e l'azione non stanno insieme nella barra nemmeno senza la parola del marchio (le lingue lunghe,
+   fra 960 e 1440 px), la barra prende la forma del tablet: il marchio, «Menu» e, scorrendo, l'azione accanto a «Menu». Lo decide
+   scena.js misurando (classe «raccolta», a ogni punto della pagina: la barra non cambia forma scorrendo). Sono le stesse regole delle
+   larghezze sotto i 960 px, legate alla classe invece che alla larghezza */
+.barra.raccolta .menu { display: none; }
+.js .barra.raccolta .menu.aperto {
+  display: block;
+  position: absolute;
+  top: var(--menu-aperto-sopra-tavoletta-stretta);
+  inset-inline-end: var(--margine);
+  width: var(--menu-aperto-larghezza);
+  z-index: var(--livello-menu-aperto);
+  background: var(--pannello-menu);
+  border: var(--filetto-sottile) solid var(--bordo-pannello);
+  border-radius: var(--raggio-10);
+  padding: var(--spazio-7);
+  -webkit-backdrop-filter: var(--menu-aperto-sfocatura);
+  backdrop-filter: var(--menu-aperto-sfocatura);
+  max-height: var(--menu-aperto-altezza-massima-menu-chiuso);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  transform: none;
+}
+.barra.raccolta .menu.aperto ul { flex-direction: column; }
+.barra.raccolta .menu.aperto a { width: 100%; min-height: var(--menu-aperto-altezza-minima); font-size: var(--corpo-9); }
+.barra.raccolta .pulsante-menu {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--misura-21);
+  padding: var(--spazi-3);
+  border-radius: var(--raggio-pillola);
+  cursor: pointer;
+  background: var(--velo-comando);
+  border: var(--filetto-comando) solid var(--bordo-comando);
+  text-decoration: none;
+  font-size: var(--corpo-7);
+  font-weight: var(--peso-forte);
+  margin-inline-start: auto;
+}
+.barra.raccolta .barra-azione { inset-inline-end: calc(var(--margine) + var(--largo-menu, var(--barra-azione-largo-menu-base)) + var(--spazio-7)); }
+.barra.raccolta.azione-a-capo .barra-azione { max-width: var(--azione-largo-massimo, none); white-space: normal; text-wrap: balance; text-align: center; }

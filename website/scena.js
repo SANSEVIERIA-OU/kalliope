@@ -1021,37 +1021,9 @@
     if (banda) banda.classList.toggle('agganciata', telefono.matches && banda.getBoundingClientRect().top <= barra.offsetHeight + 1);
   }
   const chiediBarra = () => { if (!barraChiesta) { barraChiesta = true; requestAnimationFrame(sullaBarra); } };
-  // l'azione della barra non occupa posto: il menu le fa posto scivolando della sua larghezza (computer); al telefono
-  // l'azione sta a sinistra di «Menu». Le due larghezze si misurano (dipendono dal carattere arrivato)
-  const azioneBarra = $('.barra-azione'), bottoneMenu = $('.pulsante-menu');
-  // incarico 2: se il menu, scivolando del posto dell'azione, arriverebbe sulla parola del marchio (una lingua più lunga), la barra
-  // è «stretta» e la parola sparisce intera quando l'azione entra (barra.css). Si misura dalla disposizione, senza le trasformazioni,
-  // con la larghezza intera del marchio (anche quando la parola è già nascosta), nei due versi della scrittura.
-  const menuBarra = $('.barra .menu'), marchio = $('.barra .marchio'), parolaMarchio = $('.barra .marchio span');
-  let marchioPieno = 0;
-  function misuraBarra() {
-    const posto = azioneBarra.offsetWidth + 16;
-    barra.style.setProperty('--posto-azione', `${posto}px`);
-    if (bottoneMenu.offsetWidth) barra.style.setProperty('--largo-menu', `${bottoneMenu.offsetWidth}px`);
-    if (!barra.classList.contains('con-azione') || !marchioPieno) marchioPieno = Math.max(marchioPieno, marchio.offsetWidth - parolaMarchio.offsetWidth + parolaMarchio.scrollWidth);
-    const inizioMarchio = verso() > 0 ? marchio.offsetLeft : marchio.offsetLeft + marchio.offsetWidth;
-    const libero = verso() > 0 ? menuBarra.offsetLeft - (inizioMarchio + marchioPieno) : (inizioMarchio - marchioPieno) - (menuBarra.offsetLeft + menuBarra.offsetWidth);
-    barra.classList.toggle('stretta', menuBarra.offsetWidth > 0 && libero < posto + parseFloat(getComputedStyle(barra).columnGap || 0));
-    // al telefono e sul tablet l'azione sta fra il marchio e «Menu»: non deve coprire il disegno del marchio (né la parola, dove resta).
-    // Lo spazio che ha si misura; un'azione più lunga (una traduzione) va a capo in due righe dentro la pillola
-    if (bottoneMenu.offsetWidth) {
-      const svg = $('svg', marchio), parolaVisibile = parolaMarchio.offsetWidth > 0 && getComputedStyle(parolaMarchio).opacity !== '0' && !matchMedia('(max-width: 440px)').matches;
-      const fineMarchio = parolaVisibile ? marchioPieno : svg.getBoundingClientRect().width;   // un svg non ha offsetWidth
-      const margineAzione = parseFloat(getComputedStyle(azioneBarra).insetInlineEnd) || 0;
-      const spazio = barra.clientWidth - margineAzione - (verso() > 0 ? marchio.offsetLeft : barra.clientWidth - marchio.offsetLeft - marchio.offsetWidth) - fineMarchio - parseFloat(getComputedStyle(barra).columnGap || 0);
-      barra.style.setProperty('--azione-largo-massimo', `${Math.max(0, Math.floor(spazio))}px`);
-      // va a capo soltanto se non ci sta: dove ci sta, l'azione resta com'era (una riga, la stessa resa)
-      barra.classList.remove('azione-a-capo');
-      barra.classList.toggle('azione-a-capo', azioneBarra.offsetWidth > spazio);
-    }
-  }
-  misuraBarra(); if (document.fonts) document.fonts.ready.then(misuraBarra);
-  addEventListener('scroll', chiediBarra, {passive: true}); addEventListener('resize', () => { misuraBarra(); chiediBarra(); }); sullaBarra();
+  // le misure della barra (il posto dell'azione, la barra «stretta» o «raccolta» con il testo lungo), dell'etichetta di «Tu» e dei
+  // collegamenti con la freccia stanno in componenti.js, che serve anche le pagine interne
+  addEventListener('scroll', chiediBarra, {passive: true}); addEventListener('resize', chiediBarra); sullaBarra();
 
   // ---------- al telefono l'ordine del fuoco è quello che si vede: prima «Ascolta Giulia», poi «Scarica e installa» ----------
   const palcoEl = $('.palco'), presentazione = $('.presentazione'), statoOggi = $('.apertura .stato');

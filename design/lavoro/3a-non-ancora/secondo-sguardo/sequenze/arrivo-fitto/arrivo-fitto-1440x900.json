@@ -1,0 +1,104 @@
+{
+ "pagina": "http://127.0.0.1:35351/it/non-ancora/index.html",
+ "misura": "1440x900",
+ "sequenza": "arrivo-fitto",
+ "gesto": null,
+ "ridotto": false,
+ "lento": 1,
+ "istanti": [
+  2.2,
+  2.4,
+  2.6,
+  2.8,
+  3,
+  3.2,
+  3.4,
+  3.6,
+  3.8,
+  4,
+  4.3,
+  4.6
+ ],
+ "fotogrammi": [
+  {
+   "file": "arrivo-fitto-1440x900-f01.jpg",
+   "chiesto": 2.2,
+   "scattato": 2.2,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-fitto-1440x900-f02.jpg",
+   "chiesto": 2.4,
+   "scattato": 2.4,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-fitto-1440x900-f03.jpg",
+   "chiesto": 2.6,
+   "scattato": 2.6,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-fitto-1440x900-f04.jpg",
+   "chiesto": 2.8,
+   "scattato": 2.8,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-fitto-1440x900-f05.jpg",
+   "chiesto": 3,
+   "scattato": 3,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-fitto-1440x900-f06.jpg",
+   "chiesto": 3.2,
+   "scattato": 3.2,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-fitto-1440x900-f07.jpg",
+   "chiesto": 3.4,
+   "scattato": 3.4,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-fitto-1440x900-f08.jpg",
+   "chiesto": 3.6,
+   "scattato": 3.6,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-fitto-1440x900-f09.jpg",
+   "chiesto": 3.8,
+   "scattato": 3.8,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-fitto-1440x900-f10.jpg",
+   "chiesto": 4,
+   "scattato": 4,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-fitto-1440x900-f11.jpg",
+   "chiesto": 4.3,
+   "scattato": 4.3,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-fitto-1440x900-f12.jpg",
+   "chiesto": 4.6,
+   "scattato": 4.6,
+   "scorrimento": 0
+  }
+ ],
+ "foglio": "arrivo-fitto-1440x900-foglio.jpg",
+ "video": null,
+ "orologio": {
+  "pagina": 1,
+  "media": []
+ },
+ "errori": [],
+ "misurato": "2026-11-17T03:37:56.805Z"
+}

@@ -28,6 +28,14 @@
       const prima = [...new Set(preferite)].map(per).find(Boolean);
       if (prima) prima.classList.add('preferita');
       [...ul.children].forEach((li, i) => li.style.setProperty('--i', String(i)));
+      // nella riunione della pagina della scelta, quando i nomi cominciano ad accendersi, Paola, Luca e Anna si girano verso «Tu»
+      // (lo stesso sguardo della home: riunione.css, .guarda); il momento è quello dei nomi (--ritardo-scelta-nomi, token.css)
+      const persone = document.querySelectorAll('.scelta-tavolo .persona');
+      if (persone.length) {
+        const fermo = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const ritardo = fermo ? 0 : parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--ritardo-scelta-nomi')) || 0;
+        setTimeout(() => persone.forEach(x => x.classList.add('guarda')), ritardo);
+      }
     }
     // la scelta nella barra (<details class="lingua-scelta">): senza script si apre e si chiude dal suo nome; con lo script si chiude
     // anche con Esc (il fuoco torna sul nome), con un clic fuori e quando il fuoco esce

@@ -3,8 +3,10 @@
 <!-- La pagina di scelta della lingua: la costruzione (tools/site.py) la pubblica come indirizzo principale, `/`, e ci mette l'elenco
      delle lingue (ogni lingua nel proprio nome, con il proprio lang) al posto dell'elemento con data-lingue="elenco".
      Non ha un testo da tradurre: il nome del prodotto e i nomi delle lingue.
-     Nella direzione 2 (incarico 2, 17/11/2026): i nomi stanno dentro la bolla che nasce dal tuo riquadro e si accendono uno dopo
-     l'altro, come le parole dette; la lingua del browser è la prima e accesa (lingua.js). Componente: design-system/componenti/lingue.css. -->
+     Nella direzione 2 (incarico 2, 17/11/2026; dopo il giudizio, una pagina intera): il nome del prodotto e la riunione, come nella
+     chiusura della home; i nomi stanno dentro la bolla che nasce dal tuo riquadro e si accendono uno dopo l'altro, come le parole
+     dette, e Paola, Luca e Anna si girano verso di te; la lingua del browser è la prima e accesa (lingua.js).
+     Componente: design-system/componenti/lingue.css. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -16,6 +18,7 @@
 <link rel="stylesheet" href="design-system/token.css">
 <link rel="stylesheet" href="design-system/base.css">
 <link rel="stylesheet" href="design-system/componenti/barra.css">
+<link rel="stylesheet" href="design-system/componenti/apertura.css">
 <link rel="stylesheet" href="design-system/componenti/bolla.css">
 <link rel="stylesheet" href="design-system/componenti/riunione.css">
 <link rel="stylesheet" href="design-system/componenti/tratti.css">
@@ -33,20 +36,53 @@
     </a>
   </header>
   <main id="contenuto" class="scelta-lingua">
-    <h1 class="solo-lettori">Kalliope</h1>
-    <div class="bolla bolla-lingue">
-      <div class="bolla-corpo">
-        <nav aria-label="Language">
-          <ul class="lingue-elenco lingue-in-bolla" data-lingue="elenco">
-            <li><a data-lingua href="#">English</a></li>
-          </ul>
-        </nav>
+    <h1 class="scelta-titolo">Kalliope</h1>
+    <div class="tavolo scelta-tavolo">
+      <div class="bolla bolla-lingue">
+        <div class="bolla-corpo">
+          <nav aria-label="Language">
+            <ul class="lingue-elenco lingue-in-bolla" data-lingue="elenco">
+              <li><a data-lingua href="#">English</a></li>
+            </ul>
+          </nav>
+        </div>
+        <svg class="coda" viewBox="0 0 32 24" aria-hidden="true"><path d="M0 0h31L7.6 21.6A3.5 3.5 0 0 1 2 18.8V0z"/></svg>
       </div>
-      <svg class="coda" viewBox="0 0 32 24" aria-hidden="true"><path d="M0 0h31L7.6 21.6A3.5 3.5 0 0 1 2 18.8V0z"/></svg>
-    </div>
-    <div class="riquadro tu parla scelta-tu" aria-hidden="true">
-      <span class="bordo"></span>
-      <span class="barre"><i></i><i></i><i></i><i></i><i></i></span>
+      <div class="tavolo-cornice" aria-hidden="true">
+        <div class="riquadro tu parla"><span class="bordo"></span><span class="barre"><i></i><i></i><i></i><i></i><i></i></span></div>
+        <div class="riquadro persona paola"><svg class="figura" viewBox="0 0 200 120" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+                        <path class="capelli-dietro" d="M75 56C74 30 126 30 125 56L128 98C118 104 82 104 72 98Z"/>
+                        <path class="corpo" d="M50 120C50 95 73 84 100 84C127 84 150 95 150 120Z"/>
+                        <rect class="collo" x="92" y="72" width="16" height="17" rx="6"/>
+                        <g class="cenno"><g class="testa">
+                          <ellipse class="pelle" cx="100" cy="55" rx="21" ry="24"/>
+                          <path class="capelli" d="M78 52C78 30 122 28 122 52C118 41 104 36 92 39C86 41 81 45 78 52Z"/>
+                          <g class="occhi"><ellipse cx="92" cy="58" rx="2.4" ry="3.1"/><ellipse cx="108" cy="58" rx="2.4" ry="3.1"/></g><path class="bocca" d="M95.5 67.5Q100 70.5 104.5 67.5"/>
+                        </g></g>
+                      </svg></div>
+        <div class="riquadro persona luca"><svg class="figura" viewBox="0 0 200 120" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+                        <path class="corpo" d="M48 120C48 94 72 83 100 83C128 83 152 94 152 120Z"/>
+                        <rect class="collo" x="92" y="71" width="16" height="17" rx="6"/>
+                        <g class="cenno"><g class="testa">
+                          <ellipse class="pelle" cx="100" cy="54" rx="21" ry="24"/>
+                          <path class="capelli" d="M79 51C77 31 123 29 121 51C117 42 108 39 100 39C91 39 83 42 79 51Z"/>
+                          <path class="cuffia" d="M76 58C74 26 126 26 124 58" fill="none"/>
+                          <rect class="cuffia-pad" x="71" y="50" width="8" height="15" rx="4"/><rect class="cuffia-pad" x="121" y="50" width="8" height="15" rx="4"/>
+                          <path class="cuffia" d="M75 63C76 74 84 78 92 78" fill="none"/>
+                          <g class="occhi"><ellipse cx="92" cy="57" rx="2.4" ry="3.1"/><ellipse cx="108" cy="57" rx="2.4" ry="3.1"/></g><path class="bocca" d="M95.5 66.5Q100 69.5 104.5 66.5"/>
+                        </g></g>
+                      </svg></div>
+        <div class="riquadro persona anna"><svg class="figura" viewBox="0 0 200 120" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+                        <path class="corpo" d="M52 120C52 96 74 85 100 85C126 85 148 96 148 120Z"/>
+                        <rect class="collo" x="92" y="73" width="16" height="17" rx="6"/>
+                        <g class="cenno"><g class="testa">
+                          <circle class="capelli" cx="100" cy="27" r="10"/>
+                          <ellipse class="pelle" cx="100" cy="56" rx="20" ry="23"/>
+                          <path class="capelli" d="M80 54C78 33 122 31 120 54C114 44 106 40 100 40C93 40 85 44 80 54Z"/>
+                          <g class="occhi"><ellipse cx="92" cy="59" rx="2.3" ry="3"/><ellipse cx="108" cy="59" rx="2.3" ry="3"/></g><path class="bocca" d="M96 68Q100 70.8 104 68"/>
+                        </g></g>
+                      </svg></div>
+      </div>
     </div>
   </main>
 </div>

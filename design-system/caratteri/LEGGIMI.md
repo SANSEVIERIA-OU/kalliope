@@ -22,8 +22,11 @@ I nomi delle lingue (l'elenco in ogni pagina, la scelta nella barra, la pagina d
 nomi: `lexend/Lexend-wght-nomi.woff2` (ăČčšų, 3 788 byte), `geologica/Geologica-wght-nomi.woff2` (Ελληνικά, български, 4 828),
 `readex-pro/ReadexPro-wght-nomi.woff2` (العربية, 6 056), `noto-nastaliq-urdu/NotoNastaliqUrdu-wght-nomi.woff2` (اردو, 2 104),
 `noto-sans-devanagari/NotoSansDevanagari-wght-nomi.woff2` (हिन्दी, 5 168), `noto-sans-bengali/NotoSansBengali-wght-nomi.woff2`
-(বাংলা, 2 168). Il latino di base dei nomi è lo stesso file di Lexend. In una pagina italiana con l'elenco di tutte le lingue questi
-file pesano 24 112 byte, e si scaricano soltanto se l'elenco mostra quei nomi (il piede, la scelta aperta).
+(বাংলা, 2 168). Il latino di base dei nomi è lo stesso file di Lexend: la famiglia dei nomi non ha una faccia latina sua (con lo
+stesso indirizzo il browser lo scaricava una seconda volta, correzione del 17/11/2026) e le pile `--font-nomi-lingue` cominciano da
+`"Lexend"`. In una pagina italiana con l'elenco di tutte le lingue questi file pesano 24 112 byte, e si scaricano soltanto quando
+l'elenco si impagina: la scelta aperta, o il piede vicino allo schermo (`content-visibility: auto`). A riposo la pagina italiana
+scarica 2 file, 59 480 byte (Lexend latino e DejaVu latino).
 
 **Il cinese** usa il carattere di sistema, per scelta: il sottoinsieme di Noto Sans SC con i 3 755 caratteri più comuni (GB 2312,
 primo livello) pesa 1 086 548 byte in woff2, contro 0; ogni sistema per cui c'è un browser ha un carattere cinese semplificato

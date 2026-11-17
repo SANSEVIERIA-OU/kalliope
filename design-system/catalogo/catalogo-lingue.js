@@ -110,11 +110,14 @@
   await prova('specchio', async () => {
     const s = apri('specchio', 'Lo specchio: da destra a sinistra',
       'Con <code>&lt;html dir="rtl"&gt;</code> le proprietà logiche specchiano la disposizione da sole; ciò che ha un verso (uno spostamento, l\'origine di una crescita, una freccia, la coda della bolla, gli sguardi verso «Tu», le luci) moltiplica <code>--verso</code>, che vale −1 sotto <code>:root:dir(rtl)</code>. Non si specchiano il triangolo ▶ dei comandi di riproduzione, i numeri, il marchio. Qui la stessa piccola pagina nei due versi; l\'elenco punto per punto, con la decisione e il perché: <code>design/lavoro/2-lingue-aspetto/progresso.md</code>.', 'lingue');
-    const corpo = `<p><a class="collegamento" href="#">Non uso Linux: cosa posso fare<span class="freccia" aria-hidden="true"></span></a></p>`
-      + `<div class="bolla filo-bolla"><div class="bolla-corpo"><p class="bolla-testo">La coda punta verso «Tu»</p></div><svg class="coda" viewBox="0 0 32 24" aria-hidden="true"><path d="M0 0h31L7.6 21.6A3.5 3.5 0 0 1 2 18.8V0z"/></svg></div>`
-      + `<p><button class="pillola voce-chiara" type="button"><span class="tondo" aria-hidden="true"></span>Ascolta</button></p>`;
-    s.append(el('div', {class: 'cat-prove'}, prova1('da sinistra a destra (<code>dir="ltr"</code>, <code>--verso: 1</code>)', paginetta('it', 'ltr', corpo, 'specchio, da sinistra a destra'), 'largo'),
-      prova1('da destra a sinistra (<code>dir="rtl"</code>, <code>--verso: -1</code>): la freccia e la coda si specchiano, il triangolo ▶ no (il testo di prova è italiano: le virgolette seguono la direzione)', paginetta('it', 'rtl', corpo, 'specchio, da destra a sinistra'), 'largo')));
+    const corpo = (link, bolla, ascolta) => `<p><a class="collegamento" href="#">${link}<span class="freccia" aria-hidden="true"></span></a></p>`
+      + `<div class="bolla filo-bolla"><div class="bolla-corpo"><p class="bolla-testo">${bolla}</p></div><svg class="coda" viewBox="0 0 32 24" aria-hidden="true"><path d="M0 0h31L7.6 21.6A3.5 3.5 0 0 1 2 18.8V0z"/></svg></div>`
+      + `<p><button class="pillola voce-chiara" type="button"><span class="tondo" aria-hidden="true"></span>${ascolta}</button></p>`;
+    // correzione dopo il giudizio (M8): da destra a sinistra un testo arabo vero (dai cataloghi di prova), con la parte latina isolata come
+    // la isola la costruzione con i caratteri LRI…PDI (U+2066, U+2069), come qui: l'esempio mostra la regola, non il difetto del testo
+    // latino girato. Non <bdi>: dentro un collegamento (inline-flex) un elemento spezza il testo in pezzi separati, ognuno con la sua linea
+    s.append(el('div', {class: 'cat-prove'}, prova1('da sinistra a destra (<code>dir="ltr"</code>, <code>--verso: 1</code>)', paginetta('it', 'ltr', corpo('Non uso Linux: cosa posso fare', 'Sono d\'accordo con «Kalliope 0.1».', 'Ascolta'), 'specchio, da sinistra a destra'), 'largo'),
+      prova1('da destra a sinistra (<code>lang="ar" dir="rtl"</code>, <code>--verso: -1</code>): la freccia e la coda si specchiano, il triangolo ▶ no; la parte latina («Linux», «Kalliope 0.1») resta nel suo verso', paginetta('ar', 'rtl', corpo('لا أستخدم \u2066Linux\u2069: ماذا أفعل', 'أوافق على «\u2066Kalliope 0.1\u2069».', 'استمع'), 'specchio, da destra a sinistra'), 'largo')));
   });
 
   if (errori.length) { const st = $('#stato-catalogo'); if (st) st.textContent += ` · Lingue: ${errori.join(' · ')}`; }

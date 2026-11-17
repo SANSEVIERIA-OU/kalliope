@@ -1,0 +1,97 @@
+{
+ "pagina": "http://127.0.0.1:36755/index.html",
+ "misura": "390x844",
+ "sequenza": "scelta-arrivo-corretta",
+ "gesto": null,
+ "ridotto": false,
+ "lento": 1,
+ "istanti": [
+  0,
+  0.2,
+  0.45,
+  0.7,
+  0.95,
+  1.2,
+  1.5,
+  1.8,
+  2.2,
+  2.6,
+  3
+ ],
+ "fotogrammi": [
+  {
+   "file": "scelta-arrivo-corretta-390x844-f01.jpg",
+   "chiesto": 0,
+   "scattato": 0,
+   "scorrimento": 0
+  },
+  {
+   "file": "scelta-arrivo-corretta-390x844-f02.jpg",
+   "chiesto": 0.2,
+   "scattato": 0.2,
+   "scorrimento": 0
+  },
+  {
+   "file": "scelta-arrivo-corretta-390x844-f03.jpg",
+   "chiesto": 0.45,
+   "scattato": 0.45,
+   "scorrimento": 0
+  },
+  {
+   "file": "scelta-arrivo-corretta-390x844-f04.jpg",
+   "chiesto": 0.7,
+   "scattato": 0.7,
+   "scorrimento": 0
+  },
+  {
+   "file": "scelta-arrivo-corretta-390x844-f05.jpg",
+   "chiesto": 0.95,
+   "scattato": 0.95,
+   "scorrimento": 0
+  },
+  {
+   "file": "scelta-arrivo-corretta-390x844-f06.jpg",
+   "chiesto": 1.2,
+   "scattato": 1.2,
+   "scorrimento": 0
+  },
+  {
+   "file": "scelta-arrivo-corretta-390x844-f07.jpg",
+   "chiesto": 1.5,
+   "scattato": 1.5,
+   "scorrimento": 0
+  },
+  {
+   "file": "scelta-arrivo-corretta-390x844-f08.jpg",
+   "chiesto": 1.8,
+   "scattato": 1.8,
+   "scorrimento": 0
+  },
+  {
+   "file": "scelta-arrivo-corretta-390x844-f09.jpg",
+   "chiesto": 2.2,
+   "scattato": 2.2,
+   "scorrimento": 0
+  },
+  {
+   "file": "scelta-arrivo-corretta-390x844-f10.jpg",
+   "chiesto": 2.6,
+   "scattato": 2.6,
+   "scorrimento": 0
+  },
+  {
+   "file": "scelta-arrivo-corretta-390x844-f11.jpg",
+   "chiesto": 3,
+   "scattato": 3,
+   "scorrimento": 0
+  }
+ ],
+ "foglio": "scelta-arrivo-corretta-390x844-foglio.jpg",
+ "video": "scelta-arrivo-corretta-390x844.webm",
+ "orologio": {
+  "pagina": 1,
+  "media": []
+ },
+ "errori": [],
+ "misurato": "2026-11-17T03:56:40.413Z"
+}

@@ -88,6 +88,10 @@
 /* incarico 2: un nome lungo (una traduzione, il tedesco, il finlandese) non esce dal suo riquadro e non copre il nome accanto: va a
    capo dentro il riquadro, in righe pari. In italiano le etichette stanno su una riga e non cambiano */
 .nome { max-width: calc(100% - 2 * var(--spazio-8)); white-space: normal; text-wrap: balance; }
+/* correzione dopo il giudizio (I2): se l'etichetta di «Tu» non sta in una riga, resta «Tu» (scena.js misura: classe «nome-corto»):
+   due righe finirebbero sopra le barre della voce, il segno di chi parla */
+.riquadro.nome-corto .nome-lungo { display: none; }
+.riquadro.nome-corto .nome::after, .riunione-app.vivo .tu.nome-corto .nome::after, .riunione-filo .riquadro.tu.nome-corto .nome-tu::after { content: none; }
 .barre {
   position: absolute;
   left: 50%; /* fisico: centratura con translate(-50%, -50%): simmetrica, giusta in entrambe le direzioni */

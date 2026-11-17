@@ -34,6 +34,7 @@
   line-height: var(--tratto-interlinea);
   font-weight: var(--peso-titolo);
   letter-spacing: var(--spaziatura-tratto);
+  font-feature-settings: var(--titolo-caratteristiche);
   text-wrap: balance;
 }
 .tratto-testo p {

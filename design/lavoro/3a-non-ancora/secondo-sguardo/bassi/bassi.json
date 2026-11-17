@@ -1,0 +1,470 @@
+[
+ {
+  "misura": "390x667",
+  "primo": {
+   "azione": {
+    "top": 246,
+    "bottom": 294,
+    "visibile": true
+   },
+   "collegamento": {
+    "top": 294,
+    "bottom": 338,
+    "visibile": true
+   },
+   "titolo": {
+    "top": 70,
+    "bottom": 136,
+    "visibile": true
+   },
+   "nonce": {
+    "top": 700,
+    "bottom": 729,
+    "visibile": false
+   },
+   "stato": {
+    "top": 779,
+    "bottom": 833,
+    "visibile": false
+   },
+   "sw": 390
+  },
+  "ascolto": {
+   "barra": 56,
+   "bolla": {
+    "top": 159,
+    "bottom": 225,
+    "visibile": true
+   },
+   "riquadri": {
+    "top": 241,
+    "bottom": 319,
+    "visibile": true
+   },
+   "pulsante": {
+    "top": 353,
+    "bottom": 401,
+    "visibile": true
+   },
+   "etichetta": "Pausa",
+   "y": 3530
+  },
+  "errori": []
+ },
+ {
+  "misura": "360x640",
+  "primo": {
+   "azione": {
+    "top": 238,
+    "bottom": 286,
+    "visibile": true
+   },
+   "collegamento": {
+    "top": 286,
+    "bottom": 330,
+    "visibile": true
+   },
+   "titolo": {
+    "top": 70,
+    "bottom": 128,
+    "visibile": true
+   },
+   "nonce": {
+    "top": 692,
+    "bottom": 721,
+    "visibile": false
+   },
+   "stato": {
+    "top": 771,
+    "bottom": 825,
+    "visibile": false
+   },
+   "sw": 360
+  },
+  "ascolto": {
+   "barra": 56,
+   "bolla": {
+    "top": 146,
+    "bottom": 212,
+    "visibile": true
+   },
+   "riquadri": {
+    "top": 228,
+    "bottom": 306,
+    "visibile": true
+   },
+   "pulsante": {
+    "top": 340,
+    "bottom": 388,
+    "visibile": true
+   },
+   "etichetta": "Pausa",
+   "y": 3650
+  },
+  "errori": []
+ },
+ {
+  "misura": "320x568",
+  "primo": {
+   "azione": {
+    "top": 260,
+    "bottom": 308,
+    "visibile": true
+   },
+   "collegamento": {
+    "top": 308,
+    "bottom": 352,
+    "visibile": true
+   },
+   "titolo": {
+    "top": 70,
+    "bottom": 128,
+    "visibile": true
+   },
+   "nonce": {
+    "top": 714,
+    "bottom": 743,
+    "visibile": false
+   },
+   "stato": {
+    "top": 793,
+    "bottom": 865,
+    "visibile": false
+   },
+   "sw": 320
+  },
+  "ascolto": {
+   "barra": 56,
+   "bolla": {
+    "top": 88,
+    "bottom": 176,
+    "visibile": true
+   },
+   "riquadri": {
+    "top": 192,
+    "bottom": 270,
+    "visibile": true
+   },
+   "pulsante": {
+    "top": 304,
+    "bottom": 352,
+    "visibile": true
+   },
+   "etichetta": "Pausa",
+   "y": 3888
+  },
+  "errori": []
+ },
+ {
+  "misura": "844x390",
+  "primo": {
+   "azione": {
+    "top": 242,
+    "bottom": 298,
+    "visibile": true
+   },
+   "collegamento": {
+    "top": 246,
+    "bottom": 294,
+    "visibile": true
+   },
+   "titolo": {
+    "top": 86,
+    "bottom": 152,
+    "visibile": true
+   },
+   "nonce": {
+    "top": 820,
+    "bottom": 854,
+    "visibile": false
+   },
+   "stato": {
+    "top": 312,
+    "bottom": 378,
+    "visibile": true
+   },
+   "sw": 844
+  },
+  "ascolto": {
+   "barra": 72,
+   "bolla": {
+    "top": 80,
+    "bottom": 168,
+    "visibile": true
+   },
+   "riquadri": {
+    "top": 186,
+    "bottom": 358,
+    "visibile": true
+   },
+   "pulsante": {
+    "top": 392,
+    "bottom": 448,
+    "visibile": false
+   },
+   "etichetta": "Pausa",
+   "y": 3410
+  },
+  "errori": []
+ },
+ {
+  "misura": "915x412",
+  "primo": {
+   "azione": {
+    "top": 242,
+    "bottom": 298,
+    "visibile": true
+   },
+   "collegamento": {
+    "top": 246,
+    "bottom": 294,
+    "visibile": true
+   },
+   "titolo": {
+    "top": 86,
+    "bottom": 152,
+    "visibile": true
+   },
+   "nonce": {
+    "top": 820,
+    "bottom": 854,
+    "visibile": false
+   },
+   "stato": {
+    "top": 312,
+    "bottom": 378,
+    "visibile": true
+   },
+   "sw": 915
+  },
+  "ascolto": {
+   "barra": 72,
+   "bolla": {
+    "top": 80,
+    "bottom": 168,
+    "visibile": true
+   },
+   "riquadri": {
+    "top": 186,
+    "bottom": 358,
+    "visibile": true
+   },
+   "pulsante": {
+    "top": 392,
+    "bottom": 448,
+    "visibile": false
+   },
+   "etichetta": "Pausa",
+   "y": 3384
+  },
+  "errori": []
+ },
+ {
+  "misura": "326x326",
+  "primo": {
+   "azione": {
+    "top": 260,
+    "bottom": 308,
+    "visibile": true
+   },
+   "collegamento": {
+    "top": 308,
+    "bottom": 352,
+    "visibile": false
+   },
+   "titolo": {
+    "top": 70,
+    "bottom": 128,
+    "visibile": true
+   },
+   "nonce": {
+    "top": 714,
+    "bottom": 743,
+    "visibile": false
+   },
+   "stato": {
+    "top": 793,
+    "bottom": 865,
+    "visibile": false
+   },
+   "sw": 326
+  },
+  "ascolto": {
+   "barra": 56,
+   "bolla": {
+    "top": 64,
+    "bottom": 152,
+    "visibile": true
+   },
+   "riquadri": {
+    "top": 168,
+    "bottom": 246,
+    "visibile": true
+   },
+   "pulsante": {
+    "top": 280,
+    "bottom": 328,
+    "visibile": false
+   },
+   "etichetta": "Pausa",
+   "y": 3861
+  },
+  "errori": []
+ },
+ {
+  "misura": "1440x500",
+  "primo": {
+   "azione": {
+    "top": 275,
+    "bottom": 331,
+    "visibile": true
+   },
+   "collegamento": {
+    "top": 279,
+    "bottom": 327,
+    "visibile": true
+   },
+   "titolo": {
+    "top": 86,
+    "bottom": 185,
+    "visibile": true
+   },
+   "nonce": {
+    "top": 436,
+    "bottom": 470,
+    "visibile": true
+   },
+   "stato": {
+    "top": 345,
+    "bottom": 411,
+    "visibile": true
+   },
+   "sw": 1440
+  },
+  "ascolto": {
+   "barra": 72,
+   "bolla": {
+    "top": 80,
+    "bottom": 168,
+    "visibile": true
+   },
+   "riquadri": {
+    "top": 186,
+    "bottom": 358,
+    "visibile": true
+   },
+   "pulsante": {
+    "top": 392,
+    "bottom": 448,
+    "visibile": true
+   },
+   "etichetta": "Pausa",
+   "y": 2521
+  },
+  "errori": []
+ },
+ {
+  "misura": "1280x500",
+  "primo": {
+   "azione": {
+    "top": 275,
+    "bottom": 331,
+    "visibile": true
+   },
+   "collegamento": {
+    "top": 279,
+    "bottom": 327,
+    "visibile": true
+   },
+   "titolo": {
+    "top": 86,
+    "bottom": 185,
+    "visibile": true
+   },
+   "nonce": {
+    "top": 436,
+    "bottom": 470,
+    "visibile": true
+   },
+   "stato": {
+    "top": 345,
+    "bottom": 411,
+    "visibile": true
+   },
+   "sw": 1280
+  },
+  "ascolto": {
+   "barra": 72,
+   "bolla": {
+    "top": 80,
+    "bottom": 168,
+    "visibile": true
+   },
+   "riquadri": {
+    "top": 186,
+    "bottom": 358,
+    "visibile": true
+   },
+   "pulsante": {
+    "top": 392,
+    "bottom": 448,
+    "visibile": true
+   },
+   "etichetta": "Pausa",
+   "y": 2577
+  },
+  "errori": []
+ },
+ {
+  "misura": "1024x600",
+  "primo": {
+   "azione": {
+    "top": 401,
+    "bottom": 457,
+    "visibile": true
+   },
+   "collegamento": {
+    "top": 467,
+    "bottom": 515,
+    "visibile": true
+   },
+   "titolo": {
+    "top": 102,
+    "bottom": 255,
+    "visibile": true
+   },
+   "nonce": {
+    "top": 494,
+    "bottom": 528,
+    "visibile": true
+   },
+   "stato": {
+    "top": 535,
+    "bottom": 601,
+    "visibile": false
+   },
+   "sw": 1024
+  },
+  "ascolto": {
+   "barra": 72,
+   "bolla": {
+    "top": 80,
+    "bottom": 168,
+    "visibile": true
+   },
+   "riquadri": {
+    "top": 186,
+    "bottom": 358,
+    "visibile": true
+   },
+   "pulsante": {
+    "top": 392,
+    "bottom": 448,
+    "visibile": true
+   },
+   "etichetta": "Pausa",
+   "y": 3097
+  },
+  "errori": []
+ }
+]

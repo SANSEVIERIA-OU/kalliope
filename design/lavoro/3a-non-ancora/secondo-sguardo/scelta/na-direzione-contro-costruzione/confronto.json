@@ -1,0 +1,55 @@
+{
+ "scelta": "http://127.0.0.1:44219/it/non-ancora/index.html",
+ "adesso": "http://127.0.0.1:40409/it/non-ancora/index.html",
+ "attesa": 4500,
+ "ridotto": false,
+ "tolleranza": 1,
+ "esiti": [
+  {
+   "misura": "1440x900",
+   "y": 0,
+   "cose": 44,
+   "differenze": [],
+   "ammesse": [],
+   "stessa_cosa": [],
+   "in_movimento": [],
+   "pixel_diversi_percento": 0,
+   "errori": []
+  },
+  {
+   "misura": "390x844",
+   "y": 0,
+   "cose": 36,
+   "differenze": [],
+   "ammesse": [],
+   "stessa_cosa": [],
+   "in_movimento": [],
+   "pixel_diversi_percento": 0,
+   "errori": []
+  },
+  {
+   "misura": "390x667",
+   "y": 0,
+   "cose": 28,
+   "differenze": [],
+   "ammesse": [],
+   "stessa_cosa": [],
+   "in_movimento": [],
+   "pixel_diversi_percento": 0,
+   "errori": []
+  },
+  {
+   "misura": "844x390",
+   "y": 0,
+   "cose": 12,
+   "differenze": [],
+   "ammesse": [],
+   "stessa_cosa": [],
+   "in_movimento": [],
+   "pixel_diversi_percento": 0,
+   "errori": []
+  }
+ ],
+ "dichiarazioni_non_usate": [],
+ "misurato": "2026-11-17T03:21:38.967Z"
+}

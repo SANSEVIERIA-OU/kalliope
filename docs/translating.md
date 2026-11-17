@@ -187,6 +187,11 @@ script scale the title size and the line height of titles and text; joined scrip
 licences and sizes: `design-system/caratteri/LEGGIMI.md`. A right-to-left page mirrors what has a direction (`--verso`); play
 triangles, numbers and the logo do not.
 
+On a right-to-left page the build isolates every run of Latin letters, digits and dots (a version such as `0.1-rc.1`, `x86_64`,
+`Kalliope 0.1`) between LRI and PDI (U+2066…U+2069), in the text and in the translated attributes, so it keeps its own direction
+and is never read backwards (`rc.1-0.1`); quotation marks around it follow the Arabic or Urdu text. Translators write the text as
+it is: nothing to add.
+
 Two notes for translators: in Chinese write the four lines of `apertura.titolo` with no space between the tags (`<1>…</1><2>…</2>`),
 or the phone shows a gap where the lines run on; and keep the units marked in the sentences (`<1>alle 15:30?</1>`) short, a few
 words that must not break.

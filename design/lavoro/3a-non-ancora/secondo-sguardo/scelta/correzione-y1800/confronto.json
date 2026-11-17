@@ -1,0 +1,39 @@
+{
+ "scelta": "http://127.0.0.1:45823/it/index.html",
+ "adesso": "http://127.0.0.1:43413/it/index.html",
+ "attesa": 4000,
+ "ridotto": false,
+ "tolleranza": 1,
+ "esiti": [
+  {
+   "misura": "1440x900",
+   "y": 1800,
+   "cose": 42,
+   "differenze": [],
+   "ammesse": [],
+   "stessa_cosa": [],
+   "in_movimento": [],
+   "pixel_diversi_percento": 0.11,
+   "errori": []
+  },
+  {
+   "misura": "390x844",
+   "y": 1800,
+   "cose": 46,
+   "differenze": [],
+   "ammesse": [],
+   "stessa_cosa": [],
+   "in_movimento": [
+    "div.bolla-corpo",
+    "p «Il preventivo è di IVA, valido fino al»",
+    "span «1.250 € +»",
+    "span «31 dicembre.»",
+    "svg.coda"
+   ],
+   "pixel_diversi_percento": 0,
+   "errori": []
+  }
+ ],
+ "dichiarazioni_non_usate": [],
+ "misurato": "2026-11-17T03:20:19.304Z"
+}

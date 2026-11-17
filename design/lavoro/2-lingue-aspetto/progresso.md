@@ -1,7 +1,7 @@
 # Incarico 2 · Lingue nel design system: progresso e consegna
 
 Ruolo design-direction. Incarico: `design/lavoro/incarichi/2-lingue-aspetto.md`. Nessun commit, nessun push, nessuna finestra.
-Ultimo aggiornamento: 17/11/2026, mattina. **Stato: finito**, salvo «Non verificato» e «Al ruolo di costruzione».
+Ultimo aggiornamento: 17/11/2026. **Stato: finito**, anche la correzione dopo il giudizio (sezione in fondo), salvo «Non verificato» e «Al ruolo di costruzione».
 Impronte dei file su cui girano le prove finali: `impronte-finali.txt`.
 
 ## Che cosa ho fatto (file)
@@ -180,3 +180,114 @@ dell'incarico 1, sulle costruzioni `--no-selector` di `341a841` e di adesso (por
 
 `node design/lavoro/1-lingue-sito/prove/confronta-serie.mjs … fin2-webkit-1,fin2-webkit-2` (13/13), poi le foto del selettore in italiano
 (`/tmp/lavoro-2-sel-{prima,dopo}-*.png`). In `prova-lingue/` resta un `__pycache__` di Python (dall'import dei testi): non serve, si può ignorare.
+
+## Correzione dopo il giudizio (incarico 2-c, 17/11/2026)
+
+Incarico: `design/lavoro/incarichi/2-lingue-correzione.md`; giudizio: `giudizio/GIUDIZIO.md`. Copia di partenza: commit `8c7fae1`
+(estratta in `/tmp/lavoro-2-c-prima`); per «non ancora» `b9ba336`. **Stato: finito**, salvo «Non verificato» qui sotto. Le foto prima e
+dopo sono in `foto/correzione/` (JPEG, fuori da git per la regola di `.gitignore`); le impronte dei file finali in `impronte-correzione.txt`.
+Le prove finali girano sulle costruzioni `/tmp/lavoro-2-sito-cfin6` (9 lingue + pseudo), `/tmp/lavoro-2-sito30-cfin4` (30 lingue: la
+scelta e i byte, che non dipendono da ciò che è cambiato dopo), `/tmp/lavoro-2-c-fin6-ns` (`--no-selector`), contro `/tmp/lavoro-2-c-prima-ns` (8c7fae1) e `/tmp/lavoro-2-c-b9ba-ns` (b9ba336).
+
+### Punto per punto
+
+- **B1 (bloccante), la barra nelle lingue lunghe.** Causa: la barra decideva solo «stretta» (via la parola del marchio), e la misura stava
+  in `scena.js`, quindi le pagine interne non l'avevano. Adesso una misura sola, in `website/componenti.js` (nuovo, caricato dalla home e
+  da `website/non-ancora/index.html`, elencato in `design-system/metodo.config.mjs`): dalle larghezze (non dalle posizioni) calcola se le
+  voci ci stanno con il marchio intero, senza la parola, o no; se no la barra è **«raccolta»**: la forma del tablet, «Menu» al posto delle
+  voci, l'azione fra il marchio e «Menu» (`design-system/componenti/barra.css`, blocco `.barra.raccolta`; pannello aperto in
+  `lingue.css`). Le voci non vanno più a capo (`nowrap`). Prova `prove/barra-larghezze.mjs`: dopo la rotella vera, a ogni larghezza
+  761–1440 ogni 10 px, nessuna voce fuori dallo schermo, sopra il marchio o sotto l'azione, nessuna voce su due righe, l'azione non sul
+  marchio né su «Menu». **Home, 12 lingue (it de fi el bg ar ur hi bn zh en-XA ar-XB) × 69 larghezze: 0 rotte su 828**; prima (8c7fae1, a
+  passo 20) 71 rotte su 420. **«Non ancora», en-XA e it × 69: 0 rotte su 138**; prima (b9ba336, en-XA a passo 20) 21 rotte su 35. Foto
+  `foto/correzione/B1-de-1024.jpg`, `B1-bg-1100.jpg`, `B1-en-XA-1440.jpg`, `B1-non-ancora-en-XA-1366.jpg`; il menu aperto nella barra
+  raccolta l'ho guardato a 1024 (de, home; en-XA, «non ancora»): pannello sotto «Menu», nessuna voce tagliata.
+  **Sotto 761 px**, con la stessa prova (320–760 ogni 20 px), c'erano due difetti già in 8c7fae1 (en-XA 2 e de 1 su 23 larghezze): a
+  441–460 px l'azione copriva la parola del marchio quando la pagina scorsa si allargava oltre 440 px (la misura leggeva l'opacità della
+  parola mentre riappariva: ora decide dagli stati, telefono stretto o barra «stretta»), e a 320 px in en-XA copriva «Menu» (misurato in
+  cima, dove la parola lunga lo stringeva: ora si misura intero). **12 lingue × 23 larghezze: 0 rotte su 276.** Il telefono che gira con
+  la pagina scorsa (390×844 ↔ 844×390, 8 lingue, `prove/barra-gira.mjs`): 0 rotte su 16. Foto `foto/correzione/B1-de-450-da-430.jpg`,
+  `B1-en-XA-320.jpg`.
+- **Pillole lunghe (aggiornamento di chi coordina).** `.pillola` resta su una riga com'era; `componenti.js` misura il testo e, se non ci
+  sta nella larghezza della pillola, la segna `a-capo`: va a capo dentro il fondo, in righe pari (`pulsanti.css`). Non una regola sempre
+  accesa: in WebKit perfino `text-wrap: balance` su una riga sola spostava le lettere, e l'italiano non sarebbe rimasto identico. L'azione
+  della barra ha già la sua misura (`azione-a-capo`) ed è esclusa. En-XA a 390 in «non ancora»: il comando principale e «Copia
+  l'indirizzo…» stanno nel loro fondo, su due righe (`foto/correzione/pillole-non-ancora-en-XA-390-comandi.jpg`, `…-copia.jpg`); a 390,
+  1366×640 e 1024×768 nessuna pillola né voce esce, nessun errore.
+- **I1, la versione al contrario.** Causa alla radice nella costruzione: in una pagina da destra a sinistra ogni pezzo di lettere latine,
+  cifre e punti (`0.1-rc.1`, `Linux`, `x86_64`, `Kalliope 0.1`, «Enter») è un pezzo con il suo verso dentro un testo arabo. `tools/site.py`
+  (`isola_latino`, chiamata in `costruisci_pagina` solo per le lingue `rtl` vere) lo chiude fra LRI e PDI (U+2066…U+2069), nel testo e
+  negli attributi tradotti (`data-t-*`), senza toccare segnaposti, entità, script, stili, attributi non tradotti; due volte è come una.
+  Nella home: 41 isolamenti in arabo, 43 in urdu, 0 in italiano e in ar-XB. Prove: «0.1-rc.1» si legge giusto in ar a 1440 e in ur a 390
+  (`foto/correzione/I1-ar-1440-stato.jpg`, `I1-ur-390-stato.jpg`); le parentesi di «(x86_64 مع PipeWire)» e i due punti di «Linux:»
+  misurati al loro posto; virgolette «Kalliope» in arabo, ”Kalliope“ in urdu. Tre prove nuove in `tools/test_translations.py`
+  (`DaDestraASinistra`). Documentato in `docs/translating.md` (i traduttori non devono aggiungere nulla) e in `TOKEN.md`.
+- **I2, «Tu · microfono "Kalliope"» sulle barre.** `componenti.js` misura l'etichetta in una riga (con un Range: `scrollWidth` non vede
+  ciò che esce a sinistra da destra a sinistra); se non ci sta la tessera è `nome-corto` e resta «Tu» (`riunione.css`). Ar a 390: «أنت»;
+  el: «Εσύ»; en-XA: «[Ţû·» (il punto è della pseudo-lingua); ur a 390 ci sta (una riga) e resta intera; a 1440 intere ovunque.
+  `foto/correzione/I2-ar-390-tu.jpg`, `I2-el-390-tu.jpg`, `I2-en-XA-390-tu.jpg`.
+- **I3, la pagina della scelta.** Una pagina intera, la stessa idea: il nome del prodotto in alto, poi la bolla con i nomi delle lingue,
+  la coda verso la tua tessera, e sotto la fila della riunione (Tu, Paola, Luca, Anna, le figure della home). Arrivo: le tessere entrano
+  come nella home, la bolla nasce dalla tua a 760 ms, i nomi si accendono da 1 200 ms (la lingua del browser per prima), le barre di «Tu»
+  parlano. File: `website/lingue.html`, `website/lingua.js` (lo sguardo delle persone verso «Tu»), `design-system/componenti/lingue.css`,
+  token in `token.css` (elenco in `TOKEN.md`). Prova `prove/foto-scelta2.mjs` a 1440×900, 1366×640, 390×844, 844×390, con e senza script:
+  nessuno scorrimento, titolo, bolla e fila dentro lo schermo (1440: 177–241, 275–559, 583–755; 1366×640: 104–168, 202–486, 510–610;
+  390: 83–116, 150–672, 696–774; 844×390: 84–117, 125–285, 309–369), nessun errore. Sequenza d'arrivo
+  `sequenze/scelta-arrivo-corretta-{1440x900,390x844}-foglio.jpg` e `.webm`. Prima e dopo: `foto/correzione/I3-scelta-1440.jpg`,
+  `I3-scelta-390.jpg` (prima: foto del giudizio, in arabo; dopo: lingua del browser italiana).
+- **I4, byte della pagina italiana.** Causa: il piede (con i nomi delle lingue) era impaginato subito. Ora `.piede .lingue` ha
+  `content-visibility: auto` con un'altezza stimata (`--lingue-piede-altezza-stimata`); in più la famiglia dei nomi non ha più una faccia
+  latina sua (scaricava Lexend una seconda volta: le pile cominciano da «Lexend»). Misura `prove/byte-italiano.mjs`, con il selettore e 30
+  lingue pubblicate (i cataloghi di prova): **a riposo 2 file, 59 480 byte** (Lexend latino, DejaVu latino) a 1440×900 e a 390×844;
+  prima 9 file, 121 236 byte. In fondo alla pagina, quando i nomi si vedono, +6 file dei nomi, 24 112 byte.
+- **M1, titoli.** Al telefono la terza e la quarta riga sono blocchi con `balance` (prima righe in linea con `\A`): «Du schreibst, / die
+  anderen», non «… die / anderen»; le prime due restano di seguito (`apertura.css`). L'arrivo resta com'era (righe che si accendono senza
+  spostarsi: `--sale-da-sposta-y: 0` sulle due righe): fotogrammi fermi a 10 istanti, prima e dopo, 0 diversi a 390 e a 1440 (e in «non
+  ancora» a 390). A 1440 de ed el restano su cinque righe: la terza si divide in due parti pari; dipende dal testo, che sarà riscritto.
+  `foto/correzione/M1-de-390-titolo.jpg`.
+- **M2.** La freccia del collegamento segue l'ultima parola quando il testo va a capo (`componenti.js`, `.collegamento.a-capo` in
+  `pulsanti.css`). `foto/correzione/M2-el-390-collegamento.jpg`.
+- **M3.** Un nome di lingua dentro la pagina urdu torna ai file dei nomi (`[lang]:not(:lang(ur))` in `token.css`): «العربية» in Readex
+  Pro anche nella pagina urdu. `foto/correzione/M3-ur-390-scelta.jpg`.
+- **M4, non corretto: decisione di direzione.** Noto Nastaliq Urdu arriva fino a 700, che è il peso che usiamo: più massa vuol dire solo
+  più grandezza. Provato: all'85% lo stato scende da 877 a 935 px a 1440×900 (esce dal primo schermo); all'85% con l'interlinea stretta a
+  1,5 (lo stesso spazio di adesso) le righe del nastaliq si toccano. Resta al 72% con interlinea 1,75. La didascalia della scena (903–933
+  px in urdu a 1440×900) è l'ultima riga della colonna del testo; in italiano a 1366×640 è sotto il primo schermo anche lei (642–680).
+  Foto `foto/correzione/M4-ur-1440-titolo-prove.jpg`.
+- **M5.** Arabo e urdu: linea dei collegamenti `from-font` (`--sottolineatura-posizione`, `base.css`), niente scalino.
+  `foto/correzione/M5-ar-390-collegamento.jpg`.
+- **M6.** Cinese: titoli con `"halt"` (`--titolo-caratteristiche`, `apertura.css`, `tratti.css`): virgola e punto pieni a metà larghezza.
+  `text-spacing-trim` provato, senza effetto in Chromium su questo carattere. `foto/correzione/M6-zh-390-titolo.jpg`.
+- **M7.** La pila dell'urdu nomina Noto Nastaliq Urdu, Urdu Typesetting, Jameel Noori Nastaleeq, Noto Naskh Arabic e Segoe UI prima del
+  ripiego generico. **Non verificabile qui**: questa macchina non ha nessun carattere urdu o arabo di sistema (`fc-list` vuoto), quindi
+  senza i file la resa è la stessa di prima (`foto/correzione/M7-ur-1440-senza-caratteri.jpg`). Da provare su Windows, macOS, Android.
+- **M8.** L'esempio dello specchio nel catalogo è in arabo, con la parte latina isolata come nella costruzione (LRI…PDI). Prima l'avevo
+  scritto con `<bdi>`: dentro un collegamento `inline-flex` l'elemento spezzava il testo in tre pezzi con tre linee; corretto
+  (`design-system/catalogo/catalogo-lingue.js`). `foto/correzione/M8-catalogo-specchio.jpg`. Catalogo: 31 sezioni, nessun errore.
+
+### Prove sui file finali (numeri)
+
+- **Italiano identico a `8c7fae1`** (`--no-selector`, movimento ridotto, `foto-home.mjs` e `confronta-serie.mjs` dell'incarico 1):
+  Chromium 30/30 (1440×900, 390×844, 820×1180, 1366×640 con lo scorrimento, più menu, ascolto ed errore a 390; tre serie per parte),
+  Firefox 13/13 e WebKit 13/13 (1440 e 390). Rumore: 1 schermata su 30 diversa già fra le serie di prima (Chromium).
+- **«Non ancora» in italiano identica a `b9ba336`**: Chromium 21/21, Firefox 11/11, WebKit 11/11.
+- **Barra**: vedi B1 (sul computer 0/828 nella home e 0/138 in «non ancora»; al telefono e sul tablet 0/276; girando 0/16).
+- **Arabo e urdu** a 1440 e 390: versione giusta, tessera giusta, nessun errore.
+- **Scelta**: vedi I3. **Byte**: vedi I4.
+- `controlla-sorgenti.mjs`: 23 fogli, valori solo nei token. `css_logico.py`: ok, 24 fogli. `translations.py extract --check`: 153 voci,
+  cataloghi aggiornati; `check`: it 153/153. `test_translations.py`: 52 prove, OK.
+
+### Non verificato
+
+- M7 su un sistema con un carattere urdu (Windows, macOS, Android).
+- Le pagine interne oltre a «non ancora» (hanno ancora la barra vecchia, `website/stile/`): non caricano `componenti.js`.
+- A 320 px in en-XA l'azione va su tre righe e riempie quasi tutta l'altezza della barra: non copre nulla, ma è stretta. Succede solo
+  nella pseudo-lingua, che traduce anche il nome «Kalliope» e allunga tutto; le lingue vere a 320 stanno su una o due righe.
+- Le pillole in tutte le lingue a ogni larghezza: misurate in «non ancora» en-XA (390, 1024, 1366) e viste nella home.
+- Lettori di schermo con gli isolamenti LRI/PDI (sono caratteri invisibili e senza voce per specifica; non ascoltato).
+- `design/STATO.md` risulta modificato nella copia di lavoro: non l'ho toccato io.
+
+### Ultimo comando della correzione
+
+`node prove/foto-correzione.mjs /tmp/lavoro-2-sito-c-prima /tmp/lavoro-2-sito-cfin6 /tmp/lavoro-2-c-b9ba-sito /tmp/lavoro-2-foto-corr6`
+(19 coppie, nessun errore), poi i fogli in `foto/correzione/`; prima ancora `confronta-serie.mjs` sulle costruzioni `fin6` (tutto identico).

@@ -1,0 +1,111 @@
+{
+ "pagina": "http://127.0.0.1:42017/it/non-ancora/index.html",
+ "misura": "390x844",
+ "sequenza": "scorri",
+ "gesto": "scorri",
+ "ridotto": false,
+ "lento": 1,
+ "istanti": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "fotogrammi": [
+  {
+   "file": "scorri-390x844-f01.jpg",
+   "chiesto": 0,
+   "scattato": 0,
+   "scorrimento": 12
+  },
+  {
+   "file": "scorri-390x844-f02.jpg",
+   "chiesto": 1,
+   "scattato": 1,
+   "scorrimento": 308
+  },
+  {
+   "file": "scorri-390x844-f03.jpg",
+   "chiesto": 2,
+   "scattato": 2,
+   "scorrimento": 615
+  },
+  {
+   "file": "scorri-390x844-f04.jpg",
+   "chiesto": 3,
+   "scattato": 3,
+   "scorrimento": 926
+  },
+  {
+   "file": "scorri-390x844-f05.jpg",
+   "chiesto": 4,
+   "scattato": 4,
+   "scorrimento": 1233
+  },
+  {
+   "file": "scorri-390x844-f06.jpg",
+   "chiesto": 5,
+   "scattato": 5,
+   "scorrimento": 1540
+  },
+  {
+   "file": "scorri-390x844-f07.jpg",
+   "chiesto": 6,
+   "scattato": 6,
+   "scorrimento": 1846
+  },
+  {
+   "file": "scorri-390x844-f08.jpg",
+   "chiesto": 7,
+   "scattato": 7,
+   "scorrimento": 2153
+  },
+  {
+   "file": "scorri-390x844-f09.jpg",
+   "chiesto": 8,
+   "scattato": 8,
+   "scorrimento": 2454
+  },
+  {
+   "file": "scorri-390x844-f10.jpg",
+   "chiesto": 9,
+   "scattato": 9,
+   "scorrimento": 2766
+  },
+  {
+   "file": "scorri-390x844-f11.jpg",
+   "chiesto": 10,
+   "scattato": 10,
+   "scorrimento": 3073
+  },
+  {
+   "file": "scorri-390x844-f12.jpg",
+   "chiesto": 11,
+   "scattato": 11,
+   "scorrimento": 3379
+  },
+  {
+   "file": "scorri-390x844-f13.jpg",
+   "chiesto": 12,
+   "scattato": 12,
+   "scorrimento": 3679
+  }
+ ],
+ "foglio": "scorri-390x844-foglio.jpg",
+ "video": "scorri-390x844.webm",
+ "orologio": {
+  "pagina": 1,
+  "media": []
+ },
+ "errori": [],
+ "misurato": "2026-11-17T03:07:07.425Z"
+}

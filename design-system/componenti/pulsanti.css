@@ -21,6 +21,11 @@
   text-decoration: none;
   transition: background-color var(--durata-pillola) var(--curva-dolce), box-shadow var(--durata-pillola) var(--curva-dolce), transform var(--durata-pillola) var(--entra);
 }
+/* correzione dopo il giudizio (testo lungo, «non ancora» in en-XA): una pillola non esce dal suo fondo. Su una riga resta com'era (anche
+   la resa: in WebKit perfino «text-wrap» su una riga sola sposta di un soffio le lettere); se il testo non ci sta nella larghezza che ha
+   (una traduzione, il telefono), componenti.js la segna («a-capo») e va a capo dentro la pillola, in righe pari */
+.pillola { max-width: 100%; }
+.pillola.a-capo { white-space: normal; text-wrap: balance; text-align: center; }
 .pillola.azione { background: var(--azione); color: var(--azione-testo); box-shadow: var(--pillola-ombra); }
 .pillola.azione:hover { background: var(--azione-sopra); }
 .pillola:active { transform: scale(var(--pillola-premuto-scala)); }
@@ -38,6 +43,10 @@
   text-decoration-color: var(--sottolineatura);
 }
 .collegamento:hover { text-decoration-color: var(--testo); }
+/* correzione dopo il giudizio (M2): quando il testo va a capo (scena.js: classe «a-capo») il collegamento scorre come un paragrafo e la
+   freccia segue l'ultima parola; su una riga resta in fila com'era */
+.collegamento.a-capo { display: block; }
+.collegamento.a-capo .freccia { display: inline-block; vertical-align: middle; margin-inline-start: var(--spazio-7); }
 .collegamento .freccia {
   width: var(--misura-8);
   height: var(--misura-8);

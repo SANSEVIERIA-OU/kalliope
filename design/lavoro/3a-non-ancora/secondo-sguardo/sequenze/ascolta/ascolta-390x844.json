@@ -1,0 +1,90 @@
+{
+ "pagina": "http://127.0.0.1:39033/it/non-ancora/index.html",
+ "misura": "390x844",
+ "sequenza": "ascolta",
+ "gesto": "premi:.suona-frase",
+ "ridotto": false,
+ "lento": 1,
+ "istanti": [
+  0,
+  0.25,
+  0.5,
+  1,
+  1.5,
+  2,
+  3,
+  4,
+  5,
+  6
+ ],
+ "fotogrammi": [
+  {
+   "file": "ascolta-390x844-f01.jpg",
+   "chiesto": 0,
+   "scattato": 0,
+   "scorrimento": 3423
+  },
+  {
+   "file": "ascolta-390x844-f02.jpg",
+   "chiesto": 0.25,
+   "scattato": 0.25,
+   "scorrimento": 3423
+  },
+  {
+   "file": "ascolta-390x844-f03.jpg",
+   "chiesto": 0.5,
+   "scattato": 0.5,
+   "scorrimento": 3423
+  },
+  {
+   "file": "ascolta-390x844-f04.jpg",
+   "chiesto": 1,
+   "scattato": 1,
+   "scorrimento": 3423
+  },
+  {
+   "file": "ascolta-390x844-f05.jpg",
+   "chiesto": 1.5,
+   "scattato": 1.5,
+   "scorrimento": 3423
+  },
+  {
+   "file": "ascolta-390x844-f06.jpg",
+   "chiesto": 2,
+   "scattato": 2,
+   "scorrimento": 3423
+  },
+  {
+   "file": "ascolta-390x844-f07.jpg",
+   "chiesto": 3,
+   "scattato": 3,
+   "scorrimento": 3423
+  },
+  {
+   "file": "ascolta-390x844-f08.jpg",
+   "chiesto": 4,
+   "scattato": 4,
+   "scorrimento": 3423
+  },
+  {
+   "file": "ascolta-390x844-f09.jpg",
+   "chiesto": 5,
+   "scattato": 5,
+   "scorrimento": 3423
+  },
+  {
+   "file": "ascolta-390x844-f10.jpg",
+   "chiesto": 6,
+   "scattato": 6,
+   "scorrimento": 3423
+  }
+ ],
+ "foglio": "ascolta-390x844-foglio.jpg",
+ "video": "ascolta-390x844.webm",
+ "orologio": {
+  "pagina": 1,
+  "media": []
+ },
+ "errori": [],
+ "misurato": "2026-11-17T03:08:10.217Z"
+}

@@ -18,7 +18,7 @@ body {
 /* incarico 2: un elemento con una lingua sua (una citazione, il nome di una lingua) prende il carattere della sua scrittura: le pile per
    lingua stanno in --font-testo (token.css, «Le scritture») e qui si rileggono dove la lingua cambia */
 [lang] { font-family: var(--font-testo); }
-a { color: inherit; }
+a { color: inherit; text-underline-position: var(--sottolineatura-posizione); }   /* correzione dopo il giudizio (M5): in arabo e in urdu la linea non fa scalini fra le parti in due scritture */
 img, svg, canvas { display: block; }
 button { font: inherit; color: inherit; }
 :focus-visible { outline: var(--filetto-forte) solid var(--voce); outline-offset: var(--fuoco-scarto); }

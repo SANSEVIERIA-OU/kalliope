@@ -508,6 +508,33 @@ class CssLogico(unittest.TestCase):
         self.assertEqual(d, [])
 
 
+class DaDestraASinistra(unittest.TestCase):
+    """Le parti latine di una pagina da destra a sinistra restano nel loro verso (correzione dopo il giudizio dell'incarico 2, I1)."""
+    PAGINA = ('<html lang="ar" dir="rtl"><head><meta name="viewport" content="width=device-width, initial-scale=1">'
+              '<meta name="description" content="Kalliope 0.1 للحاسوب" data-t-content="d"><style>a{color:red}</style></head>'
+              '<body><p>نسخة تجريبية 0.1-rc.1، لنظام Linux فقط (x86_64)</p><p>{voce} &amp; 14/3 «Kalliope»</p>'
+              '<a title="Kalliope، الصفحة" data-t-title="t" href="x/">ok</a><script>var a = "Linux";</script></body></html>')
+
+    def test_le_parti_latine_si_isolano(self):
+        fuori = sito_py.isola_latino(self.PAGINA)
+        for parte in ("0.1-rc.1", "Linux", "x86_64", "Kalliope"):
+            self.assertIn("\u2066" + parte + "\u2069", fuori, parte)
+        self.assertIn('content="\u2066Kalliope 0.1\u2069 للحاسوب"', fuori)
+        self.assertIn('title="\u2066Kalliope\u2069، الصفحة"', fuori)
+
+    def test_non_tocca_cio_che_non_e_testo(self):
+        fuori = sito_py.isola_latino(self.PAGINA)
+        self.assertIn('content="width=device-width, initial-scale=1"', fuori)   # un attributo non tradotto
+        self.assertIn("{voce} &amp; 14/3", fuori)   # segnaposto, entità, cifre senza lettere
+        self.assertIn('var a = "Linux";', fuori)   # uno script
+        self.assertIn('href="x/"', fuori)
+        self.assertEqual(sito_py.isola_latino(fuori), fuori)   # due volte è come una
+
+    def test_la_costruzione_isola_solo_da_destra_a_sinistra(self):
+        guasta = self.PAGINA.replace("\u2066", "")
+        self.assertNotEqual(sito_py.isola_latino(guasta), guasta)
+
+
 class Repository(unittest.TestCase):
     def test_i_cataloghi_sono_quelli_che_le_pagine_producono(self):
         self.assertEqual(translations.main(["extract", "--check"]), 0)

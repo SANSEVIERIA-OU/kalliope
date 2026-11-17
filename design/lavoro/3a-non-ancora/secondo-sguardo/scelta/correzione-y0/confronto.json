@@ -1,0 +1,37 @@
+{
+ "scelta": "http://127.0.0.1:33043/it/index.html",
+ "adesso": "http://127.0.0.1:35203/it/index.html",
+ "attesa": 4000,
+ "ridotto": false,
+ "tolleranza": 1,
+ "esiti": [
+  {
+   "misura": "1440x900",
+   "y": 0,
+   "cose": 56,
+   "differenze": [],
+   "ammesse": [],
+   "stessa_cosa": [],
+   "in_movimento": [
+    "span «Sono d'accordo con Paola. Però la consegna del 1»"
+   ],
+   "pixel_diversi_percento": 0,
+   "errori": []
+  },
+  {
+   "misura": "390x844",
+   "y": 0,
+   "cose": 48,
+   "differenze": [],
+   "ammesse": [],
+   "stessa_cosa": [],
+   "in_movimento": [
+    "span «Sono d'accordo con Paola. Però la consegna del 1»"
+   ],
+   "pixel_diversi_percento": 0,
+   "errori": []
+  }
+ ],
+ "dichiarazioni_non_usate": [],
+ "misurato": "2026-11-17T03:19:38.829Z"
+}

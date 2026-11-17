@@ -121,23 +121,50 @@
   .menu.aperto .lingua-scelta .lingue-elenco a { width: 100%; min-height: var(--misura-21); font-size: var(--corpo-7); }
 }
 
+/* la barra raccolta del computer (barra.css): la scelta sta nel menu aperto, come al telefono */
+.barra.raccolta .menu.aperto .lingua-scelta > summary { width: 100%; min-height: var(--menu-aperto-altezza-minima); font-size: var(--corpo-9); }
+.barra.raccolta .menu.aperto .lingua-scelta .lingue-elenco {
+  position: static;
+  width: auto;
+  max-height: none;
+  overflow: visible;
+  margin-top: var(--spazio-5);
+  padding: var(--spazio-5);
+  grid-template-columns: var(--lingue-pannello-colonne-telefono);
+  background: none;
+  border: 0;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.barra.raccolta .menu.aperto .lingua-scelta .lingue-elenco a { width: 100%; min-height: var(--misura-21); font-size: var(--corpo-7); }
+
 /* ---------- nel piede: tutte le lingue, quiete, nella loro scrittura ---------- */
+/* correzione dopo il giudizio (I4): l'elenco nel piede si impagina (e scarica i file dei nomi: «العربية», «हिन्दी»…) soltanto quando
+   arriva vicino allo schermo; a riposo una pagina italiana scarica soltanto Lexend e DejaVu, come prima. La scelta della barra, chiusa,
+   non si impagina: i suoi nomi arrivano quando si apre */
+.piede .lingue { content-visibility: auto; contain-intrinsic-size: auto var(--lingue-piede-altezza-stimata); }
 .piede .lingue a { font-family: var(--font-nomi-lingue); font-weight: var(--peso-medio); }
 .piede .lingue a[aria-current] { font-weight: var(--peso-forte); text-decoration-thickness: var(--filetto-medio); }
 
-/* ---------- la pagina della scelta: la bolla con le lingue nasce dal tuo riquadro ---------- */
+/* ---------- la pagina della scelta: la riunione, e la bolla con le lingue che nasce dal tuo riquadro ----------
+   Correzione dopo il giudizio (I3): una pagina intera, non un frammento. In alto il nome del prodotto (non si traduce); sotto, la
+   riunione come nella chiusura della home: la bolla sopra la fila di riquadri, con la coda verso «Tu». Al centro dello schermo, in
+   ogni misura; sugli schermi bassi la fila si accorcia perché i nomi restino interi. */
 .scelta-lingua {
   display: grid;
   grid-template-columns: minmax(0, 1fr);   /* la colonna è larga quanto lo schermo, non quanto la bolla: al telefono i nomi vanno a capo */
-  justify-items: start;
+  justify-items: center;
   align-content: center;
   min-height: var(--scelta-altezza-minima);
-  gap: var(--spazio-12);
+  gap: var(--scelta-distanza);
   max-width: var(--misura-35);
   margin-inline: auto;
   padding: var(--scelta-lingua-spazio-interno);
 }
-.bolla.bolla-lingue { position: relative; inset-inline-start: auto; bottom: auto; max-width: min(var(--scelta-bolla-larghezza-massima), 100%); transform-origin: var(--bolla-chiusa-origine); }
+.scelta-lingua .scelta-titolo { order: 0; text-align: center; }   /* in cima anche al telefono (il titolo della home, al telefono, scende dopo la frase: apertura.css) */
+.scelta-tavolo { width: var(--scelta-larghezza); margin: 0; }
+.bolla.bolla-lingue { position: relative; inset-inline-start: auto; bottom: auto; width: 100%; max-width: 100%; margin-bottom: var(--scelta-coda-spazio); transform-origin: var(--bolla-chiusa-origine); }
 .bolla-lingue .bolla-corpo { padding: var(--scelta-bolla-spazio-interno); }
 .lingue-in-bolla { gap: var(--spazio-7); }
 .lingue-in-bolla a {
@@ -149,30 +176,45 @@
 }
 .lingue-in-bolla a:hover, .lingue-in-bolla a:focus-visible { border-color: var(--bordeaux); background: var(--velo-lingua-in-bolla); }
 .lingue-in-bolla a:focus-visible { outline-color: var(--bordeaux); }
-/* la luce della stanza dietro la bolla, non dove nella home sta la riunione */
+/* la luce della stanza dietro la riunione, al centro */
 .luce.luce-scelta { inset-inline-start: var(--scelta-luce-inizio); top: var(--scelta-luce-sopra); }
 /* la lingua del browser (la mette per prima lingua.js): accesa, come chi parla */
 .lingue-in-bolla .preferita a { background: var(--bordeaux); color: var(--testo); border-color: var(--bordeaux); box-shadow: var(--lingua-preferita-ombra); }
-/* il tuo riquadro, piccolo, sotto la coda: parla mentre i nomi si accendono */
-.scelta-tu { position: relative; width: var(--scelta-tu-larghezza); height: var(--scelta-tu-altezza); border-radius: var(--raggio-9); margin-inline-start: var(--scelta-tu-scarto); }
-.scelta-tu .bordo { opacity: 1; }
-
+/* la fila della riunione: «Tu» parla (il bordo e le barre accese), gli altri ascoltano */
+.scelta-tavolo .tavolo-cornice { height: var(--scelta-tavolo-altezza); }
+.scelta-tavolo .riquadro.tu .bordo { opacity: 1; }
 @media (max-width: 760px) {
   .scelta-lingua { padding: var(--scelta-lingua-spazio-interno-telefono); }
   .bolla-lingue .bolla-corpo { padding: var(--bolla-corpo-spazio-interno-telefono); }
   .lingue-in-bolla { gap: var(--spazio-5); }
   .lingue-in-bolla a { min-height: var(--misura-19); padding-inline: var(--lingua-spazio-interno-inline-telefono); font-size: var(--corpo-8); line-height: var(--interlinea-7); }
-  .scelta-tu { width: var(--scelta-tu-larghezza-telefono); height: var(--scelta-tu-altezza-telefono); border-radius: var(--raggio-6); margin-inline-start: var(--scelta-tu-scarto-telefono); }
+  .scelta-tavolo .tavolo-cornice { height: var(--tavolo-cornice-altezza-telefono); }
+}
+/* gli schermi bassi (un telefono girato): i nomi più piccoli, così la bolla e la fila stanno insieme nello schermo */
+@media (min-width: 761px) and (max-height: 500px) {
+  .scelta-lingua { gap: var(--spazio-7); padding: var(--scelta-lingua-spazio-interno-basso); }
+  .scelta-titolo { font-size: var(--h1-grandezza-telefono); line-height: var(--h1-interlinea-telefono); }
+  .bolla-lingue .bolla-corpo { padding: var(--bolla-corpo-spazio-interno-telefono); }
+  .lingue-in-bolla { gap: var(--spazio-5); }
+  .lingue-in-bolla a { min-height: var(--misura-14); padding-inline: var(--lingua-spazio-interno-inline-telefono); font-size: var(--corpo-6); line-height: var(--interlinea-5); }
+  .scelta-tavolo .tavolo-cornice { height: var(--scelta-tavolo-altezza-basso); }
+  .scelta-tavolo .barre { height: var(--misura-12); gap: var(--spazio-2); }
+  .scelta-tavolo .barre i { width: var(--misura-2); border-radius: var(--raggio-1); }
 }
 
-/* l'arrivo: il tuo riquadro entra, la bolla nasce dalla coda, i nomi si accendono uno dopo l'altro (la lingua del browser per prima),
-   le barre di «Tu» si muovono finché l'ultimo nome è acceso. Con «riduci movimento» tutto è già al suo posto */
+/* l'arrivo: Paola, Luca e Anna entrano, «Tu» per ultimo (come nella home: entri nella riunione), la bolla nasce dalla coda, i nomi si
+   accendono uno dopo l'altro (la lingua del browser per prima) mentre le barre di «Tu» si muovono e gli altri si girano verso di te
+   (lingua.js mette .guarda). Poi tutto si ferma. Con «riduci movimento» tutto è già al suo posto */
 @media (prefers-reduced-motion: no-preference) {
-  .riquadro.scelta-tu { animation-delay: var(--ritardo-scelta-tu); }   /* entra come i riquadri della riunione (riunione.css), per primo */
+  .scelta-tavolo .riquadro { animation: entra var(--durata-tavolo-riquadro) var(--entra) backwards; }
+  .scelta-tavolo .riquadro.paola { animation-delay: 0ms; }
+  .scelta-tavolo .riquadro.luca { animation-delay: var(--ritardo-tavolo-riquadro-3); }
+  .scelta-tavolo .riquadro.anna { animation-delay: var(--ritardo-tavolo-riquadro-4); }
+  .scelta-tavolo .riquadro.tu { animation-delay: var(--ritardo-tavolo-riquadro); }
   .bolla-lingue { animation: lingue-nasce var(--durata-messaggio-filo-bolla-trasforma) var(--entra) var(--ritardo-scelta-bolla) backwards; }
   .lingue-in-bolla li { animation: lingue-accende var(--durata-scelta-nome) var(--curva-dolce) calc(var(--ritardo-scelta-nomi) + var(--i, 0) * var(--passo-scelta-nomi)) backwards; }
-  .scelta-tu .barre i { animation: lingue-parla var(--durata-scelta-barre) var(--curva-dolce-doppia) var(--ritardo-scelta-nomi) var(--ripetizioni-scelta-barre) alternate backwards; }
-  .scelta-tu .barre i:nth-child(2n) { animation-delay: calc(var(--ritardo-scelta-nomi) + var(--durata-scelta-barre) / 2); }
+  .scelta-tavolo .riquadro.tu .barre i { animation: lingue-parla var(--durata-scelta-barre) var(--curva-dolce-doppia) var(--ritardo-scelta-nomi) var(--ripetizioni-scelta-barre) alternate backwards; }
+  .scelta-tavolo .riquadro.tu .barre i:nth-child(2n) { animation-delay: calc(var(--ritardo-scelta-nomi) + var(--durata-scelta-barre) / 2); }
 }
 @keyframes lingue-nasce {
   from { opacity: 0; transform: scale(var(--messaggio-filo-bolla-scala)); }

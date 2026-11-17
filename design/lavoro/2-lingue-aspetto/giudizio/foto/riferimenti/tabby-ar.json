@@ -1,0 +1,80 @@
+{
+ "url": "https://tabby.ai/ar-AE",
+ "quando": "2026-11-17T02:23:32.535Z",
+ "misure": {
+  "390": {
+   "final": "https://tabby.ai/ar-AE",
+   "titolo": "أنفق، أرسل، ادخر وأدر أموالك مع تابي",
+   "lang": "ar",
+   "dir": "rtl",
+   "h1": {
+    "testo": "أموالك الآن تعمل لصالحك",
+    "fam": "\"Tabby Sans Display\", Arial, -apple-system, system-ui, BlinkMacSystemFont, \"Segoe UI\", Rob",
+    "w": "700",
+    "size": "44px",
+    "lh": "56px",
+    "ls": "0.15008px"
+   },
+   "h2": {
+    "testo": "تحكّم بدفعاتك لتناسب جدولك",
+    "fam": "\"Tabby Sans Display\", Arial, -apple-system, system-ui, BlinkMacSystemFont, \"Segoe UI\", Rob",
+    "w": "700",
+    "size": "36px",
+    "lh": "48px",
+    "ls": "normal"
+   },
+   "p": {
+    "testo": "تابي هو التطبيق المالي الذي يساعدك على إرسال، إنفاق، توفير، ",
+    "fam": "\"Tabby Sans Text\", Arial, -apple-system, system-ui, BlinkMacSystemFont, \"Segoe UI\", Roboto",
+    "w": "400",
+    "size": "20px",
+    "lh": "32px",
+    "ls": "0.15008px"
+   },
+   "alt": 10373,
+   "caratteri": [
+    "Tabby Sans Text 400",
+    "Tabby Sans Text 500",
+    "Tabby Sans Text 700",
+    "Tabby Sans Display 700"
+   ]
+  },
+  "1440": {
+   "final": "https://tabby.ai/ar-AE",
+   "titolo": "أنفق، أرسل، ادخر وأدر أموالك مع تابي",
+   "lang": "ar",
+   "dir": "rtl",
+   "h1": {
+    "testo": "أموالك الآن تعمل لصالحك",
+    "fam": "\"Tabby Sans Display\", Arial, -apple-system, system-ui, BlinkMacSystemFont, \"Segoe UI\", Rob",
+    "w": "700",
+    "size": "60px",
+    "lh": "76px",
+    "ls": "0.15008px"
+   },
+   "h2": {
+    "testo": "تحكّم بدفعاتك لتناسب جدولك",
+    "fam": "\"Tabby Sans Display\", Arial, -apple-system, system-ui, BlinkMacSystemFont, \"Segoe UI\", Rob",
+    "w": "700",
+    "size": "44px",
+    "lh": "56px",
+    "ls": "normal"
+   },
+   "p": {
+    "testo": "تابي هو التطبيق المالي الذي يساعدك على إرسال، إنفاق، توفير، ",
+    "fam": "\"Tabby Sans Text\", Arial, -apple-system, system-ui, BlinkMacSystemFont, \"Segoe UI\", Roboto",
+    "w": "400",
+    "size": "20px",
+    "lh": "32px",
+    "ls": "0.15008px"
+   },
+   "alt": 9453,
+   "caratteri": [
+    "Tabby Sans Text 400",
+    "Tabby Sans Text 500",
+    "Tabby Sans Text 700",
+    "Tabby Sans Display 700"
+   ]
+  }
+ }
+}

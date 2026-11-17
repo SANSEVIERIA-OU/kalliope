@@ -1128,3 +1128,21 @@ tiene `--spaziatura-marchio`.
 | `--ritardo-scelta-tu`, `--ritardo-scelta-bolla`, `--ritardo-scelta-nomi`, `--passo-scelta-nomi`, `--durata-scelta-nome`, `--durata-scelta-barre`, `--ripetizioni-scelta-barre` | `0ms`, `380ms`, `820ms`, `34ms`, `300ms`, `260ms`, `4` | l'arrivo della pagina della scelta |
 
 `--i` (l'ordine di un nome nella bolla) lo mette `lingua.js` elemento per elemento. Le soglie non cambiano.
+
+### Correzione dopo il giudizio (incarico 2-c, 17/11/2026)
+
+| Token | Valore | Ruolo |
+|---|---|---|
+| `--sottolineatura-posizione` | `auto` (arabo e urdu: `from-font`) | dove sta la linea dei collegamenti; con `auto` in arabo faceva uno scalino fra la parte araba e quella latina (`base.css`, `a`) |
+| `--titolo-caratteristiche` | `normal` (cinese: `"halt"`) | le caratteristiche OpenType dei titoli: in cinese la virgola e il punto pieni a metà larghezza (`apertura.css`, `tratti.css`) |
+| `--lingue-piede-altezza-stimata` | `96px` | l'elenco delle lingue nel piede prima di impaginarlo (`content-visibility: auto`: a riposo la pagina non scarica i caratteri dei nomi) |
+| `--scelta-larghezza`, `--scelta-distanza`, `--scelta-coda-spazio` | `min(980px, 100%)`, `var(--spazio-21)`, `var(--misura-11)` | la pagina della scelta: bolla e fila larghe uguali, il nome del prodotto sopra, la coda fra la bolla e la fila |
+| `--scelta-tavolo-altezza`, `--scelta-tavolo-altezza-basso` | `clamp(96px, calc(100vh − 540px), 172px)`, `60px` | la fila della riunione nella pagina della scelta; sugli schermi bassi si accorcia |
+| `--scelta-lingua-spazio-interno-basso` | `12px var(--margine) 24px` | la pagina della scelta in un telefono girato |
+
+Cambiati: `--scelta-lingua-spazio-interno` (`32px var(--margine) 72px`) e `-telefono` (`20px var(--margine) 48px`), `--scelta-luce-inizio`
+(`50%`) e `--scelta-luce-sopra` (`52%`), `--ritardo-scelta-bolla` (`760ms`) e `--ritardo-scelta-nomi` (`1200ms`): «Tu» entra per ultimo,
+come nella home. Tolti: `--scelta-tu-*`, `--ritardo-scelta-tu`, `--scelta-bolla-larghezza-massima` (la tessera sola non c'è più). Le pile
+`--font-nomi-lingue` cominciano da `"Lexend"`: la faccia latina della famiglia dei nomi scaricava lo stesso file una seconda volta. La pila
+dell'urdu nomina un nastaliq e un urdu del sistema prima del ripiego generico. Un nome di lingua fuori dall'urdu torna ai file dei nomi
+(`[lang]:not(:lang(ur))`). Nessun token per la barra «raccolta» (`barra.css`, misurata da `website/componenti.js`): usa quelli della barra del tablet.

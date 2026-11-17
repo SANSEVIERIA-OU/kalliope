@@ -18,6 +18,7 @@ h1 {
   line-height: var(--h1-interlinea);
   font-weight: var(--peso-titolo);
   letter-spacing: var(--spaziatura-h1);
+  font-feature-settings: var(--titolo-caratteristiche);   /* correzione dopo il giudizio (M6): in cinese la virgola e il punto pieni a metà larghezza («halt»); altrove nulla */
 }
 h1 .riga { display: block; text-wrap: balance; }   /* incarico 2: in una lingua più lunga una riga che non ci sta va a capo in due parti pari («Du schreibst, / die anderen»), non lascia una parola sola */
 .presentazione {
@@ -77,9 +78,13 @@ h1 .riga:nth-child(4) { animation-delay: var(--ritardo-riga-4); }
 @media (max-width: 760px) {
   .scena { display: flex; flex-direction: column; align-items: stretch; padding: var(--scena-spazio-interno-telefono); }
   .apertura { display: contents; }
-  h1 { order: 1; font-size: var(--h1-grandezza-telefono); line-height: var(--h1-interlinea-telefono); }
-  h1 .riga { display: inline; }
-  h1 .riga:nth-child(2)::after, h1 .riga:nth-child(3)::after { content: "\A"; white-space: pre; }
+  h1 { order: 1; font-size: var(--h1-grandezza-telefono); line-height: var(--h1-interlinea-telefono); text-wrap: balance; }
+  /* correzione dopo il giudizio (M1): al telefono le prime due righe sono di seguito; la terza e la quarta restano righe a sé (come
+     prima, quando andavano a capo con «\A»), ma come blocchi: «balance» le divide in parti pari quando non ci stanno («Du schreibst,
+     / die anderen», non «Du schreibst, die / anderen»). In italiano ci stanno: nessun pixel cambia */
+  h1 .riga:nth-child(-n+2) { display: inline; }
+  h1 .riga:nth-child(2)::after { content: "\A"; white-space: pre; }
+  h1 .riga:nth-child(n+3) { --sale-da-sposta-y: 0; }   /* l'arrivo resta com'era al telefono: righe in linea, che non si spostano, solo si accendono */
   .presentazione { order: 2; margin-top: var(--spazio-8); font-size: var(--corpo-6); line-height: var(--interlinea-6); }
   .palco { order: 3; }
   .comandi#comandi-apertura { order: 4; margin-top: var(--spazio-12); flex-direction: column; align-items: stretch; gap: 0; }

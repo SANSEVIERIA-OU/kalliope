@@ -1,0 +1,80 @@
+{
+ "url": "https://www.bbc.com/urdu",
+ "quando": "2026-11-17T02:24:38.404Z",
+ "misure": {
+  "390": {
+   "final": "https://www.bbc.com/urdu",
+   "titolo": "خبریں، تازہ خبریں، بریکنگ نیو | News, latest news, breaking news - BBC News اردو",
+   "lang": "ur",
+   "dir": "rtl",
+   "h1": {
+    "testo": "BBC News, اردو - صفحۂ اول",
+    "fam": "\"Times New Roman\"",
+    "w": "700",
+    "size": "32px",
+    "lh": "36.8px",
+    "ls": "normal"
+   },
+   "h2": {
+    "testo": "بتائیے کہ آپ کوکیز کے بارے میں متفق ہیں",
+    "fam": "\"BBC Reith Qalam\", \"Times New Roman\", Arial, Verdana, Geneva, Helvetica, sans-serif",
+    "w": "700",
+    "size": "20px",
+    "lh": "28px",
+    "ls": "normal"
+   },
+   "p": {
+    "testo": "ہم آپ کو بہترین آن لائن تجربہ دینے کے لیے کوکیز استعمال کرتے",
+    "fam": "\"BBC Reith Qalam\", \"Times New Roman\", Arial, Verdana, Geneva, Helvetica, sans-serif",
+    "w": "400",
+    "size": "16px",
+    "lh": "26px",
+    "ls": "normal"
+   },
+   "alt": 12124,
+   "caratteri": [
+    "BBC Reith Qalam 400",
+    "BBC Reith Qalam 700",
+    "BBC Reith Qalam 700",
+    "BBC Reith Qalam 400"
+   ]
+  },
+  "1440": {
+   "final": "https://www.bbc.com/urdu",
+   "titolo": "خبریں، تازہ خبریں، بریکنگ نیو | News, latest news, breaking news - BBC News اردو",
+   "lang": "ur",
+   "dir": "rtl",
+   "h1": {
+    "testo": "BBC News, اردو - صفحۂ اول",
+    "fam": "\"Times New Roman\"",
+    "w": "700",
+    "size": "32px",
+    "lh": "36.8px",
+    "ls": "normal"
+   },
+   "h2": {
+    "testo": "بتائیے کہ آپ کوکیز کے بارے میں متفق ہیں",
+    "fam": "\"BBC Reith Qalam\", \"Times New Roman\", Arial, Verdana, Geneva, Helvetica, sans-serif",
+    "w": "700",
+    "size": "24px",
+    "lh": "32px",
+    "ls": "normal"
+   },
+   "p": {
+    "testo": "ہم آپ کو بہترین آن لائن تجربہ دینے کے لیے کوکیز استعمال کرتے",
+    "fam": "\"BBC Reith Qalam\", \"Times New Roman\", Arial, Verdana, Geneva, Helvetica, sans-serif",
+    "w": "400",
+    "size": "16px",
+    "lh": "26px",
+    "ls": "normal"
+   },
+   "alt": 7701,
+   "caratteri": [
+    "BBC Reith Qalam 400",
+    "BBC Reith Qalam 700",
+    "BBC Reith Qalam 700",
+    "BBC Reith Qalam 400"
+   ]
+  }
+ }
+}

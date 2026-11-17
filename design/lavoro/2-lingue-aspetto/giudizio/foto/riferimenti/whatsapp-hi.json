@@ -1,0 +1,78 @@
+{
+ "url": "https://www.whatsapp.com/?lang=hi_IN",
+ "quando": "2026-11-17T02:23:56.566Z",
+ "misure": {
+  "390": {
+   "final": "https://www.whatsapp.com/?lang=hi_IN",
+   "titolo": "WhatsApp | प्राइवेट मैसेजिंग और कॉलिंग की फ़्री, आसान और भरोसेमंद सुविधा",
+   "lang": "hi",
+   "dir": "ltr",
+   "h1": {
+    "testo": "प्राइवेट रूप से मैसेज भेजें",
+    "fam": "\"WhatsApp Sans Var\", sans-serif",
+    "w": "400",
+    "size": "44px",
+    "lh": "52.8px",
+    "ls": "normal"
+   },
+   "h2": {
+    "testo": "प्राइवेट मैसेजिंग और कॉलिंग के ज़रिए आप अपने करीबी लोगों से ",
+    "fam": "\"WhatsApp Sans Var\", sans-serif",
+    "w": "400",
+    "size": "24px",
+    "lh": "24px",
+    "ls": "normal"
+   },
+   "p": {
+    "testo": "दुनिया भर में प्राइवेट मैसेजिंग और कॉलिंग की फ़्री*, आसान और",
+    "fam": "\"WhatsApp Sans Var\", sans-serif",
+    "w": "400",
+    "size": "16px",
+    "lh": "19.2px",
+    "ls": "normal"
+   },
+   "alt": 7150,
+   "caratteri": [
+    "WhatsApp Sans Var 400",
+    "WhatsApp Sans Var 500",
+    "WhatsApp Sans Var 700"
+   ]
+  },
+  "1440": {
+   "final": "https://www.whatsapp.com/?lang=hi_IN",
+   "titolo": "WhatsApp | प्राइवेट मैसेजिंग और कॉलिंग की फ़्री, आसान और भरोसेमंद सुविधा",
+   "lang": "hi",
+   "dir": "ltr",
+   "h1": {
+    "testo": "प्राइवेट रूप से मैसेज भेजें",
+    "fam": "\"WhatsApp Sans Var\", sans-serif",
+    "w": "400",
+    "size": "80px",
+    "lh": "96px",
+    "ls": "normal"
+   },
+   "h2": {
+    "testo": "प्राइवेट मैसेजिंग और कॉलिंग के ज़रिए आप अपने करीबी लोगों से ",
+    "fam": "\"WhatsApp Sans Var\", sans-serif",
+    "w": "400",
+    "size": "48px",
+    "lh": "48px",
+    "ls": "normal"
+   },
+   "p": {
+    "testo": "दुनिया भर में प्राइवेट मैसेजिंग और कॉलिंग की फ़्री*, आसान और",
+    "fam": "\"WhatsApp Sans Var\", sans-serif",
+    "w": "400",
+    "size": "18px",
+    "lh": "21.6px",
+    "ls": "normal"
+   },
+   "alt": 6731,
+   "caratteri": [
+    "WhatsApp Sans Var 400",
+    "WhatsApp Sans Var 500",
+    "WhatsApp Sans Var 700"
+   ]
+  }
+ }
+}
