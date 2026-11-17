@@ -1,0 +1,191 @@
+{
+ "anna": {
+  "residuo_pseudoinversa": 1.9335621459504182e-07,
+  "posizioni_trucco": 155,
+  "posizioni_pronta": 155,
+  "coseno_cache_trucco_contro_pronta": [
+   0.7820562720298767,
+   0.770440936088562,
+   0.7122508883476257,
+   0.2167767435312271,
+   0.35063913464546204,
+   0.5141413807868958
+  ],
+  "coseno_cache_altra_voce_contro_pronta": [
+   0.9089072346687317,
+   0.8970265984535217,
+   0.812952995300293,
+   0.5242200493812561,
+   0.6565583348274231,
+   0.7527151703834534
+  ],
+  "frasi": [
+   {
+    "testo": "Buongiorno a tutti, scrivo invece di parlare.",
+    "ecapa_pronta_contro_pronta_altro_seme": 0.8066559448400106,
+    "ecapa_trucco_contro_pronta": 0.030693709873822993,
+    "ecapa_altra_voce_contro_pronta": 0.10562361610697393,
+    "whisper_trucco": "Eh...",
+    "whisper_pronta": "Buongiorno a tutti, scrivo invece di parlare.",
+    "durata_trucco_s": 6.4,
+    "durata_pronta_s": 3.12
+   },
+   {
+    "testo": "Il preventivo è di mille euro.",
+    "ecapa_pronta_contro_pronta_altro_seme": 0.7972106525012543,
+    "ecapa_trucco_contro_pronta": -0.025857762307051668,
+    "ecapa_altra_voce_contro_pronta": 0.14623999436822996,
+    "whisper_trucco": "",
+    "whisper_pronta": "Il preventivo è di 1000 euro.",
+    "durata_trucco_s": 6.0,
+    "durata_pronta_s": 2.32
+   },
+   {
+    "testo": "Grazie.",
+    "ecapa_pronta_contro_pronta_altro_seme": 0.7217921925601756,
+    "ecapa_trucco_contro_pronta": 0.07637786423136189,
+    "ecapa_altra_voce_contro_pronta": 0.2272408915990271,
+    "whisper_trucco": "Sottotitoli e revisione a cura di QTSS",
+    "whisper_pronta": "Grazie.",
+    "durata_trucco_s": 3.04,
+    "durata_pronta_s": 1.36
+   },
+   {
+    "testo": "Va bene.",
+    "ecapa_pronta_contro_pronta_altro_seme": 0.6632714463377918,
+    "ecapa_trucco_contro_pronta": -0.04531144905286212,
+    "ecapa_altra_voce_contro_pronta": 0.4510485772790326,
+    "whisper_trucco": "",
+    "whisper_pronta": "Va bene.",
+    "durata_trucco_s": 3.04,
+    "durata_pronta_s": 1.36
+   }
+  ]
+ },
+ "marius": {
+  "residuo_pseudoinversa": 2.627966182444652e-07,
+  "posizioni_trucco": 127,
+  "posizioni_pronta": 127,
+  "coseno_cache_trucco_contro_pronta": [
+   0.780381441116333,
+   0.7641288042068481,
+   0.7101699113845825,
+   0.2113090604543686,
+   0.36149561405181885,
+   0.524141788482666
+  ],
+  "coseno_cache_altra_voce_contro_pronta": [
+   0.9089072346687317,
+   0.8970265984535217,
+   0.812952995300293,
+   0.5242200493812561,
+   0.6565583348274231,
+   0.7527151703834534
+  ],
+  "frasi": [
+   {
+    "testo": "Buongiorno a tutti, scrivo invece di parlare.",
+    "ecapa_pronta_contro_pronta_altro_seme": 0.6175680052043333,
+    "ecapa_trucco_contro_pronta": 0.2185796622731379,
+    "ecapa_altra_voce_contro_pronta": 0.10562393033261656,
+    "whisper_trucco": "Eh...",
+    "whisper_pronta": "Buongiorno a tutti, scrivo invece di parlare.",
+    "durata_trucco_s": 6.4,
+    "durata_pronta_s": 3.12
+   },
+   {
+    "testo": "Il preventivo è di mille euro.",
+    "ecapa_pronta_contro_pronta_altro_seme": 0.6750250501892219,
+    "ecapa_trucco_contro_pronta": 0.20038358085015998,
+    "ecapa_altra_voce_contro_pronta": 0.14623873989816039,
+    "whisper_trucco": "",
+    "whisper_pronta": "il preventivo è di mille euro.",
+    "durata_trucco_s": 6.0,
+    "durata_pronta_s": 2.08
+   },
+   {
+    "testo": "Grazie.",
+    "ecapa_pronta_contro_pronta_altro_seme": 0.6343172280151939,
+    "ecapa_trucco_contro_pronta": 0.272624468489448,
+    "ecapa_altra_voce_contro_pronta": 0.22724446843506546,
+    "whisper_trucco": "Sottotitoli a cura di QTSS",
+    "whisper_pronta": "Yeah",
+    "durata_trucco_s": 3.04,
+    "durata_pronta_s": 1.36
+   },
+   {
+    "testo": "Va bene.",
+    "ecapa_pronta_contro_pronta_altro_seme": 0.7786321376792844,
+    "ecapa_trucco_contro_pronta": 0.2266992823316132,
+    "ecapa_altra_voce_contro_pronta": 0.45105128969792907,
+    "whisper_trucco": "Ok",
+    "whisper_pronta": "buon appetito",
+    "durata_trucco_s": 3.04,
+    "durata_pronta_s": 1.36
+   }
+  ]
+ },
+ "alba": {
+  "residuo_pseudoinversa": 2.5286684035563667e-07,
+  "posizioni_trucco": 127,
+  "posizioni_pronta": 127,
+  "coseno_cache_trucco_contro_pronta": [
+   0.7680206298828125,
+   0.758070707321167,
+   0.6985003352165222,
+   0.1574714332818985,
+   0.2704150676727295,
+   0.4443688988685608
+  ],
+  "coseno_cache_altra_voce_contro_pronta": [
+   0.9086742401123047,
+   0.9016299247741699,
+   0.8188683986663818,
+   0.532747209072113,
+   0.6543182134628296,
+   0.7515835762023926
+  ],
+  "frasi": [
+   {
+    "testo": "Buongiorno a tutti, scrivo invece di parlare.",
+    "ecapa_pronta_contro_pronta_altro_seme": 0.7927865398466154,
+    "ecapa_trucco_contro_pronta": 0.11307882511093184,
+    "ecapa_altra_voce_contro_pronta": 0.16245699899262644,
+    "whisper_trucco": "Ma...  Ma...  Ma...",
+    "whisper_pronta": "Buongiorno a tutti, scrivo invece di parlare.",
+    "durata_trucco_s": 6.4,
+    "durata_pronta_s": 3.12
+   },
+   {
+    "testo": "Il preventivo è di mille euro.",
+    "ecapa_pronta_contro_pronta_altro_seme": 0.7989760179554825,
+    "ecapa_trucco_contro_pronta": 0.11202084494345564,
+    "ecapa_altra_voce_contro_pronta": 0.25361227246879753,
+    "whisper_trucco": "",
+    "whisper_pronta": "Il preventivo è di 1000 euro.",
+    "durata_trucco_s": 6.0,
+    "durata_pronta_s": 2.32
+   },
+   {
+    "testo": "Grazie.",
+    "ecapa_pronta_contro_pronta_altro_seme": 0.30600356633373405,
+    "ecapa_trucco_contro_pronta": 0.07085856144610084,
+    "ecapa_altra_voce_contro_pronta": 0.38646316349163956,
+    "whisper_trucco": "Sottotitoli e revisione a cura di QTSS",
+    "whisper_pronta": "Grazie.",
+    "durata_trucco_s": 3.04,
+    "durata_pronta_s": 1.04
+   },
+   {
+    "testo": "Va bene.",
+    "ecapa_pronta_contro_pronta_altro_seme": 0.6628253149515764,
+    "ecapa_trucco_contro_pronta": 0.1142891440310793,
+    "ecapa_altra_voce_contro_pronta": 0.38054021239252755,
+    "whisper_trucco": "Sì.",
+    "whisper_pronta": "Va bene.",
+    "durata_trucco_s": 3.04,
+    "durata_pronta_s": 1.36
+   }
+  ]
+ }
+}

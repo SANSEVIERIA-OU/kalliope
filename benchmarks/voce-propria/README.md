@@ -14,6 +14,67 @@ Le tre strade per far parlare Kalliope con la voce della persona:
 La pagina d'ascolto per il proprietario è in `/workspace/nomedadefinire/bench/voce-propria/ascolto/index.html`
 (statica, solo HTML e `<audio>`; si può servire da sola, per esempio `python3 -m http.server 8900` in quella cartella).
 
+## Il trucco: la versione attuale con l'encoder di maggio (V-2 e V-3, parte A, 17/11/2026)
+
+Il proprietario aveva scelto «il trucco» e poi dato il via a metterlo nel programma (incarichi
+`design/lavoro/incarichi/V-2-pocket-versione-attuale.md` e `V-3-pocket-nel-programma.md`). L'idea era unire due cose:
+- i pesi aperti attuali (`kyutai/pocket-tts-without-voice-cloning`, italiano `@1e08e6a2`, uguale alla testa del repository), che
+  hanno l'encoder della voce azzerato;
+- l'encoder della voce dell'esportazione di maggio (`xennonf4/pocket-tts-onnx@e3f58ae5`).
+
+**Il trucco non regge, e mi sono fermato prima della parte B.** `crates/` non è stato toccato.
+
+**Compatibilità dei pesi** (`scripts/v2_compat.py`, `esiti/v2/compatibilita.json`). Fra la versione di maggio aperta
+(`@e7205b6e`) e quella attuale il codec Mimi è stato riaddestrato da capo, non ritoccato:
+
+| Parte del codec | Tensori uguali | Coseno fra maggio e oggi |
+|---|---|---|
+| decoder | 0 su 22 | -0,001 sul tensore più grande (1,8 milioni di numeri), 0,20 in media |
+| decoder transformer | 0 su 20 | 0,0 sui pesi lineari, 0,38 in media |
+| downsample (l'ultimo strato dell'encoder: fa i 32 numeri letti dalla proiezione del parlante) | 0 su 1 | 0,006 |
+| quantizer | 0 su 1 | 0,099 |
+| upsample | 0 su 1 | 0,358 |
+| proiezione del parlante (`flow_lm.speaker_proj_weight`, 1024 × 32) | 0 su 1 | 0,138 |
+
+Altri dettagli:
+- L'encoder (SEANet e transformer) è azzerato in entrambi i file aperti, quindi non si confronta direttamente.
+- Downsample e proiezione dell'esportazione di maggio sono identici a quelli di maggio: l'esportazione è fedele alla sua versione.
+- Il decoder dell'esportazione è identico a quello di maggio.
+- Fra 6 e 24 strati attuali il codec è identico.
+
+L'encoder di maggio dà quindi numeri in un altro spazio, che la versione attuale non sa leggere.
+
+**Prova con tre voci pubblicate da Kyutai** (`scripts/v2_unione.py`, `esiti/v2/unione.json`). Ho preso tre registrazioni aperte
+di `kyutai/tts-voices@323332d3`: anna (VCTK, CC-BY-4.0), marius (donazioni, CC0) e alba. Per ciascuna, la catena del trucco è
+questa:
+- la registrazione finisce su una pausa, come nel codice ufficiale;
+- passa per l'encoder di maggio;
+- si recuperano esattamente i 32 numeri con la pseudo-inversa della proiezione di maggio (scarto 2·10⁻⁷);
+- si proiettano con la proiezione attuale e si mette davanti il `bos_before_voice` attuale;
+- la versione attuale nel codice ufficiale in PyTorch si condiziona su questo.
+
+Il confronto è con lo stato che Kyutai stesso ha calcolato per la stessa voce dalla stessa registrazione con l'encoder attuale
+(`@a7056f50`). La lunghezza coincide (155, 127 e 127 posizioni): la catena è giusta, cambia solo l'encoder.
+
+| Voce | Somiglianza ECAPA: trucco contro voce pronta | voce pronta con un altro seme | un'altra voce pronta | Che cosa dice il trucco (Whisper) |
+|---|---|---|---|---|
+| anna | 0,01 | 0,75 | 0,23 | «Eh...», niente, «Sottotitoli e revisione a cura di…» |
+| marius | 0,23 | 0,68 | 0,23 | «Eh...», niente, «Ok» |
+| alba | 0,10 | 0,64 | 0,30 | «Ma... Ma... Ma...», niente, «Sì.» |
+
+Medie su quattro frasi: due normali e due brevi («Grazie.», «Va bene.»).
+- La voce del trucco non assomiglia alla voce pronta più di quanto le assomigli un'altra persona.
+- Il trucco non dice le parole: le frasi arrivano alla lunghezza massima (6 s per frasi di 2–3 s) senza mai finire.
+- La cache di attenzione dopo il riferimento somiglia a quella di Kyutai meno di quanto le somigli un'altra voce: coseno per strato
+  0,16–0,78 contro 0,52–0,91.
+
+**Che cosa servirebbe** (decide il proprietario):
+- l'encoder della voce attuale, che è solo nel repository gated `kyutai/pocket-tts`: account e accettazione delle condizioni
+  (sezione V-1, «La versione attuale e l'account");
+- oppure la versione di maggio così com'è, con le correzioni di V-1: prima parola persa in 12–15 frasi su 40 e frasi brevi spesso
+  perse;
+- oppure un altro modello che cloni senza account.
+
 ## Rendere affidabile Pocket TTS (V-1, 17/11/2026)
 
 Il proprietario ha scelto la strada 1 dopo l'ascolto e ha dato il via a renderla affidabile, con prove e senza toccare il

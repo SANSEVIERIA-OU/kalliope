@@ -1,4 +1,24 @@
-# V-m e V-1 · progresso
+# V-m, V-1, V-2/V-3 · progresso
+
+## V-3 (sostituisce V-2) · Il motore nel programma, parte A: il trucco regge? (dal 17/11 20:20)
+
+- 20:30 Scaricati (repository aperti, nessun account): pesi italiani attuali 6 e 24 strati `@1e08e6a2` (uguali alla testa del
+  repository), quattro stati di voci pronte `@a7056f50`, tre registrazioni di `kyutai/tts-voices@323332d3`.
+- 20:40 **Compatibilità dei pesi** (`scripts/v2_compat.py`, `esiti/v2/compatibilita.json`): il codec Mimi è stato riaddestrato.
+  Fra maggio e oggi nessun tensore del codec è uguale: decoder 0/22 uguali (il più grande, 1,8 milioni di numeri, coseno -0,001),
+  decoder transformer 0/20, downsample (l'ultimo strato dell'encoder, quello che fa i 32 numeri letti dalla proiezione) coseno
+  0,006, quantizer 0,099, upsample 0,358; proiezione del parlante coseno 0,138. L'encoder è azzerato in entrambi i file aperti.
+  L'esportazione di maggio ha downsample e proiezione identici a maggio. Fra 6 e 24 strati attuali il codec è identico.
+  Conclusione dai pesi: l'encoder di maggio parla un altro spazio latente; il trucco non può funzionare.
+- 21:20 **Conferma con tre voci pubblicate da Kyutai** (`scripts/v2_unione.py`, `esiti/v2/unione.json`): con il trucco la
+  versione attuale non dice le parole (Whisper: «Eh...», niente, «Sottotitoli…»; frasi fino alla lunghezza massima) e non
+  assomiglia alla voce: ECAPA contro la voce pronta 0,01 / 0,23 / 0,10, contro 0,64–0,75 della stessa voce pronta con un altro
+  seme. La catena è giusta (stessa lunghezza del riferimento di Kyutai, latenti recuperati con scarto 2·10⁻⁷).
+- **Fermato prima della parte B**, come chiede l'incarico: `crates/`, `tools/fetch_assets.py`, `packaging/`, `docs/`,
+  `README.md` del repository e `THIRD_PARTY_NOTICES.md` non sono stati toccati. Sezione nel README di `benchmarks/voce-propria/`.
+- Prossimo passo: la decisione del proprietario (account per l'encoder attuale, oppure la versione di maggio, oppure un altro
+  modello).
+
 
 ## V-1 · Rendere affidabile Pocket TTS (incarico `design/lavoro/incarichi/V-1-pocket-affidabile.md`, dal 17/11 15:30)
 

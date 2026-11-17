@@ -1,0 +1,330 @@
+{
+ "file": {
+  "maggio_6": "/workspace/nomedadefinire/bench/voce-propria/modelli/pocket-tts-senza-clonazione/italian-vecchio/model.safetensors",
+  "attuale_6": "/workspace/nomedadefinire/bench/voce-propria/modelli/pocket-tts-senza-clonazione/italian/model.safetensors",
+  "attuale_24": "/workspace/nomedadefinire/bench/voce-propria/modelli/pocket-tts-senza-clonazione/italian_24l/model.safetensors"
+ },
+ "maggio_6_contro_attuale_6": {
+  "flow_lm.bos_before_voice": {
+   "tensori": 1,
+   "identici": 0,
+   "forme_diverse": 0,
+   "diff_rel_max": 1.1903409090909092,
+   "zero_a": 0,
+   "zero_b": 0
+  },
+  "flow_lm.bos_emb": {
+   "tensori": 1,
+   "identici": 0,
+   "forme_diverse": 0,
+   "diff_rel_max": 1.1264044943820224,
+   "zero_a": 0,
+   "zero_b": 0
+  },
+  "flow_lm.conditioner": {
+   "tensori": 1,
+   "identici": 0,
+   "forme_diverse": 0,
+   "diff_rel_max": 1.0237996688741722,
+   "zero_a": 0,
+   "zero_b": 0
+  },
+  "flow_lm.emb_mean": {
+   "tensori": 1,
+   "identici": 0,
+   "forme_diverse": 0,
+   "diff_rel_max": 1.3270042194092826,
+   "zero_a": 0,
+   "zero_b": 0
+  },
+  "flow_lm.emb_std": {
+   "tensori": 1,
+   "identici": 0,
+   "forme_diverse": 0,
+   "diff_rel_max": 0.3532934131736527,
+   "zero_a": 0,
+   "zero_b": 0
+  },
+  "flow_lm.flow_net": {
+   "tensori": 68,
+   "identici": 2,
+   "forme_diverse": 0,
+   "diff_rel_max": 1.5884773662551441,
+   "zero_a": 0,
+   "zero_b": 0
+  },
+  "flow_lm.input_linear": {
+   "tensori": 1,
+   "identici": 0,
+   "forme_diverse": 0,
+   "diff_rel_max": 1.0168608757062148,
+   "zero_a": 0,
+   "zero_b": 0
+  },
+  "flow_lm.out_eos": {
+   "tensori": 2,
+   "identici": 0,
+   "forme_diverse": 0,
+   "diff_rel_max": 1.0059546493902438,
+   "zero_a": 0,
+   "zero_b": 0
+  },
+  "flow_lm.out_norm": {
+   "tensori": 2,
+   "identici": 0,
+   "forme_diverse": 0,
+   "diff_rel_max": 1.170807453416149,
+   "zero_a": 0,
+   "zero_b": 0
+  },
+  "flow_lm.speaker_proj_weight": {
+   "tensori": 1,
+   "identici": 0,
+   "forme_diverse": 0,
+   "diff_rel_max": 1.0350274725274726,
+   "zero_a": 0,
+   "zero_b": 0
+  },
+  "flow_lm.transformer": {
+   "tensori": 48,
+   "identici": 0,
+   "forme_diverse": 0,
+   "diff_rel_max": 1.2554744525547445,
+   "zero_a": 0,
+   "zero_b": 0
+  },
+  "mimi.decoder": {
+   "tensori": 22,
+   "identici": 0,
+   "forme_diverse": 0,
+   "diff_rel_max": 1.5244565217391304,
+   "zero_a": 0,
+   "zero_b": 0
+  },
+  "mimi.decoder_transformer": {
+   "tensori": 20,
+   "identici": 0,
+   "forme_diverse": 0,
+   "diff_rel_max": 1.7355769230769231,
+   "zero_a": 0,
+   "zero_b": 0
+  },
+  "mimi.downsample": {
+   "tensori": 1,
+   "identici": 0,
+   "forme_diverse": 0,
+   "diff_rel_max": 1.1,
+   "zero_a": 0,
+   "zero_b": 0
+  },
+  "mimi.encoder": {
+   "tensori": 22,
+   "identici": 22,
+   "forme_diverse": 0,
+   "diff_rel_max": 0.0,
+   "zero_a": 22,
+   "zero_b": 22
+  },
+  "mimi.encoder_transformer": {
+   "tensori": 20,
+   "identici": 20,
+   "forme_diverse": 0,
+   "diff_rel_max": 0.0,
+   "zero_a": 20,
+   "zero_b": 20
+  },
+  "mimi.quantizer": {
+   "tensori": 1,
+   "identici": 0,
+   "forme_diverse": 0,
+   "diff_rel_max": 1.0339195979899498,
+   "zero_a": 0,
+   "zero_b": 0
+  },
+  "mimi.upsample": {
+   "tensori": 1,
+   "identici": 0,
+   "forme_diverse": 0,
+   "diff_rel_max": 0.9844842657342657,
+   "zero_a": 0,
+   "zero_b": 0
+  }
+ },
+ "attuale_6_contro_attuale_24": {
+  "flow_lm.bos_before_voice": {
+   "tensori": 1,
+   "identici": 0,
+   "forme_diverse": 0,
+   "diff_rel_max": 0.6093117408906883,
+   "zero_a": 0,
+   "zero_b": 0
+  },
+  "flow_lm.bos_emb": {
+   "tensori": 1,
+   "identici": 0,
+   "forme_diverse": 0,
+   "diff_rel_max": 0.24157303370786518,
+   "zero_a": 0,
+   "zero_b": 0
+  },
+  "flow_lm.conditioner": {
+   "tensori": 1,
+   "identici": 0,
+   "forme_diverse": 0,
+   "diff_rel_max": 0.6280788177339901,
+   "zero_a": 0,
+   "zero_b": 0
+  },
+  "flow_lm.emb_mean": {
+   "tensori": 1,
+   "identici": 1,
+   "forme_diverse": 0,
+   "diff_rel_max": 0.0,
+   "zero_a": 0,
+   "zero_b": 0
+  },
+  "flow_lm.emb_std": {
+   "tensori": 1,
+   "identici": 1,
+   "forme_diverse": 0,
+   "diff_rel_max": 0.0,
+   "zero_a": 0,
+   "zero_b": 0
+  },
+  "flow_lm.flow_net": {
+   "tensori": 68,
+   "identici": 68,
+   "forme_diverse": 0,
+   "diff_rel_max": 0.0,
+   "zero_a": 0,
+   "zero_b": 0
+  },
+  "flow_lm.input_linear": {
+   "tensori": 1,
+   "identici": 0,
+   "forme_diverse": 0,
+   "diff_rel_max": 0.3141291469194313,
+   "zero_a": 0,
+   "zero_b": 0
+  },
+  "flow_lm.out_eos": {
+   "tensori": 2,
+   "identici": 2,
+   "forme_diverse": 0,
+   "diff_rel_max": 0.0,
+   "zero_a": 0,
+   "zero_b": 0
+  },
+  "flow_lm.out_norm": {
+   "tensori": 2,
+   "identici": 0,
+   "forme_diverse": 0,
+   "diff_rel_max": 0.21656050955414013,
+   "zero_a": 0,
+   "zero_b": 0
+  },
+  "flow_lm.speaker_proj_weight": {
+   "tensori": 1,
+   "identici": 0,
+   "forme_diverse": 0,
+   "diff_rel_max": 0.6577540106951871,
+   "zero_a": 0,
+   "zero_b": 0
+  },
+  "flow_lm.transformer": {
+   "tensori": 48,
+   "identici": 0,
+   "forme_diverse": 0,
+   "diff_rel_max": 1.6942446043165467,
+   "zero_a": 0,
+   "zero_b": 0
+  },
+  "mimi.decoder": {
+   "tensori": 22,
+   "identici": 22,
+   "forme_diverse": 0,
+   "diff_rel_max": 0.0,
+   "zero_a": 0,
+   "zero_b": 0
+  },
+  "mimi.decoder_transformer": {
+   "tensori": 20,
+   "identici": 20,
+   "forme_diverse": 0,
+   "diff_rel_max": 0.0,
+   "zero_a": 0,
+   "zero_b": 0
+  },
+  "mimi.downsample": {
+   "tensori": 1,
+   "identici": 1,
+   "forme_diverse": 0,
+   "diff_rel_max": 0.0,
+   "zero_a": 0,
+   "zero_b": 0
+  },
+  "mimi.encoder": {
+   "tensori": 22,
+   "identici": 22,
+   "forme_diverse": 0,
+   "diff_rel_max": 0.0,
+   "zero_a": 22,
+   "zero_b": 22
+  },
+  "mimi.encoder_transformer": {
+   "tensori": 20,
+   "identici": 20,
+   "forme_diverse": 0,
+   "diff_rel_max": 0.0,
+   "zero_a": 20,
+   "zero_b": 20
+  },
+  "mimi.quantizer": {
+   "tensori": 1,
+   "identici": 1,
+   "forme_diverse": 0,
+   "diff_rel_max": 0.0,
+   "zero_a": 0,
+   "zero_b": 0
+  },
+  "mimi.upsample": {
+   "tensori": 1,
+   "identici": 1,
+   "forme_diverse": 0,
+   "diff_rel_max": 0.0,
+   "zero_a": 0,
+   "zero_b": 0
+  }
+ },
+ "onnx_maggio_contro_maggio_6": {
+  "mimi_encoder.onnx": {
+   "per_nome": 35,
+   "identici": 1,
+   "diff_rel_max": 0.0,
+   "zero_nell_ufficiale": 34
+  },
+  "proiezione_del_parlante": {
+   "forma_onnx": [
+    1024,
+    32
+   ],
+   "forma_ufficiale": [
+    1024,
+    32
+   ],
+   "diff_rel_max_contro_maggio": 0.0,
+   "coseno_contro_maggio": 1.0000020265579224
+  },
+  "mimi_decoder.onnx": {
+   "per_nome": 36,
+   "identici": 36,
+   "diff_rel_max": 0.0,
+   "zero_nell_ufficiale": 0
+  }
+ },
+ "proiezione_maggio_contro_attuale": {
+  "coseno": 0.1378956437110901,
+  "rango_attuale": 32,
+  "rango_maggio": 32
+ }
+}
