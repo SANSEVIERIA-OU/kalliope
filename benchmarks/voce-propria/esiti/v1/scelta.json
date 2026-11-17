@@ -1,0 +1,41 @@
+{
+ "colonne": [
+  [
+   "vecchia-6",
+   "F1",
+   "F1 · oggi",
+   "versione di maggio, impostazioni dell’esportazione (come in V-m)"
+  ],
+  [
+   "ufficiale-6",
+   "F1",
+   "F1 · impostazioni ufficiali",
+   "versione di maggio, impostazioni del codice di Kyutai"
+  ],
+  [
+   "vecchia-6",
+   "M1",
+   "M1 · oggi",
+   "versione di maggio, impostazioni dell’esportazione"
+  ],
+  [
+   "ufficiale-6",
+   "M1",
+   "M1 · impostazioni ufficiali",
+   "versione di maggio, impostazioni del codice di Kyutai"
+  ],
+  [
+   "onnx-giovanni",
+   "G",
+   "Voce di Kyutai · maggio",
+   "versione di maggio, la nostra esportazione"
+  ],
+  [
+   "pt-attuale-giovanni",
+   "G",
+   "Voce di Kyutai · attuale",
+   "versione attuale (1/10/2026), codice ufficiale"
+  ]
+ ],
+ "spiegazione": "<p>La prima parola persa viene dalla versione del modello. L’esportazione che usiamo è fatta dalla versione italiana di Pocket TTS di maggio 2026, che anche nel codice di Kyutai attacca a parlare senza silenzio e perde l’inizio. Kyutai l’ha rifatta a settembre e ottobre. Qui sotto la stessa frase in quattro modi: la versione di maggio come l’avete sentita in V-m («oggi»), la stessa con le impostazioni del codice di Kyutai (meglio, ma non basta), e una voce pubblicata da Kyutai (giovanni, senza clonazione) nella versione di maggio e in quella attuale. La versione attuale con la clonazione della voce di una persona si scarica solo con un account Hugging Face che accetti le condizioni di Kyutai; senza account c’è soltanto con le voci già pronte. Primo seme di due; in fondo a ogni colonna il conto su tutte le persone e i due semi. Sotto ogni campione: che cosa ha capito Whisper; «Sottotitoli a cura di…» o niente vuol dire che Whisper ha sentito quasi solo silenzio.</p>"
+}

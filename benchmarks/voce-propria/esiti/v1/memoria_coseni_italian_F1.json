@@ -1,0 +1,34 @@
+{
+ "italian_F1_25_fp32_10.0": {
+  "coseno_min": 0.9999761581420898,
+  "coseno_medio": 0.9999998211860657,
+  "frames": [
+   308,
+   308
+  ]
+ },
+ "italian_F1_25_fp32_5.0": {
+  "coseno_min": 0.9999417066574097,
+  "coseno_medio": 0.9999988079071045,
+  "frames": [
+   308,
+   308
+  ]
+ },
+ "italian_F1_25_int8_5.0": {
+  "coseno_min": 0.9985434412956238,
+  "coseno_medio": 0.9995178580284119,
+  "frames": [
+   308,
+   308
+  ]
+ },
+ "italian_F1_25_int8_None": {
+  "coseno_min": 0.9982790350914001,
+  "coseno_medio": 0.9995118975639343,
+  "frames": [
+   308,
+   308
+  ]
+ }
+}

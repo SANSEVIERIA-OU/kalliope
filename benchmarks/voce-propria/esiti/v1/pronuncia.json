@@ -1,0 +1,226 @@
+{
+ "vm-6": {
+  "errori_senza_prima_parola": 16,
+  "parole": 236,
+  "per_classe": {
+   "altre parole": 13,
+   "parola accentata": 2
+  },
+  "esempi": {
+   "altre parole": [
+    [
+     "invece di parlare ma vi seguo → ∅",
+     6
+    ],
+    [
+     "consegna → consegno",
+     1
+    ],
+    [
+     "∅ → benissimo",
+     1
+    ],
+    [
+     "complimenti → comprimente",
+     1
+    ],
+    [
+     "stretta → strettato e",
+     1
+    ],
+    [
+     "scrivo → scrivomi",
+     1
+    ]
+   ],
+   "parola accentata": [
+    [
+     "venerdì → venervi",
+     1
+    ],
+    [
+     "è → era",
+     1
+    ]
+   ]
+  }
+ },
+ "ufficiale-6": {
+  "errori_senza_prima_parola": 43,
+  "parole": 472,
+  "per_classe": {
+   "altre parole": 35,
+   "sigla «iva»": 4
+  },
+  "esempi": {
+   "altre parole": [
+    [
+     "scrivo invece di parlare ma vi seguo benissimo → ∅",
+     8
+    ],
+    [
+     "invece di parlare ma vi seguo benissimo → in venissimo",
+     7
+    ],
+    [
+     "invece di parlare ma vi seguo benissimo → invenissimo",
+     7
+    ],
+    [
+     "∅ → che",
+     3
+    ],
+    [
+     "possiamo sentirci → per fossimo sentisci",
+     2
+    ],
+    [
+     "consegna → consenia",
+     2
+    ]
+   ],
+   "sigla «iva»": [
+    [
+     "iva → eva",
+     1
+    ],
+    [
+     "iva → i va",
+     1
+    ],
+    [
+     "iva → ∅",
+     1
+    ],
+    [
+     "iva → i",
+     1
+    ]
+   ]
+  }
+ },
+ "ufficiale-6-r10": {
+  "errori_senza_prima_parola": 28,
+  "parole": 472,
+  "per_classe": {
+   "altre parole": 18,
+   "numeri e date": 2,
+   "sigla «iva»": 4
+  },
+  "esempi": {
+   "altre parole": [
+    [
+     "ma vi seguo benissimo → ∅",
+     4
+    ],
+    [
+     "∅ → che",
+     4
+    ],
+    [
+     "valido fino → velifino",
+     2
+    ],
+    [
+     "∅ → teo",
+     1
+    ],
+    [
+     "di mille → duemila",
+     1
+    ],
+    [
+     "consegna → consenia",
+     1
+    ]
+   ],
+   "numeri e date": [
+    [
+     "di mille → duemila",
+     1
+    ],
+    [
+     "e trenta → tetenta",
+     1
+    ]
+   ],
+   "sigla «iva»": [
+    [
+     "iva → i va",
+     2
+    ],
+    [
+     "iva → eva",
+     1
+    ],
+    [
+     "iva → il",
+     1
+    ]
+   ]
+  }
+ },
+ "ufficiale-24": {
+  "errori_senza_prima_parola": 14,
+  "parole": 472,
+  "per_classe": {
+   "altre parole": 9,
+   "nome «Paola»": 2,
+   "numeri e date": 1
+  },
+  "esempi": {
+   "altre parole": [
+    [
+     "ma vi seguo benissimo → ∅",
+     4
+    ],
+    [
+     "e → ∅",
+     3
+    ],
+    [
+     "posso → ho so",
+     1
+    ],
+    [
+     "consegna → consenia",
+     1
+    ]
+   ],
+   "nome «Paola»": [
+    [
+     "paola → paula",
+     2
+    ]
+   ],
+   "numeri e date": [
+    [
+     "dicembre → di cento",
+     1
+    ]
+   ]
+  }
+ },
+ "klein": {
+  "errori_senza_prima_parola": 2,
+  "parole": 118,
+  "per_classe": {
+   "altre parole": 1,
+   "nome «Paola»": 1
+  },
+  "esempi": {
+   "altre parole": [
+    [
+     "∅ → e",
+     1
+    ]
+   ],
+   "nome «Paola»": [
+    [
+     "paola → paole",
+     1
+    ]
+   ]
+  }
+ }
+}

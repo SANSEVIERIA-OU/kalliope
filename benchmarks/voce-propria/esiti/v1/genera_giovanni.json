@@ -1,0 +1,1010 @@
+[
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 0,
+  "tipo": "f",
+  "id": 0,
+  "cpu_s": 11.714141,
+  "audio_s": 4.96
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 0,
+  "tipo": "f",
+  "id": 0,
+  "cpu_s": 11.144633000000006,
+  "audio_s": 4.32
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 0,
+  "tipo": "f",
+  "id": 0,
+  "cpu_s": 3.8255650000000045,
+  "audio_s": 6.16
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 0,
+  "tipo": "f",
+  "id": 1,
+  "cpu_s": 20.493752,
+  "audio_s": 8.56
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 0,
+  "tipo": "f",
+  "id": 1,
+  "cpu_s": 18.749202000000018,
+  "audio_s": 7.84
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 0,
+  "tipo": "f",
+  "id": 1,
+  "cpu_s": 8.519726000000006,
+  "audio_s": 13.92
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 0,
+  "tipo": "f",
+  "id": 2,
+  "cpu_s": 10.76722199999999,
+  "audio_s": 5.76
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 0,
+  "tipo": "f",
+  "id": 2,
+  "cpu_s": 12.544260000000008,
+  "audio_s": 6.0
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 0,
+  "tipo": "f",
+  "id": 2,
+  "cpu_s": 4.177827000000008,
+  "audio_s": 6.4
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 0,
+  "tipo": "f",
+  "id": 3,
+  "cpu_s": 9.563502999999983,
+  "audio_s": 4.0
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 0,
+  "tipo": "f",
+  "id": 3,
+  "cpu_s": 8.784573000000009,
+  "audio_s": 3.76
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 0,
+  "tipo": "f",
+  "id": 3,
+  "cpu_s": 5.227663000000035,
+  "audio_s": 8.08
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 0,
+  "tipo": "f",
+  "id": 4,
+  "cpu_s": 8.590059000000025,
+  "audio_s": 3.52
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 0,
+  "tipo": "f",
+  "id": 4,
+  "cpu_s": 7.159561999999994,
+  "audio_s": 3.12
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 0,
+  "tipo": "f",
+  "id": 4,
+  "cpu_s": 2.1411089999999717,
+  "audio_s": 3.52
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 0,
+  "cpu_s": 2.433216000000016,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 0,
+  "cpu_s": 2.822201000000007,
+  "audio_s": 1.12
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 0,
+  "cpu_s": 0.526315000000011,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 1,
+  "cpu_s": 2.0689459999999826,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 1,
+  "cpu_s": 3.0529760000000294,
+  "audio_s": 1.04
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 1,
+  "cpu_s": 0.5489330000000052,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 2,
+  "cpu_s": 2.1328570000000013,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 2,
+  "cpu_s": 3.6710789999999918,
+  "audio_s": 1.44
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 2,
+  "cpu_s": 0.555374999999998,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 3,
+  "cpu_s": 2.3697730000000092,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 3,
+  "cpu_s": 3.075726999999972,
+  "audio_s": 1.36
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 3,
+  "cpu_s": 0.5324250000000177,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 4,
+  "cpu_s": 2.2717389999999966,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 4,
+  "cpu_s": 3.4628750000000252,
+  "audio_s": 1.36
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 4,
+  "cpu_s": 0.6053260000000193,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 5,
+  "cpu_s": 2.636889999999994,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 5,
+  "cpu_s": 3.8269269999999835,
+  "audio_s": 1.28
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 5,
+  "cpu_s": 0.5886639999999659,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 6,
+  "cpu_s": 2.5572429999999997,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 6,
+  "cpu_s": 3.6233489999999904,
+  "audio_s": 1.2
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 6,
+  "cpu_s": 0.5635210000000086,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 7,
+  "cpu_s": 2.6400940000000332,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 7,
+  "cpu_s": 3.6681759999999883,
+  "audio_s": 1.36
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 7,
+  "cpu_s": 0.4576889999999878,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 8,
+  "cpu_s": 2.7430870000000027,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 8,
+  "cpu_s": 3.3896000000000015,
+  "audio_s": 1.36
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 8,
+  "cpu_s": 0.3681680000000256,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 9,
+  "cpu_s": 2.7836399999999912,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 9,
+  "cpu_s": 4.212953999999996,
+  "audio_s": 1.44
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 9,
+  "cpu_s": 0.5298929999999871,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 10,
+  "cpu_s": 2.7160639999999887,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 10,
+  "cpu_s": 3.4758379999999818,
+  "audio_s": 1.36
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 10,
+  "cpu_s": 0.5518020000000092,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 11,
+  "cpu_s": 2.453782000000018,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 11,
+  "cpu_s": 3.614169000000004,
+  "audio_s": 1.6
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 11,
+  "cpu_s": 0.5653350000000046,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 12,
+  "cpu_s": 2.953055000000006,
+  "audio_s": 1.12
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 12,
+  "cpu_s": 4.821241999999984,
+  "audio_s": 2.0
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 12,
+  "cpu_s": 2.2253930000000253,
+  "audio_s": 4.0
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 13,
+  "cpu_s": 3.3252150000000142,
+  "audio_s": 1.28
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 13,
+  "cpu_s": 5.758497999999975,
+  "audio_s": 2.4
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 13,
+  "cpu_s": 1.4072999999999638,
+  "audio_s": 2.16
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 14,
+  "cpu_s": 2.770372000000009,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 14,
+  "cpu_s": 3.6140199999999822,
+  "audio_s": 1.52
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 14,
+  "cpu_s": 0.5629430000000184,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 15,
+  "cpu_s": 2.288440000000037,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 15,
+  "cpu_s": 3.9892510000000243,
+  "audio_s": 1.28
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 0,
+  "tipo": "b",
+  "id": 15,
+  "cpu_s": 0.5789760000000115,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 1,
+  "tipo": "f",
+  "id": 0,
+  "cpu_s": 13.547951000000012,
+  "audio_s": 5.36
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 1,
+  "tipo": "f",
+  "id": 0,
+  "cpu_s": 11.679058999999938,
+  "audio_s": 4.4
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 1,
+  "tipo": "f",
+  "id": 0,
+  "cpu_s": 5.410643999999991,
+  "audio_s": 8.0
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 1,
+  "tipo": "f",
+  "id": 1,
+  "cpu_s": 22.569229000000007,
+  "audio_s": 8.8
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 1,
+  "tipo": "f",
+  "id": 1,
+  "cpu_s": 18.260411999999974,
+  "audio_s": 8.32
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 1,
+  "tipo": "f",
+  "id": 1,
+  "cpu_s": 6.063025999999979,
+  "audio_s": 8.4
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 1,
+  "tipo": "f",
+  "id": 2,
+  "cpu_s": 13.74231999999995,
+  "audio_s": 5.52
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 1,
+  "tipo": "f",
+  "id": 2,
+  "cpu_s": 14.092764000000045,
+  "audio_s": 5.76
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 1,
+  "tipo": "f",
+  "id": 2,
+  "cpu_s": 3.6692769999999655,
+  "audio_s": 5.68
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 1,
+  "tipo": "f",
+  "id": 3,
+  "cpu_s": 8.531498999999997,
+  "audio_s": 3.44
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 1,
+  "tipo": "f",
+  "id": 3,
+  "cpu_s": 10.14105799999993,
+  "audio_s": 4.32
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 1,
+  "tipo": "f",
+  "id": 3,
+  "cpu_s": 5.16959700000001,
+  "audio_s": 8.16
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 1,
+  "tipo": "f",
+  "id": 4,
+  "cpu_s": 8.35576599999996,
+  "audio_s": 3.04
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 1,
+  "tipo": "f",
+  "id": 4,
+  "cpu_s": 9.305716999999959,
+  "audio_s": 3.2
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 1,
+  "tipo": "f",
+  "id": 4,
+  "cpu_s": 2.105952000000002,
+  "audio_s": 3.36
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 0,
+  "cpu_s": 2.9154179999999315,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 0,
+  "cpu_s": 3.8084330000000364,
+  "audio_s": 1.2
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 0,
+  "cpu_s": 0.5630799999999567,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 1,
+  "cpu_s": 2.4480859999999893,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 1,
+  "cpu_s": 3.068134999999984,
+  "audio_s": 1.12
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 1,
+  "cpu_s": 0.5387670000000071,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 2,
+  "cpu_s": 2.5183499999999412,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 2,
+  "cpu_s": 3.9411549999999806,
+  "audio_s": 1.36
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 2,
+  "cpu_s": 0.6377620000000661,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 3,
+  "cpu_s": 3.086608999999953,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 3,
+  "cpu_s": 3.8883220000000165,
+  "audio_s": 1.36
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 3,
+  "cpu_s": 0.5949970000000349,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 4,
+  "cpu_s": 2.603556000000026,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 4,
+  "cpu_s": 4.286802000000023,
+  "audio_s": 1.52
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 4,
+  "cpu_s": 0.5715190000000234,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 5,
+  "cpu_s": 2.6503430000000208,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 5,
+  "cpu_s": 2.9829480000000217,
+  "audio_s": 1.12
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 5,
+  "cpu_s": 0.5684210000000007,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 6,
+  "cpu_s": 2.527495999999985,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 6,
+  "cpu_s": 3.0301810000000273,
+  "audio_s": 1.2
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 6,
+  "cpu_s": 0.5732479999999782,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 7,
+  "cpu_s": 2.7065900000000624,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 7,
+  "cpu_s": 3.719323999999972,
+  "audio_s": 1.28
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 7,
+  "cpu_s": 0.5861120000000142,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 8,
+  "cpu_s": 2.9513069999999857,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 8,
+  "cpu_s": 4.344493,
+  "audio_s": 1.36
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 8,
+  "cpu_s": 0.6216890000000035,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 9,
+  "cpu_s": 2.441830999999979,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 9,
+  "cpu_s": 4.844268,
+  "audio_s": 1.68
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 9,
+  "cpu_s": 0.5616059999999834,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 10,
+  "cpu_s": 3.244801999999993,
+  "audio_s": 1.04
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 10,
+  "cpu_s": 4.321442999999988,
+  "audio_s": 1.6
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 10,
+  "cpu_s": 0.621135000000038,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 11,
+  "cpu_s": 2.6812360000000126,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 11,
+  "cpu_s": 3.5022169999999733,
+  "audio_s": 1.36
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 11,
+  "cpu_s": 0.5782019999999761,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 12,
+  "cpu_s": 3.7928510000000415,
+  "audio_s": 1.52
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 12,
+  "cpu_s": 4.939608000000021,
+  "audio_s": 2.08
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 12,
+  "cpu_s": 1.0316330000000562,
+  "audio_s": 1.68
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 13,
+  "cpu_s": 3.650374000000056,
+  "audio_s": 1.28
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 13,
+  "cpu_s": 5.169161000000031,
+  "audio_s": 2.08
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 13,
+  "cpu_s": 1.337150999999949,
+  "audio_s": 2.24
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 14,
+  "cpu_s": 2.122602000000029,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 14,
+  "cpu_s": 3.3387819999999238,
+  "audio_s": 1.44
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 14,
+  "cpu_s": 0.5571279999999206,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-vecchio-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 15,
+  "cpu_s": 2.1018000000000256,
+  "audio_s": 0.88
+ },
+ {
+  "impl": "pt-attuale-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 15,
+  "cpu_s": 2.8289910000000873,
+  "audio_s": 1.12
+ },
+ {
+  "impl": "onnx-giovanni",
+  "seme": 1,
+  "tipo": "b",
+  "id": 15,
+  "cpu_s": 0.5084050000000389,
+  "audio_s": 0.88
+ }
+]

@@ -14,7 +14,226 @@ Le tre strade per far parlare Kalliope con la voce della persona:
 La pagina d'ascolto per il proprietario è in `/workspace/nomedadefinire/bench/voce-propria/ascolto/index.html`
 (statica, solo HTML e `<audio>`; si può servire da sola, per esempio `python3 -m http.server 8900` in quella cartella).
 
-## I fatti in breve
+## Rendere affidabile Pocket TTS (V-1, 17/11/2026)
+
+Il proprietario ha scelto la strada 1 dopo l'ascolto e ha dato il via a renderla affidabile, con prove e senza toccare il
+programma (incarico `design/lavoro/incarichi/V-1-pocket-affidabile.md`). Programmi: `scripts/pocket.py` (il motore con le
+correzioni attivabili una per una), `scripts/onnx_cache.py`, `scripts/v1_genera.py`, `scripts/v1_valuta.py`,
+`scripts/v1_ufficiale.py`, `scripts/v1_memoria.py`, `scripts/v1_passo.py`; esiti in `esiti/v1/`.
+
+### In breve
+
+- **La prima parola persa viene dalla versione del modello, non dal nostro codice e non dall'esportazione.** L'esportazione
+  ONNX che usiamo (`xennonf4/pocket-tts-onnx`, rev `e3f58ae5`, 24/8/2026) è fatta dalla versione italiana di Pocket TTS di
+  maggio 2026. Ha lo stesso tokenizer (sha256 `6583b974…`, quello delle revisioni ufficiali fino al 17/9/2026). Dà anche gli
+  stessi latenti del codice ufficiale su quella versione (fp32, temperatura 0, voce giovanni: coseno medio 0,996 su 40 passi).
+  Quella versione, anche nel codice di Kyutai e con una voce di Kyutai, comincia a parlare senza silenzio iniziale e perde o
+  storpia la prima parola. Kyutai l'ha rifatta due volte:
+  - PR #326 del 24/9/2026: nuovo tokenizer; «Single words … are now correct 65-87% of the time, against 28-47% for the previous
+    models»;
+  - PR #344 dell'1/10/2026: «the previous students ended early when given prompts longer than about 12 s»; per l'italiano a 6
+    strati con riferimenti lunghi il WER passa da 15,21% a 6,69%.
+
+  Con la versione attuale, nel codice ufficiale, la stessa prova dà **0 prime parole perse su 10 frasi; nelle 32 frasi brevi nessuna parola persa e 2 cambiate** («Avevo subito», «Vi sentite»).
+  La versione di maggio nel codice ufficiale ne perde o storpia 3 su 10 e 13 su 32; la nostra esportazione 4 su 10 e 14 su 32.
+- **Con la versione di maggio il traguardo non si raggiunge.** Il wrapper dell'esportazione non applicava alcune impostazioni
+  del codice ufficiale: temperatura 0,3 invece di 0,7, riferimento che finisce su 80 ms di pausa, niente fine nei primi 6 passi,
+  dissolvenza di 5 ms. Con queste:
+  - la prima parola persa scende da 22 a 15 frasi su 40 e le parole sbagliate dal 14,6% all'11,3%;
+  - con un riferimento di 10 s scende a 12 su 40, con l'8,0% di parole sbagliate;
+  - le frasi brevi restano perse in più di un caso su tre.
+
+  Provati e scartati, perché peggiorano: gli spazi davanti alle frasi brevi (opzione ufficiale
+  `pad_with_spaces_for_short_inputs`) e il silenzio forzato all'inizio.
+- **La versione attuale con la clonazione si scarica solo dal repository «gated»** (dettagli sotto, «La versione attuale e
+  l'account»). Senza account si ha la versione attuale con le 27 voci già pronte di Kyutai, **senza clonazione da una
+  registrazione**: nei pesi aperti l'encoder della voce è azzerato. Nessuna esportazione ONNX di terzi della versione attuale con
+  la clonazione è stata trovata. Non ho creato account.
+- **Il peso**: il 63% del tempo del modello andava a copiare a ogni passo una cache di attenzione fissa a 1000 posizioni
+  (profilo di ONNX Runtime). `scripts/onnx_cache.py` dichiara libera quella dimensione nell'esportazione, senza cambiare nessun
+  peso: in fp32 i latenti sono identici bit per bit. Il nostro ciclo poi dà a ogni pezzo solo le posizioni che gli servono. A 6
+  strati int8 e 2 thread, nella stessa finestra, il costo passa da **1,05 a 0,78 secondi di CPU per secondo di parlato**, e a
+  0,58 con il riferimento di 10 s. Vale anche per la versione attuale, che ha la stessa architettura (dedotto, non misurato).
+- **La memoria**: codificare 25 s di riferimento in un colpo arrivava a 3,9 GB, perché l'encoder esportato fa l'attenzione su
+  tutto il riferimento insieme. A pezzi di 5 s con 2 s di sovrapposizione scende a **0,88 GB**, con gli stessi latenti (coseno
+  minimo 0,9999). Parlare costa **537 MB** a 6 strati (prima 844 MB) e 1,3 GB a 24 strati (prima 2,2 GB), processo Python
+  compreso. La voce si salva in 15 MB (stato pronto, ricarica in 50–160 ms) oppure in 0,6 MB (latenti fp16, ricarica in
+  0,5–1,1 s).
+- **Le combinazioni di velocità** sono state misurate una alla volta, ma con la macchina carica dagli altri lavori (load
+  average 19–34 su 12 thread). I confronti nella stessa finestra reggono; i tempi d'orologio assoluti non valgono per un
+  computer scarico.
+  - A 6 strati int8, 2 thread, con primo pezzo e pezzi di 4 fotogrammi (320 ms), non c'è nessun vuoto in 10 frasi su 10, con il
+    primo suono a 243 ms (massimo 343).
+  - A 24 strati non tiene il passo né a 2 né a 4 thread: 2,0 e 1,9 secondi d'orologio per secondo di parlato.
+  - Il thread in più rende poco: 0,71 secondi di CPU per secondo a 1 thread, 0,78 a 2, 0,85 a 4.
+- **La pronuncia**, prima parola esclusa: 9,1% di parole sbagliate a 6 strati con 25 s di riferimento, 5,9% con 10 s, 3,0% a 24
+  strati (Klein 1,7%). Restano soprattutto:
+  - la fine della prima frase che sparisce: «ma vi seguo benissimo» non viene detto, è il «fermarsi presto» dei vecchi modelli;
+  - la sigla «iva» letta «eva» o «i va»;
+  - «Paola» detto «Paula»;
+  - qualche vocale cambiata («consenia»).
+
+  I numeri, scritti in lettere dal normalizzatore di Kalliope, passano.
+
+### La versione attuale e l'account (fonti lette il 17/11/2026)
+
+- **Che cosa è «gated»**: il repository Hugging Face `kyutai/pocket-tts`, con approvazione automatica (`gated: auto`, API di
+  Hugging Face; ultima revisione `db04f0e6` del 21/10/2026). Contiene i pesi con la clonazione. La configurazione ufficiale
+  italiana (`pocket_tts/config/italian.yaml`, codice `kyutai-labs/pocket-tts` rev `8ef5cbc7`) punta a
+  `languages/italian/model.safetensors@3e82814a` (1/10/2026, PR #344), e lo stesso per `italian_24l`.
+- **Licenza dei pesi**: CC-BY-4.0 (metadati della scheda di `kyutai/pocket-tts`). Il codice è MIT (`LICENSE` del repository
+  GitHub). Le voci pronte hanno ciascuna la sua licenza, elencata da Kyutai in `kyutai/tts-voices`: quella pagina non l'ho letta.
+- **Condizioni da accettare** (campo `extra_gated_prompt` della scheda, letto dall'API; la scheda stessa risponde 401 senza
+  account): «Prohibited uses include, without limitation, voice impersonation or cloning without explicit and lawful consent;
+  misinformation, disinformation, or deception (…); and the generation of unlawful, harmful, libelous, abusive, harassing,
+  discriminatory, hateful, or privacy-invasive content. We disclaim all liability for any non-compliant use.» Il modulo chiede
+  anche «Company or university if applicable» e «I want to use this model for» (Work, Studies o Fun). Poi bisogna accedere con
+  `hf auth login`: lo dicono il README e il messaggio d'errore `VOICE_CLONING_UNSUPPORTED` del codice ufficiale.
+- **Ridistribuzione**: il testo legale CC BY 4.0 (creativecommons.org, sezione 2) permette a chiunque di «reproduce and Share
+  the Licensed Material» e il materiale adattato, con l'attribuzione. Vieta anche di aggiungere condizioni o misure tecniche che
+  restringano questi diritti a chi lo riceve («No downstream restrictions»). Le condizioni del modulo di Kyutai non parlano di
+  ridistribuzione. Le copie di terzi esistono già: `xennonf4`, `KevinAHM`, `jkatzwinkel/pocket-tts-mirror`, tutte della versione
+  di maggio. Che una copia della versione attuale messa a disposizione da noi permetta a chi usa Kalliope di non avere un
+  account è una lettura della licenza, non un parere legale.
+- **Che cosa c'è senza account**: il repository `kyutai/pocket-tts-without-voice-cloning` (non gated, CC-BY-4.0, rev `a7056f50`;
+  italiano a `1e08e6a2`, «the same, with voice cloning removed», PR #344). Contiene il modello che parla (flow LM e decoder Mimi),
+  il tokenizer e 27 voci pronte per l'italiano. L'encoder Mimi è azzerato: valore assoluto massimo 0, verificato qui. Quindi le
+  voci pronte funzionano, ma non si clona da una registrazione. Il codice ufficiale lo dice: «Without voice cloning, you can use
+  our catalog of voices». La proiezione del parlante invece c'è, con valori veri. Combinarla con l'encoder dell'esportazione di
+  maggio potrebbe forse ridare la clonazione con la versione attuale, ma non l'ho provato: aggirerebbe il controllo d'accesso di
+  Kyutai (è una decisione del proprietario) e non si può verificare che l'encoder sia lo stesso fra le due versioni.
+- **Esportazioni di terzi della versione attuale**:
+  - `MacEpic/pocket-tts-it-coreml` (8/11/2026) è fatta dai pesi senza clonazione, solo per Apple Core ML, con voci pronte;
+  - `Arm/pocket-tts-it-24l-mix-precision` (22/9, TFLite), `jiangzhuo9357/pocket-tts-it-onnx` (16/7), `KevinAHM`, `xennonf4`,
+    `rxdtech` e `Phoonnx/pockettts-it-kyutai-unicode` (16/11, riconfezione di KevinAHM) sono tutte della versione di maggio o
+    precedenti: tokenizer `6583b974` o data anteriore al 24/9;
+  - `storyteller-platform/pocket-tts-italian` (GGUF) e `TheStageAI/pocket-tts-100m-it` non dicono da quale revisione vengono.
+- **Un'esportazione fatta da noi** dai pesi aperti attuali si può fare senza account, ma dà la versione attuale solo con le voci
+  pronte, senza clonazione. Non l'ho fatta in questa chiusura: la versione attuale con la voce di Kyutai l'ho fatta parlare con il
+  codice ufficiale in PyTorch, ed è quella nella pagina d'ascolto.
+
+### Le misure
+
+#### La prima parola: le impostazioni una per una (versione di maggio, 4 persone)
+
+| Configurazione | prima parola persa: frasi | WER frasi | prima parola persa: frasi brevi | durata media frasi brevi | ECAPA | WeSpeaker | silenzio iniziale |
+|---|---|---|---|---|---|---|---|
+| V-m, 6 strati (com'era, 1 seme) | 9/20 | 11,3% | — | — | 0,56 | 0,59 | 0,02 s |
+| V-m, 24 strati (com'era, 1 seme) | 10/20 | 8,2% | — | — | 0,58 | 0,59 | 0,02 s |
+| 6 strati, impostazioni dell'esportazione (temp. 0,7) | 22/40 | 14,6% | 54/128 | 0,60 s | 0,57 | 0,57 | 0,07 s |
+| + fine del riferimento su 80 ms di pausa | 22/40 | 14,5% | 65/128 ¹ | 0,61 s | 0,57 | 0,57 | 0,07 s |
+| temperatura 0,3 al posto di 0,7 | 17/40 | 13,5% | 66/128 ¹ | 0,61 s | 0,59 | 0,59 | 0,16 s |
+| 6 strati, tutte le impostazioni ufficiali | 15/40 | 11,3% | 47/128 | 0,98 s | 0,57 | 0,57 | 0,16 s |
+| … con riferimento di 10 s | 12/40 | 8,0% | 52/128 ¹ | 1,00 s | 0,53 | 0,53 | 0,14 s |
+| … con riferimento di 5 s | 13/40 | 7,6% | 42/128 | 0,98 s | 0,47 | 0,46 | 0,03 s |
+| 24 strati, impostazioni dell'esportazione | 22/40 | 9,0% | 62/128 ¹ | 0,83 s | 0,58 | 0,60 | 0,26 s |
+| 24 strati, impostazioni ufficiali | 21/40 | 7,4% | 48/128 ¹ | 1,12 s | 0,61 | 0,62 | 0,15 s |
+| … con riferimento di 10 s | 17/40 | 9,2% | 43/128 | 1,06 s | 0,58 | 0,58 | 0,08 s |
+| Klein, voce di oggi (Giulia e Marco) | 0/10 | 1,6% | 0/32 | 1,32 s | 0,17 | 0,24 | 0,25 s |
+
+Frasi: le cinque di prova, 4 persone × 2 semi (40); frasi brevi: 16 × 4 × 2 (128), trascritte con 0,5 s di silenzio attorno (¹ senza: valutate prima di questa correzione della prova, Whisper vi inventa più spesso). Silenzio iniziale: tempo al primo frame entro 30 dB dal più forte.
+
+#### La stessa prova su una voce di Kyutai (giovanni), senza clonazione
+
+| Implementazione | prima parola persa: frasi | WER frasi | prima parola persa: frasi brevi | durata media frasi brevi | silenzio iniziale |
+|---|---|---|---|---|---|
+| esportazione ONNX (versione di maggio), il nostro ciclo | 4/10 | 13,3% | 14/32 | 1,08 s | 0,08 s |
+| codice ufficiale, versione di maggio | 3/10 | 5,5% | 13/32 | 0,94 s | 0,05 s |
+| codice ufficiale, versione attuale (1/10/2026) | 0/10 | 1,6% | 2/32 | 1,44 s | 0,34 s |
+
+Parità (temperatura 0, 40 passi, stessa voce, versione di maggio): fp32 coseno medio 0,996 (minimo 0,981); int8 coseno medio 0,834 (minimo 0,394).
+
+#### Il peso mentre parla (F1 e M1, cinque frasi ciascuno, una prova alla volta, processi separati)
+
+| Combinazione | thread | primo pezzo / pezzi (×80 ms) | CPU s per s | orologio s per s | primo suono (mediana / max) | frasi con un vuoto | attesa per non avere vuoti (max) | memoria massima | carico |
+|---|---|---|---|---|---|---|---|---|---|
+| 6-int8-t2 | 2 | 2 / 6 | 0,780 | 0,685 | 197 / 266 ms | 10/10 | 523 ms | 537 MB | 22 |
+| 6-int8-t2-p1 | 2 | 1 / 3 | 0,765 | 0,639 | 135 / 184 ms | 10/10 | 285 ms | 520 MB | 34 |
+| 6-int8-t2-p4 | 2 | 4 / 4 | 0,786 | 0,655 | 243 / 343 ms | 0/10 | 343 ms | 574 MB | 23 |
+| 6-int8-t2-p6 | 2 | 6 / 12 | 0,835 | 0,754 | 442 / 557 ms | 10/10 | 819 ms | 499 MB | 25 |
+| 6-int8-t4 | 4 | 2 / 6 | 0,848 | 0,672 | 189 / 287 ms | 10/10 | 654 ms | 488 MB | 32 |
+| 6-int8-t1 | 1 | 2 / 6 | 0,714 | 0,741 | 215 / 260 ms | 10/10 | 463 ms | 552 MB | 31 |
+| 6-main32-t2 | 2 | 2 / 6 | 1,022 | 0,831 | 234 / 349 ms | 10/10 | 676 ms | 703 MB | 28 |
+| 6-fp32-t2 | 2 | 2 / 6 | 1,090 | 0,865 | 238 / 500 ms | 10/10 | 820 ms | 798 MB | 23 |
+| 6-int8-t2-nokv | 2 | 2 / 6 | 1,049 | 0,954 | 248 / 330 ms | 10/10 | 1187 ms | 565 MB | 22 |
+| 6-int8-t2-r10 | 2 | 2 / 6 | 0,575 | 0,468 | 128 / 235 ms | 10/10 | 319 ms | 516 MB | 20 |
+| 24-int8-t2 | 2 | 2 / 6 | 2,257 | 2,030 | 572 / 971 ms | 10/10 | 14442 ms | 1303 MB | 19 |
+| 24-int8-t4 | 4 | 2 / 6 | 2,461 | 1,869 | 562 / 858 ms | 10/10 | 9467 ms | 1326 MB | 24 |
+
+- 6-int8-t2: prima parola persa 4/10, WER 11,7%, ECAPA 0,64, WeSpeaker 0,64
+- 6-main32-t2: prima parola persa 4/10, WER 10,2%, ECAPA 0,63, WeSpeaker 0,63
+- 6-fp32-t2: prima parola persa 5/10, WER 8,6%, ECAPA 0,65, WeSpeaker 0,64
+- 6-int8-t2-r10: prima parola persa 5/10, WER 10,2%, ECAPA 0,60, WeSpeaker 0,55
+- 24-int8-t2: prima parola persa 5/10, WER 7,0%, ECAPA 0,66, WeSpeaker 0,66
+
+#### La memoria per preparare la voce (F1, 6 strati, processi separati)
+
+| Riferimento | codifica | encoder | arena ONNX Runtime | memoria massima | CPU s | voce salvata |
+|---|---|---|---|---|---|---|
+| 10 s | intera | fp32 | no | 909 MB | 3,4 | stato 5,7 MB (ricarica 35 ms) · embedding 234 kB (ricarica 0,50 s) |
+| 15 s | intera | fp32 | no | 1615 MB | 14,3 | stato 9,0 MB (ricarica 30 ms) · embedding 375 kB (ricarica 0,58 s) |
+| 25 s | a pezzi di 5 s (coseno min 0,9999) | fp32 | no | 883 MB | 21,4 | stato 15,2 MB (ricarica 163 ms) · embedding 631 kB (ricarica 1,15 s) |
+| 25 s | a pezzi di 10 s (coseno min 1,0000) | fp32 | no | 1517 MB | 22,2 |  |
+| 25 s | a pezzi di 5 s (coseno min 0,9985) | int8 | no | 898 MB | 16,2 |  |
+| 25 s | a pezzi di 5 s (coseno min 0,9999) | fp32 | sì | 1356 MB | 10,4 |  |
+| 25 s | intera | fp32 | no | 3891 MB | 29,6 | stato 15,2 MB (ricarica 49 ms) · embedding 631 kB (ricarica 0,51 s) |
+| 25 s | intera (coseno min 0,9983) | int8 | no | 3538 MB | 26,4 |  |
+| 25 s | intera | fp32 | sì | 4279 MB | 20,3 |  |
+
+### Limiti e ciò che non ho misurato
+
+- La clonazione con la versione italiana attuale: serve il repository «gated» (sopra). Tutto ciò che riguarda le nostre quattro
+  persone è sulla versione di maggio; la versione attuale l'ho provata solo con una voce pronta di Kyutai (giovanni), nel codice
+  ufficiale in PyTorch, non in ONNX e non in streaming.
+- La velocità della versione attuale non l'ho misurata: ha la stessa architettura, quindi ci si aspetta lo stesso costo, ma è
+  una deduzione.
+- Le combinazioni di velocità sono state misurate con un carico medio da 19 a 34 su 12 thread (altri lavori sulla macchina):
+  i confronti nella stessa finestra reggono, i tempi d'orologio assoluti no. Il «vuoto» è calcolato, non ascoltato:
+  l'audio di un pezzo pronto dopo il suo turno, con la riproduzione che parte al primo pezzo. Il decodificatore gira nello
+  stesso thread del generatore (il codice ufficiale lo mette in un secondo thread).
+- Whisper sulle frasi di una o due parole sbaglia da solo (scrive «Sottotitoli a cura di…» sul quasi silenzio, «Adopo» per «A
+  dopo»). Per questo le frasi brevi sono trascritte con 0,5 s di silenzio attorno; alcune righe valutate prima di questa
+  correzione sono segnate. Le durate e il silenzio iniziale non dipendono da Whisper.
+- Due semi per configurazione: 40 frasi e 128 frasi brevi per riga; differenze di 2–3 casi sono rumore.
+- Il riferimento rovinato (F1d, M2d) non è stato rifatto in V-1.
+- Non ascoltato: qui non c'è uscita audio. La pagina d'ascolto ha la sezione «prima e dopo».
+
+### File di V-1
+
+`scripts/pocket.py` (il motore: correzioni del codice ufficiale attivabili, cache libera, codifica a pezzi, streaming con il
+controllo dei vuoti, voce salvata), `scripts/onnx_cache.py` (la cache libera nell'esportazione), `scripts/v1_genera.py`,
+`scripts/v1_valuta.py`, `scripts/v1_ufficiale.py` (parità e prova sulla voce di Kyutai, con i pesi aperti), `scripts/v1_memoria.py`,
+`scripts/v1_passo.py`, `scripts/v1_pronuncia.py`, `scripts/v1_resoconto.py`; esiti in `esiti/v1/` (`valuta_*.json`,
+`genera_*.json`, `passo.jsonl`, `memoria.jsonl`, `memoria_coseni_italian_F1.json`, `parita.json`, `pronuncia.json`,
+`brevi.json`, `scelta.json`). I file ONNX con la cache libera sono in `voce-propria/modelli/pocket-onnx-kv/` (fuori dal repository).
+
+### Versioni (controllate il 17/11/2026 sulle fonti ufficiali)
+
+| Dipendenza | Usata | Ultima ufficiale | Data dell'ultima | Fonte |
+|---|---|---|---|---|
+| Pocket TTS, pesi italiani con clonazione | versione di maggio 2026, dall'esportazione di terzi `xennonf4/pocket-tts-onnx` rev `e3f58ae5` (24/8/2026) | `kyutai/pocket-tts` `languages/italian@3e82814a` (gated) | 1/10/2026 (PR #344) | `pocket_tts/config/italian.yaml`, API Hugging Face |
+| Pocket TTS, pesi italiani senza clonazione | `kyutai/pocket-tts-without-voice-cloning@1e08e6a2` e la voce giovanni `@a7056f50` (solo per il confronto) | gli stessi | 1/10 e 21/10/2026 | configurazione ufficiale, API Hugging Face |
+| Pocket TTS, codice | `kyutai-labs/pocket-tts` main `8ef5cbc7` (per leggere e per il confronto); pacchetto PyPI non installato | `8ef5cbc7`; PyPI `pocket-tts` 4.0.1 | 17/11/2026; 21/10/2026 | GitHub, PyPI |
+| onnxruntime | 1.31.1 | **1.32.0** | 13/11/2026 | PyPI |
+| faster-whisper | 1.2.1 | 1.2.1 | 31/10/2025 | PyPI |
+| ctranslate2 | 4.9.0 | 4.9.0 | 10/11/2026 | PyPI |
+| Modello Whisper | `Systran/faster-whisper-small` rev `536b0662` (scelto in V-m per restare sulla scala del 12/11) | stessa revisione; OpenAI ha modelli più grandi (large-v3 e large-v3-turbo) che qui non uso | 23/11/2023 | API Hugging Face |
+| Whisper base (controllo della ricerca, V-m) | `Systran/faster-whisper-base` rev `ebe41f70` | stessa | 23/11/2023 | API Hugging Face |
+| torch / torchaudio | 2.15.0+cpu / 2.11.1+cpu | 2.15.0 / 2.11.1 | 28/10/2026 | PyPI |
+| SpeechBrain | 1.1.2 | 1.1.2 | 14/10/2026 | PyPI |
+| ECAPA (`speechbrain/spkrec-ecapa-voxceleb`) | rev `0f99f2d0` | stessa | 18/2/2025 | API Hugging Face |
+| WeSpeaker ResNet34 | rev `ff1ac5bc` | stessa | 6/5/2024 | API Hugging Face |
+| Resemblyzer | 0.1.4 | 0.1.4 | 12/10/2023 | PyPI |
+| librosa / numpy / scipy / soundfile / onnx | 1.0.1 / 2.5.5 / 1.18.1 / 0.14.0 / 1.23.2 | le stesse | 12/11, 15/11, 21/8, 6/6, 6/10/2026 | PyPI |
+| tokenizers / sentencepiece | 0.23.3 / 0.2.3 | le stesse | 9/10 e 5/11/2026 | PyPI |
+| MeanVC2 ONNX (V-m) | `kiarina/MeanVC2-ONNX` rev `2db97430` | stessa | 20/10/2026 | API Hugging Face |
+| OpenVoice V2 (V-m) | `myshell-ai/OpenVoiceV2` rev `f36e7edf` | stessa | 24/12/2024 | API Hugging Face |
+| Klein-TTS X1.5 Pro | rev `25e0e73b` | stessa | 3/11/2026 | API Hugging Face |
+
+onnxruntime 1.32.0 è uscito il 13/11/2026; le misure sono con 1.31.1, la versione del banco del 12/11 e del programma. Controllo con 1.32.0 sul guadagno della cache libera (6 strati int8, 2 thread, F1, carico 30, una corsa per versione): 1.31.1 1,29 → 0,71 CPU-s per s, 1.32.0 1,14 → 0,83. Il guadagno resta; la differenza fra le due versioni non si distingue dal rumore con questo carico, quindi non ho rifatto le misure.
+
+
+## V-m · I fatti in breve
 
 Scala della somiglianza (ECAPA, contro i brani veri tenuti da parte): un brano vero della stessa persona fa 0,80–0,85,
 un'altra persona dello stesso sesso 0,12–0,22, la voce di oggi (Giulia o Marco) 0,16–0,21. Medie sulle quattro persone

@@ -1,0 +1,82 @@
+[
+ {
+  "id": 0,
+  "testo": "Sì.",
+  "normalizzato": "Sì."
+ },
+ {
+  "id": 1,
+  "testo": "No.",
+  "normalizzato": "No."
+ },
+ {
+  "id": 2,
+  "testo": "Grazie.",
+  "normalizzato": "Grazie."
+ },
+ {
+  "id": 3,
+  "testo": "Un attimo.",
+  "normalizzato": "Un attimo."
+ },
+ {
+  "id": 4,
+  "testo": "Va bene.",
+  "normalizzato": "Va bene."
+ },
+ {
+  "id": 5,
+  "testo": "Certo.",
+  "normalizzato": "Certo."
+ },
+ {
+  "id": 6,
+  "testo": "Esatto.",
+  "normalizzato": "Esatto."
+ },
+ {
+  "id": 7,
+  "testo": "Ciao a tutti.",
+  "normalizzato": "Ciao a tutti."
+ },
+ {
+  "id": 8,
+  "testo": "Scusate.",
+  "normalizzato": "Scusate."
+ },
+ {
+  "id": 9,
+  "testo": "Mi sentite?",
+  "normalizzato": "Mi sentite?"
+ },
+ {
+  "id": 10,
+  "testo": "Arrivo subito.",
+  "normalizzato": "Arrivo subito."
+ },
+ {
+  "id": 11,
+  "testo": "D'accordo.",
+  "normalizzato": "D'accordo."
+ },
+ {
+  "id": 12,
+  "testo": "Perfetto, grazie!",
+  "normalizzato": "Perfetto, grazie!"
+ },
+ {
+  "id": 13,
+  "testo": "Un momento, per favore.",
+  "normalizzato": "Un momento, per favore."
+ },
+ {
+  "id": 14,
+  "testo": "Buongiorno.",
+  "normalizzato": "Buongiorno."
+ },
+ {
+  "id": 15,
+  "testo": "A dopo.",
+  "normalizzato": "A dopo."
+ }
+]

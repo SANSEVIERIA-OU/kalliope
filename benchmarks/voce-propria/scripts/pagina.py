@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import html
 import json
+import os
 import shutil
 import sys
 from pathlib import Path
@@ -95,9 +96,7 @@ def main():
                        f'<td>{num(100 * e / n_, 1)}%</td><td>{rv}</td><td>{cpu}</td><td>{mem}</td><td>{prep}</td></tr>')
     sintesi.append("</tbody></table>")
     fr = frasi()
-    if OUT.exists():
-        shutil.rmtree(OUT)
-    OUT.mkdir(parents=True)
+    OUT.mkdir(parents=True, exist_ok=True)   # updated in place: the folder is being served
     rifs = riferimenti()
     parti = []
     indice = []
@@ -151,12 +150,13 @@ def main():
         h.append("</tr></tbody></table></div></section>")
         parti.append("".join(h))
 
+    prima_dopo = sezione_prima_dopo(fr)
     pagina = f"""<!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kalliope · la voce di chi la usa: campioni d’ascolto</title>
 <style>
 body{{font:16px/1.5 system-ui,sans-serif;margin:0;padding:1.5rem;background:#f6f4ef;color:#1d1b17}}
-h1{{font-size:1.6rem;margin:0 0 .5rem}} h2{{margin:2.5rem 0 .25rem;font-size:1.3rem}}
+h1{{font-size:1.6rem;margin:0 0 .5rem}} h2{{margin:2.5rem 0 .25rem;font-size:1.3rem}} h3{{margin:1.5rem 0 .5rem;font-size:1.1rem}}
 .intro{{max-width:60rem}} .fonte{{margin:.25rem 0 1rem;color:#4a463e}}
 nav a{{margin-right:1rem}} .rif{{display:flex;flex-wrap:wrap;gap:1rem 2rem;margin-bottom:1rem}}
 figure{{margin:0}} figcaption{{font-size:.9rem;color:#4a463e;margin-bottom:.25rem}}
@@ -169,7 +169,7 @@ thead th{{min-width:12.5rem}} audio{{width:12.5rem;height:2rem}}
 table.sintesi{{min-width:0;margin:1rem 0}} table.sintesi thead th{{min-width:0}} table.sintesi th,table.sintesi td{{font-size:.9rem}} .n{{font-size:.85rem;margin-top:.25rem}} .t{{font-size:.8rem;color:#6a655b;margin-top:.15rem}}
 tr.tot td,tr.tot th{{background:#f1eee6;font-size:.9rem}}
 </style></head><body>
-<h1>La voce di chi usa Kalliope: tre strade a confronto</h1>
+<h1>La voce di chi usa Kalliope: campioni d’ascolto</h1>
 <div class="intro">
 <p>Quattro voci vere (lettori LibriVox, pubblico dominio) fanno la parte di chi usa Kalliope. Ogni strada ha sentito
 solo il riferimento di 25 secondi; le frasi sono quelle dei campioni del sito più una domanda e un’esclamazione,
@@ -183,12 +183,62 @@ Il testo sotto ogni campione è ciò che ha capito Whisper.</p>
 Rust con la voce di oggi sta a circa 100 MB; con il riferimento rovinato: somiglianza · parole sbagliate):</p>
 {"".join(sintesi)}
 </div>
+{prima_dopo}
+<h2>V-m · le tre strade a confronto (prima della scelta)</h2>
 <nav>{" ".join(indice)}</nav>
 {"".join(parti)}
 </body></html>
 """
-    (OUT / "index.html").write_text(pagina)
+    tmp = OUT / "index.html.tmp"
+    tmp.write_text(pagina)
+    os.replace(tmp, OUT / "index.html")
     print(OUT / "index.html")
+
+
+# V-1: before and after, on the first word (filled from esiti/v1/scelta.json)
+def sezione_prima_dopo(fr) -> str:
+    path = ESITI / "v1" / "scelta.json"
+    if not path.exists():
+        return ""
+    sc = json.loads(path.read_text())
+    colonne = sc["colonne"]          # [config, ref, title, subtitle]
+    v = {}
+    for cfg, _, _, _ in colonne:
+        p = ESITI / "v1" / f"valuta_{cfg}.json"
+        if p.exists():
+            v[cfg] = {(r["rif"], r["tipo"], r["id"]): r for r in json.loads(p.read_text())["righe"] if r["seme"] == 0}
+    brevi = json.loads((ESITI / "v1" / "brevi.json").read_text())
+
+    def cella(cfg, rif, tipo, i):
+        x = v.get(cfg, {}).get((rif, tipo, i))
+        src = AUDIO / "v1" / cfg / rif / "s0" / f"{tipo}{i}.wav"
+        if x is None or not src.exists():
+            return "<td>—</td>"
+        tag = audio_tag(copia(src.resolve(), f"v1/{cfg}/{rif}/{tipo}{i}.wav"))
+        prima = "giusta" if x["prima_ok"] else "<b>persa o storpiata</b>"
+        return (f'<td>{tag}<div class="n">prima parola {prima} · {num(x["durata_s"])} s</div>'
+                f'<div class="t">«{html.escape(x["trascrizione"])}»</div></td>')
+
+    def tabella(righe, tipo):
+        h = ['<div class="tab"><table><thead><tr><th>Frase</th>']
+        for _, _, t, sub in colonne:
+            h.append(f"<th>{html.escape(t)}<span>{html.escape(sub)}</span></th>")
+        h.append("</tr></thead><tbody>")
+        for i, testo in righe:
+            h.append(f'<tr><th class="frase">{html.escape(testo)}</th>'
+                     + "".join(cella(cfg, rif, tipo, i) for cfg, rif, _, _ in colonne) + "</tr>")
+        tot = ['<tr class="tot"><th>Prima parola persa (tutte le persone, due semi)</th>']
+        for cfg, _, _, _ in colonne:
+            p = ESITI / "v1" / f"valuta_{cfg}.json"
+            rr = [r for r in json.loads(p.read_text())["righe"] if r["tipo"] == tipo] if p.exists() else []
+            tot.append(f"<td><b>{sum(not r['prima_ok'] for r in rr)}</b> su {len(rr)}</td>" if rr else "<td>—</td>")
+        h.append("".join(tot) + "</tr></tbody></table></div>")
+        return "".join(h)
+
+    h = [f'<section id="prima-dopo"><h2>Pocket TTS prima e dopo: la prima parola (V-1)</h2><div class="intro">{sc["spiegazione"]}</div>',
+         "<h3>Frasi brevi</h3>", tabella([(b["id"], b["testo"]) for b in brevi], "b"),
+         "<h3>Le frasi di prova</h3>", tabella([(f["id"], f["testo"]) for f in fr], "f"), "</section>"]
+    return "".join(h)
 
 
 if __name__ == "__main__":
