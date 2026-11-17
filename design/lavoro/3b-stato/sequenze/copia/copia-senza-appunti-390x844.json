@@ -1,0 +1,62 @@
+{
+ "pagina": "http://127.0.0.1:38105/it/stato/index.html",
+ "misura": "390x844",
+ "sequenza": "copia-senza-appunti",
+ "gesto": "premi:.copia-messaggio",
+ "ridotto": false,
+ "lento": 1,
+ "istanti": [
+  0,
+  0.15,
+  0.3,
+  0.5,
+  0.8,
+  1.2
+ ],
+ "fotogrammi": [
+  {
+   "file": "copia-senza-appunti-390x844-f01.jpg",
+   "chiesto": 0,
+   "scattato": 0,
+   "scorrimento": 8676
+  },
+  {
+   "file": "copia-senza-appunti-390x844-f02.jpg",
+   "chiesto": 0.15,
+   "scattato": 0.15,
+   "scorrimento": 8676
+  },
+  {
+   "file": "copia-senza-appunti-390x844-f03.jpg",
+   "chiesto": 0.3,
+   "scattato": 0.3,
+   "scorrimento": 8676
+  },
+  {
+   "file": "copia-senza-appunti-390x844-f04.jpg",
+   "chiesto": 0.5,
+   "scattato": 0.5,
+   "scorrimento": 8676
+  },
+  {
+   "file": "copia-senza-appunti-390x844-f05.jpg",
+   "chiesto": 0.8,
+   "scattato": 0.8,
+   "scorrimento": 8676
+  },
+  {
+   "file": "copia-senza-appunti-390x844-f06.jpg",
+   "chiesto": 1.2,
+   "scattato": 1.2,
+   "scorrimento": 8676
+  }
+ ],
+ "foglio": "copia-senza-appunti-390x844-foglio.jpg",
+ "video": "copia-senza-appunti-390x844.webm",
+ "orologio": {
+  "pagina": 1,
+  "media": []
+ },
+ "errori": [],
+ "misurato": "2026-11-17T10:49:17.113Z"
+}

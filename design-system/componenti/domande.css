@@ -1,0 +1,93 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* Componente · Le domande, e la risposta nella bolla
+   Le domande di chi valuta Kalliope per un'altra persona, in fila come i pulsanti-voce; si preme una domanda e la risposta arriva nella
+   bolla, la stessa della riunione: una risposta alla volta, breve (progetto.md §4.2: «il lungo solo a richiesta»). Cambiando domanda le
+   parole della bolla cedono il posto alle nuove e la bolla prende la misura nuova, come la frase delle cifre nella home. Al computer la
+   bolla sta accanto alle domande e resta in vista scorrendo; al telefono si apre sotto la domanda premuta.
+   Senza JavaScript: ogni domanda con la sua risposta sotto, tutte in vista. Prima pagina che lo usa: website/stato/.
+   Ogni valore viene da ../token.css. */
+
+.domande-tratto .luce-tratto { inset-inline-start: 62%; top: 55%; }
+.domande { margin-top: var(--spazio-26); }
+.domande-elenco { list-style: none; margin: 0; padding: 0; }
+
+/* senza lo script: due colonne di domande, ognuna con la sua risposta */
+.domande:not(.viva) .domande-elenco { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--spazio-26) var(--spazio-30); }
+.domanda-chiede { margin: 0; font-size: var(--corpo-9); line-height: var(--interlinea-9); font-weight: var(--peso-forte); }
+.domanda-risponde { margin-top: var(--spazio-8); }
+.domanda-risponde p { margin: 0; font-size: var(--corpo-7); line-height: var(--interlinea-8); color: var(--testo-spiegazione); max-width: var(--misura-30); text-wrap: pretty; }
+.domanda-risponde a, .domande-bolla a { font-weight: var(--peso-forte); text-underline-offset: var(--spazio-3); text-decoration-color: var(--sottolineatura); }
+
+/* con lo script: le domande a sinistra, la bolla a destra */
+.domande.viva { display: grid; grid-template-columns: var(--domande-colonne); column-gap: var(--spazio-30); align-items: start; }
+.domande.viva .domande-elenco { display: flex; flex-direction: column; gap: var(--spazio-5); }
+.domande.viva .domanda-risponde { display: none; }
+.domanda-bottone {
+  display: flex;
+  align-items: center;
+  gap: var(--spazio-10);
+  width: 100%;
+  min-height: var(--misura-23);
+  padding-block: var(--domanda-spazio-interno-blocco);
+  padding-inline: var(--domanda-spazio-interno-inline);
+  border-radius: var(--raggio-pillola);
+  border: var(--filetto-sottile) solid var(--bordo-voce);
+  background: var(--velo-comando);
+  color: var(--testo);
+  font: inherit;
+  font-size: var(--corpo-8);
+  line-height: var(--interlinea-6);
+  font-weight: var(--peso-medio);
+  text-align: start;
+  cursor: pointer;
+  transition: background-color var(--durata-voce-sfondo) var(--curva-dolce), border-color var(--durata-voce-bordo) var(--curva-dolce), color var(--durata-scelta-testo) var(--curva-dolce), transform var(--durata-voce-trasforma) var(--entra);
+}
+.domanda-bottone::before {
+  content: "";
+  flex: none;
+  width: var(--misura-4);
+  height: var(--misura-4);
+  border-radius: 50%;
+  border: var(--filetto-medio) solid var(--bordo-voce);
+  transition: background-color var(--durata-voce-sfondo) var(--curva-dolce), border-color var(--durata-voce-bordo) var(--curva-dolce);
+}
+.domanda-bottone:hover { background: var(--velo-menu-sopra); border-color: var(--rosa); }
+.domanda-bottone:active { transform: scale(var(--voce-premuto-scala)); }
+.domanda-bottone[aria-expanded="true"] { background: var(--testo); color: var(--bordeaux); border-color: var(--testo); font-weight: var(--peso-forte); box-shadow: var(--voce-scelta-ombra); }
+.domanda-bottone[aria-expanded="true"]::before { background: var(--bordeaux); border-color: var(--bordeaux); }
+
+/* la bolla della risposta: resta in vista mentre si scorrono le domande */
+.domande-bolla {
+  position: sticky;
+  top: var(--domande-bolla-sopra);
+  inset-inline-start: auto;
+  bottom: auto;
+  width: auto;
+  max-width: var(--domande-bolla-larghezza);
+  margin-bottom: var(--misura-11);
+  transform-origin: var(--origine-inizio-x) 100%;
+}
+.domande-bolla .bolla-corpo { position: relative; overflow: hidden; }
+.domande-bolla .bolla-testo { font-size: var(--domande-bolla-grandezza); line-height: var(--domande-bolla-interlinea); }
+.domande-bolla .domande-bolla-chiede { margin: 0 0 var(--spazio-7); font-size: var(--corpo-6); line-height: var(--interlinea-6); font-weight: var(--peso-forte); color: var(--magenta); }
+.domande-bolla a { color: var(--bordeaux); text-decoration-color: var(--bordo-rivedi-chiaro); }
+.domande-bolla a:hover { text-decoration-color: var(--bordeaux); }
+
+/* la bolla nasce dalla coda quando le domande arrivano sullo schermo, come le bolle della home */
+.js .domande.viva:not(.visto) .domande-bolla { opacity: 0; transform: scale(var(--bolla-nasce-scala)); }
+.js .domande.viva.visto .domande-bolla { transition: opacity var(--durata-bolla-nasce) var(--curva-dolce) var(--ritardo-domande-bolla), transform var(--durata-bolla-nasce) var(--entra) var(--ritardo-domande-bolla); }
+
+@media (max-width: 1180px) {
+  .domande.viva { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: var(--spazio-24); }
+}
+@media (max-width: 760px) {
+  .domande:not(.viva) .domande-elenco { grid-template-columns: minmax(0, 1fr); gap: var(--spazio-21); }
+  .domanda-chiede { font-size: var(--corpo-8); line-height: var(--interlinea-6); }
+  .domanda-risponde p { font-size: var(--corpo-6); line-height: var(--interlinea-6); }
+  .domande.viva { display: block; }
+  .domanda-bottone { min-height: var(--misura-22); font-size: var(--corpo-7); padding-block: var(--domanda-spazio-interno-telefono-blocco); padding-inline: var(--domanda-spazio-interno-telefono-inline); }
+  /* al telefono la bolla si apre sotto la domanda premuta */
+  .domande-bolla { position: relative; top: auto; max-width: none; margin: var(--spazio-10) 0 var(--misura-11); }
+  .domande-bolla .bolla-testo { font-size: var(--corpo-8); line-height: var(--interlinea-8); }
+  .domande-bolla .bolla-corpo { padding: var(--bolla-corpo-spazio-interno-telefono); }
+}

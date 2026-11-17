@@ -1,0 +1,95 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* Componente · La riunione con il confine del provato
+   La riunione di «non ancora» (riunione-ferma.css), questa volta con la voce: il tuo riquadro parla e nella barra dell'app è scelto
+   «Kalliope». Fin lì è provato; da lì in poi (l'app della riunione, Paola, Luca e Anna) non ancora, e lo dice il tratteggio, il segno di
+   «non ancora» della home. All'arrivo la voce parte da «Tu», il microfono si accende con «provato fin qui» e i riquadri degli altri prendono
+   il tratteggio. Senza JavaScript e con «riduci movimento» la scena è già al suo stato finale.
+   Prima pagina che lo usa: website/stato/. Ogni valore viene da ../token.css. */
+
+/* il tuo riquadro ha la voce: le barre accese, il bordo di chi parla */
+.chiamata-provata .riquadro.tu .barre i { background: var(--voce); }
+.chiamata-provata .riquadro.tu .bordo { opacity: var(--opacita-provato-bordo); }
+
+/* gli altri: oltre il confine. Un velo leggero e il tratteggio, come le tappe «forse» della strada */
+.riquadro.oltre::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: var(--livello-nome);
+  border-radius: inherit;
+  border: var(--filetto-medio) dashed var(--tratteggio);
+  background: var(--velo-oltre);
+  pointer-events: none;
+}
+
+/* l'onda che va oltre il microfono: parte da «Tu» tratteggiata e, dove tocca un riquadro, lo lascia tratteggiato (le onde della home,
+   900 ms lineari, qui con il segno di «non ancora») */
+.chiamata-provata .griglia { position: relative; }
+.onde-oltre { position: absolute; inset: 0; z-index: var(--livello-barre); overflow: hidden; border-radius: var(--raggio-8); pointer-events: none; }
+.onda-oltre {
+  position: absolute;
+  inset-inline-start: 25%;
+  top: 25%;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: var(--filetto-forte) dashed var(--voce);
+  opacity: 0;
+  transform: translate(calc(-50% * var(--verso)), -50%) scale(var(--onda-oltre-da));
+}
+
+/* nella barra del microfono «Kalliope» è scelto: fin qui è provato */
+.kalliope-provato { position: relative; }
+.provato-nota { font-weight: var(--peso-medio); }
+
+
+/* ---------- l'arrivo (con lo script; senza, tutto è già al suo posto) ----------
+   la bolla nasce dalla coda (riunione-ferma.css); poi «Tu» parla: il bordo si accende e le barre si muovono; il microfono «Kalliope»
+   risponde con un anello e «provato fin qui»; infine un'onda tratteggiata parte da «Tu» e i riquadri che tocca restano tratteggiati. */
+.js .chiamata-provata:not(.fatta) .riquadro.tu .barre i { background: var(--barre-spente); }
+.js .chiamata-provata:not(.fatta) .riquadro.tu .bordo { opacity: 0; }
+.js .chiamata-provata:not(.fatta) .provato-nota { opacity: 0; }
+.js .chiamata-provata:not(.fatta) .riquadro.oltre::after { opacity: 0; }
+/* la frase nella bolla aspetta la voce, come nella home: grigia finché «Tu» non parla */
+.js .palco-provato:not(.detta) .bolla-provata .bolla-testo { opacity: var(--opacita-bolla-2); }
+.js .palco-provato .bolla-provata .bolla-testo { transition: opacity var(--durata-provato-frase) var(--curva-dolce); }
+.js .chiamata-provata .riquadro.tu .bordo { transition: opacity var(--durata-provato-bordo) var(--curva-dolce); }
+.js .chiamata-provata .riquadro.tu .barre i { transition: background-color var(--durata-provato-bordo) var(--curva-dolce); }
+.js .chiamata-provata.parla .riquadro.tu .bordo { opacity: 1; }
+.js .chiamata-provata.parla .riquadro.tu .barre i { background: var(--voce); animation: provato-barre var(--durata-provato-barre) var(--curva-dolce) var(--ripetizioni-provato-barre) alternate; }
+.js .chiamata-provata.parla .riquadro.tu .barre i:nth-child(2n) { animation-delay: var(--ritardo-provato-barre); }
+/* ogni barra si muove attorno alla sua altezza di riposo (riunione.css) */
+.chiamata-provata .barre i:nth-child(1) { --barra-base: var(--barre-1-scala-y); }
+.chiamata-provata .barre i:nth-child(2) { --barra-base: var(--barre-2-scala-y); }
+.chiamata-provata .barre i:nth-child(3) { --barra-base: 1; }
+.chiamata-provata .barre i:nth-child(4) { --barra-base: var(--barre-4-scala-y); }
+.chiamata-provata .barre i:nth-child(5) { --barra-base: var(--barre-5-scala-y); }
+@keyframes provato-barre {
+  from { transform: scaleY(calc(var(--barra-base) * var(--provato-barre-da))); }
+  to { transform: scaleY(var(--barra-base)); }
+}
+.js .chiamata-provata.microfono-acceso .provato-nota { opacity: 1; transition: opacity var(--durata-scelta-testo) var(--curva-dolce); }
+.js .chiamata-provata.microfono-acceso .kalliope-provato { animation: provato-acceso var(--durata-urto) var(--curva-uscita) 1; }
+/* il microfono risponde con l'anello della voce, che si spegne: non si allarga (al telefono la scelta è larga quanto lo schermo) */
+@keyframes provato-acceso {
+  0% { box-shadow: none; }
+  25% { box-shadow: var(--provato-acceso-ombra); }
+  100% { box-shadow: none; }
+}
+.js .chiamata-provata.oltre-segnato .riquadro.oltre::after { opacity: 1; transition: opacity var(--durata-oltre) var(--curva-dolce) var(--ritardo, 0ms); }
+.js .chiamata-provata.oltre-segnato .riquadro.luca { --ritardo: var(--ritardo-oltre-luca); }
+.js .chiamata-provata.oltre-segnato .riquadro.paola { --ritardo: var(--ritardo-oltre-paola); }
+.js .chiamata-provata.oltre-segnato .riquadro.anna { --ritardo: var(--ritardo-oltre-anna); }
+.js .chiamata-provata.oltre-segnato .onda-oltre { animation: onda-oltre var(--durata-urto) var(--curva-lineare) 1; }
+@keyframes onda-oltre {
+  0% { opacity: 0; transform: translate(calc(-50% * var(--verso)), -50%) scale(var(--onda-oltre-da)); }
+  12% { opacity: var(--opacita-onda-oltre); }
+  80% { opacity: var(--opacita-onda-oltre); }
+  100% { opacity: 0; transform: translate(calc(-50% * var(--verso)), -50%) scale(1); }
+}
+.js .chiamata-provata.fatta .riquadro.tu .bordo { opacity: var(--opacita-provato-bordo); }
+
+@media (max-width: 760px) {
+  .riquadro.oltre::after { border-width: var(--filetto-comando); }
+  .onda-oltre { border-width: var(--filetto-medio); }
+}

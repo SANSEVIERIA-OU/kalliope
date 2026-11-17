@@ -1,203 +1,443 @@
-<!DOCTYPE html>
+<!doctype html>
 <!-- SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 -->
 <html lang="it">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light dark">
-<meta name="text-scale" content="scale">
-<title>Stato e limiti di Kalliope: cosa è provato e cosa no</title>
-<meta name="description" content="Cosa è provato, cosa non è ancora provato e cosa non esiste. Per chi è Kalliope, cosa fa del testo, licenze, misure e chi c'è dietro.">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="it_IT">
-<meta property="og:site_name" content="Kalliope">
-<meta property="og:title" content="Stato e limiti di Kalliope: cosa è provato e cosa no">
-<meta property="og:description" content="Cosa è provato, cosa non è ancora provato e cosa non esiste. Per chi è Kalliope, cosa fa del testo, licenze, misure e chi c'è dietro.">
-<meta property="og:url" content="https://sansevieria-ou.github.io/kalliope/stato/">
-<meta property="og:image" content="https://sansevieria-ou.github.io/kalliope/immagini/kalliope-finestra.png">
-<meta property="og:image:alt" content="La finestra di Kalliope: un campo dove scrivere, i pulsanti Parla e Ferma, la scelta della voce.">
+<title data-t="st.titolo">Stato e limiti di Kalliope: che cosa è provato e che cosa no</title>
+<meta name="description" content="Kalliope è provato fino al microfono, non ancora in una riunione vera. Che cosa è provato e come, per chi è e per chi no, e i fatti con la fonte per chi deve controllare." data-t-content="st.descrizione">
+<meta name="theme-color" content="#420017">
 <link rel="canonical" href="https://sansevieria-ou.github.io/kalliope/stato/">
 <link rel="icon" href="../immagini/icona.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../stile/token.css">
-<link rel="stylesheet" href="../stile/base.css">
-<link rel="stylesheet" href="../stile/componenti.css">
-<script src="../script/kalliope.js" defer></script>
+<link rel="preload" href="../design-system/caratteri/lexend/Lexend-wght-latino.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../design-system/token.css">
+<link rel="stylesheet" href="../design-system/base.css">
+<link rel="stylesheet" href="../design-system/componenti/barra.css">
+<link rel="stylesheet" href="../design-system/componenti/pulsanti.css">
+<link rel="stylesheet" href="../design-system/componenti/apertura.css">
+<link rel="stylesheet" href="../design-system/componenti/bolla.css">
+<link rel="stylesheet" href="../design-system/componenti/riunione.css">
+<link rel="stylesheet" href="../design-system/componenti/riunione-app.css">
+<link rel="stylesheet" href="../design-system/componenti/finestra.css">
+<link rel="stylesheet" href="../design-system/componenti/strada.css">
+<link rel="stylesheet" href="../design-system/componenti/tratti.css">
+<link rel="stylesheet" href="../design-system/componenti/piede.css">
+<link rel="stylesheet" href="../design-system/componenti/arrivo.css">
+<link rel="stylesheet" href="../design-system/componenti/pagina.css">
+<link rel="stylesheet" href="../design-system/componenti/riunione-ferma.css">
+<link rel="stylesheet" href="../design-system/componenti/riunione-provata.css">
+<link rel="stylesheet" href="../design-system/componenti/catena.css">
+<link rel="stylesheet" href="../design-system/componenti/domande.css">
+<link rel="stylesheet" href="../design-system/componenti/varco.css">
+<link rel="stylesheet" href="../design-system/componenti/inoltra.css">
+<link rel="stylesheet" href="../design-system/componenti/lingue.css">
+<script src="../lingua.js" defer></script>
+<script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.__pagina)document.documentElement.classList.remove('js')},4000)</script>
+<script src="../testi.js" defer></script>
+<script src="../componenti.js" defer></script>
+<script src="../cornice.js" defer></script>
+<script src="stato.js" defer></script>
 </head>
-<body data-prerelease="{{kalliope.prerelease}}" data-versione="{{kalliope.version}}">
-<a class="salta" href="#contenuto">Vai al contenuto</a>
-<header class="sito-intestazione">
-<div class="pagina">
-<a class="marca" href="../" aria-label="Kalliope, pagina iniziale"><img src="../immagini/icona.svg" alt="" width="40" height="40"><span>Kalliope</span></a>
-<nav class="nav" aria-label="Principale">
-<ul>
-<li><a href="../ascolta/">Ascolta</a></li><li><a href="../stato/" aria-current="page">Stato e limiti</a></li><li><a href="../installa/">Installa</a></li><li><a href="../riunione/">In riunione</a></li><li><a href="../aiuto/">Aiuto</a></li>
-</ul>
-</nav>
-</div>
-</header>
-<main id="contenuto" tabindex="-1">
-<div class="pagina testo">
-<p class="percorso">Passo <b>2</b> di 5: <b>Stato e limiti</b></p>
-<h1>Stato e limiti</h1>
-<p>Qui c'è ciò che sappiamo e ciò che non sappiamo. Prima lo stato, poi le promesse.</p>
-<section class="stato" aria-labelledby="stato-titolo">
-<div class="stato__testa">
-<span class="barre barre--piccole" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
-<h2 id="stato-titolo">Com'è messo Kalliope oggi</h2>
-<span class="stato__versione solo-prova">Versione di prova {{kalliope.version}}</span>
-</div>
-<div class="stato__colonne">
-<div class="stato__col" data-tipo="provato">
-<h3><span class="stato__segno" aria-hidden="true">✓</span>Provato</h3>
-<ul>
-<li>La voce arriva al microfono «Kalliope», con un sistema audio PipeWire preparato per la prova.</li>
-<li>L'installazione è provata da uno script su Ubuntu 24.04, Fedora e Arch.</li>
-<li>Parole sbagliate secondo Whisper sulla voce registrata dal microfono: 2,3% su 10 frasi di prova; circa una parola su 45 sui sei campioni di questo sito.</li>
-</ul>
-</div>
-<div class="stato__col" data-tipo="non-provato">
-<h3><span class="stato__segno" aria-hidden="true">?</span>Non ancora provato</h3>
-<ul>
-<li>Una riunione vera con Zoom, Teams o Meet su un computer di tutti i giorni.</li>
-<li>Il tempo fra il tasto Invio e il suono nella riunione.</li>
-<li>Lettori di schermo, puntamento oculare e interruttori.</li>
-<li>Computer diversi da quello su cui abbiamo fatto le misure.</li>
-</ul>
-</div>
-<div class="stato__col" data-tipo="non-esiste">
-<h3><span class="stato__segno" aria-hidden="true">×</span>Non esiste</h3>
-<ul>
-<li>Windows, macOS, telefono e tablet.</li>
-<li>Una voce clonata dalla tua. Oggi non c'è; se arriverà, sarà solo con il tuo consenso.</li>
-<li>Altre lingue oltre all'italiano.</li>
-<li>Frasi già pronte, pittogrammi e suggerimenti mentre scrivi.</li>
-<li>Sottotitoli della riunione: Kalliope non ascolta e non trascrive.</li>
-</ul>
-</div>
+<body>
+<a class="salta" href="#contenuto" data-t="salta">Vai al contenuto</a>
+<p class="solo-lettori" id="annuncio" role="status" aria-live="polite"></p>
+
+<div class="mondo">
+  <div class="luce" aria-hidden="true"></div>
+
+  <header class="barra">
+    <a class="marchio" href="../" aria-label="Kalliope, pagina iniziale" data-t-aria-label="barra.marchio">
+      <svg width="36" height="36" viewBox="0 0 128 128" aria-hidden="true" focusable="false"><defs><linearGradient id="icona-bolla" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2fb39a"/><stop offset="1" stop-color="#16806f"/></linearGradient></defs><path d="M30 14h68a22 22 0 0 1 22 22v40a22 22 0 0 1-22 22H62l-25.4 19.6A3.5 3.5 0 0 1 31 114.8V98h-1A22 22 0 0 1 8 76V36a22 22 0 0 1 22-22z" fill="url(#icona-bolla)"/><g fill="#fff"><rect x="29.5" y="47" width="9" height="18" rx="4.5"/><rect x="44.5" y="37" width="9" height="38" rx="4.5"/><rect x="59.5" y="29" width="9" height="54" rx="4.5"/><rect x="74.5" y="39" width="9" height="34" rx="4.5"/><rect x="89.5" y="45" width="9" height="22" rx="4.5"/></g></svg>
+      <span data-t="marchio.nome" data-t-nota="The name of the program. Keep it, or write it in the script of the language.">Kalliope</span>
+    </a>
+    <nav class="menu" id="menu" aria-label="Sezioni del sito" data-t-aria-label="barra.sezioni">
+      <ul>
+        <li><a href="../ascolta/" data-t="menu.ascolta">Ascolta</a></li>
+        <li><a href="../stato/" aria-current="page" data-t="menu.stato">Stato e limiti</a></li>
+        <li><a href="../installa/" data-t="menu.installa">Installa</a></li>
+        <li><a href="../riunione/" data-t="menu.riunione">In riunione</a></li>
+        <li><a href="../aiuto/" data-t="menu.aiuto">Aiuto</a></li>
+        <li class="lingua-voce">
+          <details class="lingua-scelta">
+            <summary data-t-title="barra.lingua" title="Cambia lingua"><span data-lingua-corrente data-t-no="il nome della lingua lo mette la costruzione, dai dati CLDR">Italiano</span><span class="lingua-segno" aria-hidden="true"></span></summary>
+            <ul class="lingue-elenco" data-lingue="elenco">
+              <li><a data-lingua data-t-no="il nome della lingua lo mette la costruzione, dai dati CLDR" href="#">Italiano</a></li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </nav>
+    <a class="pulsante-menu" href="#piede-sezioni" aria-controls="menu" data-t="barra.menu">Menu</a>
+  </header>
+
+  <main id="contenuto">
+    <div class="scena scena-pagina">
+      <section class="apertura" aria-labelledby="titolo">
+        <h1 id="titolo" data-t="st.apertura.titolo" data-t-nota="Four lines, one under the other. The answer comes first: tested up to the microphone, not yet in a real meeting.">
+          <span class="riga">Provato fino</span>
+          <span class="riga">al microfono.</span>
+          <span class="riga">In riunione,</span>
+          <span class="riga">non ancora.</span>
+        </h1>
+        <p class="presentazione" data-t="st.apertura.presentazione">Kalliope dice nella riunione, con una voce italiana, la frase che scrivi. Qui c'è a che punto è: che cosa è provato e come, per chi è e per chi no, e i fatti con la fonte per chi deve controllare.</p>
+        <div class="comandi" id="comandi-apertura">
+          <a class="pillola azione" href="#per-chi" data-t="st.apertura.per-chi">Per chi è, e per chi no</a>
+          <a class="collegamento" href="#controllare" data-t="st.apertura.controllare">Se devi controllare<span class="freccia" aria-hidden="true"></span></a>
+        </div>
+        <p class="stato" data-release="prova" data-t="apertura.stato"><strong>Oggi:</strong> versione di prova {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Non ancora provata in una riunione vera con Zoom, Teams o Meet.</p>
+        <p class="stato" data-release="stabile" data-t="apertura.stato-stabile"><strong>Oggi:</strong> versione {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Non ancora provata in una riunione vera con Zoom, Teams o Meet.</p>
+        <p class="didascalia" data-t="st.apertura.didascalia" data-t-nota="The caption of the scene: the first word says what it is; the part in tag 1 says where the tests stop. On narrow screens it goes to a second line.">Ricostruzione<span class="d-lunga"> · la voce arriva al microfono «Kalliope»: provato. Dopo, nell'app della riunione: non ancora</span></p>
+      </section>
+
+      <section class="palco palco-provato" aria-label="Ricostruzione: la tua frase diventa voce e arriva al microfono «Kalliope», ed è provato; da lì all'app della riunione e alle altre persone non è ancora provato" data-t-aria-label="st.palco.etichetta">
+        <div class="posto-bolla posto-bolla-ferma">
+          <div class="bolla bolla-provata" aria-hidden="true">
+            <div class="bolla-corpo"><p class="bolla-testo" data-t="frase.3">Il preventivo è di <span class="unita">1.250 € +</span> IVA, valido fino al <span class="unita">31 dicembre.</span></p></div>
+            <svg class="coda" width="32" height="24" viewBox="0 0 32 24" aria-hidden="true"><path d="M0 0h31L7.6 21.6A3.5 3.5 0 0 1 2 18.8V0z"/></svg>
+          </div>
+        </div>
+
+        <div class="chiamata chiamata-ferma chiamata-provata" aria-hidden="true">
+          <div class="griglia">
+            <div class="riquadro tu provato">
+              <span class="bordo"></span>
+              <span class="barre"><i></i><i></i><i></i><i></i><i></i></span>
+              <span class="nome" data-t="st.tu-voce" data-t-nota="The name on the tile of the person who writes. The part in tag 1 is the long one and is dropped on narrow screens.">Tu<span class="nome-lungo"> · microfono «Kalliope»</span></span>
+            </div>
+            <div class="riquadro persona paola oltre">
+              <svg class="figura" width="200" height="120" viewBox="0 0 200 120" preserveAspectRatio="xMidYMax meet">
+                <path class="capelli-dietro" d="M75 56C74 30 126 30 125 56L128 98C118 104 82 104 72 98Z"/>
+                <path class="corpo" d="M50 120C50 95 73 84 100 84C127 84 150 95 150 120Z"/>
+                <rect class="collo" x="92" y="72" width="16" height="17" rx="6"/>
+                <g class="cenno"><g class="testa">
+                  <ellipse class="pelle" cx="100" cy="55" rx="21" ry="24"/>
+                  <path class="capelli" d="M78 52C78 30 122 28 122 52C118 41 104 36 92 39C86 41 81 45 78 52Z"/>
+                  <g class="occhi"><ellipse cx="92" cy="58" rx="2.4" ry="3.1"/><ellipse cx="108" cy="58" rx="2.4" ry="3.1"/></g><path class="bocca" d="M95.5 67.5Q100 70.5 104.5 67.5"/>
+                </g></g>
+              </svg>
+              <span class="lume"></span><span class="nome" data-t="persona.paola">Paola</span>
+            </div>
+            <div class="riquadro persona luca oltre">
+              <svg class="figura" width="200" height="120" viewBox="0 0 200 120" preserveAspectRatio="xMidYMax meet">
+                <path class="corpo" d="M48 120C48 94 72 83 100 83C128 83 152 94 152 120Z"/>
+                <rect class="collo" x="92" y="71" width="16" height="17" rx="6"/>
+                <g class="cenno"><g class="testa">
+                  <ellipse class="pelle" cx="100" cy="54" rx="21" ry="24"/>
+                  <path class="capelli" d="M79 51C77 31 123 29 121 51C117 42 108 39 100 39C91 39 83 42 79 51Z"/>
+                  <path class="cuffia" d="M76 58C74 26 126 26 124 58" fill="none"/>
+                  <rect class="cuffia-pad" x="71" y="50" width="8" height="15" rx="4"/><rect class="cuffia-pad" x="121" y="50" width="8" height="15" rx="4"/>
+                  <path class="cuffia" d="M75 63C76 74 84 78 92 78" fill="none"/>
+                  <g class="occhi"><ellipse cx="92" cy="57" rx="2.4" ry="3.1"/><ellipse cx="108" cy="57" rx="2.4" ry="3.1"/></g><path class="bocca" d="M95.5 66.5Q100 69.5 104.5 66.5"/>
+                </g></g>
+              </svg>
+              <span class="lume"></span><span class="nome" data-t="persona.luca">Luca</span>
+            </div>
+            <div class="riquadro persona anna oltre">
+              <svg class="figura" width="200" height="120" viewBox="0 0 200 120" preserveAspectRatio="xMidYMax meet">
+                <path class="corpo" d="M52 120C52 96 74 85 100 85C126 85 148 96 148 120Z"/>
+                <rect class="collo" x="92" y="73" width="16" height="17" rx="6"/>
+                <g class="cenno"><g class="testa">
+                  <circle class="capelli" cx="100" cy="27" r="10"/>
+                  <ellipse class="pelle" cx="100" cy="56" rx="20" ry="23"/>
+                  <path class="capelli" d="M80 54C78 33 122 31 120 54C114 44 106 40 100 40C93 40 85 44 80 54Z"/>
+                  <g class="occhi"><ellipse cx="92" cy="59" rx="2.3" ry="3"/><ellipse cx="108" cy="59" rx="2.3" ry="3"/></g><path class="bocca" d="M96 68Q100 70.8 104 68"/>
+                </g></g>
+              </svg>
+              <span class="lume"></span><span class="nome" data-t="persona.anna">Anna</span>
+            </div>
+            <span class="onde-oltre" aria-hidden="true"><span class="onda-oltre"></span></span>
+          </div>
+          <div class="app-comandi">
+            <div class="microfono">
+              <span class="microfono-titolo" data-t="app.microfono"><span class="app-icona"></span>Microfono</span>
+              <ul class="microfono-scelte">
+                <li class="scelta" data-t="app.scelta.computer">Microfono del computer</li>
+                <li class="scelta scelto kalliope-provato" data-t="st.scelta.provato" data-t-nota="The name of the virtual microphone as a meeting app lists it (keep it as it is), and the note that appears when the voice reaches it."><span class="provato-nome">Kalliope</span><span class="provato-nota"> · provato fin qui</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="tratto scena-notte provato" id="provato" aria-labelledby="provato-titolo">
+      <span class="luce-tratto" aria-hidden="true"></span>
+      <div class="tratto-testo">
+        <h2 id="provato-titolo" class="entra entra-titolo" data-t="st.provato.titolo">Fin dove è provato, e come.</h2>
+        <p data-t="st.provato.testo">Ogni cifra sta nel punto della strada in cui è stata misurata, con il file da cui viene. Dove la strada è tratteggiata nessuno l'ha ancora provata.</p>
+      </div>
+
+      <div class="catena">
+        <p class="catena-misura" data-t="st.catena.misura">Dal tasto Invio al suono nella riunione: <strong>non misurato</strong></p>
+        <div class="catena-computer">
+          <p class="catena-computer-nome" data-t="st.catena.computer">Le cifre: su un solo computer, un portatile con Ryzen 5 PRO 6650U. Su altri non le conosciamo.</p>
+          <p class="catena-programma" data-t="st.catena.programma">Il programma: 10,6 MB con la sola finestra, circa 117 MB con la voce caricata, 0% di processore quando è fermo. <span class="fonte">README</span></p>
+        </div>
+        <ol class="catena-tappe">
+          <li class="anello fatto nel-computer entra" data-anello="installa">
+            <span class="anello-nodo" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M20 7v17M13 18l7 7 7-7M9 30h22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3 class="anello-nome" data-t="st.anello.installa">Si installa</h3>
+            <div class="anello-fatti">
+              <ul class="pacchetti" aria-label="I quattro pacchetti provati" data-t-aria-label="st.pacchetti.etichetta">
+                <li data-t-no="nome di un formato di pacchetto">.deb · Ubuntu 24.04</li>
+                <li data-t-no="nome di un formato di pacchetto">.rpm · Fedora</li>
+                <li data-t-no="nome di un formato di pacchetto">PKGBUILD · Arch</li>
+                <li data-t-no="nome di un formato di pacchetto">.tar.gz · ./install</li>
+              </ul>
+              <p data-t="st.installa.fatto">Uno script installa ogni pacchetto, apre Kalliope e gli fa dire una frase con la voce; poi lo toglie. <span class="fonte">docs/releasing.md</span></p>
+            </div>
+          </li>
+          <li class="anello fatto nel-computer entra" data-anello="scrivi">
+            <span class="anello-nodo" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 40 40"><rect x="6" y="13" width="28" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M11 20h9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M24 16v8" stroke="currentColor" stroke-width="2"/></svg></span>
+            <h3 class="anello-nome" data-t="st.anello.scrivi">Scrivi la frase</h3>
+            <div class="anello-fatti">
+              <p class="riscrive" aria-hidden="true"><span class="riscrive-da" data-t="st.riscrive.da">cmq ci vediamo dmn alle 10:30</span><span class="riscrive-a" data-t="st.riscrive.a">comunque ci vediamo domani alle dieci e trenta</span></p>
+              <p data-t="st.scrivi.fatto">Numeri, date, orari, importi, sigle e abbreviazioni diventano parole da dire, e gli accenti mancanti tornano: «cmq ci vediamo dmn alle 10:30» si dice «comunque ci vediamo domani alle dieci e trenta». Circa 11 µs a frase. <span class="fonte">README, CHANGELOG.md</span></p>
+              <p class="anello-forse" data-t="st.scrivi.forse">Con la tastiera. Con un lettore di schermo, il puntamento oculare o gli interruttori: <strong>non ancora provato</strong>.</p>
+            </div>
+          </li>
+          <li class="anello fatto nel-computer entra" data-anello="voce">
+            <span class="anello-nodo" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 40 40"><g fill="currentColor"><rect x="8" y="16" width="4" height="8" rx="2"/><rect x="14" y="12" width="4" height="16" rx="2"/><rect x="20" y="8" width="4" height="24" rx="2"/><rect x="26" y="13" width="4" height="14" rx="2"/><rect x="32" y="16.5" width="4" height="7" rx="2"/></g></svg></span>
+            <h3 class="anello-nome" data-t="st.anello.voce">La voce nasce qui</h3>
+            <div class="anello-fatti">
+              <div class="cifra">
+                <p class="cifra-numero" data-t="st.voce.cifra">0,07 s</p>
+                <span class="quota quota-voce" aria-hidden="true"><i></i></span>
+                <p class="cifra-detto" data-t="st.voce.cifra-detto">di processore per ogni secondo di voce, con un solo thread. <span class="fonte">README</span></p>
+              </div>
+              <p data-t="st.voce.fatto">La voce parte dopo la prima frase; mentre una suona si prepara la successiva. La pronuncia viene da regole e da un lessico di 7.920 parole. Nel banco di prova dei motori il primo suono arriva in meno di 160 ms: è uno strumento in Python, non il programma. <span class="fonte">engine.rs, benchmarks/engines</span></p>
+              <p class="anello-forse" data-t="st.voce.forse">Quanto dura «Preparo la voce…» a ogni avvio: <strong>non misurato</strong>.</p>
+            </div>
+          </li>
+          <li class="anello fatto nel-computer ultimo-provato entra" data-anello="microfono">
+            <span class="anello-nodo" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 40 40"><rect x="15" y="6" width="10" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M10 19a10 10 0 0 0 20 0M20 29v5M14 34h12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+            <h3 class="anello-nome" data-t="st.anello.microfono">Microfono «Kalliope»</h3>
+            <div class="anello-fatti">
+              <div class="cifra">
+                <p class="cifra-numero" data-t="st.microfono.cifra">2,3%</p>
+                <span class="parole-segni" aria-hidden="true"></span>
+                <p class="cifra-detto" data-t="st.microfono.cifra-detto">di parole sbagliate secondo Whisper, sulla voce registrata da questo microfono come la sentirebbe una riunione: 10 frasi di prova. Sui sei campioni di questo sito, una misura a parte: circa una parola su 45. <span class="fonte">README</span></p>
+              </div>
+              <p data-t="st.microfono.fatto">Provato con un PipeWire preparato per la prova. Se nessuna app ascolta non usa il processore, e ciò che si dice va perso, come con un microfono vero; mentre un'app registra usa circa lo 0,26% di un core, con un ritardo di circa 21 ms. <span class="fonte">docs/virtual-microphone.md</span></p>
+            </div>
+          </li>
+          <li class="anello forse entra" data-anello="app">
+            <span class="anello-nodo" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="2.4"><rect x="6" y="9" width="12.5" height="10" rx="2.5"/><rect x="21.5" y="9" width="12.5" height="10" rx="2.5"/><rect x="6" y="22" width="12.5" height="10" rx="2.5"/><rect x="21.5" y="22" width="12.5" height="10" rx="2.5"/></g></svg></span>
+            <h3 class="anello-nome" data-t="st.anello.app">L'app della riunione</h3>
+            <div class="anello-fatti">
+              <ul class="app-nomi" aria-label="Le app di riunione: nessuna ancora provata in una riunione vera" data-t-aria-label="st.app.etichetta">
+                <li data-t-no="nome di un programma">Zoom</li><li data-t-no="nome di un programma">Microsoft Teams</li><li data-t-no="nome di un programma">Google Meet</li><li data-t-no="nome di un programma">Webex</li><li data-t-no="nome di un programma">Jitsi</li><li data-t="st.app.browser">il browser</li>
+              </ul>
+              <p data-t="st.app.fatto"><strong>Nessuna ancora provata in una riunione vera.</strong> Per l'app Kalliope è un microfono qualunque, da scegliere nell'elenco: per questo va provato app per app.</p>
+            </div>
+          </li>
+          <li class="anello forse entra" data-anello="altri">
+            <span class="anello-nodo nodo-altri" aria-hidden="true"><span class="mini paola"><svg class="figura" width="92" height="106" viewBox="54 14 92 106" preserveAspectRatio="xMidYMax meet">
+                <path class="capelli-dietro" d="M75 56C74 30 126 30 125 56L128 98C118 104 82 104 72 98Z"/>
+                <path class="corpo" d="M50 120C50 95 73 84 100 84C127 84 150 95 150 120Z"/>
+                <rect class="collo" x="92" y="72" width="16" height="17" rx="6"/>
+                <g class="cenno"><g class="testa">
+                  <ellipse class="pelle" cx="100" cy="55" rx="21" ry="24"/>
+                  <path class="capelli" d="M78 52C78 30 122 28 122 52C118 41 104 36 92 39C86 41 81 45 78 52Z"/>
+                  <g class="occhi"><ellipse cx="92" cy="58" rx="2.4" ry="3.1"/><ellipse cx="108" cy="58" rx="2.4" ry="3.1"/></g><path class="bocca" d="M95.5 67.5Q100 70.5 104.5 67.5"/>
+                </g></g>
+              </svg></span><span class="mini luca"><svg class="figura" width="92" height="106" viewBox="54 14 92 106" preserveAspectRatio="xMidYMax meet">
+                <path class="corpo" d="M48 120C48 94 72 83 100 83C128 83 152 94 152 120Z"/>
+                <rect class="collo" x="92" y="71" width="16" height="17" rx="6"/>
+                <g class="cenno"><g class="testa">
+                  <ellipse class="pelle" cx="100" cy="54" rx="21" ry="24"/>
+                  <path class="capelli" d="M79 51C77 31 123 29 121 51C117 42 108 39 100 39C91 39 83 42 79 51Z"/>
+                  <path class="cuffia" d="M76 58C74 26 126 26 124 58" fill="none"/>
+                  <rect class="cuffia-pad" x="71" y="50" width="8" height="15" rx="4"/><rect class="cuffia-pad" x="121" y="50" width="8" height="15" rx="4"/>
+                  <path class="cuffia" d="M75 63C76 74 84 78 92 78" fill="none"/>
+                  <g class="occhi"><ellipse cx="92" cy="57" rx="2.4" ry="3.1"/><ellipse cx="108" cy="57" rx="2.4" ry="3.1"/></g><path class="bocca" d="M95.5 66.5Q100 69.5 104.5 66.5"/>
+                </g></g>
+              </svg></span><span class="mini anna"><svg class="figura" width="92" height="106" viewBox="54 14 92 106" preserveAspectRatio="xMidYMax meet">
+                <path class="corpo" d="M52 120C52 96 74 85 100 85C126 85 148 96 148 120Z"/>
+                <rect class="collo" x="92" y="73" width="16" height="17" rx="6"/>
+                <g class="cenno"><g class="testa">
+                  <circle class="capelli" cx="100" cy="27" r="10"/>
+                  <ellipse class="pelle" cx="100" cy="56" rx="20" ry="23"/>
+                  <path class="capelli" d="M80 54C78 33 122 31 120 54C114 44 106 40 100 40C93 40 85 44 80 54Z"/>
+                  <g class="occhi"><ellipse cx="92" cy="59" rx="2.3" ry="3"/><ellipse cx="108" cy="59" rx="2.3" ry="3"/></g><path class="bocca" d="M96 68Q100 70.8 104 68"/>
+                </g></g>
+              </svg></span></span>
+            <h3 class="anello-nome" data-t="st.anello.altri">Gli altri ti sentono</h3>
+            <div class="anello-fatti">
+              <p data-t="st.altri.fatto">Se gli altri ti sentono, e con quale ritardo, lo dirà soltanto una prova in una riunione vera: <strong>non ancora fatta</strong>.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+      <div class="racconta entra">
+        <p data-t="st.racconta.testo"><strong>Hai provato Kalliope in una riunione vera?</strong> Lo stato «non ancora» cambia solo con prove vere, e questa pagina si aggiorna con quelle che arrivano. Scrivi l'app e la sua versione, la distribuzione, la versione di PipeWire, che cosa è successo e la frase che la finestra mostrava; non incollare le frasi che hai detto.</p>
+        <a class="collegamento" href="https://github.com/SANSEVIERIA-OU/kalliope/issues" data-t="st.racconta.collegamento">Dicci come è andata, su GitHub (serve un account)<span class="freccia" aria-hidden="true"></span></a>
+      </div>
+    </section>
+
+    <section class="tratto scena-stanza domande-tratto" id="per-chi" aria-labelledby="per-chi-titolo">
+      <span class="luce-tratto" aria-hidden="true"></span>
+      <div class="tratto-testo">
+        <h2 id="per-chi-titolo" class="entra entra-titolo" data-t="st.per-chi.titolo">Per chi è, e per chi no.</h2>
+        <p data-t="st.per-chi.testo">Le domande di chi lo valuta per un'altra persona. Ogni risposta è breve; quello che non sappiamo è detto.</p>
+      </div>
+      <div class="domande entra">
+        <ol class="domande-elenco">
+          <li class="domanda" id="d-adatto">
+            <h3 class="domanda-chiede" data-t="st.d.adatto.q">È per chi non può parlare?</h3>
+            <div class="domanda-risponde"><p data-t="st.d.adatto.a">Sì, se scrive: con una tastiera, o con un altro dispositivo che scrive per lei. Kalliope dice la frase con una voce italiana, nella riunione. Serve un computer Linux a 64 bit con PipeWire.</p></div>
+          </li>
+          <li class="domanda" id="d-scrivere">
+            <h3 class="domanda-chiede" data-t="st.d.scrivere.q">E se scrivere è difficile?</h3>
+            <div class="domanda-risponde"><p data-t="st.d.scrivere.a">Per alcune persone con afasia anche scrivere è difficile: Kalliope può non servire, o servire con un familiare. Non lo sappiamo: va visto con un logopedista. Kalliope non è un dispositivo medico.</p></div>
+          </li>
+          <li class="domanda" id="d-costa">
+            <h3 class="domanda-chiede" data-t="st.d.costa.q">Quanto costa?</h3>
+            <div class="domanda-risponde"><p data-t="st.d.costa.a">Non c'è un prezzo e non serve un account. L'uso personale è libero; anche quello di ricerca e interno a un'azienda.</p></div>
+          </li>
+          <li class="domanda" id="d-installa">
+            <h3 class="domanda-chiede" data-t="st.d.installa.q">Chi lo installa?</h3>
+            <div class="domanda-risponde"><p data-t="st.d.installa.a">Una persona che sa usare il terminale di Linux: i passi e i comandi da copiare sono nella <a href="../installa/">pagina Installa</a>. Poi Kalliope scarica la voce, 53 MB, una volta sola.</p></div>
+          </li>
+          <li class="domanda" id="d-dove">
+            <h3 class="domanda-chiede" data-t="st.d.dove.q">Funziona su Windows, Mac o telefono?</h3>
+            <div class="domanda-risponde"><p data-t="st.d.dove.a">Su Windows e macOS non ancora: <a href="../non-ancora/">ecco perché</a>. Per ora Kalliope è solo per il computer, non per il telefono.</p></div>
+          </li>
+          <li class="domanda" id="d-voce">
+            <h3 class="domanda-chiede" data-t="st.d.voce.q">Parla con la sua voce?</h3>
+            <div class="domanda-risponde"><p data-t="st.d.voce.a">Oggi no: con la voce di Giulia o di Marco, a scelta. Parla solo italiano.</p></div>
+          </li>
+          <li class="domanda" id="d-sottotitoli">
+            <h3 class="domanda-chiede" data-t="st.d.sottotitoli.q">Fa i sottotitoli?</h3>
+            <div class="domanda-risponde"><p data-t="st.d.sottotitoli.a">No. Kalliope non ascolta e non trascrive: i sottotitoli della riunione, se ci sono, li fa l'app della riunione.</p></div>
+          </li>
+          <li class="domanda" id="d-frasi">
+            <h3 class="domanda-chiede" data-t="st.d.frasi.q">Ha frasi pronte o simboli?</h3>
+            <div class="domanda-risponde"><p data-t="st.d.frasi.a">No: niente frasi preimpostate, simboli o suggerimenti mentre scrivi. Le frasi già dette restano in un elenco e si ripetono con un clic. Non è un sistema completo di comunicazione aumentativa.</p></div>
+          </li>
+          <li class="domanda" id="d-online">
+            <h3 class="domanda-chiede" data-t="st.d.online.q">È un servizio online?</h3>
+            <div class="domanda-risponde"><p data-t="st.d.online.a">No: è un programma che sta sul computer. Non è un servizio online né un'estensione del browser, e il testo non esce dal computer.</p></div>
+          </li>
+          <li class="domanda" id="d-chi">
+            <h3 class="domanda-chiede" data-t="st.d.chi.q">Chi c'è dietro?</h3>
+            <div class="domanda-risponde"><p data-t="st.d.chi.a">SANSEVIERIA OÜ; gli autori sono nel file NOTICE del codice. Non c'è un'assistenza telefonica, né un indirizzo e‑mail, né una certificazione: le segnalazioni passano da GitHub.</p></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="tratto scena-chiara controllare" id="controllare" aria-labelledby="controllare-titolo">
+      <span class="luce-tratto" aria-hidden="true"></span>
+      <div class="tratto-testo">
+        <h2 id="controllare-titolo" class="entra entra-titolo" data-t="st.controllare.titolo">Il testo non esce dal computer.</h2>
+        <p data-t="st.controllare.testo">Per chi deve controllare: che cosa entra nel computer, che cosa resta e che cosa sparisce, con il file del codice che lo dice.</p>
+      </div>
+      <div class="varco-scena">
+        <div class="varco entra" aria-hidden="true" data-passo="tutto">
+          <span class="varco-fuori" data-t="st.varco.fuori">huggingface.co</span>
+          <span class="varco-filo"></span>
+          <div class="varco-bordo">
+            <span class="varco-nome" data-t="st.varco.nome">Il tuo computer</span>
+            <div class="varco-finestra">
+              <span class="varco-etichetta" data-t="st.varco.finestra">Kalliope</span>
+              <span class="varco-campo"><span class="varco-scritto" data-t="st.varco.scritto">Ci sono anch'io, scusate il ritardo.</span></span>
+              <span class="varco-gia" data-t="st.varco.gia">Già detto</span>
+              <span class="varco-elenco"><i></i><i></i><i></i></span>
+              <span class="varco-memoria" data-t="st.varco.memoria">solo finché la finestra è aperta</span>
+            </div>
+            <div class="varco-disco">
+              <span class="varco-etichetta" data-t="st.varco.disco">Sul disco</span>
+              <span class="varco-file varco-voce" data-t="st.varco.voce">la voce · 53 MB</span>
+              <span class="varco-file varco-impostazioni" data-t-no="nome di un file">settings.conf</span>
+            </div>
+            <span class="varco-pacchi"><i data-t-no="frammento d'impronta">3c9f…</i><i data-t-no="frammento d'impronta">a71e…</i><i data-t-no="frammento d'impronta">0d4b…</i></span>
+            <div class="varco-mic"><span class="app-icona"></span><span data-t="st.varco.mic">Microfono «Kalliope»</span></div>
+          </div>
+        </div>
+        <ol class="varco-passi">
+          <li class="varco-passo" data-passo="testo">
+            <h3 data-t="st.passo.testo.titolo">Il testo che scrivi: nessun invio.</h3>
+            <p data-t="st.passo.testo.testo">Non viene mandato da nessuna parte e non viene salvato. Kalliope non usa il microfono vero e non chiede di accedervi. Alla riunione arriva soltanto la voce, attraverso l'app della riunione. <span class="fonte">main.rs</span></p>
+          </li>
+          <li class="varco-passo" data-passo="scarico">
+            <h3 data-t="st.passo.scarico.titolo">Una sola connessione, una volta.</h3>
+            <p data-t="st.passo.scarico.testo">Al primo avvio Kalliope scarica la voce con il programma curl, da huggingface.co, a una revisione fissata: tre file, 53 MB. Controlla l'impronta SHA-256 di ciascuno e scarta quello che non corrisponde. Poi funziona senza internet. <span class="fonte">download.rs, catalog.rs</span></p>
+          </li>
+          <li class="varco-passo" data-passo="disco">
+            <h3 data-t="st.passo.disco.titolo">Che cosa resta sul disco.</h3>
+            <p data-t="st.passo.disco.testo">La voce scelta e «Senti anche tu» in un file di preferenze, settings.conf; la voce scaricata in una cartella dell'utente. Le frasi dette restano in un elenco, fino a 30, solo finché la finestra è aperta. Nessun account. <span class="fonte">settings.rs, paths.rs, main.rs</span></p>
+          </li>
+          <li class="varco-passo" data-passo="chiudi">
+            <h3 data-t="st.passo.chiudi.titolo">Quando chiudi la finestra, si chiude.</h3>
+            <p data-t="st.passo.chiudi.testo">Kalliope non si avvia da solo e non lascia un servizio acceso: con la finestra sparisce l'elenco delle frasi, e il microfono «Kalliope» sparisce dall'elenco dei microfoni. Si toglie con ./install --remove o togliendo il pacchetto; se così si toglie anche la voce scaricata, non l'abbiamo verificato. <span class="fonte">packaging/linux, docs/releasing.md</span></p>
+          </li>
+        </ol>
+      </div>
+      <div class="licenze entra">
+        <div class="licenze-blocco">
+          <h3 data-t="st.licenze.titolo">Licenze</h3>
+          <p data-t="st.licenze.testo">Kalliope: licenza SANSEVIERIA 1.0, codice sorgente disponibile; non è «open source» nel senso dell'OSI. Uso personale, di ricerca e interno a un'azienda: senza compenso. Per offrirlo a pagamento serve l'autorizzazione scritta di SANSEVIERIA OÜ; chi lo distribuisce o lo offre in rete deve dare il sorgente. <span class="fonte">LICENSE, NOTICE</span></p>
+          <ul class="licenze-parti">
+            <li><span data-t-no="nome di un componente">ONNX Runtime</span> <span data-t-no="nome di una licenza">MIT</span></li>
+            <li><span data-t-no="nome di un componente">Klein-TTS-X1.5-Pro</span> <span data-t-no="nome di una licenza">Apache-2.0</span></li>
+            <li><span data-t-no="nome di un componente">Slint 1.18</span> <span data-t-no="nome di una licenza">Slint Royalty-free 2.0</span></li>
+            <li><span data-t="st.licenze.lessico">Lessico da Wiktionary</span> <span data-t-no="nome di una licenza">CC BY-SA 4.0</span></li>
+          </ul>
+          <p class="licenze-nota" data-t="st.licenze.nota">L'elenco completo è nei file NOTICE e THIRD_PARTY_NOTICES.md del codice.</p>
+        </div>
+        <div class="licenze-blocco">
+          <h3 data-t="st.impronte.titolo">Impronte e provenienza</h3>
+          <p data-t="st.impronte.testo">Le impronte dei file sono nella <a href="../installa/">pagina Installa</a> e nel file <a href="{{kalliope.sums.url}}">SHA256SUMS</a> della versione. L'attestazione di dove è stato costruito ogni file (<span class="comando" data-t-no="un comando">gh attestation verify</span>) c'è per le versioni pubblicate da quando il codice è pubblico: la 0.1-rc.1, pubblicata prima, non ce l'ha. Non c'è un audit indipendente che possiamo citare.</p>
+          <p data-t="st.codice.testo">Il codice, le istruzioni per compilarlo, la storia delle versioni e come contribuire: nel <a href="https://github.com/SANSEVIERIA-OU/kalliope">repository su GitHub</a>, in inglese.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="tratto chiusura scena-stanza inoltra-tratto" id="inoltra" aria-labelledby="inoltra-titolo">
+      <span class="luce-tratto" aria-hidden="true"></span><span class="luce-tratto luce-chiusa" aria-hidden="true"></span>
+      <h2 id="inoltra-titolo" class="entra entra-titolo" data-t="st.inoltra.titolo">Da mandare a chi ti aiuta.</h2>
+      <p class="sotto-titolo" data-t="st.inoltra.sotto">Lo stato di oggi in poche righe, con l'indirizzo di questa pagina: da incollare in un messaggio.</p>
+      <div class="inoltra entra">
+        <div class="bolla bolla-inoltra">
+          <div class="bolla-corpo">
+            <p class="bolla-testo inoltra-testo" data-release="prova" data-t="st.inoltra.messaggio">Kalliope: scrivi una frase e una voce italiana la dice nella riunione. Oggi è una versione di prova, solo per Linux, provata fino al microfono e non ancora in una riunione vera. Senza account e senza prezzo; il testo resta sul computer.</p>
+            <p class="bolla-testo inoltra-testo" data-release="stabile" data-t="st.inoltra.messaggio-stabile">Kalliope: scrivi una frase e una voce italiana la dice nella riunione. Oggi è solo per Linux, provata fino al microfono e non ancora in una riunione vera. Senza account e senza prezzo; il testo resta sul computer.</p>
+            <p class="inoltra-indirizzo" data-t-no="l'indirizzo della pagina">sansevieria-ou.github.io/kalliope/stato/</p>
+          </div>
+          <svg class="coda" width="32" height="24" viewBox="0 0 32 24" aria-hidden="true"><path d="M0 0h31L7.6 21.6A3.5 3.5 0 0 1 2 18.8V0z"/></svg>
+        </div>
+      </div>
+      <div class="comandi comandi-inoltra">
+        <button class="pillola azione copia-messaggio" type="button" hidden data-t="st.inoltra.copia">Copia il messaggio</button>
+        <a class="collegamento" href="../installa/" data-t="st.inoltra.installa">Come si installa<span class="freccia" aria-hidden="true"></span></a>
+      </div>
+      <p class="copia-esito inoltra-esito" role="status"><span class="copia-fatto" hidden data-t="st.inoltra.fatto">Copiato: incollalo in un messaggio o in una e‑mail.</span><span class="copia-errore" hidden data-t="st.inoltra.errore">Non riesco a copiarlo: seleziona il testo della bolla e copialo, o manda l'indirizzo di questa pagina.</span></p>
+      <p class="senza-js fatti" data-t="st.inoltra.senza-js">Seleziona il testo della bolla e copialo, o manda l'indirizzo di questa pagina.</p>
+    </section>
+  </main>
+
+  <footer class="piede scena-notte">
+    <nav aria-label="Sezioni del sito, in fondo" id="piede-sezioni" data-t-aria-label="piede.sezioni">
+      <ul>
+        <li><a href="../ascolta/" data-t="menu.ascolta">Ascolta</a></li>
+        <li><a href="../stato/" data-t="menu.stato">Stato e limiti</a></li>
+        <li><a href="../installa/" data-t="menu.installa">Installa</a></li>
+        <li><a href="../riunione/" data-t="menu.riunione">In riunione</a></li>
+        <li><a href="../aiuto/" data-t="menu.aiuto">Aiuto</a></li>
+      </ul>
+    </nav>
+    <nav class="lingue" id="lingue" aria-label="Lingue" data-t-aria-label="piede.lingue">
+      <ul data-lingue="elenco">
+        <li><a data-lingua data-t-no="il nome della lingua lo mette la costruzione, dai dati CLDR" href="#">Italiano</a></li>
+      </ul>
+    </nav>
+    <p data-t="piede.testo">Versione {{kalliope.version}} del {{kalliope.date}}. Codice sorgente disponibile, licenza SANSEVIERIA 1.0 (non «open source» nel senso dell'OSI). Prodotto da SANSEVIERIA OÜ. Questo sito non usa cookie né statistiche.</p>
+  </footer>
 </div>
 
-</section>
-<nav class="indice-pagina" aria-label="In questa pagina">
-<details class="dettagli"><summary>In questa pagina</summary><div class="dettagli__corpo">
-<ul>
-<li><a href="#per-chi">Per chi è, e per chi no</a></li>
-<li><a href="#provato-per-app">Provato, app per app</a></li>
-<li><a href="#detta-a-chi">La stessa cosa, detta a ciascuno</a></li>
-<li><a href="#controllare">Se devi controllare</a></li>
-<li><a href="#misure">Misure</a></li>
-<li><a href="#chi">Chi c'è dietro</a></li>
-</ul>
-</div></details>
-</nav>
-<h2 id="per-chi">Per chi è, e per chi no</h2>
-<h3>Fa per te se</h3>
-<ul>
-<li>scrivi con una tastiera o con un altro dispositivo che scrive per te;</li>
-<li>vuoi intervenire in una riunione senza usare la tua voce;</li>
-<li>hai un computer Linux a 64 bit con PipeWire.</li>
-</ul>
-<h3>Forse non fa per te se</h3>
-<ul>
-<li>scrivere è difficile per te. Per alcune persone con afasia Kalliope può non servire, o servire con un familiare. Non lo promettiamo: è da confermare con un logopedista.</li>
-<li>usi Windows, macOS o un telefono: <a href="../non-ancora/">leggi perché non ancora</a>.</li>
-<li>cerchi i sottotitoli della riunione: Kalliope non ascolta.</li>
-<li>cerchi un servizio online: Kalliope è un programma sul tuo computer.</li>
-</ul>
-<p>Kalliope non è un dispositivo medico e non sostituisce la valutazione di un logopedista.</p>
-
-<h2 id="provato-per-app">Provato, app per app</h2>
-<table class="tabella">
-<caption>Versione <span class="solo-prova">di prova</span> <span class="nowrap">{{kalliope.version}}</span>, del {{kalliope.date}}</caption>
-<thead><tr><th scope="col">App</th><th scope="col">In una riunione vera</th><th scope="col">Dove si sceglie il microfono</th></tr></thead>
-<tbody>
-<tr><th scope="row">Zoom</th><td data-etichetta="In una riunione vera"><span class="segno">Non ancora provato</span></td><td data-etichetta="Dove si sceglie il microfono">Impostazioni, Audio, Microfono, «Kalliope».</td></tr>
-<tr><th scope="row">Microsoft Teams</th><td data-etichetta="In una riunione vera"><span class="segno">Non ancora provato</span></td><td data-etichetta="Dove si sceglie il microfono">Non descritto: non lo abbiamo provato.</td></tr>
-<tr><th scope="row">Google Meet</th><td data-etichetta="In una riunione vera"><span class="segno">Non ancora provato</span></td><td data-etichetta="Dove si sceglie il microfono">Non descritto: non lo abbiamo provato.</td></tr>
-<tr><th scope="row">Webex</th><td data-etichetta="In una riunione vera"><span class="segno">Non ancora provato</span></td><td data-etichetta="Dove si sceglie il microfono">Non descritto: non lo abbiamo provato.</td></tr>
-<tr><th scope="row">Jitsi</th><td data-etichetta="In una riunione vera"><span class="segno">Non ancora provato</span></td><td data-etichetta="Dove si sceglie il microfono">Non descritto: non lo abbiamo provato.</td></tr>
-<tr><th scope="row">Browser (pagine di riunione)</th><td data-etichetta="In una riunione vera"><span class="segno">Non ancora provato</span></td><td data-etichetta="Dove si sceglie il microfono">Nella richiesta del browser o nella pagina della riunione.</td></tr>
-</tbody>
-</table>
-<p>Nessuna app è stata provata in una riunione vera. Per Kalliope l'app di riunione è un'app qualunque che registra da un microfono. Funziona se l'app lascia scegliere il microfono, ma va provato app per app. Hai provato? <a href="../aiuto/#segnala">Dicci come è andata</a>.</p>
-
-<h2 id="detta-a-chi">La stessa cosa, detta a ciascuno</h2>
-<table class="tabella">
-<caption>Le stesse informazioni, per chi legge con scopi diversi</caption>
-<thead><tr><th scope="col">Domanda</th><th scope="col">Chi scrive per parlare</th><th scope="col">Chi legge per un altro</th><th scope="col">Chi installa</th><th scope="col">Chi controlla</th></tr></thead>
-<tbody>
-<tr><th scope="row">Cosa fa?</th><td data-etichetta="Chi scrive per parlare">Scrivi, e la tua frase la dice una voce nella riunione.</td><td data-etichetta="Chi legge per un altro">Come per chi scrive, più la sezione «per chi è e per chi no».</td><td data-etichetta="Chi installa">Un programma con un microfono virtuale PipeWire che le app vedono.</td><td data-etichetta="Chi controlla">Fa parlare un testo scritto; non ascolta e non trascrive.</td></tr>
-<tr><th scope="row">Che fine fa il testo?</th><td data-etichetta="Chi scrive per parlare">Resta sul tuo computer.</td><td data-etichetta="Chi legge per un altro">Resta sul computer. Le frasi dette restano in un elenco nella finestra e spariscono quando la chiudi.</td><td data-etichetta="Chi installa">Dopo lo scarico della voce non serve rete.</td><td data-etichetta="Chi controlla">Nessun invio. L'unica connessione è lo scarico della voce (vedi «Se devi controllare»).</td></tr>
-<tr><th scope="row">Quanto costa?</th><td data-etichetta="Chi scrive per parlare">Non c'è un prezzo. L'uso personale è libero.</td><td data-etichetta="Chi legge per un altro">Come per chi scrive.</td><td data-etichetta="Chi installa">Licenza SANSEVIERIA 1.0.</td><td data-etichetta="Chi controlla">Uso personale, di ricerca e interno aziendale: permesso senza compenso. Offerte commerciali: serve l'autorizzazione scritta di SANSEVIERIA OÜ.</td></tr>
-<tr><th scope="row">Cosa serve oggi?</th><td data-etichetta="Chi scrive per parlare">Un computer Linux. Se non ce l'hai, <a href="../non-ancora/">te lo diciamo subito</a>.</td><td data-etichetta="Chi legge per un altro">Come per chi scrive, più qualcuno che lo installi.</td><td data-etichetta="Chi installa">Linux x86_64, glibc 2.39 o più recente, PipeWire con pipewire-pulse, curl.</td><td data-etichetta="Chi controlla">Debian 13, Ubuntu 24.04 o più recenti, Fedora attuale, Arch; altre con l'archivio.</td></tr>
-<tr><th scope="row">È provato?</th><td data-etichetta="Chi scrive per parlare">Fino al microfono sì. In una riunione vera non ancora.</td><td data-etichetta="Chi legge per un altro">Come per chi scrive; dice che prima di una riunione importante conviene fare una prova.</td><td data-etichetta="Chi installa">L'installazione è provata da uno script su Ubuntu, Fedora e Arch.</td><td data-etichetta="Chi controlla">Misure su un solo computer (sotto).</td></tr>
-<tr><th scope="row">Come si installa?</th><td data-etichetta="Chi scrive per parlare">Chiedi a chi ti aiuta di leggere la <a href="../installa/">pagina Installa</a>.</td><td data-etichetta="Chi legge per un altro">Passi con comandi da copiare: <a href="../installa/">pagina Installa</a>.</td><td data-etichetta="Chi installa">Comandi e impronte nella <a href="../installa/">pagina Installa</a>.</td><td data-etichetta="Chi controlla">Impronte e provenienza nella <a href="../installa/">pagina Installa</a>.</td></tr>
-</tbody>
-</table>
-
-<h2 id="controllare">Se devi controllare</h2>
-<p>Ogni affermazione rimanda a un file del repository. Dove non c'è una fonte lo scriviamo.</p>
-<h3>Cosa esce dal computer</h3>
-<ul>
-<li>Il testo che scrivi: niente. Il testo non viene inviato e non viene salvato.</li>
-<li>L'unica connessione dell'app è lo scarico della voce al primo avvio: con il programma curl, da huggingface.co, a una revisione fissata del modello, in tre file (53 MB in tutto). Kalliope controlla l'impronta SHA-256 di ciascun file e scarta quelli che non corrispondono. <span class="piccolo">Fonti: <code>crates/app/src/download.rs</code>, <code>catalog.rs</code>.</span></li>
-<li>Nessun account. Kalliope non ha servizi in background né avvio automatico: è un solo programma. Quando chiudi la finestra si chiude del tutto, e il microfono «Kalliope» sparisce con lui.</li>
-</ul>
-<h3>Cosa viene salvato</h3>
-<ul>
-<li>Sul disco: la voce scelta e la scelta «Senti anche tu», in un file di preferenze. Poi la voce scaricata, in una cartella dell'utente.</li>
-<li>Non viene salvato: il testo scritto e l'elenco delle frasi (resta in memoria, fino a 30 frasi).</li>
-</ul>
-<h3>Licenze</h3>
-<ul>
-<li>Kalliope: SANSEVIERIA 1.0, codice sorgente disponibile. Non è una licenza «open source» approvata dall'OSI.</li>
-<li>Componenti di terzi: ONNX Runtime (MIT), il modello Klein-TTS-X1.5-Pro (Apache-2.0), Slint, il lessico di pronuncia da Wiktionary (<span class="nowrap">CC BY-SA 4.0</span>). L'elenco completo è nei file <code>NOTICE</code> e <code>THIRD_PARTY_NOTICES.md</code> del repository.</li>
-</ul>
-<h3>Impronte e provenienza</h3>
-<ul>
-<li>Le impronte dei file sono nella <a href="../installa/#passo-2">pagina Installa</a> e nel file <a href="{{kalliope.sums.url}}">SHA256SUMS</a> della versione.</li>
-<li class="solo-rc1">Questa versione non ha l'attestazione di provenienza (<code>gh attestation verify</code>): fu pubblicata quando il repository era ancora privato. Le versioni successive l'avranno.</li>
-<li>Non c'è un audit indipendente che possiamo citare.</li>
-</ul>
-<h3 id="misure">Misure</h3>
-<p>Tutte le cifre sono misurate su un solo computer, un portatile con processore Ryzen 5 PRO 6650U. Su altri computer non le conosciamo.</p>
-<div class="misura"><b>2,3% di parole sbagliate</b>Su 10 frasi di prova, trascritte da Whisper dalla voce registrata dal microfono «Kalliope», come la sentirebbe una riunione. Fonte: README, sezione «How it works».</div>
-<div class="misura"><b>0,07 secondi di CPU per ogni secondo di voce</b>Con la voce Klein, un solo thread. Fonte: README.</div>
-<div class="misura"><b>10,6 MB di memoria con la sola finestra; circa 117 MB con la voce caricata</b>Con 0% di CPU quando è ferma. Fonte: README.</div>
-<div class="misura"><b>0% di CPU se nessuna app ascolta; circa 0,26% di un core mentre un'app registra</b>Ritardo del microfono circa 21 ms. Fonte: <code>docs/virtual-microphone.md</code>.</div>
-<p>Non abbiamo misurato il tempo fra la pressione di Invio e il suono nella riunione, né quanto dura «Preparo la voce…» a ogni avvio.</p>
-<h3 id="chi">Chi c'è dietro</h3>
-<p>Kalliope è prodotto da SANSEVIERIA OÜ. Gli autori sono nominati nel file <code>NOTICE</code> del repository. Non c'è un indirizzo <span class="nowrap">e-mail</span>: le segnalazioni passano dalle <a href="https://github.com/SANSEVIERIA-OU/kalliope/issues">issue di GitHub</a>, che richiedono un account GitHub.</p>
-<nav class="avanti" aria-label="Indietro e avanti">
-<a href="../ascolta/"><small>Indietro</small>Ascolta la voce</a>
-<a href="../installa/"><small>Avanti</small>Installa</a>
-</nav>
-</div>
-</main>
-<footer class="sito-piede">
-<div class="pagina">
-<div>
-<h2>Kalliope</h2>
-<p>Un programma per scrivere e farsi sentire nelle riunioni. <span class="solo-prova">Versione di prova {{kalliope.version}}, pubblicata il {{kalliope.date}}.</span></p>
-<p>Codice sorgente disponibile, licenza SANSEVIERIA 1.0. Non è software «open source» nel senso dell'OSI. Prodotto da SANSEVIERIA OÜ.</p>
-<p>Questo sito non usa cookie, non ha statistiche e non carica nulla da altri siti. I file li serve GitHub Pages, che registra le richieste come ogni host.</p>
-</div>
-<div>
-<h2>Nel sito</h2>
-<ul>
-<li><a href="../non-ancora/">Windows e macOS: non ancora</a></li>
-<li><a href="../sistema/">Come è fatto questo sito</a></li>
-<li><a href="../aiuto/#segnala">Segnala un problema</a></li>
-</ul>
-</div>
-<div>
-<h2>Fuori da questo sito</h2>
-<ul>
-<li><a href="https://github.com/SANSEVIERIA-OU/kalliope">Codice sorgente su GitHub</a></li>
-<li><a href="{{kalliope.release.url}}">Pagina della versione {{kalliope.version}}</a></li>
-<li><a href="https://github.com/SANSEVIERIA-OU/kalliope/issues">Segnalazioni su GitHub (serve un account)</a></li>
-</ul>
-</div>
-</div>
-</footer>
+<template id="testi-pagina">
+  <p data-t="st.annuncio.risposta" data-t-nota="Read by screen readers when an answer appears in the bubble. {domanda} is the question.">Risposta: {domanda}</p>
+</template>
 </body>
 </html>

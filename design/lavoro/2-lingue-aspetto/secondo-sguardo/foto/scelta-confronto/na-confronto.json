@@ -1,0 +1,117 @@
+{
+ "scelta": "http://127.0.0.1:8864/it/non-ancora/",
+ "adesso": "http://127.0.0.1:8860/it/non-ancora/",
+ "attesa": 4000,
+ "ridotto": false,
+ "tolleranza": 1,
+ "esiti": [
+  {
+   "misura": "1440x900",
+   "y": 0,
+   "cose": 43,
+   "differenze": [],
+   "ammesse": [],
+   "stessa_cosa": [],
+   "in_movimento": [],
+   "pixel_diversi_percento": 0,
+   "errori": []
+  },
+  {
+   "misura": "390x844",
+   "y": 0,
+   "cose": 36,
+   "differenze": [
+    {
+     "chi": "span «non ancora.»",
+     "che": "SPOSTATO",
+     "dettaglio": "y 100→103 (+3)"
+    },
+    {
+     "chi": "span «non ancora.»",
+     "che": "MISURA",
+     "dettaglio": "176×38 → 350×33"
+    },
+    {
+     "chi": "p «Ricostruzione»",
+     "che": "MISURA",
+     "dettaglio": "350×17 → 350×34"
+    },
+    {
+     "chi": "a «Come saperlo quando arriva»",
+     "che": "SPOSTATO",
+     "dettaglio": "y 661→678 (+17)"
+    },
+    {
+     "chi": "a «Intanto, senti la voce»",
+     "che": "SPOSTATO",
+     "dettaglio": "y 709→726 (+17)"
+    },
+    {
+     "chi": "p «versione di prova 0.1-rc.1, solo per Linux (x86_»",
+     "che": "SPOSTATO",
+     "dettaglio": "y 761→778 (+17)"
+    },
+    {
+     "chi": "strong «Oggi:»",
+     "che": "SPOSTATO",
+     "dettaglio": "y 762→779 (+17)"
+    },
+    {
+     "chi": "span.luce-tratto",
+     "che": "SPOSTATO",
+     "dettaglio": "y 512→529 (+17)"
+    },
+    {
+     "chi": "span «· su Windows e macOS «Kalliope» non compare fra »",
+     "che": "IN PIÙ",
+     "dettaglio": "a 20,631, 350×32"
+    }
+   ],
+   "ammesse": [],
+   "stessa_cosa": [],
+   "in_movimento": [],
+   "pixel_diversi_percento": 8.56,
+   "errori": []
+  },
+  {
+   "misura": "390x667",
+   "y": 0,
+   "cose": 28,
+   "differenze": [
+    {
+     "chi": "span «non ancora.»",
+     "che": "SPOSTATO",
+     "dettaglio": "y 100→103 (+3)"
+    },
+    {
+     "chi": "span «non ancora.»",
+     "che": "MISURA",
+     "dettaglio": "176×38 → 350×33"
+    },
+    {
+     "chi": "span.luce-tratto",
+     "che": "SPOSTATO",
+     "dettaglio": "y 530→547 (+17)"
+    }
+   ],
+   "ammesse": [],
+   "stessa_cosa": [],
+   "in_movimento": [],
+   "pixel_diversi_percento": 0,
+   "errori": []
+  },
+  {
+   "misura": "844x390",
+   "y": 0,
+   "cose": 12,
+   "differenze": [],
+   "ammesse": [],
+   "stessa_cosa": [],
+   "in_movimento": [],
+   "pixel_diversi_percento": 0,
+   "errori": []
+  }
+ ],
+ "dichiarazioni_non_usate": [],
+ "misurato": "2026-11-17T09:53:58.849Z"
+}

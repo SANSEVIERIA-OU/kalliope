@@ -33,6 +33,27 @@ La prima pagina interna rifatta nella direzione 2 è `website/non-ancora/`. Ha p
 - **Il catalogo**: `catalogo/catalogo-pagine.js` (+ `.css`) aggiunge la sezione «Pagine interne» con una scheda per ciascuno dei cinque, con stati, varianti e la pagina viva a misure vere; chi aggiunge un'altra area scrive un altro file così e non tocca il nucleo (`catalogo.js`).
 - **Gli stati nella configurazione degli strumenti** (`metodo.config.mjs`): riposo, menu aperto, ascolto in corso, errore dell'audio, copia fatta e non riuscita, per `esame-impaginazione.mjs` e `dispositivi-qa.mjs`; i limiti dichiarati (le sole misure con il messaggio d'errore dove nemmeno la riunione più bassa basta: vince il messaggio) con il rimando alla decisione.
 
+## La pagina «stato»: cinque pezzi nuovi (17/11/2026, incarico 3b, resa della direzione: da completare)
+
+La seconda pagina interna, `website/stato/` (con `stato.js`), sulla cornice di «non ancora». Idea: **ogni fatto sta dove accade**: provato
+fino al microfono, in riunione non ancora. Piano dei tratti e fonti: `design/lavoro/3b-stato/PIANO.md`; che cosa dice la pagina:
+`design/lavoro/3b-stato/CONTENUTI.md`.
+
+- **`riunione-provata.css`**: la riunione di «non ancora» con la voce. «Tu» parla, nella barra dell'app «Kalliope · provato fin qui» si
+  accende, un'onda tratteggiata parte da «Tu» e i riquadri che tocca restano tratteggiati (il segno di «non ancora» della home).
+- **`catena.css`**: la strada della voce vista da vicino, verticale: sei tappe (si installa, scrivi, la voce nasce, il microfono, l'app,
+  gli altri), ognuna con i fatti e il file da cui vengono (`.fonte`), una cifra grande dove c'è (`.cifra`, con la quota di un secondo o la
+  riga delle parole), la cornice del computer intorno alle tappe provate, la linea tratteggiata dopo il microfono, una parentesi «non
+  misurato» sul lato. Una tappa si accende quando arriva sullo schermo, in fila.
+- **`domande.css`**: le domande in fila come pulsanti-voce e la risposta nella bolla; al computer la bolla resta in vista, al telefono si
+  apre sotto la domanda premuta; senza script ogni domanda ha la sua risposta sotto.
+- **`varco.css`**: il computer come oggetto (finestra di Kalliope, disco, microfono) che mostra il fatto del passo a metà schermo; dal
+  varco entrano i tre file della voce, una volta. Sotto, le licenze e le impronte (`.licenze`).
+- **`inoltra.css`**: il messaggio da inoltrare nella bolla, con «Copia il messaggio» e le due risposte.
+- In `pagina.css` una regola aggiunta: un titolo di quattro righe sugli schermi bassi del computer prende la misura del tablet (quelli di tre
+  righe non cambiano). I token: blocco «La pagina «stato»» in fondo a `token.css`, documentati in fondo a `TOKEN.md`.
+- Non ancora nel catalogo (lo fa il ruolo di costruzione, come per «non ancora»); gli stati della pagina sono già in `metodo.config.mjs`.
+
 ## Come si usa per un'altra pagina
 
 1. Collega `design-system/token.css`, `design-system/base.css` e solo i componenti che servono, nell'ordine in cui li collega la home: è l'ordine del foglio da cui vengono. Nella prova è stato verificato sulla home che nessuna coppia di regole di file diversi, a pari specificità, riguardi lo stesso elemento con l'ordine invertito; su una pagina nuova va riguardato.

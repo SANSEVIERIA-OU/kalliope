@@ -1,0 +1,74 @@
+{
+ "scelta": "http://127.0.0.1:8864/it/",
+ "adesso": "http://127.0.0.1:8860/it/",
+ "attesa": 6000,
+ "ridotto": false,
+ "tolleranza": 1,
+ "esiti": [
+  {
+   "misura": "1440x900",
+   "y": 0,
+   "cose": 62,
+   "differenze": [],
+   "ammesse": [],
+   "stessa_cosa": [],
+   "in_movimento": [
+    "div.bolla-corpo",
+    "span «Sono»",
+    "span «d'accordo»",
+    "span «con»",
+    "span «Paola.»",
+    "span «Però»",
+    "span «la»",
+    "span «consegna»",
+    "span «del»",
+    "span «14/3»",
+    "span «mi»",
+    "span «sembra»",
+    "span «stretta:»",
+    "span «possiamo»",
+    "span «sentirci»",
+    "span «venerdì»",
+    "span «alle»",
+    "span «15:30?»",
+    "svg.coda"
+   ],
+   "pixel_diversi_percento": 1.95,
+   "errori": []
+  },
+  {
+   "misura": "390x844",
+   "y": 0,
+   "cose": 55,
+   "differenze": [
+    {
+     "chi": "span «Tu scrivi, gli altri»",
+     "che": "SPOSTATO",
+     "dettaglio": "y 100→103 (+3)"
+    },
+    {
+     "chi": "span «Tu scrivi, gli altri»",
+     "che": "MISURA",
+     "dettaglio": "251×38 → 350×33"
+    },
+    {
+     "chi": "span «ti sentono.»",
+     "che": "SPOSTATO",
+     "dettaglio": "y 133→136 (+3)"
+    },
+    {
+     "chi": "span «ti sentono.»",
+     "che": "MISURA",
+     "dettaglio": "155×38 → 350×33"
+    }
+   ],
+   "ammesse": [],
+   "stessa_cosa": [],
+   "in_movimento": [],
+   "pixel_diversi_percento": 0,
+   "errori": []
+  }
+ ],
+ "dichiarazioni_non_usate": [],
+ "misurato": "2026-11-17T09:52:40.347Z"
+}

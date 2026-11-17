@@ -1,0 +1,6 @@
+na-de: nessuna rotta
+na-enxa: nessuna rotta
+ar: nessuna rotta
+ur: nessuna rotta
+arxb: nessuna rotta
+TOTALE 0 rotte su 175

@@ -1,0 +1,593 @@
+[
+ {
+  "w": 326,
+  "h": 326,
+  "passo": "prima",
+  "ih": 326,
+  "y": 4172,
+  "barraFondo": 56,
+  "bolla": [
+   71.7,
+   144.3
+  ],
+  "riunione": [
+   160.3,
+   220.3
+  ],
+  "pulsante": [
+   254.3,
+   302.3
+  ],
+  "titolo": [
+   -205.7,
+   -96.5
+  ],
+  "etichetta": "⁦Ascolta⁩ ⁦Giulia⁩",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 326,
+  "h": 326,
+  "passo": "0.3s",
+  "ih": 326,
+  "y": 4180,
+  "barraFondo": 56,
+  "bolla": [
+   63.7,
+   136.3
+  ],
+  "riunione": [
+   152.3,
+   212.3
+  ],
+  "pulsante": [
+   246.3,
+   294.3
+  ],
+  "titolo": [
+   -213.7,
+   -104.5
+  ],
+  "etichetta": "جارٍ التحميل…",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma carica",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 326,
+  "h": 326,
+  "passo": "1s",
+  "ih": 326,
+  "y": 4180,
+  "barraFondo": 56,
+  "bolla": [
+   63.7,
+   136.3
+  ],
+  "riunione": [
+   152.3,
+   212.3
+  ],
+  "pulsante": [
+   246.3,
+   294.3
+  ],
+  "titolo": [
+   -213.7,
+   -104.5
+  ],
+  "etichetta": "إيقاف مؤقت",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 326,
+  "h": 326,
+  "passo": "2.5s",
+  "ih": 326,
+  "y": 4180,
+  "barraFondo": 56,
+  "bolla": [
+   63.7,
+   136.3
+  ],
+  "riunione": [
+   152.3,
+   212.3
+  ],
+  "pulsante": [
+   246.3,
+   294.3
+  ],
+  "titolo": [
+   -213.7,
+   -104.5
+  ],
+  "etichetta": "إيقاف مؤقت",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 326,
+  "h": 326,
+  "passo": "4.5s",
+  "ih": 326,
+  "y": 4180,
+  "barraFondo": 56,
+  "bolla": [
+   63.7,
+   136.3
+  ],
+  "riunione": [
+   152.3,
+   212.3
+  ],
+  "pulsante": [
+   246.3,
+   294.3
+  ],
+  "titolo": [
+   -213.7,
+   -104.5
+  ],
+  "etichetta": "إيقاف مؤقت",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 326,
+  "h": 326,
+  "passo": "pausa",
+  "ih": 326,
+  "y": 4180,
+  "barraFondo": 56,
+  "bolla": [
+   63.7,
+   136.3
+  ],
+  "riunione": [
+   152.3,
+   212.3
+  ],
+  "pulsante": [
+   246.3,
+   294.3
+  ],
+  "titolo": [
+   -213.7,
+   -104.5
+  ],
+  "etichetta": "استئناف",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma pausa",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 326,
+  "h": 326,
+  "errori": []
+ },
+ {
+  "w": 844,
+  "h": 390,
+  "passo": "prima",
+  "ih": 390,
+  "y": 3642,
+  "barraFondo": 72,
+  "bolla": [
+   63.9,
+   161.2
+  ],
+  "riunione": [
+   179.2,
+   275.9
+  ],
+  "pulsante": [
+   309.9,
+   365.9
+  ],
+  "titolo": [
+   -249.7,
+   -72.9
+  ],
+  "etichetta": "⁦Ascolta⁩ ⁦Giulia⁩",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 844,
+  "h": 390,
+  "passo": "0.3s",
+  "ih": 390,
+  "y": 3626,
+  "barraFondo": 72,
+  "bolla": [
+   79.9,
+   177.2
+  ],
+  "riunione": [
+   195.2,
+   291.9
+  ],
+  "pulsante": [
+   325.9,
+   381.9
+  ],
+  "titolo": [
+   -233.7,
+   -56.9
+  ],
+  "etichetta": "إيقاف مؤقت",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 844,
+  "h": 390,
+  "passo": "1s",
+  "ih": 390,
+  "y": 3626,
+  "barraFondo": 72,
+  "bolla": [
+   79.9,
+   177.2
+  ],
+  "riunione": [
+   195.2,
+   291.9
+  ],
+  "pulsante": [
+   325.9,
+   381.9
+  ],
+  "titolo": [
+   -233.7,
+   -56.9
+  ],
+  "etichetta": "إيقاف مؤقت",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 844,
+  "h": 390,
+  "passo": "2.5s",
+  "ih": 390,
+  "y": 3626,
+  "barraFondo": 72,
+  "bolla": [
+   79.9,
+   177.2
+  ],
+  "riunione": [
+   195.2,
+   291.9
+  ],
+  "pulsante": [
+   325.9,
+   381.9
+  ],
+  "titolo": [
+   -233.7,
+   -56.9
+  ],
+  "etichetta": "إيقاف مؤقت",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 844,
+  "h": 390,
+  "passo": "4.5s",
+  "ih": 390,
+  "y": 3626,
+  "barraFondo": 72,
+  "bolla": [
+   79.9,
+   177.2
+  ],
+  "riunione": [
+   195.2,
+   291.9
+  ],
+  "pulsante": [
+   325.9,
+   381.9
+  ],
+  "titolo": [
+   -233.7,
+   -56.9
+  ],
+  "etichetta": "إيقاف مؤقت",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 844,
+  "h": 390,
+  "passo": "pausa",
+  "ih": 390,
+  "y": 3626,
+  "barraFondo": 72,
+  "bolla": [
+   79.9,
+   177.2
+  ],
+  "riunione": [
+   195.2,
+   291.9
+  ],
+  "pulsante": [
+   325.9,
+   381.9
+  ],
+  "titolo": [
+   -233.7,
+   -56.9
+  ],
+  "etichetta": "استئناف",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma pausa",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 844,
+  "h": 390,
+  "errori": []
+ },
+ {
+  "w": 390,
+  "h": 844,
+  "passo": "prima",
+  "ih": 844,
+  "y": 3377,
+  "barraFondo": 56,
+  "bolla": [
+   571.4,
+   644
+  ],
+  "riunione": [
+   660,
+   738
+  ],
+  "pulsante": [
+   772,
+   820
+  ],
+  "titolo": [
+   294,
+   403.2
+  ],
+  "etichetta": "⁦Ascolta⁩ ⁦Giulia⁩",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 390,
+  "h": 844,
+  "passo": "0.3s",
+  "ih": 844,
+  "y": 3415,
+  "barraFondo": 56,
+  "bolla": [
+   533.4,
+   606
+  ],
+  "riunione": [
+   622,
+   700
+  ],
+  "pulsante": [
+   734,
+   782
+  ],
+  "titolo": [
+   256,
+   365.2
+  ],
+  "etichetta": "إيقاف مؤقت",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 390,
+  "h": 844,
+  "passo": "1s",
+  "ih": 844,
+  "y": 3415,
+  "barraFondo": 56,
+  "bolla": [
+   533.4,
+   606
+  ],
+  "riunione": [
+   622,
+   700
+  ],
+  "pulsante": [
+   734,
+   782
+  ],
+  "titolo": [
+   256,
+   365.2
+  ],
+  "etichetta": "إيقاف مؤقت",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 390,
+  "h": 844,
+  "passo": "2.5s",
+  "ih": 844,
+  "y": 3415,
+  "barraFondo": 56,
+  "bolla": [
+   533.4,
+   606
+  ],
+  "riunione": [
+   622,
+   700
+  ],
+  "pulsante": [
+   734,
+   782
+  ],
+  "titolo": [
+   256,
+   365.2
+  ],
+  "etichetta": "إيقاف مؤقت",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 390,
+  "h": 844,
+  "passo": "4.5s",
+  "ih": 844,
+  "y": 3415,
+  "barraFondo": 56,
+  "bolla": [
+   533.4,
+   606
+  ],
+  "riunione": [
+   622,
+   700
+  ],
+  "pulsante": [
+   734,
+   782
+  ],
+  "titolo": [
+   256,
+   365.2
+  ],
+  "etichetta": "إيقاف مؤقت",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 390,
+  "h": 844,
+  "passo": "pausa",
+  "ih": 844,
+  "y": 3415,
+  "barraFondo": 56,
+  "bolla": [
+   533.4,
+   606
+  ],
+  "riunione": [
+   622,
+   700
+  ],
+  "pulsante": [
+   734,
+   782
+  ],
+  "titolo": [
+   256,
+   365.2
+  ],
+  "etichetta": "استئناف",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma pausa",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 390,
+  "h": 844,
+  "errori": []
+ }
+]

@@ -1164,3 +1164,42 @@ come nella home. Tolti: `--scelta-tu-*`, `--ritardo-scelta-tu`, `--scelta-bolla-
 `--font-nomi-lingue` cominciano da `"Lexend"`: la faccia latina della famiglia dei nomi scaricava lo stesso file una seconda volta. La pila
 dell'urdu nomina un nastaliq e un urdu del sistema prima del ripiego generico. Un nome di lingua fuori dall'urdu torna ai file dei nomi
 (`[lang]:not(:lang(ur))`). Nessun token per la barra «raccolta» (`barra.css`, misurata da `website/componenti.js`): usa quelli della barra del tablet.
+
+## La pagina «stato» (incarico 3b, 17/11/2026)
+
+Blocco `:root` in fondo a `token.css` («La pagina «stato»») e una domanda sui media che lo segue (al telefono la riga delle parole è più
+fitta). Componenti nuovi: `riunione-provata.css`, `catena.css`, `domande.css`, `varco.css`, `inoltra.css`; in `pagina.css` una regola
+aggiunta (un titolo di quattro righe sugli schermi bassi del computer prende la misura del tablet). Nessun token esistente è cambiato.
+
+| Token | Valore | Ruolo |
+|---|---|---|
+| `--opacita-provato-bordo` | `0.55` | il bordo di «Tu» dopo l'arrivo: resta acceso a metà (la voce è arrivata al microfono) |
+| `--velo-oltre` | `rgba(36, 4, 14, 0.32)` | il velo sugli altri, oltre il confine del provato |
+| `--durata-provato-bordo`, `--durata-provato-barre`, `--ripetizioni-provato-barre`, `--ritardo-provato-barre`, `--provato-barre-da` | `var(--durata-bordo)`, `260ms`, `6`, `130ms`, `0.35` | «Tu» parla: il bordo si accende, le barre salgono e scendono per un secondo e mezzo |
+| `--durata-oltre`, `--onda-oltre-da`, `--opacita-onda-oltre`, `--ritardo-oltre-luca`, `-paola`, `-anna` | `360ms`, `0.02`, `0.75`, `220ms`, `440ms`, `500ms` | l'onda tratteggiata che parte da «Tu»: dove tocca un riquadro, lo lascia tratteggiato |
+| `--provato-acceso-ombra`, `--durata-provato-frase` | anello della voce, `800ms` | il microfono «Kalliope» quando la voce ci arriva; la frase della bolla che si accende |
+| `--ritardo-voce-provata`, `--ritardo-microfono-provato`, `--ritardo-oltre-segnato` | `2500ms`, `600ms`, `700ms` | l'arrivo del primo schermo: «Tu» parla, poi il microfono, poi l'onda verso gli altri (`stato.js`) |
+| `--catena-misura-larghezza`, `--catena-misura-margine` | `200px`, `78px 0 18px` | la parentesi sul lato della catena: «dal tasto Invio al suono nella riunione: non misurato» |
+| `--catena-computer-spazio-interno`, `-telefono`, `--catena-computer-spazio-inline`, `-telefono` | `20px 26px 4px`, `14px 16px 2px`, `26px`, `16px` | la cornice del computer intorno alle tappe provate |
+| `--anello-nodo`, `-telefono`, `--anello-spazio-blocco`, `--anello-spazio-blocco-sopra`, `--anello-ultimo-spazio-sotto`, `--anello-nome-margine`, `-telefono`, `--anello-fatti-colonne` | `64px`, `48px`, `26px`, `26px`, `30px`, `16px 0 0`, `11px 0 0`, `minmax(0, 300px) minmax(0, 1fr)` | una tappa della catena: il nodo, gli spazi, il nome, la cifra a sinistra e il fatto a destra |
+| `--anello-nodo-da`, `--opacita-anello-spento`, `--durata-anello-linea`, `--ritardo-anello-dopo`, `--durata-anello-nodo` | `0.9`, `0.4`, `260ms`, `320ms`, `var(--durata-nodo-trasforma)` | una tappa alla volta: la linea arriva al nodo, il nodo si accende crescendo, la linea riparte |
+| `--fonte-spazio-interno` | `0 8px 1px` | l'etichetta del file da cui viene un fatto (`.fonte`) |
+| `--cifra-grandezza`, `--cifra-interlinea`, `-telefono` | `54px`, `58px`, `38px`, `42px` | una cifra misurata, in voce |
+| `--quota-larghezza`, `--quota-altezza`, `--quota-voce-processore`, `--durata-quota`, `--ritardo-quota` | `260px`, `8px`, `0.07`, `900ms`, `520ms` | la quota: un secondo di voce, e la parte accesa (0,07 s di processore, README) che si riempie |
+| `--parole-quante`, `--parole-sbagliata`, `--parole-passo`, `--parole-segno`, `-telefono`, `--parole-altezza`, `--parole-segni-fondo`, `--durata-parole`, `--parola-sbagliata-ombra` | `43`, `29`, `6px`, `3px`, `5px`, `2px`, `16px`, gradiente a segni, `900ms`, anello dell'azione | la riga delle parole: una su 43 (il 2,3%) è sbagliata e lampeggia due volte |
+| `--pacchetto-spazio-interno`, `--passo-pacchetti` | `3px 10px 4px`, `120ms` | le etichette piccole a pillola (pacchetti, app, file); i quattro pacchetti si accendono in fila |
+| `--riscrive-campo-spazio-interno`, `--riscrive-bolla-spazio-interno`, `--ritardo-riscrive` | `6px 10px 7px`, `7px 13px 8px`, `820ms` | «Scrivi la frase»: il campo, poi la bolla di ciò che la voce dice |
+| `--domande-colonne`, `--domanda-spazio-interno-blocco`, `-inline`, `--domanda-spazio-interno-telefono-blocco`, `-inline` | `minmax(0, 480px) minmax(0, 1fr)`, `11px 12px`, `16px 22px`, `10px 11px`, `14px 18px` | le domande in fila, e la bolla accanto |
+| `--domande-bolla-sopra`, `--domande-bolla-larghezza`, `--domande-bolla-grandezza`, `--domande-bolla-interlinea` | `calc(var(--barra-altezza) + 32px)`, `640px`, `var(--bolla-testo-grandezza)`, `var(--bolla-testo-interlinea)` | la bolla della risposta, che resta in vista sotto la barra |
+| `--ritardo-domande-bolla`, `--durata-domanda-via`, `--durata-domanda-arriva`, `--durata-domanda-misura` | `360ms`, `140ms`, `var(--durata-scelta-sfondo)`, `420ms` | la prima risposta nasce; cambiando domanda le parole si spengono, la bolla prende la misura nuova, le parole nuove compaiono |
+| `--varco-larghezza`, `-medio`, `--varco-sopra`, `-telefono`, `--varco-spazio-sopra`, `-telefono`, `--varco-spazio-interno`, `-telefono`, `--varco-altezza-minima`, `--varco-colonne` | `600px`, `400px`, `calc(var(--barra-altezza) + 40px)`, `56px`, `40px`, `30px`, `48px 22px 22px`, `30px 12px 12px`, `340px`, `minmax(0, 1.2fr) minmax(0, 1fr)` | il computer del varco, che resta in vista mentre scorrono i passi |
+| `--varco-finestra-spazio-interno`, `--varco-disco-spazio-interno`, `--varco-pacco-spazio-interno` | `14px 16px 18px`, `14px 16px 16px`, `3px 7px` | la finestra di Kalliope, il disco, un file della voce |
+| `--varco-filo-fine`, `--varco-filo-sopra`, `--varco-filo-altezza` | `148px`, `26px`, `64px` | il filo da cui entra la voce: da «huggingface.co» al disco |
+| `--varco-passi-distanza`, `-telefono`, `--varco-fondo-telefono` | `26vh`, `38vh`, chiaro che sfuma | un passo alla volta a metà schermo; al telefono il computer agganciato ha sotto il chiaro della scena |
+| `--opacita-varco-quieto`, `--varco-acceso-ombra`, `--varco-chiude-scala`, `--durata-varco`, `--durata-pacco`, `--passo-pacchi`, `--curva-pacco`, `--ritardo-varco-voce`, `--finestra-chiara-ombra-varco` | `0.38`, anello della voce, `0.94`, `420ms`, `620ms`, `220ms`, `cubic-bezier(0.45, 0, 0.2, 1)`, `900ms`, ombra | i passi del varco: ciò che non riguarda il passo si quieta, il campo si accende, i tre file scendono in fila, la finestra si chiude |
+| `--inoltra-larghezza`, `--inoltra-spazio-interno`, `--ritardo-inoltra-bolla`, `--durata-inoltra-copiata`, `--inoltra-copiata-ombra` | `720px`, `20px 26px 22px`, `360ms`, `900ms`, anello della voce | il messaggio da inoltrare: la bolla nasce; copiato, l'anello della voce una volta |
+
+Le variabili per elemento che i componenti si danno da sé: `--barra-base` (l'altezza di riposo di ogni barra di «Tu», `riunione-provata.css`),
+`--quota` (`catena.css`, da `--quota-voce-processore`), `--anello-spazio-sopra-nodo` (`catena.css`), `--ritardo` (come nei tratti). Le soglie
+non cambiano. Da portare nei token (come per `scena.js` e `non-ancora.js`): in `stato.js` i moltiplicatori della discesa dei file (0,6; 1,6;
+0,85; 0,7) e le curve `linear` delle dissolvenze della bolla delle domande.

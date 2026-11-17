@@ -1,0 +1,5 @@
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+CONFRONTO 1440×900: uguale su 42 cose nello schermo · pixel diversi 0%
+CONFRONTO 1366×640: uguale su 41 cose nello schermo · pixel diversi 0%
+CONFRONTO 390×844: uguale su 36 cose nello schermo · pixel diversi 0%
+Uguale alla scelta, salvo le differenze ammesse (foto in /tmp/lavoro-3b-scelta-non-ancora)

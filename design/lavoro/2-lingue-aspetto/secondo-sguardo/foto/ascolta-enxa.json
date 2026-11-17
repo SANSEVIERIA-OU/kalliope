@@ -1,0 +1,396 @@
+[
+ {
+  "w": 326,
+  "h": 326,
+  "passo": "prima",
+  "ih": 326,
+  "y": 4479,
+  "barraFondo": 56,
+  "bolla": [
+   26,
+   136
+  ],
+  "riunione": [
+   152,
+   220
+  ],
+  "pulsante": [
+   254,
+   302
+  ],
+  "titolo": [
+   -244,
+   -118
+  ],
+  "etichetta": "[Åšçöļţá Ĺö Ĝîûļîá Ĺö]",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 326,
+  "h": 326,
+  "passo": "0.3s",
+  "ih": 326,
+  "y": 4441,
+  "barraFondo": 56,
+  "bolla": [
+   64,
+   174
+  ],
+  "riunione": [
+   190,
+   258
+  ],
+  "pulsante": [
+   292,
+   340
+  ],
+  "titolo": [
+   -206,
+   -80
+  ],
+  "etichetta": "[Çáŕîçö… Ĺö]",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma carica",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 326,
+  "h": 326,
+  "passo": "1s",
+  "ih": 326,
+  "y": 4441,
+  "barraFondo": 56,
+  "bolla": [
+   64,
+   174
+  ],
+  "riunione": [
+   190,
+   258
+  ],
+  "pulsante": [
+   292,
+   340
+  ],
+  "titolo": [
+   -206,
+   -80
+  ],
+  "etichetta": "[Þáûšá Ĺ]",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 326,
+  "h": 326,
+  "passo": "2.5s",
+  "ih": 326,
+  "y": 4441,
+  "barraFondo": 56,
+  "bolla": [
+   64,
+   174
+  ],
+  "riunione": [
+   190,
+   258
+  ],
+  "pulsante": [
+   292,
+   340
+  ],
+  "titolo": [
+   -206,
+   -80
+  ],
+  "etichetta": "[Þáûšá Ĺ]",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 326,
+  "h": 326,
+  "passo": "4.5s",
+  "ih": 326,
+  "y": 4441,
+  "barraFondo": 56,
+  "bolla": [
+   64,
+   174
+  ],
+  "riunione": [
+   190,
+   258
+  ],
+  "pulsante": [
+   292,
+   340
+  ],
+  "titolo": [
+   -206,
+   -80
+  ],
+  "etichetta": "[Þáûšá Ĺ]",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 326,
+  "h": 326,
+  "passo": "pausa",
+  "ih": 326,
+  "y": 4455,
+  "barraFondo": 56,
+  "bolla": [
+   50,
+   160
+  ],
+  "riunione": [
+   176,
+   244
+  ],
+  "pulsante": [
+   278,
+   326
+  ],
+  "titolo": [
+   -220,
+   -94
+  ],
+  "etichetta": "[Ŕîþŕéñðî Ĺöŕ]",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma pausa",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 326,
+  "h": 326,
+  "errori": []
+ },
+ {
+  "w": 844,
+  "h": 390,
+  "passo": "prima",
+  "ih": 390,
+  "y": 3943,
+  "barraFondo": 72,
+  "bolla": [
+   64,
+   152
+  ],
+  "riunione": [
+   170,
+   276
+  ],
+  "pulsante": [
+   310,
+   366
+  ],
+  "titolo": [
+   -237,
+   -101
+  ],
+  "etichetta": "[Åšçöļţá Ĺö Ĝîûļîá Ĺö]",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 844,
+  "h": 390,
+  "passo": "0.3s",
+  "ih": 390,
+  "y": 3927,
+  "barraFondo": 72,
+  "bolla": [
+   80,
+   168
+  ],
+  "riunione": [
+   186,
+   292
+  ],
+  "pulsante": [
+   326,
+   382
+  ],
+  "titolo": [
+   -221,
+   -85
+  ],
+  "etichetta": "[Þáûšá Ĺ]",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 844,
+  "h": 390,
+  "passo": "1s",
+  "ih": 390,
+  "y": 3927,
+  "barraFondo": 72,
+  "bolla": [
+   80,
+   168
+  ],
+  "riunione": [
+   186,
+   292
+  ],
+  "pulsante": [
+   326,
+   382
+  ],
+  "titolo": [
+   -221,
+   -85
+  ],
+  "etichetta": "[Þáûšá Ĺ]",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 844,
+  "h": 390,
+  "passo": "2.5s",
+  "ih": 390,
+  "y": 3927,
+  "barraFondo": 72,
+  "bolla": [
+   80,
+   168
+  ],
+  "riunione": [
+   186,
+   292
+  ],
+  "pulsante": [
+   326,
+   382
+  ],
+  "titolo": [
+   -221,
+   -85
+  ],
+  "etichetta": "[Þáûšá Ĺ]",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 844,
+  "h": 390,
+  "passo": "4.5s",
+  "ih": 390,
+  "y": 3927,
+  "barraFondo": 72,
+  "bolla": [
+   80,
+   168
+  ],
+  "riunione": [
+   186,
+   292
+  ],
+  "pulsante": [
+   326,
+   382
+  ],
+  "titolo": [
+   -221,
+   -85
+  ],
+  "etichetta": "[Þáûšá Ĺ]",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 844,
+  "h": 390,
+  "passo": "pausa",
+  "ih": 390,
+  "y": 3927,
+  "barraFondo": 72,
+  "bolla": [
+   80,
+   168
+  ],
+  "riunione": [
+   186,
+   292
+  ],
+  "pulsante": [
+   326,
+   382
+  ],
+  "titolo": [
+   -221,
+   -85
+  ],
+  "etichetta": "[Ŕîþŕéñðî Ĺöŕ]",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma pausa",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 844,
+  "h": 390,
+  "errori": []
+ }
+]

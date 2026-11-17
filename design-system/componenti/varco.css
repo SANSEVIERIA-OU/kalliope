@@ -1,0 +1,195 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* Componente · Il varco: che cosa entra nel computer, che cosa resta e che cosa sparisce
+   Il computer della strada (strada.css: «Sul tuo computer») visto da vicino, come oggetto: dentro la finestra di Kalliope con la frase
+   scritta e le frasi già dette, il disco, il microfono «Kalliope». Il bordo ha un solo varco: da lì entra la voce, una volta, in tre file
+   controllati con la loro impronta. Accanto, i passi del testo: a ogni passo che arriva a metà schermo il computer mostra quel fatto
+   (il testo resta qui; i tre file entrano dal varco; ciò che resta sul disco; la finestra che si chiude porta via l'elenco e il microfono).
+   Al computer l'oggetto resta in vista mentre si scorre; al telefono resta agganciato sotto la barra. Senza JavaScript e con «riduci
+   movimento» si vede tutto insieme, fermo. Prima pagina che lo usa: website/stato/. Ogni valore viene da ../token.css. */
+
+.varco-scena { display: grid; grid-template-columns: minmax(0, 1fr) var(--varco-larghezza); column-gap: var(--spazio-30); align-items: start; margin-top: var(--spazio-26); }
+.varco { grid-column: 2; grid-row: 1; position: sticky; top: var(--varco-sopra); padding-top: var(--varco-spazio-sopra); color: var(--testo); }
+.varco-passi { grid-column: 1; grid-row: 1; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--varco-passi-distanza); }
+.varco-passo { max-width: var(--tratto-testo-larghezza-massima); padding-inline-start: var(--spazio-19); border-inline-start: var(--filetto-forte) solid var(--requisito-traccia); transition: border-color var(--durata-requisiti) var(--curva-dolce); }
+.varco-passo h3 { margin: 0; font-size: var(--corpo-11); line-height: var(--interlinea-10); font-weight: var(--peso-titolo); color: var(--bordeaux); }
+.varco-passo p { margin: var(--spazio-8) 0 0; font-size: var(--corpo-8); line-height: var(--interlinea-8); color: var(--testo-spiegazione-chiara); text-wrap: pretty; }
+.js .varco-scena.viva .varco-passo.qui { border-color: var(--magenta); }
+.scena-chiara .fonte { border-color: var(--bordo-rivedi-chiaro); color: var(--testo-nota-chiara); }
+
+/* fuori dal computer, sopra il disco: da dove arriva la voce, e il filo che la porta dentro (si vede solo mentre entra) */
+.varco-fuori {
+  position: absolute;
+  top: 0;
+  inset-inline-end: var(--varco-filo-fine);
+  z-index: var(--livello-tappe);
+  transform: translateX(calc(50% * var(--verso)));
+  padding: var(--pacchetto-spazio-interno);
+  border-radius: var(--raggio-pillola);
+  border: var(--filetto-sottile) dashed var(--bordo-rivedi-chiaro);
+  background: var(--testo);
+  color: var(--bordeaux);
+  font-size: var(--corpo-4);
+  line-height: var(--interlinea-2);
+  font-weight: var(--peso-forte);
+  white-space: nowrap;
+}
+.varco-filo {
+  position: absolute;
+  top: var(--varco-filo-sopra);
+  inset-inline-end: var(--varco-filo-fine);
+  z-index: var(--livello-tappe);
+  width: 0;
+  height: var(--varco-filo-altezza);
+  border-inline-start: var(--filetto-medio) dashed var(--magenta);
+  transform-origin: 50% 0;
+  opacity: 0;
+}
+.varco-bordo {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--varco-colonne);
+  grid-template-rows: auto auto;
+  gap: var(--spazio-12);
+  min-height: var(--varco-altezza-minima);
+  padding: var(--varco-spazio-interno);
+  border-radius: var(--raggio-13);
+  background: var(--riquadro-scuro);
+  border: var(--filetto-medio) solid var(--bordo-pannello);
+  box-shadow: var(--riunione-app-ombra);
+}
+.varco-nome { position: absolute; top: var(--spazio-12); inset-inline-start: var(--spazio-17); font-size: var(--corpo-5); font-weight: var(--peso-forte); color: var(--testo-secondario); }
+.varco-etichetta { display: block; font-size: var(--corpo-4); line-height: var(--interlinea-2); font-weight: var(--peso-forte); color: var(--testo-didascalia); }
+
+/* la finestra di Kalliope, piccola: la frase nel campo, le frasi già dette */
+.varco-finestra {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spazio-5);
+  padding: var(--varco-finestra-spazio-interno);
+  border-radius: var(--raggio-7);
+  background: var(--app-fondo);
+  color: var(--app-testo);
+  font-family: var(--font-app);
+  box-shadow: var(--finestra-chiara-ombra-varco);
+  transition: opacity var(--durata-varco) var(--curva-dolce), transform var(--durata-varco) var(--entra), box-shadow var(--durata-varco) var(--curva-dolce);
+}
+.varco-finestra .varco-etichetta { color: var(--app-nota); font-family: var(--font-testo); }
+.varco-campo { display: block; padding: var(--riscrive-campo-spazio-interno); border-radius: var(--raggio-4); background: var(--app-campo); border: var(--filetto-sottile) solid var(--app-campo-bordo); border-bottom-color: var(--app-bordo-forte); font-size: var(--corpo-6); line-height: var(--interlinea-5); transition: box-shadow var(--durata-varco) var(--curva-dolce), outline-color var(--durata-varco) var(--curva-dolce); outline: var(--filetto-medio) dashed transparent; outline-offset: var(--spazio-1); }
+.varco-gia { margin-top: var(--spazio-7); font-size: var(--corpo-3); font-weight: var(--peso-forte); color: var(--app-nota); }
+.varco-elenco { display: flex; flex-direction: column; gap: var(--spazio-3); padding: var(--spazio-3); border-radius: var(--raggio-2); outline: var(--filetto-medio) dashed transparent; outline-offset: var(--spazio-1); transition: outline-color var(--durata-varco) var(--curva-dolce), opacity var(--durata-varco) var(--curva-dolce); }
+.varco-memoria { font-family: var(--font-testo); font-size: var(--corpo-2); line-height: var(--interlinea-1); font-weight: var(--peso-forte); color: var(--magenta); transition: opacity var(--durata-varco) var(--curva-dolce); }
+.varco-elenco i { display: block; height: var(--misura-6); border-radius: var(--raggio-1); background: var(--app-barra-vuota); }
+.varco-elenco i:nth-child(1) { width: 92%; }
+.varco-elenco i:nth-child(2) { width: 70%; }
+.varco-elenco i:nth-child(3) { width: 82%; }
+
+/* il disco: ciò che resta; i file stanno al centro, sotto il filo da cui entra la voce */
+.varco-disco {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spazio-5);
+  padding: var(--varco-disco-spazio-interno);
+  border-radius: var(--raggio-7);
+  background: var(--velo-comando);
+  border: var(--filetto-sottile) solid var(--bordo-pannello);
+  transition: opacity var(--durata-varco) var(--curva-dolce);
+}
+.varco-file {
+  padding: var(--pacchetto-spazio-interno);
+  border-radius: var(--raggio-pillola);
+  border: var(--filetto-sottile) solid var(--bordo-voce);
+  font-size: var(--corpo-4);
+  line-height: var(--interlinea-2);
+  font-weight: var(--peso-medio);
+  white-space: nowrap;
+  transition: border-color var(--durata-varco) var(--curva-dolce), background-color var(--durata-varco) var(--curva-dolce), color var(--durata-varco) var(--curva-dolce);
+}
+/* il microfono «Kalliope»: c'è finché la finestra è aperta */
+.varco-mic {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: end;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spazio-5);
+  padding: var(--pacchetto-spazio-interno);
+  border-radius: var(--raggio-pillola);
+  background: var(--velo-comando);
+  border: var(--filetto-sottile) solid var(--bordo-pannello);
+  font-size: var(--corpo-4);
+  line-height: var(--interlinea-2);
+  font-weight: var(--peso-medio);
+  transition: opacity var(--durata-varco) var(--curva-dolce), transform var(--durata-varco) var(--entra);
+}
+.varco-mic .app-icona { width: var(--misura-9); height: var(--misura-9); }
+.varco-mic .app-icona::before { inset: var(--spazio-3); }
+/* i tre file della voce, con l'inizio della loro impronta: entrano dal varco (con lo script) */
+.varco-pacchi { position: absolute; top: var(--varco-filo-sopra); inset-inline-end: var(--varco-filo-fine); transform: translateX(calc(50% * var(--verso))); display: grid; opacity: 0; pointer-events: none; }
+.varco-pacchi i { grid-area: 1 / 1; justify-self: center; }   /* i tre file scendono in fila lungo il filo, uno dopo l'altro */
+.varco-pacchi i {
+  padding: var(--varco-pacco-spazio-interno);
+  border-radius: var(--raggio-3);
+  background: var(--voce);
+  color: var(--bordeaux);
+  font-style: normal;
+  font-size: var(--corpo-2);
+  line-height: var(--interlinea-1);
+  font-weight: var(--peso-forte);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- i passi (con lo script) ---------- */
+.js .varco[data-passo="testo"] .varco-disco, .js .varco[data-passo="testo"] .varco-mic { opacity: var(--opacita-varco-quieto); }
+.js .varco[data-passo="testo"] .varco-campo { box-shadow: var(--varco-acceso-ombra); }
+.js .varco[data-passo="testo"] .varco-bordo { border-color: var(--voce); }
+.js .varco[data-passo="scarico"] .varco-finestra, .js .varco[data-passo="scarico"] .varco-mic { opacity: var(--opacita-varco-quieto); }
+.js .varco[data-passo="scarico"] .varco-filo { opacity: 1; animation: varco-filo var(--durata-pacco) var(--curva-lineare) 1 backwards; }
+@keyframes varco-filo {
+  from { transform: scaleY(0); }
+  to { transform: none; }
+}
+.js .varco[data-passo="scarico"] .varco-voce, .js .varco[data-passo="disco"] .varco-file, .js .varco[data-passo="chiudi"] .varco-file { border-color: var(--voce); background: var(--velo-scelto); }
+/* nello scarico la voce si accende quando arriva il primo file */
+.js .varco[data-passo="scarico"] .varco-voce { transition-delay: var(--ritardo-varco-voce); }
+.js .varco[data-passo="disco"] .varco-campo, .js .varco[data-passo="disco"] .varco-elenco { outline-color: var(--magenta); }
+.js .varco[data-passo="testo"] .varco-memoria, .js .varco[data-passo="scarico"] .varco-memoria { opacity: 0; }
+.js .varco[data-passo="disco"] .varco-mic { opacity: var(--opacita-varco-quieto); }
+.js .varco[data-passo="chiudi"] .varco-finestra { opacity: 0; transform: scale(var(--varco-chiude-scala)); }
+.js .varco[data-passo="chiudi"] .varco-mic { opacity: 0; transform: translateY(var(--sale12-da-sposta-y)); }
+
+@media (max-width: 1180px) {
+  .varco-scena { grid-template-columns: minmax(0, 1fr) var(--varco-larghezza-medio); column-gap: var(--spazio-24); }
+}
+@media (max-width: 760px) {
+  /* al telefono il computer resta agganciato sotto la barra, piccolo, e i passi scorrono sotto */
+  .varco-scena { display: block; }
+  .varco { position: sticky; top: var(--varco-sopra-telefono); z-index: var(--livello-tappe); padding-top: var(--varco-spazio-sopra-telefono); margin-inline: calc(-1 * var(--spazio-5)); padding-inline: var(--spazio-5); padding-bottom: var(--spazio-10); background: var(--varco-fondo-telefono); }
+  .varco-bordo { min-height: 0; padding: var(--varco-spazio-interno-telefono); gap: var(--spazio-7); border-radius: var(--raggio-11); }
+  .varco-campo { font-size: var(--corpo-4); line-height: var(--interlinea-3); }
+  .varco-nome { top: var(--spazio-7); inset-inline-start: var(--spazio-12); font-size: var(--corpo-2); }
+  .varco-passi { gap: var(--varco-passi-distanza-telefono); margin-top: var(--spazio-21); }
+  .varco-passo h3 { font-size: var(--corpo-9); line-height: var(--interlinea-6); }
+  .varco-passo p { font-size: var(--corpo-6); line-height: var(--interlinea-6); }
+}
+
+/* le licenze, le impronte e il codice: sotto il computer, due colonne di testo */
+.licenze { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--spazio-30); row-gap: var(--spazio-24); margin-top: var(--spazio-30); padding-top: var(--spazio-24); border-top: var(--filetto-sottile) solid var(--requisito-traccia); }
+.licenze h3 { margin: 0; font-size: var(--corpo-11); line-height: var(--interlinea-10); font-weight: var(--peso-titolo); color: var(--bordeaux); }
+.licenze p { margin: var(--spazio-8) 0 0; max-width: var(--misura-30); font-size: var(--corpo-7); line-height: var(--interlinea-8); color: var(--testo-spiegazione-chiara); text-wrap: pretty; }
+.licenze a { font-weight: var(--peso-forte); color: var(--bordeaux); text-underline-offset: var(--spazio-3); text-decoration-color: var(--bordo-rivedi-chiaro); }
+.licenze a:hover { text-decoration-color: var(--bordeaux); }
+.licenze-parti { list-style: none; margin: var(--spazio-14) 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--spazio-5); }
+.licenze-parti li { display: inline-flex; gap: var(--spazio-5); padding: var(--pacchetto-spazio-interno); border-radius: var(--raggio-pillola); border: var(--filetto-sottile) solid var(--bordo-rivedi-chiaro); font-size: var(--corpo-4); line-height: var(--interlinea-2); color: var(--scuro); }
+.licenze-parti li span + span { font-weight: var(--peso-forte); color: var(--bordeaux); }
+.licenze .licenze-nota { font-size: var(--corpo-5); line-height: var(--interlinea-5); color: var(--testo-nota-chiara); }
+.comando { font-family: var(--font-app); font-size: var(--corpo-5); padding: var(--spazi-6); border-radius: var(--raggio-2); background: var(--requisito-traccia); white-space: nowrap; }
+@media (max-width: 760px) {
+  .licenze { grid-template-columns: minmax(0, 1fr); margin-top: var(--spazio-26); }
+  .licenze h3 { font-size: var(--corpo-9); line-height: var(--interlinea-6); }
+  .licenze p { font-size: var(--corpo-6); line-height: var(--interlinea-6); }
+}

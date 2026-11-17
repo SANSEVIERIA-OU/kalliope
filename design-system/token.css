@@ -1187,3 +1187,126 @@
   --durata-scelta-barre: 260ms;
   --ripetizioni-scelta-barre: 4;   /* le barre si muovono finché l'ultimo nome è acceso (30 × 34 ms) */
 }
+
+/* ---------- La pagina «stato» (incarico 3b, 17/11/2026) ----------
+   Valori nuovi della pagina «stato», ognuno con il suo ruolo; dove il ruolo è lo stesso di un valore della home o di «non ancora», il
+   token lo richiama. Componenti: componenti/riunione-provata.css, catena.css, domande.css, varco.css, inoltra.css. */
+:root {
+  /* · La riunione con il confine del provato (primo schermo) */
+  --opacita-provato-bordo: 0.55;   /* il bordo di chi parla, dopo l'arrivo: resta acceso a metà (la voce è arrivata al microfono) */
+  --velo-oltre: rgba(36, 4, 14, 0.32);   /* il velo sugli altri, oltre il confine del provato: un poco più spenti, non nascosti */
+  --durata-provato-bordo: var(--durata-bordo);   /* il bordo di «Tu» si accende come quello di chi parla nella home */
+  --durata-provato-barre: 260ms;   /* le barre di «Tu» mentre parla: su e giù (come le barre della pagina della scelta) */
+  --ripetizioni-provato-barre: 6;   /* poco più di un secondo e mezzo: la frase detta, poi si ferma */
+  --ritardo-provato-barre: 130ms;   /* le barre pari partono a metà: non salgono tutte insieme */
+  --provato-barre-da: 0.35;   /* quanto si abbassano le barre di «Tu» fra una sillaba e l'altra */
+  --durata-oltre: 360ms;   /* il tratteggio di un riquadro compare quando l'onda lo tocca */
+  --onda-oltre-da: 0.02;   /* l'onda tratteggiata parte dal centro di «Tu» */
+  --opacita-onda-oltre: 0.75;
+  --ritardo-oltre-luca: 220ms;   /* l'onda (900 ms lineari, larga quanto la riunione) tocca Luca, poi Paola, poi Anna: il tratteggio compare lì */
+  --ritardo-oltre-paola: 440ms;
+  --ritardo-oltre-anna: 500ms;
+  --provato-acceso-ombra: 0 0 0 3px var(--voce), 0 0 26px 6px var(--alone-forte);   /* il microfono «Kalliope» quando la voce ci arriva: l'anello della voce */
+  --durata-provato-frase: 800ms;   /* la frase della bolla si accende quando «Tu» parla */
+  --ritardo-voce-provata: 2500ms;   /* «Tu» comincia a parlare: la bolla è nata (1900 ms + 520) */
+  --ritardo-microfono-provato: 600ms;   /* dopo, il microfono «Kalliope» si accende: la voce ci è arrivata */
+  --ritardo-oltre-segnato: 700ms;   /* dopo ancora, l'onda tratteggiata verso gli altri: oltre il microfono non è provato */
+  /* · La catena: la strada della voce vista da vicino */
+  --catena-misura-larghezza: 200px;   /* la parentesi sul lato: «dal tasto Invio al suono nella riunione: non misurato» */
+  --catena-misura-margine: 78px 0 18px;   /* la parentesi comincia con la prima tappa e finisce con l'ultima */
+  --catena-computer-spazio-interno: 20px 26px 4px;   /* il nome del computer, in cima alla cornice */
+  --catena-computer-spazio-interno-telefono: 14px 16px 2px;
+  --catena-computer-spazio-inline: 26px;   /* dentro la cornice, dal bordo al nodo */
+  --catena-computer-spazio-inline-telefono: 16px;
+  --anello-nodo: 64px;   /* il nodo di una tappa (la strada della home: 80; qui le tappe sono sei e hanno i fatti accanto) */
+  --anello-nodo-telefono: 48px;
+  --anello-spazio-blocco: 26px;   /* sopra e sotto una tappa */
+  --anello-spazio-blocco-sopra: 26px;   /* dal filo di sopra al nodo: la linea arriva al centro del nodo */
+  --anello-ultimo-spazio-sotto: 30px;   /* l'ultima tappa provata chiude la cornice del computer */
+  --anello-nome-margine: 16px 0 0;   /* il nome della tappa, all'altezza del nodo */
+  --anello-nome-margine-telefono: 11px 0 0;
+  --anello-fatti-colonne: minmax(0, 300px) minmax(0, 1fr);   /* la cifra (o il segno) a sinistra, il fatto con la sua fonte a destra */
+  --anello-nodo-da: 0.9;   /* il nodo si accende crescendo un poco, come le tappe della home */
+  --opacita-anello-spento: 0.4;   /* una tappa non ancora raggiunta dalla linea */
+  --durata-anello-linea: 260ms;   /* la linea arriva al nodo (e poi ne riparte) */
+  --ritardo-anello-dopo: 320ms;   /* la linea riparte quando il nodo si è acceso */
+  --durata-anello-nodo: var(--durata-nodo-trasforma);
+  --fonte-spazio-interno: 0 8px 1px;   /* l'etichetta del file da cui viene un fatto */
+  --cifra-grandezza: 54px;   /* una cifra misurata: la cosa più grande della tappa, in voce (le percentuali di R04, Waymo Safety Hub, sono il centro del blocco) */
+  --cifra-interlinea: 58px;
+  --cifra-grandezza-telefono: 38px;
+  --cifra-interlinea-telefono: 42px;
+  --quota-larghezza: 260px;   /* la barra della quota: un secondo di voce */
+  --quota-altezza: 8px;
+  --quota-voce-processore: 0.07;   /* la parte accesa: 0,07 s di processore per ogni secondo di voce (README) */
+  --durata-quota: 900ms;   /* la quota si riempie (il tempo delle onde della home) */
+  --ritardo-quota: 520ms;   /* quando il nodo è acceso */
+  --parole-quante: 43;   /* una parola su 43 è il 2,3% (README: 2,3% di parole sbagliate) */
+  --parole-sbagliata: 29;   /* quale parola della riga è quella sbagliata: una qualsiasi, non l'ultima */
+  --parole-passo: 6px;   /* un segno ogni 6 px */
+  --parole-segno: 3px;
+  --parole-passo-telefono: 5px;
+  --parole-segno-telefono: 2px;
+  --parole-altezza: 16px;
+  --parole-segni-fondo: repeating-linear-gradient(90deg, var(--voce) 0 var(--parole-segno), transparent var(--parole-segno) var(--parole-passo));
+  --durata-parole: 900ms;   /* la riga delle parole si scrive da un capo all'altro */
+  --parola-sbagliata-ombra: 0 0 0 3px var(--ombra-azione);   /* la parola sbagliata lampeggia due volte */
+  --pacchetto-spazio-interno: 3px 10px 4px;   /* un pacchetto provato, un'app, un file: etichette piccole a pillola */
+  --passo-pacchetti: 120ms;   /* i quattro pacchetti si accendono uno dopo l'altro */
+  --riscrive-campo-spazio-interno: 6px 10px 7px;   /* il campo della finestra, piccolo */
+  --riscrive-bolla-spazio-interno: 7px 13px 8px;   /* la bolla di ciò che la voce dice, piccola */
+  --ritardo-riscrive: 820ms;   /* la bolla nasce dopo il campo: prima si scrive, poi si dice */
+  /* · Le domande, e la risposta nella bolla */
+  --domande-colonne: minmax(0, 480px) minmax(0, 1fr);
+  --domanda-spazio-interno-blocco: 11px 12px;
+  --domanda-spazio-interno-inline: 16px 22px;   /* inizio e fine: il tondo all'inizio, aria dopo la domanda */
+  --domanda-spazio-interno-telefono-blocco: 10px 11px;
+  --domanda-spazio-interno-telefono-inline: 14px 18px;   /* inizio e fine */
+  --domande-bolla-sopra: calc(var(--barra-altezza) + 32px);   /* la bolla resta in vista sotto la barra mentre si scorrono le domande */
+  --domande-bolla-larghezza: 640px;
+  --domande-bolla-grandezza: var(--bolla-testo-grandezza);   /* la risposta grande come la frase della riunione */
+  --domande-bolla-interlinea: var(--bolla-testo-interlinea);
+  --ritardo-domande-bolla: 360ms;   /* la prima risposta nasce quando il titolo è salito e le domande ci sono */
+  --durata-domanda-via: 140ms;   /* le parole della risposta di prima si spengono */
+  --durata-domanda-arriva: var(--durata-scelta-sfondo);   /* le parole nuove compaiono (la dissolvenza della frase delle cifre) */
+  --durata-domanda-misura: 420ms;   /* la bolla prende la misura nuova (FLIP, come la bolla delle cifre della home) */
+  /* · Il varco: che cosa entra nel computer, che cosa resta */
+  --varco-larghezza: 600px;
+  --varco-larghezza-medio: 400px;
+  --varco-sopra: calc(var(--barra-altezza) + 40px);   /* il computer resta in vista mentre scorrono i passi */
+  --varco-sopra-telefono: 56px;   /* al telefono, agganciato sotto la barra */
+  --varco-spazio-sopra: 40px;   /* sopra il computer: da dove viene la voce */
+  --varco-spazio-sopra-telefono: 30px;
+  --varco-spazio-interno: 48px 22px 22px;
+  --varco-spazio-interno-telefono: 30px 12px 12px;
+  --varco-altezza-minima: 340px;   /* il computer ha presenza accanto ai passi (al telefono no: sta agganciato e piccolo) */
+  --varco-colonne: minmax(0, 1.2fr) minmax(0, 1fr);
+  --varco-finestra-spazio-interno: 14px 16px 18px;
+  --varco-disco-spazio-interno: 14px 16px 16px;
+  --varco-filo-fine: 148px;   /* il filo da cui entra la voce scende sopra il centro del disco (dalla fine del computer: margine e metà della colonna) */
+  --varco-filo-sopra: 26px;   /* parte sotto «huggingface.co» */
+  --varco-filo-altezza: 64px;   /* e arriva al disco, attraverso il bordo del computer */
+  --varco-pacco-spazio-interno: 3px 7px;
+  --varco-passi-distanza: 26vh;   /* fra un passo e l'altro: uno alla volta a metà schermo */
+  --varco-passi-distanza-telefono: 38vh;
+  --varco-fondo-telefono: linear-gradient(180deg, var(--testo) 70%, var(--bianco-trasparente) 100%);   /* al telefono il computer agganciato ha sotto il chiaro della scena, che sfuma */
+  --opacita-varco-quieto: 0.38;   /* le parti del computer che non riguardano il passo */
+  --varco-acceso-ombra: 0 0 0 3px var(--voce), 0 0 22px 4px var(--bordo-evidente);   /* il campo della frase, acceso: resta qui */
+  --varco-chiude-scala: 0.94;   /* la finestra si chiude rimpicciolendo */
+  --durata-varco: 420ms;
+  --durata-pacco: 620ms;   /* un file della voce scende dal varco al disco */
+  --passo-pacchi: 220ms;
+  --curva-pacco: cubic-bezier(0.45, 0, 0.2, 1);   /* un file scende accelerando e arriva morbido: la curva della linea della strada della home (scena.js) */
+  --ritardo-varco-voce: 900ms;   /* «la voce · 53 MB» si accende quando il primo file è arrivato (filo 620 ms, poi la discesa) */
+  --finestra-chiara-ombra-varco: 0 14px 30px -18px var(--ombra-finestra);
+  /* · Il messaggio da inoltrare */
+  --inoltra-larghezza: 720px;
+  --inoltra-spazio-interno: 20px 26px 22px;
+  --ritardo-inoltra-bolla: 360ms;   /* la bolla nasce quando il titolo è salito */
+  --durata-inoltra-copiata: 900ms;
+  --inoltra-copiata-ombra: 0 0 0 3px var(--voce), 0 0 30px 6px var(--alone-forte);   /* copiato: l'anello della voce, come una frase appena detta */
+}
+/* al telefono la riga delle parole è più fitta (il segno e il passo si leggono nel token del fondo, qui sopra: si cambiano qui) */
+@media (max-width: 760px) {
+  :root { --parole-passo: var(--parole-passo-telefono); --parole-segno: var(--parole-segno-telefono); }
+}

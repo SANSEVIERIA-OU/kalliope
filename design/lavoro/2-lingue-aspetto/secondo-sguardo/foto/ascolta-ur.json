@@ -1,0 +1,396 @@
+[
+ {
+  "w": 326,
+  "h": 326,
+  "passo": "prima",
+  "ih": 326,
+  "y": 4641,
+  "barraFondo": 56,
+  "bolla": [
+   16.6,
+   144.2
+  ],
+  "riunione": [
+   160.2,
+   220.2
+  ],
+  "pulsante": [
+   254.2,
+   302.2
+  ],
+  "titolo": [
+   -234.8,
+   -129
+  ],
+  "etichetta": "⁦Ascolta⁩ ⁦Giulia⁩",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 326,
+  "h": 326,
+  "passo": "0.3s",
+  "ih": 326,
+  "y": 4594,
+  "barraFondo": 56,
+  "bolla": [
+   63.6,
+   191.2
+  ],
+  "riunione": [
+   207.2,
+   267.2
+  ],
+  "pulsante": [
+   301.3,
+   349.2
+  ],
+  "titolo": [
+   -187.8,
+   -82
+  ],
+  "etichetta": "لوڈ ہو رہا ہے…",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma carica",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 326,
+  "h": 326,
+  "passo": "1s",
+  "ih": 326,
+  "y": 4594,
+  "barraFondo": 56,
+  "bolla": [
+   63.6,
+   191.2
+  ],
+  "riunione": [
+   207.2,
+   267.2
+  ],
+  "pulsante": [
+   301.2,
+   349.2
+  ],
+  "titolo": [
+   -187.8,
+   -82
+  ],
+  "etichetta": "وقفہ",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 326,
+  "h": 326,
+  "passo": "2.5s",
+  "ih": 326,
+  "y": 4594,
+  "barraFondo": 56,
+  "bolla": [
+   63.6,
+   191.2
+  ],
+  "riunione": [
+   207.2,
+   267.2
+  ],
+  "pulsante": [
+   301.2,
+   349.2
+  ],
+  "titolo": [
+   -187.8,
+   -82
+  ],
+  "etichetta": "وقفہ",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 326,
+  "h": 326,
+  "passo": "4.5s",
+  "ih": 326,
+  "y": 4594,
+  "barraFondo": 56,
+  "bolla": [
+   63.6,
+   191.2
+  ],
+  "riunione": [
+   207.2,
+   267.2
+  ],
+  "pulsante": [
+   301.2,
+   349.2
+  ],
+  "titolo": [
+   -187.8,
+   -82
+  ],
+  "etichetta": "وقفہ",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 326,
+  "h": 326,
+  "passo": "pausa",
+  "ih": 326,
+  "y": 4617,
+  "barraFondo": 56,
+  "bolla": [
+   40.6,
+   168.2
+  ],
+  "riunione": [
+   184.2,
+   244.2
+  ],
+  "pulsante": [
+   278.2,
+   326.2
+  ],
+  "titolo": [
+   -210.8,
+   -105
+  ],
+  "etichetta": "جاری رکھیں",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma pausa",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 326,
+  "h": 326,
+  "errori": []
+ },
+ {
+  "w": 844,
+  "h": 390,
+  "passo": "prima",
+  "ih": 390,
+  "y": 3990,
+  "barraFondo": 72,
+  "bolla": [
+   63.8,
+   189
+  ],
+  "riunione": [
+   207,
+   275.8
+  ],
+  "pulsante": [
+   309.8,
+   365.8
+  ],
+  "titolo": [
+   -155.1,
+   -69.4
+  ],
+  "etichetta": "⁦Ascolta⁩ ⁦Giulia⁩",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 844,
+  "h": 390,
+  "passo": "0.3s",
+  "ih": 390,
+  "y": 3974,
+  "barraFondo": 72,
+  "bolla": [
+   79.8,
+   205
+  ],
+  "riunione": [
+   223,
+   291.8
+  ],
+  "pulsante": [
+   325.8,
+   381.8
+  ],
+  "titolo": [
+   -139.1,
+   -53.4
+  ],
+  "etichetta": "وقفہ",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 844,
+  "h": 390,
+  "passo": "1s",
+  "ih": 390,
+  "y": 3974,
+  "barraFondo": 72,
+  "bolla": [
+   79.8,
+   205
+  ],
+  "riunione": [
+   223,
+   291.8
+  ],
+  "pulsante": [
+   325.8,
+   381.8
+  ],
+  "titolo": [
+   -139.1,
+   -53.4
+  ],
+  "etichetta": "وقفہ",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 844,
+  "h": 390,
+  "passo": "2.5s",
+  "ih": 390,
+  "y": 3974,
+  "barraFondo": 72,
+  "bolla": [
+   79.8,
+   205
+  ],
+  "riunione": [
+   223,
+   291.8
+  ],
+  "pulsante": [
+   325.8,
+   381.8
+  ],
+  "titolo": [
+   -139.1,
+   -53.4
+  ],
+  "etichetta": "وقفہ",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 844,
+  "h": 390,
+  "passo": "4.5s",
+  "ih": 390,
+  "y": 3974,
+  "barraFondo": 72,
+  "bolla": [
+   79.8,
+   205
+  ],
+  "riunione": [
+   223,
+   291.8
+  ],
+  "pulsante": [
+   325.8,
+   381.8
+  ],
+  "titolo": [
+   -139.1,
+   -53.4
+  ],
+  "etichetta": "وقفہ",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 844,
+  "h": 390,
+  "passo": "pausa",
+  "ih": 390,
+  "y": 3974,
+  "barraFondo": 72,
+  "bolla": [
+   79.8,
+   205
+  ],
+  "riunione": [
+   223,
+   291.8
+  ],
+  "pulsante": [
+   325.8,
+   381.8
+  ],
+  "titolo": [
+   -139.1,
+   -53.4
+  ],
+  "etichetta": "جاری رکھیں",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma pausa",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 844,
+  "h": 390,
+  "errori": []
+ }
+]

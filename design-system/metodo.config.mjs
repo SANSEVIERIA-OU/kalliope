@@ -22,20 +22,33 @@ const statiNonAncora = [
   {nome: 'non-ancora-copia-non-riuscita', url: NA, dopo: async p => { await p.evaluate(() => { navigator.clipboard.writeText = () => Promise.reject(new Error('no')); }); await alQuando(p); if (!await p.isVisible('.copia-indirizzo')) return false; await p.click('.copia-indirizzo'); await p.waitForTimeout(700); }, inVista: '.copia-indirizzo, .copia-errore'},
 ];
 
+// «stato» (incarico 3b): la pagina a riposo e gli stati che ne cambiano l'impaginazione. La risposta nella bolla (al telefono si apre sotto la
+// domanda premuta) e la copia del messaggio da inoltrare (gli appunti si simulano, come per «non ancora»).
+const ST = 'it/stato/';
+const alleDomande = async p => { await p.evaluate(() => document.querySelector('#per-chi').scrollIntoView({block: 'start'})); await p.waitForTimeout(900); };
+const allInoltra = async p => { await p.evaluate(() => document.querySelector('#inoltra').scrollIntoView({block: 'start'})); await p.waitForTimeout(900); };
+const statiStato = [
+  {nome: 'stato', url: ST},
+  {nome: 'stato-menu', url: ST, dopo: async p => { if (!await p.isVisible('.pulsante-menu')) return false; await p.click('.pulsante-menu'); await p.waitForTimeout(500); }, inVista: '#menu.aperto'},
+  {nome: 'stato-domanda', url: ST, dopo: async p => { await alleDomande(p); await p.click('#d-chi .domanda-bottone'); await p.waitForTimeout(900); }, inVista: '#d-chi .domanda-bottone, .domande-bolla'},
+  {nome: 'stato-copia-fatta', url: ST, dopo: async p => { await p.evaluate(() => { navigator.clipboard.writeText = () => Promise.resolve(); }); await allInoltra(p); if (!await p.isVisible('.copia-messaggio')) return false; await p.click('.copia-messaggio'); await p.waitForTimeout(700); }, inVista: '.copia-messaggio, .inoltra-esito .copia-fatto'},
+  {nome: 'stato-copia-non-riuscita', url: ST, dopo: async p => { await p.evaluate(() => { navigator.clipboard.writeText = () => Promise.reject(new Error('no')); }); await allInoltra(p); if (!await p.isVisible('.copia-messaggio')) return false; await p.click('.copia-messaggio'); await p.waitForTimeout(700); }, inVista: '.copia-messaggio, .inoltra-esito .copia-errore'},
+];
+
 export default {
   // il sito costruito e servito in locale (docs/releasing.md, «Website»)
   base: process.env.ANTEPRIMA || 'http://127.0.0.1:8765/kalliope/',
   // il sito costruito ha una cartella per lingua: la home in italiano sta in it/, l'indirizzo principale è la scelta della lingua
-  pagine: [{nome: 'home', url: 'it/'}, {nome: 'scelta-lingua', url: ''}, {nome: 'catalogo', url: 'design-system/catalogo/'}, ...statiNonAncora],
+  pagine: [{nome: 'home', url: 'it/'}, {nome: 'scelta-lingua', url: ''}, {nome: 'catalogo', url: 'design-system/catalogo/'}, ...statiNonAncora, ...statiStato],
   sorgenti: {
     token: 'token.css',
     css: ['base.css', 'componenti/*.css', 'catalogo/*.css'],
     // le pagine che devono avere la riga text-scale: la home non l'ha (SISTEMA.md, «Da decidere»), il catalogo sì
     html: ['catalogo/index.html'],
     // gli stili dentro le pagine (<style>)
-    pagine: ['../website/index.html', '../website/lingue.html', 'catalogo/index.html', '../website/non-ancora/index.html'],
+    pagine: ['../website/index.html', '../website/lingue.html', 'catalogo/index.html', '../website/non-ancora/index.html', '../website/stato/index.html'],
     // gli script che mettono variabili sugli elementi (setProperty('--x', …)): la scena e il catalogo
-    script: ['../website/scena.js', '../website/testi.js', '../website/lingua.js', '../website/componenti.js', 'catalogo/*.js', '../website/cornice.js', '../website/non-ancora/non-ancora.js'],
+    script: ['../website/scena.js', '../website/testi.js', '../website/lingua.js', '../website/componenti.js', 'catalogo/*.js', '../website/cornice.js', '../website/non-ancora/non-ancora.js', '../website/stato/stato.js'],
     perElemento: [],
     // le larghezze a cui la pagina cambia impaginazione (@media, @container): non si leggono da una variabile
     soglie: ['349px', '350px', '360px', '374px', '420px', '440px', '500px', '699px', '759px', '760px', '761px', '790px', '791px', '799px', '802px', '819px', '840px', '959px', '999px', '1000px', '1010px', '1180px', '1181px', '1209px'],

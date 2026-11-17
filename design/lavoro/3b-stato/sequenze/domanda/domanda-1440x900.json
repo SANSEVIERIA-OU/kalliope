@@ -1,0 +1,76 @@
+{
+ "pagina": "http://127.0.0.1:38747/it/stato/index.html",
+ "misura": "1440x900",
+ "sequenza": "domanda",
+ "gesto": "premi:#d-voce .domanda-bottone",
+ "ridotto": false,
+ "lento": 1,
+ "istanti": [
+  0,
+  0.1,
+  0.2,
+  0.3,
+  0.45,
+  0.6,
+  0.8,
+  1.2
+ ],
+ "fotogrammi": [
+  {
+   "file": "domanda-1440x900-f01.jpg",
+   "chiesto": 0,
+   "scattato": 0,
+   "scorrimento": 3280
+  },
+  {
+   "file": "domanda-1440x900-f02.jpg",
+   "chiesto": 0.1,
+   "scattato": 0.15,
+   "scorrimento": 3280
+  },
+  {
+   "file": "domanda-1440x900-f03.jpg",
+   "chiesto": 0.2,
+   "scattato": 0.29,
+   "scorrimento": 3280
+  },
+  {
+   "file": "domanda-1440x900-f04.jpg",
+   "chiesto": 0.3,
+   "scattato": 0.37,
+   "scorrimento": 3280
+  },
+  {
+   "file": "domanda-1440x900-f05.jpg",
+   "chiesto": 0.45,
+   "scattato": 0.47,
+   "scorrimento": 3280
+  },
+  {
+   "file": "domanda-1440x900-f06.jpg",
+   "chiesto": 0.6,
+   "scattato": 0.6,
+   "scorrimento": 3280
+  },
+  {
+   "file": "domanda-1440x900-f07.jpg",
+   "chiesto": 0.8,
+   "scattato": 0.8,
+   "scorrimento": 3280
+  },
+  {
+   "file": "domanda-1440x900-f08.jpg",
+   "chiesto": 1.2,
+   "scattato": 1.2,
+   "scorrimento": 3280
+  }
+ ],
+ "foglio": "domanda-1440x900-foglio.jpg",
+ "video": "domanda-1440x900.webm",
+ "orologio": {
+  "pagina": 1,
+  "media": []
+ },
+ "errori": [],
+ "misurato": "2026-11-17T10:49:41.547Z"
+}

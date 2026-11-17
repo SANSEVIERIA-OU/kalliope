@@ -1,0 +1,301 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* Componente · La catena: la strada della voce vista da vicino
+   La strada della home (strada.css), dritta e verticale, con i fatti accanto a ogni tappa: ogni cifra sta nel punto in cui è stata
+   misurata, con il file da cui viene. La cornice del computer tiene le tappe provate e dice su quale computer si è misurato; dopo il
+   microfono la linea è tratteggiata, come nella home: lì nessuno ha ancora provato. Ogni tappa si accende quando arriva sullo schermo,
+   una dopo l'altra: la linea arriva al nodo, il nodo si accende, compaiono i fatti, la linea prosegue.
+   Senza JavaScript e con «riduci movimento» la catena è già disegnata e accesa. Prima pagina che la usa: website/stato/.
+   Ogni valore viene da ../token.css. */
+
+.catena {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--catena-misura-larghezza);
+  column-gap: var(--spazio-24);
+  margin-top: var(--spazio-29);
+}
+.catena-computer, .catena-tappe { grid-column: 1; }
+
+/* la parentesi sul lato: dal tasto Invio al suono nella riunione, tutto il tratto; non misurato */
+.catena-misura {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: stretch;
+  margin: var(--catena-misura-margine);
+  padding-inline-start: var(--spazio-16);
+  border-inline-start: var(--filetto-medio) dashed var(--tratteggio);
+  font-size: var(--corpo-6);
+  line-height: var(--interlinea-6);
+  color: var(--testo-secondario);
+}
+.catena-misura strong { display: block; margin-top: var(--spazio-3); font-weight: var(--peso-forte); color: var(--testo); }
+
+/* la cornice del computer: comincia con il suo nome e prosegue dietro le tappe provate (.nel-computer), fino al microfono */
+.catena-computer {
+  grid-row: 1;
+  padding: var(--catena-computer-spazio-interno);
+  border: var(--filetto-sottile) solid var(--bordo-pannello);
+  border-bottom: 0;
+  border-radius: var(--computer-raggio) var(--computer-raggio) 0 0;
+  background: var(--velo-computer);
+}
+.catena-computer-nome { margin: 0; font-size: var(--corpo-5); line-height: var(--interlinea-5); font-weight: var(--peso-forte); color: var(--testo-secondario); }
+.catena-programma { margin: var(--spazio-5) 0 0; font-size: var(--corpo-5); line-height: var(--interlinea-5); color: var(--testo-didascalia); max-width: var(--misura-33); }
+
+.catena-tappe { grid-row: 2; list-style: none; margin: 0; padding: 0; }
+.anello {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--anello-nodo) minmax(0, 1fr);
+  column-gap: var(--spazio-22);
+  padding-block: var(--anello-spazio-blocco);
+  padding-inline: var(--catena-computer-spazio-inline);
+}
+.anello.nel-computer {
+  background: var(--velo-computer);
+  border-inline: var(--filetto-sottile) solid var(--bordo-pannello);
+}
+.anello.ultimo-provato {
+  border-bottom: var(--filetto-sottile) solid var(--bordo-pannello);
+  border-radius: 0 0 var(--computer-raggio) var(--computer-raggio);
+  padding-bottom: var(--anello-ultimo-spazio-sotto);
+}
+.anello:first-child { padding-top: var(--spazio-15); }
+/* fuori dalla cornice i nodi restano allineati a quelli dentro (il filetto della cornice) */
+.anello:not(.nel-computer) { padding-inline: calc(var(--catena-computer-spazio-inline) + var(--filetto-sottile)); }
+
+/* la linea: ogni tappa disegna il suo tratto, sopra il nodo (::before) e sotto (::after). Piena dove è provato, tratteggiata dove no */
+.anello::before, .anello::after {
+  content: "";
+  position: absolute;
+  inset-inline-start: calc(var(--catena-computer-spazio-inline) + var(--anello-nodo) / 2 - var(--misura-2) / 2);
+  width: var(--misura-2);
+  border-radius: var(--raggio-1);
+  background: var(--voce);
+  box-shadow: var(--linea-fatta-ombra);
+}
+.anello::before { top: 0; height: calc(var(--anello-spazio-sopra-nodo) + var(--anello-nodo) / 2); transform-origin: 50% 0; }
+.anello::after { top: calc(var(--anello-spazio-sopra-nodo) + var(--anello-nodo) / 2); bottom: 0; transform-origin: 50% 0; }
+.anello:first-child::before, .anello:last-child::after { content: none; }
+.anello:first-child { --anello-spazio-sopra-nodo: var(--spazio-15); }
+.anello:not(:first-child) { --anello-spazio-sopra-nodo: var(--anello-spazio-blocco-sopra); }
+.anello.forse::before, .anello.forse::after, .anello.ultimo-provato::after {
+  background: none;
+  box-shadow: none;
+  border-inline-start: var(--filetto-medio) dashed var(--tratteggio);
+}
+
+.anello-nodo {
+  grid-row: 1 / span 2;
+  position: relative;
+  z-index: var(--livello-tappe);
+  display: grid;
+  place-items: center;
+  width: var(--anello-nodo);
+  height: var(--anello-nodo);
+  border-radius: var(--raggio-12);
+  background: var(--voce);
+  color: var(--bordeaux);
+  border: var(--filetto-medio) solid var(--voce);
+  box-shadow: var(--tappa-nodo-ombra);
+  transition: background-color var(--durata-nodo-sfondo) var(--curva-dolce), color var(--durata-nodo-testo) var(--curva-dolce), border-color var(--durata-nodo-bordo) var(--curva-dolce), box-shadow var(--durata-nodo-ombra) var(--curva-dolce), transform var(--durata-nodo-trasforma) var(--entra);
+}
+.anello-nodo svg { width: var(--misura-17); height: var(--misura-17); }
+.anello.forse .anello-nodo { background: var(--riquadro-scuro-forse); color: var(--testo-secondario); border-style: dashed; border-color: var(--bordo-tappa-forse); box-shadow: none; }
+.anello-nodo.nodo-altri { width: var(--anello-nodo); padding: var(--spazio-5); gap: var(--spazio-2); display: flex; }
+
+.anello-nome {
+  margin: var(--anello-nome-margine);
+  font-size: var(--corpo-11);
+  line-height: var(--interlinea-10);
+  font-weight: var(--peso-titolo);
+}
+.anello.forse .anello-nome { color: var(--testo-secondario); }
+.anello-fatti {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: var(--anello-fatti-colonne);
+  column-gap: var(--spazio-26);
+  row-gap: var(--spazio-10);
+  align-items: start;
+  margin-top: var(--spazio-10);
+}
+.anello-fatti > p { grid-column: 2; margin: 0; max-width: var(--misura-31); font-size: var(--corpo-7); line-height: var(--interlinea-8); color: var(--testo-spiegazione); text-wrap: pretty; }
+.anello-fatti > :first-child:not(.cifra):not(.pacchetti):not(.riscrive):not(.app-nomi) { grid-column: 1 / -1; }
+.anello-fatti > .cifra, .anello-fatti > .pacchetti, .anello-fatti > .riscrive, .anello-fatti > .app-nomi { grid-column: 1; grid-row: 1 / span 3; }
+.anello-fatti strong { font-weight: var(--peso-forte); color: var(--testo); }
+.anello-forse { color: var(--testo-secondario) !important; }
+
+/* il file da cui viene il fatto: un'etichetta piccola, come il nome di un file */
+.fonte {
+  display: inline-block;
+  margin-inline-start: var(--spazio-3);
+  padding: var(--fonte-spazio-interno);
+  border-radius: var(--raggio-pillola);
+  border: var(--filetto-sottile) solid var(--bordo-frase);
+  font-size: var(--corpo-3);
+  line-height: var(--interlinea-2);
+  font-weight: var(--peso-medio);
+  color: var(--testo-didascalia);
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+
+/* una cifra grande, con il suo segno: la quota di un secondo, le parole su cui si sbaglia */
+.cifra { display: flex; flex-direction: column; gap: var(--spazio-7); }
+.cifra-numero {
+  margin: 0;
+  font-size: var(--cifra-grandezza);
+  line-height: var(--cifra-interlinea);
+  font-weight: var(--peso-titolo);
+  letter-spacing: var(--spaziatura-tratto);
+  color: var(--voce);
+  font-variant-numeric: tabular-nums;
+}
+.cifra-detto { margin: 0; font-size: var(--corpo-6); line-height: var(--interlinea-6); color: var(--testo-spiegazione); text-wrap: pretty; }
+/* la quota: la barra è un secondo di voce, la parte accesa il tempo di processore che costa */
+.quota { position: relative; display: block; width: 100%; max-width: var(--quota-larghezza); height: var(--quota-altezza); border-radius: var(--raggio-1); background: var(--bordo-cornice); overflow: hidden; }
+.quota i { position: absolute; inset-block: 0; inset-inline-start: 0; width: calc(100% * var(--quota)); border-radius: inherit; background: var(--voce); box-shadow: var(--linea-fatta-ombra); transform-origin: var(--origine-inizio-x) 50%; }
+.quota-voce { --quota: var(--quota-voce-processore); }
+/* le parole: una riga di segni, uno per parola; una su 43 (il 2,3%) è sbagliata e resta vuota */
+.parole-segni {
+  position: relative;
+  display: block;
+  width: calc(var(--parole-passo) * var(--parole-quante));
+  max-width: 100%;
+  height: var(--parole-altezza);
+  background: var(--parole-segni-fondo);
+  border-radius: var(--raggio-1);
+}
+.parole-segni::after {
+  content: "";
+  position: absolute;
+  top: calc(-1 * var(--spazio-1));
+  bottom: calc(-1 * var(--spazio-1));
+  inset-inline-start: calc(var(--parole-passo) * var(--parole-sbagliata) - var(--spazio-1));
+  width: calc(var(--parole-segno) + 2 * var(--spazio-1));
+  border-radius: var(--raggio-1);
+  background: var(--notte);
+  border: var(--filetto-sottile) solid var(--azione);
+}
+
+/* «Si installa»: i quattro pacchetti che lo script installa, apre e fa parlare */
+.pacchetti { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--spazio-5); }
+.pacchetti li {
+  padding: var(--pacchetto-spazio-interno);
+  border-radius: var(--raggio-pillola);
+  border: var(--filetto-sottile) solid var(--voce);
+  background: var(--velo-comando);
+  font-size: var(--corpo-4);
+  line-height: var(--interlinea-2);
+  font-weight: var(--peso-medio);
+  white-space: nowrap;
+}
+
+/* «Scrivi la frase»: ciò che scrivi nel campo, e ciò che la voce dice */
+.riscrive { display: flex; flex-direction: column; align-items: flex-start; gap: var(--spazio-10); margin: 0; }
+.riscrive-da {
+  padding: var(--riscrive-campo-spazio-interno);
+  border-radius: var(--raggio-4);
+  background: var(--app-campo);
+  border: var(--filetto-sottile) solid var(--app-campo-bordo);
+  border-bottom-color: var(--app-bordo-forte);
+  color: var(--app-testo);
+  font-family: var(--font-app);
+  font-size: var(--corpo-5);
+  line-height: var(--interlinea-3);
+}
+.riscrive-a {
+  position: relative;
+  padding: var(--riscrive-bolla-spazio-interno);
+  border-radius: var(--raggio-8);
+  background: var(--testo);
+  color: var(--scuro);
+  font-size: var(--corpo-6);
+  line-height: var(--interlinea-6);
+  font-weight: var(--peso-medio);
+  box-shadow: var(--bolla-corpo-ombra);
+  transform-origin: var(--origine-inizio-x) 100%;
+}
+
+/* «L'app della riunione»: i nomi, tratteggiati: nessuna è ancora provata */
+.app-nomi { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--spazio-5); }
+.app-nomi li {
+  padding: var(--pacchetto-spazio-interno);
+  border-radius: var(--raggio-pillola);
+  border: var(--filetto-sottile) dashed var(--tratteggio);
+  font-size: var(--corpo-4);
+  line-height: var(--interlinea-2);
+  color: var(--testo-secondario);
+  white-space: nowrap;
+}
+
+/* chi ha provato lo dice: sotto la catena */
+.racconta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: var(--spazio-24);
+  row-gap: var(--spazio-10);
+  margin-top: var(--spazio-26);
+  padding-top: var(--spazio-20);
+  border-top: var(--filetto-sottile) solid var(--bordo-sezione);
+}
+.racconta p { flex: 1 1 var(--misura-30); margin: 0; max-width: var(--misura-33); font-size: var(--corpo-7); line-height: var(--interlinea-8); color: var(--testo-nota); text-wrap: pretty; }
+.racconta strong { color: var(--testo); font-weight: var(--peso-forte); }
+
+/* ---------- con lo script: una tappa alla volta ---------- */
+.js .catena .anello:not(.acceso)::before, .js .catena .anello:not(.acceso)::after { transform: scaleY(0); }
+.js .catena .anello.acceso::before { transform: none; transition: transform var(--durata-anello-linea) var(--curva-lineare); }
+.js .catena .anello.acceso::after { transform: none; transition: transform var(--durata-anello-linea) var(--curva-lineare) var(--ritardo-anello-dopo); }
+.js .catena .anello:not(.acceso) .anello-nodo { background: var(--riquadro-scuro); color: var(--testo-spento); border-color: var(--bordo-comando); box-shadow: none; }
+.js .catena .anello.forse:not(.acceso) .anello-nodo { background: var(--riquadro-scuro-forse); border-color: var(--bordo-tappa-forse); }
+.js .catena .anello.acceso .anello-nodo { transition-delay: var(--durata-anello-linea); }
+.js .catena .anello.fatto.acceso .anello-nodo { animation: anello-acceso var(--durata-anello-nodo) var(--entra) var(--durata-anello-linea) 1 backwards; }
+@keyframes anello-acceso {
+  from { transform: scale(var(--anello-nodo-da)); }
+  60% { transform: scale(var(--tappa-nodo-scala)); }
+  to { transform: none; }
+}
+.js .catena .anello:not(.acceso) .anello-nome, .js .catena .anello:not(.acceso) .anello-fatti { opacity: var(--opacita-anello-spento); }
+.js .catena .anello .anello-nome, .js .catena .anello .anello-fatti { transition: opacity var(--durata-esito-opacita) var(--curva-dolce) var(--durata-anello-linea); }
+.js .catena .anello:not(.acceso) .quota i { transform: scaleX(0); }
+.js .catena .anello.acceso .quota i { transform: none; transition: transform var(--durata-quota) var(--entra) var(--ritardo-quota); }
+.js .catena .anello:not(.acceso) .parole-segni { clip-path: inset(0 100% 0 0); }
+:root:dir(rtl) .js .catena .anello:not(.acceso) .parole-segni { clip-path: inset(0 0 0 100%); }
+.js .catena .anello.acceso .parole-segni { clip-path: inset(0); transition: clip-path var(--durata-parole) var(--curva-lineare) var(--ritardo-quota); }
+.js .catena .anello.acceso .parole-segni::after { animation: parola-sbagliata var(--durata-urto) var(--curva-dolce) calc(var(--ritardo-quota) + var(--durata-parole)) 2 backwards; }
+@keyframes parola-sbagliata {
+  0%, 100% { box-shadow: none; }
+  40% { box-shadow: var(--parola-sbagliata-ombra); }
+}
+.js .catena .anello:not(.acceso) .pacchetti li { border-color: var(--bordo-comando); background: transparent; }
+.js .catena .anello.acceso .pacchetti li { transition: border-color var(--durata-nodo-bordo) var(--curva-dolce) var(--ritardo, 0ms), background-color var(--durata-nodo-sfondo) var(--curva-dolce) var(--ritardo, 0ms); }
+.js .catena .anello.acceso .pacchetti li:nth-child(1) { --ritardo: var(--ritardo-quota); }
+.js .catena .anello.acceso .pacchetti li:nth-child(2) { --ritardo: calc(var(--ritardo-quota) + var(--passo-pacchetti)); }
+.js .catena .anello.acceso .pacchetti li:nth-child(3) { --ritardo: calc(var(--ritardo-quota) + 2 * var(--passo-pacchetti)); }
+.js .catena .anello.acceso .pacchetti li:nth-child(4) { --ritardo: calc(var(--ritardo-quota) + 3 * var(--passo-pacchetti)); }
+.js .catena .anello:not(.acceso) .riscrive-a { opacity: 0; transform: scale(var(--bolla-nasce-scala)); }
+.js .catena .anello.acceso .riscrive-a { transition: opacity var(--durata-bolla-nasce) var(--curva-dolce) var(--ritardo-riscrive), transform var(--durata-bolla-nasce) var(--entra) var(--ritardo-riscrive); }
+
+@media (max-width: 1180px) {
+  .catena { grid-template-columns: minmax(0, 1fr); }
+  .catena-misura { grid-column: 1; grid-row: 3; margin: var(--spazio-22) 0 0; }
+  .anello-fatti { grid-template-columns: minmax(0, 1fr); }
+  .anello-fatti > p, .anello-fatti > .cifra, .anello-fatti > .pacchetti, .anello-fatti > .riscrive, .anello-fatti > .app-nomi { grid-column: 1; grid-row: auto; }
+}
+@media (max-width: 760px) {
+  .catena { margin-top: var(--spazio-24); }
+  .catena-computer { padding: var(--catena-computer-spazio-interno-telefono); border-radius: var(--raggio-12) var(--raggio-12) 0 0; }
+  .anello { --anello-nodo: var(--anello-nodo-telefono); column-gap: var(--spazio-12); padding-inline: var(--catena-computer-spazio-inline-telefono); }
+  .anello:not(.nel-computer) { padding-inline: calc(var(--catena-computer-spazio-inline-telefono) + var(--filetto-sottile)); }
+  .anello::before, .anello::after { inset-inline-start: calc(var(--catena-computer-spazio-inline-telefono) + var(--anello-nodo) / 2 - var(--misura-2) / 2); }
+  .anello.ultimo-provato { border-radius: 0 0 var(--raggio-12) var(--raggio-12); }
+  .anello-nodo { border-radius: var(--raggio-8); }
+  .anello-nodo svg { width: var(--misura-11); height: var(--misura-11); }
+  .anello-nome { font-size: var(--corpo-9); line-height: var(--interlinea-6); margin: var(--anello-nome-margine-telefono); }
+  .anello-fatti > p { font-size: var(--corpo-6); line-height: var(--interlinea-6); }
+  .cifra-numero { font-size: var(--cifra-grandezza-telefono); line-height: var(--cifra-interlinea-telefono); }
+  .racconta { flex-direction: column; align-items: stretch; }
+  .racconta p { flex-basis: auto; font-size: var(--corpo-6); line-height: var(--interlinea-6); }
+}

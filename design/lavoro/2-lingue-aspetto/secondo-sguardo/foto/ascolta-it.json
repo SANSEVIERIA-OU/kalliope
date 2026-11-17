@@ -1,0 +1,1184 @@
+[
+ {
+  "w": 1440,
+  "h": 900,
+  "passo": "prima",
+  "ih": 900,
+  "y": 2329,
+  "barraFondo": 72,
+  "bolla": [
+   502,
+   596
+  ],
+  "riunione": [
+   614,
+   786
+  ],
+  "pulsante": [
+   820,
+   876
+  ],
+  "titolo": [
+   302,
+   370
+  ],
+  "etichetta": "Ascolta Giulia",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 1440,
+  "h": 900,
+  "passo": "0.3s",
+  "ih": 900,
+  "y": 2329,
+  "barraFondo": 72,
+  "bolla": [
+   502,
+   596
+  ],
+  "riunione": [
+   614,
+   786
+  ],
+  "pulsante": [
+   820,
+   876
+  ],
+  "titolo": [
+   302,
+   370
+  ],
+  "etichetta": "Pausa",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 1440,
+  "h": 900,
+  "passo": "1s",
+  "ih": 900,
+  "y": 2329,
+  "barraFondo": 72,
+  "bolla": [
+   502,
+   596
+  ],
+  "riunione": [
+   614,
+   786
+  ],
+  "pulsante": [
+   820,
+   876
+  ],
+  "titolo": [
+   302,
+   370
+  ],
+  "etichetta": "Pausa",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 1440,
+  "h": 900,
+  "passo": "2.5s",
+  "ih": 900,
+  "y": 2329,
+  "barraFondo": 72,
+  "bolla": [
+   502,
+   596
+  ],
+  "riunione": [
+   614,
+   786
+  ],
+  "pulsante": [
+   820,
+   876
+  ],
+  "titolo": [
+   302,
+   370
+  ],
+  "etichetta": "Pausa",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 1440,
+  "h": 900,
+  "passo": "4.5s",
+  "ih": 900,
+  "y": 2329,
+  "barraFondo": 72,
+  "bolla": [
+   502,
+   596
+  ],
+  "riunione": [
+   614,
+   786
+  ],
+  "pulsante": [
+   820,
+   876
+  ],
+  "titolo": [
+   302,
+   370
+  ],
+  "etichetta": "Pausa",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 1440,
+  "h": 900,
+  "passo": "pausa",
+  "ih": 900,
+  "y": 2329,
+  "barraFondo": 72,
+  "bolla": [
+   502,
+   596
+  ],
+  "riunione": [
+   614,
+   786
+  ],
+  "pulsante": [
+   820,
+   876
+  ],
+  "titolo": [
+   302,
+   370
+  ],
+  "etichetta": "Riprendi",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma pausa",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 1440,
+  "h": 900,
+  "errori": []
+ },
+ {
+  "w": 390,
+  "h": 844,
+  "passo": "prima",
+  "ih": 844,
+  "y": 3110,
+  "barraFondo": 56,
+  "bolla": [
+   578,
+   644
+  ],
+  "riunione": [
+   660,
+   738
+  ],
+  "pulsante": [
+   772,
+   820
+  ],
+  "titolo": [
+   330,
+   414
+  ],
+  "etichetta": "Ascolta Giulia",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 390,
+  "h": 844,
+  "passo": "0.3s",
+  "ih": 844,
+  "y": 3148,
+  "barraFondo": 56,
+  "bolla": [
+   540,
+   606
+  ],
+  "riunione": [
+   622,
+   700
+  ],
+  "pulsante": [
+   734,
+   782
+  ],
+  "titolo": [
+   292,
+   376
+  ],
+  "etichetta": "Pausa",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 390,
+  "h": 844,
+  "passo": "1s",
+  "ih": 844,
+  "y": 3148,
+  "barraFondo": 56,
+  "bolla": [
+   540,
+   606
+  ],
+  "riunione": [
+   622,
+   700
+  ],
+  "pulsante": [
+   734,
+   782
+  ],
+  "titolo": [
+   292,
+   376
+  ],
+  "etichetta": "Pausa",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 390,
+  "h": 844,
+  "passo": "2.5s",
+  "ih": 844,
+  "y": 3148,
+  "barraFondo": 56,
+  "bolla": [
+   540,
+   606
+  ],
+  "riunione": [
+   622,
+   700
+  ],
+  "pulsante": [
+   734,
+   782
+  ],
+  "titolo": [
+   292,
+   376
+  ],
+  "etichetta": "Pausa",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 390,
+  "h": 844,
+  "passo": "4.5s",
+  "ih": 844,
+  "y": 3148,
+  "barraFondo": 56,
+  "bolla": [
+   540,
+   606
+  ],
+  "riunione": [
+   622,
+   700
+  ],
+  "pulsante": [
+   734,
+   782
+  ],
+  "titolo": [
+   292,
+   376
+  ],
+  "etichetta": "Pausa",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 390,
+  "h": 844,
+  "passo": "pausa",
+  "ih": 844,
+  "y": 3148,
+  "barraFondo": 56,
+  "bolla": [
+   540,
+   606
+  ],
+  "riunione": [
+   622,
+   700
+  ],
+  "pulsante": [
+   734,
+   782
+  ],
+  "titolo": [
+   292,
+   376
+  ],
+  "etichetta": "Riprendi",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma pausa",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 390,
+  "h": 844,
+  "errori": []
+ },
+ {
+  "w": 844,
+  "h": 390,
+  "passo": "prima",
+  "ih": 390,
+  "y": 3426,
+  "barraFondo": 72,
+  "bolla": [
+   64,
+   152
+  ],
+  "riunione": [
+   170,
+   276
+  ],
+  "pulsante": [
+   310,
+   366
+  ],
+  "titolo": [
+   -210,
+   -74
+  ],
+  "etichetta": "Ascolta Giulia",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 844,
+  "h": 390,
+  "passo": "0.3s",
+  "ih": 390,
+  "y": 3410,
+  "barraFondo": 72,
+  "bolla": [
+   80,
+   168
+  ],
+  "riunione": [
+   186,
+   292
+  ],
+  "pulsante": [
+   326,
+   382
+  ],
+  "titolo": [
+   -194,
+   -58
+  ],
+  "etichetta": "Pausa",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 844,
+  "h": 390,
+  "passo": "1s",
+  "ih": 390,
+  "y": 3410,
+  "barraFondo": 72,
+  "bolla": [
+   80,
+   168
+  ],
+  "riunione": [
+   186,
+   292
+  ],
+  "pulsante": [
+   326,
+   382
+  ],
+  "titolo": [
+   -194,
+   -58
+  ],
+  "etichetta": "Pausa",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 844,
+  "h": 390,
+  "passo": "2.5s",
+  "ih": 390,
+  "y": 3410,
+  "barraFondo": 72,
+  "bolla": [
+   80,
+   168
+  ],
+  "riunione": [
+   186,
+   292
+  ],
+  "pulsante": [
+   326,
+   382
+  ],
+  "titolo": [
+   -194,
+   -58
+  ],
+  "etichetta": "Pausa",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 844,
+  "h": 390,
+  "passo": "4.5s",
+  "ih": 390,
+  "y": 3410,
+  "barraFondo": 72,
+  "bolla": [
+   80,
+   168
+  ],
+  "riunione": [
+   186,
+   292
+  ],
+  "pulsante": [
+   326,
+   382
+  ],
+  "titolo": [
+   -194,
+   -58
+  ],
+  "etichetta": "Pausa",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 844,
+  "h": 390,
+  "passo": "pausa",
+  "ih": 390,
+  "y": 3410,
+  "barraFondo": 72,
+  "bolla": [
+   80,
+   168
+  ],
+  "riunione": [
+   186,
+   292
+  ],
+  "pulsante": [
+   326,
+   382
+  ],
+  "titolo": [
+   -194,
+   -58
+  ],
+  "etichetta": "Riprendi",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma pausa",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 844,
+  "h": 390,
+  "errori": []
+ },
+ {
+  "w": 915,
+  "h": 412,
+  "passo": "prima",
+  "ih": 412,
+  "y": 3400,
+  "barraFondo": 72,
+  "bolla": [
+   64,
+   152
+  ],
+  "riunione": [
+   170,
+   298
+  ],
+  "pulsante": [
+   332,
+   388
+  ],
+  "titolo": [
+   -210,
+   -74
+  ],
+  "etichetta": "Ascolta Giulia",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 915,
+  "h": 412,
+  "passo": "0.3s",
+  "ih": 412,
+  "y": 3384,
+  "barraFondo": 72,
+  "bolla": [
+   80,
+   168
+  ],
+  "riunione": [
+   186,
+   314
+  ],
+  "pulsante": [
+   348,
+   404
+  ],
+  "titolo": [
+   -194,
+   -58
+  ],
+  "etichetta": "Pausa",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 915,
+  "h": 412,
+  "passo": "1s",
+  "ih": 412,
+  "y": 3384,
+  "barraFondo": 72,
+  "bolla": [
+   80,
+   168
+  ],
+  "riunione": [
+   186,
+   314
+  ],
+  "pulsante": [
+   348,
+   404
+  ],
+  "titolo": [
+   -194,
+   -58
+  ],
+  "etichetta": "Pausa",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 915,
+  "h": 412,
+  "passo": "2.5s",
+  "ih": 412,
+  "y": 3384,
+  "barraFondo": 72,
+  "bolla": [
+   80,
+   168
+  ],
+  "riunione": [
+   186,
+   314
+  ],
+  "pulsante": [
+   348,
+   404
+  ],
+  "titolo": [
+   -194,
+   -58
+  ],
+  "etichetta": "Pausa",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 915,
+  "h": 412,
+  "passo": "4.5s",
+  "ih": 412,
+  "y": 3384,
+  "barraFondo": 72,
+  "bolla": [
+   80,
+   168
+  ],
+  "riunione": [
+   186,
+   314
+  ],
+  "pulsante": [
+   348,
+   404
+  ],
+  "titolo": [
+   -194,
+   -58
+  ],
+  "etichetta": "Pausa",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 915,
+  "h": 412,
+  "passo": "pausa",
+  "ih": 412,
+  "y": 3384,
+  "barraFondo": 72,
+  "bolla": [
+   80,
+   168
+  ],
+  "riunione": [
+   186,
+   314
+  ],
+  "pulsante": [
+   348,
+   404
+  ],
+  "titolo": [
+   -194,
+   -58
+  ],
+  "etichetta": "Riprendi",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma pausa",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 915,
+  "h": 412,
+  "errori": []
+ },
+ {
+  "w": 326,
+  "h": 326,
+  "passo": "prima",
+  "ih": 326,
+  "y": 3894,
+  "barraFondo": 56,
+  "bolla": [
+   48,
+   136
+  ],
+  "riunione": [
+   152,
+   220
+  ],
+  "pulsante": [
+   254,
+   302
+  ],
+  "titolo": [
+   -178,
+   -94
+  ],
+  "etichetta": "Ascolta Giulia",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 326,
+  "h": 326,
+  "passo": "0.3s",
+  "ih": 326,
+  "y": 3878,
+  "barraFondo": 56,
+  "bolla": [
+   64,
+   152
+  ],
+  "riunione": [
+   168,
+   236
+  ],
+  "pulsante": [
+   270,
+   318
+  ],
+  "titolo": [
+   -162,
+   -78
+  ],
+  "etichetta": "Pausa",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 326,
+  "h": 326,
+  "passo": "1s",
+  "ih": 326,
+  "y": 3878,
+  "barraFondo": 56,
+  "bolla": [
+   64,
+   152
+  ],
+  "riunione": [
+   168,
+   236
+  ],
+  "pulsante": [
+   270,
+   318
+  ],
+  "titolo": [
+   -162,
+   -78
+  ],
+  "etichetta": "Pausa",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 326,
+  "h": 326,
+  "passo": "2.5s",
+  "ih": 326,
+  "y": 3878,
+  "barraFondo": 56,
+  "bolla": [
+   64,
+   152
+  ],
+  "riunione": [
+   168,
+   236
+  ],
+  "pulsante": [
+   270,
+   318
+  ],
+  "titolo": [
+   -162,
+   -78
+  ],
+  "etichetta": "Pausa",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 326,
+  "h": 326,
+  "passo": "4.5s",
+  "ih": 326,
+  "y": 3878,
+  "barraFondo": 56,
+  "bolla": [
+   64,
+   152
+  ],
+  "riunione": [
+   168,
+   236
+  ],
+  "pulsante": [
+   270,
+   318
+  ],
+  "titolo": [
+   -162,
+   -78
+  ],
+  "etichetta": "Pausa",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 326,
+  "h": 326,
+  "passo": "pausa",
+  "ih": 326,
+  "y": 3878,
+  "barraFondo": 56,
+  "bolla": [
+   64,
+   152
+  ],
+  "riunione": [
+   168,
+   236
+  ],
+  "pulsante": [
+   270,
+   318
+  ],
+  "titolo": [
+   -162,
+   -78
+  ],
+  "etichetta": "Riprendi",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma pausa",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 326,
+  "h": 326,
+  "errori": []
+ },
+ {
+  "w": 390,
+  "h": 667,
+  "passo": "prima",
+  "ih": 667,
+  "y": 3305,
+  "barraFondo": 56,
+  "bolla": [
+   401,
+   467
+  ],
+  "riunione": [
+   483,
+   561
+  ],
+  "pulsante": [
+   595,
+   643
+  ],
+  "titolo": [
+   153,
+   237
+  ],
+  "etichetta": "Ascolta Giulia",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 390,
+  "h": 667,
+  "passo": "0.3s",
+  "ih": 667,
+  "y": 3343,
+  "barraFondo": 56,
+  "bolla": [
+   363,
+   429
+  ],
+  "riunione": [
+   445,
+   523
+  ],
+  "pulsante": [
+   557,
+   605
+  ],
+  "titolo": [
+   115,
+   199
+  ],
+  "etichetta": "Pausa",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 390,
+  "h": 667,
+  "passo": "1s",
+  "ih": 667,
+  "y": 3343,
+  "barraFondo": 56,
+  "bolla": [
+   363,
+   429
+  ],
+  "riunione": [
+   445,
+   523
+  ],
+  "pulsante": [
+   557,
+   605
+  ],
+  "titolo": [
+   115,
+   199
+  ],
+  "etichetta": "Pausa",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 390,
+  "h": 667,
+  "passo": "2.5s",
+  "ih": 667,
+  "y": 3343,
+  "barraFondo": 56,
+  "bolla": [
+   363,
+   429
+  ],
+  "riunione": [
+   445,
+   523
+  ],
+  "pulsante": [
+   557,
+   605
+  ],
+  "titolo": [
+   115,
+   199
+  ],
+  "etichetta": "Pausa",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 390,
+  "h": 667,
+  "passo": "4.5s",
+  "ih": 667,
+  "y": 3343,
+  "barraFondo": 56,
+  "bolla": [
+   363,
+   429
+  ],
+  "riunione": [
+   445,
+   523
+  ],
+  "pulsante": [
+   557,
+   605
+  ],
+  "titolo": [
+   115,
+   199
+  ],
+  "etichetta": "Pausa",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma suona",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 390,
+  "h": 667,
+  "passo": "pausa",
+  "ih": 667,
+  "y": 3343,
+  "barraFondo": 56,
+  "bolla": [
+   363,
+   429
+  ],
+  "riunione": [
+   445,
+   523
+  ],
+  "pulsante": [
+   557,
+   605
+  ],
+  "titolo": [
+   115,
+   199
+  ],
+  "etichetta": "Riprendi",
+  "stato": "pillola voce-chiara suona-frase ascolta-ferma pausa",
+  "audio": {
+   "t": 0,
+   "fermo": true,
+   "src": "giulia-1.opus"
+  },
+  "lato": false
+ },
+ {
+  "w": 390,
+  "h": 667,
+  "errori": []
+ }
+]

@@ -1,0 +1,139 @@
+{
+ "pagina": "http://127.0.0.1:34257/it/stato/index.html",
+ "misura": "1440x900",
+ "sequenza": "scorri",
+ "gesto": "scorri",
+ "ridotto": false,
+ "lento": 1,
+ "istanti": [
+  0,
+  1.5,
+  3,
+  4.5,
+  6,
+  7.5,
+  9,
+  10.5,
+  12,
+  13.5,
+  15,
+  16.5,
+  18,
+  19.5,
+  21,
+  22.5,
+  24
+ ],
+ "fotogrammi": [
+  {
+   "file": "scorri-1440x900-f01.jpg",
+   "chiesto": 0,
+   "scattato": 0,
+   "scorrimento": 54
+  },
+  {
+   "file": "scorri-1440x900-f02.jpg",
+   "chiesto": 1.5,
+   "scattato": 1.5,
+   "scorrimento": 691
+  },
+  {
+   "file": "scorri-1440x900-f03.jpg",
+   "chiesto": 3,
+   "scattato": 3,
+   "scorrimento": 887
+  },
+  {
+   "file": "scorri-1440x900-f04.jpg",
+   "chiesto": 4.5,
+   "scattato": 4.5,
+   "scorrimento": 1309
+  },
+  {
+   "file": "scorri-1440x900-f05.jpg",
+   "chiesto": 6,
+   "scattato": 6,
+   "scorrimento": 1670
+  },
+  {
+   "file": "scorri-1440x900-f06.jpg",
+   "chiesto": 7.5,
+   "scattato": 7.5,
+   "scorrimento": 2081
+  },
+  {
+   "file": "scorri-1440x900-f07.jpg",
+   "chiesto": 9,
+   "scattato": 9,
+   "scorrimento": 2652
+  },
+  {
+   "file": "scorri-1440x900-f08.jpg",
+   "chiesto": 10.5,
+   "scattato": 10.5,
+   "scorrimento": 2911
+  },
+  {
+   "file": "scorri-1440x900-f09.jpg",
+   "chiesto": 12,
+   "scattato": 12,
+   "scorrimento": 3301
+  },
+  {
+   "file": "scorri-1440x900-f10.jpg",
+   "chiesto": 13.5,
+   "scattato": 13.5,
+   "scorrimento": 3793
+  },
+  {
+   "file": "scorri-1440x900-f11.jpg",
+   "chiesto": 15,
+   "scattato": 15,
+   "scorrimento": 4181
+  },
+  {
+   "file": "scorri-1440x900-f12.jpg",
+   "chiesto": 16.5,
+   "scattato": 16.5,
+   "scorrimento": 4527
+  },
+  {
+   "file": "scorri-1440x900-f13.jpg",
+   "chiesto": 18,
+   "scattato": 18,
+   "scorrimento": 5025
+  },
+  {
+   "file": "scorri-1440x900-f14.jpg",
+   "chiesto": 19.5,
+   "scattato": 19.5,
+   "scorrimento": 5380
+  },
+  {
+   "file": "scorri-1440x900-f15.jpg",
+   "chiesto": 21,
+   "scattato": 21,
+   "scorrimento": 5774
+  },
+  {
+   "file": "scorri-1440x900-f16.jpg",
+   "chiesto": 22.5,
+   "scattato": 22.5,
+   "scorrimento": 6223
+  },
+  {
+   "file": "scorri-1440x900-f17.jpg",
+   "chiesto": 24,
+   "scattato": 24,
+   "scorrimento": 6545
+  }
+ ],
+ "foglio": "scorri-1440x900-foglio.jpg",
+ "video": "scorri-1440x900.webm",
+ "orologio": {
+  "pagina": 1,
+  "media": []
+ },
+ "errori": [],
+ "misurato": "2026-11-17T10:38:23.083Z"
+}
