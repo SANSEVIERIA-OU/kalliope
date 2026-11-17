@@ -31,7 +31,7 @@
   box-shadow: none;
   visibility: hidden;
   opacity: 0;
-  transform: translateX(var(--barra-azione-sposta-x)) scale(var(--barra-azione-scala));
+  transform: translateX(calc(var(--barra-azione-sposta-x) * var(--verso))) scale(var(--barra-azione-scala));
   transition: opacity var(--durata-barra-azione-opacita) var(--curva-dolce), transform var(--durata-barra-azione-trasforma) var(--entra), visibility 0s var(--curva-lineare) var(--ritardo-barra-azione-visibilita);
 }
 .barra.con-azione .barra-azione {
@@ -40,7 +40,7 @@
   transform: none;
   transition: opacity var(--durata-barra-azione-opacita-2) var(--curva-dolce) var(--ritardo-barra-azione-opacita), transform var(--durata-barra-azione-trasforma-2) var(--entra) var(--ritardo-barra-azione-trasforma), visibility 0s;
 }
-.barra.con-azione .menu { transform: translateX(calc(-1 * var(--posto-azione, var(--barra-menu-posto-azione-base)))); transition-delay: 0ms; }
+.barra.con-azione .menu { transform: translateX(calc(-1 * var(--verso) * var(--posto-azione, var(--barra-menu-posto-azione-base)))); transition-delay: 0ms; }
 .marchio {
   display: inline-flex;
   align-items: center;
@@ -150,6 +150,15 @@ html:not(.js) .barra { background: var(--barra-piena); box-shadow: var(--barra-o
     transition: opacity var(--durata-barra-azione-opacita-stretto) var(--curva-dolce) var(--ritardo-barra-azione-opacita-stretto), transform var(--durata-barra-azione-trasforma-stretto) var(--entra) var(--ritardo-barra-azione-trasforma-stretto), visibility 0s;
   }
 }
+/* incarico 2: anche sul computer, quando il menu che scivola per fare posto all'azione arriverebbe sulla parola del marchio (una lingua
+   più lunga: il menu è più largo), la parola sparisce intera prima che l'azione entri, come al telefono (P11). Lo decide scena.js
+   misurando (classe «stretta»); senza script l'azione in barra non c'è */
+.barra.con-azione.stretta .marchio span {
+  opacity: 0;
+  max-width: 0;
+  transition: opacity var(--durata-barra-marchio) var(--curva-dolce), max-width 0s var(--curva-lineare) var(--ritardo-barra-marchio-larghezza);
+}
+.barra.con-azione.stretta .marchio { gap: 0; transition: gap 0s var(--curva-lineare) var(--ritardo-barra-marchio); }
 @media (max-width: 360px) {
   .barra { gap: var(--spazio-7); }
   .barra .barra-azione { padding-inline-start: var(--spazio-10); padding-inline-end: var(--spazio-10); font-size: var(--corpo-4); }
@@ -186,6 +195,9 @@ html:not(.js) .barra { background: var(--barra-piena); box-shadow: var(--barra-o
   /* l'azione non occupa posto: sta a sinistra di «Menu», sopra il posto della parola del marchio (che al telefono stretto
        sparisce prima che lei entri). Così né «Menu» né il marchio si spostano */
   .barra .barra-azione { inset-inline-end: calc(var(--margine) + var(--largo-menu, var(--barra-azione-largo-menu-base)) + var(--spazio-7)); }
+  /* incarico 2: e non copre il disegno del marchio. Lo spazio fra il marchio e «Menu» lo misura scena.js; un'azione più lunga
+     (una traduzione: «Herunterladen und installieren») va a capo in due righe pari dentro la pillola */
+  .barra.azione-a-capo .barra-azione { max-width: var(--azione-largo-massimo, none); white-space: normal; text-wrap: balance; text-align: center; }
   .pulsante-menu { margin-inline-start: auto; }
 }
 @media (min-width: 761px) and (max-width: 959px) {

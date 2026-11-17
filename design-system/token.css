@@ -140,7 +140,7 @@
 
   /* Caratteri */
   /* · Base: caratteri, ripristino, fuoco, utilità */
-  --font-testo: "Lexend", "Lexend riserva", system-ui, sans-serif;
+  --font-testo: "Lexend", "Lexend esteso", "Lexend riserva", system-ui, sans-serif;
   /* · La finestra di Kalliope ricostruita */
   --font-app: "DejaVu Sans Kalliope", "DejaVu Sans", sans-serif;
 
@@ -167,40 +167,40 @@
   --corpo-11: 22px;
   --corpo-12: 25px;
   /* · Gradini di scala: interlinea (il numero è il posto nella scala) */
-  --interlinea-1: 13px;
-  --interlinea-2: 16px;
-  --interlinea-3: 18px;
-  --interlinea-4: 19px;
-  --interlinea-5: 21px;
-  --interlinea-6: 22px;
-  --interlinea-7: 24px;
-  --interlinea-8: 26px;
-  --interlinea-9: 27px;
-  --interlinea-10: 28px;
-  --interlinea-11: 29px;
-  --interlinea-12: 30px;
-  --interlinea-13: 31px;
-  --interlinea-14: 37px;
+  --interlinea-1: calc(13px * var(--interlinea-testo-scrittura));
+  --interlinea-2: calc(16px * var(--interlinea-testo-scrittura));
+  --interlinea-3: calc(18px * var(--interlinea-testo-scrittura));
+  --interlinea-4: calc(19px * var(--interlinea-testo-scrittura));
+  --interlinea-5: calc(21px * var(--interlinea-testo-scrittura));
+  --interlinea-6: calc(22px * var(--interlinea-testo-scrittura));
+  --interlinea-7: calc(24px * var(--interlinea-testo-scrittura));
+  --interlinea-8: calc(26px * var(--interlinea-testo-scrittura));
+  --interlinea-9: calc(27px * var(--interlinea-testo-scrittura));
+  --interlinea-10: calc(28px * var(--interlinea-testo-scrittura));
+  --interlinea-11: calc(29px * var(--interlinea-testo-scrittura));
+  --interlinea-12: calc(30px * var(--interlinea-testo-scrittura));
+  --interlinea-13: calc(31px * var(--interlinea-testo-scrittura));
+  --interlinea-14: calc(37px * var(--interlinea-testo-scrittura));
   /* · Barra e menu */
   --spaziatura-marchio: -0.01em;
   /* · Il primo schermo: titolo, comandi, palco */
-  --didascalia-interlinea-telefono: 17px;
-  --h1-grandezza: 62px;
-  --h1-grandezza-medio: 48px;
-  --h1-grandezza-telefono: 30px;
-  --h1-interlinea: 64px;
-  --h1-interlinea-medio: 51px;
-  --h1-interlinea-telefono: 33px;
+  --didascalia-interlinea-telefono: calc(17px * var(--interlinea-testo-scrittura));
+  --h1-grandezza: calc(62px * var(--grandezza-titoli-scrittura));
+  --h1-grandezza-medio: calc(48px * var(--grandezza-titoli-scrittura));
+  --h1-grandezza-telefono: calc(30px * var(--grandezza-titoli-scrittura));
+  --h1-interlinea: calc(64px * var(--grandezza-titoli-scrittura) * var(--interlinea-titoli-scrittura));
+  --h1-interlinea-medio: calc(51px * var(--grandezza-titoli-scrittura) * var(--interlinea-titoli-scrittura));
+  --h1-interlinea-telefono: calc(33px * var(--grandezza-titoli-scrittura) * var(--interlinea-titoli-scrittura));
   --spaziatura-h1: -0.018em;
   --stato-grandezza-telefono: 12.5px;
   /* · La bolla */
   --bolla-testo-grandezza: 24px;
-  --bolla-testo-interlinea: 34px;
+  --bolla-testo-interlinea: calc(34px * var(--interlinea-testo-scrittura));
   --spaziatura-bolla-testo: -0.005em;
   /* · I riquadri della riunione */
-  --nome-interlinea-telefono: 15px;
+  --nome-interlinea-telefono: calc(15px * var(--interlinea-testo-scrittura));
   /* · La finestra di Kalliope ricostruita */
-  --f-stato-interlinea: 1.32;
+  --f-stato-interlinea: calc(1.32 * var(--interlinea-testo-scrittura));
   /* · La riunione ricostruita, con il microfono */
   --microfono-grandezza-telefono: 11.5px;
   /* · Le frasi del filo */
@@ -208,17 +208,17 @@
   --filo-bolla-bolla-testo-grandezza-tavoletta-filo: 19px;
   /* · La strada della voce */
   --spaziatura-computer-nome: 0.01em;
-  --tappa-nome-interlinea: 23px;
+  --tappa-nome-interlinea: calc(23px * var(--interlinea-testo-scrittura));
   /* · Tratti e scene */
-  --chiusura-grandezza: 64px;
-  --chiusura-grandezza-telefono: 38px;
-  --chiusura-interlinea: 68px;
-  --chiusura-interlinea-telefono: 42px;
+  --chiusura-grandezza: calc(64px * var(--grandezza-titoli-scrittura));
+  --chiusura-grandezza-telefono: calc(38px * var(--grandezza-titoli-scrittura));
+  --chiusura-interlinea: calc(68px * var(--grandezza-titoli-scrittura) * var(--interlinea-titoli-scrittura));
+  --chiusura-interlinea-telefono: calc(42px * var(--grandezza-titoli-scrittura) * var(--interlinea-titoli-scrittura));
   --spaziatura-tratto: -0.018em;
-  --tratto-grandezza: 52px;
-  --tratto-grandezza-telefono: 33px;
-  --tratto-interlinea: 56px;
-  --tratto-testo-interlinea-telefono: 25px;
+  --tratto-grandezza: calc(52px * var(--grandezza-titoli-scrittura));
+  --tratto-grandezza-telefono: calc(33px * var(--grandezza-titoli-scrittura));
+  --tratto-interlinea: calc(56px * var(--grandezza-titoli-scrittura) * var(--interlinea-titoli-scrittura));
+  --tratto-testo-interlinea-telefono: calc(25px * var(--interlinea-testo-scrittura));
 
   /* Spazi (scala a gradini) */
   /* · Gradini di scala: spazi (il numero è il posto nella scala) */
@@ -613,8 +613,8 @@
   --ascolto-voce-luce-filo-fondo: radial-gradient(closest-side, var(--luce-filo-centro), var(--luce-filo-bordo) 50%, var(--fondo-trasparente) 80%);
   --suona-frase-tondo-prima-fondo: linear-gradient(90deg, var(--testo) 0 4px, transparent 4px 8px, var(--testo) 8px 12px);
   /* · La strada della voce */
-  --esito-forse-prima-fondo: repeating-linear-gradient(90deg, var(--alone-forte) 0 7px, transparent 7px 12px);
-  --linea-forse-fondo: repeating-linear-gradient(90deg, var(--tratteggio) 0 12px, transparent 12px 24px);
+  --esito-forse-prima-fondo: repeating-linear-gradient(calc(90deg * var(--verso)), var(--alone-forte) 0 7px, transparent 7px 12px);
+  --linea-forse-fondo: repeating-linear-gradient(calc(90deg * var(--verso)), var(--tratteggio) 0 12px, transparent 12px 24px);
   --linea-forse-fondo-telefono: repeating-linear-gradient(180deg, var(--tratteggio) 0 12px, transparent 12px 24px);
   /* · Tratti e scene */
   --chiusura-luce-chiusa-fondo: radial-gradient(closest-side, var(--luce-chiusa-centro), var(--luce-chiusa-bordo) 45%, var(--fondo-trasparente) 78%);
@@ -874,10 +874,10 @@
 
   /* Pose · origini */
   /* · La bolla */
-  --bolla-chiusa-origine: 40px 100%;
-  --bolla-filo-bolla-origine: 30px 100%;
+  --bolla-chiusa-origine: calc(50% + (40px - 50%) * var(--verso)) 100%;   /* vicino alla coda: 40 px dall'inizio (a sinistra, o a destra da destra a sinistra) */
+  --bolla-filo-bolla-origine: calc(50% + (30px - 50%) * var(--verso)) 100%;   /* vicino alla coda, dall'inizio */
   /* · Le frasi del filo */
-  --messaggio-filo-bolla-origine: 30px 100%;
+  --messaggio-filo-bolla-origine: calc(50% + (30px - 50%) * var(--verso)) 100%;   /* vicino alla coda, dall'inizio */
 }
 
 /* Caratteri · i file e il ripiego di larghezza (se Lexend non arriva, il carattere di riserva ha la sua larghezza e il titolo va a capo negli stessi punti) */
@@ -966,4 +966,213 @@
   --ritardo-arriva-in-cima: 250ms;
   --durata-posto-testo: 360ms;   /* «Windows e macOS · compariranno qui» si scrive nel posto aperto */
   --ritardo-posto-testo: 2050ms;
+}
+
+/* ---------- Le scritture: un carattere, le interlinee e la spaziatura per ogni scrittura (incarico 2, 17/11/2026) ----------
+   Lexend disegna soltanto il latino. Ogni altra scrittura ha il suo carattere, che segue Lexend nella pila: le lettere latine, le
+   cifre latine e la punteggiatura comune («Linux», «Zoom», «0.1») restano di Lexend in ogni lingua. Ogni file ha un unicode-range:
+   il browser lo scarica soltanto se la pagina ha lettere di quella scrittura, e una pagina italiana non scarica un byte in più.
+   La scrittura si lega alla lingua con :lang(), che guarda il lang della pagina (<html lang>) o di un elemento.
+   Fonti, licenze e pesi in byte: caratteri/LEGGIMI.md. Perché questi caratteri: design/lavoro/2-lingue-aspetto/progresso.md. */
+/* il latino esteso (č š ž ł ő ų ș ț ħ…: ceco, slovacco, polacco, ungherese, lituano, lettone, rumeno, croato, sloveno, maltese,
+   estone): il file «latino» di Lexend non lo ha. Una pagina italiana non lo scarica: non ha lettere di questo intervallo */
+@font-face {
+  font-family: "Lexend esteso";   /* una famiglia a parte, dopo Lexend nelle pile: come seconda faccia di «Lexend» la pagina italiana cambiava di 42 pixel (scarto 3 su 255) a 390×844 senza scaricare il file (provato) */
+  src: url("caratteri/lexend/Lexend-wght-latino-esteso.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+0100-024F, U+0259, U+02BB-02BC, U+02C7-02C8, U+02CC, U+02D8-02DD, U+1E00-1EFF;   /* senza i segni combinanti (U+0300-036F): le lettere precomposte bastano a tutte le lingue, e con quell'intervallo la pagina italiana cambiava (provato) */
+}
+@font-face {
+  font-family: "Geologica Kalliope";
+  src: url("caratteri/geologica/Geologica-wght.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+0370-03FF, U+1F00-1FFF, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Readex Pro Kalliope";
+  src: url("caratteri/readex-pro/ReadexPro-wght.woff2") format("woff2");
+  font-weight: 160 700;
+  font-display: swap;
+  unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+}
+@font-face {
+  font-family: "Noto Nastaliq Urdu Kalliope";
+  src: url("caratteri/noto-nastaliq-urdu/NotoNastaliqUrdu-wght.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+  unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+}
+@font-face {
+  font-family: "Noto Sans Devanagari Kalliope";
+  src: url("caratteri/noto-sans-devanagari/NotoSansDevanagari-wght.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+0900-097F, U+1CD0-1CFF, U+A8E0-A8FF, U+20B9;
+}
+@font-face {
+  font-family: "Noto Sans Bengali Kalliope";
+  src: url("caratteri/noto-sans-bengali/NotoSansBengali-wght.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+0980-09FF, U+0964-0965;
+}
+/* I nomi delle lingue: per ogni scrittura un file con le sole lettere del nome della lingua («العربية», «हिन्दी», «Čeština»…), per
+   l'elenco delle lingue che sta in ogni pagina e per la pagina della scelta. Il latino di base è lo stesso file di Lexend (nessuna
+   richiesta in più); il cinese («中文») è disegnato dal carattere di sistema. Tutte le facce hanno lo stesso intervallo di pesi: con
+   intervalli diversi il browser ne sceglie un gruppo solo e le altre scritture cadono sul carattere di sistema (provato). */
+@font-face {
+  font-family: "Kalliope nomi delle lingue";
+  src: url("caratteri/lexend/Lexend-wght-latino.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212;
+}
+@font-face {
+  font-family: "Kalliope nomi delle lingue";
+  src: url("caratteri/lexend/Lexend-wght-nomi.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+0100-024F;
+}
+@font-face {
+  font-family: "Kalliope nomi delle lingue";
+  src: url("caratteri/geologica/Geologica-wght-nomi.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+0370-03FF, U+0400-045F;
+}
+@font-face {
+  font-family: "Kalliope nomi delle lingue";
+  src: url("caratteri/readex-pro/ReadexPro-wght-nomi.woff2") format("woff2");
+  font-weight: 100 900;   /* lo stesso intervallo delle altre facce della famiglia: con intervalli diversi il browser ne sceglie un gruppo solo e le altre scritture cadono sul carattere di sistema (provato) */
+  font-display: swap;
+  unicode-range: U+0621-064A;
+}
+@font-face {
+  font-family: "Kalliope nomi delle lingue";
+  src: url("caratteri/noto-sans-devanagari/NotoSansDevanagari-wght-nomi.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+0900-097F;
+}
+@font-face {
+  font-family: "Kalliope nomi delle lingue";
+  src: url("caratteri/noto-sans-bengali/NotoSansBengali-wght-nomi.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+0980-09FF;
+}
+/* l'urdu ha un suo volto: le stesse lettere arabe, in nastaliq; si usa con :lang(ur) */
+@font-face {
+  font-family: "Kalliope nomi delle lingue urdu";
+  src: url("caratteri/noto-nastaliq-urdu/NotoNastaliqUrdu-wght-nomi.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+  unicode-range: U+0600-06FF;
+}
+:root {
+  /* · Le scritture: il carattere di ognuna dopo Lexend, e quanto le sue righe si allontanano (1 = come in latino) */
+  --font-cinese: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "WenQuanYi Micro Hei";   /* il carattere di sistema, scelto: nessun file da scaricare (motivo in caratteri/LEGGIMI.md) */
+  --font-nomi-lingue: "Kalliope nomi delle lingue", var(--font-cinese), system-ui, sans-serif;   /* ogni nome di lingua nella sua scrittura, con file piccolissimi */
+  --grandezza-titoli-scrittura: 1;   /* moltiplica la grandezza dei titoli (h1, tratti, chiusura) e con lei la loro interlinea */
+  --interlinea-titoli-scrittura: 1;   /* moltiplica le interlinee dei titoli (h1, tratti, chiusura) */
+  /* · Il verso: i punti di partenza che cambiano lato con la scrittura (con --verso, in cima) */
+  --origine-inizio-x: calc(50% - 50% * var(--verso));   /* il bordo d'inizio della riga: 0% (sinistra) da sinistra a destra, 100% da destra a sinistra */
+  --origine-fine-x: calc(50% + 50% * var(--verso));   /* il bordo di fine della riga */
+  --interlinea-testo-scrittura: 1;   /* moltiplica tutte le altre interlinee */
+  --tratto-interlinea-telefono: calc(37px * var(--grandezza-titoli-scrittura) * var(--interlinea-titoli-scrittura));   /* il titolo di un tratto al telefono (prima era --interlinea-14, lo stesso valore) */
+  --h1-grandezza-stretto: calc(25px * var(--grandezza-titoli-scrittura));   /* il titolo sotto i 375 px (prima era --corpo-12, lo stesso valore) */
+  --h1-interlinea-stretto: calc(29px * var(--grandezza-titoli-scrittura) * var(--interlinea-titoli-scrittura));   /* il titolo sotto i 375 px (prima era --interlinea-11, lo stesso valore) */
+}
+/* greco e bulgaro: Geologica, larga e geometrica come Lexend; in bulgaro con le forme bulgare delle lettere (locl BGR) */
+:lang(el), :lang(bg) {
+  --font-testo: "Lexend", "Lexend esteso", "Geologica Kalliope", "Lexend riserva", system-ui, sans-serif;
+  --font-app: "DejaVu Sans Kalliope", "DejaVu Sans", "Geologica Kalliope", sans-serif;
+}
+/* arabo: Readex Pro, l'arabo di Lexend (gli stessi autori, lo stesso metodo); le lettere legate non si allargano */
+:lang(ar) {
+  --font-testo: "Lexend", "Lexend esteso", "Readex Pro Kalliope", "Lexend riserva", system-ui, sans-serif;
+  --font-app: "DejaVu Sans Kalliope", "Readex Pro Kalliope", sans-serif;
+  --interlinea-titoli-scrittura: 1.3;
+  --interlinea-testo-scrittura: 1.15;
+}
+/* urdu: nastaliq, la scrittura in cui si legge l'urdu; le righe si allontanano molto (le lettere scendono in diagonale) */
+:lang(ur) {
+  --font-testo: "Lexend", "Lexend esteso", "Noto Nastaliq Urdu Kalliope", system-ui, sans-serif;
+  --font-app: "DejaVu Sans Kalliope", "Noto Nastaliq Urdu Kalliope", sans-serif;
+  --font-nomi-lingue: "Kalliope nomi delle lingue urdu", "Kalliope nomi delle lingue", var(--font-cinese), system-ui, sans-serif;
+  --grandezza-titoli-scrittura: 0.72;
+  --interlinea-titoli-scrittura: 1.75;
+  --interlinea-testo-scrittura: 1.6;
+}
+/* hindi e bengali: Noto Sans Devanagari e Noto Sans Bengali; i segni sopra e sotto la riga chiedono righe più distanti */
+:lang(hi) {
+  --font-testo: "Lexend", "Lexend esteso", "Noto Sans Devanagari Kalliope", system-ui, sans-serif;
+  --font-app: "DejaVu Sans Kalliope", "Noto Sans Devanagari Kalliope", sans-serif;
+  --interlinea-titoli-scrittura: 1.25;
+  --interlinea-testo-scrittura: 1.12;
+}
+:lang(bn) {
+  --font-testo: "Lexend", "Lexend esteso", "Noto Sans Bengali Kalliope", system-ui, sans-serif;
+  --font-app: "DejaVu Sans Kalliope", "Noto Sans Bengali Kalliope", sans-serif;
+  --interlinea-titoli-scrittura: 1.25;
+  --interlinea-testo-scrittura: 1.12;
+}
+/* cinese: il carattere di sistema, dopo Lexend */
+:lang(zh) {
+  --font-testo: "Lexend", "Lexend esteso", var(--font-cinese), system-ui, sans-serif;
+  --font-app: "DejaVu Sans Kalliope", var(--font-cinese), sans-serif;
+  --interlinea-titoli-scrittura: 1.1;
+  --interlinea-testo-scrittura: 1.1;
+}
+/* le scritture legate (arabo, urdu, devanagari, bengali) e il cinese non si spaziano: le lettere si staccherebbero (CSS Text 4 §8.2.1) */
+:lang(ar), :lang(ur), :lang(hi), :lang(bn), :lang(zh) {
+  --spaziatura-h1: 0em;
+  --spaziatura-tratto: 0em;
+  --spaziatura-bolla-testo: 0em;
+  --spaziatura-computer-nome: 0em;
+}
+/* ---------- Le lingue: l'elenco, la scelta nella barra, la pagina della scelta (incarico 2, 17/11/2026) · componenti/lingue.css ---------- */
+:root {
+  /* · L'elenco: un pulsante-voce per lingua */
+  --lingue-distanza: var(--spazio-7);   /* fra un nome e l'altro */
+  --lingua-spazio-interno-inline: var(--spazio-14);   /* un nome senza il tondo della voce: lo stesso spazio ai due lati */
+  --lingua-spazio-interno-inline-telefono: var(--spazio-10);
+  /* · La scelta nella barra: il pannello di vetro scuro, come il menu aperto */
+  --lingua-segno-rotazione: 90deg;   /* la freccia dei collegamenti, girata in giù (aperta: in su) */
+  --durata-lingue-pannello: var(--durata-menu);   /* il pannello si apre col tempo del menu che scivola */
+  --lingue-pannello-sopra: calc(100% + 8px);   /* sotto il nome della lingua, staccato quanto i pannelli della barra */
+  --lingue-pannello-larghezza: min(460px, calc(100vw - 2 * var(--margine)));   /* tre colonne di nomi */
+  --lingue-pannello-colonne: repeat(3, minmax(0, 1fr));
+  --lingue-pannello-colonne-telefono: repeat(2, minmax(0, 1fr));
+  --lingue-pannello-altezza-massima: calc(100vh - 96px);   /* sugli schermi bassi il pannello scorre dentro di sé */
+  --lingue-pannello-sposta-y: -6px;   /* aprendosi scende di poco dal nome */
+  /* · La pagina della scelta: la bolla con le lingue e il tuo riquadro */
+  --scelta-lingua-spazio-interno: 56px var(--margine) 96px;
+  --scelta-lingua-spazio-interno-telefono: 24px var(--margine) 64px;
+  --scelta-bolla-larghezza-massima: 980px;   /* trenta nomi in quattro o cinque righe al computer */
+  --scelta-altezza-minima: calc(100vh - var(--barra-altezza));   /* la bolla e il riquadro stanno a metà dello schermo, sotto la barra */
+  --scelta-luce-inizio: 34%;   /* la luce della stanza dietro la bolla */
+  --scelta-luce-sopra: 46%;
+  --scelta-bolla-spazio-interno: var(--bolla-corpo-spazio-interno);
+  --bordo-lingua-in-bolla: var(--bordo-rivedi-chiaro);   /* il bordo di un comando sul chiaro (come «Rivedi» sulla scena chiara) */
+  --velo-lingua-in-bolla: rgba(91, 1, 35, 0.07);   /* un nome al passaggio, sul chiaro della bolla */
+  --lingua-preferita-ombra: 0 10px 22px -12px rgba(91, 1, 35, 0.6);   /* la lingua del browser, accesa: l'ombra della voce scelta, in scuro sul chiaro */
+  --scelta-tu-larghezza: 220px;
+  --scelta-tu-altezza: 128px;
+  --scelta-tu-larghezza-telefono: 148px;
+  --scelta-tu-altezza-telefono: 88px;
+  --scelta-tu-scarto: var(--spazio-14);   /* il riquadro sta sotto la coda della bolla */
+  --scelta-tu-scarto-telefono: var(--spazio-8);
+  --scelta-barre-scala-y: var(--barre-1-scala-y);   /* le barre di «Tu» fra un nome e l'altro */
+  /* · L'arrivo della pagina della scelta */
+  --ritardo-scelta-tu: 0ms;   /* il tuo riquadro entra per primo */
+  --ritardo-scelta-bolla: 380ms;   /* la bolla nasce dalla coda quando il riquadro è quasi fermo */
+  --ritardo-scelta-nomi: 820ms;   /* i nomi cominciano ad accendersi quando la bolla è nata */
+  --passo-scelta-nomi: 34ms;   /* un nome dopo l'altro, al passo della scrittura del primo schermo (33 ms a lettera) */
+  --durata-scelta-nome: 300ms;
+  --durata-scelta-barre: 260ms;
+  --ripetizioni-scelta-barre: 4;   /* le barre si muovono finché l'ultimo nome è acceso (30 × 34 ms) */
 }

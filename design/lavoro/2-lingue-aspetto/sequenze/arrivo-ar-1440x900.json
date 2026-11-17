@@ -1,0 +1,111 @@
+{
+ "pagina": "http://127.0.0.1:34999/ar/index.html",
+ "misura": "1440x900",
+ "sequenza": "arrivo-ar",
+ "gesto": null,
+ "ridotto": false,
+ "lento": 1,
+ "istanti": [
+  0,
+  0.4,
+  0.8,
+  1.2,
+  1.8,
+  2.4,
+  3.5,
+  5,
+  6.2,
+  6.8,
+  8,
+  11,
+  15.6
+ ],
+ "fotogrammi": [
+  {
+   "file": "arrivo-ar-1440x900-f01.jpg",
+   "chiesto": 0,
+   "scattato": 0,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-ar-1440x900-f02.jpg",
+   "chiesto": 0.4,
+   "scattato": 0.67,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-ar-1440x900-f03.jpg",
+   "chiesto": 0.8,
+   "scattato": 0.81,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-ar-1440x900-f04.jpg",
+   "chiesto": 1.2,
+   "scattato": 1.2,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-ar-1440x900-f05.jpg",
+   "chiesto": 1.8,
+   "scattato": 1.8,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-ar-1440x900-f06.jpg",
+   "chiesto": 2.4,
+   "scattato": 2.4,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-ar-1440x900-f07.jpg",
+   "chiesto": 3.5,
+   "scattato": 3.5,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-ar-1440x900-f08.jpg",
+   "chiesto": 5,
+   "scattato": 5,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-ar-1440x900-f09.jpg",
+   "chiesto": 6.2,
+   "scattato": 6.2,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-ar-1440x900-f10.jpg",
+   "chiesto": 6.8,
+   "scattato": 6.8,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-ar-1440x900-f11.jpg",
+   "chiesto": 8,
+   "scattato": 8,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-ar-1440x900-f12.jpg",
+   "chiesto": 11,
+   "scattato": 11,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-ar-1440x900-f13.jpg",
+   "chiesto": 15.6,
+   "scattato": 15.6,
+   "scorrimento": 0
+  }
+ ],
+ "foglio": "arrivo-ar-1440x900-foglio.jpg",
+ "video": "arrivo-ar-1440x900.webm",
+ "orologio": {
+  "pagina": 1,
+  "media": []
+ },
+ "errori": [],
+ "misurato": "2026-11-17T01:19:34.811Z"
+}

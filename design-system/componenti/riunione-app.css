@@ -69,7 +69,7 @@
 .scelta.scelto { background: var(--testo); color: var(--bordeaux); font-weight: var(--peso-forte); }
 .scelta.puntata { background: var(--velo-puntata); }
 .scelta.premuta { transform: scale(var(--scelta-scala)); }
-.js .riunione-app.entra-finestra { transform-origin: 100% 0; --ritardo: var(--riunione-app-entra-finestra-ritardo); }
+.js .riunione-app.entra-finestra { transform-origin: var(--origine-fine-x) 0; --ritardo: var(--riunione-app-entra-finestra-ritardo); }
 @media (max-width: 760px) {
   .riunione-app { width: var(--riunione-app-larghezza-telefono); margin-top: 0; }
   .app-griglia { grid-template-rows: var(--app-griglia-righe-telefono); gap: var(--spazio-4); }

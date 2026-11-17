@@ -1,0 +1,1039 @@
+# Kalliope · website texts in fi. SOLO PER LE PROVE (incarico 2, 16/11/2026): traduzione onesta ma non rivista,
+# fatta per provare l'aspetto delle scritture. Non va in website/lingue/ e non si pubblica.
+msgid ""
+msgstr ""
+"Project-Id-Version: Kalliope website\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fi\n"
+"Plural-Forms: nplurals=2; plural=(n==1 ? 0 : 1);\n"
+
+#: index.html
+#, kalliope-markup
+msgctxt "pagina.titolo"
+msgid "Kalliope · In riunione, alla pari"
+msgstr "Kalliope · Kokouksessa, tasavertaisena"
+
+#. Attribute «content» of an element of the page: plain text, no tags.
+#: index.html
+msgctxt "pagina.descrizione"
+msgid "Kalliope è un programma per il computer, per chi non può parlare o fa fatica: scrivi una frase, premi Invio, e nella riunione gli altri la sentono con una voce italiana naturale."
+msgstr "Kalliope on tietokoneohjelma niille, jotka eivät voi puhua tai joille puhuminen on vaikeaa: kirjoitat lauseen, painat Enteriä, ja kokouksessa muut kuulevat sen luonnollisella italialaisella äänellä."
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "salta"
+msgid "Vai al contenuto"
+msgstr "Siirry sisältöön"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: index.html non-ancora/index.html
+msgctxt "barra.marchio"
+msgid "Kalliope, pagina iniziale"
+msgstr "Kalliope, etusivu"
+
+#. The name of the program. Keep it, or write it in the script of the language.
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "marchio.nome"
+msgid "Kalliope"
+msgstr "Kalliope"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: index.html non-ancora/index.html
+msgctxt "barra.sezioni"
+msgid "Sezioni del sito"
+msgstr "Sivuston osiot"
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "menu.ascolta"
+msgid "Ascolta"
+msgstr "Kuuntele"
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "menu.stato"
+msgid "Stato e limiti"
+msgstr "Tila ja rajoitukset"
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "menu.installa"
+msgid "Installa"
+msgstr "Asenna"
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "menu.riunione"
+msgid "In riunione"
+msgstr "Kokouksessa"
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "menu.aiuto"
+msgid "Aiuto"
+msgstr "Ohjeet"
+
+#. Attribute «title» of an element of the page: plain text, no tags.
+#: index.html non-ancora/index.html
+msgctxt "barra.lingua"
+msgid "Cambia lingua"
+msgstr "Vaihda kieltä"
+
+#: index.html
+#, kalliope-markup
+msgctxt "cta.scarica"
+msgid "Scarica e installa"
+msgstr "Lataa ja asenna"
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "barra.menu"
+msgid "Menu"
+msgstr "Valikko"
+
+#. Four lines, one under the other: words can move from one line to another, but there must still be four lines.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="riga">
+#.   <2> = <span class="riga">
+#.   <3> = <span class="riga">
+#.   <4> = <span class="riga">
+#: index.html
+#, kalliope-markup
+msgctxt "apertura.titolo"
+msgid "<1>In riunione,</1> <2>alla pari.</2> <3>Tu scrivi, gli altri</3> <4>ti sentono.</4>"
+msgstr "<1>Kokouksessa,</1> <2>tasavertaisena.</2> <3>Sinä kirjoitat, muut</3> <4>kuulevat sinut.</4>"
+
+#: index.html
+#, kalliope-markup
+msgctxt "apertura.presentazione"
+msgid "Un programma per chi non può parlare o fa fatica. Scrivi una frase e premi Invio: una voce italiana naturale la dice nella riunione."
+msgstr "Ohjelma niille, jotka eivät voi puhua tai joille puhuminen on vaikeaa. Kirjoita lause ja paina Enteriä: luonnollinen italialainen ääni sanoo sen kokouksessa."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="freccia" aria-hidden="true">
+#: index.html
+#, kalliope-markup
+msgctxt "cta.non-linux"
+msgid "Non uso Linux: cosa posso fare<1/>"
+msgstr "En käytä Linuxia: mitä voin tehdä<1/>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#. Placeholders to leave as they are: {{kalliope.version}}
+#: index.html non-ancora/index.html
+#, kalliope-markup, python-brace-format
+msgctxt "apertura.stato"
+msgid "<1>Oggi:</1> versione di prova {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Non ancora provata in una riunione vera con Zoom, Teams o Meet."
+msgstr "<1>Tänään:</1> testiversio {{kalliope.version}}, vain Linuxille (x86_64 ja PipeWire). Ei vielä kokeiltu oikeassa kokouksessa Zoomilla, Teamsilla tai Meetillä."
+
+#. The parts in tags 1 and 2 are the long ones and are dropped on narrow screens: the rest must read well without them.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="d-lunga">
+#.   <2> = <span class="d-piu">
+#: index.html
+#, kalliope-markup
+msgctxt "apertura.didascalia"
+msgid "Ricostruzione<1> della finestra di Kalliope 0.1</1> · la voce è la registrazione vera<2> · scrittura accelerata, partecipanti di esempio</2>"
+msgstr "Jäljitelmä<1> Kalliope 0.1:n ikkunasta</1> · ääni on aito tallenne<2> · nopeutettu kirjoitus, esimerkkiosallistujat</2>"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: index.html
+msgctxt "palco.etichetta"
+msgid "Kalliope al lavoro in una riunione: ricostruzione"
+msgstr "Kalliope työssä kokouksessa: jäljitelmä"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="unita">
+#.   <2> = <span class="unita">
+#: index.html
+#, kalliope-markup
+msgctxt "frase.3"
+msgid "Il preventivo è di <1>1.250 € +</1> IVA, valido fino al <2>31 dicembre.</2>"
+msgstr "Tarjous on <1>1 250 € +</1> ALV, voimassa <2>31. joulukuuta</2> asti."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="nome-lungo">
+#: index.html
+#, kalliope-markup
+msgctxt "riunione.tu-lungo"
+msgid "Tu<1> · microfono «Kalliope»</1>"
+msgstr "Sinä<1> · mikrofoni ”Kalliope”</1>"
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "persona.paola"
+msgid "Paola"
+msgstr "Paola"
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "persona.luca"
+msgid "Luca"
+msgstr "Luca"
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "persona.anna"
+msgid "Anna"
+msgstr "Anna"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: index.html
+msgctxt "finestra.etichetta"
+msgid "Ricostruzione della finestra di Kalliope 0.1"
+msgstr "Jäljitelmä Kalliope 0.1:n ikkunasta"
+
+#: index.html
+#, kalliope-markup
+msgctxt "finestra.pronta"
+msgid "Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono."
+msgstr "Valmis. Valitse Zoomissa, Teamsissa, Meetissä tai selaimessa mikrofoniksi ”Kalliope”."
+
+#: index.html
+#, kalliope-markup
+msgctxt "finestra.segnaposto"
+msgid "Scrivi qui e premi Invio per parlare"
+msgstr "Kirjoita tähän ja puhu painamalla Enteriä"
+
+#: index.html
+#, kalliope-markup
+msgctxt "finestra.parla"
+msgid "Parla"
+msgstr "Puhu"
+
+#: index.html
+#, kalliope-markup
+msgctxt "finestra.ferma"
+msgid "Ferma"
+msgstr "Pysäytä"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="tondo" aria-hidden="true">
+#: index.html
+#, kalliope-markup
+msgctxt "ascolto.pillola"
+msgid "<1/>Ascolta Giulia"
+msgstr "<1/>Kuuntele Giuliaa"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: index.html
+msgctxt "ascolto.etichetta"
+msgid "Ascolto della voce vera"
+msgstr "Aidon äänen kuuntelu"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: index.html
+msgctxt "ascolto.voce"
+msgid "Voce"
+msgstr "Ääni"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="voce-tondo" aria-hidden="true">
+#: index.html
+#, kalliope-markup
+msgctxt "voce.giulia"
+msgid "<1/>Giulia"
+msgstr "<1/>Giulia"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="voce-tondo" aria-hidden="true">
+#: index.html
+#, kalliope-markup
+msgctxt "voce.marco"
+msgid "<1/>Marco"
+msgstr "<1/>Marco"
+
+#: index.html
+#, kalliope-markup
+msgctxt "ascolto.chiudi"
+msgid "Chiudi"
+msgstr "Sulje"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: index.html
+msgctxt "ascolto.frasi"
+msgid "Frasi da ascoltare"
+msgstr "Kuunneltavat lauseet"
+
+#: index.html
+#, kalliope-markup
+msgctxt "ascolto.frase.3"
+msgid "«Il preventivo…»"
+msgstr "”Tarjous…”"
+
+#: index.html
+#, kalliope-markup
+msgctxt "ascolto.frase.2"
+msgid "«Sono d'accordo…»"
+msgstr "”Olen samaa mieltä…”"
+
+#: index.html
+#, kalliope-markup
+msgctxt "ascolto.frase.1"
+msgid "«Buongiorno…»"
+msgstr "”Hyvää päivää…”"
+
+#: index.html
+#, kalliope-markup
+msgctxt "campioni.titolo"
+msgid "Senti come suona, con il testo accanto."
+msgstr "Kuule, miltä se kuulostaa, teksti vieressä."
+
+#. Two versions of one sentence: the part in tag 1 is read when the page runs with JavaScript, the part in tag 2 when it does not. Write both.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="con-js">
+#.   <2> = <span class="senza-js">
+#: index.html
+#, kalliope-markup
+msgctxt "campioni.testo"
+msgid "Le frasi sono tue, dette con le registrazioni vere di Kalliope 0.1. <1>Scegli la voce, poi premi una frase: le parole si accendono mentre Paola, Luca e Anna la sentono.</1><2>Premi il lettore sotto ogni frase per ascoltarla. Accanto trovi il collegamento alla stessa frase con la voce di Marco.</2>"
+msgstr "Lauseet ovat sinun, ja ne sanotaan Kalliope 0.1:n aidoilla tallenteilla. <1>Valitse ääni ja paina sitten lausetta: sanat syttyvät, kun Paola, Luca ja Anna kuulevat sen.</1><2>Paina kunkin lauseen alla olevaa soitinta kuunnellaksesi sen. Vieressä on linkki samaan lauseeseen Marcon äänellä.</2>"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: index.html
+msgctxt "campioni.voce"
+msgid "Voce delle frasi"
+msgstr "Lauseiden ääni"
+
+#. The name on the tile of the person who writes (riunione.tu); riunione.tu-microfono is what follows it once the microphone is chosen: keep the quotes around Kalliope.
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "riunione.tu"
+msgid "Tu"
+msgstr "Sinä"
+
+#. The name on the tile of the person who writes (riunione.tu); riunione.tu-microfono is what follows it once the microphone is chosen: keep the quotes around Kalliope.
+#. Attribute «data-lungo» of an element of the page: plain text, no tags.
+#: index.html
+msgctxt "riunione.tu-microfono"
+msgid "· microfono «Kalliope»"
+msgstr "· mikrofoni ”Kalliope”"
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "frase.1"
+msgid "Buongiorno a tutti! Scrivo invece di parlare, ma vi seguo benissimo."
+msgstr "Hyvää päivää kaikille! Kirjoitan puhumisen sijaan, mutta pysyn hyvin mukana."
+
+#: index.html
+#, kalliope-markup
+msgctxt "ascolto.verbo.fermo"
+msgid "Ascolta"
+msgstr "Kuuntele"
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "campioni.scarica-audio"
+msgid "Scarica l'audio (Giulia)"
+msgstr "Lataa ääni (Giulia)"
+
+#: index.html
+#, kalliope-markup
+msgctxt "campioni.altra-voce"
+msgid "La stessa frase con Marco"
+msgstr "Sama lause Marcon äänellä"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="unita">
+#: index.html
+#, kalliope-markup
+msgctxt "frase.2"
+msgid "Sono d'accordo con Paola. Però la consegna del 14/3 mi sembra stretta: possiamo sentirci venerdì <1>alle 15:30?</1>"
+msgstr "Olen samaa mieltä Paolan kanssa. Mutta 14/3 määräaika tuntuu tiukalta: voisimmeko puhua perjantaina <1>kello 15.30?</1>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span>
+#: index.html
+#, kalliope-markup
+msgctxt "frase.3.detto-riga"
+msgid "<1>Detto:</1> «Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
+msgstr "<1>Sanottu:</1> ”Tarjous on tuhat kaksisataaviisikymmentä euroa plus ALV, voimassa kolmaskymmenesensimmäinen joulukuuta asti.”"
+
+#: index.html
+#, kalliope-markup
+msgctxt "oggi.titolo"
+msgid "Fin dove arriva la voce, oggi."
+msgstr "Kuinka pitkälle ääni tänään kantaa."
+
+#: index.html
+#, kalliope-markup
+msgctxt "oggi.testo"
+msgid "Detto chiaro, prima di scaricare: che cosa è provato e che cosa no."
+msgstr "Suoraan sanottuna, ennen lataamista: mikä on kokeiltu ja mikä ei."
+
+#: index.html
+#, kalliope-markup
+msgctxt "strada.computer"
+msgid "Sul tuo computer"
+msgstr "Tietokoneellasi"
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "strada.tappa.1"
+msgid "Scrivi la frase"
+msgstr "Kirjoita lause"
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "strada.tappa.2"
+msgid "La voce nasce qui"
+msgstr "Ääni syntyy tässä"
+
+#: index.html
+#, kalliope-markup
+msgctxt "strada.tappa.3"
+msgid "Microfono «Kalliope»"
+msgstr "Mikrofoni ”Kalliope”"
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "strada.tappa.4"
+msgid "Zoom, Teams, Meet"
+msgstr "Zoom, Teams, Meet"
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "strada.tappa.5"
+msgid "Gli altri ti sentono"
+msgstr "Muut kuulevat sinut"
+
+#: index.html
+#, kalliope-markup
+msgctxt "strada.provato.titolo"
+msgid "Provato"
+msgstr "Kokeiltu"
+
+#: index.html
+#, kalliope-markup
+msgctxt "strada.provato.testo"
+msgid "La voce arriva al microfono «Kalliope». L'installazione è provata da uno script su Ubuntu, Fedora e Arch."
+msgstr "Ääni saapuu ”Kalliope”-mikrofoniin. Asennus on kokeiltu skriptillä Ubuntussa, Fedorassa ja Archissa."
+
+#: index.html
+#, kalliope-markup
+msgctxt "strada.nonprovato.titolo"
+msgid "Non ancora provato"
+msgstr "Ei vielä kokeiltu"
+
+#: index.html
+#, kalliope-markup
+msgctxt "strada.nonprovato.testo"
+msgid "Una riunione vera con Zoom, Teams o Meet."
+msgstr "Oikea kokous Zoomilla, Teamsilla tai Meetillä."
+
+#: index.html
+#, kalliope-markup
+msgctxt "strada.riservato"
+msgid "Il testo che scrivi resta sul tuo computer: non passa da internet e non serve un account. Alla riunione arriva soltanto la voce."
+msgstr "Kirjoittamasi teksti pysyy tietokoneellasi: se ei kulje internetin kautta, eikä tiliä tarvita. Kokoukseen saapuu vain ääni."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: index.html
+#, kalliope-markup
+msgctxt "strada.non-esiste"
+msgid "<1>Non esiste ancora</1> per Windows, macOS, telefono e altre lingue."
+msgstr "<1>Ei vielä saatavilla</1> Windowsille, macOS:lle, puhelimille eikä muille kielille."
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: index.html
+msgctxt "avvio.etichetta"
+msgid "Ricostruzione del primo avvio di Kalliope 0.1"
+msgstr "Jäljitelmä Kalliope 0.1:n ensimmäisestä käynnistyksestä"
+
+#: index.html
+#, kalliope-markup
+msgctxt "avvio.primo"
+msgid "Per parlare, Kalliope deve scaricare la voce: 53 MB, una volta sola. Poi funziona senza internet."
+msgstr "Puhuakseen Kalliopen täytyy ladata ääni: 53 Mt, vain kerran. Sen jälkeen se toimii ilman internetiä."
+
+#: index.html
+#, kalliope-markup
+msgctxt "avvio.scarica"
+msgid "Scarica la voce"
+msgstr "Lataa ääni"
+
+#: index.html
+#, kalliope-markup
+msgctxt "avvio.nota"
+msgid "Le frasi che dici restano qui, per ripeterle."
+msgstr "Sanomasi lauseet jäävät tähän, jotta voit toistaa ne."
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: index.html
+msgctxt "app.etichetta"
+msgid "Ricostruzione: nell'app della riunione si sceglie «Kalliope» come microfono"
+msgstr "Jäljitelmä: kokoussovelluksessa valitaan mikrofoniksi ”Kalliope”"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="app-icona">
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "app.microfono"
+msgid "<1/>Microfono"
+msgstr "<1/>Mikrofoni"
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "app.scelta.computer"
+msgid "Microfono del computer"
+msgstr "Tietokoneen mikrofoni"
+
+#. The name of the virtual microphone, as a meeting app lists it: keep it as it is.
+#: index.html
+#, kalliope-markup
+msgctxt "app.scelta.kalliope"
+msgid "Kalliope"
+msgstr "Kalliope"
+
+#: index.html
+#, kalliope-markup
+msgctxt "avvio.ricostruzione"
+msgid "Ricostruzione del primo avvio di Kalliope 0.1 e della scelta del microfono in un'app di riunione · tempi accelerati"
+msgstr "Jäljitelmä Kalliope 0.1:n ensimmäisestä käynnistyksestä ja mikrofonin valinnasta kokoussovelluksessa · nopeutettu"
+
+#: index.html
+#, kalliope-markup
+msgctxt "avvio.rivedi"
+msgid "Rivedi il primo avvio"
+msgstr "Katso ensimmäinen käynnistys uudelleen"
+
+#: index.html
+#, kalliope-markup
+msgctxt "serve.titolo"
+msgid "Che cosa serve."
+msgstr "Mitä tarvitset."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: index.html
+#, kalliope-markup
+msgctxt "serve.1"
+msgid "<1>Un computer Linux a 64 bit</1> con PipeWire."
+msgstr "<1>64-bittisen Linux-tietokoneen</1>, jossa on PipeWire."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: index.html
+#, kalliope-markup
+msgctxt "serve.2"
+msgid "<1>53 MB per la voce</1>, scaricati una volta sola: poi funziona senza internet."
+msgstr "<1>53 Mt ääntä varten</1>, ladataan vain kerran: sen jälkeen toimii ilman internetiä."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: index.html
+#, kalliope-markup
+msgctxt "serve.3"
+msgid "<1>Un'app di riunione</1> che ti lasci scegliere il microfono: lì scegli «Kalliope»."
+msgstr "<1>Kokoussovelluksen</1>, jossa voit valita mikrofonin: valitse siellä ”Kalliope”."
+
+#: index.html
+#, kalliope-markup
+msgctxt "chiusura.titolo"
+msgid "Provala sul tuo computer."
+msgstr "Kokeile sitä tietokoneellasi."
+
+#. Placeholders to leave as they are: {{kalliope.version}}
+#: index.html
+#, kalliope-markup, python-brace-format
+msgctxt "chiusura.fatti"
+msgid "Versione di prova {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Nessun account, nessun prezzo: l'uso personale è libero."
+msgstr "Testiversio {{kalliope.version}}, vain Linuxille (x86_64 ja PipeWire). Ei tiliä, ei hintaa: henkilökohtainen käyttö on vapaata."
+
+#: index.html
+#, kalliope-markup
+msgctxt "chiusura.avvertenza"
+msgid "Kalliope non è un dispositivo medico e non sostituisce la valutazione di un logopedista."
+msgstr "Kalliope ei ole lääkinnällinen laite eikä korvaa puheterapeutin arviota."
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: index.html non-ancora/index.html
+msgctxt "piede.sezioni"
+msgid "Sezioni del sito, in fondo"
+msgstr "Sivuston osiot, alhaalla"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: index.html non-ancora/index.html
+msgctxt "piede.lingue"
+msgid "Lingue"
+msgstr "Kielet"
+
+#. Placeholders to leave as they are: {{kalliope.date}} {{kalliope.version}}
+#: index.html non-ancora/index.html
+#, kalliope-markup, python-brace-format
+msgctxt "piede.testo"
+msgid "Versione {{kalliope.version}} del {{kalliope.date}}. Codice sorgente disponibile, licenza SANSEVIERIA 1.0 (non «open source» nel senso dell'OSI). Prodotto da SANSEVIERIA OÜ. Questo sito non usa cookie né statistiche."
+msgstr "Versio {{kalliope.version}}, julkaistu {{kalliope.date}}. Lähdekoodi saatavilla, lisenssi SANSEVIERIA 1.0 (ei OSI:n tarkoittamaa ”avointa lähdekoodia”). Tekijä SANSEVIERIA OÜ. Tämä sivusto ei käytä evästeitä eikä tilastointia."
+
+#. Says that the voice is speaking; shown in Kalliope's window while a sentence plays.
+#: index.html
+#, kalliope-markup
+msgctxt "finestra.parlando"
+msgid "Sto parlando…"
+msgstr "Puhun…"
+
+#. Read by screen readers when listening is paused.
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "annuncio.pausa"
+msgid "In pausa."
+msgstr "Tauolla."
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "errore.caricamento"
+msgid "Non riesco a caricare la registrazione. Controlla la connessione e riprova, oppure scaricala."
+msgstr "En pysty lataamaan tallennetta. Tarkista yhteys ja yritä uudelleen, tai lataa se."
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "errore.interrotta"
+msgid "La registrazione si è interrotta. Riprova, oppure scaricala."
+msgstr "Tallenne katkesi. Yritä uudelleen, tai lataa se."
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "errore.permesso"
+msgid "Il browser non ha fatto partire il suono. Premi «Riprova»: il suono parte solo con un tuo gesto."
+msgstr "Selain ei käynnistänyt ääntä. Paina ”Yritä uudelleen”: ääni käynnistyy vain omasta eleestäsi."
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "errore.lento"
+msgid "Il caricamento è lento. Puoi aspettare, riprovare o scaricare la registrazione."
+msgstr "Lataus on hidas. Voit odottaa, yrittää uudelleen tai ladata tallenteen."
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "errore.riprova"
+msgid "Riprova"
+msgstr "Yritä uudelleen"
+
+#. {voce} is the name of the voice (Giulia or Marco), written as in the voice buttons.
+#. Placeholders to leave as they are: {voce}
+#: index.html non-ancora/index.html
+#, kalliope-markup, python-brace-format
+msgctxt "errore.scarica"
+msgid "Scarica la registrazione ({voce}, mp3)"
+msgstr "Lataa tallenne ({voce}, mp3)"
+
+#. Read by screen readers when a voice is chosen while a sentence plays. {n} is the number of the sentence (1, 2 or 3).
+#. Placeholders to leave as they are: {n} {voce}
+#: index.html
+#, kalliope-markup, python-brace-format
+msgctxt "annuncio.voce-frase"
+msgid "Voce scelta: {voce}. Sto leggendo la frase {n}."
+msgstr "Valittu ääni: {voce}. Luen lausetta {n}."
+
+#. Read by screen readers when a sentence starts. {n} is the number of the sentence (1, 2 or 3).
+#. Placeholders to leave as they are: {n} {voce}
+#: index.html
+#, kalliope-markup, python-brace-format
+msgctxt "annuncio.frase"
+msgid "Sto leggendo la frase {n}, voce di {voce}."
+msgstr "Luen lausetta {n}, äänenä {voce}."
+
+#. Placeholders to leave as they are: {voce}
+#: index.html
+#, kalliope-markup, python-brace-format
+msgctxt "annuncio.voce"
+msgid "Voce scelta: {voce}."
+msgstr "Valittu ääni: {voce}."
+
+#. Short text on a sentence's button while it loads.
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "ascolto.verbo.carica"
+msgid "Carico…"
+msgstr "Ladataan…"
+
+#. Short text on a sentence's button while it plays: pressing it pauses.
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "ascolto.verbo.suona"
+msgid "Pausa"
+msgstr "Tauko"
+
+#. Short text on a sentence's button when paused: pressing it resumes.
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "ascolto.verbo.pausa"
+msgid "Riprendi"
+msgstr "Jatka"
+
+#. Short text on the button of a sentence already heard.
+#: index.html
+#, kalliope-markup
+msgctxt "ascolto.verbo.fatto"
+msgid "Riascolta"
+msgstr "Kuuntele uudelleen"
+
+#. What a sentence's button tells screen readers, before the colon and the sentence.
+#: index.html
+#, kalliope-markup
+msgctxt "ascolto.azione.fermo"
+msgid "Ascolta"
+msgstr "Kuuntele"
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "ascolto.azione.carica"
+msgid "Carico la registrazione, premi per annullare"
+msgstr "Ladataan tallennetta, peruuta painamalla"
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "ascolto.azione.suona"
+msgid "Metti in pausa"
+msgstr "Keskeytä"
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "ascolto.azione.pausa"
+msgid "Riprendi"
+msgstr "Jatka"
+
+#: index.html
+#, kalliope-markup
+msgctxt "ascolto.azione.fatto"
+msgid "Riascolta"
+msgstr "Kuuntele uudelleen"
+
+#. Joins the action and the sentence: «Ascolta: Il preventivo…». {azione} is one of the actions above, {frase} the text of the sentence.
+#. Placeholders to leave as they are: {azione} {frase}
+#: index.html
+#, kalliope-markup, python-brace-format
+msgctxt "ascolto.azione.formato"
+msgid "{azione}: {frase}"
+msgstr "{azione}: {frase}"
+
+#. The first-start story: {mb} goes from 0 to 53, in megabytes.
+#. Placeholders to leave as they are: {mb}
+#: index.html
+#, kalliope-markup, python-brace-format
+msgctxt "avvio.scarico"
+msgid "Scarico la voce… {mb} di 53 MB"
+msgstr "Ladataan ääntä… {mb} / 53 Mt"
+
+#: index.html
+#, kalliope-markup
+msgctxt "avvio.preparo"
+msgid "Preparo la voce…"
+msgstr "Valmistellaan ääntä…"
+
+#: index.html
+#, kalliope-markup
+msgctxt "avvio.annulla"
+msgid "Annulla"
+msgstr "Peruuta"
+
+#. The word of sentence 2 that is Paola's name, written as it is in the sentence, punctuation included: when the voice says it, Paola turns to look.
+#: index.html
+#, kalliope-markup
+msgctxt "frase.2.chi.paola"
+msgid "Paola."
+msgstr "Paolan"
+
+#. Words of sentence 3 that change together, in one go, when the voice reaches them (a price): written exactly as in the sentence.
+#: index.html
+#, kalliope-markup
+msgctxt "frase.3.gruppo.1"
+msgid "1.250 € +"
+msgstr "1 250 € +"
+
+#. How the words of the group above are said aloud, one spoken word for each written word (three for three).
+#: index.html
+#, kalliope-markup
+msgctxt "frase.3.detto.1"
+msgid "milleduecentocinquanta euro più"
+msgstr "tuhat kaksisataaviisikymmentä euroa plus"
+
+#. A second group of sentence 3, written exactly as in the sentence (a day).
+#: index.html
+#, kalliope-markup
+msgctxt "frase.3.gruppo.2"
+msgid "31"
+msgstr "31."
+
+#. How the words of the group above are said aloud.
+#: index.html
+#, kalliope-markup
+msgctxt "frase.3.detto.2"
+msgid "trentuno"
+msgstr "kolmaskymmenesensimmäinen"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.titolo"
+msgid "Kalliope per Windows e macOS: non ancora, e perché"
+msgstr "Kalliope per Windows e macOS: non ancora, e perché"
+
+#. Attribute «content» of an element of the page: plain text, no tags.
+#: non-ancora/index.html
+msgctxt "na.descrizione"
+msgid "Oggi Kalliope funziona solo su Linux. Perché non ancora su Windows, macOS e telefono, che cosa manca e come saperlo quando arriva, senza lasciare dati."
+msgstr "Oggi Kalliope funziona solo su Linux. Perché non ancora su Windows, macOS e telefono, che cosa manca e come saperlo quando arriva, senza lasciare dati."
+
+#. Three lines, one under the other: words can move from one line to another, but there must still be three lines. The answer to the question of the page comes first: not yet.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="riga">
+#.   <2> = <span class="riga">
+#.   <3> = <span class="riga">
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.apertura.titolo"
+msgid "<1>Su Windows</1> <2>e macOS:</2> <3>non ancora.</3>"
+msgstr "<1>Su Windows</1> <2>e macOS:</2> <3>non ancora.</3>"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.apertura.presentazione"
+msgid "Kalliope, il programma che dice nella riunione la frase che scrivi, oggi funziona solo su Linux. Qui trovi perché, che cosa manca e come saperlo quando arriva."
+msgstr "Kalliope, il programma che dice nella riunione la frase che scrivi, oggi funziona solo su Linux. Qui trovi perché, che cosa manca e come saperlo quando arriva."
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.apertura.quando"
+msgid "Come saperlo quando arriva"
+msgstr "Come saperlo quando arriva"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="freccia" aria-hidden="true">
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.apertura.ascolta"
+msgid "Intanto, senti la voce<1/>"
+msgstr "Intanto, senti la voce<1/>"
+
+#. The part in tag 1 is the long one and is dropped on narrow screens: the rest must read well without it.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="d-lunga">
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.apertura.didascalia"
+msgid "Ricostruzione<1> · su Windows e macOS «Kalliope» non compare fra i microfoni dell'app di riunione</1>"
+msgstr "Ricostruzione<1> · su Windows e macOS «Kalliope» non compare fra i microfoni dell'app di riunione</1>"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: non-ancora/index.html
+msgctxt "na.palco.etichetta"
+msgid "Ricostruzione: su Windows e macOS, nell'app della riunione, il microfono «Kalliope» non c'è e la tua frase resta senza voce"
+msgstr "Ricostruzione: su Windows e macOS, nell'app della riunione, il microfono «Kalliope» non c'è e la tua frase resta senza voce"
+
+#. The name on the tile of the person who writes, who has no voice here. The part in tag 1 is the long one and is dropped on narrow screens.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="nome-lungo">
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.tu-senza-voce"
+msgid "Tu<1> · senza voce</1>"
+msgstr "Tu<1> · senza voce</1>"
+
+#. The name of the virtual microphone as a meeting app lists it (keep it as it is), and what follows it where the program is not installed: the part in tag 2 appears when the person tries to choose it.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="mancante-nome">
+#.   <2> = <span class="mancante-nota">
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.scelta.mancante"
+msgid "<1>Kalliope</1><2> · non c'è</2>"
+msgstr "<1>Kalliope</1><2> · non c'è</2>"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.perche.titolo"
+msgid "Si ferma al microfono."
+msgstr "Si ferma al microfono."
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.perche.testo"
+msgid "Su Windows e macOS Kalliope si costruisce e supera i test, ma non ha ancora il suo microfono. Senza, nessuna app di riunione può sentire la voce."
+msgstr "Su Windows e macOS Kalliope si costruisce e supera i test, ma non ha ancora il suo microfono. Senza, nessuna app di riunione può sentire la voce."
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.strada.computer"
+msgid "Su Windows e macOS, oggi"
+msgstr "Su Windows e macOS, oggi"
+
+#. The part in tag 1 is read by screen readers and not shown: the step is drawn dashed and empty, and this says what the drawing says.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="solo-lettori">
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.strada.tappa.3"
+msgid "Microfono «Kalliope»<1>: non c'è ancora</1>"
+msgstr "Microfono «Kalliope»<1>: non c'è ancora</1>"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.esito.fatto.titolo"
+msgid "C'è già"
+msgstr "C'è già"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.esito.fatto.testo"
+msgid "Il programma si costruisce e supera i test anche su Windows e macOS: la voce nasce."
+msgstr "Il programma si costruisce e supera i test anche su Windows e macOS: la voce nasce."
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.esito.manca.titolo"
+msgid "Manca il microfono"
+msgstr "Manca il microfono"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#.   <2> = <strong>
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.esito.manca.testo"
+msgid "Su <1>Windows</1> serve un driver audio con una firma valida; su <2>macOS</2>, per firmare il componente audio, un account sviluppatore Apple. Nessuno dei due c'è ancora, e mancano anche i pacchetti da installare, con la loro firma."
+msgstr "Su <1>Windows</1> serve un driver audio con una firma valida; su <2>macOS</2>, per firmare il componente audio, un account sviluppatore Apple. Nessuno dei due c'è ancora, e mancano anche i pacchetti da installare, con la loro firma."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.non-esiste"
+msgid "<1>Non esiste ancora</1> per telefono e tablet, e per ora parla solo italiano. Kalliope è un programma per il computer: non è un servizio online né un'estensione del browser."
+msgstr "<1>Non esiste ancora</1> per telefono e tablet, e per ora parla solo italiano. Kalliope è un programma per il computer: non è un servizio online né un'estensione del browser."
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.quando.titolo"
+msgid "Non promettiamo date."
+msgstr "Non promettiamo date."
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.quando.testo"
+msgid "Quando ci sarà una versione per Windows o macOS, comparirà in cima a questo elenco. L'elenco si aggiorna da solo a ogni nuova versione di Kalliope: tieni l'indirizzo di questa pagina e ripassa quando vuoi."
+msgstr "Quando ci sarà una versione per Windows o macOS, comparirà in cima a questo elenco. L'elenco si aggiorna da solo a ogni nuova versione di Kalliope: tieni l'indirizzo di questa pagina e ripassa quando vuoi."
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.quando.nessuna-email"
+msgid "Non raccogliamo indirizzi e-mail e non abbiamo un elenco d'attesa."
+msgstr "Non raccogliamo indirizzi e-mail e non abbiamo un elenco d'attesa."
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.versioni.titolo"
+msgid "Versioni di Kalliope"
+msgstr "Versioni di Kalliope"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.versioni.prossima.nome"
+msgid "Windows e macOS"
+msgstr "Windows e macOS"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.versioni.prossima.nota"
+msgid "compariranno qui, in cima · nessuna data"
+msgstr "compariranno qui, in cima · nessuna data"
+
+#. Placeholders to leave as they are: {{kalliope.version}}
+#: non-ancora/index.html
+#, kalliope-markup, python-brace-format
+msgctxt "na.versioni.ultima.nome"
+msgid "Kalliope {{kalliope.version}}"
+msgstr "Kalliope {{kalliope.version}}"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.versioni.ultima.nota"
+msgid "Versione di prova · solo Linux"
+msgstr "Versione di prova · solo Linux"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.copia.pulsante"
+msgid "Copia l'indirizzo di questa pagina"
+msgstr "Copia l'indirizzo di questa pagina"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.copia.fatto"
+msgid "Copiato: incollalo nelle note o in un messaggio, e ripassa da qui."
+msgstr "Copiato: incollalo nelle note o in un messaggio, e ripassa da qui."
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.copia.errore"
+msgid "Non riesco a copiarlo: salva la pagina tra i preferiti del browser."
+msgstr "Non riesco a copiarlo: salva la pagina tra i preferiti del browser."
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.copia.senza-js"
+msgid "Salva questa pagina tra i preferiti del browser e ripassa da qui."
+msgstr "Salva questa pagina tra i preferiti del browser e ripassa da qui."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="https://github.com/SANSEVIERIA-OU/kalliope/releases.atom">
+#.   <2> = <a href="https://github.com/SANSEVIERIA-OU/kalliope/releases">
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.quando.feed"
+msgid "Usi un lettore di feed, un programma che ti avvisa quando un sito pubblica qualcosa? Il <1>feed delle versioni</1> segnala ogni nuova versione, anche quelle solo per Linux, ed è in inglese, come la <2>pagina delle versioni su GitHub</2>."
+msgstr "Usi un lettore di feed, un programma che ti avvisa quando un sito pubblica qualcosa? Il <1>feed delle versioni</1> segnala ogni nuova versione, anche quelle solo per Linux, ed è in inglese, come la <2>pagina delle versioni su GitHub</2>."
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.ascolta.titolo"
+msgid "Intanto, senti come suona."
+msgstr "Intanto, senti come suona."
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.ascolta.sotto"
+msgid "La frase di prima, detta con la registrazione vera di Kalliope 0.1. Il suono parte solo se premi."
+msgstr "La frase di prima, detta con la registrazione vera di Kalliope 0.1. Il suono parte solo se premi."
+
+#. The part in tag 1 is the name of the voice, written as it is in the second line of the page: the script reads it from here for what it says aloud and for the file to download.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="nome-voce">
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.ascolta.fermo"
+msgid "Ascolta <1>Giulia</1>"
+msgstr "Ascolta <1>Giulia</1>"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: non-ancora/index.html
+msgctxt "na.ascolta.lettore"
+msgid "Ascolta la frase con la voce di Giulia"
+msgstr "Ascolta la frase con la voce di Giulia"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="freccia" aria-hidden="true">
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.ascolta.tutte"
+msgid "Tutte le frasi, anche con Marco<1/>"
+msgstr "Tutte le frasi, anche con Marco<1/>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="../stato/">
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.ascolta.fatti"
+msgid "Che cosa è provato e che cosa no, anche su Linux: <1>stato e limiti</1>."
+msgstr "Che cosa è provato e che cosa no, anche su Linux: <1>stato e limiti</1>."
+
+#. Read by screen readers when the voice starts speaking the sentence of the page. {voce} is the name of the voice, written as in the button.
+#. Placeholders to leave as they are: {voce}
+#: non-ancora/index.html
+#, kalliope-markup, python-brace-format
+msgctxt "na.annuncio.parte"
+msgid "Sto leggendo la frase, voce di {voce}."
+msgstr "Sto leggendo la frase, voce di {voce}."

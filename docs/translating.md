@@ -177,9 +177,19 @@ A page is right to left when its `<html>` says `dir="rtl"` (the build sets `lang
 
 `design/lavoro/1-lingue-sito/versi.md` lists every point that has a direction of its own, with file and line.
 
-## What is not done
+## Typefaces and the look of each script
 
-Nothing here decides how a right-to-left page or a script other than Latin *looks*: typefaces by script, line height of Arabic
-and Devanagari, what mirrors and what keeps its direction in a drawing. The texts of the site are today's Italian ones and
-will be rewritten: the tools do not care. The application (Slint, `@tr`, `.po` compiled into the program) is a later step and
-reads the same format.
+Lexend draws Latin (a second file adds Latin Extended: č š ł ő ų ș…). Every other script has its own typeface after Lexend,
+chosen by `:lang()` in `design-system/token.css` («Le scritture»): Geologica for Greek and Bulgarian (with the Bulgarian letter
+forms), Readex Pro (Lexend's Arabic) for Arabic, Noto Nastaliq Urdu for Urdu, Noto Sans Devanagari and Noto Sans Bengali for Hindi
+and Bengali, the system font for Chinese. Each file has a `unicode-range`, so a page downloads only the scripts it shows. Factors per
+script scale the title size and the line height of titles and text; joined scripts and Chinese get no letter spacing. Sources,
+licences and sizes: `design-system/caratteri/LEGGIMI.md`. A right-to-left page mirrors what has a direction (`--verso`); play
+triangles, numbers and the logo do not.
+
+Two notes for translators: in Chinese write the four lines of `apertura.titolo` with no space between the tags (`<1>…</1><2>…</2>`),
+or the phone shows a gap where the lines run on; and keep the units marked in the sentences (`<1>alle 15:30?</1>`) short, a few
+words that must not break.
+
+The texts of the site are today's Italian ones and will be rewritten: the tools do not care. The application (Slint, `@tr`, `.po`
+compiled into the program) is a later step and reads the same format.

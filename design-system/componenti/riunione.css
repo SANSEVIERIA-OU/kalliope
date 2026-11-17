@@ -51,13 +51,13 @@
 .figura .occhi { transform-origin: 50% 50%; transition: transform var(--durata-figura-occhi) var(--entra); }
 .figura .occhi ellipse { transform-origin: 50% 50%; }
 .figura .cenno { transform-origin: 50% 100%; }
-/* quando la voce li raggiunge, si girano verso di te (il tuo riquadro è in alto a sinistra) */
-.paola.guarda .testa { transform: translateX(var(--paola-testa-sposta-x)) rotate(var(--paola-testa-rotazione)); }
-.paola.guarda .occhi { transform: translateX(var(--paola-occhi-sposta-x)); }
-.luca.guarda .testa { transform: translateY(var(--luca-testa-sposta-y)) rotate(var(--luca-testa-rotazione)); }
-.luca.guarda .occhi { transform: translate(var(--luca-occhi-sposta-x), var(--luca-occhi-sposta-y)); }
-.anna.guarda .testa { transform: translate(var(--anna-testa-sposta-x), var(--anna-testa-sposta-y)) rotate(var(--anna-testa-rotazione)); }
-.anna.guarda .occhi { transform: translate(var(--anna-occhi-sposta-x), var(--anna-occhi-sposta-y)); }
+/* quando la voce li raggiunge, si girano verso di te (il tuo riquadro è in alto all'inizio: a sinistra, o a destra da destra a sinistra; --verso cambia il segno) */
+.paola.guarda .testa { transform: translateX(calc(var(--paola-testa-sposta-x) * var(--verso))) rotate(calc(var(--paola-testa-rotazione) * var(--verso))); }
+.paola.guarda .occhi { transform: translateX(calc(var(--paola-occhi-sposta-x) * var(--verso))); }
+.luca.guarda .testa { transform: translateY(var(--luca-testa-sposta-y)) rotate(calc(var(--luca-testa-rotazione) * var(--verso))); }
+.luca.guarda .occhi { transform: translate(calc(var(--luca-occhi-sposta-x) * var(--verso)), var(--luca-occhi-sposta-y)); }
+.anna.guarda .testa { transform: translate(calc(var(--anna-testa-sposta-x) * var(--verso)), var(--anna-testa-sposta-y)) rotate(calc(var(--anna-testa-rotazione) * var(--verso))); }
+.anna.guarda .occhi { transform: translate(calc(var(--anna-occhi-sposta-x) * var(--verso)), var(--anna-occhi-sposta-y)); }
 .annuisce .cenno { animation: annuisce var(--durata-annuisce-cenno) var(--curva-dolce-doppia) 1; }
 @keyframes annuisce {
   0%, 100% { transform: none; }
@@ -85,6 +85,9 @@
   font-weight: var(--peso-medio);
   white-space: nowrap;
 }
+/* incarico 2: un nome lungo (una traduzione, il tedesco, il finlandese) non esce dal suo riquadro e non copre il nome accanto: va a
+   capo dentro il riquadro, in righe pari. In italiano le etichette stanno su una riga e non cambiano */
+.nome { max-width: calc(100% - 2 * var(--spazio-8)); white-space: normal; text-wrap: balance; }
 .barre {
   position: absolute;
   left: 50%; /* fisico: centratura con translate(-50%, -50%): simmetrica, giusta in entrambe le direzioni */
@@ -131,6 +134,7 @@
     font-size: var(--corpo-2);
     line-height: var(--nome-interlinea-telefono);
     padding: var(--nome-spazio-interno-telefono);
+    max-width: calc(100% - 2 * var(--spazio-5));
   }
   .barre { height: var(--misura-19); gap: var(--spazio-3); top: 56%; }
   .barre i { width: var(--barre-larghezza-telefono); border-radius: var(--barre-raggio-telefono); }

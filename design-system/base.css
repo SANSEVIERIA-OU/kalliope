@@ -15,6 +15,9 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
+/* incarico 2: un elemento con una lingua sua (una citazione, il nome di una lingua) prende il carattere della sua scrittura: le pile per
+   lingua stanno in --font-testo (token.css, «Le scritture») e qui si rileggono dove la lingua cambia */
+[lang] { font-family: var(--font-testo); }
 a { color: inherit; }
 img, svg, canvas { display: block; }
 button { font: inherit; color: inherit; }
@@ -60,6 +63,9 @@ html:not(.js) .rivedi { display: none; }
 /* un giorno con il mese, un orario con «alle», un prezzo con la valuta non vanno a capo nel mezzo («31 / dicembre», «alle / 15:30»):
    stesse parole e stessi spazi, cambia solo dove la riga può spezzarsi. Anche il gruppo scritto «1.250 € +» sta insieme. */
 .unita { white-space: nowrap; }
+/* incarico 2: in una traduzione l'unità può essere più lunga della riga della bolla (al telefono): allora va a capo dentro di sé
+   invece di uscire dalla bolla. Finché ci sta, resta in un pezzo, come prima */
+.unita { display: inline-block; max-width: 100%; white-space: normal; }
 /* 8f (chi costruisce): quando la voce arriva alla forma detta di una frase del filo («1.250 € +» diventa «milleduecentocinquanta euro più») la bolla può
    crescere di una o due righe (a 820 px: da 94 a 156 px; a 390 px: da 78 a 134). Chromium e Firefox, per tenere fermo ciò che sta sotto, scorrono la
    pagina di metà della crescita (31 px a 820×1180, 28 a 390×844) mentre la voce parla: un secondo movimento, non voluto, anche con la riunione ferma.

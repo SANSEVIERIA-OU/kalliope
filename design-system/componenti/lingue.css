@@ -1,0 +1,185 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* Componente · Le lingue: l'elenco delle lingue, la scelta nella barra e la pagina della scelta (incarico 2, 17/11/2026)
+   Scegliere la lingua è come scegliere la voce: ogni lingua è un pulsante-voce con il suo nome, scritto nella sua scrittura e con
+   il suo lang (W3C qa-link-lang: niente bandiere), e la lingua di adesso è piena come la voce scelta (R51, un tratto già nel sistema).
+   Nella barra l'elenco si apre in un pannello di vetro scuro, come il menu; nella pagina della scelta i nomi stanno dentro la bolla
+   che nasce dal tuo riquadro e si accendono come le parole dette. Funziona senza script (<details> e collegamenti); lo script
+   (lingua.js) mette la lingua del browser per prima, chiude il pannello con Esc o fuori, e ricorda la scelta.
+   Ogni valore viene da ../token.css: qui non ce n'è nessuno scritto a mano. */
+
+/* ---------- l'elenco: un pulsante-voce per lingua ---------- */
+.lingue-elenco {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--lingue-distanza);
+}
+.lingue-elenco a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--voce-altezza-minima);
+  padding-block: var(--voce-spazio-interno-blocco);
+  padding-inline: var(--lingua-spazio-interno-inline);
+  border-radius: var(--raggio-pillola);
+  border: var(--filetto-comando) solid var(--bordo-voce);
+  font-family: var(--font-nomi-lingue);
+  font-size: var(--corpo-7);
+  font-weight: var(--peso-medio);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: border-color var(--durata-voce) var(--curva-dolce), background-color var(--durata-voce) var(--curva-dolce), transform var(--durata-voce-trasforma) var(--entra);
+}
+.lingue-elenco a:hover, .lingue-elenco a:focus-visible { border-color: var(--testo); background: var(--velo-sopra); }
+.lingue-elenco a:active { transform: scale(var(--voce-premuto-scala)); }
+/* la lingua di adesso: piena, come la voce scelta */
+.lingue-elenco a[aria-current] { background: var(--testo); color: var(--bordeaux); border-color: var(--testo); box-shadow: var(--voce-scelta-ombra); }
+
+/* ---------- nella barra: il nome della lingua di adesso apre l'elenco ---------- */
+.lingua-scelta { position: relative; }
+.lingua-scelta > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spazio-5);
+  min-height: var(--misura-21);
+  padding: var(--menu-spazio-interno);
+  border-radius: var(--raggio-pillola);
+  font-size: var(--corpo-7);
+  font-weight: var(--peso-medio);
+  list-style: none;
+  cursor: pointer;
+  transition: background-color var(--durata-menu-2);
+}
+.lingua-scelta > summary::-webkit-details-marker { display: none; }
+.lingua-scelta > summary:hover, .lingua-scelta[open] > summary { background: var(--velo-menu-sopra); }
+/* il segno: la freccia dei collegamenti, girata in giù; aperta, in su */
+.lingua-segno {
+  width: var(--misura-6);
+  height: var(--misura-6);
+  background: currentColor;
+  -webkit-mask: var(--collegamento-freccia-maschera);
+  mask: var(--collegamento-freccia-maschera);
+  transform: rotate(var(--lingua-segno-rotazione));
+  transition: transform var(--durata-lingue-pannello) var(--entra);
+}
+.lingua-scelta[open] .lingua-segno { transform: rotate(calc(-1 * var(--lingua-segno-rotazione))); }
+/* il pannello: vetro scuro come il menu aperto, i nomi in colonne */
+.menu .lingua-scelta .lingue-elenco {
+  position: absolute;
+  top: var(--lingue-pannello-sopra);
+  inset-inline-end: 0;
+  z-index: var(--livello-menu-aperto);
+  width: var(--lingue-pannello-larghezza);
+  display: grid;
+  grid-template-columns: var(--lingue-pannello-colonne);
+  gap: var(--spazio-5);
+  padding: var(--spazio-10);
+  background: var(--pannello-menu);
+  border: var(--filetto-sottile) solid var(--bordo-pannello);
+  border-radius: var(--raggio-10);
+  -webkit-backdrop-filter: var(--menu-aperto-sfocatura);
+  backdrop-filter: var(--menu-aperto-sfocatura);
+  box-shadow: var(--ascolto-ombra);
+  max-height: var(--lingue-pannello-altezza-massima);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.menu .lingua-scelta .lingue-elenco a { justify-content: flex-start; width: 100%; min-height: var(--misura-19); font-size: var(--corpo-6); }
+/* apre come la scheda dell'ascolto: dal suo angolo, con la curva d'entrata */
+@media (prefers-reduced-motion: no-preference) {
+  .menu .lingua-scelta[open] .lingue-elenco { animation: lingue-apre var(--durata-lingue-pannello) var(--entra) both; transform-origin: var(--origine-fine-x) 0; }
+}
+@keyframes lingue-apre {
+  from { opacity: 0; transform: translateY(var(--lingue-pannello-sposta-y)) scale(var(--entra-da-scala)); }
+}
+/* la barra compatta ritaglia ciò che sporge sotto di lei (l'ombra): mentre un pannello è aperto non ritaglia */
+.barra:has(.lingua-scelta[open]), .barra:has(.menu.aperto) { clip-path: none; }
+/* un difetto di prima, trovato qui (17/11/2026): al telefono e sul tablet, aprendo il menu dopo aver scorso (con l'azione in barra),
+   il menu restava spostato del posto dell'azione, fuori dallo schermo, e la barra compatta lo ritagliava: non si vedeva. Il menu
+   aperto non scivola: lo spostamento serve solo al menu in riga del computer */
+@media (max-width: 959px) {
+  .barra.con-azione .menu.aperto { transform: none; }
+}
+/* al telefono e sul tablet la scelta sta nel menu aperto: l'elenco si apre dentro il menu, in due colonne */
+@media (max-width: 959px) {
+  .menu.aperto .lingua-scelta > summary { width: 100%; min-height: var(--menu-aperto-altezza-minima); font-size: var(--corpo-9); }
+  .menu.aperto .lingua-scelta .lingue-elenco {
+    position: static;
+    width: auto;
+    max-height: none;
+    overflow: visible;
+    margin-top: var(--spazio-5);
+    padding: var(--spazio-5);
+    grid-template-columns: var(--lingue-pannello-colonne-telefono);
+    background: none;
+    border: 0;
+    box-shadow: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  .menu.aperto .lingua-scelta .lingue-elenco a { width: 100%; min-height: var(--misura-21); font-size: var(--corpo-7); }
+}
+
+/* ---------- nel piede: tutte le lingue, quiete, nella loro scrittura ---------- */
+.piede .lingue a { font-family: var(--font-nomi-lingue); font-weight: var(--peso-medio); }
+.piede .lingue a[aria-current] { font-weight: var(--peso-forte); text-decoration-thickness: var(--filetto-medio); }
+
+/* ---------- la pagina della scelta: la bolla con le lingue nasce dal tuo riquadro ---------- */
+.scelta-lingua {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);   /* la colonna è larga quanto lo schermo, non quanto la bolla: al telefono i nomi vanno a capo */
+  justify-items: start;
+  align-content: center;
+  min-height: var(--scelta-altezza-minima);
+  gap: var(--spazio-12);
+  max-width: var(--misura-35);
+  margin-inline: auto;
+  padding: var(--scelta-lingua-spazio-interno);
+}
+.bolla.bolla-lingue { position: relative; inset-inline-start: auto; bottom: auto; max-width: min(var(--scelta-bolla-larghezza-massima), 100%); transform-origin: var(--bolla-chiusa-origine); }
+.bolla-lingue .bolla-corpo { padding: var(--scelta-bolla-spazio-interno); }
+.lingue-in-bolla { gap: var(--spazio-7); }
+.lingue-in-bolla a {
+  min-height: var(--misura-21);
+  border-color: var(--bordo-lingua-in-bolla);
+  color: var(--scuro);
+  font-size: var(--bolla-testo-grandezza);
+  line-height: var(--bolla-testo-interlinea);
+}
+.lingue-in-bolla a:hover, .lingue-in-bolla a:focus-visible { border-color: var(--bordeaux); background: var(--velo-lingua-in-bolla); }
+.lingue-in-bolla a:focus-visible { outline-color: var(--bordeaux); }
+/* la luce della stanza dietro la bolla, non dove nella home sta la riunione */
+.luce.luce-scelta { inset-inline-start: var(--scelta-luce-inizio); top: var(--scelta-luce-sopra); }
+/* la lingua del browser (la mette per prima lingua.js): accesa, come chi parla */
+.lingue-in-bolla .preferita a { background: var(--bordeaux); color: var(--testo); border-color: var(--bordeaux); box-shadow: var(--lingua-preferita-ombra); }
+/* il tuo riquadro, piccolo, sotto la coda: parla mentre i nomi si accendono */
+.scelta-tu { position: relative; width: var(--scelta-tu-larghezza); height: var(--scelta-tu-altezza); border-radius: var(--raggio-9); margin-inline-start: var(--scelta-tu-scarto); }
+.scelta-tu .bordo { opacity: 1; }
+
+@media (max-width: 760px) {
+  .scelta-lingua { padding: var(--scelta-lingua-spazio-interno-telefono); }
+  .bolla-lingue .bolla-corpo { padding: var(--bolla-corpo-spazio-interno-telefono); }
+  .lingue-in-bolla { gap: var(--spazio-5); }
+  .lingue-in-bolla a { min-height: var(--misura-19); padding-inline: var(--lingua-spazio-interno-inline-telefono); font-size: var(--corpo-8); line-height: var(--interlinea-7); }
+  .scelta-tu { width: var(--scelta-tu-larghezza-telefono); height: var(--scelta-tu-altezza-telefono); border-radius: var(--raggio-6); margin-inline-start: var(--scelta-tu-scarto-telefono); }
+}
+
+/* l'arrivo: il tuo riquadro entra, la bolla nasce dalla coda, i nomi si accendono uno dopo l'altro (la lingua del browser per prima),
+   le barre di «Tu» si muovono finché l'ultimo nome è acceso. Con «riduci movimento» tutto è già al suo posto */
+@media (prefers-reduced-motion: no-preference) {
+  .riquadro.scelta-tu { animation-delay: var(--ritardo-scelta-tu); }   /* entra come i riquadri della riunione (riunione.css), per primo */
+  .bolla-lingue { animation: lingue-nasce var(--durata-messaggio-filo-bolla-trasforma) var(--entra) var(--ritardo-scelta-bolla) backwards; }
+  .lingue-in-bolla li { animation: lingue-accende var(--durata-scelta-nome) var(--curva-dolce) calc(var(--ritardo-scelta-nomi) + var(--i, 0) * var(--passo-scelta-nomi)) backwards; }
+  .scelta-tu .barre i { animation: lingue-parla var(--durata-scelta-barre) var(--curva-dolce-doppia) var(--ritardo-scelta-nomi) var(--ripetizioni-scelta-barre) alternate backwards; }
+  .scelta-tu .barre i:nth-child(2n) { animation-delay: calc(var(--ritardo-scelta-nomi) + var(--durata-scelta-barre) / 2); }
+}
+@keyframes lingue-nasce {
+  from { opacity: 0; transform: scale(var(--messaggio-filo-bolla-scala)); }
+}
+@keyframes lingue-accende {
+  from { opacity: var(--opacita-bolla-2); }
+}
+@keyframes lingue-parla {
+  from { transform: scaleY(var(--scelta-barre-scala-y)); }
+}

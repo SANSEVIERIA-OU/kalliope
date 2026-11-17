@@ -46,7 +46,11 @@
   -webkit-mask: var(--collegamento-freccia-maschera);
   mask: var(--collegamento-freccia-maschera);
 }
-.collegamento:hover .freccia, .collegamento:focus-visible .freccia { transform: translateX(var(--collegamento-freccia-sopra-sposta-x)); }
+.collegamento:hover .freccia, .collegamento:focus-visible .freccia { transform: translateX(calc(var(--collegamento-freccia-sopra-sposta-x) * var(--verso))); }
+/* da destra a sinistra la freccia punta a sinistra (la lettura va di là). Soltanto lì: una trasformazione anche identica cambia di un
+   soffio la resa della maschera in WebKit (19 pixel, scarto 1, provato) */
+:root:dir(rtl) .collegamento .freccia { transform: scaleX(var(--verso)); }
+:root:dir(rtl) .collegamento:hover .freccia, :root:dir(rtl) .collegamento:focus-visible .freccia { transform: translateX(calc(var(--collegamento-freccia-sopra-sposta-x) * var(--verso))) scaleX(var(--verso)); }
 .pillola.voce-chiara { background: var(--testo); color: var(--bordeaux); padding-block: var(--pillola-spazio-interno-2-blocco); padding-inline: var(--pillola-spazio-interno-2-inline); }
 .pillola.voce-chiara:hover { background: var(--bianco); }
 .tondo { position: relative; width: var(--misura-19); height: var(--misura-19); border-radius: 50%; background: var(--bordeaux); flex: none; }

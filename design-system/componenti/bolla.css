@@ -12,7 +12,7 @@
   bottom: var(--spazio-15);
   width: max-content;
   max-width: 100%;
-  transform-origin: 0 0;
+  transform-origin: var(--origine-inizio-x) 0;
   transition: opacity var(--durata-bolla) var(--curva-dolce);
 }
 .bolla-corpo {
@@ -38,6 +38,8 @@
   height: var(--misura-11);
   fill: var(--testo);
 }
+/* il disegno punta in basso verso l'inizio, dove sta «Tu»: da destra a sinistra si specchia (soltanto lì, come la freccia dei collegamenti) */
+:root:dir(rtl) .bolla .coda { transform: scaleX(var(--verso)); }
 .bolla.detta { opacity: var(--opacita-bolla); }
 .bolla .p { transition: opacity var(--durata-bolla-2) var(--curva-lineare); }
 .bolla .p.attesa { opacity: var(--opacita-bolla-2); }

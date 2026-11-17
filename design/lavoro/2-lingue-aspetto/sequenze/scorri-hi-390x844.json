@@ -1,0 +1,76 @@
+{
+ "pagina": "http://127.0.0.1:36629/hi/index.html",
+ "misura": "390x844",
+ "sequenza": "scorri-hi",
+ "gesto": "scorri",
+ "ridotto": false,
+ "lento": 1,
+ "istanti": [
+  0,
+  0.3,
+  0.6,
+  1,
+  1.5,
+  2,
+  3,
+  4
+ ],
+ "fotogrammi": [
+  {
+   "file": "scorri-hi-390x844-f01.jpg",
+   "chiesto": 0,
+   "scattato": 0,
+   "scorrimento": 73
+  },
+  {
+   "file": "scorri-hi-390x844-f02.jpg",
+   "chiesto": 0.3,
+   "scattato": 0.3,
+   "scorrimento": 426
+  },
+  {
+   "file": "scorri-hi-390x844-f03.jpg",
+   "chiesto": 0.6,
+   "scattato": 0.6,
+   "scorrimento": 807
+  },
+  {
+   "file": "scorri-hi-390x844-f04.jpg",
+   "chiesto": 1,
+   "scattato": 1,
+   "scorrimento": 1329
+  },
+  {
+   "file": "scorri-hi-390x844-f05.jpg",
+   "chiesto": 1.5,
+   "scattato": 1.5,
+   "scorrimento": 1960
+  },
+  {
+   "file": "scorri-hi-390x844-f06.jpg",
+   "chiesto": 2,
+   "scattato": 2,
+   "scorrimento": 2569
+  },
+  {
+   "file": "scorri-hi-390x844-f07.jpg",
+   "chiesto": 3,
+   "scattato": 3,
+   "scorrimento": 3848
+  },
+  {
+   "file": "scorri-hi-390x844-f08.jpg",
+   "chiesto": 4,
+   "scattato": 4,
+   "scorrimento": 5038
+  }
+ ],
+ "foglio": "scorri-hi-390x844-foglio.jpg",
+ "video": "scorri-hi-390x844.webm",
+ "orologio": {
+  "pagina": 1,
+  "media": []
+ },
+ "errori": [],
+ "misurato": "2026-11-17T01:21:13.111Z"
+}

@@ -97,7 +97,7 @@ button.f-ferma:enabled:hover { background: var(--app-ferma-sopra); }
 .f-scarico { display: none; margin-top: var(--spazio-8); }
 .avvio.scarica .f-scarico { display: block; }
 .f-barra { display: block; height: var(--misura-4); border-radius: var(--raggio-2); background: var(--app-barra-vuota); overflow: hidden; }
-.f-barra i { display: block; height: 100%; background: var(--app-accento); transform-origin: 0 50%; transform: scaleX(0); }
+.f-barra i { display: block; height: 100%; background: var(--app-accento); transform-origin: var(--origine-inizio-x) 50%; transform: scaleX(0); }
 .f-riga-scarica { margin-top: var(--spazio-8); }
 .avvio.pronta .f-riga-scarica, .avvio.prepara .f-riga-scarica { display: none; }
 .f-primario {

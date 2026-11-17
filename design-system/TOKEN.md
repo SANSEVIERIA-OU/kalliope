@@ -1073,3 +1073,58 @@ a `152px`. Nuovi:
 
 `--durata-urto` vale ora anche per il posto della prossima versione che si accende una volta quando si copia l'indirizzo
 (`versioni.css`, `.ricordata`). La soglia d'altezza `500px` (telefono girato) è dichiarata in `metodo.config.mjs`.
+
+## Le scritture e le lingue (incarico 2, 17/11/2026)
+
+In fondo a `token.css` due blocchi nuovi: «Le scritture» (i caratteri di ogni scrittura, legati alla lingua con `:lang()`) e «Le
+lingue» (il componente `componenti/lingue.css`). In italiano nessun valore calcolato cambia: ogni fattore vale 1 e ogni
+spaziatura resta quella di prima. Fonti, licenze e pesi dei file: `caratteri/LEGGIMI.md`.
+
+**Valori di prima che ora moltiplicano un fattore della scrittura** (in italiano lo stesso numero di pixel):
+
+| Token | Valore di adesso | Prima |
+|---|---|---|
+| `--interlinea-1` … `--interlinea-14`, `--didascalia-interlinea-telefono`, `--bolla-testo-interlinea`, `--nome-interlinea-telefono`, `--tappa-nome-interlinea`, `--tratto-testo-interlinea-telefono` | `calc(<px di prima> * var(--interlinea-testo-scrittura))` | i px di prima |
+| `--f-stato-interlinea` | `calc(1.32 * var(--interlinea-testo-scrittura))` | `1.32` |
+| `--h1-grandezza`, `-medio`, `-telefono`, `--tratto-grandezza`, `-telefono`, `--chiusura-grandezza`, `-telefono` | `calc(<px> * var(--grandezza-titoli-scrittura))` | i px di prima |
+| `--h1-interlinea`, `-medio`, `-telefono`, `--tratto-interlinea`, `--chiusura-interlinea`, `-telefono` | `calc(<px> * var(--grandezza-titoli-scrittura) * var(--interlinea-titoli-scrittura))` | i px di prima |
+| `--bolla-chiusa-origine`, `--bolla-filo-bolla-origine`, `--messaggio-filo-bolla-origine` | `calc(50% + (40px − 50%) * var(--verso)) 100%` (30px per le ultime due): vicino alla coda, dall'inizio della riga | `40px 100%`, `30px 100%` |
+| `--font-testo` | `"Lexend", "Lexend esteso", "Lexend riserva", system-ui, sans-serif` (la famiglia «Lexend esteso» ha soltanto il latino esteso: una pagina italiana non la usa e non la scarica) | `"Lexend", "Lexend riserva", system-ui, sans-serif` |
+| `--linea-forse-fondo`, `--esito-forse-prima-fondo` | il tratteggio parte dall'inizio della riga: `repeating-linear-gradient(calc(90deg * var(--verso)), …)` | `90deg` |
+
+**Nuovi, «Le scritture»:**
+
+| Token | Valore | Ruolo | Dove |
+|---|---|---|---|
+| `--grandezza-titoli-scrittura` | `1` (urdu `0.72`) | la grandezza dei titoli nella scrittura, e con lei la loro interlinea | i token dei titoli |
+| `--interlinea-titoli-scrittura` | `1` (arabo `1.3`, urdu `1.75`, hindi e bengali `1.25`, cinese `1.1`) | quanto si allontanano le righe dei titoli | i token dei titoli |
+| `--interlinea-testo-scrittura` | `1` (arabo `1.15`, urdu `1.6`, hindi e bengali `1.12`, cinese `1.1`) | quanto si allontanano tutte le altre righe | le interlinee |
+| `--tratto-interlinea-telefono` | `calc(37px * …titoli…)` | il titolo di un tratto al telefono (prima `--interlinea-14`, lo stesso valore) | `tratti.css` |
+| `--h1-grandezza-stretto`, `--h1-interlinea-stretto` | `calc(25px * …)`, `calc(29px * …)` | il titolo sotto i 375 px (prima `--corpo-12` e `--interlinea-11`) | `apertura.css` |
+| `--font-cinese` | `"PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "WenQuanYi Micro Hei"` | il carattere di sistema per il cinese, scelto (nessun file) | le pile `:lang(zh)` |
+| `--font-nomi-lingue` | `"Kalliope nomi delle lingue", var(--font-cinese), system-ui, sans-serif` (urdu: prima il nastaliq) | i nomi delle lingue, ognuno nella sua scrittura, con file piccolissimi | `lingue.css` |
+| `--origine-inizio-x`, `--origine-fine-x` | `calc(50% ∓ 50% * var(--verso))` | il bordo d'inizio e di fine della riga, per le origini delle crescite | `finestra.css`, `strada.css`, `bolla.css`, `tratti.css`, `riunione-app.css`, `lingue.css` |
+
+Per lingua (`:lang(…)`, ridefiniti): `--font-testo` (Lexend, poi il carattere della scrittura: Geologica per `el` e `bg`, Readex Pro
+per `ar`, Noto Nastaliq Urdu per `ur`, Noto Sans Devanagari per `hi`, Noto Sans Bengali per `bn`, il carattere di sistema per
+`zh`), `--font-app` (la finestra ricostruita: DejaVu per il latino, poi lo stesso carattere della scrittura) e, per `ar ur hi bn zh`,
+`--spaziatura-h1`, `--spaziatura-tratto`, `--spaziatura-bolla-testo`, `--spaziatura-computer-nome` a `0em`. Il marchio resta latino e
+tiene `--spaziatura-marchio`.
+
+**Nuovi, «Le lingue»** (`componenti/lingue.css`):
+
+| Token | Valore | Ruolo |
+|---|---|---|
+| `--lingue-distanza`, `--lingua-spazio-interno-inline`, `-telefono` | `var(--spazio-7)`, `var(--spazio-14)`, `var(--spazio-10)` | l'elenco: fra un nome e l'altro, dentro un nome |
+| `--lingua-segno-rotazione` | `90deg` | la freccia dei collegamenti girata in giù accanto al nome della lingua (aperta: in su) |
+| `--durata-lingue-pannello` | `var(--durata-menu)` | il pannello della barra si apre col tempo del menu |
+| `--lingue-pannello-sopra`, `-larghezza`, `-colonne`, `-colonne-telefono`, `-altezza-massima`, `-sposta-y` | `calc(100% + 8px)`, `min(460px, …)`, tre colonne, due colonne, `calc(100vh − 96px)`, `-6px` | il pannello di vetro scuro della barra |
+| `--scelta-lingua-spazio-interno`, `-telefono`, `--scelta-altezza-minima` | `56px var(--margine) 96px`, `24px var(--margine) 64px`, `calc(100vh − var(--barra-altezza))` | la pagina della scelta: la bolla e il riquadro a metà schermo |
+| `--scelta-bolla-larghezza-massima`, `--scelta-bolla-spazio-interno` | `980px`, `var(--bolla-corpo-spazio-interno)` | la bolla delle lingue |
+| `--bordo-lingua-in-bolla`, `--velo-lingua-in-bolla`, `--lingua-preferita-ombra` | `var(--bordo-rivedi-chiaro)`, `rgba(91, 1, 35, 0.07)`, `0 10px 22px -12px rgba(91, 1, 35, 0.6)` | un nome sul chiaro della bolla: bordo, passaggio, la lingua del browser accesa |
+| `--scelta-tu-larghezza`, `-altezza`, `-larghezza-telefono`, `-altezza-telefono`, `--scelta-tu-scarto`, `-telefono` | `220px`, `128px`, `148px`, `88px`, `var(--spazio-14)`, `var(--spazio-8)` | il tuo riquadro sotto la coda |
+| `--scelta-luce-inizio`, `--scelta-luce-sopra` | `34%`, `46%` | la luce della stanza dietro la bolla |
+| `--scelta-barre-scala-y` | `var(--barre-1-scala-y)` | le barre di «Tu» fra un nome e l'altro |
+| `--ritardo-scelta-tu`, `--ritardo-scelta-bolla`, `--ritardo-scelta-nomi`, `--passo-scelta-nomi`, `--durata-scelta-nome`, `--durata-scelta-barre`, `--ripetizioni-scelta-barre` | `0ms`, `380ms`, `820ms`, `34ms`, `300ms`, `260ms`, `4` | l'arrivo della pagina della scelta |
+
+`--i` (l'ordine di un nome nella bolla) lo mette `lingua.js` elemento per elemento. Le soglie non cambiano.

@@ -103,7 +103,7 @@
   .ascolto-voce {  }
   .ascolto-voce .tratto-testo { position: static; }
 }
-.ascolto-voce .luce-tratto { left: 62%; top: 50%; } /* fisico: posizione fisica in coppia con translate(-50%, -50%): le due cose si decidono insieme (elenco dei versi) */
+.ascolto-voce .luce-tratto { inset-inline-start: 62%; top: 50%; }
 .filo { display: block; }
 .ascolto-voce .voci-filo { margin-top: var(--ascolto-voce-voci-filo-margine-sopra); }
 @media (max-height: 819px) and (min-width: 1181px) {

@@ -339,6 +339,22 @@ def voce_elenco(modello_li, lingua_voce, href, corrente):
     return pagina.applica(modello_li, mod)
 
 
+def _antenato_li(nodo):
+    """Il <li> più vicino che contiene il nodo (la voce della barra); il padre, se non ce n'è."""
+    n = nodo.padre
+    while n is not None and n.tag != "li":
+        n = n.padre
+    return n if n is not None else nodo.padre
+
+
+def _dentro(nodo, antenato):
+    while nodo is not None:
+        if nodo is antenato:
+            return True
+        nodo = nodo.padre
+    return False
+
+
 def _spazio_prima(testo, offset):
     """Lo spazio fra l'ultimo a capo e offset (il rientro di una riga del sorgente)."""
     m = re.search(r"([ \t]*)$", testo[:offset])
@@ -356,8 +372,12 @@ def passo_struttura(testo, rel, lingua, reali, sito, senza_selettore, base_url, 
         mod.append((html_nodo.s, html_nodo.se, tag_html(html_nodo, lingua)))
     cartella = posixpath.dirname(rel)
     in_vista = sorted((l for l in reali.values() if l.pubblicata), key=lambda x: x.codice)
+    # senza selettore si toglie la voce della barra intera (il <li> che contiene il nome della lingua corrente, con ciò che ha dentro)
+    voci_tolte = [_antenato_li(a) for a in nodi if a.ha("data-lingua-corrente")] if senza_selettore else []
     for ul in (n for n in nodi if n.attr("data-lingue") == "elenco"):
         if senza_selettore:
+            if any(_dentro(ul, li) for li in voci_tolte):
+                continue
             nav = ul.padre
             mod.append((nav.s, nav.cf, "") if nav is not None and nav.tag == "nav" else (ul.s, ul.cf, ""))
             continue
@@ -373,9 +393,11 @@ def passo_struttura(testo, rel, lingua, reali, sito, senza_selettore, base_url, 
         mod.append((ul.se, ul.ce, "\n" + rientro + ("\n" + rientro).join(voci) + "\n" + _spazio_prima(testo, ul.ce)))
     for a in (n for n in nodi if n.ha("data-lingua-corrente")):
         if senza_selettore:
-            mod.append((a.padre.s, a.padre.cf, ""))
+            li = _antenato_li(a)
+            mod.append((li.s, li.cf, ""))
         else:
-            mod.append((a.s, a.cf, f'<a{_attributi(a, ("data-lingua-corrente", "lang", "data-t-no"))} lang="{lingua.bcp47}">{html_escape(lingua.nome)}</a>'))
+            # l'elemento resta quello della pagina (un collegamento, o il nome dentro il comando che apre l'elenco)
+            mod.append((a.s, a.cf, f'<{a.tag}{_attributi(a, ("data-lingua-corrente", "lang", "data-t-no"))} lang="{lingua.bcp47}">{html_escape(lingua.nome)}</{a.tag}>'))
     if head is not None:
         righe = []
         indirizzo = sito.indirizzo(rel) if not nella_radice else ""

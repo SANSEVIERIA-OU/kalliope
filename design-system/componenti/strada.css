@@ -4,7 +4,7 @@
    Ogni valore viene da ../token.css (o ../../token.css): qui non ce n'è nessuno scritto a mano. */
 
 /* correzioni (P4): le onde del filo stanno dentro la cornice della riunione, come nel primo schermo */
-.strada-voce .luce-tratto { left: 40%; top: 55%; } /* fisico: posizione fisica in coppia con translate(-50%, -50%): le due cose si decidono insieme (elenco dei versi) */
+.strada-voce .luce-tratto { inset-inline-start: 40%; top: 55%; }
 .strada { position: relative; margin-top: var(--spazio-29); }
 .computer {
   position: absolute;
@@ -62,7 +62,7 @@
   top: var(--spazio-32);
   height: var(--misura-2);
   border-radius: var(--raggio-1);
-  transform-origin: 0 50%;
+  transform-origin: var(--origine-inizio-x) 50%;
 }
 .linea-fatta { inset-inline-start: 10%; width: 40%; background: var(--voce); box-shadow: var(--linea-fatta-ombra); }
 .linea-forse { inset-inline-start: 50%; width: 40%; background: var(--linea-forse-fondo); }
@@ -190,3 +190,7 @@
 .riservato { transition: opacity var(--durata-riservato-opacita) var(--curva-dolce), transform var(--durata-riservato-trasforma) var(--entra); }
 .js .strada:not(.fatto) .riservato { opacity: 0; transform: translateY(var(--strada-riservato-sposta-y)); }
 .js .strada.provato .esito-fatto, .js .strada.provato .riservato { opacity: 1; transform: none; }
+/* il campo in cui si scrive: il testo comincia all'inizio della riga e il cursore lo segue; da destra a sinistra il disegno si specchia
+   (incarico 2). Gli altri disegni della strada sono simmetrici o sono persone, e restano come sono */
+/* soltanto da destra a sinistra: una trasformazione anche identica cambia di un soffio la resa del disegno (42 pixel a 390×844, provato) */
+:root:dir(rtl) .nodo .segue-verso { transform: scaleX(var(--verso)); }

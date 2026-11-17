@@ -19,7 +19,7 @@ h1 {
   font-weight: var(--peso-titolo);
   letter-spacing: var(--spaziatura-h1);
 }
-h1 .riga { display: block; }
+h1 .riga { display: block; text-wrap: balance; }   /* incarico 2: in una lingua più lunga una riga che non ci sta va a capo in due parti pari («Du schreibst, / die anderen»), non lascia una parola sola */
 .presentazione {
   margin: var(--presentazione-margine);
   font-size: var(--corpo-10);
@@ -106,7 +106,7 @@ h1 .riga:nth-child(4) { animation-delay: var(--ritardo-riga-4); }
   /* «ti sentono.» non resta in due pezzi */
 }
 @media (max-width: 349px) {
-  h1 { font-size: var(--corpo-12); line-height: var(--interlinea-11); }
+  h1 { font-size: var(--h1-grandezza-stretto); line-height: var(--h1-interlinea-stretto); }
   /* «In riunione, alla pari.» sta su una riga */
 }
 .scena { z-index: var(--livello-scena); }
@@ -130,5 +130,5 @@ h1 .riga:nth-child(4) { animation-delay: var(--ritardo-riga-4); }
   .scena { padding-top: var(--spazio-12); }
 }
 @media (min-width: 350px) and (max-width: 374px) {
-  h1 { font-size: var(--corpo-12); line-height: var(--interlinea-11); }
+  h1 { font-size: var(--h1-grandezza-stretto); line-height: var(--h1-interlinea-stretto); }
 }

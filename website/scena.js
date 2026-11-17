@@ -17,7 +17,8 @@
   // I testi che lo script mostra o fa leggere non stanno qui: stanno nella pagina, tradotti con lei (testi.js, docs/translating.md).
   const {testo: T, formato: fmt} = window.Testi;
   // Il verso della scrittura: 1 da sinistra a destra, −1 da destra a sinistra (design-system/token.css, --verso). Ciò che la scena fa
-  // in orizzontale e ha un verso (elenco in design/lavoro/1-lingue-sito/versi.md) lo moltiplica; per ora lo leggono solo le prove.
+  // in orizzontale e ha un verso (elenco in design/lavoro/1-lingue-sito/versi.md) lo moltiplica: il volo della bolla, che parte
+  // dall'angolo d'inizio del campo, e il testo che scorre nel campo mentre si scrive.
   const verso = window.Testi.verso;
   // il nome di una voce è quello scritto nei suoi pulsanti; il testo «Pronta…» della finestra, quello che la pagina mostra all'arrivo
   const nomeVoce = v => $(`.voce[data-voce="${v}"]`).textContent.trim();
@@ -59,33 +60,41 @@
   const w = (s, x = {}) => ({s, ...x});
   const FINE_FRASE = /[.!?…。！？؟۔।][»”’)\]"']*$/;
   const SENZA_SPAZI = /^(zh|ja|ko|th|lo|km|my)(-|$)/i;
-  function paroleDi(testo) {
+  // Ogni parola sa se nel testo era preceduta da uno spazio (sp): rimontando la frase, fra due parole va uno spazio solo se c'era
+  // (in cinese le parole si toccano; in italiano c'è sempre). finale: il testo finisce con uno spazio.
+  function pezziDi(testo) {
     if (SENZA_SPAZI.test(document.documentElement.lang) && window.Intl && Intl.Segmenter) {
       const out = [];
+      let spazio = false;
       for (const {segment, isWordLike} of new Intl.Segmenter(document.documentElement.lang, {granularity: 'word'}).segment(testo)) {
-        if (!segment.trim()) continue;
-        if (isWordLike || !out.length) out.push(segment); else out[out.length - 1] += segment;
+        if (!segment.trim()) { spazio = true; continue; }
+        if (isWordLike || !out.length) out.push({s: segment, sp: spazio}); else out[out.length - 1].s += (spazio ? ' ' : '') + segment;   // «1,250 € +» resta con i suoi spazi
+        spazio = false;
       }
-      return out;
+      return {pezzi: out, finale: /\s$/.test(testo)};
     }
-    return testo.split(/\s+/).filter(Boolean);
+    return {pezzi: testo.split(/\s+/).filter(Boolean).map((s, i) => ({s, sp: i > 0 || /^\s/.test(testo)})), finale: /\s$/.test(testo)};
   }
+  const paroleDi = testo => pezziDi(testo).pezzi.map(p => p.s);
   function leggiFrase(n) {
     const li = $(`.messaggio[data-frase="${n}"]`), radice = $('.bolla-testo', li), tok = [];
     const lunghezze = Object.fromEntries((li.dataset.lunghezze || '').split(/\s+/).filter(Boolean).map(x => x.split('=')).map(([parola, len]) => [parola, +len]));
-    let unita = 0;
+    let unita = 0, spazio = false;
     const visita = (nodo, u) => {
       for (const c of nodo.childNodes) {
-        if (c.nodeType === 3) { for (const s of paroleDi(c.textContent)) tok.push(w(s, {...(u ? {u} : {}), ...(lunghezze[s] ? {len: lunghezze[s]} : {})})); }
-        else if (c.nodeType === 1) visita(c, c.classList.contains('unita') ? `u${++unita}` : u);
+        if (c.nodeType === 3) {
+          const {pezzi, finale} = pezziDi(c.textContent);
+          pezzi.forEach(({s, sp}, k) => tok.push(w(s, {sp: k ? sp : sp || spazio, ...(u ? {u} : {}), ...(lunghezze[s] ? {len: lunghezze[s]} : {})})));
+          spazio = pezzi.length ? finale : spazio || /\s/.test(c.textContent);
+        } else if (c.nodeType === 1) visita(c, c.classList.contains('unita') ? `u${++unita}` : u);
       }
     };
     visita(radice, null);
     const trova = scritte => { for (let i = 0; i + scritte.length <= tok.length; i++) if (scritte.every((s, k) => tok[i + k].s === s)) return i; return -1; };
     for (const chiave of window.Testi.chiavi(`frase.${n}.gruppo.`)) {
-      const g = +chiave.split('.').pop(), scritte = paroleDi(T(chiave)), dette = paroleDi(T(`frase.${n}.detto.${g}`)), i = trova(scritte);
+      const g = +chiave.split('.').pop(), scritte = paroleDi(T(chiave)), dette = pezziDi(T(`frase.${n}.detto.${g}`)).pezzi, i = trova(scritte);
       // se le parole scritte non ci sono, o non tornano con quelle dette, il gruppo resta com'è scritto
-      if (i >= 0 && scritte.length === dette.length) dette.forEach((d, k) => Object.assign(tok[i + k], {g, d}));
+      if (i >= 0 && scritte.length === dette.length) dette.forEach((d, k) => Object.assign(tok[i + k], {g, d: d.s, dsp: d.sp}));
     }
     for (const chiave of window.Testi.chiavi(`frase.${n}.chi.`)) { const i = trova([T(chiave)]); if (i >= 0) tok[i].chi = chiave.split('.').pop(); }
     const parti = [[]];
@@ -146,14 +155,15 @@
   // ---------- una frase dentro una bolla ----------
   // i pezzi di una frase, uno dopo l'altro; quelli della stessa unità (u) stanno insieme in un contenitore che non va a capo
   function montaPezzi(el, pezzi) {
+    const spazio = p => (p.sp === false ? '' : ' ');
     for (let k = 0, primo = true; k < pezzi.length;) {
-      if (!primo) el.append(' ');
+      if (!primo) el.append(spazio(pezzi[k]));
       primo = false;
       const u = pezzi[k].u;
       if (u && k + 1 < pezzi.length && pezzi[k + 1].u === u) {
         const unita = document.createElement('span'); unita.className = 'unita';
         unita.append(pezzi[k++].nodo);
-        while (k < pezzi.length && pezzi[k].u === u) unita.append(' ', pezzi[k++].nodo);
+        while (k < pezzi.length && pezzi[k].u === u) { unita.append(spazio(pezzi[k]), pezzi[k].nodo); k++; }
         el.append(unita);
       } else el.append(pezzi[k++].nodo);
     }
@@ -161,7 +171,7 @@
   // la frase com'è scritta, intera e piena (senza parole accese né forma detta), con le sue unità
   function testoScritto(el, n) {
     el.textContent = '';
-    montaPezzi(el, FRASI[n].parti.flat().map(p => ({nodo: document.createTextNode(p.s), u: p.u})));
+    montaPezzi(el, FRASI[n].parti.flat().map(p => ({nodo: document.createTextNode(p.s), u: p.u, sp: p.sp})));
   }
   function rendiFrase(testoEl, n, accesa) {
     testoEl.textContent = '';
@@ -174,18 +184,18 @@
         g.className = 'gruppo'; a.className = 'scritto p' + (accesa ? '' : ' attesa'); b.className = 'detto';
         const membri = [];
         while (i < tok.length && tok[i].g === p.g) membri.push(tok[i++]);
-        a.textContent = membri.map(m => m.s).join(' ');
+        a.textContent = membri.map((m, k) => (k && m.sp !== false ? ' ' : '') + m.s).join('');
         membri.forEach((m, k) => {
-          if (k) b.append(' ');
+          if (k && m.dsp !== false) b.append(' ');
           const s = document.createElement('span'); s.className = 'p' + (accesa ? '' : ' attesa'); s.textContent = m.d;
           b.append(s); parole.push(s); gruppi.push(g);
         });
-        g.append(a, b); pezzi.push({nodo: g, u: p.u});
+        g.append(a, b); pezzi.push({nodo: g, u: p.u, sp: p.sp});
         if (accesa) g.classList.add('fatto');
       } else {
         const s = document.createElement('span'); s.className = 'p' + (accesa ? '' : ' attesa'); s.textContent = p.s;
         if (p.chi) s.dataset.chi = p.chi;
-        pezzi.push({nodo: s, u: p.u}); parole.push(s); gruppi.push(null); i++;
+        pezzi.push({nodo: s, u: p.u, sp: p.sp}); parole.push(s); gruppi.push(null); i++;
       }
     }
     montaPezzi(testoEl, pezzi);
@@ -293,7 +303,8 @@
         if (!ridotto) {
           const rcm = campo.getBoundingClientRect(), rb = bolla.getBoundingClientRect();
           const s = Math.min(1, Math.max(0.45, rcm.width / rb.width));
-          const dx = rcm.left - rb.left, dy = rcm.top + rcm.height / 2 - (rb.top + rb.height * s / 2);
+          // la bolla cresce dal suo angolo d'inizio (in alto a sinistra, o a destra da destra a sinistra), dove nel campo comincia la frase
+          const dx = verso() < 0 ? rcm.right - rb.right : rcm.left - rb.left, dy = rcm.top + rcm.height / 2 - (rb.top + rb.height * s / 2);
           bolla.animate([
             {transform: `translate(${dx}px, ${dy}px) scale(${s * 0.85})`, opacity: 0},
             {transform: `translate(${dx}px, ${dy}px) scale(${s * 0.85})`, opacity: 0, offset: 0.2},
@@ -677,7 +688,7 @@
     eroe.campo.classList.toggle('pieno', k > 0);
     parlaBtn.classList.toggle('attivo', k > 0);
     const spazio = eroe.campo.clientWidth - 18, sposta = Math.max(0, linea.offsetWidth - spazio);
-    linea.style.transform = sposta ? `translateX(${-sposta}px)` : '';
+    linea.style.transform = sposta ? `translateX(${-sposta * verso()}px)` : '';   // il testo scorre verso l'inizio della riga
   }
   function passoArrivo(t) {
     if (!TEMPI) return;
@@ -1013,9 +1024,31 @@
   // l'azione della barra non occupa posto: il menu le fa posto scivolando della sua larghezza (computer); al telefono
   // l'azione sta a sinistra di «Menu». Le due larghezze si misurano (dipendono dal carattere arrivato)
   const azioneBarra = $('.barra-azione'), bottoneMenu = $('.pulsante-menu');
+  // incarico 2: se il menu, scivolando del posto dell'azione, arriverebbe sulla parola del marchio (una lingua più lunga), la barra
+  // è «stretta» e la parola sparisce intera quando l'azione entra (barra.css). Si misura dalla disposizione, senza le trasformazioni,
+  // con la larghezza intera del marchio (anche quando la parola è già nascosta), nei due versi della scrittura.
+  const menuBarra = $('.barra .menu'), marchio = $('.barra .marchio'), parolaMarchio = $('.barra .marchio span');
+  let marchioPieno = 0;
   function misuraBarra() {
-    barra.style.setProperty('--posto-azione', `${azioneBarra.offsetWidth + 16}px`);
+    const posto = azioneBarra.offsetWidth + 16;
+    barra.style.setProperty('--posto-azione', `${posto}px`);
     if (bottoneMenu.offsetWidth) barra.style.setProperty('--largo-menu', `${bottoneMenu.offsetWidth}px`);
+    if (!barra.classList.contains('con-azione') || !marchioPieno) marchioPieno = Math.max(marchioPieno, marchio.offsetWidth - parolaMarchio.offsetWidth + parolaMarchio.scrollWidth);
+    const inizioMarchio = verso() > 0 ? marchio.offsetLeft : marchio.offsetLeft + marchio.offsetWidth;
+    const libero = verso() > 0 ? menuBarra.offsetLeft - (inizioMarchio + marchioPieno) : (inizioMarchio - marchioPieno) - (menuBarra.offsetLeft + menuBarra.offsetWidth);
+    barra.classList.toggle('stretta', menuBarra.offsetWidth > 0 && libero < posto + parseFloat(getComputedStyle(barra).columnGap || 0));
+    // al telefono e sul tablet l'azione sta fra il marchio e «Menu»: non deve coprire il disegno del marchio (né la parola, dove resta).
+    // Lo spazio che ha si misura; un'azione più lunga (una traduzione) va a capo in due righe dentro la pillola
+    if (bottoneMenu.offsetWidth) {
+      const svg = $('svg', marchio), parolaVisibile = parolaMarchio.offsetWidth > 0 && getComputedStyle(parolaMarchio).opacity !== '0' && !matchMedia('(max-width: 440px)').matches;
+      const fineMarchio = parolaVisibile ? marchioPieno : svg.getBoundingClientRect().width;   // un svg non ha offsetWidth
+      const margineAzione = parseFloat(getComputedStyle(azioneBarra).insetInlineEnd) || 0;
+      const spazio = barra.clientWidth - margineAzione - (verso() > 0 ? marchio.offsetLeft : barra.clientWidth - marchio.offsetLeft - marchio.offsetWidth) - fineMarchio - parseFloat(getComputedStyle(barra).columnGap || 0);
+      barra.style.setProperty('--azione-largo-massimo', `${Math.max(0, Math.floor(spazio))}px`);
+      // va a capo soltanto se non ci sta: dove ci sta, l'azione resta com'era (una riga, la stessa resa)
+      barra.classList.remove('azione-a-capo');
+      barra.classList.toggle('azione-a-capo', azioneBarra.offsetWidth > spazio);
+    }
   }
   misuraBarra(); if (document.fonts) document.fonts.ready.then(misuraBarra);
   addEventListener('scroll', chiediBarra, {passive: true}); addEventListener('resize', () => { misuraBarra(); chiediBarra(); }); sullaBarra();

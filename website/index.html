@@ -25,6 +25,7 @@
 <link rel="stylesheet" href="design-system/componenti/tratti.css">
 <link rel="stylesheet" href="design-system/componenti/piede.css">
 <link rel="stylesheet" href="design-system/componenti/arrivo.css">
+<link rel="stylesheet" href="design-system/componenti/lingue.css">
 <script src="lingua.js" defer></script>
 <script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.__scena)document.documentElement.classList.remove('js')},4000)</script>
 </head>
@@ -48,7 +49,14 @@
         <li><a href="installa/" data-t="menu.installa">Installa</a></li>
         <li><a href="riunione/" data-t="menu.riunione">In riunione</a></li>
         <li><a href="aiuto/" data-t="menu.aiuto">Aiuto</a></li>
-        <li><a href="#lingue" data-lingua-corrente data-t-no="il nome della lingua lo mette la costruzione, dai dati CLDR" data-t-title="barra.lingua" title="Cambia lingua">Italiano</a></li>
+        <li class="lingua-voce">
+          <details class="lingua-scelta">
+            <summary data-t-title="barra.lingua" title="Cambia lingua"><span data-lingua-corrente data-t-no="il nome della lingua lo mette la costruzione, dai dati CLDR">Italiano</span><span class="lingua-segno" aria-hidden="true"></span></summary>
+            <ul class="lingue-elenco" data-lingue="elenco">
+              <li><a data-lingua data-t-no="il nome della lingua lo mette la costruzione, dai dati CLDR" href="#">Italiano</a></li>
+            </ul>
+          </details>
+        </li>
       </ul>
     </nav>
     <a class="pillola azione barra-azione" href="installa/" data-t="cta.scarica">Scarica e installa</a>
@@ -276,7 +284,7 @@
         <span class="linea linea-fatta" aria-hidden="true"></span><span class="linea linea-forse" aria-hidden="true"></span>
         <span class="impulso" aria-hidden="true"></span>
         <ol class="tappe">
-          <li class="tappa fatta"><span class="nodo" aria-hidden="true"><svg viewBox="0 0 40 40"><rect x="6" y="13" width="28" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M11 20h9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M24 16v8" stroke="currentColor" stroke-width="2"/></svg></span><span class="tappa-nome" data-t="strada.tappa.1">Scrivi la frase</span></li>
+          <li class="tappa fatta"><span class="nodo" aria-hidden="true"><svg class="segue-verso" viewBox="0 0 40 40"><rect x="6" y="13" width="28" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M11 20h9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M24 16v8" stroke="currentColor" stroke-width="2"/></svg></span><span class="tappa-nome" data-t="strada.tappa.1">Scrivi la frase</span></li>
           <li class="tappa fatta"><span class="nodo" aria-hidden="true"><svg viewBox="0 0 40 40"><g fill="currentColor"><rect x="8" y="16" width="4" height="8" rx="2"/><rect x="14" y="12" width="4" height="16" rx="2"/><rect x="20" y="8" width="4" height="24" rx="2"/><rect x="26" y="13" width="4" height="14" rx="2"/><rect x="32" y="16.5" width="4" height="7" rx="2"/></g></svg></span><span class="tappa-nome" data-t="strada.tappa.2">La voce nasce qui</span></li>
           <li class="tappa fatta"><span class="nodo" aria-hidden="true"><svg viewBox="0 0 40 40"><rect x="15" y="6" width="10" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M10 19a10 10 0 0 0 20 0M20 29v5M14 34h12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span><span class="tappa-nome" data-t="strada.tappa.3">Microfono «Kalliope»</span></li>
           <li class="tappa forse"><span class="nodo" aria-hidden="true"><svg viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="2.4"><rect x="6" y="9" width="12.5" height="10" rx="2.5"/><rect x="21.5" y="9" width="12.5" height="10" rx="2.5"/><rect x="6" y="22" width="12.5" height="10" rx="2.5"/><rect x="21.5" y="22" width="12.5" height="10" rx="2.5"/></g></svg></span><span class="tappa-nome" data-t="strada.tappa.4">Zoom, Teams, Meet</span></li>
