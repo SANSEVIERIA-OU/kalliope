@@ -43,9 +43,11 @@
 /* la frase scritta e non detta: nella bolla, al passo delle parole che aspettano la voce */
 .bolla-ferma:not(.divisa) .bolla-testo { opacity: var(--opacita-bolla-2); }
 
-/* ---------- l'arrivo, solo CSS (vale anche senza JavaScript; con «riduci movimento» resta lo stato finale) ----------
-   la bolla nasce dalla coda quando il tuo riquadro è entrato; poi il puntatore cerca «Kalliope» (la scelta puntata),
-   il posto vuoto risponde con un'onda tratteggiata che non arriva a nessuno, il tuo bordo si accende e si spegne */
+/* ---------- l'arrivo ----------
+   la bolla nasce dalla coda quando il tuo riquadro è entrato (solo CSS: vale anche senza JavaScript). Poi, con lo script, il
+   tentativo: il segno della scelta lascia «Microfono del computer» e va su «Kalliope»; lì non c'è niente da scegliere, il segno
+   si svuota, il posto tratteggiato manda un'onda che non arriva a nessuno, il tuo bordo si accende e compare «non c'è»; il segno
+   torna al microfono del computer. Senza script e con «riduci movimento» la barra è ferma, con «non c'è» già scritto. */
 .posto-bolla-ferma { animation: none; }
 .posto-bolla-ferma .bolla {
   transform-origin: calc(50% + (var(--spazio-24) - 50%) * var(--verso)) 100%;
@@ -55,19 +57,31 @@
   from { opacity: 0; transform: scale(var(--bolla-nasce-scala)); }
   to { opacity: 1; transform: none; }
 }
-.chiamata-ferma .scelta.mancante { animation: cerca var(--durata-cerca) var(--curva-dolce) var(--ritardo-cerca) both; }
-@keyframes cerca {
-  0%, 100% { background-color: transparent; }
-  18%, 72% { background-color: var(--velo-puntata); }
+.chiamata-ferma .microfono { position: relative; }
+.chiamata-ferma .microfono-titolo, .chiamata-ferma .scelta { position: relative; z-index: var(--livello-barre); }
+.segno-scelta {
+  position: absolute;
+  top: 0;
+  inset-inline-start: 0;
+  border-radius: var(--raggio-pillola);
+  background: var(--testo);
+  opacity: 0;
+  pointer-events: none;
 }
-.chiamata-ferma .scelta.mancante::after { animation: urto var(--durata-urto) var(--curva-uscita) var(--ritardo-urto) both; }
+.chiamata-ferma.con-segno .segno-scelta { opacity: 1; }
+.chiamata-ferma.con-segno .scelta.scelto { background: transparent; transition: color var(--durata-scelta-testo) var(--curva-dolce); }
+.chiamata-ferma.con-segno.segno-via .scelta.scelto { color: var(--testo); }
+.chiamata-ferma.segno-va .scelta.mancante { color: var(--bordeaux); transition: color var(--durata-scelta-testo) var(--curva-dolce); }
+.chiamata-ferma.prova .mancante-nota { opacity: 0; transition: opacity var(--durata-mancante-nota) var(--curva-dolce); }
+.chiamata-ferma.prova.non-c-e .mancante-nota { opacity: 1; }
+.scelta.mancante.urtata { border-color: var(--voce); color: var(--testo); transition: border-color var(--durata-scelta-sfondo) var(--curva-dolce), color var(--durata-scelta-testo) var(--curva-dolce); }
+.scelta.mancante.urtata::after { animation: urto var(--durata-urto) var(--curva-uscita) both; }
 @keyframes urto {
   0% { opacity: 0; transform: scale(1); }
   20% { opacity: 1; }
-  100% { opacity: 0; transform: scale(var(--urto-scala)); }
+  100% { opacity: 0; transform: scale(var(--urto-scelta-scala)); }
 }
-.chiamata-ferma .mancante-nota { animation: appare var(--durata-mancante-nota) var(--curva-dolce) var(--ritardo-mancante-nota) backwards; }
-.chiamata-ferma .riquadro.tu.assente::before { animation: tu-cerca var(--durata-urto) var(--curva-dolce) var(--ritardo-urto) both; }
+.riquadro.tu.assente.urtato::before { animation: tu-cerca var(--durata-urto) var(--curva-dolce) both; }
 @keyframes tu-cerca {
   0%, 100% { border-color: var(--tratteggio); }
   30% { border-color: var(--voce); }

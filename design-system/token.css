@@ -936,28 +936,34 @@
   --pagina-scena-spazio-sotto: 96px;   /* aria sotto il primo schermo di una pagina interna, prima che la prima scena vi salga sopra */
   --pagina-primo-tratto-margine: 0px;   /* la prima scena comincia subito sotto il primo schermo */
   --coppia-colonne: minmax(0, 1fr) minmax(0, 480px);   /* un tratto con il testo e un oggetto della scena affiancati */
+  --didascalia-margine-pagina-telefono: 8px 0 0;   /* al telefono la didascalia sta subito sotto la scena che descrive */
   --testo-spiegazione-chiara: var(--testo-requisiti-chiara);   /* la spiegazione sotto un titolo, sulla scena chiara (come i requisiti della home) */
   /* · La riunione in cui la tua voce non arriva */
   --chiamata-ferma-altezza: clamp(200px, calc(100vh - 380px), 362px);   /* i riquadri, sopra la barra del microfono: interi anche a 1366×640 */
-  --chiamata-ferma-altezza-telefono: 176px;   /* i riquadri al telefono, come la riunione della home */
+  --chiamata-ferma-altezza-telefono: 152px;   /* i riquadri al telefono: un poco più bassi della riunione della home, perché sotto stiano i comandi e lo stato intero (375×812) */
   --chiamata-ferma-barra-spazio-interno: 6px 0 4px;   /* la barra del microfono dentro la cornice */
   --barre-ferme-scala-y: 0.14;   /* la voce piatta nel tuo posto vuoto: le barre diventano punti */
   --bolla-nasce-scala: var(--messaggio-filo-bolla-scala);   /* la bolla nasce dalla coda, come le frasi del filo */
   --durata-bolla-nasce: var(--durata-messaggio-filo-bolla-trasforma);
   --ritardo-bolla-ferma: 1900ms;   /* la bolla nasce dopo che il tuo riquadro è entrato (ultimo, a 1280 ms + 520) */
-  --durata-cerca: 1300ms;   /* il puntatore resta sul posto vuoto di «Kalliope» */
-  --ritardo-cerca: 2500ms;
-  --durata-urto: 900ms;   /* l'onda tratteggiata del posto vuoto: la durata delle onde della home */
-  --ritardo-urto: 2780ms;
-  --urto-scala: 1.18;   /* fin dove si allarga l'onda del posto vuoto: poco, non arriva a nessuno */
+  --ritardo-segno: 2400ms;   /* il segno della scelta parte verso «Kalliope» quando la bolla è nata (dall'arrivo sulla pagina) */
+  --durata-segno-va: 420ms;   /* il segno va sul posto di «Kalliope» */
+  --attesa-segno: 900ms;   /* il segno resta sul posto vuoto, svuotato, mentre l'onda tratteggiata si spegne */
+  --durata-segno-torna: 520ms;   /* il segno torna su «Microfono del computer» */
+  --opacita-segno-vuoto: 0.16;   /* il segno sul posto vuoto: non c'è niente da scegliere */
+  --durata-urto: 900ms;   /* l'onda tratteggiata di un posto vuoto: la durata delle onde della home */
+  --urto-scala: 1.18;   /* fin dove si allarga l'onda della tappa vuota della strada: poco, non arriva a nessuno */
+  --urto-scelta-scala: 1.32;   /* fin dove si allarga l'onda del posto vuoto di «Kalliope» nella barra (più piccolo della tappa: va di più) */
   --durata-mancante-nota: var(--durata-scelta-testo);   /* «non c'è» compare accanto a «Kalliope» */
-  --ritardo-mancante-nota: 2900ms;
   /* · La strada che si ferma */
   --opacita-tappa-spenta: 0.42;   /* le tappe che la voce non raggiunge */
   /* · L'elenco delle versioni */
   --versioni-titolo-margine: 2px 4px 10px;
   --versione-spazio-interno: 12px 16px 13px;
-  --durata-respira: 1400ms;   /* il posto della prossima versione respira una volta, arrivando sullo schermo */
-  --ritardo-respira: 520ms;
-  --respira-scala: 1.015;
+  --versioni-piede-spazio-interno: 12px 2px 2px;   /* sotto l'elenco: il comando per tenerne l'indirizzo */
+  --versione-nuova-ombra: 0 0 0 2px var(--voce), 0 0 26px 4px var(--bordo-evidente);   /* l'ultima versione appena arrivata in cima */
+  --durata-arriva-in-cima: 1900ms;   /* l'ultima versione compare in cima, resta, scende; poi si apre il posto tratteggiato */
+  --ritardo-arriva-in-cima: 250ms;
+  --durata-posto-testo: 360ms;   /* «Windows e macOS · compariranno qui» si scrive nel posto aperto */
+  --ritardo-posto-testo: 2050ms;
 }

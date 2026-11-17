@@ -1051,3 +1051,25 @@ vuota), `versioni.css` (l'elenco delle versioni con il posto della prossima).
 Non ancora nei token (come in `scena.js` per la home, «Da decidere» in `SISTEMA.md`): i tempi della strada e i parametri
 delle onde dentro `../website/non-ancora/non-ancora.js` (gli stessi numeri di `scena.js`). Il catalogo non mostra ancora i
 quattro componenti nuovi: lo farà il ruolo di costruzione (durante l'incarico 3a il catalogo era in lavorazione dall'incarico 1).
+
+### Correzioni dopo il giudizio (incarico 3a, giro di correzioni)
+
+Nel blocco «Pagine interne» di `token.css` non esistono più `--durata-cerca`, `--ritardo-cerca`, `--ritardo-urto`,
+`--ritardo-mancante-nota`, `--durata-respira`, `--ritardo-respira`, `--respira-scala` (il tentativo sul posto di «Kalliope» e
+il respiro della prossima versione non si vedevano: sono stati rifatti). `--chiamata-ferma-altezza-telefono` passa da `176px`
+a `152px`. Nuovi:
+
+| Token | Valore | Ruolo | Dove |
+|---|---|---|---|
+| `--didascalia-margine-pagina-telefono` | `8px 0 0` | al telefono la didascalia sta subito sotto la scena | `pagina.css` |
+| `--ritardo-segno` | `2400ms` | il segno della scelta parte verso «Kalliope» (dall'arrivo sulla pagina) | `non-ancora.js` |
+| `--durata-segno-va`, `--attesa-segno`, `--durata-segno-torna` | `420ms`, `900ms`, `520ms` | va sul posto vuoto, resta svuotato, torna al microfono del computer | `non-ancora.js` |
+| `--opacita-segno-vuoto` | `0.16` | il segno sul posto vuoto: non c'è niente da scegliere | `non-ancora.js` |
+| `--urto-scelta-scala` | `1.32` | l'onda tratteggiata del posto vuoto nella barra del microfono | `riunione-ferma.css` |
+| `--versioni-piede-spazio-interno` | `12px 2px 2px` | sotto l'elenco: il comando per tenerne l'indirizzo | `versioni.css` |
+| `--versione-nuova-ombra` | `0 0 0 2px var(--voce), 0 0 26px 4px var(--bordo-evidente)` | l'ultima versione appena arrivata in cima | `versioni.css` |
+| `--durata-arriva-in-cima`, `--ritardo-arriva-in-cima` | `1900ms`, `250ms` | l'ultima versione compare in cima, resta, scende; poi si apre il posto tratteggiato | `versioni.css` |
+| `--durata-posto-testo`, `--ritardo-posto-testo` | `360ms`, `2050ms` | «Windows e macOS · compariranno qui» si scrive nel posto aperto | `versioni.css` |
+
+`--durata-urto` vale ora anche per il posto della prossima versione che si accende una volta quando si copia l'indirizzo
+(`versioni.css`, `.ricordata`). La soglia d'altezza `500px` (telefono girato) è dichiarata in `metodo.config.mjs`.

@@ -1,36 +1,49 @@
 # Incarico 3a · progresso
 
-Aggiornato: 16/11/2026, notte. **Stato: consegnato** (aspetto e movimento della pagina intera; il resto al ruolo di costruzione).
+Aggiornato: 17/11/2026, notte. **Stato: giro di correzioni dopo il giudizio consegnato.** Il lavoro di prima è nel commit
+7cb9e65; la copia di partenza di questo giro è in `/tmp/lavoro-3a-copia-prima-correzioni/`.
 
-## Fatto
-- Letture; home costruita e guardata a 1440×900 e 390×844; riferimenti sotto il primo schermo (R01, R03, R05, R50, R51,
-  R53, R06). Feed `releases.atom` verificato (200, una voce, note in inglese).
-- `CONTENUTI.md` (prima di rendere), `PIANO.md` (piano dei tratti, cornice per le pagine interne, scelte progettuali,
-  da completare, non verificato).
-- Pagina: `website/non-ancora/index.html` (sostituisce quella vecchia, che resta in HEAD), `website/non-ancora/non-ancora.js`,
-  `website/cornice.js` (cornice comune delle pagine interne).
-- Sistema: componenti nuovi `design-system/componenti/pagina.css`, `riunione-ferma.css`, `strada-ferma.css`, `versioni.css`;
-  token nuovi in un blocco in fondo a `design-system/token.css` (24 nomi, ognuno con il ruolo), documentati in fondo a
-  `design-system/TOKEN.md`; pagina e script aggiunti a `design-system/metodo.config.mjs`. Nessun componente esistente toccato.
-- `controlla-sorgenti.mjs` (da `design-system/`): verde, «20 fogli di stile, valori solo nei token».
-- Prove: `sequenze/` (arrivo, scorri, ascolta a 1440×900 e 390×844; arrivo a 1366×640: fogli, video, json); `foto/` (primi
-  schermi, ascolto in corso, riduci movimento, senza JavaScript, prova da destra a sinistra, 820×1180, 1180×820, menu);
-  `confronti/` (primo schermo con la home a 1440 e 390, con R01, R03, R05; scorrimento con R01, R03, R05, la home; telefono
-  con R03). Testo +40% (pseudo-lingua): nulla esce dal bordo. Ascolto: premi, pausa, riprendi, fine provati.
+## Fatto (primo giro, 16/11)
+- Pagina resa, `CONTENUTI.md`, `PIANO.md`, sequenze, foto, confronti (vedi commit 7cb9e65).
+
+## Fatto (giro di correzioni, 17/11; giudizio in `giudizio/GIUDIZIO.md`)
+- **I1** stato vero nella riga «Oggi:» (non ancora provata in una riunione vera con Zoom, Teams o Meet); tappe dopo il
+  microfono tratteggiate come «non provate». `website/non-ancora/index.html`.
+- **I2** «non è un servizio online né un'estensione del browser» detto come confine; «non ancora» solo per telefono e
+  tablet e altre lingue. `index.html`.
+- **macOS** account sviluppatore Apple per firmare il componente audio. **Propria voce** tolta. **Dubbio E**: tolti il
+  consiglio di installarlo su un Linux vicino e «non consigliamo altri prodotti». `index.html`.
+- **I3** comando pieno «Copia l'indirizzo di questa pagina» (l'elenco si aggiorna da solo a ogni release; senza script:
+  preferiti); il feed in una nota che dice che cos'è, che segnala ogni versione e che è in inglese. `index.html`,
+  `non-ancora.js`, `versioni.css`, `pagina.css` (`.nota`, `.coppia-oggetto`, `.coppia-nota`).
+- **I5** regola della cornice «quando l'altezza manca, vince il comando»: telefono basso (sotto 760 px d'altezza) comandi
+  subito dopo la frase; telefono girato (fino a 500 px d'altezza) titolo e frase alla misura del telefono, scena dopo;
+  `cornice.js` tiene il fuoco nell'ordine visto; riquadri del telefono a 152 px perché lo stato stia intero a 375×812.
+  `pagina.css`, `cornice.js`, token. Scritta in `PIANO.md`, «La cornice».
+- **I6** il momento del tratto: l'ultima versione compare in cima, resta, scende; il posto tratteggiato di Windows e macOS
+  si apre e resta; copiato l'indirizzo, il posto si accende. `versioni.css`, `index.html`, `non-ancora.js`.
+- **Ciò che il giudice non vedeva**: il tentativo su «Kalliope» rifatto e ora visibile (la pillola della scelta va, si
+  svuota, onda tratteggiata, torna); il respiro della prossima versione tolto e sostituito dal momento dell'I6.
+  `non-ancora.js`, `riunione-ferma.css`, `index.html` (`.segno-scelta`).
+- Token: tolti 7 miei che non servivano più, aggiunti 13, uno cambiato (`token.css`, solo il mio blocco); documentati in
+  fondo a `TOKEN.md` (solo aggiunte). Soglia d'altezza `500px` dichiarata in `metodo.config.mjs`.
+- `controlla-sorgenti.mjs` verde («20 fogli di stile, valori solo nei token»).
+- Prove nuove: `sequenze-correzioni/` (arrivo, scorri, quando, ascolta a 1440×900 e 390×844; arrivo a 390×667, 360×640,
+  844×390, 1366×640), `foto-correzioni/`; copia provata con e senza permesso degli appunti; movimento ridotto, senza
+  JavaScript, prova da destra a sinistra del tentativo.
+- `PIANO.md` e `CONTENUTI.md` aggiornati.
 
 ## In corso
 - Niente.
 
 ## Prossimo passo
-- Giudice, poi ruolo di costruzione (elenco in `PIANO.md`, «Da completare a chi costruisce»).
+- Secondo sguardo del giudice; poi il ruolo di costruzione (I4 catalogo, M1, M2, M5, M6, M7 e l'elenco in `PIANO.md`).
 
 ## Ultimo comando
-- `python3 -I tools/site.py --out /tmp/lavoro-3a-sito-9` (site.py dell'incarico 1: la pagina sta in `it/non-ancora/`);
-  `/tmp/lavoro-3a-strumenti/mira.mjs` per le foto finali (primo schermo uguale a quello delle sequenze, 0 pixel diversi a
-  1440 e 390).
+- `python3 -I tools/site.py --out /tmp/lavoro-3a-c8-sito`, sequenze in `/tmp/lavoro-3a-c8-seq/` (copiate in
+  `sequenze-correzioni/`), `controlla-sorgenti.mjs` da `design-system/`.
 
 ## Problemi aperti
-- La convenzione `data-t` non è scritta nel `progresso.md` dell'incarico 1: la pagina ha testo semplice.
-- Domande per il proprietario in `CONTENUTI.md` (macOS «account Apple» o «componente approvato»; la propria voce qui; dubbio E;
-  feed in inglese).
-- Il catalogo non mostra ancora i quattro componenti nuovi (l'incarico 1 ci lavorava).
+- Catalogo non toccato (I4, ruolo di costruzione; ora ci lavora anche l'incarico 2).
+- `confronta-scelta.mjs` sulla home non rifatto: in questo giro nessun file della home o condiviso è stato toccato.
+- La convenzione `data-t`: testo ancora semplice.

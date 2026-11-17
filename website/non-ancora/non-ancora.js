@@ -19,6 +19,69 @@
   const ENTRA = tok('--entra');
 
   // =================================================================================================================
+  // IL PRIMO SCHERMO: il tentativo su «Kalliope». Il segno della scelta lascia «Microfono del computer», va sul posto di
+  // «Kalliope», lo trova vuoto (si svuota, il posto manda un'onda tratteggiata, il tuo bordo si accende, compare «non c'è»)
+  // e torna. Senza script o con «riduci movimento» la barra è ferma, con «non c'è» già scritto.
+  // =================================================================================================================
+  const chiamata = $('.chiamata-ferma'), segno = chiamata && $('.segno-scelta', chiamata);
+  const microfono = chiamata && $('.microfono', chiamata), sceltaPc = chiamata && $('.scelta.scelto', chiamata);
+  const sceltaK = chiamata && $('.scelta.mancante', chiamata), tuFermo = chiamata && $('.riquadro.tu.assente', chiamata);
+  // la forma del segno sopra una scelta, misurata (vale in tutte e due le direzioni di scrittura: l'ancora del segno è
+  // l'inizio della riga della barra, a sinistra o a destra)
+  function forma(el) {
+    const m = microfono.getBoundingClientRect(), r = el.getBoundingClientRect();
+    const ancora = getComputedStyle(microfono).direction === 'rtl' ? m.right - microfono.clientLeft - r.width : m.left + microfono.clientLeft;
+    return {transform: `translate(${(r.left - ancora).toFixed(1)}px, ${(r.top - m.top - microfono.clientTop).toFixed(1)}px)`, width: `${r.width.toFixed(1)}px`, height: `${r.height.toFixed(1)}px`};
+  }
+  function provaKalliope() {
+    if (!chiamata || !segno || ridotto) return;
+    chiamata.classList.add('prova');
+    let finita = false;
+    const ferma = () => { finita = true; segno.getAnimations().forEach(a => a.cancel()); chiamata.classList.remove('con-segno', 'segno-via'); chiamata.classList.add('non-c-e'); };
+    addEventListener('resize', ferma, {once: true});
+    setTimeout(() => {
+      if (finita) return;
+      const da = forma(sceltaPc), a = forma(sceltaK);
+      Object.assign(segno.style, da); chiamata.classList.add('con-segno');
+      requestAnimationFrame(() => {
+        if (finita) return;
+        chiamata.classList.add('segno-via', 'segno-va');
+        segno.animate([da, a], {duration: tempo('--durata-segno-va'), easing: ENTRA, fill: 'forwards'}).finished.then(() => {
+          if (finita) return;
+          const vuoto = parseFloat(tok('--opacita-segno-vuoto'));
+          segno.animate([{...a, opacity: 1}, {...a, opacity: vuoto}], {duration: tempo('--durata-scelta-sfondo'), easing: 'ease', fill: 'forwards'});
+          chiamata.classList.remove('segno-va');
+          sceltaK.classList.add('urtata'); tuFermo.classList.add('urtato'); chiamata.classList.add('non-c-e');
+          setTimeout(() => {
+            if (finita) return;
+            sceltaK.classList.remove('urtata');
+            const torna = tempo('--durata-segno-torna');
+            segno.animate([{...a, opacity: vuoto}, {...da, opacity: 1}], {duration: torna, easing: ENTRA, fill: 'forwards'});
+            setTimeout(() => { if (!finita) chiamata.classList.remove('segno-via'); }, torna * 0.2);   // il testo torna scuro quando il segno gli è già sotto (la curva d'entrata arriva presto)
+          }, tempo('--attesa-segno'));
+        }, () => {});
+      });
+    }, Math.max(0, tempo('--ritardo-segno') - performance.now()));
+  }
+  provaKalliope();
+
+  // =================================================================================================================
+  // QUANDO ARRIVA: tenere l'indirizzo di questa pagina, che si aggiorna da sola a ogni versione
+  // =================================================================================================================
+  const copia = $('.copia-indirizzo'), copiato = $('.copia-fatto'), noCopia = $('.copia-errore');
+  if (copia && navigator.clipboard && window.isSecureContext) {
+    copia.hidden = false;
+    copia.addEventListener('click', () => {
+      navigator.clipboard.writeText(location.href.split('#')[0])
+        .then(() => {
+          copiato.hidden = false; noCopia.hidden = true;
+          const posto = $('.versione.prossima');   // il posto da tenere d'occhio si accende una volta
+          if (posto && !ridotto) { posto.classList.remove('ricordata'); void posto.offsetWidth; posto.classList.add('ricordata'); }
+        }, () => { copiato.hidden = true; noCopia.hidden = false; });
+    });
+  } else if (noCopia) noCopia.hidden = false;
+
+  // =================================================================================================================
   // LA STRADA CHE SI FERMA: la voce nasce, arriva dove dovrebbe esserci il microfono, lo trova vuoto
   // =================================================================================================================
   function animaStrada(strada) {

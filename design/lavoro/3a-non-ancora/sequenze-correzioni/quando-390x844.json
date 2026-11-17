@@ -1,0 +1,90 @@
+{
+ "pagina": "http://127.0.0.1:33449/it/non-ancora/",
+ "misura": "390x844",
+ "sequenza": "quando",
+ "gesto": "punta:.versioni-titolo",
+ "ridotto": false,
+ "lento": 1,
+ "istanti": [
+  0,
+  0.3,
+  0.6,
+  0.9,
+  1.2,
+  1.5,
+  1.8,
+  2.1,
+  2.5,
+  3
+ ],
+ "fotogrammi": [
+  {
+   "file": "quando-390x844-f01.jpg",
+   "chiesto": 0,
+   "scattato": 0,
+   "scorrimento": 2364
+  },
+  {
+   "file": "quando-390x844-f02.jpg",
+   "chiesto": 0.3,
+   "scattato": 0.3,
+   "scorrimento": 2364
+  },
+  {
+   "file": "quando-390x844-f03.jpg",
+   "chiesto": 0.6,
+   "scattato": 0.6,
+   "scorrimento": 2364
+  },
+  {
+   "file": "quando-390x844-f04.jpg",
+   "chiesto": 0.9,
+   "scattato": 0.9,
+   "scorrimento": 2364
+  },
+  {
+   "file": "quando-390x844-f05.jpg",
+   "chiesto": 1.2,
+   "scattato": 1.2,
+   "scorrimento": 2364
+  },
+  {
+   "file": "quando-390x844-f06.jpg",
+   "chiesto": 1.5,
+   "scattato": 1.5,
+   "scorrimento": 2364
+  },
+  {
+   "file": "quando-390x844-f07.jpg",
+   "chiesto": 1.8,
+   "scattato": 1.8,
+   "scorrimento": 2364
+  },
+  {
+   "file": "quando-390x844-f08.jpg",
+   "chiesto": 2.1,
+   "scattato": 2.1,
+   "scorrimento": 2364
+  },
+  {
+   "file": "quando-390x844-f09.jpg",
+   "chiesto": 2.5,
+   "scattato": 2.5,
+   "scorrimento": 2364
+  },
+  {
+   "file": "quando-390x844-f10.jpg",
+   "chiesto": 3,
+   "scattato": 3,
+   "scorrimento": 2364
+  }
+ ],
+ "foglio": "quando-390x844-foglio.jpg",
+ "video": "quando-390x844.webm",
+ "orologio": {
+  "pagina": 1,
+  "media": []
+ },
+ "errori": [],
+ "misurato": "2026-11-16T23:53:42.838Z"
+}

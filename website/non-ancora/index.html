@@ -68,7 +68,7 @@
           <a class="pillola azione" href="#quando">Come saperlo quando arriva</a>
           <a class="collegamento" href="#ascolta">Intanto, senti la voce<span class="freccia" aria-hidden="true"></span></a>
         </div>
-        <p class="stato"><strong>Oggi:</strong> versione di prova {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Per telefono e tablet Kalliope non esiste.</p>
+        <p class="stato"><strong>Oggi:</strong> versione di prova {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Non ancora provata in una riunione vera con Zoom, Teams o Meet.</p>
         <p class="didascalia">Ricostruzione<span class="d-lunga"> · su Windows e macOS «Kalliope» non compare fra i microfoni dell'app di riunione</span></p>
       </section>
 
@@ -131,6 +131,7 @@
           </div>
           <div class="app-comandi">
             <div class="microfono">
+              <span class="segno-scelta"></span>
               <span class="microfono-titolo"><span class="app-icona"></span>Microfono</span>
               <ul class="microfono-scelte">
                 <li class="scelta scelto">Microfono del computer</li>
@@ -156,8 +157,8 @@
           <li class="tappa fatta"><span class="nodo" aria-hidden="true"><svg viewBox="0 0 40 40"><rect x="6" y="13" width="28" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M11 20h9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M24 16v8" stroke="currentColor" stroke-width="2"/></svg></span><span class="tappa-nome">Scrivi la frase</span></li>
           <li class="tappa fatta"><span class="nodo" aria-hidden="true"><svg viewBox="0 0 40 40"><g fill="currentColor"><rect x="8" y="16" width="4" height="8" rx="2"/><rect x="14" y="12" width="4" height="16" rx="2"/><rect x="20" y="8" width="4" height="24" rx="2"/><rect x="26" y="13" width="4" height="14" rx="2"/><rect x="32" y="16.5" width="4" height="7" rx="2"/></g></svg></span><span class="tappa-nome">La voce nasce qui</span></li>
           <li class="tappa ferma"><span class="nodo" aria-hidden="true"><svg viewBox="0 0 40 40"><rect x="15" y="6" width="10" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M10 19a10 10 0 0 0 20 0M20 29v5M14 34h12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span><span class="tappa-nome">Microfono «Kalliope»<span class="solo-lettori">: non c'è ancora</span></span></li>
-          <li class="tappa spenta"><span class="nodo" aria-hidden="true"><svg viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="2.4"><rect x="6" y="9" width="12.5" height="10" rx="2.5"/><rect x="21.5" y="9" width="12.5" height="10" rx="2.5"/><rect x="6" y="22" width="12.5" height="10" rx="2.5"/><rect x="21.5" y="22" width="12.5" height="10" rx="2.5"/></g></svg></span><span class="tappa-nome">Zoom, Teams, Meet</span></li>
-          <li class="tappa spenta tappa-altri"><span class="nodo nodo-altri" aria-hidden="true"><span class="mini paola"><svg class="figura" viewBox="54 14 92 106" preserveAspectRatio="xMidYMax meet">
+          <li class="tappa forse spenta"><span class="nodo" aria-hidden="true"><svg viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="2.4"><rect x="6" y="9" width="12.5" height="10" rx="2.5"/><rect x="21.5" y="9" width="12.5" height="10" rx="2.5"/><rect x="6" y="22" width="12.5" height="10" rx="2.5"/><rect x="21.5" y="22" width="12.5" height="10" rx="2.5"/></g></svg></span><span class="tappa-nome">Zoom, Teams, Meet</span></li>
+          <li class="tappa forse spenta tappa-altri"><span class="nodo nodo-altri" aria-hidden="true"><span class="mini paola"><svg class="figura" viewBox="54 14 92 106" preserveAspectRatio="xMidYMax meet">
                 <path class="capelli-dietro" d="M75 56C74 30 126 30 125 56L128 98C118 104 82 104 72 98Z"/>
                 <path class="corpo" d="M50 120C50 95 73 84 100 84C127 84 150 95 150 120Z"/>
                 <rect class="collo" x="92" y="72" width="16" height="17" rx="6"/>
@@ -190,11 +191,11 @@
         </ol>
         <div class="esiti">
           <div class="esito esito-fatto"><h3>C'è già</h3><p>Il programma si costruisce e supera i test anche su Windows e macOS: la voce nasce.</p></div>
-          <div class="esito esito-manca"><h3>Manca il microfono</h3><p><strong>Windows</strong> chiede un driver audio con una firma valida; <strong>macOS</strong> un componente audio approvato da Apple. Nessuno dei due c'è ancora, e mancano anche i pacchetti da installare, con la loro firma.</p></div>
+          <div class="esito esito-manca"><h3>Manca il microfono</h3><p>Su <strong>Windows</strong> serve un driver audio con una firma valida; su <strong>macOS</strong>, per firmare il componente audio, un account sviluppatore Apple. Nessuno dei due c'è ancora, e mancano anche i pacchetti da installare, con la loro firma.</p></div>
         </div>
       </div>
       <div class="non-esiste">
-        <p><strong>Non esiste ancora</strong> per telefono e tablet, né come servizio online o estensione del browser: Kalliope è un programma per il computer. Parla solo italiano. E non parla con la tua voce: forse in futuro, solo con il tuo consenso.</p>
+        <p><strong>Non esiste ancora</strong> per telefono e tablet, e per ora parla solo italiano. Kalliope è un programma per il computer: non è un servizio online né un'estensione del browser.</p>
       </div>
     </section>
 
@@ -202,20 +203,22 @@
       <span class="luce-tratto" aria-hidden="true"></span>
       <div class="tratto-testo">
         <h2 id="quando-titolo" class="entra entra-titolo">Non promettiamo date.</h2>
-        <p>Quando ci sarà una versione per Windows o macOS, comparirà in cima alla pagina delle versioni di Kalliope e nel suo feed: un lettore di feed te lo segnala, senza account e senza che tu ci lasci dati.</p>
+        <p>Quando ci sarà una versione per Windows o macOS, comparirà in cima a questo elenco. L'elenco si aggiorna da solo a ogni nuova versione di Kalliope: tieni l'indirizzo di questa pagina e ripassa quando vuoi.</p>
         <p>Non raccogliamo indirizzi e-mail e non abbiamo un elenco d'attesa.</p>
-        <div class="comandi">
-          <a class="pillola azione" href="https://github.com/SANSEVIERIA-OU/kalliope/releases.atom">Segui le versioni (feed)</a>
-          <a class="collegamento" href="https://github.com/SANSEVIERIA-OU/kalliope/releases">La pagina delle versioni<span class="freccia" aria-hidden="true"></span></a>
+      </div>
+      <div class="versioni coppia-oggetto entra">
+        <p class="versioni-titolo">Versioni di Kalliope</p>
+        <ol class="versioni-elenco">
+          <li class="versione prossima"><span class="versione-nome">Windows e macOS</span><span class="versione-nota">compariranno qui, in cima · nessuna data</span></li>
+          <li class="versione ultima"><span class="versione-nome">Kalliope {{kalliope.version}}</span><span class="versione-data">{{kalliope.date}}</span><span class="versione-nota">Versione di prova · solo Linux</span></li>
+        </ol>
+        <div class="versioni-piede">
+          <button class="pillola azione copia-indirizzo" type="button" hidden>Copia l'indirizzo di questa pagina</button>
+          <p class="copia-esito" role="status"><span class="copia-fatto" hidden>Copiato: incollalo nelle note o in un messaggio, e ripassa da qui.</span><span class="copia-errore" hidden>Non riesco a copiarlo: salva la pagina tra i preferiti del browser.</span></p>
+          <p class="senza-js">Salva questa pagina tra i preferiti del browser e ripassa da qui.</p>
         </div>
       </div>
-      <div class="versioni entra entra-finestra" role="img" aria-label="Ricostruzione dell'elenco delle versioni di Kalliope: in cima, il posto della prossima, ancora vuoto; sotto, la versione {{kalliope.version}} del {{kalliope.date}}, solo per Linux">
-        <p class="versioni-titolo" aria-hidden="true">Versioni di Kalliope</p>
-        <ol class="versioni-elenco" aria-hidden="true">
-          <li class="versione prossima"><span class="versione-nome">La prossima</span><span class="versione-nota">quando ci sarà, compare qui</span></li>
-          <li class="versione"><span class="versione-nome">Kalliope {{kalliope.version}}</span><span class="versione-data">{{kalliope.date}}</span><span class="versione-nota">Versione di prova · solo Linux</span></li>
-        </ol>
-      </div>
+      <p class="nota coppia-nota">Usi un lettore di feed, un programma che ti avvisa quando un sito pubblica qualcosa? Il <a href="https://github.com/SANSEVIERIA-OU/kalliope/releases.atom">feed delle versioni</a> segnala ogni nuova versione, anche quelle solo per Linux, ed è in inglese, come la <a href="https://github.com/SANSEVIERIA-OU/kalliope/releases">pagina delle versioni su GitHub</a>.</p>
     </section>
 
     <section class="tratto chiusura scena-stanza" id="ascolta" aria-labelledby="ascolta-titolo">
@@ -268,7 +271,7 @@
         <audio class="lettore-ferma" controls preload="none" src="../voce/giulia-1.mp3"></audio>
         <a class="collegamento" href="../ascolta/">Tutte le frasi, anche con Marco<span class="freccia" aria-hidden="true"></span></a>
       </div>
-      <p class="fatti">Non consigliamo altri prodotti: non li abbiamo provati. Se una persona vicina a te ha un computer Linux, Kalliope si può <a href="../installa/">installare lì</a>. Che cosa è provato e che cosa no: <a href="../stato/">stato e limiti</a>.</p>
+      <p class="fatti">Che cosa è provato e che cosa no, anche su Linux: <a href="../stato/">stato e limiti</a>.</p>
     </section>
   </main>
 

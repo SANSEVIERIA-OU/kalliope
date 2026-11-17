@@ -44,15 +44,18 @@
   }
 
   // ---------- al telefono il fuoco va nell'ordine in cui si vede: prima la riunione, poi i comandi e lo stato ----------
+  // Nelle pagine interne (.scena-pagina) vale la regola della cornice: sui telefoni bassi (sotto i 760 px) vince il comando,
+  // che resta subito dopo la frase (pagina.css); lo script sposta i comandi dopo la riunione solo sui telefoni alti.
   const palco = $('.scena .palco'), comandi = $('#comandi-apertura'), stato = $('.apertura .stato'), presentazione = $('.apertura .presentazione');
-  let sulTelefono = false;
+  const pagina = !!$('.scena-pagina'), dopoLaScena = matchMedia(pagina ? '(max-width: 760px) and (min-height: 760px)' : '(max-width: 760px)');
+  let sotto = false;
   function ordine() {
-    if (!palco || !comandi || telefono.matches === sulTelefono) return;
-    sulTelefono = telefono.matches;
+    if (!palco || !comandi || dopoLaScena.matches === sotto) return;
+    sotto = dopoLaScena.matches;
     if (document.readyState === 'complete') [comandi, ...comandi.children, stato].forEach(e => e && e.classList.add('senza-arrivo'));
-    if (sulTelefono) palco.after(comandi, ...(stato ? [stato] : [])); else presentazione.after(comandi, ...(stato ? [stato] : []));
+    if (sotto) palco.after(comandi, ...(stato ? [stato] : [])); else presentazione.after(comandi, ...(stato ? [stato] : []));
   }
-  ordine(); telefono.addEventListener('change', ordine);
+  ordine(); dopoLaScena.addEventListener('change', ordine);
 
   // ---------- un tratto entra quando ne è visibile il 15% (o quanto lo schermo può mostrarne) ----------
   const fatti = new WeakSet();

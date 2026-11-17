@@ -1,9 +1,12 @@
 /* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
 /* Componente · L'elenco delle versioni
-   Le versioni di Kalliope come le mostrano la pagina delle versioni e il suo feed, disegnate nel nostro mondo (nessuna
-   pagina copiata): in cima il posto della prossima, tratteggiato e vuoto; sotto le versioni che ci sono, con i dati della
-   release (segnaposto di tools/site.py, mai scritti a mano). Arrivando sullo schermo, il posto vuoto respira una volta:
-   è lì che comparirà la novità. Ogni valore viene da ../token.css. */
+   Le versioni di Kalliope come le mostra la pagina delle versioni, disegnate nel nostro mondo (nessuna pagina copiata): in
+   cima il posto di ciò che non c'è ancora, tratteggiato e vuoto; sotto l'ultima versione, con i dati della release
+   (segnaposto di tools/site.py, mai scritti a mano: il sito si ricostruisce a ogni release e l'elenco si aggiorna da solo).
+   Sotto l'elenco, il comando per tenerne l'indirizzo.
+   Il momento, arrivando sullo schermo: l'ultima versione compare in cima, dove arriva ogni novità, resta lì un attimo e
+   scende al suo posto; in cima si apre il posto tratteggiato di Windows e macOS, che si accende e resta ad aspettare.
+   Senza JavaScript e con «riduci movimento» l'elenco è già al suo stato finale. Ogni valore viene da ../token.css. */
 
 .versioni {
   position: relative;
@@ -45,12 +48,48 @@
   border: var(--filetto-medio) dashed var(--tratteggio);
   pointer-events: none;
 }
-.versione.prossima .versione-nota { color: var(--testo-spento); }
-.js .versioni.visto .versione.prossima::before { animation: respira var(--durata-respira) var(--curva-dolce-doppia) var(--ritardo-respira) 1 both; }
-@keyframes respira {
-  0%, 100% { border-color: var(--tratteggio); transform: none; }
-  45% { border-color: var(--voce); transform: scale(var(--respira-scala)); }
+.versione.prossima .versione-nota { color: var(--testo-didascalia); }
+
+/* sotto l'elenco: il comando per tenerne l'indirizzo e la sua risposta */
+.versioni-piede {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spazio-7) var(--spazio-14);
+  margin-top: var(--spazio-12);
+  padding: var(--versioni-piede-spazio-interno);
+  border-top: var(--filetto-sottile) solid var(--bordo-sezione);
 }
+.versioni-piede .pillola { min-height: var(--misura-22); font-size: var(--corpo-7); padding: var(--spazi-4); }
+.versioni-piede p { margin: 0; font-size: var(--corpo-5); line-height: var(--interlinea-4); color: var(--testo-spiegazione); }
+
+/* ---------- il momento (con JavaScript, quando l'elenco arriva sullo schermo) ---------- */
+.js .versioni:not(.visto) .versione.ultima,
+.js .versioni:not(.visto) .versione.prossima > *,
+.js .versioni:not(.visto) .versione.prossima::before { opacity: 0; }
+.js .versioni.visto .versione.ultima { animation: arriva-in-cima var(--durata-arriva-in-cima) var(--curva-lineare) var(--ritardo-arriva-in-cima) both; }
+@keyframes arriva-in-cima {
+  0% { opacity: 0; transform: translateY(calc(-100% - var(--spazio-7))) scale(var(--entra-da-scala)); animation-timing-function: var(--entra); }
+  24% { opacity: 1; transform: translateY(calc(-100% - var(--spazio-7))); box-shadow: var(--versione-nuova-ombra); }
+  58% { opacity: 1; transform: translateY(calc(-100% - var(--spazio-7))); box-shadow: var(--versione-nuova-ombra); animation-timing-function: var(--entra); }
+  100% { opacity: 1; transform: none; box-shadow: none; }
+}
+.js .versioni.visto .versione.prossima::before { animation: posto-si-apre var(--durata-arriva-in-cima) var(--curva-lineare) var(--ritardo-arriva-in-cima) both; }
+@keyframes posto-si-apre {
+  0%, 74% { opacity: 0; transform: scale(var(--entra-da-scala)); border-color: var(--voce); animation-timing-function: var(--entra); }
+  88% { opacity: 1; transform: none; border-color: var(--voce); }
+  100% { opacity: 1; transform: none; border-color: var(--tratteggio); }
+}
+.js .versioni.visto .versione.prossima > * { animation: appare var(--durata-posto-testo) var(--curva-dolce) var(--ritardo-posto-testo) both; }
+
 @media (max-width: 760px) {
   .versione-nome { font-size: var(--corpo-7); line-height: var(--interlinea-7); }
+  .versioni-piede .pillola { width: 100%; }
+}
+
+/* tenere l'indirizzo è tenere d'occhio questo posto: copiato l'indirizzo, il posto tratteggiato si accende una volta */
+.versione.prossima.ricordata::before { animation: ricorda var(--durata-urto) var(--curva-dolce) 1; }
+@keyframes ricorda {
+  0%, 100% { border-color: var(--tratteggio); }
+  30% { border-color: var(--voce); }
 }
