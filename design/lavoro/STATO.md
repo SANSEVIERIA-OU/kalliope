@@ -74,4 +74,7 @@ Sulle tre domande lasciate da «non ancora»:
   uscita audio su questa macchina). Dopo un riavvio si rifà.
 - Il proprietario guarda il sito su `http://127.0.0.1:8765/` (servito dal coordinatore da `/tmp/kalliope-site`): i
   worker usano altre porte.
+- Il sito a più lingue si costruisce con le traduzioni di prova di `2-lingue-aspetto/prova-lingue/`: dopo ogni pagina con testi
+  nuovi vanno rigenerate (`python3 -I design/lavoro/2-lingue-aspetto/prova-lingue/crea_cataloghi.py`), altrimenti le lingue
+  risultano incomplete e il sito esce con il solo italiano (successo il 17/11 con «stato», commit `6bad455`).
 - Macchina: 12 CPU, 14 GB; `passo.mjs stato` 5 posti liberi alle 16/11 sera.
