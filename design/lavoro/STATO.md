@@ -42,7 +42,7 @@ Sulle tre domande lasciate da «non ancora»:
 - La strada per la voce (17/11, dopo le misure e la pagina d'ascolto): «Strada 1», cioè un secondo motore che imita la voce
   dalla registrazione (Pocket TTS di Kyutai). Da risolvere prima di costruire: la prima parola persa in metà delle frasi, il peso
   (24 strati più lenti del parlato a 2 thread, 2,2 GB; 4,6–5 GB per codificare il riferimento), la provenienza dei pesi
-  (esportazione ONNX di terzi; i pesi ufficiali chiedono un account). Proposta di lavoro al proprietario, in attesa del via.
+  (esportazione ONNX di terzi; i pesi ufficiali chiedono un account). Proposta di lavoro in tre punti (affidabile → nel programma → finestra); via del proprietario al punto 1 («ok», 17/11).
 
 ## Fasi
 
@@ -70,6 +70,7 @@ Sulle tre domande lasciate da «non ancora»:
 | 3b-b. «stato»: costruzione (catalogo, dati, fonti collegate, stati, larghezze, tre motori, lingue) | in corso | design-build (sonnet) | 17/11 → | `incarichi/3b-stato-costruzione.md`; poi secondo sguardo del giudice, poi proprietario |
 | V. La voce di chi usa Kalliope: ricerca | fatta | research ×5 (haiku) | 17/11, 1 087k token | modelli che clonano dal testo, conversione della voce, voice banking per chi perde la parola, adattare una voce piccola, regole UE e filigrana → `ricerca/voce/SINTESI.md`; tre strade proposte al proprietario il 17/11, con la proposta di misurarle prima di scegliere |
 | V-m. La voce di chi usa Kalliope: misurare le tre strade | fatta (via del proprietario: «ok», 17/11) | general-purpose (opus) | 17/11, 244 min, 549k token | `benchmarks/voce-propria/README.md`: somiglianza ECAPA (persona 0,80–0,85; voce di oggi 0,18): Pocket 24 strati 0,58 ma 8% di parole sbagliate, prima parola persa in metà delle frasi, 2,85 CPU-s/s e 2,2 GB; Klein + MeanVC2 0,51 (WeSpeaker 0,60 come Pocket), 5,5%, 0,45 CPU-s/s, 526 MB, regge il riferimento rovinato, esce a 16 kHz; OpenVoice 0,43, 0,8%, 1,4–1,8 s al primo suono; ricerca dentro Klein 0,30. Ascolto non fatto (niente uscita audio qui). Pagina d'ascolto servita al proprietario su 8767; poi la scelta |
+| V-1. Pocket TTS affidabile: prima parola, peso, memoria, pronuncia (prove, programma non toccato) | in corso (via: «ok», 17/11) | general-purpose (opus), lo stesso di V-m | 17/11 → | `incarichi/V-1-pocket-affidabile.md`; poi proposta del punto 2 (nel programma) |
 | 4. Applicazione: token per Slint, prova delle scritture, `@tr`, finestra nella direzione 2 (due varianti) | da fare | design-build, design-direction, design-judge | | dopo il sito |
 | 5. Matrice completa (15 dispositivi × 3 motori) e pulizia di `website/stile/`, `script/`, `sistema/` | da fare | design-build | | alla fine |
 
