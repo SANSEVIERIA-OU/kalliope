@@ -1,0 +1,14 @@
+# lingue-na-enXA-prima · 17/11/2026 12:35 · sito: /tmp/lavoro-2f-sito-prima-10 · esame-impaginazione.mjs chromium normale enXA_na 326x326
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+enXA_na · 326×326 · testo 100%: 
+  STRETTO a.pulsante-menu «[Ḿéñû Ĺ]» largo 63px, circa 6 caratteri, su 2 righe
+enXA_na_copia · 326×326 · testo 100%: 
+  STRETTO a.pulsante-menu «[Ḿéñû Ĺ]» largo 63px, circa 6 caratteri, su 2 righe
+enXA_na_ascolto · 326×326 · testo 100%: 
+  FUORI VISTA button.pillola.voce-chiara: 14 px sotto (schermo 326×326)
+  STRETTO a.pulsante-menu «[Ḿéñû Ĺ]» largo 63px, circa 6 caratteri, su 2 righe
+
+STRETTO: 3 · FUORI VISTA: 1
+LIMITE NON USATO COPERTO DOPO IL GESTO «p.bolla-testo» (ur_na_ascolto, enXA_na_ascolto, arXB_na_ascolto, bn_na_ascolto, hi_na_ascolto, ar_na_ascolto a 326x326): alle misure provate la segnalazione non c'è più. Togli la voce: coprirebbe un difetto nuovo.
+4 cose da guardare (foto in /tmp/lavoro-2f-qa-lingue/esame/chromium)
+# uscita: 1

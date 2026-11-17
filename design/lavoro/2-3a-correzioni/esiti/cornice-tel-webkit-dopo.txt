@@ -1,0 +1,4 @@
+# cornice-tel-webkit-dopo · 17/11/2026 13:25 · node senza-cornice.mjs /tmp/lavoro-2f-sito-fin2-it webkit it/non-ancora/,it/stato/ 390x844
+ok  webkit it/non-ancora/ 390x844: senza JavaScript 0 invisibili; con cornice.js bloccato 0 (classe js tolta)
+ok  webkit it/stato/ 390x844: senza JavaScript 3 invisibili; con cornice.js bloccato 3 (classe js tolta)
+# uscita: 0

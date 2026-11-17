@@ -1204,7 +1204,7 @@ msgstr ""
 #: stato/index.html
 #, kalliope-markup
 msgctxt "st.riscrive.da"
-msgid "cmq ci vediamo dmn alle 10:30"
+msgid "cmq ci vediamo dmn alle 10:30"
 msgstr ""
 
 #: stato/index.html
@@ -1213,12 +1213,24 @@ msgctxt "st.riscrive.a"
 msgid "comunque ci vediamo domani alle dieci e trenta"
 msgstr ""
 
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.scrivi.breve"
+msgid "Numeri, date, orari, importi e sigle diventano parole da dire."
+msgstr ""
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.dettagli.apri"
+msgid "I dettagli e le fonti"
+msgstr ""
+
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <span class="fonte">
 #: stato/index.html
 #, kalliope-markup
 msgctxt "st.scrivi.fatto"
-msgid "Numeri, date, orari, importi, sigle e abbreviazioni diventano parole da dire, e gli accenti mancanti tornano: «cmq ci vediamo dmn alle 10:30» si dice «comunque ci vediamo domani alle dieci e trenta». Circa 11 µs a frase. <1>README, CHANGELOG.md</1>"
+msgid "Anche le abbreviazioni, e gli accenti mancanti tornano: «cmq ci vediamo dmn alle 10:30» si dice «comunque ci vediamo domani alle dieci e trenta». Circa 11 µs a frase. <1>README, CHANGELOG.md</1>"
 msgstr ""
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
@@ -1281,8 +1293,16 @@ msgstr ""
 #.   <1> = <span class="fonte">
 #: stato/index.html
 #, kalliope-markup
-msgctxt "st.microfono.cifra-detto"
-msgid "di parole sbagliate secondo Whisper, sulla voce registrata da questo microfono come la sentirebbe una riunione: 10 frasi di prova. Sui sei campioni di questo sito, una misura a parte: circa una parola su 45. <1>README</1>"
+msgctxt "st.microfono.cifra-breve"
+msgid "di parole sbagliate secondo Whisper, sulla voce registrata da questo microfono come la sentirebbe una riunione: 10 frasi di prova. <1>README</1>"
+msgstr ""
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="fonte">
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.microfono.differenze"
+msgid "Negli ascolti di verifica le differenze che restano sono soprattutto di scrittura: «10 e 30» per «10:30», «ancora» per «àncora». Sui sei campioni di questo sito, una misura a parte: circa una parola su 45. <1>README</1>"
 msgstr ""
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
@@ -1485,6 +1505,14 @@ msgctxt "st.d.chi.a"
 msgid "SANSEVIERIA OÜ; gli autori sono nel file NOTICE del codice. Non c'è un'assistenza telefonica, né un indirizzo e‑mail, né una certificazione: le segnalazioni passano da GitHub."
 msgstr ""
 
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="freccia" aria-hidden="true">
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.per-chi.poi"
+msgid "Da mandare a chi ti aiuta: lo stato di oggi in poche righe<1/>"
+msgstr ""
+
 #: stato/index.html
 #, kalliope-markup
 msgctxt "st.controllare.titolo"
@@ -1541,6 +1569,12 @@ msgstr ""
 
 #: stato/index.html
 #, kalliope-markup
+msgctxt "st.varco.programma"
+msgid "il programma"
+msgstr ""
+
+#: stato/index.html
+#, kalliope-markup
 msgctxt "st.varco.voce"
 msgid "la voce · 53 MB"
 msgstr ""
@@ -1582,7 +1616,7 @@ msgstr ""
 #: stato/index.html
 #, kalliope-markup
 msgctxt "st.passo.disco.titolo"
-msgid "Che cosa resta sul disco."
+msgid "Che cosa scrive sul disco."
 msgstr ""
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
@@ -1590,7 +1624,7 @@ msgstr ""
 #: stato/index.html
 #, kalliope-markup
 msgctxt "st.passo.disco.testo"
-msgid "La voce scelta e «Senti anche tu» in un file di preferenze, settings.conf; la voce scaricata in una cartella dell'utente. Le frasi dette restano in un elenco, fino a 30, solo finché la finestra è aperta. Nessun account. <1>settings.rs, paths.rs, main.rs</1>"
+msgid "Il programma: con il pacchetto .deb o .rpm in /usr, e servono i permessi di amministratore; con l'archivio e ./install in ~/.local, senza. Poi la voce scelta e «Senti anche tu» in un file di preferenze, settings.conf, e la voce scaricata in una cartella dell'utente. Fuori dalle sue cartelle non modifica niente. Le frasi dette restano in un elenco, fino a 30, solo finché la finestra è aperta. Nessun account. <1>docs/releasing.md, settings.rs, paths.rs, main.rs</1>"
 msgstr ""
 
 #: stato/index.html
@@ -1650,6 +1684,14 @@ msgid "Le impronte dei file sono nella <1>pagina Installa</1> e nel file <2>SHA2
 msgstr ""
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="fonte">
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.sito.testo"
+msgid "Questo sito lo servono le pagine di GitHub (GitHub Pages), che registrano le richieste come ogni server; il sito non usa cookie né statistiche e non carica niente da altri siti. <1>.github/workflows/pages.yml</1>"
+msgstr ""
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <a href="https://github.com/SANSEVIERIA-OU/kalliope">
 #: stato/index.html
 #, kalliope-markup
@@ -1687,14 +1729,6 @@ msgctxt "st.inoltra.copia"
 msgid "Copia il messaggio"
 msgstr ""
 
-#. Tags in the text (move the words, keep every tag, each inside the same tag):
-#.   <1> = <span class="freccia" aria-hidden="true">
-#: stato/index.html
-#, kalliope-markup
-msgctxt "st.inoltra.installa"
-msgid "Come si installa<1/>"
-msgstr ""
-
 #: stato/index.html
 #, kalliope-markup
 msgctxt "st.inoltra.fatto"
@@ -1705,6 +1739,14 @@ msgstr ""
 #, kalliope-markup
 msgctxt "st.inoltra.errore"
 msgid "Non riesco a copiarlo: seleziona il testo della bolla e copialo, o manda l'indirizzo di questa pagina."
+msgstr ""
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="freccia" aria-hidden="true">
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.inoltra.installa"
+msgid "Come si installa<1/>"
 msgstr ""
 
 #: stato/index.html

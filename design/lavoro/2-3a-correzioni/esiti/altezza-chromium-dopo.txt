@@ -1,0 +1,7 @@
+# altezza-chromium-dopo · 17/11/2026 13:15 · node altezza-schermo.mjs /tmp/lavoro-2f-sito-fin2-10 /tmp/lavoro-2f-sito-fin2-10-vh2 /tmp/lavoro-2f-sito-fin2-10-rotto2 chromium 844x390,390x844,326x326,1440x900,915x412
+ok  chromium 844x390: svh conosciuto; token «100svh» → 390 px (innerHeight 390); ripiego «100vh» → 390 px; riunione di «non ancora» 106 / 106, della home 200 / 200, fila della scelta 60 / 60, scelta intera 318 / 318; copia rotta: 0 px (la prova la vede)
+ok  chromium 390x844: svh conosciuto; token «100svh» → 844 px (innerHeight 844); ripiego «100vh» → 844 px; riunione di «non ancora» 78 / 78, della home 176 / 176, fila della scelta 78 / 78, scelta intera 772 / 772; copia rotta: 0 px (la prova la vede)
+ok  chromium 326x326: svh conosciuto; token «100svh» → 326 px (innerHeight 326); ripiego «100vh» → 326 px; riunione di «non ancora» 68 / 68, della home 176 / 176, fila della scelta 78 / 78, scelta intera 433 / 433; copia rotta: 0 px (la prova la vede)
+ok  chromium 1440x900: svh conosciuto; token «100svh» → 900 px (innerHeight 900); ripiego «100vh» → 900 px; riunione di «non ancora» 172 / 172, della home 362 / 362, fila della scelta 172 / 172, scelta intera 828 / 828; copia rotta: 0 px (la prova la vede)
+ok  chromium 915x412: svh conosciuto; token «100svh» → 412 px (innerHeight 412); ripiego «100vh» → 412 px; riunione di «non ancora» 128 / 128, della home 200 / 200, fila della scelta 60 / 60, scelta intera 340 / 340; copia rotta: 0 px (la prova la vede)
+# uscita: 0

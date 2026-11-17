@@ -1,0 +1,9 @@
+# salto-rapido-fin3-firefox · 17/11/2026 13:41 · node salto-menu.mjs /tmp/lavoro-2f-sito-fin3-10 firefox ar/non-ancora/,de/,./ 390x844,326x326
+ok  firefox ar/non-ancora/ 390x844
+ok  firefox ar/non-ancora/ 326x326
+ok  firefox de/ 390x844
+ok  firefox de/ 326x326
+ok  firefox ./ 390x844 (nessun pulsante Menu)
+ok  firefox ./ 326x326 (nessun pulsante Menu)
+ok  firefox: 56 controlli, 0 in cui la pagina si muove
+# uscita: 0

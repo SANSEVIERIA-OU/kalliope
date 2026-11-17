@@ -1,0 +1,71 @@
+# esame-scelta · 17/11/2026 12:18 · sito: /tmp/lavoro-2f-sito-mio2-10 · esame-impaginazione.mjs chromium normale scelta-lingua 390x844,360x740,844x390,412x915,750x832,466x678,951x669,326x326,440x706,440x744,421x616,861x609,820x1180,1180x820,1440x900,360x640,390x667,375x812,320x568,1024x600,915x412,1366x640,320x900,334x900,349x900,350x900,355x900,360x900,361x900,367x900,374x900,375x900,397x900,420x900,421x900,430x900,440x900,441x900,600x900,760x900,761x900,823x900,886x900,887x900,923x900,959x900,960x900,979x900,999x900,1000x900,1005x900,1010x900,1011x900,1095x900,1180x900,1181x900,1195x900,1209x900,1210x900,1320x900,1430x900,1431x900,1675x900,1920x900
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+scelta-lingua · 390×844 · testo 100%: pulito
+scelta-lingua · 360×740 · testo 100%: pulito
+scelta-lingua · 844×390 · testo 100%: pulito
+scelta-lingua · 412×915 · testo 100%: pulito
+scelta-lingua · 750×832 · testo 100%: pulito
+scelta-lingua · 466×678 · testo 100%: pulito
+scelta-lingua · 951×669 · testo 100%: pulito
+scelta-lingua · 326×326 · testo 100%: pulito
+scelta-lingua · 440×706 · testo 100%: pulito
+scelta-lingua · 440×744 · testo 100%: pulito
+scelta-lingua · 421×616 · testo 100%: pulito
+scelta-lingua · 861×609 · testo 100%: pulito
+scelta-lingua · 820×1180 · testo 100%: pulito
+scelta-lingua · 1180×820 · testo 100%: pulito
+scelta-lingua · 1440×900 · testo 100%: pulito
+scelta-lingua · 360×640 · testo 100%: pulito
+scelta-lingua · 390×667 · testo 100%: pulito
+scelta-lingua · 375×812 · testo 100%: pulito
+scelta-lingua · 320×568 · testo 100%: pulito
+scelta-lingua · 1024×600 · testo 100%: pulito
+scelta-lingua · 915×412 · testo 100%: pulito
+scelta-lingua · 1366×640 · testo 100%: pulito
+scelta-lingua · 320×900 · testo 100%: pulito
+scelta-lingua · 334×900 · testo 100%: pulito
+scelta-lingua · 349×900 · testo 100%: pulito
+scelta-lingua · 350×900 · testo 100%: pulito
+scelta-lingua · 355×900 · testo 100%: pulito
+scelta-lingua · 360×900 · testo 100%: pulito
+scelta-lingua · 361×900 · testo 100%: pulito
+scelta-lingua · 367×900 · testo 100%: pulito
+scelta-lingua · 374×900 · testo 100%: pulito
+scelta-lingua · 375×900 · testo 100%: pulito
+scelta-lingua · 397×900 · testo 100%: pulito
+scelta-lingua · 420×900 · testo 100%: pulito
+scelta-lingua · 421×900 · testo 100%: pulito
+scelta-lingua · 430×900 · testo 100%: pulito
+scelta-lingua · 440×900 · testo 100%: pulito
+scelta-lingua · 441×900 · testo 100%: pulito
+scelta-lingua · 600×900 · testo 100%: pulito
+scelta-lingua · 760×900 · testo 100%: pulito
+scelta-lingua · 761×900 · testo 100%: pulito
+scelta-lingua · 823×900 · testo 100%: pulito
+scelta-lingua · 886×900 · testo 100%: pulito
+scelta-lingua · 887×900 · testo 100%: pulito
+scelta-lingua · 923×900 · testo 100%: pulito
+scelta-lingua · 959×900 · testo 100%: pulito
+scelta-lingua · 960×900 · testo 100%: pulito
+scelta-lingua · 979×900 · testo 100%: pulito
+scelta-lingua · 999×900 · testo 100%: pulito
+scelta-lingua · 1000×900 · testo 100%: pulito
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+scelta-lingua · 1005×900 · testo 100%: pulito
+scelta-lingua · 1010×900 · testo 100%: pulito
+scelta-lingua · 1011×900 · testo 100%: pulito
+scelta-lingua · 1095×900 · testo 100%: pulito
+scelta-lingua · 1180×900 · testo 100%: pulito
+scelta-lingua · 1181×900 · testo 100%: pulito
+scelta-lingua · 1195×900 · testo 100%: pulito
+scelta-lingua · 1209×900 · testo 100%: pulito
+scelta-lingua · 1210×900 · testo 100%: pulito
+scelta-lingua · 1320×900 · testo 100%: pulito
+scelta-lingua · 1430×900 · testo 100%: pulito
+scelta-lingua · 1431×900 · testo 100%: pulito
+scelta-lingua · 1675×900 · testo 100%: pulito
+scelta-lingua · 1920×900 · testo 100%: pulito
+
+
+Tutto pulito (foto in /tmp/lavoro-2f-qa-esame-scelta/esame/chromium)
+# uscita: 0

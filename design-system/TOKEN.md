@@ -1203,3 +1203,39 @@ Le variabili per elemento che i componenti si danno da sé: `--barra-base` (l'al
 `--quota` (`catena.css`, da `--quota-voce-processore`), `--anello-spazio-sopra-nodo` (`catena.css`), `--ritardo` (come nei tratti). Le soglie
 non cambiano. Da portare nei token (come per `scena.js` e `non-ancora.js`): in `stato.js` i moltiplicatori della discesa dei file (0,6; 1,6;
 0,85; 0,7) e le curve `linear` delle dissolvenze della bolla delle domande.
+
+### Correzione dopo il giudizio (incarico 3b-c, 17/11/2026)
+
+Aggiunti in fondo al blocco «La pagina «stato»» (nessun token cambiato: dove un valore nuovo ne sostituisce uno, quello di prima resta e non
+è più usato dai fogli; da togliere quando il file non ha altri lavori in corso).
+
+| Token | Valore | Ruolo |
+|---|---|---|
+| `--passo-cascata-anelli` | `140ms` | le tappe della catena che arrivano insieme sullo schermo si accendono a cascata breve (I1) |
+| `--ritardo-fatto-anello` | `300ms` | il fatto della tappa accade appena il nodo è acceso (sostituisce `--ritardo-quota`) |
+| `--catena-misura-testo-sopra` | `calc(var(--barra-altezza) + 24px)` | la scritta «non misurato» resta in vista sotto la barra finché c'è la parentesi (M3) |
+| `--dettagli-segno-rotazione` | `90deg` | la freccia dei collegamenti girata accanto a «I dettagli e le fonti», «Licenze», «Impronte e provenienza» al telefono |
+| `--anello-spazio-blocco-telefono` | `18px` | al telefono meno aria fra le tappe (I4) |
+| `--domande-bolla-coda-spazio` | `var(--misura-11)` | al telefono la coda della bolla della risposta sta sopra e indica la domanda (M2) |
+| `--varco-spazio-sopra-2`, `-telefono-2`, `--varco-filo-altezza-2`, `--varco-filo-altezza-telefono` | `112px`, `30px`, `134px`, `44px` | il filo da «huggingface.co» più lungo: la discesa delle impronte si vede (M8; sostituiscono `--varco-spazio-sopra`, `--varco-filo-altezza`) |
+| `--varco-pacco-spazio-interno-2`, `--varco-pacco-ombra` | `4px 9px 5px`, ombra | un'impronta leggibile (sostituisce `--varco-pacco-spazio-interno`) |
+| `--varco-passi-distanza-2`, `--varco-passi-distanza-telefono-2`, `--varco-passo-larghezza-massima` | `14vh`, `10vh`, `520px` | i passi del varco più vicini e la colonna più larga (M9, I4; sostituiscono `26vh`, `38vh`) |
+
+Variabili date dallo script: `--misura-da`, `--misura-a` (`stato.js`, sulla `.catena`: dove comincia e finisce la parentesi «non misurato»).
+In `barra.css` una regola in fondo (M1) usa token che c'erano: `--velo-scelto`, `--peso-forte`, `--velo-menu-premuto`.
+
+## Correzioni dopo il secondo sguardo (incarico 2-f, 17/11/2026)
+
+Cinque token nuovi, in fondo a `token.css` (blocco «Correzioni dopo il secondo sguardo» e «L2»), e otto token che cambiano la sola unità dell'altezza (`vh` → `var(--altezza-schermo)`: stesso valore dove lo schermo non cambia, più basso
+su un telefono con la barra del browser visibile). Nessun valore dei token che c'erano è cambiato.
+
+| Token | Valore | Ruolo | Dove è usato |
+|---|---|---|---|
+| `--altezza-schermo` | `100vh`; `100svh` dove il browser lo conosce (`@supports (height: 100svh)`) | l'altezza dello schermo che si vede davvero, con la barra del browser visibile: su un telefono `vh` è l'altezza con la barra nascosta e le misure calcolate su `vh` vengono più alte di quanto serve | negli 8 token sotto. `--mondo-altezza-minima` resta `100vh` (il mondo deve riempire anche lo schermo con la barra nascosta); `--menu-aperto-altezza-massima`, `--lingue-pannello-altezza-massima`, `--sovrap` e `--varco-passi-distanza*` restano come sono |
+| `--chiamata-altezza-basso-699`, `--chiamata-altezza-computer`, `--chiamata-ferma-altezza`, `--tavolo-pagina-altezza`, `-telefono`, `-errore`, `--scelta-tavolo-altezza`, `--scelta-altezza-minima` | stessi di prima, con `calc(var(--altezza-schermo) - …)` al posto di `calc(100vh - …)` | l'altezza della riunione (home, chiusura di «non ancora», fila della pagina della scelta) e il minimo della pagina della scelta | `riunione.css`, `riunione-ferma.css`, `pagina.css`, `lingue.css` |
+| `--pannello-menu-pieno` | `rgba(28, 3, 11, 0.995)` | il menu aperto dove il browser non sfoca il fondo (Firefox senza scheda grafica: dice di conoscere `backdrop-filter` e non lo disegna) | `barra.css`, solo in `@supports (-moz-appearance: none) { .js .menu.aperto, .js .barra.raccolta .menu.aperto { background: var(--pannello-menu-pieno) } }`: il menu aperto in Firefox; il pannello delle lingue sul computer resta com'è (lì la differenza fra Firefox senza sfocatura e Chromium è piccola: 11 e 10 su 255); Chromium e WebKit non cambiano |
+| `--barre-etichetta-distanza`, `--barre-scala-minima`, `--barre-voce-scala-massima` | `3px`, `0.4`, `1.1` | l'etichetta di «Tu» e le barre della voce non si toccano: la distanza che deve restare, quanto possono rimpicciolirsi le barre, la massima altezza che la voce dà a una barra rispetto al riposo | `componenti.js` (`misuraBarreTu`) li legge e mette `--barre-sposta` e `--barre-scala` sulle barre; `riunione.css`: `.tavolo .riquadro.tu .barre { transform: translate(-50%, calc(-50% + var(--barre-sposta, 0px))) scale(var(--barre-scala, 1)) }` |
+
+Regole (non token) che cambiano: in `barra.css` le due regole del menu che stavano in `lingue.css` e `html:has(.barra:focus-within) { scroll-padding-top: 0 }` (il fuoco dentro la barra non muove la pagina); in `lingue.css` il titolo della pagina della scelta
+sopra la luce (`z-index: var(--livello-scena)`) e la barra della pagina della scelta senza fondo a riposo (`@keyframes barra-scelta-piena`); in `versioni.css` il posto per la risposta di «Copia» (`.copia-esito` in griglia, `.vuoto` invisibile).
+

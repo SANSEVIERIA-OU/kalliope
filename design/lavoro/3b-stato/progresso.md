@@ -43,3 +43,27 @@ Porte 8870–8879, cartelle `/tmp/lavoro-3b-*`. Nessun commit, nessun push, ness
   `progetto.md` §7). Vedi `CONTENUTI.md`.
 - Pseudo-lingue: in en-XA l'etichetta di «Tu» al telefono si taglia, il titolo a 1440 va su sei righe (alla costruzione).
 - Catalogo non toccato (alla costruzione). Solo Chromium.
+
+## Correzione dopo il giudizio (incarico 3b-c, 17/11/2026)
+
+Incarico: `design/lavoro/incarichi/3b-stato-correzione.md`; giudizio: `giudizio/GIUDIZIO.md`. Copia di partenza (commit `b456308`):
+`/tmp/lavoro-3b-copia-prima-correzione/`, costruita in `/tmp/lavoro-3b-sito-prima/`. In parallelo l'incarico 2-f cambia la cornice
+(`pagina.css`, `barra.css`, `cornice.js`, `componenti.js`, `lingue.css`, `riunione.css`, `versioni.css`, `token.css`, `website/non-ancora/`).
+
+**Stato: correzione consegnata.** Per ogni punto, che cosa è cambiato e la prova: `PIANO.md`, «Correzione dopo il giudizio».
+
+- **Fatto**: I1, I2, I4, I6, M1, M2, M3, M4, M6, M8, M9, M10, M12. Nessun minore lasciato come scelta fra quelli dati alla direzione.
+- **File toccati**: `website/stato/index.html`, `website/stato/stato.js`; `design-system/componenti/catena.css`, `domande.css`, `varco.css`,
+  `inoltra.css` (regole in fondo, e pochi valori ripuntati sui token nuovi); `design-system/token.css` (16 token in fondo al blocco di
+  «stato», nessuno cambiato); `design-system/componenti/barra.css` (una regola in fondo, M1); `design-system/TOKEN.md`, `SISTEMA.md` (aggiunte);
+  `website/lingue/site.pot`, `it.po` (rigenerati: 7 chiavi nuove, una tolta); `design/lavoro/3b-stato/CONTENUTI.md`, `PIANO.md`;
+  `design/lavoro/3a-non-ancora/PIANO.md` («La cornice», la regola di M1). Non toccati: `pagina.css`, `cornice.js`, `componenti.js`,
+  `lingue.css`, `riunione.css`, `versioni.css`, `website/non-ancora/` («non ancora» non ha una voce nel menu: niente attributo da mettere).
+- **Prove**: `sequenze-correzioni/` (arrivo, scorri, domanda a 1440 e 390; dettagli e salto al messaggio al telefono; copia riuscita),
+  `foto-correzioni/` (prima e dopo, punto per punto; varco e catena a 1366×640), `confronti-correzioni/` (con home e «non ancora», alle due
+  misure; il telefono prima e dopo), `esiti/` (sonde I1 e I2, altezze, testo fuori dalla tappa, confronta-scelta).
+- **Controlli**: `controlla-sorgenti.mjs` verde (28 fogli), `css_logico.py` verde, `translations.py extract --check` e `check` (260/260),
+  72 prove degli strumenti OK; sull'albero vivo e sulla copia con i soli file della correzione.
+- **Home e «non ancora»**: identiche a `b456308` con i soli file della correzione (0%).
+- **Ultimo comando**: `node prove/stati.mjs … 1366x640` sulla copia `/tmp/lavoro-3b-sito-mia` (costruita da `/tmp/lavoro-3b-copia-mia/`).
+- **Aperto per la costruzione**: elenco in `PIANO.md` («Dal giudizio» e il resto). Le traduzioni di prova vanno rigenerate.

@@ -1,0 +1,9 @@
+# salto-rapido-fin3-webkit · 17/11/2026 14:09 · node salto-menu.mjs /tmp/lavoro-2f-sito-fin3-10 webkit ar/non-ancora/,de/,./ 390x844,326x326
+ok  webkit ar/non-ancora/ 390x844
+ok  webkit ar/non-ancora/ 326x326
+ok  webkit de/ 390x844
+ok  webkit de/ 326x326
+ok  webkit ./ 390x844 (nessun pulsante Menu)
+ok  webkit ./ 326x326 (nessun pulsante Menu)
+ok  webkit: 72 controlli, 0 in cui la pagina si muove
+# uscita: 0

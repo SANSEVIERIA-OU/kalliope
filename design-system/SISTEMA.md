@@ -53,6 +53,10 @@ fino al microfono, in riunione non ancora. Piano dei tratti e fonti: `design/lav
 - In `pagina.css` una regola aggiunta: un titolo di quattro righe sugli schermi bassi del computer prende la misura del tablet (quelli di tre
   righe non cambiano). I token: blocco «La pagina «stato»» in fondo a `token.css`, documentati in fondo a `TOKEN.md`.
 - Non ancora nel catalogo (lo fa il ruolo di costruzione, come per «non ancora»); gli stati della pagina sono già in `metodo.config.mjs`.
+- **Dopo il giudizio** (incarico 3b-c): la tappa della catena si legge subito e si accende quando arriva (niente coda); la risposta delle domande
+  entra una volta sola; al telefono i dettagli delle tappe, le licenze e le impronte si aprono a richiesta (`<details>`, aperti al computer e
+  senza script) e dopo le domande un collegamento porta al messaggio da inoltrare. **La barra segna la pagina in cui sei**: regola in fondo
+  a `barra.css` (`.menu a[aria-current="page"]`), per ogni pagina che ha la sua voce nel menu.
 
 ## Come si usa per un'altra pagina
 
@@ -60,6 +64,7 @@ fino al microfono, in riunione non ancora. Piano dei tratti e fonti: `design/lav
 2. Ogni valore passa dai token (`var(--voce)`, `var(--durata-pillola)`, `var(--entra)`); se manca si aggiunge a `token.css` con il suo ruolo, non alla regola. `controlla-sorgenti.mjs`, da questa cartella, dice se è rimasto un valore a mano.
 3. Varianti e stati dei componenti: il catalogo, «Componenti». Una variante nuova entra nel file del componente.
 4. `token.css` e `TOKEN.md` da qui in poi si modificano a mano: gli strumenti con cui sono stati ricavati dalla home non sono in questo repository, e rilanciati riscriverebbero tutto dal foglio di partenza.
+5. La rete di sicurezza di ogni pagina (lo script in linea nel `<head>` che mette la classe `js` e la toglie dopo 4 s se qualcosa non è partito) controlla **tutti** gli script da cui la pagina dipende: lo script della pagina (`window.__pagina`, `window.__scena`) e, nelle pagine interne, la cornice (`window.Cornice`, che `website/cornice.js` imposta alla fine). Prima controllava solo il primo: se `cornice.js` non si caricava (rete, 404, un blocco, un errore) la classe `js` restava e i titoli dei tratti, la bolla della risposta e il messaggio da inoltrare restavano invisibili, perché nessuno aggiungeva `visto`. Una pagina nuova che usa la cornice scrive `if(!window.__pagina||!window.Cornice)…`; la prova è `design/lavoro/2-3a-correzioni/prove/senza-cornice.mjs` (incarico 2-f, 17/11/2026).
 
 ## Che cosa è provato
 

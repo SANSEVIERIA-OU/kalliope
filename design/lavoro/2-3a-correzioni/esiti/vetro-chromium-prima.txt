@@ -1,0 +1,4 @@
+# vetro-chromium-prima · 17/11/2026 13:11 · node vetro-menu.mjs /tmp/lavoro-2f-sito-prima-10 chromium it/non-ancora/,it/ 390x844 --soglia=6
+ok  chromium it/non-ancora/ 390x844: la pagina dietro: differenza massima 13/255, media 5.07, bordo netto massimo 6/255 (su 98864 pixel fuori dalle voci) · pannello rgba(28, 3, 11, 0.94) · backdrop-filter conosciuto («blur(18px)») · errori 0
+ok  chromium it/ 390x844: la pagina dietro: differenza massima 9/255, media 4.36, bordo netto massimo 6/255 (su 98864 pixel fuori dalle voci) · pannello rgba(28, 3, 11, 0.94) · backdrop-filter conosciuto («blur(18px)») · errori 0
+# uscita: 0

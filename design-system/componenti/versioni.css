@@ -66,6 +66,15 @@
 }
 .versioni-piede .pillola { min-height: var(--misura-22); font-size: var(--corpo-7); padding: var(--spazi-4); }
 .versioni-piede p { margin: 0; font-size: var(--corpo-5); line-height: var(--interlinea-4); color: var(--testo-spiegazione); }
+/* correzione 2-f (P1): il posto per la risposta di «Copia» c'è già prima di premere. Il pannello sta al centro accanto al testo: la riga «Copiato: …» che compariva
+   sotto il comando lo allungava di 28 px, e lui saliva di 14 proprio mentre il posto si accendeva. Le due risposte (fatta, non riuscita) stanno nella stessa cella e
+   quella che non c'è è solo invisibile (`.vuoto`, che mette lo script quando il comando compare: l'attributo `hidden` non basta, base.css lo fa vincere su ogni display):
+   il posto ha l'altezza della più lunga, in ogni lingua e a ogni larghezza (come le etichette di «Ascolta» in pagina.css). Dove il comando non c'è (senza script, o senza
+   appunti) non c'è nemmeno il posto. */
+.versioni-piede .copia-esito { display: grid; }
+.versioni-piede .copia-esito > span { grid-area: 1 / 1; }
+.versioni-piede .copia-esito > .vuoto { visibility: hidden; }
+.versioni-piede .copia-indirizzo:not([hidden]) ~ .copia-esito { flex-basis: 100%; }
 
 /* ---------- il momento (con JavaScript, quando l'elenco arriva sullo schermo) ---------- */
 .js .versioni:not(.visto) .versione.ultima,

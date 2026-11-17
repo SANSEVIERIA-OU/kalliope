@@ -1,0 +1,21 @@
+# lingue-na-de_ · 17/11/2026 12:38 · sito: /tmp/lavoro-2f-sito-fin1-10 · esame-impaginazione.mjs chromium normale de_ 326x326,844x390,915x412,390x844,1440x900
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+de_na · 326×326 · testo 100%: pulito
+de_na_copia · 326×326 · testo 100%: pulito
+de_na_ascolto · 326×326 · testo 100%: pulito
+de_na · 844×390 · testo 100%: pulito
+de_na_copia · 844×390 · testo 100%: pulito
+de_na_ascolto · 844×390 · testo 100%: pulito
+de_na · 915×412 · testo 100%: pulito
+de_na_copia · 915×412 · testo 100%: pulito
+de_na_ascolto · 915×412 · testo 100%: pulito
+de_na · 390×844 · testo 100%: pulito
+de_na_copia · 390×844 · testo 100%: pulito
+de_na_ascolto · 390×844 · testo 100%: pulito
+de_na · 1440×900 · testo 100%: pulito
+de_na_copia · 1440×900 · testo 100%: pulito
+de_na_ascolto · 1440×900 · testo 100%: pulito
+
+
+Tutto pulito (foto in /tmp/lavoro-2f-qa-lingue/esame/chromium)
+# uscita: 0

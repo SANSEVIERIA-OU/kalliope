@@ -1,0 +1,7 @@
+translations.py: 254 messages, catalogues up to date
+it: 254/254 entries ready
+css_logico.py: ok, no physical left/right, no asymmetric shorthand, no text in CSS (29 style sheets; 10 physical declarations kept on purpose)
+Ran 72 tests in 9.201s
+OK
+Sorgenti in ordine: 28 fogli di stile, valori solo nei token
+ok   fogli controllati, 0 con le graffe che non tornano

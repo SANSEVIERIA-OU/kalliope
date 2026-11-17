@@ -8,8 +8,8 @@
    movimento» si vede tutto insieme, fermo. Prima pagina che lo usa: website/stato/. Ogni valore viene da ../token.css. */
 
 .varco-scena { display: grid; grid-template-columns: minmax(0, 1fr) var(--varco-larghezza); column-gap: var(--spazio-30); align-items: start; margin-top: var(--spazio-26); }
-.varco { grid-column: 2; grid-row: 1; position: sticky; top: var(--varco-sopra); padding-top: var(--varco-spazio-sopra); color: var(--testo); }
-.varco-passi { grid-column: 1; grid-row: 1; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--varco-passi-distanza); }
+.varco { grid-column: 2; grid-row: 1; position: sticky; top: var(--varco-sopra); padding-top: var(--varco-spazio-sopra-2); color: var(--testo); }
+.varco-passi { grid-column: 1; grid-row: 1; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--varco-passi-distanza-2); }
 .varco-passo { max-width: var(--tratto-testo-larghezza-massima); padding-inline-start: var(--spazio-19); border-inline-start: var(--filetto-forte) solid var(--requisito-traccia); transition: border-color var(--durata-requisiti) var(--curva-dolce); }
 .varco-passo h3 { margin: 0; font-size: var(--corpo-11); line-height: var(--interlinea-10); font-weight: var(--peso-titolo); color: var(--bordeaux); }
 .varco-passo p { margin: var(--spazio-8) 0 0; font-size: var(--corpo-8); line-height: var(--interlinea-8); color: var(--testo-spiegazione-chiara); text-wrap: pretty; }
@@ -39,7 +39,7 @@
   inset-inline-end: var(--varco-filo-fine);
   z-index: var(--livello-tappe);
   width: 0;
-  height: var(--varco-filo-altezza);
+  height: var(--varco-filo-altezza-2);
   border-inline-start: var(--filetto-medio) dashed var(--magenta);
   transform-origin: 50% 0;
   opacity: 0;
@@ -132,15 +132,16 @@
 .varco-pacchi { position: absolute; top: var(--varco-filo-sopra); inset-inline-end: var(--varco-filo-fine); transform: translateX(calc(50% * var(--verso))); display: grid; opacity: 0; pointer-events: none; }
 .varco-pacchi i { grid-area: 1 / 1; justify-self: center; }   /* i tre file scendono in fila lungo il filo, uno dopo l'altro */
 .varco-pacchi i {
-  padding: var(--varco-pacco-spazio-interno);
-  border-radius: var(--raggio-3);
+  padding: var(--varco-pacco-spazio-interno-2);
+  border-radius: var(--raggio-4);
   background: var(--voce);
   color: var(--bordeaux);
   font-style: normal;
-  font-size: var(--corpo-2);
-  line-height: var(--interlinea-1);
+  font-size: var(--corpo-4);
+  line-height: var(--interlinea-2);
   font-weight: var(--peso-forte);
   font-variant-numeric: tabular-nums;
+  box-shadow: var(--varco-pacco-ombra);
 }
 
 /* ---------- i passi (con lo script) ---------- */
@@ -168,11 +169,11 @@
 @media (max-width: 760px) {
   /* al telefono il computer resta agganciato sotto la barra, piccolo, e i passi scorrono sotto */
   .varco-scena { display: block; }
-  .varco { position: sticky; top: var(--varco-sopra-telefono); z-index: var(--livello-tappe); padding-top: var(--varco-spazio-sopra-telefono); margin-inline: calc(-1 * var(--spazio-5)); padding-inline: var(--spazio-5); padding-bottom: var(--spazio-10); background: var(--varco-fondo-telefono); }
+  .varco { position: sticky; top: var(--varco-sopra-telefono); z-index: var(--livello-tappe); padding-top: var(--varco-spazio-sopra-telefono-2); margin-inline: calc(-1 * var(--spazio-5)); padding-inline: var(--spazio-5); padding-bottom: var(--spazio-10); background: var(--varco-fondo-telefono); }
   .varco-bordo { min-height: 0; padding: var(--varco-spazio-interno-telefono); gap: var(--spazio-7); border-radius: var(--raggio-11); }
   .varco-campo { font-size: var(--corpo-4); line-height: var(--interlinea-3); }
   .varco-nome { top: var(--spazio-7); inset-inline-start: var(--spazio-12); font-size: var(--corpo-2); }
-  .varco-passi { gap: var(--varco-passi-distanza-telefono); margin-top: var(--spazio-21); }
+  .varco-passi { gap: var(--varco-passi-distanza-telefono-2); margin-top: var(--spazio-21); }
   .varco-passo h3 { font-size: var(--corpo-9); line-height: var(--interlinea-6); }
   .varco-passo p { font-size: var(--corpo-6); line-height: var(--interlinea-6); }
 }
@@ -192,4 +193,36 @@
   .licenze { grid-template-columns: minmax(0, 1fr); margin-top: var(--spazio-26); }
   .licenze h3 { font-size: var(--corpo-9); line-height: var(--interlinea-6); }
   .licenze p { font-size: var(--corpo-6); line-height: var(--interlinea-6); }
+}
+
+/* ---------- Correzione dopo il giudizio (incarico 3b-c, 17/11/2026) ---------- */
+/* M8: il filo più lungo e le impronte più grandi: la discesa si vede, e finisce sul bordo del disco senza passare sopra «Sul disco» */
+/* M9: i passi più vicini fra loro e la colonna del testo un poco più larga: meno rosa pieno fra un passo e l'altro */
+.varco-passo { max-width: var(--varco-passo-larghezza-massima); }
+/* I6: anche il programma è un file sul disco (in /usr o in ~/.local) */
+.js .varco[data-passo="disco"] .varco-programma, .js .varco[data-passo="chiudi"] .varco-programma { border-color: var(--voce); background: var(--velo-scelto); }
+@media (max-width: 760px) {
+  .varco-filo { height: var(--varco-filo-altezza-telefono); }
+}
+/* I4: licenze e impronte: al computer aperte, con il titolo come titolo; al telefono si aprono a richiesta, il titolo con la freccia */
+.licenze-blocco > summary { display: block; list-style: none; }
+.licenze-blocco > summary::-webkit-details-marker { display: none; }
+@media (min-width: 761px) {
+  .licenze-blocco > summary { pointer-events: none; }
+}
+@media (max-width: 760px) {
+  .licenze { row-gap: var(--spazio-10); }
+  .licenze-blocco > summary { cursor: pointer; }
+  .licenze-blocco > summary h3 { display: inline-flex; align-items: center; gap: var(--spazio-8); min-height: var(--misura-21); }
+  .licenze-blocco > summary h3::after {
+    content: "";
+    width: var(--misura-8);
+    height: var(--misura-8);
+    background: currentColor;
+    transform: rotate(var(--dettagli-segno-rotazione));
+    transition: transform var(--durata-collegamento-freccia) var(--entra);
+    -webkit-mask: var(--collegamento-freccia-maschera);
+    mask: var(--collegamento-freccia-maschera);
+  }
+  .licenze-blocco[open] > summary h3::after { transform: rotate(calc(-1 * var(--dettagli-segno-rotazione))); }
 }

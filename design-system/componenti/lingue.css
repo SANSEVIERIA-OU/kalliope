@@ -93,14 +93,9 @@
 @keyframes lingue-apre {
   from { opacity: 0; transform: translateY(var(--lingue-pannello-sposta-y)) scale(var(--entra-da-scala)); }
 }
-/* la barra compatta ritaglia ciò che sporge sotto di lei (l'ombra): mentre un pannello è aperto non ritaglia */
-.barra:has(.lingua-scelta[open]), .barra:has(.menu.aperto) { clip-path: none; }
-/* un difetto di prima, trovato qui (17/11/2026): al telefono e sul tablet, aprendo il menu dopo aver scorso (con l'azione in barra),
-   il menu restava spostato del posto dell'azione, fuori dallo schermo, e la barra compatta lo ritagliava: non si vedeva. Il menu
-   aperto non scivola: lo spostamento serve solo al menu in riga del computer */
-@media (max-width: 959px) {
-  .barra.con-azione .menu.aperto { transform: none; }
-}
+/* la barra compatta ritaglia ciò che sporge sotto di lei (l'ombra): mentre un pannello è aperto non ritaglia.
+   (La stessa regola per il menu aperto sta in barra.css: riguarda il menu, non le lingue; qui resta quella dell'elenco delle lingue.) */
+.barra:has(.lingua-scelta[open]) { clip-path: none; }
 /* al telefono e sul tablet la scelta sta nel menu aperto: l'elenco si apre dentro il menu, in due colonne */
 @media (max-width: 959px) {
   .menu.aperto .lingua-scelta > summary { width: 100%; min-height: var(--menu-aperto-altezza-minima); font-size: var(--corpo-9); }
@@ -163,6 +158,32 @@
   padding: var(--scelta-lingua-spazio-interno);
 }
 .scelta-lingua .scelta-titolo { order: 0; text-align: center; }   /* in cima anche al telefono (il titolo della home, al telefono, scende dopo la frase: apertura.css) */
+/* correzione 2-f (L3): il nome del prodotto sta sopra la luce della stanza, come il titolo della home (.scena ha lo stesso livello). Il titolo non era posizionato e la
+   luce (posizionata, livello 0) si dipingeva sopra di lui: a riposo il bianco del testo diventava un rosa spento (220 156 176 invece di 255 237 239), più debole dei nomi
+   che introduce. Non cambia un pixel del resto della pagina. */
+.scelta-lingua .scelta-titolo { position: relative; z-index: var(--livello-scena); }
+/* correzione 2-f (L3): la barra della pagina della scelta fa come quella delle altre pagine: a riposo senza fondo, appena si scorre piena. Prima il foglio «senza script»
+   (barra.css) la faceva piena sempre, e il riempimento legato allo scorrimento (`animation-timeline`), che esiste solo dove il browser lo conosce e solo quando la pagina
+   scorre, la faceva trasparente in cima: la stessa pagina, a due altezze di schermo vicine, aveva due barre diverse, e in Firefox e WebKit di questa macchina sempre quella
+   piena. La pagina non ha la classe «js» (con «js» i riquadri della riunione resterebbero spenti), quindi una riga in linea in `lingue.html` mette «barra-viva» e, scorrendo,
+   «compatta» (la classe e la soglia di cornice.js: la barra piena di barra.css). Con la riga: trasparente finché non è «compatta». */
+html.barra-viva:not(.js) .mondo:has(> .scelta-lingua) > .barra:not(.compatta) {
+  background-color: transparent;
+  box-shadow: var(--barra-piena-da-ombra);
+}
+/* senza la riga (senza script), dove il browser lega l'animazione allo scorrimento: trasparente a riposo, piena nei primi 24 px; altrove resta piena, come prima */
+@supports (animation-timeline: scroll()) {
+  @keyframes barra-scelta-piena {
+    to { background-color: var(--barra-piena); box-shadow: var(--barra-ombra); }
+  }
+  html:not(.barra-viva):not(.js) .mondo:has(> .scelta-lingua) > .barra {
+    background-color: transparent;
+    box-shadow: var(--barra-piena-da-ombra);
+    animation: barra-scelta-piena var(--curva-lineare) both;
+    animation-timeline: scroll(root);
+    animation-range: var(--barra-intervallo);
+  }
+}
 .scelta-tavolo { width: var(--scelta-larghezza); margin: 0; }
 .bolla.bolla-lingue { position: relative; inset-inline-start: auto; bottom: auto; width: 100%; max-width: 100%; margin-bottom: var(--scelta-coda-spazio); transform-origin: var(--bolla-chiusa-origine); }
 .bolla-lingue .bolla-corpo { padding: var(--scelta-bolla-spazio-interno); }

@@ -1,0 +1,8 @@
+prima 320x640 {"fuori":["fonte: engine.rs, benchmarks/engines (103–306 in 20–300)"],"scorreDiLato":false}
+prima 334x700 {"fuori":[],"scorreDiLato":false}
+prima 360x740 {"fuori":[],"scorreDiLato":false}
+prima 397x800 {"fuori":[],"scorreDiLato":false}
+c3 320x640 {"fuori":[],"scorreDiLato":false}
+c3 334x700 {"fuori":[],"scorreDiLato":false}
+c3 360x740 {"fuori":[],"scorreDiLato":false}
+c3 397x800 {"fuori":[],"scorreDiLato":false}

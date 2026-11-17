@@ -1,0 +1,15 @@
+# copia-firefox-dopo · 17/11/2026 13:22 · node copia-posto.mjs /tmp/lavoro-2f-sito-fin2-10 firefox it/non-ancora/,en-XA/non-ancora/,ar-XB/non-ancora/ 1440x900,1024x768,844x390,390x844
+ok  firefox it/non-ancora/ 1440x900: pannello alto 316 px, sopra a 2020; dopo «Copia» (risposta: fatto) scarto massimo: posizione 0 px, altezza 0 px, nota sotto 0 px · errori 0
+ok  firefox it/non-ancora/ 1024x768: pannello alto 316 px, sopra a 2344; dopo «Copia» (risposta: fatto) scarto massimo: posizione 0 px, altezza 0 px, nota sotto 0 px · errori 0
+ok  firefox it/non-ancora/ 844x390: pannello alto 316 px, sopra a 2512; dopo «Copia» (risposta: fatto) scarto massimo: posizione 0 px, altezza 0 px, nota sotto 0 px · errori 0
+ok  firefox it/non-ancora/ 390x844: pannello alto 331 px, sopra a 2792; dopo «Copia» (risposta: fatto) scarto massimo: posizione 0 px, altezza 0 px, nota sotto 0 px · errori 0
+ok  firefox en-XA/non-ancora/ 1440x900: pannello alto 335 px, sopra a 2278.5; dopo «Copia» (risposta: fatto) scarto massimo: posizione 0 px, altezza 0 px, nota sotto 0 px · errori 0
+ok  firefox en-XA/non-ancora/ 1024x768: pannello alto 335 px, sopra a 2614; dopo «Copia» (risposta: fatto) scarto massimo: posizione 0 px, altezza 0 px, nota sotto 0 px · errori 0
+ok  firefox en-XA/non-ancora/ 844x390: pannello alto 335 px, sopra a 2954; dopo «Copia» (risposta: fatto) scarto massimo: posizione 0 px, altezza 0 px, nota sotto 0 px · errori 0
+ok  firefox en-XA/non-ancora/ 390x844: pannello alto 407 px, sopra a 3193; dopo «Copia» (risposta: fatto) scarto massimo: posizione 0 px, altezza 0 px, nota sotto 0 px · errori 0
+ok  firefox ar-XB/non-ancora/ 1440x900: pannello alto 335 px, sopra a 2285.8; dopo «Copia» (risposta: fatto) scarto massimo: posizione 0 px, altezza 0 px, nota sotto 0 px · errori 0
+ok  firefox ar-XB/non-ancora/ 1024x768: pannello alto 335 px, sopra a 2587.8; dopo «Copia» (risposta: fatto) scarto massimo: posizione 0 px, altezza 0 px, nota sotto 0 px · errori 0
+ok  firefox ar-XB/non-ancora/ 844x390: pannello alto 335 px, sopra a 2725.9; dopo «Copia» (risposta: fatto) scarto massimo: posizione 0 px, altezza 0 px, nota sotto 0 px · errori 0
+ok  firefox ar-XB/non-ancora/ 390x844: pannello alto 352.3 px, sopra a 3026.5; dopo «Copia» (risposta: fatto) scarto massimo: posizione 0 px, altezza 0 px, nota sotto 0 px · errori 0
+ok  firefox: 12 casi, 0 in cui il pannello si muove o cambia altezza
+# uscita: 0

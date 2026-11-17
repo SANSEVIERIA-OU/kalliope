@@ -147,13 +147,14 @@
     // 4. l'elenco delle versioni
     // =============================================================================================================
     // il comando c'è (con lo script), le due risposte e la frase di chi non ha lo script no: si mostra ciò che serve a ogni stato
-    const versioni = () => { const x = sblocca(da('.versioni')); $$('.senza-js, .copia-fatto, .copia-errore', x).forEach(n => { n.hidden = true; }); return x; };
+    // come la pagina quando il comando c'è: le due risposte restano nella stessa cella, invisibili (`.vuoto`), così il posto per la più lunga c'è già (versioni.css, P1)
+    const versioni = () => { const x = sblocca(da('.versioni')); $$('.senza-js', x).forEach(n => { n.hidden = true; }); $$('.copia-fatto, .copia-errore', x).forEach(n => { n.hidden = false; n.classList.add('vuoto'); }); return x; };
     const momento = () => {
       const v = versioni(); const quadro = el('div', {class: 'js'}, v); v.classList.add('visto');
       const rip = () => { v.classList.remove('visto', 'ricordata'); void v.offsetWidth; v.classList.add('visto'); };
       return el('div', {}, controlli(['Riproduci', rip]), quadro);
     };
-    const piede = (x, mostra) => { $$('.copia-fatto, .copia-errore', x).forEach(n => { n.hidden = !n.matches(mostra); }); return x; };
+    const piede = (x, mostra) => { $$('.copia-fatto, .copia-errore', x).forEach(n => { n.classList.toggle('vuoto', !n.matches(mostra)); }); return x; };
     const piuVersioni = (x, nomi) => { const l = $('.versioni-elenco', x), u = $('.versione.ultima', x); nomi.forEach(([n, d, t]) => { const c = u.cloneNode(true); $('.versione-nome', c).textContent = n; $('.versione-data', c).textContent = d; $('.versione-nota', c).textContent = t; l.append(c); }); return x; };
     s.append(scheda({nome: 'L\'elenco delle versioni', id: '<code>.versioni</code> <code>.versioni-titolo</code> <code>.versioni-elenco</code> <code>.versione.ultima</code> <code>.versione.prossima</code> <code>.versioni-piede</code> <code>.copia-indirizzo</code> <code>.copia-esito</code> <code>.ricordata</code> (versioni.css)',
       regola: 'Le versioni di Kalliope come le mostra la pagina delle versioni, nel nostro mondo: in cima il posto di ciò che non c\'è ancora (tratteggiato, vuoto: «compariranno qui, in cima · nessuna data»), sotto l\'ultima versione con i dati della release (segnaposto di <code>tools/site.py</code>, mai scritti a mano: il sito si ricostruisce a ogni release e l\'elenco si aggiorna da solo). Anche la nota accanto al numero segue i dati: «Versione di prova · solo Linux» se la release è una prerelease, «Solo Linux» se no (<code>data-release="prova"</code> e <code>"stabile"</code>, scelti dalla costruzione). Sotto, il comando per tenere l\'indirizzo della pagina: copiato, risponde «Copiato…» e il posto tratteggiato si accende una volta (resta fino alla prossima pressione); se non riesce, dice di usare i preferiti; senza script o dove gli appunti non si possono usare resta la frase dei preferiti. <b>Il momento</b> (arrivando sullo schermo): l\'ultima versione compare in cima, dove arriva ogni novità, con il bordo della voce acceso; resta un attimo e scende al suo posto; in cima si apre il posto tratteggiato di Windows e macOS, che si accende e resta ad aspettare.',
@@ -161,7 +162,7 @@
       persona: 'Chi aspetta Windows o macOS e vuole sapere come ritrovare la notizia senza account e senza lasciare dati.',
       provenienza: 'Elenco delle versioni con data e stato: R50 (linea del tempo, <code>R/sequenze/R50/scorri-1440x900-foglio.jpg</code>); il bordo della voce acceso sul nuovo: le frasi della home in voce; la novità che arriva in cima, il posto che si apre e il comando «copia l\'indirizzo»: progettuali (<code>PIANO.md</code>, «Quando arriva»; giudizio I3 e I6).',
       prove: [
-        prova1('a riposo, con il comando di copia (senza script manca: resta la frase dei preferiti)', piede(versioni(), '.nessuno'), 'largo'),
+        prova1('a riposo, con il comando di copia e il posto per la risposta già lì (senza script manca: resta la frase dei preferiti); il pannello ha la stessa altezza nelle due risposte qui sotto', piede(versioni(), '.nessuno'), 'largo'),
         prova1('il momento: premi Riproduci (con lo script: l\'ultima versione in cima, resta, scende; il posto tratteggiato si apre)', momento(), 'largo'),
         prova1('risposta: copiato (<code>.copia-fatto</code>)', piede(versioni(), '.copia-fatto'), 'largo'),
         prova1('risposta: non riuscita (<code>.copia-errore</code>)', piede(versioni(), '.copia-errore'), 'largo'),

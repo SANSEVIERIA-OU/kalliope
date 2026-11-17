@@ -33,3 +33,12 @@
   .inoltra-testo { font-size: var(--corpo-8) !important; line-height: var(--interlinea-8) !important; }
   .inoltra-esito { font-size: var(--corpo-6); line-height: var(--interlinea-6); }
 }
+
+/* ---------- Correzione dopo il giudizio (incarico 3b-c, 17/11/2026) ---------- */
+/* M6: «Copiato…» sta accanto al pulsante: al computer sotto la fila dei comandi, al telefono subito sotto «Copia il messaggio» */
+.comandi-inoltra { flex-wrap: wrap; }
+.comandi-inoltra .inoltra-esito { order: 3; flex-basis: 100%; min-height: 0; margin: 0; text-align: center; }
+@media (max-width: 760px) {
+  .comandi-inoltra .inoltra-esito { order: 1; margin: var(--spazio-5) 0 var(--spazio-7); }
+  .comandi-inoltra > .collegamento { order: 2; }
+}

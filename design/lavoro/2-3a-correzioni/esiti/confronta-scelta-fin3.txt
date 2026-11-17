@@ -1,0 +1,33 @@
+# confronta-scelta · b456308 (prima-it) contro fin3-it (b456308 + i miei file) · 17/11/2026 13:43
+== it/index.html, 1440x900 390x844 844x390 360x640 1366x640, in cima
+CONFRONTO 1440×900: uguale su 61 cose nello schermo · pixel diversi 0%
+CONFRONTO 390×844: uguale su 54 cose nello schermo · pixel diversi 0%
+CONFRONTO 844×390: uguale su 9 cose nello schermo · pixel diversi 0%
+CONFRONTO 360×640: uguale su 49 cose nello schermo · pixel diversi 0%
+CONFRONTO 1366×640: uguale su 57 cose nello schermo · pixel diversi 0%
+Uguale alla scelta, salvo le differenze ammesse (foto in /tmp/lavoro-2f-lavoro/confF-it_index.html)
+== it/non-ancora/index.html, 1440x900 390x844 844x390 360x640 1366x640, in cima
+CONFRONTO 1440×900: uguale su 42 cose nello schermo · pixel diversi 0%
+CONFRONTO 390×844: uguale su 36 cose nello schermo · pixel diversi 0%
+CONFRONTO 844×390: uguale su 12 cose nello schermo · pixel diversi 0%
+CONFRONTO 360×640: uguale su 27 cose nello schermo · pixel diversi 0%
+CONFRONTO 1366×640: uguale su 41 cose nello schermo · pixel diversi 0%
+Uguale alla scelta, salvo le differenze ammesse (foto in /tmp/lavoro-2f-lavoro/confF-it_non-ancora_index.html)
+== it/stato/index.html, 1440x900 390x844 844x390 360x640 1366x640, in cima
+CONFRONTO 1440×900: uguale su 46 cose nello schermo · pixel diversi 0%
+CONFRONTO 390×844: uguale su 38 cose nello schermo · pixel diversi 0%
+CONFRONTO 844×390: uguale su 11 cose nello schermo · pixel diversi 0%
+CONFRONTO 360×640: uguale su 29 cose nello schermo · pixel diversi 0%
+CONFRONTO 1366×640: uguale su 45 cose nello schermo · pixel diversi 0%
+Uguale alla scelta, salvo le differenze ammesse (foto in /tmp/lavoro-2f-lavoro/confF-it_stato_index.html)
+== it/non-ancora/index.html 1440x900 a y=1850 (con le differenze di P1 dichiarate)
+CONFRONTO 1440×900 a 1850 px: solo differenze ammesse su 31 cose nello schermo · pixel diversi 5,14%
+Uguale alla scelta, salvo le differenze ammesse (foto in /tmp/lavoro-2f-lavoro/confF-na-y1850)
+== it/non-ancora/index.html 1440x900 a y=2150 (con le differenze di P1 dichiarate)
+CONFRONTO 1440×900 a 2150 px: solo differenze ammesse su 43 cose nello schermo · pixel diversi 2,86%
+Uguale alla scelta, salvo le differenze ammesse (foto in /tmp/lavoro-2f-lavoro/confF-na-y2150)
+== it/non-ancora/index.html 1440x900 a y=2800 (con le differenze di P1 dichiarate)
+CONFRONTO 1440×900 a 2800 px: uguale su 42 cose nello schermo · pixel diversi 0%
+DICHIARAZIONE NON USATA «div.versioni.coppia-oggetto» (SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «div.versioni-piede» (MISURA): qui quella differenza non c'è; se non serve più toglila
+Uguale alla scelta, salvo le differenze ammesse (foto in /tmp/lavoro-2f-lavoro/confF-na-y2800)

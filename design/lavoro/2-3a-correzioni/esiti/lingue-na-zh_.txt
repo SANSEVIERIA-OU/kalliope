@@ -1,0 +1,33 @@
+# lingue-na-zh_ · 17/11/2026 12:36 · sito: /tmp/lavoro-2f-sito-fin1-10 · esame-impaginazione.mjs chromium normale zh_ 326x326,844x390,915x412,390x844,1440x900
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+zh_na · 326×326 · testo 100%: pulito
+zh_na_copia · 326×326 · testo 100%: pulito
+zh_na_ascolto · 326×326 · testo 100%: pulito
+zh_na · 844×390 · testo 100%: 
+  SPEZZATA «开源» in p
+zh_na_copia · 844×390 · testo 100%: 
+  SPEZZATA «开源» in p
+zh_na_ascolto · 844×390 · testo 100%: 
+  SPEZZATA «开源» in p
+zh_na · 915×412 · testo 100%: pulito
+zh_na_copia · 915×412 · testo 100%: pulito
+zh_na_ascolto · 915×412 · testo 100%: pulito
+zh_na · 390×844 · testo 100%: 
+  SPEZZATA «的真实会议中测试» in p.stato
+  SPEZZATA «源代码公开» in p
+  SPEZZATA «本网站不使用» in p
+zh_na_copia · 390×844 · testo 100%: 
+  SPEZZATA «的真实会议中测试» in p.stato
+  SPEZZATA «源代码公开» in p
+  SPEZZATA «本网站不使用» in p
+zh_na_ascolto · 390×844 · testo 100%: 
+  SPEZZATA «的真实会议中测试» in p.stato
+  SPEZZATA «源代码公开» in p
+  SPEZZATA «本网站不使用» in p
+zh_na · 1440×900 · testo 100%: pulito
+zh_na_copia · 1440×900 · testo 100%: pulito
+zh_na_ascolto · 1440×900 · testo 100%: pulito
+
+SPEZZATA: 12
+12 cose da guardare (foto in /tmp/lavoro-2f-qa-lingue/esame/chromium)
+# uscita: 1

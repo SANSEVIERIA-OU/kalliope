@@ -1,0 +1,28 @@
+# esame-home · 17/11/2026 12:21 · sito: /tmp/lavoro-2f-sito-mio2-it · esame-impaginazione.mjs chromium normale home 390x844,360x740,844x390,412x915,750x832,466x678,951x669,326x326,440x706,440x744,421x616,861x609,820x1180,1180x820,1440x900,360x640,390x667,375x812,320x568,1024x600,915x412,1366x640
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+home · 390×844 · testo 100%: pulito
+home · 360×740 · testo 100%: pulito
+home · 844×390 · testo 100%: pulito
+home · 412×915 · testo 100%: pulito
+home · 750×832 · testo 100%: pulito
+home · 466×678 · testo 100%: pulito
+home · 951×669 · testo 100%: pulito
+home · 326×326 · testo 100%: pulito
+home · 440×706 · testo 100%: pulito
+home · 440×744 · testo 100%: pulito
+home · 421×616 · testo 100%: pulito
+home · 861×609 · testo 100%: pulito
+home · 820×1180 · testo 100%: pulito
+home · 1180×820 · testo 100%: pulito
+home · 1440×900 · testo 100%: pulito
+home · 360×640 · testo 100%: pulito
+home · 390×667 · testo 100%: pulito
+home · 375×812 · testo 100%: pulito
+home · 320×568 · testo 100%: pulito
+home · 1024×600 · testo 100%: pulito
+home · 915×412 · testo 100%: pulito
+home · 1366×640 · testo 100%: pulito
+
+
+Tutto pulito (foto in /tmp/lavoro-2f-qa-esame-home/esame/chromium)
+# uscita: 0

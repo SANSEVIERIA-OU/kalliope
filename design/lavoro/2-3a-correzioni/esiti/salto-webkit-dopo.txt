@@ -1,0 +1,15 @@
+# salto-webkit-dopo · 17/11/2026 13:16 · node salto-menu.mjs /tmp/lavoro-2f-sito-fin2-it webkit it/,it/non-ancora/,it/stato/ 390x844,844x390,326x326,750x832
+ok  webkit it/ 390x844
+ok  webkit it/ 844x390
+ok  webkit it/ 326x326
+ok  webkit it/ 750x832
+ok  webkit it/non-ancora/ 390x844
+ok  webkit it/non-ancora/ 844x390
+ok  webkit it/non-ancora/ 326x326
+ok  webkit it/non-ancora/ 750x832
+ok  webkit it/stato/ 390x844
+ok  webkit it/stato/ 844x390
+ok  webkit it/stato/ 326x326
+ok  webkit it/stato/ 750x832
+ok  webkit: 176 controlli, 0 in cui la pagina si muove
+# uscita: 0

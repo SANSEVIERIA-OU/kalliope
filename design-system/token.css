@@ -376,8 +376,8 @@
   --barre-larghezza: 15px;
   --barre-larghezza-telefono: 6px;
   --chiamata-altezza: 362px;
-  --chiamata-altezza-basso-699: clamp(200px, calc(100vh - 336px), 362px);
-  --chiamata-altezza-computer: clamp(190px, calc(100vh - 441px), 362px);
+  --chiamata-altezza-basso-699: clamp(200px, calc(var(--altezza-schermo) - 336px), 362px);
+  --chiamata-altezza-computer: clamp(190px, calc(var(--altezza-schermo) - 441px), 362px);
   --chiamata-altezza-telefono: 176px;
   --chiamata-nome-spazio-interno: 4px 9px;
   --luca-occhi-sposta-x: -1px;
@@ -939,7 +939,7 @@
   --didascalia-margine-pagina-telefono: 8px 0 0;   /* al telefono la didascalia sta subito sotto la scena che descrive */
   --testo-spiegazione-chiara: var(--testo-requisiti-chiara);   /* la spiegazione sotto un titolo, sulla scena chiara (come i requisiti della home) */
   /* · La riunione in cui la tua voce non arriva */
-  --chiamata-ferma-altezza: clamp(200px, calc(100vh - 380px), 362px);   /* i riquadri, sopra la barra del microfono: interi anche a 1366×640 */
+  --chiamata-ferma-altezza: clamp(200px, calc(var(--altezza-schermo) - 380px), 362px);   /* i riquadri, sopra la barra del microfono: interi anche a 1366×640 */
   --chiamata-ferma-altezza-telefono: 152px;   /* i riquadri al telefono: un poco più bassi della riunione della home, perché sotto stiano i comandi e lo stato intero (375×812) */
   --chiamata-ferma-barra-spazio-interno: 6px 0 4px;   /* la barra del microfono dentro la cornice */
   --barre-ferme-scala-y: 0.14;   /* la voce piatta nel tuo posto vuoto: le barre diventano punti */
@@ -969,9 +969,9 @@
   /* · La chiusura sugli schermi bassi (rifinitura 3a-r, N1; regola della cornice, PIANO.md): quando l'altezza manca la riunione si fa più bassa,
        perché la bolla dove le parole si accendono, la riunione e il comando «Pausa» (o il messaggio d'errore) stiano insieme nello schermo */
   --tavolo-pagina-altezza-minima: 60px;   /* la riunione più bassa che regge i nomi e le barre di «Tu»: la stessa della fila della scelta della lingua sugli schermi bassi */
-  --tavolo-pagina-altezza: clamp(var(--tavolo-pagina-altezza-minima), calc(100vh - 222px - 2 * var(--interlinea-13)), var(--tavolo-cornice-altezza));   /* al computer: la barra (72) con 8 px sotto, la bolla (26 + due righe, 88 in italiano) con la coda (18), la riunione, il comando (34 + 56) e 8 px in fondo stanno nello schermo; da 456 px di altezza in su (in italiano) è quella di sempre. Le righe della bolla sono quelle della scrittura: in arabo, con le righe più alte, la riunione è più bassa di quel tanto */
-  --tavolo-pagina-altezza-telefono: clamp(var(--tavolo-pagina-altezza-minima), calc(100vh - 192px - 3 * var(--interlinea-6)), var(--tavolo-cornice-altezza-telefono));   /* al telefono, con la barra da 56 e la bolla di tre righe (la più alta, a 326 px di larghezza): da 336 px di altezza in su (in italiano) è quella di sempre */
-  --tavolo-pagina-altezza-errore: clamp(var(--tavolo-pagina-altezza-minima), calc(100vh - 324px - 2 * var(--interlinea-13) - 2 * var(--interlinea-6)), var(--tavolo-cornice-altezza));   /* al computer, con il messaggio d'errore sotto il comando (132 px in italiano: due righe e i comandi): la bolla e il messaggio stanno insieme da 500 px di altezza; da 602 in su (in italiano) è quella di sempre */
+  --tavolo-pagina-altezza: clamp(var(--tavolo-pagina-altezza-minima), calc(var(--altezza-schermo) - 222px - 2 * var(--interlinea-13)), var(--tavolo-cornice-altezza));   /* al computer: la barra (72) con 8 px sotto, la bolla (26 + due righe, 88 in italiano) con la coda (18), la riunione, il comando (34 + 56) e 8 px in fondo stanno nello schermo; da 456 px di altezza in su (in italiano) è quella di sempre. Le righe della bolla sono quelle della scrittura: in arabo, con le righe più alte, la riunione è più bassa di quel tanto */
+  --tavolo-pagina-altezza-telefono: clamp(var(--tavolo-pagina-altezza-minima), calc(var(--altezza-schermo) - 192px - 3 * var(--interlinea-6)), var(--tavolo-cornice-altezza-telefono));   /* al telefono, con la barra da 56 e la bolla di tre righe (la più alta, a 326 px di larghezza): da 336 px di altezza in su (in italiano) è quella di sempre */
+  --tavolo-pagina-altezza-errore: clamp(var(--tavolo-pagina-altezza-minima), calc(var(--altezza-schermo) - 324px - 2 * var(--interlinea-13) - 2 * var(--interlinea-6)), var(--tavolo-cornice-altezza));   /* al computer, con il messaggio d'errore sotto il comando (132 px in italiano: due righe e i comandi): la bolla e il messaggio stanno insieme da 500 px di altezza; da 602 in su (in italiano) è quella di sempre */
   --tavolo-barre-quota: 42%;   /* le barre di «Tu» in una riunione bassa: non più alte di questa parte del riquadro (a 156 px di riquadro sono i 64 px di sempre) */
   --scorrimento-spazio-sotto: var(--spazio-29);   /* lo spazio che resta sotto una voce del piede portata in vista dal fuoco (scroll-margin-bottom): Firefox scorre solo se il comando non si vede affatto, e uno mezzo fuori restava tale */
 }
@@ -1169,9 +1169,9 @@
   --scelta-larghezza: min(980px, 100%);   /* la bolla e la fila della riunione, larghe uguali: trenta nomi in cinque righe al computer */
   --scelta-distanza: var(--spazio-21);   /* fra il nome del prodotto e la riunione */
   --scelta-coda-spazio: var(--misura-11);   /* sotto la bolla, la coda: poi la fila */
-  --scelta-tavolo-altezza: clamp(96px, calc(100vh - 540px), 172px);   /* la fila della chiusura; sugli schermi bassi si accorcia, i nomi restano interi */
+  --scelta-tavolo-altezza: clamp(96px, calc(var(--altezza-schermo) - 540px), 172px);   /* la fila della chiusura; sugli schermi bassi si accorcia, i nomi restano interi */
   --scelta-tavolo-altezza-basso: 60px;   /* la fila in un telefono girato: sta nello schermo con il nome e la bolla */
-  --scelta-altezza-minima: calc(100vh - var(--barra-altezza));   /* il nome e la riunione stanno a metà dello schermo, sotto la barra */
+  --scelta-altezza-minima: calc(var(--altezza-schermo) - var(--barra-altezza));   /* il nome e la riunione stanno a metà dello schermo, sotto la barra */
   --scelta-luce-inizio: 50%;   /* la luce della stanza dietro la riunione, al centro */
   --scelta-luce-sopra: 52%;
   --scelta-bolla-spazio-interno: var(--bolla-corpo-spazio-interno);
@@ -1305,8 +1305,48 @@
   --ritardo-inoltra-bolla: 360ms;   /* la bolla nasce quando il titolo è salito */
   --durata-inoltra-copiata: 900ms;
   --inoltra-copiata-ombra: 0 0 0 3px var(--voce), 0 0 30px 6px var(--alone-forte);   /* copiato: l'anello della voce, come una frase appena detta */
+  /* · Correzione dopo il giudizio (incarico 3b-c, 17/11/2026): valori nuovi; dove sostituiscono un valore di sopra, quello resta e non si usa più */
+  --passo-cascata-anelli: 140ms;   /* le tappe che arrivano insieme sullo schermo si accendono a cascata breve (I1: prima una coda dalla prima tappa) */
+  --ritardo-fatto-anello: 300ms;   /* il fatto della tappa accade appena il nodo è acceso (sostituisce --ritardo-quota: 520 ms) */
+  --catena-misura-testo-sopra: calc(var(--barra-altezza) + 24px);   /* la scritta «non misurato» resta in vista sotto la barra finché c'è la parentesi (M3) */
+  --dettagli-segno-rotazione: 90deg;   /* la freccia dei collegamenti girata in giù accanto a «I dettagli e le fonti» (aperti: in su) */
+  --anello-spazio-blocco-telefono: 18px;   /* al telefono meno aria fra una tappa e l'altra (I4) */
+  --domande-bolla-coda-spazio: var(--misura-11);   /* al telefono la coda della bolla sta sopra, verso la domanda (M2) */
+  --varco-spazio-sopra-2: 112px;   /* sopra il computer: «huggingface.co» e un filo lungo, perché la discesa delle impronte si veda (M8; sostituisce 40px) */
+  --varco-spazio-sopra-telefono-2: 30px;
+  --varco-filo-altezza-2: 134px;   /* da «huggingface.co» al bordo alto del disco (sostituisce 64px) */
+  --varco-filo-altezza-telefono: 44px;
+  --varco-pacco-spazio-interno-2: 4px 9px 5px;   /* un'impronta che scende: leggibile (M8; sostituisce 3px 7px) */
+  --varco-pacco-ombra: 0 6px 14px -6px var(--ombra-cornice);
+  --varco-passi-distanza-2: 14vh;   /* fra un passo e l'altro, al computer: meno rosa pieno (M9; sostituisce 26vh) */
+  --varco-passi-distanza-telefono-2: 10vh;   /* al telefono i passi senza lo scorrimento vuoto fra l'uno e l'altro (I4; sostituisce 38vh) */
+  --varco-passo-larghezza-massima: 520px;   /* la colonna dei passi un poco più larga (M9) */
 }
 /* al telefono la riga delle parole è più fitta (il segno e il passo si leggono nel token del fondo, qui sopra: si cambiano qui) */
 @media (max-width: 760px) {
   :root { --parole-passo: var(--parole-passo-telefono); --parole-segno: var(--parole-segno-telefono); }
+}
+
+/* ---------- Correzioni dopo il secondo sguardo (incarico 2-f, 17/11/2026) ---------- */
+/* L'altezza dello schermo che si vede davvero. Su un telefono `vh` è l'altezza con la barra del browser nascosta: quando la barra c'è, lo schermo è più basso
+   di 50-100 px e ogni misura calcolata su `vh` (la riunione, perché bolla e «Pausa» stiano insieme nello schermo) viene più alta di quanto serve. `svh` è
+   l'altezza con la barra visibile (la più piccola): sul computer, dove la barra non cambia, è uguale a `vh`. Dove il browser non conosce `svh` resta `vh`
+   (un'unità sconosciuta dentro un token non ripiega da sola: per questo il cambio sta in un @supports, non in una seconda dichiarazione). Le misure della
+   riunione calcolate sull'altezza (`--chiamata-*`, `--chiamata-ferma-altezza`, `--tavolo-pagina-altezza*`, `--scelta-*`) usano questo token. Non cambia `--mondo-altezza-minima`
+   (il mondo deve riempire anche lo schermo con la barra nascosta). */
+:root { --altezza-schermo: 100vh; }
+@supports (height: 100svh) {
+  :root { --altezza-schermo: 100svh; }
+}
+/* Il menu aperto è un pannello scuro al 94% con la pagina sfocata dietro (`backdrop-filter`). Firefox, quando disegna senza la scheda grafica (provato qui: Firefox
+   150 senza finestra), dice di conoscere `backdrop-filter` ma non sfoca: il 6% che passa lascia leggere il titolo e il testo sotto le voci. Un pannello non può
+   dipendere da una sfocatura che può non arrivare: in Firefox il menu aperto è quasi pieno (il 99,5%: con il 98,5% si leggeva ancora, appena, il titolo dietro; la
+   regola sta in barra.css, dentro `@supports (-moz-appearance: none)`, che solo Firefox conosce). Se un Firefox con la scheda grafica sfoca, perde il vetro (la sfocatura
+   del 94% si vede poco): da guardare su una macchina vera; per tornare indietro basta togliere quella regola. Chromium e WebKit non cambiano. */
+:root { --pannello-menu-pieno: rgba(28, 3, 11, 0.995); }
+/* L2 · le barre della voce di «Tu» e la sua etichetta (componenti.js misura, riunione.css applica) */
+:root {
+  --barre-etichetta-distanza: 3px;   /* quanto resta fra l'etichetta di «Tu» e la barra più vicina, anche alla massima altezza della voce */
+  --barre-scala-minima: 0.4;   /* quanto possono rimpicciolirsi le barre perché l'etichetta non le tocchi */
+  --barre-voce-scala-massima: 1.1;   /* la massima altezza che la voce dà a una barra rispetto alla sua altezza di riposo (non-ancora.js: 0,3 + 0,8 di inviluppo) */
 }

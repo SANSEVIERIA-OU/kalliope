@@ -1,0 +1,4 @@
+# vetro-webkit-dopo · 17/11/2026 13:34 · node vetro-menu.mjs /tmp/lavoro-2f-sito-fin2-10 webkit it/non-ancora/,it/ 390x844 --soglia=6
+NO  webkit it/non-ancora/ 390x844: la pagina dietro: differenza massima 14/255, media 5, bordo netto massimo 14/255 (su 98960 pixel fuori dalle voci) · pannello rgba(28, 3, 11, 0.94) · backdrop-filter conosciuto («blur(18px)») · errori 0
+NO  webkit it/ 390x844: la pagina dietro: differenza massima 14/255, media 4.12, bordo netto massimo 14/255 (su 98960 pixel fuori dalle voci) · pannello rgba(28, 3, 11, 0.94) · backdrop-filter conosciuto («blur(18px)») · errori 0
+# uscita: 1

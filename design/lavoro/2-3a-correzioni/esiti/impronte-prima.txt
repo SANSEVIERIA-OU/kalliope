@@ -1,0 +1,13 @@
+design-system/token.css                                 b9758057eb6afd5c
+design-system/componenti/barra.css                      14095e4a3a29a9d9
+design-system/componenti/lingue.css                     cc6193a7ef2fea99
+design-system/componenti/riunione.css                   2e04b835ed60eed0
+design-system/componenti/versioni.css                   c5a07548a38d96ef
+design-system/catalogo/catalogo-pagine.js               8340d830fe267cef
+website/componenti.js                                   9bf3a7346e147880
+website/lingue.html                                     73f3a2a7f28ea156
+website/non-ancora/non-ancora.js                        ef87898d130e8d92
+website/non-ancora/index.html                           bd85d88b93667f28
+website/stato/index.html                                dddd828d09a785e3
+albero (website, design-system, tools)                  95c6da86c5748f1b4ab6f8287642df99
+sito costruito /tmp/lavoro-2f-sito-prima-it             e07d7a3f1504f0c02609061f6900a43d

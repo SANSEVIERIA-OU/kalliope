@@ -284,3 +284,30 @@ html:not(.js) .barra { background: var(--barra-piena); box-shadow: var(--barra-o
 }
 .barra.raccolta .barra-azione { inset-inline-end: calc(var(--margine) + var(--largo-menu, var(--barra-azione-largo-menu-base)) + var(--spazio-7)); }
 .barra.raccolta.azione-a-capo .barra-azione { max-width: var(--azione-largo-massimo, none); white-space: normal; text-wrap: balance; text-align: center; }
+
+/* ---------- Il menu aperto, la barra e la pagina (incarico 2-f, 17/11/2026) ----------
+   Le due regole che stavano in lingue.css e riguardano il menu: qui vanno con la barra, perché ogni superficie che usa la barra le abbia
+   senza dover caricare il foglio delle lingue. Non cambiano nulla a vista. */
+/* la barra compatta ritaglia ciò che sporge sotto di lei (l'ombra): mentre il menu è aperto non ritaglia */
+.barra:has(.menu.aperto) { clip-path: none; }
+/* al telefono e sul tablet, aprendo il menu dopo aver scorso (con l'azione in barra), il menu restava spostato del posto dell'azione, fuori dallo
+   schermo, e la barra compatta lo ritagliava: non si vedeva. Il menu aperto non scivola: lo spostamento serve solo al menu in riga del computer */
+@media (max-width: 959px) {
+  .barra.con-azione .menu.aperto { transform: none; }
+}
+/* il fuoco dentro la barra non muove la pagina. Il bordo di sicurezza di base.css (html { scroll-padding-top }) tiene i collegamenti interni e il
+   fuoco sotto la barra; ma la barra sta già in cima allo schermo, quindi per Chromium ogni suo comando (il pulsante «Menu», una voce, il marchio) sta
+   «sotto il bordo» e il fuoco che ci arriva centra la pagina: aprire il menu la faceva salire di 23 px, chiuderlo con Esc di altri 438 (a 844 px
+   d'altezza), e con Maiusc+Tab dalla pagina scorsa ogni passo verso la barra di altri 438. Finché il fuoco è nella barra il bordo non serve. */
+html:has(.barra:focus-within) { scroll-padding-top: 0; }
+/* il menu aperto non dipende dalla sfocatura del fondo: Firefox senza scheda grafica non sfoca (provato: la pagina dietro si leggeva sotto le voci), e lì il pannello è quasi
+   pieno (--pannello-menu-pieno). `-moz-appearance` lo conosce solo Firefox: Chromium e WebKit non cambiano. */
+@supports (-moz-appearance: none) {
+  .js .menu.aperto, .js .barra.raccolta .menu.aperto { background: var(--pannello-menu-pieno); }
+}
+
+/* ---------- La pagina in cui sei (incarico 3b-c, 17/11/2026: correzione dopo il giudizio della pagina «stato», M1) ----------
+   La voce del menu della pagina in cui sei (aria-current="page") ha il velo di una scelta e il peso forte, nella barra come nel menu aperto
+   del telefono: dice dove sei senza diventare un comando (l'azione resta l'unico rosa pieno). Vale per ogni pagina il cui nome sta nel menu */
+.menu a[aria-current="page"] { background: var(--velo-scelto); font-weight: var(--peso-forte); }
+.menu a[aria-current="page"]:hover { background: var(--velo-menu-premuto); }

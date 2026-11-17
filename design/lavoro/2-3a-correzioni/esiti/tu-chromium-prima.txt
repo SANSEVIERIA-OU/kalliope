@@ -1,0 +1,14 @@
+# tu-chromium-prima · 17/11/2026 13:34 · node tu-misure.mjs /tmp/lavoro-2f-sito-prima-10 chromium it,ar,ur,de,fi,el,bg,hi,bn,zh,en-XA,ar-XB 844x390,915x412,761x500,1440x900,326x326,390x844 --poco=2
+  ar: tocca a 2 misure: 844x390(-1.8) 326x326(-3.6)
+  ur: tocca a 3 misure: 844x390(-2.7) 326x326(-7.6) 390x844(1.1)
+  de: tocca a 1 misure: 326x326(0.4)
+  fi: tocca a 1 misure: 326x326(-0.6)
+  el: tocca a 1 misure: 326x326(-0.6)
+  bg: tocca a 1 misure: 326x326(1.4)
+  hi: tocca a 2 misure: 844x390(-0.4) 326x326(-2.7)
+  bn: tocca a 2 misure: 844x390(-2.7) 326x326(-6.6)
+  zh: tocca a 1 misure: 326x326(-1.7)
+  en-XA: tocca a 1 misure: 326x326(-0.6)
+  ar-XB: tocca a 2 misure: 844x390(1.3) 326x326(-3.2)
+NO  chromium a riposo: 72 casi, 17 in cui l'etichetta tocca le barre (margine 2 px)
+# uscita: 1

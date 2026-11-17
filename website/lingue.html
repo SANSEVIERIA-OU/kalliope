@@ -25,6 +25,10 @@
 <link rel="stylesheet" href="design-system/componenti/arrivo.css">
 <link rel="stylesheet" href="design-system/componenti/lingue.css">
 <script src="lingua.js"></script>
+<!-- la barra come quella delle altre pagine (lingue.css, L3): trasparente a riposo, piena appena si scorre. Le altre pagine lo fanno con cornice.js e scena.js; questa non ha
+     la classe «js» (i riquadri della riunione resterebbero spenti), quindi lo fa da sé, con la stessa classe («compatta») e la stessa soglia (12 px). Senza questa riga (senza
+     script) la barra segue il foglio di stile: dove il browser lega l'animazione allo scorrimento si riempie scorrendo, altrove resta piena. -->
+<script>document.documentElement.classList.add('barra-viva');addEventListener('scroll',function(){var b=document.querySelector('.barra');if(b)b.classList.toggle('compatta',scrollY>12)},{passive:true})</script>
 </head>
 <body>
 <div class="mondo">

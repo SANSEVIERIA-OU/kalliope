@@ -91,3 +91,18 @@
   .domande-bolla .bolla-testo { font-size: var(--corpo-8); line-height: var(--interlinea-8); }
   .domande-bolla .bolla-corpo { padding: var(--bolla-corpo-spazio-interno-telefono); }
 }
+
+/* ---------- Correzione dopo il giudizio (incarico 3b-c, 17/11/2026) ---------- */
+/* M2: la coda della bolla indica la domanda a cui risponde. Al computer la bolla sta accanto all'elenco e la domanda scelta è accesa:
+   niente coda. Al telefono la bolla si apre sotto la domanda: la coda sta in alto e punta in su, verso di lei */
+.domande-bolla .coda { display: none; }
+@media (max-width: 760px) {
+  .domande-bolla { margin-top: var(--domande-bolla-coda-spazio); margin-bottom: var(--spazio-10); }
+  .domande-bolla .coda { display: block; top: auto; bottom: 100%; transform: scale(var(--verso), -1); }
+}
+/* I4: dopo le domande, il messaggio da inoltrare è a un passo, senza attraversare il tratto per chi controlla */
+.domande-poi { margin: var(--spazio-26) 0 0; }
+@media (max-width: 760px) {
+  .domande-poi { margin-top: var(--spazio-12); }
+  .domande-poi .collegamento { justify-content: flex-start; text-align: start; }
+}

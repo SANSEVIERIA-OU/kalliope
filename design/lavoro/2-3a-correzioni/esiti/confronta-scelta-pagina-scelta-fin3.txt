@@ -1,0 +1,7 @@
+# confronta-scelta · pagina della scelta: b456308 (prima-10) contro fin3-10 · 17/11/2026 13:50
+CONFRONTO 1440×900: solo differenze ammesse su 25 cose nello schermo · pixel diversi 1,05%
+CONFRONTO 390×844: solo differenze ammesse su 25 cose nello schermo · pixel diversi 0,43%
+CONFRONTO 844×390: solo differenze ammesse su 25 cose nello schermo · pixel diversi 18,56%
+CONFRONTO 1280×720: solo differenze ammesse su 25 cose nello schermo · pixel diversi 5,11%
+CONFRONTO 326×326: uguale su 14 cose nello schermo · pixel diversi 0,93%
+Uguale alla scelta, salvo le differenze ammesse (foto in /tmp/lavoro-2f-lavoro/confF-scelta)

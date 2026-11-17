@@ -198,6 +198,11 @@
 .tavolo .barre { height: var(--tavolo-barre-altezza); gap: var(--spazio-6); }
 .tavolo .barre i { width: var(--misura-5); border-radius: var(--raggio-3); }
 .tavolo .riquadro.tu.parla .barre i, .riunione-filo .riquadro.tu.parla .barre i { background: var(--voce); }
+/* incarico 2-f (L2): l'etichetta di «Tu» (in alto, dove comincia la riga) e le barre della voce (al centro) non si toccano. Nel riquadro basso (a 844×390 la riunione
+   della chiusura è alta 51-88 px) un'etichetta larga o alta (l'arabo, il nastaliq dell'urdu, il bengali) arrivava sulle barre. componenti.js misura e, dove si toccherebbero,
+   fa scendere le barre (--barre-sposta) e, se non basta, le rimpicciolisce attorno al loro centro (--barre-scala, da 1 a --barre-scala-minima): resta una distanza
+   (--barre-etichetta-distanza) anche alla massima altezza che la voce dà loro. Dove non si toccano non c'è né scala né spostamento e le barre sono quelle di sempre. */
+.tavolo .riquadro.tu .barre { transform: translate(-50%, calc(-50% + var(--barre-sposta, 0px))) scale(var(--barre-scala, 1)); }
 .js .tavolo:not(.visto) .riquadro, .js .riunione-filo:not(.visto) .riquadro { opacity: 0; }
 .js .tavolo.visto .riquadro, .js .riunione-filo.visto .riquadro { animation: entra var(--durata-tavolo-riquadro) var(--entra) backwards; }
 .js .tavolo.visto .riquadro:nth-child(2), .js .riunione-filo.visto .riquadro:nth-child(2) { animation-delay: 0ms; }

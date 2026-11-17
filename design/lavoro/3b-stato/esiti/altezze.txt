@@ -1,0 +1,6 @@
+prima 390x844 {"pagina":9674,"scena":958,"catena":3543,"domande":1490,"controllare":3527,"inoltra":812,"daDomandeAInoltra":3273}
+prima 1440x900 {"pagina":7445,"scena":812,"catena":2588,"domande":1426,"controllare":2651,"inoltra":808,"daDomandeAInoltra":2419}
+c1 390x844 {"pagina":8765,"scena":958,"catena":3071,"domande":1548,"controllare":3048,"inoltra":796,"daDomandeAInoltra":2852}
+c1 1440x900 {"pagina":7328,"scena":812,"catena":2624,"domande":1522,"controllare":2432,"inoltra":778,"daDomandeAInoltra":2296}
+c2 390x844 {"pagina":8049,"scena":958,"catena":3071,"domande":1548,"controllare":2332,"inoltra":796,"daDomandeAInoltra":2136}
+c2 1440x900 {"pagina":7328,"scena":812,"catena":2624,"domande":1522,"controllare":2432,"inoltra":778,"daDomandeAInoltra":2296}

@@ -1,0 +1,158 @@
+# esame-stato-prima · 17/11/2026 12:26 · sito: /tmp/lavoro-2f-sito-prima-it · esame-impaginazione.mjs chromium normale stato 390x844,360x740,844x390,412x915,750x832,466x678,951x669,326x326,440x706,440x744,421x616,861x609,820x1180,1180x820,1440x900,360x640,390x667,375x812,320x568,1024x600,915x412,1366x640
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+stato · 390×844 · testo 100%: pulito
+stato-menu · 390×844 · testo 100%: pulito
+stato-copia-fatta · 390×844 · testo 100%: pulito
+stato-domanda · 390×844 · testo 100%: pulito
+stato-copia-non-riuscita · 390×844 · testo 100%: pulito
+stato · 360×740 · testo 100%: 
+  A CAPO NEL MEZZO «alle 10:30» in p
+stato-menu · 360×740 · testo 100%: 
+  A CAPO NEL MEZZO «alle 10:30» in p
+stato-copia-fatta · 360×740 · testo 100%: 
+  FUORI VISTA span.copia-fatto: tutto sotto il bordo (schermo 360×740)
+  A CAPO NEL MEZZO «alle 10:30» in p
+stato-domanda · 360×740 · testo 100%: 
+  A CAPO NEL MEZZO «alle 10:30» in p
+stato-copia-non-riuscita · 360×740 · testo 100%: 
+  FUORI VISTA span.copia-errore: tutto sotto il bordo (schermo 360×740)
+  A CAPO NEL MEZZO «alle 10:30» in p
+stato · 844×390 · testo 100%: pulito
+stato-menu · 844×390 · testo 100%: pulito
+stato-domanda · 844×390 · testo 100%: 
+  FUORI VISTA div#domande-risposta: 119 px sopra (schermo 844×390)
+stato-copia-fatta · 844×390 · testo 100%: pulito
+stato-copia-non-riuscita · 844×390 · testo 100%: pulito
+stato · 412×915 · testo 100%: pulito
+stato-menu · 412×915 · testo 100%: pulito
+stato-copia-fatta · 412×915 · testo 100%: pulito
+stato-domanda · 412×915 · testo 100%: pulito
+stato-copia-non-riuscita · 412×915 · testo 100%: pulito
+stato · 750×832 · testo 100%: pulito
+stato-menu · 750×832 · testo 100%: pulito
+stato-copia-fatta · 750×832 · testo 100%: pulito
+stato-domanda · 750×832 · testo 100%: pulito
+stato-copia-non-riuscita · 750×832 · testo 100%: pulito
+stato · 466×678 · testo 100%: pulito
+stato-menu · 466×678 · testo 100%: pulito
+stato-copia-fatta · 466×678 · testo 100%: 
+  FUORI VISTA span.copia-fatto: tutto sotto il bordo (schermo 466×678)
+stato-domanda · 466×678 · testo 100%: pulito
+stato-copia-non-riuscita · 466×678 · testo 100%: 
+  FUORI VISTA span.copia-errore: tutto sotto il bordo (schermo 466×678)
+stato · 951×669 · testo 100%: pulito
+stato-menu · 951×669 · testo 100%: pulito
+stato-copia-fatta · 951×669 · testo 100%: 
+  FUORI VISTA span.copia-fatto: tutto sotto il bordo (schermo 951×669)
+stato-domanda · 951×669 · testo 100%: pulito
+stato-copia-non-riuscita · 951×669 · testo 100%: 
+  FUORI VISTA span.copia-errore: tutto sotto il bordo (schermo 951×669)
+stato · 326×326 · testo 100%: pulito
+stato-menu · 326×326 · testo 100%: pulito
+stato-copia-fatta · 326×326 · testo 100%: 
+  FUORI VISTA span.copia-fatto: 15 px sotto (schermo 326×326)
+stato-domanda · 326×326 · testo 100%: 
+  FUORI VISTA button.domanda-bottone: 93 px sopra (schermo 326×326)
+  FUORI VISTA div#domande-risposta: 27 px sopra (schermo 326×326)
+stato-copia-non-riuscita · 326×326 · testo 100%: 
+  FUORI VISTA span.copia-errore: 37 px sotto (schermo 326×326)
+stato · 440×706 · testo 100%: pulito
+stato-menu · 440×706 · testo 100%: pulito
+stato-copia-fatta · 440×706 · testo 100%: 
+  FUORI VISTA span.copia-fatto: tutto sotto il bordo (schermo 440×706)
+stato-domanda · 440×706 · testo 100%: pulito
+stato-copia-non-riuscita · 440×706 · testo 100%: 
+  FUORI VISTA span.copia-errore: tutto sotto il bordo (schermo 440×706)
+stato · 440×744 · testo 100%: pulito
+stato-menu · 440×744 · testo 100%: pulito
+stato-copia-fatta · 440×744 · testo 100%: pulito
+stato-domanda · 440×744 · testo 100%: pulito
+stato-copia-non-riuscita · 440×744 · testo 100%: 
+  FUORI VISTA span.copia-errore: 10 px sotto (schermo 440×744)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+stato · 421×616 · testo 100%: pulito
+stato-menu · 421×616 · testo 100%: pulito
+stato-copia-fatta · 421×616 · testo 100%: 
+  FUORI VISTA span.copia-fatto: tutto sotto il bordo (schermo 421×616)
+stato-domanda · 421×616 · testo 100%: pulito
+stato-copia-non-riuscita · 421×616 · testo 100%: 
+  FUORI VISTA span.copia-errore: tutto sotto il bordo (schermo 421×616)
+stato · 861×609 · testo 100%: pulito
+stato-menu · 861×609 · testo 100%: pulito
+stato-copia-fatta · 861×609 · testo 100%: pulito
+stato-domanda · 861×609 · testo 100%: 
+  COPERTO DOPO IL GESTO div#domande-risposta: sopra c'è header.barra.compatta
+stato-copia-non-riuscita · 861×609 · testo 100%: pulito
+stato · 820×1180 · testo 100%: pulito
+stato-menu · 820×1180 · testo 100%: pulito
+stato-copia-fatta · 820×1180 · testo 100%: pulito
+stato-domanda · 820×1180 · testo 100%: pulito
+stato-copia-non-riuscita · 820×1180 · testo 100%: pulito
+stato-menu · 1180×820 · testo 100%: lo stato non c'è a questa misura
+stato · 1180×820 · testo 100%: pulito
+stato-copia-fatta · 1180×820 · testo 100%: pulito
+stato-domanda · 1180×820 · testo 100%: pulito
+stato-copia-non-riuscita · 1180×820 · testo 100%: pulito
+stato-menu · 1440×900 · testo 100%: lo stato non c'è a questa misura
+stato · 1440×900 · testo 100%: pulito
+stato-copia-fatta · 1440×900 · testo 100%: pulito
+stato-domanda · 1440×900 · testo 100%: pulito
+stato-copia-non-riuscita · 1440×900 · testo 100%: pulito
+stato · 360×640 · testo 100%: 
+  A CAPO NEL MEZZO «alle 10:30» in p
+stato-menu · 360×640 · testo 100%: 
+  A CAPO NEL MEZZO «alle 10:30» in p
+stato-copia-fatta · 360×640 · testo 100%: 
+  A CAPO NEL MEZZO «alle 10:30» in p
+stato-domanda · 360×640 · testo 100%: 
+  A CAPO NEL MEZZO «alle 10:30» in p
+stato-copia-non-riuscita · 360×640 · testo 100%: 
+  A CAPO NEL MEZZO «alle 10:30» in p
+stato · 390×667 · testo 100%: pulito
+stato-menu · 390×667 · testo 100%: pulito
+stato-copia-fatta · 390×667 · testo 100%: 
+  FUORI VISTA span.copia-fatto: tutto sotto il bordo (schermo 390×667)
+stato-domanda · 390×667 · testo 100%: pulito
+stato-copia-non-riuscita · 390×667 · testo 100%: 
+  FUORI VISTA span.copia-errore: tutto sotto il bordo (schermo 390×667)
+stato · 375×812 · testo 100%: pulito
+stato-menu · 375×812 · testo 100%: pulito
+stato-copia-fatta · 375×812 · testo 100%: 
+  FUORI VISTA span.copia-fatto: 14 px sotto (schermo 375×812)
+stato-domanda · 375×812 · testo 100%: pulito
+stato-copia-non-riuscita · 375×812 · testo 100%: 
+  FUORI VISTA span.copia-errore: 36 px sotto (schermo 375×812)
+stato · 320×568 · testo 100%: 
+  ESCE span.fonte «engine.rs, benchmarks/engines» da li.anello.fatto
+stato-menu · 320×568 · testo 100%: 
+  ESCE span.fonte «engine.rs, benchmarks/engines» da li.anello.fatto
+stato-copia-fatta · 320×568 · testo 100%: 
+  ESCE span.fonte «engine.rs, benchmarks/engines» da li.anello.fatto
+stato-domanda · 320×568 · testo 100%: 
+  COPERTO DOPO IL GESTO button.domanda-bottone: sopra c'è path
+  ESCE span.fonte «engine.rs, benchmarks/engines» da li.anello.fatto
+stato-copia-non-riuscita · 320×568 · testo 100%: 
+  ESCE span.fonte «engine.rs, benchmarks/engines» da li.anello.fatto
+stato-menu · 1024×600 · testo 100%: lo stato non c'è a questa misura
+stato · 1024×600 · testo 100%: pulito
+stato-copia-fatta · 1024×600 · testo 100%: pulito
+stato-domanda · 1024×600 · testo 100%: pulito
+stato-copia-non-riuscita · 1024×600 · testo 100%: pulito
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+stato · 915×412 · testo 100%: pulito
+stato-menu · 915×412 · testo 100%: pulito
+stato-copia-fatta · 915×412 · testo 100%: pulito
+stato-domanda · 915×412 · testo 100%: 
+  FUORI VISTA div#domande-risposta: 40 px sopra (schermo 915×412)
+stato-copia-non-riuscita · 915×412 · testo 100%: pulito
+stato-menu · 1366×640 · testo 100%: lo stato non c'è a questa misura
+stato · 1366×640 · testo 100%: pulito
+stato-copia-fatta · 1366×640 · testo 100%: 
+  FUORI VISTA span.copia-fatto: tutto sotto il bordo (schermo 1366×640)
+stato-domanda · 1366×640 · testo 100%: pulito
+stato-copia-non-riuscita · 1366×640 · testo 100%: 
+  FUORI VISTA span.copia-errore: tutto sotto il bordo (schermo 1366×640)
+
+A CAPO NEL MEZZO: 10 · FUORI VISTA: 23 · COPERTO DOPO IL GESTO: 2 · ESCE: 5
+40 cose da guardare (foto in /tmp/lavoro-2f-qa-esame-stato-prima/esame/chromium)
+# uscita: 1

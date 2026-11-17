@@ -1,0 +1,91 @@
+# esame-na-3 · 17/11/2026 12:07 · sito: /tmp/lavoro-2f-sito-mio2-it · esame-impaginazione.mjs chromium normale non-ancora 1005x900,1010x900,1011x900,1095x900,1180x900,1181x900,1195x900,1209x900,1210x900,1320x900,1430x900,1431x900,1675x900,1920x900
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+non-ancora-menu · 1005×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1005×900 · testo 100%: pulito
+non-ancora-errore-audio · 1005×900 · testo 100%: pulito
+non-ancora-ascolto · 1005×900 · testo 100%: pulito
+non-ancora-copia-fatta · 1005×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1005×900 · testo 100%: pulito
+non-ancora-menu · 1010×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1010×900 · testo 100%: pulito
+non-ancora-errore-audio · 1010×900 · testo 100%: pulito
+non-ancora-ascolto · 1010×900 · testo 100%: pulito
+non-ancora-copia-fatta · 1010×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1010×900 · testo 100%: pulito
+non-ancora-menu · 1011×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1011×900 · testo 100%: pulito
+non-ancora-errore-audio · 1011×900 · testo 100%: pulito
+non-ancora-ascolto · 1011×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1011×900 · testo 100%: pulito
+non-ancora-copia-fatta · 1011×900 · testo 100%: pulito
+non-ancora-menu · 1095×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1095×900 · testo 100%: pulito
+non-ancora-errore-audio · 1095×900 · testo 100%: pulito
+non-ancora-ascolto · 1095×900 · testo 100%: pulito
+non-ancora-copia-fatta · 1095×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1095×900 · testo 100%: pulito
+non-ancora-menu · 1180×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1180×900 · testo 100%: pulito
+non-ancora-errore-audio · 1180×900 · testo 100%: pulito
+non-ancora-ascolto · 1180×900 · testo 100%: pulito
+non-ancora-copia-fatta · 1180×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1180×900 · testo 100%: pulito
+non-ancora-menu · 1181×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1181×900 · testo 100%: pulito
+non-ancora-errore-audio · 1181×900 · testo 100%: pulito
+non-ancora-ascolto · 1181×900 · testo 100%: pulito
+non-ancora-copia-fatta · 1181×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1181×900 · testo 100%: pulito
+non-ancora-menu · 1195×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1195×900 · testo 100%: pulito
+non-ancora-errore-audio · 1195×900 · testo 100%: pulito
+non-ancora-ascolto · 1195×900 · testo 100%: pulito
+non-ancora-copia-fatta · 1195×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1195×900 · testo 100%: pulito
+non-ancora-menu · 1209×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1209×900 · testo 100%: pulito
+non-ancora-errore-audio · 1209×900 · testo 100%: pulito
+non-ancora-ascolto · 1209×900 · testo 100%: pulito
+non-ancora-copia-fatta · 1209×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1209×900 · testo 100%: pulito
+non-ancora-menu · 1210×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1210×900 · testo 100%: pulito
+non-ancora-ascolto · 1210×900 · testo 100%: pulito
+non-ancora-errore-audio · 1210×900 · testo 100%: pulito
+non-ancora-copia-fatta · 1210×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1210×900 · testo 100%: pulito
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+non-ancora-menu · 1320×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1320×900 · testo 100%: pulito
+non-ancora-ascolto · 1320×900 · testo 100%: pulito
+non-ancora-errore-audio · 1320×900 · testo 100%: pulito
+non-ancora-copia-fatta · 1320×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1320×900 · testo 100%: pulito
+non-ancora-menu · 1430×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1430×900 · testo 100%: pulito
+non-ancora-ascolto · 1430×900 · testo 100%: pulito
+non-ancora-errore-audio · 1430×900 · testo 100%: pulito
+non-ancora-copia-fatta · 1430×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1430×900 · testo 100%: pulito
+non-ancora-menu · 1431×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1431×900 · testo 100%: pulito
+non-ancora-errore-audio · 1431×900 · testo 100%: pulito
+non-ancora-ascolto · 1431×900 · testo 100%: pulito
+non-ancora-copia-fatta · 1431×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1431×900 · testo 100%: pulito
+non-ancora-menu · 1675×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1675×900 · testo 100%: pulito
+non-ancora-errore-audio · 1675×900 · testo 100%: pulito
+non-ancora-ascolto · 1675×900 · testo 100%: pulito
+non-ancora-copia-fatta · 1675×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1675×900 · testo 100%: pulito
+non-ancora-menu · 1920×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1920×900 · testo 100%: pulito
+non-ancora-errore-audio · 1920×900 · testo 100%: pulito
+non-ancora-ascolto · 1920×900 · testo 100%: pulito
+non-ancora-copia-fatta · 1920×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1920×900 · testo 100%: pulito
+
+
+Tutto pulito (foto in /tmp/lavoro-2f-qa-esame-na-3/esame/chromium)
+# uscita: 0

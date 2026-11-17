@@ -1,0 +1,7 @@
+# scelta-chromium-prima · 17/11/2026 13:19 · node scelta-barra.mjs /tmp/lavoro-2f-sito-prima-10 chromium 1440x900,844x390,1280x720,390x844,326x326
+NO  chromium 1440x900: titolo 220 156 176 (SPENTO) · barra a riposo 46 0 16 contro pagina 67 1 24 (FASCIA PIENA) · scorrendo la pagina non scorre · animation-timeline sì · errori 0
+NO  chromium 844x390: titolo 219 123 157 (SPENTO) · barra a riposo 46 0 16 contro pagina 94 8 38 (FASCIA PIENA) · scorrendo la pagina non scorre · animation-timeline sì · errori 0
+NO  chromium 1280x720: titolo 220 155 176 (SPENTO) · barra a riposo 46 0 16 contro pagina 75 3 28 (FASCIA PIENA) · scorrendo la pagina non scorre · animation-timeline sì · errori 0
+NO  chromium 390x844: titolo 220 165 181 (SPENTO) · barra a riposo 46 0 16 contro pagina 66 0 23 (FASCIA PIENA) · scorrendo la pagina non scorre · animation-timeline sì · errori 0
+NO  chromium 326x326: titolo 220 166 181 (SPENTO) · barra a riposo 82 6 32 contro pagina 85 7 33 (senza fondo) · scorrendo 46 0 16 piena · animation-timeline sì · errori 0
+# uscita: 1

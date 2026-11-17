@@ -138,6 +138,7 @@
   font-weight: var(--peso-medio);
   color: var(--testo-didascalia);
   white-space: nowrap;
+  max-width: 100%;
   vertical-align: baseline;
 }
 
@@ -241,10 +242,10 @@
   padding-top: var(--spazio-20);
   border-top: var(--filetto-sottile) solid var(--bordo-sezione);
 }
-.racconta p { flex: 1 1 var(--misura-30); margin: 0; max-width: var(--misura-33); font-size: var(--corpo-7); line-height: var(--interlinea-8); color: var(--testo-nota); text-wrap: pretty; }
+.racconta p { flex: 1 1 var(--misura-30); margin: 0; max-width: var(--misura-30); font-size: var(--corpo-7); line-height: var(--interlinea-8); color: var(--testo-nota); text-wrap: pretty; }
 .racconta strong { color: var(--testo); font-weight: var(--peso-forte); }
 
-/* ---------- con lo script: una tappa alla volta ---------- */
+/* ---------- con lo script: la tappa che arriva sullo schermo si accende (a cascata breve se ne arrivano più insieme) ---------- */
 .js .catena .anello:not(.acceso)::before, .js .catena .anello:not(.acceso)::after { transform: scaleY(0); }
 .js .catena .anello.acceso::before { transform: none; transition: transform var(--durata-anello-linea) var(--curva-lineare); }
 .js .catena .anello.acceso::after { transform: none; transition: transform var(--durata-anello-linea) var(--curva-lineare) var(--ritardo-anello-dopo); }
@@ -257,30 +258,33 @@
   60% { transform: scale(var(--tappa-nodo-scala)); }
   to { transform: none; }
 }
-.js .catena .anello:not(.acceso) .anello-nome, .js .catena .anello:not(.acceso) .anello-fatti { opacity: var(--opacita-anello-spento); }
-.js .catena .anello .anello-nome, .js .catena .anello .anello-fatti { transition: opacity var(--durata-esito-opacita) var(--curva-dolce) var(--durata-anello-linea); }
+/* il testo della tappa si legge sempre, anche prima che la linea arrivi (correzione dopo il giudizio, I1): spenti restano solo il nodo e la linea */
+/* una tappa accesa «subito» (sopra lo schermo, saltata) non ripete il movimento */
+.js .catena .anello.subito::before, .js .catena .anello.subito::after { transition: none !important; }
+.js .catena .anello.subito .anello-nodo, .js .catena .anello.subito .parole-segni::after { animation: none !important; }
 .js .catena .anello:not(.acceso) .quota i { transform: scaleX(0); }
-.js .catena .anello.acceso .quota i { transform: none; transition: transform var(--durata-quota) var(--entra) var(--ritardo-quota); }
+.js .catena .anello.acceso .quota i { transform: none; transition: transform var(--durata-quota) var(--entra) var(--ritardo-fatto-anello); }
 .js .catena .anello:not(.acceso) .parole-segni { clip-path: inset(0 100% 0 0); }
 :root:dir(rtl) .js .catena .anello:not(.acceso) .parole-segni { clip-path: inset(0 0 0 100%); }
-.js .catena .anello.acceso .parole-segni { clip-path: inset(0); transition: clip-path var(--durata-parole) var(--curva-lineare) var(--ritardo-quota); }
-.js .catena .anello.acceso .parole-segni::after { animation: parola-sbagliata var(--durata-urto) var(--curva-dolce) calc(var(--ritardo-quota) + var(--durata-parole)) 2 backwards; }
+.js .catena .anello.acceso .parole-segni { clip-path: inset(0); transition: clip-path var(--durata-parole) var(--curva-lineare) var(--ritardo-fatto-anello); }
+.js .catena .anello.acceso .parole-segni::after { animation: parola-sbagliata var(--durata-urto) var(--curva-dolce) calc(var(--ritardo-fatto-anello) + var(--durata-parole)) 2 backwards; }
 @keyframes parola-sbagliata {
   0%, 100% { box-shadow: none; }
   40% { box-shadow: var(--parola-sbagliata-ombra); }
 }
 .js .catena .anello:not(.acceso) .pacchetti li { border-color: var(--bordo-comando); background: transparent; }
 .js .catena .anello.acceso .pacchetti li { transition: border-color var(--durata-nodo-bordo) var(--curva-dolce) var(--ritardo, 0ms), background-color var(--durata-nodo-sfondo) var(--curva-dolce) var(--ritardo, 0ms); }
-.js .catena .anello.acceso .pacchetti li:nth-child(1) { --ritardo: var(--ritardo-quota); }
-.js .catena .anello.acceso .pacchetti li:nth-child(2) { --ritardo: calc(var(--ritardo-quota) + var(--passo-pacchetti)); }
-.js .catena .anello.acceso .pacchetti li:nth-child(3) { --ritardo: calc(var(--ritardo-quota) + 2 * var(--passo-pacchetti)); }
-.js .catena .anello.acceso .pacchetti li:nth-child(4) { --ritardo: calc(var(--ritardo-quota) + 3 * var(--passo-pacchetti)); }
+.js .catena .anello.acceso .pacchetti li:nth-child(1) { --ritardo: var(--ritardo-fatto-anello); }
+.js .catena .anello.acceso .pacchetti li:nth-child(2) { --ritardo: calc(var(--ritardo-fatto-anello) + var(--passo-pacchetti)); }
+.js .catena .anello.acceso .pacchetti li:nth-child(3) { --ritardo: calc(var(--ritardo-fatto-anello) + 2 * var(--passo-pacchetti)); }
+.js .catena .anello.acceso .pacchetti li:nth-child(4) { --ritardo: calc(var(--ritardo-fatto-anello) + 3 * var(--passo-pacchetti)); }
 .js .catena .anello:not(.acceso) .riscrive-a { opacity: 0; transform: scale(var(--bolla-nasce-scala)); }
 .js .catena .anello.acceso .riscrive-a { transition: opacity var(--durata-bolla-nasce) var(--curva-dolce) var(--ritardo-riscrive), transform var(--durata-bolla-nasce) var(--entra) var(--ritardo-riscrive); }
 
 @media (max-width: 1180px) {
   .catena { grid-template-columns: minmax(0, 1fr); }
-  .catena-misura { grid-column: 1; grid-row: 3; margin: var(--spazio-22) 0 0; }
+  .catena-misura { position: static; grid-column: 1; grid-row: 3; height: auto; margin: var(--spazio-22) 0 0; }
+  .catena-misura-testo { position: static; }
   .anello-fatti { grid-template-columns: minmax(0, 1fr); }
   .anello-fatti > p, .anello-fatti > .cifra, .anello-fatti > .pacchetti, .anello-fatti > .riscrive, .anello-fatti > .app-nomi { grid-column: 1; grid-row: auto; }
 }
@@ -298,4 +302,61 @@
   .cifra-numero { font-size: var(--cifra-grandezza-telefono); line-height: var(--cifra-interlinea-telefono); }
   .racconta { flex-direction: column; align-items: stretch; }
   .racconta p { flex-basis: auto; font-size: var(--corpo-6); line-height: var(--interlinea-6); }
+}
+
+/* ---------- Correzione dopo il giudizio (incarico 3b-c, 17/11/2026) ---------- */
+/* M3: la parentesi «non misurato» va dal nodo di «Scrivi la frase» a quello di «Gli altri ti sentono» (stato.js misura i due nodi:
+   --misura-da e --misura-a) e la scritta resta in vista finché c'è la parentesi. Senza script: tutta l'altezza della catena */
+@media (min-width: 1181px) {
+  .catena-misura { position: absolute; inset-inline-start: 0; top: var(--misura-da, 0px); height: calc(var(--misura-a, 100%) - var(--misura-da, 0px)); margin: 0; }
+  .catena-misura-testo { position: sticky; top: var(--catena-misura-testo-sopra); margin: 0; }
+}
+.catena-misura-testo { margin: 0; }
+/* M4: una fonte lunga va a capo dentro la sua etichetta invece di uscire dalla cornice (a 320 px) */
+.fonte { white-space: normal; overflow-wrap: anywhere; }
+/* I4: i dettagli di una tappa (come è misurato, le fonti): al computer sempre aperti, senza il comando; al telefono a richiesta */
+.anello-fatti > .anello-dettagli { grid-column: 2; display: grid; row-gap: var(--spazio-10); }
+.anello-fatti > :first-child:not(.cifra):not(.pacchetti):not(.riscrive):not(.app-nomi) ~ .anello-dettagli { grid-column: 1 / -1; }
+.anello-dettagli > p + p { margin-top: var(--spazio-10); }
+.anello-dettagli > p { margin: 0; max-width: var(--misura-31); font-size: var(--corpo-7); line-height: var(--interlinea-8); color: var(--testo-spiegazione); text-wrap: pretty; }
+.anello-dettagli > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spazio-7);
+  width: max-content;
+  max-width: 100%;
+  min-height: var(--misura-21);
+  font-size: var(--corpo-6);
+  font-weight: var(--peso-medio);
+  color: var(--testo-secondario);
+  text-decoration: underline;
+  text-decoration-color: var(--sottolineatura);
+  text-underline-offset: var(--spazio-5);
+  cursor: pointer;
+  list-style: none;
+}
+.anello-dettagli > summary::-webkit-details-marker { display: none; }
+.anello-dettagli > summary::after {
+  content: "";
+  width: var(--misura-8);
+  height: var(--misura-8);
+  background: currentColor;
+  transform: rotate(var(--dettagli-segno-rotazione));
+  transition: transform var(--durata-collegamento-freccia) var(--entra);
+  -webkit-mask: var(--collegamento-freccia-maschera);
+  mask: var(--collegamento-freccia-maschera);
+}
+.anello-dettagli[open] > summary::after { transform: rotate(calc(-1 * var(--dettagli-segno-rotazione))); }
+@media (min-width: 761px) {
+  .anello-dettagli > summary { display: none; }
+}
+@media (max-width: 1180px) {
+  .anello-fatti > .anello-dettagli { grid-column: 1; }
+}
+@media (max-width: 760px) {
+  .anello-dettagli > p { font-size: var(--corpo-6); line-height: var(--interlinea-6); }
+  .anello-dettagli > p:first-of-type { margin-top: var(--spazio-3); }
+  /* al telefono la strada si legge per tappe: meno aria fra l'una e l'altra */
+  .anello { padding-block: var(--anello-spazio-blocco-telefono); }
+  .anello:not(:first-child) { --anello-spazio-sopra-nodo: var(--anello-spazio-blocco-telefono); }
 }

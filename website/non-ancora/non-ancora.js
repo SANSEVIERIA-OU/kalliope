@@ -114,11 +114,13 @@
   // la risposta si dice a ogni pressione, anche la seconda con le stesse parole: per i lettori di schermo il testo cambia
   function rispondi(si) {
     const [mostra, nascondi] = si ? [copiato, noCopia] : [noCopia, copiato];
-    nascondi.hidden = true; mostra.hidden = true;
-    setTimeout(() => { mostra.hidden = false; mostraInsieme(copia, copiato.parentElement); }, 60);
+    nascondi.classList.add('vuoto'); mostra.classList.add('vuoto');
+    setTimeout(() => { mostra.classList.remove('vuoto'); mostraInsieme(copia, copiato.parentElement); }, 60);
   }
   if (copia && navigator.clipboard && window.isSecureContext) {
     copia.hidden = false;
+    // le due risposte restano nella pagina, invisibili, e il posto per la più lunga c'è già (versioni.css, P1: il pannello non si muove quando compare la risposta)
+    [copiato, noCopia].forEach(r => { r.hidden = false; r.classList.add('vuoto'); });
     copia.addEventListener('click', () => {
       navigator.clipboard.writeText(location.href.split('#')[0])
         .then(() => {
@@ -336,11 +338,15 @@
   // messaggio d'errore, la risposta di «Copia»). Nel primo schermo vince il comando; quando un gesto apre qualcosa vince ciò che il gesto ha aperto
   // (PIANO.md, «La cornice»), e dove l'altezza non basta la riunione si abbassa perché stia tutto (pagina.css, .tavolo-pagina). Se non ci stanno insieme
   // nemmeno così (il messaggio d'errore sugli schermi più bassi, al telefono) vince uno dei due: il fondo (il messaggio d'errore sta per intero nello
-  // schermo, vicino al comando che l'ha causato, e la riunione scorre sotto la barra) o l'inizio (mentre suona, la bolla con le parole che si accendono).
+  // schermo, vicino al comando che l'ha causato, e la riunione scorre sotto la barra) o l'inizio (mentre suona, la bolla con le parole che si accendono). Ma l'inizio non vince
+  // a costo del pulsante premuto (l'«essenziale»: non tutto il suo contenitore, che ha anche il collegamento a «Tutte le frasi»): mentre suona vinceva senza condizioni, e in
+  // urdu a 326×326, dove la riunione è già al suo minimo e la bolla ha tre righe alte, «Pausa» finiva 23 px sotto il bordo (en-XA 14). Ora si cede a gradi: prima la bolla sale
+  // sotto la barra per il suo margine (le parole restano appena sotto la barra: «testo»); se non basta, il pulsante resta a 4 px dal bordo invece di 8 e le parole salgono
+  // sotto la barra per il poco che manca (di norma l'interlinea della prima riga), mai il pulsante fuori (incarico 2-f, L1).
   // Se uno scorrimento è già in corso (il primo, premendo «Ascolta», e il messaggio d'errore arriva a metà) si misura dove sarà arrivato: misurando a metà
   // strada il messaggio sembrava già in vista, non si chiedeva niente, e lo scorrimento in corso lo portava sotto il bordo (rifinitura 3a-r, N1).
   let meta = null, metaQuando = 0;   // dove va a finire lo scorrimento in corso (posizione assoluta) e quando è stato chiesto
-  function mostraInsieme(inizio, fondo, vince = 'fondo') {
+  function mostraInsieme(inizio, fondo, vince = 'fondo', {essenziale = fondo, testo = inizio} = {}) {
     requestAnimationFrame(() => {
       if (!inizio.isConnected || !fondo.isConnected) return;
       if (meta !== null && (Math.abs(scrollY - meta) <= 1 || performance.now() - metaQuando > 1500)) meta = null;   // arrivato (o non arriva: la pagina finisce prima)
@@ -350,7 +356,14 @@
       const barraEl = $('.barra'), alto = (barraEl ? barraEl.getBoundingClientRect().bottom : 0) + 8;
       const giu = Math.max(0, fondo.getBoundingClientRect().bottom - spostato - resto - (innerHeight - 8));   // quanto scorrere perché il fondo si veda
       const su = inizio.getBoundingClientRect().top - resto - alto;                                            // quanto scorrere perché l'inizio stia sotto la barra (negativo: verso l'alto)
-      const dy = giu <= su ? Math.min(Math.max(0, giu), su) : vince === 'inizio' ? su : giu;
+      const giuEssenziale = essenziale.getBoundingClientRect().bottom - resto - (innerHeight - 8);                                 // quanto scorrere perché l'essenziale (il pulsante premuto) si veda (negativo: quanto può scendere sullo schermo)
+      const suTesto = testo.getBoundingClientRect().top - resto - (alto - 8);                                                      // quanto scorrere perché il testo stia appena sotto la barra (senza il margine di 8 px)
+      const cedi = 4;                                                                                                              // l'ultimo margine che si cede: il pulsante a 4 px dal bordo invece di 8
+      const dy = giu <= su ? Math.min(Math.max(0, giu), su)
+        : vince !== 'inizio' ? giu
+        : giuEssenziale <= su ? su                                   // la bolla intera e il pulsante ci stanno
+        : giuEssenziale <= suTesto ? giuEssenziale                   // sale sotto la barra solo il margine della bolla
+        : Math.max(suTesto, giuEssenziale - cedi);                   // non basta: il pulsante a 4 px dal bordo, e il testo sale sotto la barra del poco che manca
       if (Math.abs(dy) > 1) {
         const nuova = scrollY + resto + dy;
         scrollTo({top: nuova, behavior: ridotto ? 'instant' : 'smooth'});
@@ -372,7 +385,7 @@
   function suona() {
     if (discorso) { if (discorso.stato === 'suona') pausa(); else if (discorso.stato === 'pausa') riprendi(); else ferma(false); return; }
     clearTimeout(ritorno); togliNota();
-    scenaSubito(); mostraInsieme(bolla, comandi, 'inizio');   // dove lo schermo è basso o la pagina è in fondo, premendo la riunione viene in vista da sé (come nella home, 8c); se col comando non ci sta, vince la bolla, dove le parole si accendono
+    scenaSubito(); mostraInsieme(bolla, comandi, 'inizio', {essenziale: bottone, testo});   // dove lo schermo è basso o la pagina è in fondo, premendo la riunione viene in vista da sé (come nella home, 8c); se col comando non ci sta, vince la bolla, dove le parole si accendono, ma mai a costo del pulsante: «Pausa» resta in vista, e della bolla sale sotto la barra soltanto ciò che manca (incarico 2-f, L1)
     const parole = dividi().flat();
     parole.forEach(p => p.classList.add('attesa'));
     bolla.classList.remove('detta');

@@ -1,0 +1,15 @@
+# copia-webkit-prima · 17/11/2026 13:34 · node copia-posto.mjs /tmp/lavoro-2f-sito-prima-10 webkit it/non-ancora/,en-XA/non-ancora/,ar-XB/non-ancora/ 1440x900,1024x768,844x390,390x844
+NO  webkit it/non-ancora/ 1440x900: pannello alto 289 px, sopra a 2033.5; dopo «Copia» (risposta: fatto) scarto massimo: posizione 13.5 px, altezza 27 px, nota sotto 0 px · errori 0
+NO  webkit it/non-ancora/ 1024x768: pannello alto 289 px, sopra a 2345; dopo «Copia» (risposta: fatto) scarto massimo: posizione 0 px, altezza 27 px, nota sotto 27 px · errori 0
+NO  webkit it/non-ancora/ 844x390: pannello alto 289 px, sopra a 2513; dopo «Copia» (risposta: fatto) scarto massimo: posizione 0 px, altezza 27 px, nota sotto 27 px · errori 0
+NO  webkit it/non-ancora/ 390x844: pannello alto 293 px, sopra a 2794; dopo «Copia» (risposta: fatto) scarto massimo: posizione 0 px, altezza 38 px, nota sotto 38 px · errori 0
+NO  webkit en-XA/non-ancora/ 1440x900: pannello alto 297 px, sopra a 2323.5; dopo «Copia» (risposta: fatto) scarto massimo: posizione 19 px, altezza 38 px, nota sotto 0 px · errori 0
+NO  webkit en-XA/non-ancora/ 1024x768: pannello alto 289 px, sopra a 2614; dopo «Copia» (risposta: fatto) scarto massimo: posizione 0 px, altezza 46 px, nota sotto 46 px · errori 0
+NO  webkit en-XA/non-ancora/ 844x390: pannello alto 289 px, sopra a 2955; dopo «Copia» (risposta: fatto) scarto massimo: posizione 0 px, altezza 46 px, nota sotto 46 px · errori 0
+NO  webkit en-XA/non-ancora/ 390x844: pannello alto 351 px, sopra a 3231; dopo «Copia» (risposta: fatto) scarto massimo: posizione 0 px, altezza 57 px, nota sotto 57 px · errori 0
+NO  webkit ar-XB/non-ancora/ 1440x900: pannello alto 305.2 px, sopra a 2383.8; dopo «Copia» (risposta: fatto) scarto massimo: posizione 14.900000000000091 px, altezza 29.80000000000001 px, nota sotto 0 px · errori 0
+NO  webkit ar-XB/non-ancora/ 1024x768: pannello alto 305.2 px, sopra a 2654; dopo «Copia» (risposta: fatto) scarto massimo: posizione 0 px, altezza 29.80000000000001 px, nota sotto 29.800000000000182 px · errori 0
+NO  webkit ar-XB/non-ancora/ 844x390: pannello alto 305.2 px, sopra a 2726.8; dopo «Copia» (risposta: fatto) scarto massimo: posizione 0 px, altezza 29.80000000000001 px, nota sotto 29.800000000000182 px · errori 0
+NO  webkit ar-XB/non-ancora/ 390x844: pannello alto 308.6 px, sopra a 3028.3; dopo «Copia» (risposta: fatto) scarto massimo: posizione 0 px, altezza 43.69999999999999 px, nota sotto 43.69999999999982 px · errori 0
+NO  webkit: 12 casi, 12 in cui il pannello si muove o cambia altezza
+# uscita: 1

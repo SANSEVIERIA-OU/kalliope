@@ -25,8 +25,8 @@ devi controllare» (il computer: che cosa ne esce, che cosa ci entra, che cosa r
 | Non ancora provato in una riunione vera con Zoom, Teams o Meet | §0; §7 «Promesse»; §9 | A, titolo, scena (dopo il microfono tutto tratteggiato) e riga «Oggi:»; B, tappa «le app di riunione» tratteggiata | c'è |
 | L'installazione è provata da uno script, su Ubuntu 24.04 (apt), Fedora (dnf, in un contenitore), Arch (makepkg) e con l'archivio; per ognuno: si apre, pronuncia una frase con la voce | R `docs/releasing.md` punto 6 | B, nella cornice «Su un solo computer», accanto alla prima tappa: «L'installazione è provata da uno script…» | c'è. La pagina vecchia diceva «Ubuntu 24.04, Fedora e Arch»: corretto con il file (anche l'archivio, e che cosa fa la prova) |
 | Parole sbagliate secondo Whisper sulla voce registrata dal microfono, come la sentirebbe una riunione: 2,3% su 10 frasi | R README; §2.3 | B, sotto la tappa del microfono (è lì che è registrata), con la barra «una parola su 43» e la fonte | c'è |
-| Circa una parola sbagliata su 45 sui sei campioni del sito | C §2.3 | B, stessa tappa, misura a parte («due misure diverse: non si fondono») | c'è, separata dalla prima |
-| Le differenze che restano sono di scrittura («10 e 30» per «10:30», «ancora» per «àncora») | R README | B, nota della stessa tappa | c'è |
+| Circa una parola sbagliata su 45 sui sei campioni del sito | C §2.3 | B, tappa del microfono, nei dettagli («I dettagli e le fonti», aperti al computer, a richiesta al telefono), misura a parte | c'è, separata dalla prima |
+| Le differenze che restano sono di scrittura («10 e 30» per «10:30», «ancora» per «àncora») | R README | B, tappa del microfono, nei dettagli: «Negli ascolti di verifica le differenze che restano sono soprattutto di scrittura…» | c'è (dalla correzione, I6: prima l'elenco la dava per presente e la pagina non l'aveva) |
 | Non misurato: il tempo fra Invio e il suono nella riunione | §2.3 L; §7 «In tempo reale» | B, la parentesi tratteggiata sopra tutta la strada: «dal tasto Invio al suono nella riunione: non misurato» | c'è |
 | Nel banco di prova dei motori il primo suono arriva in meno di 160 ms (strumento in Python, non l'app) | R `benchmarks/engines/README.md` | B, nota della tappa «la voce nasce»: detta come misura di uno strumento di prova, non dell'app | c'è, con il limite accanto |
 | La voce parte dopo la prima frase; mentre una suona si prepara la successiva | R engine.rs §2.3 | B, tappa «la voce nasce» | c'è |
@@ -40,7 +40,7 @@ devi controllare» (il computer: che cosa ne esce, che cosa ci entra, che cosa r
 | Il suono arriva solo se un'app registra dal microfono; ciò che si dice mentre nessuno ascolta si scarta | §1.4 R docs | B, nota della tappa del microfono | c'è |
 | Microfono: 0% di CPU se nessuna app ascolta; circa 0,26% di un core mentre registra; ritardo circa 21 ms | M `docs/virtual-microphone.md` | B, tappa del microfono, con la fonte | c'è |
 | Voce: circa 0,07 s di CPU per ogni secondo di voce, un thread | M README | B, tappa «la voce nasce», con la barra «0,07 s su 1 s» | c'è |
-| Normalizzatore: circa 11 µs a frase; numeri, date, orari, importi, sigle scritti in parole | M R README, CHANGELOG | B, tappa «scrivi la frase», con l'esempio vero «cmq ci vediamo dmn alle 10:30» | c'è |
+| Normalizzatore: circa 11 µs a frase; numeri, date, orari, importi, sigle scritti in parole | M R README, CHANGELOG | B, tappa «scrivi la frase»: una frase in vista («numeri, date, orari, importi e sigle diventano parole da dire»), il campo e la bolla della riscrittura, nei dettagli l'esempio vero e gli 11 µs | c'è |
 | Pronuncia: regole e un lessico di 7.920 parole | R README | B, tappa «la voce nasce» | c'è |
 | Finestra: 10,6 MB con la sola finestra, circa 117 MB con la voce caricata, 0% di CPU a riposo | M README | B, la cornice del computer (il programma intero) | c'è |
 | Hai provato in una riunione vera? Dillo: app e versione, distribuzione, versione di PipeWire, che cosa è successo, la frase che la finestra mostrava; non incollare le frasi dette; canale: le segnalazioni su GitHub, con un account | P9; pagina vecchia | B, sotto la strada: «Lo stato «non ancora» cambia solo con prove vere» e il collegamento alle segnalazioni, con che cosa scrivere | c'è. Il canale senza account (dubbio A) non esiste: detto |
@@ -52,15 +52,15 @@ devi controllare» (il computer: che cosa ne esce, che cosa ci entra, che cosa r
 |---|---|---|---|
 | Fa per te se scrivi con una tastiera (o un altro dispositivo che scrive per te: non ancora provato), vuoi intervenire senza la tua voce, hai un computer Linux a 64 bit con PipeWire | pagina vecchia; §4.1 F1 | C, domanda «È adatto a chi non può parlare?» (la prima, già aperta) | c'è |
 | Per alcune persone con afasia scrivere è difficile: può non servire, o servire con un familiare. Non lo promettiamo; da confermare con un logopedista | §4.2 I | C, domanda «E se scrivere è difficile?» | c'è, detta come «non lo sappiamo» |
-| Kalliope non è un dispositivo medico e non sostituisce la valutazione di un logopedista | pagina vecchia; home (chiusura); §12 dubbio F | C, nella stessa risposta | c'è, **come nella home**. Il dubbio F (avvertenza concordata con il proprietario) è ancora aperto in `progetto.md` §12: **chiedere** a chi coordina se resta |
-| Che cosa serve oggi: Linux x86_64, glibc 2.39 o più recente, PipeWire con pipewire-pulse, curl; Debian 13, Ubuntu 24.04 o più recenti, Fedora, Arch, altre con l'archivio | §4.3; R releasing.md | C, domanda «Che cosa serve?» (in breve) e rimando a `installa/` | c'è; i comandi **rimandati a** `installa/` |
+| Kalliope non è un dispositivo medico e non sostituisce la valutazione di un logopedista | pagina vecchia; home (chiusura); §12 dubbio F | C, nella stessa risposta | c'è, come nella home: deciso da chi coordina il 17/11 (si rivede con i testi) |
+| Che cosa serve oggi: Linux x86_64, glibc 2.39 o più recente, PipeWire con pipewire-pulse, curl; Debian 13, Ubuntu 24.04 o più recenti, Fedora, Arch, altre con l'archivio | §4.3; R releasing.md | C, nella risposta a «È per chi non può parlare?» («un computer Linux a 64 bit con PipeWire»); glibc 2.39, curl e le distribuzioni non sono in questa pagina | c'è in breve; i requisiti minimi e i comandi **rimandati a** `installa/` (correzione, M12: prima l'elenco diceva «c'è») |
 | Quanto costa: nessun prezzo; l'uso personale è libero | §4.3; R LICENSE | C, domanda «Quanto costa?» | c'è |
 | È difficile? Chi installa: una persona che usa il terminale; i passi con i comandi da copiare | P3; §4.3 «Come si installa» | C, domanda «Chi lo installa?» con il rimando a `installa/` | c'è (nessuna promessa di facilità) |
 | Windows e macOS: non ancora | §9; P6 | C, domanda «Funziona su Windows, Mac o telefono?» → rimando a `non-ancora/` | c'è |
 | Telefono: per ora è solo per il computer (confine, non «non ancora») | §1.4 P (17/11/2026) | C, stessa risposta | c'è, **senza «non ancora»** |
 | Sottotitoli: Kalliope non ascolta e non trascrive; i sottotitoli dipendono dall'app della riunione | §1.4 R I | C, domanda «Fa i sottotitoli?» | c'è |
 | La voce: oggi parla con Giulia o Marco, non con la voce di chi lo usa | §1.4 P (17/11/2026); §7 | C, domanda «Parla con la sua voce?»: «Oggi no: con Giulia o con Marco» | c'è, **senza promessa e senza data** (decisione del 17/11) |
-| Altre lingue: per ora solo italiano | §1.4 R; §9 | C, domanda «In che lingua parla?» | c'è |
+| Altre lingue: per ora solo italiano | §1.4 R; §9 | C, nella risposta a «Parla con la sua voce?» («Parla solo italiano») | c'è (correzione, M12: non c'è una domanda a parte) |
 | Niente pittogrammi, predizione del testo, frasi preimpostate; solo le frasi già dette nella sessione; non è un sistema completo di CAA | §1.4 R I | C, domanda «Ha frasi pronte o simboli?» | c'è («non è un sistema completo di comunicazione aumentativa» detto come confine) |
 | Non è un servizio online né un'estensione del browser | §1.4 R | C, domanda «È un servizio online?»; D (tutto sul computer) | c'è, come confine |
 | Chi c'è dietro: SANSEVIERIA OÜ; gli autori nominati in `NOTICE`; nessun indirizzo e-mail, segnalazioni su GitHub con un account | P3, P7; pagina vecchia | C, domanda «Chi c'è dietro?»; D, in fondo | c'è (l'autore originale è nominato in `NOTICE`: la pagina rimanda lì, come la pagina vecchia) |
@@ -76,20 +76,20 @@ devi controllare» (il computer: che cosa ne esce, che cosa ci entra, che cosa r
 | L'unica connessione: lo scarico della voce al primo avvio, con curl, da huggingface.co, a una revisione fissata, tre file, 53 MB (52.974.546 byte); impronta SHA-256 di ogni file, un file diverso si scarta | §7 R download.rs, catalog.rs | D, seconda scena: i tre file entrano dal bordo, una volta, e passano il controllo dell'impronta; fonti accanto | c'è |
 | Poi funziona senza internet | §2.3 R | D, stessa scena: il bordo si richiude | c'è |
 | Nessun account | §7 | D | c'è |
-| Non si avvia da solo e non lascia servizi accesi; quando chiudi la finestra si chiude, e il microfono «Kalliope» sparisce | §7 I (da confermare); `packaging/linux/` senza avvio automatico; pagina vecchia | D, quarta scena: si chiude la finestra, il microfono sparisce dall'elenco | c'è, con la fonte che c'è (nessun file d'avvio nei pacchetti). La parte «nessun servizio dopo la chiusura» resta [I]: **chiedere** conferma a chi coordina |
+| Non si avvia da solo e non lascia servizi accesi; quando chiudi la finestra si chiude, e il microfono «Kalliope» sparisce | §7 I (da confermare); `packaging/linux/` senza avvio automatico; pagina vecchia | D, quarta scena: si chiude la finestra, il microfono sparisce dall'elenco | c'è: deciso da chi coordina il 17/11 (`crates/mic/src/lib.rs`: «Dropping it removes the microphone»; nessun avvio automatico nei pacchetti) |
 | Non usa il microfono vero: nessuna richiesta di accesso | §7 R | D, prima scena | c'è |
 | Che cosa resta sul disco: voce scelta e «Senti anche tu» in `settings.conf`; la voce in `~/.local/share/kalliope/models/…` | §7 R settings.rs, paths.rs, catalog.rs | D, terza scena: ciò che resta | c'è |
 | Che cosa non si salva: il testo e l'elenco delle frasi (in memoria, fino a 30; sparisce chiudendo) | §1.2 §7 R | D, terza scena: l'elenco «Già detto» sparisce con la finestra | c'è |
-| Cosa si modifica: nulla fuori dalle sue cartelle; `.deb`/`.rpm` con i permessi di amministratore; l'archivio in `~/.local` | §7 R releasing.md | D, nota della terza scena | c'è in breve; i dettagli **rimandati a** `installa/` |
-| Reversibile: `./install --remove` o la rimozione del pacchetto; se toglie anche la voce scaricata: non verificato | §7 L | D, stessa nota («non verificato» detto) | c'è |
+| Cosa si modifica: nulla fuori dalle sue cartelle; `.deb`/`.rpm` con i permessi di amministratore; l'archivio in `~/.local` | §7 R releasing.md | D, passo «Che cosa scrive sul disco»: il programma in /usr con il .deb o il .rpm (permessi di amministratore), in ~/.local con l'archivio e ./install (senza); «fuori dalle sue cartelle non modifica niente»; nel computer, «il programma» sul disco | c'è (dalla correzione, I6: prima l'elenco la dava per presente e la pagina non l'aveva) |
+| Reversibile: `./install --remove` o la rimozione del pacchetto; se toglie anche la voce scaricata: non verificato | §7 L | D, passo «Quando chiudi la finestra, si chiude» («se così si toglie anche la voce scaricata, non l'abbiamo verificato») | c'è |
 | Licenza: SANSEVIERIA 1.0, codice sorgente disponibile, non «open source» nel senso dell'OSI | §7; NOTICE | D, «Licenze»; piede | c'è |
 | Uso personale, di ricerca e interno aziendale senza compenso; offerte commerciali con autorizzazione scritta di SANSEVIERIA OÜ; chi distribuisce o offre uso in rete fornisce il sorgente | R LICENSE §2 §4 §5 §7 | D, «Licenze» | c'è |
-| Componenti di terzi: ONNX Runtime (MIT), Klein-TTS-X1.5-Pro (Apache-2.0), Slint 1.18 (Slint Royalty-free License 2.0), il lessico da Wiktionary (CC BY-SA 4.0); elenco in `NOTICE` e `THIRD_PARTY_NOTICES.md` | R THIRD_PARTY_NOTICES.md | D, «Licenze»: ogni componente accanto alla parte della strada in cui lavora | c'è (la licenza di Slint presa dal file: la pagina vecchia non la diceva) |
+| Componenti di terzi: ONNX Runtime (MIT), Klein-TTS-X1.5-Pro (Apache-2.0), Slint 1.18 (Slint Royalty-free License 2.0), il lessico da Wiktionary (CC BY-SA 4.0); elenco in `NOTICE` e `THIRD_PARTY_NOTICES.md` | R THIRD_PARTY_NOTICES.md | D, blocco «Licenze» (in fila, ciascuno con la sua licenza; al telefono il blocco si apre a richiesta) | c'è (correzione, M12: non stanno accanto alle tappe della strada) |
 | Impronte dei file nella pagina Installa e in `SHA256SUMS` della versione ({{kalliope.sums.url}}) | G; pagina vecchia | D, «Impronte e provenienza» | c'è (segnaposto) |
 | Attestazione di provenienza (`gh attestation verify`): le versioni pubblicate da quando il repository è pubblico; la 0.1-rc.1 no, pubblicata quando era privato | P7; R releasing.md | D, stessa voce, detta in modo che resti vera dopo la prossima versione | c'è. La pagina vecchia aveva «Le versioni successive l'avranno» con una classe `solo-rc1` che `tools/site.py` non gestisce: tolta la promessa |
 | Nessun audit indipendente | P7 L | D | c'è |
 | Codice sorgente, istruzioni di compilazione, cronologia (`CHANGELOG.md`), come contribuire (`CONTRIBUTING.md`, assenso di licenza): sul repository, in inglese | P7, P8 | D, in fondo: i collegamenti al repository | c'è |
-| Hosting del sito: GitHub Pages registra le richieste come ogni host; niente cookie né statistiche | §7 | piede (come la home) | c'è |
+| Hosting del sito: GitHub Pages registra le richieste come ogni host; niente cookie né statistiche | §7 | D, blocco «Impronte e provenienza»: «Questo sito lo servono le pagine di GitHub (GitHub Pages), che registrano le richieste come ogni server…»; nel piede, come nella home, «non usa cookie né statistiche» | c'è (dalla correzione, I6: prima l'elenco diceva «nel piede», dove GitHub Pages non è nominato) |
 | Ogni affermazione rimanda a un file; dove non c'è una fonte lo si scrive | P7 «Regole» | B e D: ogni fatto ha accanto il file o il comando | c'è |
 
 ## Dalle pagine già fatte
@@ -103,10 +103,8 @@ devi controllare» (il computer: che cosa ne esce, che cosa ci entra, che cosa r
 | L'indice «In questa pagina» | pagina vecchia | — | **lasciata fuori**: i due comandi del primo schermo portano ai tratti di chi valuta e di chi controlla; la pagina è corta abbastanza da scorrere |
 | Nessuna funzione inventata, nessuna data, nessuna alternativa di terzi | P6, P7, decisioni del 16 e 17/11 | tutta la pagina | rispettata |
 
-In tutto 61 voci: 55 ci sono, 4 rimandate (`riunione/` 1, `installa/` 3 in parte), 2 lasciate fuori (percorso a passi, indice).
+In tutto 61 voci: 54 ci sono (tre dalla correzione dopo il giudizio, I6), 5 rimandate (`riunione/` 1, `installa/` 4, fra cui i requisiti minimi), 2 lasciate fuori (percorso a passi, indice). Dalla correzione: al telefono i dettagli delle tappe, le licenze e le impronte si aprono a richiesta («I dettagli e le fonti»): ci sono, chiusi.
 
-## Da chiedere (tramite chi coordina)
-- **Dubbio F**: «non è un dispositivo medico e non sostituisce la valutazione di un logopedista» è nella home e nella pagina vecchia,
-  ma `progetto.md` §12 dice che va concordata con il proprietario. Resta così?
-- **«Nessun servizio acceso dopo la chiusura»**: `progetto.md` §7 lo segna [I]; i pacchetti non hanno un avvio automatico (verificato),
-  il resto non è verificato da me sul programma acceso.
+## Decise da chi coordina (17/11/2026, `design/lavoro/STATO.md`, riga 3b)
+- La frase «non è un dispositivo medico» resta come nella home; si rivede con i testi.
+- «Il microfono sparisce alla chiusura» regge (`crates/mic/src/lib.rs`: «Dropping it removes the microphone»; nessun avvio automatico nei pacchetti).

@@ -1,0 +1,41 @@
+{
+ "pagina": "http://127.0.0.1:34717/it/stato/index.html",
+ "misura": "1440x900",
+ "sequenza": "salto-al-messaggio",
+ "gesto": "premi:.domande-poi a",
+ "ridotto": false,
+ "lento": 1,
+ "istanti": [
+  0,
+  0.5,
+  1.2
+ ],
+ "fotogrammi": [
+  {
+   "file": "salto-al-messaggio-1440x900-f01.jpg",
+   "chiesto": 0,
+   "scattato": 0,
+   "scorrimento": 6306
+  },
+  {
+   "file": "salto-al-messaggio-1440x900-f02.jpg",
+   "chiesto": 0.5,
+   "scattato": 0.5,
+   "scorrimento": 6306
+  },
+  {
+   "file": "salto-al-messaggio-1440x900-f03.jpg",
+   "chiesto": 1.2,
+   "scattato": 1.2,
+   "scorrimento": 6306
+  }
+ ],
+ "foglio": "salto-al-messaggio-1440x900-foglio.jpg",
+ "video": "salto-al-messaggio-1440x900.webm",
+ "orologio": {
+  "pagina": 1,
+  "media": []
+ },
+ "errori": [],
+ "misurato": "2026-11-17T12:04:10.861Z"
+}

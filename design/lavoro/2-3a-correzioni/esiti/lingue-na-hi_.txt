@@ -1,0 +1,22 @@
+# lingue-na-hi_ · 17/11/2026 12:35 · sito: /tmp/lavoro-2f-sito-fin1-10 · esame-impaginazione.mjs chromium normale hi_ 326x326,844x390,915x412,390x844,1440x900
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+hi_na · 326×326 · testo 100%: pulito
+hi_na_copia · 326×326 · testo 100%: pulito
+hi_na_ascolto · 326×326 · testo 100%: pulito
+hi_na · 844×390 · testo 100%: pulito
+hi_na_copia · 844×390 · testo 100%: pulito
+hi_na_ascolto · 844×390 · testo 100%: pulito
+hi_na · 915×412 · testo 100%: pulito
+hi_na_copia · 915×412 · testo 100%: pulito
+hi_na_ascolto · 915×412 · testo 100%: pulito
+hi_na · 390×844 · testo 100%: pulito
+hi_na_copia · 390×844 · testo 100%: pulito
+hi_na_ascolto · 390×844 · testo 100%: pulito
+hi_na · 1440×900 · testo 100%: pulito
+hi_na_copia · 1440×900 · testo 100%: pulito
+hi_na_ascolto · 1440×900 · testo 100%: pulito
+
+
+LIMITE NON USATO COPERTO DOPO IL GESTO «p.bolla-testo» (ur_na_ascolto, enXA_na_ascolto, arXB_na_ascolto, bn_na_ascolto, hi_na_ascolto, ar_na_ascolto a 326x326): alle misure provate la segnalazione non c'è più. Togli la voce: coprirebbe un difetto nuovo.
+Tutto pulito (foto in /tmp/lavoro-2f-qa-lingue/esame/chromium)
+# uscita: 0

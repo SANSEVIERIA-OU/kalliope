@@ -1,0 +1,4 @@
+# vetro-firefox-dopo · 17/11/2026 13:19 · node vetro-menu.mjs /tmp/lavoro-2f-sito-fin2-10 firefox it/non-ancora/,it/ 390x844 --soglia=6
+ok  firefox it/non-ancora/ 390x844: la pagina dietro: differenza massima 1/255, media 0.29, bordo netto massimo 1/255 (su 99496 pixel fuori dalle voci) · pannello rgba(28, 3, 11, 0.995) · backdrop-filter conosciuto («blur(18px)») · errori 0
+ok  firefox it/ 390x844: la pagina dietro: differenza massima 1/255, media 0.26, bordo netto massimo 1/255 (su 99496 pixel fuori dalle voci) · pannello rgba(28, 3, 11, 0.995) · backdrop-filter conosciuto («blur(18px)») · errori 0
+# uscita: 0

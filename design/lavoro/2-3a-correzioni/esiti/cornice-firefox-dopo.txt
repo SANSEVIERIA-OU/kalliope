@@ -1,0 +1,4 @@
+# cornice-firefox-dopo · 17/11/2026 13:14 · node senza-cornice.mjs /tmp/lavoro-2f-sito-fin2-it firefox it/non-ancora/,it/stato/ 1440x900
+ok  firefox it/non-ancora/ 1440x900: senza JavaScript 0 invisibili; con cornice.js bloccato 0 (classe js tolta)
+ok  firefox it/stato/ 1440x900: senza JavaScript 3 invisibili; con cornice.js bloccato 3 (classe js tolta)
+# uscita: 0

@@ -1,0 +1,15 @@
+# salto-firefox-dopo · 17/11/2026 13:06 · node salto-menu.mjs /tmp/lavoro-2f-sito-fin2-it firefox it/,it/non-ancora/,it/stato/ 390x844,844x390,326x326,750x832
+ok  firefox it/ 390x844
+ok  firefox it/ 844x390
+ok  firefox it/ 326x326
+ok  firefox it/ 750x832
+ok  firefox it/non-ancora/ 390x844
+ok  firefox it/non-ancora/ 844x390
+ok  firefox it/non-ancora/ 326x326
+ok  firefox it/non-ancora/ 750x832
+ok  firefox it/stato/ 390x844
+ok  firefox it/stato/ 844x390
+ok  firefox it/stato/ 326x326
+ok  firefox it/stato/ 750x832
+ok  firefox: 127 controlli, 0 in cui la pagina si muove
+# uscita: 0

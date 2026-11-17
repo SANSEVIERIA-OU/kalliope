@@ -41,6 +41,11 @@ vanno a capo dentro il pannello (`flex-wrap`), da riprovare dal ruolo di costruz
 ## La cornice per le pagine interne (stato, installa, in riunione, 404)
 
 - Barra e menu della home; l'azione in barra solo dove è l'azione di chi legge quella pagina.
+- **La barra segna la pagina in cui sei** (17/11/2026, correzione della pagina «stato», M1 del suo giudizio): la voce del menu della pagina
+  corrente ha `aria-current="page"` nel markup e prende il velo di una scelta e il peso forte, nella barra e nel menu aperto del telefono
+  (`barra.css`, regola in fondo; nessun token nuovo: `--velo-scelto`, `--peso-forte`). Ogni pagina interna che ha la sua voce nel menu
+  mette l'attributo sulla sua voce (stato, installa, in riunione, aiuto; ascolta quando sarà una parte della home). «Non ancora» e la 404
+  non hanno una voce nel menu: niente da segnare, la barra resta com'è (`confronta-scelta`: «non ancora» invariata).
 - Primo schermo con l'impianto della home (`.scena.scena-pagina`: titolo, presentazione, comandi, «Oggi:», didascalia a
   sinistra; la riunione o la scena della pagina a destra), con l'arrivo della home.
 - **La regola, completa** (`pagina.css`, `cornice.js`; decisa il 17/11/2026 sulla proposta del secondo sguardo):
@@ -57,6 +62,11 @@ vanno a capo dentro il pannello (`flex-wrap`), da riprovare dal ruolo di costruz
      al telefono il messaggio ha l'altezza che gli dà la larghezza (182-226 px) e non basta abbassare la riunione: lì
      vince il messaggio, vicino al comando che l'ha causato, e la bolla scorre sotto la barra. Il minimo è 60 px
      (`--tavolo-pagina-altezza-minima`, come la fila della scelta della lingua): sotto non reggerebbero i nomi.
+     **Dove nemmeno al minimo ci stanno insieme** (una scrittura con le righe alte a 326×326: urdu, en-XA) cede la bolla, a gradi, mai il pulsante
+     (incarico 2-f, L1): prima sale sotto la barra il suo margine; se non basta, il pulsante resta a 4 px dal bordo invece di 8 e le parole salgono
+     sotto la barra del poco che manca (in urdu 2,6 px dell'interlinea della prima riga). «Pausa» è sempre nello schermo.
+     L'altezza su cui si calcola è quella dello schermo con la barra del browser visibile (`--altezza-schermo`: `svh`, con `vh` come ripiego): su un
+     telefono con la barra visibile la riunione non viene più alta di quanto serve (da provare su un telefono vero: nelle prove è uguale a `vh`).
      Le misure dove nemmeno così basta sono i `limiti` di `metodo.config.mjs` (844×390, 915×412, 326×326, 390×500, 320×568,
      solo con il messaggio d'errore).
   Il resto di questa sezione descrive il primo schermo (punto 1).

@@ -1,0 +1,7 @@
+# scelta-chromium-dopo · 17/11/2026 13:21 · node scelta-barra.mjs /tmp/lavoro-2f-sito-fin3-10 chromium 1440x900,844x390,1280x720,390x844,326x326
+ok  chromium 1440x900: titolo 255 237 239 (colore del testo) · barra a riposo 66 0 23 contro pagina 67 1 24 (senza fondo) · scorrendo la pagina non scorre · animation-timeline sì · errori 0
+ok  chromium 844x390: titolo 255 237 239 (colore del testo) · barra a riposo 90 8 36 contro pagina 94 8 38 (senza fondo) · scorrendo la pagina non scorre · animation-timeline sì · errori 0
+ok  chromium 1280x720: titolo 255 237 239 (colore del testo) · barra a riposo 72 2 26 contro pagina 75 3 28 (senza fondo) · scorrendo la pagina non scorre · animation-timeline sì · errori 0
+ok  chromium 390x844: titolo 255 237 239 (colore del testo) · barra a riposo 66 0 23 contro pagina 66 0 23 (senza fondo) · scorrendo la pagina non scorre · animation-timeline sì · errori 0
+ok  chromium 326x326: titolo 255 237 239 (colore del testo) · barra a riposo 82 6 32 contro pagina 85 7 33 (senza fondo) · scorrendo 46 0 16 piena · animation-timeline sì · errori 0
+# uscita: 0

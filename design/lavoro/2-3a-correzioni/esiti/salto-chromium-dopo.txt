@@ -1,0 +1,15 @@
+# salto-chromium-dopo · 17/11/2026 13:02 · node salto-menu.mjs /tmp/lavoro-2f-sito-fin2-it chromium it/,it/non-ancora/,it/stato/ 390x844,844x390,326x326,750x832
+ok  chromium it/ 390x844
+ok  chromium it/ 844x390
+ok  chromium it/ 326x326
+ok  chromium it/ 750x832
+ok  chromium it/non-ancora/ 390x844
+ok  chromium it/non-ancora/ 844x390
+ok  chromium it/non-ancora/ 326x326
+ok  chromium it/non-ancora/ 750x832
+ok  chromium it/stato/ 390x844
+ok  chromium it/stato/ 844x390
+ok  chromium it/stato/ 326x326
+ok  chromium it/stato/ 750x832
+ok  chromium: 176 controlli, 0 in cui la pagina si muove
+# uscita: 0

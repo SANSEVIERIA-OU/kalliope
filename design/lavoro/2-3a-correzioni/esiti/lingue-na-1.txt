@@ -1,0 +1,22 @@
+# lingue-na-1 · 17/11/2026 12:33 · sito: /tmp/lavoro-2f-sito-fin1-10 · esame-impaginazione.mjs chromium normale ur_ 326x326,844x390,915x412,390x844,1440x900
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+ur_na · 326×326 · testo 100%: pulito
+ur_na_copia · 326×326 · testo 100%: pulito
+ur_na_ascolto · 326×326 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO COPERTO DOPO IL GESTO p.bolla-testo: sopra c'è header.barra.compatta · L1 (2-f): a 326×326 con righe alte o più righe la riunione è già al minimo e bolla e «Pausa» non ci stanno insieme: vince il pulsante, e la bolla sale sotto la barra del poco che manca; delle parole resta sotto la barra al più l'interlinea della prima riga (urdu: 2,6 px; `suona-basso.mjs` lo misura)
+ur_na · 844×390 · testo 100%: pulito
+ur_na_copia · 844×390 · testo 100%: pulito
+ur_na_ascolto · 844×390 · testo 100%: pulito
+ur_na · 915×412 · testo 100%: pulito
+ur_na_copia · 915×412 · testo 100%: pulito
+ur_na_ascolto · 915×412 · testo 100%: pulito
+ur_na · 390×844 · testo 100%: pulito
+ur_na_copia · 390×844 · testo 100%: pulito
+ur_na_ascolto · 390×844 · testo 100%: pulito
+ur_na · 1440×900 · testo 100%: pulito
+ur_na_copia · 1440×900 · testo 100%: pulito
+ur_na_ascolto · 1440×900 · testo 100%: pulito
+
+
+Tutto pulito; un limite dichiarato, elencato a parte e non contato (foto in /tmp/lavoro-2f-qa-lingue/esame/chromium)
+# uscita: 0

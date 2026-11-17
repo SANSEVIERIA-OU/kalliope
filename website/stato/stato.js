@@ -59,22 +59,53 @@
   }
 
   // =================================================================================================================
-  // LA CATENA: una tappa alla volta, nell'ordine della strada. La linea arriva al nodo, il nodo si accende, compaiono i fatti, la
-  // linea riparte verso la tappa dopo. Se più tappe arrivano sullo schermo insieme, si accendono in fila.
+  // LA CATENA: ogni tappa si legge subito (titolo, cifra, testo e fonte sono pieni da prima che arrivi); quando arriva sullo schermo
+  // la linea scende al suo nodo, il nodo si accende e il suo fatto accade (la quota si riempie, la riga delle parole si scrive, la
+  // bolla della riscrittura nasce). Le tappe che arrivano insieme dal basso si accendono a cascata breve; quelle sopra, che chi è
+  // saltato a metà non ha visto, si accendono subito, ferme (correzione dopo il giudizio, I1: prima era una coda dalla prima tappa)
   // =================================================================================================================
   const anelli = $$('.catena .anello');
-  const passoAnello = () => tempo('--ritardo-anello-dopo') + tempo('--durata-anello-linea');
-  let prossimoLibero = 0;
+  let ultimoAvvio = -Infinity, inCascata = 0;
+  function subito(a) {
+    if (a.classList.contains('acceso')) return;
+    a.classList.add('subito', 'acceso');
+    requestAnimationFrame(() => requestAnimationFrame(() => a.classList.remove('subito')));
+  }
   function accendi(a) {
     if (a.classList.contains('acceso') || a.dataset.inCoda) return;
-    // le tappe prima di questa si accendono prima (chi scorre in fretta o salta con un'ancora non lascia buchi)
-    anelli.slice(0, anelli.indexOf(a)).forEach(accendi);
+    // le tappe sopra, non ancora accese, sono fuori dallo schermo: si accendono ferme, nessuno le aspetta
+    anelli.slice(0, anelli.indexOf(a)).forEach(x => { if (!x.dataset.inCoda && x.getBoundingClientRect().bottom < 0) subito(x); });
+    const ora = tScena();
+    inCascata = ora - ultimoAvvio < tempo('--passo-cascata-anelli') ? inCascata + 1 : 0;
+    ultimoAvvio = ora;
     a.dataset.inCoda = '1';
-    const ora = tScena(), quando = Math.max(ora, prossimoLibero);
-    prossimoLibero = quando + passoAnello();
-    dopo(quando - ora, () => { a.classList.add('acceso'); delete a.dataset.inCoda; });
+    dopo(inCascata * tempo('--passo-cascata-anelli'), () => { a.classList.add('acceso'); delete a.dataset.inCoda; });
   }
   if (ridotto) anelli.forEach(a => a.classList.add('acceso'));
+
+  // al telefono i dettagli di una tappa (come è misurato, le fonti), le licenze e le impronte si aprono a richiesta: il lungo dopo
+  // (correzione dopo il giudizio, I4; progetto.md §4.2). Al computer e senza script restano aperti
+  const dettagli = $$('.anello-dettagli, .licenze-blocco');   // anche licenze e impronte, nel tratto per chi controlla
+  function dettagliPerMisura() {
+    dettagli.forEach(d => {
+      d.open = !telefono.matches;
+      // al computer il titolo di licenze e impronte è soltanto un titolo: non una fermata del fuoco che chiude il blocco
+      const t = d.querySelector(':scope > summary'); if (t && d.classList.contains('licenze-blocco')) t.tabIndex = telefono.matches ? 0 : -1;
+    });
+  }
+  dettagliPerMisura(); telefono.addEventListener('change', dettagliPerMisura);
+
+  // la parentesi «non misurato» va dal nodo di «Scrivi la frase» a quello di «Gli altri ti sentono» (M3): le misure dalla pagina vera
+  const catena = $('.catena'), da = $('.anello[data-anello=scrivi] .anello-nodo'), a = $('.anello[data-anello=altri] .anello-nodo');
+  function parentesi() {
+    if (!catena || !da || !a) return;
+    const rc = catena.getBoundingClientRect(), r1 = da.getBoundingClientRect(), r2 = a.getBoundingClientRect();
+    catena.style.setProperty('--misura-da', `${(r1.top + r1.height / 2 - rc.top).toFixed(1)}px`);
+    catena.style.setProperty('--misura-a', `${(r2.top + r2.height / 2 - rc.top).toFixed(1)}px`);
+  }
+  parentesi(); addEventListener('resize', parentesi); addEventListener('load', parentesi);
+  if (document.fonts) document.fonts.ready.then(parentesi);
+  dettagli.forEach(d => d.addEventListener('toggle', parentesi));
 
   // =================================================================================================================
   // LE DOMANDE: una risposta alla volta, nella bolla. Cambiando domanda le parole di prima si spengono, la bolla prende la misura
@@ -113,15 +144,21 @@
         posto(v); riempi(v);
         if (gesto && !ridotto && spostata) bolla.animate([{opacity: 0, transform: `scale(${tok('--bolla-nasce-scala')})`}, {opacity: 1, transform: 'none'}], {duration: tempo('--durata-bolla-nasce'), easing: ENTRA});
       } else {
-        // la bolla resta al suo posto: le parole cambiano dentro, e la bolla prende la misura nuova
+        // la bolla resta al suo posto: le parole cambiano dentro, e la bolla prende la misura nuova. Le parole nuove entrano una volta sola,
+        // dalla trasparenza: l'animazione d'entrata parte nello stesso istante in cui si tolgono quella d'uscita e il testo vecchio, così
+        // nessun fotogramma mostra il testo nuovo pieno prima della sua entrata (correzione dopo il giudizio, I2). Premendo di nuovo a metà,
+        // si riparte dall'opacità di quel momento
+        const op = parseFloat(getComputedStyle(contenuto).opacity) || 0;
+        contenuto.getAnimations().forEach(x => x.cancel()); corpo.getAnimations().forEach(x => x.cancel());
         const h0 = corpo.getBoundingClientRect().height;
-        const via = contenuto.animate([{opacity: 1}, {opacity: 0}], {duration: tempo('--durata-domanda-via'), easing: 'linear', fill: 'forwards'});
+        const via = contenuto.animate([{opacity: op}, {opacity: 0}], {duration: tempo('--durata-domanda-via') * op, easing: 'linear', fill: 'forwards'});
         via.finished.then(() => {
           if (scelta !== v) return;
-          riempi(v); via.cancel();
+          riempi(v);
+          contenuto.animate([{opacity: 0}, {opacity: 1}], {duration: tempo('--durata-domanda-arriva'), easing: 'linear', fill: 'backwards'});
+          via.cancel();
           const h1 = corpo.getBoundingClientRect().height;
           corpo.animate([{height: `${h0}px`}, {height: `${h1}px`}], {duration: tempo('--durata-domanda-misura'), easing: ENTRA});
-          contenuto.animate([{opacity: 0}, {opacity: 1}], {duration: tempo('--durata-domanda-arriva'), easing: 'linear', delay: tempo('--durata-domanda-via')});
         }, () => {});
       }
       if (gesto) {
@@ -157,17 +194,17 @@
     function scendono() {
       if (ridotto || !pacchi || !voceFile) return;
       if (discesa) discesa.forEach(a => a.cancel());
-      const rp = pacchi.getBoundingClientRect(), rv = voceFile.getBoundingClientRect();
+      const rp = pacchi.getBoundingClientRect(), rv = voceFile.getBoundingClientRect(), rd = $('.varco-disco', varco).getBoundingClientRect();
       const dx = rv.left + rv.width / 2 - (rp.left + rp.width / 2);
       const d = tempo('--durata-pacco'), passo = tempo('--passo-pacchi');
-      // in fila lungo il filo: ogni file scende fino al bordo alto di «la voce» e lì si spegne, entrando
-      const dyBordo = rv.top - (rp.top + rp.height / 2);
+      // in fila lungo il filo: ogni file scende e si spegne entrando nel disco
+      const dyBordo = rd.top - (rp.top + rp.height);   // fino al bordo alto del disco: entrano lì, senza passare sopra le sue scritte
       discesa = [...pacchi.children].map((p, i) => p.animate([
         {opacity: 0, transform: 'translate(0, 0)'},
         {opacity: 1, transform: 'translate(0, 0)', offset: 0.2},
         {opacity: 1, transform: `translate(${dx.toFixed(1)}px, ${(dyBordo * 0.85).toFixed(1)}px)`, offset: 0.8},
         {opacity: 0, transform: `translate(${dx.toFixed(1)}px, ${dyBordo.toFixed(1)}px) scale(0.7)`}],
-      {duration: d * 1.6, delay: d * 0.6 + i * passo, easing: tok('--curva-pacco'), fill: 'both'}));
+      {duration: d * 1.8, delay: d * 0.6 + i * passo, easing: tok('--curva-pacco'), fill: 'both'}));
       pacchi.style.opacity = 1;
       const queste = discesa;
       Promise.all(queste.map(a => a.finished)).then(() => { queste.forEach(a => a.cancel()); pacchi.style.opacity = ''; }, () => {});

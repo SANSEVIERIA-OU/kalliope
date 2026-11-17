@@ -1,0 +1,4 @@
+[
+ {"chi": "div.versioni.coppia-oggetto", "che": ["SPOSTATO", "MISURA"], "perche": "P1: il pannello delle versioni ha già il posto per la risposta di «Copia» (una riga, 27 px: 19 di riga e 7 di spazio), così non si muove quando la risposta compare; al computer sta al centro accanto al testo e ne sale di 13,5 (la metà)"},
+ {"chi": "div.versioni-piede", "che": "MISURA", "perche": "P1: il piede del pannello ha il posto per la risposta (+27 px)"}
+]
