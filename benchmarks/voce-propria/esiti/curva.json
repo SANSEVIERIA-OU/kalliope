@@ -1,0 +1,778 @@
+{
+ "F1": {
+  "giudice_ricerca": "resemblyzer",
+  "partenza": "0.50*af_aoede+0.50*if_sara",
+  "cpu_partenza_s": 108.04367099999999,
+  "punti": [
+   {
+    "minuti_cpu_cammino": 0,
+    "cpu_s_totali": 108.04367099999999,
+    "passo": 0,
+    "punteggio_ricerca": 0.6702788287300184,
+    "ecapa_frasi_di_prova": 0.28913583998646286,
+    "wespeaker_frasi_di_prova": 0.3172947962264436
+   },
+   {
+    "minuti_cpu_cammino": 1,
+    "cpu_s_totali": 108.04367099999999,
+    "passo": 0,
+    "punteggio_ricerca": 0.6702788287300184,
+    "ecapa_frasi_di_prova": 0.28913583998646286,
+    "wespeaker_frasi_di_prova": 0.3172947962264436
+   },
+   {
+    "minuti_cpu_cammino": 2,
+    "cpu_s_totali": 220.977824,
+    "passo": 77,
+    "punteggio_ricerca": 0.7468763139757401,
+    "ecapa_frasi_di_prova": 0.37328172106219426,
+    "wespeaker_frasi_di_prova": 0.4302166539496561
+   },
+   {
+    "minuti_cpu_cammino": 5,
+    "cpu_s_totali": 365.322848,
+    "passo": 167,
+    "punteggio_ricerca": 0.7924486016641459,
+    "ecapa_frasi_di_prova": 0.35122739586573637,
+    "wespeaker_frasi_di_prova": 0.45193831390486744
+   },
+   {
+    "minuti_cpu_cammino": 10,
+    "cpu_s_totali": 703.1137389999999,
+    "passo": 405,
+    "punteggio_ricerca": 0.834485942761714,
+    "ecapa_frasi_di_prova": 0.2612853057952724,
+    "wespeaker_frasi_di_prova": 0.3594898201454396
+   },
+   {
+    "minuti_cpu_cammino": 15,
+    "cpu_s_totali": 910.073812,
+    "passo": 534,
+    "punteggio_ricerca": 0.8403801051447417,
+    "ecapa_frasi_di_prova": 0.2937086864528392,
+    "wespeaker_frasi_di_prova": 0.39184287799137785
+   },
+   {
+    "minuti_cpu_cammino": 20,
+    "cpu_s_totali": 1191.237781,
+    "passo": 764,
+    "punteggio_ricerca": 0.8447238656083971,
+    "ecapa_frasi_di_prova": 0.2523604224822737,
+    "wespeaker_frasi_di_prova": 0.37694870754628196
+   },
+   {
+    "minuti_cpu_cammino": 30,
+    "cpu_s_totali": 1191.237781,
+    "passo": 764,
+    "punteggio_ricerca": 0.8447238656083971,
+    "ecapa_frasi_di_prova": 0.2523604224822737,
+    "wespeaker_frasi_di_prova": 0.37694870754628196
+   },
+   {
+    "minuti_cpu_cammino": 40,
+    "cpu_s_totali": 2342.3212740000004,
+    "passo": 1614,
+    "punteggio_ricerca": 0.854540311709124,
+    "ecapa_frasi_di_prova": 0.2684568667434399,
+    "wespeaker_frasi_di_prova": 0.39223643116991036
+   },
+   {
+    "minuti_cpu_cammino": 50,
+    "cpu_s_totali": 2342.3212740000004,
+    "passo": 1614,
+    "punteggio_ricerca": 0.854540311709124,
+    "ecapa_frasi_di_prova": 0.2684568667434399,
+    "wespeaker_frasi_di_prova": 0.39223643116991036
+   },
+   {
+    "minuti_cpu_cammino": 60,
+    "cpu_s_totali": 2342.3212740000004,
+    "passo": 1614,
+    "punteggio_ricerca": 0.854540311709124,
+    "ecapa_frasi_di_prova": 0.2684568667434399,
+    "wespeaker_frasi_di_prova": 0.39223643116991036
+   }
+  ],
+  "passi": 2563,
+  "cpu_s": 3600.820759
+ },
+ "M1": {
+  "giudice_ricerca": "resemblyzer",
+  "partenza": "0.75*em_alex+0.25*bm_fable",
+  "cpu_partenza_s": 84.696207,
+  "punti": [
+   {
+    "minuti_cpu_cammino": 0,
+    "cpu_s_totali": 84.696207,
+    "passo": 0,
+    "punteggio_ricerca": 0.7329746065301959,
+    "ecapa_frasi_di_prova": 0.2658496339569068,
+    "wespeaker_frasi_di_prova": 0.35127715856958874
+   },
+   {
+    "minuti_cpu_cammino": 1,
+    "cpu_s_totali": 110.73050199999999,
+    "passo": 19,
+    "punteggio_ricerca": 0.7752041709669335,
+    "ecapa_frasi_di_prova": 0.3055117143287417,
+    "wespeaker_frasi_di_prova": 0.38845456178866156
+   },
+   {
+    "minuti_cpu_cammino": 2,
+    "cpu_s_totali": 110.73050199999999,
+    "passo": 19,
+    "punteggio_ricerca": 0.7752041709669335,
+    "ecapa_frasi_di_prova": 0.3055117143287417,
+    "wespeaker_frasi_di_prova": 0.38845456178866156
+   },
+   {
+    "minuti_cpu_cammino": 5,
+    "cpu_s_totali": 314.416367,
+    "passo": 157,
+    "punteggio_ricerca": 0.7917990035071772,
+    "ecapa_frasi_di_prova": 0.320727698452242,
+    "wespeaker_frasi_di_prova": 0.45141054244793716
+   },
+   {
+    "minuti_cpu_cammino": 10,
+    "cpu_s_totali": 388.39465399999995,
+    "passo": 203,
+    "punteggio_ricerca": 0.8035831052243382,
+    "ecapa_frasi_di_prova": 0.3680513896791291,
+    "wespeaker_frasi_di_prova": 0.4283801872568856
+   },
+   {
+    "minuti_cpu_cammino": 15,
+    "cpu_s_totali": 959.0756240000001,
+    "passo": 606,
+    "punteggio_ricerca": 0.8122223758799922,
+    "ecapa_frasi_di_prova": 0.35485613140639793,
+    "wespeaker_frasi_di_prova": 0.4388945079633242
+   },
+   {
+    "minuti_cpu_cammino": 20,
+    "cpu_s_totali": 1213.3942310000002,
+    "passo": 818,
+    "punteggio_ricerca": 0.8279741807377965,
+    "ecapa_frasi_di_prova": 0.3552505492794855,
+    "wespeaker_frasi_di_prova": 0.4190309926602084
+   },
+   {
+    "minuti_cpu_cammino": 30,
+    "cpu_s_totali": 1871.9243689999998,
+    "passo": 1325,
+    "punteggio_ricerca": 0.8302595981016563,
+    "ecapa_frasi_di_prova": 0.37408200024445504,
+    "wespeaker_frasi_di_prova": 0.42468384468063525
+   },
+   {
+    "minuti_cpu_cammino": 40,
+    "cpu_s_totali": 2284.368006,
+    "passo": 1627,
+    "punteggio_ricerca": 0.8339200472579553,
+    "ecapa_frasi_di_prova": 0.37705415605563203,
+    "wespeaker_frasi_di_prova": 0.43815182795076807
+   },
+   {
+    "minuti_cpu_cammino": 50,
+    "cpu_s_totali": 2970.436495,
+    "passo": 2162,
+    "punteggio_ricerca": 0.8346375854685883,
+    "ecapa_frasi_di_prova": 0.36627615058362445,
+    "wespeaker_frasi_di_prova": 0.4305582761209479
+   },
+   {
+    "minuti_cpu_cammino": 60,
+    "cpu_s_totali": 2970.436495,
+    "passo": 2162,
+    "punteggio_ricerca": 0.8346375854685883,
+    "ecapa_frasi_di_prova": 0.36627615058362445,
+    "wespeaker_frasi_di_prova": 0.4305582761209479
+   }
+  ],
+  "passi": 2653,
+  "cpu_s": 3600.101115
+ },
+ "F1d": {
+  "giudice_ricerca": "resemblyzer",
+  "partenza": "0.75*if_sara+0.25*em_alex",
+  "cpu_partenza_s": 74.98740500000001,
+  "punti": [
+   {
+    "minuti_cpu_cammino": 0,
+    "cpu_s_totali": 74.98740500000001,
+    "passo": 0,
+    "punteggio_ricerca": 0.6624257704459322,
+    "ecapa_frasi_di_prova": 0.21286476708926458,
+    "wespeaker_frasi_di_prova": 0.3370990953436367
+   },
+   {
+    "minuti_cpu_cammino": 1,
+    "cpu_s_totali": 125.37504,
+    "passo": 38,
+    "punteggio_ricerca": 0.7469569055148826,
+    "ecapa_frasi_di_prova": 0.3231390310660765,
+    "wespeaker_frasi_di_prova": 0.35202555166919736
+   },
+   {
+    "minuti_cpu_cammino": 2,
+    "cpu_s_totali": 184.33621699999998,
+    "passo": 76,
+    "punteggio_ricerca": 0.753481452391278,
+    "ecapa_frasi_di_prova": 0.26298647179101653,
+    "wespeaker_frasi_di_prova": 0.3548405398970247
+   },
+   {
+    "minuti_cpu_cammino": 5,
+    "cpu_s_totali": 352.52687199999997,
+    "passo": 192,
+    "punteggio_ricerca": 0.7586978275042691,
+    "ecapa_frasi_di_prova": 0.22427395558853633,
+    "wespeaker_frasi_di_prova": 0.29352806338250736
+   },
+   {
+    "minuti_cpu_cammino": 10,
+    "cpu_s_totali": 628.98604,
+    "passo": 386,
+    "punteggio_ricerca": 0.7803769350982007,
+    "ecapa_frasi_di_prova": 0.31882021858148546,
+    "wespeaker_frasi_di_prova": 0.38278208193063024
+   },
+   {
+    "minuti_cpu_cammino": 15,
+    "cpu_s_totali": 879.599834,
+    "passo": 573,
+    "punteggio_ricerca": 0.7822869953622766,
+    "ecapa_frasi_di_prova": 0.2799096580334795,
+    "wespeaker_frasi_di_prova": 0.3646357731871291
+   },
+   {
+    "minuti_cpu_cammino": 20,
+    "cpu_s_totali": 1098.923203,
+    "passo": 733,
+    "punteggio_ricerca": 0.7949945978843529,
+    "ecapa_frasi_di_prova": 0.3380477753403297,
+    "wespeaker_frasi_di_prova": 0.35779266819079386
+   },
+   {
+    "minuti_cpu_cammino": 30,
+    "cpu_s_totali": 1775.4687460000002,
+    "passo": 1248,
+    "punteggio_ricerca": 0.8004065027615049,
+    "ecapa_frasi_di_prova": 0.3292422132071905,
+    "wespeaker_frasi_di_prova": 0.3700466623160593
+   },
+   {
+    "minuti_cpu_cammino": 40,
+    "cpu_s_totali": 2351.221908,
+    "passo": 1664,
+    "punteggio_ricerca": 0.8019740939736847,
+    "ecapa_frasi_di_prova": 0.3702306901348564,
+    "wespeaker_frasi_di_prova": 0.38883722073421656
+   },
+   {
+    "minuti_cpu_cammino": 50,
+    "cpu_s_totali": 2855.362723,
+    "passo": 1989,
+    "punteggio_ricerca": 0.8053778599856505,
+    "ecapa_frasi_di_prova": 0.3567806346239236,
+    "wespeaker_frasi_di_prova": 0.37520445813798614
+   },
+   {
+    "minuti_cpu_cammino": 60,
+    "cpu_s_totali": 3458.094777,
+    "passo": 2395,
+    "punteggio_ricerca": 0.8067961509410204,
+    "ecapa_frasi_di_prova": 0.35143035289102975,
+    "wespeaker_frasi_di_prova": 0.38184747199577307
+   }
+  ],
+  "passi": 2489,
+  "cpu_s": 3601.598217
+ },
+ "F1_ecapa": {
+  "giudice_ricerca": "ecapa",
+  "partenza": "0.50*if_sara+0.50*em_alex",
+  "cpu_partenza_s": 142.040368,
+  "punti": [
+   {
+    "minuti_cpu_cammino": 0,
+    "cpu_s_totali": 142.040368,
+    "passo": 0,
+    "punteggio_ricerca": 0.29405824172513506,
+    "ecapa_frasi_di_prova": 0.19296902236703656,
+    "wespeaker_frasi_di_prova": 0.34746339394203823
+   },
+   {
+    "minuti_cpu_cammino": 1,
+    "cpu_s_totali": 199.716601,
+    "passo": 28,
+    "punteggio_ricerca": 0.41403479179425806,
+    "ecapa_frasi_di_prova": 0.2812198180600427,
+    "wespeaker_frasi_di_prova": 0.3672627808361916
+   },
+   {
+    "minuti_cpu_cammino": 2,
+    "cpu_s_totali": 255.116985,
+    "passo": 50,
+    "punteggio_ricerca": 0.4398086701870697,
+    "ecapa_frasi_di_prova": 0.2787770164287723,
+    "wespeaker_frasi_di_prova": 0.3515332954067495
+   },
+   {
+    "minuti_cpu_cammino": 5,
+    "cpu_s_totali": 322.413645,
+    "passo": 77,
+    "punteggio_ricerca": 0.5041051556141144,
+    "ecapa_frasi_di_prova": 0.40310913187240305,
+    "wespeaker_frasi_di_prova": 0.4082547098779744
+   },
+   {
+    "minuti_cpu_cammino": 10,
+    "cpu_s_totali": 506.84375600000004,
+    "passo": 152,
+    "punteggio_ricerca": 0.5435828273964773,
+    "ecapa_frasi_di_prova": 0.4193495949148387,
+    "wespeaker_frasi_di_prova": 0.4163814960822615
+   },
+   {
+    "minuti_cpu_cammino": 15,
+    "cpu_s_totali": 933.0956600000001,
+    "passo": 344,
+    "punteggio_ricerca": 0.5634466687888291,
+    "ecapa_frasi_di_prova": 0.4080699856071561,
+    "wespeaker_frasi_di_prova": 0.44046484361961136
+   },
+   {
+    "minuti_cpu_cammino": 20,
+    "cpu_s_totali": 1218.623799,
+    "passo": 471,
+    "punteggio_ricerca": 0.5903060340412899,
+    "ecapa_frasi_di_prova": 0.47551357597468635,
+    "wespeaker_frasi_di_prova": 0.4702165386462287
+   },
+   {
+    "minuti_cpu_cammino": 30,
+    "cpu_s_totali": 1680.321695,
+    "passo": 676,
+    "punteggio_ricerca": 0.621058027227164,
+    "ecapa_frasi_di_prova": 0.41377661021849893,
+    "wespeaker_frasi_di_prova": 0.431271293629217
+   },
+   {
+    "minuti_cpu_cammino": 40,
+    "cpu_s_totali": 1680.321695,
+    "passo": 676,
+    "punteggio_ricerca": 0.621058027227164,
+    "ecapa_frasi_di_prova": 0.41377661021849893,
+    "wespeaker_frasi_di_prova": 0.431271293629217
+   },
+   {
+    "minuti_cpu_cammino": 50,
+    "cpu_s_totali": 1680.321695,
+    "passo": 676,
+    "punteggio_ricerca": 0.621058027227164,
+    "ecapa_frasi_di_prova": 0.41377661021849893,
+    "wespeaker_frasi_di_prova": 0.431271293629217
+   },
+   {
+    "minuti_cpu_cammino": 60,
+    "cpu_s_totali": 1680.321695,
+    "passo": 676,
+    "punteggio_ricerca": 0.621058027227164,
+    "ecapa_frasi_di_prova": 0.41377661021849893,
+    "wespeaker_frasi_di_prova": 0.431271293629217
+   }
+  ],
+  "passi": 727,
+  "cpu_s": 1800.239026
+ },
+ "F2": {
+  "giudice_ricerca": "resemblyzer",
+  "partenza": "0.75*ff_siwis+0.25*af_nicole",
+  "cpu_partenza_s": 94.72019599999999,
+  "punti": [
+   {
+    "minuti_cpu_cammino": 0,
+    "cpu_s_totali": 94.72019599999999,
+    "passo": 0,
+    "punteggio_ricerca": 0.7532456744757594,
+    "ecapa_frasi_di_prova": 0.33903971531073623,
+    "wespeaker_frasi_di_prova": 0.3650348290112527
+   },
+   {
+    "minuti_cpu_cammino": 1,
+    "cpu_s_totali": 153.163636,
+    "passo": 33,
+    "punteggio_ricerca": 0.7740381580724818,
+    "ecapa_frasi_di_prova": 0.29948706646368484,
+    "wespeaker_frasi_di_prova": 0.4280726027909381
+   },
+   {
+    "minuti_cpu_cammino": 2,
+    "cpu_s_totali": 153.163636,
+    "passo": 33,
+    "punteggio_ricerca": 0.7740381580724818,
+    "ecapa_frasi_di_prova": 0.29948706646368484,
+    "wespeaker_frasi_di_prova": 0.4280726027909381
+   },
+   {
+    "minuti_cpu_cammino": 5,
+    "cpu_s_totali": 325.18099,
+    "passo": 119,
+    "punteggio_ricerca": 0.8118136070401427,
+    "ecapa_frasi_di_prova": 0.3296750103146101,
+    "wespeaker_frasi_di_prova": 0.464953874331826
+   },
+   {
+    "minuti_cpu_cammino": 10,
+    "cpu_s_totali": 676.474543,
+    "passo": 310,
+    "punteggio_ricerca": 0.8213747700127165,
+    "ecapa_frasi_di_prova": 0.33938730057817323,
+    "wespeaker_frasi_di_prova": 0.48628638857526213
+   },
+   {
+    "minuti_cpu_cammino": 15,
+    "cpu_s_totali": 842.336053,
+    "passo": 390,
+    "punteggio_ricerca": 0.826630159868271,
+    "ecapa_frasi_di_prova": 0.33722169796510615,
+    "wespeaker_frasi_di_prova": 0.45841990095485896
+   },
+   {
+    "minuti_cpu_cammino": 20,
+    "cpu_s_totali": 1089.926326,
+    "passo": 517,
+    "punteggio_ricerca": 0.8508840406989286,
+    "ecapa_frasi_di_prova": 0.30968635640884334,
+    "wespeaker_frasi_di_prova": 0.44541595499477593
+   },
+   {
+    "minuti_cpu_cammino": 30,
+    "cpu_s_totali": 1588.627704,
+    "passo": 766,
+    "punteggio_ricerca": 0.8532955861430589,
+    "ecapa_frasi_di_prova": 0.3148551783558186,
+    "wespeaker_frasi_di_prova": 0.4353530040498443
+   },
+   {
+    "minuti_cpu_cammino": 40,
+    "cpu_s_totali": 2097.082519,
+    "passo": 1021,
+    "punteggio_ricerca": 0.8573975664376818,
+    "ecapa_frasi_di_prova": 0.30246625351869605,
+    "wespeaker_frasi_di_prova": 0.4401409574709276
+   },
+   {
+    "minuti_cpu_cammino": 50,
+    "cpu_s_totali": 2097.082519,
+    "passo": 1021,
+    "punteggio_ricerca": 0.8573975664376818,
+    "ecapa_frasi_di_prova": 0.30246625351869605,
+    "wespeaker_frasi_di_prova": 0.4401409574709276
+   },
+   {
+    "minuti_cpu_cammino": 60,
+    "cpu_s_totali": 2097.082519,
+    "passo": 1021,
+    "punteggio_ricerca": 0.8573975664376818,
+    "ecapa_frasi_di_prova": 0.30246625351869605,
+    "wespeaker_frasi_di_prova": 0.4401409574709276
+   }
+  ],
+  "passi": 1831,
+  "cpu_s": 3600.191229
+ },
+ "M2": {
+  "giudice_ricerca": "resemblyzer",
+  "partenza": "0.50*em_santa+0.50*am_fenrir",
+  "cpu_partenza_s": 103.127719,
+  "punti": [
+   {
+    "minuti_cpu_cammino": 0,
+    "cpu_s_totali": 103.127719,
+    "passo": 0,
+    "punteggio_ricerca": 0.6681418716718552,
+    "ecapa_frasi_di_prova": 0.17284611457831597,
+    "wespeaker_frasi_di_prova": 0.2999371931122786
+   },
+   {
+    "minuti_cpu_cammino": 1,
+    "cpu_s_totali": 103.127719,
+    "passo": 0,
+    "punteggio_ricerca": 0.6681418716718552,
+    "ecapa_frasi_di_prova": 0.17284611457831597,
+    "wespeaker_frasi_di_prova": 0.2999371931122786
+   },
+   {
+    "minuti_cpu_cammino": 2,
+    "cpu_s_totali": 103.127719,
+    "passo": 0,
+    "punteggio_ricerca": 0.6681418716718552,
+    "ecapa_frasi_di_prova": 0.17284611457831597,
+    "wespeaker_frasi_di_prova": 0.2999371931122786
+   },
+   {
+    "minuti_cpu_cammino": 5,
+    "cpu_s_totali": 370.77136400000006,
+    "passo": 175,
+    "punteggio_ricerca": 0.7401552904713107,
+    "ecapa_frasi_di_prova": 0.23016548028844733,
+    "wespeaker_frasi_di_prova": 0.34593542459361315
+   },
+   {
+    "minuti_cpu_cammino": 10,
+    "cpu_s_totali": 370.77136400000006,
+    "passo": 175,
+    "punteggio_ricerca": 0.7401552904713107,
+    "ecapa_frasi_di_prova": 0.23016548028844733,
+    "wespeaker_frasi_di_prova": 0.34593542459361315
+   },
+   {
+    "minuti_cpu_cammino": 15,
+    "cpu_s_totali": 961.01073,
+    "passo": 549,
+    "punteggio_ricerca": 0.7443734498078399,
+    "ecapa_frasi_di_prova": 0.2741498504025491,
+    "wespeaker_frasi_di_prova": 0.3753345667232867
+   },
+   {
+    "minuti_cpu_cammino": 20,
+    "cpu_s_totali": 1059.576008,
+    "passo": 607,
+    "punteggio_ricerca": 0.7493251094073621,
+    "ecapa_frasi_di_prova": 0.24475274772682068,
+    "wespeaker_frasi_di_prova": 0.3892653819825317
+   },
+   {
+    "minuti_cpu_cammino": 30,
+    "cpu_s_totali": 1303.447881,
+    "passo": 781,
+    "punteggio_ricerca": 0.7527806132958144,
+    "ecapa_frasi_di_prova": 0.2722778340111629,
+    "wespeaker_frasi_di_prova": 0.3621328665074495
+   },
+   {
+    "minuti_cpu_cammino": 40,
+    "cpu_s_totali": 2272.624361,
+    "passo": 1462,
+    "punteggio_ricerca": 0.7571615419878764,
+    "ecapa_frasi_di_prova": 0.25294933374740164,
+    "wespeaker_frasi_di_prova": 0.35946082590158934
+   },
+   {
+    "minuti_cpu_cammino": 50,
+    "cpu_s_totali": 2272.624361,
+    "passo": 1462,
+    "punteggio_ricerca": 0.7571615419878764,
+    "ecapa_frasi_di_prova": 0.25294933374740164,
+    "wespeaker_frasi_di_prova": 0.35946082590158934
+   },
+   {
+    "minuti_cpu_cammino": 60,
+    "cpu_s_totali": 3221.2253269999997,
+    "passo": 2137,
+    "punteggio_ricerca": 0.7573185633473556,
+    "ecapa_frasi_di_prova": 0.23798798226340162,
+    "wespeaker_frasi_di_prova": 0.3741767992279271
+   }
+  ],
+  "passi": 2410,
+  "cpu_s": 3600.066232
+ },
+ "M1_ecapa": {
+  "giudice_ricerca": "ecapa",
+  "partenza": "0.50*af_bella+0.50*if_sara",
+  "cpu_partenza_s": 181.223114,
+  "punti": [
+   {
+    "minuti_cpu_cammino": 0,
+    "cpu_s_totali": 181.223114,
+    "passo": 0,
+    "punteggio_ricerca": 0.2974767828121394,
+    "ecapa_frasi_di_prova": 0.28865309388052224,
+    "wespeaker_frasi_di_prova": 0.18667598284817535
+   },
+   {
+    "minuti_cpu_cammino": 1,
+    "cpu_s_totali": 219.21054499999997,
+    "passo": 15,
+    "punteggio_ricerca": 0.34653853009442914,
+    "ecapa_frasi_di_prova": 0.30656172217584493,
+    "wespeaker_frasi_di_prova": 0.1555204549224285
+   },
+   {
+    "minuti_cpu_cammino": 2,
+    "cpu_s_totali": 219.21054499999997,
+    "passo": 15,
+    "punteggio_ricerca": 0.34653853009442914,
+    "ecapa_frasi_di_prova": 0.30656172217584493,
+    "wespeaker_frasi_di_prova": 0.1555204549224285
+   },
+   {
+    "minuti_cpu_cammino": 5,
+    "cpu_s_totali": 360.469276,
+    "passo": 65,
+    "punteggio_ricerca": 0.37904194711288475,
+    "ecapa_frasi_di_prova": 0.3409233841512581,
+    "wespeaker_frasi_di_prova": 0.19406004202379468
+   },
+   {
+    "minuti_cpu_cammino": 10,
+    "cpu_s_totali": 581.038941,
+    "passo": 146,
+    "punteggio_ricerca": 0.4487542435003698,
+    "ecapa_frasi_di_prova": 0.37956218489126936,
+    "wespeaker_frasi_di_prova": 0.22337779936371835
+   },
+   {
+    "minuti_cpu_cammino": 15,
+    "cpu_s_totali": 1035.0611,
+    "passo": 332,
+    "punteggio_ricerca": 0.45018399097146405,
+    "ecapa_frasi_di_prova": 0.3844104356799793,
+    "wespeaker_frasi_di_prova": 0.22344967514650066
+   },
+   {
+    "minuti_cpu_cammino": 20,
+    "cpu_s_totali": 1214.982009,
+    "passo": 405,
+    "punteggio_ricerca": 0.4512972466777372,
+    "ecapa_frasi_di_prova": 0.3938700082082246,
+    "wespeaker_frasi_di_prova": 0.23310740318407647
+   },
+   {
+    "minuti_cpu_cammino": 30,
+    "cpu_s_totali": 1783.224139,
+    "passo": 635,
+    "punteggio_ricerca": 0.45525706553699435,
+    "ecapa_frasi_di_prova": 0.39958110307817585,
+    "wespeaker_frasi_di_prova": 0.25114953014193536
+   },
+   {
+    "minuti_cpu_cammino": 40,
+    "cpu_s_totali": 1783.224139,
+    "passo": 635,
+    "punteggio_ricerca": 0.45525706553699435,
+    "ecapa_frasi_di_prova": 0.39958110307817585,
+    "wespeaker_frasi_di_prova": 0.25114953014193536
+   },
+   {
+    "minuti_cpu_cammino": 50,
+    "cpu_s_totali": 1783.224139,
+    "passo": 635,
+    "punteggio_ricerca": 0.45525706553699435,
+    "ecapa_frasi_di_prova": 0.39958110307817585,
+    "wespeaker_frasi_di_prova": 0.25114953014193536
+   },
+   {
+    "minuti_cpu_cammino": 60,
+    "cpu_s_totali": 1783.224139,
+    "passo": 635,
+    "punteggio_ricerca": 0.45525706553699435,
+    "ecapa_frasi_di_prova": 0.39958110307817585,
+    "wespeaker_frasi_di_prova": 0.25114953014193536
+   }
+  ],
+  "passi": 643,
+  "cpu_s": 1807.917058
+ },
+ "M2d": {
+  "giudice_ricerca": "resemblyzer",
+  "partenza": "0.50*em_alex+0.50*em_santa",
+  "cpu_partenza_s": 91.49773599999999,
+  "punti": [
+   {
+    "minuti_cpu_cammino": 0,
+    "cpu_s_totali": 91.49773599999999,
+    "passo": 0,
+    "punteggio_ricerca": 0.6428265511447026,
+    "ecapa_frasi_di_prova": 0.14531497332293797,
+    "wespeaker_frasi_di_prova": 0.2809785719039861
+   },
+   {
+    "minuti_cpu_cammino": 1,
+    "cpu_s_totali": 91.49773599999999,
+    "passo": 0,
+    "punteggio_ricerca": 0.6428265511447026,
+    "ecapa_frasi_di_prova": 0.14531497332293797,
+    "wespeaker_frasi_di_prova": 0.2809785719039861
+   },
+   {
+    "minuti_cpu_cammino": 2,
+    "cpu_s_totali": 208.136525,
+    "passo": 77,
+    "punteggio_ricerca": 0.6859952095094686,
+    "ecapa_frasi_di_prova": 0.2070376777807493,
+    "wespeaker_frasi_di_prova": 0.3576232958774793
+   },
+   {
+    "minuti_cpu_cammino": 5,
+    "cpu_s_totali": 208.136525,
+    "passo": 77,
+    "punteggio_ricerca": 0.6859952095094686,
+    "ecapa_frasi_di_prova": 0.2070376777807493,
+    "wespeaker_frasi_di_prova": 0.3576232958774793
+   },
+   {
+    "minuti_cpu_cammino": 10,
+    "cpu_s_totali": 624.0257570000001,
+    "passo": 346,
+    "punteggio_ricerca": 0.7178059880628683,
+    "ecapa_frasi_di_prova": 0.1685156055231433,
+    "wespeaker_frasi_di_prova": 0.2565071242892179
+   },
+   {
+    "minuti_cpu_cammino": 15,
+    "cpu_s_totali": 923.189213,
+    "passo": 544,
+    "punteggio_ricerca": 0.7199936414353387,
+    "ecapa_frasi_di_prova": 0.16108864767643516,
+    "wespeaker_frasi_di_prova": 0.23893385987715926
+   },
+   {
+    "minuti_cpu_cammino": 20,
+    "cpu_s_totali": 1286.29465,
+    "passo": 812,
+    "punteggio_ricerca": 0.7328491880396006,
+    "ecapa_frasi_di_prova": 0.16047870555589594,
+    "wespeaker_frasi_di_prova": 0.2639634073071848
+   },
+   {
+    "minuti_cpu_cammino": 30,
+    "cpu_s_totali": 1831.38617,
+    "passo": 1217,
+    "punteggio_ricerca": 0.7497461211254814,
+    "ecapa_frasi_di_prova": 0.1508312071600399,
+    "wespeaker_frasi_di_prova": 0.23540326158571814
+   },
+   {
+    "minuti_cpu_cammino": 40,
+    "cpu_s_totali": 1831.38617,
+    "passo": 1217,
+    "punteggio_ricerca": 0.7497461211254814,
+    "ecapa_frasi_di_prova": 0.1508312071600399,
+    "wespeaker_frasi_di_prova": 0.23540326158571814
+   },
+   {
+    "minuti_cpu_cammino": 50,
+    "cpu_s_totali": 2857.349091,
+    "passo": 2090,
+    "punteggio_ricerca": 0.7523062664749134,
+    "ecapa_frasi_di_prova": 0.18231664236464848,
+    "wespeaker_frasi_di_prova": 0.23491990299322363
+   },
+   {
+    "minuti_cpu_cammino": 60,
+    "cpu_s_totali": 2857.349091,
+    "passo": 2090,
+    "punteggio_ricerca": 0.7523062664749134,
+    "ecapa_frasi_di_prova": 0.18231664236464848,
+    "wespeaker_frasi_di_prova": 0.23491990299322363
+   }
+  ],
+  "passi": 2801,
+  "cpu_s": 3600.790943
+ }
+}

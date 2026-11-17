@@ -1,0 +1,56 @@
+{
+ "F1": [
+  {
+   "cpu_s": 2.565322,
+   "picco_mb": 144.688,
+   "stderr": "load 4087 ms · synthesis 1667 ms · audio 5.25 s · ONNX Runtime 1.31.1"
+  },
+  {
+   "cpu_s": 3.3559769999999998,
+   "picco_mb": 190.852,
+   "stderr": "load 2014 ms · synthesis 3296 ms · audio 9.29 s · ONNX Runtime 1.31.1"
+  },
+  {
+   "cpu_s": 2.918386,
+   "picco_mb": 178.744,
+   "stderr": "load 2530 ms · synthesis 2453 ms · audio 6.25 s · ONNX Runtime 1.31.1"
+  },
+  {
+   "cpu_s": 2.649775,
+   "picco_mb": 133.828,
+   "stderr": "load 2523 ms · synthesis 1334 ms · audio 5.25 s · ONNX Runtime 1.31.1"
+  },
+  {
+   "cpu_s": 2.2851929999999996,
+   "picco_mb": 134.84,
+   "stderr": "load 2154 ms · synthesis 950 ms · audio 3.52 s · ONNX Runtime 1.31.1"
+  }
+ ],
+ "M1": [
+  {
+   "cpu_s": 2.43817,
+   "picco_mb": 143.588,
+   "stderr": "load 1875 ms · synthesis 1064 ms · audio 5.70 s · ONNX Runtime 1.31.1"
+  },
+  {
+   "cpu_s": 3.099056,
+   "picco_mb": 194.636,
+   "stderr": "load 1282 ms · synthesis 2194 ms · audio 9.82 s · ONNX Runtime 1.31.1"
+  },
+  {
+   "cpu_s": 2.594624,
+   "picco_mb": 185.508,
+   "stderr": "load 1385 ms · synthesis 1442 ms · audio 6.67 s · ONNX Runtime 1.31.1"
+  },
+  {
+   "cpu_s": 2.1410109999999998,
+   "picco_mb": 137.332,
+   "stderr": "load 1429 ms · synthesis 936 ms · audio 5.47 s · ONNX Runtime 1.31.1"
+  },
+  {
+   "cpu_s": 1.956833,
+   "picco_mb": 141.336,
+   "stderr": "load 1350 ms · synthesis 797 ms · audio 3.73 s · ONNX Runtime 1.31.1"
+  }
+ ]
+}

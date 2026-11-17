@@ -1,0 +1,1565 @@
+{
+ "rif": "F2",
+ "persona": "F2",
+ "voce_di_oggi": "Giulia",
+ "budget_cpu_s": 3600.0,
+ "cpu_s": 3600.191229,
+ "orologio_s": 5471.410428708012,
+ "cpu_preparazione_s": 6.961712,
+ "passi": 1831,
+ "rifiutati_dal_controllo": 25,
+ "controlli": 35,
+ "picco_mb": 698.908,
+ "carico_inizio": [
+  24.86,
+  21.27,
+  17.77
+ ],
+ "carico_fine": [
+  42.33,
+  37.44,
+  36.0
+ ],
+ "testi_ricerca": [
+  "Oggi il cielo è sereno e il treno parte alle nove.",
+  "Vorrei sapere se domani la sala delle riunioni è libera."
+ ],
+ "partenza": {
+  "voci": [
+   {
+    "id": "ff_siwis",
+    "punteggio": 0.7255087665586548,
+    "somiglianza": 0.7255087665586548
+   },
+   {
+    "id": "af_aoede",
+    "punteggio": 0.6480351942785354,
+    "somiglianza": 0.6480351942785354
+   },
+   {
+    "id": "if_sara",
+    "punteggio": 0.6452989431759846,
+    "somiglianza": 0.6452989431759846
+   },
+   {
+    "id": "bf_emma",
+    "punteggio": 0.5998766890531928,
+    "somiglianza": 0.5998766890531928
+   },
+   {
+    "id": "af_nicole",
+    "punteggio": 0.5944915855974581,
+    "somiglianza": 0.5944915855974581
+   },
+   {
+    "id": "ef_dora",
+    "punteggio": 0.587505292929738,
+    "somiglianza": 0.587505292929738
+   },
+   {
+    "id": "bf_isabella",
+    "punteggio": 0.5607780638742909,
+    "somiglianza": 0.5607780638742909
+   },
+   {
+    "id": "em_santa",
+    "punteggio": 0.5505082548202745,
+    "somiglianza": 0.5505082548202745
+   },
+   {
+    "id": "am_michael",
+    "punteggio": 0.5457736106112412,
+    "somiglianza": 0.5457736106112412
+   },
+   {
+    "id": "af_bella",
+    "punteggio": 0.5314033023547697,
+    "somiglianza": 0.5314033023547697
+   },
+   {
+    "id": "em_alex",
+    "punteggio": 0.5164224036468774,
+    "somiglianza": 0.5164224036468774
+   },
+   {
+    "id": "af_heart",
+    "punteggio": 0.511250510906054,
+    "somiglianza": 0.511250510906054
+   },
+   {
+    "id": "am_fenrir",
+    "punteggio": 0.4986267519722687,
+    "somiglianza": 0.4986267519722687
+   },
+   {
+    "id": "bm_fable",
+    "punteggio": 0.491563696728088,
+    "somiglianza": 0.491563696728088
+   },
+   {
+    "id": "bm_george",
+    "punteggio": 0.4862965375274506,
+    "somiglianza": 0.4862965375274506
+   },
+   {
+    "id": "im_nicola",
+    "punteggio": 0.47922525757156514,
+    "somiglianza": 0.47922525757156514
+   },
+   {
+    "id": "af_sarah",
+    "punteggio": 0.467341428646211,
+    "somiglianza": 0.467341428646211
+   }
+  ],
+  "miscele_migliori": [
+   {
+    "id": "0.75*ff_siwis+0.25*af_nicole",
+    "punteggio": 0.7532456744757594
+   },
+   {
+    "id": "0.50*ff_siwis+0.50*af_aoede",
+    "punteggio": 0.7272889798401994
+   },
+   {
+    "id": "0.75*ff_siwis+0.25*af_aoede",
+    "punteggio": 0.7265397421201243
+   },
+   {
+    "id": "ff_siwis",
+    "punteggio": 0.7255087665586548
+   },
+   {
+    "id": "0.75*ff_siwis+0.25*if_sara",
+    "punteggio": 0.7206580810330547
+   },
+   {
+    "id": "0.50*ff_siwis+0.50*if_sara",
+    "punteggio": 0.7188699966808201
+   },
+   {
+    "id": "0.50*ff_siwis+0.50*af_nicole",
+    "punteggio": 0.7091498651424836
+   },
+   {
+    "id": "0.75*ff_siwis+0.25*bf_emma",
+    "punteggio": 0.693239701788844
+   }
+  ],
+  "scelta": "0.75*ff_siwis+0.25*af_nicole"
+ },
+ "storia": [
+  {
+   "cpu_s": 94.72019599999999,
+   "orologio_s": 133.86369958499563,
+   "fase": "partenza",
+   "passo": 0,
+   "punteggio": 0.7532456744757594,
+   "somiglianza_resemblyzer": 0.7532456744757594,
+   "coerenza": 0.9336634784463615,
+   "wer_ricerca": 0.14285714285714285,
+   "da": "0.75*ff_siwis+0.25*af_nicole",
+   "verificato": true
+  },
+  {
+   "cpu_s": 96.53707299999999,
+   "orologio_s": 135.8158864880097,
+   "fase": "cammino",
+   "passo": 1,
+   "punteggio": 0.7554587687569083,
+   "somiglianza_resemblyzer": 0.7554587687569083,
+   "coerenza": 0.9290306778476469,
+   "wer_ricerca": 0.14285714285714285,
+   "da": "passo 1",
+   "verificato": true
+  },
+  {
+   "cpu_s": 103.665385,
+   "orologio_s": 145.15531593299238,
+   "fase": "cammino",
+   "passo": 5,
+   "punteggio": 0.7639243318225766,
+   "somiglianza_resemblyzer": 0.7639243318225766,
+   "coerenza": 0.9415910351415718,
+   "wer_ricerca": 0.14285714285714285,
+   "da": "passo 5",
+   "verificato": true
+  },
+  {
+   "cpu_s": 146.66345,
+   "orologio_s": 203.42287646399927,
+   "fase": "cammino",
+   "passo": 29,
+   "punteggio": 0.7698870424049764,
+   "somiglianza_resemblyzer": 0.7698870424049764,
+   "coerenza": 0.9374095002198132,
+   "wer_ricerca": 0.14285714285714285,
+   "da": "passo 29",
+   "verificato": true
+  },
+  {
+   "cpu_s": 149.94597100000001,
+   "orologio_s": 208.03002479299903,
+   "fase": "cammino",
+   "passo": 31,
+   "punteggio": 0.7708099873176167,
+   "somiglianza_resemblyzer": 0.7708099873176167,
+   "coerenza": 0.9314788255872487,
+   "wer_ricerca": 0.14285714285714285,
+   "da": "passo 31",
+   "verificato": true
+  },
+  {
+   "cpu_s": 153.163636,
+   "orologio_s": 213.31435157399392,
+   "fase": "cammino",
+   "passo": 33,
+   "punteggio": 0.7740381580724818,
+   "somiglianza_resemblyzer": 0.7740381580724818,
+   "coerenza": 0.9067069946965467,
+   "wer_ricerca": 0.14285714285714285,
+   "da": "passo 33",
+   "verificato": true
+  },
+  {
+   "cpu_s": 166.44257,
+   "orologio_s": 236.3129179420066,
+   "fase": "cammino",
+   "passo": 36,
+   "punteggio": 0.7756569115314835,
+   "somiglianza_resemblyzer": 0.7756569115314835,
+   "coerenza": 0.933190542215113,
+   "wer_ricerca": null,
+   "da": "passo 36",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 176.52076399999999,
+   "orologio_s": 253.42351164799766,
+   "fase": "cammino",
+   "passo": 42,
+   "punteggio": 0.7900302135009047,
+   "somiglianza_resemblyzer": 0.7900302135009047,
+   "coerenza": 0.9319955769690603,
+   "wer_ricerca": null,
+   "da": "passo 42",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 200.835138,
+   "orologio_s": 289.75246557299397,
+   "fase": "cammino",
+   "passo": 56,
+   "punteggio": 0.8019455787464154,
+   "somiglianza_resemblyzer": 0.8019455787464154,
+   "coerenza": 0.9234635253442194,
+   "wer_ricerca": null,
+   "da": "passo 56",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 211.289811,
+   "orologio_s": 305.58899020499666,
+   "fase": "cammino",
+   "passo": 62,
+   "punteggio": 0.8042332248237254,
+   "somiglianza_resemblyzer": 0.8042332248237254,
+   "coerenza": 0.9297973933430488,
+   "wer_ricerca": null,
+   "da": "passo 62",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 237.534014,
+   "orologio_s": 348.1434781829885,
+   "fase": "cammino",
+   "passo": 73,
+   "punteggio": 0.7924208359173578,
+   "somiglianza_resemblyzer": 0.7924208359173578,
+   "coerenza": 0.9430411387116451,
+   "wer_ricerca": 0.09523809523809523,
+   "da": "passo 73",
+   "verificato": true
+  },
+  {
+   "cpu_s": 240.765901,
+   "orologio_s": 355.32331824701396,
+   "fase": "cammino",
+   "passo": 75,
+   "punteggio": 0.7979449061788286,
+   "somiglianza_resemblyzer": 0.7979449061788286,
+   "coerenza": 0.9240048965146795,
+   "wer_ricerca": 0.09523809523809523,
+   "da": "passo 75",
+   "verificato": true
+  },
+  {
+   "cpu_s": 288.396161,
+   "orologio_s": 432.4425362960028,
+   "fase": "cammino",
+   "passo": 102,
+   "punteggio": 0.8015994030068394,
+   "somiglianza_resemblyzer": 0.8015994030068394,
+   "coerenza": 0.9135405353825143,
+   "wer_ricerca": 0.09523809523809523,
+   "da": "passo 102",
+   "verificato": true
+  },
+  {
+   "cpu_s": 325.18099,
+   "orologio_s": 497.7915721030149,
+   "fase": "cammino",
+   "passo": 119,
+   "punteggio": 0.8118136070401427,
+   "somiglianza_resemblyzer": 0.8118136070401427,
+   "coerenza": 0.9215815650341976,
+   "wer_ricerca": 0.14285714285714285,
+   "da": "passo 119",
+   "verificato": true
+  },
+  {
+   "cpu_s": 485.738567,
+   "orologio_s": 769.939773185004,
+   "fase": "cammino",
+   "passo": 206,
+   "punteggio": 0.8125309977752868,
+   "somiglianza_resemblyzer": 0.8125309977752868,
+   "coerenza": 0.9141683594593896,
+   "wer_ricerca": 0.14285714285714285,
+   "da": "passo 206",
+   "verificato": true
+  },
+  {
+   "cpu_s": 676.474543,
+   "orologio_s": 1090.3888287750015,
+   "fase": "cammino",
+   "passo": 310,
+   "punteggio": 0.8213747700127165,
+   "somiglianza_resemblyzer": 0.8213747700127165,
+   "coerenza": 0.9312939868716387,
+   "wer_ricerca": 0.0,
+   "da": "passo 310",
+   "verificato": true
+  },
+  {
+   "cpu_s": 699.2059270000001,
+   "orologio_s": 1127.2667033970065,
+   "fase": "cammino",
+   "passo": 318,
+   "punteggio": 0.8234916322188975,
+   "somiglianza_resemblyzer": 0.8234916322188975,
+   "coerenza": 0.9361287252844368,
+   "wer_ricerca": null,
+   "da": "passo 318",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 794.1096660000001,
+   "orologio_s": 1281.6442808230058,
+   "fase": "cammino",
+   "passo": 367,
+   "punteggio": 0.8219958701096888,
+   "somiglianza_resemblyzer": 0.8219958701096888,
+   "coerenza": 0.93605347188912,
+   "wer_ricerca": 0.14285714285714285,
+   "da": "passo 367",
+   "verificato": true
+  },
+  {
+   "cpu_s": 842.336053,
+   "orologio_s": 1353.7958186210017,
+   "fase": "cammino",
+   "passo": 390,
+   "punteggio": 0.826630159868271,
+   "somiglianza_resemblyzer": 0.826630159868271,
+   "coerenza": 0.9361270833303825,
+   "wer_ricerca": 0.09523809523809523,
+   "da": "passo 390",
+   "verificato": true
+  },
+  {
+   "cpu_s": 927.5461610000001,
+   "orologio_s": 1490.0952405660064,
+   "fase": "cammino",
+   "passo": 434,
+   "punteggio": 0.8399494914135222,
+   "somiglianza_resemblyzer": 0.8399494914135222,
+   "coerenza": 0.926694242175333,
+   "wer_ricerca": null,
+   "da": "passo 434",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 942.7035370000001,
+   "orologio_s": 1511.3142029719893,
+   "fase": "cammino",
+   "passo": 443,
+   "punteggio": 0.8407313497327068,
+   "somiglianza_resemblyzer": 0.8407313497327068,
+   "coerenza": 0.945524827041839,
+   "wer_ricerca": null,
+   "da": "passo 443",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 983.2762400000001,
+   "orologio_s": 1574.3631220120005,
+   "fase": "cammino",
+   "passo": 461,
+   "punteggio": 0.8319152254908844,
+   "somiglianza_resemblyzer": 0.8319152254908844,
+   "coerenza": 0.935344775741221,
+   "wer_ricerca": null,
+   "da": "passo 461",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1031.871893,
+   "orologio_s": 1650.8764234349946,
+   "fase": "cammino",
+   "passo": 484,
+   "punteggio": 0.8297211910114701,
+   "somiglianza_resemblyzer": 0.8297211910114701,
+   "coerenza": 0.9320950033605715,
+   "wer_ricerca": 0.14285714285714285,
+   "da": "passo 484",
+   "verificato": true
+  },
+  {
+   "cpu_s": 1037.3728970000002,
+   "orologio_s": 1657.941336830001,
+   "fase": "cammino",
+   "passo": 487,
+   "punteggio": 0.832766205552951,
+   "somiglianza_resemblyzer": 0.832766205552951,
+   "coerenza": 0.9523548776433769,
+   "wer_ricerca": 0.14285714285714285,
+   "da": "passo 487",
+   "verificato": true
+  },
+  {
+   "cpu_s": 1073.044697,
+   "orologio_s": 1711.6469861099904,
+   "fase": "cammino",
+   "passo": 507,
+   "punteggio": 0.8336787011603951,
+   "somiglianza_resemblyzer": 0.8336787011603951,
+   "coerenza": 0.9347573732404693,
+   "wer_ricerca": 0.14285714285714285,
+   "da": "passo 507",
+   "verificato": true
+  },
+  {
+   "cpu_s": 1084.729778,
+   "orologio_s": 1726.092909266008,
+   "fase": "cammino",
+   "passo": 514,
+   "punteggio": 0.8497704757023735,
+   "somiglianza_resemblyzer": 0.8497704757023735,
+   "coerenza": 0.9455896298713552,
+   "wer_ricerca": 0.14285714285714285,
+   "da": "passo 514",
+   "verificato": true
+  },
+  {
+   "cpu_s": 1089.926326,
+   "orologio_s": 1732.7089018929983,
+   "fase": "cammino",
+   "passo": 517,
+   "punteggio": 0.8508840406989286,
+   "somiglianza_resemblyzer": 0.8508840406989286,
+   "coerenza": 0.9373070034706459,
+   "wer_ricerca": 0.14285714285714285,
+   "da": "passo 517",
+   "verificato": true
+  },
+  {
+   "cpu_s": 1111.994455,
+   "orologio_s": 1763.031715412013,
+   "fase": "cammino",
+   "passo": 525,
+   "punteggio": 0.8543972989302406,
+   "somiglianza_resemblyzer": 0.8543972989302406,
+   "coerenza": 0.9402802404851234,
+   "wer_ricerca": null,
+   "da": "passo 525",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1187.226472,
+   "orologio_s": 1885.0947102250066,
+   "fase": "cammino",
+   "passo": 564,
+   "punteggio": 0.8585940606201934,
+   "somiglianza_resemblyzer": 0.8585940606201934,
+   "coerenza": 0.9388300074121904,
+   "wer_ricerca": null,
+   "da": "passo 564",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1194.167394,
+   "orologio_s": 1896.114297691005,
+   "fase": "cammino",
+   "passo": 568,
+   "punteggio": 0.8598083144001479,
+   "somiglianza_resemblyzer": 0.8598083144001479,
+   "coerenza": 0.9568911300941874,
+   "wer_ricerca": null,
+   "da": "passo 568",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1247.500775,
+   "orologio_s": 1973.9579260729952,
+   "fase": "cammino",
+   "passo": 593,
+   "punteggio": 0.8583070622362663,
+   "somiglianza_resemblyzer": 0.8583070622362663,
+   "coerenza": 0.9329589740964522,
+   "wer_ricerca": null,
+   "da": "passo 593",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1249.1337620000002,
+   "orologio_s": 1975.7788403359882,
+   "fase": "cammino",
+   "passo": 594,
+   "punteggio": 0.8615596624021667,
+   "somiglianza_resemblyzer": 0.8615596624021667,
+   "coerenza": 0.9379240406713485,
+   "wer_ricerca": null,
+   "da": "passo 594",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1254.400584,
+   "orologio_s": 1983.8624499439902,
+   "fase": "cammino",
+   "passo": 597,
+   "punteggio": 0.8727878654669952,
+   "somiglianza_resemblyzer": 0.8727878654669952,
+   "coerenza": 0.9547420601723149,
+   "wer_ricerca": null,
+   "da": "passo 597",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1271.99909,
+   "orologio_s": 2009.3223979670147,
+   "fase": "cammino",
+   "passo": 607,
+   "punteggio": 0.8788277446685573,
+   "somiglianza_resemblyzer": 0.8788277446685573,
+   "coerenza": 0.9590919713519499,
+   "wer_ricerca": null,
+   "da": "passo 607",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1316.514363,
+   "orologio_s": 2072.4178641359904,
+   "fase": "cammino",
+   "passo": 628,
+   "punteggio": 0.8607570515835148,
+   "somiglianza_resemblyzer": 0.8607570515835148,
+   "coerenza": 0.939651626679068,
+   "wer_ricerca": null,
+   "da": "passo 628",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1347.734274,
+   "orologio_s": 2114.2704584310122,
+   "fase": "cammino",
+   "passo": 646,
+   "punteggio": 0.8684911678261142,
+   "somiglianza_resemblyzer": 0.8684911678261142,
+   "coerenza": 0.9434812190335351,
+   "wer_ricerca": null,
+   "da": "passo 646",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1381.683495,
+   "orologio_s": 2167.1384525989997,
+   "fase": "cammino",
+   "passo": 661,
+   "punteggio": 0.8517185431516281,
+   "somiglianza_resemblyzer": 0.8517185431516281,
+   "coerenza": 0.9422324507586126,
+   "wer_ricerca": null,
+   "da": "passo 661",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1385.248336,
+   "orologio_s": 2172.4588977580133,
+   "fase": "cammino",
+   "passo": 663,
+   "punteggio": 0.8541409447171365,
+   "somiglianza_resemblyzer": 0.8541409447171365,
+   "coerenza": 0.9507090185466535,
+   "wer_ricerca": null,
+   "da": "passo 663",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1402.004588,
+   "orologio_s": 2197.5878643850156,
+   "fase": "cammino",
+   "passo": 672,
+   "punteggio": 0.8570992816531833,
+   "somiglianza_resemblyzer": 0.8570992816531833,
+   "coerenza": 0.9499200118465544,
+   "wer_ricerca": null,
+   "da": "passo 672",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1419.7741480000002,
+   "orologio_s": 2221.6657037900004,
+   "fase": "cammino",
+   "passo": 682,
+   "punteggio": 0.8639821819289908,
+   "somiglianza_resemblyzer": 0.8639821819289908,
+   "coerenza": 0.9453981601906175,
+   "wer_ricerca": null,
+   "da": "passo 682",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1421.581498,
+   "orologio_s": 2224.327618359006,
+   "fase": "cammino",
+   "passo": 683,
+   "punteggio": 0.8669894565279017,
+   "somiglianza_resemblyzer": 0.8669894565279017,
+   "coerenza": 0.9401646209191761,
+   "wer_ricerca": null,
+   "da": "passo 683",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1430.439935,
+   "orologio_s": 2237.2296501600067,
+   "fase": "cammino",
+   "passo": 688,
+   "punteggio": 0.8684433770832731,
+   "somiglianza_resemblyzer": 0.8684433770832731,
+   "coerenza": 0.9420686637493207,
+   "wer_ricerca": null,
+   "da": "passo 688",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1447.197447,
+   "orologio_s": 2266.2910737810016,
+   "fase": "cammino",
+   "passo": 693,
+   "punteggio": 0.8540513310198012,
+   "somiglianza_resemblyzer": 0.8540513310198012,
+   "coerenza": 0.9401130914449186,
+   "wer_ricerca": null,
+   "da": "passo 693",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1464.521795,
+   "orologio_s": 2296.9429765449895,
+   "fase": "cammino",
+   "passo": 703,
+   "punteggio": 0.859736891545048,
+   "somiglianza_resemblyzer": 0.859736891545048,
+   "coerenza": 0.937992906303749,
+   "wer_ricerca": null,
+   "da": "passo 703",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1466.219639,
+   "orologio_s": 2299.500030072988,
+   "fase": "cammino",
+   "passo": 704,
+   "punteggio": 0.8689283574320075,
+   "somiglianza_resemblyzer": 0.8689283574320075,
+   "coerenza": 0.9463625308796508,
+   "wer_ricerca": null,
+   "da": "passo 704",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1518.668331,
+   "orologio_s": 2377.3554288560117,
+   "fase": "cammino",
+   "passo": 729,
+   "punteggio": 0.8562361545640813,
+   "somiglianza_resemblyzer": 0.8562361545640813,
+   "coerenza": 0.9290493452960377,
+   "wer_ricerca": null,
+   "da": "passo 729",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1525.322515,
+   "orologio_s": 2385.8902871920145,
+   "fase": "cammino",
+   "passo": 733,
+   "punteggio": 0.8599626831629235,
+   "somiglianza_resemblyzer": 0.8599626831629235,
+   "coerenza": 0.938536918245952,
+   "wer_ricerca": null,
+   "da": "passo 733",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1545.09615,
+   "orologio_s": 2415.612984795007,
+   "fase": "cammino",
+   "passo": 745,
+   "punteggio": 0.8652882891512885,
+   "somiglianza_resemblyzer": 0.8652882891512885,
+   "coerenza": 0.9391028690457159,
+   "wer_ricerca": null,
+   "da": "passo 745",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1546.807207,
+   "orologio_s": 2417.6997524290055,
+   "fase": "cammino",
+   "passo": 746,
+   "punteggio": 0.8726361295135057,
+   "somiglianza_resemblyzer": 0.8726361295135057,
+   "coerenza": 0.9389345010156114,
+   "wer_ricerca": null,
+   "da": "passo 746",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1588.627704,
+   "orologio_s": 2473.0459921960137,
+   "fase": "cammino",
+   "passo": 766,
+   "punteggio": 0.8532955861430589,
+   "somiglianza_resemblyzer": 0.8532955861430589,
+   "coerenza": 0.9476084217484928,
+   "wer_ricerca": 0.14285714285714285,
+   "da": "passo 766",
+   "verificato": true
+  },
+  {
+   "cpu_s": 1662.919758,
+   "orologio_s": 2582.0854738299968,
+   "fase": "cammino",
+   "passo": 804,
+   "punteggio": 0.8565460903285268,
+   "somiglianza_resemblyzer": 0.8565460903285268,
+   "coerenza": 0.9472824387435291,
+   "wer_ricerca": null,
+   "da": "passo 804",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1744.899491,
+   "orologio_s": 2707.9010407569876,
+   "fase": "cammino",
+   "passo": 846,
+   "punteggio": 0.8559430121341909,
+   "somiglianza_resemblyzer": 0.8559430121341909,
+   "coerenza": 0.9460118724819953,
+   "wer_ricerca": null,
+   "da": "passo 846",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1748.415454,
+   "orologio_s": 2713.4004113870033,
+   "fase": "cammino",
+   "passo": 848,
+   "punteggio": 0.8576725231955857,
+   "somiglianza_resemblyzer": 0.8576725231955857,
+   "coerenza": 0.9510993765760557,
+   "wer_ricerca": null,
+   "da": "passo 848",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1750.263056,
+   "orologio_s": 2717.3284085979976,
+   "fase": "cammino",
+   "passo": 849,
+   "punteggio": 0.8624249385364748,
+   "somiglianza_resemblyzer": 0.8624249385364748,
+   "coerenza": 0.9404666628978906,
+   "wer_ricerca": null,
+   "da": "passo 849",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1774.0823650000002,
+   "orologio_s": 2761.2158820260083,
+   "fase": "cammino",
+   "passo": 863,
+   "punteggio": 0.86478235375117,
+   "somiglianza_resemblyzer": 0.86478235375117,
+   "coerenza": 0.9434257587634007,
+   "wer_ricerca": null,
+   "da": "passo 863",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1777.629461,
+   "orologio_s": 2767.7327302919875,
+   "fase": "cammino",
+   "passo": 865,
+   "punteggio": 0.8720739707782529,
+   "somiglianza_resemblyzer": 0.8720739707782529,
+   "coerenza": 0.9554960893626238,
+   "wer_ricerca": null,
+   "da": "passo 865",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1865.239295,
+   "orologio_s": 2901.5432988590037,
+   "fase": "cammino",
+   "passo": 909,
+   "punteggio": 0.8592159194177285,
+   "somiglianza_resemblyzer": 0.8592159194177285,
+   "coerenza": 0.9376829196790795,
+   "wer_ricerca": null,
+   "da": "passo 909",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1894.715187,
+   "orologio_s": 2948.2659592829878,
+   "fase": "cammino",
+   "passo": 921,
+   "punteggio": 0.85359036306905,
+   "somiglianza_resemblyzer": 0.85359036306905,
+   "coerenza": 0.9407438144834619,
+   "wer_ricerca": null,
+   "da": "passo 921",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1907.152464,
+   "orologio_s": 2968.0552508870023,
+   "fase": "cammino",
+   "passo": 928,
+   "punteggio": 0.8553125970274413,
+   "somiglianza_resemblyzer": 0.8553125970274413,
+   "coerenza": 0.9365938653077137,
+   "wer_ricerca": null,
+   "da": "passo 928",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1915.730388,
+   "orologio_s": 2981.2543278390076,
+   "fase": "cammino",
+   "passo": 933,
+   "punteggio": 0.8575120458898993,
+   "somiglianza_resemblyzer": 0.8575120458898993,
+   "coerenza": 0.9408875150129345,
+   "wer_ricerca": null,
+   "da": "passo 933",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1917.679814,
+   "orologio_s": 2983.8927616380097,
+   "fase": "cammino",
+   "passo": 934,
+   "punteggio": 0.8588154104185706,
+   "somiglianza_resemblyzer": 0.8588154104185706,
+   "coerenza": 0.9482915060784888,
+   "wer_ricerca": null,
+   "da": "passo 934",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1947.894094,
+   "orologio_s": 3027.565282180003,
+   "fase": "cammino",
+   "passo": 946,
+   "punteggio": 0.8570519000195123,
+   "somiglianza_resemblyzer": 0.8570519000195123,
+   "coerenza": 0.9408454103822157,
+   "wer_ricerca": null,
+   "da": "passo 946",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1964.0836640000002,
+   "orologio_s": 3047.894998295,
+   "fase": "cammino",
+   "passo": 955,
+   "punteggio": 0.8587824721766155,
+   "somiglianza_resemblyzer": 0.8587824721766155,
+   "coerenza": 0.935030490535549,
+   "wer_ricerca": null,
+   "da": "passo 955",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 1969.2978990000001,
+   "orologio_s": 3053.9236991729995,
+   "fase": "cammino",
+   "passo": 958,
+   "punteggio": 0.8667663248060903,
+   "somiglianza_resemblyzer": 0.8667663248060903,
+   "coerenza": 0.9426975426778279,
+   "wer_ricerca": null,
+   "da": "passo 958",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 2012.630747,
+   "orologio_s": 3111.6681051070045,
+   "fase": "cammino",
+   "passo": 978,
+   "punteggio": 0.8537291685355641,
+   "somiglianza_resemblyzer": 0.8537291685355641,
+   "coerenza": 0.9430242892346908,
+   "wer_ricerca": null,
+   "da": "passo 978",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 2016.2909510000002,
+   "orologio_s": 3116.5867349010077,
+   "fase": "cammino",
+   "passo": 980,
+   "punteggio": 0.8559574462157624,
+   "somiglianza_resemblyzer": 0.8559574462157624,
+   "coerenza": 0.9402320062686852,
+   "wer_ricerca": null,
+   "da": "passo 980",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 2025.42146,
+   "orologio_s": 3129.1936062560126,
+   "fase": "cammino",
+   "passo": 985,
+   "punteggio": 0.8573874924018384,
+   "somiglianza_resemblyzer": 0.8573874924018384,
+   "coerenza": 0.9435443508423165,
+   "wer_ricerca": null,
+   "da": "passo 985",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 2030.815137,
+   "orologio_s": 3136.330152518989,
+   "fase": "cammino",
+   "passo": 988,
+   "punteggio": 0.8577327829459402,
+   "somiglianza_resemblyzer": 0.8577327829459402,
+   "coerenza": 0.9390692333200354,
+   "wer_ricerca": null,
+   "da": "passo 988",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 2045.431772,
+   "orologio_s": 3153.998332613992,
+   "fase": "cammino",
+   "passo": 996,
+   "punteggio": 0.859434382774505,
+   "somiglianza_resemblyzer": 0.859434382774505,
+   "coerenza": 0.9525561277979024,
+   "wer_ricerca": null,
+   "da": "passo 996",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 2060.7769900000003,
+   "orologio_s": 3172.4027671380027,
+   "fase": "cammino",
+   "passo": 1005,
+   "punteggio": 0.861625591754006,
+   "somiglianza_resemblyzer": 0.861625591754006,
+   "coerenza": 0.9490457068055622,
+   "wer_ricerca": null,
+   "da": "passo 1005",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 2091.391535,
+   "orologio_s": 3214.679951094993,
+   "fase": "cammino",
+   "passo": 1018,
+   "punteggio": 0.8560660714178542,
+   "somiglianza_resemblyzer": 0.8560660714178542,
+   "coerenza": 0.9462415707424349,
+   "wer_ricerca": 0.14285714285714285,
+   "da": "passo 1018",
+   "verificato": true
+  },
+  {
+   "cpu_s": 2097.082519,
+   "orologio_s": 3223.6527093280165,
+   "fase": "cammino",
+   "passo": 1021,
+   "punteggio": 0.8573975664376818,
+   "somiglianza_resemblyzer": 0.8573975664376818,
+   "coerenza": 0.9434636830714047,
+   "wer_ricerca": 0.14285714285714285,
+   "da": "passo 1021",
+   "verificato": true
+  },
+  {
+   "cpu_s": 2172.316831,
+   "orologio_s": 3338.9997549869877,
+   "fase": "cammino",
+   "passo": 1058,
+   "punteggio": 0.8618416287490607,
+   "somiglianza_resemblyzer": 0.8618416287490607,
+   "coerenza": 0.9506378825737796,
+   "wer_ricerca": null,
+   "da": "passo 1058",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 2714.414276,
+   "orologio_s": 4118.73798859099,
+   "fase": "cammino",
+   "passo": 1358,
+   "punteggio": 0.8582640235997714,
+   "somiglianza_resemblyzer": 0.8582640235997714,
+   "coerenza": 0.9446638060807695,
+   "wer_ricerca": null,
+   "da": "passo 1358",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 2976.544347,
+   "orologio_s": 4498.035687275988,
+   "fase": "cammino",
+   "passo": 1499,
+   "punteggio": 0.8590043648417409,
+   "somiglianza_resemblyzer": 0.8590043648417409,
+   "coerenza": 0.9442480203344821,
+   "wer_ricerca": null,
+   "da": "passo 1499",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 3141.470487,
+   "orologio_s": 4822.493566699995,
+   "fase": "cammino",
+   "passo": 1590,
+   "punteggio": 0.8577533696439045,
+   "somiglianza_resemblyzer": 0.8577533696439045,
+   "coerenza": 0.9404231144775104,
+   "wer_ricerca": null,
+   "da": "passo 1590",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 3211.0234840000003,
+   "orologio_s": 4918.0464420700155,
+   "fase": "cammino",
+   "passo": 1625,
+   "punteggio": 0.8589255665805811,
+   "somiglianza_resemblyzer": 0.8589255665805811,
+   "coerenza": 0.9428917236055334,
+   "wer_ricerca": null,
+   "da": "passo 1625",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 3415.35271,
+   "orologio_s": 5221.336851244996,
+   "fase": "cammino",
+   "passo": 1739,
+   "punteggio": 0.8579287648518819,
+   "somiglianza_resemblyzer": 0.8579287648518819,
+   "coerenza": 0.9412429807003813,
+   "wer_ricerca": null,
+   "da": "passo 1739",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 3451.40571,
+   "orologio_s": 5270.983018447994,
+   "fase": "cammino",
+   "passo": 1755,
+   "punteggio": 0.8598637772397107,
+   "somiglianza_resemblyzer": 0.8598637772397107,
+   "coerenza": 0.9503187230560467,
+   "wer_ricerca": null,
+   "da": "passo 1755",
+   "verificato": false,
+   "scartato": true
+  },
+  {
+   "cpu_s": 3520.183513,
+   "orologio_s": 5359.598832888005,
+   "fase": "cammino",
+   "passo": 1790,
+   "punteggio": 0.8593280062001651,
+   "somiglianza_resemblyzer": 0.8593280062001651,
+   "coerenza": 0.9379531154401279,
+   "wer_ricerca": null,
+   "da": "passo 1790",
+   "verificato": false,
+   "scartato": true
+  }
+ ],
+ "controlli_dettaglio": [
+  {
+   "cpu_s": 163.182413,
+   "superato": true,
+   "wer": 0.14285714285714285,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo è sereno e il treno parte alle nuove.",
+    "Vorrei sapere se domani la sala delle Vioni e libera."
+   ],
+   "punteggio": 0.7740381580724818
+  },
+  {
+   "cpu_s": 232.32224,
+   "superato": false,
+   "wer": 0.19047619047619047,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo esereno e il treno parte alle nuove.",
+    "Vorrei sapere se domani la sala delle riunioni e libera."
+   ],
+   "punteggio": 0.8042332248237254
+  },
+  {
+   "cpu_s": 301.979148,
+   "superato": true,
+   "wer": 0.09523809523809523,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo esereno e il treno parte alle nove.",
+    "Vorrei sapere se domani la sala delle riunioni è libera."
+   ],
+   "punteggio": 0.8015994030068394
+  },
+  {
+   "cpu_s": 371.305995,
+   "superato": true,
+   "wer": 0.14285714285714285,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo e sereno, e il treno parte alle nove.",
+    "Vorrei sapere se domani la sala delle unioni e libera."
+   ],
+   "punteggio": 0.8118136070401427
+  },
+  {
+   "cpu_s": 494.483478,
+   "superato": true,
+   "wer": 0.14285714285714285,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo e sereno, il treno parte alle nove.",
+    "Vorrei sapere se domani la sala delle riunioni e libera."
+   ],
+   "punteggio": 0.8125309977752868
+  },
+  {
+   "cpu_s": 685.084073,
+   "superato": true,
+   "wer": 0.0,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo è sereno e il treno parte alle nove.",
+    "Vorrei sapere se domani la sala delle riunioni è libera."
+   ],
+   "punteggio": 0.8213747700127165
+  },
+  {
+   "cpu_s": 754.591387,
+   "superato": false,
+   "wer": 0.19047619047619047,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo esereno e il treno parte alle nove.",
+    "Vorrei sapere se domani la sala delle unioni e libera."
+   ],
+   "punteggio": 0.8234916322188975
+  },
+  {
+   "cpu_s": 823.1456810000001,
+   "superato": true,
+   "wer": 0.14285714285714285,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cello e sereno, e il treno parte alle nove.",
+    "Vorrei sapere se domani la sala delle unioni è libera."
+   ],
+   "punteggio": 0.8219958701096888
+  },
+  {
+   "cpu_s": 892.5008260000001,
+   "superato": true,
+   "wer": 0.09523809523809523,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo è sereno e il treno parte alle nove.",
+    "Vorrei sapere se domani la sala delle riuscite e libera."
+   ],
+   "punteggio": 0.826630159868271
+  },
+  {
+   "cpu_s": 961.572769,
+   "superato": false,
+   "wer": 0.19047619047619047,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo esereno e il treno parte alle nuove.",
+    "Vorrei sapere se domani la sala delle riunioni e libera."
+   ],
+   "punteggio": 0.8407313497327068
+  },
+  {
+   "cpu_s": 1030.017438,
+   "superato": false,
+   "wer": 0.19047619047619047,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo esereno e il treno parte alle nove.",
+    "Vorrei sapere se domani la sala delle unioni e libera."
+   ],
+   "punteggio": 0.8319152254908844
+  },
+  {
+   "cpu_s": 1099.446543,
+   "superato": true,
+   "wer": 0.14285714285714285,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo e sereno, e il treno parte alle nuove.",
+    "Vorrei sapere se domani la sala delle unioni è libera."
+   ],
+   "punteggio": 0.8508840406989286
+  },
+  {
+   "cpu_s": 1168.2087000000001,
+   "superato": false,
+   "wer": 0.23809523809523808,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo e sereno, e il treno parte alle nuove.",
+    "Vorrei sapere se domani la sala delle r unioni e libera."
+   ],
+   "punteggio": 0.8543972989302406
+  },
+  {
+   "cpu_s": 1238.540134,
+   "superato": false,
+   "wer": 0.2857142857142857,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo e sereno, il treno parte alle nuove.",
+    "Vorrei sapere se domani la sala delle r unioni e libera."
+   ],
+   "punteggio": 0.8598083144001479
+  },
+  {
+   "cpu_s": 1307.865578,
+   "superato": false,
+   "wer": 0.19047619047619047,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo esereno, e il treno parte alle 9.",
+    "Vorrei sapere se domani la sala delle junioni e libera."
+   ],
+   "punteggio": 0.8788277446685573
+  },
+  {
+   "cpu_s": 1376.45775,
+   "superato": false,
+   "wer": 0.19047619047619047,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo esereno e il treno parte alle nuove.",
+    "Vorrei sapere se domani la sala delle riunioni, e libera."
+   ],
+   "punteggio": 0.8684911678261142
+  },
+  {
+   "cpu_s": 1445.359081,
+   "superato": false,
+   "wer": 0.23809523809523808,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo esereno, e il treno parte alle nuove.",
+    "Vorrei sapere se domani la sala delle junioni, e libera."
+   ],
+   "punteggio": 0.8684433770832731
+  },
+  {
+   "cpu_s": 1515.3489319999999,
+   "superato": false,
+   "wer": 0.19047619047619047,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo esereno e il treno parte alle nove.",
+    "Vorrei sapere se domani la sala delle unioni, e libera."
+   ],
+   "punteggio": 0.8689283574320075
+  },
+  {
+   "cpu_s": 1583.5353010000001,
+   "superato": false,
+   "wer": 0.2857142857142857,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo esereno e il treno parte alle nuove.",
+    "Vorrei sapere se domani la sala delle r unioni e libera."
+   ],
+   "punteggio": 0.8726361295135057
+  },
+  {
+   "cpu_s": 1652.4927500000001,
+   "superato": true,
+   "wer": 0.14285714285714285,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo e sereno, e il treno parte alle 9.",
+    "Vorrei sapere se domani la sala delle reunioni, e libera."
+   ],
+   "punteggio": 0.8532955861430589
+  },
+  {
+   "cpu_s": 1722.027257,
+   "superato": false,
+   "wer": 0.23809523809523808,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo e sereno, il treno parte alle nuove.",
+    "Vorrei sapere se domani la sala delle unioni, e libera."
+   ],
+   "punteggio": 0.8565460903285268
+  },
+  {
+   "cpu_s": 1791.083804,
+   "superato": false,
+   "wer": 0.19047619047619047,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo eserino e il treno parte alle nuove.",
+    "Vorrei sapere se domani la sala delle unioni è libera."
+   ],
+   "punteggio": 0.8720739707782529
+  },
+  {
+   "cpu_s": 1873.860785,
+   "superato": false,
+   "wer": 0.19047619047619047,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo esereno, e il treno parte alle 9.",
+    "Vorrei sapere se domani la sala delle Junioni, e libera."
+   ],
+   "punteggio": 0.8592159194177285
+  },
+  {
+   "cpu_s": 1942.444028,
+   "superato": false,
+   "wer": 0.23809523809523808,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo esereno e il treno parte alle nuove.",
+    "Vorrei sapere se domani la sala delle Junioni, e libera."
+   ],
+   "punteggio": 0.8588154104185706
+  },
+  {
+   "cpu_s": 2010.834523,
+   "superato": false,
+   "wer": 0.23809523809523808,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo esereno, e il treno parte alle nuove.",
+    "Vorrei sapere se domani la sala delle reunioni e libera."
+   ],
+   "punteggio": 0.8667663248060903
+  },
+  {
+   "cpu_s": 2079.039385,
+   "superato": false,
+   "wer": 0.23809523809523808,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo eserino, e il treno parte alle nuove.",
+    "Vorrei sapere se domani la sala delle Junioni e libera."
+   ],
+   "punteggio": 0.861625591754006
+  },
+  {
+   "cpu_s": 2148.989376,
+   "superato": true,
+   "wer": 0.14285714285714285,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo è sereno, e il treno parte alle nuove.",
+    "Vorrei sapere se domani la sala delle unioni e libera."
+   ],
+   "punteggio": 0.8573975664376818
+  },
+  {
+   "cpu_s": 2216.747375,
+   "superato": false,
+   "wer": 0.19047619047619047,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo eserino e il treno parte alle nove.",
+    "Vorrei sapere se domani la sala delle Junioni, e libera."
+   ],
+   "punteggio": 0.8618416287490607
+  },
+  {
+   "cpu_s": 2723.07235,
+   "superato": false,
+   "wer": 0.19047619047619047,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo esereno, e il treno parte alle nove.",
+    "Vorrei sapere se domani la sala delle regioni e libera."
+   ],
+   "punteggio": 0.8582640235997714
+  },
+  {
+   "cpu_s": 2985.2128860000003,
+   "superato": false,
+   "wer": 0.19047619047619047,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo esirino e il treno parte alle 9.",
+    "Vorrei sapere se domani la sala delle unioni e libera."
+   ],
+   "punteggio": 0.8590043648417409
+  },
+  {
+   "cpu_s": 3149.9913420000003,
+   "superato": false,
+   "wer": 0.19047619047619047,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo è sereno, e il treno parte alle nuove.",
+    "Vorrei sapere se domani la sala dell'Erinioni, e libera."
+   ],
+   "punteggio": 0.8577533696439045
+  },
+  {
+   "cpu_s": 3218.519002,
+   "superato": false,
+   "wer": 0.23809523809523808,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo esereno, e il treno parte alle nuove.",
+    "Vorrei sapere se domani la sala delle Junioni, e libera."
+   ],
+   "punteggio": 0.8589255665805811
+  },
+  {
+   "cpu_s": 3423.72827,
+   "superato": false,
+   "wer": 0.19047619047619047,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo esirino e il treno parte alle 9.",
+    "Vorrei sapere se domani la sala delle Junioni, e libera."
+   ],
+   "punteggio": 0.8579287648518819
+  },
+  {
+   "cpu_s": 3492.258949,
+   "superato": false,
+   "wer": 0.23809523809523808,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo esereno e il treno parte alle nuove.",
+    "Vorrei sapere se domani la sala delle Junioni e libera."
+   ],
+   "punteggio": 0.8598637772397107
+  },
+  {
+   "cpu_s": 3561.492935,
+   "superato": false,
+   "wer": 0.2857142857142857,
+   "durata_ok": true,
+   "trascrizioni": [
+    "Oggi il cielo esereno, il treno parte alle nuove.",
+    "Vorrei sapere se domani la sala delle reunioni, e libera."
+   ],
+   "punteggio": 0.8593280062001651
+  }
+ ],
+ "migliore": {
+  "punteggio": 0.8573975664376818,
+  "somiglianza_resemblyzer": 0.8573975664376818,
+  "coerenza": 0.9434636830714047,
+  "wer_ricerca": 0.14285714285714285,
+  "da": "passo 1021"
+ }
+}

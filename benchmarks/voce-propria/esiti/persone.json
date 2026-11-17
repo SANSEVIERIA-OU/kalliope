@@ -1,0 +1,220 @@
+{
+ "F1": {
+  "lettore": "Enrica Giampieretti",
+  "opera": "Grazia Deledda, «Canne al vento»",
+  "item": "canne_al_vento_1609_librivox",
+  "a": "cannealvento_01_deledda.mp3",
+  "b": "cannealvento_02_deledda.mp3",
+  "licenza": "pubblico dominio (LibriVox; archive.org: Public Domain Mark 1.0)",
+  "riferimento_s": [
+   188.26000000000002,
+   212.9
+  ],
+  "riferimento_durata": 24.639999999999986,
+  "tenuti_s": [
+   [
+    567.27,
+    575.5300000000001
+   ],
+   [
+    1131.63,
+    1140.1899999999998
+   ],
+   [
+    1695.3000000000002,
+    1701.83
+   ],
+   [
+    2262.09,
+    2270.66
+   ]
+  ],
+  "tenuti_durata": 31.919999999999277,
+  "controllo_s": [
+   [
+    286.39,
+    291.03000000000003
+   ],
+   [
+    848.89,
+    851.64
+   ],
+   [
+    1412.65,
+    1416.05
+   ],
+   [
+    1976.8200000000002,
+    1979.58
+   ],
+   [
+    2542.38,
+    2545.54
+   ]
+  ],
+  "degradato": "rumore rosa a 20 dB di SNR, banda del telefono 300-3400 Hz a 8 kHz, MP3 a 16 kbit/s, riportato a 24 kHz"
+ },
+ "F2": {
+  "lettore": "Claudia Caldi",
+  "opera": "Scipio Sighele, «La crisi dell'infanzia e la delinquenza dei minorenni»",
+  "item": "lacrisidellinfanzi_2405_librivox",
+  "a": "crisidellinfanzia_01_sighele.mp3",
+  "b": "crisidellinfanzia_02_sighele.mp3",
+  "licenza": "pubblico dominio (LibriVox; archive.org: Public Domain Mark 1.0)",
+  "riferimento_s": [
+   196.61,
+   221.39
+  ],
+  "riferimento_durata": 24.779999999999973,
+  "tenuti_s": [
+   [
+    169.11,
+    179.76
+   ],
+   [
+    501.53999999999996,
+    508.61
+   ],
+   [
+    501.53999999999996,
+    508.61
+   ],
+   [
+    649.45,
+    659.83
+   ]
+  ],
+  "tenuti_durata": 35.17000000000007,
+  "controllo_s": [
+   [
+    385.69,
+    388.69000000000005
+   ],
+   [
+    385.69,
+    388.69000000000005
+   ],
+   [
+    508.84999999999997,
+    512.48
+   ],
+   [
+    548.92,
+    555.46
+   ],
+   [
+    767.68,
+    772.6600000000001
+   ]
+  ]
+ },
+ "M1": {
+  "lettore": "Riccardo Fasol",
+  "opera": "Luigi Pirandello, «Il fu Mattia Pascal»",
+  "item": "mattia_pascal_1012_librivox",
+  "a": "mattiapascal_01_pirandello.mp3",
+  "b": "mattiapascal_02_pirandello.mp3",
+  "licenza": "pubblico dominio (LibriVox; archive.org: Public Domain Mark 1.0)",
+  "riferimento_s": [
+   183.91,
+   211.29
+  ],
+  "riferimento_durata": 27.379999999999995,
+  "tenuti_s": [
+   [
+    252.12,
+    261.47
+   ],
+   [
+    508.89,
+    517.38
+   ],
+   [
+    748.52,
+    754.86
+   ],
+   [
+    1001.76,
+    1010.0
+   ]
+  ],
+  "tenuti_durata": 32.42000000000007,
+  "controllo_s": [
+   [
+    130.73000000000002,
+    135.42
+   ],
+   [
+    388.74,
+    393.86
+   ],
+   [
+    631.17,
+    636.99
+   ],
+   [
+    880.95,
+    886.4100000000001
+   ],
+   [
+    1125.92,
+    1129.79
+   ]
+  ]
+ },
+ "M2": {
+  "lettore": "Renzo Clerico",
+  "opera": "Niccolò Machiavelli, «Il Principe»",
+  "item": "il_principe_1711_librivox",
+  "a": "ilprincipe_01_machiavelli.mp3",
+  "b": "ilprincipe_02_machiavelli.mp3",
+  "licenza": "pubblico dominio (LibriVox; archive.org: Public Domain Mark 1.0)",
+  "riferimento_s": [
+   181.15,
+   206.45
+  ],
+  "riferimento_durata": 25.299999999999983,
+  "tenuti_s": [
+   [
+    223.79000000000002,
+    230.2
+   ],
+   [
+    447.25,
+    454.19000000000005
+   ],
+   [
+    667.02,
+    674.9100000000001
+   ],
+   [
+    888.76,
+    897.87
+   ]
+  ],
+  "tenuti_durata": 30.350000000000136,
+  "controllo_s": [
+   [
+    112.45,
+    116.13
+   ],
+   [
+    335.49,
+    341.97
+   ],
+   [
+    558.21,
+    562.33
+   ],
+   [
+    780.81,
+    786.2900000000001
+   ],
+   [
+    1001.45,
+    1006.75
+   ]
+  ],
+  "degradato": "rumore rosa a 20 dB di SNR, banda del telefono 300-3400 Hz a 8 kHz, MP3 a 16 kbit/s, riportato a 24 kHz"
+ }
+}

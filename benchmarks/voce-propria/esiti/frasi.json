@@ -1,0 +1,63 @@
+[
+ {
+  "id": 0,
+  "testo": "Buongiorno a tutti! Scrivo invece di parlare, ma vi seguo benissimo.",
+  "frasi_normalizzate": [
+   "buongiorno a tutti!",
+   "scrivo invece di parlare, ma vi seguo benissimo."
+  ],
+  "fonemi": [
+   "bʊonʤˈorno a tˈutːɪ!",
+   "skrˈivo invˈeʧe dɪ parlˈare, ma vɪ sˈeɡwo benˈiSimo."
+  ],
+  "normalizzato": "Buongiorno a tutti! Scrivo invece di parlare, ma vi seguo benissimo."
+ },
+ {
+  "id": 1,
+  "testo": "Sono d'accordo con Paola. Però la consegna del 14/3 mi sembra stretta: possiamo sentirci venerdì alle 15:30?",
+  "frasi_normalizzate": [
+   "sono d'accordo con paola.",
+   "però la consegna del quattordici marzo mi sembra stretta: possiamo sentirci venerdì alle quindici e trenta?"
+  ],
+  "fonemi": [
+   "sˌono dakːˈɔrdo kon pˈaola.",
+   "perˈɔ la konsˈeɲɲa del kwatːˈordiʧɪ mˈarʦo mɪ sˈembra strˈetːa: poSjˈamo sentˈirʧɪ venerdˈi ˌalle kwˈindiʧɪ e trˈenta?"
+  ],
+  "normalizzato": "Sono d'accordo con paola. Però la consegna del quattordici marzo mi sembra stretta: possiamo sentirci venerdì alle quindici e trenta?"
+ },
+ {
+  "id": 2,
+  "testo": "Il preventivo è di 1.250 € + IVA, valido fino al 31 dicembre.",
+  "frasi_normalizzate": [
+   "il preventivo è di mille duecento cinquanta euro più iva, valido fino al trentuno dicembre."
+  ],
+  "fonemi": [
+   "il preventˈivo e dɪ mˈille dʊeʧˈɛnto ʧinkwˈanta ˈɛʊro piˈu ˈiva, vˈalido fˈino al trentˈuno diʧˈɛmbre."
+  ],
+  "normalizzato": "Il preventivo è di mille duecento cinquanta euro più iva, valido fino al trentuno dicembre."
+ },
+ {
+  "id": 3,
+  "testo": "Scusate, mi sentite bene adesso? Posso condividere lo schermo?",
+  "frasi_normalizzate": [
+   "scusate, mi sentite bene adesso?",
+   "posso condividere lo schermo?"
+  ],
+  "fonemi": [
+   "skʊzˈate, mɪ sentˈite bˈɛne adˈɛSo?",
+   "pˈɔSo kondivˈidere lo skˈermo?"
+  ],
+  "normalizzato": "Scusate, mi sentite bene adesso? Posso condividere lo schermo?"
+ },
+ {
+  "id": 4,
+  "testo": "Che bella notizia, complimenti a tutta la squadra!",
+  "frasi_normalizzate": [
+   "che bella notizia, complimenti a tutta la squadra!"
+  ],
+  "fonemi": [
+   "ke bˈɛlla notˈiʦja, komplimˈentɪ a tˈutːa la skwˈadra!"
+  ],
+  "normalizzato": "Che bella notizia, complimenti a tutta la squadra!"
+ }
+]
