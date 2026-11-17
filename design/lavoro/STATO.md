@@ -39,6 +39,11 @@ Sulle tre domande lasciate da «non ancora»:
   chi usa Kalliope, adesso e non «in futuro». Prima la ricerca (fase V), poi la proposta con le alternative al proprietario, poi
   la costruzione, in parallelo alle pagine del sito (tocca `crates/`, non `website/`).
 
+- La strada per la voce (17/11, dopo le misure e la pagina d'ascolto): «Strada 1», cioè un secondo motore che imita la voce
+  dalla registrazione (Pocket TTS di Kyutai). Da risolvere prima di costruire: la prima parola persa in metà delle frasi, il peso
+  (24 strati più lenti del parlato a 2 thread, 2,2 GB; 4,6–5 GB per codificare il riferimento), la provenienza dei pesi
+  (esportazione ONNX di terzi; i pesi ufficiali chiedono un account). Proposta di lavoro al proprietario, in attesa del via.
+
 ## Fasi
 
 | Fase | Stato | Ruolo e modello | Tempi | Esito / prossimo passo |

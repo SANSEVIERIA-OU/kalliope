@@ -28,6 +28,8 @@ come si lavora.
 - **La voce di chi usa Kalliope** (decisione del proprietario del 17/11/2026: «voglio che lo faccia già adesso (non "la
   mia voce" ma la voce dell'utente)»): il programma parlerà con la voce della persona che lo usa. Si fa adesso, in
   parallelo alle pagine: prima ricerca e proposta con le alternative, poi la costruzione (`design/lavoro/STATO.md`, fase V).
+  Strada scelta dal proprietario il 17/11/2026 dopo l'ascolto dei campioni: «Strada 1», un secondo motore che imita la voce
+  dalla registrazione (Pocket TTS; misure in `benchmarks/voce-propria/README.md`). La voce di oggi resta per chi non ha una registrazione.
 - **Il telefono** (17/11/2026): «non è per telefono: è solo desktop per il momento». Il sito non dice «non ancora» per
   il telefono.
 
