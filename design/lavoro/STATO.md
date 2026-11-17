@@ -26,8 +26,18 @@ Metodo: skill vibe-next `design-system-generator` 0.46.1, ruoli nativi di Claude
   barra non si mostra e `/` manda a `/it/` come i vecchi indirizzi; tornano da soli con la seconda lingua (lo fa la
   costruzione, in `tools/site.py`). La barra di «non ancora» e delle pagine dopo prende il selettore nuovo. Foto e sequenze
   di `design/lavoro/` restano sul disco, fuori dal repository (`.gitignore`).
-- Rinviati finché il proprietario non ne riparla: clonazione della voce, Windows e macOS, il cursore nel campo con
+- Rinviati finché il proprietario non ne riparla: Windows e macOS, il cursore nel campo con
   testo arabo (limite di Slint), la piattaforma dei traduttori, i messaggi da terminale.
+
+## Decisioni del proprietario (17/11/2026)
+
+Sulle tre domande lasciate da «non ancora»:
+- Telefono: «non è per telefono: è solo desktop per il momento». Le pagine non dicono «non ancora» per il telefono ma «per ora è
+  solo per il computer» (home e «non ancora» corrette da chi coordina; `design/progetto.md` allineato).
+- La frase grigia nella bolla: «tema di copy, lo vediamo a parte». Resta com'è; si riprende con i testi.
+- La voce: «voglio che lo faccia già adesso (non "la mia voce" ma la voce dell'utente)». Il programma parlerà con la voce di
+  chi usa Kalliope, adesso e non «in futuro». Prima la ricerca (fase V), poi la proposta con le alternative al proprietario, poi
+  la costruzione, in parallelo alle pagine del sito (tocca `crates/`, non `website/`).
 
 ## Fasi
 
@@ -48,6 +58,7 @@ Metodo: skill vibe-next `design-system-generator` 0.46.1, ruoli nativi di Claude
 | 3a-p. «non ancora»: al proprietario | mostrata 17/11 | chi coordina | | domande: telefono «non ancora» o confine; la frase grigia della bolla. Decisi da chi coordina: sugli schermi bassi una riunione più bassa perché bolla e «Pausa» stiano insieme; N1–N5 e M3 nella prossima costruzione |
 | 3a-r. «non ancora»: N1–N5, M3, selettore nella barra, piede in Firefox | fatta, salvata con 2-b | design-build (sonnet) | 17/11, 260 min, 799k token | `3a-non-ancora/rifinitura/progresso.md`; N1–N5, M3, selettore e piede chiusi in tre motori; 6 token nuovi; a riposo identica a `82823d5` salvo M3 (didascalia su due righe al telefono) e il fondo della riga di N3; verificato da chi coordina sull'albero da salvare (costruzione vera e a 10 lingue, controlli, 72 prove, foto dell'ascolto a 844×390, 915×412 e 326×326 con «Pausa» nello schermo, 0 errori). Chi coordina ha aggiunto alle traduzioni di prova le due frasi «non di prova» che mancavano. Poi secondo sguardo su 2 e 3a-r insieme |
 | 2-s. Lingue e rifinitura di «non ancora»: secondo sguardo del giudice | in corso | design-judge (opus) | 17/11 → | `incarichi/2-3a-secondo-sguardo.md`; poi al proprietario |
+| V. La voce di chi usa Kalliope: ricerca | in corso | research ×5 (haiku) | 17/11 → | modelli che clonano dal testo, conversione della voce, voice banking per chi perde la parola, adattare una voce piccola, regole UE e filigrana; poi proposta al proprietario (almeno due vie) |
 | 4. Applicazione: token per Slint, prova delle scritture, `@tr`, finestra nella direzione 2 (due varianti) | da fare | design-build, design-direction, design-judge | | dopo il sito |
 | 5. Matrice completa (15 dispositivi × 3 motori) e pulizia di `website/stile/`, `script/`, `sistema/` | da fare | design-build | | alla fine |
 

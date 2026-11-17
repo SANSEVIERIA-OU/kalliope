@@ -66,11 +66,14 @@ della scrittura `[I]`.
 
 - Non ascolta e non trascrive: nessun riconoscimento vocale, nessuna registrazione `[R]`. Chi non sente non riceve da
   Kalliope sottotitoli della riunione: quelli dipendono dall'app della riunione `[I]`.
-- Non clona la voce della persona: «non c'è; forse in futuro, solo con consenso» `[P]`.
+- Oggi non parla con la voce della persona. Decisione del proprietario del 17/11/2026: il programma lo farà già adesso,
+  con la voce di chi usa Kalliope (come: ricerca e proposta in `design/lavoro/STATO.md`); finché non c'è, il sito non lo
+  promette `[P]`.
 - Parla solo italiano: normalizzazione e pronuncia sono italiane `[R crates/text, crates/phonemes]`.
 - Non ha pittogrammi, predizione del testo né frasi preimpostate: solo le frasi già dette in quella sessione `[R]`.
   Non è un sistema completo di comunicazione aumentativa (CAA) `[I]`.
-- Non è un servizio online, né un'estensione del browser, né un'app per telefono `[R]`.
+- Non è un servizio online, né un'estensione del browser, né un'app per telefono `[R]`: «non è per telefono: è solo
+  desktop per il momento» (proprietario, 17/11/2026). Per il telefono il sito non dice «non ancora» `[P]`.
 - Non si integra con una app di riunione in particolare: per l'app di riunione è semplicemente un microfono `[R docs]`.
   Quindi la compatibilità con una app è un fatto da provare app per app, non una promessa generale.
 - Il suono arriva solo se un'app sta registrando dal microfono: le frasi dette mentre nessuno ascolta vengono scartate
@@ -283,7 +286,7 @@ misura (da riprovare) `[C metodo-capacita.json]`.
 - «Open source»: la licenza è propria; si dice «codice sorgente disponibile» `[P][R NOTICE]`.
 - «Gratis per ogni uso» o un prezzo: nessun prezzo esiste; l'uso commerciale richiede autorizzazione `[R]`.
 - «Per Windows/macOS» o «per telefono» `[R]`.
-- «Con la tua voce» (nessuna clonazione) `[P]`.
+- «Con la tua voce», finché il programma non parla con la voce di chi lo usa `[P]`.
 - «In tempo reale» o un tempo di risposta: non misurato end-to-end `[L]`.
 - «Nessuna connessione»: c'è lo scarico della voce `[R]`.
 - «Provato con lettori di schermo» o «con puntamento oculare»: non risulta alcuna prova `[L]`.
@@ -325,9 +328,9 @@ lettura e di compito con persone reali, e con le segnalazioni che arrivano (P9):
 | Testi dei campioni, scritti esattamente così: 1. «Buongiorno a tutti! Scrivo invece di parlare, ma vi seguo benissimo.» 2. «Sono d'accordo con Paola. Però la consegna del 14/3 mi sembra stretta: possiamo sentirci venerdì alle 15:30?» 3. «Il preventivo è di 1.250 € + IVA, valido fino al 31 dicembre.» | `[C]` | Il testo mostrato accanto al suono è identico, carattere per carattere |
 | Codebase, identità e meccanismi separati dalla sorella Kalipso | `comune.md` | Nessuna copia di codice, identità o meccanismi; solo ciò che si conosce per esistenza |
 | Licenza SANSEVIERIA 1.0: sorgente disponibile, non «open source» | `[P]`, `NOTICE` | Parole del sito sulla licenza |
-| Clonazione della propria voce: non c'è | `[P]` | Non compare fra le funzioni; al massimo «forse in futuro, solo con consenso» |
+| La voce di chi usa Kalliope: decisa dal proprietario il 17/11/2026, non ancora nel programma | `[P]` | Non compare fra le funzioni finché il programma non la fa |
 | Nessun invio di moduli, nessun account, nessun server | `[P]` | Il sito non ha moduli; i contatti passano da canali esterni (§12, dubbio A) |
-| Esclusi per ora | Windows, macOS, telefono, altre lingue, clonazione, pittogrammi, sottotitoli | Spiegati, non nascosti |
+| Esclusi per ora | Windows, macOS, telefono, altre lingue, pittogrammi, sottotitoli | Spiegati, non nascosti; il telefono non come «non ancora» ma come confine (17/11/2026) |
 
 ---
 
@@ -437,7 +440,7 @@ Ogni percorso: **persona → bisogno → ingresso → azioni e dati → regole �
   nuova versione senza account e senza lasciare dati: il feed delle release del repository (`releases.atom`) `[I]` da
   verificare; nessuna lista d'attesa.
 - **Regole.** Nessuna data promessa; nessuna alternativa di terzi consigliata senza decisione del proprietario
-  (dubbio E).
+  (dubbio E). Per il telefono la risposta è un'altra: per ora Kalliope è solo per il computer (proprietario, 17/11/2026).
 - **Esito.** Non perde tempo, sa perché, sa come tornare.
 - **Errore e recupero.** Non applicabile: il percorso è già il recupero.
 - **Perché serve.** È probabilmente il primo incontro di molte persone con Kalliope: dire «no, e perché» subito è

@@ -445,7 +445,7 @@ msgstr "Το κείμενο που γράφεις μένει στον υπολο
 #: index.html
 #, kalliope-markup
 msgctxt "strada.non-esiste"
-msgid "<1>Non esiste ancora</1> per Windows, macOS, telefono e altre lingue."
+msgid "<1>Non esiste ancora</1> per Windows, macOS e altre lingue. Per ora è solo per il computer, non per il telefono."
 msgstr "<1>Δεν υπάρχει ακόμη</1> για Windows, macOS, κινητά και άλλες γλώσσες."
 
 #. Attribute «aria-label» of an element of the page: plain text, no tags.
@@ -793,8 +793,8 @@ msgstr "Kalliope per Windows e macOS: non ancora, e perché"
 #. Attribute «content» of an element of the page: plain text, no tags.
 #: non-ancora/index.html
 msgctxt "na.descrizione"
-msgid "Oggi Kalliope funziona solo su Linux. Perché non ancora su Windows, macOS e telefono, che cosa manca e come saperlo quando arriva, senza lasciare dati."
-msgstr "Oggi Kalliope funziona solo su Linux. Perché non ancora su Windows, macOS e telefono, che cosa manca e come saperlo quando arriva, senza lasciare dati."
+msgid "Oggi Kalliope funziona solo su Linux. Perché non ancora su Windows e macOS, che cosa manca e come saperlo quando arriva, senza lasciare dati."
+msgstr "Oggi Kalliope funziona solo su Linux. Perché non ancora su Windows e macOS, che cosa manca e come saperlo quando arriva, senza lasciare dati."
 
 #. Three lines, one under the other: words can move from one line to another, but there must still be three lines. The answer to the question of the page comes first: not yet.
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
@@ -920,8 +920,8 @@ msgstr "Su <1>Windows</1> serve un driver audio con una firma valida; su <2>macO
 #: non-ancora/index.html
 #, kalliope-markup
 msgctxt "na.non-esiste"
-msgid "<1>Non esiste ancora</1> per telefono e tablet, e per ora parla solo italiano. Kalliope è un programma per il computer: non è un servizio online né un'estensione del browser."
-msgstr "<1>Non esiste ancora</1> per telefono e tablet, e per ora parla solo italiano. Kalliope è un programma per il computer: non è un servizio online né un'estensione del browser."
+msgid "<1>Non è per telefono e tablet</1>: per ora Kalliope è solo per il computer, e parla solo italiano. Non è un servizio online né un'estensione del browser."
+msgstr "<1>Non è per telefono e tablet</1>: per ora Kalliope è solo per il computer, e parla solo italiano. Non è un servizio online né un'estensione del browser."
 
 #: non-ancora/index.html
 #, kalliope-markup

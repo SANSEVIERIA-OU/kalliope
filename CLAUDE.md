@@ -25,6 +25,11 @@ come si lavora.
 - **In linea c'è ancora il sito di prima** finché il proprietario non dice di pubblicare.
 - **Il lavoro in corso** (dal 16/11/2026: lingue, poi le altre pagine, poi l'applicazione) è in `design/lavoro/`:
   `STATO.md` dice fasi, decisioni prese a lavoro avviato e incarichi; `ricerca/lingue.md` i fatti con le fonti.
+- **La voce di chi usa Kalliope** (decisione del proprietario del 17/11/2026: «voglio che lo faccia già adesso (non "la
+  mia voce" ma la voce dell'utente)»): il programma parlerà con la voce della persona che lo usa. Si fa adesso, in
+  parallelo alle pagine: prima ricerca e proposta con le alternative, poi la costruzione (`design/lavoro/STATO.md`, fase V).
+- **Il telefono** (17/11/2026): «non è per telefono: è solo desktop per il momento». Il sito non dice «non ancora» per
+  il telefono.
 
 **«Riprendiamo dal sito» vuol dire questo, e non altro:** rifare le altre pagine nella direzione 2, sopra
 `design-system/`, partendo dalla home nuova. Non vuol dire riprendere il lavoro del 12/11/2026.
