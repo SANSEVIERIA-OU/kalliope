@@ -10,15 +10,18 @@ come si lavora.
 
 ## Il sito e il design system: da dove si riparte
 
-**Stato al 16/11/2026.** Aggiorna questa sezione ogni volta che lo stato cambia.
+**Stato al 17/11/2026.** Aggiorna questa sezione ogni volta che lo stato cambia.
 
 - **Il sito è `website/`** (prima si chiamava `site/`). La home è quella nuova, nella direzione 2 «Alla pari, in
   riunione», scelta dal proprietario il 14/11/2026 fra tre direzioni rese.
-- **Le altre pagine non sono ancora state rifatte.** Ascolta, stato, installa, in riunione, aiuto, «non ancora» e
-  la pagina 404 hanno l'aspetto di prima, con i loro fogli in `website/stile/`, gli script in `website/script/` e
-  il vecchio catalogo in `website/sistema/`. Restano solo perché la home nuova rimanda a loro.
+- **«non ancora» è rifatta** nella direzione 2 (mostrata al proprietario il 17/11/2026) e fissa la cornice delle pagine
+  interne (`website/cornice.js`, `design-system/componenti/pagina.css`). La pagina della scelta della lingua (`/`) è
+  nuova anche lei.
+- **Le altre pagine non sono ancora state rifatte.** Ascolta, stato, installa, in riunione, aiuto e la pagina 404
+  hanno l'aspetto di prima, con i loro fogli in `website/stile/`, gli script in `website/script/` e il vecchio
+  catalogo in `website/sistema/`. Restano solo perché le pagine nuove rimandano a loro.
 - **Il design system è `design-system/`**, fuori dal sito: token, base, componenti, caratteri, catalogo vivo,
-  `SISTEMA.md` e `TOKEN.md`. Oggi lo usa solo la home.
+  `SISTEMA.md` e `TOKEN.md`. Lo usano la home, «non ancora» e la scelta della lingua.
 - **In linea c'è ancora il sito di prima** finché il proprietario non dice di pubblicare.
 - **Il lavoro in corso** (dal 16/11/2026: lingue, poi le altre pagine, poi l'applicazione) è in `design/lavoro/`:
   `STATO.md` dice fasi, decisioni prese a lavoro avviato e incarichi; `ricerca/lingue.md` i fatti con le fonti.
@@ -70,7 +73,10 @@ mondo.»
   2026, letto attraverso Wikipedia perché il sito di Ethnologue era bloccato): bg cs da de el en es et fi fr ga hr hu
   it lt lv mt nl pl pt ro sk sl sv, più zh hi ar bn id ur. Scritture: latina, greca, cirillica (bg), cinese,
   devanagari, bengali, araba (ar, ur; da destra a sinistra; l'urdu di solito in nastaliq).
-- Come farlo non è ancora deciso: prima la ricerca, poi la proposta al proprietario, poi il via.
+- Come farlo: proposto dopo la ricerca e approvato dal proprietario il 16/11/2026 (`.po` unico per sito e
+  applicazione, una cartella per lingua, design system specchiabile, applicazione con `@tr`). **Il sito è pronto**
+  (17/11/2026): struttura, specchio da destra a sinistra, un carattere per scrittura (`design-system/caratteri/LEGGIMI.md`),
+  scelta della lingua. **L'applicazione è da fare**, dopo le pagine del sito (`design/lavoro/STATO.md`, fase 4).
 
 ## Come si costruisce e si pubblica il sito
 
