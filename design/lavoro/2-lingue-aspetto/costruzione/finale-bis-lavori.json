@@ -1,0 +1,689 @@
+{
+ "versione": 1,
+ "lavori": [
+  {
+   "id": "A-barra-computer-it",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/prove/barra-larghezze.mjs",
+    "/tmp/lavoro-2b-sito30-s11",
+    "/tmp/lavoro-2b-fin3-barra-computer-it.json",
+    "--lingue",
+    "it",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "A-barra-azione-it",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/barra-azione.mjs",
+    "/tmp/lavoro-2b-sito30-s11",
+    "/tmp/lavoro-2b-fin3-barra-azione-it.json",
+    "--lingue",
+    "it",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "A-barra-computer-ar",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/prove/barra-larghezze.mjs",
+    "/tmp/lavoro-2b-sito30-s11",
+    "/tmp/lavoro-2b-fin3-barra-computer-ar.json",
+    "--lingue",
+    "ar",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "A-barra-azione-ar",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/barra-azione.mjs",
+    "/tmp/lavoro-2b-sito30-s11",
+    "/tmp/lavoro-2b-fin3-barra-azione-ar.json",
+    "--lingue",
+    "ar",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "A-barra-computer-en-XA",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/prove/barra-larghezze.mjs",
+    "/tmp/lavoro-2b-sito30-s11",
+    "/tmp/lavoro-2b-fin3-barra-computer-en-XA.json",
+    "--lingue",
+    "en-XA",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "A-barra-azione-en-XA",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/barra-azione.mjs",
+    "/tmp/lavoro-2b-sito30-s11",
+    "/tmp/lavoro-2b-fin3-barra-azione-en-XA.json",
+    "--lingue",
+    "en-XA",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "A-barra-computer-non-ancora-it",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/prove/barra-larghezze.mjs",
+    "/tmp/lavoro-2b-sito30-s11",
+    "/tmp/lavoro-2b-fin3-barra-computer-na-it.json",
+    "--lingue",
+    "it",
+    "--pagina",
+    "non-ancora/",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "A-barra-azione-non-ancora-it",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/barra-azione.mjs",
+    "/tmp/lavoro-2b-sito30-s11",
+    "/tmp/lavoro-2b-fin3-barra-azione-na-it.json",
+    "--lingue",
+    "it",
+    "--pagina",
+    "non-ancora/",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "B-chromium-ar-larghezze",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs",
+    "METODO_CONFIG": "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/esame-lingue.config.mjs",
+    "ESAME_CARTELLA": "/tmp/lavoro-2b-esame7-B-chromium-ar-larghezze"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/../1-lingue-sito/prove/con-server.mjs",
+    "/tmp/lavoro-2b-sito30-s11",
+    "0",
+    "node",
+    "/home/dev/.claude/plugins/cache/vibe-next/vibe-next/0.46.1/skills/design-system-generator/scripts/esame-impaginazione.mjs",
+    "chromium",
+    "normale",
+    "ar_",
+    "320x900,334x900,349x900,350x900,355x900,360x900,361x900,367x900,374x900,375x900,397x900,420x900,421x900,430x900,440x900,441x900,600x900,760x900,761x900,780x900,800x900,823x900,840x900,886x900,887x900,900x900,923x900,940x900,959x900,960x900,979x900,980x900,999x900,1000x900,1005x900,1010x900,1011x900,1020x900,1060x900,1095x900,1100x900,1140x900,1160x900,1180x900,1181x900,1195x900,1209x900,1210x900,1320x900,1430x900,1431x900,1675x900,1920x900"
+   ]
+  },
+  {
+   "id": "B-chromium-ar-altezze-dispositivi",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs",
+    "METODO_CONFIG": "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/esame-lingue.config.mjs",
+    "ESAME_CARTELLA": "/tmp/lavoro-2b-esame7-B-chromium-ar-altezze-dispositivi"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/../1-lingue-sito/prove/con-server.mjs",
+    "/tmp/lavoro-2b-sito30-s11",
+    "0",
+    "node",
+    "/home/dev/.claude/plugins/cache/vibe-next/vibe-next/0.46.1/skills/design-system-generator/scripts/esame-impaginazione.mjs",
+    "chromium",
+    "normale",
+    "ar_",
+    "1366x500,1366x501,1366x699,1366x700,1366x759,1366x760,1366x799,1366x800,1366x802,1366x803,1366x819,1366x820,1366x840,1366x841,1366x640,390x844,360x640,844x390,1440x900,820x1180,1180x820,326x326"
+   ]
+  },
+  {
+   "id": "B-chromium-hi-larghezze",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs",
+    "METODO_CONFIG": "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/esame-lingue.config.mjs",
+    "ESAME_CARTELLA": "/tmp/lavoro-2b-esame7-B-chromium-hi-larghezze"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/../1-lingue-sito/prove/con-server.mjs",
+    "/tmp/lavoro-2b-sito30-s11",
+    "0",
+    "node",
+    "/home/dev/.claude/plugins/cache/vibe-next/vibe-next/0.46.1/skills/design-system-generator/scripts/esame-impaginazione.mjs",
+    "chromium",
+    "normale",
+    "hi_",
+    "320x900,334x900,349x900,350x900,355x900,360x900,361x900,367x900,374x900,375x900,397x900,420x900,421x900,430x900,440x900,441x900,600x900,760x900,761x900,780x900,800x900,823x900,840x900,886x900,887x900,900x900,923x900,940x900,959x900,960x900,979x900,980x900,999x900,1000x900,1005x900,1010x900,1011x900,1020x900,1060x900,1095x900,1100x900,1140x900,1160x900,1180x900,1181x900,1195x900,1209x900,1210x900,1320x900,1430x900,1431x900,1675x900,1920x900"
+   ]
+  },
+  {
+   "id": "B-chromium-hi-altezze-dispositivi",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs",
+    "METODO_CONFIG": "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/esame-lingue.config.mjs",
+    "ESAME_CARTELLA": "/tmp/lavoro-2b-esame7-B-chromium-hi-altezze-dispositivi"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/../1-lingue-sito/prove/con-server.mjs",
+    "/tmp/lavoro-2b-sito30-s11",
+    "0",
+    "node",
+    "/home/dev/.claude/plugins/cache/vibe-next/vibe-next/0.46.1/skills/design-system-generator/scripts/esame-impaginazione.mjs",
+    "chromium",
+    "normale",
+    "hi_",
+    "1366x500,1366x501,1366x699,1366x700,1366x759,1366x760,1366x799,1366x800,1366x802,1366x803,1366x819,1366x820,1366x840,1366x841,1366x640,390x844,360x640,844x390,1440x900,820x1180,1180x820,326x326"
+   ]
+  },
+  {
+   "id": "B-chromium-enXA-larghezze",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs",
+    "METODO_CONFIG": "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/esame-lingue.config.mjs",
+    "ESAME_CARTELLA": "/tmp/lavoro-2b-esame7-B-chromium-enXA-larghezze"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/../1-lingue-sito/prove/con-server.mjs",
+    "/tmp/lavoro-2b-sito30-s11",
+    "0",
+    "node",
+    "/home/dev/.claude/plugins/cache/vibe-next/vibe-next/0.46.1/skills/design-system-generator/scripts/esame-impaginazione.mjs",
+    "chromium",
+    "normale",
+    "enXA_",
+    "320x900,334x900,349x900,350x900,355x900,360x900,361x900,367x900,374x900,375x900,397x900,420x900,421x900,430x900,440x900,441x900,600x900,760x900,761x900,780x900,800x900,823x900,840x900,886x900,887x900,900x900,923x900,940x900,959x900,960x900,979x900,980x900,999x900,1000x900,1005x900,1010x900,1011x900,1020x900,1060x900,1095x900,1100x900,1140x900,1160x900,1180x900,1181x900,1195x900,1209x900,1210x900,1320x900,1430x900,1431x900,1675x900,1920x900"
+   ]
+  },
+  {
+   "id": "B-chromium-enXA-altezze-dispositivi",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs",
+    "METODO_CONFIG": "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/esame-lingue.config.mjs",
+    "ESAME_CARTELLA": "/tmp/lavoro-2b-esame7-B-chromium-enXA-altezze-dispositivi"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/../1-lingue-sito/prove/con-server.mjs",
+    "/tmp/lavoro-2b-sito30-s11",
+    "0",
+    "node",
+    "/home/dev/.claude/plugins/cache/vibe-next/vibe-next/0.46.1/skills/design-system-generator/scripts/esame-impaginazione.mjs",
+    "chromium",
+    "normale",
+    "enXA_",
+    "1366x500,1366x501,1366x699,1366x700,1366x759,1366x760,1366x799,1366x800,1366x802,1366x803,1366x819,1366x820,1366x840,1366x841,1366x640,390x844,360x640,844x390,1440x900,820x1180,1180x820,326x326"
+   ]
+  },
+  {
+   "id": "B-firefox-ar-dispositivi",
+   "motore": "firefox",
+   "priorita": 2,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs",
+    "METODO_CONFIG": "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/esame-lingue.config.mjs",
+    "ESAME_CARTELLA": "/tmp/lavoro-2b-esame7-B-firefox-ar-dispositivi"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/../1-lingue-sito/prove/con-server.mjs",
+    "/tmp/lavoro-2b-sito30-s11",
+    "0",
+    "node",
+    "/home/dev/.claude/plugins/cache/vibe-next/vibe-next/0.46.1/skills/design-system-generator/scripts/esame-impaginazione.mjs",
+    "firefox",
+    "normale",
+    "ar_",
+    "390x844,1440x900,844x390,360x640"
+   ]
+  },
+  {
+   "id": "B-firefox-zh-dispositivi",
+   "motore": "firefox",
+   "priorita": 2,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs",
+    "METODO_CONFIG": "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/esame-lingue.config.mjs",
+    "ESAME_CARTELLA": "/tmp/lavoro-2b-esame7-B-firefox-zh-dispositivi"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/../1-lingue-sito/prove/con-server.mjs",
+    "/tmp/lavoro-2b-sito30-s11",
+    "0",
+    "node",
+    "/home/dev/.claude/plugins/cache/vibe-next/vibe-next/0.46.1/skills/design-system-generator/scripts/esame-impaginazione.mjs",
+    "firefox",
+    "normale",
+    "zh_",
+    "390x844,1440x900,844x390,360x640"
+   ]
+  },
+  {
+   "id": "B-webkit-ar-dispositivi",
+   "motore": "webkit",
+   "priorita": 2,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs",
+    "METODO_CONFIG": "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/esame-lingue.config.mjs",
+    "ESAME_CARTELLA": "/tmp/lavoro-2b-esame7-B-webkit-ar-dispositivi"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/../1-lingue-sito/prove/con-server.mjs",
+    "/tmp/lavoro-2b-sito30-s11",
+    "0",
+    "node",
+    "/home/dev/.claude/plugins/cache/vibe-next/vibe-next/0.46.1/skills/design-system-generator/scripts/esame-impaginazione.mjs",
+    "webkit",
+    "normale",
+    "ar_",
+    "390x844,1440x900,844x390,360x640"
+   ]
+  },
+  {
+   "id": "B-webkit-zh-dispositivi",
+   "motore": "webkit",
+   "priorita": 2,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs",
+    "METODO_CONFIG": "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/esame-lingue.config.mjs",
+    "ESAME_CARTELLA": "/tmp/lavoro-2b-esame7-B-webkit-zh-dispositivi"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/../1-lingue-sito/prove/con-server.mjs",
+    "/tmp/lavoro-2b-sito30-s11",
+    "0",
+    "node",
+    "/home/dev/.claude/plugins/cache/vibe-next/vibe-next/0.46.1/skills/design-system-generator/scripts/esame-impaginazione.mjs",
+    "webkit",
+    "normale",
+    "zh_",
+    "390x844,1440x900,844x390,360x640"
+   ]
+  },
+  {
+   "id": "C-pillole-chromium-dispositivi",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/pillole.mjs",
+    "/tmp/lavoro-2b-sito30-s11",
+    "--porta",
+    "0",
+    "--motore",
+    "chromium",
+    "--lingue",
+    "ar,ur,hi,bn,zh,el,de,fi,en-XA,ar-XB",
+    "--misure",
+    "390x844,844x390,360x640,1440x900,1366x640,820x1180"
+   ]
+  },
+  {
+   "id": "C-pillole-firefox-dispositivi",
+   "motore": "firefox",
+   "priorita": 2,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/pillole.mjs",
+    "/tmp/lavoro-2b-sito30-s11",
+    "--porta",
+    "0",
+    "--motore",
+    "firefox",
+    "--lingue",
+    "ar,ur,hi,bn,zh",
+    "--misure",
+    "390x844,844x390,360x640,1440x900"
+   ]
+  },
+  {
+   "id": "C-pillole-webkit-dispositivi",
+   "motore": "webkit",
+   "priorita": 2,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/pillole.mjs",
+    "/tmp/lavoro-2b-sito30-s11",
+    "--porta",
+    "0",
+    "--motore",
+    "webkit",
+    "--lingue",
+    "ar,ur,hi,bn,zh",
+    "--misure",
+    "390x844,844x390,360x640,1440x900"
+   ]
+  },
+  {
+   "id": "D-selettore-barra-chromium-it",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/selettore-barra.mjs",
+    "/tmp/lavoro-2b-sito30-s11",
+    "--motori",
+    "chromium",
+    "--lingue",
+    "it",
+    "--porta",
+    "0",
+    "--foto",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/foto/selettore-finale"
+   ]
+  },
+  {
+   "id": "D-selettore-barra-chromium-non-ancora",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/selettore-barra.mjs",
+    "/tmp/lavoro-2b-sito30-s11",
+    "--motori",
+    "chromium",
+    "--lingue",
+    "it",
+    "--sezioni",
+    "tastiera,telefono,basso,senzajs",
+    "--pagina",
+    "non-ancora/",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "D-selettore-barra-firefox-it",
+   "motore": "firefox",
+   "priorita": 2,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/selettore-barra.mjs",
+    "/tmp/lavoro-2b-sito30-s11",
+    "--motori",
+    "firefox",
+    "--lingue",
+    "it",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "D-selettore-barra-webkit-it",
+   "motore": "webkit",
+   "priorita": 2,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/selettore-barra.mjs",
+    "/tmp/lavoro-2b-sito30-s11",
+    "--motori",
+    "webkit",
+    "--lingue",
+    "it",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "E-selettore-scelta-chromium",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/selettore-scelta.mjs",
+    "/tmp/lavoro-2b-sito30-s11",
+    "--motori",
+    "chromium",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "E-selettore-scelta-firefox",
+   "motore": "firefox",
+   "priorita": 2,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/selettore-scelta.mjs",
+    "/tmp/lavoro-2b-sito30-s11",
+    "--motori",
+    "firefox",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "E-selettore-scelta-webkit",
+   "motore": "webkit",
+   "priorita": 2,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/selettore-scelta.mjs",
+    "/tmp/lavoro-2b-sito30-s11",
+    "--motori",
+    "webkit",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "F-selettore-a11y",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/selettore-a11y.mjs",
+    "/tmp/lavoro-2b-sito30-s11",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "G-catalogo-chromium",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/catalogo.mjs",
+    "/tmp/lavoro-2b-sito-it-fin3",
+    "--attesi",
+    "799",
+    "--motori",
+    "chromium",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "G-catalogo-firefox",
+   "motore": "firefox",
+   "priorita": 2,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/catalogo.mjs",
+    "/tmp/lavoro-2b-sito-it-fin3",
+    "--attesi",
+    "799",
+    "--motori",
+    "firefox",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "G-catalogo-webkit",
+   "motore": "webkit",
+   "priorita": 2,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/catalogo.mjs",
+    "/tmp/lavoro-2b-sito-it-fin3",
+    "--attesi",
+    "799",
+    "--motori",
+    "webkit",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "H-radice-una-lingua",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/radice.mjs",
+    "/tmp/lavoro-2b-sito-it-fin3",
+    "--porta",
+    "0"
+   ]
+  }
+ ]
+}

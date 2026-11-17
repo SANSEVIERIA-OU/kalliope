@@ -1,0 +1,24 @@
+# J-robustezza-webkit-390x844 · 17/11/2026 08:39 · node prove/robustezza.mjs /tmp/lavoro-3ar-sito-J /tmp/lavoro-3ar-J-foto/rob webkit 390x844 tutti
+
+== tastiera · webkit 390x844
+   soste: Vai al contenuto → Kalliope, pagina iniziale → Menu → Come saperlo quando arriva → Intanto, senti la voce → Copia l'indirizzo di questa pagina → feed delle versioni → pagina delle versioni su GitHub → Ascolta GiuliaCarico…PausaRiprendi → Tutte le frasi, anche con Marco → stato e limiti → Ascolta → Stato e limiti → Installa → In riunione → Aiuto
+
+== tastiera-veloce · webkit 390x844
+   soste: Vai al contenuto → Kalliope, pagina iniziale → Menu → Come saperlo quando arriva → Intanto, senti la voce → Copia l'indirizzo di questa pagina → feed delle versioni → pagina delle versioni su GitHub → Ascolta GiuliaCarico…PausaRiprendi → Tutte le frasi, anche con Marco → stato e limiti → Ascolta → Stato e limiti → Installa → In riunione → Aiuto
+
+== senza-js · webkit 390x844
+
+== senza-stili · webkit 390x844
+
+== senza-token · webkit 390x844
+
+== ridotto · webkit 390x844
+
+== scorrimento · webkit 390x844
+
+== ritorno · webkit 390x844
+
+== ricarica · webkit 390x844
+
+43/43 ok
+# uscita: 0

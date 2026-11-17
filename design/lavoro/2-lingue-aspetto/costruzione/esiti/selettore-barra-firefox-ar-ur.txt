@@ -1,0 +1,50 @@
+lingue pubblicate: 10
+firefox
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ok    [ar] 1440 · Tab: 6 comandi fino alla scelta, nell'ordine in cui si vedono (da destra a sinistra): x 657 → 549 → 439 → 338 → 230 → 129
+  ok    [ar] 1440 · la scelta ha il fuoco, sta nello schermo e niente la copre
+  ok    [ar] 1440 · Invio apre l'elenco
+  ok    [ar] 1440 · il fuoco resta sul comando che l'ha aperto
+  ok    [ar] 1440 · il pannello sta nello schermo: 80–540 su 1440, 66–270 su 900
+  ok    [ar] 1440 · Tab percorre le 10/10 voci riga per riga, nel verso della lettura
+  ok    [ar] 1440 · ogni voce con il fuoco sta nello schermo e niente la copre (tutte)
+  ok    [ar] 1440 · dopo l'ultima voce il fuoco esce e l'elenco si chiude (fuoco su «نزّل وثبّت»)
+  ok    [ar] 1440 · Maiusc+Tab dalla prima voce torna al comando e l'elenco resta aperto
+  ok    [ar] 1440 · Esc dalla seconda voce chiude l'elenco e il fuoco torna al comando
+  ok    [ar] 1440 · Esc dal comando aperto chiude l'elenco e il fuoco resta sul comando
+  ok    [ar] 1440 · il clic apre, il clic fuori chiude, un secondo clic sul comando apre e richiude
+  ok    [ar] 1440 · nessun errore di console (0)
+  ok    [ar] 390 · il menu si apre
+  ok    [ar] 390 · Tab porta alla scelta dentro il menu (6 comandi), nello schermo e non coperta
+  ok    [ar] 390 · l'elenco si apre dentro il menu e sta nello schermo: 21–369 su 390
+  ok    [ar] 390 · Tab percorre 10/10 voci riga per riga nel verso della lettura
+  ok    [ar] 390 · ogni voce con il fuoco sta nello schermo e niente la copre (tutte)
+  ok    [ar] 390 · riaperti menu ed elenco, il fuoco è nella prima voce
+  ok    [ar] 390 · Esc dall'elenco chiude l'elenco, il menu resta e il fuoco va sul comando (elenco chiuso, menu aperto, fuoco SUMMARY)
+  ok    [ar] 390 · un secondo Esc chiude il menu e il fuoco va su «Menu» (pulsante-menu)
+  ok    [ar] 390 · chiuso il menu con l'elenco aperto, riaprendo il menu l'elenco è chiuso
+  ok    [ar] 390 · nessun errore di console (0)
+  ok    [ur] 1440 · Tab: 6 comandi fino alla scelta, nell'ordine in cui si vedono (da destra a sinistra): x 568 → 473 → 354 → 252 → 180 → 117
+  ok    [ur] 1440 · la scelta ha il fuoco, sta nello schermo e niente la copre
+  ok    [ur] 1440 · Invio apre l'elenco
+  ok    [ur] 1440 · il fuoco resta sul comando che l'ha aperto
+  ok    [ur] 1440 · il pannello sta nello schermo: 80–540 su 1440, 66–270 su 900
+  ok    [ur] 1440 · Tab percorre le 10/10 voci riga per riga, nel verso della lettura
+  ok    [ur] 1440 · ogni voce con il fuoco sta nello schermo e niente la copre (tutte)
+  ok    [ur] 1440 · dopo l'ultima voce il fuoco esce e l'elenco si chiude (fuoco su «ڈاؤن لوڈ اور انسٹال کریں»)
+  ok    [ur] 1440 · Maiusc+Tab dalla prima voce torna al comando e l'elenco resta aperto
+  ok    [ur] 1440 · Esc dalla seconda voce chiude l'elenco e il fuoco torna al comando
+  ok    [ur] 1440 · Esc dal comando aperto chiude l'elenco e il fuoco resta sul comando
+  ok    [ur] 1440 · il clic apre, il clic fuori chiude, un secondo clic sul comando apre e richiude
+  ok    [ur] 1440 · nessun errore di console (0)
+  ok    [ur] 390 · il menu si apre
+  ok    [ur] 390 · Tab porta alla scelta dentro il menu (6 comandi), nello schermo e non coperta
+  ok    [ur] 390 · l'elenco si apre dentro il menu e sta nello schermo: 21–369 su 390
+  ok    [ur] 390 · Tab percorre 10/10 voci riga per riga nel verso della lettura
+  ok    [ur] 390 · ogni voce con il fuoco sta nello schermo e niente la copre (tutte)
+  ok    [ur] 390 · riaperti menu ed elenco, il fuoco è nella prima voce
+  ok    [ur] 390 · Esc dall'elenco chiude l'elenco, il menu resta e il fuoco va sul comando (elenco chiuso, menu aperto, fuoco SUMMARY)
+  ok    [ur] 390 · un secondo Esc chiude il menu e il fuoco va su «Menu» (pulsante-menu)
+  ok    [ur] 390 · chiuso il menu con l'elenco aperto, riaprendo il menu l'elenco è chiuso
+  ok    [ur] 390 · nessun errore di console (0)
+tutto ok

@@ -1,0 +1,225 @@
+# F-larghezze-1 · 17/11/2026 06:08 · sito: /tmp/lavoro-3ar-sito-F · esame-impaginazione.mjs chromium normale non-ancora 320x900,334x900,349x900,350x900,355x900,360x900,361x900,367x900,374x900,375x900,397x900,420x900,421x900,430x900,440x900,441x900,600x900,760x900,761x900,860x900,959x900,960x900,979x900,999x900,1000x900,1005x900,1010x900,1011x900,1095x900,1180x900,1181x900,1195x900,1209x900,1210x900,1565x900,1920x900
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+non-ancora · 320×900 · testo 100%: pulito
+non-ancora-menu · 320×900 · testo 100%: pulito
+non-ancora-errore-audio · 320×900 · testo 100%: pulito
+non-ancora-ascolto · 320×900 · testo 100%: pulito
+non-ancora-copia-fatta · 320×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 320×900 · testo 100%: pulito
+non-ancora · 334×900 · testo 100%: pulito
+non-ancora-menu · 334×900 · testo 100%: pulito
+non-ancora-errore-audio · 334×900 · testo 100%: pulito
+non-ancora-ascolto · 334×900 · testo 100%: pulito
+non-ancora-copia-fatta · 334×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 334×900 · testo 100%: pulito
+non-ancora · 349×900 · testo 100%: pulito
+non-ancora-menu · 349×900 · testo 100%: pulito
+non-ancora-errore-audio · 349×900 · testo 100%: pulito
+non-ancora-ascolto · 349×900 · testo 100%: pulito
+non-ancora-copia-fatta · 349×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 349×900 · testo 100%: pulito
+non-ancora · 350×900 · testo 100%: pulito
+non-ancora-menu · 350×900 · testo 100%: pulito
+non-ancora-errore-audio · 350×900 · testo 100%: pulito
+non-ancora-ascolto · 350×900 · testo 100%: pulito
+non-ancora-copia-fatta · 350×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 350×900 · testo 100%: pulito
+non-ancora · 355×900 · testo 100%: pulito
+non-ancora-menu · 355×900 · testo 100%: pulito
+non-ancora-errore-audio · 355×900 · testo 100%: pulito
+non-ancora-ascolto · 355×900 · testo 100%: pulito
+non-ancora-copia-fatta · 355×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 355×900 · testo 100%: pulito
+non-ancora · 360×900 · testo 100%: pulito
+non-ancora-menu · 360×900 · testo 100%: pulito
+non-ancora-errore-audio · 360×900 · testo 100%: pulito
+non-ancora-ascolto · 360×900 · testo 100%: pulito
+non-ancora-copia-fatta · 360×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 360×900 · testo 100%: pulito
+non-ancora · 361×900 · testo 100%: pulito
+non-ancora-menu · 361×900 · testo 100%: pulito
+non-ancora-errore-audio · 361×900 · testo 100%: pulito
+non-ancora-ascolto · 361×900 · testo 100%: pulito
+non-ancora-copia-fatta · 361×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 361×900 · testo 100%: pulito
+non-ancora · 367×900 · testo 100%: pulito
+non-ancora-menu · 367×900 · testo 100%: pulito
+non-ancora-errore-audio · 367×900 · testo 100%: pulito
+non-ancora-ascolto · 367×900 · testo 100%: pulito
+non-ancora-copia-fatta · 367×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 367×900 · testo 100%: pulito
+non-ancora · 374×900 · testo 100%: pulito
+non-ancora-menu · 374×900 · testo 100%: pulito
+non-ancora-errore-audio · 374×900 · testo 100%: pulito
+non-ancora-ascolto · 374×900 · testo 100%: pulito
+non-ancora-copia-fatta · 374×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 374×900 · testo 100%: pulito
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+non-ancora · 375×900 · testo 100%: pulito
+non-ancora-menu · 375×900 · testo 100%: pulito
+non-ancora-errore-audio · 375×900 · testo 100%: pulito
+non-ancora-ascolto · 375×900 · testo 100%: pulito
+non-ancora-copia-fatta · 375×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 375×900 · testo 100%: pulito
+non-ancora · 397×900 · testo 100%: pulito
+non-ancora-menu · 397×900 · testo 100%: pulito
+non-ancora-errore-audio · 397×900 · testo 100%: pulito
+non-ancora-ascolto · 397×900 · testo 100%: pulito
+non-ancora-copia-fatta · 397×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 397×900 · testo 100%: pulito
+non-ancora · 420×900 · testo 100%: pulito
+non-ancora-menu · 420×900 · testo 100%: pulito
+non-ancora-errore-audio · 420×900 · testo 100%: pulito
+non-ancora-ascolto · 420×900 · testo 100%: pulito
+non-ancora-copia-fatta · 420×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 420×900 · testo 100%: pulito
+non-ancora · 421×900 · testo 100%: pulito
+non-ancora-menu · 421×900 · testo 100%: pulito
+non-ancora-errore-audio · 421×900 · testo 100%: pulito
+non-ancora-ascolto · 421×900 · testo 100%: pulito
+non-ancora-copia-fatta · 421×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 421×900 · testo 100%: pulito
+non-ancora · 430×900 · testo 100%: pulito
+non-ancora-menu · 430×900 · testo 100%: pulito
+non-ancora-errore-audio · 430×900 · testo 100%: pulito
+non-ancora-ascolto · 430×900 · testo 100%: pulito
+non-ancora-copia-fatta · 430×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 430×900 · testo 100%: pulito
+non-ancora · 440×900 · testo 100%: pulito
+non-ancora-menu · 440×900 · testo 100%: pulito
+non-ancora-errore-audio · 440×900 · testo 100%: pulito
+non-ancora-ascolto · 440×900 · testo 100%: pulito
+non-ancora-copia-fatta · 440×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 440×900 · testo 100%: pulito
+non-ancora · 441×900 · testo 100%: pulito
+non-ancora-menu · 441×900 · testo 100%: pulito
+non-ancora-errore-audio · 441×900 · testo 100%: pulito
+non-ancora-ascolto · 441×900 · testo 100%: pulito
+non-ancora-copia-fatta · 441×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 441×900 · testo 100%: pulito
+non-ancora · 600×900 · testo 100%: pulito
+non-ancora-menu · 600×900 · testo 100%: pulito
+non-ancora-errore-audio · 600×900 · testo 100%: pulito
+non-ancora-ascolto · 600×900 · testo 100%: pulito
+non-ancora-copia-fatta · 600×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 600×900 · testo 100%: pulito
+non-ancora · 760×900 · testo 100%: pulito
+non-ancora-menu · 760×900 · testo 100%: pulito
+non-ancora-errore-audio · 760×900 · testo 100%: pulito
+non-ancora-ascolto · 760×900 · testo 100%: pulito
+non-ancora-copia-fatta · 760×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 760×900 · testo 100%: pulito
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+non-ancora · 761×900 · testo 100%: pulito
+non-ancora-menu · 761×900 · testo 100%: pulito
+non-ancora-errore-audio · 761×900 · testo 100%: pulito
+non-ancora-ascolto · 761×900 · testo 100%: pulito
+non-ancora-copia-fatta · 761×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 761×900 · testo 100%: pulito
+non-ancora · 860×900 · testo 100%: pulito
+non-ancora-menu · 860×900 · testo 100%: pulito
+non-ancora-errore-audio · 860×900 · testo 100%: pulito
+non-ancora-ascolto · 860×900 · testo 100%: pulito
+non-ancora-copia-fatta · 860×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 860×900 · testo 100%: pulito
+non-ancora · 959×900 · testo 100%: pulito
+non-ancora-menu · 959×900 · testo 100%: pulito
+non-ancora-errore-audio · 959×900 · testo 100%: pulito
+non-ancora-ascolto · 959×900 · testo 100%: pulito
+non-ancora-copia-fatta · 959×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 959×900 · testo 100%: pulito
+non-ancora-menu · 960×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 960×900 · testo 100%: pulito
+non-ancora-errore-audio · 960×900 · testo 100%: pulito
+non-ancora-ascolto · 960×900 · testo 100%: pulito
+non-ancora-copia-fatta · 960×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 960×900 · testo 100%: pulito
+non-ancora-menu · 979×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 979×900 · testo 100%: pulito
+non-ancora-errore-audio · 979×900 · testo 100%: pulito
+non-ancora-ascolto · 979×900 · testo 100%: pulito
+non-ancora-copia-fatta · 979×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 979×900 · testo 100%: pulito
+non-ancora-menu · 999×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 999×900 · testo 100%: pulito
+non-ancora-errore-audio · 999×900 · testo 100%: pulito
+non-ancora-ascolto · 999×900 · testo 100%: pulito
+non-ancora-copia-fatta · 999×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 999×900 · testo 100%: pulito
+non-ancora-menu · 1000×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1000×900 · testo 100%: pulito
+non-ancora-errore-audio · 1000×900 · testo 100%: pulito
+non-ancora-ascolto · 1000×900 · testo 100%: pulito
+non-ancora-copia-fatta · 1000×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1000×900 · testo 100%: pulito
+non-ancora-menu · 1005×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1005×900 · testo 100%: pulito
+non-ancora-errore-audio · 1005×900 · testo 100%: pulito
+non-ancora-ascolto · 1005×900 · testo 100%: pulito
+non-ancora-copia-fatta · 1005×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1005×900 · testo 100%: pulito
+non-ancora-menu · 1010×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1010×900 · testo 100%: pulito
+non-ancora-errore-audio · 1010×900 · testo 100%: pulito
+non-ancora-ascolto · 1010×900 · testo 100%: pulito
+non-ancora-copia-fatta · 1010×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1010×900 · testo 100%: pulito
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+non-ancora-menu · 1011×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1011×900 · testo 100%: pulito
+non-ancora-errore-audio · 1011×900 · testo 100%: pulito
+non-ancora-ascolto · 1011×900 · testo 100%: pulito
+non-ancora-copia-fatta · 1011×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1011×900 · testo 100%: pulito
+non-ancora-menu · 1095×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1095×900 · testo 100%: pulito
+non-ancora-errore-audio · 1095×900 · testo 100%: pulito
+non-ancora-ascolto · 1095×900 · testo 100%: pulito
+non-ancora-copia-fatta · 1095×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1095×900 · testo 100%: pulito
+non-ancora-menu · 1180×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1180×900 · testo 100%: pulito
+non-ancora-errore-audio · 1180×900 · testo 100%: pulito
+non-ancora-ascolto · 1180×900 · testo 100%: pulito
+non-ancora-copia-fatta · 1180×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1180×900 · testo 100%: pulito
+non-ancora-menu · 1181×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1181×900 · testo 100%: pulito
+non-ancora-errore-audio · 1181×900 · testo 100%: pulito
+non-ancora-ascolto · 1181×900 · testo 100%: pulito
+non-ancora-copia-fatta · 1181×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1181×900 · testo 100%: pulito
+non-ancora-menu · 1195×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1195×900 · testo 100%: pulito
+non-ancora-errore-audio · 1195×900 · testo 100%: pulito
+non-ancora-ascolto · 1195×900 · testo 100%: pulito
+non-ancora-copia-fatta · 1195×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1195×900 · testo 100%: pulito
+non-ancora-menu · 1209×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1209×900 · testo 100%: pulito
+non-ancora-errore-audio · 1209×900 · testo 100%: pulito
+non-ancora-ascolto · 1209×900 · testo 100%: pulito
+non-ancora-copia-fatta · 1209×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1209×900 · testo 100%: pulito
+non-ancora-menu · 1210×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1210×900 · testo 100%: pulito
+non-ancora-errore-audio · 1210×900 · testo 100%: pulito
+non-ancora-ascolto · 1210×900 · testo 100%: pulito
+non-ancora-copia-fatta · 1210×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1210×900 · testo 100%: pulito
+non-ancora-menu · 1565×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1565×900 · testo 100%: pulito
+non-ancora-errore-audio · 1565×900 · testo 100%: pulito
+non-ancora-ascolto · 1565×900 · testo 100%: pulito
+non-ancora-copia-fatta · 1565×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1565×900 · testo 100%: pulito
+non-ancora-menu · 1920×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1920×900 · testo 100%: pulito
+non-ancora-errore-audio · 1920×900 · testo 100%: pulito
+non-ancora-ascolto · 1920×900 · testo 100%: pulito
+non-ancora-copia-fatta · 1920×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1920×900 · testo 100%: pulito
+
+
+Tutto pulito (foto in /tmp/lavoro-3ar-qa-F-larghezze-1/esame/chromium)
+# uscita: 0

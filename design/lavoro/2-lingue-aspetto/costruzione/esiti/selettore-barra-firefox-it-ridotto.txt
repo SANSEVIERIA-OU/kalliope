@@ -1,0 +1,6 @@
+lingue pubblicate: 10
+firefox
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ok    [movimento ridotto] l'elenco si apre subito, senza animazione (a 60 ms: 0 animazioni, opacità 1; poi 1)
+  ok    [movimento normale] l'elenco si apre con l'animazione (a 60 ms: 1 animazioni, opacità 0.688551; poi 1)
+tutto ok

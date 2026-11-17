@@ -1,0 +1,12 @@
+[
+ {
+  "chi": "span.luce-tratto",
+  "che": "SPOSTATO",
+  "perche": "M3, solo al telefono: la didascalia su due righe sposta di 17 px ciò che sta sotto"
+ },
+ {
+  "chi": "li.versione.ultima",
+  "che": "FONDO",
+  "perche": "N3: il fondo della riga della versione è lo stesso colore ma pieno (il velo steso sul colore del pannello), così il tratteggio che si apre le passa sotto; a riposo 0% di pixel diversi"
+ }
+]

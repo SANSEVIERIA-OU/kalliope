@@ -2,7 +2,9 @@
 // Il catalogo delle lingue (incarico 2, 17/11/2026): le scritture con i loro caratteri, l'elenco delle lingue, la scelta nella barra, la
 // pagina della scelta e lo specchio da destra a sinistra. Come catalogo.js non ha stili né markup suoi per i componenti: le scritture e lo
 // specchio sono piccole pagine vere (un riquadro con <html lang dir> e i fogli del sistema: :lang() e :dir() valgono sulla radice, come
-// nel sito), i componenti sono copiati dalla home vera (../../it/index.html) e dalla pagina della scelta (../../index.html).
+// nel sito), i componenti sono copiati dalla home e dalla pagina della scelta come la costruzione le fa con tutte le lingue del registro
+// (esempio-home.html, esempio-scelta.html, scritte da tools/site.py): con una lingua sola le pagine vere non hanno la scelta nella barra, l'elenco
+// del piede né la pagina della scelta (e «/» manda a «/it/»), ma il catalogo li mostra lo stesso.
 // Sta in un file suo e aggiunge le proprie sezioni dopo quelle di catalogo.js (che segnala di aver finito con window.__catalogo).
 (async () => {
   const $ = (s, r = document) => r.querySelector(s);
@@ -11,7 +13,7 @@
   const prova = async (nome, f) => { try { return await f(); } catch (e) { errori.push(`${nome}: ${e.message}`); return null; } };
   await new Promise(fine => { const t0 = performance.now(); (function chiedi() { if (window.__catalogo || performance.now() - t0 > 20000) fine(); else setTimeout(chiedi, 40); })(); });
   const leggi = async u => new DOMParser().parseFromString(await (await fetch(u)).text(), 'text/html');
-  const [home, scelta] = await Promise.all([leggi('../../it/index.html'), leggi('../../index.html')]);
+  const [home, scelta] = await Promise.all([leggi('esempio-home.html'), leggi('esempio-scelta.html')]);
   const da = (doc, sel) => { const e = doc.querySelector(sel); if (!e) throw new Error('manca ' + sel); const c = e.cloneNode(true); c.querySelectorAll('[id]').forEach(x => x.removeAttribute('id')); return c; };
   const prova1 = (et, nodo, classe = '') => el('div', {class: 'cat-prova' + (classe.includes('largo') ? ' intero' : '')}, el('span', {class: 'cat-et', html: et}), el('div', {class: 'cat-quadro ' + classe}, nodo));
   const scheda = ({nome, id, regola, confine, persona, provenienza, prove}) => el('article', {class: 'cat-scheda'}, el('h3', {testo: nome}),
@@ -93,7 +95,7 @@
       provenienza: 'Progettuale: il pannello del menu aperto della home (<code>barra.css</code>) e la curva d\'entrata del sistema.',
       prove: [prova1('aperta, nella barra compatta', barra(), 'largo')]}));
     const bolla = () => { const m = da(scelta, '.scelta-lingua'); m.style.minHeight = '0'; return m; };
-    const viva = (w, h, n) => { const f = el('iframe', {title: n, width: w, height: h, loading: 'lazy', src: '../../?lingue'}); const q = el('div', {class: 'cap-schermo'}, f);
+    const viva = (w, h, n) => { const f = el('iframe', {title: n, width: w, height: h, loading: 'lazy', src: 'esempio-scelta.html?lingue'}); const q = el('div', {class: 'cap-schermo'}, f);
       const adatta = () => { const k = Math.min(1, (s.clientWidth - 48) / w) || 1; q.style.width = `${Math.round(w * k)}px`; q.style.height = `${Math.round(h * k)}px`; f.style.transform = `scale(${k})`; }; requestAnimationFrame(adatta); addEventListener('resize', adatta);
       return el('div', {class: 'cat-prova intero'}, el('span', {class: 'cat-et', testo: n}), el('div', {class: 'cat-controlli'}, el('button', {type: 'button', testo: 'Riproduci l\'arrivo', onclick: () => { f.src = f.src; }})), q); };
     s.append(scheda({nome: 'La pagina della scelta', id: '<code>.scelta-lingua</code> <code>.bolla-lingue</code> <code>.scelta-tu</code> <code>.luce-scelta</code> (<code>website/lingue.html</code>)',
@@ -120,5 +122,5 @@
       prova1('da destra a sinistra (<code>lang="ar" dir="rtl"</code>, <code>--verso: -1</code>): la freccia e la coda si specchiano, il triangolo ▶ no; la parte latina («Linux», «Kalliope 0.1») resta nel suo verso', paginetta('ar', 'rtl', corpo('لا أستخدم \u2066Linux\u2069: ماذا أفعل', 'أوافق على «\u2066Kalliope 0.1\u2069».', 'استمع'), 'specchio, da destra a sinistra'), 'largo')));
   });
 
-  if (errori.length) { const st = $('#stato-catalogo'); if (st) st.textContent += ` · Lingue: ${errori.join(' · ')}`; }
+  if (errori.length) { const st = $('#stato-catalogo'); if (st) st.textContent += ` · Lingue: ${errori.join(' · ')}`; if (window.__catalogo) window.__catalogo.errori.push(...errori.map(e => `lingue: ${e}`)); }   // anche nel conto dello stato, che le prove leggono
 })();

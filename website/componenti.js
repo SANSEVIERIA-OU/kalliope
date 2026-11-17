@@ -21,6 +21,16 @@
   const parola = marchio && $('span', marchio), icona = marchio && $('svg', marchio);
   const azione = barra && $('.barra-azione', barra), bottone = barra && $('.pulsante-menu', barra);
   let marchioPieno = 0;
+  // le righe di testo di un elemento (i nodi di testo: un'icona o un tondo accanto non sono righe)
+  function righeDi(el) {
+    const corpo = parseFloat(getComputedStyle(el).fontSize) || 16, linee = new Set();
+    for (const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT); w.nextNode();) {
+      if (!w.currentNode.textContent.trim()) continue;
+      const r = document.createRange(); r.selectNodeContents(w.currentNode);
+      for (const q of r.getClientRects()) if (q.width > 1) linee.add(Math.round(q.top / (corpo * 0.6)));
+    }
+    return linee.size;
+  }
   function misuraBarra() {
     if (!barra || !menu || !marchio) return;
     barra.classList.remove('raccolta', 'azione-a-capo');
@@ -51,10 +61,17 @@
         // la parola resta quando l'azione è in barra, tranne al telefono stretto e nella barra «stretta» (barra.css). Dagli stati, non
         // dall'opacità di adesso: girando il telefono con la pagina scorsa la parola sta ancora riapparendo, e l'azione le finiva sopra
         const parolaVisibile = parola && !matchMedia('(max-width: 440px)').matches && !barra.classList.contains('stretta');
-        const fineMarchio = parolaVisibile ? marchioPieno : largoIcona;
-        const spazio = barra.clientWidth - px(getComputedStyle(azione).insetInlineEnd) - px(cs.paddingInlineStart) - fineMarchio - distanza;
-        barra.style.setProperty('--azione-largo-massimo', `${Math.max(0, Math.floor(spazio))}px`);
-        barra.classList.toggle('azione-a-capo', azione.offsetWidth > spazio);   // va a capo soltanto se non ci sta
+        const poni = conParola => {
+          // il marchio com'è adesso (la parola c'è e non si muove: soltanto sotto 441 px e con «stretta» sparisce), non il più largo visto in passato: tra 441 e 959 px
+          // è più piccolo che sul computer, e dalla misura del computer l'azione andava a capo di troppo (in urdu, a 450 px, su due righe più alte della barra)
+          const spazio = barra.clientWidth - px(getComputedStyle(azione).insetInlineEnd) - px(cs.paddingInlineStart) - (conParola ? marchio.getBoundingClientRect().width : largoIcona) - distanza;
+          barra.style.setProperty('--azione-largo-massimo', `${Math.max(0, Math.floor(spazio))}px`);
+          barra.classList.toggle('azione-a-capo', azione.offsetWidth > spazio);   // va a capo soltanto se non ci sta
+        };
+        poni(parolaVisibile);
+        // se a capo l'azione ha più di due righe (una lingua lunga, e un marchio lungo accanto: in en-XA a 441 px erano quattro, e uscivano dalla barra) la parola
+        // del marchio sparisce intera, come sotto 441 px e sul computer, e l'azione prende il suo posto
+        if (parolaVisibile && righeDi(azione) > 2) { barra.classList.add('stretta'); poni(false); }
       }
     }
   }
@@ -99,6 +116,13 @@
   misura();
   if (document.fonts) document.fonts.ready.then(misura);
   addEventListener('resize', misura);
+  // l'azione in barra entra scorrendo: la misura fatta mentre la pagina era in cima (o allo schermo di prima) può non valere più per com'è la barra quando l'azione
+  // c'è. Con la pagina scorsa dopo aver cambiato la larghezza (la finestra che si stringe, il telefono che gira) in urdu l'azione restava su due righe, più alta della
+  // barra, finché non si rimisurava a mano. Quando l'azione entra o esce si misura di nuovo (le classi che la misura scrive non rimettono in moto l'osservatore)
+  if (barra && window.MutationObserver) {
+    let c = barra.classList.contains('con-azione');
+    new MutationObserver(() => { const ora = barra.classList.contains('con-azione'); if (ora !== c) { c = ora; requestAnimationFrame(misuraBarra); } }).observe(barra, {attributes: true, attributeFilter: ['class']});
+  }
   // un'etichetta che cambia (la parte lunga che compare in una scena) si rimisura
   if (window.ResizeObserver) { const ro = new ResizeObserver(() => misuraEtichette()); etichette.forEach(n => { ro.observe(n.closest('.riquadro')); ro.observe(n); }); }
   window.Componenti = {misura};

@@ -1,0 +1,18 @@
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+it 390×844 → 844×390: azione in barra, a posto
+it 844×390 → 390×844: senza azione, a posto
+de 390×844 → 844×390: azione in barra, a posto
+de 844×390 → 390×844: senza azione, a posto
+el 390×844 → 844×390: azione in barra, a posto
+el 844×390 → 390×844: senza azione, a posto
+bg 390×844 → 844×390: azione in barra, a posto
+bg 844×390 → 390×844: senza azione, a posto
+fi 390×844 → 844×390: azione in barra, a posto
+fi 844×390 → 390×844: senza azione, a posto
+ar 390×844 → 844×390: azione in barra, a posto
+ar 844×390 → 390×844: senza azione, a posto
+ur 390×844 → 844×390: azione in barra, a posto
+ur 844×390 → 390×844: senza azione, a posto
+en-XA 390×844 → 844×390: azione in barra, a posto
+en-XA 844×390 → 390×844: senza azione, a posto
+in tutto 16 prove, 0 rotte

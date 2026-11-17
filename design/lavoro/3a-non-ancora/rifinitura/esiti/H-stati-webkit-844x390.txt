@@ -1,0 +1,12 @@
+# H-stati-webkit-844x390 · 17/11/2026 07:28 · node prove/stati.mjs /tmp/lavoro-3ar-sito-H /tmp/lavoro-3ar-H-foto/stati webkit 844x390 ascolto,errore,copia,copia-no
+
+== ascolto · webkit 844x390
+
+== errore · webkit 844x390
+
+== copia · webkit 844x390
+
+== copia-no · webkit 844x390
+
+30/30 ok
+# uscita: 0

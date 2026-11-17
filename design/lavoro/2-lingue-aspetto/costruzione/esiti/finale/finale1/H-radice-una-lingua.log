@@ -1,0 +1,33 @@
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+chromium js=sì /                  → /it/                 indietro: ok ok
+chromium js=sì /?lingue           → /it/?lingue          indietro: ok ok
+chromium js=sì /#a                → /it/#a               indietro: ok ok
+chromium js=sì /installa/         → /it/installa/        indietro: ok ok
+chromium js=sì /installa/?x=1#y   → /it/installa/?x=1#y  indietro: ok ok
+chromium js=no /                  → /it/                 indietro: ok ok
+chromium js=no /?lingue           → /it/                 indietro: ok ok
+chromium js=no /#a                → /it/                 indietro: ok ok
+chromium js=no /installa/         → /it/installa/        indietro: ok ok
+chromium js=no /installa/?x=1#y   → /it/installa/        indietro: ok ok
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+firefox js=sì /                  → /it/                 indietro: ok ok
+firefox js=sì /?lingue           → /it/?lingue          indietro: ok ok
+firefox js=sì /#a                → /it/#a               indietro: ok ok
+firefox js=sì /installa/         → /it/installa/        indietro: ok ok
+firefox js=sì /installa/?x=1#y   → /it/installa/?x=1#y  indietro: ok ok
+firefox js=no /                  → /it/                 indietro: ok ok
+firefox js=no /?lingue           → /it/                 indietro: ok ok
+firefox js=no /#a                → /it/                 indietro: ok ok
+firefox js=no /installa/         → /it/installa/        indietro: ok ok
+firefox js=no /installa/?x=1#y   → /it/installa/        indietro: ok ok
+webkit js=sì /                  → /it/                 indietro: ok ok
+webkit js=sì /?lingue           → /it/?lingue          indietro: ok ok
+webkit js=sì /#a                → /it/#a               indietro: ok ok
+webkit js=sì /installa/         → /it/installa/        indietro: ok ok
+webkit js=sì /installa/?x=1#y   → /it/installa/?x=1#y  indietro: ok ok
+webkit js=no /                  → /it/                 indietro: ok ok
+webkit js=no /?lingue           → /it/                 indietro: ok ok
+webkit js=no /#a                → /it/                 indietro: ok ok
+webkit js=no /installa/         → /it/installa/        indietro: ok ok
+webkit js=no /installa/?x=1#y   → /it/installa/        indietro: ok ok
+tutto ok

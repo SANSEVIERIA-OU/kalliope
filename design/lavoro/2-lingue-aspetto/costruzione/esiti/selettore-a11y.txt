@@ -1,0 +1,48 @@
+chromium
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ok    [it] il comando ha per nome «Cambia lingua: Italiano» (atteso «Cambia lingua: Italiano»); il nome visibile «Italiano» ci sta dentro
+  ok    [it] la lingua di adesso ha lang it (pagina it, dir ltr) ed è la sola con aria-current: «Italiano»
+  ok    [it] 10 voci, ognuna con lang e hreflang, nessun nome ripetuto; prime: ar:العربية · bg:български · bn:বাংলা · de:Deutsch · el:Ελληνικά
+  ok    [it] albero di Chromium: ruolo «DisclosureTriangle», nome «Cambia lingua: Italiano», espanso false, descrizione «Italiano»
+  ok    [it] aperto: espanso true; nell'albero i collegamenti delle lingue hanno per nome il nome della lingua (العربية · Deutsch · Italiano · اردو · 中文…)
+  ok    [ar] il comando ha per nome «تغيير اللغة: العربية» (atteso «تغيير اللغة: العربية»); il nome visibile «العربية» ci sta dentro
+  ok    [ar] la lingua di adesso ha lang ar (pagina ar, dir rtl) ed è la sola con aria-current: «العربية»
+  ok    [ar] 10 voci, ognuna con lang e hreflang, nessun nome ripetuto; prime: ar:العربية · bg:български · bn:বাংলা · de:⁦Deutsch⁩ · el:Ελληνικά
+  ok    [ar] albero di Chromium: ruolo «DisclosureTriangle», nome «تغيير اللغة: العربية», espanso false, descrizione «العربية»
+  ROSSO [ar] aperto: espanso true; nell'albero i collegamenti delle lingue hanno per nome il nome della lingua (العربية · اردو · 中文…)
+  ok    [zh] il comando ha per nome «切换语言: 中文» (atteso «切换语言: 中文»); il nome visibile «中文» ci sta dentro
+  ok    [zh] la lingua di adesso ha lang zh-Hans (pagina zh-Hans, dir ltr) ed è la sola con aria-current: «中文»
+  ok    [zh] 10 voci, ognuna con lang e hreflang, nessun nome ripetuto; prime: ar:العربية · bg:български · bn:বাংলা · de:Deutsch · el:Ελληνικά
+  ok    [zh] albero di Chromium: ruolo «DisclosureTriangle», nome «切换语言: 中文», espanso false, descrizione «中文»
+  ok    [zh] aperto: espanso true; nell'albero i collegamenti delle lingue hanno per nome il nome della lingua (العربية · Deutsch · Italiano · اردو · 中文…)
+  ok    [scelta] una regione principale, titolo «Kalliope», navigazione «Language» (en), 10 nomi tutti con lang e hreflang, la riunione decorativa nascosta ai lettori (aria-hidden)
+firefox
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ok    [it] il comando ha per nome «Cambia lingua: Italiano» (atteso «Cambia lingua: Italiano»); il nome visibile «Italiano» ci sta dentro
+  ok    [it] la lingua di adesso ha lang it (pagina it, dir ltr) ed è la sola con aria-current: «Italiano»
+  ok    [it] 10 voci, ognuna con lang e hreflang, nessun nome ripetuto; prime: ar:العربية · bg:български · bn:বাংলা · de:Deutsch · el:Ελληνικά
+  ok    [it] istantanea di Playwright, elenco aperto: 10/10 collegamenti con il nome della lingua (primo: - link "العربية":)
+  ok    [ar] il comando ha per nome «تغيير اللغة: العربية» (atteso «تغيير اللغة: العربية»); il nome visibile «العربية» ci sta dentro
+  ok    [ar] la lingua di adesso ha lang ar (pagina ar, dir rtl) ed è la sola con aria-current: «العربية»
+  ok    [ar] 10 voci, ognuna con lang e hreflang, nessun nome ripetuto; prime: ar:العربية · bg:български · bn:বাংলা · de:⁦Deutsch⁩ · el:Ελληνικά
+  ok    [ar] istantanea di Playwright, elenco aperto: 10/10 collegamenti con il nome della lingua (primo: - link "العربية":)
+  ok    [zh] il comando ha per nome «切换语言: 中文» (atteso «切换语言: 中文»); il nome visibile «中文» ci sta dentro
+  ok    [zh] la lingua di adesso ha lang zh-Hans (pagina zh-Hans, dir ltr) ed è la sola con aria-current: «中文»
+  ok    [zh] 10 voci, ognuna con lang e hreflang, nessun nome ripetuto; prime: ar:العربية · bg:български · bn:বাংলা · de:Deutsch · el:Ελληνικά
+  ok    [zh] istantanea di Playwright, elenco aperto: 10/10 collegamenti con il nome della lingua (primo: - link "العربية":)
+  ok    [scelta] una regione principale, titolo «Kalliope», navigazione «Language» (en), 10 nomi tutti con lang e hreflang, la riunione decorativa nascosta ai lettori (aria-hidden)
+webkit
+  ok    [it] il comando ha per nome «Cambia lingua: Italiano» (atteso «Cambia lingua: Italiano»); il nome visibile «Italiano» ci sta dentro
+  ok    [it] la lingua di adesso ha lang it (pagina it, dir ltr) ed è la sola con aria-current: «Italiano»
+  ok    [it] 10 voci, ognuna con lang e hreflang, nessun nome ripetuto; prime: ar:العربية · bg:български · bn:বাংলা · de:Deutsch · el:Ελληνικά
+  ok    [it] istantanea di Playwright, elenco aperto: 10/10 collegamenti con il nome della lingua (primo: - link "العربية":)
+  ok    [ar] il comando ha per nome «تغيير اللغة: العربية» (atteso «تغيير اللغة: العربية»); il nome visibile «العربية» ci sta dentro
+  ok    [ar] la lingua di adesso ha lang ar (pagina ar, dir rtl) ed è la sola con aria-current: «العربية»
+  ok    [ar] 10 voci, ognuna con lang e hreflang, nessun nome ripetuto; prime: ar:العربية · bg:български · bn:বাংলা · de:⁦Deutsch⁩ · el:Ελληνικά
+  ok    [ar] istantanea di Playwright, elenco aperto: 10/10 collegamenti con il nome della lingua (primo: - link "العربية":)
+  ok    [zh] il comando ha per nome «切换语言: 中文» (atteso «切换语言: 中文»); il nome visibile «中文» ci sta dentro
+  ok    [zh] la lingua di adesso ha lang zh-Hans (pagina zh-Hans, dir ltr) ed è la sola con aria-current: «中文»
+  ok    [zh] 10 voci, ognuna con lang e hreflang, nessun nome ripetuto; prime: ar:العربية · bg:български · bn:বাংলা · de:Deutsch · el:Ελληνικά
+  ok    [zh] istantanea di Playwright, elenco aperto: 10/10 collegamenti con il nome della lingua (primo: - link "العربية":)
+  ok    [scelta] una regione principale, titolo «Kalliope», navigazione «Language» (en), 10 nomi tutti con lang e hreflang, la riunione decorativa nascosta ai lettori (aria-hidden)
+1 ROSSE

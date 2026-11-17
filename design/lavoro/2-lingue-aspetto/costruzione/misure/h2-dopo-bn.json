@@ -1,0 +1,248 @@
+{
+ "bn · rete veloce": {
+  "comparso": 152,
+  "fcp": 99999,
+  "richiesteFont": 3,
+  "corse": [
+   {
+    "comparso": 280,
+    "fcp": 236,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 23,
+      "fine": 73
+     },
+     {
+      "file": "noto-sans-bengali/NotoSansBengali-wght.woff2",
+      "byte": 101724,
+      "inizio": 24,
+      "fine": 75
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 92,
+      "fine": 175
+     }
+    ]
+   },
+   {
+    "comparso": 141,
+    "fcp": null,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 7,
+      "fine": 41
+     },
+     {
+      "file": "noto-sans-bengali/NotoSansBengali-wght.woff2",
+      "byte": 101724,
+      "inizio": 8,
+      "fine": 43
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 54,
+      "fine": 99
+     }
+    ]
+   },
+   {
+    "comparso": 152,
+    "fcp": null,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 9,
+      "fine": 43
+     },
+     {
+      "file": "noto-sans-bengali/NotoSansBengali-wght.woff2",
+      "byte": 101724,
+      "inizio": 9,
+      "fine": 45
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 60,
+      "fine": 107
+     }
+    ]
+   }
+  ]
+ },
+ "bn · 4G lento (1,6 Mbps, 150 ms)": {
+  "comparso": 1681,
+  "fcp": 1024,
+  "richiesteFont": 3,
+  "corse": [
+   {
+    "comparso": 1693,
+    "fcp": 1024,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 167,
+      "fine": 1230
+     },
+     {
+      "file": "noto-sans-bengali/NotoSansBengali-wght.woff2",
+      "byte": 101724,
+      "inizio": 167,
+      "fine": 1635
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 921,
+      "fine": 1388
+     }
+    ]
+   },
+   {
+    "comparso": 1674,
+    "fcp": 1024,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 167,
+      "fine": 1230
+     },
+     {
+      "file": "noto-sans-bengali/NotoSansBengali-wght.woff2",
+      "byte": 101724,
+      "inizio": 167,
+      "fine": 1628
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 913,
+      "fine": 1380
+     }
+    ]
+   },
+   {
+    "comparso": 1681,
+    "fcp": 1032,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 175,
+      "fine": 1245
+     },
+     {
+      "file": "noto-sans-bengali/NotoSansBengali-wght.woff2",
+      "byte": 101724,
+      "inizio": 175,
+      "fine": 1642
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 926,
+      "fine": 1387
+     }
+    ]
+   }
+  ]
+ },
+ "bn · 3G (400 kbps, 400 ms)": {
+  "comparso": 6141,
+  "fcp": 3260,
+  "richiesteFont": 3,
+  "corse": [
+   {
+    "comparso": 6141,
+    "fcp": 3260,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 452,
+      "fine": 4651
+     },
+     {
+      "file": "noto-sans-bengali/NotoSansBengali-wght.woff2",
+      "byte": 101724,
+      "inizio": 453,
+      "fine": 6090
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 3177,
+      "fine": 4951
+     }
+    ]
+   },
+   {
+    "comparso": 6142,
+    "fcp": 3264,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 453,
+      "fine": 4650
+     },
+     {
+      "file": "noto-sans-bengali/NotoSansBengali-wght.woff2",
+      "byte": 101724,
+      "inizio": 453,
+      "fine": 6090
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 3178,
+      "fine": 4950
+     }
+    ]
+   },
+   {
+    "comparso": 6127,
+    "fcp": 3232,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 452,
+      "fine": 4650
+     },
+     {
+      "file": "noto-sans-bengali/NotoSansBengali-wght.woff2",
+      "byte": 101724,
+      "inizio": 453,
+      "fine": 6090
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 3170,
+      "fine": 4951
+     }
+    ]
+   }
+  ]
+ }
+}

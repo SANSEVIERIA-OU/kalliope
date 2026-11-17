@@ -1,0 +1,21 @@
+## «non ancora» sotto il primo schermo (con «riduci movimento»): il tratto «Si ferma al microfono», «Non promettiamo date», la chiusura e il piede, 1440×900 e 390×844 (390: tutto 17 px più in basso, M3)
+-- 1440×900 y=820
+CONFRONTO 1440×900 a 820 px: uguale su 45 cose nello schermo · pixel diversi 0%
+-- 1440×900 y=2519
+CONFRONTO 1440×900 a 2519 px: uguale su 37 cose nello schermo · pixel diversi 0%
+-- 1440×900 y=2705
+CONFRONTO 1440×900 a 2705 px: uguale su 42 cose nello schermo · pixel diversi 0%
+-- 390×844 base y=911, adesso y=928
+-- 390×844 base y=2411, adesso y=2428
+-- 390×844 base y=3347, adesso y=3364
+-- 390×844 base y=3619, adesso y=3636
+## 390×844 sotto il primo schermo: ogni sezione scorsa alla propria posizione (in cima alla schermata), prima e adesso; la didascalia di M3 sposta tutto di 17 px, la posizione di ogni sezione lo segue
+390x844 #perche: 99 pixel diversi su 1316640 (0.008%)
+390x844 #quando: 0 pixel diversi su 1316640 (0.000%)
+390x844 #ascolta: 0 pixel diversi su 1316640 (0.000%)
+-- 1440×900 y=1853 (con la differenza voluta di N3 dichiarata)
+CONFRONTO 1440×900 a 1853 px: solo differenze ammesse su 31 cose nello schermo · pixel diversi 0%
+DICHIARAZIONE NON USATA «p «versione» (MANCA, IN PIÙ): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «span «di prova»» (IN PIÙ): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «span.luce-tratto» (SPOSTATO): qui quella differenza non c'è; se non serve più toglila
+Uguale alla scelta, salvo le differenze ammesse (foto in /tmp/lavoro-3ar-qa/cs-H/na-y1853b)

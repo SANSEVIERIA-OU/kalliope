@@ -1,0 +1,247 @@
+{
+ "versione": 1,
+ "lavori": [
+  {
+   "id": "pillole-chromium-1",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/pillole.mjs",
+    "/tmp/lavoro-2b-sito30-s7",
+    "--porta",
+    "0",
+    "--motore",
+    "chromium",
+    "--lingue",
+    "ar,ur,hi,bn,zh,el,de,fi,en-XA,ar-XB",
+    "--misure",
+    "320x900,334x900,349x900,350x900,355x900,360x900,361x900"
+   ]
+  },
+  {
+   "id": "pillole-chromium-2",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/pillole.mjs",
+    "/tmp/lavoro-2b-sito30-s7",
+    "--porta",
+    "0",
+    "--motore",
+    "chromium",
+    "--lingue",
+    "ar,ur,hi,bn,zh,el,de,fi,en-XA,ar-XB",
+    "--misure",
+    "367x900,374x900,375x900,397x900,420x900,421x900,430x900"
+   ]
+  },
+  {
+   "id": "pillole-chromium-3",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/pillole.mjs",
+    "/tmp/lavoro-2b-sito30-s7",
+    "--porta",
+    "0",
+    "--motore",
+    "chromium",
+    "--lingue",
+    "ar,ur,hi,bn,zh,el,de,fi,en-XA,ar-XB",
+    "--misure",
+    "440x900,441x900,600x900,760x900,761x900,780x900,800x900"
+   ]
+  },
+  {
+   "id": "pillole-chromium-4",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/pillole.mjs",
+    "/tmp/lavoro-2b-sito30-s7",
+    "--porta",
+    "0",
+    "--motore",
+    "chromium",
+    "--lingue",
+    "ar,ur,hi,bn,zh,el,de,fi,en-XA,ar-XB",
+    "--misure",
+    "823x900,840x900,886x900,887x900,900x900,923x900,940x900"
+   ]
+  },
+  {
+   "id": "pillole-chromium-5",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/pillole.mjs",
+    "/tmp/lavoro-2b-sito30-s7",
+    "--porta",
+    "0",
+    "--motore",
+    "chromium",
+    "--lingue",
+    "ar,ur,hi,bn,zh,el,de,fi,en-XA,ar-XB",
+    "--misure",
+    "959x900,960x900,979x900,980x900,999x900,1000x900,1005x900"
+   ]
+  },
+  {
+   "id": "pillole-chromium-6",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/pillole.mjs",
+    "/tmp/lavoro-2b-sito30-s7",
+    "--porta",
+    "0",
+    "--motore",
+    "chromium",
+    "--lingue",
+    "ar,ur,hi,bn,zh,el,de,fi,en-XA,ar-XB",
+    "--misure",
+    "1010x900,1011x900,1020x900,1060x900,1095x900,1100x900,1140x900"
+   ]
+  },
+  {
+   "id": "pillole-chromium-7",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/pillole.mjs",
+    "/tmp/lavoro-2b-sito30-s7",
+    "--porta",
+    "0",
+    "--motore",
+    "chromium",
+    "--lingue",
+    "ar,ur,hi,bn,zh,el,de,fi,en-XA,ar-XB",
+    "--misure",
+    "1160x900,1180x900,1181x900,1195x900,1209x900,1210x900,1320x900"
+   ]
+  },
+  {
+   "id": "pillole-chromium-8",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/pillole.mjs",
+    "/tmp/lavoro-2b-sito30-s7",
+    "--porta",
+    "0",
+    "--motore",
+    "chromium",
+    "--lingue",
+    "ar,ur,hi,bn,zh,el,de,fi,en-XA,ar-XB",
+    "--misure",
+    "1430x900,1431x900,1675x900,1920x900"
+   ]
+  },
+  {
+   "id": "pillole-chromium-dispositivi",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/pillole.mjs",
+    "/tmp/lavoro-2b-sito30-s7",
+    "--porta",
+    "0",
+    "--motore",
+    "chromium",
+    "--lingue",
+    "ar,ur,hi,bn,zh,el,de,fi,en-XA,ar-XB",
+    "--misure",
+    "390x844,844x390,360x640,1440x900,1366x640,820x1180"
+   ]
+  },
+  {
+   "id": "pillole-firefox-dispositivi",
+   "motore": "firefox",
+   "priorita": 2,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/pillole.mjs",
+    "/tmp/lavoro-2b-sito30-s7",
+    "--porta",
+    "0",
+    "--motore",
+    "firefox",
+    "--lingue",
+    "ar,ur,hi,bn,zh",
+    "--misure",
+    "390x844,844x390,360x640,1440x900"
+   ]
+  },
+  {
+   "id": "pillole-webkit-dispositivi",
+   "motore": "webkit",
+   "priorita": 2,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/pillole.mjs",
+    "/tmp/lavoro-2b-sito30-s7",
+    "--porta",
+    "0",
+    "--motore",
+    "webkit",
+    "--lingue",
+    "ar,ur,hi,bn,zh",
+    "--misure",
+    "390x844,844x390,360x640,1440x900"
+   ]
+  }
+ ]
+}

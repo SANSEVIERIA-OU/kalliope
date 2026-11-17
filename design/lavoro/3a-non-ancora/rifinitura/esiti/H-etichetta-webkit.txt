@@ -1,0 +1,8 @@
+# H-etichetta-webkit · 17/11/2026 07:44 · node prove/etichetta.mjs /tmp/lavoro-3ar-sito-H /tmp/lavoro-3ar-H-foto/etichetta webkit 390x844,326x326,1440x900
+   390x844: fermo: «Ascolta Giulia» largh 350, sbilanciamento -7.5 (margini 83/98) | carica: «Carico…» largh 350, sbilanciamento -7.5 (margini 109/124) | suona: «Pausa» largh 350, sbilanciamento -7.5 (margini 117/132) | pausa: «Riprendi» largh 350, sbilanciamento -7.5 (margini 107/122)
+   326x326: fermo: «Ascolta Giulia» largh 286, sbilanciamento -7.5 (margini 51/66) | carica: «Carico…» largh 286, sbilanciamento -7.5 (margini 77/92) | suona: «Pausa» largh 286, sbilanciamento -7.5 (margini 85/100) | pausa: «Riprendi» largh 286, sbilanciamento -7.5 (margini 75/90)
+   1440x900: fermo: «Ascolta Giulia» largh 209, sbilanciamento -8 (margini 8/24) | carica: «Carico…» largh 209, sbilanciamento -35 (margini 8/78) | suona: «Pausa» largh 209, sbilanciamento -43 (margini 8/94) | pausa: «Riprendi» largh 209, sbilanciamento -32.4 (margini 8/73)
+   (al computer il comando è largo quanto la sua etichetta più lunga: nelle altre l'aria resta dalla parte della parola, -8, -35, -43, -32.4: non è il punto 2)
+
+11/11 ok
+# uscita: 0

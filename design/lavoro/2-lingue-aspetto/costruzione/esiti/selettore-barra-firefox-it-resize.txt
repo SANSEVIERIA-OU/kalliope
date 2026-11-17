@@ -1,0 +1,6 @@
+lingue pubblicate: 10
+firefox
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ok    [it] aperto l'elenco a 1440 e ridotto lo schermo a 390, aprendo il menu l'elenco è chiuso (dopo il ridimensionamento era ancora aperto)
+  ok    [it] girando il telefono (844×390) nessuno scorrimento di lato
+tutto ok

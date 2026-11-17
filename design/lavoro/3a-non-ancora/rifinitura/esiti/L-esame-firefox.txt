@@ -1,0 +1,54 @@
+# L-esame-firefox · 17/11/2026 08:54 · sito: /tmp/lavoro-3ar-sito-L · esame-impaginazione.mjs firefox normale non-ancora 1440x900,390x844,844x390,360x640,326x326,1440x500,1366x640
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+non-ancora-menu · 1440×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1440×900 · testo 100%: pulito
+non-ancora-errore-audio · 1440×900 · testo 100%: pulito
+non-ancora-ascolto · 1440×900 · testo 100%: pulito
+non-ancora-copia-fatta · 1440×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1440×900 · testo 100%: pulito
+non-ancora · 390×844 · testo 100%: pulito
+non-ancora-menu · 390×844 · testo 100%: pulito
+non-ancora-errore-audio · 390×844 · testo 100%: pulito
+non-ancora-ascolto · 390×844 · testo 100%: pulito
+non-ancora-copia-fatta · 390×844 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 390×844 · testo 100%: pulito
+non-ancora · 844×390 · testo 100%: pulito
+non-ancora-menu · 844×390 · testo 100%: pulito
+non-ancora-errore-audio · 844×390 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA div.bolla.bolla-chiusa: 20 px sopra (schermo 844×390) · schermo basso con il messaggio d'errore: la riunione è già alla sua altezza minima (60 px), o al telefono il messaggio è alto 182-226 px (a capo secondo la larghezza): non stanno insieme; vince il messaggio (PIANO.md, «La cornice»)
+non-ancora-ascolto · 844×390 · testo 100%: 
+  COPERTO DOPO IL GESTO div.bolla.bolla-chiusa: sopra c'è header.barra.compatta
+non-ancora-copia-fatta · 844×390 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 844×390 · testo 100%: pulito
+non-ancora · 360×640 · testo 100%: pulito
+non-ancora-menu · 360×640 · testo 100%: pulito
+non-ancora-errore-audio · 360×640 · testo 100%: pulito
+non-ancora-ascolto · 360×640 · testo 100%: pulito
+non-ancora-copia-fatta · 360×640 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 360×640 · testo 100%: pulito
+non-ancora · 326×326 · testo 100%: pulito
+non-ancora-menu · 326×326 · testo 100%: pulito
+non-ancora-errore-audio · 326×326 · testo 100%: pulito, con 2 limiti dichiarati
+  LIMITE DICHIARATO FUORI VISTA div.bolla.bolla-chiusa: 230 px sopra (schermo 326×326) · schermo basso con il messaggio d'errore: la riunione è già alla sua altezza minima (60 px), o al telefono il messaggio è alto 182-226 px (a capo secondo la larghezza): non stanno insieme; vince il messaggio (PIANO.md, «La cornice»)
+  LIMITE DICHIARATO FUORI VISTA button.pillola.voce-chiara: 24 px sopra (schermo 326×326) · schermo quadrato da 326 px: il messaggio d'errore (con «Riprova» e il file) vince sul comando «Ascolta», che resta sopra il bordo (PIANO.md, «La cornice»)
+non-ancora-ascolto · 326×326 · testo 100%: 
+  FUORI VISTA div.bolla.bolla-chiusa: 186 px sopra (schermo 326×326)
+  COPERTO DOPO IL GESTO button.pillola.voce-chiara: sopra c'è path
+non-ancora-copia-fatta · 326×326 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 326×326 · testo 100%: pulito
+non-ancora-menu · 1440×500 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1440×500 · testo 100%: pulito
+non-ancora-errore-audio · 1440×500 · testo 100%: pulito
+non-ancora-ascolto · 1440×500 · testo 100%: pulito
+non-ancora-copia-fatta · 1440×500 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1440×500 · testo 100%: pulito
+non-ancora-menu · 1366×640 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1366×640 · testo 100%: pulito
+non-ancora-errore-audio · 1366×640 · testo 100%: pulito
+non-ancora-ascolto · 1366×640 · testo 100%: pulito
+non-ancora-copia-fatta · 1366×640 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1366×640 · testo 100%: pulito
+
+COPERTO DOPO IL GESTO: 2 · FUORI VISTA: 1
+3 cose da guardare; 3 limiti dichiarati, elencati a parte e non contati (foto in /tmp/lavoro-3ar-qa-L-esame-firefox/esame/firefox)
+# uscita: 1

@@ -1,0 +1,14 @@
+lingue pubblicate: 10
+firefox
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ok    [it] 390 · il menu si apre
+  ok    [it] 390 · Tab porta alla scelta dentro il menu (6 comandi), nello schermo e non coperta
+  ok    [it] 390 · l'elenco si apre dentro il menu e sta nello schermo: 21–369 su 390
+  ok    [it] 390 · Tab percorre 10/10 voci riga per riga nel verso della lettura
+  ok    [it] 390 · ogni voce con il fuoco sta nello schermo e niente la copre (tutte)
+  ok    [it] 390 · riaperti menu ed elenco, il fuoco è nella prima voce
+  ok    [it] 390 · Esc dall'elenco chiude l'elenco, il menu resta e il fuoco va sul comando (elenco chiuso, menu aperto, fuoco SUMMARY)
+  ok    [it] 390 · un secondo Esc chiude il menu e il fuoco va su «Menu» (pulsante-menu)
+  ok    [it] 390 · chiuso il menu con l'elenco aperto, riaprendo il menu l'elenco è chiuso
+  ok    [it] 390 · nessun errore di console (0)
+tutto ok

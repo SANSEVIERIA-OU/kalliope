@@ -1,0 +1,15 @@
+ok   chromium 844x390 · la pagina resta ferma con il fuoco nel menu: scrollY 0 → menu 0 → elenco 0 → 4 voci con Tab, massimo 0
+ok   chromium 326x326 · la pagina resta ferma con il fuoco nel menu: scrollY 0 → menu 0 → elenco 0 → 4 voci con Tab, massimo 0
+ok   chromium 390x844 · la pagina resta ferma con il fuoco nel menu: scrollY 0 → menu 0 → elenco 0 → 4 voci con Tab, massimo 0
+ok   chromium 360x640 · la pagina resta ferma con il fuoco nel menu: scrollY 0 → menu 0 → elenco 0 → 4 voci con Tab, massimo 0
+ok   webkit 844x390 · la pagina resta ferma con il fuoco nel menu: scrollY 0 → menu 0 → elenco 0 → 4 voci con Tab, massimo 0
+ok   webkit 326x326 · la pagina resta ferma con il fuoco nel menu: scrollY 0 → menu 0 → elenco 0 → 4 voci con Tab, massimo 0
+ok   webkit 390x844 · la pagina resta ferma con il fuoco nel menu: scrollY 0 → menu 0 → elenco 0 → 4 voci con Tab, massimo 0
+ok   webkit 360x640 · la pagina resta ferma con il fuoco nel menu: scrollY 0 → menu 0 → elenco 0 → 4 voci con Tab, massimo 0
+ok   firefox 844x390 · la pagina resta ferma con il fuoco nel menu: scrollY 0 → menu 0 → elenco 0 → 4 voci con Tab, massimo 0
+ok   firefox 326x326 · la pagina resta ferma con il fuoco nel menu: scrollY 0 → menu 0 → elenco 0 → 4 voci con Tab, massimo 0
+ok   firefox 390x844 · la pagina resta ferma con il fuoco nel menu: scrollY 0 → menu 0 → elenco 0 → 4 voci con Tab, massimo 0
+ok   firefox 360x640 · la pagina resta ferma con il fuoco nel menu: scrollY 0 → menu 0 → elenco 0 → 4 voci con Tab, massimo 0
+--- la home (il termine di confronto: 0 px)
+ok   chromium 844x390 · la pagina resta ferma con il fuoco nel menu: scrollY 0 → menu 0 → elenco 0 → 4 voci con Tab, massimo 0
+ok   chromium 326x326 · la pagina resta ferma con il fuoco nel menu: scrollY 0 → menu 0 → elenco 0 → 4 voci con Tab, massimo 0

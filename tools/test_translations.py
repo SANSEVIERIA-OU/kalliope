@@ -372,6 +372,15 @@ class Sito(unittest.TestCase):
         self.assertIn('<link rel="canonical" href="https://esempio.test/k/it/vecchia/">', self.leggi("it/vecchia/index.html"))
         self.assertIn('href="../it/vecchia/"', self.leggi("vecchia/index.html"))   # il rimando del vecchio indirizzo
         self.assertEqual(rimandi, ["vecchia/"])
+        # una lingua sola: niente da scegliere. Né il selettore della barra né l'elenco del piede, e «/» manda a «/it/»
+        self.assertNotIn("data-lingua", home)
+        self.assertNotIn("Cambia lingua", home)   # la voce della barra
+        self.assertNotIn('id="lingue"', home)
+        scelta = self.leggi("index.html")
+        self.assertIn('<meta http-equiv="refresh" content="0; url=it/">', scelta)
+        self.assertIn('<link rel="canonical" href="https://esempio.test/k/it/">', scelta)
+        self.assertIn('location.replace("it/" + location.search + location.hash)', scelta)
+        self.assertNotIn("data-lingue", scelta)
 
     def test_ogni_pagina_costruita_ha_lang_e_dir(self):
         import re
@@ -393,6 +402,29 @@ class Sito(unittest.TestCase):
         self.assertIn('data-lingue="en it"', scelta)
         self.assertIn('<li><a href="en/" hreflang="en" lang="en" data-lingua-codice="en">English</a></li>', scelta)
         self.assertIn('<li><a href="it/" hreflang="it" lang="it" data-lingua-codice="it">Italiano</a></li>', scelta)
+
+    def test_con_la_seconda_lingua_tornano_il_selettore_e_la_scelta(self):
+        self.aggiungi_lingua("en")
+        self.costruisci()
+        home = self.leggi("it/index.html")
+        self.assertIn('title="Cambia lingua"', home)   # la voce della barra (la costruzione toglie il marcatore e scrive il nome)
+        self.assertIn('id="lingue"', home)
+        self.assertIn('data-lingue="elenco"', home)
+        self.assertEqual(home.count('data-lingua-codice='), 2)
+        self.assertIn('data-lingue="en it"', self.leggi("index.html"))   # «/» è la scelta, non un rimando
+        self.assertNotIn("http-equiv", self.leggi("index.html"))
+
+    def test_una_lingua_incompleta_non_riporta_il_selettore(self):
+        self.aggiungi_lingua("de", lambda c: c.voci.pop())
+        self.costruisci()
+        self.assertNotIn("data-lingua", self.leggi("it/index.html"))
+        self.assertIn('http-equiv="refresh"', self.leggi("index.html"))
+
+    def test_le_pseudo_lingue_non_contano_per_il_selettore(self):
+        self.costruisci(pseudo=True)
+        self.assertNotIn("data-lingua", self.leggi("it/index.html"))
+        self.assertNotIn("data-lingua", self.leggi("en-XA/index.html"))
+        self.assertIn('http-equiv="refresh"', self.leggi("index.html"))
 
     def test_lingua_completa_si_pubblica_con_hreflang(self):
         self.aggiungi_lingua("en")
@@ -445,6 +477,7 @@ class Sito(unittest.TestCase):
         self.assertIn("[", self.leggi("en-XA/index.html"))
 
     def test_senza_selettore(self):
+        self.aggiungi_lingua("en")
         self.costruisci(senza_selettore=True)
         home = self.leggi("it/index.html")
         self.assertNotIn("lingue", home.replace("hreflang", ""))
@@ -467,6 +500,215 @@ class Sito(unittest.TestCase):
         with self.assertRaises(SystemExit) as c:
             self.costruisci()
         self.assertIn("mark their texts wrongly", str(c.exception))
+
+
+class SitoVero(unittest.TestCase):
+    """Il sito vero (website/ e design-system/) con una lingua sola e con due: il selettore c'è soltanto con due, in ogni pagina che lo ha
+    (incarico 2-b, 17/11/2026). La seconda lingua è fatta dal catalogo italiano con la pseudo-lingua, soltanto per questa prova."""
+    @classmethod
+    def setUpClass(cls):
+        cls.tmp = pathlib.Path(tempfile.mkdtemp(prefix="lavoro-2b-sitovero-"))
+        cls.v, cls.grezzi = sito_py.values(RILASCIO)
+        cls.una = cls.costruisci(cls.tmp / "una", RADICE / "website")
+        w = cls.tmp / "due-website"
+        shutil.copytree(RADICE / "website", w)
+        pagine, tutti, _ = catalogo.raccogli(w)
+        for codice, f in (("en", pseudo.en_xa), ("ar", pseudo.ar_xb)):
+            cat = catalogo.unisci(None, catalogo.modello(pagine, tutti), codice)
+            for voce in cat.voci:
+                voce.str = [f(voce.id)] if voce.id_plurale is None else [f(voce.id if i == 0 else voce.id_plurale) for i in range(len(voce.str))]
+            (w / "lingue" / f"{codice}.po").write_text(po.scrivi(cat), encoding="utf-8")
+        cls.due = cls.costruisci(cls.tmp / "due", w)
+
+    @classmethod
+    def tearDownClass(cls):
+        shutil.rmtree(cls.tmp, True)
+
+    @classmethod
+    def costruisci(cls, out, website):
+        opzioni = {"pseudo": False, "senza_selettore": False, "base_url": "https://esempio.test/k/", "lingue": None, "website": website,
+                   "system": RADICE / "design-system"}
+        sito_py.build(out, cls.v, cls.grezzi, opzioni)
+        return out
+
+    PAGINE_CON_BARRA = ["it/index.html", "it/non-ancora/index.html"]
+
+    def test_con_una_lingua_sola_niente_selettore_in_nessuna_pagina(self):
+        for rel in self.PAGINE_CON_BARRA:
+            html = (self.una / rel).read_text(encoding="utf-8")
+            self.assertNotIn("lingua-scelta", html, rel)
+            self.assertNotIn("data-lingua", html, rel)
+            self.assertNotIn('class="lingue"', html, rel)
+            self.assertNotIn("Cambia lingua", html, rel)
+        self.assertIn('http-equiv="refresh" content="0; url=it/"', (self.una / "index.html").read_text(encoding="utf-8"))
+
+    def test_con_due_lingue_ogni_pagina_ha_il_selettore_e_porta_alla_stessa_pagina(self):
+        import re
+        for rel, atteso in (("it/index.html", "../en/"), ("it/non-ancora/index.html", "../../en/non-ancora/"),
+                            ("en/index.html", "../it/"), ("en/non-ancora/index.html", "../../it/non-ancora/"),
+                            ("ar/index.html", "../it/"), ("ar/non-ancora/index.html", "../../it/non-ancora/")):
+            html = (self.due / rel).read_text(encoding="utf-8")
+            self.assertIn("data-lingua-codice=", html, rel)
+            self.assertIn(f'href="{atteso}"', html, rel)
+            sorgente = (RADICE / "website" / rel.split("/", 1)[1]).read_text(encoding="utf-8")
+            if "lingua-scelta" in sorgente:   # la pagina ha preso la scelta nuova: ne resta una sola, con il suo elenco (la home sempre)
+                self.assertEqual(len(re.findall(r"<details[^>]*lingua-scelta", html)), 1, rel)
+            else:
+                self.assertNotEqual(rel, "it/index.html")
+        self.assertIn('data-lingue="ar en it"', (self.due / "index.html").read_text(encoding="utf-8"))
+
+    def test_il_carattere_arabo_si_precarica_in_ogni_pagina_araba(self):
+        for rel, prefisso in (("ar/index.html", "../"), ("ar/non-ancora/index.html", "../../")):
+            html = (self.due / rel).read_text(encoding="utf-8")
+            riga = f'<link rel="preload" href="{prefisso}design-system/caratteri/readex-pro/ReadexPro-wght.woff2" as="font" type="font/woff2" crossorigin>'
+            self.assertEqual(html.count(riga), 1, rel)
+            self.assertLess(html.index("Lexend-wght-latino.woff2"), html.index("ReadexPro-wght.woff2"), rel)
+            self.assertTrue((self.due / "design-system/caratteri/readex-pro/ReadexPro-wght.woff2").is_file())
+        for rel in ("en/index.html", "en/non-ancora/index.html", "it/index.html", "it/non-ancora/index.html"):
+            self.assertNotIn("ReadexPro", (self.due / rel).read_text(encoding="utf-8"), rel)
+
+    def test_il_comando_della_scelta_ha_per_nome_cio_che_fa_e_la_lingua_di_adesso(self):
+        import re
+        for rel, nome in (("it/index.html", "Italiano"), ("en/index.html", "English"), ("ar/index.html", "العربية"), ("it/non-ancora/index.html", "Italiano")):
+            html = (self.due / rel).read_text(encoding="utf-8")
+            m = re.search(r'<summary[^>]*\btitle="([^"]*)"[^>]*\baria-label="([^"]*)"', html)
+            self.assertIsNotNone(m, rel)
+            titolo = m.group(1).replace("\u2066", "").replace("\u2069", "")   # il title di una pagina da destra a sinistra ha i suoi isolamenti: il nome, che si ascolta e non si vede, no
+            self.assertEqual(m.group(2), f"{titolo}: {nome}", rel)   # «Cambia lingua: Italiano»: il nome visibile ci sta dentro
+        # i nomi delle lingue nel loro elenco non hanno caratteri invisibili, nemmeno in una pagina da destra a sinistra
+        ar = (self.due / "ar/index.html").read_text(encoding="utf-8")
+        self.assertIn('hreflang="en" lang="en" data-lingua-codice="en">English</a>', ar)
+
+    def test_un_comando_senza_title_non_prende_un_nome_inventato(self):
+        class Finto:
+            traducibili = {"index.html": ""}
+            def indirizzo(self, rel):
+                return ""
+        it = sito_py.Lingua("it", "it", "ltr", "Italiano")
+        for titolo, atteso in (' title="Cambia lingua"', ' aria-label="Cambia lingua: Italiano"'), ("", None):
+            pagina_di_prova = f'<html lang="it"><head></head><body><details class="lingua-scelta"><summary{titolo}><span data-lingua-corrente data-t-no="n">Italiano</span></summary></details></body></html>'
+            fuori = sito_py.passo_struttura(pagina_di_prova, "index.html", it, {"it": it}, Finto(), False, "https://x/")
+            if atteso:
+                self.assertIn(atteso, fuori)
+            else:
+                self.assertNotIn("aria-label", fuori)
+
+    def test_il_catalogo_ha_gli_esempi_con_tutte_le_lingue_anche_con_una_lingua_sola(self):
+        import re
+        for sito in (self.una, self.due):
+            home = (sito / "design-system/catalogo/esempio-home.html").read_text(encoding="utf-8")
+            scelta = (sito / "design-system/catalogo/esempio-scelta.html").read_text(encoding="utf-8")
+            self.assertEqual(len(re.findall(r"<details[^>]*lingua-scelta", home)), 1)
+            self.assertEqual(len(re.findall(r'<nav class="lingue"', home)), 1)
+            self.assertEqual(home.count("data-lingua-codice="), 60)   # 30 nella barra, 30 nel piede
+            self.assertEqual(scelta.count("data-lingua-codice="), 30)
+            self.assertEqual(len(re.search(r'<html[^>]*data-lingue="([^"]+)"', scelta).group(1).split()), 30)
+            for html, base in ((home, "../../it/"), (scelta, "../../")):
+                self.assertIn(f'<base href="{base}">', html)
+                self.assertIn('<meta name="robots" content="noindex">', html)
+                self.assertNotIn('rel="canonical"', html)
+                self.assertNotIn('rel="alternate"', html)
+        # le pagine vere, con una lingua sola, non hanno né la scelta né il piede: gli esempi non sono quelle pagine
+        self.assertNotIn("lingua-scelta", (self.una / "it/index.html").read_text(encoding="utf-8"))
+
+    def test_la_pagina_italiana_non_ha_un_precarico_in_piu(self):
+        for rel in self.PAGINE_CON_BARRA:
+            html = (self.una / rel).read_text(encoding="utf-8")
+            self.assertEqual(html.count('rel="preload"'), 1, rel)   # soltanto Lexend latino, com'era
+            self.assertEqual(html.count('as="font"'), 1, rel)
+
+
+TOKEN_CARATTERI = """
+@font-face { font-family: "Lexend"; src: url("caratteri/lexend/Lexend-wght-latino.woff2") format("woff2"); }
+@font-face { font-family: "Lexend riserva"; src: local("Arial"); }
+@font-face { font-family: "Readex Pro Kalliope"; src: url("caratteri/readex-pro/ReadexPro-wght.woff2") format("woff2"); unicode-range: U+0600-06FF; }
+@font-face { font-family: "Geologica Kalliope"; src: url("caratteri/geologica/Geologica-wght.woff2") format("woff2"); }
+@font-face { font-family: "Noto Sans Devanagari Kalliope"; src: url("caratteri/noto-sans-devanagari/NotoSansDevanagari-wght.woff2") format("woff2"); }
+:root { --font-testo: "Lexend", "Lexend riserva", system-ui, sans-serif; }
+/* un commento con :lang(xx) { --font-testo: "Lexend", "Finto"; } */
+:lang(el), :lang(bg) { --font-testo: "Lexend", "Geologica Kalliope", "Lexend riserva", sans-serif; }
+:lang(ar) { --font-testo: "Lexend", "Readex Pro Kalliope", "Lexend riserva", sans-serif; --font-app: "Finto"; }
+:lang(hi) { --font-testo: "Lexend", "Noto Sans Devanagari Kalliope", sans-serif; }
+:lang(zh) { --font-testo: "Lexend", "PingFang SC", "Microsoft YaHei", sans-serif; }
+:lang(ur) { --font-testo: "Lexend", "Noto Nastaliq Urdu", sans-serif; }
+@media (max-width: 760px) { :root { --margine: 20px; } }
+:lang(ar), :lang(ur) { --sottolineatura-posizione: from-font; }
+"""
+
+
+class Precarico(unittest.TestCase):
+    """Il carattere della scrittura si scarica subito: la costruzione lo precarica nelle pagine di quella lingua (incarico 2-b, 17/11/2026)."""
+
+    def test_il_file_lo_dice_token_css(self):
+        self.assertEqual(sito_py.caratteri_per_lingua(TOKEN_CARATTERI),
+                         {"el": "caratteri/geologica/Geologica-wght.woff2", "bg": "caratteri/geologica/Geologica-wght.woff2",
+                          "ar": "caratteri/readex-pro/ReadexPro-wght.woff2",
+                          "hi": "caratteri/noto-sans-devanagari/NotoSansDevanagari-wght.woff2"})   # il cinese (carattere di sistema) e l'urdu (nessuna faccia con un file qui) no
+
+    def test_i_caratteri_del_sistema_vero(self):
+        c = sito_py.caratteri_per_lingua((RADICE / "design-system" / "token.css").read_text(encoding="utf-8"))
+        self.assertEqual(sorted(c), ["ar", "bg", "bn", "el", "hi", "ur"])   # le sei scritture con un file; il cinese è di sistema, il latino è già precaricato
+        for file in c.values():
+            self.assertTrue((RADICE / "design-system" / file).is_file(), file)
+        self.assertEqual(c["ur"], "caratteri/noto-nastaliq-urdu/NotoNastaliqUrdu-wght.woff2")
+
+    def test_si_precaricano_soltanto_i_file_piccoli(self):
+        c = sito_py.caratteri_per_lingua((RADICE / "design-system" / "token.css").read_text(encoding="utf-8"))
+        self.assertEqual(sorted(sito_py.da_precaricare(c, RADICE / "design-system")), ["ar", "bg", "el"])   # Readex Pro e Geologica, 22 KB; non Bengali, Devanagari, Nastaliq (misure in site.py)
+        for lingua in ("ar", "bg", "el"):
+            self.assertLessEqual((RADICE / "design-system" / c[lingua]).stat().st_size, sito_py.PRECARICO_FINO_A)
+        for lingua in ("bn", "hi", "ur"):
+            self.assertGreater((RADICE / "design-system" / c[lingua]).stat().st_size, sito_py.PRECARICO_FINO_A)
+
+    def test_una_pagina_si_costruisce_con_il_precarico_giusto(self):
+        for rel, atteso in (("index.html", "../design-system/caratteri/readex-pro/ReadexPro-wght.woff2"),
+                            ("sotto/index.html", "../../design-system/caratteri/readex-pro/ReadexPro-wght.woff2")):
+            lingua = sito_py.Lingua("ar", "ar", "rtl", "العربية")
+            pagina_di_prova = ('<html><head><meta charset="utf-8">\n  <link rel="preload" href="design-system/caratteri/lexend/Lexend-wght-latino.woff2" as="font" type="font/woff2" crossorigin>\n'
+                               '  <link rel="stylesheet" href="design-system/token.css">\n</head><body></body></html>')
+            fuori = sito_py.precarica_carattere(pagina_di_prova, rel, lingua, "readex-pro/ReadexPro-wght.woff2")
+            self.assertIn(f'  <link rel="preload" href="{atteso}" as="font" type="font/woff2" crossorigin>\n  <link rel="stylesheet"', fuori)
+            self.assertLess(fuori.index("Lexend-wght-latino"), fuori.index("ReadexPro"))   # dopo il precarico del latino
+            self.assertEqual(fuori.count('rel="preload"'), 2)
+        senza = sito_py.precarica_carattere('<html><head>\n<link rel="stylesheet" href="x.css">\n</head></html>', "index.html", lingua, "readex-pro/ReadexPro-wght.woff2")
+        self.assertLess(senza.index("ReadexPro"), senza.index("x.css"))   # senza un altro precarico: prima del primo foglio di stile
+
+    def test_la_costruzione_la_mette_dove_serve_e_non_altrove(self):
+        tmp = pathlib.Path(tempfile.mkdtemp(prefix="lavoro-2b-precarico-"))
+        self.addCleanup(shutil.rmtree, tmp, True)
+        w = tmp / "website"
+        (w / "lingue").mkdir(parents=True)
+        (w / "index.html").write_text('<!doctype html><html lang="it"><head><meta charset="utf-8"><title data-t="t">Kalliope</title>'
+                                      '<link rel="preload" href="design-system/caratteri/lexend/Lexend-wght-latino.woff2" as="font" type="font/woff2" crossorigin>'
+                                      '<link rel="stylesheet" href="design-system/token.css"></head><body><h1 data-t="h">Ciao</h1>'
+                                      '<ul data-lingue="elenco"><li><a data-lingua data-t-no="n" href="#">x</a></li></ul></body></html>', encoding="utf-8")
+        (w / "vecchia").mkdir()
+        (w / "vecchia" / "index.html").write_text("<!doctype html><html lang=\"it\"><head><title>V</title></head><body><p>solo italiano</p></body></html>", encoding="utf-8")
+        (w / "lingue.html").write_text(SCELTA, encoding="utf-8")
+        s = tmp / "design-system"
+        for cartella, file, byte in (("lexend", "Lexend-wght-latino.woff2", 100), ("readex-pro", "ReadexPro-wght.woff2", 100),
+                                     ("noto-sans-devanagari", "NotoSansDevanagari-wght.woff2", sito_py.PRECARICO_FINO_A + 1)):
+            (s / "caratteri" / cartella).mkdir(parents=True)
+            (s / "caratteri" / cartella / file).write_bytes(b"w" * byte)
+        (s / "token.css").write_text(TOKEN_CARATTERI, encoding="utf-8")
+        pagine, tutti, _ = catalogo.raccogli(w)
+        mod = catalogo.modello(pagine, tutti)
+        for codice in ("ar", "en", "zh", "hi"):
+            cat = catalogo.unisci(None, mod, codice)
+            for v in cat.voci:
+                v.str = [v.id]
+            (w / "lingue" / f"{codice}.po").write_text(po.scrivi(cat), encoding="utf-8")
+        v, grezzi = sito_py.values(RILASCIO)
+        opzioni = {"pseudo": True, "senza_selettore": False, "base_url": "https://esempio.test/k/", "lingue": None, "website": w, "system": s}
+        sito_py.build(tmp / "out", v, grezzi, opzioni)
+        leggi = lambda r: (tmp / "out" / r).read_text(encoding="utf-8")   # noqa: E731
+        self.assertIn('href="../design-system/caratteri/readex-pro/ReadexPro-wght.woff2" as="font"', leggi("ar/index.html"))
+        self.assertEqual(leggi("ar/index.html").count("ReadexPro"), 1)
+        for senza in ("it/index.html", "en/index.html", "zh/index.html", "ar-XB/index.html", "en-XA/index.html", "hi/index.html"):
+            self.assertNotIn("ReadexPro", leggi(senza), senza)   # l'italiano non cambia di un byte; il latino, il cinese di sistema e le pseudo-lingue non ne hanno bisogno
+        self.assertNotIn("NotoSansDevanagari", leggi("hi/index.html"))   # un file grande non si precarica
+        self.assertEqual(leggi("it/index.html").count('rel="preload"'), 1)
+        self.assertNotIn("ReadexPro", leggi("it/vecchia/index.html"))
 
 
 class CssLogico(unittest.TestCase):
@@ -522,6 +764,12 @@ class DaDestraASinistra(unittest.TestCase):
         self.assertIn('content="\u2066Kalliope 0.1\u2069 للحاسوب"', fuori)
         self.assertIn('title="\u2066Kalliope\u2069، الصفحة"', fuori)
 
+    def test_il_nome_di_una_lingua_nel_suo_elenco_resta_com_e(self):
+        pagina_con_elenco = '<html lang="ar" dir="rtl"><body><p>اللغة Linux</p><ul><li><a href="../de/" hreflang="de" lang="de">Deutsch</a></li></ul></body></html>'
+        fuori = sito_py.isola_latino(pagina_con_elenco)
+        self.assertIn('lang="de">Deutsch</a>', fuori)   # nessun LRI né PDI nel nome
+        self.assertIn("\u2066Linux\u2069", fuori)         # il testo vicino sì
+
     def test_non_tocca_cio_che_non_e_testo(self):
         fuori = sito_py.isola_latino(self.PAGINA)
         self.assertIn('content="width=device-width, initial-scale=1"', fuori)   # un attributo non tradotto
@@ -533,6 +781,59 @@ class DaDestraASinistra(unittest.TestCase):
     def test_la_costruzione_isola_solo_da_destra_a_sinistra(self):
         guasta = self.PAGINA.replace("\u2066", "")
         self.assertNotEqual(sito_py.isola_latino(guasta), guasta)
+
+
+class DataRelease(unittest.TestCase):
+    """Ciò che dipende dall'essere la versione di prova o no si sceglie dai dati della versione (rifinitura 3a-r, N4): data-release="prova"
+    resta soltanto con una versione di prova, "stabile" soltanto con una che non lo è, anche dentro una frase."""
+    PAGINA = """<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><title data-t="t">Prova</title></head>
+<body>
+<p data-t="frase">Versione<span data-release="prova"> di prova</span> {{kalliope.version}}, solo per Linux.</p>
+<ul><li><span data-release="prova" data-t="nota.prova">Versione di prova · solo Linux</span><span data-release="stabile" data-t="nota.stabile">Solo Linux</span></li></ul>
+</body></html>
+"""
+
+    def costruisci(self, di_prova, pagina_html=None):
+        tmp = pathlib.Path(tempfile.mkdtemp(prefix="lavoro-3ar-release-"))
+        self.addCleanup(shutil.rmtree, tmp, True)
+        w = tmp / "website"
+        w.mkdir()
+        (w / "index.html").write_text(pagina_html or self.PAGINA, encoding="utf-8")
+        (w / "lingue.html").write_text(SCELTA, encoding="utf-8")
+        (w / "lingua.js").write_text("//", encoding="utf-8")
+        (tmp / "design-system").mkdir()
+        (tmp / "design-system" / "token.css").write_text(":root{}", encoding="utf-8")
+        v, grezzi = sito_py.values({**RILASCIO, "prerelease": di_prova})
+        opzioni = {"pseudo": False, "senza_selettore": False, "base_url": "https://esempio.test/k/", "lingue": None, "website": w, "system": tmp / "design-system"}
+        sito_py.build(tmp / "out", v, grezzi, opzioni)
+        return (tmp / "out" / "it" / "index.html").read_text(encoding="utf-8")
+
+    def test_una_versione_di_prova_tiene_le_parole_di_prova(self):
+        html = self.costruisci(True)
+        self.assertIn('Versione<span data-release="prova"> di prova</span> 0.1, solo per Linux.', html)
+        self.assertIn("Versione di prova · solo Linux", html)
+        self.assertNotIn("Solo Linux", html)
+
+    def test_una_versione_stabile_non_le_ha(self):
+        html = self.costruisci(False)
+        self.assertIn("Versione 0.1, solo per Linux.", html)   # lo spazio sta dentro l'elemento: la frase si chiude senza buchi
+        self.assertNotIn("di prova", html)
+        self.assertIn("Solo Linux", html)
+        self.assertNotIn("Versione di prova", html)
+
+    def test_un_valore_sconosciuto_ferma_la_costruzione(self):
+        with self.assertRaises(SystemExit) as e:
+            self.costruisci(True, self.PAGINA.replace('data-release="stabile"', 'data-release="beta"'))
+        self.assertIn("data-release", str(e.exception))
+
+    def test_il_catalogo_ha_tutte_e_due_le_forme(self):
+        tmp = pathlib.Path(tempfile.mkdtemp(prefix="lavoro-3ar-release-cat-"))
+        self.addCleanup(shutil.rmtree, tmp, True)
+        (tmp / "index.html").write_text(self.PAGINA, encoding="utf-8")
+        pagine, tutti, errori = catalogo.raccogli(tmp)
+        self.assertEqual(errori, [])
+        self.assertTrue({"nota.prova", "nota.stabile", "frase"} <= set(tutti))   # chi traduce vede tutte e due: la costruzione ne sceglie una
 
 
 class Repository(unittest.TestCase):

@@ -1,0 +1,8 @@
+# J-lingua-barra-firefox · 17/11/2026 08:36 · node prove/lingua-barra.mjs /tmp/lavoro-3ar-sito-L-J /tmp/lavoro-3ar-J-foto/lingua firefox 1440x900,390x844
+
+== firefox 1440x900
+
+== firefox 390x844
+
+22/22 ok
+# uscita: 0

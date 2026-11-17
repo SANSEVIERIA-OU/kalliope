@@ -39,6 +39,10 @@
 .versione-nome { font-size: var(--corpo-8); line-height: var(--interlinea-8); font-weight: var(--peso-forte); }
 .versione-data { margin-inline-start: auto; font-size: var(--corpo-5); color: var(--testo-didascalia); white-space: nowrap; }
 .versione-nota { flex-basis: 100%; font-size: var(--corpo-5); line-height: var(--interlinea-4); color: var(--testo-spiegazione); }
+/* l'ultima versione, scendendo dal posto in cima al suo, passa sopra il tratteggio che si sta aprendo: con il fondo trasparente la linea si vedeva
+   attraverso il suo nome e la sua data per un istante (rifinitura 3a-r, N3). Il suo fondo è lo stesso, il velo sul pannello, ma steso sul colore del
+   pannello: pieno, così il tratteggio si disegna sotto la riga che scende. A riposo non cambia un pixel (il pannello è pieno e di quel colore). */
+.versione.ultima { background: linear-gradient(var(--velo-comando), var(--velo-comando)), var(--riquadro-scuro); }
 .versione.prossima { background: transparent; }
 .versione.prossima::before {
   content: "";
@@ -89,6 +93,9 @@
 
 /* tenere l'indirizzo è tenere d'occhio questo posto: copiato l'indirizzo, il posto tratteggiato si accende una volta */
 .versione.prossima.ricordata::before { animation: ricorda var(--durata-urto) var(--curva-dolce) 1; }
+/* nella pagina viva l'apertura del posto (sopra, con «.js .versioni.visto») ha più peso della risposta, che così non si vedeva: questa regola ha le stesse classi
+   più «.ricordata» (rifinitura 3a-r, N5). Finita la risposta il posto torna com'era: quello dell'apertura finita (aperto, tratteggio spento) */
+.js .versioni.visto .versione.prossima.ricordata::before { animation: ricorda var(--durata-urto) var(--curva-dolce) 1; }
 @keyframes ricorda {
   0%, 100% { border-color: var(--tratteggio); }
   30% { border-color: var(--voce); }

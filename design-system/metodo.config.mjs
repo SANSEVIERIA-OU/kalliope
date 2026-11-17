@@ -43,15 +43,17 @@ export default {
   },
   // ciò che a una misura non può stare insieme (esame-impaginazione.mjs, dispositivi-qa.mjs): una voce per decisione
   limiti: [
-    // Dove l'altezza manca la riunione, il comando e il messaggio non stanno insieme: vincono il comando e il messaggio, la riunione scorre sotto la barra
-    // (design/lavoro/3a-non-ancora/PIANO.md, «La cornice»: «quando l'altezza manca, vince il comando; la scena cede il posto»; come nella home, scena.js 8c:
-    // «dove le due cose non stanno insieme (telefono girato) vince la scheda: i comandi»). Decisione della costruzione sul modello di quella della direzione: da confermare.
-    {pagina: 'non-ancora-errore-audio', misure: '*x500, *x501, 844x390, 915x412, 326x326, 320x568', che: 'FUORI VISTA', cosa: 'div.bolla.bolla-chiusa',
-      perche: 'schermo basso: la bolla, i riquadri, il comando e il messaggio d\'errore non stanno insieme; vincono il comando e il messaggio (PIANO.md, «La cornice»; scena.js 8c)'},
-    {pagina: 'non-ancora-ascolto', misure: '844x390, 915x412, 326x326', che: 'FUORI VISTA', cosa: 'button.pillola.voce-chiara',
-      perche: 'telefono girato e schermo quadrato: la bolla dove le parole si accendono e il comando non stanno insieme (la riunione sola è alta quasi come lo schermo); vince la bolla, il comando «Pausa» resta sotto il bordo (a 326 px per 2 px). Scelta della costruzione, diversa da scena.js 8c (lì vince il comando): da decidere alla direzione (foto in costruzione/foto-difetti/)'},
+    // Regola della cornice (design/lavoro/3a-non-ancora/PIANO.md, «La cornice»): nel primo schermo vince il comando; quando un gesto apre qualcosa vince
+    // ciò che il gesto ha aperto, e a quelle altezze la riunione si abbassa perché il comando resti (pagina.css, .tavolo-pagina: rifinitura 3a-r, N1).
+    // Mentre suona, la bolla dove le parole si accendono e «Pausa» stanno insieme a ogni misura provata (844×390, 915×412, 326×326 compresi): nessun limite.
+    // Con il messaggio d'errore la riunione si abbassa fino a 60 px e al computer da 500 px d'altezza la bolla e il messaggio stanno insieme. Restano
+    // le misure dove nemmeno così basta: il messaggio d'errore sta per intero nello schermo, vicino al comando che l'ha causato, e vince sulla bolla.
+    {pagina: 'non-ancora-errore-audio', misure: '844x390, 326x326', che: 'FUORI VISTA', cosa: 'div.bolla.bolla-chiusa',
+      perche: 'schermo basso con il messaggio d\'errore: la riunione è già alla sua altezza minima (60 px), o al telefono il messaggio è alto 182-226 px (a capo secondo la larghezza): non stanno insieme; vince il messaggio (PIANO.md, «La cornice»)'},
+    {pagina: 'non-ancora-errore-audio', misure: '915x412, 390x500, 390x501, 320x568', che: 'COPERTO DOPO IL GESTO', cosa: 'div.bolla.bolla-chiusa',
+      perche: 'come sopra: la bolla scorre sotto la barra (la si vede in parte) perché il messaggio d\'errore stia per intero nello schermo (PIANO.md, «La cornice»)'},
     {pagina: 'non-ancora-errore-audio', misure: '326x326', che: 'FUORI VISTA', cosa: 'button.pillola.voce-chiara',
-      perche: 'schermo quadrato da 326 px: il messaggio d\'errore (con «Riprova» e il file) vince sul comando «Ascolta», che resta sopra il bordo (PIANO.md, «La cornice»; scena.js 8c)'},
+      perche: 'schermo quadrato da 326 px: il messaggio d\'errore (con «Riprova» e il file) vince sul comando «Ascolta», che resta sopra il bordo (PIANO.md, «La cornice»)'},
   ],
   // il testo che si legge e non si vede (.solo-lettori) è ritagliato apposta
   escludi: '.solo-lettori',

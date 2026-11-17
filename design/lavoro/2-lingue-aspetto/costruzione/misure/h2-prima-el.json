@@ -1,0 +1,494 @@
+{
+ "el · rete veloce": {
+  "comparso": 190,
+  "fcp": 160,
+  "richiesteFont": 3,
+  "corse": [
+   {
+    "comparso": 212,
+    "fcp": 168,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 21,
+      "fine": 63
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 79,
+      "fine": 121
+     },
+     {
+      "file": "geologica/Geologica-wght.woff2",
+      "byte": 21984,
+      "inizio": 133,
+      "fine": 143
+     }
+    ]
+   },
+   {
+    "comparso": 190,
+    "fcp": 160,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 9,
+      "fine": 49
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 69,
+      "fine": 114
+     },
+     {
+      "file": "geologica/Geologica-wght.woff2",
+      "byte": 21984,
+      "inizio": 122,
+      "fine": 132
+     }
+    ]
+   },
+   {
+    "comparso": 174,
+    "fcp": 136,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 9,
+      "fine": 43
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 58,
+      "fine": 92
+     },
+     {
+      "file": "geologica/Geologica-wght.woff2",
+      "byte": 21984,
+      "inizio": 99,
+      "fine": 109
+     }
+    ]
+   }
+  ]
+ },
+ "el · 4G lento (1,6 Mbps, 150 ms)": {
+  "comparso": 1304,
+  "fcp": 952,
+  "richiesteFont": 3,
+  "corse": [
+   {
+    "comparso": 1300,
+    "fcp": 952,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 175,
+      "fine": 998
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 844,
+      "fine": 1140
+     },
+     {
+      "file": "geologica/Geologica-wght.woff2",
+      "byte": 21984,
+      "inizio": 1008,
+      "fine": 1275
+     }
+    ]
+   },
+   {
+    "comparso": 1304,
+    "fcp": 952,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 167,
+      "fine": 999
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 844,
+      "fine": 1148
+     },
+     {
+      "file": "geologica/Geologica-wght.woff2",
+      "byte": 21984,
+      "inizio": 1002,
+      "fine": 1276
+     }
+    ]
+   },
+   {
+    "comparso": 1318,
+    "fcp": 964,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 176,
+      "fine": 1006
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 860,
+      "fine": 1170
+     },
+     {
+      "file": "geologica/Geologica-wght.woff2",
+      "byte": 21984,
+      "inizio": 1009,
+      "fine": 1283
+     }
+    ]
+   }
+  ]
+ },
+ "el · 3G (400 kbps, 400 ms)": {
+  "comparso": 4677,
+  "fcp": 2924,
+  "richiesteFont": 3,
+  "corse": [
+   {
+    "comparso": 4677,
+    "fcp": 2948,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 452,
+      "fine": 3810
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 2876,
+      "fine": 4050
+     },
+     {
+      "file": "geologica/Geologica-wght.woff2",
+      "byte": 21984,
+      "inizio": 3814,
+      "fine": 4650
+     }
+    ]
+   },
+   {
+    "comparso": 4675,
+    "fcp": 2924,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 453,
+      "fine": 3810
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 2870,
+      "fine": 4050
+     },
+     {
+      "file": "geologica/Geologica-wght.woff2",
+      "byte": 21984,
+      "inizio": 3812,
+      "fine": 4650
+     }
+    ]
+   },
+   {
+    "comparso": 4684,
+    "fcp": 2920,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 453,
+      "fine": 3810
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 2868,
+      "fine": 4050
+     },
+     {
+      "file": "geologica/Geologica-wght.woff2",
+      "byte": 21984,
+      "inizio": 3813,
+      "fine": 4650
+     }
+    ]
+   }
+  ]
+ },
+ "bg · rete veloce": {
+  "comparso": 167,
+  "fcp": 132,
+  "richiesteFont": 3,
+  "corse": [
+   {
+    "comparso": 167,
+    "fcp": 140,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 10,
+      "fine": 45
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 61,
+      "fine": 97
+     },
+     {
+      "file": "geologica/Geologica-wght.woff2",
+      "byte": 21984,
+      "inizio": 106,
+      "fine": 115
+     }
+    ]
+   },
+   {
+    "comparso": 168,
+    "fcp": 128,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 8,
+      "fine": 41
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 54,
+      "fine": 88
+     },
+     {
+      "file": "geologica/Geologica-wght.woff2",
+      "byte": 21984,
+      "inizio": 96,
+      "fine": 105
+     }
+    ]
+   },
+   {
+    "comparso": 161,
+    "fcp": 132,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 13,
+      "fine": 46
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 61,
+      "fine": 94
+     },
+     {
+      "file": "geologica/Geologica-wght.woff2",
+      "byte": 21984,
+      "inizio": 102,
+      "fine": 111
+     }
+    ]
+   }
+  ]
+ },
+ "bg · 4G lento (1,6 Mbps, 150 ms)": {
+  "comparso": 1300,
+  "fcp": 948,
+  "richiesteFont": 3,
+  "corse": [
+   {
+    "comparso": 1300,
+    "fcp": 944,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 167,
+      "fine": 991
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 836,
+      "fine": 1133
+     },
+     {
+      "file": "geologica/Geologica-wght.woff2",
+      "byte": 21984,
+      "inizio": 1001,
+      "fine": 1268
+     }
+    ]
+   },
+   {
+    "comparso": 1298,
+    "fcp": 948,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 167,
+      "fine": 999
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 844,
+      "fine": 1141
+     },
+     {
+      "file": "geologica/Geologica-wght.woff2",
+      "byte": 21984,
+      "inizio": 1003,
+      "fine": 1268
+     }
+    ]
+   },
+   {
+    "comparso": 1300,
+    "fcp": 956,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 167,
+      "fine": 998
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 851,
+      "fine": 1163
+     },
+     {
+      "file": "geologica/Geologica-wght.woff2",
+      "byte": 21984,
+      "inizio": 1003,
+      "fine": 1275
+     }
+    ]
+   }
+  ]
+ },
+ "bg · 3G (400 kbps, 400 ms)": {
+  "comparso": 4680,
+  "fcp": 2944,
+  "richiesteFont": 3,
+  "corse": [
+   {
+    "comparso": 4675,
+    "fcp": 2948,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 453,
+      "fine": 3810
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 2876,
+      "fine": 4050
+     },
+     {
+      "file": "geologica/Geologica-wght.woff2",
+      "byte": 21984,
+      "inizio": 3813,
+      "fine": 4650
+     }
+    ]
+   },
+   {
+    "comparso": 4680,
+    "fcp": 2928,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 454,
+      "fine": 3810
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 2874,
+      "fine": 4051
+     },
+     {
+      "file": "geologica/Geologica-wght.woff2",
+      "byte": 21984,
+      "inizio": 3814,
+      "fine": 4650
+     }
+    ]
+   },
+   {
+    "comparso": 4690,
+    "fcp": 2944,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 453,
+      "fine": 3810
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 2876,
+      "fine": 4050
+     },
+     {
+      "file": "geologica/Geologica-wght.woff2",
+      "byte": 21984,
+      "inizio": 3815,
+      "fine": 4650
+     }
+    ]
+   }
+  ]
+ }
+}

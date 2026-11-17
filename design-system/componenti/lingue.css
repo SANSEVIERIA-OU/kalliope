@@ -178,6 +178,9 @@
 .lingue-in-bolla a:focus-visible { outline-color: var(--bordeaux); }
 /* la luce della stanza dietro la riunione, al centro */
 .luce.luce-scelta { inset-inline-start: var(--scelta-luce-inizio); top: var(--scelta-luce-sopra); }
+/* la luce è più alta dello schermo e, centrata al 52%, finiva sotto il bordo: la pagina della scelta, che sta in una schermata, scorreva (143 px a
+   1440×900, 268 a 1366×640) su niente. Si ritaglia sotto la pagina; sopra lo schermo non cambia un pixel (costruzione 2-b, 17/11/2026) */
+.mondo:has(> .scelta-lingua) { overflow-y: clip; }
 /* la lingua del browser (la mette per prima lingua.js): accesa, come chi parla */
 .lingue-in-bolla .preferita a { background: var(--bordeaux); color: var(--testo); border-color: var(--bordeaux); box-shadow: var(--lingua-preferita-ombra); }
 /* la fila della riunione: «Tu» parla (il bordo e le barre accese), gli altri ascoltano */

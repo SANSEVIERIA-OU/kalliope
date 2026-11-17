@@ -1,0 +1,19 @@
+# J-stati-chromium-326x326 · 17/11/2026 08:35 · node prove/stati.mjs /tmp/lavoro-3ar-sito-J /tmp/lavoro-3ar-J-foto/stati chromium 326x326 ascolto,errore,copia,copia-no,tentativo,tentativo-ridimensiona,tentativo-nascosto
+
+== ascolto · chromium 326x326
+
+== errore · chromium 326x326
+NV   la riunione resta in vista accanto al messaggio · limite dichiarato a 326x326: {"altezza":326,"tavoloTop":-234,"tavoloBottom":-58,"barraBottom":56,"bottoneBottom":24}
+
+== copia · chromium 326x326
+
+== copia-no · chromium 326x326
+
+== tentativo · chromium 326x326
+
+== tentativo-ridimensiona · chromium 326x326
+
+== tentativo-nascosto · chromium 326x326
+
+42/42 ok
+# uscita: 0

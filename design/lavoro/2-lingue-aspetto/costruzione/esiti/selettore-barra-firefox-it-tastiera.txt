@@ -1,0 +1,17 @@
+lingue pubblicate: 10
+firefox
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ok    [it] 1440 · Tab: 6 comandi fino alla scelta, nell'ordine in cui si vedono (da sinistra a destra): x 772 → 886 → 1001 → 1109 → 1208 → 1303
+  ok    [it] 1440 · la scelta ha il fuoco, sta nello schermo e niente la copre
+  ok    [it] 1440 · Invio apre l'elenco
+  ok    [it] 1440 · il fuoco resta sul comando che l'ha aperto
+  ok    [it] 1440 · il pannello sta nello schermo: 900–1360 su 1440, 66–270 su 900
+  ok    [it] 1440 · Tab percorre le 10/10 voci riga per riga, nel verso della lettura
+  ok    [it] 1440 · ogni voce con il fuoco sta nello schermo e niente la copre (tutte)
+  ok    [it] 1440 · dopo l'ultima voce il fuoco esce e l'elenco si chiude (fuoco su «Scarica e installa»)
+  ok    [it] 1440 · Maiusc+Tab dalla prima voce torna al comando e l'elenco resta aperto
+  ok    [it] 1440 · Esc dalla seconda voce chiude l'elenco e il fuoco torna al comando
+  ok    [it] 1440 · Esc dal comando aperto chiude l'elenco e il fuoco resta sul comando
+  ok    [it] 1440 · il clic apre, il clic fuori chiude, un secondo clic sul comando apre e richiude
+  ok    [it] 1440 · nessun errore di console (0)
+tutto ok

@@ -1,0 +1,22 @@
+[
+ {
+  "nome": "390x844 · la larghezza del comando non cambia fra gli stati",
+  "ok": true,
+  "dettaglio": "350,350,350,350"
+ },
+ {
+  "nome": "390x844 · l'etichetta visibile è una sola in ogni stato",
+  "ok": true,
+  "dettaglio": ""
+ },
+ {
+  "nome": "390x844 · al telefono il tondo e la parola stanno al centro del comando come a riposo, in ogni stato (scarto massimo 2 px)",
+  "ok": false,
+  "dettaglio": "-7.5, -33, -40.5, -30.5"
+ },
+ {
+  "nome": "console pulita",
+  "ok": true,
+  "dettaglio": ""
+ }
+]

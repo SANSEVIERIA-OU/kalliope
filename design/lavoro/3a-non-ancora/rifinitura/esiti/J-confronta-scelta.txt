@@ -1,0 +1,32 @@
+# confronta-scelta · 82823d5 (costruito senza selettore, come l'italiano di oggi con una lingua sola) contro adesso (copia J) · 17/11/2026 08:51
+## «non ancora», primo schermo, con «riduci movimento»
+CONFRONTO 1440×900: uguale su 42 cose nello schermo · pixel diversi 0%
+CONFRONTO 1366×640: uguale su 41 cose nello schermo · pixel diversi 0%
+CONFRONTO 1280×720: uguale su 41 cose nello schermo · pixel diversi 0%
+CONFRONTO 1180×820: uguale su 42 cose nello schermo · pixel diversi 0%
+CONFRONTO 844×390: uguale su 12 cose nello schermo · pixel diversi 0%
+CONFRONTO 390×844: solo differenze ammesse su 35 cose nello schermo · pixel diversi 8,56%
+CONFRONTO 360×640: solo differenze ammesse su 27 cose nello schermo · pixel diversi 0%
+Uguale alla scelta, salvo le differenze ammesse (foto in /tmp/lavoro-3ar-qa/cs-J/na)
+## «non ancora» sotto il primo schermo a 1440×900 (perche 820, quando 1853, chiusura 2519, piede 2705)
+-- y=820
+CONFRONTO 1440×900 a 820 px: uguale su 45 cose nello schermo · pixel diversi 0%
+-- y=1853
+CONFRONTO 1440×900 a 1853 px: solo differenze ammesse su 31 cose nello schermo · pixel diversi 0%
+-- y=2519
+CONFRONTO 1440×900 a 2519 px: uguale su 37 cose nello schermo · pixel diversi 0%
+-- y=2705
+CONFRONTO 1440×900 a 2705 px: uguale su 42 cose nello schermo · pixel diversi 0%
+## 390×844 sotto il primo schermo: ogni sezione alla propria posizione (la didascalia di M3 sposta tutto di 17 px)
+390x844 #perche: 99 pixel diversi su 1316640 (0.008%)
+390x844 #quando: 0 pixel diversi su 1316640 (0.000%)
+390x844 #ascolta: 0 pixel diversi su 1316640 (0.000%)
+## la home, in cima e in fondo, con «riduci movimento»
+-- y=0
+CONFRONTO 1440×900: uguale su 61 cose nello schermo · pixel diversi 0%
+CONFRONTO 390×844: uguale su 54 cose nello schermo · pixel diversi 0%
+Uguale alla scelta, salvo le differenze ammesse (foto in /tmp/lavoro-3ar-qa/cs-J/home-y0)
+-- y=99999
+CONFRONTO 1440×900 a 99999 px: uguale su 37 cose nello schermo · pixel diversi 0%
+CONFRONTO 390×844 a 99999 px: uguale su 21 cose nello schermo · pixel diversi 0%
+Uguale alla scelta, salvo le differenze ammesse (foto in /tmp/lavoro-3ar-qa/cs-J/home-y99999)

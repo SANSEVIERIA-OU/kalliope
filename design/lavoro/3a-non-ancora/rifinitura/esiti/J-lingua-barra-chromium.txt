@@ -1,0 +1,8 @@
+# J-lingua-barra-chromium · 17/11/2026 08:51 · node prove/lingua-barra.mjs /tmp/lavoro-3ar-sito-L-J /tmp/lavoro-3ar-J-foto/lingua chromium 1440x900,390x844
+
+== chromium 1440x900
+
+== chromium 390x844
+
+22/22 ok
+# uscita: 0

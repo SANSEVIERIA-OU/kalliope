@@ -193,7 +193,9 @@ components, fonts, living catalogue) lives in `design-system/`, outside the site
 application will use it too; the build copies it into the site as `design-system/`, so a page is
 complete only once built. `tools/site.py` copies the pages and fills in the version, the
 links, sizes and fingerprints of the packages of the newest release (the newest prerelease while
-there is no release), so the pages never name a version by hand.
+there is no release), so the pages never name a version by hand. What depends on the release being a test version (the note next to the
+number, the words «of test» in a sentence) is written for both cases in the page and chosen by the build (`data-release`, see
+[translating.md](translating.md)): the first release that is not a prerelease changes those words by itself.
 
 The site has one folder per language (`/it/`, `/en/` …) with the same pages under the same names, and the top address is the
 page where a visitor chooses the language. The build makes only the languages whose catalogue, `website/lingue/<xx>.po`,

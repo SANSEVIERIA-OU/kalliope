@@ -1,0 +1,9 @@
+## la home, 82823d5 (senza selettore) contro adesso (copia H), con «riduci movimento»: in cima e in fondo
+-- y=0
+CONFRONTO 1440×900: solo differenze ammesse su 61 cose nello schermo · pixel diversi 0%
+CONFRONTO 390×844: solo differenze ammesse su 54 cose nello schermo · pixel diversi 0%
+Uguale alla scelta, salvo le differenze ammesse (foto in /tmp/lavoro-3ar-qa/cs-H/home-y0)
+-- y=99999
+CONFRONTO 1440×900 a 99999 px: solo differenze ammesse su 37 cose nello schermo · pixel diversi 0%
+CONFRONTO 390×844 a 99999 px: solo differenze ammesse su 21 cose nello schermo · pixel diversi 0%
+Uguale alla scelta, salvo le differenze ammesse (foto in /tmp/lavoro-3ar-qa/cs-H/home-y99999)

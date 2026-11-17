@@ -1,0 +1,248 @@
+{
+ "ur · rete veloce": {
+  "comparso": 209,
+  "fcp": 99999,
+  "richiesteFont": 3,
+  "corse": [
+   {
+    "comparso": 252,
+    "fcp": null,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 22,
+      "fine": 65
+     },
+     {
+      "file": "noto-nastaliq-urdu/NotoNastaliqUrdu-wght.woff2",
+      "byte": 234220,
+      "inizio": 23,
+      "fine": 67
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 83,
+      "fine": 169
+     }
+    ]
+   },
+   {
+    "comparso": 209,
+    "fcp": null,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 9,
+      "fine": 45
+     },
+     {
+      "file": "noto-nastaliq-urdu/NotoNastaliqUrdu-wght.woff2",
+      "byte": 234220,
+      "inizio": 10,
+      "fine": 47
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 62,
+      "fine": 124
+     }
+    ]
+   },
+   {
+    "comparso": 195,
+    "fcp": null,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 12,
+      "fine": 48
+     },
+     {
+      "file": "noto-nastaliq-urdu/NotoNastaliqUrdu-wght.woff2",
+      "byte": 234220,
+      "inizio": 12,
+      "fine": 50
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 63,
+      "fine": 113
+     }
+    ]
+   }
+  ]
+ },
+ "ur · 4G lento (1,6 Mbps, 150 ms)": {
+  "comparso": 2384,
+  "fcp": 1028,
+  "richiesteFont": 3,
+  "corse": [
+   {
+    "comparso": 2384,
+    "fcp": 1028,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 168,
+      "fine": 1230
+     },
+     {
+      "file": "noto-nastaliq-urdu/NotoNastaliqUrdu-wght.woff2",
+      "byte": 234220,
+      "inizio": 168,
+      "fine": 2303
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 920,
+      "fine": 1388
+     }
+    ]
+   },
+   {
+    "comparso": 2391,
+    "fcp": 1028,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 168,
+      "fine": 1230
+     },
+     {
+      "file": "noto-nastaliq-urdu/NotoNastaliqUrdu-wght.woff2",
+      "byte": 234220,
+      "inizio": 168,
+      "fine": 2303
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 923,
+      "fine": 1396
+     }
+    ]
+   },
+   {
+    "comparso": 2383,
+    "fcp": 1024,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 167,
+      "fine": 1230
+     },
+     {
+      "file": "noto-nastaliq-urdu/NotoNastaliqUrdu-wght.woff2",
+      "byte": 234220,
+      "inizio": 167,
+      "fine": 2302
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 921,
+      "fine": 1395
+     }
+    ]
+   }
+  ]
+ },
+ "ur · 3G (400 kbps, 400 ms)": {
+  "comparso": 8860,
+  "fcp": 3252,
+  "richiesteFont": 3,
+  "corse": [
+   {
+    "comparso": 8856,
+    "fcp": 3240,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 453,
+      "fine": 4650
+     },
+     {
+      "file": "noto-nastaliq-urdu/NotoNastaliqUrdu-wght.woff2",
+      "byte": 234220,
+      "inizio": 453,
+      "fine": 8761
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 3170,
+      "fine": 4951
+     }
+    ]
+   },
+   {
+    "comparso": 8865,
+    "fcp": 3252,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 452,
+      "fine": 4650
+     },
+     {
+      "file": "noto-nastaliq-urdu/NotoNastaliqUrdu-wght.woff2",
+      "byte": 234220,
+      "inizio": 452,
+      "fine": 8760
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 3172,
+      "fine": 4950
+     }
+    ]
+   },
+   {
+    "comparso": 8860,
+    "fcp": 3256,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 452,
+      "fine": 4650
+     },
+     {
+      "file": "noto-nastaliq-urdu/NotoNastaliqUrdu-wght.woff2",
+      "byte": 234220,
+      "inizio": 452,
+      "fine": 8760
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 3175,
+      "fine": 4950
+     }
+    ]
+   }
+  ]
+ }
+}

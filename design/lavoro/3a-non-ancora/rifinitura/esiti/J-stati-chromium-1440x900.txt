@@ -1,0 +1,29 @@
+# J-stati-chromium-1440x900 · 17/11/2026 08:29 · node prove/stati.mjs /tmp/lavoro-3ar-sito-J /tmp/lavoro-3ar-J-foto/stati chromium 1440x900 tutti
+
+== ascolto · chromium 1440x900
+
+== errore · chromium 1440x900
+
+== lento · chromium 1440x900
+
+== attesa · chromium 1440x900
+stati nel tempo: carica → suona → carica → suona → fermo
+
+== nascosto · chromium 1440x900
+
+== copia · chromium 1440x900
+
+== copia-no · chromium 1440x900
+
+== tentativo · chromium 1440x900
+
+== tentativo-ridimensiona · chromium 1440x900
+
+== tentativo-altezza · chromium 1440x900
+
+== tentativo-nascosto · chromium 1440x900
+
+== tentativo-nascosto-da-subito · chromium 1440x900
+
+57/57 ok
+# uscita: 0

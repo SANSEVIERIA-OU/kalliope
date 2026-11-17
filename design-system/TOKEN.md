@@ -1074,6 +1074,24 @@ a `152px`. Nuovi:
 `--durata-urto` vale ora anche per il posto della prossima versione che si accende una volta quando si copia l'indirizzo
 (`versioni.css`, `.ricordata`). La soglia d'altezza `500px` (telefono girato) è dichiarata in `metodo.config.mjs`.
 
+### Rifinitura (incarico 3a-r, 17/11/2026): gli schermi bassi della chiusura e il fuoco sul piede
+
+Sei token nuovi, in fondo al blocco «Pagine interne» di `token.css`. La riunione della chiusura (`.tavolo-pagina`) si abbassa dove l'altezza
+non basta per la bolla, la riunione e il comando (regola in `design/lavoro/3a-non-ancora/PIANO.md`, «La cornice»). Le costanti sono ciò che sta nello
+schermo oltre alla riunione, misurato in italiano (barra 72 o 56, 8 px sotto la barra e 8 px in fondo, la coda della bolla 18, 34 + comando 56 o 48, e con
+il messaggio d'errore 14 + 132); le righe della bolla e del messaggio sono quelle della scrittura (`--interlinea-13`, `--interlinea-6`: in arabo, con le
+righe più alte, la riunione si abbassa di quel tanto, e la bolla sta nello schermo anche lì). Con un testo che fa una riga in più (un'altra lingua, +40%)
+la bolla o il messaggio possono non starci: dove l'altezza non basta vince il messaggio (limiti in `metodo.config.mjs`).
+
+| Token | Valore | Ruolo | Dove |
+|---|---|---|---|
+| `--tavolo-pagina-altezza-minima` | `60px` | la riunione più bassa che regge i nomi e le barre di «Tu» (come la fila della scelta della lingua sugli schermi bassi) | `pagina.css` (minimo dei tre sotto) |
+| `--tavolo-pagina-altezza` | `clamp(60px, calc(100vh - 222px - 2 * var(--interlinea-13)), var(--tavolo-cornice-altezza))` | al computer: bolla (due righe), riunione e «Pausa» nello schermo; da 456 px d'altezza (in italiano) è i 172 di sempre | `pagina.css` `.tavolo-pagina .tavolo-cornice` |
+| `--tavolo-pagina-altezza-telefono` | `clamp(60px, calc(100vh - 192px - 3 * var(--interlinea-6)), var(--tavolo-cornice-altezza-telefono))` | al telefono (barra da 56, bolla di tre righe, la più alta a 326 px): da 336 px d'altezza è i 78 di sempre | `pagina.css` ((max-width: 760px)) |
+| `--tavolo-pagina-altezza-errore` | `clamp(60px, calc(100vh - 324px - 2 * var(--interlinea-13) - 2 * var(--interlinea-6)), var(--tavolo-cornice-altezza))` | al computer con il messaggio d'errore sotto il comando: bolla e messaggio insieme da 500 px d'altezza; da 602 è i 172 di sempre | `pagina.css` `.chiusura:has(.errore-ascolto)` ((min-width: 761px)) |
+| `--tavolo-barre-quota` | `42%` | le barre di «Tu» non più alte di questa parte del riquadro (a 156 px di riquadro sono i 64 px di sempre) | `pagina.css` `.tavolo-pagina .barre` ((min-width: 761px)) |
+| `--scorrimento-spazio-sotto` | `var(--spazio-29)` | lo spazio che resta sotto una voce del piede portata in vista dal fuoco (`scroll-margin-bottom`): Firefox scorre solo se il comando non si vede affatto | `pagina.css` `.piede a` |
+
 ## Le scritture e le lingue (incarico 2, 17/11/2026)
 
 In fondo a `token.css` due blocchi nuovi: «Le scritture» (i caratteri di ogni scrittura, legati alla lingua con `:lang()`) e «Le

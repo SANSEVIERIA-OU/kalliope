@@ -1,0 +1,14 @@
+# H-robustezza-chromium-390x667 · 17/11/2026 07:01 · node prove/robustezza.mjs /tmp/lavoro-3ar-sito-H /tmp/lavoro-3ar-H-foto/rob chromium 390x667 tastiera,tastiera-veloce,senza-js,senza-stili
+
+== tastiera · chromium 390x667
+   soste: Vai al contenuto → Kalliope, pagina iniziale → Menu → Come saperlo quando arriva → Intanto, senti la voce → Copia l'indirizzo di questa pagina → feed delle versioni → pagina delle versioni su GitHub → Ascolta GiuliaCarico…PausaRiprendi → Tutte le frasi, anche con Marco → stato e limiti → Ascolta → Stato e limiti → Installa → In riunione → Aiuto
+
+== tastiera-veloce · chromium 390x667
+   soste: Vai al contenuto → Kalliope, pagina iniziale → Menu → Come saperlo quando arriva → Intanto, senti la voce → Copia l'indirizzo di questa pagina → feed delle versioni → pagina delle versioni su GitHub → Ascolta GiuliaCarico…PausaRiprendi → Tutte le frasi, anche con Marco → stato e limiti → Ascolta → Stato e limiti → Installa → In riunione → Aiuto
+
+== senza-js · chromium 390x667
+
+== senza-stili · chromium 390x667
+
+20/20 ok
+# uscita: 0

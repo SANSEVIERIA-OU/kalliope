@@ -1,0 +1,24 @@
+SOGLIE di http://127.0.0.1:46827/it/index.html (larghezze da 320 a 1920 px)
+    350 px  cambia fra 349 e 350 · 6 regole · @media (max-width: 349px) · @media (min-width: 350px) and (max-width: 374px)
+    361 px  cambia fra 360 e 361 · 3 regole · @media (max-width: 360px)
+    375 px  cambia fra 374 e 375 · 3 regole · @media (min-width: 350px) and (max-width: 374px)
+    421 px  cambia fra 420 e 421 · 5 regole · @media (max-width: 420px)
+    441 px  cambia fra 440 e 441 · 3 regole · @media (max-width: 440px)
+    761 px  cambia fra 760 e 761 · 217 regole · @media (min-width: 761px) and (max-width: 999px) · @media (max-width: 760px) · @media (min-width: 761px) and (max-width: 959px) · @media (min-width: 761px) and (max-height: 799px) · @media (min-width: 761px) and (max-height: 759px) · @media (min-width: 761px) and (max-height: 699px) · @media (min-width: 761px) and (max-width: 1010px) · @media (min-width: 761px) and (max-width: 1180px) · @media (min-width: 761px) · @media (min-width: 761px) and (max-height: 802px) · @media (min-width: 761px) and (max-height: 840px) · @media (min-width: 761px) and (max-height: 500px)
+    887 px  cambia fra 886 e 887 · 3 regole · @container (min-width: 791px) su div.primo-avvio · @container (max-width: 790px) su div.primo-avvio
+    960 px  cambia fra 959 e 960 · 15 regole · @media (max-width: 959px) · @media (min-width: 761px) and (max-width: 959px)
+   1000 px  cambia fra 999 e 1000 · 15 regole · @media (min-width: 1000px) and (max-width: 1180px) · @media (min-width: 761px) and (max-width: 999px)
+   1011 px  cambia fra 1010 e 1011 · 15 regole · @media (min-width: 761px) and (max-width: 1010px)
+   1181 px  cambia fra 1180 e 1181 · 19 regole · @media (min-width: 1000px) and (max-width: 1180px) · @media (min-width: 761px) and (max-width: 1180px) · @media (min-width: 1181px) and (max-width: 1209px) · @media (max-height: 819px) and (min-width: 1181px) · @container (min-width: 791px) su div.primo-avvio · @container (max-width: 790px) su div.primo-avvio
+   1210 px  cambia fra 1209 e 1210 · 1 regola · @media (min-width: 1181px) and (max-width: 1209px)
+   1431 px  cambia fra 1430 e 1431 · 3 regole · @container (min-width: 791px) su div.primo-avvio · @container (max-width: 790px) su div.primo-avvio
+  altezza 501 px  cambia fra 500 e 501 · @media (min-width: 761px) and (max-height: 500px)
+  altezza 700 px  cambia fra 699 e 700 · @media (min-width: 761px) and (max-height: 699px)
+  altezza 760 px  cambia fra 759 e 760 · @media (min-width: 761px) and (max-height: 759px)
+  altezza 800 px  cambia fra 799 e 800 · @media (min-width: 761px) and (max-height: 799px)
+  altezza 803 px  cambia fra 802 e 803 · @media (min-width: 761px) and (max-height: 802px)
+  altezza 820 px  cambia fra 819 e 820 · @media (max-height: 819px) and (min-width: 1181px)
+  altezza 841 px  cambia fra 840 e 841 · @media (min-width: 761px) and (max-height: 840px)
+Misure da provare (ogni soglia e il pixel prima, il mezzo di ogni intervallo, gli estremi):
+320x900,334x900,349x900,350x900,355x900,360x900,361x900,367x900,374x900,375x900,397x900,420x900,421x900,430x900,440x900,441x900,600x900,760x900,761x900,823x900,886x900,887x900,923x900,959x900,960x900,979x900,999x900,1000x900,1005x900,1010x900,1011x900,1095x900,1180x900,1181x900,1195x900,1209x900,1210x900,1320x900,1430x900,1431x900,1675x900,1920x900
+Ci sono soglie d'altezza: prova anche gli schermi bassi (500 e 501, 699 e 700, 759 e 760, 799 e 800, 802 e 803, 819 e 820, 840 e 841 px).

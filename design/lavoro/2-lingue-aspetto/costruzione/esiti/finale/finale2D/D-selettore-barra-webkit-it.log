@@ -1,0 +1,64 @@
+lingue pubblicate: 30
+webkit
+  ok    [it] 1440 · Tab: 6 comandi fino alla scelta, nell'ordine in cui si vedono (da sinistra a destra): x 772 → 886 → 1001 → 1109 → 1208 → 1303
+  ok    [it] 1440 · la scelta ha il fuoco, sta nello schermo e niente la copre
+  ok    [it] 1440 · Invio apre l'elenco
+  ok    [it] 1440 · il fuoco resta sul comando che l'ha aperto
+  ok    [it] 1440 · il pannello sta nello schermo: 900–1360 su 1440, 66–546 su 900
+  ok    [it] 1440 · Tab percorre le 30/30 voci riga per riga, nel verso della lettura
+  ok    [it] 1440 · ogni voce con il fuoco sta nello schermo e niente la copre (tutte)
+  ok    [it] 1440 · dopo l'ultima voce il fuoco esce e l'elenco si chiude (fuoco su «Scarica e installa»)
+  ok    [it] 1440 · Maiusc+Tab dalla prima voce torna al comando e l'elenco resta aperto
+  ok    [it] 1440 · Esc dalla seconda voce chiude l'elenco e il fuoco torna al comando
+  ok    [it] 1440 · Esc dal comando aperto chiude l'elenco e il fuoco resta sul comando
+  ok    [it] 1440 · il clic apre, il clic fuori chiude, un secondo clic sul comando apre e richiude
+  ok    [it] 1440 · nessun errore di console (0)
+  ok    [it] scelta del tedesco dalla barra: porta a /de/ (href «../de/»)
+  ok    [it] la scelta è ricordata (localStorage kalliope.lingua = de)
+  ok    [it] «/» con la scelta ricordata porta a /de/
+  ok    [it] «/?lingue» mostra la scelta anche con la scelta ricordata
+  ok    [it] Indietro da /ar/ torna a /it/
+  ok    [it] tornando indietro l'elenco è chiuso (il comando mostra «Italiano»)
+  ok    [it] ricaricando con l'elenco aperto la pagina riparte con l'elenco chiuso
+  ok    [it] nessun errore di console (0)
+  ok    [it] 390 · il menu si apre
+  ok    [it] 390 · Tab porta alla scelta dentro il menu (6 comandi), nello schermo e non coperta
+  ok    [it] 390 · l'elenco si apre dentro il menu e sta nello schermo: 21–369 su 390
+  ok    [it] 390 · Tab percorre 30/30 voci riga per riga nel verso della lettura
+  ok    [it] 390 · ogni voce con il fuoco sta nello schermo e niente la copre (tutte)
+  ok    [it] 390 · riaperti menu ed elenco, il fuoco è nella prima voce
+  ok    [it] 390 · Esc dall'elenco chiude l'elenco, il menu resta e il fuoco va sul comando (elenco chiuso, menu aperto, fuoco SUMMARY)
+  ok    [it] 390 · un secondo Esc chiude il menu e il fuoco va su «Menu» (pulsante-menu)
+  ok    [it] 390 · chiuso il menu con l'elenco aperto, riaprendo il menu l'elenco è chiuso
+  ok    [it] 390 · nessun errore di console (0)
+  ok    [basso 844×390] aperto l'elenco nel menu: il comando e le prime due righe (4 nomi di 30) stanno nello schermo e nel menu (il menu scorre, scostato di 140 px; la pagina resta ferma)
+  ok    [basso 844×390] Tab percorre 30/30 voci nel menu che scorre: ognuna nello schermo e non coperta
+  ok    [basso 844×390] nessun errore di console (0)
+  ok    [basso 326×326] aperto l'elenco nel menu: il comando e le prime due righe (4 nomi di 30) stanno nello schermo e nel menu (il menu scorre, scostato di 204 px; la pagina resta ferma)
+  ok    [basso 326×326] Tab percorre 30/30 voci nel menu che scorre: ognuna nello schermo e non coperta
+  ok    [basso 326×326] nessun errore di console (0)
+  ok    [basso 360×640] aperto l'elenco nel menu: il comando e le prime due righe (4 nomi di 30) stanno nello schermo e nel menu (il menu scorre, scostato di 0 px; la pagina resta ferma)
+  ok    [basso 360×640] Tab percorre 30/30 voci nel menu che scorre: ognuna nello schermo e non coperta
+  ok    [basso 360×640] nessun errore di console (0)
+  ok    [basso 390×844] aperto l'elenco nel menu: il comando e le prime due righe (4 nomi di 30) stanno nello schermo e nel menu (il menu scorre, scostato di 0 px; la pagina resta ferma)
+  ok    [basso 390×844] Tab percorre 30/30 voci nel menu che scorre: ognuna nello schermo e non coperta
+  ok    [basso 390×844] nessun errore di console (0)
+  ok    [basso 750×832] aperto l'elenco nel menu: il comando e le prime due righe (4 nomi di 30) stanno nello schermo e nel menu (il menu scorre, scostato di 0 px; la pagina resta ferma)
+  ok    [basso 750×832] Tab percorre 30/30 voci nel menu che scorre: ognuna nello schermo e non coperta
+  ok    [basso 750×832] nessun errore di console (0)
+  ok    [basso 959×900] aperto l'elenco nel menu: il comando e le prime due righe (4 nomi di 30) stanno nello schermo e nel menu (il menu scorre, scostato di 0 px; la pagina resta ferma)
+  ok    [basso 959×900] Tab percorre 30/30 voci nel menu che scorre: ognuna nello schermo e non coperta
+  ok    [basso 959×900] nessun errore di console (0)
+  ok    [ritmo 1440×900] il giro con Tab a 700 ms per passo e a 0 ms dà lo stesso percorso: 6 comandi fino alla scelta, 30 voci nell'elenco
+  ok    [ritmo 390×844] il giro con Tab a 700 ms per passo e a 0 ms dà lo stesso percorso: 5 comandi fino alla scelta, 30 voci nell'elenco
+  ok    [it] 1440 · scorrendo in fretta (3752 px) con l'elenco aperto: il comando e l'elenco restano nello schermo e il comando non finisce sull'azione della barra (aperto true)
+  ok    [it] 1440 · scorrimento: nessun errore di console (0)
+  ok    [it] aperto l'elenco a 1440 e ridotto lo schermo a 390, aprendo il menu l'elenco è chiuso (dopo il ridimensionamento era ancora aperto)
+  ok    [it] girando il telefono (844×390) nessuno scorrimento di lato
+  ok    [senza JS 1440] la scelta nella barra si apre e si chiude con il clic, con Invio e con Spazio (true/false/true/false)
+  ok    [senza JS 1440] l'elenco aperto sta nello schermo: 914–1360 su 1440
+  ok    [senza JS 1440] 30/30 collegamenti veri nella barra, ognuno con href, lang e hreflang
+  ok    [senza JS 390] il menu non c'è e «Menu» porta all'elenco del piede: 30/30 lingue tutte nello schermo, tutte con lang, hreflang e href, nessuno scorrimento di lato
+  ok    [movimento ridotto] l'elenco si apre subito, senza animazione (a 60 ms: 0 animazioni, opacità 1; poi 1)
+  ok    [movimento normale] l'elenco si apre con l'animazione (a 60 ms: 1 animazioni, opacità 0; poi 1)
+tutto ok

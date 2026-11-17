@@ -1,0 +1,83 @@
+[
+ {
+  "misura": "844x390",
+  "stato": "suona",
+  "da": "chiusura",
+  "altezza": 390,
+  "barra": 72,
+  "y": 3410,
+  "bolla": {
+   "top": 80,
+   "bottom": 168
+  },
+  "cornice": {
+   "top": 186,
+   "bottom": 292
+  },
+  "comando": {
+   "top": 326,
+   "bottom": 382
+  },
+  "nota": null,
+  "altezzaCornice": 106,
+  "etichetta": "Pausa",
+  "richiesto": 302,
+  "disponibile": 302,
+  "insieme": true,
+  "notaInVista": true
+ },
+ {
+  "misura": "915x412",
+  "stato": "suona",
+  "da": "chiusura",
+  "altezza": 412,
+  "barra": 72,
+  "y": 3384,
+  "bolla": {
+   "top": 80,
+   "bottom": 168
+  },
+  "cornice": {
+   "top": 186,
+   "bottom": 314
+  },
+  "comando": {
+   "top": 348,
+   "bottom": 404
+  },
+  "nota": null,
+  "altezzaCornice": 128,
+  "etichetta": "Pausa",
+  "richiesto": 324,
+  "disponibile": 324,
+  "insieme": true,
+  "notaInVista": true
+ },
+ {
+  "misura": "326x326",
+  "stato": "suona",
+  "da": "chiusura",
+  "altezza": 326,
+  "barra": 56,
+  "y": 3878,
+  "bolla": {
+   "top": 64,
+   "bottom": 152
+  },
+  "cornice": {
+   "top": 168,
+   "bottom": 236
+  },
+  "comando": {
+   "top": 270,
+   "bottom": 318
+  },
+  "nota": null,
+  "altezzaCornice": 68,
+  "etichetta": "Pausa",
+  "richiesto": 254,
+  "disponibile": 254,
+  "insieme": true,
+  "notaInVista": true
+ }
+]

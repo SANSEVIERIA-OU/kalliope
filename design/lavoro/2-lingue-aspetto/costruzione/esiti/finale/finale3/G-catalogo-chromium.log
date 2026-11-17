@@ -1,0 +1,15 @@
+chromium
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ok    nessuna sezione in errore ([]): 799 token letti da token.css (4 blocchi), 42 regole di stato forzabili, componenti copiati dalla home.
+  ok    righe della tabella 799 = token letti 799
+  ok    token letti 799 = token dei blocchi :root di token.css contati a parte 799
+  ok    blocchi 4, nella tabella: Base | Pagine interne: la cornice e | Le scritture: un carattere,  | Le lingue: l'elenco, la scel
+  ok    un token di ogni blocco aggiunto ha il suo blocco: Pagine interne: la cor | Le scritture: un carat | Le lingue: l'elenco, l
+  ok    colonna «Varia»: --verso «da destra a sinistra: -1», --margine «(min-width: 1000px) and (max-width: 1180px): 48px », --interlinea-titoli-scrittura «ar: 1.3 · ur: 1.75 · hi: 1.25 · bn: 1.25 · zh: 1.1»
+  ok    sezioni (13): scritture, lingue, specchio presenti
+  ok    riquadri: scritture 9/9, specchio 2/2, pagina della scelta viva 2/2
+  ok    scelta nella barra 30 voci (aperta true), elenco 30, bolla 30
+  ok    riquadri senza altezza: 0
+  ok    dentro i riquadri (24): tutti caricati e con il titolo (nessuno senza); pagine della scelta con 30,30 nomi; lingue it cs el bg ar ur hi bn zh-Hans en
+  ok    errori di console e di pagina: 0
+tutto ok

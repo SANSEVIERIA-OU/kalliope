@@ -14,6 +14,14 @@ not yet redone) are built in Italian only, and the other languages link to their
 Every page gets <html lang dir>; translated pages get a canonical link and hreflang for all the languages built. Old
 addresses (/installa/, /ascolta/ …) are small pages that send to the Italian one: GitHub Pages has no server to redirect.
 
+A page of a language whose script has its own font file (Arabic, Greek, Bulgarian) preloads that file in its <head>, so the
+first screen shows in the right font instead of going through the fallback; the Italian page does not change by a byte. The
+file comes from token.css (the :lang() rule of the language), and only small files are preloaded (PRECARICO_FINO_A).
+
+While one language only is published (today Italian) there is nothing to choose: the selector of the bar and the list of
+languages of the foot are left out of every page, and the top address, /, is one more of those small pages that send to
+/it/ (with the query and the fragment). The second complete language brings them all back, with no other change.
+
 The pages never write a version or a package name by hand. They use these markers, replaced in every .html, .xml, .txt
 and .webmanifest file, in the language of the page:
 
@@ -31,6 +39,12 @@ and .webmanifest file, in the language of the page:
     {{kalliope.sums.url}}       SHA256SUMS
     {{kalliope.sha256.deb}}     {{kalliope.sha256.rpm}}   {{kalliope.sha256.tar}}
 
+What depends on the release being a prerelease or not is written twice in the page and chosen by the build: an element with
+data-release="prova" is kept only when the release offered is a prerelease, one with data-release="stabile" only when it is not
+(for example the note «test version» next to the number, or the words «of test» inside a sentence: they never stay in the page by
+hand, so the page says what the release is). The two are messages of the catalogue like any other; the one not chosen is left out
+of every language.
+
 Dates and sizes come from the CLDR data of the language (tools/data/cldr.json, made by tools/cldr_data.py): Italian "14,1 MB",
 English "14.1 MB", French "14,1 Mo". The release offered is the newest one that is not a prerelease; while there is none, the
 newest prerelease. Release data comes from the public GitHub API (GH_TOKEN or GITHUB_TOKEN is used when set, to avoid the
@@ -42,8 +56,8 @@ Options for tests, never for the published site:
     --languages     build only these languages (the check of the others is skipped)
     --base-url      the address the site will have, for canonical and hreflang (default: GitHub Pages)
     --website DIR, --system DIR   build from other copies of website/ and design-system/ (the tests do)
-    --no-selector   leave out the language selector the pages have in their bar and foot (to compare the Italian pages
-                    with those of before the languages)
+    --no-selector   leave out the language selector the pages have in their bar and foot, whatever the number of languages
+                    (to compare the Italian pages with those of before the languages; with one language it is the default)
 
 The design system (tokens, base, components, fonts and its living catalogue) has its own folder, design-system/, because
 the application will use it too. The build copies it into the site as design-system/, without its Markdown documents and
@@ -398,6 +412,15 @@ def passo_struttura(testo, rel, lingua, reali, sito, senza_selettore, base_url, 
         else:
             # l'elemento resta quello della pagina (un collegamento, o il nome dentro il comando che apre l'elenco)
             mod.append((a.s, a.cf, f'<{a.tag}{_attributi(a, ("data-lingua-corrente", "lang", "data-t-no"))} lang="{lingua.bcp47}">{html_escape(lingua.nome)}</{a.tag}>'))
+            # il comando che apre l'elenco (un <summary>) ha per nome ciò che fa e la lingua di adesso, «Cambia lingua: Italiano»: dal solo nome
+            # visibile («Italiano») chi ascolta la pagina non saprebbe che apre una scelta. Il testo è quello già tradotto del suo title, e il nome
+            # visibile ci sta dentro; la lingua di adesso è sempre quella della pagina, quindi il nome si legge in un'unica lingua.
+            comando = a.padre
+            while comando is not None and comando.tag != "summary":
+                comando = comando.padre
+            if comando is not None and comando.attr("title") and not comando.ha("aria-label"):
+                nome_comando = html_escape(f'{comando.attr("title")}: {lingua.nome}').replace('"', "&quot;")
+                mod.append((comando.se - 1, comando.se - 1, f' aria-label="{nome_comando}"'))
     if head is not None:
         righe = []
         indirizzo = sito.indirizzo(rel) if not nella_radice else ""
@@ -441,6 +464,10 @@ def isola_latino(testo):
         if isinstance(n, pagina.Testo):
             if n.padre is not None and n.padre.tag in pagina.TESTO_PURO:
                 continue
+            # il nome di una lingua nel suo elenco («Deutsch» in una pagina araba) è l'unico testo del suo collegamento, con il suo lang: non ha un
+            # verso da proteggere, e i caratteri invisibili finirebbero nel nome del collegamento (per chi lo detta o lo cerca per nome)
+            if n.padre is not None and n.padre.tag == "a" and n.padre.ha("hreflang"):
+                continue
             nuovo = _isola(n.raw)
             if nuovo != n.raw:
                 mod.append((n.s, n.e, nuovo))
@@ -453,6 +480,93 @@ def isola_latino(testo):
     return pagina.applica(testo, mod)
 
 
+# ---------- il carattere della scrittura: scaricato subito, non quando il testo è già disegnato ----------
+# Una pagina in arabo, urdu, hindi, bengali, greco o bulgaro disegna il primo schermo con un carattere che arriva da un file (design-system/
+# caratteri/, uno per scrittura, con il suo unicode-range). Il browser lo scopre soltanto quando ha letto lo stile e impaginato il testo:
+# fino a quel momento il titolo è nel carattere di ripiego, e a rete lenta ci resta per secondi. La costruzione lo dice subito, con un
+# <link rel="preload"> nella testa della pagina: la pagina italiana, che non ne ha bisogno, non cambia di un byte. Il file lo dice
+# token.css, non una tabella qui: la regola :lang(xx) che dà il --font-testo della lingua nomina una famiglia con @font-face e url() che
+# la pila di base non ha (il cinese usa un carattere di sistema, e non ne ha: niente da scaricare).
+def _blocchi_css(css, selettore):
+    """Le coppie (selettori, corpo) delle regole di primo livello che cominciano con il selettore dato, senza i commenti."""
+    css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
+    return [(s.strip(), c) for s, c in re.findall(r"(?:^|(?<=\}))\s*([^{}@]+)\{([^{}]*)\}", css) if re.search(selettore, s.strip())]
+
+
+def caratteri_per_lingua(token_css):
+    """{codice della lingua: percorso del file del suo carattere, relativo a design-system/}, letto da token.css."""
+    css = re.sub(r"/\*.*?\*/", "", token_css, flags=re.S)
+    facce = {}   # famiglia → file, per le facce con un file vero (le facce con local() non ne hanno)
+    for corpo in re.findall(r"@font-face\s*\{([^{}]*)\}", css):
+        famiglia, file = re.search(r'font-family:\s*"([^"]+)"', corpo), re.search(r'url\("([^"]+)"\)', corpo)
+        if famiglia and file:
+            facce.setdefault(famiglia.group(1), file.group(1))
+    def pila(corpo):
+        m = re.search(r"--font-testo:\s*([^;]+);", corpo)
+        return re.findall(r'"([^"]+)"', m.group(1)) if m else []
+    base = set()
+    for _, corpo in _blocchi_css(css, r"^:root$"):
+        base |= set(pila(corpo))
+    out = {}
+    for selettori, corpo in _blocchi_css(css, r":lang\("):
+        propri = [f for f in pila(corpo) if f not in base and f in facce]
+        if propri:
+            for codice in re.findall(r":lang\(([a-z]{2,3})\)", selettori):
+                out[codice] = facce[propri[0]]
+    return out
+
+
+# Quando conviene. Misurato il 17/11/2026 a rete lenta (Chromium, HTTP/2 e testo compresso come GitHub Pages; 4G lento 1,6 Mbps con 150 ms, 3G
+# 400 kbps con 400 ms; tre corse per caso; design/lavoro/2-lingue-aspetto/costruzione/misure/): per i file piccoli (Readex Pro e Geologica,
+# 22 KB) il testo del primo schermo compare nel carattere giusto 17-22% prima (4G: 1,30 → 1,06 s; 3G: 4,7 → 3,6 s) e non passa più
+# dal ripiego; per i grandi (Noto Sans Bengali 102 KB, Devanagari 118 KB, Nastaliq 234 KB) il guadagno è il 1-4% (il file occupa la
+# rete per tutto il tempo, anche scoperto tardi) e il primo disegno arriva dell'8-9% dopo (+0,08 s al 4G, +0,3 s al 3G): lì non si precarica.
+PRECARICO_FINO_A = 40_000   # byte del file
+
+
+def da_precaricare(caratteri, system):
+    """Dei file dei caratteri per lingua, soltanto quelli che il precarico fa comparire prima senza ritardare il resto: i piccoli."""
+    return {c: f for c, f in caratteri.items() if (system / f).is_file() and (system / f).stat().st_size <= PRECARICO_FINO_A}
+
+
+def precarica_carattere(testo, rel, lingua, nome_file):
+    """Aggiunge alla testa il precarico del file del carattere, dopo gli altri precarichi di caratteri (o prima del primo foglio di stile)."""
+    radice = pagina.leggi(testo)
+    nodi = [n for n in pagina.cammina(radice) if isinstance(n, pagina.Nodo) and n.tag == "link"]
+    precarichi = [n for n in nodi if (n.attr("rel") or "").lower() == "preload" and (n.attr("as") or "").lower() == "font"]
+    fogli = [n for n in nodi if (n.attr("rel") or "").lower() == "stylesheet"]
+    ancora = precarichi[-1] if precarichi else (fogli[0] if fogli else None)
+    if ancora is None:
+        return testo
+    cartella = posixpath.dirname(rel)
+    alla_radice = posixpath.relpath(".", f"{lingua.codice}/{cartella}".rstrip("/") or ".")
+    href = posixpath.normpath(posixpath.join(alla_radice, SYSTEM_IN_SITE, "caratteri", nome_file))
+    riga = f'<link rel="preload" href="{href}" as="font" type="font/woff2" crossorigin>'
+    if precarichi:
+        return pagina.applica(testo, [(ancora.se, ancora.se, "\n" + _spazio_prima(testo, ancora.s) + riga)])
+    return pagina.applica(testo, [(ancora.s, ancora.s, riga + "\n" + _spazio_prima(testo, ancora.s))])
+
+
+def passo_release(testo, v, rel):
+    """Toglie gli elementi che valgono per l'altro tipo di versione: data-release="prova" resta se la versione offerta è di prova,
+    data-release="stabile" se non lo è."""
+    radice = pagina.leggi(testo)
+    di_prova = v["prerelease"] == "true"
+    mod, fino = [], -1
+    for n in pagina.cammina(radice):
+        if not isinstance(n, pagina.Nodo) or not n.ha("data-release") or n.s < fino:
+            continue   # (un elemento dentro uno già tolto non serve)
+        tipo = n.attr("data-release")
+        if tipo not in ("prova", "stabile"):
+            sys.exit(f'site.py: {rel}: data-release="{tipo}" is not "prova" or "stabile"')
+        if n.cf is None:
+            sys.exit(f"site.py: {rel}: an element with data-release must have content and a closing tag ({n.tag})")
+        if (tipo == "prova") != di_prova:
+            mod.append((n.s, n.cf, ""))
+            fino = n.cf
+    return pagina.applica(testo, mod)
+
+
 def costruisci_pagina(rel, testo, lingua, reali, sito, disponibile, v_lingua, sconosciuti, avvisi, opzioni):
     """L'HTML di una pagina in una lingua."""
     if rel in sito.traducibili:
@@ -461,10 +575,14 @@ def costruisci_pagina(rel, testo, lingua, reali, sito, disponibile, v_lingua, sc
         if err:
             sys.exit("site.py: " + "; ".join(err))
         testo = pagina.applica(testo, pagina.sostituzioni(testo, msgs, lingua.tradotte, lingua.plurale, lingua.numero))
+    testo = passo_release(testo, v_lingua, f"{lingua.codice}/{rel}")   # prima degli indirizzi: ciò che si toglie non deve dare avvisi
     # prima gli indirizzi scritti nella pagina, poi ciò che la costruzione aggiunge (che è già scritto per la cartella della lingua)
     testo = passo_indirizzi(testo, rel, lingua.codice, sito, disponibile, avvisi, opzioni["base_url"])
     testo = passo_struttura(testo, rel, lingua, reali, sito, opzioni["senza_selettore"], opzioni["base_url"])
     testo = riempi(testo, v_lingua, f"{lingua.codice}/{rel}", sconosciuti)
+    file = opzioni.get("caratteri", {}).get(lingua.codice)
+    if file and rel in sito.traducibili and not lingua.finta:   # una pseudo-lingua non ha lettere della scrittura: il file non servirebbe
+        testo = precarica_carattere(testo, rel, lingua, file)
     return isola_latino(testo) if lingua.direzione == "rtl" and not lingua.finta else testo
 
 
@@ -477,6 +595,34 @@ def pagina_scelta(testo, reali, sito, v_it, sconosciuti, opzioni):
     testo = testo[:h.s] + tag_html(h, lingua)[:-1] + f' data-lingue="{codici}">' + testo[h.se:]
     testo = passo_struttura(testo, "index.html", lingua, reali, sito, opzioni["senza_selettore"], opzioni["base_url"], nella_radice=True)
     return riempi(testo, v_it, "index.html", sconosciuti)
+
+
+def esempi_per_il_catalogo(out, sito, reali, v_lingue, sconosciuti, opzioni):
+    """Per il catalogo (design-system/catalogo/): la home e la pagina della scelta come sarebbero con tutte le lingue del registro pubblicate.
+
+    Il catalogo mostra la scelta nella barra, l'elenco del piede e la pagina della scelta copiandoli dalle pagine vere. Con una lingua sola
+    quelle pagine non li hanno (la costruzione li toglie, e «/» manda a «/it/»): i due file qui sotto sono le stesse pagine, costruite
+    con le stesse funzioni, con le 30 lingue del registro (tools/data/cldr.json), solo per il catalogo: senza indici di ricerca, con
+    <base> perché gli indirizzi relativi valgano dalla radice del sito."""
+    it = reali[SORGENTE]
+    tutte = {}
+    for codice in cldr.lingue():
+        info = cldr.info(codice)
+        tutte[codice] = Lingua(codice, info["bcp47"], info["direzione"], info["nomeElenco"], pubblicata=True)
+    tutte[SORGENTE] = Lingua(it.codice, it.bcp47, it.direzione, it.nome, it.tradotte, True, False, it.plurale, it.numero, it.forme)
+    disponibile = {c: (set(sito.pagine) if c == SORGENTE else set(sito.traducibili)) for c in tutte}
+    opz = {**opzioni, "senza_selettore": False, "caratteri": {}}
+
+    def per_il_catalogo(html, base):
+        html = re.sub(r'<link rel="(?:canonical|alternate)"[^>]*>\n?', "", html)   # non sono pagine del sito: né canonical né hreflang
+        return html.replace('<meta charset="utf-8">', f'<meta charset="utf-8">\n<base href="{base}">\n<meta name="robots" content="noindex">', 1)
+
+    home = costruisci_pagina("index.html", sito.pagine["index.html"], tutte[SORGENTE], tutte, sito, disponibile, v_lingue[SORGENTE], sconosciuti, [], opz)
+    scelta = pagina_scelta(sito.radice["index.html"], tutte, sito, v_lingue[SORGENTE], sconosciuti, opz)
+    cartella = out / SYSTEM_IN_SITE / "catalogo"
+    cartella.mkdir(parents=True, exist_ok=True)
+    (cartella / "esempio-home.html").write_text(per_il_catalogo(home, "../../it/"), encoding="utf-8")
+    (cartella / "esempio-scelta.html").write_text(per_il_catalogo(scelta, "../../"), encoding="utf-8")
 
 
 def pagina_rimando(relativo, assoluto):
@@ -513,6 +659,14 @@ def build(out, v, grezzi, opzioni):
     mod = catalogo.modello(pagine, tutti)
     giornale = []
     reali = lingue_da_costruire(mod, len(mod.voci), opzioni["website"] / "lingue", opzioni["lingue"], opzioni["pseudo"], giornale)
+    # una lingua sola (oggi l'italiano): non c'è niente da scegliere. Il selettore della barra e l'elenco del piede non si mostrano e
+    # l'indirizzo principale manda alla lingua, come i vecchi indirizzi; con la seconda lingua completa tornano da soli.
+    lingua_sola = sum(1 for l in reali.values() if l.pubblicata) < 2
+    if lingua_sola:
+        opzioni = {**opzioni, "senza_selettore": True}
+    # il file del carattere di ogni scrittura, da precaricare (token.css dice quale)
+    tutti_i_caratteri = caratteri_per_lingua((opzioni["system"] / "token.css").read_text(encoding="utf-8"))
+    opzioni = {**opzioni, "caratteri": {c: f.removeprefix("caratteri/") for c, f in da_precaricare(tutti_i_caratteri, opzioni["system"]).items()}}
     # le pagine di ogni lingua: le traducibili in ogni lingua, le altre soltanto in italiano
     disponibile = {c: (set(sito.pagine) if c == SORGENTE else set(sito.traducibili)) for c in reali}
     sconosciuti, avvisi = set(), []
@@ -538,13 +692,17 @@ def build(out, v, grezzi, opzioni):
         contate[codice] = len(disponibile[codice])
     # in cima al sito: la scelta della lingua, le altre pagine, i rimandi dei vecchi indirizzi
     for nome, testo in sito.radice.items():
-        if nome == "index.html":
+        if nome == "index.html" and lingua_sola:
+            html = pagina_rimando(f"{SORGENTE}/", opzioni["base_url"] + f"{SORGENTE}/")
+        elif nome == "index.html":
             html = pagina_scelta(testo, reali, sito, v_lingue[SORGENTE], sconosciuti, opzioni)
         else:
             # un'altra pagina in cima al sito (la 404): anche lei ha lang e dir
             testo = passo_struttura(testo, nome, reali[SORGENTE], reali, sito, opzioni["senza_selettore"], opzioni["base_url"])
             html = riempi(testo, v_lingue[SORGENTE], nome, sconosciuti)
         (out / nome).write_text(html, encoding="utf-8")
+    if "index.html" in sito.radice and "index.html" in sito.pagine:
+        esempi_per_il_catalogo(out, sito, reali, v_lingue, sconosciuti, opzioni)
     rimandi = []
     for rel in sorted(sito.pagine):
         if rel == "index.html":

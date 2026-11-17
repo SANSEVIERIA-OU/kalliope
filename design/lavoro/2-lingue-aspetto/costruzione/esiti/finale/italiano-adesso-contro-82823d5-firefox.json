@@ -1,0 +1,110 @@
+{
+ "serieA": [
+  "/tmp/lavoro-2b-foto-it-firefox-a1",
+  "/tmp/lavoro-2b-foto-it-firefox-a2"
+ ],
+ "serieB": [
+  "/tmp/lavoro-2b-foto-it-firefox-d1",
+  "/tmp/lavoro-2b-foto-it-firefox-d2"
+ ],
+ "schermate": 16,
+ "diverse": 1,
+ "righe": [
+  {
+   "n": "1440x900-riposo.png",
+   "minimo": 0,
+   "scarto": 0,
+   "rumoreSerieA": 0
+  },
+  {
+   "n": "1440x900-scorri-01.png",
+   "minimo": 0,
+   "scarto": 0,
+   "rumoreSerieA": 0
+  },
+  {
+   "n": "1440x900-scorri-02.png",
+   "minimo": 0,
+   "scarto": 0,
+   "rumoreSerieA": 0
+  },
+  {
+   "n": "1440x900-scorri-03.png",
+   "minimo": 0,
+   "scarto": 0,
+   "rumoreSerieA": 0
+  },
+  {
+   "n": "1440x900-scorri-04.png",
+   "minimo": 0,
+   "scarto": 0,
+   "rumoreSerieA": 0
+  },
+  {
+   "n": "1440x900-scorri-05.png",
+   "minimo": 0,
+   "scarto": 0,
+   "rumoreSerieA": 0
+  },
+  {
+   "n": "390x844-riposo.png",
+   "minimo": 0,
+   "scarto": 0,
+   "rumoreSerieA": 0
+  },
+  {
+   "n": "390x844-scorri-01.png",
+   "minimo": 0,
+   "scarto": 0,
+   "rumoreSerieA": 0
+  },
+  {
+   "n": "390x844-scorri-02.png",
+   "minimo": 0,
+   "scarto": 0,
+   "rumoreSerieA": 0
+  },
+  {
+   "n": "390x844-scorri-03.png",
+   "minimo": 0,
+   "scarto": 0,
+   "rumoreSerieA": 0
+  },
+  {
+   "n": "390x844-scorri-04.png",
+   "minimo": 0,
+   "scarto": 0,
+   "rumoreSerieA": 0
+  },
+  {
+   "n": "390x844-scorri-05.png",
+   "minimo": 0,
+   "scarto": 0,
+   "rumoreSerieA": 0
+  },
+  {
+   "n": "390x844-scorri-06.png",
+   "minimo": 0,
+   "scarto": 0,
+   "rumoreSerieA": 0
+  },
+  {
+   "n": "390x844-stato-ascolto.png",
+   "minimo": 19,
+   "scarto": 6,
+   "rumoreSerieA": 59
+  },
+  {
+   "n": "390x844-stato-errore.png",
+   "minimo": 0,
+   "scarto": 0,
+   "rumoreSerieA": 0
+  },
+  {
+   "n": "390x844-stato-menu.png",
+   "minimo": 0,
+   "scarto": 0,
+   "rumoreSerieA": 0
+  }
+ ]
+}

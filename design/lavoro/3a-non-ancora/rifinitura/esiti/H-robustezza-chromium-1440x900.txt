@@ -1,0 +1,24 @@
+# H-robustezza-chromium-1440x900 · 17/11/2026 06:57 · node prove/robustezza.mjs /tmp/lavoro-3ar-sito-H /tmp/lavoro-3ar-H-foto/rob chromium 1440x900 tutti
+
+== tastiera · chromium 1440x900
+   soste: Vai al contenuto → Kalliope, pagina iniziale → Ascolta → Stato e limiti → Installa → In riunione → Aiuto → Come saperlo quando arriva → Intanto, senti la voce → Copia l'indirizzo di questa pagina → feed delle versioni → pagina delle versioni su GitHub → Ascolta GiuliaCarico…PausaRiprendi → Tutte le frasi, anche con Marco → stato e limiti → Ascolta → Stato e limiti → Installa → In riunione → Aiuto
+
+== tastiera-veloce · chromium 1440x900
+   soste: Vai al contenuto → Kalliope, pagina iniziale → Ascolta → Stato e limiti → Installa → In riunione → Aiuto → Come saperlo quando arriva → Intanto, senti la voce → Copia l'indirizzo di questa pagina → feed delle versioni → pagina delle versioni su GitHub → Ascolta GiuliaCarico…PausaRiprendi → Tutte le frasi, anche con Marco → stato e limiti → Ascolta → Stato e limiti → Installa → In riunione → Aiuto
+
+== senza-js · chromium 1440x900
+
+== senza-stili · chromium 1440x900
+
+== senza-token · chromium 1440x900
+
+== ridotto · chromium 1440x900
+
+== scorrimento · chromium 1440x900
+
+== ritorno · chromium 1440x900
+
+== ricarica · chromium 1440x900
+
+42/42 ok
+# uscita: 0

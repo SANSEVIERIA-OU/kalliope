@@ -1,0 +1,32 @@
+[
+ {
+  "misura": "844x390",
+  "stato": "errore",
+  "da": "chiusura",
+  "altezza": 390,
+  "barra": 72,
+  "y": 3410,
+  "bolla": {
+   "top": 80,
+   "bottom": 168
+  },
+  "cornice": {
+   "top": 186,
+   "bottom": 246
+  },
+  "comando": {
+   "top": 280,
+   "bottom": 336
+  },
+  "nota": {
+   "top": 350,
+   "bottom": 482
+  },
+  "altezzaCornice": 60,
+  "etichetta": "Ascolta Giulia",
+  "richiesto": 402,
+  "disponibile": 302,
+  "insieme": false,
+  "notaInVista": false
+ }
+]

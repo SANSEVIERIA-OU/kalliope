@@ -1,0 +1,12 @@
+lingue pubblicate: 10
+firefox
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ok    [it] scelta del tedesco dalla barra: porta a /de/ (href «../de/»)
+  ok    [it] la scelta è ricordata (localStorage kalliope.lingua = de)
+  ok    [it] «/» con la scelta ricordata porta a /de/
+  ok    [it] «/?lingue» mostra la scelta anche con la scelta ricordata
+  ok    [it] Indietro da /ar/ torna a /it/
+  ok    [it] tornando indietro l'elenco è chiuso (il comando mostra «Italiano»)
+  ok    [it] ricaricando con l'elenco aperto la pagina riparte con l'elenco chiuso
+  ok    [it] nessun errore di console (0)
+tutto ok

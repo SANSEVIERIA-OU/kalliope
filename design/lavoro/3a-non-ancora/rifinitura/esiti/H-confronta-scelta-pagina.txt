@@ -1,0 +1,10 @@
+# confronta-scelta · 82823d5 (costruito senza selettore, come l'italiano di oggi con una lingua sola) contro adesso (copia H) · 17/11/2026 06:28
+## «non ancora», primo schermo, con «riduci movimento»
+CONFRONTO 1440×900: solo differenze ammesse su 42 cose nello schermo · pixel diversi 0%
+CONFRONTO 1366×640: solo differenze ammesse su 41 cose nello schermo · pixel diversi 0%
+CONFRONTO 1280×720: solo differenze ammesse su 41 cose nello schermo · pixel diversi 0%
+CONFRONTO 1180×820: solo differenze ammesse su 42 cose nello schermo · pixel diversi 0%
+CONFRONTO 844×390: solo differenze ammesse su 12 cose nello schermo · pixel diversi 0%
+CONFRONTO 390×844: solo differenze ammesse su 35 cose nello schermo · pixel diversi 8,56%
+CONFRONTO 360×640: solo differenze ammesse su 27 cose nello schermo · pixel diversi 0%
+Uguale alla scelta, salvo le differenze ammesse (foto in /tmp/lavoro-3ar-qa/cs-H/na)

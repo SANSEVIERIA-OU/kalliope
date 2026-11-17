@@ -1,0 +1,27 @@
+lingue pubblicate: 30
+webkit
+  ok    [scelta] la lingua del browser (de) è la prima e accesa: «Deutsch», «العربية», «български…»
+  ok    [scelta] Tab percorre 30 nomi nell'ordine in cui si leggono (riga per riga, da sinistra a destra), uguale all'ordine del documento
+  ok    [scelta] ogni nome con il fuoco sta nello schermo, niente lo copre e ha il segno del fuoco
+  ok    [scelta] Invio su un nome porta a /bg/ e la ricorda
+  ok    [scelta] nessun errore di console (0)
+  ok    [ritorno] da «/» alla pagina italiana e «Indietro»: si torna alla scelta (/), che non rimanda subito avanti
+  ok    [ritorno] «/» con la scelta ricordata porta a /it/
+  ok    [ritorno] una scelta ricordata che non è una lingua del sito (valore scritto a mano) mostra la scelta, non porta altrove
+  ok    [ritorno] una lingua ricordata che il sito non ha (zz) mostra la scelta
+  ok    [ritorno] ricaricando la scelta si ricarica la scelta
+  ok    [senza JS] 30/30 nomi, tutti collegamenti con href, lang e hreflang, tutti nello schermo e visibili
+  ok    [senza JS] l'ordine è quello dei codici (ar/ bg/ bn/ cs/…): senza script non si sposta la lingua del browser
+  ok    [senza JS] un nome porta alla lingua (/it/)
+  ok    [movimento ridotto] nessuna animazione più lunga di 1 ms (0 da 1 ms, base.css; più lunghe: nessuna), la bolla e i 30 nomi già al loro posto fin dal primo istante, e la pagina a 0,6 s e a 3,6 s è la stessa (foto identiche)
+  ok    [movimento normale] a 50 ms 47 animazioni e i nomi non ancora accesi (bolla 0.00); a 4,5 s tutto acceso e fermo (0 animazioni in corso)
+  ----  [scheda in secondo piano] non verificabile in webkit: senza finestra il motore non rende nascosta una scheda
+  ok    [1440×900] nessuno scorrimento di lato; titolo 177,241, bolla 275–559, fila 583–755; sta tutto nello schermo; in fondo l'ultimo nome è nello schermo; nomi fuori dalla bolla: 0
+  ok    [1366×640] nessuno scorrimento di lato; titolo 104,168, bolla 202–486, fila 510–610; si scorre di 42 px (schermo basso, dichiarato); in fondo l'ultimo nome è nello schermo; nomi fuori dalla bolla: 0
+  ok    [1024×768] nessuno scorrimento di lato; titolo 118,169, bolla 203–487, fila 511–683; sta tutto nello schermo; in fondo l'ultimo nome è nello schermo; nomi fuori dalla bolla: 0
+  ok    [820×1180] nessuno scorrimento di lato; titolo 265,329, bolla 363–751, fila 775–947; sta tutto nello schermo; in fondo l'ultimo nome è nello schermo; nomi fuori dalla bolla: 0
+  ok    [390×844] nessuno scorrimento di lato; titolo 82,115, bolla 149–671, fila 695–773; sta tutto nello schermo; in fondo l'ultimo nome è nello schermo; nomi fuori dalla bolla: 0
+  ok    [360×640] nessuno scorrimento di lato; titolo 76,105, bolla 139–707, fila 731–809; si scorre di 217 px (schermo basso, dichiarato); in fondo l'ultimo nome è nello schermo; nomi fuori dalla bolla: 0
+  ok    [844×390] nessuno scorrimento di lato; titolo 84,117, bolla 125–285, fila 309–369; sta tutto nello schermo; in fondo l'ultimo nome è nello schermo; nomi fuori dalla bolla: 0
+  ok    [326×326] nessuno scorrimento di lato; titolo 76,105, bolla 139–799, fila 823–901; si scorre di 623 px (schermo basso, dichiarato); in fondo l'ultimo nome è nello schermo; nomi fuori dalla bolla: 0
+tutto ok

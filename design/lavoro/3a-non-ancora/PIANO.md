@@ -43,10 +43,27 @@ vanno a capo dentro il pannello (`flex-wrap`), da riprovare dal ruolo di costruz
 - Barra e menu della home; l'azione in barra solo dove è l'azione di chi legge quella pagina.
 - Primo schermo con l'impianto della home (`.scena.scena-pagina`: titolo, presentazione, comandi, «Oggi:», didascalia a
   sinistra; la riunione o la scena della pagina a destra), con l'arrivo della home.
-- **Quando l'altezza manca, vince il comando** (`pagina.css`, `cornice.js`). La risposta (titolo e frase) e il comando
+- **La regola, completa** (`pagina.css`, `cornice.js`; decisa il 17/11/2026 sulla proposta del secondo sguardo):
+  1. **Nel primo schermo vince il comando.** La risposta (titolo e frase) e il comando principale stanno sempre nel primo
+     schermo; la scena cede il posto, non il comando (sotto).
+  2. **Quando un gesto apre qualcosa, vince ciò che il gesto ha aperto.** Il comando che si preme porta in vista quello che
+     apre (nella chiusura: la bolla dove le parole si accendono, e il messaggio d'errore se il suono non parte; con «Copia»,
+     la risposta), sotto la barra; mai il contrario, mai il comando che sparisce sotto il dito.
+  3. **A quelle altezze la riunione si abbassa perché il comando resti.** Dove bolla, riunione e comando («Pausa») non
+     stanno insieme nello schermo, la riunione della chiusura si fa più bassa, non il comando più lontano
+     (`.tavolo-pagina`; token `--tavolo-pagina-altezza*`): a 844×390 è di 106 px e non di 172, a 915×412 di 128, a 326×326
+     di 68 e non di 78; da 456 px d'altezza (al computer) e da 336 (al telefono) in su è quella di sempre. Con il messaggio
+     d'errore, al computer, si abbassa fino a farlo stare con la bolla (70 px a 500 d'altezza, da 602 in su com'era);
+     al telefono il messaggio ha l'altezza che gli dà la larghezza (182-226 px) e non basta abbassare la riunione: lì
+     vince il messaggio, vicino al comando che l'ha causato, e la bolla scorre sotto la barra. Il minimo è 60 px
+     (`--tavolo-pagina-altezza-minima`, come la fila della scelta della lingua): sotto non reggerebbero i nomi.
+     Le misure dove nemmeno così basta sono i `limiti` di `metodo.config.mjs` (844×390, 915×412, 326×326, 390×500, 320×568,
+     solo con il messaggio d'errore).
+  Il resto di questa sezione descrive il primo schermo (punto 1).
+- **Quando l'altezza manca, vince il comando** (primo schermo). La risposta (titolo e frase) e il comando
   principale stanno sempre nel primo schermo; la scena cede il posto, non il comando.
   - Telefono alto (fino a 760 px di larghezza, da 760 px di altezza: 390×844, 375×812, 412×915): l'ordine della home, cioè
-    titolo, frase, la scena con sotto la sua didascalia, i comandi, lo stato. A queste tre misure lo stato finisce a 815 px.
+    titolo, frase, la scena con sotto la sua didascalia, i comandi, lo stato. A queste tre misure lo stato finiva a 815 px; da quando la didascalia della scena dice per intero che cos'è anche al telefono (due righe, rifinitura 3a-r, M3) finisce a 832 px: nello schermo a 390×844 e 412×915, 20 px sotto il bordo a 375×812 (dove era già 3 px sotto).
   - Telefono basso (sotto i 760 px di altezza: 390×667, 360×640): titolo, frase, **i comandi**, poi la scena e lo stato.
     Comando principale a 246-294 px (390×667) e 238-286 px (360×640).
   - Telefono girato e finestre basse (oltre 760 px di larghezza, fino a 500 px di altezza: 844×390): titolo e frase alla
@@ -78,7 +95,7 @@ vanno a capo dentro il pannello (`flex-wrap`), da riprovare dal ruolo di costruz
 - L'elenco delle versioni: l'ultima che compare in cima e scende (1,9 s), il posto tratteggiato che si apre e resta; il comando
   «Copia l'indirizzo di questa pagina» e la risposta del posto quando si copia.
 - La regola della cornice sugli schermi bassi; i riquadri del telefono a 152 px (24 meno della home), perché a 375×812 lo stato
-  stia intero.
+  stia intero (con la didascalia su due righe non ci sta più: vedi sopra, M3).
 - La successione dei toni (stanza, notte, chiaro, stanza, notte).
 - Nella chiusura il titolo sopra la riunione e il comando subito sotto; la pausa come nelle frasi della home.
 - Nessuna azione «Scarica e installa» in barra su questa pagina.
@@ -137,3 +154,28 @@ Senza ridisegnare: colori, caratteri, composizione, curve e durate come prima (a
 - **Premere prima che la scena sia entrata** (M5): la scena arriva subito intera e il suono parte; non si aspetta.
 - Il catalogo (I4): `design-system/catalogo/catalogo-pagine.js`, sezione «Pagine interne».
 - Non fatto: i tempi della strada e i parametri delle onde in `non-ancora.js` non sono ancora token (come in `scena.js`); `<meta name="text-scale">` non messa (come la home).
+
+## Rifinitura dei difetti del secondo sguardo (17/11/2026, incarico 3a-r: `rifinitura/progresso.md`)
+
+Senza ridisegnare: colori, caratteri, curve e durate come prima; la composizione cambia solo dove il punto 2 lo dice. Che cosa è cambiato, e le scelte che la
+costruzione ha dovuto fare (da confermare):
+- **N5** il posto tratteggiato si accende dopo «Copia» anche nella pagina viva: la regola dell'apertura del posto (`.js .versioni.visto …`) era più specifica di quella
+  della risposta; ora la risposta ha le stesse classi più `.ricordata`.
+- **N1** gli schermi bassi: la regola completa è in «La cornice» (sopra). Misure e token: `--tavolo-pagina-altezza*`; la riunione della chiusura si abbassa fino a 60 px.
+  Scelta della costruzione: le costanti dei token sono misurate in italiano e usano le righe della scrittura (`--interlinea-13`, `--interlinea-6`), così in arabo la
+  bolla sta nello schermo lo stesso; al telefono con il messaggio d'errore non si abbassa la riunione (il messaggio ha l'altezza che gli dà la larghezza: 182-226 px).
+  I limiti che restano (`metodo.config.mjs`): solo con il messaggio d'errore, 844×390, 915×412, 326×326, 390×500/501, 320×568; mentre suona non ce n'è più.
+- **N2** al telefono le etichette che non si vedono non occupano posto (il comando è largo quanto lo schermo: la larghezza è già ferma) e il tondo con la parola
+  stanno al centro come a riposo. Al computer il comando resta largo quanto l'etichetta più lunga e in «Pausa» e «Riprendi» resta aria dalla parte della parola
+  (95 px a 1440): non è cambiato, e per cambiarlo servirebbe un tondo per stato nel markup.
+- **N3** la riga della versione ha il fondo pieno (lo stesso colore): il tratteggio che si apre le passa sotto. Il movimento è identico.
+- **N4** la nota accanto al numero e le parole «di prova» nelle frasi «Oggi:» e della chiusura della home vengono dai dati della versione: `data-release="prova"` /
+  `"stabile"`, scelti da `tools/site.py`. Con una versione che non è di prova la nota dice «Solo Linux» e le frasi dicono «versione 0.2». Scelta della costruzione: la variante è una
+  frase intera con la sua chiave (`apertura.stato-stabile`, `chiusura.fatti-stabile`, `na.versioni.ultima.nota-stabile`), non una parola dentro la frase: chi traduce scrive le due
+  frasi con la grammatica della sua lingua («Testversion» / «Version») e le chiavi che c'erano non cambiano. Le traduzioni di prova dell'incarico 2 (`prova-lingue/`) restano
+  valide ma incomplete: mancano le due chiavi nuove della home (frasi intere, senza «di prova»).
+- **M3** al telefono la didascalia della scena dice per intero che cos'è, su due righe, nello stesso posto: lo stato finisce a 832 px (era 815) e a 375×812 sta
+  20 px sotto il bordo (3 prima); il comando principale resta nel primo schermo a ogni misura provata.
+- **La barra** ha la scelta della lingua nuova (`<details class="lingua-scelta">`, `lingue.css`, `lingua.js`) come la home; con una lingua sola la costruzione la toglie.
+- **Il piede in Firefox** (`.piede a { scroll-margin-bottom }`, token `--scorrimento-spazio-sotto`; il primo tentativo, `scroll-padding-bottom` su `html`, faceva scorrere la pagina anche per il fuoco nel menu del telefono: 51 px a 844×390): il fuoco porta in vista anche le voci della seconda riga; il difetto si
+  vede solo con più di una lingua (con una sola il piede finisce prima).

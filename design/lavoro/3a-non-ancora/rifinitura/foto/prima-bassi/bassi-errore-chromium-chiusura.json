@@ -1,0 +1,350 @@
+[
+ {
+  "misura": "1440x500",
+  "stato": "errore",
+  "da": "chiusura",
+  "altezza": 500,
+  "barra": 72,
+  "y": 2635,
+  "bolla": {
+   "top": -34,
+   "bottom": 54
+  },
+  "cornice": {
+   "top": 72,
+   "bottom": 244
+  },
+  "comando": {
+   "top": 278,
+   "bottom": 334
+  },
+  "nota": {
+   "top": 348,
+   "bottom": 480
+  },
+  "altezzaCornice": 172,
+  "etichetta": "Ascolta Giulia",
+  "richiesto": 514,
+  "disponibile": 412,
+  "insieme": false
+ },
+ {
+  "misura": "1440x501",
+  "stato": "errore",
+  "da": "chiusura",
+  "altezza": 501,
+  "barra": 72,
+  "y": 2792,
+  "bolla": {
+   "top": -33,
+   "bottom": 55
+  },
+  "cornice": {
+   "top": 73,
+   "bottom": 245
+  },
+  "comando": {
+   "top": 279,
+   "bottom": 335
+  },
+  "nota": {
+   "top": 349,
+   "bottom": 481
+  },
+  "altezzaCornice": 172,
+  "etichetta": "Ascolta Giulia",
+  "richiesto": 514,
+  "disponibile": 413,
+  "insieme": false
+ },
+ {
+  "misura": "1440x560",
+  "stato": "errore",
+  "da": "chiusura",
+  "altezza": 560,
+  "barra": 72,
+  "y": 2733,
+  "bolla": {
+   "top": 26,
+   "bottom": 114
+  },
+  "cornice": {
+   "top": 132,
+   "bottom": 304
+  },
+  "comando": {
+   "top": 338,
+   "bottom": 394
+  },
+  "nota": {
+   "top": 408,
+   "bottom": 540
+  },
+  "altezzaCornice": 172,
+  "etichetta": "Ascolta Giulia",
+  "richiesto": 514,
+  "disponibile": 472,
+  "insieme": false
+ },
+ {
+  "misura": "1440x600",
+  "stato": "errore",
+  "da": "chiusura",
+  "altezza": 600,
+  "barra": 72,
+  "y": 2693,
+  "bolla": {
+   "top": 66,
+   "bottom": 154
+  },
+  "cornice": {
+   "top": 172,
+   "bottom": 344
+  },
+  "comando": {
+   "top": 378,
+   "bottom": 434
+  },
+  "nota": {
+   "top": 448,
+   "bottom": 580
+  },
+  "altezzaCornice": 172,
+  "etichetta": "Ascolta Giulia",
+  "richiesto": 514,
+  "disponibile": 512,
+  "insieme": false
+ },
+ {
+  "misura": "1440x640",
+  "stato": "errore",
+  "da": "chiusura",
+  "altezza": 640,
+  "barra": 72,
+  "y": 2653,
+  "bolla": {
+   "top": 106,
+   "bottom": 194
+  },
+  "cornice": {
+   "top": 212,
+   "bottom": 384
+  },
+  "comando": {
+   "top": 418,
+   "bottom": 474
+  },
+  "nota": {
+   "top": 488,
+   "bottom": 620
+  },
+  "altezzaCornice": 172,
+  "etichetta": "Ascolta Giulia",
+  "richiesto": 514,
+  "disponibile": 552,
+  "insieme": true
+ },
+ {
+  "misura": "1280x500",
+  "stato": "errore",
+  "da": "chiusura",
+  "altezza": 500,
+  "barra": 72,
+  "y": 2691,
+  "bolla": {
+   "top": -34,
+   "bottom": 54
+  },
+  "cornice": {
+   "top": 72,
+   "bottom": 244
+  },
+  "comando": {
+   "top": 278,
+   "bottom": 334
+  },
+  "nota": {
+   "top": 348,
+   "bottom": 480
+  },
+  "altezzaCornice": 172,
+  "etichetta": "Ascolta Giulia",
+  "richiesto": 514,
+  "disponibile": 412,
+  "insieme": false
+ },
+ {
+  "misura": "844x390",
+  "stato": "errore",
+  "da": "chiusura",
+  "altezza": 390,
+  "barra": 72,
+  "y": 3634,
+  "bolla": {
+   "top": -144,
+   "bottom": -56
+  },
+  "cornice": {
+   "top": -38,
+   "bottom": 134
+  },
+  "comando": {
+   "top": 168,
+   "bottom": 224
+  },
+  "nota": {
+   "top": 238,
+   "bottom": 370
+  },
+  "altezzaCornice": 172,
+  "etichetta": "Ascolta Giulia",
+  "richiesto": 514,
+  "disponibile": 302,
+  "insieme": false
+ },
+ {
+  "misura": "915x412",
+  "stato": "errore",
+  "da": "chiusura",
+  "altezza": 412,
+  "barra": 72,
+  "y": 3586,
+  "bolla": {
+   "top": -122,
+   "bottom": -34
+  },
+  "cornice": {
+   "top": -16,
+   "bottom": 156
+  },
+  "comando": {
+   "top": 190,
+   "bottom": 246
+  },
+  "nota": {
+   "top": 260,
+   "bottom": 392
+  },
+  "altezzaCornice": 172,
+  "etichetta": "Ascolta Giulia",
+  "richiesto": 514,
+  "disponibile": 324,
+  "insieme": false
+ },
+ {
+  "misura": "326x326",
+  "stato": "errore",
+  "da": "chiusura",
+  "altezza": 326,
+  "barra": 56,
+  "y": 4177,
+  "bolla": {
+   "top": -252,
+   "bottom": -164
+  },
+  "cornice": {
+   "top": -148,
+   "bottom": -70
+  },
+  "comando": {
+   "top": -36,
+   "bottom": 12
+  },
+  "nota": {
+   "top": 80,
+   "bottom": 306
+  },
+  "altezzaCornice": 78,
+  "etichetta": "Ascolta Giulia",
+  "richiesto": 558,
+  "disponibile": 254,
+  "insieme": false
+ },
+ {
+  "misura": "320x568",
+  "stato": "errore",
+  "da": "chiusura",
+  "altezza": 568,
+  "barra": 56,
+  "y": 3986,
+  "bolla": {
+   "top": -10,
+   "bottom": 78
+  },
+  "cornice": {
+   "top": 94,
+   "bottom": 172
+  },
+  "comando": {
+   "top": 206,
+   "bottom": 254
+  },
+  "nota": {
+   "top": 322,
+   "bottom": 548
+  },
+  "altezzaCornice": 78,
+  "etichetta": "Ascolta Giulia",
+  "richiesto": 558,
+  "disponibile": 496,
+  "insieme": false
+ },
+ {
+  "misura": "390x667",
+  "stato": "errore",
+  "da": "chiusura",
+  "altezza": 667,
+  "barra": 56,
+  "y": 3575,
+  "bolla": {
+   "top": 114,
+   "bottom": 180
+  },
+  "cornice": {
+   "top": 196,
+   "bottom": 274
+  },
+  "comando": {
+   "top": 308,
+   "bottom": 356
+  },
+  "nota": {
+   "top": 424,
+   "bottom": 606
+  },
+  "altezzaCornice": 78,
+  "etichetta": "Ascolta Giulia",
+  "richiesto": 492,
+  "disponibile": 595,
+  "insieme": true
+ },
+ {
+  "misura": "360x640",
+  "stato": "errore",
+  "da": "chiusura",
+  "altezza": 640,
+  "barra": 56,
+  "y": 3690,
+  "bolla": {
+   "top": 106,
+   "bottom": 172
+  },
+  "cornice": {
+   "top": 188,
+   "bottom": 266
+  },
+  "comando": {
+   "top": 300,
+   "bottom": 348
+  },
+  "nota": {
+   "top": 416,
+   "bottom": 620
+  },
+  "altezzaCornice": 78,
+  "etichetta": "Ascolta Giulia",
+  "richiesto": 514,
+  "disponibile": 568,
+  "insieme": true
+ }
+]

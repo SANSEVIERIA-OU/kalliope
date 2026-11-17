@@ -1,0 +1,23 @@
+# impronte 17/11/2026 06:28:20
+## i file di questo incarico, nella copia di lavoro (/tmp/lavoro-3ar-lavoro/radice-H) e nell'albero vivo (/workspace/kalliope): se le due colonne coincidono la copia è quella viva
+abe8e4926abfd71c  abe8e4926abfd71c  =  website/non-ancora/index.html
+ef87898d130e8d92  ef87898d130e8d92  =  website/non-ancora/non-ancora.js
+d980b83f8a7eceeb  d980b83f8a7eceeb  =  website/index.html
+09007c7fd0fc98b8  09007c7fd0fc98b8  =  website/cornice.js
+04daf3b07e40d501  04daf3b07e40d501  =  website/lingua.js
+a0619d90911ed013  a0619d90911ed013  =  design-system/token.css
+1bf1b28e29fa6c91  1bf1b28e29fa6c91  =  design-system/componenti/pagina.css
+c5a07548a38d96ef  c5a07548a38d96ef  =  design-system/componenti/versioni.css
+fe44a385a58c6e0b  fe44a385a58c6e0b  =  design-system/componenti/riunione-ferma.css
+cc6193a7ef2fea99  cc6193a7ef2fea99  =  design-system/componenti/lingue.css
+0b3c8ae3834c934e  0b3c8ae3834c934e  =  design-system/catalogo/catalogo-pagine.js
+cfffbde516c2d652  cfffbde516c2d652  =  design-system/catalogo/catalogo-pagine.css
+a1608dac3b1880fc  a1608dac3b1880fc  =  design-system/metodo.config.mjs
+9f40ba72969ee6a2  9f40ba72969ee6a2  =  tools/site.py
+c801b198a3786cf3  c801b198a3786cf3  =  tools/test_translations.py
+a7ddcc7e2183e9ab  a7ddcc7e2183e9ab  =  website/lingue/site.pot
+f2c02c8360378f2e  f2c02c8360378f2e  =  website/lingue/it.po
+## la copia di lavoro intera (website, design-system, tools): una sola impronta
+4c6f59af88b371ceadb2366da8232f74
+## il sito costruito (/tmp/lavoro-3ar-sito-H): una sola impronta
+eae1977efba18631d0e344794932ec20

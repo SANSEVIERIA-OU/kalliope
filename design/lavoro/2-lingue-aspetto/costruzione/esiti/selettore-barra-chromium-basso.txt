@@ -1,0 +1,22 @@
+lingue pubblicate: 30
+chromium
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ok    [basso 844×390] aperto l'elenco nel menu: il comando e le prime due righe (4 nomi di 30) stanno nello schermo e nel menu (il menu scorre, scostato di 140 px; la pagina resta ferma)
+  ok    [basso 844×390] Tab percorre 30/30 voci nel menu che scorre: ognuna nello schermo e non coperta
+  ok    [basso 844×390] nessun errore di console (0)
+  ok    [basso 326×326] aperto l'elenco nel menu: il comando e le prime due righe (4 nomi di 30) stanno nello schermo e nel menu (il menu scorre, scostato di 204 px; la pagina resta ferma)
+  ok    [basso 326×326] Tab percorre 30/30 voci nel menu che scorre: ognuna nello schermo e non coperta
+  ok    [basso 326×326] nessun errore di console (0)
+  ok    [basso 360×640] aperto l'elenco nel menu: il comando e le prime due righe (4 nomi di 30) stanno nello schermo e nel menu (il menu scorre, scostato di 0 px; la pagina resta ferma)
+  ok    [basso 360×640] Tab percorre 30/30 voci nel menu che scorre: ognuna nello schermo e non coperta
+  ok    [basso 360×640] nessun errore di console (0)
+  ok    [basso 390×844] aperto l'elenco nel menu: il comando e le prime due righe (4 nomi di 30) stanno nello schermo e nel menu (il menu scorre, scostato di 0 px; la pagina resta ferma)
+  ok    [basso 390×844] Tab percorre 30/30 voci nel menu che scorre: ognuna nello schermo e non coperta
+  ok    [basso 390×844] nessun errore di console (0)
+  ok    [basso 750×832] aperto l'elenco nel menu: il comando e le prime due righe (4 nomi di 30) stanno nello schermo e nel menu (il menu scorre, scostato di 0 px; la pagina resta ferma)
+  ok    [basso 750×832] Tab percorre 30/30 voci nel menu che scorre: ognuna nello schermo e non coperta
+  ok    [basso 750×832] nessun errore di console (0)
+  ok    [basso 959×900] aperto l'elenco nel menu: il comando e le prime due righe (4 nomi di 30) stanno nello schermo e nel menu (il menu scorre, scostato di 0 px; la pagina resta ferma)
+  ok    [basso 959×900] Tab percorre 30/30 voci nel menu che scorre: ognuna nello schermo e non coperta
+  ok    [basso 959×900] nessun errore di console (0)
+tutto ok

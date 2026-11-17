@@ -1,0 +1,3 @@
+# J-piede-webkit · 17/11/2026 08:25 · node prove/piede-fuoco.mjs /tmp/lavoro-3ar-sito-L-J webkit 390x844
+9/9 soste nel piede dentro lo schermo
+# uscita: 0

@@ -1,0 +1,14 @@
+# L-robustezza-chromium-844x390 · 17/11/2026 09:05 · node prove/robustezza.mjs /tmp/lavoro-3ar-sito-L /tmp/lavoro-3ar-L-foto/rob chromium 844x390 tastiera,tastiera-veloce,senza-js,senza-stili
+
+== tastiera · chromium 844x390
+   soste: Vai al contenuto → Kalliope, pagina iniziale → Menu → Come saperlo quando arriva → Intanto, senti la voce → Copia l'indirizzo di questa pagina → feed delle versioni → pagina delle versioni su GitHub → Ascolta GiuliaCarico…PausaRiprendi → Tutte le frasi, anche con Marco → stato e limiti → Ascolta → Stato e limiti → Installa → In riunione → Aiuto
+
+== tastiera-veloce · chromium 844x390
+   soste: Vai al contenuto → Kalliope, pagina iniziale → Menu → Come saperlo quando arriva → Intanto, senti la voce → Copia l'indirizzo di questa pagina → feed delle versioni → pagina delle versioni su GitHub → Ascolta GiuliaCarico…PausaRiprendi → Tutte le frasi, anche con Marco → stato e limiti → Ascolta → Stato e limiti → Installa → In riunione → Aiuto
+
+== senza-js · chromium 844x390
+
+== senza-stili · chromium 844x390
+
+19/19 ok
+# uscita: 0

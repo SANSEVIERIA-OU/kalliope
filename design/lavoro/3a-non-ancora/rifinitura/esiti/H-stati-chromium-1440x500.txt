@@ -1,0 +1,18 @@
+# H-stati-chromium-1440x500 · 17/11/2026 06:56 · node prove/stati.mjs /tmp/lavoro-3ar-sito-H /tmp/lavoro-3ar-H-foto/stati chromium 1440x500 ascolto,errore,copia,copia-no,tentativo,tentativo-ridimensiona,tentativo-nascosto
+
+== ascolto · chromium 1440x500
+
+== errore · chromium 1440x500
+
+== copia · chromium 1440x500
+
+== copia-no · chromium 1440x500
+
+== tentativo · chromium 1440x500
+
+== tentativo-ridimensiona · chromium 1440x500
+
+== tentativo-nascosto · chromium 1440x500
+
+42/42 ok
+# uscita: 0

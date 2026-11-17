@@ -1,0 +1,3 @@
+# L-piede-firefox · 17/11/2026 08:55 · node prove/piede-fuoco.mjs /tmp/lavoro-3ar-sito-L-LL firefox 390x844
+9/9 soste nel piede dentro lo schermo
+# uscita: 0

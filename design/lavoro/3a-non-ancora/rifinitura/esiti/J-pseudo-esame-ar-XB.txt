@@ -1,0 +1,37 @@
+# J-pseudo-esame-ar-XB · 17/11/2026 08:48 · sito: /tmp/lavoro-3ar-sito-J-pseudo · esame-impaginazione.mjs chromium normale non-ancora 390x844,1440x900,844x390,360x640,1366x640
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+non-ancora · 390×844 · testo 100%: pulito
+non-ancora-menu · 390×844 · testo 100%: pulito
+non-ancora-errore-audio · 390×844 · testo 100%: pulito
+non-ancora-ascolto · 390×844 · testo 100%: pulito
+non-ancora-copia-fatta · 390×844 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 390×844 · testo 100%: pulito
+non-ancora-menu · 1440×900 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1440×900 · testo 100%: pulito
+non-ancora-errore-audio · 1440×900 · testo 100%: pulito
+non-ancora-ascolto · 1440×900 · testo 100%: pulito
+non-ancora-copia-fatta · 1440×900 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1440×900 · testo 100%: pulito
+non-ancora · 844×390 · testo 100%: pulito
+non-ancora-menu · 844×390 · testo 100%: pulito
+non-ancora-errore-audio · 844×390 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA div.bolla.bolla-chiusa: 36 px sopra (schermo 844×390) · schermo basso con il messaggio d'errore: la riunione è già alla sua altezza minima (60 px), o al telefono il messaggio è alto 182-226 px (a capo secondo la larghezza): non stanno insieme; vince il messaggio (PIANO.md, «La cornice»)
+non-ancora-ascolto · 844×390 · testo 100%: pulito
+non-ancora-copia-fatta · 844×390 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 844×390 · testo 100%: pulito
+non-ancora · 360×640 · testo 100%: pulito
+non-ancora-menu · 360×640 · testo 100%: pulito
+non-ancora-errore-audio · 360×640 · testo 100%: pulito
+non-ancora-ascolto · 360×640 · testo 100%: pulito
+non-ancora-copia-fatta · 360×640 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 360×640 · testo 100%: pulito
+non-ancora-menu · 1366×640 · testo 100%: lo stato non c'è a questa misura
+non-ancora · 1366×640 · testo 100%: pulito
+non-ancora-errore-audio · 1366×640 · testo 100%: pulito
+non-ancora-ascolto · 1366×640 · testo 100%: pulito
+non-ancora-copia-fatta · 1366×640 · testo 100%: pulito
+non-ancora-copia-non-riuscita · 1366×640 · testo 100%: pulito
+
+
+Tutto pulito; un limite dichiarato, elencato a parte e non contato (foto in /tmp/lavoro-3ar-qa-J-pseudo-esame-ar-XB/esame/chromium)
+# uscita: 0

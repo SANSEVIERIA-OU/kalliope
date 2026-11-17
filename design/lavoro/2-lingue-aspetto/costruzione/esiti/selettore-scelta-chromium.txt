@@ -1,0 +1,27 @@
+lingue pubblicate: 10
+chromium
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ok    [scelta] la lingua del browser (de) è la prima e accesa: «Deutsch», «العربية», «български…»
+  ok    [scelta] Tab percorre 10 nomi nell'ordine in cui si leggono (riga per riga, da sinistra a destra), uguale all'ordine del documento
+  ok    [scelta] ogni nome con il fuoco sta nello schermo, niente lo copre e ha il segno del fuoco
+  ok    [scelta] Invio su un nome porta a /bg/ e la ricorda
+  ok    [scelta] nessun errore di console (0)
+  ROSSO [ritorno] da «/» alla pagina italiana e «Indietro»: si torna alla scelta (/it/), che non rimanda subito avanti
+  ok    [ritorno] «/» con la scelta ricordata porta a /it/
+  ok    [ritorno] una scelta ricordata che non è una lingua del sito (valore scritto a mano) mostra la scelta, non porta altrove
+  ok    [ritorno] una lingua ricordata che il sito non ha (zz) mostra la scelta
+  ok    [ritorno] ricaricando la scelta si ricarica la scelta
+  ROSSO [senza JS] 10/10 nomi, tutti collegamenti con href, lang e hreflang, tutti nello schermo e visibili
+  ok    [senza JS] l'ordine è quello dei codici (ar/ bg/ bn/ de/…): senza script non si sposta la lingua del browser
+  ok    [senza JS] un nome porta alla lingua (/it/)
+  ROSSO [movimento ridotto] fin dal primo istante nessuna animazione, la bolla e i 10 nomi sono già al loro posto e la pagina a 50 ms e a 3 s è la stessa (1 animazioni, foto identiche)
+  ok    [movimento normale] a 50 ms 28 animazioni e i nomi non ancora accesi (bolla 0.00); a 4,5 s tutto acceso e fermo (1 animazioni in corso)
+  ok    [1440×900] nessuno scorrimento di lato; titolo 255,319,595,845, bolla 353–481, fila 505–677 nello schermo (scorre in altezza di 143 px); nomi fuori dalla bolla: 0
+  ok    [1366×640] nessuno scorrimento di lato; titolo 161,225,558,808, bolla 259–387, fila 411–511 nello schermo (scorre in altezza di 268 px); nomi fuori dalla bolla: 0
+  ok    [1024×768] nessuno scorrimento di lato; titolo 196,247,415,609, bolla 281–409, fila 433–605 nello schermo (scorre in altezza di 206 px); nomi fuori dalla bolla: 0
+  ok    [820×1180] nessuno scorrimento di lato; titolo 395,459,285,535, bolla 493–621, fila 645–817 nello schermo (scorre in altezza di 9 px); nomi fuori dalla bolla: 0
+  ok    [390×844] nessuno scorrimento di lato; titolo 267,300,134,256, bolla 334–488, fila 512–590 nello schermo (scorre in altezza di 0 px); nomi fuori dalla bolla: 0
+  ok    [360×640] nessuno scorrimento di lato; titolo 144,173,130,230, bolla 207–407, fila 431–509 nello schermo (scorre in altezza di 73 px); nomi fuori dalla bolla: 0
+  ok    [844×390] nessuno scorrimento di lato; titolo 119,152,361,483, bolla 160–248, fila 272–332 nello schermo (scorre in altezza di 388 px); nomi fuori dalla bolla: 0
+  ROSSO [326×326] nessuno scorrimento di lato; titolo 76,105,113,213, bolla 139–385, fila 409–487 OLTRE LO SCHERMO (scorre in altezza di 332 px); nomi fuori dalla bolla: 0
+4 ROSSE

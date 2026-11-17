@@ -1,0 +1,6 @@
+# H-versioni-chromium · 17/11/2026 07:39 · node prove/versioni.mjs /tmp/lavoro-3ar-sito-H /tmp/lavoro-3ar-H-foto/versioni chromium 1440x900
+   serie [{"t":0,"nome":"ricorda","colore":"rgba(255, 219, 225, 0.6)","luce":141},{"t":135,"nome":"ricorda","colore":"rgba(255, 219, 225, 0.92)","luce":209},{"t":270,"nome":"ricorda","colore":"rgb(255, 219, 225)","luce":227},{"t":450,"nome":"ricorda","colore":"rgba(255, 219, 225, 0.808)","luce":185},{"t":899,"nome":"ricorda","colore":"rgba(255, 219, 225, 0.6)","luce":141}] prima {"nome":"posto-si-apre","colore":"rgba(255, 219, 225, 0.6)","luce":141} animazioni «ricorda» 1
+   istanti guardati 42 su 109 (gli altri: la riga non c'è ancora o il tratteggio non c'è ancora) · fondo della riga 32 · il più luminoso 32 a 1675 ms
+
+6/6 ok
+# uscita: 0

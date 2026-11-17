@@ -1,0 +1,8 @@
+lingue pubblicate: 10
+firefox
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ok    [senza JS 1440] la scelta nella barra si apre e si chiude con il clic, con Invio e con Spazio (true/false/true/false)
+  ok    [senza JS 1440] l'elenco aperto sta nello schermo: 900–1360 su 1440
+  ok    [senza JS 1440] 10/10 collegamenti veri nella barra, ognuno con href, lang e hreflang
+  ok    [senza JS 390] il menu non c'è e «Menu» porta all'elenco del piede: 10/10 lingue tutte nello schermo, tutte con lang, hreflang e href, nessuno scorrimento di lato
+tutto ok

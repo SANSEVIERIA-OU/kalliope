@@ -1,0 +1,30 @@
+# H-stati-webkit-1440x900 · 17/11/2026 07:25 · node prove/stati.mjs /tmp/lavoro-3ar-sito-H /tmp/lavoro-3ar-H-foto/stati webkit 1440x900 tutti
+
+== ascolto · webkit 1440x900
+
+== errore · webkit 1440x900
+
+== lento · webkit 1440x900
+
+== attesa · webkit 1440x900
+stati nel tempo: carica → suona → fermo
+NV   l'audio aspetta dati a metà: «Carico…» e poi riparte · in webkit il file a goccia non lo fa mai aspettare (carica → suona → fermo): provato solo in Chromium
+
+== nascosto · webkit 1440x900
+
+== copia · webkit 1440x900
+
+== copia-no · webkit 1440x900
+
+== tentativo · webkit 1440x900
+
+== tentativo-ridimensiona · webkit 1440x900
+
+== tentativo-altezza · webkit 1440x900
+
+== tentativo-nascosto · webkit 1440x900
+
+== tentativo-nascosto-da-subito · webkit 1440x900
+
+56/56 ok
+# uscita: 0

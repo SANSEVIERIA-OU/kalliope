@@ -1,0 +1,488 @@
+{
+ "versione": 1,
+ "lavori": [
+  {
+   "id": "foto-chromium-a1",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/1-lingue-sito/prove/foto-home.mjs",
+    "/tmp/lavoro-2b-sito-b82-ns",
+    "it/",
+    "/tmp/lavoro-2b-foto-it-chromium-a1",
+    "--motore",
+    "chromium",
+    "--misure",
+    "1440x900,390x844,820x1180,1366x640",
+    "--porta",
+    "0",
+    "--stati"
+   ]
+  },
+  {
+   "id": "foto-chromium-a2",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/1-lingue-sito/prove/foto-home.mjs",
+    "/tmp/lavoro-2b-sito-b82-ns",
+    "it/",
+    "/tmp/lavoro-2b-foto-it-chromium-a2",
+    "--motore",
+    "chromium",
+    "--misure",
+    "1440x900,390x844,820x1180,1366x640",
+    "--porta",
+    "0",
+    "--stati"
+   ]
+  },
+  {
+   "id": "foto-chromium-a3",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/1-lingue-sito/prove/foto-home.mjs",
+    "/tmp/lavoro-2b-sito-b82-ns",
+    "it/",
+    "/tmp/lavoro-2b-foto-it-chromium-a3",
+    "--motore",
+    "chromium",
+    "--misure",
+    "1440x900,390x844,820x1180,1366x640",
+    "--porta",
+    "0",
+    "--stati"
+   ]
+  },
+  {
+   "id": "foto-firefox-a1",
+   "motore": "firefox",
+   "priorita": 2,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/1-lingue-sito/prove/foto-home.mjs",
+    "/tmp/lavoro-2b-sito-b82-ns",
+    "it/",
+    "/tmp/lavoro-2b-foto-it-firefox-a1",
+    "--motore",
+    "firefox",
+    "--misure",
+    "1440x900,390x844",
+    "--porta",
+    "0",
+    "--stati"
+   ]
+  },
+  {
+   "id": "foto-firefox-a2",
+   "motore": "firefox",
+   "priorita": 2,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/1-lingue-sito/prove/foto-home.mjs",
+    "/tmp/lavoro-2b-sito-b82-ns",
+    "it/",
+    "/tmp/lavoro-2b-foto-it-firefox-a2",
+    "--motore",
+    "firefox",
+    "--misure",
+    "1440x900,390x844",
+    "--porta",
+    "0",
+    "--stati"
+   ]
+  },
+  {
+   "id": "foto-webkit-a1",
+   "motore": "webkit",
+   "priorita": 2,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/1-lingue-sito/prove/foto-home.mjs",
+    "/tmp/lavoro-2b-sito-b82-ns",
+    "it/",
+    "/tmp/lavoro-2b-foto-it-webkit-a1",
+    "--motore",
+    "webkit",
+    "--misure",
+    "1440x900,390x844",
+    "--porta",
+    "0",
+    "--stati"
+   ]
+  },
+  {
+   "id": "foto-webkit-a2",
+   "motore": "webkit",
+   "priorita": 2,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/1-lingue-sito/prove/foto-home.mjs",
+    "/tmp/lavoro-2b-sito-b82-ns",
+    "it/",
+    "/tmp/lavoro-2b-foto-it-webkit-a2",
+    "--motore",
+    "webkit",
+    "--misure",
+    "1440x900,390x844",
+    "--porta",
+    "0",
+    "--stati"
+   ]
+  },
+  {
+   "id": "foto-chromium-b1",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/1-lingue-sito/prove/foto-home.mjs",
+    "/tmp/lavoro-2b-sito-it-fin2",
+    "it/",
+    "/tmp/lavoro-2b-foto-it-chromium-b1",
+    "--motore",
+    "chromium",
+    "--misure",
+    "1440x900,390x844,820x1180,1366x640",
+    "--porta",
+    "0",
+    "--stati"
+   ]
+  },
+  {
+   "id": "foto-chromium-b2",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/1-lingue-sito/prove/foto-home.mjs",
+    "/tmp/lavoro-2b-sito-it-fin2",
+    "it/",
+    "/tmp/lavoro-2b-foto-it-chromium-b2",
+    "--motore",
+    "chromium",
+    "--misure",
+    "1440x900,390x844,820x1180,1366x640",
+    "--porta",
+    "0",
+    "--stati"
+   ]
+  },
+  {
+   "id": "foto-chromium-b3",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/1-lingue-sito/prove/foto-home.mjs",
+    "/tmp/lavoro-2b-sito-it-fin2",
+    "it/",
+    "/tmp/lavoro-2b-foto-it-chromium-b3",
+    "--motore",
+    "chromium",
+    "--misure",
+    "1440x900,390x844,820x1180,1366x640",
+    "--porta",
+    "0",
+    "--stati"
+   ]
+  },
+  {
+   "id": "foto-firefox-b1",
+   "motore": "firefox",
+   "priorita": 2,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/1-lingue-sito/prove/foto-home.mjs",
+    "/tmp/lavoro-2b-sito-it-fin2",
+    "it/",
+    "/tmp/lavoro-2b-foto-it-firefox-b1",
+    "--motore",
+    "firefox",
+    "--misure",
+    "1440x900,390x844",
+    "--porta",
+    "0",
+    "--stati"
+   ]
+  },
+  {
+   "id": "foto-firefox-b2",
+   "motore": "firefox",
+   "priorita": 2,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/1-lingue-sito/prove/foto-home.mjs",
+    "/tmp/lavoro-2b-sito-it-fin2",
+    "it/",
+    "/tmp/lavoro-2b-foto-it-firefox-b2",
+    "--motore",
+    "firefox",
+    "--misure",
+    "1440x900,390x844",
+    "--porta",
+    "0",
+    "--stati"
+   ]
+  },
+  {
+   "id": "foto-webkit-b1",
+   "motore": "webkit",
+   "priorita": 2,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/1-lingue-sito/prove/foto-home.mjs",
+    "/tmp/lavoro-2b-sito-it-fin2",
+    "it/",
+    "/tmp/lavoro-2b-foto-it-webkit-b1",
+    "--motore",
+    "webkit",
+    "--misure",
+    "1440x900,390x844",
+    "--porta",
+    "0",
+    "--stati"
+   ]
+  },
+  {
+   "id": "foto-webkit-b2",
+   "motore": "webkit",
+   "priorita": 2,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/1-lingue-sito/prove/foto-home.mjs",
+    "/tmp/lavoro-2b-sito-it-fin2",
+    "it/",
+    "/tmp/lavoro-2b-foto-it-webkit-b2",
+    "--motore",
+    "webkit",
+    "--misure",
+    "1440x900,390x844",
+    "--porta",
+    "0",
+    "--stati"
+   ]
+  },
+  {
+   "id": "foto-chromium-c1",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/1-lingue-sito/prove/foto-home.mjs",
+    "/tmp/lavoro-2b-sito-b341-ns",
+    "it/",
+    "/tmp/lavoro-2b-foto-it-chromium-c1",
+    "--motore",
+    "chromium",
+    "--misure",
+    "1440x900,390x844,820x1180,1366x640",
+    "--porta",
+    "0",
+    "--stati"
+   ]
+  },
+  {
+   "id": "foto-chromium-c2",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/1-lingue-sito/prove/foto-home.mjs",
+    "/tmp/lavoro-2b-sito-b341-ns",
+    "it/",
+    "/tmp/lavoro-2b-foto-it-chromium-c2",
+    "--motore",
+    "chromium",
+    "--misure",
+    "1440x900,390x844,820x1180,1366x640",
+    "--porta",
+    "0",
+    "--stati"
+   ]
+  },
+  {
+   "id": "foto-chromium-c3",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/1-lingue-sito/prove/foto-home.mjs",
+    "/tmp/lavoro-2b-sito-b341-ns",
+    "it/",
+    "/tmp/lavoro-2b-foto-it-chromium-c3",
+    "--motore",
+    "chromium",
+    "--misure",
+    "1440x900,390x844,820x1180,1366x640",
+    "--porta",
+    "0",
+    "--stati"
+   ]
+  },
+  {
+   "id": "foto-firefox-c1",
+   "motore": "firefox",
+   "priorita": 2,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/1-lingue-sito/prove/foto-home.mjs",
+    "/tmp/lavoro-2b-sito-b341-ns",
+    "it/",
+    "/tmp/lavoro-2b-foto-it-firefox-c1",
+    "--motore",
+    "firefox",
+    "--misure",
+    "1440x900,390x844",
+    "--porta",
+    "0",
+    "--stati"
+   ]
+  },
+  {
+   "id": "foto-firefox-c2",
+   "motore": "firefox",
+   "priorita": 2,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/1-lingue-sito/prove/foto-home.mjs",
+    "/tmp/lavoro-2b-sito-b341-ns",
+    "it/",
+    "/tmp/lavoro-2b-foto-it-firefox-c2",
+    "--motore",
+    "firefox",
+    "--misure",
+    "1440x900,390x844",
+    "--porta",
+    "0",
+    "--stati"
+   ]
+  },
+  {
+   "id": "foto-webkit-c1",
+   "motore": "webkit",
+   "priorita": 2,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/1-lingue-sito/prove/foto-home.mjs",
+    "/tmp/lavoro-2b-sito-b341-ns",
+    "it/",
+    "/tmp/lavoro-2b-foto-it-webkit-c1",
+    "--motore",
+    "webkit",
+    "--misure",
+    "1440x900,390x844",
+    "--porta",
+    "0",
+    "--stati"
+   ]
+  },
+  {
+   "id": "foto-webkit-c2",
+   "motore": "webkit",
+   "priorita": 2,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/1-lingue-sito/prove/foto-home.mjs",
+    "/tmp/lavoro-2b-sito-b341-ns",
+    "it/",
+    "/tmp/lavoro-2b-foto-it-webkit-c2",
+    "--motore",
+    "webkit",
+    "--misure",
+    "1440x900,390x844",
+    "--porta",
+    "0",
+    "--stati"
+   ]
+  }
+ ]
+}

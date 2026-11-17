@@ -28,8 +28,16 @@ Italian words: when the Italian text changes, the translation is kept and marked
 
 The site has one folder per language: `/it/`, `/en/`, `/ar/` … with the same pages under the same names. The top address,
 `/`, is the language chooser (`hreflang="x-default"`): every language written in its own name, the browser's language first,
-no automatic jump. A choice made there, or with the list of languages at the foot of a page, is remembered in the browser
-(localStorage, no cookie) and the next visit to `/` goes straight to it; `/?lingue` shows the chooser anyway. Pages not yet
+no automatic jump. A choice made there, or with the selector in the bar or the list of languages at the foot of a page, is
+remembered in the browser (localStorage, no cookie) and the next visit to `/` goes straight to it; `/?lingue` shows the
+chooser anyway, and so does «Back» from a language page and a reload (otherwise «Back» would never leave the language).
+**While only one language is published (today Italian) there is nothing to choose:** the build leaves the selector out of the
+bar and the list out of the foot, and `/` is one more of the small pages that send to `/it/` (like the old addresses; the query
+and the fragment are kept when a script runs). The second complete language brings the selector, the list and the chooser back,
+with no other change. The catalogue (`design-system/catalogo/`) still shows them, from `esempio-home.html` and `esempio-scelta.html`,
+which the build writes with the 30 languages of the registry (`noindex`, only for the catalogue). The selector's name for a screen
+reader is «Change language: English» (the `title` of the control, already translated, and the language of the page: nothing new to
+translate). Pages not yet
 redone for the new design exist only in Italian, and the other languages link to that Italian page. The old addresses
 (`/installa/`, `/ascolta/` …) are small pages that send to `/it/…`, keeping the query and the fragment. Files shared by the
 languages stay where they were: `/voce/…`, `/immagini/…`, `/design-system/…`.
@@ -88,6 +96,7 @@ Italian only. The marks are attributes, so the page stays readable in Italian:
 | `data-t-plurale="…{n}…"` | the content is the singular and this the plural of a message that counts `{n}` things; `data-t-n="3"` is the number, if the page itself shows a plural |
 | `data-t-nota="…"` | a note for the translator (English), copied to the catalogue |
 | `data-t-no="reason"` | text or attributes here are deliberately not translated (the name of a language, a code) |
+| `data-release="prova"` / `"stabile"` | the element (with its content) stays in the page only when the release the site shows is a prerelease (`prova`) or is not (`stabile`): the build decides, from the release data, like the version and the date. Write the two as sibling elements with their own keys (`apertura.stato`, `apertura.stato-stabile`): each language writes both sentences in its own grammar («Testversion» / «Version»), and the existing key does not change when the other is added. Words inside one sentence also work (`<span data-release="prova"> di prova</span>`), where the language can take them out without changing the rest |
 
 Rules: a key is written once or repeated with the same text; two different texts under one key are an error. Everything a person
 sees or hears read (text, the attributes above, the `<title>`, the description, the text a script shows) is marked; **text in a
@@ -191,6 +200,13 @@ On a right-to-left page the build isolates every run of Latin letters, digits an
 `Kalliope 0.1`) between LRI and PDI (U+2066…U+2069), in the text and in the translated attributes, so it keeps its own direction
 and is never read backwards (`rc.1-0.1`); quotation marks around it follow the Arabic or Urdu text. Translators write the text as
 it is: nothing to add.
+
+The build also tells the browser to fetch the font of the script at once: a page in a language with a small font file (Arabic,
+Greek, Bulgarian: 22 KB) carries a `<link rel="preload">` for it, found in `design-system/token.css` (the `:lang()` rule of the
+language), so the first screen is drawn in the right font and does not flash the fallback (at 1.6 Mbps the text is in the right
+font 17-22% sooner; at 400 kbps, 1 s sooner). For the large files (Bengali 102 KB, Devanagari 118 KB, Nastaliq 234 KB) a preload
+was measured to gain 1-4% and to delay the first paint by 8-9%, so there is none (`PRECARICO_FINO_A` in `tools/site.py`). The
+Italian page does not change by a byte. Measures: `design/lavoro/2-lingue-aspetto/costruzione/misure/`.
 
 Two notes for translators: in Chinese write the four lines of `apertura.titolo` with no space between the tags (`<1>…</1><2>…</2>`),
 or the phone shows a gap where the lines run on; and keep the units marked in the sentences (`<1>alle 15:30?</1>`) short, a few

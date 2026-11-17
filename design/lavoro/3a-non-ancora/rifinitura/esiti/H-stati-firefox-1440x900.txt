@@ -1,0 +1,38 @@
+# H-stati-firefox-1440x900 · 17/11/2026 07:29 · node prove/stati.mjs /tmp/lavoro-3ar-sito-H /tmp/lavoro-3ar-H-foto/stati firefox 1440x900 tutti
+
+== ascolto · firefox 1440x900
+NV   pausa: etichetta «Riprendi», nome «Riprendi» · Firefox senza uscita audio, il suono non può partire
+NV   ripreso: «Pausa» · Firefox senza uscita audio, il suono non può partire
+NV   a fine: frase detta (bolla tenue, parole nere), comando di nuovo «Ascolta Giulia» · Firefox senza uscita audio, il suono non può partire
+
+== errore · firefox 1440x900
+NV   Riprova: il messaggio sparisce e il suono parte · Firefox senza uscita audio, il suono non può partire
+
+== lento · firefox 1440x900
+NV   arrivato il file: il messaggio sparisce e il suono suona · Firefox senza uscita audio, il suono non può partire
+
+== attesa · firefox 1440x900
+stati nel tempo: carica → fermo+nota
+NV   l'audio aspetta dati a metà: il comando torna a «Carico…» e poi il suono riparte e finisce · Firefox senza uscita audio, il suono non può partire
+
+== nascosto · firefox 1440x900
+NV   con la scheda in secondo piano il suono va in pausa · Firefox senza uscita audio, il suono non può partire
+NV   al ritorno si riprende da dove si era · Firefox senza uscita audio, il suono non può partire
+
+== copia · firefox 1440x900
+
+== copia-no · firefox 1440x900
+
+== tentativo · firefox 1440x900
+
+== tentativo-ridimensiona · firefox 1440x900
+
+== tentativo-altezza · firefox 1440x900
+NO   cambiare solo l'altezza (barra del browser) non interrompe il tentativo: arriva in fondo · prova con-segno non-c-e segno op 1 x 920 · «non c'è» op 1 · urtata false
+
+== tentativo-nascosto · firefox 1440x900
+
+== tentativo-nascosto-da-subito · firefox 1440x900
+
+55/56 ok
+# uscita: 1

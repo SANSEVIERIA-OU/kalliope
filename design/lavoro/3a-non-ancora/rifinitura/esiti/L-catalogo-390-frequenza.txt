@@ -1,0 +1,10 @@
+base 390 giro 1:    (la tabella non si riempiva da sola: riportata sotto gli occhi 6 volte) 9/9 ok 
+L 390 giro 1:    (la tabella non si riempiva da sola: riportata sotto gli occhi 6 volte) 9/9 ok 
+base 390 giro 2:    (la tabella si è riempita da sola) 9/9 ok 
+L 390 giro 2:    (la tabella si è riempita da sola) 9/9 ok 
+base 390 giro 3:    (la tabella si è riempita da sola) 9/9 ok 
+L 390 giro 3:    (la tabella non si riempiva da sola: riportata sotto gli occhi 6 volte) 9/9 ok 
+base 390 giro 4:    (la tabella si è riempita da sola) 9/9 ok 
+L 390 giro 4:    (la tabella non si riempiva da sola: riportata sotto gli occhi 6 volte) 9/9 ok 
+base 390 giro 5:    (la tabella non si riempiva da sola: riportata sotto gli occhi 6 volte) 9/9 ok 
+L 390 giro 5:    (la tabella si è riempita da sola) 9/9 ok 

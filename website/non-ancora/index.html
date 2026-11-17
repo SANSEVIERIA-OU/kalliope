@@ -28,6 +28,8 @@
 <link rel="stylesheet" href="../design-system/componenti/riunione-ferma.css">
 <link rel="stylesheet" href="../design-system/componenti/strada-ferma.css">
 <link rel="stylesheet" href="../design-system/componenti/versioni.css">
+<link rel="stylesheet" href="../design-system/componenti/lingue.css">
+<script src="../lingua.js" defer></script>
 <script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.__pagina)document.documentElement.classList.remove('js')},4000)</script>
 <script src="../testi.js" defer></script>
 <script src="../componenti.js" defer></script>
@@ -53,7 +55,14 @@
         <li><a href="../installa/" data-t="menu.installa">Installa</a></li>
         <li><a href="../riunione/" data-t="menu.riunione">In riunione</a></li>
         <li><a href="../aiuto/" data-t="menu.aiuto">Aiuto</a></li>
-        <li><a href="#lingue" data-lingua-corrente data-t-no="il nome della lingua lo mette la costruzione, dai dati CLDR" data-t-title="barra.lingua" title="Cambia lingua">Italiano</a></li>
+        <li class="lingua-voce">
+          <details class="lingua-scelta">
+            <summary data-t-title="barra.lingua" title="Cambia lingua"><span data-lingua-corrente data-t-no="il nome della lingua lo mette la costruzione, dai dati CLDR">Italiano</span><span class="lingua-segno" aria-hidden="true"></span></summary>
+            <ul class="lingue-elenco" data-lingue="elenco">
+              <li><a data-lingua data-t-no="il nome della lingua lo mette la costruzione, dai dati CLDR" href="#">Italiano</a></li>
+            </ul>
+          </details>
+        </li>
       </ul>
     </nav>
     <a class="pulsante-menu" href="#piede-sezioni" aria-controls="menu" data-t="barra.menu">Menu</a>
@@ -72,8 +81,9 @@
           <a class="pillola azione" href="#quando" data-t="na.apertura.quando">Come saperlo quando arriva</a>
           <a class="collegamento" href="#ascolta" data-t="na.apertura.ascolta">Intanto, senti la voce<span class="freccia" aria-hidden="true"></span></a>
         </div>
-        <p class="stato" data-t="apertura.stato"><strong>Oggi:</strong> versione di prova {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Non ancora provata in una riunione vera con Zoom, Teams o Meet.</p>
-        <p class="didascalia" data-t="na.apertura.didascalia" data-t-nota="The part in tag 1 is the long one and is dropped on narrow screens: the rest must read well without it.">Ricostruzione<span class="d-lunga"> · su Windows e macOS «Kalliope» non compare fra i microfoni dell'app di riunione</span></p>
+        <p class="stato" data-release="prova" data-t="apertura.stato"><strong>Oggi:</strong> versione di prova {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Non ancora provata in una riunione vera con Zoom, Teams o Meet.</p>
+        <p class="stato" data-release="stabile" data-t="apertura.stato-stabile" data-t-nota="Shown instead of the sentence of the key apertura.stato when the release is not a test version: the same sentence without «of test». The site chooses one of the two by the release data."><strong>Oggi:</strong> versione {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Non ancora provata in una riunione vera con Zoom, Teams o Meet.</p>
+        <p class="didascalia" data-t="na.apertura.didascalia" data-t-nota="The caption of the scene: the first word says what it is, the part in tag 1 says which one. On narrow screens the part in tag 1 goes to a second line; it is not dropped.">Ricostruzione<span class="d-lunga"> · su Windows e macOS «Kalliope» non compare fra i microfoni dell'app di riunione</span></p>
       </section>
 
       <section class="palco palco-fermo" aria-label="Ricostruzione: su Windows e macOS, nell'app della riunione, il microfono «Kalliope» non c'è e la tua frase resta senza voce" data-t-aria-label="na.palco.etichetta">
@@ -214,7 +224,7 @@
         <p class="versioni-titolo" data-t="na.versioni.titolo">Versioni di Kalliope</p>
         <ol class="versioni-elenco">
           <li class="versione prossima"><span class="versione-nome" data-t="na.versioni.prossima.nome">Windows e macOS</span><span class="versione-nota" data-t="na.versioni.prossima.nota">compariranno qui, in cima · nessuna data</span></li>
-          <li class="versione ultima"><span class="versione-nome" data-t="na.versioni.ultima.nome">Kalliope {{kalliope.version}}</span><span class="versione-data" data-t-no="la data la scrive la costruzione, dai dati CLDR">{{kalliope.date}}</span><span class="versione-nota" data-t="na.versioni.ultima.nota">Versione di prova · solo Linux</span></li>
+          <li class="versione ultima"><span class="versione-nome" data-t="na.versioni.ultima.nome">Kalliope {{kalliope.version}}</span><span class="versione-data" data-t-no="la data la scrive la costruzione, dai dati CLDR">{{kalliope.date}}</span><span class="versione-nota" data-release="prova" data-t="na.versioni.ultima.nota">Versione di prova · solo Linux</span><span class="versione-nota" data-release="stabile" data-t="na.versioni.ultima.nota-stabile">Solo Linux</span></li>
         </ol>
         <div class="versioni-piede">
           <button class="pillola azione copia-indirizzo" type="button" hidden data-t="na.copia.pulsante">Copia l'indirizzo di questa pagina</button>
@@ -229,7 +239,7 @@
       <span class="luce-tratto" aria-hidden="true"></span><span class="luce-tratto luce-chiusa" aria-hidden="true"></span>
       <h2 id="ascolta-titolo" class="entra entra-titolo" data-t="na.ascolta.titolo">Intanto, senti come suona.</h2>
       <p class="sotto-titolo" data-t="na.ascolta.sotto">La frase di prima, detta con la registrazione vera di Kalliope 0.1. Il suono parte solo se premi.</p>
-      <div class="tavolo entra" aria-hidden="true">
+      <div class="tavolo tavolo-pagina entra" aria-hidden="true">
         <div class="posto-bolla posto-bolla-chiusa">
           <div class="bolla bolla-chiusa bolla-ferma"><div class="bolla-corpo"><p class="bolla-testo" data-t="frase.1">Buongiorno a tutti! Scrivo invece di parlare, ma vi seguo benissimo.</p></div><svg class="coda" width="32" height="24" viewBox="0 0 32 24"><path d="M0 0h31L7.6 21.6A3.5 3.5 0 0 1 2 18.8V0z"/></svg></div>
         </div>

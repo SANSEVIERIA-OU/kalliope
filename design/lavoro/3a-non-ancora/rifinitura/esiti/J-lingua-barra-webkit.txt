@@ -1,0 +1,8 @@
+# J-lingua-barra-webkit · 17/11/2026 08:25 · node prove/lingua-barra.mjs /tmp/lavoro-3ar-sito-L-J /tmp/lavoro-3ar-J-foto/lingua webkit 1440x900,390x844
+
+== webkit 1440x900
+
+== webkit 390x844
+
+22/22 ok
+# uscita: 0

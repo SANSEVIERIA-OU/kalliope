@@ -85,7 +85,8 @@ mondo.»
 - La home è completa solo nel sito costruito: i suoi stili arrivano da `design-system/`. Per vederla:
   `docs/releasing.md`, «Website».
 - **Una cartella per lingua** (dal 16/11/2026): `/` è la scelta della lingua, `/it/`, `/en/`… le pagine; i vecchi
-  indirizzi rimandano a `/it/…`. Aggiungere una lingua vuol dire aggiungere `website/lingue/<xx>.po`
+  indirizzi rimandano a `/it/…`. Finché la lingua pubblicata è una sola, `/` manda a `/it/` e il selettore non si
+  mostra; tornano da soli con la seconda lingua (decisione del 17/11/2026, `tools/site.py`). Aggiungere una lingua vuol dire aggiungere `website/lingue/<xx>.po`
   (`docs/translating.md`); una lingua con voci mancanti o da rivedere non si pubblica. I testi da tradurre si segnano
   nell'HTML con `data-t`; `tools/translations.py check`, `tools/css_logico.py` (niente sinistra/destra nel CSS) e
   `tools/test_translations.py` girano in CI. Le pseudo-lingue `en-XA` e `ar-XB` si costruiscono solo per le prove.

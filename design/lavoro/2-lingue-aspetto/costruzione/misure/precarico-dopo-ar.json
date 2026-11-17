@@ -1,0 +1,248 @@
+{
+ "ar · rete veloce": {
+  "comparso": 155,
+  "fcp": 140,
+  "richiesteFont": 3,
+  "corse": [
+   {
+    "comparso": 201,
+    "fcp": 140,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 12,
+      "fine": 17
+     },
+     {
+      "file": "readex-pro/ReadexPro-wght.woff2",
+      "byte": 21984,
+      "inizio": 12,
+      "fine": 54
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 77,
+      "fine": 130
+     }
+    ]
+   },
+   {
+    "comparso": 155,
+    "fcp": 100,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 5,
+      "fine": 10
+     },
+     {
+      "file": "readex-pro/ReadexPro-wght.woff2",
+      "byte": 21984,
+      "inizio": 5,
+      "fine": 36
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 57,
+      "fine": 95
+     }
+    ]
+   },
+   {
+    "comparso": 94,
+    "fcp": null,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 4,
+      "fine": 9
+     },
+     {
+      "file": "readex-pro/ReadexPro-wght.woff2",
+      "byte": 21984,
+      "inizio": 5,
+      "fine": 37
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 57,
+      "fine": 95
+     }
+    ]
+   }
+  ]
+ },
+ "ar · 4G lento (1,6 Mbps, 150 ms)": {
+  "comparso": 1860,
+  "fcp": 1588,
+  "richiesteFont": 3,
+  "corse": [
+   {
+    "comparso": 1864,
+    "fcp": 1596,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 168,
+      "fine": 1980
+     },
+     {
+      "file": "readex-pro/ReadexPro-wght.woff2",
+      "byte": 21984,
+      "inizio": 168,
+      "fine": 1838
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 1519,
+      "fine": 2078
+     }
+    ]
+   },
+   {
+    "comparso": 1843,
+    "fcp": 1588,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 168,
+      "fine": 1995
+     },
+     {
+      "file": "readex-pro/ReadexPro-wght.woff2",
+      "byte": 21984,
+      "inizio": 168,
+      "fine": 1815
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 1518,
+      "fine": 2078
+     }
+    ]
+   },
+   {
+    "comparso": 1860,
+    "fcp": 1564,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 168,
+      "fine": 1995
+     },
+     {
+      "file": "readex-pro/ReadexPro-wght.woff2",
+      "byte": 21984,
+      "inizio": 168,
+      "fine": 1830
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 1514,
+      "fine": 2078
+     }
+    ]
+   }
+  ]
+ },
+ "ar · 3G (400 kbps, 400 ms)": {
+  "comparso": 6835,
+  "fcp": 6472,
+  "richiesteFont": 3,
+  "corse": [
+   {
+    "comparso": 6835,
+    "fcp": 6460,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 453,
+      "fine": 7741
+     },
+     {
+      "file": "readex-pro/ReadexPro-wght.woff2",
+      "byte": 21984,
+      "inizio": 454,
+      "fine": 6810
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 6382,
+      "fine": 8100
+     }
+    ]
+   },
+   {
+    "comparso": 6832,
+    "fcp": 6500,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 452,
+      "fine": 7740
+     },
+     {
+      "file": "readex-pro/ReadexPro-wght.woff2",
+      "byte": 21984,
+      "inizio": 452,
+      "fine": 6811
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 6439,
+      "fine": 8130
+     }
+    ]
+   },
+   {
+    "comparso": 6841,
+    "fcp": 6472,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 453,
+      "fine": 7710
+     },
+     {
+      "file": "readex-pro/ReadexPro-wght.woff2",
+      "byte": 21984,
+      "inizio": 453,
+      "fine": 6810
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 6389,
+      "fine": 8100
+     }
+    ]
+   }
+  ]
+ }
+}

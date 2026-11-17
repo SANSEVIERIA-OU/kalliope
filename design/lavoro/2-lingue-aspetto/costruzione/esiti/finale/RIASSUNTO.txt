@@ -1,0 +1,126 @@
+== corsa finale1 (barra A, esame B, pillole C, scelta E, nomi F, catalogo G, radice H; D sostituita da finale2D: gli script erano stati corretti)
+A barra: lavori 29, rossi 0, prove 1892, rotte 0
+B esame chromium: lavori 20, rossi 6, pagine 3000, pulite 2389, stato assente 316
+B esame firefox: lavori 5, rossi 2, pagine 80, pulite 56, stato assente 5
+B esame webkit: lavori 5, rossi 2, pagine 80, pulite 56, stato assente 5
+C pillole chromium: lavori 9, rossi 0, pillole 7670, fuori posto 0
+C pillole firefox: lavori 1, rossi 0, pillole 260, fuori posto 0
+C pillole webkit: lavori 1, rossi 0, pillole 260, fuori posto 0
+E pagina della scelta: lavori 3, rossi 0, controlli ok 72, controlli rossi 0
+F nomi e ruoli: lavori 1, rossi 0, controlli ok 42, controlli rossi 0
+G catalogo: lavori 3, rossi 0, controlli ok 36, controlli rossi 0
+H radice con una lingua sola: lavori 1, rossi 0, controlli ok 0, controlli rossi 0
+
+B esame chromium: 1211 segnalazioni
+  B-chromium-bn-altezze-dispositivi: A CAPO NEL MEZZO «OSI-এর» in p
+  B-chromium-bn-altezze-dispositivi: A CAPO NEL MEZZO «OSI-এর» in p
+  B-chromium-bn-altezze-dispositivi: A CAPO NEL MEZZO «OSI-এর» in p
+  B-chromium-bn-altezze-dispositivi: A CAPO NEL MEZZO «OSI-এর» in p
+  B-chromium-bn-larghezze: A CAPO NEL MEZZO «OSI-এর» in p
+  B-chromium-bn-larghezze: A CAPO NEL MEZZO «OSI-এর» in p
+  B-chromium-bn-larghezze: A CAPO NEL MEZZO «OSI-এর» in p
+  B-chromium-bn-larghezze: A CAPO NEL MEZZO «OSI-এর» in p
+  B-chromium-bn-larghezze: A CAPO NEL MEZZO «OSI-এর» in p
+  B-chromium-bn-larghezze: A CAPO NEL MEZZO «OSI-এর» in p
+  B-chromium-bn-larghezze: A CAPO NEL MEZZO «OSI-এর» in p
+  B-chromium-bn-larghezze: A CAPO NEL MEZZO «OSI-এর» in p
+  B-chromium-bn-larghezze: A CAPO NEL MEZZO «OSI-এর» in p
+  B-chromium-bn-larghezze: A CAPO NEL MEZZO «OSI-এর» in p
+  B-chromium-bn-larghezze: A CAPO NEL MEZZO «OSI-এর» in p
+  B-chromium-bn-larghezze: A CAPO NEL MEZZO «OSI-এর» in p
+  B-chromium-bn-larghezze: A CAPO NEL MEZZO «OSI-এর» in p
+  B-chromium-bn-larghezze: A CAPO NEL MEZZO «OSI-এর» in p
+  B-chromium-bn-larghezze: A CAPO NEL MEZZO «OSI-এর» in p
+  B-chromium-bn-larghezze: A CAPO NEL MEZZO «OSI-এর» in p
+  B-chromium-bn-larghezze: A CAPO NEL MEZZO «OSI-এর» in p
+  B-chromium-bn-larghezze: A CAPO NEL MEZZO «OSI-এর» in p
+  B-chromium-bn-larghezze: A CAPO NEL MEZZO «OSI-এর» in p
+  B-chromium-bn-larghezze: A CAPO NEL MEZZO «OSI-এর» in p
+  B-chromium-enXA-altezze-dispositivi: STRETTO a.pulsante-menu «[Ḿéñû Ĺ]» largo 63px, circa 6 caratteri, su 2 righe
+
+B esame firefox: 71 segnalazioni
+  B-firefox-bn-dispositivi: A CAPO NEL MEZZO «OSI-এর» in p
+  B-firefox-bn-dispositivi: A CAPO NEL MEZZO «OSI-এর» in p
+  B-firefox-bn-dispositivi: A CAPO NEL MEZZO «OSI-এর» in p
+  B-firefox-bn-dispositivi: A CAPO NEL MEZZO «OSI-এর» in p
+  B-firefox-zh-dispositivi: SPEZZATA «写下一句话» in p.presentazione
+  B-firefox-zh-dispositivi: SPEZZATA «一个自然的意大利语声音会在会议中把它说出来» in p.presentazione
+  B-firefox-zh-dispositivi: SPEZZATA «的真实会议中测试» in p.stato
+  B-firefox-zh-dispositivi: SPEZZATA «的真实录音说出» in p.entra
+  B-firefox-zh-dispositivi: SPEZZATA «卢卡和安娜听到时» in span.con-js
+  B-firefox-zh-dispositivi: SPEZZATA «写下一句话» in p.presentazione
+  B-firefox-zh-dispositivi: SPEZZATA «一个自然的意大利语声音会在会议中把它说出来» in p.presentazione
+  B-firefox-zh-dispositivi: SPEZZATA «的真实会议中测试» in p.stato
+  B-firefox-zh-dispositivi: SPEZZATA «的真实录音说出» in p.entra
+  B-firefox-zh-dispositivi: SPEZZATA «卢卡和安娜听到时» in span.con-js
+  B-firefox-zh-dispositivi: SPEZZATA «写下一句话» in p.presentazione
+  B-firefox-zh-dispositivi: SPEZZATA «一个自然的意大利语声音会在会议中把它说出来» in p.presentazione
+  B-firefox-zh-dispositivi: SPEZZATA «的真实会议中测试» in p.stato
+  B-firefox-zh-dispositivi: SPEZZATA «的真实录音说出» in p.entra
+  B-firefox-zh-dispositivi: SPEZZATA «卢卡和安娜听到时» in span.con-js
+  B-firefox-zh-dispositivi: SPEZZATA «写下一句话» in p.presentazione
+  B-firefox-zh-dispositivi: SPEZZATA «一个自然的意大利语声音会在会议中把它说出来» in p.presentazione
+  B-firefox-zh-dispositivi: SPEZZATA «的真实会议中测试» in p.stato
+  B-firefox-zh-dispositivi: SPEZZATA «的真实录音说出» in p.entra
+  B-firefox-zh-dispositivi: SPEZZATA «卢卡和安娜听到时» in span.con-js
+  B-firefox-zh-dispositivi: SPEZZATA «按下回车» in p.presentazione
+
+B esame webkit: 71 segnalazioni
+  B-webkit-bn-dispositivi: A CAPO NEL MEZZO «OSI-এর» in p
+  B-webkit-bn-dispositivi: A CAPO NEL MEZZO «OSI-এর» in p
+  B-webkit-bn-dispositivi: A CAPO NEL MEZZO «OSI-এর» in p
+  B-webkit-bn-dispositivi: A CAPO NEL MEZZO «OSI-এর» in p
+  B-webkit-zh-dispositivi: SPEZZATA «一个自然的意大利语声音会在会议中把它说出来» in p.presentazione
+  B-webkit-zh-dispositivi: SPEZZATA «的真实录音说出» in p.entra
+  B-webkit-zh-dispositivi: SPEZZATA «哪些还没有» in p.entra
+  B-webkit-zh-dispositivi: SPEZZATA «手机版和其他语言» in p
+  B-webkit-zh-dispositivi: SPEZZATA «首次启动及在会议应用中选择麦克风的还原图» in p.nota-ricostruzione
+  B-webkit-zh-dispositivi: SPEZZATA «一个自然的意大利语声音会在会议中把它说出来» in p.presentazione
+  B-webkit-zh-dispositivi: SPEZZATA «的真实录音说出» in p.entra
+  B-webkit-zh-dispositivi: SPEZZATA «哪些还没有» in p.entra
+  B-webkit-zh-dispositivi: SPEZZATA «手机版和其他语言» in p
+  B-webkit-zh-dispositivi: SPEZZATA «首次启动及在会议应用中选择麦克风的还原图» in p.nota-ricostruzione
+  B-webkit-zh-dispositivi: SPEZZATA «一个自然的意大利语声音会在会议中把它说出来» in p.presentazione
+  B-webkit-zh-dispositivi: SPEZZATA «的真实录音说出» in p.entra
+  B-webkit-zh-dispositivi: SPEZZATA «哪些还没有» in p.entra
+  B-webkit-zh-dispositivi: SPEZZATA «手机版和其他语言» in p
+  B-webkit-zh-dispositivi: SPEZZATA «首次启动及在会议应用中选择麦克风的还原图» in p.nota-ricostruzione
+  B-webkit-zh-dispositivi: SPEZZATA «一个自然的意大利语声音会在会议中把它说出来» in p.presentazione
+  B-webkit-zh-dispositivi: SPEZZATA «的真实录音说出» in p.entra
+  B-webkit-zh-dispositivi: SPEZZATA «哪些还没有» in p.entra
+  B-webkit-zh-dispositivi: SPEZZATA «手机版和其他语言» in p
+  B-webkit-zh-dispositivi: SPEZZATA «首次启动及在会议应用中选择麦克风的还原图» in p.nota-ricostruzione
+  B-webkit-zh-dispositivi: SPEZZATA «写下一句话» in p.presentazione
+
+
+== corsa finale2D (selettore nella barra, script corretti)
+D selettore nella barra: lavori 7, rossi 1, controlli ok 376, controlli rossi 2
+
+D: 2 segnalazioni
+  D-selettore-barra-chromium-non-ancora: ROSSO [basso 844×390] aperto l'elenco nel menu: il comando e le prime due righe (4 nomi di 30) stanno nello schermo e nel menu (il menu scorre, scostato di 140 px; la pagina resta ferma)
+  D-selettore-barra-chromium-non-ancora: ROSSO [basso 326×326] aperto l'elenco nel menu: il comando e le prime due righe (4 nomi di 30) stanno nello schermo e nel menu (il menu scorre, scostato di 204 px; la pagina resta ferma)
+
+== corsa finale3 (sottoinsieme rifatto sui file di adesso, dopo le modifiche di 3a-r)
+A barra: lavori 8, rossi 0, prove 536, rotte 0
+B esame chromium: lavori 6, rossi 2, pagine 900, pulite 806, stato assente 82
+B esame firefox: lavori 2, rossi 1, pagine 32, pulite 15, stato assente 2
+B esame webkit: lavori 2, rossi 1, pagine 32, pulite 15, stato assente 2
+C pillole chromium: lavori 1, rossi 0, pillole 780, fuori posto 0
+C pillole firefox: lavori 1, rossi 0, pillole 260, fuori posto 0
+C pillole webkit: lavori 1, rossi 0, pillole 259, fuori posto 0
+D selettore nella barra: lavori 4, rossi 1, controlli ok 226, controlli rossi 2
+E pagina della scelta: lavori 3, rossi 0, controlli ok 70, controlli rossi 0
+F nomi e ruoli: lavori 1, rossi 0, controlli ok 42, controlli rossi 0
+G catalogo: lavori 3, rossi 0, controlli ok 36, controlli rossi 0
+H radice con una lingua sola: lavori 1, rossi 0, controlli ok 0, controlli rossi 0
+
+B esame chromium: 12 segnalazioni
+
+B esame firefox: 71 segnalazioni
+
+B esame webkit: 67 segnalazioni
+
+D: 2 segnalazioni
+
+== corsa finale4E (pagina della scelta, prova della scheda in secondo piano corretta)
+E pagina della scelta: lavori 3, rossi 0, controlli ok 70, controlli rossi 0

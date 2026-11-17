@@ -1,0 +1,2 @@
+# L-menu-fuoco-webkit · 17/11/2026 08:52 · node prove/menu-fuoco.mjs /tmp/lavoro-3ar-sito-L-LL webkit 844x390,326x326,390x844,360x640,750x832
+# uscita: 0

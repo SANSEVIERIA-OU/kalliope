@@ -1,0 +1,98 @@
+{
+ "ar · rete veloce": {
+  "comparso": 175,
+  "fcp": 140,
+  "richiesteFont": 3,
+  "corse": [
+   {
+    "comparso": 175,
+    "fcp": 140,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 11,
+      "fine": 17
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 69,
+      "fine": 137
+     },
+     {
+      "file": "readex-pro/ReadexPro-wght.woff2",
+      "byte": 21984,
+      "inizio": 73,
+      "fine": 137
+     }
+    ]
+   }
+  ]
+ },
+ "ar · 4G lento (1,6 Mbps, 150 ms)": {
+  "comparso": 2260,
+  "fcp": 1572,
+  "richiesteFont": 3,
+  "corse": [
+   {
+    "comparso": 2260,
+    "fcp": 1572,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 167,
+      "fine": 1852
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 1515,
+      "fine": 1988
+     },
+     {
+      "file": "readex-pro/ReadexPro-wght.woff2",
+      "byte": 21984,
+      "inizio": 1855,
+      "fine": 2235
+     }
+    ]
+   }
+  ]
+ },
+ "ar · 3G (400 kbps, 400 ms)": {
+  "comparso": 8698,
+  "fcp": 6336,
+  "richiesteFont": 3,
+  "corse": [
+   {
+    "comparso": 8698,
+    "fcp": 6336,
+    "richieste": 3,
+    "file": [
+     {
+      "file": "lexend/Lexend-wght-latino.woff2",
+      "byte": 37644,
+      "inizio": 451,
+      "fine": 7289
+     },
+     {
+      "file": "dejavu/DejaVuSans-latino.woff2",
+      "byte": 21836,
+      "inizio": 6261,
+      "fine": 7920
+     },
+     {
+      "file": "readex-pro/ReadexPro-wght.woff2",
+      "byte": 21984,
+      "inizio": 7292,
+      "fine": 8670
+     }
+    ]
+   }
+  ]
+ }
+}

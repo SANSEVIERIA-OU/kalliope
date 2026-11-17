@@ -1,0 +1,8 @@
+# J-etichetta-chromium · 17/11/2026 08:49 · node prove/etichetta.mjs /tmp/lavoro-3ar-sito-J /tmp/lavoro-3ar-J-foto/etichetta chromium 390x844,326x326,1440x900
+   390x844: fermo: «Ascolta Giulia» largh 350, sbilanciamento -7.5 (margini 84/99) | carica: «Carico…» largh 350, sbilanciamento -7.5 (margini 109/124) | suona: «Pausa» largh 350, sbilanciamento -7.5 (margini 117/132) | pausa: «Riprendi» largh 350, sbilanciamento -7.5 (margini 107/122)
+   326x326: fermo: «Ascolta Giulia» largh 286, sbilanciamento -7.5 (margini 52/67) | carica: «Carico…» largh 286, sbilanciamento -7.5 (margini 77/92) | suona: «Pausa» largh 286, sbilanciamento -7.5 (margini 85/100) | pausa: «Riprendi» largh 286, sbilanciamento -7.5 (margini 75/90)
+   1440x900: fermo: «Ascolta Giulia» largh 211, sbilanciamento -8 (margini 8/24) | carica: «Carico…» largh 211, sbilanciamento -36 (margini 8/80) | suona: «Pausa» largh 211, sbilanciamento -43.5 (margini 8/95) | pausa: «Riprendi» largh 211, sbilanciamento -32 (margini 8/72)
+   (al computer il comando è largo quanto la sua etichetta più lunga: nelle altre l'aria resta dalla parte della parola, -8, -36, -43.5, -32: non è il punto 2)
+
+11/11 ok
+# uscita: 0

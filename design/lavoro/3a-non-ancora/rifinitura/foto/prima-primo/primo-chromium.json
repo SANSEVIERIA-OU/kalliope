@@ -1,0 +1,200 @@
+[
+ {
+  "misura": "390x844",
+  "altezza": 844,
+  "didascalia": {
+   "top": 630,
+   "bottom": 647,
+   "h": 17,
+   "w": 350
+  },
+  "righeDidascalia": 1,
+  "testoDidascalia": "Ricostruzione · su Windows e macOS «Kalliope» non compare fra i microfoni dell'app di riunione",
+  "comando": {
+   "top": 661,
+   "bottom": 753,
+   "h": 92,
+   "w": 350
+  },
+  "stato": {
+   "top": 761,
+   "bottom": 815,
+   "h": 54,
+   "w": 350
+  },
+  "palco": {
+   "top": 234,
+   "bottom": 622,
+   "h": 388,
+   "w": 350
+  },
+  "comandoNelloSchermo": true,
+  "statoNelloSchermo": true,
+  "errori": 0
+ },
+ {
+  "misura": "375x812",
+  "altezza": 812,
+  "didascalia": {
+   "top": 630,
+   "bottom": 647,
+   "h": 17,
+   "w": 335
+  },
+  "righeDidascalia": 1,
+  "testoDidascalia": "Ricostruzione · su Windows e macOS «Kalliope» non compare fra i microfoni dell'app di riunione",
+  "comando": {
+   "top": 661,
+   "bottom": 753,
+   "h": 92,
+   "w": 335
+  },
+  "stato": {
+   "top": 761,
+   "bottom": 815,
+   "h": 54,
+   "w": 335
+  },
+  "palco": {
+   "top": 234,
+   "bottom": 622,
+   "h": 388,
+   "w": 335
+  },
+  "comandoNelloSchermo": true,
+  "statoNelloSchermo": false,
+  "errori": 0
+ },
+ {
+  "misura": "412x915",
+  "altezza": 915,
+  "didascalia": {
+   "top": 630,
+   "bottom": 647,
+   "h": 17,
+   "w": 372
+  },
+  "righeDidascalia": 1,
+  "testoDidascalia": "Ricostruzione · su Windows e macOS «Kalliope» non compare fra i microfoni dell'app di riunione",
+  "comando": {
+   "top": 661,
+   "bottom": 753,
+   "h": 92,
+   "w": 372
+  },
+  "stato": {
+   "top": 761,
+   "bottom": 815,
+   "h": 54,
+   "w": 372
+  },
+  "palco": {
+   "top": 234,
+   "bottom": 622,
+   "h": 388,
+   "w": 372
+  },
+  "comandoNelloSchermo": true,
+  "statoNelloSchermo": true,
+  "errori": 0
+ },
+ {
+  "misura": "360x740",
+  "altezza": 740,
+  "didascalia": {
+   "top": 746,
+   "bottom": 763,
+   "h": 17,
+   "w": 320
+  },
+  "righeDidascalia": 1,
+  "testoDidascalia": "Ricostruzione · su Windows e macOS «Kalliope» non compare fra i microfoni dell'app di riunione",
+  "comando": {
+   "top": 238,
+   "bottom": 330,
+   "h": 92,
+   "w": 320
+  },
+  "stato": {
+   "top": 771,
+   "bottom": 825,
+   "h": 54,
+   "w": 320
+  },
+  "palco": {
+   "top": 350,
+   "bottom": 738,
+   "h": 388,
+   "w": 320
+  },
+  "comandoNelloSchermo": true,
+  "statoNelloSchermo": false,
+  "errori": 0
+ },
+ {
+  "misura": "390x667",
+  "altezza": 667,
+  "didascalia": {
+   "top": 754,
+   "bottom": 771,
+   "h": 17,
+   "w": 350
+  },
+  "righeDidascalia": 1,
+  "testoDidascalia": "Ricostruzione · su Windows e macOS «Kalliope» non compare fra i microfoni dell'app di riunione",
+  "comando": {
+   "top": 246,
+   "bottom": 338,
+   "h": 92,
+   "w": 350
+  },
+  "stato": {
+   "top": 779,
+   "bottom": 833,
+   "h": 54,
+   "w": 350
+  },
+  "palco": {
+   "top": 358,
+   "bottom": 746,
+   "h": 388,
+   "w": 350
+  },
+  "comandoNelloSchermo": true,
+  "statoNelloSchermo": false,
+  "errori": 0
+ },
+ {
+  "misura": "360x640",
+  "altezza": 640,
+  "didascalia": {
+   "top": 746,
+   "bottom": 763,
+   "h": 17,
+   "w": 320
+  },
+  "righeDidascalia": 1,
+  "testoDidascalia": "Ricostruzione · su Windows e macOS «Kalliope» non compare fra i microfoni dell'app di riunione",
+  "comando": {
+   "top": 238,
+   "bottom": 330,
+   "h": 92,
+   "w": 320
+  },
+  "stato": {
+   "top": 771,
+   "bottom": 825,
+   "h": 54,
+   "w": 320
+  },
+  "palco": {
+   "top": 350,
+   "bottom": 738,
+   "h": 388,
+   "w": 320
+  },
+  "comandoNelloSchermo": true,
+  "statoNelloSchermo": false,
+  "errori": 0
+ }
+]

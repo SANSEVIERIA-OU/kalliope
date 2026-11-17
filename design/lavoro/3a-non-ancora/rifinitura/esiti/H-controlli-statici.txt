@@ -1,0 +1,10 @@
+# controlli statici sulla copia H · 17/11/2026 06:28
+Sorgenti in ordine: 23 fogli di stile, valori solo nei token
+css_logico.py: ok, no physical left/right, no asymmetric shorthand, no text in CSS (24 style sheets; 10 physical declarations kept on purpose)
+translations.py: 154 messages, catalogues up to date
+it: 154/154 entries ready
+
+OK
+translations.py: 154 messages, catalogues up to date
+it: 154/154 entries ready
+ok   fogli controllati, 0 con le graffe che non tornano

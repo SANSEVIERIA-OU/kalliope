@@ -1,0 +1,18 @@
+# H-stati-chromium-360x640 · 17/11/2026 06:53 · node prove/stati.mjs /tmp/lavoro-3ar-sito-H /tmp/lavoro-3ar-H-foto/stati chromium 360x640 ascolto,errore,copia,copia-no,tentativo,tentativo-ridimensiona,tentativo-nascosto
+
+== ascolto · chromium 360x640
+
+== errore · chromium 360x640
+
+== copia · chromium 360x640
+
+== copia-no · chromium 360x640
+
+== tentativo · chromium 360x640
+
+== tentativo-ridimensiona · chromium 360x640
+
+== tentativo-nascosto · chromium 360x640
+
+42/42 ok
+# uscita: 0

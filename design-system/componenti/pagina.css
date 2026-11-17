@@ -59,6 +59,16 @@
 .ascolta-ferma .etichette > .se-fermo { visibility: visible; }
 .ascolta-ferma.carica .etichette > .se-fermo, .ascolta-ferma.suona .etichette > .se-fermo, .ascolta-ferma.pausa .etichette > .se-fermo { visibility: hidden; }
 .ascolta-ferma.carica .etichette > .se-carica, .ascolta-ferma.suona .etichette > .se-suona, .ascolta-ferma.pausa .etichette > .se-pausa { visibility: visible; }
+/* al telefono il comando è largo quanto lo schermo: la larghezza è già ferma (non cambia con l'etichetta), e a stare nella stessa cella
+   l'etichetta di «Pausa» o «Riprendi» finiva a sinistra della più lunga, con il tondo, lontana dal centro. Qui le altre non occupano posto:
+   il tondo e la parola dello stato stanno insieme, al centro, come a riposo (rifinitura 3a-r, N2) */
+@media (max-width: 760px) {
+  .ascolta-ferma .etichette { display: inline; }
+  .ascolta-ferma .etichette > span { display: none; }
+  .ascolta-ferma .etichette > .se-fermo { display: inline; }
+  .ascolta-ferma.carica .etichette > .se-fermo, .ascolta-ferma.suona .etichette > .se-fermo, .ascolta-ferma.pausa .etichette > .se-fermo { display: none; }
+  .ascolta-ferma.carica .etichette > .se-carica, .ascolta-ferma.suona .etichette > .se-suona, .ascolta-ferma.pausa .etichette > .se-pausa { display: inline; }
+}
 
 /* la scena chiara: il testo dei tratti scuro, come i requisiti della home sulla stessa scena; i collegamenti con la loro riga */
 .scena-chiara .tratto-testo p { color: var(--testo-spiegazione-chiara); }
@@ -113,3 +123,31 @@
   .scena-pagina #comandi-apertura { margin-top: var(--spazio-12); }
   .scena-pagina .apertura .stato { margin-top: var(--spazio-12); }
 }
+
+/* ---------- quando un gesto apre qualcosa, vince ciò che il gesto ha aperto: la riunione si abbassa perché il comando resti ----------
+   (regola della cornice, PIANO.md; rifinitura 3a-r, N1). Nella chiusura il gesto è «Ascolta»: apre la bolla dove le parole si accendono, e se il suono
+   non parte il messaggio d'errore. Dove l'altezza non basta per la bolla, la riunione e il comando «Pausa» (o il messaggio), la riunione si fa più
+   bassa, fino a --tavolo-pagina-altezza-minima, invece di mandare il comando sotto il bordo: a 844×390 la riunione è di 106 px e non di 172, a
+   326×326 di 68 e non di 78. Da dove l'altezza basta è quella di sempre. Con il messaggio d'errore, al computer, la riunione si abbassa di più (il
+   messaggio è alto 132 px, e largo sempre uguale); al telefono la sua altezza dipende da quante righe fa il testo, e ci pensa il messaggio: vince lui. */
+.tavolo-pagina .tavolo-cornice { height: var(--tavolo-pagina-altezza); transition-property: none; }   /* la riunione cambia altezza di colpo: con «riduci movimento» (base.css: ogni transizione dura 1 ms) la sua altezza nuova si vedrebbe un attimo dopo, e lo scorrimento che porta tutto in vista misurerebbe quella vecchia */
+@media (min-width: 761px) {
+  .chiusura:has(.errore-ascolto) .tavolo-pagina .tavolo-cornice { height: var(--tavolo-pagina-altezza-errore); }
+  /* le barre di «Tu» seguono il riquadro: in una riunione bassa non escono dal suo bordo (a 156 px di riquadro sono i 64 px di sempre) */
+  .tavolo-pagina .barre { height: min(var(--tavolo-barre-altezza), var(--tavolo-barre-quota)); }
+}
+@media (max-width: 760px) {
+  .tavolo-pagina .tavolo-cornice { height: var(--tavolo-pagina-altezza-telefono); }
+}
+
+/* al telefono la didascalia della scena dice per intero che cos'è («Ricostruzione · su Windows e macOS «Kalliope» non compare…»), non una parola:
+   sta nello stesso posto, sotto la scena, e va a capo (rifinitura 3a-r, M3) */
+@media (max-width: 760px) {
+  .scena-pagina .didascalia .d-lunga { display: inline; }
+}
+
+/* il fuoco porta in vista il comando che tocca, in ogni motore: Firefox scorre solo se il comando non si vede affatto, e le due voci del piede sotto il bordo,
+   mezze fuori, restavano dove erano. Le voci del piede hanno uno spazio sotto di sé (scroll-margin-bottom) e Firefox le porta in vista (provato nei tre motori,
+   con più lingue nel piede). Non è uno scroll-padding della pagina: quello faceva scorrere la pagina anche per il fuoco dentro il menu del telefono (51 px a
+   844×390, 23 a 326×326), dove il fuoco non deve muovere niente (rifinitura 3a-r, punto 8 e sua correzione) */
+.piede a { scroll-margin-bottom: var(--scorrimento-spazio-sotto); }

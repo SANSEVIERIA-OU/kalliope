@@ -77,7 +77,8 @@
           <a class="pillola azione" href="installa/" data-t="cta.scarica">Scarica e installa</a>
           <a class="collegamento" href="non-ancora/" data-t="cta.non-linux">Non uso Linux: cosa posso fare<span class="freccia" aria-hidden="true"></span></a>
         </div>
-        <p class="stato" data-t="apertura.stato"><strong>Oggi:</strong> versione di prova {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Non ancora provata in una riunione vera con Zoom, Teams o Meet.</p>
+        <p class="stato" data-release="prova" data-t="apertura.stato"><strong>Oggi:</strong> versione di prova {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Non ancora provata in una riunione vera con Zoom, Teams o Meet.</p>
+        <p class="stato" data-release="stabile" data-t="apertura.stato-stabile" data-t-nota="Shown instead of the sentence of the key apertura.stato when the release is not a test version: the same sentence without «of test». The site chooses one of the two by the release data."><strong>Oggi:</strong> versione {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Non ancora provata in una riunione vera con Zoom, Teams o Meet.</p>
         <p class="didascalia" data-t="apertura.didascalia" data-t-nota="The parts in tags 1 and 2 are the long ones and are dropped on narrow screens: the rest must read well without them.">Ricostruzione<span class="d-lunga"> della finestra di Kalliope 0.1</span> · la voce è la registrazione vera<span class="d-piu"> · scrittura accelerata, partecipanti di esempio</span></p>
       </section>
 
@@ -454,7 +455,8 @@
         <a class="pillola azione" href="installa/" data-t="cta.scarica">Scarica e installa</a>
         <a class="collegamento" href="non-ancora/" data-t="cta.non-linux">Non uso Linux: cosa posso fare<span class="freccia" aria-hidden="true"></span></a>
       </div>
-      <p class="fatti entra" data-t="chiusura.fatti">Versione di prova {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Nessun account, nessun prezzo: l'uso personale è libero.</p>
+      <p class="fatti entra" data-release="prova" data-t="chiusura.fatti">Versione di prova {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Nessun account, nessun prezzo: l'uso personale è libero.</p>
+      <p class="fatti entra" data-release="stabile" data-t="chiusura.fatti-stabile" data-t-nota="Shown instead of the sentence of the key chiusura.fatti when the release is not a test version: the same sentence without «of test». The site chooses one of the two by the release data.">Versione {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Nessun account, nessun prezzo: l'uso personale è libero.</p>
       <p class="avvertenza entra" data-t="chiusura.avvertenza">Kalliope non è un dispositivo medico e non sostituisce la valutazione di un logopedista.</p>
     </section>
   </main>

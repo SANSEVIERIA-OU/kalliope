@@ -1,0 +1,3 @@
+hi · rete veloce                  testo nel carattere giusto:   171 ms (corse 171, 96, 181) · primo disegno 140 ms · richieste di caratteri 3 · Lexend-wght-latino.woff2 9→15 | NotoSansDevanagari-wght.woff2 10→51 | DejaVuSans-latino.woff2 74→132
+hi · 4G lento (1,6 Mbps, 150 ms)  testo nel carattere giusto:  2542 ms (corse 2542, 2538, 2550) · primo disegno 2264 ms · richieste di caratteri 3 · Lexend-wght-latino.woff2 166→1267 | NotoSansDevanagari-wght.woff2 166→2497 | DejaVuSans-latino.woff2 2193→2678
+hi · 3G (400 kbps, 400 ms)        testo nel carattere giusto: 10432 ms (corse 10433, 10432, 10430) · primo disegno 8432 ms · richieste di caratteri 3 · Lexend-wght-latino.woff2 452→4950 | NotoSansDevanagari-wght.woff2 452→10380 | DejaVuSans-latino.woff2 8366→10231

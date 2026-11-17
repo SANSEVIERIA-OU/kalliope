@@ -1,0 +1,59 @@
+{
+ "versione": 1,
+ "lavori": [
+  {
+   "id": "E-selettore-scelta-chromium",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/selettore-scelta.mjs",
+    "/tmp/lavoro-2b-sito30-s11",
+    "--motori",
+    "chromium",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "E-selettore-scelta-firefox",
+   "motore": "firefox",
+   "priorita": 2,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/selettore-scelta.mjs",
+    "/tmp/lavoro-2b-sito30-s11",
+    "--motori",
+    "firefox",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "E-selettore-scelta-webkit",
+   "motore": "webkit",
+   "priorita": 2,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/selettore-scelta.mjs",
+    "/tmp/lavoro-2b-sito30-s11",
+    "--motori",
+    "webkit",
+    "--porta",
+    "0"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+# J-stati-chromium-390x844 · 17/11/2026 08:31 · node prove/stati.mjs /tmp/lavoro-3ar-sito-J /tmp/lavoro-3ar-J-foto/stati chromium 390x844 tutti
+
+== ascolto · chromium 390x844
+
+== errore · chromium 390x844
+
+== lento · chromium 390x844
+
+== attesa · chromium 390x844
+stati nel tempo: carica → suona → carica → suona → fermo
+
+== nascosto · chromium 390x844
+
+== copia · chromium 390x844
+
+== copia-no · chromium 390x844
+
+== tentativo · chromium 390x844
+
+== tentativo-ridimensiona · chromium 390x844
+
+== tentativo-altezza · chromium 390x844
+
+== tentativo-nascosto · chromium 390x844
+
+== tentativo-nascosto-da-subito · chromium 390x844
+
+57/57 ok
+# uscita: 0

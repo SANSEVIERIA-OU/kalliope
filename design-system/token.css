@@ -966,6 +966,14 @@
   --ritardo-arriva-in-cima: 250ms;
   --durata-posto-testo: 360ms;   /* «Windows e macOS · compariranno qui» si scrive nel posto aperto */
   --ritardo-posto-testo: 2050ms;
+  /* · La chiusura sugli schermi bassi (rifinitura 3a-r, N1; regola della cornice, PIANO.md): quando l'altezza manca la riunione si fa più bassa,
+       perché la bolla dove le parole si accendono, la riunione e il comando «Pausa» (o il messaggio d'errore) stiano insieme nello schermo */
+  --tavolo-pagina-altezza-minima: 60px;   /* la riunione più bassa che regge i nomi e le barre di «Tu»: la stessa della fila della scelta della lingua sugli schermi bassi */
+  --tavolo-pagina-altezza: clamp(var(--tavolo-pagina-altezza-minima), calc(100vh - 222px - 2 * var(--interlinea-13)), var(--tavolo-cornice-altezza));   /* al computer: la barra (72) con 8 px sotto, la bolla (26 + due righe, 88 in italiano) con la coda (18), la riunione, il comando (34 + 56) e 8 px in fondo stanno nello schermo; da 456 px di altezza in su (in italiano) è quella di sempre. Le righe della bolla sono quelle della scrittura: in arabo, con le righe più alte, la riunione è più bassa di quel tanto */
+  --tavolo-pagina-altezza-telefono: clamp(var(--tavolo-pagina-altezza-minima), calc(100vh - 192px - 3 * var(--interlinea-6)), var(--tavolo-cornice-altezza-telefono));   /* al telefono, con la barra da 56 e la bolla di tre righe (la più alta, a 326 px di larghezza): da 336 px di altezza in su (in italiano) è quella di sempre */
+  --tavolo-pagina-altezza-errore: clamp(var(--tavolo-pagina-altezza-minima), calc(100vh - 324px - 2 * var(--interlinea-13) - 2 * var(--interlinea-6)), var(--tavolo-cornice-altezza));   /* al computer, con il messaggio d'errore sotto il comando (132 px in italiano: due righe e i comandi): la bolla e il messaggio stanno insieme da 500 px di altezza; da 602 in su (in italiano) è quella di sempre */
+  --tavolo-barre-quota: 42%;   /* le barre di «Tu» in una riunione bassa: non più alte di questa parte del riquadro (a 156 px di riquadro sono i 64 px di sempre) */
+  --scorrimento-spazio-sotto: var(--spazio-29);   /* lo spazio che resta sotto una voce del piede portata in vista dal fuoco (scroll-margin-bottom): Firefox scorre solo se il comando non si vede affatto, e uno mezzo fuori restava tale */
 }
 
 /* ---------- Le scritture: un carattere, le interlinee e la spaziatura per ogni scrittura (incarico 2, 17/11/2026) ----------

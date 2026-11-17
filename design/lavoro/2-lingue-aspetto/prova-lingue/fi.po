@@ -129,6 +129,16 @@ msgctxt "apertura.stato"
 msgid "<1>Oggi:</1> versione di prova {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Non ancora provata in una riunione vera con Zoom, Teams o Meet."
 msgstr "<1>Tänään:</1> testiversio {{kalliope.version}}, vain Linuxille (x86_64 ja PipeWire). Ei vielä kokeiltu oikeassa kokouksessa Zoomilla, Teamsilla tai Meetillä."
 
+#. Shown instead of the sentence of the key apertura.stato when the release is not a test version: the same sentence without «of test». The site chooses one of the two by the release data.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#. Placeholders to leave as they are: {{kalliope.version}}
+#: index.html non-ancora/index.html
+#, kalliope-markup, python-brace-format
+msgctxt "apertura.stato-stabile"
+msgid "<1>Oggi:</1> versione {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Non ancora provata in una riunione vera con Zoom, Teams o Meet."
+msgstr "<1>Tänään:</1> versio {{kalliope.version}}, vain Linuxille (x86_64 ja PipeWire). Ei vielä kokeiltu oikeassa kokouksessa Zoomilla, Teamsilla tai Meetillä."
+
 #. The parts in tags 1 and 2 are the long ones and are dropped on narrow screens: the rest must read well without them.
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <span class="d-lunga">
@@ -544,6 +554,14 @@ msgctxt "chiusura.fatti"
 msgid "Versione di prova {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Nessun account, nessun prezzo: l'uso personale è libero."
 msgstr "Testiversio {{kalliope.version}}, vain Linuxille (x86_64 ja PipeWire). Ei tiliä, ei hintaa: henkilökohtainen käyttö on vapaata."
 
+#. Shown instead of the sentence of the key chiusura.fatti when the release is not a test version: the same sentence without «of test». The site chooses one of the two by the release data.
+#. Placeholders to leave as they are: {{kalliope.version}}
+#: index.html
+#, kalliope-markup, python-brace-format
+msgctxt "chiusura.fatti-stabile"
+msgid "Versione {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Nessun account, nessun prezzo: l'uso personale è libero."
+msgstr "Versio {{kalliope.version}}, vain Linuxille (x86_64 ja PipeWire). Ei tiliä, ei hintaa: henkilökohtainen käyttö on vapaata."
+
 #: index.html
 #, kalliope-markup
 msgctxt "chiusura.avvertenza"
@@ -809,7 +827,7 @@ msgctxt "na.apertura.ascolta"
 msgid "Intanto, senti la voce<1/>"
 msgstr "Intanto, senti la voce<1/>"
 
-#. The part in tag 1 is the long one and is dropped on narrow screens: the rest must read well without it.
+#. The caption of the scene: the first word says what it is, the part in tag 1 says which one. On narrow screens the part in tag 1 goes to a second line; it is not dropped.
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <span class="d-lunga">
 #: non-ancora/index.html
@@ -953,6 +971,12 @@ msgstr "Kalliope {{kalliope.version}}"
 msgctxt "na.versioni.ultima.nota"
 msgid "Versione di prova · solo Linux"
 msgstr "Versione di prova · solo Linux"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.versioni.ultima.nota-stabile"
+msgid "Solo Linux"
+msgstr "Solo Linux"
 
 #: non-ancora/index.html
 #, kalliope-markup

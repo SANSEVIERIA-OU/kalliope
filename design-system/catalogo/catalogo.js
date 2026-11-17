@@ -10,17 +10,39 @@
   const prova = (nome, f) => { try { return f(); } catch (e) { errori.push(`${nome}: ${e.message}`); return null; } };
 
   // ---------- i token, letti dal file ----------
+  // token.css ha più blocchi :root: la base, e uno per ogni gruppo aggiunto dopo (pagine interne, scritture, lingue), ognuno con il suo titolo in un
+  // commento «/* ---------- Titolo (incarico…) ---------- */». La base è divisa in sezioni («/* Colori e materiali */») e gruppi («/* · … */»); un blocco
+  // aggiunto è una sezione sola, con i suoi gruppi. Ciò che cambia con la larghezza (@media, @container), con la scrittura (:lang()) e con il verso
+  // (:dir(rtl)) sta in altre regole: ogni token ha le sue nella colonna «Varia».
   const css = await (await fetch('../token.css')).text();
-  const radice = css.match(/:root\s*\{([\s\S]*?)\n\}/)[1];
-  const sezioni = []; let cur = null, gruppo = '';
-  for (const riga of radice.split('\n')) {
-    const t = riga.match(/^\s*\/\*\s*(.*?)\s*\*\/\s*$/);
-    if (t) { if (t[1].startsWith('·')) gruppo = t[1].slice(1).trim(); else { cur = {titolo: t[1], token: []}; sezioni.push(cur); gruppo = ''; } continue; }
-    const k = riga.match(/^\s*(--[\w-]+):\s*(.*?);\s*(?:\/\*\s*(.*?)\s*\*\/)?\s*$/);
-    if (k && cur) cur.token.push({nome: k[1], valore: k[2], ruolo: k[3] || '', gruppo});
-  }
+  const unaRiga = s => s.replace(/\/\*[\s\S]*?\*\//g, m => m.replace(/\s*\n\s*/g, ' '));   // un commento su più righe diventa una riga sola
+  const sezioni = [];
+  const blocchi = [...('\n' + css).matchAll(/\n:root\s*\{([\s\S]*?)\n\}/g)];
+  blocchi.forEach((b, i) => {
+    const titolo = i === 0 ? 'Base' : (([...('\n' + css).slice(0, b.index).matchAll(/\/\*\s*-{4,}\s*(.+?)\s*-{4,}/g)].pop() || [])[1] || `Blocco ${i + 1}`)
+      .replace(/\s*\((?:incarico|rifinitura)[^)]*\)/, '').replace(/\s*·\s*componenti\/.*$/, '');
+    let cur = null, gruppo = '';
+    if (i > 0) { cur = {titolo, blocco: titolo, token: []}; sezioni.push(cur); }
+    for (const riga of unaRiga(b[1]).split('\n')) {
+      const t = riga.match(/^\s*\/\*\s*(.*?)\s*\*\/\s*$/);
+      if (t) { if (t[1].startsWith('·')) gruppo = t[1].slice(1).trim(); else if (i === 0) { cur = {titolo: t[1], blocco: titolo, token: []}; sezioni.push(cur); gruppo = ''; } continue; }
+      const k = riga.match(/^\s*(--[\w-]+):\s*(.*?);\s*(?:\/\*\s*(.*?)\s*\*\/)?\s*$/);
+      if (k && cur) cur.token.push({nome: k[1], valore: k[2], ruolo: k[3] || '', gruppo});
+    }
+  });
   const cambia = [...css.matchAll(/(@media[^{]*|@container[^{]*)\{\s*:root\s*\{([^}]*)\}/g)].map(m => ({cond: m[1].trim(), dich: m[2].trim()}));
-  const tutti = sezioni.flatMap(s => s.token.map(t => ({...t, sezione: s.titolo})));
+  const tutti = sezioni.flatMap(s => s.token.map(t => ({...t, sezione: s.titolo, blocco: s.blocco})));
+  // le altre regole che ridefiniscono un token: per larghezza, per lingua, per verso
+  const varia = new Map();
+  {
+    const nudo = css.replace(/\/\*[\s\S]*?\*\//g, '');
+    const nota = (quando, corpo) => { for (const m of corpo.matchAll(/(--[\w-]+)\s*:\s*([^;]+);/g)) { if (!varia.has(m[1])) varia.set(m[1], []); varia.get(m[1]).push(`${quando}: ${m[2].trim()}`); } };
+    for (const m of nudo.matchAll(/(@media[^{]*|@container[^{]*)\{\s*:root\s*\{([^}]*)\}/g)) nota(m[1].replace(/^@(?:media|container)\s*/, '').trim(), m[2]);
+    for (const m of nudo.matchAll(/(?<=^|\})\s*([^{}@]+?)\s*\{([^{}]*)\}/g)) {
+      const sel = m[1].trim();
+      if (/:lang\(|:dir\(/.test(sel)) nota(sel.replace(/:root:dir\(rtl\)/, 'da destra a sinistra').replace(/\[lang\]:not\(:lang\(([\w-]+)\)\)/g, 'non $1').replace(/:lang\(([\w-]+)\)/g, '$1'), m[2]);
+    }
+  }
   const risolto = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
   const sez = nome => sezioni.find(s => s.titolo.startsWith(nome))?.token || [];
 
@@ -90,7 +112,7 @@
     const corpi = tutti.filter(t => /^--corpo-\d+$/.test(t.nome)), inter = tutti.filter(t => /^--interlinea-\d+$/.test(t.nome));
     s.append(el('h3', {testo: `Grandezze del testo condivise (${corpi.length})`}), el('div', {class: 'cat-scala'}, corpi.map(t => el('div', {class: 'cat-riga-scala'}, el('code', {testo: t.nome}), el('span', {testo: t.valore}), el('span', {style: `font-size: var(${t.nome}); line-height: 1.2`, testo: 'Una frase detta nella riunione'})))));
     s.append(el('h3', {testo: `Interlinee condivise (${inter.length})`}), el('div', {class: 'cat-scala'}, inter.map(t => el('div', {class: 'cat-riga-scala'}, el('code', {testo: t.nome}), el('span', {testo: t.valore}), el('span', {style: `display: block; line-height: var(${t.nome}); max-width: 22em; border-left: var(--filetto-comando) solid var(--bordo-comando)`, testo: 'Le parole si accendono mentre le dici e gli altri ti sentono.'})))));
-    s.append(el('p', {class: 'cat-nota', html: 'Le grandezze di un solo componente (il titolo, la bolla, il marchio…) hanno il nome del componente: sono nella tabella in fondo. Alfabeti: il sito è in italiano; il carattere è il sottoinsieme latino.'}));
+    s.append(el('p', {class: 'cat-nota', html: 'Le grandezze di un solo componente (il titolo, la bolla, il marchio…) hanno il nome del componente: sono nella tabella in fondo. Gli altri alfabeti (greco, cirillico, arabo, urdu, devanagari, bengali, cinese) sono in «Le scritture».'}));
   });
 
   prova('forme', () => {
@@ -202,19 +224,29 @@
   });
 
   prova('tabella', () => {
-    const s = apri('tabella', `Tutti i token (${tutti.length})`, 'Tabella generata da <code>token.css</code> mentre la pagina si apre: nome, valore scritto, valore calcolato dal browser e un campione. Il ruolo e gli usi di ogni token sono in <code>TOKEN.md</code>.');
+    const perBlocco = blocchi.length > 1 ? [...new Set(tutti.map(t => t.blocco))].map(b => `${b}: ${tutti.filter(t => t.blocco === b).length}`).join(' · ') : '';
+    const s = apri('tabella', `Tutti i token (${tutti.length})`, `Tabella generata da <code>token.css</code> mentre la pagina si apre, da tutti i suoi blocchi <code>:root</code> (${perBlocco}): il blocco, la sezione, il nome, il valore scritto, il valore calcolato dal browser, un campione e, dove c'è, come il token cambia con la larghezza, la lingua o il verso. Il ruolo e gli usi di ogni token sono in <code>TOKEN.md</code>.`);
     const cerca = el('input', {class: 'cat-cerca', type: 'search', placeholder: 'Cerca un token o un valore', 'aria-label': 'Cerca un token'}); s.append(cerca);
-    const tb = el('tbody'); const tab = el('table', {class: 'cat-tabella'}, el('thead', {}, el('tr', {}, ['Sezione', 'Token', 'Valore', 'Calcolato', 'Campione'].map(t => el('th', {testo: t})))), tb); s.append(tab);
+    const tb = el('tbody'); const tab = el('table', {class: 'cat-tabella'}, el('thead', {}, el('tr', {}, ['Blocco', 'Sezione', 'Token', 'Valore', 'Calcolato', 'Campione', 'Varia'].map(t => el('th', {testo: t})))), tb); s.append(tab);
     const campione = t => {
+      if (t.blocco !== 'Base') {   // i blocchi aggiunti non hanno le sezioni della base: il campione dal valore
+        if (/^(#[0-9a-f]{3,8}|rgba?\(|hsla?\()/i.test(t.valore)) return el('span', {class: 'cat-campione', style: `background: var(${t.nome})`});
+        if (/^-?[\d.]+px$/.test(t.valore) && parseFloat(t.valore) > 0) return el('span', {class: 'cat-barra', style: `display: block; width: min(var(${t.nome}), 100%)`});
+        if (/^[\d.]+m?s$/.test(t.valore)) return el('span', {class: 'cat-barra', style: `display: block; width: calc(${parseFloat(t.valore) * (/ms$/.test(t.valore) ? 1 : 1000)} * 0.06em); max-width: 20em`});
+        return '';
+      }
       if (/^(#|rgba?\()|^var\(--[\w-]+\)$/.test(t.valore) && t.sezione.startsWith('Colori')) return el('span', {class: 'cat-campione', style: `background: var(${t.nome})`});
       if (t.sezione.startsWith('Ombre') && !/vmax/.test(t.valore)) return el('span', {class: 'cat-ombra', style: `box-shadow: var(${t.nome}); width: 4em; height: 2em`});
       if (t.sezione.startsWith('Raggi')) return el('span', {class: 'cat-forma', style: `border-radius: var(${t.nome}); width: 3em; height: 2em`});
       if (/^-?[\d.]+px$/.test(t.valore) && /^(Spazi|Misure)/.test(t.sezione) && parseFloat(t.valore) > 0) return el('span', {class: 'cat-barra', style: `display: block; width: min(var(${t.nome}), 100%)`});
       if (t.sezione.startsWith('Scala del testo') && /^--(corpo|[\w-]+-grandezza)/.test(t.nome)) return el('span', {style: `font-size: var(${t.nome})`, testo: 'Aa'});
-      if (t.sezione.startsWith('Movimento') && /ms$|s$/.test(t.valore)) return el('span', {class: 'cat-barra', style: `display: block; width: calc(${parseFloat(t.valore) * (/ms$/.test(t.valore) ? 1 : 1000)} * 0.06em); max-width: 100%`});
+      if (t.sezione.startsWith('Movimento') && /ms$|s$/.test(t.valore)) return el('span', {class: 'cat-barra', style: `display: block; width: calc(${parseFloat(t.valore) * (/ms$/.test(t.valore) ? 1 : 1000)} * 0.06em); max-width: 20em`});
       return '';
     };
-    for (const t of tutti) tb.append(el('tr', {'data-q': (t.nome + ' ' + t.valore + ' ' + t.sezione + ' ' + t.ruolo).toLowerCase()}, el('td', {testo: t.sezione}), el('td', {class: 'n', testo: t.nome}), el('td', {class: 'v', testo: t.valore.length > 120 ? t.valore.slice(0, 117) + '…' : t.valore}), el('td', {class: 'v', testo: (risolto(t.nome) || '').slice(0, 80)}), el('td', {}, campione(t))));
+    for (const t of tutti) {
+      const v = (varia.get(t.nome) || []).join(' · ');
+      tb.append(el('tr', {'data-q': (t.nome + ' ' + t.valore + ' ' + t.blocco + ' ' + t.sezione + ' ' + t.gruppo + ' ' + t.ruolo + ' ' + v).toLowerCase()}, el('td', {testo: t.blocco}), el('td', {testo: t.blocco === 'Base' ? t.sezione : (t.gruppo || t.sezione)}), el('td', {class: 'n', testo: t.nome}), el('td', {class: 'v', testo: t.valore.length > 120 ? t.valore.slice(0, 117) + '…' : t.valore}), el('td', {class: 'v', testo: (risolto(t.nome) || '').slice(0, 80)}), el('td', {}, campione(t)), el('td', {class: 'v', title: v, testo: v.length > 160 ? v.slice(0, 157) + '…' : v})));
+    }
     cerca.addEventListener('input', () => { const q = cerca.value.toLowerCase().trim(); tb.querySelectorAll('tr').forEach(r => { r.hidden = q && !r.dataset.q.includes(q); }); });
   });
 
@@ -231,13 +263,13 @@
       ['Provenienza e decisioni', 'la direzione scelta è in <code>design/direzione-2/D2.md</code>; le schede dei riferimenti e la matrice del confronto non sono in questo repository.'],
       ['Tutti i dispositivi (15 voci) nei tre motori', 'per decisione dell\'incarico: solo un confronto pixel per pixel su quattro misure in Chromium; niente matrici. Qui tre larghezze vive come anteprima.'],
       ['Prove con i log', 'gli esiti dei confronti stanno in <code>sistema/prove/</code> e in <code>SISTEMA.md</code>, non letti dal catalogo.'],
-      ['Lingue e alfabeti', 'il sito è solo in italiano; nessuna traduzione da mostrare.'],
+      ['Lingue e alfabeti', 'sono nelle sezioni «Le scritture», «La scelta della lingua» e «Lo specchio» (<code>catalogo-lingue.js</code>); le traduzioni vere non ci sono ancora: i testi si riscrivono, il catalogo mostra i caratteri, la scelta e lo specchio.'],
       ['Valori in <code>scena.js</code>', 'curve, durate e colori delle onde scritti nello script non sono ancora token (<code>TOKEN.md</code>, «Altro da decidere»).'],
     ].map(([a, b]) => `<li><b>${a}</b>: ${b}</li>`).join('')}));
   });
 
   // l'indice e lo stato
   const ind = $('#indice'); for (const [id, t] of indice) ind.append(el('li', {}, el('a', {href: '#' + id, testo: t})));
-  stato.textContent = errori.length ? `Qualche sezione non si è costruita: ${errori.join(' · ')}` : `${tutti.length} token letti da token.css, ${forzati.length} regole di stato forzabili, componenti copiati dalla home.`;
-  window.__catalogo = {token: tutti.length, errori, stati: forzati.length};
+  stato.textContent = errori.length ? `Qualche sezione non si è costruita: ${errori.join(' · ')}` : `${tutti.length} token letti da token.css (${blocchi.length} blocchi), ${forzati.length} regole di stato forzabili, componenti copiati dalla home.`;
+  window.__catalogo = {token: tutti.length, blocchi: blocchi.length, perBlocco: Object.fromEntries([...new Set(tutti.map(t => t.blocco))].map(b => [b, tutti.filter(t => t.blocco === b).length])), variano: varia.size, errori, stati: forzati.length};
 })();

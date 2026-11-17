@@ -315,7 +315,7 @@
     if (!nota) return;
     // «Riprova» sparisce premendolo: il fuoco torna al comando invece di cadere sulla pagina
     const ritornoFuoco = nota.contains(document.activeElement);
-    nota.remove(); nota = null;
+    nota.remove(); nota = null; geo = null;   // senza il messaggio la riunione torna alla sua altezza (pagina.css): le onde si rimisurano
     if (ritornoFuoco) bottone.focus({preventScroll: true});
   }
   function mostraNota(causa) {
@@ -329,21 +329,33 @@
     const scarica = document.createElement('a'); scarica.className = 'scarica-file'; scarica.href = new URL(`voce/${FILE}.mp3`, RADICE).href; scarica.setAttribute('download', '');
     scarica.textContent = fmt(T('errore.scarica'), {voce: nomeVoce()});
     az.append(riprova, scarica); el.append(p, az);
-    comandi.after(el); nota = el;
+    comandi.after(el); nota = el; geo = null;   // con il messaggio, al computer, la riunione si abbassa (pagina.css): le onde si rimisurano
     mostraInsieme(bolla, el);
   }
   // Ciò che un gesto apre sta nello schermo, sotto la barra: dall'inizio (la bolla dove si accendono le parole, o il comando) al fondo (il comando, il
-  // messaggio d'errore, la risposta di «Copia»). Se non ci stanno insieme (schermi bassi) vince uno dei due: il fondo (il messaggio d'errore sta per
-  // intero nello schermo, vicino al comando che l'ha causato, e la riunione scorre sotto la barra) o l'inizio (mentre suona, la bolla con le parole
-  // che si accendono: il testo che accompagna il suono).
+  // messaggio d'errore, la risposta di «Copia»). Nel primo schermo vince il comando; quando un gesto apre qualcosa vince ciò che il gesto ha aperto
+  // (PIANO.md, «La cornice»), e dove l'altezza non basta la riunione si abbassa perché stia tutto (pagina.css, .tavolo-pagina). Se non ci stanno insieme
+  // nemmeno così (il messaggio d'errore sugli schermi più bassi, al telefono) vince uno dei due: il fondo (il messaggio d'errore sta per intero nello
+  // schermo, vicino al comando che l'ha causato, e la riunione scorre sotto la barra) o l'inizio (mentre suona, la bolla con le parole che si accendono).
+  // Se uno scorrimento è già in corso (il primo, premendo «Ascolta», e il messaggio d'errore arriva a metà) si misura dove sarà arrivato: misurando a metà
+  // strada il messaggio sembrava già in vista, non si chiedeva niente, e lo scorrimento in corso lo portava sotto il bordo (rifinitura 3a-r, N1).
+  let meta = null, metaQuando = 0;   // dove va a finire lo scorrimento in corso (posizione assoluta) e quando è stato chiesto
   function mostraInsieme(inizio, fondo, vince = 'fondo') {
     requestAnimationFrame(() => {
       if (!inizio.isConnected || !fondo.isConnected) return;
+      if (meta !== null && (Math.abs(scrollY - meta) <= 1 || performance.now() - metaQuando > 1500)) meta = null;   // arrivato (o non arriva: la pagina finisce prima)
+      const resto = meta === null ? 0 : meta - scrollY;   // quanto lo scorrimento in corso deve ancora fare
+      // un messaggio che sta entrando (sale12) è più in basso, per un attimo, di dove resterà: si misura dove resterà
+      const spostato = fondo.getAnimations().length ? new DOMMatrix(getComputedStyle(fondo).transform === 'none' ? undefined : getComputedStyle(fondo).transform).m42 : 0;
       const barraEl = $('.barra'), alto = (barraEl ? barraEl.getBoundingClientRect().bottom : 0) + 8;
-      const giu = Math.max(0, fondo.getBoundingClientRect().bottom - (innerHeight - 8));   // quanto scorrere perché il fondo si veda
-      const su = inizio.getBoundingClientRect().top - alto;                                   // quanto scorrere perché l'inizio stia sotto la barra (negativo: verso l'alto)
+      const giu = Math.max(0, fondo.getBoundingClientRect().bottom - spostato - resto - (innerHeight - 8));   // quanto scorrere perché il fondo si veda
+      const su = inizio.getBoundingClientRect().top - resto - alto;                                            // quanto scorrere perché l'inizio stia sotto la barra (negativo: verso l'alto)
       const dy = giu <= su ? Math.min(Math.max(0, giu), su) : vince === 'inizio' ? su : giu;
-      if (Math.abs(dy) > 1) scrollBy({top: dy, behavior: ridotto ? 'instant' : 'smooth'});
+      if (Math.abs(dy) > 1) {
+        const nuova = scrollY + resto + dy;
+        scrollTo({top: nuova, behavior: ridotto ? 'instant' : 'smooth'});
+        meta = ridotto ? null : nuova; metaQuando = performance.now();
+      }
     });
   }
   function fallisci(causa) {

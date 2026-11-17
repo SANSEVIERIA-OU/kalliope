@@ -1,0 +1,4 @@
+# H-pseudo-testi-en-XA · 17/11/2026 07:53 · node prove/pseudo-testi.mjs /tmp/lavoro-3ar-sito-H-pseudo en-XA
+104 testi diversi guardati in en-XA (854 letture), in 9 momenti
+ok: nessun testo è rimasto in italiano
+# uscita: 0

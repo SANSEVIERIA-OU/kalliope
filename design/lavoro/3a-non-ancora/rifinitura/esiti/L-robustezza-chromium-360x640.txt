@@ -1,0 +1,14 @@
+# L-robustezza-chromium-360x640 · 17/11/2026 09:06 · node prove/robustezza.mjs /tmp/lavoro-3ar-sito-L /tmp/lavoro-3ar-L-foto/rob chromium 360x640 tastiera,tastiera-veloce,senza-js,senza-stili
+
+== tastiera · chromium 360x640
+   soste: Vai al contenuto → Kalliope, pagina iniziale → Menu → Come saperlo quando arriva → Intanto, senti la voce → Copia l'indirizzo di questa pagina → feed delle versioni → pagina delle versioni su GitHub → Ascolta GiuliaCarico…PausaRiprendi → Tutte le frasi, anche con Marco → stato e limiti → Ascolta → Stato e limiti → Installa → In riunione → Aiuto
+
+== tastiera-veloce · chromium 360x640
+   soste: Vai al contenuto → Kalliope, pagina iniziale → Menu → Come saperlo quando arriva → Intanto, senti la voce → Copia l'indirizzo di questa pagina → feed delle versioni → pagina delle versioni su GitHub → Ascolta GiuliaCarico…PausaRiprendi → Tutte le frasi, anche con Marco → stato e limiti → Ascolta → Stato e limiti → Installa → In riunione → Aiuto
+
+== senza-js · chromium 360x640
+
+== senza-stili · chromium 360x640
+
+20/20 ok
+# uscita: 0

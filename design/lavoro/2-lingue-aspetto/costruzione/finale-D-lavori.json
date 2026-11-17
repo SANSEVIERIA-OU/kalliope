@@ -1,0 +1,157 @@
+{
+ "versione": 1,
+ "lavori": [
+  {
+   "id": "D-selettore-barra-chromium-it",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/selettore-barra.mjs",
+    "/tmp/lavoro-2b-sito30-s10",
+    "--motori",
+    "chromium",
+    "--lingue",
+    "it",
+    "--porta",
+    "0",
+    "--foto",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/foto/selettore-finale"
+   ]
+  },
+  {
+   "id": "D-selettore-barra-chromium-ar-ur",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/selettore-barra.mjs",
+    "/tmp/lavoro-2b-sito30-s10",
+    "--motori",
+    "chromium",
+    "--lingue",
+    "ar,ur",
+    "--sezioni",
+    "tastiera,telefono,scorrimento",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "D-selettore-barra-chromium-non-ancora",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/selettore-barra.mjs",
+    "/tmp/lavoro-2b-sito30-s10",
+    "--motori",
+    "chromium",
+    "--lingue",
+    "it",
+    "--sezioni",
+    "tastiera,telefono,basso,senzajs",
+    "--pagina",
+    "non-ancora/",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "D-selettore-barra-firefox-it",
+   "motore": "firefox",
+   "priorita": 2,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/selettore-barra.mjs",
+    "/tmp/lavoro-2b-sito30-s10",
+    "--motori",
+    "firefox",
+    "--lingue",
+    "it",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "D-selettore-barra-firefox-ar-ur",
+   "motore": "firefox",
+   "priorita": 2,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/selettore-barra.mjs",
+    "/tmp/lavoro-2b-sito30-s10",
+    "--motori",
+    "firefox",
+    "--lingue",
+    "ar,ur",
+    "--sezioni",
+    "tastiera,telefono,scorrimento",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "D-selettore-barra-webkit-it",
+   "motore": "webkit",
+   "priorita": 2,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/selettore-barra.mjs",
+    "/tmp/lavoro-2b-sito30-s10",
+    "--motori",
+    "webkit",
+    "--lingue",
+    "it",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "D-selettore-barra-webkit-ar-ur",
+   "motore": "webkit",
+   "priorita": 2,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/selettore-barra.mjs",
+    "/tmp/lavoro-2b-sito30-s10",
+    "--motori",
+    "webkit",
+    "--lingue",
+    "ar,ur",
+    "--sezioni",
+    "tastiera,telefono,scorrimento",
+    "--porta",
+    "0"
+   ]
+  }
+ ]
+}

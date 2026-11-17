@@ -1,0 +1,17 @@
+# H-stati-firefox-326x326 · 17/11/2026 07:34 · node prove/stati.mjs /tmp/lavoro-3ar-sito-H /tmp/lavoro-3ar-H-foto/stati firefox 326x326 ascolto,errore,copia,copia-no
+
+== ascolto · firefox 326x326
+NV   pausa: etichetta «Riprendi», nome «Riprendi» · Firefox senza uscita audio, il suono non può partire
+NV   ripreso: «Pausa» · Firefox senza uscita audio, il suono non può partire
+NV   a fine: frase detta (bolla tenue, parole nere), comando di nuovo «Ascolta Giulia» · Firefox senza uscita audio, il suono non può partire
+
+== errore · firefox 326x326
+NV   la riunione resta in vista accanto al messaggio · limite dichiarato a 326x326: {"altezza":326,"tavoloTop":-234,"tavoloBottom":-58,"barraBottom":56,"bottoneBottom":24}
+NV   Riprova: il messaggio sparisce e il suono parte · Firefox senza uscita audio, il suono non può partire
+
+== copia · firefox 326x326
+
+== copia-no · firefox 326x326
+
+30/30 ok
+# uscita: 0

@@ -1,0 +1,16 @@
+# J-stati-firefox-844x390 · 17/11/2026 08:31 · node prove/stati.mjs /tmp/lavoro-3ar-sito-J /tmp/lavoro-3ar-J-foto/stati firefox 844x390 ascolto,errore,copia,copia-no
+
+== ascolto · firefox 844x390
+NV   pausa: etichetta «Riprendi», nome «Riprendi» · Firefox senza uscita audio, il suono non può partire
+NV   ripreso: «Pausa» · Firefox senza uscita audio, il suono non può partire
+NV   a fine: frase detta (bolla tenue, parole nere), comando di nuovo «Ascolta Giulia» · Firefox senza uscita audio, il suono non può partire
+
+== errore · firefox 844x390
+NV   Riprova: il messaggio sparisce e il suono parte · Firefox senza uscita audio, il suono non può partire
+
+== copia · firefox 844x390
+
+== copia-no · firefox 844x390
+
+30/30 ok
+# uscita: 0

@@ -1,0 +1,17 @@
+{
+ "corsa": "pillole2",
+ "completa": true,
+ "lavori": 11,
+ "fatti": 11,
+ "codici_diversi_da_zero": [
+  {
+   "id": "pillole-chromium-3",
+   "codice": 1
+  }
+ ],
+ "trascorso_s": 295,
+ "stima_s": 313,
+ "massimo": 4,
+ "processori": 12,
+ "fermata": null
+}

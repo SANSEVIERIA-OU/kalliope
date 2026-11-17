@@ -1,0 +1,32 @@
+[
+ {
+  "chi": "p «Ricostruzione»",
+  "che": "MISURA",
+  "perche": "M3: al telefono la didascalia dice per intero che cos'è la scena («Ricostruzione · su Windows e macOS «Kalliope» non compare fra i microfoni…»): due righe invece di una, nello stesso posto, sotto la scena"
+ },
+ {
+  "chi": "span «· su Windows e macOS",
+  "che": "IN PIÙ",
+  "perche": "M3: la parte lunga della didascalia c'è anche al telefono (prima era nascosta sotto i 760 px)"
+ },
+ {
+  "chi": "a «Come saperlo quando arriva»",
+  "che": "SPOSTATO",
+  "perche": "M3: scende di 17 px, la riga in più della didascalia che sta sopra (a 390×844: 678–770, nello schermo)"
+ },
+ {
+  "chi": "a «Intanto, senti la voce»",
+  "che": "SPOSTATO",
+  "perche": "M3: come sopra, 17 px più in basso"
+ },
+ {
+  "chi": "strong «Oggi:»",
+  "che": "SPOSTATO",
+  "perche": "M3: come sopra, 17 px più in basso (lo stato finisce a 832 px su 844)"
+ },
+ {
+  "chi": "span.luce-tratto",
+  "che": "SPOSTATO",
+  "perche": "M3: la luce del tratto sotto il primo schermo scende insieme al tratto, di 17 px"
+ }
+]

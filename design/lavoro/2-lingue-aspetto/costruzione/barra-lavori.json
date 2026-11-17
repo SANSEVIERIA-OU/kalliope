@@ -1,0 +1,561 @@
+{
+ "versione": 1,
+ "lavori": [
+  {
+   "id": "barra-computer-it",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/prove/barra-larghezze.mjs",
+    "/tmp/lavoro-2b-sito30-s8",
+    "/tmp/lavoro-2b-barra-computer-it.json",
+    "--lingue",
+    "it",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "barra-azione-it",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/barra-azione.mjs",
+    "/tmp/lavoro-2b-sito30-s8",
+    "/tmp/lavoro-2b-barra-azione-it.json",
+    "--lingue",
+    "it",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "barra-computer-de",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/prove/barra-larghezze.mjs",
+    "/tmp/lavoro-2b-sito30-s8",
+    "/tmp/lavoro-2b-barra-computer-de.json",
+    "--lingue",
+    "de",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "barra-azione-de",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/barra-azione.mjs",
+    "/tmp/lavoro-2b-sito30-s8",
+    "/tmp/lavoro-2b-barra-azione-de.json",
+    "--lingue",
+    "de",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "barra-computer-fi",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/prove/barra-larghezze.mjs",
+    "/tmp/lavoro-2b-sito30-s8",
+    "/tmp/lavoro-2b-barra-computer-fi.json",
+    "--lingue",
+    "fi",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "barra-azione-fi",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/barra-azione.mjs",
+    "/tmp/lavoro-2b-sito30-s8",
+    "/tmp/lavoro-2b-barra-azione-fi.json",
+    "--lingue",
+    "fi",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "barra-computer-el",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/prove/barra-larghezze.mjs",
+    "/tmp/lavoro-2b-sito30-s8",
+    "/tmp/lavoro-2b-barra-computer-el.json",
+    "--lingue",
+    "el",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "barra-azione-el",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/barra-azione.mjs",
+    "/tmp/lavoro-2b-sito30-s8",
+    "/tmp/lavoro-2b-barra-azione-el.json",
+    "--lingue",
+    "el",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "barra-computer-bg",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/prove/barra-larghezze.mjs",
+    "/tmp/lavoro-2b-sito30-s8",
+    "/tmp/lavoro-2b-barra-computer-bg.json",
+    "--lingue",
+    "bg",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "barra-azione-bg",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/barra-azione.mjs",
+    "/tmp/lavoro-2b-sito30-s8",
+    "/tmp/lavoro-2b-barra-azione-bg.json",
+    "--lingue",
+    "bg",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "barra-computer-ar",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/prove/barra-larghezze.mjs",
+    "/tmp/lavoro-2b-sito30-s8",
+    "/tmp/lavoro-2b-barra-computer-ar.json",
+    "--lingue",
+    "ar",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "barra-azione-ar",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/barra-azione.mjs",
+    "/tmp/lavoro-2b-sito30-s8",
+    "/tmp/lavoro-2b-barra-azione-ar.json",
+    "--lingue",
+    "ar",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "barra-computer-ur",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/prove/barra-larghezze.mjs",
+    "/tmp/lavoro-2b-sito30-s8",
+    "/tmp/lavoro-2b-barra-computer-ur.json",
+    "--lingue",
+    "ur",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "barra-azione-ur",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/barra-azione.mjs",
+    "/tmp/lavoro-2b-sito30-s8",
+    "/tmp/lavoro-2b-barra-azione-ur.json",
+    "--lingue",
+    "ur",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "barra-computer-hi",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/prove/barra-larghezze.mjs",
+    "/tmp/lavoro-2b-sito30-s8",
+    "/tmp/lavoro-2b-barra-computer-hi.json",
+    "--lingue",
+    "hi",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "barra-azione-hi",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/barra-azione.mjs",
+    "/tmp/lavoro-2b-sito30-s8",
+    "/tmp/lavoro-2b-barra-azione-hi.json",
+    "--lingue",
+    "hi",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "barra-computer-bn",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/prove/barra-larghezze.mjs",
+    "/tmp/lavoro-2b-sito30-s8",
+    "/tmp/lavoro-2b-barra-computer-bn.json",
+    "--lingue",
+    "bn",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "barra-azione-bn",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/barra-azione.mjs",
+    "/tmp/lavoro-2b-sito30-s8",
+    "/tmp/lavoro-2b-barra-azione-bn.json",
+    "--lingue",
+    "bn",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "barra-computer-zh",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/prove/barra-larghezze.mjs",
+    "/tmp/lavoro-2b-sito30-s8",
+    "/tmp/lavoro-2b-barra-computer-zh.json",
+    "--lingue",
+    "zh",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "barra-azione-zh",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/barra-azione.mjs",
+    "/tmp/lavoro-2b-sito30-s8",
+    "/tmp/lavoro-2b-barra-azione-zh.json",
+    "--lingue",
+    "zh",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "barra-computer-en-XA",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/prove/barra-larghezze.mjs",
+    "/tmp/lavoro-2b-sito30-s8",
+    "/tmp/lavoro-2b-barra-computer-en-XA.json",
+    "--lingue",
+    "en-XA",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "barra-azione-en-XA",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/barra-azione.mjs",
+    "/tmp/lavoro-2b-sito30-s8",
+    "/tmp/lavoro-2b-barra-azione-en-XA.json",
+    "--lingue",
+    "en-XA",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "barra-computer-ar-XB",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/prove/barra-larghezze.mjs",
+    "/tmp/lavoro-2b-sito30-s8",
+    "/tmp/lavoro-2b-barra-computer-ar-XB.json",
+    "--lingue",
+    "ar-XB",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "barra-azione-ar-XB",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/barra-azione.mjs",
+    "/tmp/lavoro-2b-sito30-s8",
+    "/tmp/lavoro-2b-barra-azione-ar-XB.json",
+    "--lingue",
+    "ar-XB",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "barra-computer-non-ancora-it",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/prove/barra-larghezze.mjs",
+    "/tmp/lavoro-2b-sito30-s8",
+    "/tmp/lavoro-2b-barra-computer-na-it.json",
+    "--lingue",
+    "it",
+    "--pagina",
+    "non-ancora/",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "barra-azione-non-ancora-it",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/barra-azione.mjs",
+    "/tmp/lavoro-2b-sito30-s8",
+    "/tmp/lavoro-2b-barra-azione-na-it.json",
+    "--lingue",
+    "it",
+    "--pagina",
+    "non-ancora/",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "barra-computer-non-ancora-en-XA",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/prove/barra-larghezze.mjs",
+    "/tmp/lavoro-2b-sito30-s8",
+    "/tmp/lavoro-2b-barra-computer-na-en-XA.json",
+    "--lingue",
+    "en-XA",
+    "--pagina",
+    "non-ancora/",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "barra-azione-non-ancora-en-XA",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/costruzione/prove/barra-azione.mjs",
+    "/tmp/lavoro-2b-sito30-s8",
+    "/tmp/lavoro-2b-barra-azione-na-en-XA.json",
+    "--lingue",
+    "en-XA",
+    "--pagina",
+    "non-ancora/",
+    "--porta",
+    "0"
+   ]
+  },
+  {
+   "id": "barra-gira",
+   "motore": "chromium",
+   "priorita": 1,
+   "cwd": "/workspace/kalliope",
+   "env": {
+    "PLAYWRIGHT": "/workspace/test-playwright/node_modules/playwright/index.mjs"
+   },
+   "comando": [
+    "node",
+    "/workspace/kalliope/design/lavoro/2-lingue-aspetto/prove/barra-gira.mjs",
+    "/tmp/lavoro-2b-sito30-s8",
+    "--porta",
+    "0"
+   ]
+  }
+ ]
+}
