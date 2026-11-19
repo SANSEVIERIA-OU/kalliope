@@ -52,6 +52,12 @@ Sulle tre domande lasciate da «non ancora»:
   L'accesso al modello, la chiave di lettura e l'accesso sulla macchina li fa il proprietario; chi coordina e gli incaricati
   non creano account e non accettano condizioni al suo posto.
 
+- Dopo V-4, alle quattro domande (19/11):
+  1. dove mettere i file del modello: «ridistribuiamo con citazione»;
+  2. ONNX Runtime da NuGet: «no, anche onx lo mettiamo nel programma e a noi l'onere di tenerlo aggiornato così come il modello
+     kyutai»;
+  3. aggiornare gli altri componenti: «si, aggiorniamo tutto»;
+  4. la finestra per la propria voce più avanti, dopo la proposta dei valori del design system per Slint: «ok».
 ## Fasi
 
 | Fase | Stato | Ruolo e modello | Tempi | Esito / prossimo passo |
@@ -84,6 +90,8 @@ Sulle tre domande lasciate da «non ancora»:
 | V-2. Pocket TTS: versione attuale aperta con l'encoder della voce di maggio | superata da V-3 | | 17/11 | Decisione del proprietario fra account, altro modello e «il trucco» (non proposto da chi coordina: aggira il controllo d'accesso di Kyutai, compatibilità non verificabile prima): «scelgo il trucco». Poi: «stai facendo un lavoro inutile: ti dico già di inserire il trucco senza farmi sentire i test» |
 | V-3. Il motore che imita la voce nel programma (punto 2), con il trucco | **fermato alla parte A: il trucco non regge**; domanda al proprietario | general-purpose (opus), lo stesso di V-m | 17/11, ~50 min | `benchmarks/voce-propria/README.md`, «Il trucco…»; `esiti/v2/`: Kyutai ha riaddestrato il codec fra maggio e oggi (0 tensori uguali su decoder, downsample, quantizer, proiezione del parlante; coseno circa 0); con tre voci aperte di Kyutai il trucco dà somiglianza 0,01–0,23 (la stessa voce 0,64–0,75) e Whisper non sente parole. Parte B non fatta, `crates/` intatto. Restano: account per l'encoder attuale, versione di maggio (12–15/40 prime parole perse), altro modello |
 | V-4. Il motore che imita la voce nel programma, con la versione attuale ufficiale (account) | **fatto e verificato** da chi coordina (19/11); decisioni aperte del proprietario | general-purpose (opus), lo stesso di V-m | 19/11, ~94 min, 546k token | `benchmarks/voce-propria/README.md`, sezione V-4; `crates/voice/src/pocket/`. Pesi gated e aperti identici salvo i 42 tensori dell'encoder della voce; esportazione ONNX propria (nessuna della versione attuale), fedele al codice di Kyutai; prima parola: 0/10 frasi e 0–2/32 brevi (maggio 4/10 e 16/32); registrazione usata per 12 s (oltre 20 s il modello chiude le frasi presto, anche nel codice di Kyutai); 6 strati nel programma, 24 pronti a parte; 0,43 s di CPU per secondo, primo suono ~50 ms, 294 MB. ONNX Runtime 1.32.0, scaricato dal pacchetto NuGet di Microsoft perché `github.com/microsoft/onnxruntime` risponde 404 da qui (anche l'API; altri repository Microsoft rispondono). Controllo di chi coordina: fmt, clippy, test con Klein e Pocket verdi; `kalliope-cli` prepara una voce CC0 in 0,8 s (348 MB) e dice 5 frasi brevi, Whisper sente tutte le parole e tutte le prime parole; nessun file contiene la chiave. Aperti: dove ospitare i file del modello; sì o no a NuGet; la finestra (punto 3); il normalizzatore mette in minuscolo i nomi propri; microfono virtuale non provato (niente PipeWire qui); dipendenze non all'ultima: Rust 1.100.0, Slint 1.19.0, 187 crate (`esiti/v4/dipendenze_cargo.txt`) |
+| P-1. Tutte le dipendenze del programma all'ultima versione | in corso | general-purpose (opus) | 19/11 | `incarichi/P-1-dipendenze-ultima-versione.md`: Rust, crate e Slint, CI, pacchetti, Klein se c'è di più nuovo; finestra identica in foto; microfono virtuale provato con il PipeWire privato di prova; il sito solo elencato |
+| P-2. ONNX Runtime e i modelli dentro il programma, aggiornati da noi | ricerca dei fatti, poi proposta al proprietario | vibe-next:research (haiku), poi chi coordina | 19/11 | Limiti di GitHub (file, LFS, release), Hugging Face, canali ufficiali di ONNX Runtime (da qui `github.com/microsoft/onnxruntime` risponde 404), obblighi di MIT e CC BY 4.0 |
 | 4. Applicazione: token per Slint, prova delle scritture, `@tr`, finestra nella direzione 2 (due varianti) | da fare | design-build, design-direction, design-judge | | dopo il sito |
 | 5. Matrice completa (15 dispositivi × 3 motori) e pulizia di `website/stile/`, `script/`, `sistema/` | da fare | design-build | | alla fine |
 

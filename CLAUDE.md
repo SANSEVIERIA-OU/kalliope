@@ -34,6 +34,11 @@ come si lavora.
   attuali più l'encoder di maggio) non regge, perché Kyutai ha riaddestrato il codec (V-3). Il 19/11/2026 il proprietario ha
   creato l'account Hugging Face: si usa la versione attuale ufficiale con la clonazione (`kyutai/pocket-tts`), sempre senza
   prove d'ascolto (`design/lavoro/STATO.md`, V-4). Account, condizioni e chiave li gestisce solo il proprietario.
+- **Modelli e ONNX Runtime dentro il programma** (decisioni del proprietario del 19/11/2026). Il modello di Kyutai si
+  ridistribuisce citandolo («ridistribuiamo con citazione»). ONNX Runtime non si scarica da terzi: «anche onx lo mettiamo nel
+  programma e a noi l'onere di tenerlo aggiornato così come il modello kyutai». Come farlo si propone prima al proprietario
+  (`design/lavoro/STATO.md`, P-2). Le dipendenze del programma si portano tutte all'ultima versione («si, aggiorniamo
+  tutto», P-1).
 - **Il telefono** (17/11/2026): «non è per telefono: è solo desktop per il momento». Il sito non dice «non ancora» per
   il telefono.
 
