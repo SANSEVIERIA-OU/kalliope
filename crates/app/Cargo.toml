@@ -19,7 +19,7 @@ kalliope-mic.workspace = true
 # The window. Software renderer only (no GPU stack), winit for Wayland/X11/Windows/macOS,
 # AccessKit for screen readers. Licensed to us under the Slint Royalty-free License 2.0, which
 # requires the AboutSlint widget in the About dialog.
-slint = { version = "1.18.1", default-features = false, features = [
+slint = { version = "1.19.0", default-features = false, features = [
     "std",
     "compat-1-2",
     "backend-winit",
@@ -29,4 +29,4 @@ slint = { version = "1.18.1", default-features = false, features = [
 ] }
 
 [build-dependencies]
-slint-build = "1.18.1"
+slint-build = "1.19.0"

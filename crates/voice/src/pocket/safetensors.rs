@@ -75,13 +75,17 @@ fn parse(bytes: &[u8]) -> Result<Contents, Error> {
         let count: usize = shape.iter().product();
         let data = match dtype {
             "F32" if raw.len() == count * 4 => Data::F32(
-                raw.chunks_exact(4)
-                    .map(|b| f32::from_le_bytes(b.try_into().expect("4 bytes")))
+                raw.as_chunks::<4>()
+                    .0
+                    .iter()
+                    .map(|&b| f32::from_le_bytes(b))
                     .collect(),
             ),
             "I64" if raw.len() == count * 8 => Data::I64(
-                raw.chunks_exact(8)
-                    .map(|b| i64::from_le_bytes(b.try_into().expect("8 bytes")))
+                raw.as_chunks::<8>()
+                    .0
+                    .iter()
+                    .map(|&b| i64::from_le_bytes(b))
                     .collect(),
             ),
             _ => {
@@ -134,7 +138,7 @@ pub fn write(path: &Path, tensors: &[Tensor], metadata: &[(&str, &str)]) -> Resu
     }
     header.push('}');
     // The data starts on an 8-byte boundary, as the reference implementation pads it.
-    while header.len() % 8 != 0 {
+    while !header.len().is_multiple_of(8) {
         header.push(' ');
     }
     let mut out = Vec::with_capacity(8 + header.len() + offset);

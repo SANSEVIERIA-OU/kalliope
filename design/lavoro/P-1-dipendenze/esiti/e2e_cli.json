@@ -1,0 +1,297 @@
+{
+ "programmi": {
+  "prima": {
+   "voce_s": 3.58,
+   "voce_log": "load 1603 ms · voice prepared in 1650 ms (7.4 s of recording, 84 positions) · saved to /tmp/p1-e2e/cli/prima/giovanni.safetensors",
+   "say_s": {
+    "giulia": 24.1,
+    "giovanni": 43.7
+   }
+  },
+  "dopo": {
+   "voce_s": 2.63,
+   "voce_log": "load 902 ms · voice prepared in 1436 ms (7.4 s of recording, 84 positions) · saved to /tmp/p1-e2e/cli/dopo/giovanni.safetensors",
+   "say_s": {
+    "giulia": 25.5,
+    "giovanni": 44.5
+   }
+  }
+ },
+ "uguali": {
+  "file": 43,
+  "identici": 43,
+  "diversi": []
+ },
+ "whisper": {
+  "giulia": {
+   "parole": 72,
+   "errori": 3,
+   "wer": 0.0417,
+   "prime_perse": 0,
+   "testi": 21,
+   "righe": [
+    {
+     "testo": "Buongiorno a tutti, scusate il ritardo.",
+     "whisper": "Buongiorno a tutti, scusate il ritardo.",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "Possiamo rivedere insieme i numeri del terzo trimestre?",
+     "whisper": "Possiamo rivedere insieme i numeri del terzo trimestre.",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "Mi sentite bene? Ho cambiato microfono stamattina.",
+     "whisper": "Mi sentite bene? Ho cambiato il microfono stamattina.",
+     "errori": 1,
+     "prima_parola": true
+    },
+    {
+     "testo": "Sono d'accordo con Marco, ma preferirei aspettare la riunione di giovedì.",
+     "whisper": "Sono d'accordo con Marco, ma preferirei aspettare la riunione di giovedì?",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "Vi mando il documento appena finiamo, così lo leggete con calma.",
+     "whisper": "Vi mando il documento appena finiamo, così lo leggete con calma.",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "Sì.",
+     "whisper": "Sì.",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "No.",
+     "whisper": "No.",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "Grazie.",
+     "whisper": "Grazie.",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "Un attimo.",
+     "whisper": "un attimo",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "Va bene.",
+     "whisper": "Va bene!",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "Certo.",
+     "whisper": "certo",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "Esatto.",
+     "whisper": "esatto",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "Ciao a tutti.",
+     "whisper": "Ciao a tutti!",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "Scusate.",
+     "whisper": "scusate!",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "Mi sentite?",
+     "whisper": "Mi sentite?",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "Arrivo subito.",
+     "whisper": "arrivo subito",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "D'accordo.",
+     "whisper": "D'accordo!",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "Perfetto, grazie!",
+     "whisper": "Perfetto, grazie.",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "Un momento, per favore.",
+     "whisper": "Un momento per favore.",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "Buongiorno.",
+     "whisper": "Buongiorno!",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "A dopo.",
+     "whisper": "Adopo!",
+     "errori": 2,
+     "prima_parola": true
+    }
+   ]
+  },
+  "giovanni": {
+   "parole": 72,
+   "errori": 6,
+   "wer": 0.0833,
+   "prime_perse": 2,
+   "testi": 21,
+   "righe": [
+    {
+     "testo": "Buongiorno a tutti, scusate il ritardo.",
+     "whisper": "Buongiorno a tutti, scusate, è ritardo.",
+     "errori": 1,
+     "prima_parola": true
+    },
+    {
+     "testo": "Possiamo rivedere insieme i numeri del terzo trimestre?",
+     "whisper": "Possiamo rivedere insieme i numeri del terzo trimestre.",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "Mi sentite bene? Ho cambiato microfono stamattina.",
+     "whisper": "Mi sentite bene? Ho cambiato il microfono stamattina.",
+     "errori": 1,
+     "prima_parola": true
+    },
+    {
+     "testo": "Sono d'accordo con Marco, ma preferirei aspettare la riunione di giovedì.",
+     "whisper": "Sono d'accordo con Marco, ma preferirei aspettare la riunione di giovedì.",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "Vi mando il documento appena finiamo, così lo leggete con calma.",
+     "whisper": "Vi mando il documento appena finiamo, così lo leggete con calma.",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "Sì.",
+     "whisper": "Sì.",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "No.",
+     "whisper": "No.",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "Grazie.",
+     "whisper": "grazie",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "Un attimo.",
+     "whisper": "un attimo",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "Va bene.",
+     "whisper": "va bene",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "Certo.",
+     "whisper": "chat",
+     "errori": 1,
+     "prima_parola": false
+    },
+    {
+     "testo": "Esatto.",
+     "whisper": "esatto",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "Ciao a tutti.",
+     "whisper": "Ciao a tutti!",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "Scusate.",
+     "whisper": "scusate",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "Mi sentite?",
+     "whisper": "Vi sentite?",
+     "errori": 1,
+     "prima_parola": false
+    },
+    {
+     "testo": "Arrivo subito.",
+     "whisper": "Arrivo subito.",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "D'accordo.",
+     "whisper": "D'accordo.",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "Perfetto, grazie!",
+     "whisper": "Perfetto, grazie.",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "Un momento, per favore.",
+     "whisper": "Un momento, per favore.",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "Buongiorno.",
+     "whisper": "Buongiorno.",
+     "errori": 0,
+     "prima_parola": true
+    },
+    {
+     "testo": "A dopo.",
+     "whisper": "Adopo.",
+     "errori": 2,
+     "prima_parola": true
+    }
+   ]
+  }
+ }
+}

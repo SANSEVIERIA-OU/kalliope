@@ -1,0 +1,197 @@
+{
+ "01-primo-avvio": {
+  "pixels": 276,
+  "of": 257600,
+  "box": [
+   8,
+   8,
+   551,
+   451
+  ],
+  "pair": [
+   1,
+   1
+  ],
+  "max_channel_delta": 93
+ },
+ "02-scaricamento": {
+  "pixels": 272,
+  "of": 257600,
+  "box": [
+   8,
+   8,
+   551,
+   451
+  ],
+  "pair": [
+   1,
+   1
+  ],
+  "max_channel_delta": 93
+ },
+ "03-scaricamento-annullato": {
+  "pixels": 272,
+  "of": 257600,
+  "box": [
+   8,
+   8,
+   551,
+   451
+  ],
+  "pair": [
+   1,
+   1
+  ],
+  "max_channel_delta": 93
+ },
+ "04-errore": {
+  "pixels": 228,
+  "of": 257600,
+  "box": [
+   8,
+   8,
+   551,
+   451
+  ],
+  "pair": [
+   1,
+   1
+  ],
+  "max_channel_delta": 93
+ },
+ "05-pronta-senza-microfono": {
+  "pixels": 220,
+  "of": 257600,
+  "box": [
+   8,
+   8,
+   551,
+   451
+  ],
+  "pair": [
+   1,
+   1
+  ],
+  "max_channel_delta": 93
+ },
+ "06-pronta": {
+  "pixels": 224,
+  "of": 257600,
+  "box": [
+   8,
+   8,
+   551,
+   451
+  ],
+  "pair": [
+   1,
+   1
+  ],
+  "max_channel_delta": 93
+ },
+ "07-scritto": {
+  "pixels": 250,
+  "of": 257600,
+  "box": [
+   8,
+   8,
+   551,
+   451
+  ],
+  "pair": [
+   1,
+   1
+  ],
+  "max_channel_delta": 93
+ },
+ "08-sta-parlando": {
+  "pixels": 266,
+  "of": 257600,
+  "box": [
+   8,
+   8,
+   551,
+   451
+  ],
+  "pair": [
+   1,
+   1
+  ],
+  "max_channel_delta": 93
+ },
+ "09-nessuno-ascolta": {
+  "pixels": 294,
+  "of": 257600,
+  "box": [
+   8,
+   8,
+   551,
+   451
+  ],
+  "pair": [
+   2,
+   2
+  ],
+  "max_channel_delta": 85
+ },
+ "10-cronologia": {
+  "pixels": 342,
+  "of": 257600,
+  "box": [
+   8,
+   8,
+   551,
+   451
+  ],
+  "pair": [
+   1,
+   2
+  ],
+  "max_channel_delta": 85
+ },
+ "11-voci": {
+  "pixels": 6000,
+  "of": 257600,
+  "box": [
+   8,
+   8,
+   551,
+   459
+  ],
+  "pair": [
+   1,
+   1
+  ],
+  "max_channel_delta": 77
+ },
+ "12-informazioni": {
+  "pixels": 353,
+  "of": 257600,
+  "box": [
+   8,
+   8,
+   551,
+   451
+  ],
+  "pair": [
+   1,
+   1
+  ],
+  "max_channel_delta": 206
+ },
+ "13-voce-preparata": {
+  "pixels": 224,
+  "of": 257600,
+  "box": [
+   8,
+   8,
+   551,
+   451
+  ],
+  "pair": [
+   1,
+   1
+  ],
+  "max_channel_delta": 93
+ }
+}

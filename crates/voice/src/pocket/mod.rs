@@ -375,7 +375,7 @@ impl Pocket {
                     o.shape
                 )));
             }
-            if i % 2 == 0 {
+            if i.is_multiple_of(2) {
                 past.keys[i / 2] = o.data;
             } else {
                 past.values[i / 2] = o.data;

@@ -6,7 +6,8 @@ People see "0.1"; Cargo needs "0.1.0". The version in Cargo.toml is the next one
 released (or the one just released, until `set` moves on).
 
   version.py                   print the version, e.g. 0.1
-  version.py check             fail if Cargo.lock, AppStream, PKGBUILD or CHANGELOG disagree
+  version.py check             fail if Cargo.lock, AppStream, PKGBUILD or CHANGELOG disagree, or if
+                               rust-version in Cargo.toml is not the Rust of rust-toolchain.toml
   version.py next              print the version after this one (0.9 is followed by 1.0)
   version.py set X.Y           write X.Y everywhere; add AppStream and CHANGELOG entries for it
   version.py release [DATE]    mark this version released on DATE (default today, YYYY-MM-DD)
@@ -25,6 +26,7 @@ LOCK = ROOT / "Cargo.lock"
 METAINFO = ROOT / "packaging/linux/io.github.sansevieria_ou.kalliope.metainfo.xml"
 PKGBUILD = ROOT / "packaging/aur/PKGBUILD"
 CHANGELOG = ROOT / "CHANGELOG.md"
+TOOLCHAIN = ROOT / "rust-toolchain.toml"
 
 VERSION = re.compile(r"(\d+)\.(\d+)")
 # vX.Y, or vX.Y-PRE for a prerelease (v0.1-rc.1). v0.0-test.N only tries the release workflow.
@@ -130,13 +132,34 @@ def problems():
     return issues
 
 
+def rust_problems():
+    """rust-version in Cargo.toml must say the Rust that CI and releases build with: the one pinned
+    in rust-toolchain.toml, the only one checked."""
+    if not TOOLCHAIN.exists():
+        return [f"{TOOLCHAIN.name} is missing: it pins the Rust that builds Kalliope"]
+    channel = re.search(r'^channel\s*=\s*"(\d+)\.(\d+)\.\d+"', read(TOOLCHAIN), re.M)
+    declared = re.search(r'^rust-version\s*=\s*"(\d+)\.(\d+)(?:\.\d+)?"', read(CARGO), re.M)
+    if not channel:
+        return [f"{TOOLCHAIN.name}: channel is not a release such as \"1.100.0\""]
+    if not declared:
+        return ["Cargo.toml: no rust-version in [workspace.package]"]
+    if channel.groups() != declared.groups():
+        return [f"Cargo.toml: rust-version is {'.'.join(declared.groups())}, but {TOOLCHAIN.name} builds with "
+                f"{'.'.join(channel.groups())}"]
+    return []
+
+
 def check():
-    """Fails, listing what disagrees, unless the version is the same everywhere."""
+    """Fails, listing what disagrees, unless the version is the same everywhere and rust-version
+    is the pinned Rust."""
     found = problems()
-    for problem in found:
+    rust = rust_problems()
+    for problem in found + rust:
         print(problem, file=sys.stderr)
     if found:
         fail(f"the version is not {current()} everywhere")
+    if rust:
+        fail("rust-version and rust-toolchain.toml disagree")
 
 
 def set_version(version):

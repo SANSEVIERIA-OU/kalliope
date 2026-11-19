@@ -1,0 +1,10 @@
+#!/bin/bash
+# Stand-in for rpmbuild, which this machine lacks: leaves a placeholder where build-packages.sh expects
+# the .rpm, so the script can go on to the AUR recipe. The placeholder is not a package and is deleted.
+top=
+while [ $# -gt 0 ]; do
+  if [ "$1" = --define ] && [[ $2 == _topdir* ]]; then top=${2#_topdir }; fi
+  shift
+done
+mkdir -p "$top/RPMS/x86_64"
+echo "placeholder: rpmbuild is not installed here" > "$top/RPMS/x86_64/kalliope-placeholder.rpm"

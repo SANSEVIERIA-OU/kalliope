@@ -795,7 +795,10 @@ unsafe fn fill(shared: &Shared, channel: &Channel) -> bool {
         let mut copied = 0;
         if !spa.is_null() && (*spa).n_datas > 0 && !(*spa).datas.is_null() {
             let data = &mut *(*spa).datas;
-            if !data.data.is_null() && !data.chunk.is_null() && data.data.addr() % STRIDE == 0 {
+            if !data.data.is_null()
+                && !data.chunk.is_null()
+                && data.data.addr().is_multiple_of(STRIDE)
+            {
                 let capacity = data.maxsize as usize / STRIDE;
                 let wanted = if shared.has_requested && (*buffer).requested > 0 {
                     (*buffer).requested as usize

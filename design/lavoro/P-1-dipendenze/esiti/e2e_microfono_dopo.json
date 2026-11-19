@@ -1,0 +1,173 @@
+{
+ "Giulia": {
+  "parole": 29,
+  "errori": 3,
+  "wer": 0.1034,
+  "prime_perse": 0,
+  "testi": 8,
+  "righe": [
+   {
+    "testo": "Buongiorno a tutti, scusate il ritardo.",
+    "whisper": "Buongiorno a tutti e scusate il ritardo.",
+    "errori": 1,
+    "prima_parola": true,
+    "secondi_di_voce": 2.22,
+    "registrato_s": 9.0
+   },
+   {
+    "testo": "Possiamo rivedere insieme i numeri del terzo trimestre?",
+    "whisper": "Possiamo rivedere insieme i numeri del terzo trimestre.",
+    "errori": 0,
+    "prima_parola": true,
+    "secondi_di_voce": 3.03,
+    "registrato_s": 9.0
+   },
+   {
+    "testo": "Mi sentite bene? Ho cambiato microfono stamattina.",
+    "whisper": "Mi sentite bene? Ho cambiato microfono stamattina.",
+    "errori": 0,
+    "prima_parola": true,
+    "secondi_di_voce": 3.81,
+    "registrato_s": 9.0
+   },
+   {
+    "testo": "Certo.",
+    "whisper": "certo",
+    "errori": 0,
+    "prima_parola": true,
+    "secondi_di_voce": 0.71,
+    "registrato_s": 9.0
+   },
+   {
+    "testo": "Mi sentite?",
+    "whisper": "mi sentite?",
+    "errori": 0,
+    "prima_parola": true,
+    "secondi_di_voce": 0.97,
+    "registrato_s": 9.0
+   },
+   {
+    "testo": "Grazie.",
+    "whisper": "Grazie.",
+    "errori": 0,
+    "prima_parola": true,
+    "secondi_di_voce": 0.68,
+    "registrato_s": 8.98
+   },
+   {
+    "testo": "Arrivo subito.",
+    "whisper": "arrivo subito",
+    "errori": 0,
+    "prima_parola": true,
+    "secondi_di_voce": 1.09,
+    "registrato_s": 9.0
+   },
+   {
+    "testo": "A dopo.",
+    "whisper": "Adopro",
+    "errori": 2,
+    "prima_parola": true,
+    "secondi_di_voce": 0.87,
+    "registrato_s": 9.0
+   }
+  ]
+ },
+ "giovanni": {
+  "parole": 29,
+  "errori": 5,
+  "wer": 0.1724,
+  "prime_perse": 0,
+  "testi": 8,
+  "righe": [
+   {
+    "testo": "Buongiorno a tutti, scusate il ritardo.",
+    "whisper": "Buongiorno a tutti, scusate, è ritardo.",
+    "errori": 1,
+    "prima_parola": true,
+    "secondi_di_voce": 2.55,
+    "registrato_s": 8.98
+   },
+   {
+    "testo": "Possiamo rivedere insieme i numeri del terzo trimestre?",
+    "whisper": "Possiamo rivedere insieme i numeri del terzo trimestre.",
+    "errori": 0,
+    "prima_parola": true,
+    "secondi_di_voce": 3.26,
+    "registrato_s": 8.98
+   },
+   {
+    "testo": "Mi sentite bene? Ho cambiato microfono stamattina.",
+    "whisper": "Mi sentite bene, ho cambiato il microfono stamattina.",
+    "errori": 1,
+    "prima_parola": true,
+    "secondi_di_voce": 3.19,
+    "registrato_s": 8.98
+   },
+   {
+    "testo": "Certo.",
+    "whisper": "Certo.",
+    "errori": 0,
+    "prima_parola": true,
+    "secondi_di_voce": 0.71,
+    "registrato_s": 9.0
+   },
+   {
+    "testo": "Mi sentite?",
+    "whisper": "Mi sentite?",
+    "errori": 0,
+    "prima_parola": true,
+    "secondi_di_voce": 1.05,
+    "registrato_s": 9.0
+   },
+   {
+    "testo": "Grazie.",
+    "whisper": "Grazie.",
+    "errori": 0,
+    "prima_parola": true,
+    "secondi_di_voce": 0.94,
+    "registrato_s": 9.0
+   },
+   {
+    "testo": "Arrivo subito.",
+    "whisper": "Arrivò subito.",
+    "errori": 1,
+    "prima_parola": true,
+    "secondi_di_voce": 1.32,
+    "registrato_s": 9.0
+   },
+   {
+    "testo": "A dopo.",
+    "whisper": "Adopo.",
+    "errori": 2,
+    "prima_parola": true,
+    "secondi_di_voce": 0.87,
+    "registrato_s": 9.0
+   }
+  ]
+ },
+ "say": {
+  "parole": 7,
+  "errori": 7,
+  "wer": 1.0,
+  "prime_perse": 2,
+  "testi": 2,
+  "righe": [
+   {
+    "testo": "Buongiorno a tutti, scusate il ritardo.",
+    "whisper": "",
+    "errori": 6,
+    "prima_parola": false,
+    "secondi_di_voce": 0.0,
+    "registrato_s": 0.0
+   },
+   {
+    "testo": "Certo.",
+    "whisper": "",
+    "errori": 1,
+    "prima_parola": false,
+    "secondi_di_voce": 0.0,
+    "registrato_s": 0.0
+   }
+  ]
+ }
+}

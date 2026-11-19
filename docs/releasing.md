@@ -16,7 +16,7 @@ disagree.
 | Command | What it does |
 | --- | --- |
 | `python3 tools/version.py` | Prints the version, e.g. `0.1`. |
-| `python3 tools/version.py check` | Fails unless `Cargo.toml`, `Cargo.lock`, the AppStream metadata, the PKGBUILD and the changelog agree. |
+| `python3 tools/version.py check` | Fails unless `Cargo.toml`, `Cargo.lock`, the AppStream metadata, the PKGBUILD and the changelog agree, and unless `rust-version` in `Cargo.toml` is the Rust pinned in `rust-toolchain.toml`. |
 | `python3 tools/version.py release [DATE]` | Marks the version released on DATE (default today): the changelog heading gets the date, the AppStream entry stops being a development release. |
 | `python3 tools/version.py set X.Y` | Moves to version X.Y everywhere, and adds its AppStream entry and changelog section with a TODO. |
 | `python3 tools/version.py next` | Prints the step after this one (0.9 → 1.0). |
@@ -116,8 +116,11 @@ pinning, and cannot work out library dependencies; `dpkg-shlibdeps` and rpm do t
 
 ### Dependencies
 
-The binaries are built on Ubuntu 24.04, so they need glibc 2.39 or newer. The libraries they link
-are found by `dpkg-shlibdeps` and by rpm: glibc, libgcc, fontconfig, and libstdc++ for ONNX Runtime.
+The binaries are built on Ubuntu 24.04, so they need glibc 2.39 or newer. The release job stays on
+Ubuntu 24.04 on purpose while CI uses the newest Ubuntu: a newer build system would raise that
+minimum (Ubuntu 26.04 has glibc 2.43, Debian 13 has 2.41) and leave out the systems the packages are
+made for. The libraries they link are found by `dpkg-shlibdeps` and by rpm: glibc, libgcc,
+fontconfig, and libstdc++ for ONNX Runtime.
 The others are loaded at run time and listed by hand. They were found by listing the library names
 in the app's program (Slint with winit, the software renderer, system fonts and AccessKit; the
 PipeWire microphone):
@@ -156,8 +159,11 @@ and by hand:
 
 | Job | When | What |
 | --- | --- | --- |
-| Linux | always | `tools/version.py check`, `cargo fmt --check`, clippy with `-D warnings`, `cargo test --workspace` with the Klein model and ONNX Runtime, and `kalliope-cli say`, which must produce 1.5 to 6 seconds of speech |
+| Linux | always, on `ubuntu-26.04` | `tools/version.py check`, `cargo fmt --check`, clippy with `-D warnings`, `cargo test --workspace` with the Klein model and ONNX Runtime, and `kalliope-cli say`, which must produce 1.5 to 6 seconds of speech |
 | Windows, macOS | pushes to `main`, and runs started by hand | the workspace's tests with the model, after Linux has passed, on `windows-latest` and `macos-latest` (Apple Silicon); not the examples, as `crates/voice/examples/measure.rs` uses Linux-only calls |
+
+Every job uses the Rust named in `rust-toolchain.toml` (rustup installs it on the runner), not the
+one the runner image comes with, which can be a release behind.
 
 Pull requests from branches of this repository are not checked twice: the push already was. A new
 push to a branch cancels the run it replaces. Compiled dependencies are cached with
@@ -173,7 +179,7 @@ was cancelled twice after GitHub found no free runner), which would hold up ever
 
 Measured on 12 November 2026, with the app, in minutes of runner time:
 
-| Run | Jobs | Minutes | After a change to `Cargo.lock` or to Rust |
+| Run | Jobs | Minutes | After a change to `Cargo.lock` or to `rust-toolchain.toml` |
 | --- | --- | --- | --- |
 | CI on a branch or pull request | Linux | 2 | 8 |
 | CI on `main`, or by hand | Linux, Windows, macOS | about 5 | about 18 |
@@ -181,8 +187,8 @@ Measured on 12 November 2026, with the app, in minutes of runner time:
 | Website | build and deploy | under 1 | the same |
 
 The right-hand column is the first run after the cache stops matching: every dependency (mostly
-Slint) is compiled again. That happens when `Cargo.lock` changes and when GitHub's runners get a
-new Rust, about every six weeks. A branch uses `main`'s cache when it has none of its own.
+Slint) is compiled again. That happens when `Cargo.lock` changes and when `rust-toolchain.toml` moves
+to a new Rust, about every six weeks. A branch uses `main`'s cache when it has none of its own.
 
 ## Website
 

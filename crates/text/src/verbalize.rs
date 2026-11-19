@@ -933,7 +933,7 @@ impl<'a> Verbalizer<'a> {
             self.say(singular);
         } else if !(int == 0 && cents > 0) {
             self.say_all(numbers::cardinal(int));
-            if int >= 1_000_000 && int % 1_000_000 == 0 {
+            if int >= 1_000_000 && int.is_multiple_of(1_000_000) {
                 self.say("di");
             }
             self.say(plural);

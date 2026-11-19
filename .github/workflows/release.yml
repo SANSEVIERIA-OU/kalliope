@@ -23,6 +23,9 @@ env:
 jobs:
   linux:
     name: Linux packages
+    # The oldest Ubuntu Kalliope supports, on purpose: the system that builds the programs sets the
+    # oldest glibc they run on (2.39 here, so Debian 13 and Ubuntu 24.04 keep working), and the .deb
+    # is installed and tried here. A newer runner would drop those systems (docs/releasing.md).
     runs-on: ubuntu-24.04
     timeout-minutes: 40
     outputs:
@@ -94,7 +97,7 @@ jobs:
     name: Publish
     if: github.ref_type == 'tag'
     needs: linux
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 10
     permissions:
       contents: write

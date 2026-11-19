@@ -27,7 +27,8 @@ jobs:
     name: Linux
     # A pull request from a branch of this repository was already checked when it was pushed.
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.fork
-    runs-on: ubuntu-24.04
+    # The newest Ubuntu; releases are built on the oldest one Kalliope supports (release.yml).
+    runs-on: ubuntu-26.04
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v7

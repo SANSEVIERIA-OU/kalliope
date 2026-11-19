@@ -41,8 +41,13 @@ cargo build --release
 cargo test --workspace            # model tests run when KALLIOPE_MODEL_DIR and KALLIOPE_ORT_LIB are set
 cargo clippy --workspace --all-targets -- -D warnings
 cargo fmt --all --check
-python3 tools/version.py check    # the version is the same in every file that states it
+python3 tools/version.py check    # the version is the same in every file that states it, and so is the Rust
 ```
+
+`rust-toolchain.toml` names the Rust that builds Kalliope, the latest stable release; rustup installs
+it, with clippy and rustfmt, the first time you run `cargo` here. CI and release builds use the same
+one, and `rust-version` in `Cargo.toml` says the same version, the only one CI checks. To move to a
+newer Rust, change both, then run the checks above: a new clippy often has new warnings.
 
 `python3 tools/fetch_assets.py onnxruntime DIR` and `python3 tools/fetch_assets.py model DIR`
 download the ONNX Runtime and Klein model that CI uses, and print the two variables to set. ONNX

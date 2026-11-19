@@ -144,12 +144,16 @@ fn read_wav(path: &str, rate: u32) -> Result<Vec<f32>, String> {
                 let data = &bytes[body..end];
                 let samples: Vec<f32> = match (format, bits) {
                     (1, 16) => data
-                        .chunks_exact(2)
-                        .map(|b| f32::from(i16::from_le_bytes([b[0], b[1]])) / 32768.0)
+                        .as_chunks::<2>()
+                        .0
+                        .iter()
+                        .map(|&b| f32::from(i16::from_le_bytes(b)) / 32768.0)
                         .collect(),
                     (3, 32) => data
-                        .chunks_exact(4)
-                        .map(|b| f32::from_le_bytes([b[0], b[1], b[2], b[3]]))
+                        .as_chunks::<4>()
+                        .0
+                        .iter()
+                        .map(|&b| f32::from_le_bytes(b))
                         .collect(),
                     _ => return Err(format!("unsupported WAV format {format}, {bits} bits")),
                 };
