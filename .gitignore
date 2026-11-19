@@ -1,3 +1,5 @@
+# The owner's personal keys (Hugging Face and others): never committed
+.env
 # Build output
 /target/
 /build*/

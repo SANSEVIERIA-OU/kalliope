@@ -12,10 +12,18 @@
 
 ## L'account e la chiave: solo del proprietario
 
-- Le condizioni del modello, la chiave di lettura e `hf auth login` li fa il proprietario. Tu non crei account, non accetti
-  condizioni e non cambi impostazioni dell'account.
-- Prima di scaricare dal repository gated, controlla con `hf auth whoami` che l'accesso ci sia. Se manca, oppure se il
-  repository risponde 401/403, fermati e dillo a chi coordina, senza aggirarlo.
+- Le condizioni del modello e la chiave di lettura li fa il proprietario. Tu non crei account, non accetti condizioni e non
+  cambi impostazioni dell'account.
+- **Dove sta la chiave** (decisione del proprietario del 19/11/2026): in `/workspace/kalliope/.env`, alla riga `HF_TOKEN=`.
+  Il file è in `.gitignore` e ha i permessi 600.
+  - Caricala solo dentro il comando che scarica, per esempio
+    `bash -c 'set -a; . /workspace/kalliope/.env; set +a; hf auth whoami; hf download …'`.
+  - Non leggere il file con `cat`, `grep` o altri strumenti che ne mostrino il contenuto. Per sapere se la chiave c'è basta
+    `[ -n "$HF_TOKEN" ]`.
+  - Non usare `hf auth login`: la chiave non va copiata nella cache di Hugging Face.
+- Prima di scaricare dal repository gated, controlla con `hf auth whoami` (con la chiave caricata come sopra) che l'accesso ci
+  sia. Se la chiave è vuota, se manca l'accesso o se il repository risponde 401/403, fermati e dillo a chi coordina, senza
+  aggirarlo.
 - La chiave serve **solo** a scaricare i file di `kyutai/pocket-tts` che servono a questo incarico. Non stamparla, non copiarla in
   file, log, script o nel repository, e non usarla per altro. Niente `hf upload`, niente repository nuovi.
 - Mentre l'accesso non c'è, puoi già lavorare su tutto ciò che è uguale nella versione aperta attuale
