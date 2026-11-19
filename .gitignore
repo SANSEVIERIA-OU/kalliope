@@ -21,3 +21,5 @@ __pycache__/
 /design/lavoro/**/*.jpg
 /design/lavoro/**/*.webm
 /design/lavoro/**/*.mp4
+# Icons and marks of other programs, downloaded only to compare the logo with them
+/design/lavoro/L-logo/giudizio/scaricati/
