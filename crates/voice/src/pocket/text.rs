@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! Text preparation of Pocket TTS, as the official code does it (`pocket_tts/models/text_chunking.py`
 //! of kyutai-labs/pocket-tts a4a6054d): the prompt of each chunk, and the split of a text into chunks of
 //! at most `max_tokens` tokens on sentence ends, then on commas.

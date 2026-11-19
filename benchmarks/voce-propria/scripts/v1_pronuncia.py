@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """V-1: what remains wrong in the Italian pronunciation, apart from the lost first word.
 
 For the test sentences of the given configurations: word alignment of text and transcript (both

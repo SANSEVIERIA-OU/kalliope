@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Tests of tools/fetch_assets.py and tools/release_assets.py. Standard library only, no network: the
 release is a folder read through file:// URLs, and the upstream answers of `check` are canned.
 

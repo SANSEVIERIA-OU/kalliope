@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 # Raccoglie gli effetti misurati (CSS/WAAPI) da tutti i file *.movimento.json di un riferimento in una tabella: un effetto per riga.
 # Uso: visita4-effetti.py <ID> [sottocartelle...]   → prove/<ID>/effetti-misurati.tsv
 import sys, json, glob, os

@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Markdown tables for README.md from the JSON results (qualita.json, costo.jsonl, curva.json,
 ricerca/*.json). Usage: python -I resoconto.py > /tmp/voce-m-tabelle.md
 """

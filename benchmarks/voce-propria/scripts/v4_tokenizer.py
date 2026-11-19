@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """V-4, part B: Kalliope's Pocket TTS front end (Rust) against the official one, token by token.
 
 The corpus: Italian sentences with numbers, acronyms, accents and punctuation from Kalliope's own

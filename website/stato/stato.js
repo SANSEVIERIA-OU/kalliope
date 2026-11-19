@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 // «Stato» nella direzione 2: provato fino al microfono, in riunione non ancora. Ogni fatto sta dove accade.
 // Qui: l'arrivo del primo schermo (la voce parte da «Tu», il microfono «Kalliope» si accende, gli altri prendono il tratteggio); la
 // catena che si accende una tappa alla volta quando arriva sullo schermo; le domande con la risposta nella bolla; il computer del

@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 // Perche' la pagina senza JavaScript e' vuota: elementi a tutto schermo e testo con opacita' 0 (un solo browser, nessun posto passo).
 const [url, nome] = process.argv.slice(2);
 const {chromium} = await import(process.env.PLAYWRIGHT);

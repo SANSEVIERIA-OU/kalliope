@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 # Once a week, and by hand: are ONNX Runtime, Klein, Pocket TTS (weights, tokenizer, code) and Rust still
 # at the versions Kalliope pins (tools/assets.json, rust-toolchain.toml)? For each new version it opens one
 # issue, never two with the same title. It changes nothing by itself: the update follows docs/releasing.md.

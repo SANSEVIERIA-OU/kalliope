@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 // I testi di una pagina per il suo script, nella lingua della pagina.
 // Il testo non sta negli script: sta nella pagina, segnato come ogni altro testo (data-t), e si traduce con lei
 // (docs/translating.md). Quello che uno script legge e la pagina non mostra sta in <template id="testi-…">, che il browser

@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Writes tools/data/cldr.json, the Unicode CLDR data the website build needs, for the languages the site is ready for.
 
     python3 -I tools/cldr_data.py [--tag 49.0.0] [--out tools/data/cldr.json]

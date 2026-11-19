@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Make the audio of one strategy for every reference and every test sentence.
 
 Writes AUDIO/<strategy>/<reference>/<i>.wav and ESITI/genera_<strategy>.json (one-time and

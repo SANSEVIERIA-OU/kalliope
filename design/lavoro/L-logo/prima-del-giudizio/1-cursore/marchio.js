@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 // Il marchio della barra · direzione 1 «Il cursore che parla». scena.js lo chiama quando la home scrive e quando la sua voce
 // parla: il cursore lampeggia mentre si scrive, le onde seguono la voce e a ogni picco ripartono dal cursore (crescono da più vicine al cursore), come gli anelli
 // che partono da «Tu». Con «riduci movimento» il marchio resta fermo. I tempi vengono dai token (--d1-…).

@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Dates, numbers, sizes of files and the names of the languages, from the CLDR data in tools/data/cldr.json.
 
 Nothing here is a table written by hand: the file is generated from the official CLDR release by tools/cldr_data.py.

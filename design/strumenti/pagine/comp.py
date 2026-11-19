@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 import json
 TEMPI = json.load(open('/workspace/kalliope/site/voce/tempi.json'))['file']
 

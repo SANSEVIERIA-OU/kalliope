@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """DEVELOPMENT ONLY: intelligibility check of generated speech with Whisper.
 
 Transcribes DIR/00.wav, DIR/01.wav… (one per text of a JSON list) with faster-whisper "small"

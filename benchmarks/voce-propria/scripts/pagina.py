@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """The listening page for the owner: static HTML and <audio>, no scripts, no libraries.
 
 For each person: the reference and a real held-out clip, then sentence by sentence today's voice

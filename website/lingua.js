@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 // La scelta della lingua del sito (docs/translating.md). Senza script i collegamenti alle lingue bastano; con lo script:
 //  · nella pagina di scelta (`<html data-lingue="it en …">`, l'indirizzo principale) la lingua del browser sta per prima, nell'ordine
 //    di navigator.languages; nessuno spostamento a indovinare la lingua;

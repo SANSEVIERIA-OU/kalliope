@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! Pocket TTS (Kyutai): speaks with the voice of a short recording.
 //!
 //! Three ONNX graphs exported from the official code (benchmarks/voce-propria/scripts/v4_esporta.py),

@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 // Salva meta (anteprima del collegamento), lingua, punti di riferimento, titoli e immagini senza alt dei tre siti (worker visita-3, a posto libero).
 import fs from 'node:fs';
 const pw = await import(process.env.PLAYWRIGHT); const chromium = pw.chromium || pw.default.chromium;

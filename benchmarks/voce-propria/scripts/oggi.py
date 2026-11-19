@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Today's voice, made by the program itself: kalliope-cli say (normalizer, phonemizer, Klein).
 
 Writes AUDIO/oggi/<Giulia|Marco>/<i>.wav. With a model folder from klein.cartella_con_voci the

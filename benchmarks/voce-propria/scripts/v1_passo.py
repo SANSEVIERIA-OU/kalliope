@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """V-1: which combination speaks without making the listener wait.
 
 Each combination runs in a fresh process, one at a time: Pocket with the official settings

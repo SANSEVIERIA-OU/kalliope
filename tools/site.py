@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Build the website, in every language that is ready, with the design system and the release to download.
 
     python3 -I tools/site.py --out DIR [--release-json FILE] [--pseudo] [--languages it,en] [--base-url URL] [--no-selector] [--website DIR --system DIR]
@@ -712,7 +712,7 @@ def esempi_per_il_catalogo(out, sito, reali, v_lingue, sconosciuti, opzioni):
 
 def pagina_rimando(relativo, assoluto):
     return f"""<!doctype html>
-<!-- SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 -->
+<!-- SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 -->
 <html lang="it" dir="ltr">
 <head>
 <meta charset="utf-8">

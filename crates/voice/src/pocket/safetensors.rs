@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! Reading and writing `.safetensors` files (the format of Kyutai's voice states): an 8-byte header
 //! length, a JSON header naming each tensor's type, shape and byte range, then the raw little-endian
 //! data. Only `F32` and `I64` tensors, the two a voice state holds.

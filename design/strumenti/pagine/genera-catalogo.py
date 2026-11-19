@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Genera il catalogo vivo del sito: site/sistema/index.html (token generati da site/stile/token.css, componenti vivi con i fogli di stile del sito)
 e site/sistema/ricerca/index.html (riferimenti, matrice di copertura, decisioni: da design/confronto.json, copertura e direzione.json).
 Uso: python3 -I design/strumenti/pagine/genera-catalogo.py

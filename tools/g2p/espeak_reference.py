@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Development only: espeak-ng phonemes for a list of words, in the convention the official Klein
 package feeds the model (affricates as single symbols ʧ ʤ ʦ ʣ).
 

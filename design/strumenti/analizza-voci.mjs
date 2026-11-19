@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 // Analizza i sei MP3 di site/voce con la decodifica di Chromium (senza finestra) e scrive site/voce/tempi.json:
 // durata, pause fra le frasi e inviluppo dell'ampiezza (un valore ogni 60 ms). Dati misurati, non stimati.
 // Uso: PLAYWRIGHT=/workspace/test-playwright/node_modules/playwright/index.mjs node analizza-voci.mjs

@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 /* Il catalogo delle pagine interne (catalogo-pagine.js): i riquadri delle pagine vive. Nessun valore proprio: i colori e le linee sono i token del
    sistema (../token.css), le distanze sono relative al testo (em), come in catalogo.css. */
 /* una pagina viva a una misura: la pagina sta nel suo schermo vero (width e height dell'iframe) e il riquadro la rimpicciolisce per starci */

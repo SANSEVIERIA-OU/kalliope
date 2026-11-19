@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """V-2/V-3, step 2: does "the trick" work? Checked on voices Kyutai publishes.
 
 For a Kyutai voice whose recording is open (kyutai/tts-voices) and whose state for the current Italian

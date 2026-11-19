@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 /* Kalliope: script facoltativo. Tutto il sito funziona senza; questo file aggiunge soltanto:
    1. l'ascolto con barre e frase evidenziata (al posto dei controlli nativi dell'audio);
    2. il filtro delle frasi nella pagina Aiuto;

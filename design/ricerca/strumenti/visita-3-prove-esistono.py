@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 # Controlla che ogni file citato in `evidenze` delle osservazioni esista sotto design/ricerca/. Uso: visita-3-prove-esistono.py R20 R21 R22
 import json, os, sys
 base = '/workspace/kalliope/design/ricerca/'

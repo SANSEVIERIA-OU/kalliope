@@ -584,8 +584,8 @@ msgstr "语言"
 #: index.html non-ancora/index.html stato/index.html
 #, kalliope-markup, python-brace-format
 msgctxt "piede.testo"
-msgid "Versione {{kalliope.version}} del {{kalliope.date}}. Codice sorgente disponibile, licenza SANSEVIERIA 1.0 (non «open source» nel senso dell'OSI). Prodotto da SANSEVIERIA OÜ. Questo sito non usa cookie né statistiche."
-msgstr "版本 {{kalliope.version}}，发布于 {{kalliope.date}}。源代码公开，许可证 SANSEVIERIA 1.0（并非 OSI 所定义的“开源”）。由 SANSEVIERIA OÜ 出品。本网站不使用 Cookie，也不做统计。"
+msgid "Versione {{kalliope.version}} del {{kalliope.date}}. Codice sorgente disponibile, licenza SANSEVIERIA 1.1 (non «open source» nel senso dell'OSI). Prodotto da SANSEVIERIA OÜ. Questo sito non usa cookie né statistiche."
+msgstr "版本 {{kalliope.version}}，发布于 {{kalliope.date}}。源代码公开，许可证 SANSEVIERIA 1.1（并非 OSI 所定义的“开源”）。由 SANSEVIERIA OÜ 出品。本网站不使用 Cookie，也不做统计。"
 
 #. Says that the voice is speaking; shown in Kalliope's window while a sentence plays.
 #: index.html
@@ -1672,8 +1672,8 @@ msgstr "Licenze"
 #: stato/index.html
 #, kalliope-markup
 msgctxt "st.licenze.testo"
-msgid "Kalliope: licenza SANSEVIERIA 1.0, codice sorgente disponibile; non è «open source» nel senso dell'OSI. Uso personale, di ricerca e interno a un'azienda: senza compenso. Per offrirlo a pagamento serve l'autorizzazione scritta di SANSEVIERIA OÜ; chi lo distribuisce o lo offre in rete deve dare il sorgente. <1><2>LICENSE</2>, <3>NOTICE</3></1>"
-msgstr "Kalliope: licenza SANSEVIERIA 1.0, codice sorgente disponibile; non è «open source» nel senso dell'OSI. Uso personale, di ricerca e interno a un'azienda: senza compenso. Per offrirlo a pagamento serve l'autorizzazione scritta di SANSEVIERIA OÜ; chi lo distribuisce o lo offre in rete deve dare il sorgente. <1><2>LICENSE</2>, <3>NOTICE</3></1>"
+msgid "Kalliope: licenza SANSEVIERIA 1.1, codice sorgente disponibile; non è «open source» nel senso dell'OSI. Uso personale, di ricerca e interno a un'azienda: senza compenso. Per offrirlo a pagamento serve l'autorizzazione scritta di SANSEVIERIA OÜ; chi lo distribuisce o lo offre in rete deve dare il sorgente. <1><2>LICENSE</2>, <3>NOTICE</3></1>"
+msgstr "Kalliope: licenza SANSEVIERIA 1.1, codice sorgente disponibile; non è «open source» nel senso dell'OSI. Uso personale, di ricerca e interno a un'azienda: senza compenso. Per offrirlo a pagamento serve l'autorizzazione scritta di SANSEVIERIA OÜ; chi lo distribuisce o lo offre in rete deve dare il sorgente. <1><2>LICENSE</2>, <3>NOTICE</3></1>"
 
 #: stato/index.html
 #, kalliope-markup

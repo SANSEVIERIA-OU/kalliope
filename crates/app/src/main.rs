@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! Kalliope: type, and be heard. The window and the speaking thread; the voice comes with the program.
 
 mod audio;

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 # Montaggi di confronto per il worker visita-2: affianca foto già salvate (non riacquisisce nulla).
 # Uso: visita2-fogli.py <uscita.jpg> <altezza> <foto1> <foto2> ...
 import sys

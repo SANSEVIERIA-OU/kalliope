@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """ONNX Runtime and the voice models that go inside Kalliope: the maintainers' tool. Standard library only;
 the Pocket TTS export runs tools/pocket_export/export.py in its own Python environment.
 

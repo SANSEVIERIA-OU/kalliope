@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """V-1: the export against Kyutai's own code, on a voice Kyutai publishes (no cloning).
 
 The official model with voice cloning is gated (account needed); the weights of

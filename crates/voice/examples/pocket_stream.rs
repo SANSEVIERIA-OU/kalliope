@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! Measures Pocket TTS as the app streams it: for each line of standard input (text already
 //! normalized, as the app passes it), the time to the first audio, whether playback started at the
 //! first audio would ever run dry (gaps), the CPU time and the real-time factor; at the end the peak

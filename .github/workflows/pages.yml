@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 # Publishes the website (website/, with design-system/) on GitHub Pages:
 # https://sansevieria-ou.github.io/kalliope/
 # tools/site.py fills in the release to download, so the site is rebuilt whenever the pages or the

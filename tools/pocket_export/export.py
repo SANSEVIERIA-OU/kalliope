@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Exports Kyutai's Pocket TTS Italian model to the ONNX graphs Kalliope runs, then checks them against
 Kyutai's own code. tools/release_assets.py runs it, in a Python environment made from requirements.txt
 next to this file. (It was benchmarks/voce-propria/scripts/v4_esporta.py, written in V-4 on 19/11/2026;

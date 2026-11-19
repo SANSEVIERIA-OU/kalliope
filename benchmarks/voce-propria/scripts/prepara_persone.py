@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Cut the test people out of LibriVox chapters (public domain).
 
 For each person: a reference of 22-30 s from chapter A (the only audio the strategies may see),

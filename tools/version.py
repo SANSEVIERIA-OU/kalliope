@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Kalliope's version, kept the same everywhere it is written. Development only; stdlib only.
 
 People see "0.1"; Cargo needs "0.1.0". The version in Cargo.toml is the next one to be

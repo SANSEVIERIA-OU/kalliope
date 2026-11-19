@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """V-4, part A step 2: the reference chain in Python, official code and settings.
 
 For each voice whose recording is open and whose ready state Kyutai publishes (giovanni, anna, marius,

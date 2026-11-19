@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! Neural voices through ONNX Runtime, loaded at run time.
 //!
 //! - [`Voice`]: Klein-TTS, phonemes → audio (an encoder that predicts phoneme durations and

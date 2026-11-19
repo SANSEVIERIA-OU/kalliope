@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Spectrograms side by side, to look at what one cannot hear here (no audio output on this
 machine): cut endings, metallic buzz, missing high band, breaths, long silences.
 

@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Judges of the benchmark.
 
 - Similarity to the person: ECAPA-TDNN (SpeechBrain spkrec-ecapa-voxceleb, Apache-2.0), cosine

@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """The catalogues of the website: the template made from the pages, the merge into each language, and the check.
 
 website/lingue/site.pot   the template: one entry per message, keyed by `msgctxt` (the key written in the page)

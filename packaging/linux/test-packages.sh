@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 # Installs, runs and removes the packages that build-packages.sh made:
 #   the tarball with ./install, into a temporary folder;
 #   the .deb with apt, here (needs Debian or Ubuntu, and root or sudo);

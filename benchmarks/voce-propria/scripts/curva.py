@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Similarity over time for strategy 3: the best voice the search had after N minutes of CPU,
 judged on the five test sentences against the held-out clips (ECAPA), next to the search's own
 score (Resemblyzer on the two search sentences against the reference).

@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 /* L'impaginazione del catalogo: nessun valore proprio. I colori, i caratteri, i pesi e le forme sono i token del sistema (../token.css);
    le distanze sono relative al testo (em), così crescono con lui. I componenti mostrati sono quelli veri (../componenti). */
 body { background: var(--fondo); color: var(--testo); font-family: var(--font-testo); font-weight: var(--peso-testo); line-height: 1.5; }

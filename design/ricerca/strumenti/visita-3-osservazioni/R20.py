@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 import sys; sys.path.insert(0, '/workspace/kalliope/design/ricerca/strumenti/visita-3-osservazioni')
 from comune import o, scrivi
 D, M, S = 'prove/R20/desktop/', 'prove/R20/mobile/', 'prove/R20/script/'

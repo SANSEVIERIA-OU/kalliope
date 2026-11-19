@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! WAV files: 16-bit PCM mono encoding, and decoding of the usual PCM and float files.
 
 /// Encodes `samples` (nominally within -1..1) as a mono 16-bit WAV file. Audio that would clip

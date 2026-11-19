@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Tests of the translation tools and of the multilingual site build. Standard library only.
 
     python3 -I -m unittest discover -s tools -p 'test_*.py'

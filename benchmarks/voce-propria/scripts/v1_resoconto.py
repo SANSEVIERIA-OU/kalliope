@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Markdown tables of V-1 for README.md, from esiti/v1/. Usage: python -I v1_resoconto.py"""
 from __future__ import annotations
 

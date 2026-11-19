@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """The three graphs Kalliope runs, written over the official modules and weights (made in V-4, 19/11/2026).
 
 Every step keeps its streaming state in explicit tensors, so that ONNX Runtime can run it and the

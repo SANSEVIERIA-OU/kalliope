@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Strategy 3: look for the person's voice inside Klein's style space (the 256 numbers).
 
 On the model of KVoiceWalk (github.com/RobViren/kvoicewalk, Apache-2.0): Klein speaks two search

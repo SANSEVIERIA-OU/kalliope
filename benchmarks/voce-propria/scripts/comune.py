@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Shared paths, test sentences and helpers for the own-voice benchmark (V-m, 17/11/2026).
 
 Heavy data (recordings, downloaded models, generated audio) lives outside the repository in

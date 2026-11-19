@@ -46,7 +46,7 @@ for p in PAGINE:
 
 shutil.copy(d / 'marchio.js', w / 'marchio.js')
 icona = (d / ('piccola.svg' if (d / 'piccola.svg').exists() else 'disegno.svg')).read_text()   # la scheda del browser: 16 e 32 px
-(w / 'immagini' / 'icona.svg').write_text('<!-- SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 -->\n' + icona)
+(w / 'immagini' / 'icona.svg').write_text('<!-- SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 -->\n' + icona)
 
 # le chiamate al marchio in scena.js
 sc = w / 'scena.js'

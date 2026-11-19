@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! Preparing a recording as the official code does before encoding it: resampled to 24 kHz like
 //! `scipy.signal.resample_poly` (`pocket_tts/data/audio_utils.convert_audio`), then ended on exactly
 //! 80 ms of silence (`end_on_pause`).

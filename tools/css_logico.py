@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Checks that the style sheets of the design system can be mirrored for a right-to-left page.
 
     python3 -I tools/css_logico.py [DIR]            check DIR (default design-system/); exit 1 on a defect

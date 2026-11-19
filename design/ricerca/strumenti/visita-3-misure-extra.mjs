@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 // Misure mirate (worker visita-3), a posto libero: testo corrente di R22, bersaglio Share di R21. Chromium, 1440×900 e 390×844.
 import fs from 'node:fs';
 const pw = await import(process.env.PLAYWRIGHT); const chromium = pw.chromium || pw.default.chromium;

@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Pseudo-languages for testing the site without translators, made from the Italian catalogue and never published.
 
     en-XA   accented letters, a text 40% longer, delimiters: every cut, overlap and unmarked (still Italian) text shows up

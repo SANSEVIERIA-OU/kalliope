@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """V-4, part A step 4: does the length of the recording change how much of the sentence is said?
 
 In the check (v4_controllo.py) the voice F1, cloned from her 25 s reference, drops the end of the

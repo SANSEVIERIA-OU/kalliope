@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 // Ciò che i componenti del design system devono misurare, in ogni pagina che li usa (la home e le pagine interne): il testo di
 // una traduzione può essere molto più lungo dell'italiano, e un foglio di stile non sa quanto spazio prende. Cinque misure:
 //  · la barra (design-system/componenti/barra.css): se le voci del menu non ci stanno, o non ci stanno insieme all'azione nemmeno

@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 # Riassume un file NNN-gesto.movimento.json di passo.mjs: per ogni bersaglio campionato dalle mutazioni, proprieta',
 # numero di campioni, durata fra primo e ultimo campione, primo e ultimo valore. Uso: python3 -I visita1-analizza.py file [max-voci]
 import json, sys

@@ -31,7 +31,7 @@ Leggi prima `design/incarichi/comune.md`. Ruolo: vibe-next:design-build.
 - Kalliope fa parlare nelle videochiamate chi è muto o ha difficoltà a parlare: scrive, e un microfono virtuale
   locale («Kalliope») pronuncia il testo con voce naturale; gli altri partecipanti sentono la voce come se
   parlasse la persona. Tutto sul computer della persona: niente server, niente account, il testo non esce.
-- Prodotto di SANSEVIERIA OÜ, licenza SANSEVIERIA 1.0 (codice sorgente disponibile). Italiano prima.
+- Prodotto di SANSEVIERIA OÜ, licenza SANSEVIERIA 1.1 (codice sorgente disponibile). Italiano prima.
 - Stato reale da dire con onestà: 0.1-rc.1, solo Linux x86_64 con PipeWire. Provato end-to-end con PipeWire
   privato (Whisper: 2,3% di parole sbagliate), **non ancora** provato con Zoom/Teams/Meet su un desktop reale.
   Windows e macOS: compilano, ma il microfono virtuale richiede un driver firmato / account Apple, non ancora.

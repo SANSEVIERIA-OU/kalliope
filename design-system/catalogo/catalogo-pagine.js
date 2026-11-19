@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 // Il catalogo delle pagine interne: ciò che è nato con la pagina «non ancora» (website/non-ancora/): la cornice, la riunione ferma, la
 // strada ferma, l'elenco delle versioni, e l'ascolto della chiusura con i suoi stati. Come catalogo.js non ha stili né markup suoi per i
 // componenti: copia i pezzi dalla pagina vera (nel sito costruito, in italiano, ../../it/non-ancora/index.html) e li mostra con le classi e

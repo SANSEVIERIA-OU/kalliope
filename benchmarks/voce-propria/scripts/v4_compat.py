@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """V-4, part A step 1: the gated Italian weights against the open ones, tensor by tensor.
 
 kyutai/pocket-tts@3e82814a (gated, with voice cloning) against

@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 // Il marchio della barra · direzione 3 «La frase che si accende» (corretto dopo il giudizio del 19/11/2026). scena.js lo chiama
 // quando la home scrive e quando la sua voce parla: mentre si scrive la bolla si svuota e resta il contorno tratteggiato (niente è ancora detto), mentre la voce
 // parla il fronte della voce avanza nella stessa proporzione delle parole già dette della bolla vera; finita la frase la bolla

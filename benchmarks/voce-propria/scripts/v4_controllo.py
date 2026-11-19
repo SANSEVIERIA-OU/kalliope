@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """V-4, part A step 4: the short automatic check of the current official model.
 
 Two voices: giovanni (Common Voice Italian, CC0; Kyutai's recording) and F1 (Enrica Giampieretti,

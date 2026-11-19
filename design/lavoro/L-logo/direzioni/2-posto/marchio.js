@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 // Il marchio della barra · direzione 2 «Il tuo posto, alla pari». scena.js lo chiama quando la voce della home parla: il tuo
 // riquadro tiene il bordo di chi parla, che segue l'inviluppo, e a ogni picco i riquadri degli altri si accendono uno dopo
 // l'altro, come i bordi dei riquadri della home quando l'anello di «Tu» li raggiunge. Con «riduci movimento» resta fermo. Tempi dai token.

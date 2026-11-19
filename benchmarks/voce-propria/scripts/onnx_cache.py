@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Make the KV-cache length of the exported flow LM a free dimension.
 
 The export fixes every attention cache at 1000 positions ([2, 1, 1000, heads, 64] per layer), and

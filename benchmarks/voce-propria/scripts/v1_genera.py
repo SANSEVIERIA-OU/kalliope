@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """V-1: generate the test sentences and the short meeting phrases with one Pocket configuration,
 for the four people, with several seeds; record streaming timing and CPU per utterance.
 

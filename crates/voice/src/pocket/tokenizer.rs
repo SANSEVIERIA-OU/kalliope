@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! The text tokenizer of Pocket TTS: the `tokenizer.json` that Kyutai ships with the Italian model,
 //! read and run without the `tokenizers` library.
 //!

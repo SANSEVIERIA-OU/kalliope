@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Pocket TTS on the third-party ONNX export (xennonf4/pocket-tts-onnx), with what the official
 code (kyutai-labs/pocket-tts, MIT) does and the export's wrapper does not, each switchable so
 that its effect can be measured (incarico V-1, 17/11/2026):

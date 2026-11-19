@@ -1,5 +1,5 @@
 #!/bin/bash
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 # Strumento del worker visita-2: lancia un gesto di passo.mjs senza finestra, salva l'uscita completa in un registro
 # (design/incarichi/visita-2/log) e stampa una sintesi (foto, titoli visibili, movimento rilevato in forma compatta).
 # Uso: POSTO=<posto:segno> visita2-passo.sh <ID-prove> <comando passo...>

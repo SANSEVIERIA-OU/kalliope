@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! Where the voice models are: they come with Kalliope, in `share/kalliope/` next to the program
 //! (tools/assets.json pins the files the packages put there). Nothing is downloaded.
 

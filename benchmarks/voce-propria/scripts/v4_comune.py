@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """V-4: paths and the official model (current Italian release, with voice cloning).
 
 - Code: kyutai-labs/pocket-tts main a4a6054d (18/11/2026), read from its own folder.

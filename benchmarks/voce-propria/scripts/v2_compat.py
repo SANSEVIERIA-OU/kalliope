@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """V-2, step 1: are the weights of May and of the current Italian release compatible?
 
 Compared tensor by tensor (shape, identical bits, largest absolute difference relative to the

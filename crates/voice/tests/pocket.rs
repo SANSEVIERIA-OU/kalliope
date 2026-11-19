@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! End-to-end checks of Pocket TTS with the real model. Run only when KALLIOPE_POCKET_DIR (the
 //! model folder: flow_lm.onnx, mimi_decoder.onnx, mimi_encoder.onnx, tokenizer.json, pocket.json)
 //! and KALLIOPE_ORT_LIB are set; otherwise they pass without work. They need no recording of a

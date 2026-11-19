@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """The translations of the website: the model, one catalogue per language, and the check (docs/translating.md).
 
     python3 -I tools/translations.py extract [--check]   make website/lingue/site.pot and it.po from the pages, and bring

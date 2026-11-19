@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """V-4, part B: end to end with the real program, as a user would.
 
 1. `kalliope-cli voice RECORDING.wav -o VOICE.safetensors` for giovanni (Common Voice Italian, CC0;

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Unisce design/ricerca/osservazioni/R*.json in un solo file per confronta-riferimenti.mjs.
 
 Uso: python3 -I design/strumenti/unisci-osservazioni.py design/confronto-lavoro/ricerca-unita.json

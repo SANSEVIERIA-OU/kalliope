@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 # Rapporto di contrasto WCAG fra due colori sRGB «r,g,b». Uso: python3 -I visita1-contrasto.py "nome|r,g,b|r,g,b" ...
 # I colori vengono da stili calcolati (getComputedStyle) o da un pixel della foto salvata: lo dice il nome nel documento.
 import sys

@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Reading and writing gettext .po and .pot files (the format Slint reads too), with nothing but the standard library.
 
 Supported: header, `msgctxt`, `msgid`, `msgid_plural`, `msgstr` and `msgstr[N]`, translator comments (`# `), extracted

@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """V-1: judge the utterances of v1_genera.py.
 
 Per utterance: Whisper small transcript (settings of asr_check.py, Kalliope-normalized on both

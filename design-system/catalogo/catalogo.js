@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 // Il catalogo vivo. Non ha stili né markup suoi per i componenti: legge token.css (la tabella dei token è generata dal file), copia i componenti
 // dalla home vera (website/index.html, che nel sito costruito, in italiano, è ../../it/index.html) e li mostra con le classi e gli stati del sistema. Gli stati «al passaggio», «fuoco» e «premuto» si
 // forzano riscrivendo le regole del sistema stesso (.voce:hover → .voce.sim-sopra): nessuna regola in più, solo le stesse con una classe.

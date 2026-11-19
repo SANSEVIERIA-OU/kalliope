@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Vista leggibile di design/confronto.json (generata, non scritta a mano).
 
 Uso: python3 -I design/strumenti/vista-confronto.py design/confronto.json design/confronto.md

@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Cost of each strategy, one test at a time, each in a fresh process, same thread count.
 
 Two measurements per strategy and reference, each in its own process so that peak memory is

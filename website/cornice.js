@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 // La cornice delle pagine interne nella direzione 2 (design-system/componenti/pagina.css): ciò che la home fa con scena.js
 // e ogni pagina interna ripete. La barra resta in alto e diventa piena appena si scorre; al telefono «Menu» apre le sezioni;
 // un tratto «entra» quando arriva sullo schermo (classe «visto», e l'evento «rivelato» per lo script della pagina); il fuoco

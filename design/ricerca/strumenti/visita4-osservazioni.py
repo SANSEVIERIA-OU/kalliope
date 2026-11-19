@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 # Genera design/ricerca/osservazioni/R50..R53.json (vocabolario di piano.md §8) a partire dai dati misurati dal worker visita-4
 # e verifica che ogni prova citata esista. I valori sono quelli delle letture (prove/<ID>/lettura-*.json, script/misure-script.json,
 # effetti-misurati.tsv) e delle foto; la prosa sta in «descrizione». Uso: python3 -I visita4-osservazioni.py

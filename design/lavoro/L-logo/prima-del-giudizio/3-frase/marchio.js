@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 // Il marchio della barra · direzione 3 «La frase che si accende». scena.js lo chiama quando la home scrive e quando la sua voce
 // parla: mentre si scrive le parole del disegno si spengono (non sono ancora dette), mentre la voce parla si accendono nella
 // stessa proporzione delle parole della bolla, e il bordo segue l'inviluppo. Finita la frase il disegno torna com'è.

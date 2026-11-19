@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Downloads ONNX Runtime and the voice models that go inside Kalliope, for CI, releases and people who
 build Kalliope. Standard library only. Everything comes from one release of this repository, tagged
 `assets` (docs/releasing.md); nothing is downloaded from anyone else.

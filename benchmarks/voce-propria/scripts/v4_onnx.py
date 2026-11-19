@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """V-4: the official generation loop on Kalliope's ONNX graphs, in Python.
 
 The reference for the Rust engine and the generator of the automatic check. It follows

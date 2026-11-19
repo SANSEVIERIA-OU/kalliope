@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 // Il catalogo della pagina «stato» (incarico 3b-b, 17/11/2026): i cinque componenti che ha portato nel sistema, con le loro varianti e i loro stati:
 // la riunione con il confine del provato, la strada vista da vicino (la catena, le sue tappe, la cifra e la quota, le parole, le fonti che si aprono,
 // i dettagli a richiesta, la parentesi «non misurato» che segue i nodi), le domande con la risposta nella bolla, il varco con i suoi cinque passi, il

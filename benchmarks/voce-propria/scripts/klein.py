@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Klein-TTS X1.5 Pro in Python, following crates/voice step by step (chunk per sentence, phoneme
 durations rounded as JavaScript does, 0.12 s pause between chunks), with any 256-number style.
 

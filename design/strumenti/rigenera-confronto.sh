@@ -1,5 +1,5 @@
 #!/bin/sh
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 # Rigenera confronto, copertura e direzione dalle osservazioni correnti. Uso: sh design/strumenti/rigenera-confronto.sh
 set -e
 cd /workspace/kalliope/design

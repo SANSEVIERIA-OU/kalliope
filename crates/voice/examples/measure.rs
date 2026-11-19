@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! Measures load time, memory, time to first audio and CPU cost of the voice, with the same
 //! method as the Python engine benchmark (bench/scripts/worker.py). Prints one JSON line.
 //!

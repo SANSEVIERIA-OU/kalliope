@@ -1,5 +1,5 @@
 #!/bin/sh
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 # Costruisce il sito con tools/site.py in una cartella nuova (site.py non scrive in site/) e stampa il percorso della cartella da servire.
 # Uso: sh design/strumenti/anteprima.sh NOME   -> /tmp/kalliope-anteprima/NOME  (contiene kalliope/, come sotto /kalliope/ su Pages)
 # Serve un file con la risposta dell'API delle release: /tmp/kalliope-lavoro/releases.json (gh api repos/SANSEVIERIA-OU/kalliope/releases)

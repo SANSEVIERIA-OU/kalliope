@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 # Builds the Linux packages and installs, runs and removes each one. For a tag vX.Y it then
 # publishes them as a GitHub release. Started by hand (Actions → Release → Run workflow), it only
 # builds and tests the packages. See docs/releasing.md.

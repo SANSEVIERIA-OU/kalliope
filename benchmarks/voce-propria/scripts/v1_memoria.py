@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """V-1: memory and time of preparing the voice (Mimi encoder of the reference), each setting in a
 fresh process; and the saved voice: file size and reload time.
 

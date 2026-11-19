@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! Italian grapheme-to-phoneme conversion: normalized words → IPA phonemes with stress marks.
 //!
 //! Spelling rules give the sounds; stress, open/closed e and o and z voicing come from the

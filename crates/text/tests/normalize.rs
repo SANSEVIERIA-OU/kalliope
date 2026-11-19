@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! Written → spoken pairs. Each case is one behaviour a listener would notice.
 
 use kalliope_text::normalize;

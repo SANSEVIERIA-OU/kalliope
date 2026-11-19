@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 // Il catalogo delle lingue (incarico 2, 17/11/2026): le scritture con i loro caratteri, l'elenco delle lingue, la scelta nella barra, la
 // pagina della scelta e lo specchio da destra a sinistra. Come catalogo.js non ha stili né markup suoi per i componenti: le scritture e lo
 // specchio sono piccole pagine vere (un riquadro con <html lang dir> e i fogli del sistema: :lang() e :dir() valgono sulla radice, come

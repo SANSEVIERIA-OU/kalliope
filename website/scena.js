@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 // Kalliope · la home intera nella direzione 2 «Alla pari, in riunione».
 // La pagina è una riunione che continua fino al piede. La voce vera può suonare in due «palchi» (la riunione del primo
 // schermo e il filo delle tue frasi più sotto), uno alla volta, con lo stesso motore: le parole si accendono sui tempi

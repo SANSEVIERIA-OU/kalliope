@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 // Il primo schermo, misurato: dove stanno il comando d'ascolto, lo stato e le azioni principali su computer e telefono (con e senza l'avviso del sistema).
 // Uso: node design/strumenti/con-server.mjs DIR node design/strumenti/primo-schermo.mjs CARTELLA_FOTO [motore]
 import {mkdirSync, writeFileSync} from 'node:fs';

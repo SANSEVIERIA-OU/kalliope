@@ -3,7 +3,7 @@
 <component type="desktop-application">
   <id>io.github.sansevieria_ou.kalliope</id>
   <metadata_license>CC0-1.0</metadata_license>
-  <project_license>LicenseRef-SANSEVIERIA-1.0</project_license>
+  <project_license>LicenseRef-SANSEVIERIA-1.1</project_license>
   <name>Kalliope</name>
   <summary>Type, and be heard in video calls</summary>
   <summary xml:lang="it">Scrivi e fatti sentire nelle videochiamate</summary>

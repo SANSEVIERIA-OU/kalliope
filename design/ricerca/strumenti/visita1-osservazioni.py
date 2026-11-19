@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 # Genera design/ricerca/osservazioni/R01.json, R02.json, R03.json nel vocabolario di piano.md §8 (worker visita-1).
 # Percorsi delle evidenze: relativi a design/ricerca. Uso: python3 -I visita1-osservazioni.py
 import json, os

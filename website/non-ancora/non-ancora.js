@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 // «Non ancora» nella direzione 2: la riunione è pronta, la tua voce non ancora.
 // Il primo schermo si muove da sé con il solo CSS (componenti/riunione-ferma.css). Qui: il tentativo su «Kalliope»; la strada che si
 // ferma al microfono quando arriva sullo schermo; la bolla della chiusura che nasce; e il solo suono della pagina, la frase della

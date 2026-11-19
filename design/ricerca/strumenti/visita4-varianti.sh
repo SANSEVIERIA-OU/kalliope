@@ -1,5 +1,5 @@
 #!/bin/bash
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 # Varianti di §7.3 su un riferimento, col posto in $POSTO: testo 200%, zoom 200%, colori forzati (e scuro se richiesto).
 # Uso: POSTO=l4:xxxx visita4-varianti.sh <ID> <url> <dy-scorrimento> [scuro]
 ID="$1"; URL="$2"; DY="${3:-900}"

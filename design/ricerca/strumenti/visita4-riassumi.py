@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 # Riassume l'uscita di passo.mjs (righe di avviso + JSON del gesto) per il worker visita-4.
 # Il JSON completo resta nel registro e accanto alla foto (<foto>.movimento.json).
 import sys, json, re

@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """V-4, part B: peak memory of the real program, measured from outside.
 
 `ru_maxrss` of a child started from Python counts the Python process it was forked from (in v4_e2e.py

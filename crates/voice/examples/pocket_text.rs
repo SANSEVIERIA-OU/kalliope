@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! For checking the Pocket TTS front end against the official Python code: reads lines from standard
 //! input and prints, per line, one JSON object with the token ids, their decoded text and the chunks
 //! with their prompts.

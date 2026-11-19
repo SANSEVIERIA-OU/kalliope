@@ -1,6 +1,6 @@
 # Third-party notices
 
-Kalliope's own code is under [SANSEVIERIA License 1.0](LICENSE). The components below keep their own
+Kalliope's own code is under [SANSEVIERIA License 1.1](LICENSE). The components below keep their own
 licences. This list covers what a Kalliope build uses or ships; development-only tools are listed
 separately. ONNX Runtime and the voice models are inside Kalliope's packages, each with its licence and
 notices in `share/doc/kalliope/`; their files are kept in the `assets` release of this repository and

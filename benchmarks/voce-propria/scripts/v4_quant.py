@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """V-4, part A step 3: which smaller flow_lm.onnx keeps the numbers of the fp32 one.
 
 Variants of flow_lm.onnx (the graph exported by v4_esporta.py):

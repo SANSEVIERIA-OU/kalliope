@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 // Configurazione del controllo «i valori stanno solo nei token» per il design system di Kalliope.
 // Si lancia da questa cartella:  node <skill>/scripts/controlla-sorgenti.mjs
 // Riguarda solo ciò che usa questo sistema: la home (../website/index.html), la pagina di scelta della lingua (../website/lingue.html), il catalogo

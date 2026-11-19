@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Plural forms: from CLDR rules to a gettext `Plural-Forms` header, and a small evaluator for such headers.
 
 CLDR writes a plural rule as `n % 10 = 2..4 and n % 100 != 12..14 @integer 2~4, 22~24 ...`. A .po file counts

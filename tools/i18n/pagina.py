@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """The pages of the website as the translation tools see them: a small HTML reader that keeps every offset, the messages a
 page marks for translation, the unmarked text a translatable page still has, and the way a translation goes back in.
 

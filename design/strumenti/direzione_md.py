@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Vista leggibile di direzione.json: ambizione, alternative confrontate, direzione scelta, regole, decisioni, esito del controllo."""
 import subprocess, datetime, collections
 
