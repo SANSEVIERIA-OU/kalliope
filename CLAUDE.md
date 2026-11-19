@@ -10,18 +10,24 @@ come si lavora.
 
 ## Il sito e il design system: da dove si riparte
 
-**Stato al 17/11/2026.** Aggiorna questa sezione ogni volta che lo stato cambia.
+**Stato al 19/11/2026.** Aggiorna questa sezione ogni volta che lo stato cambia.
 
 - **Il sito è `website/`** (prima si chiamava `site/`). La home è quella nuova, nella direzione 2 «Alla pari, in
   riunione», scelta dal proprietario il 14/11/2026 fra tre direzioni rese.
 - **«non ancora» è rifatta** nella direzione 2 (mostrata al proprietario il 17/11/2026) e fissa la cornice delle pagine
   interne (`website/cornice.js`, `design-system/componenti/pagina.css`). La pagina della scelta della lingua (`/`) è
   nuova anche lei.
-- **Le altre pagine non sono ancora state rifatte.** Ascolta, stato, installa, in riunione, aiuto e la pagina 404
+- **«stato» è rifatta** nella direzione 2 e approvata dal proprietario il 19/11/2026 («ok per tutto»). La prossima è
+  «installa».
+- **Il logo si rifà** (decisione del proprietario del 19/11/2026: «rifarei il logo perché con il nuovo sito c'entra poco»).
+  Quello di oggi, la bolla verde con le barre del suono, viene dal sito di prima; la direzione 2 gli aveva lasciato il verde
+  come unica eccezione e ne aveva preso la forma della bolla. Prima la proposta di come rifarlo, poi il via
+  (`design/lavoro/STATO.md`).
+- **Le altre pagine non sono ancora state rifatte.** Ascolta, installa, in riunione, aiuto e la pagina 404
   hanno l'aspetto di prima, con i loro fogli in `website/stile/`, gli script in `website/script/` e il vecchio
   catalogo in `website/sistema/`. Restano solo perché le pagine nuove rimandano a loro.
 - **Il design system è `design-system/`**, fuori dal sito: token, base, componenti, caratteri, catalogo vivo,
-  `SISTEMA.md` e `TOKEN.md`. Lo usano la home, «non ancora» e la scelta della lingua.
+  `SISTEMA.md` e `TOKEN.md`. Lo usano la home, «non ancora», «stato» e la scelta della lingua.
 - **In linea c'è ancora il sito di prima** finché il proprietario non dice di pubblicare.
 - **Il lavoro in corso** (dal 16/11/2026: lingue, poi le altre pagine, poi l'applicazione) è in `design/lavoro/`:
   `STATO.md` dice fasi, decisioni prese a lavoro avviato e incarichi; `ricerca/lingue.md` i fatti con le fonti.
@@ -36,8 +42,9 @@ come si lavora.
   prove d'ascolto (`design/lavoro/STATO.md`, V-4). Account, condizioni e chiave li gestisce solo il proprietario.
 - **Modelli e ONNX Runtime dentro il programma** (decisioni del proprietario del 19/11/2026). Il modello di Kyutai si
   ridistribuisce citandolo («ridistribuiamo con citazione»). ONNX Runtime non si scarica da terzi: «anche onx lo mettiamo nel
-  programma e a noi l'onere di tenerlo aggiornato così come il modello kyutai». Come farlo si propone prima al proprietario
-  (`design/lavoro/STATO.md`, P-2). Le dipendenze del programma si portano tutte all'ultima versione («si, aggiorniamo
+  programma e a noi l'onere di tenerlo aggiornato così come il modello kyutai». Proposta approvata il 19/11/2026 («ok per tutto»): una release
+  di GitHub di Kalliope fa da magazzino dei file, i pacchetti contengono tutto (Giulia e Marco compresi), un controllo ogni
+  settimana segnala le versioni nuove (`design/lavoro/STATO.md`, P-2). Caricare i file e pubblicare si chiede ogni volta. Le dipendenze del programma si portano tutte all'ultima versione («si, aggiorniamo
   tutto», P-1).
 - **Il telefono** (17/11/2026): «non è per telefono: è solo desktop per il momento». Il sito non dice «non ancora» per
   il telefono.
