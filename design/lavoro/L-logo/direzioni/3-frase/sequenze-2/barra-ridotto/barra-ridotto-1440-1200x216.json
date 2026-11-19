@@ -1,0 +1,62 @@
+{
+ "pagina": "http://127.0.0.1:8944/lente.html?p=it/&vw=1440&vh=900&x=60&y=0&w=400&h=72&s=3",
+ "misura": "1200x216",
+ "sequenza": "barra-ridotto-1440",
+ "gesto": null,
+ "ridotto": true,
+ "lento": 1,
+ "istanti": [
+  0,
+  2.5,
+  4,
+  6,
+  8,
+  12
+ ],
+ "fotogrammi": [
+  {
+   "file": "barra-ridotto-1440-1200x216-f01.jpg",
+   "chiesto": 0,
+   "scattato": 0,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-ridotto-1440-1200x216-f02.jpg",
+   "chiesto": 2.5,
+   "scattato": 2.5,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-ridotto-1440-1200x216-f03.jpg",
+   "chiesto": 4,
+   "scattato": 4,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-ridotto-1440-1200x216-f04.jpg",
+   "chiesto": 6,
+   "scattato": 6,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-ridotto-1440-1200x216-f05.jpg",
+   "chiesto": 8,
+   "scattato": 8,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-ridotto-1440-1200x216-f06.jpg",
+   "chiesto": 12,
+   "scattato": 12,
+   "scorrimento": 0
+  }
+ ],
+ "foglio": "barra-ridotto-1440-1200x216-foglio.jpg",
+ "video": "barra-ridotto-1440-1200x216.webm",
+ "orologio": {
+  "pagina": 1,
+  "media": []
+ },
+ "errori": [],
+ "misurato": "2026-11-19T14:56:20.801Z"
+}

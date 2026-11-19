@@ -1,40 +1,41 @@
-/* Direzione 1 · «Il cursore che parla» · i token del marchio.
+/* Direzione 1 · «Il cursore che parla» · i token del marchio (corretti dopo il giudizio del 19/11/2026).
    La fonte unica dei colori, dei tempi e delle curve del disegno: i modelli in modelli/ li usano per nome, genera.py li
    scrive nei file che non possono leggere un foglio di stile (icona della scheda, icona del programma).
-   Tinta di tutto: 8 in OKLCH, la tinta del bordeaux del sito (design-system/token.css). Fonti e motivi: idea.md. */
+   Tinta di tutto: 8 in OKLCH, la tinta del bordeaux del sito (design-system/token.css). Fonti e motivi: idea.md.
+   Prima del giudizio: ../../prima-del-giudizio/1-cursore/token.css. */
 :root {
-  /* Il disegno libero, su fondo trasparente (Linux, Windows, la scheda del browser) */
-  --d1-cursore: #c50f56;                 /* il cursore: l'inchiostro di chi scrive. Il magenta del sito (--magenta), oklch(53% 0.21 8) */
-  --d1-cursore-spessore: #7e1840;        /* lo spessore sotto il cursore (GNOME: al massimo 4 px a 128). Il colore delle barre spente del sito (--barre-spente) */
-  --d1-onda-vicina: #e6396e;             /* la prima onda, la voce appena nata. Nuovo, oklch(62% 0.21 8): regge 3:1 sul chiaro e sullo scuro (regola di Windows) */
-  --d1-onda-vicina-spessore: #a5154a;    /* il suo spessore, oklch(45% 0.18 8) */
-  --d1-onda-lontana: #f3a4b2;            /* la seconda onda, la voce che arriva agli altri. Nuovo, oklch(80% 0.095 8), a metà fra --rosa e --voce */
-  --d1-onda-lontana-spessore: #e3718a;   /* il suo spessore: il rosa del sito (--rosa) */
+  /* Il disegno libero, su fondo trasparente (Linux, Windows): la riga scritta, il cursore, due onde */
+  --d1-inchiostro-scritto: #d82762;      /* la riga e il cursore, oklch(58% 0.21 8): 4,6:1 sul chiaro e 3,3:1 sullo scuro (prima #c50f56, 2,7:1 sullo scuro: l'asta spariva) */
+  --d1-inchiostro-spessore: #9f0042;     /* il loro spessore (GNOME: al massimo 4 px a 128), oklch(45% 0.18 8) */
+  --d1-onda-vicina: #ed537c;             /* la prima onda, oklch(66% 0.19 8): 3,3:1 sul chiaro, 4,6:1 sullo scuro */
+  --d1-onda-vicina-spessore: #b4144e;    /* oklch(50% 0.19 8) */
+  --d1-onda-lontana: #ed7c94;            /* la seconda onda, oklch(72% 0.14 8): sul chiaro non si perde più (prima #f3a4b2, 1,9:1) */
+  --d1-onda-lontana-spessore: #d82762;   /* = --d1-inchiostro-scritto */
 
-  /* Il disegno per le grandezze piccole (16 e 24 px: la scheda del browser, l'ICO 16, hicolor 16 e 24): senza spessore, sulla griglia dei pixel */
-  --d1-onda-lontana-piccola: #e3718a;    /* a 16 px la seconda onda chiara sparisce sul bianco: qui è il rosa del sito (--rosa), 2,9:1 sul bianco */
-
-  /* La forma piena, che macOS chiude nel suo quadrato arrotondato: il disegno sulla stanza del sito */
-  --d1-stanza-alta: #5b0123;             /* la stanza in alto (--bordeaux) */
-  --d1-stanza-bassa: #2e0010;            /* la stanza in basso (--barra-piena) */
-  --d1-cursore-acceso: #ffedef;          /* il cursore sulla stanza: il colore del testo del sito (--testo) */
-  --d1-onda-lontana-accesa: #ffdbe1;     /* la seconda onda sulla stanza: la voce del sito (--voce) */
+  /* La forma piena, che macOS chiude nel suo quadrato arrotondato: il segno chiaro della barra su una piastrella magenta */
+  --d1-piastra: #d82762;                 /* oklch(58% 0.21 8): il bordo si vede anche su un fondo scuro (prima la stanza #5b0123→#2e0010 spariva) */
+  --d1-cursore-acceso: #ffedef;          /* la riga e il cursore sulla piastrella: il testo del sito (--testo) */
+  --d1-onda-vicina-accesa: #fdb8c4;      /* oklch(85% 0.08 8), 2,9:1 sulla piastrella */
+  --d1-onda-lontana-accesa: #ffdbe1;     /* la voce del sito (--voce) */
 
   /* La versione simbolica di GNOME: un colore solo, che il sistema ricolora */
   --d1-simbolo: #2e3436;                 /* il grigio dei simboli di Adwaita (GNOME/adwaita-icon-theme, master, commit 2066120e, per esempio Adwaita/symbolic/actions/open-menu-symbolic.svg); GTK ricolora comunque le simboliche quando le usa */
 
   /* Nella barra del sito il disegno è scritto con l'inchiostro della pagina */
   --d1-inchiostro: #ffedef;              /* = --testo: il segno sta accanto al nome come una lettera in più */
-  --d1-onda-quieta: 0.38;
-  --d1-segno-proporzione: 0.78;          /* la larghezza del disegno nella barra rispetto all'altezza (100 su 128): il segno sta vicino al nome come le lettere fra loro */                /* le onde prima che la voce parli: la frase non è ancora detta (le parole non dette della bolla sono al 40%) */
+  --d1-onda-quieta: 0.6;                 /* le onde prima che la voce parli (prima 0,38: per dieci secondi il marchio sembrava spento) */
+  --d1-segno-proporzione: 0.875;         /* la larghezza del disegno nella barra rispetto all'altezza (112 su 128) */
 
   /* Il movimento nella barra */
   --d1-lampeggio: 1s;                    /* il cursore lampeggia mentre la home scrive: lo stesso ritmo del cursore del campo (--durata-f-campo-f-cursore) */
   --d1-curva-lampeggio: steps(1);        /* a scatti, come il cursore vero (--curva-a-scatti) */
-  --d1-cursore-spento: 0.2;              /* il cursore vero si spegne del tutto; il marchio no: resta un'ombra del segno, così il disegno non perde il suo tratto principale */
+  --d1-cursore-spento: 0.55;             /* il marchio non si spegne come il cursore vero: resta più che visibile (prima 0,2) */
+  --d1-scrittura: 3.1s;                  /* la riga cresce fino al cursore mentre la home scrive (da 2,2 a 5,3 s in scena.js: SCRIVE, INVIO) */
+  --d1-riga-iniziale: 0.25;              /* da quanto parte la riga: una parola appena cominciata */
   --d1-onda-durata: 520ms;               /* un'onda che parte a ogni picco della voce: il tempo della bolla che nasce nella home (D2: 520 ms) */
   --d1-onda-sfasamento: 110ms;           /* la seconda onda parte dopo la prima */
   --d1-onda-partenza: 0.82;              /* da dove riparte un'onda: più vicina al cursore, poi si allarga fino al suo posto */
   --d1-curva-onda: cubic-bezier(0.19, 1, 0.22, 1);   /* la curva d'entrata della home (--entra), misurata su R03 */
+  --d1-curva-scrittura: linear;          /* la riga cresce come si scrive, lettera dopo lettera (--curva-lineare) */
   --d1-respiro: 160ms;                   /* le onde seguono la voce: il tempo con cui inseguono l'inviluppo */
 }

@@ -1,0 +1,56 @@
+{
+ "pagina": "http://127.0.0.1:8944/lente.html?p=it/&vw=1440&vh=900&x=60&y=0&w=400&h=72&s=3",
+ "punto": [
+  120,
+  108
+ ],
+ "fotogrammi": [
+  {
+   "file": "puntatore-1440-1200x216-f01.jpg",
+   "chiesto": 0,
+   "scattato": 0.03
+  },
+  {
+   "file": "puntatore-1440-1200x216-f02.jpg",
+   "chiesto": 0.08,
+   "scattato": 0.11
+  },
+  {
+   "file": "puntatore-1440-1200x216-f03.jpg",
+   "chiesto": 0.16,
+   "scattato": 0.17
+  },
+  {
+   "file": "puntatore-1440-1200x216-f04.jpg",
+   "chiesto": 0.24,
+   "scattato": 0.26
+  },
+  {
+   "file": "puntatore-1440-1200x216-f05.jpg",
+   "chiesto": 0.32,
+   "scattato": 0.34
+  },
+  {
+   "file": "puntatore-1440-1200x216-f06.jpg",
+   "chiesto": 0.44,
+   "scattato": 0.46
+  },
+  {
+   "file": "puntatore-1440-1200x216-f07.jpg",
+   "chiesto": 0.6,
+   "scattato": 0.61
+  },
+  {
+   "file": "puntatore-1440-1200x216-f08.jpg",
+   "chiesto": 0.9,
+   "scattato": 0.91
+  },
+  {
+   "file": "puntatore-1440-1200x216-f09.jpg",
+   "chiesto": 1.4,
+   "scattato": 1.41
+  }
+ ],
+ "video": "puntatore-1440-1200x216.webm",
+ "misurato": "2026-11-19T14:55:32.520Z"
+}

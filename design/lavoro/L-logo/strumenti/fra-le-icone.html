@@ -1,0 +1,28 @@
+<!doctype html>
+<!-- Una direzione fra le icone vere del suo genere, alla stessa misura: app di messaggi e programmi di voce (icone di Flathub
+     scaricate dal giudice in ../giudizio/scaricati/, solo lette), e la simbolica fra i simboli di sistema di Adwaita e Material.
+     Lo stesso impianto dei fogli del giudice (giudizio/fogli/fra-le-icone-*.png). Uso: fra-le-icone.html?d=1-cursore -->
+<meta charset="utf-8">
+<style>
+body{margin:0;font:12px sans-serif;background:#777;width:900px}
+.r{display:flex;align-items:center;gap:var(--g,14px);padding:10px 16px}
+.c{background:#f6f5f4}.s{background:#1f1f1f}
+.s img.sym{filter:invert(1) brightness(1.6)}
+b{display:block;padding:4px 16px;background:#000;color:#fff;font-weight:600}
+</style>
+<div id="dove"></div>
+<script>
+const d = new URLSearchParams(location.search).get('d');
+const F = '../giudizio/scaricati/flathub/', S = '../giudizio/scaricati/simboli/', K = `../direzioni/${d}/`;
+const msg = ['org.signal.Signal', 'org.telegram.desktop', 'sm.puri.Chatty', 'org.gnome.Fractal', null, 'org.gnome.Polari', 'chat.delta.desktop', 'io.github.tobagin.karere', 'us.zoom.Zoom', 'com.slack.Slack'];
+const voce = ['org.gnome.SoundRecorder', 'net.mkiol.SpeechNote', 'io.gitlab.persiangolf.voicegen', 'im.bernard.Parolu', 'it.mijorus.whisper', null, 'io.speedofsound.SpeedOfSound', 'org.sugarlabs.Speak', 'app.drey.Dialect'];
+const sim = ['adw-audio-volume-high-symbolic', 'adw-audio-input-microphone-symbolic', 'adw-media-record-symbolic', 'adw-media-playback-stop-symbolic', null, 'adw-mail-unread-symbolic', 'mat-volume_up', 'mat-chat', 'mat-sms', 'mat-record_voice_over', 'mat-text_to_speech', 'mat-graphic_eq', 'mat-radio_button_checked', 'mat-stop_circle'];
+const riga = (lista, px, tema, piccola) => `<div class="r ${tema}" style="--g:${px < 40 ? 10 : 14}px">${lista.map(n => n ? `<img src="${F}${n}.png" width="${px}" height="${px}">` : `<img src="${K}${piccola && px <= 32 ? 'disegno' : 'disegno'}.svg" width="${px}" height="${px}">`).join('')}</div>`;
+const rigaSim = (px, tema) => `<div class="r ${tema}">${sim.map(n => `<img class="sym" src="${n ? S + n + '.svg' : K + 'simbolica.svg'}" width="${px}" height="${px}">`).join('')}</div>`;
+let h = `<b>${d} · app di messaggi, 48 px (dove sta Kalliope?)</b>` + riga(msg, 48, 'c') + riga(msg, 48, 's');
+h += `<b>${d} · app di messaggi, 32 px</b>` + riga(msg, 32, 'c') + riga(msg, 32, 's');
+h += `<b>${d} · voce e sintesi vocale, 48 e 32 px</b>` + riga(voce, 48, 'c') + riga(voce, 48, 's') + riga(voce, 32, 'c') + riga(voce, 32, 's');
+h += `<b>${d} · simboli di sistema (Adwaita e Material) e la simbolica, 16, 24 e 48 px</b>` + [16, 24, 48].map(px => rigaSim(px, 'c') + rigaSim(px, 's')).join('');
+h += `<b>${d} · prima del giudizio e adesso, accanto al logo di oggi (48 px)</b><div class="r c"><img src="../prima-del-giudizio/${d}/disegno.svg" width="48" height="48"> → <img src="${K}disegno.svg" width="48" height="48"> &nbsp; · &nbsp; <img src="../../../../packaging/linux/io.github.sansevieria_ou.kalliope.svg" width="48" height="48"> (oggi) &nbsp; · &nbsp; simbolica <img class="sym" src="../prima-del-giudizio/${d}/simbolica.svg" width="24" height="24"> → <img class="sym" src="${K}simbolica.svg" width="24" height="24"></div>`;
+document.getElementById('dove').innerHTML = h;
+</script>

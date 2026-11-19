@@ -1,0 +1,26 @@
+/* Direzione 2 · «Il tuo posto, alla pari» · i token del marchio.
+   La fonte unica dei colori, dei tempi e delle curve del disegno (modelli/ li usa per nome, genera.py ne scrive i valori).
+   Quattro gradini di luce alla pari: la stessa tinta del sito (8 in OKLCH) a luminosità 23, 42, 62 e 80%, passi uguali di
+   circa 19 punti. Dal tuo riquadro, buio come quello di «Tu» nella home, la voce schiarisce mentre arriva agli altri. Fonti: idea.md. */
+:root {
+  /* Il disegno libero, su fondo trasparente */
+  --d2-nucleo: #3a0817;          /* il tuo riquadro, a camera spenta: il fondo di «Tu» nella home (--tu-fondo-alto #3a0816), oklch(23% 0.08 8) */
+  --d2-fascia-vicina: #90053c;   /* la voce appena uscita, oklch(42% 0.165 8). Nuovo: il gradino fra il riquadro e il magenta */
+  --d2-fascia-media: #e6396e;    /* la voce a metà strada, oklch(62% 0.21 8). Nuovo: regge 3:1 sul chiaro e sullo scuro (regola di Windows) */
+  --d2-fascia-lontana: #f3a4b2;  /* la voce che arriva più lontano, oklch(80% 0.095 8). Nuovo: fra --rosa e --voce; mai scuro sul bordo (Flathub) */
+  --d2-spessore: #e6768e;        /* lo spessore del riquadro esterno (GNOME: un piccolo spessore frontale, al massimo 4 px), oklch(70% 0.14 8) */
+
+  /* La forma piena per macOS: la fascia lontana diventa il quadrato; non cambia nessun colore */
+
+  /* La versione simbolica di GNOME */
+  --d2-simbolo: #2e3436;         /* il grigio dei simboli di Adwaita (GNOME/adwaita-icon-theme, master, commit 2066120e, per esempio Adwaita/symbolic/actions/open-menu-symbolic.svg); GTK ricolora comunque le simboliche quando le usa */
+
+  /* Il movimento nella barra: a ogni picco della voce una luce passa dal tuo riquadro alle fasce, come l'anello della home */
+  --d2-luce: #ffdbe1;            /* la luce che passa: la voce del sito (--voce), come gli anelli che partono da «Tu» */
+  --d2-luce-forte: 0.7;          /* quanto si accende una fascia al passaggio */
+  --d2-anello: #ffdbe1;          /* il bordo di chi parla attorno al tuo riquadro: il bordo di «Tu» nella home (--voce) */
+  --d2-passo-durata: 380ms;      /* quanto resta accesa una fascia */
+  --d2-passo-sfasamento: 90ms;   /* il ritardo da una fascia alla successiva: in tutto circa 560 ms, come l'anello della home che arriva all'ultimo riquadro in 900 ms ma su un disegno di 36 px */
+  --d2-curva-luce: cubic-bezier(0.19, 1, 0.22, 1);   /* la curva d'entrata della home (--entra) */
+  --d2-respiro: 160ms;           /* il bordo di chi parla insegue l'inviluppo della voce */
+}

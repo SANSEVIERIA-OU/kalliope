@@ -1,0 +1,139 @@
+{
+ "pagina": "http://127.0.0.1:8944/lente.html?p=it/&vw=390&vh=844&x=0&y=0&w=390&h=56&s=3",
+ "misura": "1170x168",
+ "sequenza": "barra-arrivo-390",
+ "gesto": null,
+ "ridotto": false,
+ "lento": 1,
+ "istanti": [
+  0,
+  1,
+  2.5,
+  3,
+  3.5,
+  4.5,
+  5.6,
+  6,
+  6.4,
+  7,
+  7.6,
+  8.5,
+  9.5,
+  11,
+  13,
+  15.5,
+  17
+ ],
+ "fotogrammi": [
+  {
+   "file": "barra-arrivo-390-1170x168-f01.jpg",
+   "chiesto": 0,
+   "scattato": 0,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-arrivo-390-1170x168-f02.jpg",
+   "chiesto": 1,
+   "scattato": 1,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-arrivo-390-1170x168-f03.jpg",
+   "chiesto": 2.5,
+   "scattato": 2.5,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-arrivo-390-1170x168-f04.jpg",
+   "chiesto": 3,
+   "scattato": 3,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-arrivo-390-1170x168-f05.jpg",
+   "chiesto": 3.5,
+   "scattato": 3.5,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-arrivo-390-1170x168-f06.jpg",
+   "chiesto": 4.5,
+   "scattato": 4.5,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-arrivo-390-1170x168-f07.jpg",
+   "chiesto": 5.6,
+   "scattato": 5.6,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-arrivo-390-1170x168-f08.jpg",
+   "chiesto": 6,
+   "scattato": 6,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-arrivo-390-1170x168-f09.jpg",
+   "chiesto": 6.4,
+   "scattato": 6.4,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-arrivo-390-1170x168-f10.jpg",
+   "chiesto": 7,
+   "scattato": 7,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-arrivo-390-1170x168-f11.jpg",
+   "chiesto": 7.6,
+   "scattato": 7.6,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-arrivo-390-1170x168-f12.jpg",
+   "chiesto": 8.5,
+   "scattato": 8.5,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-arrivo-390-1170x168-f13.jpg",
+   "chiesto": 9.5,
+   "scattato": 9.5,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-arrivo-390-1170x168-f14.jpg",
+   "chiesto": 11,
+   "scattato": 11,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-arrivo-390-1170x168-f15.jpg",
+   "chiesto": 13,
+   "scattato": 13,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-arrivo-390-1170x168-f16.jpg",
+   "chiesto": 15.5,
+   "scattato": 15.5,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-arrivo-390-1170x168-f17.jpg",
+   "chiesto": 17,
+   "scattato": 17,
+   "scorrimento": 0
+  }
+ ],
+ "foglio": "barra-arrivo-390-1170x168-foglio.jpg",
+ "video": "barra-arrivo-390-1170x168.webm",
+ "orologio": {
+  "pagina": 1,
+  "media": []
+ },
+ "errori": [],
+ "misurato": "2026-11-19T14:54:58.416Z"
+}

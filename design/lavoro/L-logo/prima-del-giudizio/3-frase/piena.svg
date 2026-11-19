@@ -1,0 +1,18 @@
+<!-- Direzione 3 · la forma piena: il quadrato di macOS ha il colore del bordo della bolla, la bolla chiara sta al centro. 
+     File generato da strumenti/genera.py da modelli/piena.svg e token.css: non si modifica a mano. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="d3-fondo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" style="stop-color:#ea3d71"/>
+      <stop offset="1" style="stop-color:#b51150"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" fill="url(#d3-fondo)"/>
+  <path d="M38 28h52a18 18 0 0 1 18 18v30a18 18 0 0 1-18 18H64l-18 13a2.5 2.5 0 0 1-4-2V94h-4A18 18 0 0 1 20 76V46a18 18 0 0 1 18-18z" style="fill:#ffedef"/>
+  <g style="fill:#5b0123">
+    <rect x="32" y="44" width="31" height="11" rx="5.5"/><rect x="68" y="44" width="27" height="11" rx="5.5"/>
+  </g>
+  <g style="fill:rgba(91, 1, 35, 0.4)">
+    <rect x="32" y="64" width="19" height="11" rx="5.5"/><rect x="56" y="64" width="28" height="11" rx="5.5"/>
+  </g>
+</svg>

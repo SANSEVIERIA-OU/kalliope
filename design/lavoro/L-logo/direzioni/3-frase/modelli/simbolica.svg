@@ -1,5 +1,8 @@
 <?xml-stylesheet href="../token.css" type="text/css"?>
-<!-- Direzione 3 · la versione simbolica di GNOME: 16×16, un colore solo. La bolla piena con le due righe della frase scavate. -->
+<!-- Direzione 3 · la versione simbolica di GNOME: 16×16, un colore solo. La bolla piena fino al fronte, poi solo il contorno
+     tratteggiato: la parte detta e quella che non lo è ancora. -->
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" style="fill:var(--d3-simbolo)" d="M4 2h8a3 3 0 0 1 3 3v4a3 3 0 0 1-3 3H8l-3 2.6a.6.6 0 0 1-1-.45V12a3 3 0 0 1-3-3V5a3 3 0 0 1 3-3zM4 5v2h8V5zM4 8v1.5h5V8z"/>
+  <defs><clipPath id="d3y-bolla"><path d="M4 2.5h8a2.5 2.5 0 0 1 2.5 2.5v4a2.5 2.5 0 0 1-2.5 2.5H8l-3 2.6a.6.6 0 0 1-1-.45V11.5A2.5 2.5 0 0 1 1.5 9V5A2.5 2.5 0 0 1 4 2.5z"/></clipPath><clipPath id="d3y-attesa"><rect x="8" width="8" height="16"/></clipPath></defs>
+  <g clip-path="url(#d3y-bolla)"><rect width="8" height="16" style="fill:var(--d3-simbolo)"/></g>
+  <g clip-path="url(#d3y-attesa)"><path d="M4 2.5h8a2.5 2.5 0 0 1 2.5 2.5v4a2.5 2.5 0 0 1-2.5 2.5H8l-3 2.6a.6.6 0 0 1-1-.45V11.5A2.5 2.5 0 0 1 1.5 9V5A2.5 2.5 0 0 1 4 2.5z" fill="none" stroke-width="1.5" stroke-dasharray="2 1.2" style="stroke:var(--d3-simbolo)"/></g>
 </svg>

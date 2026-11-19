@@ -1,9 +1,15 @@
-<!-- Direzione 2 · il disegno per le grandezze piccole (16 e 24 px): senza spessore, le quattro fasce sulla griglia dei pixel di 16
-     (un pixel = 8 unità), due pixel ciascuna; il tuo posto ne ha quattro. 
+<!-- Direzione 2 · il disegno per le grandezze piccole (16 e 24 px): senza spessore, i riquadri di 6 px sulla griglia di 16, la
+     persona con la testa di 2 px, il bordo del tuo riquadro di 1 px. 
      File generato da strumenti/genera.py da modelli/piccola.svg e token.css: non si modifica a mano. -->
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
-  <rect x="8" y="8" width="112" height="112" rx="32" style="fill:#f3a4b2"/>
-  <rect x="24" y="24" width="80" height="80" rx="22" style="fill:#e6396e"/>
-  <rect x="40" y="40" width="48" height="48" rx="13" style="fill:#90053c"/>
-  <rect x="48" y="48" width="32" height="32" rx="8" style="fill:#3a0817"/>
+  <defs><clipPath id="d2s0"><rect x="8" y="8" width="48" height="48" rx="12"/></clipPath><clipPath id="d2s1"><rect x="72" y="8" width="48" height="48" rx="12"/></clipPath><clipPath id="d2s2"><rect x="8" y="72" width="48" height="48" rx="12"/></clipPath><clipPath id="d2s3"><rect x="72" y="72" width="48" height="48" rx="12"/></clipPath></defs>
+  <rect x="8" y="8" width="48" height="48" rx="12" style="fill:#5b0123"/>
+  <g clip-path="url(#d2s0)" style="fill:#ffdbe1"><circle cx="32" cy="28" r="8"/><ellipse cx="32" cy="58" rx="16" ry="16"/></g>
+  <rect x="72" y="8" width="48" height="48" rx="12" style="fill:#e6396e"/>
+  <g clip-path="url(#d2s1)" style="fill:#ffdbe1"><circle cx="96" cy="28" r="8"/><ellipse cx="96" cy="58" rx="16" ry="16"/></g>
+  <rect x="8" y="72" width="48" height="48" rx="12" style="fill:#e6396e"/>
+  <g clip-path="url(#d2s2)" style="fill:#ffdbe1"><circle cx="32" cy="92" r="8"/><ellipse cx="32" cy="122" rx="16" ry="16"/></g>
+  <rect x="72" y="72" width="48" height="48" rx="12" style="fill:#e6396e"/>
+  <g clip-path="url(#d2s3)" style="fill:#ffdbe1"><circle cx="96" cy="92" r="8"/><ellipse cx="96" cy="122" rx="16" ry="16"/></g>
+  <rect x="12" y="12" width="40" height="40" rx="8" fill="none" stroke-width="8" style="stroke:#ffdbe1"/>
 </svg>

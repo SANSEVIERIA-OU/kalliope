@@ -1,18 +1,7 @@
 /* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
-/* Componente · Il marchio nella barra · direzione 3 «La frase che si accende».
-   Colori, tempi e curve dal file dei token della direzione. È la bolla della home: quando la voce della pagina parla, le parole
-   del disegno si accendono insieme alle parole della frase, e il bordo «suona» con la voce. */
-.marchio .m-bordo-alto { stop-color: var(--d3-bordo-alto); }
-.marchio .m-bordo-basso { stop-color: var(--d3-bordo-basso); }
-.marchio .m-bordo-luce { fill: var(--d3-bordo-acceso); opacity: 0; transition: opacity var(--d3-respiro) var(--curva-lineare); }
-.marchio .m-bolla { fill: var(--d3-bolla); }
-.marchio .m-parola { fill: var(--d3-parola-detta); transition: fill var(--d3-parola-durata) var(--d3-curva-parola); }
-.marchio .m-parola.m-attesa { fill: var(--d3-parola-attesa); }
-.marchio.m-parla .m-bordo-luce { opacity: var(--m-env, 0); }
-/* al passaggio del puntatore e al fuoco: la seconda riga si accende, una parola dopo l'altra, e torna */
-.marchio:hover .m-attesa, .marchio:focus-visible .m-attesa { animation: m-dice calc(6 * var(--d3-parola-durata)) var(--d3-curva-parola); }
-.marchio:hover .m-parola-4, .marchio:focus-visible .m-parola-4 { animation-delay: var(--d3-parola-sfasamento); }
-@keyframes m-dice { 25%, 70% { fill: var(--d3-parola-detta); } }
-@media (prefers-reduced-motion: reduce) {
-  .marchio .m-parola, .marchio .m-bordo-luce { animation: none; transition: none; }
-}
+/* Componente · Il marchio nella barra · direzione 3 «La frase che si accende» (corretto dopo il giudizio del 19/11/2026).
+   Colori, tempi e curve dal file dei token della direzione. La bolla a metà frase: quando la voce della pagina parla, il fronte
+   della voce (la parte piena) attraversa la bolla insieme alle parole della bolla vera; lo sposta marchio.js. */
+.marchio .m-detto { fill: var(--d3-detto); }
+.marchio .m-bordo { stroke: var(--d3-bordo); }
+.marchio .m-dette { fill: var(--d3-parola-detta); }

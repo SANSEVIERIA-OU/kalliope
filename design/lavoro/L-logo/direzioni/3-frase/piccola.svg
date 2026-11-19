@@ -1,15 +1,10 @@
-<!-- Direzione 3 · il disegno per le grandezze piccole (16 e 24 px): la bolla sulla griglia dei pixel di 16 (un pixel = 8 unità),
-     bordo di un pixel, le due righe della frase come due tratti: la prima detta, la seconda no. 
+<!-- Direzione 3 · il disegno per le grandezze piccole (16 e 24 px), sulla griglia di 16 (un pixel = 8 unità): la bolla piena fino a
+     metà con una parola chiara, poi il contorno tratteggiato di un pixel (due pieni, uno vuoto). 
      File generato da strumenti/genera.py da modelli/piccola.svg e token.css: non si modifica a mano. -->
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
-  <defs>
-    <linearGradient id="d3-bordo-p" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" style="stop-color:#ea3d71"/>
-      <stop offset="1" style="stop-color:#b51150"/>
-    </linearGradient>
-  </defs>
-  <path d="M32 16h64a24 24 0 0 1 24 24v32a24 24 0 0 1-24 24H56l-20 18a3 3 0 0 1-5-2.2V96A24 24 0 0 1 8 72V40a24 24 0 0 1 24-24z" fill="url(#d3-bordo-p)"/>
-  <rect x="16" y="24" width="96" height="64" rx="16" style="fill:#ffedef"/>
-  <rect x="32" y="40" width="64" height="16" rx="8" style="fill:#5b0123"/>
-  <rect x="32" y="64" width="40" height="16" rx="8" style="fill:rgba(91, 1, 35, 0.4)"/>
+  <defs><clipPath id="d3s-bolla"><path d="M32 20h64a20 20 0 0 1 20 20v28a20 20 0 0 1-20 20H56l-20 18a3 3 0 0 1-5-2.2V88a20 20 0 0 1-19-20V40a20 20 0 0 1 20-20z"/></clipPath><clipPath id="d3s-detto"><rect width="64" height="128"/></clipPath><clipPath id="d3s-attesa"><rect x="64" width="64" height="128"/></clipPath></defs>
+  <g clip-path="url(#d3s-bolla)"><rect width="64" height="128" style="fill:#e6396e"/></g>
+  <g clip-path="url(#d3s-detto)"><path d="M32 20h64a20 20 0 0 1 20 20v28a20 20 0 0 1-20 20H56l-20 18a3 3 0 0 1-5-2.2V88a20 20 0 0 1-19-20V40a20 20 0 0 1 20-20z" fill="none" stroke-width="8" stroke-linejoin="round" style="stroke:#e6396e"/></g>
+  <g clip-path="url(#d3s-attesa)"><path d="M32 20h64a20 20 0 0 1 20 20v28a20 20 0 0 1-20 20H56l-20 18a3 3 0 0 1-5-2.2V88a20 20 0 0 1-19-20V40a20 20 0 0 1 20-20z" fill="none" stroke-width="8" stroke-dasharray="16 8" stroke-linejoin="round" style="stroke:#e6396e"/></g>
+  <rect x="24" y="48" width="32" height="16" rx="8" style="fill:#ffedef"/>
 </svg>

@@ -4,7 +4,7 @@ Ruolo design-direction (skill `design-system-generator` 0.49.0). Incarico: `desi
 Partenza HEAD `bf5909f`. Porte 8940 (siti costruiti) e 8941 (radice del repository per le pagine di prova), copie in `/tmp/l1-*`,
 scrivo solo qui. Nessun commit, nessun push, nessun altro agente, un browser alla volta senza finestra (`free -m` prima).
 
-**Stato: resa consegnata (19/11/2026).** Prossimo: giudizio (design-judge), una correzione, poi la scelta del proprietario.
+**Stato: correzione dopo il giudizio consegnata (19/11/2026).** Prossimo: secondo sguardo del giudice, poi la scelta del proprietario.
 
 ## Il criterio di ambizione
 
@@ -21,14 +21,14 @@ ritrova nel marchio il gesto della riunione; coperto il nome, non si scambia con
 ## Le tre idee
 
 1. **«Il cursore che parla»**: il cursore di chi scrive è la sorgente della voce; dalla riga che scrivi le onde vanno verso gli altri.
-   Tratti pieni (cursore e due onde), a colori sul trasparente, sulla stanza del sito nella forma piena, **con l'inchiostro della
+   Dopo il giudizio la riga scritta sta davanti al cursore. Tratti pieni (riga, cursore e due onde), a colori sul trasparente, su una piastrella magenta nella forma piena, **con l’inchiostro della
    pagina nella barra**; il cursore lampeggia mentre la home scrive, le onde seguono la voce e ripartono a ogni picco.
-2. **«Il tuo posto, alla pari»**: il tuo riquadro nella riunione, da cui la voce si allarga a tutti alla stessa distanza. Quattro
-   riquadri concentrici in quattro gradini di luce uguali, **a colori anche nella barra**; il tuo riquadro prende il bordo di chi parla
-   e a ogni picco una luce passa verso l'esterno.
+2. **«Il tuo posto, alla pari»**: il tuo riquadro nella riunione, uguale a quelli degli altri, da cui la voce raggiunge tutti (frase
+   ritoccata dopo il giudizio). Dopo il giudizio: quattro riquadri uguali con una persona ciascuno, il tuo buio con il bordo di chi
+   parla, **a colori anche nella barra**; a ogni picco i riquadri degli altri si accendono. (Prima: riquadri concentrici.)
 3. **«La frase che si accende»** (la bolla, ripensata e dichiarata): la frase che hai scritto è la bolla; le parole si accendono mentre
-   la voce le dice. Bolla chiara con bordo lampone e due righe di parole, una detta e una no, **la bolla della home in piccolo nella
-   barra**; le parole del marchio si accendono con quelle della bolla vera.
+   la voce le dice. Dopo il giudizio: la bolla detta a metà, piena con le parole dove è detta e tratteggiata dove non lo è ancora;
+   nella barra il fronte avanza con le parole della bolla vera. (Prima: bolla chiara con bordo lampone e due righe di parole.)
 
 Differenze: metafora (scrivere / la riunione / il parlato), forma (tratti aperti / riquadri pieni concentrici / sagoma di bolla con
 dentro le parole), colore (inchiostro e tre toni sulla stanza / quattro gradini piatti / chiaro, lampone e testo scuro della bolla),
@@ -124,8 +124,73 @@ cambiati**: i file generati (`disegno`, `piena`, `piccola`, `simbolica`.svg) son
   il menu di KDE (vista bianca), la scheda scura del negozio e i titoli; GNOME, Firefox, la barra di Windows e la scala restano
   uguali. Le foto della barra vera e le sequenze non dipendono da questi valori.
 
-## Ultimo comando
-- `node con-server.mjs /workspace/kalliope 8941 -- node scatta.mjs /tmp/l1-el-prova3.json` (con `source strumenti/env.sh`)
-
 ## Problemi aperti
 - Per chi coordina: decidere se le sei chiamate a `scena.js` (e il componente `marchio.css`) entrano nel sistema dopo la scelta.
+
+## Correzione dopo il giudizio (19/11/2026)
+
+Giudizio: `giudizio/giudizio.md` (letto tutto, con i fogli in `giudizio/fogli/`). Una correzione per direzione, solo bloccanti e
+importanti (più i minori della 1 che si correggevano senza cambiare l'idea), ognuna dentro la sua idea; le tre restano diverse.
+**Copia di partenza salvata** prima di toccare: `prima-del-giudizio/<direzione>/` (modelli, token, componenti, disegni, `idea.md`) e
+`prima-del-giudizio/contesti.js`. Le foto e le sequenze di prima restano dove erano; le nuove stanno accanto: `foto/barra-2/`,
+`foto/fra-le-icone-2.png`, `sequenze-2/`. Porte: 8941–8943 erano occupate da altri, uso 8944 (siti) e 8946 (repository).
+
+### 1 · «Il cursore che parla»
+- **Importante, il simbolo del volume** → davanti al cursore c'è ora **la riga scritta** (una pillola bassa, sulla linea delle
+  lettere); il cursore è alto quanto una riga di testo e più alto delle onde, che sono più corte: «scrivi → cursore → voce», da
+  sinistra a destra. Nel simbolo del volume niente sta a sinistra in basso e le onde superano ciò che suona. Simbolica provata a 16,
+  24 e 48 px accanto al volume di Adwaita e a «volume_up» di Material (`direzioni/1-cursore/foto/fra-le-icone-2.png`).
+- **Minori, corretti**: il marchio non sembra più spento all'arrivo (cursore che lampeggia fra 100% e 55%, onde al 60%; in più la riga
+  cresce fino al cursore mentre la home scrive); tre toni medi che reggono su chiaro e scuro (`#d82762`, `#ed537c`, `#ed7c94`);
+  forma piena su una piastrella magenta `#d82762` invece della stanza bordeaux, che spariva sullo scuro.
+- **Resta**: le onde restano onde, «suono» si legge ancora; a 16 px la riga è un trattino di 3 px.
+
+### 2 · «Il tuo posto, alla pari»
+- **I quattro importanti** (non dice niente; «ferma», «registra», Square; movimento invisibile) venivano tutti dalla forma
+  concentrica: **la forma è cambiata, l'idea no**. Ora è la riunione della home vista dal tuo posto: quattro riquadri uguali con una
+  persona ciascuno; il tuo è buio come «Tu» e ha il bordo di chi parla. La frase dell'idea è ritoccata: «Il tuo riquadro nella
+  riunione, uguale a quelli degli altri, da cui la voce raggiunge tutti» (prima: «… da cui la voce si allarga a tutti alla stessa
+  distanza»).
+- **Il movimento si vede a 36 px**: a ogni picco i riquadri degli altri si accendono interi, uno dopo l'altro; il bordo del tuo
+  segue la voce.
+- **Il prezzo, da dire al proprietario**: ora può sembrare un'app di videochiamate; a 16 px è «quattro persone». La persona disegnata
+  va guardata con la regola di GNOME sui personaggi (per me è un segno, non un personaggio).
+
+### 3 · «La frase che si accende»
+- **Bloccante e importanti** (una chat fra le chat, la sagoma del logo di oggi, l'idea solo in movimento) → la bolla ora è **detta a
+  metà**: la parte detta piena con le parole chiare, il fronte della voce curvo, **la parte non ancora detta solo come contorno
+  tratteggiato**, il «non ancora» del sito. Ferma, a 32 e 48 px, nessuna app di messaggi le somiglia, non è la sagoma piena di oggi,
+  e «detto / non ancora» arriva nei menu (`direzioni/3-frase/foto/fra-le-icone-2.png`). Nella barra il fronte avanza con le parole.
+- **Provate e scartate guardandole**: metà vuota (una «D»), riempimento a quarto di cerchio dalla coda (il simbolo «cast»), metà
+  piena e metà chiara con le parole (a 48 px una chat con «sta scrivendo»), bolla larga a striscia (sempre una chat).
+- **Resta**: è ancora una bolla; il tratteggio può leggersi «bozza»; a 16 px il tratteggio si sfuma.
+
+### Le prove nuove (accanto alle vecchie)
+- **Fra le icone vere del genere, alla stessa misura**: `direzioni/<n>/foto/fra-le-icone-2.png` (dieci app di messaggi e otto di voce
+  da Flathub a 48 e 32 px su chiaro e scuro, la simbolica fra i simboli di Adwaita e Material a 16, 24 e 48 px, e in fondo il disegno
+  prima e adesso accanto al logo di oggi); pagina `strumenti/fra-le-icone.html`, con le icone scaricate dal giudice, solo lette.
+- **La barra vera**: `direzioni/<n>/foto/barra-2/` (1440, 390, con l'azione, ar-XB, compatta, 1366×640, «non ancora»), dalle copie
+  `/tmp/l1-sito-1-5`, `/tmp/l1-sito-2-3`, `/tmp/l1-sito-3-4` (e `-pseudo`).
+- **Le sequenze**: `direzioni/<n>/sequenze-2/` (arrivo con la lente 3× a 1440 e 390, puntatore, movimento ridotto, arrivo a pagina
+  intera a 1440 e 390).
+- **Le pagine**: `prova.html` e `index.html` puntano alle prove nuove e hanno la sezione «Fra le icone vere»; foto
+  `direzioni/<n>/foto/prova-intera-3.png`, `foto/index-intera-3.png`.
+- **Gli schizzi delle correzioni** (in `/tmp/l1-schizzi/`, fuori dal repository): `c1.png`–`c4.png`, `simb3.png`.
+- `controlla-sorgenti.mjs` verde sulle tre copie nuove (30 fogli, valori solo nei token).
+
+- **Un difetto trovato guardando le sequenze e corretto**: nella 3 il fronte della voce, a frase detta, *scorreva* invece di
+  *crescere* (restava una «D» senza coda e senza parole: `sequenze-2/barra-puntatore`, prima registrazione). Il campo della parte detta
+  ora si estende a sinistra della tela; copia rifatta (`/tmp/l1-sito-3-4`) e sequenze di arrivo e del puntatore registrate di nuovo.
+- **ICO** rifatto con i disegni nuovi: `/tmp/l1-icone-prova-2/<n>/kalliope.ico` (16 e 24 da `piccola.svg`, 32, 48, 256 da
+  `disegno.svg`, con il canale alfa).
+
+### Ciò che non sono riuscito a correggere, o che ha un prezzo
+- **1**: le onde restano onde; chi conosce il simbolo del volume vede «suono» (ed è giusto). A 16 px la riga è un trattino.
+- **2**: uscita dal «comando», entra nel rischio opposto, sembrare un'app per videochiamate. Il proprietario deve saperlo.
+- **3**: è ancora una bolla, anche se nessuna è detta a metà e tratteggiata; il tratteggio può leggersi «bozza». A 16 px si sfuma.
+- **Tutte**: il mondo di colore è lo stesso (chi coordina: lo dice lui al proprietario). Non ho rifatto le coppie con `affianca.mjs`
+  contro R01, R03 e R51 (le aveva rifatte il giudice; il confronto nuovo è fra le icone vere del genere, come ha chiesto chi coordina).
+  Solo Chromium senza finestra, senza suono.
+
+## Ultimo comando
+- `node con-server.mjs /workspace/kalliope 8946 -- node scatta.mjs /tmp/l1-el-prova4.json` (con `source strumenti/env.sh`)

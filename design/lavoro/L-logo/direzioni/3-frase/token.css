@@ -1,26 +1,23 @@
-/* Direzione 3 · «La frase che si accende» · i token del marchio.
+/* Direzione 3 · «La frase che si accende» · i token del marchio (corretti dopo il giudizio del 19/11/2026).
    La fonte unica dei colori, dei tempi e delle curve del disegno (modelli/ li usa per nome, genera.py ne scrive i valori).
-   È la bolla della home ripensata: dentro non c'è un simbolo ma la frase, e le parole si accendono quando la voce le dice.
-   Fonti: idea.md. */
+   È la bolla della home ripensata: la frase mentre la voce la dice. La parte già detta è piena, con le parole; quella non ancora
+   detta è solo un contorno tratteggiato; il fronte della voce sta in mezzo. Fonti: idea.md. Prima del giudizio: ../../prima-del-giudizio/3-frase/. */
 :root {
   /* Il disegno libero, su fondo trasparente */
-  --d3-bolla: #ffedef;                    /* la bolla: il chiaro della bolla della home (--testo) */
-  --d3-bordo-alto: #ea3d71;               /* il bordo della bolla in alto, oklch(63% 0.21 8): regge sul chiaro e sullo scuro */
-  --d3-bordo-basso: #b51150;              /* il bordo in basso e la coda, oklch(50% 0.19 8): la bolla ha un volume (GNOME: sfumature solo sulle superfici curve) */
-  --d3-parola-detta: #5b0123;             /* le parole già dette: il testo scuro della bolla (--bordeaux) */
-  --d3-parola-attesa: rgba(91, 1, 35, 0.4);   /* le parole non ancora dette: al 40%, come nella bolla della home (D2) */
+  --d3-detto: #e6396e;                     /* la parte già detta: oklch(62% 0.21 8), 3,9:1 sul chiaro e sullo scuro (regola di Windows) */
+  --d3-bordo: #e6396e;                     /* il bordo della bolla, pieno dove la frase è detta e tratteggiato dove non lo è ancora: il tratteggio è il segno di «non ancora» del sito (--tratteggio) */
+  --d3-parola-detta: #ffedef;              /* le parole dette, chiare sul pieno: il chiaro della bolla della home (--testo) */
 
-  /* La forma piena per macOS: la bolla sul colore del suo bordo */
-  --d3-fondo-alto: #ea3d71;               /* = --d3-bordo-alto */
-  --d3-fondo-basso: #b51150;              /* = --d3-bordo-basso */
+  /* La forma piena per macOS: la bolla sul rosa chiaro */
+  --d3-piastra: #fab7c2;                   /* il rosa chiaro del fondo della direzione 2 (D2.md, gradino a 84,5%): il bordo si vede sullo scuro, la bolla sul chiaro */
 
   /* La versione simbolica di GNOME */
-  --d3-simbolo: #2e3436;                  /* il grigio dei simboli di Adwaita (GNOME/adwaita-icon-theme, master, commit 2066120e, per esempio Adwaita/symbolic/actions/open-menu-symbolic.svg); GTK ricolora comunque le simboliche quando le usa */
+  --d3-simbolo: #2e3436;                   /* il grigio dei simboli di Adwaita (GNOME/adwaita-icon-theme, master, commit 2066120e, per esempio Adwaita/symbolic/actions/open-menu-symbolic.svg); GTK ricolora comunque le simboliche quando le usa */
 
-  /* Il movimento nella barra: le parole del disegno si accendono con le parole della frase che la home dice */
-  --d3-parola-durata: 220ms;              /* una parola che si accende: la dissolvenza della bolla della home (D2: 220 ms) */
-  --d3-parola-sfasamento: 70ms;           /* al passaggio del puntatore le parole si accendono una dopo l'altra */
-  --d3-curva-parola: ease;                /* la curva dolce del sito (--curva-dolce) */
-  --d3-bordo-acceso: #ff7ba3;             /* il bordo mentre la voce parla: l'azione al passaggio del sito (--azione-sopra), la bolla «suona» */
-  --d3-respiro: 160ms;                    /* il bordo insegue l'inviluppo della voce */
+  /* Il movimento nella barra: il fronte della voce attraversa la frase insieme alle parole della bolla vera */
+  --d3-fronte-inizio: -60;                 /* dove sta il fronte (in unità della tela) quando non è detto niente: resta solo il contorno tratteggiato */
+  --d3-fronte-fine: 62;                    /* dove sta quando la frase è tutta detta: la bolla è tutta piena */
+  --d3-fronte-inseguimento: 220ms;         /* il fronte insegue le parole con questa costante di tempo (marchio.js): la dissolvenza della bolla della home (D2: 220 ms) */
+  --d3-ritorno: 1400ms;                    /* finita la frase la bolla resta piena, poi torna a metà frase */
+  --d3-passaggio: 900ms;                   /* al passaggio del puntatore il fronte va in fondo e torna */
 }

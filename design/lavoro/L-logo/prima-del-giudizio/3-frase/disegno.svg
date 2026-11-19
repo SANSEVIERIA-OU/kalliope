@@ -1,0 +1,19 @@
+<!-- Direzione 3 · «La frase che si accende» · il disegno libero, tela 128, fondo trasparente, griglia di 2 px.
+     La bolla della home (raggio 22, coda a punta in basso all'inizio della riga) con dentro la frase: la prima riga è detta, la seconda no. 
+     File generato da strumenti/genera.py da modelli/disegno.svg e token.css: non si modifica a mano. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="d3-bordo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" style="stop-color:#ea3d71"/>
+      <stop offset="1" style="stop-color:#b51150"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 18h64a22 22 0 0 1 22 22v36a22 22 0 0 1-22 22H62l-22 16a3 3 0 0 1-5-2.4V98h-3A22 22 0 0 1 10 76V40a22 22 0 0 1 22-22z" fill="url(#d3-bordo)"/>
+  <rect x="20" y="28" width="88" height="60" rx="14" style="fill:#ffedef"/>
+  <g style="fill:#5b0123">
+    <rect x="30" y="40" width="34" height="12" rx="6"/><rect x="70" y="40" width="28" height="12" rx="6"/>
+  </g>
+  <g style="fill:rgba(91, 1, 35, 0.4)">
+    <rect x="30" y="62" width="20" height="12" rx="6"/><rect x="56" y="62" width="30" height="12" rx="6"/>
+  </g>
+</svg>

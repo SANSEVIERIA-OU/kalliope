@@ -13,6 +13,44 @@ una lettera in più, e vive con la home: mentre la home scrive la frase il curso
 parla le onde seguono l'inviluppo della registrazione e a ogni picco ripartono dal cursore, insieme agli anelli di «Tu». Fermo,
 nei menu, dice «il testo diventa voce» senza lettere.
 
+## Dopo il giudizio (19/11/2026): la correzione
+
+Il giudice (`../../giudizio/giudizio.md`) ha trovato un problema importante e tre minori. Corretti dentro la stessa idea («dalla
+riga che scrivi le onde vanno verso gli altri»): l'idea non cambia, la si vede di più.
+
+- **Importante · da ferma la sagoma era il simbolo del volume.** Prima: un'asta e due onde, come l'altoparlante del volume con
+  un'asta al posto del cono. Adesso **la riga scritta sta prima del cursore**: una pillola bassa, sulla linea delle lettere, poi il
+  cursore, alto quanto una riga di testo (dal sopra delle maiuscole al sotto delle discendenti), più alto delle onde, poi due onde
+  più corte. È la frase stessa dell'idea, da sinistra a destra: scrivi, il cursore, la voce. Nel volume nessun pezzo sta a sinistra
+  in basso e le onde sono più alte di ciò che suona; qui è il contrario. Provata la simbolica a 16, 24 e 48 px accanto al volume di
+  Adwaita e a «volume_up» di Material (`foto/fra-le-icone-2.png`, ultime sei righe; `/tmp/l1-schizzi/simb3.png`).
+- **Minore · il logo quasi spento nei primi dieci secondi.** Il cursore lampeggia fra 100% e 55% (prima 20%) e le onde aspettano al
+  60% (prima 38%); in più, mentre la home scrive, **la riga cresce fino al cursore** (da un quarto alla sua lunghezza, in 3,1 s,
+  quanto dura la scrittura in `scena.js`): il marchio scrive mentre la pagina scrive.
+- **Minore · sbilanciato sul chiaro e sullo scuro.** Tre toni medi invece di uno scuro e uno chiaro: riga e cursore `#d82762`
+  (4,6:1 sul chiaro, 3,3:1 sullo scuro), prima onda `#ed537c` (3,3 e 4,6), seconda onda `#ed7c94` (2,5 e 6,0). Sul chiaro la
+  seconda onda non si perde più, sullo scuro l'asta non scende nel fondo.
+- **Minore · la forma piena spariva sul bordo nello scuro.** La piastrella è magenta `#d82762` (prima la stanza bordeaux scura):
+  il bordo si vede su chiaro (4,6:1) e su scuro (3,3:1); sopra, il segno chiaro della barra.
+
+| Token | Valore | Fonte o motivo |
+| --- | --- | --- |
+| `--d1-inchiostro-scritto` | `#d82762` | riga e cursore, oklch(58% 0.21 8): regge da tutte e due le parti |
+| `--d1-onda-vicina`, `--d1-onda-lontana` | `#ed537c`, `#ed7c94` | oklch(66% 0.19 8) e oklch(72% 0.14 8) |
+| spessori | `#9f0042`, `#b4144e`, `#d82762` | oklch(45% 0.18 8), oklch(50% 0.19 8), l'inchiostro |
+| `--d1-piastra` | `#d82762` | la forma piena; sopra `#ffedef` (`--testo`), `#fdb8c4` (oklch 85% 0.08 8) e `#ffdbe1` (`--voce`) |
+| `--d1-segno-proporzione` | `0,875` | il disegno nella barra è largo 112 su 128 (32 × 36 px) |
+| `--d1-cursore-spento`, `--d1-onda-quieta` | `0,55`, `0,6` | il marchio non sembra più spento all'arrivo |
+| `--d1-scrittura`, `--d1-riga-iniziale`, `--d1-curva-scrittura` | `3,1 s`, `0,25`, lineare | la riga cresce come si scrive, nel tempo della scrittura della home (2,2–5,3 s) |
+
+Geometria (tela 128, griglia di 2 px): riga 26×16 a (12, 70); cursore 16×92 a (46, 18); onde con centro (54, 64), raggi 28 e 48,
+aperte 92° e 72°, larghe 16. La versione piccola ha riga 3×2 px, cursore 2×14 px e onde sulle colonne 9–11 e 12–14; la simbolica
+lo stesso disegno in un colore.
+
+**Che cosa resta.** Le onde sono ancora onde: chi conosce il simbolo del volume ci vedrà del suono, ed è giusto. La riga, a 16 px,
+è un trattino di 3 px: si legge «-|))», non ancora «testo». Da destra a sinistra le onde vanno verso il bordo (regola: il marchio non
+si specchia).
+
 ## Dove sta che cosa
 
 | Che cosa | File |
@@ -22,12 +60,14 @@ nei menu, dice «il testo diventa voce» senza lettere.
 | I file con i valori (generati da `../../strumenti/genera.py`) | `disegno.svg` (libero, tela 128), `piena.svg` (macOS), `piccola.svg` (16 e 24 px), `simbolica.svg` (GNOME, 16×16) |
 | Il componente della barra | `marchio.css`, `marchio.js` |
 | La pagina di prova | `prova.html` (servita dalla radice del repository) |
-| Le foto | `foto/barra/` (barra vera: 1440, 390, con l'azione, ar-XB, compatta, 1366×640, «non ancora»), `foto/prova-intera.png` |
-| Le sequenze | `sequenze/barra-arrivo/` (lente 3× a 1440 e 390), `barra-puntatore/`, `barra-ridotto/`, `arrivo-pagina/` (1440 e 390) |
+| Le foto | `foto/barra-2/` (dopo il giudizio), `foto/fra-le-icone-2.png`; prima: `foto/barra/` (barra vera: 1440, 390, con l'azione, ar-XB, compatta, 1366×640, «non ancora»), `foto/prova-intera.png` |
+| Le sequenze | dopo il giudizio in `sequenze-2/`; prima in `sequenze/`: `sequenze/barra-arrivo/` (lente 3× a 1440 e 390), `barra-puntatore/`, `barra-ridotto/`, `arrivo-pagina/` (1440 e 390) |
 | I confronti | `../../confronti/1-cursore/` (home con R01, R03, R51; barra con i marchi dei riferimenti; icone con i programmi simili) |
-| La copia del sito | `/tmp/l1-1-copia-4` costruita in `/tmp/l1-sito-1-4` e `/tmp/l1-sito-1-4-pseudo` |
+| La copia del sito | dopo il giudizio `/tmp/l1-1-copia-5` → `/tmp/l1-sito-1-5` e `-pseudo`; prima `/tmp/l1-sito-1-4` |
 
-## Le scelte e le fonti
+## Le scelte e le fonti, prima del giudizio
+
+> Questa sezione descrive il disegno di prima della correzione; i suoi file sono in `../../prima-del-giudizio/1-cursore/`. I valori di adesso sono nella sezione «Dopo il giudizio».
 
 **I tratti comuni del genere, adottati.** Nelle barre dei riferimenti il marchio sta a sinistra del nome (6 su 7, classifica dei
 riferimenti), è un segno compatto alto circa una volta e mezza le maiuscole del nome (ElevenAgents R03, LALAL.AI R05, Voiceitt R53:
@@ -89,7 +129,7 @@ bellezza.
 **Stile di default** (`giudizio.md`, parte E): nessun tratto dell'elenco. Il cursore è una barra arrotondata, non un pulsante a
 pillola. Il gradiente c'è solo nella forma piena ed è la stanza del sito, un solo colore (R01, già fonte della direzione 2).
 
-## I difetti che vedo
+## I difetti che vedevo prima del giudizio
 
 - **Somiglia al simbolo del volume** (altoparlante con onde) e, meno, a quello del Wi-Fi: chi non ha visto la home può leggerlo come
   «audio». È il prezzo della lettura immediata «testo che suona».
@@ -104,7 +144,7 @@ pillola. Il gradiente c'è solo nella forma piena ed è la stanza del sito, un s
 ## Come verrebbero ICO e ICNS
 
 - **Windows (ICO)**: 16 e 24 da `piccola.svg`, 32, 48 e 256 da `disegno.svg`, rese in PNG a 32 bit con trasparenza e messe in un ICO
-  (il 256 compresso PNG). Provato in `/tmp/l1-icone-prova/1-cursore/kalliope.ico` con `strumenti/png.mjs` (Chromium di Playwright) e
+  (il 256 compresso PNG). Provato in `/tmp/l1-icone-prova-2/1-cursore/kalliope.ico` (dopo il giudizio; prima `/tmp/l1-icone-prova/1-cursore/kalliope.ico` con `strumenti/png.mjs` (Chromium di Playwright) e
   ImageMagick 7.1.1-43 di questa macchina (`magick piccola-16.png … disegno-256.png kalliope.ico`: 5 grandezze, canale alfa). Per
   l'elenco delle app di Windows le varianti `_altform-unplated` e `-lightunplated` possono essere lo stesso disegno, perché regge sul
   chiaro e sullo scuro; le ombre interne che Microsoft suggerisce si aggiungerebbero solo lì.

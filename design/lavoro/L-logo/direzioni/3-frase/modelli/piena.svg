@@ -1,18 +1,7 @@
 <?xml-stylesheet href="../token.css" type="text/css"?>
-<!-- Direzione 3 · la forma piena: il quadrato di macOS ha il colore del bordo della bolla, la bolla chiara sta al centro. -->
+<!-- Direzione 3 · la forma piena: il quadrato di macOS ha il rosa chiaro del fondo della direzione 2; la bolla a metà frase al centro, a 0,84. -->
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
-  <defs>
-    <linearGradient id="d3-fondo" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" style="stop-color:var(--d3-fondo-alto)"/>
-      <stop offset="1" style="stop-color:var(--d3-fondo-basso)"/>
-    </linearGradient>
-  </defs>
-  <rect width="128" height="128" fill="url(#d3-fondo)"/>
-  <path d="M38 28h52a18 18 0 0 1 18 18v30a18 18 0 0 1-18 18H64l-18 13a2.5 2.5 0 0 1-4-2V94h-4A18 18 0 0 1 20 76V46a18 18 0 0 1 18-18z" style="fill:var(--d3-bolla)"/>
-  <g style="fill:var(--d3-parola-detta)">
-    <rect x="32" y="44" width="31" height="11" rx="5.5"/><rect x="68" y="44" width="27" height="11" rx="5.5"/>
-  </g>
-  <g style="fill:var(--d3-parola-attesa)">
-    <rect x="32" y="64" width="19" height="11" rx="5.5"/><rect x="56" y="64" width="28" height="11" rx="5.5"/>
-  </g>
+  <defs><clipPath id="d3p-bolla"><path d="M32 22h64a20 20 0 0 1 20 20v34a20 20 0 0 1-20 20H60l-22 16a3 3 0 0 1-5-2.4V96h-1A20 20 0 0 1 12 76V42a20 20 0 0 1 20-20z"/></clipPath><clipPath id="d3p-detto"><path d="M-200 0H50C74 30 74 90 50 128H-200z"/></clipPath><clipPath id="d3p-attesa"><path d="M50 0H400V128H50C74 90 74 30 50 0z"/></clipPath></defs>
+  <rect width="128" height="128" style="fill:var(--d3-piastra)"/>
+  <g transform="translate(10.24 7) scale(0.84)"><g clip-path="url(#d3p-bolla)"><rect width="128" height="128" clip-path="url(#d3p-detto)" style="fill:var(--d3-detto)"/></g><g clip-path="url(#d3p-detto)"><path d="M32 22h64a20 20 0 0 1 20 20v34a20 20 0 0 1-20 20H60l-22 16a3 3 0 0 1-5-2.4V96h-1A20 20 0 0 1 12 76V42a20 20 0 0 1 20-20z" fill="none" stroke-width="12" stroke-linejoin="round" style="stroke:var(--d3-bordo)"/></g><g clip-path="url(#d3p-attesa)"><path d="M32 22h64a20 20 0 0 1 20 20v34a20 20 0 0 1-20 20H60l-22 16a3 3 0 0 1-5-2.4V96h-1A20 20 0 0 1 12 76V42a20 20 0 0 1 20-20z" fill="none" stroke-width="12" stroke-dasharray="14 9" stroke-linejoin="round" style="stroke:var(--d3-bordo)"/></g><g clip-path="url(#d3p-detto)" style="fill:var(--d3-parola-detta)"><rect x="28" y="44" width="26" height="11" rx="5.5"/><rect x="28" y="64" width="18" height="11" rx="5.5"/></g></g>
 </svg>

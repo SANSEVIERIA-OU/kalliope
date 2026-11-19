@@ -1,16 +1,16 @@
 /* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
-/* Componente · Il marchio nella barra · direzione 2 «Il tuo posto, alla pari».
+/* Componente · Il marchio nella barra · direzione 2 «Il tuo posto, alla pari» (corretto dopo il giudizio del 19/11/2026).
    Colori, tempi e curve dal file dei token della direzione. Il disegno resta a colori anche nella barra; quando la voce della
-   pagina parla, il tuo riquadro prende il bordo di chi parla e a ogni picco una luce passa dalle fasce vicine a quelle lontane. */
+   pagina parla, il bordo del tuo riquadro segue la voce e a ogni picco i riquadri degli altri si accendono uno dopo l'altro. */
 .marchio .m-spessore { fill: var(--d2-spessore); }
-.marchio .m-fascia-3 { fill: var(--d2-fascia-lontana); }
-.marchio .m-fascia-2 { fill: var(--d2-fascia-media); }
-.marchio .m-fascia-1 { fill: var(--d2-fascia-vicina); }
-.marchio .m-nucleo { fill: var(--d2-nucleo); }
+.marchio .m-spessore-tu { fill: var(--d2-tu-spessore); }
+.marchio .m-riquadro { fill: var(--d2-riquadro); }
+.marchio .m-tu { fill: var(--d2-tu); }
+.marchio .m-persona { fill: var(--d2-persona); }
 .marchio .m-luce { fill: var(--d2-luce); opacity: 0; }
-.marchio .m-anello { fill: none; stroke: var(--d2-anello); opacity: 0; transition: opacity var(--d2-respiro) var(--curva-lineare); }
-.marchio.m-parla .m-anello { opacity: var(--m-env, 1); }
-/* al passaggio del puntatore e al fuoco: una luce sola, dal tuo riquadro verso il bordo */
+.marchio .m-anello { stroke: var(--d2-tu-anello); transition: opacity var(--d2-respiro) var(--curva-lineare); }
+.marchio.m-parla .m-anello { opacity: calc(var(--d2-anello-quieto) + (1 - var(--d2-anello-quieto)) * var(--m-env, 1)); }
+/* al passaggio del puntatore e al fuoco: la voce raggiunge gli altri una volta */
 .marchio:hover .m-luce, .marchio:focus-visible .m-luce { animation: m-passa var(--d2-passo-durata) var(--d2-curva-luce); }
 .marchio:hover .m-luce-2, .marchio:focus-visible .m-luce-2 { animation-delay: var(--d2-passo-sfasamento); }
 .marchio:hover .m-luce-3, .marchio:focus-visible .m-luce-3 { animation-delay: calc(2 * var(--d2-passo-sfasamento)); }

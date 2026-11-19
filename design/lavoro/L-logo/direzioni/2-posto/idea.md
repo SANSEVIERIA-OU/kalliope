@@ -1,16 +1,53 @@
 # Direzione 2 · «Il tuo posto, alla pari»
 
-**L'idea.** Il tuo riquadro nella riunione, da cui la voce si allarga a tutti alla stessa distanza.
+**L'idea.** Il tuo riquadro nella riunione, uguale a quelli degli altri, da cui la voce raggiunge tutti.
 
-Della frase di Kalliope questa direzione prende la seconda metà: nella riunione, alla pari. Al centro c'è il tuo riquadro a camera
-spenta, buio come quello di «Tu» nella home; intorno, tre riquadri uno dentro l'altro a passi uguali, sempre più chiari: la voce che
-esce da te e arriva a tutti alla stessa distanza. È un'immagine sola (riquadro e voce sono la stessa forma), senza lettere, senza
-bolla e senza barre: il segno più lontano dai marchi della voce che si vedono nei riferimenti.
+Della frase di Kalliope questa direzione prende la seconda metà: nella riunione, alla pari. Dopo il giudizio è la riunione della home
+vista dal tuo posto: quattro riquadri uguali con una persona ciascuno; il tuo è buio come «Tu» e ha il bordo di chi parla. (Prima
+del giudizio la stessa idea era detta con quattro riquadri concentrici, la voce che si allarga a tutti alla stessa distanza: si
+leggeva come un comando; vedi «Dopo il giudizio». La frase dell'idea è stata ritoccata di conseguenza: prima finiva con «da cui la
+voce si allarga a tutti alla stessa distanza».) Senza lettere, senza bolla e senza barre.
 
 **Come realizza il criterio di ambizione.** Nella barra il disegno resta a colori e diventa la riunione della home in piccolo:
 quando la voce della pagina parla, il tuo riquadro prende il bordo di chi parla (lo stesso bordo `--voce` che prende «Tu») e a ogni
-picco una luce passa dalle fasce vicine a quelle lontane, come l'anello che parte da «Tu» e accende il bordo degli altri. Fermo, nei
-menu, è un oggetto pieno con un centro: si trova al primo sguardo fra le icone, su chiaro e su scuro.
+picco i riquadri degli altri si accendono uno dopo l'altro, come i bordi dei riquadri della home quando l'anello di «Tu» li raggiunge.
+Fermo, nei menu, è una riunione di quattro persone in cui parli tu.
+
+## Dopo il giudizio (19/11/2026): la correzione
+
+Il giudice (`../../giudizio/giudizio.md`) ha trovato quattro problemi importanti: non diceva niente del programma (un bersaglio, un
+pulsante), la simbolica si leggeva come «ferma» e «registra» e somigliava al marchio di Square, il movimento a 36 px non si vedeva.
+Tutti nascevano dalla forma, i riquadri concentrici: **la forma è cambiata, l'idea no** («il tuo riquadro nella riunione, alla pari»).
+
+- **Adesso è la riunione vista dal tuo posto**: quattro riquadri uguali, due per due come la riunione della home, ognuno con una
+  persona (testa e spalle, la figura semplice dei volti della home). Il tuo, in alto all'inizio, è buio come «Tu» nella home e ha il
+  bordo chiaro di chi sta parlando. «Alla pari» si vede: stessi riquadri, stessa persona; tu sei quello che parla. Non ha più niente
+  di un comando: fra i simboli di Adwaita e Material non si confonde con «ferma», «registra», «stop_circle» né con Square
+  (`foto/fra-le-icone-2.png`, ultime sei righe; `/tmp/l1-schizzi/simb3.png`).
+- **Il movimento ora si vede a 36 px**: a ogni picco della voce si accendono **interi** i riquadri degli altri, uno dopo l'altro
+  (l'ordine della home: Paola, Luca, Anna), e il bordo del tuo riquadro segue la voce. Prima era un anello di 2–3 px.
+- La forma piena: la riunione su una cornice rosa chiaro `#fab7c2` (il rosa chiaro della direzione 2), che si vede sullo scuro.
+
+| Token | Valore | Fonte o motivo |
+| --- | --- | --- |
+| `--d2-riquadro` | `#e6396e` | i riquadri degli altri, tutti uguali; oklch(62% 0.21 8), 3,9:1 su chiaro e scuro |
+| `--d2-tu` | `#5b0123` | il tuo riquadro, buio come «Tu» (`--bordeaux`; il fondo di «Tu» è `#3a0816`) |
+| `--d2-persona`, `--d2-tu-anello` | `#ffdbe1` | la persona, la stessa per tutti, e il bordo di chi parla: la voce del sito (`--voce`) |
+| `--d2-spessore`, `--d2-tu-spessore` | `#a5154a`, `#3a0817` | lo spessore dei riquadri (GNOME) |
+| `--d2-cornice` | `#fab7c2` | la forma piena |
+| `--d2-luce`, `--d2-luce-forte` | `#ffdbe1`, `0,6` | il riquadro raggiunto si accende tutto |
+| `--d2-anello-quieto` | `0,35` | il bordo del tuo riquadro fra una parola e l'altra |
+| `--d2-passo-durata`, `--d2-passo-sfasamento` | `360 ms`, `110 ms` | un riquadro dopo l'altro |
+
+Geometria: riquadri 52×52 a (10, 10), (66, 10), (10, 66), (66, 66), raggio 14, spessore 4 sotto ciascuno; persona: testa di raggio
+0,17 della larghezza a 0,40 dall'alto, spalle ellisse di raggio 0,33 con il centro sul bordo basso; bordo di chi parla largo 7 dentro
+il tuo riquadro. La piccola: riquadri di 6 px, testa di 2 px, bordo di 1 px. La simbolica: tre riquadri pieni con la persona scavata e
+il tuo come contorno con la persona piena.
+
+**Che cosa resta, e il prezzo.** Ora dice «una riunione con quattro persone, tu parli»: chi lo vede in un menu può pensare a
+un'app per le videochiamate (Zoom, Teams, Jitsi), non a un programma che parla per te. È il rischio opposto a quello di prima. A 16
+px i riquadri diventano quattro quadratini con un punto: si legge «persone», non più «tu parli». La figura umana, anche così
+semplice, va guardata con la regola di GNOME «niente mascotte o personaggi»: per me è un segno di persona, non un personaggio.
 
 ## Dove sta che cosa
 
@@ -21,12 +58,14 @@ menu, è un oggetto pieno con un centro: si trova al primo sguardo fra le icone,
 | I file con i valori (da `../../strumenti/genera.py`) | `disegno.svg`, `piena.svg`, `piccola.svg`, `simbolica.svg` |
 | Il componente della barra | `marchio.css`, `marchio.js` |
 | La pagina di prova | `prova.html` |
-| Le foto | `foto/barra/`, `foto/prova-intera.png` |
-| Le sequenze | `sequenze/barra-arrivo/` (lente 3× a 1440 e 390), `barra-puntatore/`, `barra-ridotto/`, `arrivo-pagina/` |
+| Le foto | `foto/barra-2/` (dopo il giudizio), `foto/fra-le-icone-2.png`; prima: `foto/barra/`, `foto/prova-intera.png` |
+| Le sequenze | dopo il giudizio in `sequenze-2/`; prima in `sequenze/`: `sequenze/barra-arrivo/` (lente 3× a 1440 e 390), `barra-puntatore/`, `barra-ridotto/`, `arrivo-pagina/` |
 | I confronti | `../../confronti/2-posto/` |
-| La copia del sito | `/tmp/l1-2-copia-2` costruita in `/tmp/l1-sito-2-2` e `-pseudo` |
+| La copia del sito | dopo il giudizio `/tmp/l1-2-copia-3` → `/tmp/l1-sito-2-3` e `-pseudo`; prima `/tmp/l1-sito-2-2` |
 
-## Le scelte e le fonti
+## Le scelte e le fonti, prima del giudizio
+
+> Questa sezione descrive il disegno di prima della correzione; i suoi file sono in `../../prima-del-giudizio/2-posto/`. I valori di adesso sono nella sezione «Dopo il giudizio».
 
 **I tratti comuni del genere, adottati.** Marchio a sinistra del nome, compatto, a colori del mondo del sito, come la piastrella di
 ElevenAgents (R03) e il quadrato di LALAL.AI (R05), che hanno un segno pieno dentro un riquadro
@@ -85,7 +124,7 @@ La prova della rimozione: senza il movimento si perde il legame fra il tuo riqua
 **Stile di default** (parte E): nessuno. Niente pillole, niente gradiente, niente schede uguali (i riquadri sono uno dentro l'altro,
 di grandezze diverse).
 
-## I difetti che vedo
+## I difetti che vedevo prima del giudizio
 
 - **È il più astratto dei tre**: senza la home non dice «voce» né «scrittura». Coperto il nome, si riconosce come un segno, non come
   un programma per parlare. Chi lo vede per la prima volta in un menu può leggerlo come un pulsante «registra» o «ferma», o come un
@@ -98,7 +137,7 @@ di grandezze diverse).
 ## Come verrebbero ICO e ICNS
 
 - **Windows (ICO)**: 16 e 24 da `piccola.svg`, 32, 48 e 256 da `disegno.svg`, PNG a 32 bit con trasparenza in un ICO; provato in
-  `/tmp/l1-icone-prova/2-posto/kalliope.ico` (5 grandezze, canale alfa) con `strumenti/png.mjs` e ImageMagick 7.1.1-43 di questa
+  `/tmp/l1-icone-prova-2/2-posto/kalliope.ico` (dopo il giudizio; prima `/tmp/l1-icone-prova/2-posto/kalliope.ico` (5 grandezze, canale alfa) con `strumenti/png.mjs` e ImageMagick 7.1.1-43 di questa
   macchina. Le varianti chiara e scura dell'elenco delle app possono restare lo stesso disegno.
 - **macOS (ICNS)**: da `piena.svg`, `.iconset` da 16 a 1024 con `@2x` e `iconutil -c icns` su macOS; o Icon Composer con quattro
   livelli (le fasce), che il vetro di macOS separerebbe bene. Non provato (niente macOS qui).

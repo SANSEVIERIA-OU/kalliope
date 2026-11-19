@@ -1,17 +1,12 @@
 <!-- Direzione 1 · la forma piena: un quadrato pieno senza angoli, come lo vuole macOS (il sistema mette la maschera).
-     Il disegno sta al centro, dentro la parte che la maschera lascia. 
+     Il segno chiaro della barra, ridotto a 0,8 attorno al centro, su una piastrella magenta che si vede anche sullo scuro. 
      File generato da strumenti/genera.py da modelli/piena.svg e token.css: non si modifica a mano. -->
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
-  <defs>
-    <linearGradient id="d1-stanza" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" style="stop-color:#5b0123"/>
-      <stop offset="1" style="stop-color:#2e0010"/>
-    </linearGradient>
-  </defs>
-  <rect width="128" height="128" fill="url(#d1-stanza)"/>
-  <g fill="none" stroke-width="13" stroke-linecap="round">
-    <rect x="31" y="28" width="14" height="72" rx="7" style="fill:#ffedef" stroke="none"/>
-    <path d="M58.07 41.71A30 30 0 0 1 58.07 86.29" style="stroke:#e6396e"/>
-    <path d="M79.97 30.02A54 54 0 0 1 79.97 97.98" style="stroke:#ffdbe1"/>
+  <rect width="128" height="128" style="fill:#d82762"/>
+  <g fill="none" stroke-width="12.8" stroke-linecap="round">
+    <rect x="22.4" y="68.8" width="20.8" height="12.8" rx="6.4" style="fill:#ffedef" stroke="none"/>
+    <rect x="49.6" y="27.2" width="12.8" height="73.6" rx="6.4" style="fill:#ffedef" stroke="none"/>
+    <path d="M71.56 47.89A22.4 22.4 0 0 1 71.56 80.11" style="stroke:#fdb8c4"/>
+    <path d="M87.07 41.43A38.4 38.4 0 0 1 87.07 86.57" style="stroke:#ffdbe1"/>
   </g>
 </svg>

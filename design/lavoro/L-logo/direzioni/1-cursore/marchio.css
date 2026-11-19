@@ -3,10 +3,12 @@
    Colori, tempi e curve vengono dal file dei token della direzione: qui non ce n'è nessuno scritto a mano.
    Il disegno è scritto con l'inchiostro della pagina; il movimento lo comanda marchio.js quando la voce della pagina parla. */
 .marchio .m-segno { width: calc(var(--misura-17) * var(--d1-segno-proporzione)); }
-.marchio .m-cursore { fill: var(--d1-inchiostro); }
+.marchio .m-cursore, .marchio .m-riga { fill: var(--d1-inchiostro); }
+.marchio .m-riga { transform-box: fill-box; transform-origin: left center; }
 .marchio .m-onda { stroke: var(--d1-inchiostro); transition: opacity var(--d1-respiro) var(--curva-lineare); }
-/* mentre la home scrive la frase: il cursore lampeggia come quello del campo, le onde aspettano (la frase non è ancora detta) */
+/* mentre la home scrive la frase: il cursore lampeggia come quello del campo, la riga cresce fino al cursore, le onde aspettano */
 .marchio.m-scrive .m-cursore { animation: m-lampeggia var(--d1-lampeggio) var(--d1-curva-lampeggio) infinite; }
+.marchio.m-scrive .m-riga { animation: m-scrive var(--d1-scrittura) var(--d1-curva-scrittura) both; }
 .marchio.m-attende .m-onda { opacity: var(--d1-onda-quieta); }
 /* mentre la voce parla: le onde seguono l'inviluppo della voce (--m-env, scritto da marchio.js fra 0 e 1) */
 .marchio.m-parla .m-onda { opacity: calc(var(--d1-onda-quieta) + (1 - var(--d1-onda-quieta)) * var(--m-env, 1)); }
@@ -16,8 +18,9 @@
 @media (max-width: 760px) {
   .marchio .m-segno { width: calc(var(--misura-14) * var(--d1-segno-proporzione)); }
 }
+@keyframes m-scrive { from { transform: scaleX(var(--d1-riga-iniziale)); } }
 @keyframes m-lampeggia { 50% { opacity: var(--d1-cursore-spento); } }
 @keyframes m-onda { from { opacity: var(--d1-onda-quieta); transform: scale(var(--d1-onda-partenza)); } }
 @media (prefers-reduced-motion: reduce) {
-  .marchio .m-cursore, .marchio .m-onda { animation: none; transition: none; }
+  .marchio .m-cursore, .marchio .m-riga, .marchio .m-onda { animation: none; transition: none; }
 }

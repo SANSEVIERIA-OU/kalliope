@@ -1,0 +1,13 @@
+<!-- Direzione 1 · «Il cursore che parla» · il disegno libero, tela 128, fondo trasparente. Griglia di 2 px (GNOME).
+     I colori sono i token di ../token.css; genera.py scrive ../disegno.svg con i valori. 
+     File generato da strumenti/genera.py da modelli/disegno.svg e token.css: non si modifica a mano. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <g fill="none" stroke-width="16" stroke-linecap="round">
+    <rect x="26" y="26" width="16" height="84" rx="8" style="fill:#7e1840" stroke="none"/>
+    <path d="M56.75 42.73A34 34 0 0 1 56.75 93.27" style="stroke:#a5154a"/>
+    <path d="M82.18 28.98A62 62 0 0 1 82.18 107.02" style="stroke:#e3718a"/>
+    <rect x="26" y="22" width="16" height="84" rx="8" style="fill:#c50f56" stroke="none"/>
+    <path d="M56.75 38.73A34 34 0 0 1 56.75 89.27" style="stroke:#e6396e"/>
+    <path d="M82.18 24.98A62 62 0 0 1 82.18 103.02" style="stroke:#f3a4b2"/>
+  </g>
+</svg>

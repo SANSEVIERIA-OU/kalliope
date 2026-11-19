@@ -1,8 +1,17 @@
 <?xml-stylesheet href="../token.css" type="text/css"?>
-<!-- Direzione 2 · la forma piena: il quadrato di macOS è la fascia più lontana; gli altri riquadri stanno al centro. -->
+<!-- Direzione 2 · la forma piena: il quadrato di macOS è la cornice chiara della riunione; i quattro riquadri al centro, a 0,8. -->
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
-  <rect width="128" height="128" style="fill:var(--d2-fascia-lontana)"/>
-  <rect x="20" y="20" width="88" height="88" rx="26" style="fill:var(--d2-fascia-media)"/>
-  <rect x="35" y="35" width="58" height="58" rx="17" style="fill:var(--d2-fascia-vicina)"/>
-  <rect x="50" y="50" width="28" height="28" rx="8" style="fill:var(--d2-nucleo)"/>
+  <defs><clipPath id="d2q0"><rect x="10" y="10" width="52" height="52" rx="14"/></clipPath><clipPath id="d2q1"><rect x="66" y="10" width="52" height="52" rx="14"/></clipPath><clipPath id="d2q2"><rect x="10" y="66" width="52" height="52" rx="14"/></clipPath><clipPath id="d2q3"><rect x="66" y="66" width="52" height="52" rx="14"/></clipPath></defs>
+  <rect width="128" height="128" style="fill:var(--d2-cornice)"/>
+  <g transform="translate(12.8 12.8) scale(0.8)">
+    <rect x="10" y="10" width="52" height="52" rx="14" style="fill:var(--d2-tu)"/>
+    <g clip-path="url(#d2q0)" style="fill:var(--d2-persona)"><circle cx="36.0" cy="30.8" r="8.8"/><ellipse cx="36.0" cy="63.0" rx="17.2" ry="17.2"/></g>
+    <rect x="66" y="10" width="52" height="52" rx="14" style="fill:var(--d2-riquadro)"/>
+    <g clip-path="url(#d2q1)" style="fill:var(--d2-persona)"><circle cx="92.0" cy="30.8" r="8.8"/><ellipse cx="92.0" cy="63.0" rx="17.2" ry="17.2"/></g>
+    <rect x="10" y="66" width="52" height="52" rx="14" style="fill:var(--d2-riquadro)"/>
+    <g clip-path="url(#d2q2)" style="fill:var(--d2-persona)"><circle cx="36.0" cy="86.8" r="8.8"/><ellipse cx="36.0" cy="119.0" rx="17.2" ry="17.2"/></g>
+    <rect x="66" y="66" width="52" height="52" rx="14" style="fill:var(--d2-riquadro)"/>
+    <g clip-path="url(#d2q3)" style="fill:var(--d2-persona)"><circle cx="92.0" cy="86.8" r="8.8"/><ellipse cx="92.0" cy="119.0" rx="17.2" ry="17.2"/></g>
+    <rect x="13.5" y="13.5" width="45" height="45" rx="10.5" fill="none" stroke-width="7" style="stroke:var(--d2-tu-anello)"/>
+  </g>
 </svg>
