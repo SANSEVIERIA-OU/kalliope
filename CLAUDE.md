@@ -29,9 +29,11 @@ come si lavora.
   mia voce" ma la voce dell'utente)»): il programma parlerà con la voce della persona che lo usa. Si fa adesso, in
   parallelo alle pagine: prima ricerca e proposta con le alternative, poi la costruzione (`design/lavoro/STATO.md`, fase V).
   Strada scelta dal proprietario il 17/11/2026 dopo l'ascolto dei campioni: «Strada 1», un secondo motore che imita la voce
-  dalla registrazione (Pocket TTS; misure in `benchmarks/voce-propria/README.md`). La voce di oggi resta per chi non ha una registrazione. Il 17/11/2026, fra un account Hugging Face per la versione attuale e altre strade, il proprietario ha scelto «il trucco» (i pesi aperti attuali
-  più l'encoder della voce dell'esportazione di maggio) e di metterlo nel programma senza ascoltare prove: «ti dico già di inserire il trucco senza farmi
-  sentire i test» (`design/lavoro/STATO.md`, V-3).
+  dalla registrazione (Pocket TTS; misure in `benchmarks/voce-propria/README.md`). La voce di oggi resta per chi non ha una registrazione. Il 17/11/2026 il proprietario ha chiesto di metterlo nel
+  programma senza ascoltare prove («ti dico già di inserire il trucco senza farmi sentire i test»); «il trucco» (pesi aperti
+  attuali più l'encoder di maggio) non regge, perché Kyutai ha riaddestrato il codec (V-3). Il 19/11/2026 il proprietario ha
+  creato l'account Hugging Face: si usa la versione attuale ufficiale con la clonazione (`kyutai/pocket-tts`), sempre senza
+  prove d'ascolto (`design/lavoro/STATO.md`, V-4). Account, condizioni e chiave li gestisce solo il proprietario.
 - **Il telefono** (17/11/2026): «non è per telefono: è solo desktop per il momento». Il sito non dice «non ancora» per
   il telefono.
 
