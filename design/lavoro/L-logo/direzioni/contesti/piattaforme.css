@@ -1,0 +1,51 @@
+/* I fondi e le misure delle piattaforme nelle ricostruzioni delle pagine di prova (non sono token del marchio).
+   Accanto a ogni valore la fonte. Firefox: letto il 19/11/2026 nei file del Firefox installato su questa macchina. GNOME, KDE,
+   Windows e macOS: verificati il 19/11/2026 nelle fonti ufficiali da chi coordina (prima erano da memoria: la ricerca in rete era
+   bloccata durante l'incarico). Dove una piattaforma non pubblica il valore, lo si dice. */
+:root {
+  /* Firefox 157, verificato: omni.ja del Firefox di Playwright, design-system/tokens-shared.css e tabbrowser/tabs.css */
+  --ff-striscia-chiara: rgb(234, 234, 237);   /* --toolbox-background-color, tema chiaro */
+  --ff-scheda-chiara: #f9f9fb;                /* --toolbar-background-color: la scheda scelta ha il colore della barra */
+  --ff-testo-chiaro: #15141a;                 /* --color-gray-100 */
+  --ff-striscia-scura: #1c1b22;               /* --color-gray-90 */
+  --ff-scheda-scura: rgb(43, 42, 51);         /* --toolbar-background-color, tema scuro */
+  --ff-testo-scuro: #fbfbfe;                  /* --color-gray-0 */
+  --ff-scheda-altezza: 32px;                  /* --tab-min-height */
+  --ff-icona: 16px;                           /* l'icona della scheda */
+
+  /* GNOME: libadwaita 1.10.0 (tag del 14/09/2026), src/stylesheet/_colors.scss */
+  --gnome-chiaro: #fafafb;                    /* window_bg_color chiaro (riga 32): il negozio dei programmi, la scala */
+  --gnome-scheda-chiara: #ffffff;             /* card_bg_color chiaro (riga 61) */
+  --gnome-scheda-scura: rgb(255 255 255 / 8%);   /* card_bg_color scuro (riga 123): bianco all'8% sul fondo scuro */
+  --gnome-testo-chiaro: rgb(0 0 6 / 80%);     /* window_fg_color chiaro (riga 33) */
+  --gnome-testo-scuro: #ffffff;               /* il testo sullo scuro (etichette della griglia, negozio scuro) */
+  /* GNOME Shell 51.1 (tag del 14/10/2026): la panoramica e la griglia delle applicazioni sono sempre scure, anche con il tema chiaro
+     (data/theme/gnome-shell-sass/_colors.scss righe 19–20, widgets/_overview.scss righe 7–9) */
+  --gnome-scuro: #222226;                     /* window_bg_color scuro di libadwaita (riga 95) = il fondo della panoramica di GNOME Shell */
+  --gnome-griglia-icona: 96px;                /* la misura massima della griglia: scende a 64, 48 o 32 px se la pagina non ci sta (js/ui/iconGrid.js righe 11, 17, 360–370) */
+
+  /* KDE Plasma: Breeze v6.8.3 (tag del 10/11/2026), colors/BreezeLight.colors, invariato da Plasma 6.0 */
+  --kde-finestra: #eff0f1;                    /* [Colors:Window] BackgroundNormal (riga 129) */
+  --kde-vista: #ffffff;                       /* [Colors:View] BackgroundNormal (riga 115); #fcfcfc, usato prima per errore, è [Colors:Button] */
+  --kde-testo: #232629;                       /* [Colors:Window] ForegroundNormal (riga 137) */
+  --kde-scelta: #3daee9;                      /* [Colors:Window] DecorationFocus (riga 130) */
+
+  /* Windows 11: Microsoft non pubblica il colore della barra delle applicazioni (lo genera la shell). Qui c'è il token
+     SolidBackgroundFillColorBase, il ripiego di Mica per le app: microsoft-ui-xaml, controls/dev/CommonStyles/
+     Common_themeresources_any.xaml, commit 905a4f6c */
+  --win-barra-chiara: #f3f3f3;                /* SolidBackgroundFillColorBase, tema chiaro (riga 272): non è il colore vero della barra */
+  --win-barra-scura: #202020;                 /* SolidBackgroundFillColorBase, tema scuro (riga 68): non è il colore vero della barra */
+  --win-accento-chiaro: #005fb8;              /* l'indicatore dell'app attiva: approssimazione, non verificato (l'accento predefinito non è pubblicato) */
+  --win-accento-scuro: #60cdff;               /* approssimazione, non verificato */
+
+  /* macOS: Apple non pubblica valori per il materiale del Dock (HIG «Materials»). Il fondo, il vetro e i suoi bordi sono inventati
+     (non sono una foto di Apple); la maschera è una superellisse (n = 5), un'approssimazione degli angoli continui di Apple */
+  --mac-cielo: linear-gradient(160deg, #3b5d8f 0%, #7c6ea8 45%, #d79a8f 100%);
+  --mac-dock: rgba(255, 255, 255, 0.24);
+  --mac-dock-bordo: rgba(255, 255, 255, 0.4);
+
+  /* il sito */
+  --sito-fondo: #420017;                      /* --fondo del sito */
+  --sito-testo: #ffedef;                      /* --testo */
+  --sito-scuro: #26060f;                      /* --scuro */
+}

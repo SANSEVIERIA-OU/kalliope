@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="it">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Logo · le tre direzioni negli stessi contesti</title>
+<link rel="stylesheet" href="contesti/piattaforme.css">
+<link rel="stylesheet" href="contesti/contesti.css">
+<header class="capo">
+  <h1>Il logo di Kalliope · tre direzioni negli stessi contesti</h1>
+  <p><b>Il criterio di ambizione.</b> Il marchio fa ciò che fa il programma. Nella barra del sito lo muove la voce vera della pagina:
+  gli stessi istanti (la scrittura, le parole, i picchi, l'inviluppo della registrazione) che muovono la riunione della home, così chi
+  guarda vede il marchio parlare quando parla Kalliope. Fermo, nei menu del computer, tiene in un segno solo un momento della catena
+  «scrivi → la voce arriva agli altri, alla pari». I marchi dei riferimenti e dei programmi simili sono segni fermi della voce in
+  generale (le barre di ElevenLabs, LALAL.AI e del Kalliope di oggi, la bolla con il nome di Grid, la mascotte di Proloquo2Go); l'unico
+  che vive con la voce, la sfera di ElevenAgents, lo fa nel suo pannello, non nella barra. Per chi: chi parla con Kalliope, che lo cerca
+  fra le applicazioni prima di una riunione (32–96 px, chiaro o scuro, a volte con il puntamento oculare), e chi gli sta intorno e
+  inoltra l'indirizzo (la scheda a 16 px). Si riconosce perché chi ha visto la home ritrova nel marchio il gesto della riunione.</p>
+  <p><b>Le tre idee.</b> 1 · Il cursore di chi scrive è la sorgente della voce: dalla riga che scrivi le onde vanno verso gli altri.
+  2 · Il tuo riquadro nella riunione, da cui la voce si allarga a tutti alla stessa distanza. 3 · La frase che hai scritto è la bolla:
+  le parole si accendono mentre la voce le dice.</p>
+  <p class="nota">Incarico L-1. Ogni direzione ha la sua pagina con tutti i contesti: <a href="1-cursore/prova.html">1 · Il cursore che parla</a>, <a href="2-posto/prova.html">2 · Il tuo posto, alla pari</a>, <a href="3-frase/prova.html">3 · La frase che si accende</a>. GNOME, KDE, Windows e macOS sono ricostruzioni (GNOME e KDE verificati nelle fonti ufficiali; Windows con il token di ripiego di Mica; il Dock di macOS inventato: fonti in contesti/piattaforme.css); Firefox usa i valori del Firefox 157 installato.</p>
+</header>
+<main id="dove"></main>
+<script src="contesti/contesti.js"></script>
+<script>Contesti.pagina(document.getElementById('dove'), [
+  {id: '1-cursore', nome: '1. Il cursore che parla', idea: 'Il cursore di chi scrive è la sorgente della voce: dalla riga che scrivi le onde vanno verso gli altri.', base: '1-cursore/'},
+  {id: '2-posto', nome: '2. Il tuo posto, alla pari', idea: 'Il tuo riquadro nella riunione, da cui la voce si allarga a tutti alla stessa distanza.', base: '2-posto/'},
+  {id: '3-frase', nome: '3. La frase che si accende', idea: 'La frase che hai scritto è la bolla: le parole si accendono mentre la voce le dice.', base: '3-frase/'}], {radice: './'});</script>
+</html>

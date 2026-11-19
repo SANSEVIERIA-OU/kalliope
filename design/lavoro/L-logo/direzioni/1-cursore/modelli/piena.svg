@@ -1,0 +1,17 @@
+<?xml-stylesheet href="../token.css" type="text/css"?>
+<!-- Direzione 1 · la forma piena: un quadrato pieno senza angoli, come lo vuole macOS (il sistema mette la maschera).
+     Il disegno sta al centro, dentro la parte che la maschera lascia. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="d1-stanza" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" style="stop-color:var(--d1-stanza-alta)"/>
+      <stop offset="1" style="stop-color:var(--d1-stanza-bassa)"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" fill="url(#d1-stanza)"/>
+  <g fill="none" stroke-width="13" stroke-linecap="round">
+    <rect x="31" y="28" width="14" height="72" rx="7" style="fill:var(--d1-cursore-acceso)" stroke="none"/>
+    <path d="M58.07 41.71A30 30 0 0 1 58.07 86.29" style="stroke:var(--d1-onda-vicina)"/>
+    <path d="M79.97 30.02A54 54 0 0 1 79.97 97.98" style="stroke:var(--d1-onda-lontana-accesa)"/>
+  </g>
+</svg>

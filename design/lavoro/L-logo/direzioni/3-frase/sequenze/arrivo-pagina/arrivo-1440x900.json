@@ -1,0 +1,76 @@
+{
+ "pagina": "http://127.0.0.1:8940/it/",
+ "misura": "1440x900",
+ "sequenza": "arrivo",
+ "gesto": null,
+ "ridotto": false,
+ "lento": 1,
+ "istanti": [
+  0,
+  1,
+  3,
+  5.6,
+  7,
+  9,
+  12,
+  16
+ ],
+ "fotogrammi": [
+  {
+   "file": "arrivo-1440x900-f01.jpg",
+   "chiesto": 0,
+   "scattato": 0,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-1440x900-f02.jpg",
+   "chiesto": 1,
+   "scattato": 1,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-1440x900-f03.jpg",
+   "chiesto": 3,
+   "scattato": 3,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-1440x900-f04.jpg",
+   "chiesto": 5.6,
+   "scattato": 5.6,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-1440x900-f05.jpg",
+   "chiesto": 7,
+   "scattato": 7,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-1440x900-f06.jpg",
+   "chiesto": 9,
+   "scattato": 9,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-1440x900-f07.jpg",
+   "chiesto": 12,
+   "scattato": 12,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-1440x900-f08.jpg",
+   "chiesto": 16,
+   "scattato": 16,
+   "scorrimento": 0
+  }
+ ],
+ "foglio": "arrivo-1440x900-foglio.jpg",
+ "video": "arrivo-1440x900.webm",
+ "orologio": {
+  "pagina": 1,
+  "media": []
+ },
+ "errori": [],
+ "misurato": "2026-11-19T13:48:10.011Z"
+}

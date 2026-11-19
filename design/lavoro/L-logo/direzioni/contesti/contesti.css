@@ -1,0 +1,113 @@
+/* L'impaginazione delle pagine di prova del logo (impalcatura: non fa parte di nessuna direzione). */
+@font-face { font-family: Lexend; src: url(../../../../../design-system/caratteri/lexend/Lexend-wght-latino.woff2) format("woff2"); font-weight: 100 900; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #e9e7e8; color: #1d1b1c; font: 15px/1.45 system-ui, sans-serif; }
+header.capo { padding: 28px 40px 8px; }
+header.capo h1 { font: 700 30px/1.15 Lexend, sans-serif; margin: 0 0 6px; }
+header.capo p { max-width: 980px; margin: 4px 0; }
+.nota { color: #5a5357; font-size: 13px; }
+section { padding: 18px 40px 26px; border-top: 1px solid #d3cfd1; }
+section h2 { font: 600 19px/1.2 Lexend, sans-serif; margin: 0 0 10px; }
+section h3 { font: 600 14px/1.2 system-ui, sans-serif; margin: 14px 0 6px; color: #3f383b; }
+.fila { display: flex; flex-wrap: wrap; gap: 18px; align-items: flex-start; }
+.colonne { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.colonne > .col > h3:first-child { margin-top: 0; }
+.cartellino { font-size: 12px; color: #5a5357; margin-top: 4px; }
+img.foto { display: block; max-width: 100%; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,.2); }
+/* i tre disegni */
+.disegni { display: flex; gap: 22px; align-items: flex-end; flex-wrap: wrap; }
+.disegni figure { margin: 0; text-align: center; }
+.disegni .tavola { width: 280px; height: 280px; display: grid; place-items: center; border-radius: 10px;
+  background: repeating-conic-gradient(#d9d6d8 0 25%, #f4f2f3 0 50%) 0 0 / 20px 20px; }
+.disegni .tavola.scura { background: repeating-conic-gradient(#2a2a2e 0 25%, #333338 0 50%) 0 0 / 20px 20px; }
+/* firefox */
+.ff { width: 520px; padding: 6px 6px 0; border-radius: 8px 8px 0 0; font: 12px system-ui, sans-serif; }
+.ff.chiaro { background: var(--ff-striscia-chiara); color: var(--ff-testo-chiaro); }
+.ff.scuro { background: var(--ff-striscia-scura); color: var(--ff-testo-scuro); }
+.ff .schede { display: flex; gap: 4px; }
+.ff .scheda { display: flex; align-items: center; gap: 8px; height: var(--ff-scheda-altezza); padding: 0 10px; border-radius: 6px; width: 220px; white-space: nowrap; overflow: hidden; }
+.ff .scheda img, .ff .scheda .globo { width: var(--ff-icona); height: var(--ff-icona); flex: none; }
+.ff .scheda .globo { border-radius: 50%; border: 1.5px solid currentColor; opacity: .55; }
+.ff.chiaro .scheda.scelta { background: var(--ff-scheda-chiara); box-shadow: 0 0 4px rgba(0,0,0,.18); }
+.ff.scuro .scheda.scelta { background: var(--ff-scheda-scura); box-shadow: 0 0 4px rgba(0,0,0,.5); }
+.ff .indirizzo { height: 38px; margin: 6px -6px 0; display: flex; align-items: center; padding: 0 12px; }
+.ff.chiaro .indirizzo { background: var(--ff-scheda-chiara); }
+.ff.scuro .indirizzo { background: var(--ff-scheda-scura); }
+.ff .campo { flex: 1; height: 28px; border-radius: 6px; padding: 0 10px; display: flex; align-items: center; opacity: .8; }
+.ff.chiaro .campo { background: rgba(0,0,0,.05); }
+.ff.scuro .campo { background: rgba(0,0,0,.3); }
+.doppio { zoom: 2; }
+/* gnome */
+.gnome { background: var(--gnome-scuro); color: var(--gnome-testo-scuro); padding: 28px 26px; border-radius: 10px; display: grid; gap: 20px 8px; justify-items: center; font: 13px system-ui, sans-serif; }
+.gnome .app { display: grid; justify-items: center; gap: 10px; width: 132px; text-align: center; }
+.gnome .app img { width: var(--gnome-griglia-icona); height: var(--gnome-griglia-icona); }
+.gnome.medio .app img { width: 64px; height: 64px; }
+/* kde */
+.kde { width: 560px; background: var(--kde-finestra); color: var(--kde-testo); border-radius: 8px; box-shadow: 0 6px 24px rgba(0,0,0,.25); font: 13px system-ui, sans-serif; overflow: hidden; }
+.kde .testa { padding: 10px; display: flex; gap: 10px; align-items: center; }
+.kde .cerca { flex: 1; height: 30px; border-radius: 4px; background: var(--kde-vista); border: 1px solid #bcbebf; padding: 0 8px; display: flex; align-items: center; color: #7f8c8d; }
+.kde .corpo { display: grid; grid-template-columns: 170px 1fr; min-height: 260px; }
+.kde .categorie { padding: 6px; }
+.kde .categorie div { padding: 7px 10px; border-radius: 3px; }
+.kde .categorie div.su { background: rgba(61,174,233,.25); }
+.kde .griglia { background: var(--kde-vista); display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px 6px; padding: 16px 10px; align-content: start; }
+.kde .griglia .app { display: grid; justify-items: center; gap: 6px; text-align: center; }
+.kde .griglia img { width: 48px; height: 48px; }
+.kde .elenco { background: var(--kde-vista); padding: 6px 10px; border-top: 1px solid #dcdcdc; }
+.kde .elenco .riga { display: flex; gap: 10px; align-items: center; padding: 4px 6px; }
+.kde .elenco img { width: 32px; height: 32px; }
+/* barra delle applicazioni */
+.task { display: flex; justify-content: center; align-items: center; gap: calc(var(--i) * .28); height: calc(var(--i) * 2); width: 640px; border-radius: 0; }
+.task.chiaro { background: var(--win-barra-chiara); }
+.task.scuro { background: var(--win-barra-scura); }
+.task .posto { position: relative; width: calc(var(--i) * 1.65); height: calc(var(--i) * 1.65); display: grid; place-items: center; border-radius: calc(var(--i) * .16); }
+.task .posto img { width: var(--i); height: var(--i); }
+.task.chiaro .posto.attivo { background: rgba(0,0,0,.05); }
+.task.scuro .posto.attivo { background: rgba(255,255,255,.07); }
+.task .posto.attivo::after { content: ""; position: absolute; bottom: 1px; width: calc(var(--i) * .5); height: 3px; border-radius: 2px; }
+.task.chiaro .posto.attivo::after { background: var(--win-accento-chiaro); }
+.task.scuro .posto.attivo::after { background: var(--win-accento-scuro); }
+/* negozio */
+.negozio { padding: 22px; border-radius: 12px; display: grid; gap: 16px; width: 640px; font: 14px system-ui, sans-serif; }
+.negozio.chiaro { background: var(--gnome-chiaro); color: var(--gnome-testo-chiaro); }
+.negozio.scuro { background: var(--gnome-scuro); color: var(--gnome-testo-scuro); }
+.negozio .tessera { display: flex; gap: 16px; align-items: center; padding: 16px; border-radius: 12px; }
+.negozio.chiaro .tessera { background: var(--gnome-scheda-chiara); box-shadow: 0 0 0 1px rgba(0,0,6,.07), 0 1px 3px rgba(0,0,6,.07); }
+.negozio.scuro .tessera { background: var(--gnome-scheda-scura); }
+.negozio .tessera b { display: block; font-size: 15px; }
+.negozio .vetrina { display: flex; gap: 22px; align-items: center; padding: 26px; border-radius: 12px; }
+.negozio.chiaro .vetrina { background: #f0e5e8; }   /* la vetrina di un'app in evidenza: tinta inventata, non è un valore di GNOME Software */
+.negozio.scuro .vetrina { background: #3a2c31; }
+.negozio .vetrina b { display: block; font-size: 22px; }
+/* dock */
+.mac { width: 640px; height: 300px; background: var(--mac-cielo); border-radius: 10px; position: relative; overflow: hidden; }
+.mac .dock { position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%); display: flex; align-items: flex-end; gap: 8px; padding: 8px 10px;
+  background: var(--mac-dock); border: 1px solid var(--mac-dock-bordo); border-radius: 22px; backdrop-filter: blur(18px); }
+.mac .dock svg { display: block; }
+.mac .dock .nome { position: absolute; top: -34px; left: 50%; transform: translateX(-50%); background: rgba(40,40,40,.6); color: #fff; font: 12px system-ui; padding: 3px 9px; border-radius: 6px; white-space: nowrap; }
+.mac .dock .su { position: relative; }
+/* scala */
+.scala { display: flex; align-items: flex-end; gap: 22px; padding: 18px 22px; border-radius: 10px; }
+.scala figure { margin: 0; text-align: center; font: 11px system-ui; }
+.scala figcaption { margin-top: 6px; opacity: .7; }
+.scala.chiaro { background: var(--gnome-chiaro); color: #333; }
+.scala.scuro { background: var(--gnome-scuro); color: #ddd; }
+.scala.bordeaux { background: var(--sito-fondo); color: var(--sito-testo); }
+.scala.bianco { background: #ffffff; color: #333; }
+.scala.nero { background: #000; color: #ddd; }
+/* pixel */
+canvas.pixel { image-rendering: pixelated; width: 128px; height: 128px; border-radius: 4px; }
+.pixeli { display: flex; gap: 14px; flex-wrap: wrap; align-items: flex-end; }
+.pixeli figure { margin: 0; font: 11px system-ui; text-align: center; }
+/* testa gnome con la simbolica */
+.testa-gnome { width: 380px; height: 46px; display: flex; align-items: center; gap: 10px; padding: 0 14px; border-radius: 10px 10px 0 0; font: 600 14px system-ui; }
+.testa-gnome.chiaro { background: #ffffff; color: rgba(0,0,6,.8); }
+.testa-gnome.scuro { background: #2e2e32; color: #fff; }
+.testa-gnome img { width: 16px; height: 16px; }
+.testa-gnome.scuro img { filter: invert(1); }
+/* marchio con il nome */
+.coppia { display: inline-flex; align-items: center; gap: 12px; padding: 18px 26px; border-radius: 10px; font: 700 22px Lexend, sans-serif; letter-spacing: -0.01em; }
+.coppia img { width: 36px; height: 36px; }
+.coppia.scuro { background: var(--sito-fondo); color: var(--sito-testo); }
+.coppia.chiaro { background: #fff; color: var(--sito-scuro); }
+video { max-width: 100%; border-radius: 6px; background: #000; }

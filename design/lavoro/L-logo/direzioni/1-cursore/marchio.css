@@ -1,0 +1,23 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0 */
+/* Componente · Il marchio nella barra · direzione 1 «Il cursore che parla».
+   Colori, tempi e curve vengono dal file dei token della direzione: qui non ce n'è nessuno scritto a mano.
+   Il disegno è scritto con l'inchiostro della pagina; il movimento lo comanda marchio.js quando la voce della pagina parla. */
+.marchio .m-segno { width: calc(var(--misura-17) * var(--d1-segno-proporzione)); }
+.marchio .m-cursore { fill: var(--d1-inchiostro); }
+.marchio .m-onda { stroke: var(--d1-inchiostro); transition: opacity var(--d1-respiro) var(--curva-lineare); }
+/* mentre la home scrive la frase: il cursore lampeggia come quello del campo, le onde aspettano (la frase non è ancora detta) */
+.marchio.m-scrive .m-cursore { animation: m-lampeggia var(--d1-lampeggio) var(--d1-curva-lampeggio) infinite; }
+.marchio.m-attende .m-onda { opacity: var(--d1-onda-quieta); }
+/* mentre la voce parla: le onde seguono l'inviluppo della voce (--m-env, scritto da marchio.js fra 0 e 1) */
+.marchio.m-parla .m-onda { opacity: calc(var(--d1-onda-quieta) + (1 - var(--d1-onda-quieta)) * var(--m-env, 1)); }
+/* al passaggio del puntatore e al fuoco: il cursore «parla» una volta, le onde ripartono dal cursore una dopo l'altra */
+.marchio:hover .m-onda, .marchio:focus-visible .m-onda { animation: m-onda var(--d1-onda-durata) var(--d1-curva-onda) backwards; }
+.marchio:hover .m-onda-2, .marchio:focus-visible .m-onda-2 { animation-delay: var(--d1-onda-sfasamento); }
+@media (max-width: 760px) {
+  .marchio .m-segno { width: calc(var(--misura-14) * var(--d1-segno-proporzione)); }
+}
+@keyframes m-lampeggia { 50% { opacity: var(--d1-cursore-spento); } }
+@keyframes m-onda { from { opacity: var(--d1-onda-quieta); transform: scale(var(--d1-onda-partenza)); } }
+@media (prefers-reduced-motion: reduce) {
+  .marchio .m-cursore, .marchio .m-onda { animation: none; transition: none; }
+}

@@ -1,0 +1,14 @@
+<!doctype html>
+<!-- Le icone di una direzione su chiaro e scuro, a 128, 64, 32 e 16 px, accanto all'icona di oggi: per il confronto con le
+     icone dei programmi simili (affianca.mjs). Uso: icone.html?d=1-cursore -->
+<meta charset="utf-8">
+<style>body{margin:0;width:1180px;font:13px system-ui,sans-serif}.f{display:flex;gap:30px;align-items:flex-end;padding:20px}.c{background:#fafafb;color:#333}.s{background:#222226;color:#ddd}figure{margin:0;text-align:center}</style>
+<div class="f c" id="c"></div><div class="f s" id="s"></div>
+<script>
+const d = new URLSearchParams(location.search).get('d'), B = `../direzioni/${d}/`;
+const vecchio = '../../../../packaging/linux/io.github.sansevieria_ou.kalliope.svg';
+for (const id of ['c', 's']) document.getElementById(id).innerHTML =
+  [128, 64, 32].map(px => `<figure><img src="${B}disegno.svg" width="${px}" height="${px}"><figcaption>${px}</figcaption></figure>`).join('') +
+  [24, 16].map(px => `<figure><img src="${B}piccola.svg" width="${px}" height="${px}"><figcaption>${px}</figcaption></figure>`).join('') +
+  `<figure style="margin-left:60px"><img src="${vecchio}" width="128" height="128"><figcaption>Kalliope di oggi</figcaption></figure><figure><img src="${vecchio}" width="32" height="32"><figcaption>32</figcaption></figure>`;
+</script>

@@ -1,0 +1,6 @@
+<?xml-stylesheet href="../token.css" type="text/css"?>
+<!-- Direzione 2 · la versione simbolica di GNOME: 16×16, un colore solo. Quattro livelli come nel disegno a colori,
+     alternati pieno e vuoto: il riquadro esterno, lo spazio, il riquadro di mezzo, il tuo posto vuoto con il punto. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" style="fill:var(--d2-simbolo)" d="M5 1h6a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4H5a4 4 0 0 1-4-4V5a4 4 0 0 1 4-4zM5.5 3h5A2.5 2.5 0 0 1 13 5.5v5a2.5 2.5 0 0 1-2.5 2.5h-5A2.5 2.5 0 0 1 3 10.5v-5A2.5 2.5 0 0 1 5.5 3zM6.5 5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5v-3A1.5 1.5 0 0 1 6.5 5zM7 7h2v2H7z"/>
+</svg>

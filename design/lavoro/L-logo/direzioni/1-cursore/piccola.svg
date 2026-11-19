@@ -1,0 +1,10 @@
+<!-- Direzione 1 · il disegno per le grandezze piccole (16 e 24 px): lo stesso segno senza spessore, con il cursore e le onde
+     sulla griglia dei pixel di 16 (un pixel = 8 unità): cursore largo 2 px, onde larghe 2 px. 
+     File generato da strumenti/genera.py da modelli/piccola.svg e token.css: non si modifica a mano. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <g fill="none" stroke-width="16" stroke-linecap="round">
+    <rect x="16" y="16" width="16" height="96" rx="8" style="fill:#c50f56" stroke="none"/>
+    <path d="M52.28 35.72A40 40 0 0 1 52.28 92.28" style="stroke:#e6396e"/>
+    <path d="M81.50 20.67A72 72 0 0 1 81.50 107.33" style="stroke:#e3718a"/>
+  </g>
+</svg>

@@ -1,0 +1,9 @@
+<?xml-stylesheet href="../token.css" type="text/css"?>
+<!-- Direzione 1 · la versione simbolica di GNOME: 16×16, un colore solo, sulla griglia dei pixel. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <g style="fill:var(--d1-simbolo);stroke:var(--d1-simbolo)">
+    <rect x="2" y="2" width="2" height="12" rx="1" stroke="none"/>
+    <path d="M6.71 4.17A5 5 0 0 1 6.71 11.83" fill="none" stroke-width="2" stroke-linecap="round"/>
+    <path d="M10.78 1.89A9.5 9.5 0 0 1 10.78 14.11" fill="none" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</svg>

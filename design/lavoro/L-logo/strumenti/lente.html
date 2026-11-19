@@ -1,0 +1,16 @@
+<!doctype html>
+<!-- La lente: una pagina del sito costruito dentro una cornice ingrandita, così che la barra si veda a grandezza utile nei
+     fotogrammi e nel video di sequenza.mjs. La pagina dentro è quella vera, alla sua misura vera, con il suo movimento.
+     Uso: lente.html?p=it/&vw=1440&vh=900&x=40&y=0&w=520&h=72&s=3  (regione x,y,w,h della pagina, ingrandita s volte) -->
+<meta charset="utf-8">
+<title>Lente sulla barra</title>
+<style>html,body{margin:0;overflow:hidden;background:#000}iframe{position:absolute;border:0;transform-origin:0 0}</style>
+<iframe id="pagina" title="pagina"></iframe>
+<script>
+const q = new URLSearchParams(location.search), n = k => +(q.get(k) || 0);
+const f = document.getElementById('pagina'), s = n('s') || 3;
+f.style.width = n('vw') + 'px'; f.style.height = n('vh') + 'px';
+f.style.left = -n('x') * s + 'px'; f.style.top = -n('y') * s + 'px';
+f.style.transform = `scale(${s})`;
+f.src = q.get('p') || 'it/';
+</script>

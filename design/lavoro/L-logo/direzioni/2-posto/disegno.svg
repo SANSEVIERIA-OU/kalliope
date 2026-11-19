@@ -1,0 +1,10 @@
+<!-- Direzione 2 · «Il tuo posto, alla pari» · il disegno libero, tela 128, fondo trasparente, griglia di 2 px.
+     Quattro riquadri uno dentro l'altro, a passi uguali di 14 px: il tuo al centro, la voce che si allarga a tutti. 
+     File generato da strumenti/genera.py da modelli/disegno.svg e token.css: non si modifica a mano. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <rect x="8" y="10" width="112" height="112" rx="34" style="fill:#e6768e"/>
+  <rect x="8" y="6" width="112" height="112" rx="34" style="fill:#f3a4b2"/>
+  <rect x="22" y="20" width="84" height="84" rx="25" style="fill:#e6396e"/>
+  <rect x="36" y="34" width="56" height="56" rx="17" style="fill:#90053c"/>
+  <rect x="50" y="48" width="28" height="28" rx="8" style="fill:#3a0817"/>
+</svg>
