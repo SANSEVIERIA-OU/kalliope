@@ -62,18 +62,25 @@ jobs:
       # No cache: release files are built from scratch.
       - name: Build
         run: cargo build --release --workspace --locked
-      - name: ONNX Runtime
-        run: python3 tools/fetch_assets.py onnxruntime "$RUNNER_TEMP/assets" >> "$GITHUB_ENV"
+      # What goes inside the packages, from the assets release of this repository, pinned in
+      # tools/assets.json; and a recording (CC0) for the tests.
+      - name: ONNX Runtime, Klein and Pocket TTS
+        run: |
+          for part in onnxruntime model pocket recording; do
+            python3 tools/fetch_assets.py "$part" "$RUNNER_TEMP/assets" >> "$GITHUB_ENV"
+          done
       - name: Packages
         env:
           VERSION: ${{ steps.version.outputs.version }}
-        run: packaging/linux/build-packages.sh "$VERSION" target/release "$KALLIOPE_ORT_LIB" dist
+        run: |
+          packaging/linux/build-packages.sh "$VERSION" target/release \
+            "$KALLIOPE_ORT_LIB" "$KALLIOPE_MODEL_DIR" "$KALLIOPE_POCKET_DIR" dist
+      # Each installed package speaks without any KALLIOPE_* variable, with Giulia and with a voice
+      # prepared from the recording.
       - name: Install, run and remove each package
         env:
           VERSION: ${{ steps.version.outputs.version }}
-        run: |
-          model=$(python3 tools/fetch_assets.py model "$RUNNER_TEMP/assets" | sed -n 's/^KALLIOPE_MODEL_DIR=//p')
-          packaging/linux/test-packages.sh dist "$VERSION" "$(python3 tools/version.py)" "$model"
+        run: packaging/linux/test-packages.sh dist "$VERSION" "$(python3 tools/version.py)" "$KALLIOPE_TEST_RECORDING"
       - name: Checksums and release notes
         env:
           VERSION: ${{ steps.version.outputs.version }}

@@ -6,11 +6,12 @@
 #   the .rpm with dnf, in a Fedora container, and kalliope-bin.PKGBUILD with makepkg, in an
 #   Arch Linux container (needs docker or podman).
 #
-#   packaging/linux/test-packages.sh DIST_DIR VERSION APP_VERSION [MODEL_DIR]
+#   packaging/linux/test-packages.sh DIST_DIR VERSION APP_VERSION [RECORDING]
 #
 # VERSION is the one in the file names (0.1, 0.1-rc.1); APP_VERSION is what kalliope --version
-# must print (tools/version.py). With MODEL_DIR (tools/fetch_assets.py model), each installed
-# copy also speaks a sentence with the ONNX Runtime it brought.
+# must print (tools/version.py). Each installed copy speaks a sentence with Giulia, with the ONNX
+# Runtime and the model it brought and no KALLIOPE_* variable. With RECORDING, a WAV file
+# (tools/fetch_assets.py recording), it also prepares a voice from it and speaks with that voice.
 set -euo pipefail
 
 # Inside a container, this script runs one check: test-packages.sh --inside rpm|arch ...
@@ -21,44 +22,60 @@ else
     inside=
 fi
 if [ $# -lt 3 ]; then
-    sed -n '3,13p' "$0" >&2
+    sed -n '3,14p' "$0" >&2
     exit 2
 fi
-dist=$(cd "$1" && pwd) version=$2 app_version=$3 model=${4:-}
-if [ -n "$model" ]; then model=$(cd "$model" && pwd); fi
+dist=$(cd "$1" && pwd) version=$2 app_version=$3 recording=${4:-}
+if [ -n "$recording" ]; then recording=$(cd "$(dirname "$recording")" && pwd)/$(basename "$recording"); fi
 here=$(cd "$(dirname "$0")" && pwd)
 sudo=$([ "$(id -u)" = 0 ] || echo sudo)
 
-# Runs the installed programs in BIN_DIR, with ONNX Runtime at ORT_LIB.
+# The installed programs run as people run them: no variable says where ONNX Runtime or the models are.
+bare() {
+    env -u KALLIOPE_ORT_LIB -u KALLIOPE_MODEL_DIR -u KALLIOPE_POCKET_DIR -u KALLIOPE_VOICES_DIR "$@"
+}
+
+# Milliseconds of speech in a 16-bit mono WAV file (two bytes per sample after the 44-byte header).
+speech_ms() {
+    local rate bytes
+    rate=$(od -An -tu4 -j24 -N4 "$1" | tr -d ' ')
+    bytes=$(stat -c %s "$1")
+    echo $(((bytes - 44) * 500 / rate))
+}
+
+# Runs the installed programs in BIN_DIR; ORT_LIB is the ONNX Runtime they must have brought.
 check() {
-    local bin=$1 ort=$2 out
+    local bin=$1 ort=$2 out tmp ms
     echo "--- $bin/kalliope --version"
-    out=$("$bin/kalliope" --version)
+    out=$(bare "$bin/kalliope" --version)
     echo "$out"
     grep -qF "$app_version" <<<"$out" || { echo "expected $app_version" >&2; return 1; }
     echo "--- $bin/kalliope-cli phonemes ciao"
-    out=$("$bin/kalliope-cli" phonemes "ciao")
+    out=$(bare "$bin/kalliope-cli" phonemes "ciao")
     echo "$out"
     grep -q $'^ciao\t.' <<<"$out" || { echo "expected ciao and its phonemes" >&2; return 1; }
     test -f "$ort" || { echo "$ort is missing" >&2; return 1; }
-    if [ -n "$model" ]; then
-        echo "--- $bin/kalliope-cli say, with $ort"
-        local wav
-        wav=$(mktemp --suffix=.wav)
-        KALLIOPE_ORT_LIB=$ort "$bin/kalliope-cli" say --model-dir "$model" -o "$wav" \
-            "Ciao a tutti, mi sentite?"
-        # 16-bit mono PCM: two bytes per sample after the 44-byte header.
-        local rate bytes ms
-        rate=$(od -An -tu4 -j24 -N4 "$wav" | tr -d ' ')
-        bytes=$(stat -c %s "$wav")
-        ms=$(((bytes - 44) * 500 / rate))
-        rm -f "$wav"
+    tmp=$(mktemp -d)
+    echo "--- $bin/kalliope-cli say, with Giulia"
+    bare "$bin/kalliope-cli" say -o "$tmp/giulia.wav" "Ciao a tutti, mi sentite?"
+    ms=$(speech_ms "$tmp/giulia.wav")
+    echo "$ms ms of speech"
+    if ((ms < 700 || ms > 6000)); then
+        echo "expected 0.7 to 6 seconds of speech" >&2
+        return 1
+    fi
+    if [ -n "$recording" ]; then
+        echo "--- $bin/kalliope-cli voice, then say with that voice"
+        bare "$bin/kalliope-cli" voice "$recording" -o "$tmp/voce.safetensors"
+        bare "$bin/kalliope-cli" say --voice "$tmp/voce.safetensors" -o "$tmp/voce.wav" "Ciao a tutti, mi sentite?"
+        ms=$(speech_ms "$tmp/voce.wav")
         echo "$ms ms of speech"
         if ((ms < 700 || ms > 6000)); then
             echo "expected 0.7 to 6 seconds of speech" >&2
             return 1
         fi
     fi
+    rm -rf "$tmp"
 }
 
 gone() {
@@ -77,7 +94,7 @@ rpm)
     rpm -q --requires kalliope
     check /usr/bin /usr/lib/kalliope/libonnxruntime.so.1
     dnf remove -y -q kalliope
-    gone /usr/bin/kalliope /usr/bin/kalliope-cli /usr/lib/kalliope
+    gone /usr/bin/kalliope /usr/bin/kalliope-cli /usr/lib/kalliope /usr/share/kalliope
     exit 0
     ;;
 arch)
@@ -93,7 +110,7 @@ arch)
     check /usr/bin /usr/lib/kalliope/libonnxruntime.so.1
     test -L /usr/share/licenses/kalliope-bin/LICENSE
     pacman -R --noconfirm kalliope-bin
-    gone /usr/bin/kalliope /usr/bin/kalliope-cli /usr/lib/kalliope
+    gone /usr/bin/kalliope /usr/bin/kalliope-cli /usr/lib/kalliope /usr/share/kalliope
     exit 0
     ;;
 esac
@@ -107,7 +124,7 @@ check "$tmp/prefix/bin" "$tmp/prefix/lib/kalliope/libonnxruntime.so.1"
 grep -qx "Exec=\"$tmp/prefix/bin/kalliope\"" \
     "$tmp/prefix/share/applications/io.github.sansevieria_ou.kalliope.desktop"
 "$tmp/kalliope-$version-linux-x86_64/install" --remove "$tmp/prefix"
-gone "$tmp/prefix/bin/kalliope" "$tmp/prefix/lib/kalliope" "$tmp/prefix/share/doc/kalliope"
+gone "$tmp/prefix/bin/kalliope" "$tmp/prefix/lib/kalliope" "$tmp/prefix/share/kalliope" "$tmp/prefix/share/doc/kalliope"
 
 if command -v apt-get >/dev/null; then
     echo "=== .deb"
@@ -115,7 +132,7 @@ if command -v apt-get >/dev/null; then
     dpkg -s kalliope | grep -E '^(Version|Depends|Recommends):'
     check /usr/bin /usr/lib/kalliope/libonnxruntime.so.1
     $sudo env DEBIAN_FRONTEND=noninteractive apt-get remove -y -q kalliope >/dev/null
-    gone /usr/bin/kalliope /usr/bin/kalliope-cli /usr/lib/kalliope
+    gone /usr/bin/kalliope /usr/bin/kalliope-cli /usr/lib/kalliope /usr/share/kalliope
 else
     echo "=== .deb: skipped (no apt-get)"
 fi
@@ -123,17 +140,17 @@ fi
 engine=$(command -v docker || command -v podman || true)
 if [ -n "$engine" ]; then
     mounts=(-v "$dist:/dist:ro" -v "$here:/test:ro")
-    model_arg=()
-    if [ -n "$model" ]; then
-        mounts+=(-v "$model:/model:ro")
-        model_arg=(/model)
+    recording_arg=()
+    if [ -n "$recording" ]; then
+        mounts+=(-v "$recording:/recording.wav:ro")
+        recording_arg=(/recording.wav)
     fi
     echo "=== .rpm, in fedora:latest"
     "$engine" run --rm "${mounts[@]}" fedora:latest \
-        bash /test/test-packages.sh --inside rpm /dist "$version" "$app_version" "${model_arg[@]}"
+        bash /test/test-packages.sh --inside rpm /dist "$version" "$app_version" "${recording_arg[@]}"
     echo "=== kalliope-bin.PKGBUILD, in archlinux:base-devel"
     "$engine" run --rm "${mounts[@]}" archlinux:base-devel \
-        bash /test/test-packages.sh --inside arch /dist "$version" "$app_version" "${model_arg[@]}"
+        bash /test/test-packages.sh --inside arch /dist "$version" "$app_version" "${recording_arg[@]}"
 else
     echo "=== .rpm and PKGBUILD: skipped (no docker or podman)"
 fi

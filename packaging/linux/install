@@ -3,7 +3,7 @@
 # Installs Kalliope from this folder for you alone, under ~/.local (no administrator needed).
 #
 #   ./install             install, or update an earlier copy
-#   ./install --remove    remove it again (your settings and the downloaded voice stay)
+#   ./install --remove    remove it again (your settings and your prepared voices stay)
 #   ./install [--remove] PREFIX    the same, under PREFIX instead of ~/.local
 set -eu
 
@@ -21,7 +21,7 @@ if $remove; then
         "$prefix/share/applications/$id.desktop" \
         "$prefix/share/icons/hicolor/scalable/apps/$id.svg" \
         "$prefix/share/metainfo/$id.metainfo.xml"
-    rm -rf "$prefix/lib/kalliope" "$prefix/share/doc/kalliope"
+    rm -rf "$prefix/lib/kalliope" "$prefix/share/kalliope" "$prefix/share/doc/kalliope"
     echo "Kalliope is removed from $prefix."
     exit 0
 fi
@@ -36,6 +36,9 @@ sed "s|^Exec=kalliope\$|Exec=\"$prefix/bin/kalliope\"|" "$here/share/application
     > "$prefix/share/applications/$id.desktop"
 cp "$here/share/icons/hicolor/scalable/apps/$id.svg" "$prefix/share/icons/hicolor/scalable/apps/"
 cp "$here/share/metainfo/$id.metainfo.xml" "$prefix/share/metainfo/"
+# The voice models, next to the programs as they look for them.
+rm -rf "$prefix/share/kalliope"
+cp -R "$here/share/kalliope" "$prefix/share/"
 rm -rf "$prefix/share/doc/kalliope"
 cp -R "$here/share/doc/kalliope" "$prefix/share/doc/"
 if command -v update-desktop-database >/dev/null 2>&1; then

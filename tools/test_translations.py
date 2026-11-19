@@ -320,6 +320,27 @@ RILASCIO = {"tag_name": "v0.1", "published_at": "2026-11-12T15:57:29Z", "html_ur
                        {"name": "kalliope-bin.PKGBUILD", "browser_download_url": "https://x/p"}, {"name": "SHA256SUMS", "browser_download_url": "https://x/s"}]}
 
 
+class SceltaDellaVersione(unittest.TestCase):
+    """La versione offerta è una release del programma (tag vX.Y o vX.Y-…), mai quella dei file che vanno nel programma."""
+
+    def rilascio(self, tag, quando, prova):
+        return {**RILASCIO, "tag_name": tag, "published_at": quando, "prerelease": prova}
+
+    def test_la_release_dei_file_non_e_mai_offerta(self):
+        prova = self.rilascio("v0.1-rc.1", "2026-11-12T15:57:29Z", True)
+        file = self.rilascio("assets", "2026-11-20T09:00:00Z", True)
+        self.assertEqual(sito_py.choose([file, prova])["tag_name"], "v0.1-rc.1")
+        stabile = self.rilascio("v0.1", "2026-11-25T09:00:00Z", False)
+        self.assertEqual(sito_py.choose([self.rilascio("assets", "2026-11-30T09:00:00Z", False), stabile, prova])["tag_name"], "v0.1")
+
+    def test_solo_i_tag_di_versione(self):
+        for tag in ("v0.1", "v1.0", "v0.1-rc.1", "v0.0-test.3"):
+            self.assertEqual(sito_py.choose([self.rilascio(tag, "2026-11-12T15:57:29Z", True)])["tag_name"], tag)
+        for tag in ("assets", "v1", "0.1", "versione-0.1", "v0.1.0x"):
+            with self.assertRaises(SystemExit):
+                sito_py.choose([self.rilascio(tag, "2026-11-12T15:57:29Z", True)])
+
+
 class Sito(unittest.TestCase):
     def setUp(self):
         self.tmp = pathlib.Path(tempfile.mkdtemp(prefix="lavoro-1-sito-"))
@@ -938,7 +959,12 @@ class FontiEIndirizzo(unittest.TestCase):
         testo = (RADICE / "website" / "stato" / "index.html").read_text(encoding="utf-8")
         trovate = re.findall(r'href="\{\{kalliope\.(source|tree)\.url\}\}/([^"#?]+)"', testo)
         self.assertGreaterEqual(len(trovate), 14, trovate)
+        # Tolte dal repository dopo la versione che la pagina descrive (v0.1-rc.1, dove esistono: la costruzione collega le fonti a
+        # quella versione). Si tolgono da qui quando la pagina descrive la versione nuova.
+        tolte_dopo = {"crates/app/src/download.rs"}
         for tipo, percorso in trovate:
+            if percorso in tolte_dopo:
+                continue
             f = RADICE / percorso
             self.assertTrue(f.is_dir() if tipo == "tree" else f.is_file(), f"{tipo}: {percorso}")
 

@@ -4,18 +4,20 @@
 #   kalliope-VERSION-linux-x86_64.tar.gz, kalliope-VERSION-amd64.deb, kalliope-VERSION-x86_64.rpm
 #   and kalliope-bin.PKGBUILD (packaging/aur/PKGBUILD with the tarball's checksum).
 #
-#   packaging/linux/build-packages.sh VERSION BIN_DIR ORT_LIB OUT_DIR
+#   packaging/linux/build-packages.sh VERSION BIN_DIR ORT_LIB MODEL_DIR POCKET_DIR OUT_DIR
 #
 # VERSION is what people see: 0.1, or 0.1-rc.1 for a prerelease. BIN_DIR holds kalliope and
-# kalliope-cli (target/release). ORT_LIB is libonnxruntime.so.X.Y.Z, from tools/fetch_assets.py.
+# kalliope-cli (target/release). ORT_LIB is libonnxruntime.so.X.Y.Z, MODEL_DIR the Klein model and
+# POCKET_DIR the Pocket TTS model, as tools/fetch_assets.py unpacks them (each with its LICENSE and
+# notices). Everything goes inside the packages: once installed, Kalliope downloads nothing.
 # Needs dpkg-deb, dpkg-shlibdeps (dpkg-dev) and rpmbuild (rpm).
 set -euo pipefail
 
-if [ $# -ne 4 ]; then
-    sed -n '3,11p' "$0" >&2
+if [ $# -ne 6 ]; then
+    sed -n '3,13p' "$0" >&2
     exit 2
 fi
-version=$1 bin_dir=$2 ort_lib=$3 out=$4
+version=$1 bin_dir=$2 ort_lib=$3 model_dir=$4 pocket_dir=$5 out=$6
 root=$(cd "$(dirname "$0")/../.." && pwd)
 id=io.github.sansevieria_ou.kalliope
 # Debian and RPM sort a tilde before everything else, so 0.1~rc.1 comes before 0.1.
@@ -33,6 +35,15 @@ if [[ ! -f $ort_lib || $ort_name != libonnxruntime.so.*.*.* || ! -f $ort_dir/LIC
     echo "build-packages.sh: $ort_lib is not an ONNX Runtime library from its release archive" >&2
     exit 1
 fi
+# The folders the programs look for under share/kalliope/ (crates/voice: KLEIN_FOLDER, POCKET_FOLDER).
+klein_folder=klein-tts-x1.5-pro pocket_folder=pocket-tts-italian
+for f in "$model_dir"/{encoder.onnx,decoder.onnx,model.json,LICENSE,NOTICE.txt} \
+    "$pocket_dir"/{flow_lm.onnx,mimi_decoder.onnx,mimi_encoder.onnx,tokenizer.json,pocket.json,LICENSE,NOTICE.txt}; do
+    if [ ! -f "$f" ]; then
+        echo "build-packages.sh: $f is missing; get the models with tools/fetch_assets.py model and pocket" >&2
+        exit 1
+    fi
+done
 
 work=$(mktemp -d)
 trap 'rm -rf "$work"' EXIT
@@ -44,9 +55,22 @@ out=$(cd "$out" && pwd)
 # Same input, same files: timestamps come from the last commit.
 export SOURCE_DATE_EPOCH=${SOURCE_DATE_EPOCH:-$(git -C "$root" log -1 --format=%ct 2>/dev/null || date +%s)}
 
+# A model folder: its files into share/kalliope/FOLDER, its licence and notices into share/doc/kalliope/DOC.
+model() {
+    local prefix=$1 from=$2 folder=$3 doc=$4 f
+    install -d "$prefix/share/kalliope/$folder" "$prefix/share/doc/kalliope/$doc"
+    for f in "$from"/*; do
+        case $(basename "$f") in
+        LICENSE | NOTICE.txt) install -m644 "$f" "$prefix/share/doc/kalliope/$doc/" ;;
+        *) install -m644 "$f" "$prefix/share/kalliope/$folder/" ;;
+        esac
+    done
+}
+
 # The installed files, laid out under PREFIX as the .deb and .rpm install them into /usr.
 # ONNX Runtime goes to PREFIX/LIBDIR: lib/kalliope for the packages, lib for the tarball. The
-# app looks for it next to itself in ../lib/kalliope, then ../lib.
+# programs look for it next to themselves in ../lib/kalliope, then ../lib, and for the models in
+# ../share/kalliope.
 stage() {
     local prefix=$1 libdir=$2
     install -Dm755 -t "$prefix/bin" "$bin_dir/kalliope" "$bin_dir/kalliope-cli"
@@ -61,6 +85,9 @@ stage() {
     # ONNX Runtime is MIT-licensed and bundles other code: its notices travel with it.
     install -Dm644 -t "$prefix/share/doc/kalliope/onnxruntime" \
         "$ort_dir/LICENSE" "$ort_dir/ThirdPartyNotices.txt"
+    # Klein (Apache-2.0) and Pocket TTS by Kyutai (CC BY 4.0, converted by Kalliope: NOTICE.txt says how).
+    model "$prefix" "$model_dir" "$klein_folder" klein-tts
+    model "$prefix" "$pocket_dir" "$pocket_folder" pocket-tts
 }
 
 # Tarball, with ./install for ~/.local.
@@ -71,8 +98,7 @@ tar -C "$work" --sort=name --owner=0 --group=0 --numeric-owner --mtime="@$SOURCE
     -cf - "$name" | gzip -9n > "$out/$name.tar.gz"
 
 # .deb, with dpkg-deb. Linked libraries come from dpkg-shlibdeps; the ones loaded at run time
-# are listed by hand (see docs/releasing.md for how they were found), and so is curl, which the
-# app runs to download the voice.
+# are listed by hand (see docs/releasing.md for how they were found).
 deb=$work/debian/kalliope
 stage "$deb/usr" lib/kalliope
 mkdir -p "$deb/DEBIAN"
@@ -91,7 +117,7 @@ Version: $package_version
 Architecture: amd64
 Maintainer: Kalliope contributors <https://github.com/SANSEVIERIA-OU/kalliope/issues>
 Installed-Size: $(du -sk --exclude=DEBIAN "$deb" | cut -f1)
-Depends: $shlibs, libxkbcommon0, libwayland-client0 | libx11-6, curl
+Depends: $shlibs, libxkbcommon0, libwayland-client0 | libx11-6
 Recommends: libpipewire-0.3-0t64 | libpipewire-0.3-0, libwayland-client0, libx11-6, libx11-xcb1, libxcb1, libxcursor1, libxi6, libxkbcommon-x11-0
 Section: sound
 Priority: optional
@@ -99,8 +125,8 @@ Homepage: https://github.com/SANSEVIERIA-OU/kalliope
 Description: Type, and be heard in video calls
  Kalliope is for people who cannot speak, or find speaking hard. What you type
  during a video call is spoken aloud with a natural voice, through a virtual
- microphone that any call app can select. The voice is made on your computer;
- it is downloaded once, the first time Kalliope starts.
+ microphone that any call app can select. The voice is made on your computer,
+ with the voice models that come in this package: nothing is downloaded.
 EOF
 dpkg-deb --root-owner-group -Zxz --build "$deb" "$out/kalliope-$version-amd64.deb" >/dev/null
 

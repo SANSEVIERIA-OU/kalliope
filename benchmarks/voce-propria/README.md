@@ -125,6 +125,9 @@ della voce di 16–28 MB, e tiene il passo solo decodificando un fotogramma per 
 
 - Script: `v4_comune.py`, `v4_compat.py`, `v4_riferimento.py`, `v4_grafi.py`, `v4_esporta.py`, `v4_quant.py`, `v4_onnx.py`,
   `v4_controllo.py`, `v4_lunghezza.py`, `v4_tokenizer.py`, `v4_e2e.py`, `v4_memoria.py`.
+- **`v4_esporta.py` e `v4_grafi.py` sono andati in `tools/pocket_export/`** (`export.py`, `graphs.py`, 19/11/2026, P-2): li usa
+  `tools/release_assets.py` per preparare i file che vanno nel programma. `v4_quant.py` e `v4_onnx.py` importavano funzioni da
+  `v4_esporta`: per rifarli, prenderle da `tools/pocket_export/export.py` (`session`, `step`, `compare`).
 - Esiti: `esiti/v4/` (compatibilità, riferimento, esportazione, quantizzazione, controllo, lunghezza, tokenizer, e2e, memoria,
   `dipendenze_cargo.txt`).
 - Dati (fuori dal repository): `modelli/pocket-tts-gated/` (scaricato con la chiave), `modelli/pocket-onnx-v4/` (esportazione),

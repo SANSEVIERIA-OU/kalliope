@@ -15,15 +15,14 @@ a real desktop. Windows and macOS builds compile and pass tests, but have no vir
 
 1. Install the package for your system from the [releases page](https://github.com/SANSEVIERIA-OU/kalliope/releases)
    and open **Kalliope**.
-2. The first time, press **Scarica la voce**: the voice (53 MB) is downloaded once and checked,
-   and Kalliope then works offline.
+2. The voices come inside the package: Kalliope downloads nothing and works offline from the
+   first start. (Version 0.1-rc.1 still downloaded its voice, 53 MB, the first time.)
 3. In Zoom, Teams, Meet, Webex, Jitsi or your browser, choose **Kalliope** as the microphone.
 4. Type and press Enter. **Ferma** stops; earlier phrases stay in the list, ready to repeat.
    **Senti anche tu** also plays the voice on your speakers.
 
 Needs PipeWire with pipewire-pulse (the default on current Fedora, Ubuntu, Debian, Arch and openSUSE desktops).
-From a terminal: `kalliope --say "Buongiorno a tutti"` speaks without opening the window, and
-`kalliope --download-voice` downloads the voice.
+From a terminal: `kalliope --say "Buongiorno a tutti"` speaks without opening the window.
 
 ## How it works
 
@@ -47,15 +46,17 @@ with [Pocket TTS](https://github.com/kyutai-labs/pocket-tts) by Kyutai (Italian 
 Giulia and Marco stay for whoever has no recording.
 
 **Whose voice.** Record your own voice, or use the voice of someone who has given you explicit consent.
-Kyutai's terms, which everyone who downloads the model accepts, forbid imitating a voice without the
-explicit and lawful consent of its owner.
+Kyutai's terms for the model forbid imitating a voice without the explicit and lawful consent of its
+owner, and Kalliope asks the same of everyone who uses it. This is how we read Kyutai's terms, not legal
+advice, and not a condition added to the licence of the weights, which stays CC BY 4.0.
 
-The model is not downloaded by Kalliope yet: its files come from Kyutai's repository on Hugging Face,
-which asks for an account and the acceptance of those terms, and are converted to ONNX by
-`benchmarks/voce-propria/scripts/v4_esporta.py`. Once its folder is in place:
+The model comes inside Kalliope's packages (`share/kalliope/pocket-tts-italian/`), with its licence and
+attribution in `share/doc/kalliope/pocket-tts/`: "Pocket TTS by Kyutai (kyutai.org), CC BY 4.0;
+converted to ONNX and quantized by Kalliope". Kalliope exports it from Kyutai's weights with Kyutai's
+code (`tools/pocket_export/`); [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) says what was changed.
+To prepare a voice:
 
 ```sh
-export KALLIOPE_POCKET_DIR=/path/to/pocket-tts-italian   # flow_lm.onnx, mimi_*.onnx, tokenizer.json, pocket.json
 kalliope-cli voice my-voice.wav -o ~/.local/share/kalliope/voices/Mia.safetensors
 kalliope-cli say --voice ~/.local/share/kalliope/voices/Mia.safetensors -o prova.wav "Buongiorno a tutti."
 ```
@@ -81,7 +82,9 @@ export KALLIOPE_ORT_LIB=/path/to/libonnxruntime.so KALLIOPE_MODEL_DIR=/path/to/k
 ./target/release/kalliope-cli phonemes "Il preventivo è di 1.250 €, IVA esclusa."
 ```
 
-`python3 tools/fetch_assets.py` downloads the model and ONNX Runtime with pinned fingerprints. See
+`python3 tools/fetch_assets.py` downloads ONNX Runtime and the models, with pinned fingerprints, from the
+`assets` release of this repository, where they are kept (`tools/release_assets.py` makes those files;
+[docs/releasing.md](docs/releasing.md) says how they are updated). See
 [benchmarks/engines](benchmarks/engines/README.md) for why Klein was chosen,
 [docs/virtual-microphone.md](docs/virtual-microphone.md) for the microphone, and
 [CONTRIBUTING.md](CONTRIBUTING.md) for the layout and the licence terms.

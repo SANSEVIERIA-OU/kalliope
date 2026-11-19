@@ -70,12 +70,16 @@ re-run the failed jobs from the workflow run.
 2. Validates the desktop file and the AppStream metadata.
 3. Builds the whole workspace with `cargo build --release --workspace --locked`, from scratch: no
    cache goes into release files. The app binary `kalliope` (crates/app) is required.
-4. Downloads ONNX Runtime 1.32.0 for Linux x86_64 from Microsoft's NuGet package and checks its
-   SHA-256 (`tools/fetch_assets.py`).
+4. Downloads what goes inside the packages from the `assets` release of this repository
+   (`tools/fetch_assets.py`, below): ONNX Runtime 1.32.0 for Linux x86_64, the Klein model and the
+   Pocket TTS model, each checked against its SHA-256 in `tools/assets.json`; and a recording (CC0)
+   for the tests.
 5. Makes the packages (`packaging/linux/build-packages.sh`).
 6. Installs, runs and removes each package (`packaging/linux/test-packages.sh`). For each one it
-   runs `kalliope --version` and `kalliope-cli phonemes ciao`, and has `kalliope-cli say` speak a
-   sentence with the packaged ONNX Runtime and the Klein model:
+   runs `kalliope --version` and `kalliope-cli phonemes ciao`, has `kalliope-cli say` speak a
+   sentence with Giulia, then prepares a voice from the recording (`kalliope-cli voice`) and speaks
+   with it, all with the ONNX Runtime and the models the package brought and no `KALLIOPE_*`
+   variable, as people run Kalliope:
    - the tarball through `./install`, into a temporary folder;
    - the `.deb` with apt, on Ubuntu 24.04;
    - the `.rpm` with dnf, in a `fedora:latest` container;
@@ -97,18 +101,32 @@ Linux x86_64 only, for now:
 
 | File | For | Contents |
 | --- | --- | --- |
-| `kalliope-X.Y-linux-x86_64.tar.gz` | any Linux | `bin/kalliope`, `bin/kalliope-cli`, `lib/libonnxruntime.so.1.32.0` and its `.so.1` link, `share/` (desktop file, icon, AppStream metadata, `doc/kalliope/`), and `./install`, which copies everything into `~/.local` (`./install --remove` takes it away) |
-| `kalliope-X.Y-amd64.deb` | Debian 13, Ubuntu 24.04 or newer | the same files under `/usr`, with ONNX Runtime in `/usr/lib/kalliope/` |
+| `kalliope-X.Y-linux-x86_64.tar.gz` | any Linux | `bin/kalliope`, `bin/kalliope-cli`, `lib/libonnxruntime.so.1.32.0` and its `.so.1` link, `share/kalliope/` (the voice models), `share/` (desktop file, icon, AppStream metadata, `doc/kalliope/`), and `./install`, which copies everything into `~/.local` (`./install --remove` takes it away) |
+| `kalliope-X.Y-amd64.deb` | Debian 13, Ubuntu 24.04 or newer | the same files under `/usr`, with ONNX Runtime in `/usr/lib/kalliope/` and the models in `/usr/share/kalliope/` |
 | `kalliope-X.Y-x86_64.rpm` | current Fedora | the same as the `.deb` |
 | `kalliope-bin.PKGBUILD` | Arch Linux | `packaging/aur/PKGBUILD` with this tarball's checksum |
 | `SHA256SUMS` | | the checksum of every file above |
 
-`share/doc/kalliope/` holds `LICENSE`, `NOTICE`, `THIRD_PARTY_NOTICES.md`, `CHANGELOG.md`, and
-ONNX Runtime's `LICENSE` and `ThirdPartyNotices.txt`, which must travel with its library.
+The packages contain everything Kalliope needs: once installed, it downloads nothing. On 19 November
+2026 the `.deb` was 187 MB and the tarball 205 MB (320 MB installed), against 16 and 22 MB when the
+voice was downloaded at first start; the Pocket TTS model is most of it (215 MB unpacked).
 
-The app finds ONNX Runtime by looking at `$KALLIOPE_ORT_LIB`, then `../lib/kalliope/` and `../lib/`
-next to its own program, then the system. The Klein model is not packaged: the app downloads it the
-first time it starts. `kalliope-cli` only looks at `--ort-lib`, `$KALLIOPE_ORT_LIB` and the system.
+| Installed in | What | Licence and notices, in `share/doc/kalliope/` |
+| --- | --- | --- |
+| `lib/kalliope/` (`.deb`, `.rpm`), `lib/` (tarball) | ONNX Runtime | `onnxruntime/LICENSE`, `onnxruntime/ThirdPartyNotices.txt` (MIT; they must travel with the library) |
+| `share/kalliope/klein-tts-x1.5-pro/` | Klein-TTS-X1.5-Pro: Giulia and Marco | `klein-tts/LICENSE` (Apache-2.0), `klein-tts/NOTICE.txt` |
+| `share/kalliope/pocket-tts-italian/` | Pocket TTS by Kyutai, converted to ONNX by Kalliope: the voices prepared from a recording | `pocket-tts/LICENSE` (CC BY 4.0), `pocket-tts/NOTICE.txt` (the attribution and what Kalliope changed) |
+
+`share/doc/kalliope/` also holds `LICENSE`, `NOTICE`, `THIRD_PARTY_NOTICES.md`, `CHANGELOG.md` and
+`THIRD_PARTY_LICENSES.txt`.
+
+The app and `kalliope-cli` find ONNX Runtime at `$KALLIOPE_ORT_LIB`, then in `../lib/kalliope/` and
+`../lib/` next to their own program, then wherever the system finds it; and the models at
+`$KALLIOPE_MODEL_DIR` and `$KALLIOPE_POCKET_DIR`, then in `../share/kalliope/` next to the program
+(`kalliope-cli` takes `--ort-lib`, `--model-dir` and `--pocket-dir` first, and `models/klein` or
+`models/pocket` in the current folder last, for development). The variables are for development: the
+packages need none. When the Klein model is missing (a broken installation, or a build without the
+models), the window shows its error state and says which files are missing where.
 
 The packages are built with each format's own tools, `dpkg-deb` and `rpmbuild`, from a short script
 and spec file anyone can read. A third-party packager such as nfpm would need its own download and
@@ -131,7 +149,6 @@ PipeWire microphone):
 | libwayland-client | Wayland | Depends (or libX11), Recommends | Requires (or libX11), Recommends |
 | libX11, libX11-xcb, libxcb, libXcursor, libXi, libxkbcommon-x11 | X11 | Recommends | Recommends |
 | libpipewire-0.3 | the virtual microphone | Recommends | Recommends |
-| curl (the program) | downloading the voice at first start | Depends | Requires `/usr/bin/curl` |
 
 No OpenGL or EGL library is needed: the app draws with Slint's software renderer. Any desktop
 already has all of these. When the app changes its Slint features, check the list again:
@@ -159,16 +176,18 @@ and by hand:
 
 | Job | When | What |
 | --- | --- | --- |
-| Linux | always, on `ubuntu-26.04` | `tools/version.py check`, `cargo fmt --check`, clippy with `-D warnings`, `cargo test --workspace` with the Klein model and ONNX Runtime, and `kalliope-cli say`, which must produce 1.5 to 6 seconds of speech |
-| Windows, macOS | pushes to `main`, and runs started by hand | the workspace's tests with the model, after Linux has passed, on `windows-latest` and `macos-latest` (Apple Silicon); not the examples, as `crates/voice/examples/measure.rs` uses Linux-only calls |
+| Linux | always, on `ubuntu-26.04` | `tools/version.py check`, `cargo fmt --check`, clippy with `-D warnings`, `cargo test --workspace` with ONNX Runtime and both models (Klein, and Pocket TTS, whose tests prepare a voice and speak with it), and `kalliope-cli say`, which must produce 1.5 to 6 seconds of speech |
+| Windows, macOS | pushes to `main`, and runs started by hand | the workspace's tests with both models, after Linux has passed, on `windows-latest` and `macos-latest` (Apple Silicon); not the examples, as `crates/voice/examples/measure.rs` uses Linux-only calls |
+| New versions (`versions.yml`) | Mondays, and by hand | compares the pinned versions with the newest ones and opens an issue for each new one (below) |
 
 Every job uses the Rust named in `rust-toolchain.toml` (rustup installs it on the runner), not the
 one the runner image comes with, which can be a release behind.
 
 Pull requests from branches of this repository are not checked twice: the push already was. A new
 push to a branch cancels the run it replaces. Compiled dependencies are cached with
-`Swatinem/rust-cache`; ONNX Runtime and the model are cached under `.ci-assets`, keyed on
-`tools/fetch_assets.py`, which pins their versions and checksums.
+`Swatinem/rust-cache`; ONNX Runtime and the models are cached under `.ci-assets`, keyed on
+`tools/assets.json`, which pins them, and `tools/fetch_assets.py`, which downloads them from the
+`assets` release.
 
 ## Cost
 
@@ -228,6 +247,79 @@ test languages (accented and 40% longer; right to left), never published.
 
 CI (`ci.yml`, Linux job) runs `tools/translations.py extract --check` and `check`, `tools/css_logico.py` and the tests of the
 tools (`python3 -I -m unittest discover -s tools -p 'test_*.py'`).
+
+## ONNX Runtime and the models: the `assets` release
+
+Kalliope ships ONNX Runtime and its voice models inside its packages and keeps them up to date itself
+(decisions of the owner, 19 November 2026). Their files live in one release of this repository, tagged
+`assets`, so that CI, releases and people who build Kalliope download them from here only, never from
+Microsoft's or Hugging Face's servers:
+
+| File | What | From |
+| --- | --- | --- |
+| `onnxruntime-linux-x64-X.Y.Z.tar.xz`, `onnxruntime-osx-arm64-…`, `onnxruntime-win-x64-…` | ONNX Runtime for each system, with its `LICENSE` and `ThirdPartyNotices.txt` | Microsoft's NuGet package `Microsoft.ML.OnnxRuntime`, its official channel for the C library (`github.com/microsoft/onnxruntime` answered 404 on 19 November 2026) |
+| `klein-tts-x1.5-pro-REV.tar.xz` | Klein's `onnx/` files, unchanged, with its licence | `klein-ml/Klein-TTS-X1.5-Pro` on Hugging Face, revision REV |
+| `pocket-tts-italian-REV.tar.xz` | Pocket TTS, Italian, 6 layers, exported to ONNX by `tools/pocket_export/`, with the CC BY 4.0 text and the attribution | `kyutai/pocket-tts` on Hugging Face (gated: downloading it needs the owner's key), revision REV of the weights |
+| `test-recording-selfie-REV.tar.xz` | a voice donated to Kyutai (CC0), only for tests | `kyutai/tts-voices` |
+
+- The release is a **prerelease, never "latest"**, and its tag does not start with `v`: the Release
+  workflow does not run for it, and `tools/site.py` offers only releases tagged `vX.Y` or `vX.Y-…`, so
+  it is never taken for a version of Kalliope.
+- **A file's name carries its version** (the ONNX Runtime version, the first 7 characters of a
+  revision). A name is never used twice: a file rebuilt with other contents gets `-2`, `-3`… A file
+  stays in the release as long as a version of Kalliope uses it (its `tools/assets.json` names it),
+  so older versions can always be built again. Never replace a file that is already there.
+- **`tools/assets.json` pins every file**, with its SHA-256, size, folder and the SHA-256 of each file
+  inside, and the sources it was made from (versions, revisions, hashes). It is the only place:
+  `tools/fetch_assets.py` checks every download against it, and the weekly check reads it. It is
+  written by the tool below, never by hand.
+- Archives are `.tar.xz` (smaller than `.tar.gz` by a quarter for ONNX Runtime, by 12% for Pocket
+  TTS), each a folder with its licence; the same contents always make the same bytes.
+
+### Moving to a new version
+
+The weekly check opens an issue that names the new version and the command. Then:
+
+1. Prepare the files (here, or on any machine with Python 3.10–3.14 and about 3 GB of free memory):
+   ```sh
+   python3 tools/release_assets.py build OUT --onnxruntime 1.33.0     # or --klein REV, --pocket-weights REV,
+                                                                     # --pocket-tokenizer REV, --pocket-code COMMIT
+   ```
+   It downloads the new sources and checks them (NuGet's SHA-512; the git ids Hugging Face lists), and
+   for Pocket TTS makes the export's Python environment from `tools/pocket_export/requirements.txt`
+   (first update its pins to the latest versions, as `CLAUDE.md` asks), exports, and checks the graphs
+   against Kyutai's code. The Pocket TTS weights need the owner's read key in `HF_TOKEN`, only in that
+   command's environment; the tool never prints or saves it. It writes `tools/assets.json` and the new
+   files into `OUT`, and prints the command that uploads them. **It uploads nothing.**
+2. Check the new files in a branch: `KALLIOPE_ASSETS_URL=http://127.0.0.1:PORT/` makes
+   `tools/fetch_assets.py` download them from a local copy (`python3 -m http.server -d OUT PORT`); run
+   `cargo test --workspace` with them, build the packages and run `packaging/linux/test-packages.sh`.
+   For Pocket TTS, listen to it and run the voice checks of `benchmarks/voce-propria/`; a new Kyutai
+   commit may also need changes in `crates/voice/src/pocket/`, which follows Kyutai's generation loop.
+3. **With the owner's permission**, upload the files with the printed command
+   (`gh release upload assets …`), and only then push the branch: CI downloads from the release.
+4. Merge. The next version of Kalliope ships the new files.
+
+The first time, the release does not exist yet: the tool prints `gh release create assets … --prerelease
+--latest=false` with every file. Two consequences to weigh before running it, both because
+`.github/workflows/pages.yml` runs for every release published, edited or deleted:
+- the website workflow starts and builds the site of the commit the tag points to;
+- with a `tools/site.py` older than the one that offers only `v…` tags, that build stops with an error
+  (the `assets` release has no packages), and the site already online stays as it is.
+
+### The weekly check
+
+`.github/workflows/versions.yml` runs `tools/release_assets.py check --open-issues` every Monday and by
+hand. It compares the pins with ONNX Runtime on NuGet, the Klein files and the Pocket TTS weights and
+tokenizer on Hugging Face (by their git ids, which the gated repository also shows without a key), the
+commits that touch `pocket_tts/` in Kyutai's code, and the stable Rust against `rust-toolchain.toml`.
+For each new version it opens one issue, and none when an issue with that title already exists (open
+or closed). It changes nothing by itself, needs no secret (the run's own token, with `issues: write`)
+and can be run here without `--open-issues` to see what is new.
+
+GitHub disables a scheduled workflow of a public repository after 60 days without activity in the
+repository (GitHub's documentation, checked on 19 November 2026). If nothing is pushed for two months,
+enable it again: **Actions → New versions → Enable workflow**.
 
 ## Not done yet
 

@@ -1,0 +1,147 @@
+{
+  "_": "The files that go inside Kalliope, kept in the release tagged 'assets' of this repository. Written by tools/release_assets.py build (never by hand); read by tools/fetch_assets.py and by release_assets.py check. See docs/releasing.md.",
+  "release": {
+    "repository": "SANSEVIERIA-OU/kalliope",
+    "tag": "assets"
+  },
+  "sources": {
+    "onnxruntime": {
+      "version": "1.32.0",
+      "nuget": "microsoft.ml.onnxruntime",
+      "sha256": "a9150bc2992cbbb6722070da9910e1ffa989a8bfc67bdd5bb8e745ca755641db"
+    },
+    "klein": {
+      "repository": "klein-ml/Klein-TTS-X1.5-Pro",
+      "revision": "25e0e73bebba71e5985bc369628ebdcb81bf7116",
+      "files": {
+        "onnx/encoder.onnx": {
+          "sha256": "0abf547af7f8663c12134900a845087f0d220d70b4744b3a383c7a909fc4c4a6",
+          "oid": "7d78e8e9d5c22e867adafc9db9ad6471b99fb60e"
+        },
+        "onnx/decoder.onnx": {
+          "sha256": "8bcaace5e03ed273b987e5e319014fcffb08597f229e0eb11487bd24ed593918",
+          "oid": "94bbb6c669e8d931b77eb6c6450eca8b0de2af17"
+        },
+        "onnx/model.json": {
+          "sha256": "e549b783b7650781c418f2f3c73a68e45181cea9513d1c72bd5b05b0c383a354",
+          "oid": "91ceea97dc90faa53fa461fba8953a31e256b7e6"
+        },
+        "LICENSE": {
+          "sha256": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff",
+          "oid": "137069b823873b8bcf42979bcf8e9371052d26a2"
+        }
+      }
+    },
+    "pocket": {
+      "weights": {
+        "repository": "kyutai/pocket-tts",
+        "revision": "3e82814a68665eec246ff649b14c71331f955c06",
+        "path": "languages/italian/model.safetensors",
+        "sha256": "11c226c14deb3e403d6a3fb5a52cb5cffdce85b93ba782344cea430370e2d4ab",
+        "oid": "4d66c1d84dcd4a8e7490b88cee38de4df0da4a31"
+      },
+      "tokenizer": {
+        "repository": "kyutai/pocket-tts-without-voice-cloning",
+        "revision": "4e1e0a3e611c51c0b4ed8174fc10f32a54644303",
+        "path": "languages/italian/tokenizer.json",
+        "sha256": "4bc1c0d4d54f9480183e94c94cfabf74fd89b0912537d4ef607d1982c4a381ec",
+        "oid": "9f131c421f0d3fea1d364bf06fa099e88f0b9b2b"
+      },
+      "code": {
+        "repository": "kyutai-labs/pocket-tts",
+        "commit": "a4a6054db281f0f34f3d44d626a972a44560dc83",
+        "tree_sha256": "521d9c925397504d81fae2c512c2bda56e99141b14ffd90311d255f6d68f07b0"
+      },
+      "licence": {
+        "url": "https://creativecommons.org/licenses/by/4.0/legalcode.txt",
+        "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      }
+    },
+    "recording": {
+      "repository": "kyutai/tts-voices",
+      "revision": "323332d33f997de8394f24a193e1a76df720e01a",
+      "path": "voice-donations/Selfie.wav",
+      "licence": "CC0-1.0 (Unmute Voice Donation Project, README of kyutai/tts-voices)",
+      "sha256": "076968c3122520f3412eb7090e8c1c3f75fe57be1e24a2f96465583d84c71e16",
+      "oid": "c148f7a1e6bf4e44bab7624aa76ef395fd62a67f"
+    }
+  },
+  "files": {
+    "onnxruntime-linux-x86_64": {
+      "name": "onnxruntime-linux-x64-1.32.0.tar.xz",
+      "size": 9720264,
+      "sha256": "0c52245d6470b6b84678bc5b2c475c9c6c2667f2931a2ac06c921cfee876756a",
+      "folder": "onnxruntime-linux-x64-1.32.0",
+      "library": "lib/libonnxruntime.so.1.32.0",
+      "contents": {
+        "LICENSE": "c250d6278f0b47a6439fb7592b08b58a55eb9f535aa49a1db63211c3f982b674",
+        "ThirdPartyNotices.txt": "bf8073fd6a112ac2a656bb60799652127e881689e51d37ad20df446cd5188b2d",
+        "lib/libonnxruntime.so.1.32.0": "4213d6d8c42ac4754865849cb139d31fc39127db6a326babf90bbc81a6eb52fc",
+        "lib/libonnxruntime_providers_shared.so": "8ef51f6bf2c621fc129f625b22241fa6f9a5870bc08eaf2fdd279169ec40d09a"
+      }
+    },
+    "onnxruntime-macos-arm64": {
+      "name": "onnxruntime-osx-arm64-1.32.0.tar.xz",
+      "size": 8661284,
+      "sha256": "58af6a9bb6732b52137d049ceb6cbfb0430077c223afc74cf3a8634a28c03938",
+      "folder": "onnxruntime-osx-arm64-1.32.0",
+      "library": "lib/libonnxruntime.1.32.0.dylib",
+      "contents": {
+        "LICENSE": "c250d6278f0b47a6439fb7592b08b58a55eb9f535aa49a1db63211c3f982b674",
+        "ThirdPartyNotices.txt": "bf8073fd6a112ac2a656bb60799652127e881689e51d37ad20df446cd5188b2d",
+        "lib/libonnxruntime.1.32.0.dylib": "21ff304871400e846a30c8a1165d15173add56598afb45f98227e2dfc716a497"
+      }
+    },
+    "onnxruntime-windows-x64": {
+      "name": "onnxruntime-win-x64-1.32.0.tar.xz",
+      "size": 5103068,
+      "sha256": "3b415c7d133ecad75791863597f5d9b2ca397ee5a0e0af1e7688e2f031f6cb50",
+      "folder": "onnxruntime-win-x64-1.32.0",
+      "library": "lib/onnxruntime.dll",
+      "contents": {
+        "LICENSE": "c250d6278f0b47a6439fb7592b08b58a55eb9f535aa49a1db63211c3f982b674",
+        "ThirdPartyNotices.txt": "bf8073fd6a112ac2a656bb60799652127e881689e51d37ad20df446cd5188b2d",
+        "lib/onnxruntime.dll": "348c3d29d6995eee37e3451825eaddb7ea7400be3afda6ca2286b12bc775f042",
+        "lib/onnxruntime_providers_shared.dll": "6caf57ac07c9cf72fb4e73c5bb0fe156f02dd60bbbd7385530c9a5654f10f950"
+      }
+    },
+    "klein": {
+      "name": "klein-tts-x1.5-pro-25e0e73.tar.xz",
+      "size": 48496720,
+      "sha256": "57f7de5a0403505978aaf45e150f69103dc4b61ea2dc93a113b6c6560b026e6f",
+      "folder": "klein-tts-x1.5-pro-25e0e73",
+      "contents": {
+        "LICENSE": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff",
+        "NOTICE.txt": "f006514472aa58908c3bf1b328d9a30efbe7e6b29ee7645257271506384beab8",
+        "decoder.onnx": "8bcaace5e03ed273b987e5e319014fcffb08597f229e0eb11487bd24ed593918",
+        "encoder.onnx": "0abf547af7f8663c12134900a845087f0d220d70b4744b3a383c7a909fc4c4a6",
+        "model.json": "e549b783b7650781c418f2f3c73a68e45181cea9513d1c72bd5b05b0c383a354"
+      }
+    },
+    "pocket": {
+      "name": "pocket-tts-italian-3e82814.tar.xz",
+      "size": 122699524,
+      "sha256": "9723a60bb393e4872d5dbf5b1dd7ef4229653265ae5394e8db8b59a3a6a85f02",
+      "folder": "pocket-tts-italian-3e82814",
+      "contents": {
+        "LICENSE": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+        "NOTICE.txt": "111831ea2bad8d765a52ffb29f471c024b77873df000679897c2be8b3b665584",
+        "flow_lm.onnx": "6862a77bcf185bcbe60c9ceb2d522ff60359af9e4d5798e5eed31d839b3dce8d",
+        "mimi_decoder.onnx": "0fe54e432734ed04d6f9a28d77e9f6fa5780811bfbf2bb7b18b79f98eb7bb5cd",
+        "mimi_encoder.onnx": "6af6e86ec6b369a744e3240c906cd20f13876d43efd3c4c903b26a47757f591e",
+        "pocket.json": "bcd795fc15be8c40f261e8292fe25856208af22e9c9d8c87f68a834fd4e84ad2",
+        "tokenizer.json": "4bc1c0d4d54f9480183e94c94cfabf74fd89b0912537d4ef607d1982c4a381ec"
+      }
+    },
+    "recording": {
+      "name": "test-recording-selfie-323332d.tar.xz",
+      "size": 304608,
+      "sha256": "a70f06347b1c13d33a29d35ff166a581d51c03a5953446f58ef3d686413d2331",
+      "folder": "test-recording-selfie-323332d",
+      "contents": {
+        "NOTICE.txt": "fea73bb975cfa32bade0eb8aa07e7fb0bb59c5558a9c2ca182b658f2748ebc8c",
+        "Selfie.wav": "076968c3122520f3412eb7090e8c1c3f75fe57be1e24a2f96465583d84c71e16"
+      }
+    }
+  }
+}

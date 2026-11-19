@@ -14,8 +14,6 @@ ExclusiveArch:  x86_64
 # These are loaded at run time: xkbcommon always, then Wayland or X11 for the window.
 Requires:       libxkbcommon%{?_isa}
 Requires:       (libwayland-client%{?_isa} or libX11%{?_isa})
-# The app runs curl to download the voice; curl or curl-minimal provides it.
-Requires:       /usr/bin/curl
 # The virtual microphone.
 Recommends:     pipewire-libs%{?_isa}
 Recommends:     libwayland-client%{?_isa}
@@ -37,8 +35,8 @@ Recommends:     libxkbcommon-x11%{?_isa}
 %description
 Kalliope is for people who cannot speak, or find speaking hard. What you type
 during a video call is spoken aloud with a natural voice, through a virtual
-microphone that any call app can select. The voice is made on your computer;
-it is downloaded once, the first time Kalliope starts.
+microphone that any call app can select. The voice is made on your computer,
+with the voice models that come in this package: nothing is downloaded.
 
 %install
 cp -a %{staging}/. %{buildroot}/
@@ -47,12 +45,15 @@ cp -a %{staging}/. %{buildroot}/
 /usr/bin/kalliope
 /usr/bin/kalliope-cli
 /usr/lib/kalliope/
+/usr/share/kalliope/
 /usr/share/applications/io.github.sansevieria_ou.kalliope.desktop
 /usr/share/icons/hicolor/scalable/apps/io.github.sansevieria_ou.kalliope.svg
 /usr/share/metainfo/io.github.sansevieria_ou.kalliope.metainfo.xml
 %dir /usr/share/doc/kalliope
 %license /usr/share/doc/kalliope/LICENSE
 %license /usr/share/doc/kalliope/onnxruntime/
+%license /usr/share/doc/kalliope/klein-tts/
+%license /usr/share/doc/kalliope/pocket-tts/
 %license /usr/share/doc/kalliope/THIRD_PARTY_LICENSES.txt
 %doc /usr/share/doc/kalliope/NOTICE
 %doc /usr/share/doc/kalliope/THIRD_PARTY_NOTICES.md

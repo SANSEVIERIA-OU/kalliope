@@ -19,14 +19,17 @@ usage:
   kalliope-cli phonemes TEXT...         print each normalized sentence and its phonemes
 
 options for say:
-  --model-dir DIR   Klein model folder (default: $KALLIOPE_MODEL_DIR, else models/klein)
+  --model-dir DIR   Klein model folder (default: $KALLIOPE_MODEL_DIR, else the one that comes with
+                    Kalliope, share/kalliope/klein-tts-x1.5-pro next to the program, else models/klein)
   --speaker NAME    voice, e.g. Giulia or Marco (default: Giulia)
   --voice FILE      speak with a voice prepared by `voice` (Pocket TTS) instead
-  --pocket-dir DIR  Pocket TTS model folder (default: $KALLIOPE_POCKET_DIR, else models/pocket)
+  --pocket-dir DIR  Pocket TTS model folder (default: $KALLIOPE_POCKET_DIR, else the one that comes
+                    with Kalliope, share/kalliope/pocket-tts-italian, else models/pocket)
   --seed N          sampling seed of Pocket TTS (default: 0)
   --temperature T   sampling temperature of Pocket TTS (default: the model's, 0.3)
   --threads N       threads per model (default: 1 for Klein, 2 for Pocket TTS)
-  --ort-lib PATH    ONNX Runtime library (default: $KALLIOPE_ORT_LIB, else the system one)
+  --ort-lib PATH    ONNX Runtime library (default: $KALLIOPE_ORT_LIB, else the one that comes with
+                    Kalliope, in ../lib/kalliope or ../lib next to the program, else the system one)
   --max-chunk-tokens N  cut longer sentences at commas (default and maximum: 510; Klein)
   --phonemes        TEXT is already phonemes: skip normalization and phonemization (Klein)
   -o FILE           output WAV (default: kalliope.wav; - for standard output)
@@ -50,15 +53,33 @@ struct SayArgs {
     threads_given: bool,
 }
 
+/// A model folder: the variable, else the copy that comes with Kalliope (`share/kalliope/FOLDER` next
+/// to the program), else `fallback` (relative to where kalliope-cli runs, for development).
+fn model_folder(variable: &str, folder: &str, fallback: &str) -> PathBuf {
+    if let Some(dir) = std::env::var_os(variable) {
+        return PathBuf::from(dir);
+    }
+    kalliope_voice::models_next_to_program()
+        .map(|d| d.join(folder))
+        .filter(|d| d.is_dir())
+        .unwrap_or_else(|| PathBuf::from(fallback))
+}
+
 fn default_pocket_dir() -> PathBuf {
-    std::env::var_os("KALLIOPE_POCKET_DIR")
-        .map_or_else(|| PathBuf::from("models/pocket"), PathBuf::from)
+    model_folder(
+        "KALLIOPE_POCKET_DIR",
+        kalliope_voice::POCKET_FOLDER,
+        "models/pocket",
+    )
 }
 
 fn parse_say(args: &[String]) -> Result<SayArgs, String> {
     let mut say = SayArgs {
-        model_dir: std::env::var_os("KALLIOPE_MODEL_DIR")
-            .map_or_else(|| PathBuf::from("models/klein"), PathBuf::from),
+        model_dir: model_folder(
+            "KALLIOPE_MODEL_DIR",
+            kalliope_voice::KLEIN_FOLDER,
+            "models/klein",
+        ),
         speaker: "Giulia".into(),
         options: VoiceOptions::default(),
         raw_phonemes: false,

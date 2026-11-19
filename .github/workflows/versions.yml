@@ -1,0 +1,28 @@
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
+# Once a week, and by hand: are ONNX Runtime, Klein, Pocket TTS (weights, tokenizer, code) and Rust still
+# at the versions Kalliope pins (tools/assets.json, rust-toolchain.toml)? For each new version it opens one
+# issue, never two with the same title. It changes nothing by itself: the update follows docs/releasing.md.
+name: New versions
+
+on:
+  schedule:
+    # Mondays at 06:17 UTC (not on the hour, when GitHub's scheduled runs crowd).
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  check:
+    runs-on: ubuntu-26.04
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v7
+      # Standard library only; the GitHub token comes with the run (no secret is needed).
+      - name: Compare the pinned versions with the newest ones
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -I tools/release_assets.py check --open-issues

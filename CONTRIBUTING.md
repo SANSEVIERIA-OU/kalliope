@@ -27,7 +27,7 @@ are official. Submission does not guarantee acceptance.
 | `crates/phonemes` | Italian phonemizer (`kalliope-phonemes`); `data/` is CC BY-SA, see its README |
 | `crates/voice` | Neural voices through ONNX Runtime, with its own minimal C API binding (`kalliope-voice`): Klein (Giulia, Marco) and Pocket TTS (`src/pocket/`, a voice prepared from a recording) |
 | `crates/cli` | `kalliope-cli` development command line |
-| `tools/` | Development-only Python helpers: espeak-ng reference phonemes, Whisper WER, phonemizer data build |
+| `tools/` | Python helpers: ONNX Runtime and the models (`fetch_assets.py`, `release_assets.py`, `assets.json`, the Pocket TTS export in `pocket_export/`), the website build, version checks; development only: espeak-ng reference phonemes, Whisper WER, phonemizer data build |
 | `benchmarks/engines` | The November 2026 engine benchmark that chose the voice |
 
 Principles: no crate dependencies unless clearly justified; every CPU and memory cost is
@@ -38,7 +38,8 @@ in a build.
 
 ```sh
 cargo build --release
-cargo test --workspace            # model tests run when KALLIOPE_MODEL_DIR and KALLIOPE_ORT_LIB are set
+cargo test --workspace            # model tests run when KALLIOPE_ORT_LIB and KALLIOPE_MODEL_DIR (Klein)
+                                  # or KALLIOPE_POCKET_DIR (Pocket TTS) are set
 cargo clippy --workspace --all-targets -- -D warnings
 cargo fmt --all --check
 python3 tools/version.py check    # the version is the same in every file that states it, and so is the Rust
@@ -49,10 +50,14 @@ it, with clippy and rustfmt, the first time you run `cargo` here. CI and release
 one, and `rust-version` in `Cargo.toml` says the same version, the only one CI checks. To move to a
 newer Rust, change both, then run the checks above: a new clippy often has new warnings.
 
-`python3 tools/fetch_assets.py onnxruntime DIR` and `python3 tools/fetch_assets.py model DIR`
-download the ONNX Runtime and Klein model that CI uses, and print the two variables to set. ONNX
-Runtime is `libonnxruntime.so` on Linux, `libonnxruntime.dylib` on macOS and `onnxruntime.dll` on
-Windows.
+`python3 tools/fetch_assets.py onnxruntime DIR`, `… model DIR` and `… pocket DIR` download ONNX
+Runtime, the Klein model and the Pocket TTS model that CI and the packages use, and print the variables
+to set. They come from the `assets` release of this repository, each checked against its SHA-256 in
+`tools/assets.json`; nothing is downloaded from anyone else. ONNX Runtime is `libonnxruntime.so` on
+Linux, `libonnxruntime.dylib` on macOS and `onnxruntime.dll` on Windows. Installed Kalliope needs none of
+these variables: the packages bring ONNX Runtime and the models, and the programs find them next to
+themselves. Updating those files is for maintainers, with the owner's permission to upload:
+[docs/releasing.md](docs/releasing.md).
 
 CI runs these checks on Linux for every push, and also on Windows and macOS for `main`. The Linux
 packages are made by `packaging/linux/build-packages.sh`; [docs/releasing.md](docs/releasing.md)

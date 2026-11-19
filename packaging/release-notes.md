@@ -6,6 +6,6 @@
 - **Other Linux (x86_64):** `kalliope-@VERSION@-linux-x86_64.tar.gz`. Unpack it and run `./install`: Kalliope goes into `~/.local`, for you alone. `./install --remove` takes it away again.
 - **Arch Linux:** `kalliope-bin.PKGBUILD`. Save it as `PKGBUILD` next to the `.tar.gz`, then run `makepkg -si`.
 
-The first time it starts, Kalliope downloads its voice (about 53 MB). It needs `curl` for that, which the packages install.
+The voices come inside the packages, Giulia and Marco as well as the model that speaks with a voice prepared from a recording: once installed, Kalliope downloads nothing.
 
 To check what you downloaded: `sha256sum -c SHA256SUMS --ignore-missing`.

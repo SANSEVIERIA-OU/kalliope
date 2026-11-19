@@ -114,8 +114,13 @@ def fetch_releases():
         return json.load(resp)
 
 
+# The releases of the program: tags vX.Y and vX.Y-… (docs/releasing.md). Any other release, such as the one
+# tagged assets that keeps the files that go inside Kalliope, is never offered.
+VERSION_TAG = re.compile(r"v\d+\.\d+(-.+)?")
+
+
 def choose(releases):
-    published = [r for r in releases if not r.get("draft")]
+    published = [r for r in releases if not r.get("draft") and VERSION_TAG.fullmatch(r.get("tag_name", ""))]
     stable = [r for r in published if not r.get("prerelease")]
     pool = stable or published
     if not pool:

@@ -1,0 +1,15 @@
+--- a/tools/test_translations.py	2026-11-19 13:39:09.264408666 +0000
++++ b/tools/test_translations.py	2026-11-19 13:39:09.294278839 +0000
+@@ -959,7 +959,12 @@
+         testo = (RADICE / "website" / "stato" / "index.html").read_text(encoding="utf-8")
+         trovate = re.findall(r'href="\{\{kalliope\.(source|tree)\.url\}\}/([^"#?]+)"', testo)
+         self.assertGreaterEqual(len(trovate), 14, trovate)
++        # Tolte dal repository dopo la versione che la pagina descrive (v0.1-rc.1, dove esistono: la costruzione collega le fonti a
++        # quella versione). Si tolgono da qui quando la pagina descrive la versione nuova.
++        tolte_dopo = {"crates/app/src/download.rs"}
+         for tipo, percorso in trovate:
++            if percorso in tolte_dopo:
++                continue
+             f = RADICE / percorso
+             self.assertTrue(f.is_dir() if tipo == "tree" else f.is_file(), f"{tipo}: {percorso}")
+ 

@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
 // Kalliope's window: write, press Enter, and the virtual microphone speaks.
 
-import { Button, LineEdit, ComboBox, CheckBox, ListView, ProgressIndicator, AboutSlint, VerticalBox, HorizontalBox, ScrollView } from "std-widgets.slint";
+import { Button, LineEdit, ComboBox, CheckBox, ListView, AboutSlint, VerticalBox, HorizontalBox, ScrollView } from "std-widgets.slint";
 
-export enum Phase { loading, ready, speaking, error, needs-model, downloading }
+export enum Phase { loading, ready, speaking, error }
 
 export component AppWindow inherits Window {
     title: "Kalliope";
@@ -18,7 +18,6 @@ export component AppWindow inherits Window {
     in property <Phase> phase: Phase.loading;
     in property <string> status: "Preparo la voce…";
     in property <bool> warning: false;
-    in property <float> progress: 0;
     in property <[string]> history;
     in property <[string]> voices: ["Giulia", "Marco"];
     in-out property <int> voice-index: 0;
@@ -30,10 +29,6 @@ export component AppWindow inherits Window {
     callback stop();
     callback voice-changed(int);
     callback monitor-changed(bool);
-    callback download();
-    callback cancel-download();
-    // Empty when the download succeeded, else the reason.
-    callback download-done(string);
 
     property <bool> about-open: false;
     property <bool> can-speak: root.phase == Phase.ready || root.phase == Phase.speaking;
@@ -52,29 +47,6 @@ export component AppWindow inherits Window {
                 wrap: word-wrap;
                 color: #1d1d1f;
                 accessible-role: text;
-            }
-        }
-
-        if root.phase == Phase.needs-model || root.phase == Phase.downloading: VerticalBox {
-            padding: 0;
-            if root.phase == Phase.downloading: ProgressIndicator {
-                progress: root.progress;
-                height: 8px;
-            }
-            HorizontalBox {
-                padding: 0;
-                alignment: start;
-                Button {
-                    text: root.phase == Phase.downloading ? "Annulla" : "Scarica la voce";
-                    primary: root.phase == Phase.needs-model;
-                    clicked => {
-                        if (root.phase == Phase.downloading) {
-                            root.cancel-download();
-                        } else {
-                            root.download();
-                        }
-                    }
-                }
             }
         }
 

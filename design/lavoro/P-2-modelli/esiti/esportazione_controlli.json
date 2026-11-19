@@ -1,0 +1,94 @@
+{
+ "layers": 6,
+ "revisions": {
+  "model": "3e82814a68665eec246ff649b14c71331f955c06",
+  "tokenizer": "4e1e0a3e611c51c0b4ed8174fc10f32a54644303",
+  "code": "a4a6054db281f0f34f3d44d626a972a44560dc83"
+ },
+ "fp32": {
+  "flow_lm": "/tmp/p2-export1/work/flow_lm_fp32.onnx",
+  "flow_seconds": 0.5766587257385254,
+  "latents": {
+   "diff_max": 5.793571472167969e-05,
+   "max_abs": 5.595320224761963,
+   "cosine_min": 0.9999999997458326,
+   "cosine_mean": 0.9999999999654356
+  },
+  "latents_first_5": {
+   "diff_max": 4.76837158203125e-06,
+   "max_abs": 5.595320224761963,
+   "cosine_min": 0.9999999999992016,
+   "cosine_mean": 0.9999999999995544
+  },
+  "eos": {
+   "diff_max": 4.1961669921875e-05
+  },
+  "encoder_seconds": 0.731884241104126,
+  "conditioning": {
+   "diff_max": 4.112720489501953e-06,
+   "max_abs": 1.0645980834960938,
+   "cosine_min": 0.9999999999919953,
+   "cosine_mean": 0.9999999999976038
+  },
+  "voice_positions": 127,
+  "voice_state_keys_layer_0": {
+   "diff_max": 1.5735626220703125e-05,
+   "max_abs": 7.061297416687012,
+   "cosine_min": 0.9999999999960146,
+   "cosine_mean": 0.9999999999995364
+  },
+  "voice_state_values_last_layer": {
+   "diff_max": 3.600120544433594e-05,
+   "max_abs": 1.7404388189315796,
+   "cosine_min": 0.99999999965435,
+   "cosine_mean": 0.9999999999656254
+  },
+  "decoder_seconds": 0.28916215896606445,
+  "audio": {
+   "diff_max": 5.103647708892822e-07,
+   "max_abs": 0.23354803025722504,
+   "samples": 76800
+  }
+ },
+ "int8": {
+  "flow_lm": "/tmp/p2-export1/out/flow_lm.onnx",
+  "flow_seconds": 0.44639039039611816,
+  "latents": {
+   "diff_max": 1.9127787351608276,
+   "max_abs": 5.595320224761963,
+   "cosine_min": 0.5964831316772273,
+   "cosine_mean": 0.9508463687625962
+  },
+  "latents_first_5": {
+   "diff_max": 0.25077271461486816,
+   "max_abs": 5.595320224761963,
+   "cosine_min": 0.9981875291418993,
+   "cosine_mean": 0.9994353694841799
+  },
+  "eos": {
+   "diff_max": 0.9786109924316406
+  },
+  "encoder_seconds": 0.6791338920593262,
+  "conditioning": {
+   "diff_max": 4.112720489501953e-06,
+   "max_abs": 1.0645980834960938,
+   "cosine_min": 0.9999999999919953,
+   "cosine_mean": 0.9999999999976038
+  },
+  "voice_positions": 127,
+  "voice_state_keys_layer_0": {
+   "diff_max": 0.010747909545898438,
+   "max_abs": 7.061297416687012,
+   "cosine_min": 0.9999965150262446,
+   "cosine_mean": 0.9999982018160519
+  },
+  "voice_state_values_last_layer": {
+   "diff_max": 0.05849277973175049,
+   "max_abs": 1.7404388189315796,
+   "cosine_min": 0.9990966509764699,
+   "cosine_mean": 0.9995745512175603
+  }
+ },
+ "peak_mb": 1990.203125,
+ "out_of_bounds": []
+}

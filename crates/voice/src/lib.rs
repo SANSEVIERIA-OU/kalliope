@@ -65,7 +65,8 @@ impl std::error::Error for Error {}
 pub struct VoiceOptions {
     /// Intra-op threads per model. One is the most efficient per watt for this small model.
     pub threads: usize,
-    /// ONNX Runtime shared library; `None` reads `KALLIOPE_ORT_LIB`, then the system path.
+    /// ONNX Runtime shared library; `None` reads `KALLIOPE_ORT_LIB`, then looks next to the program
+    /// ([`find_runtime`]).
     pub ort_lib: Option<PathBuf>,
     /// Longest chunk in phoneme tokens (at most [`MAX_TOKENS`]). Longer sentences are cut at
     /// clause punctuation, then at spaces. Peak memory grows with chunk length: a 12.7-second
@@ -417,6 +418,19 @@ fn split_after<'a>(s: &'a str, marks: &[char]) -> Vec<&'a str> {
         .map(str::trim)
         .filter(|p| !p.is_empty())
         .collect()
+}
+
+/// The folder of the Klein model (Giulia and Marco) inside Kalliope's packages, under `share/kalliope/`.
+pub const KLEIN_FOLDER: &str = "klein-tts-x1.5-pro";
+/// The folder of the Pocket TTS model (voices prepared from a recording), under `share/kalliope/`.
+pub const POCKET_FOLDER: &str = "pocket-tts-italian";
+
+/// Where Kalliope's packages put the models: `share/kalliope/` beside the program's own folder, so
+/// `/usr/share/kalliope` for `/usr/bin/kalliope` and `~/.local/share/kalliope` for the tarball's
+/// `./install`. `None` when the program cannot tell where it is.
+pub fn models_next_to_program() -> Option<PathBuf> {
+    let exe = std::env::current_exe().ok()?;
+    Some(exe.parent()?.parent()?.join("share").join("kalliope"))
 }
 
 /// Where to load ONNX Runtime from: `KALLIOPE_ORT_LIB`, then next to the program

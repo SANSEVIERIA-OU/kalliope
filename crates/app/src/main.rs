@@ -1,13 +1,11 @@
 // SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
-//! Kalliope: type, and be heard. The window, the first-start download and the speaking thread.
+//! Kalliope: type, and be heard. The window and the speaking thread; the voice comes with the program.
 
 mod audio;
 mod catalog;
-mod download;
 mod engine;
 mod paths;
 mod settings;
-mod sha256;
 
 use engine::{Command, Config, Engine, Event, KLEIN_VOICES};
 use settings::Settings;
@@ -15,8 +13,6 @@ use slint::{ComponentHandle, Model, ModelRc, SharedString, VecModel};
 use std::cell::RefCell;
 use std::process::ExitCode;
 use std::rc::Rc;
-use std::sync::Arc;
-use std::sync::atomic::{AtomicBool, Ordering};
 
 slint::include_modules!();
 
@@ -34,7 +30,6 @@ fn usage() -> String {
         "Kalliope {}: scrivi e fatti sentire nelle videochiamate.\n\n\
          uso:\n  kalliope                   apre la finestra\n  \
          kalliope --say TESTO       dice TESTO nel microfono virtuale, senza finestra\n  \
-         kalliope --download-voice  scarica la voce (la finestra lo propone al primo avvio)\n  \
          kalliope --version         mostra la versione\n",
         version()
     )
@@ -62,8 +57,8 @@ fn voices() -> Vec<String> {
 
 /// Speaks without a window: for tests, scripts and checking the microphone from a terminal.
 fn say(text: &str) -> ExitCode {
-    if !catalog::installed() {
-        eprintln!("La voce non è ancora scaricata: apri Kalliope una volta per scaricarla.");
+    if let Some(missing) = catalog::missing_voice() {
+        eprintln!("{missing}");
         return ExitCode::FAILURE;
     }
     let settings = Settings::load();
@@ -102,7 +97,6 @@ struct App {
     engine: RefCell<Option<Engine>>,
     history: Rc<VecModel<SharedString>>,
     settings: RefCell<Settings>,
-    cancel: Arc<AtomicBool>,
 }
 
 impl App {
@@ -144,45 +138,6 @@ impl App {
         if self.history.row_count() > HISTORY {
             self.history.remove(HISTORY);
         }
-    }
-
-    fn download(self: &Rc<Self>) {
-        let Some(ui) = self.ui.upgrade() else { return };
-        ui.set_phase(Phase::Downloading);
-        ui.set_warning(false);
-        ui.set_progress(0.0);
-        ui.set_status("Scarico la voce…".into());
-        self.cancel.store(false, Ordering::Relaxed);
-        let cancel = self.cancel.clone();
-        let weak = self.ui.clone();
-        let _ = std::thread::Builder::new()
-            .name("kalliope-download".into())
-            .spawn(move || {
-                let progress_weak = weak.clone();
-                let result =
-                    download::model(&catalog::model_dir(), &cancel, &move |done, total| {
-                        let w = progress_weak.clone();
-                        let _ = slint::invoke_from_event_loop(move || {
-                            if let Some(ui) = w.upgrade() {
-                                ui.set_progress(done as f32 / total.max(1) as f32);
-                                ui.set_status(
-                                    format!(
-                                        "Scarico la voce… {} di {} MB",
-                                        done / 1_000_000,
-                                        total / 1_000_000
-                                    )
-                                    .into(),
-                                );
-                            }
-                        });
-                    });
-                let message: SharedString = result.err().unwrap_or_default().into();
-                let _ = slint::invoke_from_event_loop(move || {
-                    if let Some(ui) = weak.upgrade() {
-                        ui.invoke_download_done(message);
-                    }
-                });
-            });
     }
 }
 
@@ -274,7 +229,6 @@ fn run_window() -> Result<(), slint::PlatformError> {
         engine: RefCell::new(None),
         history,
         settings: RefCell::new(settings),
-        cancel: Arc::new(AtomicBool::new(false)),
     });
 
     let a = app.clone();
@@ -297,36 +251,16 @@ fn run_window() -> Result<(), slint::PlatformError> {
         a.settings.borrow().save();
         a.send(Command::Monitor(on));
     });
-    let a = app.clone();
-    ui.on_download(move || a.download());
-    let a = app.clone();
-    ui.on_cancel_download(move || a.cancel.store(true, Ordering::Relaxed));
-    let a = app.clone();
-    ui.on_download_done(move |error| {
-        let Some(ui) = a.ui.upgrade() else { return };
-        if error.is_empty() {
-            a.start_engine();
-        } else {
-            ui.set_phase(Phase::NeedsModel);
-            ui.set_warning(true);
-            ui.set_status(error);
-        }
-    });
 
-    if catalog::installed() {
-        app.start_engine();
-    } else {
-        ui.set_phase(Phase::NeedsModel);
-        ui.set_status(
-            format!(
-                "Per parlare, Kalliope deve scaricare la voce: {} MB, una volta sola. Poi funziona senza internet.",
-                (catalog::total_size() + 500_000) / 1_000_000
-            )
-            .into(),
-        );
+    match catalog::missing_voice() {
+        None => app.start_engine(),
+        Some(missing) => {
+            ui.set_phase(Phase::Error);
+            ui.set_warning(true);
+            ui.set_status(missing.into());
+        }
     }
     let result = ui.run();
-    app.cancel.store(true, Ordering::Relaxed);
     app.engine.borrow_mut().take();
     result
 }
@@ -343,31 +277,6 @@ fn main() -> ExitCode {
             ExitCode::SUCCESS
         }
         Some("--say") => say(&args[1..].join(" ")),
-        Some("--download-voice") => {
-            let cancel = AtomicBool::new(false);
-            let last = std::cell::Cell::new(u64::MAX);
-            let result = download::model(&catalog::model_dir(), &cancel, &|done, total| {
-                let step = done * 10 / total.max(1);
-                if step != last.get() {
-                    last.set(step);
-                    eprintln!(
-                        "{} di {} MB",
-                        done / 1_000_000,
-                        (total + 500_000) / 1_000_000
-                    );
-                }
-            });
-            match result {
-                Ok(()) => {
-                    println!("Voce pronta in {}", catalog::model_dir().display());
-                    ExitCode::SUCCESS
-                }
-                Err(e) => {
-                    eprintln!("{e}");
-                    ExitCode::FAILURE
-                }
-            }
-        }
         Some(other) => {
             eprintln!("opzione sconosciuta: {other}\n\n{}", usage());
             ExitCode::FAILURE

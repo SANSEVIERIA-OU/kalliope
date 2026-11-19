@@ -49,16 +49,19 @@ jobs:
       - uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2.9.3
       - name: Clippy
         run: cargo clippy --workspace --all-targets --locked -- -D warnings
-      - name: Cache ONNX Runtime and the Klein model
+      - name: Cache ONNX Runtime and the models
         uses: actions/cache@v6
         with:
           path: .ci-assets
-          key: assets-${{ runner.os }}-${{ hashFiles('tools/fetch_assets.py') }}
-      - name: ONNX Runtime and the Klein model
+          key: assets-${{ runner.os }}-${{ hashFiles('tools/assets.json', 'tools/fetch_assets.py') }}
+      # From the assets release of this repository, pinned in tools/assets.json (docs/releasing.md).
+      - name: ONNX Runtime, Klein and Pocket TTS
         run: |
           python3 tools/fetch_assets.py onnxruntime .ci-assets >> "$GITHUB_ENV"
           python3 tools/fetch_assets.py model .ci-assets >> "$GITHUB_ENV"
-      - name: Tests, with the model
+          python3 tools/fetch_assets.py pocket .ci-assets >> "$GITHUB_ENV"
+      # With KALLIOPE_MODEL_DIR and KALLIOPE_POCKET_DIR set, the tests of both voices run for real.
+      - name: Tests, with the models
         run: cargo test --workspace --locked
       - name: kalliope-cli says a sentence
         run: |
@@ -87,16 +90,17 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2.9.3
-      - name: Cache ONNX Runtime and the Klein model
+      - name: Cache ONNX Runtime and the models
         uses: actions/cache@v6
         with:
           path: .ci-assets
-          key: assets-${{ runner.os }}-${{ hashFiles('tools/fetch_assets.py') }}
-      - name: ONNX Runtime and the Klein model
+          key: assets-${{ runner.os }}-${{ hashFiles('tools/assets.json', 'tools/fetch_assets.py') }}
+      - name: ONNX Runtime, Klein and Pocket TTS
         run: |
           python=$([ "$RUNNER_OS" = Windows ] && echo python || echo python3)
           $python tools/fetch_assets.py onnxruntime .ci-assets >> "$GITHUB_ENV"
           $python tools/fetch_assets.py model .ci-assets >> "$GITHUB_ENV"
+          $python tools/fetch_assets.py pocket .ci-assets >> "$GITHUB_ENV"
       # Not the examples: crates/voice/examples/measure.rs measures with Linux-only calls.
-      - name: Tests, with the model
+      - name: Tests, with the models
         run: cargo test --workspace --lib --bins --tests --locked
