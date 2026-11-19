@@ -19,10 +19,12 @@ come si lavora.
   nuova anche lei.
 - **«stato» è rifatta** nella direzione 2 e approvata dal proprietario il 19/11/2026 («ok per tutto»). La prossima è
   «installa».
-- **Il logo si rifà** (decisione del proprietario del 19/11/2026: «rifarei il logo perché con il nuovo sito c'entra poco»).
-  Quello di oggi, la bolla verde con le barre del suono, viene dal sito di prima; la direzione 2 gli aveva lasciato il verde
-  come unica eccezione e ne aveva preso la forma della bolla. Prima la proposta di come rifarlo, poi il via
-  (`design/lavoro/STATO.md`).
+- **Il logo nuovo** (decisione del proprietario del 19/11/2026: «rifarei il logo perché con il nuovo sito c'entra poco»):
+  fra tre direzioni rese e giudicate il proprietario ha scelto la 3, «La frase che si accende», una bolla metà piena (detto)
+  e metà tratteggiata (non ancora detto) (`design/lavoro/L-logo/`). Entra in `design-system/` come disegno unico per barra,
+  icona della scheda e icona del programma; il verde del logo di prima, unica eccezione ai colori, se ne va.
+- **Pubblicare** (19/11/2026): il proprietario ha detto di «cominciare a mergiare in main e caricare il nuovo sito». Il sito
+  nuovo va in linea con le pagine fatte; le altre arrivano una alla volta. Ogni push resta un passo detto al proprietario.
 - **Le altre pagine non sono ancora state rifatte.** Ascolta, installa, in riunione, aiuto e la pagina 404
   hanno l'aspetto di prima, con i loro fogli in `website/stile/`, gli script in `website/script/` e il vecchio
   catalogo in `website/sistema/`. Restano solo perché le pagine nuove rimandano a loro.
