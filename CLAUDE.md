@@ -44,7 +44,9 @@ come si lavora.
   ridistribuisce citandolo («ridistribuiamo con citazione»). ONNX Runtime non si scarica da terzi: «anche onx lo mettiamo nel
   programma e a noi l'onere di tenerlo aggiornato così come il modello kyutai». Proposta approvata il 19/11/2026 («ok per tutto»): una release
   di GitHub di Kalliope fa da magazzino dei file, i pacchetti contengono tutto (Giulia e Marco compresi), un controllo ogni
-  settimana segnala le versioni nuove (`design/lavoro/STATO.md`, P-2). Caricare i file e pubblicare si chiede ogni volta. Le dipendenze del programma si portano tutte all'ultima versione («si, aggiorniamo
+  settimana segnala le versioni nuove (`design/lavoro/STATO.md`, P-2). Costruito il 19/11/2026: i file stanno in `tools/assets.json`,
+  l'aggiornamento in `docs/releasing.md`. Caricare i file nella release `assets` e pubblicare si chiede ogni volta, e la release
+  va creata prima del push, perché la CI scarica da lì. Le dipendenze del programma si portano tutte all'ultima versione («si, aggiorniamo
   tutto», P-1).
 - **Il telefono** (17/11/2026): «non è per telefono: è solo desktop per il momento». Il sito non dice «non ancora» per
   il telefono.
