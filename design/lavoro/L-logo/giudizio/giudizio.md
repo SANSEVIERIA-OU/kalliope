@@ -327,3 +327,173 @@ Letti `direzioni/*/idea.md` e `progresso.md` dopo il giudizio. Chi ha reso vede 
   128 px sfocati, e le icone vicine nei contesti non sono del genere (Firefox, GVim, ImageMagick): per questo li ho rifatti
   alla stessa misura e fra app di messaggi e di voce.
 - Le scelte lasciate al proprietario: il mondo di colore comune è giustificato dal sito, ma va detto che è uno solo.
+
+---
+
+# Secondo sguardo, dopo la correzione (19/11/2026)
+
+Stesso giudice, prove mie, registrate di nuovo; non ho usato foto né sequenze di chi ha corretto. Le prove stanno in
+`secondo/` (percorsi relativi a `design/lavoro/L-logo/giudizio/secondo/`). Copie giudicate: `/tmp/l1-sito-1-5`,
+`/tmp/l1-sito-2-3`, `/tmp/l1-sito-3-4` (e `-pseudo`). I disegni sono stati rigenerati alle 14:57, dopo le copie 1-5 e 2-3
+(14:51): le icone delle copie e i `piccola.svg` di adesso differiscono di 0, 6 e 21 pixel su 16 384 (`foto/favicon-diff.png`,
+bordi sfumati); `marchio.js` e `marchio.css` sono identici byte per byte. Le copie mostrano quindi i disegni di adesso.
+
+## Le prove rifatte
+
+- **Disegni**: `foto/disegni-grandi.png`, `foto/minime-16-24-32-x6.png`, `foto/simboliche-16-24-x6.png`,
+  `fogli/tre-direzioni-affiancate.png`, `fogli/prima-e-dopo.png` (sopra prima, sotto adesso), `fogli/forme-piene-tre.png`.
+- **Fra le icone vere** (`fogli/fra-le-icone-*.png`): le stesse righe del primo sguardo (dieci app di messaggi, otto di voce,
+  simboli di volume, «registra», «ferma» e chat a 16, 24 e 48 px), più due righe nuove: videochiamate e contatti (Zoom, Teams,
+  Jitsi Meet, Chiamate di GNOME, Contatti di GNOME, Kontact, Discord, Element) e altri simboli (volume basso, persone, griglia,
+  videochiamata, bozza, chat a contorno, di Adwaita e Material). Più `fogli/sedici-px-2-accanto-a-quattro-quadrati-e-3-e-1.png`
+  (16, 24 e 32 px a pixel veri, ingranditi 5 volte; i quattro quadrati blu sono uno schema del logo di Windows disegnato da me).
+- **La barra**: da vicino a 3×, 22 s dall'arrivo ogni 250 ms (`sequenze/*/barra-1440/`, `fogli/movimento-tre-ogni-mezzo-secondo.png`,
+  `sequenze/*/barra-1440-istanti.png` a 0, 2, 2,5, 3, 3,5, 4, 5, 6, 7, 8, 10, 15 s); puntatore a 20 s ogni 100 ms
+  (`sequenze/punta-tutte.png`); «riduci movimento» (`sequenze/ridotto-tutte.png`); a riposo e a 4 s (`fogli/barre-a-riposo-e-a-4s.png`);
+  390 (`foto/barre-390.png`), 320 e 600 (`foto/barre-320.png`, `foto/barre-600.png`); ar-XB (`foto/barre-rtl.png`).
+- **Coppie nei due versi**: barra contro R03 e R51, primo schermo contro R01, icona contro ElevenLabs, Proloquo e Grid Player
+  (`fogli/barra-*`, `fogli/primo-schermo-*`, `fogli/icona-*`). Nessuna risposta è cambiata scambiando le posizioni.
+- **Funziona**: `it/` e `it/non-ancora/` a 1440, 768 e 390, e la barra a 320, 600, 1024 e 1280: nessuno scorrimento
+  orizzontale, nessun errore, nessuna risorsa mancante; marchio 32×36 (1), 36×36 (2 e 3), 26×30 e 30×30 al telefono. Da destra a
+  sinistra non si specchia. Con «riduci movimento» i tre marchi stanno fermi e accesi.
+
+## Lo stato dei problemi trovati al primo sguardo
+
+### 1 · «Il cursore che parla»
+
+| Problema | Gravità | Stato | Prova |
+| --- | --- | --- | --- |
+| Da fermo la sagoma è il simbolo del volume | importante | **chiuso in parte** | `fogli/fra-le-icone-1-cursore.png`, righe dei simboli: la riga bassa a sinistra e il cursore più alto delle onde rompono la sagoma «cono + onde»; a 16 e 24 px accanto al volume di Adwaita e a «volume_up» non si scambia più. Resta che le onde dicono «suono»: ora è «testo che suona», che è ciò che fa il programma. Ciò che resta è minore |
+| Quasi spento nei primi dieci secondi | minore | **chiuso in parte** | `sequenze/1-cursore/barra-1440-istanti.png`: il cursore resta acceso quasi sempre, le onde aspettano più chiare; fra 2,5 e 3,5 s il cursore è ancora a metà e la riga diventa un punto |
+| Sbilanciato sul chiaro e sullo scuro | minore | **chiuso** | `foto/disegni-grandi.png`, prime due righe: l'onda esterna si vede sul chiaro, l'asta sullo scuro |
+| La forma piena sparisce sul bordo nello scuro | minore | **chiuso** | `fogli/forme-piene-tre.png`, `fogli/icona-1-cursore-vs-elevenlabs-ab.jpg`: piastrella magenta, il bordo si vede anche sullo scuro a 32 px |
+
+### 2 · «Il tuo posto, alla pari» (forma cambiata: quattro riquadri con una persona ciascuno)
+
+| Problema | Gravità | Stato | Prova |
+| --- | --- | --- | --- |
+| Non dice niente del programma | importante | **chiuso in parte** | ora dice «una riunione»; non dice «voce» né «scrivere» (`fogli/fra-le-icone-2-posto.png`). Vedi il problema nuovo 1 |
+| Si confonde con «ferma» e «registra» | importante | **chiuso** | stesse righe dei simboli: niente più somiglianza con «stop_circle», «radio_button_checked», «ferma» |
+| La simbolica somiglia al marchio di Square | importante | **chiuso** | stessa riga: è una griglia di persone, non un quadrato nel quadrato |
+| Il movimento nella barra non si vede | importante | **chiuso in parte** | `sequenze/2-posto/barra-1440-istanti.png`: un riquadro intero si schiarisce (a 8 s si vede), ma breve e piccolo; il bordo del tuo riquadro che segue la voce si nota appena |
+| Nella barra è l'elemento più acceso | minore | **aperto, peggiorato in fittezza** | `fogli/barre-a-riposo-e-a-4s.png`: a 36 px quattro riquadri e quattro figure, il segno più fitto di tutta la barra |
+| Sul chiaro il bordo rosa chiaro si ammorbidisce | minore | **chiuso** | `foto/minime-16-24-32-x6.png`: i riquadri magenta reggono sul chiaro |
+
+### 3 · «La frase che si accende» (bolla piena a metà, metà tratteggiata)
+
+| Problema | Gravità | Stato | Prova |
+| --- | --- | --- | --- |
+| È l'icona di una chat | bloccante | **chiuso in parte: non più bloccante** | `fogli/fra-le-icone-3-frase.png`, prime quattro righe: la metà tratteggiata la distingue dalle altre bolle anche senza il colore; la simbolica non è più il «chat» di Material. Resta una bolla (si guarda fra i «messaggi») e nella barra per circa 4 s torna una bolla piena qualunque (vedi i problemi nuovi) |
+| Sagoma del logo di oggi, in rosa | importante | **chiuso in parte** | `fogli/prima-e-dopo.png`: metà sagoma ora è aperta; resta la bolla con la coda in basso a sinistra |
+| L'idea si vede solo in movimento | importante | **chiuso in parte** | `fogli/forme-piene-tre.png`, `foto/minime-16-24-32-x6.png`: a 32 e 48 px «detto / non ancora detto» si vede da fermo; a 16 px il tratteggio diventa una fila di puntini chiari |
+| Accanto alla bolla della home sembra un pezzo della scena | minore | **aperto** | `foto/home-3-frase-1440.png` |
+| Righe di testo finto | minore | **aperto** | due pillole nella metà piena |
+
+## I difetti nati dalle correzioni
+
+### 2 · «Il tuo posto»
+
+1. **Importante · si legge come un'app per videochiamate o per i contatti.** Fra Zoom, Teams, Jitsi e Chiamate sta come una di
+   loro, e la simbolica sta accanto a «groups», «grid_view» e «contacts» di Material come un simbolo di quella famiglia
+   (`fogli/fra-le-icone-2-posto.png`, righe «videochiamate e contatti» e «altri simboli»). Kalliope non è un programma per le
+   riunioni: è la voce dentro quei programmi. Il segno dice la cosa sbagliata a chi lo cerca fra le applicazioni. Chi ha reso lo
+   scrive da sé («il rischio opposto a quello di prima»).
+2. **Minore · a 16 px resta una griglia di quattro quadratini.** Le persone non si leggono più (sulla simbolica diventano segni quasi
+   da lettera), e la griglia 2×2 ricorda il simbolo delle app e i quattro quadrati di Windows
+   (`fogli/sedici-px-2-accanto-a-quattro-quadrati-e-3-e-1.png`, `foto/simboliche-16-24-x6.png`). Chi ha reso aveva scartato
+   la griglia 2×2 al primo giro proprio per questo («a 16 px sembrano il logo di Windows»).
+3. **Minore · la persona è la sagoma del profilo vuoto** che ogni programma mostra quando manca la foto, e la griglia ripete in
+   piccolo la riunione che sta subito sotto nella home (`foto/home-2-posto-1440.png`): il marchio sembra una miniatura della scena.
+
+### 3 · «La frase»
+
+1. **Importante · il tratteggio si legge «bozza», «segnaposto», «non inviato».** Nei programmi il contorno tratteggiato vuol dire
+   ciò che non c'è ancora: un'icona metà tratteggiata può sembrare non finita o non caricata. Nel sito il tratteggio è proprio il
+   segno di «non ancora» (lo dice chi ha reso): il logo porta su di sé quel significato. Prova: `fogli/tre-direzioni-affiancate.png`,
+   `fogli/forme-piene-tre.png`.
+2. **Importante · nella barra, all'arrivo, il marchio è una bolla vuota tutta tratteggiata per circa 3,5 s** (da 3 a 6,5 s):
+   proprio nei primi secondi sembra un'immagine che non si è caricata (`sequenze/3-frase/barra-1440-istanti.png`, fotogrammi da 3 a
+   6 s; `fogli/barre-a-riposo-e-a-4s.png`, ultima riga). Poi, finita la frase, è **una bolla piena qualunque per circa 4 s** (da 12
+   a 16 s, `fogli/movimento-tre-ogni-mezzo-secondo.png`, terzo blocco): il segno generico della chat che la correzione aveva tolto.
+3. **Minore · il disegno libero è diventato un colore solo, piatto**: magenta `#e6396e` con due parole chiare, senza spessore. La
+   ricerca (`design/lavoro/ricerca/logo.md`) chiede un po' di profondità per GNOME e KDE e ricorda che Flathub sconsiglia il simbolo
+   piatto di un colore solo (`foto/disegni-grandi.png`, terzo blocco).
+4. **Minore · a 16 px sullo scuro la metà tratteggiata quasi sparisce** (`fogli/sedici-px-2-accanto-a-quattro-quadrati-e-3-e-1.png`,
+   metà scura).
+
+### 1 · «Il cursore»
+
+1. **Minore · nella barra la riga è un puntino.** A 32×36 px la riga davanti al cursore è un trattino di 3–4 px, e mentre la home
+   scrive parte da un punto: si legge «·|))» (`fogli/barre-a-riposo-e-a-4s.png`, prima e quarta riga). Il segno ha quattro pezzi
+   invece di tre: è un po' meno pulito di prima, ma regge.
+
+## Le tre sono rimaste diverse?
+
+- **Nella forma sì**, in quattro aspetti: metafora (testo che suona / la riunione / la frase detta a metà), sagoma (tratti aperti /
+  griglia 2×2 / mezza bolla), barra (segno chiaro di un colore / piastrella a colori / piastrella a colori), movimento (la riga
+  che cresce e le onde / i riquadri che si accendono / la bolla che si riempie) (`fogli/tre-direzioni-affiancate.png`).
+- **Nel colore si sono avvicinate**, e questo è da far sapere al proprietario (importante come limite della scelta, non come
+  difetto di una direzione): le forme piene della 2 e della 3 sono ora la stessa ricetta, piastrella rosa chiaro `#fab7c2` con il
+  disegno magenta `#e6396e` (`fogli/forme-piene-tre.png`); la 1 ha preso la piastrella magenta piena; nei disegni liberi domina in
+  tutte e tre lo stesso magenta, e la 3 ha perso l'interno chiaro che la distingueva. Prima: piastrella bordeaux, rosa a quattro
+  gradini, magenta sfumato.
+
+## Le coppie rifatte
+
+| Direzione | Contro | Prima | Adesso | Prova |
+| --- | --- | --- | --- | --- |
+| 1 | R03 e R51, barra | regge | **regge**: sempre segno chiaro accanto al nome come «II»; la riga in più lo rende un po' meno netto | `fogli/barra-1-cursore-vs-R03|R51-*` |
+| 1 | ElevenLabs, icona | regge in parte | **regge**: la piastrella magenta ora si vede anche sullo scuro | `fogli/icona-1-cursore-vs-elevenlabs-*` |
+| 1 | Proloquo, Grid | regge per leggibilità | **uguale** | `fogli/icona-1-cursore-vs-proloquo|grid-*` |
+| 2 | R03 e R51, barra | regge in parte | **regge in parte**: più fitta della piastrella di ElevenAgents e del segno di AssistiveWare | `fogli/barra-2-posto-vs-R03|R51-*` |
+| 2 | ElevenLabs, Proloquo, Grid, icona | non regge | **non regge**: la più carica delle sei a 32 px; il gufo è un personaggio, qui figure generiche | `fogli/icona-2-posto-vs-*` |
+| 3 | R03 e R51, barra | regge in parte | **regge** a riposo: segno compatto e suo; **non regge** nei 3,5 s da bolla vuota all'arrivo | `fogli/barra-3-frase-vs-R03|R51-*`, `fogli/barre-a-riposo-e-a-4s.png` |
+| 3 | ElevenLabs, Proloquo, Grid, icona | non regge per distinzione | **regge in parte**: ora si distingue; a 32 px il tratteggio si impasta | `fogli/icona-3-frase-vs-*` |
+| tutte | R01, primo schermo | non si decide sul logo | **uguale**: il logo è un dettaglio di 32–36 px | `fogli/primo-schermo-*-vs-R01-*` |
+
+## Il momento che resta in mente e il movimento (A2, D4, D6)
+
+- **1**: sì, ancora: la riga cresce mentre la home scrive, il cursore lampeggia, le onde parlano. Togliendolo si perde il legame
+  con la pagina.
+- **2**: in parte: un riquadro che si accende a ogni picco, piccolo.
+- **3**: sì, ed è il più visibile dei tre: la bolla si riempie mentre la voce parla. Il prezzo sono i due estremi (vuota tratteggiata
+  all'arrivo, piena qualunque alla fine).
+- Puntatore: risposte brevi in tutte e tre (circa 0,4 s per 1 e 2, circa 1 s per 3: la bolla si riempie e torna)
+  (`sequenze/punta-tutte.png`).
+
+## Ordine adesso, dalla più forte alla più debole
+
+1. **1 · cursore**: tutti i suoi problemi chiusi o quasi; nessun problema importante resta. Nella barra sta fra i marchi dei
+   vincitori, come icona è pulita e ora dice «scrivi → voce». **In assoluto: all'altezza, con riserve minori.**
+2. **3 · frase**: non è più un'icona di chat qualunque e ha il momento più visibile; ma il tratteggio porta «bozza / non ancora» e
+   nella barra passa per una bolla vuota e poi per una bolla piena qualunque. Due problemi importanti.
+3. **2 · posto**: ha chiuso «ferma», «registra» e Square, ma ora sembra un'app per videochiamate, è la più fitta a 32 e 36 px e a
+   16 px è una griglia. Un problema importante, ma tocca il significato.
+
+Fra la 1 e la 3 la differenza è reale ma dipende da quanto pesa un gesto visibile (3) rispetto a un segno fermo pulito (1): è il mio
+parere, non una certezza. Fra la 3 e la 2 la differenza ora è netta. Nessun problema bloccante resta.
+
+## Dopo aver letto le note di chi ha corretto
+
+Letti `direzioni/*/idea.md` («Dopo il giudizio») e `progresso.md` («Correzione dopo il giudizio») dopo tutto il resto. Le note
+dicono da sole quasi tutti i rischi che ho visto (videochiamate per la 2, «bozza» e 16 px per la 3, «suono» per la 1). Dove
+affermano più di quanto ho visto:
+
+- **«Le tre restano diverse»** (`progresso.md`): nella forma sì; nel colore si sono avvicinate, e le forme piene della 2 e della 3
+  sono ora la stessa piastrella rosa chiaro con il disegno magenta (`fogli/forme-piene-tre.png`).
+- **3, «finita la frase la bolla resta piena un momento»**: nelle mie sequenze resta piena circa 4 s (da 12 a 16 s). Le note non
+  dicono che all'arrivo il marchio è una bolla vuota tutta tratteggiata per circa 3,5 s.
+- **3, «ferma, a 32 e 48 px, nessuna app di messaggi le somiglia»**: vero per la sagoma; resta una bolla, come le note stesse
+  ammettono più sotto.
+- **2, «il movimento ora si vede a 36 px»**: si vede, ma breve; «chiuso in parte», non chiuso.
+- **2**: le note non dicono che la griglia 2×2 a 16 px è proprio ciò che avevano scartato al primo giro perché ricordava il logo
+  di Windows.
+- **3**: le note non dicono che il disegno libero è diventato un colore solo, senza lo spessore chiesto dalla ricerca.
+- **1, «il marchio non sembra più spento all'arrivo»**: quasi; fra 2,5 e 3,5 s il cursore è ancora a metà. Concordo che non è più
+  un problema.
+
+## Non verificato (secondo sguardo)
+
+- Firefox e WebKit; l'aspetto vero su GNOME, KDE, Windows e macOS; il puntamento oculare; il suono.
+- `controlla-sorgenti.mjs` e gli ICO nuovi non li ho rifatti io.
+- La somiglianza della 2 a 16 px con il logo di Windows l'ho guardata con uno schema disegnato da me, non con il marchio vero.

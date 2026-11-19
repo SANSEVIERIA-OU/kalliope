@@ -1,0 +1,95 @@
+{
+ "titolo": "Il logo nuovo di Kalliope: tre proposte",
+ "premessa": "Tre loghi disegnati da capo per il sito nuovo, già corretti una volta dopo il parere del giudice. Per ognuno: l'idea in una frase, i video (senza suono) e «la pagina viva», cioè la home vera con quel logo, da aprire e ascoltare. Sotto, «Tutti i posti» mostra ogni logo nella scheda del browser, nei menu di Linux, nella barra di Windows, nel Dock del Mac e da 16 a 256 pixel, su chiaro e su scuro. Tutti e tre usano il rosa e il bordeaux del sito: cambia l'idea e la forma, non il colore. Puoi sceglierne uno, chiedere di cambiare qualcosa, oppure scartarli tutti.",
+ "uscita": "cancello/index.html",
+ "voci": [
+  {
+   "nome": "1 · Il cursore che parla",
+   "idea": "Il cursore di chi scrive è la sorgente della voce: dalla riga che scrivi le onde vanno verso gli altri.",
+   "viva": "siti/1-cursore/it/index.html",
+   "video": [
+    {
+     "file": "design/lavoro/L-logo/direzioni/1-cursore/sequenze-2/barra-arrivo/barra-arrivo-1440-1200x216.webm",
+     "didascalia": "Il logo nella barra, ingrandito 3 volte, mentre la home scrive e parla"
+    },
+    {
+     "file": "design/lavoro/L-logo/direzioni/1-cursore/sequenze-2/arrivo-pagina/arrivo-1440x900.webm",
+     "didascalia": "La home al computer, a grandezza vera"
+    },
+    {
+     "file": "design/lavoro/L-logo/direzioni/1-cursore/sequenze-2/arrivo-pagina/arrivo-390x844.webm",
+     "didascalia": "La home al telefono"
+    },
+    {
+     "file": "design/lavoro/L-logo/direzioni/1-cursore/sequenze-2/barra-puntatore/puntatore-1440-1200x216.webm",
+     "didascalia": "Il puntatore sopra il logo, ingrandito"
+    }
+   ]
+  },
+  {
+   "nome": "2 · Il tuo posto, alla pari",
+   "idea": "Il tuo riquadro nella riunione, uguale a quelli degli altri, da cui la voce raggiunge tutti.",
+   "viva": "siti/2-posto/it/index.html",
+   "video": [
+    {
+     "file": "design/lavoro/L-logo/direzioni/2-posto/sequenze-2/barra-arrivo/barra-arrivo-1440-1200x216.webm",
+     "didascalia": "Il logo nella barra, ingrandito 3 volte, mentre la home scrive e parla"
+    },
+    {
+     "file": "design/lavoro/L-logo/direzioni/2-posto/sequenze-2/arrivo-pagina/arrivo-1440x900.webm",
+     "didascalia": "La home al computer, a grandezza vera"
+    },
+    {
+     "file": "design/lavoro/L-logo/direzioni/2-posto/sequenze-2/arrivo-pagina/arrivo-390x844.webm",
+     "didascalia": "La home al telefono"
+    },
+    {
+     "file": "design/lavoro/L-logo/direzioni/2-posto/sequenze-2/barra-puntatore/puntatore-1440-1200x216.webm",
+     "didascalia": "Il puntatore sopra il logo, ingrandito"
+    }
+   ]
+  },
+  {
+   "nome": "3 · La frase che si accende",
+   "idea": "La frase che hai scritto è la bolla: le parole si accendono mentre la voce le dice.",
+   "viva": "siti/3-frase/it/index.html",
+   "video": [
+    {
+     "file": "design/lavoro/L-logo/direzioni/3-frase/sequenze-2/barra-arrivo/barra-arrivo-1440-1200x216.webm",
+     "didascalia": "Il logo nella barra, ingrandito 3 volte, mentre la home scrive e parla"
+    },
+    {
+     "file": "design/lavoro/L-logo/direzioni/3-frase/sequenze-2/arrivo-pagina/arrivo-1440x900.webm",
+     "didascalia": "La home al computer, a grandezza vera"
+    },
+    {
+     "file": "design/lavoro/L-logo/direzioni/3-frase/sequenze-2/arrivo-pagina/arrivo-390x844.webm",
+     "didascalia": "La home al telefono"
+    },
+    {
+     "file": "design/lavoro/L-logo/direzioni/3-frase/sequenze-2/barra-puntatore/puntatore-1440-1200x216.webm",
+     "didascalia": "Il puntatore sopra il logo, ingrandito"
+    }
+   ]
+  }
+ ],
+ "giudizio": "design/lavoro/L-logo/giudizio/riassunto.md",
+ "altre": [
+  {
+   "nome": "Tutti i posti, i tre loghi affiancati",
+   "pagina": "design/lavoro/L-logo/direzioni/index.html"
+  },
+  {
+   "nome": "1 · Il cursore che parla, tutti i posti",
+   "pagina": "design/lavoro/L-logo/direzioni/1-cursore/prova.html"
+  },
+  {
+   "nome": "2 · Il tuo posto, tutti i posti",
+   "pagina": "design/lavoro/L-logo/direzioni/2-posto/prova.html"
+  },
+  {
+   "nome": "3 · La frase che si accende, tutti i posti",
+   "pagina": "design/lavoro/L-logo/direzioni/3-frase/prova.html"
+  }
+ ]
+}

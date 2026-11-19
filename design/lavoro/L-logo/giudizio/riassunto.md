@@ -1,28 +1,26 @@
-# Il logo nuovo: il parere del giudice
+# Il logo nuovo, dopo la correzione: il parere del giudice
 
-## I problemi
-- **3 · la frase, bloccante**: sembra l'icona di un programma di messaggi. Fra Signal, Telegram e le altre è una bolla fra le bolle, si riconosce solo dal rosa.
-- **3 · la frase, importante**: ha la stessa forma del logo di oggi (la bolla con la coda in basso), cambiano solo colore e interno.
-- **2 · il posto, importante**: non dice che cosa fa Kalliope. Sembra un tasto «ferma» o «registra» e, in piccolo, il marchio di Square (pagamenti).
-- **2 · il posto, importante**: il movimento nella barra del sito non si vede, è troppo piccolo.
-- **1 · il cursore, importante**: in piccolo, accanto all'icona del volume del computer, si scambia per un secondo volume.
-- **1 · il cursore, minore**: nei primi dieci secondi della home il logo resta quasi spento mentre la scena scrive.
-- **Tutte e tre**: hanno lo stesso rosa e bordeaux del sito e lo stesso stile. Cambia la forma, non il colore: se quel colore non convince per un logo, nessuna delle tre mostra un'alternativa.
+## I problemi di adesso
+- **Nessun problema bloccante.** Prima c'era la 3, che sembrava un'app di messaggi: adesso si distingue.
+- **2 · il posto, importante**: ora sono quattro riquadri con una persona ciascuno. Sembra un programma per videochiamate o per i contatti, come Zoom o Teams; Kalliope invece è la voce dentro quei programmi.
+- **3 · la frase, importante**: metà bolla è tratteggiata. Il tratteggio di solito vuol dire «bozza» o «non ancora»: il logo può sembrare non finito.
+- **3 · la frase, importante**: nella barra del sito, appena si apre la pagina, il logo è per qualche secondo una bolla vuota tratteggiata, come un'immagine che non si è caricata; alla fine della frase è per qualche secondo una bolla piena qualunque.
+- **Minori**: la 2 a 16 px diventa una griglia di quattro quadratini, che ricorda i quattro quadrati di Windows; la 3 è diventata di un colore solo, senza rilievo; nella 1 il trattino davanti al cursore, nella barra, è quasi un puntino.
+- **Il colore**: le tre si sono avvicinate. La 2 e la 3 nel Dock del Mac sono ora la stessa piastrella rosa chiaro con il disegno magenta. Cambia la forma, non il colore.
 
-## Che cosa funziona
-- **1 · il cursore**: nella barra sta accanto al nome come i marchi migliori, e mentre la home scrive il cursore lampeggia e poi «parla». È l'unico momento che si ricorda.
-- **3 · la frase**: è la più rifinita e la più legata alla home: è la bolla della scena in piccolo.
-- **2 · il posto**: è la più diversa dai segni della voce che si vedono di solito.
-- Tutte si leggono a 16 px, reggono su chiaro e su scuro e non si girano nelle lingue da destra a sinistra. Le pagine non danno errori, a nessuna misura.
+## Che cosa è migliorato
+- **1 · il cursore**: davanti al cursore c'è la riga scritta, quindi non si scambia più con l'icona del volume; i colori reggono su chiaro e su scuro; nei primi secondi il logo non sembra più spento.
+- **2 · il posto**: non sembra più un tasto «ferma» o «registra» né il marchio di Square, e nella barra si vede un po' di movimento.
+- **3 · la frase**: fra le app di messaggi ora si riconosce, e si capisce anche da ferma «detto a metà». Nella barra la bolla si riempie mentre la voce parla: è il movimento più visibile dei tre.
+- Le pagine non danno errori, a nessuna larghezza.
 
 ## Accanto ai riferimenti
-- Nella barra del sito la 1 regge accanto a ElevenLabs e AssistiveWare; la 2 e la 3 reggono in parte, sono più accese e dicono meno.
-- Come icona del programma nessuna è riconoscibile come il gufo di Proloquo o le due aste di ElevenLabs. La 1 ci va più vicino.
+- Nella barra la 1 regge accanto a ElevenLabs e AssistiveWare; la 3 regge a riposo; la 2 regge solo in parte, è la più fitta.
+- Come icona del programma la 1 regge accanto a ElevenLabs; la 3 si distingue, ma a 32 px il tratteggio si impasta; la 2 è la più carica.
 
 ## Ordine e parere
-- **1 · il cursore**, poi **3 · la frase**, poi **2 · il posto**. Fra la 3 e la 2 la differenza è meno netta.
-- Nessuna è pronta così com'è. La 1 è vicina, se si toglie la somiglianza con il volume.
+- **1 · il cursore**, poi **3 · la frase**, poi **2 · il posto**.
+- La 1 secondo me è all'altezza, con piccole riserve. La 3 è vicina, se il tratteggio non dà l'idea di una cosa non finita. La 2 ha cambiato problema: ora dice «videochiamata».
 
 ## Non verificato
 - Come appaiono davvero su Windows e macOS, in Firefox e Safari, e con il puntamento oculare.
-- La somiglianza con Square l'ho guardata a occhio, non è una verifica legale.
