@@ -1,0 +1,32 @@
+{
+ "voce_giovanni": {
+  "picco_mb": 351.59375,
+  "secondi": 1.2422916889190674,
+  "codice": 0,
+  "stderr": "load 517 ms · voice prepared in 663 ms (7.4 s of recording, 84 positions) · saved to /tmp/voce-m-v4/mem-giovanni.safetensors"
+ },
+ "voce_F1": {
+  "picco_mb": 359.80078125,
+  "secondi": 1.5307989120483398,
+  "codice": 0,
+  "stderr": "load 476 ms · voice prepared in 985 ms (24.6 s of recording, 144 positions) · saved to /tmp/voce-m-v4/mem-F1.safetensors"
+ },
+ "say_breve": {
+  "picco_mb": 293.984375,
+  "secondi": 0.8952078819274902,
+  "codice": 0,
+  "stderr": "load 541 ms · first audio 26 ms · synthesis 298 ms · audio 1.52 s · ONNX Runtime 1.32.0"
+ },
+ "say_cinque_frasi": {
+  "picco_mb": 293.96484375,
+  "secondi": 6.192173957824707,
+  "codice": 0,
+  "stderr": "load 513 ms · first audio 68 ms · synthesis 5619 ms · audio 25.28 s · ONNX Runtime 1.32.0"
+ },
+ "klein_cinque_frasi": {
+  "picco_mb": 187.3203125,
+  "secondi": 2.909467935562134,
+  "codice": 0,
+  "stderr": "load 307 ms · synthesis 2558 ms · audio 29.49 s · ONNX Runtime 1.32.0"
+ }
+}

@@ -5,7 +5,8 @@
 //! Only the calls Kalliope needs. Function pointers are read from the `OrtApi` table by index:
 //! the table is append-only, so an index never changes between releases. The indices below were
 //! computed with `offsetof(OrtApi, Name) / sizeof(void*)` against `onnxruntime_c_api.h` of
-//! ONNX Runtime 1.31.1. Every function used exists since long before [`API_VERSION`].
+//! ONNX Runtime 1.31.1, and checked again, all equal, against that of 1.32.0 (API version 32).
+//! Every function used exists since long before [`API_VERSION`].
 //!
 //! Function pointers use `extern "system"`: the header declares them `ORT_API_CALL`, which is
 //! `__stdcall` on 32-bit Windows. Everywhere else `"system"` is the plain C convention.

@@ -1,0 +1,94 @@
+{
+ "strati": 6,
+ "fp32": {
+  "flow_lm": "flow_lm.onnx",
+  "flow_tempo_s": 0.5269379615783691,
+  "latenti": {
+   "diff_max": 0.0008880347013473511,
+   "max_abs": 5.536734580993652,
+   "coseno_min": 0.9999999821945222,
+   "coseno_medio": 0.9999999979235643
+  },
+  "eos": {
+   "diff_max": 0.000186920166015625,
+   "primo_sopra_soglia_ufficiale": null,
+   "primo_sopra_soglia_onnx": null
+  },
+  "encoder_tempo_s": 0.6771523952484131,
+  "voce_condizionamento": {
+   "diff_max": 3.814697265625e-06,
+   "max_abs": 1.013282060623169,
+   "coseno_min": 0.999999999994834,
+   "coseno_medio": 0.9999999999978288
+  },
+  "stato_voce": {
+   "posizioni": 155,
+   "posizioni_kyutai": 155,
+   "chiavi_strato_0": {
+    "diff_max": 6.556510925292969e-06,
+    "max_abs": 7.110011100769043,
+    "coseno_min": 0.9999999999997575,
+    "coseno_medio": 0.9999999999999245
+   },
+   "valori_ultimo_strato": {
+    "diff_max": 1.644343137741089e-05,
+    "max_abs": 1.6987404823303223,
+    "coseno_min": 0.9999999999619288,
+    "coseno_medio": 0.9999999999961324
+   }
+  },
+  "decoder_tempo_s": 0.2042074203491211,
+  "audio": {
+   "diff_max": 1.1995434761047363e-06,
+   "max_abs": 0.34658798575401306,
+   "campioni": 76800,
+   "campioni_ufficiali": 76800
+  }
+ },
+ "int8": {
+  "flow_lm": "flow_lm_int8.onnx",
+  "flow_tempo_s": 0.2599172592163086,
+  "latenti": {
+   "diff_max": 3.9580129832029343,
+   "max_abs": 5.536734580993652,
+   "coseno_min": -0.035059208479976706,
+   "coseno_medio": 0.5229446859601312
+  },
+  "eos": {
+   "diff_max": 8.028097152709961,
+   "primo_sopra_soglia_ufficiale": null,
+   "primo_sopra_soglia_onnx": null
+  },
+  "encoder_tempo_s": 0.6620535850524902,
+  "voce_condizionamento": {
+   "diff_max": 3.814697265625e-06,
+   "max_abs": 1.013282060623169,
+   "coseno_min": 0.999999999994834,
+   "coseno_medio": 0.9999999999978288
+  },
+  "stato_voce": {
+   "posizioni": 155,
+   "posizioni_kyutai": 155,
+   "chiavi_strato_0": {
+    "diff_max": 0.09964978694915771,
+    "max_abs": 7.110011100769043,
+    "coseno_min": 0.9999376156902805,
+    "coseno_medio": 0.9999836546624252
+   },
+   "valori_ultimo_strato": {
+    "diff_max": 0.6091203093528748,
+    "max_abs": 1.6987404823303223,
+    "coseno_min": 0.8862835032094221,
+    "coseno_medio": 0.9544517936572459
+   }
+  },
+  "decoder_tempo_s": 0.23248696327209473,
+  "audio": {
+   "diff_max": 1.1995434761047363e-06,
+   "max_abs": 0.34658798575401306,
+   "campioni": 76800,
+   "campioni_ufficiali": 76800
+  }
+ },
+ "picco_mb": 2143.888
+}

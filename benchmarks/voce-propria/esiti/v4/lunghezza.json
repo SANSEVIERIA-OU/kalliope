@@ -1,0 +1,1346 @@
+{
+ "F1_6": {
+  "persona": "F1",
+  "secondi": 6,
+  "posizioni": 63,
+  "wer": 0.0,
+  "prima_persa": 0,
+  "ecapa": 0.611899116823205,
+  "durata_audio_s": 29.759999999999998,
+  "righe": [
+   {
+    "id": 0,
+    "durata_s": 5.36,
+    "trascrizione": "Buongiorno a tutti. Scrivo invece di parlare, ma vi seguo benissimo.",
+    "errori": 0,
+    "parole": 11,
+    "prima_ok": true,
+    "ecapa": 0.6072111484545513
+   },
+   {
+    "id": 1,
+    "durata_s": 9.28,
+    "trascrizione": "Sono d'accordo con Paola, però la consegna del 14 marzo mi sembra stretta.  Possiamo sentirci venerdì alle 15.30.",
+    "errori": 0,
+    "parole": 21,
+    "prima_ok": true,
+    "ecapa": 0.6257815180517499
+   },
+   {
+    "id": 2,
+    "durata_s": 6.4,
+    "trascrizione": "il preventivo è di 1.250 euro più IVA, valido fino al 31 dicembre.",
+    "errori": 0,
+    "parole": 15,
+    "prima_ok": true,
+    "ecapa": 0.6300272245869074
+   },
+   {
+    "id": 3,
+    "durata_s": 4.72,
+    "trascrizione": "Scusate, mi sentite bene adesso. Posso condividere lo schermo.",
+    "errori": 0,
+    "parole": 9,
+    "prima_ok": true,
+    "ecapa": 0.5652347154037288
+   },
+   {
+    "id": 4,
+    "durata_s": 4.0,
+    "trascrizione": "Che bella notizia! Complimenti a tutta la squadra!",
+    "errori": 0,
+    "parole": 8,
+    "prima_ok": true,
+    "ecapa": 0.6312409776190873
+   }
+  ]
+ },
+ "F1_10": {
+  "persona": "F1",
+  "secondi": 10,
+  "posizioni": 115,
+  "wer": 0.0,
+  "prima_persa": 0,
+  "ecapa": 0.600693295769707,
+  "durata_audio_s": 30.96,
+  "righe": [
+   {
+    "id": 0,
+    "durata_s": 5.52,
+    "trascrizione": "Buongiorno a tutti. Scrivo invece di parlare, ma vi seguo benissimo.",
+    "errori": 0,
+    "parole": 11,
+    "prima_ok": true,
+    "ecapa": 0.5805198862248065
+   },
+   {
+    "id": 1,
+    "durata_s": 9.68,
+    "trascrizione": "Sono d'accordo con Paola, però la consegna del 14 marzo mi sembra stretta.  Possiamo sentirci venerdì alle 15.30.",
+    "errori": 0,
+    "parole": 21,
+    "prima_ok": true,
+    "ecapa": 0.6153175543736219
+   },
+   {
+    "id": 2,
+    "durata_s": 6.72,
+    "trascrizione": "Il preventivo è di 1.250 euro più IVA, valido fino al 31 dicembre.",
+    "errori": 0,
+    "parole": 15,
+    "prima_ok": true,
+    "ecapa": 0.6206114620067571
+   },
+   {
+    "id": 3,
+    "durata_s": 5.12,
+    "trascrizione": "Scusate, mi sentite bene adesso?  Posso condividere lo schermo.",
+    "errori": 0,
+    "parole": 9,
+    "prima_ok": true,
+    "ecapa": 0.5744303900391348
+   },
+   {
+    "id": 4,
+    "durata_s": 3.92,
+    "trascrizione": "Che bella notizia! Complimenti a tutta la squadra!",
+    "errori": 0,
+    "parole": 8,
+    "prima_ok": true,
+    "ecapa": 0.6125871862042148
+   }
+  ]
+ },
+ "F1_15": {
+  "persona": "F1",
+  "secondi": 15,
+  "posizioni": 184,
+  "wer": 0.0,
+  "prima_persa": 0,
+  "ecapa": 0.6194670001377443,
+  "durata_audio_s": 31.119999999999997,
+  "righe": [
+   {
+    "id": 0,
+    "durata_s": 5.6,
+    "trascrizione": "Buongiorno a tutti. Scrivo invece di parlare, ma vi seguo benissimo.",
+    "errori": 0,
+    "parole": 11,
+    "prima_ok": true,
+    "ecapa": 0.6271705788379758
+   },
+   {
+    "id": 1,
+    "durata_s": 9.44,
+    "trascrizione": "Sono d'accordo con Paola, però la consegna del 14 marzo mi sembra stretta.  Possiamo sentirci venerdì alle 15 e 30.",
+    "errori": 0,
+    "parole": 21,
+    "prima_ok": true,
+    "ecapa": 0.595781020021769
+   },
+   {
+    "id": 2,
+    "durata_s": 6.96,
+    "trascrizione": "Il preventivo è di 1.250 euro più IVA, valido fino al 31 dicembre.",
+    "errori": 0,
+    "parole": 15,
+    "prima_ok": true,
+    "ecapa": 0.6589452617611182
+   },
+   {
+    "id": 3,
+    "durata_s": 5.28,
+    "trascrizione": "Scusate, mi sentite bene adesso.  Posso condividere lo schermo.",
+    "errori": 0,
+    "parole": 9,
+    "prima_ok": true,
+    "ecapa": 0.5895540489407691
+   },
+   {
+    "id": 4,
+    "durata_s": 3.84,
+    "trascrizione": "Che bella notizia! Complimenti a tutta la squadra!",
+    "errori": 0,
+    "parole": 8,
+    "prima_ok": true,
+    "ecapa": 0.6258840911270892
+   }
+  ]
+ },
+ "F1_25": {
+  "persona": "F1",
+  "secondi": 25,
+  "posizioni": 309,
+  "wer": 0.328125,
+  "prima_persa": 0,
+  "ecapa": 0.6423449840425736,
+  "durata_audio_s": 22.8,
+  "righe": [
+   {
+    "id": 0,
+    "durata_s": 4.8,
+    "trascrizione": "Buongiorno a tutti. Scrivo invece di parlare, ma vi sei.",
+    "errori": 2,
+    "parole": 11,
+    "prima_ok": true,
+    "ecapa": 0.6625493644424
+   },
+   {
+    "id": 1,
+    "durata_s": 5.2,
+    "trascrizione": "Sono d'accordo con Paola, con segna del quattordici, ma sentirci venedia.",
+    "errori": 13,
+    "parole": 21,
+    "prima_ok": true,
+    "ecapa": 0.6592047452868524
+   },
+   {
+    "id": 2,
+    "durata_s": 4.24,
+    "trascrizione": "Il preventivo è di 1250 euro più IVA.",
+    "errori": 5,
+    "parole": 15,
+    "prima_ok": true,
+    "ecapa": 0.5543320554894282
+   },
+   {
+    "id": 3,
+    "durata_s": 4.64,
+    "trascrizione": "Scusate, mi sentite bene adesso. Posso condividere lo scher.",
+    "errori": 1,
+    "parole": 9,
+    "prima_ok": true,
+    "ecapa": 0.628993856910142
+   },
+   {
+    "id": 4,
+    "durata_s": 3.92,
+    "trascrizione": "Che bella notizia! Complimenti a tutta la squadra!",
+    "errori": 0,
+    "parole": 8,
+    "prima_ok": true,
+    "ecapa": 0.7066448980840456
+   }
+  ]
+ },
+ "F2_6": {
+  "persona": "F2",
+  "secondi": 6,
+  "posizioni": 70,
+  "wer": 0.015625,
+  "prima_persa": 1,
+  "ecapa": 0.5391165143919789,
+  "durata_audio_s": 28.8,
+  "righe": [
+   {
+    "id": 0,
+    "durata_s": 4.96,
+    "trascrizione": "Buongiorno a tutti. Scrivo invece di parlare, ma vi seguo benissimo.",
+    "errori": 0,
+    "parole": 11,
+    "prima_ok": true,
+    "ecapa": 0.6263562106007955
+   },
+   {
+    "id": 1,
+    "durata_s": 9.2,
+    "trascrizione": "Sono d'accordo con Paola, però la consegna del 14 marzo mi sembra stretta, possiamo sentirci venerdì alle 15 e 30.",
+    "errori": 0,
+    "parole": 21,
+    "prima_ok": true,
+    "ecapa": 0.49243264366620965
+   },
+   {
+    "id": 2,
+    "durata_s": 6.08,
+    "trascrizione": "il preventivo è di 1.250 euro più IVA, valido fino al 31 dicembre.",
+    "errori": 0,
+    "parole": 15,
+    "prima_ok": true,
+    "ecapa": 0.5340151494958582
+   },
+   {
+    "id": 3,
+    "durata_s": 4.96,
+    "trascrizione": "Mi sentite bene adesso? Posso condividere lo schermo.",
+    "errori": 1,
+    "parole": 9,
+    "prima_ok": false,
+    "ecapa": 0.5583353232833964
+   },
+   {
+    "id": 4,
+    "durata_s": 3.6,
+    "trascrizione": "che bella notizia, complimenti a tutta la squadra.",
+    "errori": 0,
+    "parole": 8,
+    "prima_ok": true,
+    "ecapa": 0.48444324491363505
+   }
+  ]
+ },
+ "F2_10": {
+  "persona": "F2",
+  "secondi": 10,
+  "posizioni": 121,
+  "wer": 0.0,
+  "prima_persa": 0,
+  "ecapa": 0.5704687916113781,
+  "durata_audio_s": 28.24,
+  "righe": [
+   {
+    "id": 0,
+    "durata_s": 4.88,
+    "trascrizione": "Buongiorno a tutti. Scrivo invece di parlare, ma vi seguo benissimo.",
+    "errori": 0,
+    "parole": 11,
+    "prima_ok": true,
+    "ecapa": 0.6729881753757183
+   },
+   {
+    "id": 1,
+    "durata_s": 9.36,
+    "trascrizione": "Sono d'accordo con Paola, però la consegna del 14 marzo mi sembra stretta.  Possiamo sentirci venerdì alle 15 e 30.",
+    "errori": 0,
+    "parole": 21,
+    "prima_ok": true,
+    "ecapa": 0.5139464640275122
+   },
+   {
+    "id": 2,
+    "durata_s": 6.08,
+    "trascrizione": "Il preventivo è di 1.250 euro più IVA, valido fino al 31 dicembre.",
+    "errori": 0,
+    "parole": 15,
+    "prima_ok": true,
+    "ecapa": 0.552178703468893
+   },
+   {
+    "id": 3,
+    "durata_s": 4.32,
+    "trascrizione": "Scusate, mi sentite bene adesso. Posso condividere lo schermo.",
+    "errori": 0,
+    "parole": 9,
+    "prima_ok": true,
+    "ecapa": 0.5654766536090494
+   },
+   {
+    "id": 4,
+    "durata_s": 3.6,
+    "trascrizione": "Che bella notizia, complimenti a tutta la squadra.",
+    "errori": 0,
+    "parole": 8,
+    "prima_ok": true,
+    "ecapa": 0.5477539615757174
+   }
+  ]
+ },
+ "F2_15": {
+  "persona": "F2",
+  "secondi": 15,
+  "posizioni": 189,
+  "wer": 0.0,
+  "prima_persa": 0,
+  "ecapa": 0.5576231913831582,
+  "durata_audio_s": 28.96,
+  "righe": [
+   {
+    "id": 0,
+    "durata_s": 4.96,
+    "trascrizione": "Buongiorno a tutti, scrivo invece di parlare, ma vi seguo benissimo.",
+    "errori": 0,
+    "parole": 11,
+    "prima_ok": true,
+    "ecapa": 0.626507646239683
+   },
+   {
+    "id": 1,
+    "durata_s": 9.52,
+    "trascrizione": "Sono d'accordo con Paola, però la consegna del 14 marzo mi sembra stretta.  Possiamo sentirci venerdì alle 15 e 30.",
+    "errori": 0,
+    "parole": 21,
+    "prima_ok": true,
+    "ecapa": 0.588351710892869
+   },
+   {
+    "id": 2,
+    "durata_s": 6.48,
+    "trascrizione": "Il preventivo è di 1.250 euro più IVA, valido fino al 31 dicembre.",
+    "errori": 0,
+    "parole": 15,
+    "prima_ok": true,
+    "ecapa": 0.5009426975522614
+   },
+   {
+    "id": 3,
+    "durata_s": 4.32,
+    "trascrizione": "Scusate, mi sentite bene adesso. Posso condividere lo schermo.",
+    "errori": 0,
+    "parole": 9,
+    "prima_ok": true,
+    "ecapa": 0.5647354353673069
+   },
+   {
+    "id": 4,
+    "durata_s": 3.68,
+    "trascrizione": "Che bella notizia, complimenti a tutta la squadra.",
+    "errori": 0,
+    "parole": 8,
+    "prima_ok": true,
+    "ecapa": 0.5075784668636705
+   }
+  ]
+ },
+ "F2_25": {
+  "persona": "F2",
+  "secondi": 25,
+  "posizioni": 310,
+  "wer": 0.328125,
+  "prima_persa": 1,
+  "ecapa": 0.5743293122282038,
+  "durata_audio_s": 21.2,
+  "righe": [
+   {
+    "id": 0,
+    "durata_s": 4.08,
+    "trascrizione": "Buongiorno a tutti, scrivo invece di parlare, ma vi seguo bene.",
+    "errori": 1,
+    "parole": 11,
+    "prima_ok": true,
+    "ecapa": 0.5727250011697519
+   },
+   {
+    "id": 1,
+    "durata_s": 6.32,
+    "trascrizione": "Ti accordo con Paola, però consegna di venerdì alle quindici e te.",
+    "errori": 12,
+    "parole": 21,
+    "prima_ok": false,
+    "ecapa": 0.6245537974770564
+   },
+   {
+    "id": 2,
+    "durata_s": 3.52,
+    "trascrizione": "Il preventivo è di 1.250 e...",
+    "errori": 8,
+    "parole": 15,
+    "prima_ok": true,
+    "ecapa": 0.5594745754676204
+   },
+   {
+    "id": 3,
+    "durata_s": 3.92,
+    "trascrizione": "Scusate, mi sentite bene adesso, posso condividere lo schermo.",
+    "errori": 0,
+    "parole": 9,
+    "prima_ok": true,
+    "ecapa": 0.5873698362142958
+   },
+   {
+    "id": 4,
+    "durata_s": 3.36,
+    "trascrizione": "Che bella notizia. Complimenti a tutta la squadra.",
+    "errori": 0,
+    "parole": 8,
+    "prima_ok": true,
+    "ecapa": 0.5275233508122945
+   }
+  ]
+ },
+ "M1_6": {
+  "persona": "M1",
+  "secondi": 6,
+  "posizioni": 70,
+  "wer": 0.0,
+  "prima_persa": 0,
+  "ecapa": 0.5548642896512297,
+  "durata_audio_s": 24.240000000000002,
+  "righe": [
+   {
+    "id": 0,
+    "durata_s": 4.16,
+    "trascrizione": "Buongiorno a tutti, scrivo invece di parlare ma vi seguo benissimo.",
+    "errori": 0,
+    "parole": 11,
+    "prima_ok": true,
+    "ecapa": 0.4907905456765103
+   },
+   {
+    "id": 1,
+    "durata_s": 7.6,
+    "trascrizione": "sono d'accordo con Paola, però la consegna del 14 marzo mi sembra stretta, possiamo sentirci venerdì alle 15 e 30.",
+    "errori": 0,
+    "parole": 21,
+    "prima_ok": true,
+    "ecapa": 0.7276278268970348
+   },
+   {
+    "id": 2,
+    "durata_s": 5.44,
+    "trascrizione": "Il preventivo è di 1.250 euro più IVA, valido fino al 31 dicembre.",
+    "errori": 0,
+    "parole": 15,
+    "prima_ok": true,
+    "ecapa": 0.5642679202665085
+   },
+   {
+    "id": 3,
+    "durata_s": 3.84,
+    "trascrizione": "scusate mi sentite bene adesso posso condividere lo schermo",
+    "errori": 0,
+    "parole": 9,
+    "prima_ok": true,
+    "ecapa": 0.5024937676804082
+   },
+   {
+    "id": 4,
+    "durata_s": 3.2,
+    "trascrizione": "Che bella notizia, complimenti a tutta la squadra!",
+    "errori": 0,
+    "parole": 8,
+    "prima_ok": true,
+    "ecapa": 0.48914138773568655
+   }
+  ]
+ },
+ "M1_10": {
+  "persona": "M1",
+  "secondi": 10,
+  "posizioni": 112,
+  "wer": 0.0,
+  "prima_persa": 0,
+  "ecapa": 0.5267219243550011,
+  "durata_audio_s": 26.48,
+  "righe": [
+   {
+    "id": 0,
+    "durata_s": 4.8,
+    "trascrizione": "Buongiorno a tutti. Scrivo invece di parlare ma vi seguo benissimo.",
+    "errori": 0,
+    "parole": 11,
+    "prima_ok": true,
+    "ecapa": 0.42062881803646346
+   },
+   {
+    "id": 1,
+    "durata_s": 8.64,
+    "trascrizione": "Sono d'accordo con Paola, però la consegna del 14 marzo mi sembra stretta, possiamo sentirci venerdì alle 15 e 30.",
+    "errori": 0,
+    "parole": 21,
+    "prima_ok": true,
+    "ecapa": 0.6226607053364627
+   },
+   {
+    "id": 2,
+    "durata_s": 6.0,
+    "trascrizione": "Il preventivo è di 1.250 euro più IVA, valido fino al 31 dicembre.",
+    "errori": 0,
+    "parole": 15,
+    "prima_ok": true,
+    "ecapa": 0.5890389847213064
+   },
+   {
+    "id": 3,
+    "durata_s": 3.84,
+    "trascrizione": "Scusate, mi sentite bene, adesso posso condividere lo schermo.",
+    "errori": 0,
+    "parole": 9,
+    "prima_ok": true,
+    "ecapa": 0.4630225190473963
+   },
+   {
+    "id": 4,
+    "durata_s": 3.2,
+    "trascrizione": "Che bella notizia, complimenti a tutta la squadra!",
+    "errori": 0,
+    "parole": 8,
+    "prima_ok": true,
+    "ecapa": 0.5382585946333769
+   }
+  ]
+ },
+ "M1_15": {
+  "persona": "M1",
+  "secondi": 15,
+  "posizioni": 176,
+  "wer": 0.015625,
+  "prima_persa": 1,
+  "ecapa": 0.5295300581266305,
+  "durata_audio_s": 27.36,
+  "righe": [
+   {
+    "id": 0,
+    "durata_s": 4.96,
+    "trascrizione": "Buongiorno a tutti. Scrivo invece di parlare, ma vi seguo benissimo.",
+    "errori": 0,
+    "parole": 11,
+    "prima_ok": true,
+    "ecapa": 0.49927957013463675
+   },
+   {
+    "id": 1,
+    "durata_s": 8.8,
+    "trascrizione": "Sono d'accordo con Paola, però la consegna del 14 marzo mi sembra stretta, possiamo sentirci venerdì alle 15 e 30.",
+    "errori": 0,
+    "parole": 21,
+    "prima_ok": true,
+    "ecapa": 0.5589042024927068
+   },
+   {
+    "id": 2,
+    "durata_s": 6.24,
+    "trascrizione": "Il preventivo è di 1.250 euro più IVA, valido fino al 31 dicembre.",
+    "errori": 0,
+    "parole": 15,
+    "prima_ok": true,
+    "ecapa": 0.5478216883155271
+   },
+   {
+    "id": 3,
+    "durata_s": 4.0,
+    "trascrizione": "mi sentite bene adesso? Posso condividere lo schermo.",
+    "errori": 1,
+    "parole": 9,
+    "prima_ok": false,
+    "ecapa": 0.5108809554970872
+   },
+   {
+    "id": 4,
+    "durata_s": 3.36,
+    "trascrizione": "Che bella notizia, complimenti a tutta la squadra.",
+    "errori": 0,
+    "parole": 8,
+    "prima_ok": true,
+    "ecapa": 0.5307638741931943
+   }
+  ]
+ },
+ "M1_25": {
+  "persona": "M1",
+  "secondi": 25,
+  "posizioni": 307,
+  "wer": 0.296875,
+  "prima_persa": 1,
+  "ecapa": 0.6161952765288742,
+  "durata_audio_s": 18.16,
+  "righe": [
+   {
+    "id": 0,
+    "durata_s": 3.68,
+    "trascrizione": "Buongiorno a tutti, scrivo invece di parlare, ma vi seguo bene.",
+    "errori": 1,
+    "parole": 11,
+    "prima_ok": true,
+    "ecapa": 0.6593446487724145
+   },
+   {
+    "id": 1,
+    "durata_s": 4.08,
+    "trascrizione": "sono d'accordo con Paola, però la consegna del Quattratis Perantertia",
+    "errori": 12,
+    "parole": 21,
+    "prima_ok": true,
+    "ecapa": 0.6424642343114206
+   },
+   {
+    "id": 2,
+    "durata_s": 3.44,
+    "trascrizione": "Preventivo è di 1.250 euro più IVA.",
+    "errori": 6,
+    "parole": 15,
+    "prima_ok": false,
+    "ecapa": 0.52968878826756
+   },
+   {
+    "id": 3,
+    "durata_s": 3.68,
+    "trascrizione": "Scusate, mi sentite bene adesso posso condividere lo schermo?",
+    "errori": 0,
+    "parole": 9,
+    "prima_ok": true,
+    "ecapa": 0.6469868563866864
+   },
+   {
+    "id": 4,
+    "durata_s": 3.28,
+    "trascrizione": "che bella notizia, complimenti a tutta la squadra.",
+    "errori": 0,
+    "parole": 8,
+    "prima_ok": true,
+    "ecapa": 0.6024918549062894
+   }
+  ]
+ },
+ "M2_6": {
+  "persona": "M2",
+  "secondi": 6,
+  "posizioni": 66,
+  "wer": 0.0,
+  "prima_persa": 0,
+  "ecapa": 0.6054857885110654,
+  "durata_audio_s": 28.08,
+  "righe": [
+   {
+    "id": 0,
+    "durata_s": 4.88,
+    "trascrizione": "Buongiorno a tutti. Scrivo invece di parlare, ma vi seguo benissimo.",
+    "errori": 0,
+    "parole": 11,
+    "prima_ok": true,
+    "ecapa": 0.5371943726919145
+   },
+   {
+    "id": 1,
+    "durata_s": 9.2,
+    "trascrizione": "sono d'accordo con Paola, però la consegna del 14 marzo mi sembra stretta.  Possiamo sentirci venerdì alle 15.30?",
+    "errori": 0,
+    "parole": 21,
+    "prima_ok": true,
+    "ecapa": 0.6621922417828972
+   },
+   {
+    "id": 2,
+    "durata_s": 6.0,
+    "trascrizione": "Il preventivo è di 1.250 euro più IVA, valido fino al 31 dicembre.",
+    "errori": 0,
+    "parole": 15,
+    "prima_ok": true,
+    "ecapa": 0.607692215449172
+   },
+   {
+    "id": 3,
+    "durata_s": 4.56,
+    "trascrizione": "Scusate, mi sentite bene adesso? Posso condividere lo schermo?",
+    "errori": 0,
+    "parole": 9,
+    "prima_ok": true,
+    "ecapa": 0.5942314759745857
+   },
+   {
+    "id": 4,
+    "durata_s": 3.44,
+    "trascrizione": "Che bella notizia! Complimenti a tutta la squadra!",
+    "errori": 0,
+    "parole": 8,
+    "prima_ok": true,
+    "ecapa": 0.6261186366567577
+   }
+  ]
+ },
+ "M2_10": {
+  "persona": "M2",
+  "secondi": 10,
+  "posizioni": 110,
+  "wer": 0.03125,
+  "prima_persa": 0,
+  "ecapa": 0.6096009012055281,
+  "durata_audio_s": 27.12,
+  "righe": [
+   {
+    "id": 0,
+    "durata_s": 5.04,
+    "trascrizione": "Buongiorno a tutti. Scrivo invece di parlare, ma vi seguo benissimo.",
+    "errori": 0,
+    "parole": 11,
+    "prima_ok": true,
+    "ecapa": 0.5172004047163962
+   },
+   {
+    "id": 1,
+    "durata_s": 8.56,
+    "trascrizione": "Sono d'accordo con Paola, però la consegna del 14 marzo mi sembra stretta.  Possiamo sentirci venerdì alle 15.30.",
+    "errori": 0,
+    "parole": 21,
+    "prima_ok": true,
+    "ecapa": 0.641973851165133
+   },
+   {
+    "id": 2,
+    "durata_s": 5.92,
+    "trascrizione": "Il preventivo è di 1.250 euro più IVA, varido fino al 31 dicembre.",
+    "errori": 1,
+    "parole": 15,
+    "prima_ok": true,
+    "ecapa": 0.6018854792436172
+   },
+   {
+    "id": 3,
+    "durata_s": 4.4,
+    "trascrizione": "Scusate, mi sentite bene adesso? Posso condividere lo schermo?",
+    "errori": 0,
+    "parole": 9,
+    "prima_ok": true,
+    "ecapa": 0.6077948966815624
+   },
+   {
+    "id": 4,
+    "durata_s": 3.2,
+    "trascrizione": "Che bella notizia, compimente a tutta la squadra!",
+    "errori": 1,
+    "parole": 8,
+    "prima_ok": true,
+    "ecapa": 0.6791498742209321
+   }
+  ]
+ },
+ "M2_15": {
+  "persona": "M2",
+  "secondi": 15,
+  "posizioni": 189,
+  "wer": 0.015625,
+  "prima_persa": 1,
+  "ecapa": 0.6081259677422665,
+  "durata_audio_s": 27.04,
+  "righe": [
+   {
+    "id": 0,
+    "durata_s": 4.8,
+    "trascrizione": "Buongiorno a tutti. Scrivo invece di parlare, ma vi seguo benissimo.",
+    "errori": 0,
+    "parole": 11,
+    "prima_ok": true,
+    "ecapa": 0.5418752801195028
+   },
+   {
+    "id": 1,
+    "durata_s": 8.56,
+    "trascrizione": "sono d'accordo con Paola. Però la consegna del 14 marzo mi sembra stretta. Possiamo sentirci venerdì alle 15.30.",
+    "errori": 0,
+    "parole": 21,
+    "prima_ok": true,
+    "ecapa": 0.5919425677675609
+   },
+   {
+    "id": 2,
+    "durata_s": 6.08,
+    "trascrizione": "Il preventivo è di 1.250 euro più IVA, valido fino al 31 dicembre.",
+    "errori": 0,
+    "parole": 15,
+    "prima_ok": true,
+    "ecapa": 0.6359880785243421
+   },
+   {
+    "id": 3,
+    "durata_s": 4.24,
+    "trascrizione": "Mi sentite bene adesso? Posso condividere lo schermo?",
+    "errori": 1,
+    "parole": 9,
+    "prima_ok": false,
+    "ecapa": 0.6268422593673438
+   },
+   {
+    "id": 4,
+    "durata_s": 3.36,
+    "trascrizione": "Che bella notizia, complimenti a tutta la squadra!",
+    "errori": 0,
+    "parole": 8,
+    "prima_ok": true,
+    "ecapa": 0.6439816529325829
+   }
+  ]
+ },
+ "M2_25": {
+  "persona": "M2",
+  "secondi": 25,
+  "posizioni": 269,
+  "wer": 0.3125,
+  "prima_persa": 1,
+  "ecapa": 0.6091893113642923,
+  "durata_audio_s": 21.84,
+  "righe": [
+   {
+    "id": 0,
+    "durata_s": 4.72,
+    "trascrizione": "Buongiorno a tutti. Scrivo invece di parlare, ma vi seguo benissimo.",
+    "errori": 0,
+    "parole": 11,
+    "prima_ok": true,
+    "ecapa": 0.5991311420655535
+   },
+   {
+    "id": 1,
+    "durata_s": 5.84,
+    "trascrizione": "Sono d'accordo con Paola, però con segno del quattordici maschetta possiamo sentirci bene.",
+    "errori": 11,
+    "parole": 21,
+    "prima_ok": true,
+    "ecapa": 0.6105180486723767
+   },
+   {
+    "id": 2,
+    "durata_s": 3.76,
+    "trascrizione": "di preventivo è di 1.250 euro più riva.",
+    "errori": 7,
+    "parole": 15,
+    "prima_ok": false,
+    "ecapa": 0.5079993626743466
+   },
+   {
+    "id": 3,
+    "durata_s": 4.24,
+    "trascrizione": "Scusate, mi sentite bene adesso? Posso condividere lo schermo?",
+    "errori": 0,
+    "parole": 9,
+    "prima_ok": true,
+    "ecapa": 0.6132838924215075
+   },
+   {
+    "id": 4,
+    "durata_s": 3.28,
+    "trascrizione": "che bella notizia, compimenti e tutta la squadra.",
+    "errori": 2,
+    "parole": 8,
+    "prima_ok": true,
+    "ecapa": 0.7150141109876775
+   }
+  ]
+ },
+ "F1_12": {
+  "persona": "F1",
+  "secondi": 12,
+  "posizioni": 144,
+  "wer": 0.0,
+  "prima_persa": 0,
+  "ecapa": 0.5656308785105709,
+  "durata_audio_s": 30.32,
+  "righe": [
+   {
+    "id": 0,
+    "durata_s": 5.44,
+    "trascrizione": "Buongiorno a tutti. Scrivo invece di parlare, ma vi seguo benissimo.",
+    "errori": 0,
+    "parole": 11,
+    "prima_ok": true,
+    "ecapa": 0.6087124689671582
+   },
+   {
+    "id": 1,
+    "durata_s": 9.28,
+    "trascrizione": "Sono d'accordo con Paola.  Però la consegna del 14 marzo mi sembra stretta.  Possiamo sentirci venerdì alle 15.30.",
+    "errori": 0,
+    "parole": 21,
+    "prima_ok": true,
+    "ecapa": 0.565384727789435
+   },
+   {
+    "id": 2,
+    "durata_s": 6.88,
+    "trascrizione": "Il preventivo è di 1.250 euro più IVA, valido fino al 31 dicembre.",
+    "errori": 0,
+    "parole": 15,
+    "prima_ok": true,
+    "ecapa": 0.5295341255928749
+   },
+   {
+    "id": 3,
+    "durata_s": 5.12,
+    "trascrizione": "Scusate, mi sentite bene adesso. Posso condividere lo schermo?",
+    "errori": 0,
+    "parole": 9,
+    "prima_ok": true,
+    "ecapa": 0.5034200926345083
+   },
+   {
+    "id": 4,
+    "durata_s": 3.6,
+    "trascrizione": "Che bella notizia! Complimenti a tutta la squadra!",
+    "errori": 0,
+    "parole": 8,
+    "prima_ok": true,
+    "ecapa": 0.621102977568878
+   }
+  ]
+ },
+ "F1_20": {
+  "persona": "F1",
+  "secondi": 20,
+  "posizioni": 235,
+  "wer": 0.0625,
+  "prima_persa": 0,
+  "ecapa": 0.5954296559495624,
+  "durata_audio_s": 29.52,
+  "righe": [
+   {
+    "id": 0,
+    "durata_s": 5.6,
+    "trascrizione": "Buongiorno a tutti. Scrivo invece di parlare, ma vi seguo benissimo.",
+    "errori": 0,
+    "parole": 11,
+    "prima_ok": true,
+    "ecapa": 0.5789908818802432
+   },
+   {
+    "id": 1,
+    "durata_s": 8.96,
+    "trascrizione": "Sono d'accordo con Paola, però la consegna del 14 marzo mi sembra stretta, possiamo sentirci e trenta.",
+    "errori": 3,
+    "parole": 21,
+    "prima_ok": true,
+    "ecapa": 0.5898675790527254
+   },
+   {
+    "id": 2,
+    "durata_s": 6.16,
+    "trascrizione": "Il preventivo è di 1.250 euro più IVA valido fino al 31.",
+    "errori": 1,
+    "parole": 15,
+    "prima_ok": true,
+    "ecapa": 0.6330924053964464
+   },
+   {
+    "id": 3,
+    "durata_s": 4.8,
+    "trascrizione": "Scusate, mi sentite bene adesso? Posso condividere lo schermo.",
+    "errori": 0,
+    "parole": 9,
+    "prima_ok": true,
+    "ecapa": 0.5580156328376873
+   },
+   {
+    "id": 4,
+    "durata_s": 4.0,
+    "trascrizione": "Che bella notizia! Complimenti a tutta la squadra!",
+    "errori": 0,
+    "parole": 8,
+    "prima_ok": true,
+    "ecapa": 0.6171817805807096
+   }
+  ]
+ },
+ "F2_12": {
+  "persona": "F2",
+  "secondi": 12,
+  "posizioni": 144,
+  "wer": 0.015625,
+  "prima_persa": 1,
+  "ecapa": 0.57511376391517,
+  "durata_audio_s": 29.2,
+  "righe": [
+   {
+    "id": 0,
+    "durata_s": 5.68,
+    "trascrizione": "Buongiorno a tutti. Scrivo invece di parlare, ma vi seguo benissimo.",
+    "errori": 0,
+    "parole": 11,
+    "prima_ok": true,
+    "ecapa": 0.618941129364885
+   },
+   {
+    "id": 1,
+    "durata_s": 9.12,
+    "trascrizione": "Sono d'accordo con Paola, però la consegna del 14 marzo mi sembra stretta, possiamo sentirci venerdì alle 15 e 30?",
+    "errori": 0,
+    "parole": 21,
+    "prima_ok": true,
+    "ecapa": 0.5805438245093613
+   },
+   {
+    "id": 2,
+    "durata_s": 6.32,
+    "trascrizione": "Il preventivo è di 1.250 euro più IVA, valido fino al 31 dicembre.",
+    "errori": 0,
+    "parole": 15,
+    "prima_ok": true,
+    "ecapa": 0.520776017832445
+   },
+   {
+    "id": 3,
+    "durata_s": 4.48,
+    "trascrizione": "Mi sentite bene adesso? Posso condividere lo schermo?",
+    "errori": 1,
+    "parole": 9,
+    "prima_ok": false,
+    "ecapa": 0.5657619264185367
+   },
+   {
+    "id": 4,
+    "durata_s": 3.6,
+    "trascrizione": "Che bella notizia. Complimenti a tutta la squadra.",
+    "errori": 0,
+    "parole": 8,
+    "prima_ok": true,
+    "ecapa": 0.589545921450622
+   }
+  ]
+ },
+ "F2_20": {
+  "persona": "F2",
+  "secondi": 20,
+  "posizioni": 241,
+  "wer": 0.125,
+  "prima_persa": 1,
+  "ecapa": 0.5672105607258487,
+  "durata_audio_s": 26.96,
+  "righe": [
+   {
+    "id": 0,
+    "durata_s": 4.96,
+    "trascrizione": "Buongiorno a tutti, scrivo invece di parlare, ma vi seguo benissimo.",
+    "errori": 0,
+    "parole": 11,
+    "prima_ok": true,
+    "ecapa": 0.6259227232613889
+   },
+   {
+    "id": 1,
+    "durata_s": 8.4,
+    "trascrizione": "sono d'accordo con Paola. Però la consenia del 14 mar stretta, possiamo sentirci venerdì alle 15 ette.",
+    "errori": 6,
+    "parole": 21,
+    "prima_ok": true,
+    "ecapa": 0.5445409027089871
+   },
+   {
+    "id": 2,
+    "durata_s": 5.6,
+    "trascrizione": "Il preventivo è di 1.250 euro più IVA, valido fino al 31.",
+    "errori": 1,
+    "parole": 15,
+    "prima_ok": true,
+    "ecapa": 0.5710681186497006
+   },
+   {
+    "id": 3,
+    "durata_s": 4.32,
+    "trascrizione": "Mi sentite bene adesso? Posso condividere lo schermo.",
+    "errori": 1,
+    "parole": 9,
+    "prima_ok": false,
+    "ecapa": 0.5387271262961473
+   },
+   {
+    "id": 4,
+    "durata_s": 3.68,
+    "trascrizione": "Che bella notizia, complimenti a tutta la squadra.",
+    "errori": 0,
+    "parole": 8,
+    "prima_ok": true,
+    "ecapa": 0.5557939327130195
+   }
+  ]
+ },
+ "M1_12": {
+  "persona": "M1",
+  "secondi": 12,
+  "posizioni": 139,
+  "wer": 0.0,
+  "prima_persa": 0,
+  "ecapa": 0.5492219531205196,
+  "durata_audio_s": 27.44,
+  "righe": [
+   {
+    "id": 0,
+    "durata_s": 5.04,
+    "trascrizione": "Buongiorno a tutti. Scrivo invece di parlare ma vi seguo benissimo.",
+    "errori": 0,
+    "parole": 11,
+    "prima_ok": true,
+    "ecapa": 0.46713129285938926
+   },
+   {
+    "id": 1,
+    "durata_s": 8.64,
+    "trascrizione": "Sono d'accordo con Paola, però la consegna del 14 marzo mi sembra stretta, possiamo  sentirci venerdì alle 15 e 30.",
+    "errori": 0,
+    "parole": 21,
+    "prima_ok": true,
+    "ecapa": 0.5927190292271222
+   },
+   {
+    "id": 2,
+    "durata_s": 6.4,
+    "trascrizione": "Il preventivo è di 1.250 euro più IVA, valido fino al 31 dicembre.",
+    "errori": 0,
+    "parole": 15,
+    "prima_ok": true,
+    "ecapa": 0.6152472667634716
+   },
+   {
+    "id": 3,
+    "durata_s": 4.0,
+    "trascrizione": "scusate mi sentite bene adesso posso condividere lo schermo",
+    "errori": 0,
+    "parole": 9,
+    "prima_ok": true,
+    "ecapa": 0.5498974308807183
+   },
+   {
+    "id": 4,
+    "durata_s": 3.36,
+    "trascrizione": "Che bella notizia, complimenti a tutta la squadra.",
+    "errori": 0,
+    "parole": 8,
+    "prima_ok": true,
+    "ecapa": 0.5211147458718963
+   }
+  ]
+ },
+ "M1_20": {
+  "persona": "M1",
+  "secondi": 20,
+  "posizioni": 250,
+  "wer": 0.078125,
+  "prima_persa": 1,
+  "ecapa": 0.5163885787668568,
+  "durata_audio_s": 25.36,
+  "righe": [
+   {
+    "id": 0,
+    "durata_s": 5.12,
+    "trascrizione": "Buongiorno a tutti. Scrivo invece di parlare, ma vi seguo benissimo.",
+    "errori": 0,
+    "parole": 11,
+    "prima_ok": true,
+    "ecapa": 0.4411903391316534
+   },
+   {
+    "id": 1,
+    "durata_s": 7.36,
+    "trascrizione": "sono d'accordo con Paola. Però la consegna del 14 marzo mi sembra sentirci venerdì alle  15 e 30.",
+    "errori": 2,
+    "parole": 21,
+    "prima_ok": true,
+    "ecapa": 0.5798244675382211
+   },
+   {
+    "id": 2,
+    "durata_s": 4.96,
+    "trascrizione": "Il preventivo è di 1.250 euro più IVA, valido fino al treno.",
+    "errori": 2,
+    "parole": 15,
+    "prima_ok": true,
+    "ecapa": 0.4966331402627844
+   },
+   {
+    "id": 3,
+    "durata_s": 4.16,
+    "trascrizione": "mi sentite bene adesso? Posso condividere lo schermo.",
+    "errori": 1,
+    "parole": 9,
+    "prima_ok": false,
+    "ecapa": 0.4906931529343408
+   },
+   {
+    "id": 4,
+    "durata_s": 3.76,
+    "trascrizione": "Che bella notizia, complimenti a tutta la squadra.",
+    "errori": 0,
+    "parole": 8,
+    "prima_ok": true,
+    "ecapa": 0.5736017939672843
+   }
+  ]
+ },
+ "M2_12": {
+  "persona": "M2",
+  "secondi": 12,
+  "posizioni": 133,
+  "wer": 0.015625,
+  "prima_persa": 0,
+  "ecapa": 0.597440053374805,
+  "durata_audio_s": 27.2,
+  "righe": [
+   {
+    "id": 0,
+    "durata_s": 5.12,
+    "trascrizione": "Buongiorno a tutti. Scrivo invece di parlare, ma vi seguo benissimo.",
+    "errori": 0,
+    "parole": 11,
+    "prima_ok": true,
+    "ecapa": 0.5555401893598316
+   },
+   {
+    "id": 1,
+    "durata_s": 8.48,
+    "trascrizione": "Sono d'accordo con Paola, però la consenia del 14 marzo mi sembra stretta.  Possiamo sentirci venerdì alle 15.30.",
+    "errori": 1,
+    "parole": 21,
+    "prima_ok": true,
+    "ecapa": 0.5935380045662966
+   },
+   {
+    "id": 2,
+    "durata_s": 5.92,
+    "trascrizione": "Il preventivo è di 1.250 euro più IVA, valido fino al 31 dicembre.",
+    "errori": 0,
+    "parole": 15,
+    "prima_ok": true,
+    "ecapa": 0.6266850486740528
+   },
+   {
+    "id": 3,
+    "durata_s": 4.4,
+    "trascrizione": "Scusate, mi sentite bene adesso? Posso condividere lo schermo?",
+    "errori": 0,
+    "parole": 9,
+    "prima_ok": true,
+    "ecapa": 0.629968987991497
+   },
+   {
+    "id": 4,
+    "durata_s": 3.28,
+    "trascrizione": "Che bella notizia, complimenti a tutta la squadra.",
+    "errori": 0,
+    "parole": 8,
+    "prima_ok": true,
+    "ecapa": 0.5814680362823463
+   }
+  ]
+ },
+ "M2_20": {
+  "persona": "M2",
+  "secondi": 20,
+  "posizioni": 248,
+  "wer": 0.171875,
+  "prima_persa": 1,
+  "ecapa": 0.6112995339816468,
+  "durata_audio_s": 24.56,
+  "righe": [
+   {
+    "id": 0,
+    "durata_s": 4.88,
+    "trascrizione": "Buongiorno a tutti. Scrivo invece di parlare, ma vi seguo benissimo.",
+    "errori": 0,
+    "parole": 11,
+    "prima_ok": true,
+    "ecapa": 0.6281832769258702
+   },
+   {
+    "id": 1,
+    "durata_s": 7.04,
+    "trascrizione": "Sono d'accordo con Paola, però la consegna del quattordici ma sembra sentirci venerdì alle quindice e trenta.",
+    "errori": 5,
+    "parole": 21,
+    "prima_ok": true,
+    "ecapa": 0.6229160794418714
+   },
+   {
+    "id": 2,
+    "durata_s": 5.04,
+    "trascrizione": "di preventivo è di 1.250 euro più IVA, valido fino a 3.",
+    "errori": 4,
+    "parole": 15,
+    "prima_ok": false,
+    "ecapa": 0.5849571305938024
+   },
+   {
+    "id": 3,
+    "durata_s": 4.24,
+    "trascrizione": "Scusatemi, sentite bene adesso? Posso condividere lo schermo?",
+    "errori": 2,
+    "parole": 9,
+    "prima_ok": true,
+    "ecapa": 0.6019721817895949
+   },
+   {
+    "id": 4,
+    "durata_s": 3.36,
+    "trascrizione": "che bella notizia, complimenti a tutta la squadra.",
+    "errori": 0,
+    "parole": 8,
+    "prima_ok": true,
+    "ecapa": 0.6184690011570948
+   }
+  ]
+ }
+}

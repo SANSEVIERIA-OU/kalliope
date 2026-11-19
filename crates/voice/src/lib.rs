@@ -1,13 +1,15 @@
 // SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.0
-//! Neural voice: phonemes → audio samples.
+//! Neural voices through ONNX Runtime, loaded at run time.
 //!
-//! Runs Klein-TTS (an encoder that predicts phoneme durations and features, and a decoder that
-//! turns the time-expanded features into a waveform) through ONNX Runtime, loaded at run time.
-//! The pipeline follows the official `@kleinml/kleintts` package (`src/model.js`).
+//! - [`Voice`]: Klein-TTS, phonemes → audio (an encoder that predicts phoneme durations and
+//!   features, and a decoder that turns the time-expanded features into a waveform), following the
+//!   official `@kleinml/kleintts` package (`src/model.js`). Giulia and Marco.
+//! - [`pocket::Pocket`]: Pocket TTS by Kyutai, text → audio in the voice of a short recording.
 
 mod json;
 mod noise;
 pub mod ort;
+pub mod pocket;
 
 use std::collections::HashMap;
 use std::fmt;

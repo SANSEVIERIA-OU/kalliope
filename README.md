@@ -36,8 +36,36 @@ typed text → normalizer → phonemizer → neural voice → virtual microphone
 | Normalizer | `kalliope-text` | Writes out numbers, dates, times, money, units, phone numbers, addresses, abbreviations, acronyms and chat shorthand as words; restores missing accents; splits sentences; keeps punctuation | about 11 µs per sentence |
 | Phonemizer | `kalliope-phonemes` | Italian spelling → IPA, with stress and e/o quality from rules, endings and a 7,920-word lexicon (no espeak-ng) | microseconds per word |
 | Voice | `kalliope-voice` | Klein-TTS-X1.5-Pro through ONNX Runtime, loaded at run time; one thread, no spinning, no memory arena | about 0.07 CPU-seconds per second of speech |
+| Own voice | `kalliope-voice` (`pocket`) | Pocket TTS by Kyutai: three ONNX graphs, the flow model with 8-bit weights, two threads; streamed frame by frame | see [A voice of your own](#a-voice-of-your-own-in-progress) |
 | Microphone | `kalliope-mic` | PipeWire virtual source "Kalliope", loaded at run time; audio flows only while an app listens | 0% CPU when nobody listens |
 | App | `kalliope-app` | Slint window, software-rendered, accessible to screen readers; one sentence is synthesized while the previous one plays | 10.6 MB RAM with the window alone, about 117 MB with the voice loaded, 0% CPU when idle |
+
+## A voice of your own (in progress)
+
+Kalliope can also speak with the voice of the person who uses it, imitated from a short recording,
+with [Pocket TTS](https://github.com/kyutai-labs/pocket-tts) by Kyutai (Italian model, CC BY 4.0).
+Giulia and Marco stay for whoever has no recording.
+
+**Whose voice.** Record your own voice, or use the voice of someone who has given you explicit consent.
+Kyutai's terms, which everyone who downloads the model accepts, forbid imitating a voice without the
+explicit and lawful consent of its owner.
+
+The model is not downloaded by Kalliope yet: its files come from Kyutai's repository on Hugging Face,
+which asks for an account and the acceptance of those terms, and are converted to ONNX by
+`benchmarks/voce-propria/scripts/v4_esporta.py`. Once its folder is in place:
+
+```sh
+export KALLIOPE_POCKET_DIR=/path/to/pocket-tts-italian   # flow_lm.onnx, mimi_*.onnx, tokenizer.json, pocket.json
+kalliope-cli voice my-voice.wav -o ~/.local/share/kalliope/voices/Mia.safetensors
+kalliope-cli say --voice ~/.local/share/kalliope/voices/Mia.safetensors -o prova.wav "Buongiorno a tutti."
+```
+
+The recording is a WAV file of the person speaking naturally, as clean as possible (the model also
+imitates noise and echo); Kalliope uses its first 12 seconds (longer prompts make the model end
+sentences early). The voice file (4 to 7 MB) is then listed in the app next to Giulia and Marco,
+and speaks into the microphone while it is being generated: on the Ryzen 5 PRO 6650U, about 0.43
+CPU-seconds per second of speech with two threads, the first audio about 50 ms after the text is
+ready, 294 MB of memory (measures in [benchmarks/voce-propria](benchmarks/voce-propria/README.md)).
 
 Speech recorded from the "Kalliope" microphone, as a call would hear it, transcribes with a 2.3%
 word error rate on the 10 benchmark sentences. The remaining differences are mostly spelling:

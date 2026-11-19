@@ -2,7 +2,7 @@
 
 ## V-4 · Pocket TTS ufficiale attuale (gated) dentro il programma (dal 19/11, incarico `design/lavoro/incarichi/V-4-pocket-ufficiale-nel-programma.md`)
 
-### Dove sono (19/11, prima del riavvio della sessione)
+### Dove ero alle 08:10 (prima del via all'accesso; superato dal diario qui sotto)
 
 - Letti per intero V-4 e V-3 (parte B, prove, regole). Letti il programma (`crates/voice` lib.rs e ort.rs, `crates/app`
   engine.rs, catalog.rs, settings.rs, main.rs, audio.rs, download.rs, `crates/cli`) e il codice ufficiale attuale di Kyutai
@@ -10,7 +10,7 @@
   text_chunking.py, text_conditioner.py, config.py, audio_utils.py, model_state.py).
 - **Nessun file del programma toccato finora** (`crates/`, `tools/fetch_assets.py`, `packaging/`, `docs/`, `README.md`,
   `THIRD_PARTY_NOTICES.md` intatti). Nessun processo lanciato in background, nessuno in corso.
-- **Accesso al repository gated**: alle 08:1x la riga `HF_TOKEN=` di `/workspace/kalliope/.env` era vuota (controllato solo con
+- **Accesso al repository gated**: verso le 08:09 la riga `HF_TOKEN=` di `/workspace/kalliope/.env` era vuota (controllato solo con
   `[ -n "$HF_TOKEN" ]`); poi chi coordina ha scritto che la chiave c'è e che il repository risponde 206 con la chiave. **Dal
   repository gated non ho ancora scaricato nulla.** `hf` non è nel PATH: si usa `/workspace/nomedadefinire/bench/voce-propria/.venv/bin/hf`
   (versione 2.4.0); `hf auth login` non va usato, la chiave si carica solo dentro il comando che scarica.
@@ -26,12 +26,12 @@
 - onnxruntime 1.32.0 (13/11/2026) è ancora l'ultima; onnx 1.23.2, torch 2.15.0, tokenizers 0.23.3, safetensors 0.8.0,
   huggingface_hub 2.4.0, sentencepiece 0.2.3.
 
-### Scaricato in V-4 (tutto da fonti aperte, nessun account)
+### Scaricato in V-4 (prima parte; i file del gated sono nel diario qui sotto)
 
 - `/workspace/nomedadefinire/bench/voce-propria/codice/dl-pocket-tts-a4a6054d/`: il codice ufficiale a `a4a6054d`
   (archivio di GitHub, scaricato per intero ed estratto; nessuno scaricamento a metà).
 
-### Piano deciso (da fare, in quest'ordine)
+### Piano deciso alle 08:10, poi seguito (diario)
 
 1. Scaricare dal gated, con la chiave caricata solo nel comando, in
    `/workspace/nomedadefinire/bench/voce-propria/modelli/pocket-tts-gated/` i soli file
@@ -55,12 +55,46 @@
    divisione ufficiali, safetensors dello stato voce compatibile con Kyutai, ricampionamento come `resample_poly`, fine su pausa),
    CLI, `engine.rs`, ONNX Runtime 1.32.0, attribuzione, prove.
 
-### Prossimo passo esatto
+- 19/11 08:11: chiave presente, `hf auth whoami` risponde con l'account del proprietario. **Avviato lo scaricamento** di
+  `languages/italian/model.safetensors@3e82814a` in `modelli/pocket-tts-gated/` (in primo piano). Se la sessione si ferma a metà,
+  lo stesso comando `hf download` riprende dai file `.incomplete` in `modelli/pocket-tts-gated/.cache/`.
+- 19/11 08:12 **Scaricati dal gated, completi** (con la chiave caricata solo nel comando), in
+  `/workspace/nomedadefinire/bench/voce-propria/modelli/pocket-tts-gated/` (revisione in `REVISION`):
+  - `languages/italian/model.safetensors@3e82814a` (219 029 196 byte, sha256 `11c226c1…`);
+  - `languages/italian_24l/model.safetensors@3e82814a` (672 178 676 byte, sha256 `b318edee…`).
+  Controllato con `grep -rlF` senza stamparla: la chiave non compare in quella cartella, in `~/.cache/huggingface` né in
+  `benchmarks/`. Nessun altro file scaricato dal gated.
 
-- Passo 1 del piano: controllare che la chiave ci sia (`[ -n "$HF_TOKEN" ]` dentro `bash -c` con `.env` caricato), poi
-  `hf auth whoami` e lo scaricamento dei due `model.safetensors` gated a `3e82814a`. Memoria: un lavoro pesante alla volta,
-  controllare `free -m` prima (sotto 1,5 GB disponibili aspettare).
+- 19/11 08:14 **Compatibilità gated/aperti** (`scripts/v4_compat.py`, `esiti/v4/compatibilita.json`, picco 1,6 GB, 6 s): a 6 e
+  a 24 strati i due file hanno gli stessi tensori con le stesse forme e sono **identici bit per bit ovunque tranne
+  `mimi.encoder.*` (22 tensori) e `mimi.encoder_transformer.*` (20)**, azzerati nei file aperti. Il downsample, la proiezione
+  del parlante, `bos_before_voice`, il decoder Mimi e tutto il flow LM sono uguali. Quindi tutto ciò che non codifica la voce si
+  può costruire e provare dai pesi aperti, e l'encoder viene dal gated.
 
+- 19/11 08:14 Scaricato dal gated anche `common_voice_it_36520747-enhanced-v2.mp3@64ab7d24` (la registrazione della voce
+  italiana giovanni, Common Voice CC0, sha256 `c1a6cc4e…`) in `modelli/pocket-tts-gated/registrazioni-64ab7d24/`; dal repository
+  aperto gli stati pronti a 24 strati di giovanni, anna, marius, alba `@a7056f50` in
+  `modelli/pocket-tts-senza-clonazione/voci-attuali-24l/`. Licenze delle registrazioni (README di `kyutai/tts-voices@323332d3`):
+  vctk CC BY 4.0, voice-donations CC0, alba-mackenna CC BY 4.0.
+- 19/11 08:18 **Catena di riferimento, 6 strati** (`scripts/v4_riferimento.py`, `esiti/v4/riferimento_6.json`, picco 2,0 GB con
+  ECAPA e Whisper): la voce clonata dalla registrazione dal codice ufficiale con i pesi gated **coincide con la voce pronta di
+  Kyutai** per tutte e quattro le voci: stessa lunghezza (84, 155, 127, 127 posizioni), coseno delle cache 1,0000 in ogni strato,
+  stesso audio (ECAPA 1,00, stessa durata, stesse parole). Quindi Kyutai calcola le voci pronte proprio con questa catena.
+- 19/11 08:22 **Catena di riferimento, 24 strati** (`esiti/v4/riferimento_24.json`, picco 2,9 GB): come a 6 strati, la voce
+  clonata coincide con quella pronta (coseno delle cache 1,0000 in tutti i 24 strati, ECAPA 1,00).
+- 19/11 08:23 Esportazioni ONNX della versione attuale, ricontrollate oggi: nessuna. Le due italiane aggiornate di recente
+  (`rxdtech/pocket-tts-onnx` del 19/11, `Phoonnx/pockettts-it-kyutai-unicode` del 18/11) hanno il tokenizer di maggio
+  (`tokenizer.model` sha `6583b974`) e gli stessi file di `xennonf4`. Quindi l'esportazione la faccio io dal codice ufficiale.
+
+### Consegna (19/11 09:50)
+
+- Parte A e B fatte; prove verdi (`cargo fmt`, `clippy -D warnings`, `cargo test --workspace` con Klein, Pocket e ONNX Runtime
+  1.32.0, `tools/version.py check`). Chiave: non compare in nessun file (controllato con `grep -rlF` sulle cartelle del repository,
+  dei dati, di `/tmp/voce-m-*` e della cache di Hugging Face). `scripts/comune.py` ora punta alla libreria 1.32.0 del `.venv`.
+- Nessun processo lasciato in esecuzione. Nessun commit, nessun push.
+- Resta a chi coordina e al proprietario: dove ospitare i file del modello (oggi in `modelli/pocket-kalliope/italian`), la finestra
+  per aggiungere la propria voce (punto 3, con la proposta dei valori del design system per Slint), la sorgente di ONNX Runtime
+  (NuGet al posto delle pagine di GitHub che qui rispondevano 404), e le dipendenze non all'ultima (Rust 1.100.0, Slint 1.19.0).
 
 ## V-3 (sostituisce V-2) · Il motore nel programma, parte A: il trucco regge? (dal 17/11 20:20)
 

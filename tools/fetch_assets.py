@@ -7,7 +7,7 @@
 
 Every download is checked against its SHA-256 before use. DIR can be cached: what is already
 there is not downloaded again (the model files are checked again each time). To move to a newer ONNX Runtime or
-model, change the pins below (the release page lists each file's sha256).
+model, change the pins below (NuGet's catalog lists the package's SHA-512; Hugging Face each file's SHA-256).
 """
 
 import hashlib
@@ -15,29 +15,39 @@ import pathlib
 import platform
 import shutil
 import sys
-import tarfile
 import time
 import urllib.request
 import zipfile
 
-ORT_VERSION = "1.31.1"
-ORT_URL = f"https://github.com/microsoft/onnxruntime/releases/download/v{ORT_VERSION}/"
-# (system, machine) → (archive, sha256, library inside the archive's top folder)
+ORT_VERSION = "1.32.0"
+# Microsoft's NuGet package of the ONNX Runtime C API: the same libraries as the release archives,
+# for every system in one file, with the licence and the third-party notices. (On 2026-11-19 the
+# release pages of github.com/microsoft/onnxruntime answered 404; NuGet lists the package's SHA-512
+# in its catalog, which matched this file's.)
+ORT_URL = (
+    "https://api.nuget.org/v3-flatcontainer/microsoft.ml.onnxruntime/"
+    f"{ORT_VERSION}/microsoft.ml.onnxruntime.{ORT_VERSION}.nupkg"
+)
+ORT_SHA256 = "a9150bc2992cbbb6722070da9910e1ffa989a8bfc67bdd5bb8e745ca755641db"
+# (system, machine) → (folder, [(file in the package, file in the folder)]); the first is the library.
 ORT = {
     ("linux", "x86_64"): (
-        f"onnxruntime-linux-x64-{ORT_VERSION}.tgz",
-        "c849e36a1ef3e22d4ff217b9d1ce4a3cf5b9467b975610913ae959ad5b16bdc9",
-        f"lib/libonnxruntime.so.{ORT_VERSION}",
+        f"onnxruntime-linux-x64-{ORT_VERSION}",
+        [
+            ("runtimes/linux-x64/native/libonnxruntime.so", f"lib/libonnxruntime.so.{ORT_VERSION}"),
+            ("runtimes/linux-x64/native/libonnxruntime_providers_shared.so", "lib/libonnxruntime_providers_shared.so"),
+        ],
     ),
     ("darwin", "arm64"): (
-        f"onnxruntime-osx-arm64-{ORT_VERSION}.tgz",
-        "2e1344a1926ee50eb25b38153cb6992c3567515aef0e677a1a520a1798896d6f",
-        f"lib/libonnxruntime.{ORT_VERSION}.dylib",
+        f"onnxruntime-osx-arm64-{ORT_VERSION}",
+        [("runtimes/osx-arm64/native/libonnxruntime.dylib", f"lib/libonnxruntime.{ORT_VERSION}.dylib")],
     ),
     ("win32", "amd64"): (
-        f"onnxruntime-win-x64-{ORT_VERSION}.zip",
-        "5869e26bb25314375f2d5ef1877e3ea06b1543d6c710e6e4a1ec2f7177ab4b2c",
-        "lib/onnxruntime.dll",
+        f"onnxruntime-win-x64-{ORT_VERSION}",
+        [
+            ("runtimes/win-x64/native/onnxruntime.dll", "lib/onnxruntime.dll"),
+            ("runtimes/win-x64/native/onnxruntime_providers_shared.dll", "lib/onnxruntime_providers_shared.dll"),
+        ],
     ),
 }
 
@@ -81,33 +91,25 @@ def fetch(url, path, expected):
     partial.replace(path)
 
 
-def wanted(name):
-    """Whether an archive member is needed: the libraries and the licence texts, not the
-    headers, debug symbols (430 MB on Windows) or build files."""
-    parts = name.rstrip("/").split("/")[1:]
-    if parts in (["LICENSE"], ["ThirdPartyNotices.txt"]):
-        return True
-    return len(parts) == 2 and parts[0] == "lib" and not parts[1].endswith((".pdb", ".lib"))
-
-
 def onnxruntime(dest):
     key = (sys.platform, platform.machine().lower())
     if key not in ORT:
         sys.exit(f"fetch_assets.py: no pinned ONNX Runtime for {key}")
-    archive, expected, library = ORT[key]
-    top = dest / archive.removesuffix(".tgz").removesuffix(".zip")
-    if not (top / library).exists():
-        path = dest / archive
-        fetch(ORT_URL + archive, path, expected)
-        if archive.endswith(".zip"):
-            with zipfile.ZipFile(path) as z:
-                z.extractall(dest, [m for m in z.namelist() if wanted(m) and not m.endswith("/")])
-        else:
-            with tarfile.open(path) as t:
-                members = [m for m in t if wanted(m.name) and (m.isfile() or m.issym())]
-                t.extractall(dest, members, filter="data")
+    folder, files = ORT[key]
+    top = dest / folder
+    library = top / files[0][1]
+    if not library.exists():
+        path = dest / f"microsoft.ml.onnxruntime.{ORT_VERSION}.nupkg"
+        fetch(ORT_URL, path, ORT_SHA256)
+        # The same layout as the release archives: lib/, LICENSE, ThirdPartyNotices.txt.
+        with zipfile.ZipFile(path) as z:
+            for member, target in files + [("LICENSE", "LICENSE"), ("ThirdPartyNotices.txt", "ThirdPartyNotices.txt")]:
+                out = top / target
+                out.parent.mkdir(parents=True, exist_ok=True)
+                with z.open(member) as src, open(out, "wb") as dst:
+                    shutil.copyfileobj(src, dst, 1 << 20)
         path.unlink()
-    print(f"KALLIOPE_ORT_LIB={(top / library).resolve()}")
+    print(f"KALLIOPE_ORT_LIB={library.resolve()}")
 
 
 def model(dest):

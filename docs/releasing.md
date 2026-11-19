@@ -70,8 +70,8 @@ re-run the failed jobs from the workflow run.
 2. Validates the desktop file and the AppStream metadata.
 3. Builds the whole workspace with `cargo build --release --workspace --locked`, from scratch: no
    cache goes into release files. The app binary `kalliope` (crates/app) is required.
-4. Downloads ONNX Runtime 1.31.1 for Linux x86_64 from its GitHub release and checks its SHA-256
-   (`tools/fetch_assets.py`).
+4. Downloads ONNX Runtime 1.32.0 for Linux x86_64 from Microsoft's NuGet package and checks its
+   SHA-256 (`tools/fetch_assets.py`).
 5. Makes the packages (`packaging/linux/build-packages.sh`).
 6. Installs, runs and removes each package (`packaging/linux/test-packages.sh`). For each one it
    runs `kalliope --version` and `kalliope-cli phonemes ciao`, and has `kalliope-cli say` speak a
@@ -97,7 +97,7 @@ Linux x86_64 only, for now:
 
 | File | For | Contents |
 | --- | --- | --- |
-| `kalliope-X.Y-linux-x86_64.tar.gz` | any Linux | `bin/kalliope`, `bin/kalliope-cli`, `lib/libonnxruntime.so.1.31.1` and its `.so.1` link, `share/` (desktop file, icon, AppStream metadata, `doc/kalliope/`), and `./install`, which copies everything into `~/.local` (`./install --remove` takes it away) |
+| `kalliope-X.Y-linux-x86_64.tar.gz` | any Linux | `bin/kalliope`, `bin/kalliope-cli`, `lib/libonnxruntime.so.1.32.0` and its `.so.1` link, `share/` (desktop file, icon, AppStream metadata, `doc/kalliope/`), and `./install`, which copies everything into `~/.local` (`./install --remove` takes it away) |
 | `kalliope-X.Y-amd64.deb` | Debian 13, Ubuntu 24.04 or newer | the same files under `/usr`, with ONNX Runtime in `/usr/lib/kalliope/` |
 | `kalliope-X.Y-x86_64.rpm` | current Fedora | the same as the `.deb` |
 | `kalliope-bin.PKGBUILD` | Arch Linux | `packaging/aur/PKGBUILD` with this tarball's checksum |

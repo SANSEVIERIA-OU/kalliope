@@ -1,0 +1,680 @@
+{
+ "italian": {
+  "gruppi": {
+   "flow_lm.bos_before_voice": {
+    "tensori": 1,
+    "uguali": 1,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "flow_lm.bos_emb": {
+    "tensori": 1,
+    "uguali": 1,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "flow_lm.conditioner": {
+    "tensori": 1,
+    "uguali": 1,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "flow_lm.emb_mean": {
+    "tensori": 1,
+    "uguali": 1,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "flow_lm.emb_std": {
+    "tensori": 1,
+    "uguali": 1,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "flow_lm.flow_net": {
+    "tensori": 68,
+    "uguali": 68,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "flow_lm.input_linear.weight": {
+    "tensori": 1,
+    "uguali": 1,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "flow_lm.out_eos.bias": {
+    "tensori": 1,
+    "uguali": 1,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "flow_lm.out_eos.weight": {
+    "tensori": 1,
+    "uguali": 1,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "flow_lm.out_norm.bias": {
+    "tensori": 1,
+    "uguali": 1,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "flow_lm.out_norm.weight": {
+    "tensori": 1,
+    "uguali": 1,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "flow_lm.speaker_proj_weight": {
+    "tensori": 1,
+    "uguali": 1,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "flow_lm.transformer": {
+    "tensori": 48,
+    "uguali": 48,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "mimi.decoder": {
+    "tensori": 22,
+    "uguali": 22,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "mimi.decoder_transformer": {
+    "tensori": 20,
+    "uguali": 20,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "mimi.downsample": {
+    "tensori": 1,
+    "uguali": 1,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "mimi.encoder": {
+    "tensori": 22,
+    "uguali": 0,
+    "zero_negli_aperti": 22,
+    "zero_nei_gated": 0
+   },
+   "mimi.encoder_transformer": {
+    "tensori": 20,
+    "uguali": 0,
+    "zero_negli_aperti": 20,
+    "zero_nei_gated": 0
+   },
+   "mimi.quantizer": {
+    "tensori": 1,
+    "uguali": 1,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "mimi.upsample": {
+    "tensori": 1,
+    "uguali": 1,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   }
+  },
+  "solo_gated": [],
+  "solo_aperti": [],
+  "diversi": [
+   {
+    "tensore": "mimi.encoder.model.0.conv.bias",
+    "max_abs_gated": 0.40234375,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.0.conv.weight",
+    "max_abs_gated": 1.484375,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.1.block.1.conv.bias",
+    "max_abs_gated": 0.7890625,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.1.block.1.conv.weight",
+    "max_abs_gated": 0.3828125,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.1.block.3.conv.bias",
+    "max_abs_gated": 0.41015625,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.1.block.3.conv.weight",
+    "max_abs_gated": 1.0078125,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.11.conv.bias",
+    "max_abs_gated": 0.1005859375,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.11.conv.weight",
+    "max_abs_gated": 0.00830078125,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.3.conv.bias",
+    "max_abs_gated": 0.248046875,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.3.conv.weight",
+    "max_abs_gated": 0.64453125,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.4.block.1.conv.bias",
+    "max_abs_gated": 0.51171875,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.4.block.1.conv.weight",
+    "max_abs_gated": 3.5625,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.4.block.3.conv.bias",
+    "max_abs_gated": 0.9765625,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.4.block.3.conv.weight",
+    "max_abs_gated": 2.828125,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.6.conv.bias",
+    "max_abs_gated": 1.0078125,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.6.conv.weight",
+    "max_abs_gated": 0.61328125,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.7.block.1.conv.bias",
+    "max_abs_gated": 1.109375,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.7.block.1.conv.weight",
+    "max_abs_gated": 3.015625,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.7.block.3.conv.bias",
+    "max_abs_gated": 1.5546875,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.7.block.3.conv.weight",
+    "max_abs_gated": 1.796875,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.9.conv.bias",
+    "max_abs_gated": 1.0625,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.9.conv.weight",
+    "max_abs_gated": 0.1962890625,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.0.layer_scale_1.scale",
+    "max_abs_gated": 0.10791015625,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.0.layer_scale_2.scale",
+    "max_abs_gated": 0.0791015625,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.0.linear1.weight",
+    "max_abs_gated": 0.66015625,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.0.linear2.weight",
+    "max_abs_gated": 0.6953125,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.0.norm1.bias",
+    "max_abs_gated": 0.3046875,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.0.norm1.weight",
+    "max_abs_gated": 0.427734375,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.0.norm2.bias",
+    "max_abs_gated": 0.431640625,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.0.norm2.weight",
+    "max_abs_gated": 0.69140625,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.0.self_attn.in_proj.weight",
+    "max_abs_gated": 0.97265625,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.0.self_attn.out_proj.weight",
+    "max_abs_gated": 0.478515625,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.1.layer_scale_1.scale",
+    "max_abs_gated": 0.09326171875,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.1.layer_scale_2.scale",
+    "max_abs_gated": 0.07373046875,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.1.linear1.weight",
+    "max_abs_gated": 0.91796875,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.1.linear2.weight",
+    "max_abs_gated": 1.0078125,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.1.norm1.bias",
+    "max_abs_gated": 0.330078125,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.1.norm1.weight",
+    "max_abs_gated": 0.4609375,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.1.norm2.bias",
+    "max_abs_gated": 0.498046875,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.1.norm2.weight",
+    "max_abs_gated": 0.62890625,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.1.self_attn.in_proj.weight",
+    "max_abs_gated": 0.7890625,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.1.self_attn.out_proj.weight",
+    "max_abs_gated": 0.361328125,
+    "max_abs_aperti": 0.0
+   }
+  ],
+  "diversi_fuori_dall_encoder": []
+ },
+ "italian_24l": {
+  "gruppi": {
+   "flow_lm.bos_before_voice": {
+    "tensori": 1,
+    "uguali": 1,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "flow_lm.bos_emb": {
+    "tensori": 1,
+    "uguali": 1,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "flow_lm.conditioner": {
+    "tensori": 1,
+    "uguali": 1,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "flow_lm.emb_mean": {
+    "tensori": 1,
+    "uguali": 1,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "flow_lm.emb_std": {
+    "tensori": 1,
+    "uguali": 1,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "flow_lm.flow_net": {
+    "tensori": 68,
+    "uguali": 68,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "flow_lm.input_linear.weight": {
+    "tensori": 1,
+    "uguali": 1,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "flow_lm.out_eos.bias": {
+    "tensori": 1,
+    "uguali": 1,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "flow_lm.out_eos.weight": {
+    "tensori": 1,
+    "uguali": 1,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "flow_lm.out_norm.bias": {
+    "tensori": 1,
+    "uguali": 1,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "flow_lm.out_norm.weight": {
+    "tensori": 1,
+    "uguali": 1,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "flow_lm.speaker_proj_weight": {
+    "tensori": 1,
+    "uguali": 1,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "flow_lm.transformer": {
+    "tensori": 192,
+    "uguali": 192,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "mimi.decoder": {
+    "tensori": 22,
+    "uguali": 22,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "mimi.decoder_transformer": {
+    "tensori": 20,
+    "uguali": 20,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "mimi.downsample": {
+    "tensori": 1,
+    "uguali": 1,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "mimi.encoder": {
+    "tensori": 22,
+    "uguali": 0,
+    "zero_negli_aperti": 22,
+    "zero_nei_gated": 0
+   },
+   "mimi.encoder_transformer": {
+    "tensori": 20,
+    "uguali": 0,
+    "zero_negli_aperti": 20,
+    "zero_nei_gated": 0
+   },
+   "mimi.quantizer": {
+    "tensori": 1,
+    "uguali": 1,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   },
+   "mimi.upsample": {
+    "tensori": 1,
+    "uguali": 1,
+    "zero_negli_aperti": 0,
+    "zero_nei_gated": 0
+   }
+  },
+  "solo_gated": [],
+  "solo_aperti": [],
+  "diversi": [
+   {
+    "tensore": "mimi.encoder.model.0.conv.bias",
+    "max_abs_gated": 0.40234375,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.0.conv.weight",
+    "max_abs_gated": 1.484375,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.1.block.1.conv.bias",
+    "max_abs_gated": 0.7890625,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.1.block.1.conv.weight",
+    "max_abs_gated": 0.3828125,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.1.block.3.conv.bias",
+    "max_abs_gated": 0.41015625,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.1.block.3.conv.weight",
+    "max_abs_gated": 1.0078125,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.11.conv.bias",
+    "max_abs_gated": 0.1005859375,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.11.conv.weight",
+    "max_abs_gated": 0.00830078125,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.3.conv.bias",
+    "max_abs_gated": 0.248046875,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.3.conv.weight",
+    "max_abs_gated": 0.64453125,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.4.block.1.conv.bias",
+    "max_abs_gated": 0.51171875,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.4.block.1.conv.weight",
+    "max_abs_gated": 3.5625,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.4.block.3.conv.bias",
+    "max_abs_gated": 0.9765625,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.4.block.3.conv.weight",
+    "max_abs_gated": 2.828125,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.6.conv.bias",
+    "max_abs_gated": 1.0078125,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.6.conv.weight",
+    "max_abs_gated": 0.61328125,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.7.block.1.conv.bias",
+    "max_abs_gated": 1.109375,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.7.block.1.conv.weight",
+    "max_abs_gated": 3.015625,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.7.block.3.conv.bias",
+    "max_abs_gated": 1.5546875,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.7.block.3.conv.weight",
+    "max_abs_gated": 1.796875,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.9.conv.bias",
+    "max_abs_gated": 1.0625,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder.model.9.conv.weight",
+    "max_abs_gated": 0.1962890625,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.0.layer_scale_1.scale",
+    "max_abs_gated": 0.10791015625,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.0.layer_scale_2.scale",
+    "max_abs_gated": 0.0791015625,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.0.linear1.weight",
+    "max_abs_gated": 0.66015625,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.0.linear2.weight",
+    "max_abs_gated": 0.6953125,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.0.norm1.bias",
+    "max_abs_gated": 0.3046875,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.0.norm1.weight",
+    "max_abs_gated": 0.427734375,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.0.norm2.bias",
+    "max_abs_gated": 0.431640625,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.0.norm2.weight",
+    "max_abs_gated": 0.69140625,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.0.self_attn.in_proj.weight",
+    "max_abs_gated": 0.97265625,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.0.self_attn.out_proj.weight",
+    "max_abs_gated": 0.478515625,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.1.layer_scale_1.scale",
+    "max_abs_gated": 0.09326171875,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.1.layer_scale_2.scale",
+    "max_abs_gated": 0.07373046875,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.1.linear1.weight",
+    "max_abs_gated": 0.91796875,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.1.linear2.weight",
+    "max_abs_gated": 1.0078125,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.1.norm1.bias",
+    "max_abs_gated": 0.330078125,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.1.norm1.weight",
+    "max_abs_gated": 0.4609375,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.1.norm2.bias",
+    "max_abs_gated": 0.498046875,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.1.norm2.weight",
+    "max_abs_gated": 0.62890625,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.1.self_attn.in_proj.weight",
+    "max_abs_gated": 0.7890625,
+    "max_abs_aperti": 0.0
+   },
+   {
+    "tensore": "mimi.encoder_transformer.transformer.layers.1.self_attn.out_proj.weight",
+    "max_abs_gated": 0.361328125,
+    "max_abs_aperti": 0.0
+   }
+  ],
+  "diversi_fuori_dall_encoder": []
+ }
+}

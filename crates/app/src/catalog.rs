@@ -65,6 +65,45 @@ pub fn installed() -> bool {
         .all(|f| std::fs::metadata(dir.join(f.name)).is_ok_and(|m| m.len() == f.size))
 }
 
+/// The Pocket TTS model that speaks with the voices prepared from a recording:
+/// `KALLIOPE_POCKET_DIR`, or `models/pocket-tts-italian` in the data folder. Kalliope does not
+/// download it yet: where its files will be published is still to be decided.
+pub fn pocket_dir() -> PathBuf {
+    std::env::var_os("KALLIOPE_POCKET_DIR")
+        .map(PathBuf::from)
+        .unwrap_or_else(|| {
+            crate::paths::data_dir()
+                .join("models")
+                .join("pocket-tts-italian")
+        })
+}
+
+/// The voices prepared from a recording (`kalliope-cli voice … -o NAME.safetensors`):
+/// `KALLIOPE_VOICES_DIR`, or `voices` in the data folder.
+pub fn voices_dir() -> PathBuf {
+    std::env::var_os("KALLIOPE_VOICES_DIR")
+        .map(PathBuf::from)
+        .unwrap_or_else(|| crate::paths::data_dir().join("voices"))
+}
+
+/// Names of the prepared voices, sorted; none when the Pocket TTS model is missing.
+pub fn own_voices() -> Vec<String> {
+    if !pocket_dir().join("pocket.json").is_file() {
+        return Vec::new();
+    }
+    let mut names: Vec<String> = std::fs::read_dir(voices_dir())
+        .into_iter()
+        .flatten()
+        .filter_map(|e| {
+            let path = e.ok()?.path();
+            (path.extension()? == "safetensors")
+                .then(|| path.file_stem()?.to_str().map(str::to_owned))?
+        })
+        .collect();
+    names.sort();
+    names
+}
+
 #[cfg(test)]
 mod tests {
     #[test]

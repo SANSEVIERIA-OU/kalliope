@@ -1,7 +1,8 @@
 # La voce di chi usa Kalliope: misura delle tre strade (17/11/2026)
 
 Incarico V-m (`design/lavoro/incarichi/V-misure-voce.md`), con il via del proprietario del 17/11/2026 per **misurare**,
-non per costruire: il programma (`crates/`) non è stato toccato. Qui i fatti; nessuna raccomandazione.
+non per costruire: in V-m, V-1, V-2 e V-3 il programma (`crates/`) non è stato toccato; in V-4 (prima sezione qui sotto) il
+motore che imita la voce è entrato nel programma. Qui i fatti; nessuna raccomandazione.
 
 Le tre strade per far parlare Kalliope con la voce della persona:
 
@@ -13,6 +14,121 @@ Le tre strade per far parlare Kalliope con la voce della persona:
 
 La pagina d'ascolto per il proprietario è in `/workspace/nomedadefinire/bench/voce-propria/ascolto/index.html`
 (statica, solo HTML e `<audio>`; si può servire da sola, per esempio `python3 -m http.server 8900` in quella cartella).
+
+## La versione ufficiale attuale, dentro il programma (V-4, 19/11/2026)
+
+Incarico `design/lavoro/incarichi/V-4-pocket-ufficiale-nel-programma.md`: il proprietario ha creato l'account Hugging Face e
+messo la chiave di lettura in `/workspace/kalliope/.env`; la chiave è stata caricata solo dentro i comandi che scaricavano e non
+compare in nessun file (controllato con `grep -rlF`, senza stamparla). Diario: `progresso.md`.
+
+### In breve
+
+- **Gated e aperti**: a 6 e a 24 strati i pesi con la clonazione (`kyutai/pocket-tts@3e82814a`) e quelli aperti
+  (`kyutai/pocket-tts-without-voice-cloning@1e08e6a2`) sono identici bit per bit, tranne i 42 tensori dell'encoder Mimi e del suo
+  transformer, azzerati negli aperti (`scripts/v4_compat.py`).
+- **La catena ufficiale**: la voce clonata dal codice ufficiale dalla registrazione di giovanni, anna, marius e alba coincide con
+  la voce pronta di Kyutai (coseno delle cache 1,0000 in ogni strato, stesso audio), a 6 e a 24 strati (`scripts/v4_riferimento.py`).
+- **Esportazione propria** (non esiste un'esportazione ONNX della versione attuale: le ultime italiane, del 18 e 19/11, hanno il
+  tokenizer di maggio), dal codice ufficiale `a4a6054d` (`scripts/v4_grafi.py`, `scripts/v4_esporta.py`):
+  - `flow_lm.onnx`: un passo del flow LM con la tabella del testo e la rete di flusso nello stesso grafo (un solo `Run` per
+    fotogramma) e la cache passato/presente senza lunghezza fissa (in V-1 la cache fissa di 1000 posizioni costava il 63%);
+  - `mimi_decoder.onnx` e `mimi_encoder.onnx` in streaming, con lo stato esplicito: l'encoder a pezzi da 0,8 s dà lo stesso
+    risultato dell'encoder ufficiale sull'intera registrazione (differenza 4·10⁻⁶) senza l'attenzione piena che in V-1 costava
+    3,9 GB;
+  - in fp32 contro il codice ufficiale: latenti di 40 passi a temperatura 0 differenza massima 9·10⁻⁴ su 5,5 (24 strati
+    6·10⁻⁵), stato della voce 7·10⁻⁶, audio 1,2·10⁻⁶;
+  - flow LM con i pesi a 8 bit a blocchi di 32 e calcolo int8 per blocco (`MatMulNBits`, accuracy level 4): 141 MB invece di
+    358, 8,6 ms per passo invece di 13,2 (2 thread), latenti dei primi passi coseno 0,9999. L'int8 dinamico (103 MB, 5,9 ms) si
+    allontana di più (coseno 0,97), i 4 bit troppo (0,88).
+- **Il controllo breve** (`scripts/v4_onnx.py`, `scripts/v4_controllo.py`; giovanni e F1, 5 frasi e 16 brevi, 2 semi): la prima
+  parola non si perde più (grafi: frasi 1/10 e 0/10, brevi 2/32 e 0/32; codice ufficiale 0/10, 1/32, 0/32), contro maggio
+  (V-1) 4/10 e 16/32 su giovanni e 15/40 sulle persone.
+- **La lunghezza della registrazione** (`scripts/v4_lunghezza.py`; 4 lettori, 5 frasi): con 6, 10, 12 e 15 s parole sbagliate
+  0–3,1%; con 20 s 6–17%; con 25 s 30–33%, nel codice ufficiale come nei grafi: con un riferimento lungo il modello finisce le
+  frasi prima del tempo. La somiglianza non cresce in modo stabile oltre i 10 s. **Il programma usa i primi 12 s.**
+- **Nel programma** (`crates/voice/src/pocket/`, con `kalliope-cli voice` e `say --voice`, e il motore dell'app): vedi sotto.
+
+### Il programma, misurato da capo a fondo
+
+`scripts/v4_e2e.py` e `scripts/v4_memoria.py` sul programma vero (`kalliope-cli` compilato in release, ONNX Runtime 1.32.0 di
+NuGet, 2 thread), con la macchina caricata da altri lavori (carico 6–10).
+
+| | 6 strati |
+|---|---|
+| Preparare la voce | 1,0 s per 7,4 s di registrazione; 1,2 s per 24,6 s (ne usa 12); memoria massima 352–360 MB (V-1: 0,88 GB) |
+| File della voce | 4,1–7,4 MB (stato nel formato di Kyutai), letto in circa 7 ms |
+| Prima parola persa, frasi | giovanni 0/10, F1 0/10 |
+| Prima parola persa o storpiata, frasi brevi | giovanni 2/32 («Certo» → «C'è», «Mi sentite» → «Vi sentite»), F1 0/32 |
+| Parole sbagliate (Whisper) | frasi giovanni 1,6%, F1 0,0%; brevi 12,5% e 7,1% (in parte «A dopo» → «Adopo» di Whisper) |
+| Somiglianza ECAPA, frasi | giovanni 0,525 (contro la registrazione), F1 0,563 (contro i suoi brani tenuti da parte) |
+| Primo suono | mediano 42–49 ms, peggiore 146–147 ms (dal testo già normalizzato) |
+| Vuoti nello streaming | nessuno in 42 testi, decodificando 2 fotogrammi per volta (con 4: 9 testi su 21 con un vuoto) |
+| CPU | 0,42–0,43 CPU-s per secondo di voce (Klein 0,07; maggio in V-1 0,78) |
+| Memoria parlando | 294 MB (Klein 187 MB nello stesso comando) |
+
+Parità: la voce preparata da Rust dalle registrazioni di marius (24 kHz) e di alba (48 kHz, quindi anche il ricampionamento)
+coincide con lo stato pronto di Kyutai (differenza 1,3·10⁻⁵ e 2,5·10⁻⁵ con il flow LM fp32); l'audio di Rust coincide con quello
+del ciclo Python sugli stessi grafi a temperatura 0 (stessi 113 280 campioni, differenza 2·10⁻⁵, quella del WAV a 16 bit). Il
+tokenizer e la preparazione del testo di Rust danno gli stessi token, lo stesso testo decodificato e gli stessi pezzi del codice
+ufficiale su 1873 righe e 51 323 token (`scripts/v4_tokenizer.py`).
+
+**24 strati** (stessa esportazione, verificata come i 6: latenti 6·10⁻⁵; flow LM a 8 bit 397 MB, 29 ms per passo contro 45 in
+fp32; `esiti/v4/e2e_24l.json`, carico 3–6): giovanni frasi 0/10 e WER 0,0%, F1 1/10 e 1,6%; brevi 0/32 e 7,1% per entrambi;
+somiglianza ECAPA più alta (giovanni 0,560 contro 0,525, F1 0,612 contro 0,563). Ma costa il doppio di CPU (0,81–0,99 CPU-s per
+secondo di voce a 2 thread), il primo suono arriva in 95–139 ms (peggiore 300–508 ms), la memoria parlando è di 740–790 MB, il file
+della voce di 16–28 MB, e tiene il passo solo decodificando un fotogramma per volta: con 2, F1 ha avuto 3 testi su 21 con un vuoto
+(36 ms in tutto), con 4 tutti. **Il programma usa i 6 strati**; i 24 restano una cartella del modello alternativa
+(`modelli/pocket-kalliope/italian_24l`), che il programma legge uguale, per una macchina più veloce o meno carica.
+
+### Versioni (controllate il 19/11/2026 sulle fonti ufficiali)
+
+| Dipendenza | Usata | Ultima | Fonte |
+|---|---|---|---|
+| Pesi italiani con clonazione | `kyutai/pocket-tts` `languages/italian` e `italian_24l` `@3e82814a` (1/10/2026, PR #344), quelli della configurazione ufficiale | stessi; testa del repository `db04f0e6` del 21/10/2026 | `pocket_tts/config/italian.yaml`, API Hugging Face |
+| Tokenizer | `kyutai/pocket-tts-without-voice-cloning` `languages/italian/tokenizer.json@4e1e0a3e` | stesso | configurazione ufficiale |
+| Voci pronte e registrazioni per le prove | `kyutai/pocket-tts-without-voice-cloning@a7056f50`; `kyutai/tts-voices@323332d3`; `kyutai/pocket-tts` `common_voice_it_36520747-enhanced-v2.mp3@64ab7d24` | stesse | API Hugging Face |
+| Codice di Kyutai | `kyutai-labs/pocket-tts` main `a4a6054d` (18/11/2026) | stesso; PyPI `pocket-tts` 4.0.1 (21/10/2026) | GitHub, PyPI |
+| ONNX Runtime | 1.32.0 (programma: NuGet `Microsoft.ML.OnnxRuntime`; prove Python: PyPI) | 1.32.0 (13/11/2026) | NuGet, PyPI; le pagine di `github.com/microsoft/onnxruntime` rispondevano 404 |
+| onnx / onnxscript / torch | 1.23.2 / 0.7.2 / 2.15.0 | stesse | PyPI |
+| tokenizers / safetensors / huggingface_hub | 0.23.3 / 0.8.0 / 2.4.0 | stesse | PyPI |
+
+### Provenienza e licenza di ogni parte (per `THIRD_PARTY_NOTICES.md`)
+
+- Pesi del modello italiano, con la clonazione: Kyutai, `kyutai/pocket-tts` `@3e82814a`, **CC BY 4.0** (scheda del modello).
+  Kalliope li converte in ONNX e quantizza il flow LM: è materiale adattato, che la licenza chiede di attribuire indicando le
+  modifiche («Pocket TTS by Kyutai, CC BY 4.0; converted to ONNX and quantized by Kalliope»).
+- Tokenizer: Kyutai, `kyutai/pocket-tts-without-voice-cloning`, CC BY 4.0.
+- Codice di Kyutai (`kyutai-labs/pocket-tts`): MIT. Non è compilato nel programma: lo usa l'esportazione, e il codice Rust di
+  Kalliope ne segue il ciclo di generazione e la preparazione del testo.
+- ONNX Runtime: Microsoft, MIT, con le sue `ThirdPartyNotices.txt`.
+- Registrazioni usate per le prove (mai fuori da questa macchina): giovanni (Common Voice, CC0, copia ripulita da Kyutai), anna
+  (VCTK, CC BY 4.0), marius (Unmute voice donation, CC0), alba (Alba MacKenna, CC BY 4.0), i quattro lettori LibriVox di V-m
+  (pubblico dominio, solo misure interne).
+
+### Le condizioni d'accesso e chi distribuisce i file del modello (una lettura, non un parere legale)
+
+- Il repository con la clonazione è «gated» con approvazione automatica: per scaricare bisogna avere un account, accettare il
+  modulo (azienda o università se c'è, uso «Work», «Studies» o «Fun») e le condizioni. Il testo delle condizioni, riletto oggi
+  dall'API: «Prohibited uses include, without limitation, voice impersonation or cloning without explicit and lawful consent;
+  misinformation, disinformation, or deception (…); and the generation of unlawful, harmful, libelous, abusive, harassing,
+  discriminatory, hateful, or privacy-invasive content. We disclaim all liability for any non-compliant use.»
+- La licenza dei pesi resta CC BY 4.0, che permette a chiunque di riprodurre e condividere il materiale e quello adattato, con
+  l'attribuzione, e vieta di aggiungere condizioni o misure tecniche che restringano gli stessi diritti a chi lo riceve («No
+  downstream restrictions»; testo letto il 17/11). Le condizioni del modulo non parlano di ridistribuzione.
+- Quindi, a mia lettura: chi ha accettato le condizioni può distribuire i file convertiti con l'attribuzione e l'indicazione delle
+  modifiche, e chi li riceve da Kalliope non avrebbe bisogno di un account. Il divieto di imitare una voce senza consenso resta
+  una condizione d'uso di Kyutai che conviene riportare a chi usa Kalliope: la documentazione del programma dice che la voce da
+  imitare è la propria, o quella di chi ha dato il consenso esplicito. Dove ospitare i file lo decide il proprietario; un parere
+  legale non c'è.
+
+### File di V-4
+
+- Script: `v4_comune.py`, `v4_compat.py`, `v4_riferimento.py`, `v4_grafi.py`, `v4_esporta.py`, `v4_quant.py`, `v4_onnx.py`,
+  `v4_controllo.py`, `v4_lunghezza.py`, `v4_tokenizer.py`, `v4_e2e.py`, `v4_memoria.py`.
+- Esiti: `esiti/v4/` (compatibilità, riferimento, esportazione, quantizzazione, controllo, lunghezza, tokenizer, e2e, memoria,
+  `dipendenze_cargo.txt`).
+- Dati (fuori dal repository): `modelli/pocket-tts-gated/` (scaricato con la chiave), `modelli/pocket-onnx-v4/` (esportazione),
+  `modelli/pocket-kalliope/italian` e `italian_24l` (le cartelle del modello come le legge il programma), `audio/v4/`.
 
 ## Il trucco: la versione attuale con l'encoder di maggio (V-2 e V-3, parte A, 17/11/2026)
 

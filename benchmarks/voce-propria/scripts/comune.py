@@ -29,7 +29,8 @@ OLD_MODELS = Path("/workspace/nomedadefinire/bench/models")   # models of the 12
 KLEIN_DIR = OLD_MODELS / "klein" / "onnx"
 POCKET_DIR = OLD_MODELS / "pocket-onnx"
 CLI = Path("/tmp/voce-m-target/release/kalliope-cli")       # built from crates/ untouched
-ORT_LIB = DATA / ".venv/lib/python3.13/site-packages/onnxruntime/capi/libonnxruntime.so.1.31.1"
+# 1.31.1 for V-m and V-1; the .venv has 1.32.0 since V-4 (19/11/2026).
+ORT_LIB = DATA / ".venv/lib/python3.13/site-packages/onnxruntime/capi/libonnxruntime.so.1.32.0"
 
 SR = 24000  # master rate for references and generated audio
 

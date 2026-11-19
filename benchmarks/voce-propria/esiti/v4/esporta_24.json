@@ -1,0 +1,49 @@
+{
+ "strati": 24,
+ "fp32": {
+  "flow_lm": "flow_lm.onnx",
+  "flow_tempo_s": 2.1774418354034424,
+  "latenti": {
+   "diff_max": 6.017833948135376e-05,
+   "max_abs": 5.629688739776611,
+   "coseno_min": 0.9999999999040008,
+   "coseno_medio": 0.999999999987778
+  },
+  "eos": {
+   "diff_max": 2.47955322265625e-05,
+   "primo_sopra_soglia_ufficiale": null,
+   "primo_sopra_soglia_onnx": null
+  },
+  "encoder_tempo_s": 0.7341930866241455,
+  "voce_condizionamento": {
+   "diff_max": 5.364418029785156e-06,
+   "max_abs": 1.315955638885498,
+   "coseno_min": 0.9999999999951544,
+   "coseno_medio": 0.999999999997861
+  },
+  "stato_voce": {
+   "posizioni": 155,
+   "posizioni_kyutai": 155,
+   "chiavi_strato_0": {
+    "diff_max": 4.112720489501953e-06,
+    "max_abs": 4.683302879333496,
+    "coseno_min": 0.9999999999998639,
+    "coseno_medio": 0.9999999999999541
+   },
+   "valori_ultimo_strato": {
+    "diff_max": 1.055002212524414e-05,
+    "max_abs": 1.7448480129241943,
+    "coseno_min": 0.9999999999659797,
+    "coseno_medio": 0.9999999999973866
+   }
+  },
+  "decoder_tempo_s": 0.22872400283813477,
+  "audio": {
+   "diff_max": 9.5367431640625e-07,
+   "max_abs": 0.3436543345451355,
+   "campioni": 76800,
+   "campioni_ufficiali": 76800
+  }
+ },
+ "picco_mb": 5579.144
+}

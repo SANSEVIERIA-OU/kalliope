@@ -1,0 +1,254 @@
+{
+ "strati": 24,
+ "voci": {
+  "giovanni": {
+   "posizioni_clonata": 84,
+   "posizioni_pronta": 84,
+   "coseno_cache_clonata_contro_pronta": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.9999998807907104,
+    1.0,
+    1.0000001192092896,
+    1.0,
+    1.0,
+    1.0000001192092896,
+    1.0,
+    1.0,
+    0.9999999403953552,
+    1.0,
+    0.9999998807907104,
+    1.0000001192092896,
+    0.9999998807907104,
+    0.9999998211860657,
+    1.0,
+    1.0000001192092896,
+    1.0,
+    0.9999999403953552,
+    1.0,
+    0.9999999403953552
+   ],
+   "frasi": [
+    {
+     "testo": "Buongiorno a tutti, scrivo invece di parlare, ma vi seguo benissimo.",
+     "ecapa_clonata_contro_pronta": 0.9999999931495525,
+     "ecapa_pronta_contro_pronta_altro_seme": 0.8330368497517773,
+     "ecapa_altra_voce_contro_pronta": 0.2290096953071456,
+     "whisper_clonata": "Buongiorno a tutti, scrivo invece di parlare, ma vi seguo benissimo.",
+     "whisper_pronta": "Buongiorno a tutti, scrivo invece di parlare, ma vi seguo benissimo.",
+     "durata_clonata_s": 4.56,
+     "durata_pronta_s": 4.56
+    },
+    {
+     "testo": "Il preventivo è di mille euro.",
+     "ecapa_clonata_contro_pronta": 0.9999999129943042,
+     "ecapa_pronta_contro_pronta_altro_seme": 0.759478693785014,
+     "ecapa_altra_voce_contro_pronta": 0.1374362431059745,
+     "whisper_clonata": "Il preventivo è di 1000 euro.",
+     "whisper_pronta": "Il preventivo è di 1000 euro.",
+     "durata_clonata_s": 2.56,
+     "durata_pronta_s": 2.56
+    },
+    {
+     "testo": "Va bene.",
+     "ecapa_clonata_contro_pronta": 0.9999999981300267,
+     "ecapa_pronta_contro_pronta_altro_seme": 0.7468930789923385,
+     "ecapa_altra_voce_contro_pronta": 0.19724323259211324,
+     "whisper_clonata": "Va bene.",
+     "whisper_pronta": "Va bene.",
+     "durata_clonata_s": 1.52,
+     "durata_pronta_s": 1.52
+    }
+   ]
+  },
+  "anna": {
+   "posizioni_clonata": 155,
+   "posizioni_pronta": 155,
+   "coseno_cache_clonata_contro_pronta": [
+    1.0000001192092896,
+    1.0,
+    1.0,
+    1.0,
+    1.0000001192092896,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.9999998807907104,
+    1.0,
+    1.0000001192092896,
+    1.0,
+    0.9999998211860657,
+    1.0000001192092896,
+    1.0000001192092896,
+    1.0000001192092896,
+    1.0,
+    1.0,
+    0.9999999403953552,
+    0.9999999403953552,
+    0.9999998807907104,
+    1.0000001192092896
+   ],
+   "frasi": [
+    {
+     "testo": "Buongiorno a tutti, scrivo invece di parlare, ma vi seguo benissimo.",
+     "ecapa_clonata_contro_pronta": 0.9999999996181982,
+     "ecapa_pronta_contro_pronta_altro_seme": 0.8757009626148959,
+     "ecapa_altra_voce_contro_pronta": 0.19194273168146048,
+     "whisper_clonata": "Buongiorno a tutti, scrivo invece di parlare, ma vi seguo benissimo.",
+     "whisper_pronta": "Buongiorno a tutti, scrivo invece di parlare ma vi seguo benissimo.",
+     "durata_clonata_s": 4.32,
+     "durata_pronta_s": 4.32
+    },
+    {
+     "testo": "Il preventivo è di mille euro.",
+     "ecapa_clonata_contro_pronta": 0.9999999997525635,
+     "ecapa_pronta_contro_pronta_altro_seme": 0.7986231125121669,
+     "ecapa_altra_voce_contro_pronta": 0.12924075259492937,
+     "whisper_clonata": "Il preventivo è di 1000 euro.",
+     "whisper_pronta": "Il preventivo è di 1000 euro.",
+     "durata_clonata_s": 2.32,
+     "durata_pronta_s": 2.32
+    },
+    {
+     "testo": "Va bene.",
+     "ecapa_clonata_contro_pronta": 0.9999999140748475,
+     "ecapa_pronta_contro_pronta_altro_seme": 0.5929312072125592,
+     "ecapa_altra_voce_contro_pronta": 0.47833892132321953,
+     "whisper_clonata": "Va bene.",
+     "whisper_pronta": "Va bene.",
+     "durata_clonata_s": 1.36,
+     "durata_pronta_s": 1.36
+    }
+   ]
+  },
+  "marius": {
+   "posizioni_clonata": 127,
+   "posizioni_pronta": 127,
+   "coseno_cache_clonata_contro_pronta": [
+    1.000000238418579,
+    1.0,
+    1.0,
+    1.0,
+    1.0000001192092896,
+    1.0,
+    0.9999999403953552,
+    0.9999999403953552,
+    0.9999998211860657,
+    1.0000001192092896,
+    1.0000001192092896,
+    0.9999998807907104,
+    1.0,
+    1.0000001192092896,
+    0.9999999403953552,
+    1.0000001192092896,
+    1.0000001192092896,
+    1.0000001192092896,
+    1.0,
+    1.0,
+    0.9999998807907104,
+    1.0000001192092896,
+    1.0,
+    0.9999999403953552
+   ],
+   "frasi": [
+    {
+     "testo": "Buongiorno a tutti, scrivo invece di parlare, ma vi seguo benissimo.",
+     "ecapa_clonata_contro_pronta": 0.9999999995132814,
+     "ecapa_pronta_contro_pronta_altro_seme": 0.6459086940601361,
+     "ecapa_altra_voce_contro_pronta": 0.4149876371913241,
+     "whisper_clonata": "Buongiorno a tutti, scrivo invece di parlare ma vi seguo benissimo.",
+     "whisper_pronta": "Buongiorno a tutti, scrivo invece di parlare, ma vi seguo benissimo.",
+     "durata_clonata_s": 3.76,
+     "durata_pronta_s": 3.76
+    },
+    {
+     "testo": "Il preventivo è di mille euro.",
+     "ecapa_clonata_contro_pronta": 0.9999999981117638,
+     "ecapa_pronta_contro_pronta_altro_seme": 0.7517068824237522,
+     "ecapa_altra_voce_contro_pronta": 0.23702742947975938,
+     "whisper_clonata": "il preventivo è di mille euro.",
+     "whisper_pronta": "il preventivo è di 1.000 euro",
+     "durata_clonata_s": 2.08,
+     "durata_pronta_s": 2.08
+    },
+    {
+     "testo": "Va bene.",
+     "ecapa_clonata_contro_pronta": 0.9999999990559841,
+     "ecapa_pronta_contro_pronta_altro_seme": 0.5165290285064361,
+     "ecapa_altra_voce_contro_pronta": 0.20711383257068253,
+     "whisper_clonata": "va bene",
+     "whisper_pronta": "va bene",
+     "durata_clonata_s": 1.44,
+     "durata_pronta_s": 1.44
+    }
+   ]
+  },
+  "alba": {
+   "posizioni_clonata": 127,
+   "posizioni_pronta": 127,
+   "coseno_cache_clonata_contro_pronta": [
+    1.0,
+    1.0,
+    0.9999999403953552,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0000001192092896,
+    1.0,
+    1.0000001192092896,
+    1.0,
+    1.0,
+    1.0,
+    1.0000001192092896,
+    0.9999999403953552,
+    1.0,
+    1.0,
+    1.0000001192092896,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.9999999403953552
+   ],
+   "frasi": [
+    {
+     "testo": "Buongiorno a tutti, scrivo invece di parlare, ma vi seguo benissimo.",
+     "ecapa_clonata_contro_pronta": 0.9999999960918018,
+     "ecapa_pronta_contro_pronta_altro_seme": 0.8101411602114037,
+     "ecapa_altra_voce_contro_pronta": 0.2304466767090382,
+     "whisper_clonata": "Buongiorno a tutti, scrivo invece di parlare, ma vi seguo benissimo.",
+     "whisper_pronta": "Buongiorno a tutti, scrivo invece di parlare, ma vi seguo benissimo.",
+     "durata_clonata_s": 4.08,
+     "durata_pronta_s": 4.08
+    },
+    {
+     "testo": "Il preventivo è di mille euro.",
+     "ecapa_clonata_contro_pronta": 0.9999635680263131,
+     "ecapa_pronta_contro_pronta_altro_seme": 0.7082879108104629,
+     "ecapa_altra_voce_contro_pronta": 0.278953347747005,
+     "whisper_clonata": "Il preventivo è di mille euro.",
+     "whisper_pronta": "Il preventivo è di mille euro.",
+     "durata_clonata_s": 2.56,
+     "durata_pronta_s": 2.56
+    },
+    {
+     "testo": "Va bene.",
+     "ecapa_clonata_contro_pronta": 0.9999999899693783,
+     "ecapa_pronta_contro_pronta_altro_seme": 0.48927461362427094,
+     "ecapa_altra_voce_contro_pronta": 0.11681922674560782,
+     "whisper_clonata": "Buh-bye.",
+     "whisper_pronta": "Buh-bye.",
+     "durata_clonata_s": 1.2,
+     "durata_pronta_s": 1.2
+    }
+   ]
+  }
+ },
+ "picco_mb": 2858.632
+}

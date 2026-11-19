@@ -9,7 +9,7 @@ mod paths;
 mod settings;
 mod sha256;
 
-use engine::{Command, Config, Engine, Event};
+use engine::{Command, Config, Engine, Event, KLEIN_VOICES};
 use settings::Settings;
 use slint::{ComponentHandle, Model, ModelRc, SharedString, VecModel};
 use std::cell::RefCell;
@@ -20,7 +20,6 @@ use std::sync::atomic::{AtomicBool, Ordering};
 
 slint::include_modules!();
 
-const VOICES: [&str; 2] = ["Giulia", "Marco"];
 const HISTORY: usize = 30;
 const READY: &str = "Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono.";
 
@@ -41,6 +40,26 @@ fn usage() -> String {
     )
 }
 
+fn config(voice: String, monitor: bool) -> Config {
+    Config {
+        model_dir: catalog::model_dir(),
+        voice,
+        monitor,
+        ort_lib: kalliope_voice::find_runtime(),
+        pocket_dir: catalog::pocket_dir(),
+        voices_dir: catalog::voices_dir(),
+    }
+}
+
+/// Giulia and Marco, then the voices prepared from a recording.
+fn voices() -> Vec<String> {
+    KLEIN_VOICES
+        .iter()
+        .map(|&v| v.to_string())
+        .chain(catalog::own_voices())
+        .collect()
+}
+
 /// Speaks without a window: for tests, scripts and checking the microphone from a terminal.
 fn say(text: &str) -> ExitCode {
     if !catalog::installed() {
@@ -49,17 +68,9 @@ fn say(text: &str) -> ExitCode {
     }
     let settings = Settings::load();
     let (tx, rx) = std::sync::mpsc::channel();
-    let engine = Engine::start(
-        Config {
-            model_dir: catalog::model_dir(),
-            voice: settings.voice,
-            monitor: settings.monitor,
-            ort_lib: kalliope_voice::find_runtime(),
-        },
-        move |e| {
-            let _ = tx.send(e);
-        },
-    );
+    let engine = Engine::start(config(settings.voice, settings.monitor), move |e| {
+        let _ = tx.send(e);
+    });
     let mut spoken = false;
     while let Ok(event) = rx.recv() {
         match event {
@@ -99,12 +110,7 @@ impl App {
         let weak = self.ui.clone();
         let settings = self.settings.borrow();
         let engine = Engine::start(
-            Config {
-                model_dir: catalog::model_dir(),
-                voice: settings.voice.clone(),
-                monitor: settings.monitor,
-                ort_lib: kalliope_voice::find_runtime(),
-            },
+            config(settings.voice.clone(), settings.monitor),
             move |event| {
                 let weak = weak.clone();
                 let _ = slint::invoke_from_event_loop(move || {
@@ -251,18 +257,14 @@ fn run_window() -> Result<(), slint::PlatformError> {
     let _ = slint::set_xdg_app_id("io.github.sansevieria_ou.kalliope");
     let settings = Settings::load();
     ui.set_version(version().into());
+    let names = voices();
     ui.set_voices(ModelRc::new(VecModel::from(
-        VOICES
+        names
             .iter()
-            .map(|&v| SharedString::from(v))
+            .map(|v| SharedString::from(v.as_str()))
             .collect::<Vec<_>>(),
     )));
-    ui.set_voice_index(
-        VOICES
-            .iter()
-            .position(|&v| v == settings.voice)
-            .unwrap_or(0) as i32,
-    );
+    ui.set_voice_index(names.iter().position(|v| *v == settings.voice).unwrap_or(0) as i32);
     ui.set_monitor(settings.monitor);
     let history = Rc::new(VecModel::<SharedString>::default());
     ui.set_history(ModelRc::from(history.clone()));
@@ -281,11 +283,10 @@ fn run_window() -> Result<(), slint::PlatformError> {
     ui.on_stop(move || a.send(Command::Stop));
     let a = app.clone();
     ui.on_voice_changed(move |index| {
-        let name = VOICES
+        let name = names
             .get(index as usize)
-            .copied()
-            .unwrap_or(VOICES[0])
-            .to_string();
+            .cloned()
+            .unwrap_or_else(|| KLEIN_VOICES[0].to_string());
         a.settings.borrow_mut().voice = name.clone();
         a.settings.borrow().save();
         a.send(Command::Voice(name));
