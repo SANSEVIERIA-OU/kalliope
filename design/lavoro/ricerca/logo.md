@@ -170,3 +170,21 @@ Questa è la lettura di chi coordina, non una scelta di disegno.
 - **I colori del sito nuovo**, il bordeaux della direzione 2, vanno guardati resi:
   - su un desktop scuro un bordeaux molto scuro sparisce sul bordo;
   - su una scheda chiara un rosa chiaro sparisce.
+
+## I fondi delle piattaforme, per le ricostruzioni (verificati il 19/11/2026)
+
+- **GNOME**:
+  - libadwaita 1.10.0, `src/stylesheet/_colors.scss`: fondo della finestra `#fafafb` (chiaro) e `#222226` (scuro); schede
+    `#ffffff` (chiaro) e `rgb(255 255 255 / 8%)` (scuro); testo `rgb(0 0 6 / 80%)`;
+  - GNOME Shell 51.1: la panoramica e la griglia delle applicazioni sono sempre scure, `#222226`. Le icone vanno a 96 px al
+    massimo e scendono a 64, 48 o 32 se la pagina non ci sta (`js/ui/iconGrid.js`).
+- **KDE Breeze chiaro** (v6.8.3, `colors/BreezeLight.colors`, invariato da Plasma 6.0): finestra `#eff0f1`, viste `#ffffff`,
+  testo `#232629`, fuoco `#3daee9`.
+- **Windows 11**: il colore della barra delle applicazioni e i numeri dell'accento predefinito non sono pubblicati; li
+  genera la shell. `#f3f3f3` e `#202020` sono `SolidBackgroundFillColorBase`, il ripiego di Mica per le app
+  (`microsoft-ui-xaml`, `Common_themeresources_any.xaml`).
+- **macOS**: Apple non pubblica valori per il materiale del Dock.
+- **Le simboliche GNOME**:
+  - `#2e3436` nei simboli di Adwaita (`adwaita-icon-theme`);
+  - `#222222` nel modello ufficiale delle icone delle app (`Teams/Design/HIG-app-icons`);
+  - i simboli del formato nuovo sono neri e GTK li ricolora.
