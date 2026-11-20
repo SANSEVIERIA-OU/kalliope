@@ -7,7 +7,7 @@ any conferencing app (Zoom, Teams, Meet, Webex, Jitsi…) can select. Everything
 Goals: excellent, punctuation-aware voice quality on modest CPUs; a very small app with the best
 performance per watt; Italian first.
 
-**Status:** first version on its way, Linux only. The app speaks into a virtual microphone named
+**Status:** version 0.1, the first, Linux only. The app speaks into a virtual microphone named
 "Kalliope". It has been tested end to end with PipeWire 1.6 but not yet with Zoom, Teams or Meet on
 a real desktop. Windows and macOS builds compile and pass tests, but have no virtual microphone yet.
 
@@ -93,9 +93,9 @@ export KALLIOPE_ORT_LIB=/path/to/libonnxruntime.so KALLIOPE_MODEL_DIR=/path/to/k
 
 Website: https://sansevieria-ou.github.io/kalliope/
 
-The first test version, [0.1-rc.1](https://github.com/SANSEVIERIA-OU/kalliope/releases/tag/v0.1-rc.1),
-is a prerelease. Each version is published on the
-[releases page](https://github.com/SANSEVIERIA-OU/kalliope/releases). For now it is Linux x86_64:
-a `.deb` for Debian 13 and Ubuntu 24.04 or newer, an `.rpm` for Fedora, a `.tar.gz` for any other
-distribution and a PKGBUILD for Arch. [CHANGELOG.md](CHANGELOG.md) says what each version brings;
+The first version is [0.1](https://github.com/SANSEVIERIA-OU/kalliope/releases/tag/v0.1). Each
+version is published on the [releases page](https://github.com/SANSEVIERIA-OU/kalliope/releases), and
+every version is final. For now it is Linux x86_64: a `.deb` for Debian 13 and Ubuntu 24.04 or newer,
+an `.rpm` for Fedora, a `.tar.gz` for any other distribution, and for Arch
+[`kalliope-bin` on AUR](https://aur.archlinux.org/packages/kalliope-bin) or the PKGBUILD of the release. [CHANGELOG.md](CHANGELOG.md) says what each version brings;
 [docs/releasing.md](docs/releasing.md) explains how versions and releases are made.

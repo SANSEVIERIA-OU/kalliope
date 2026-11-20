@@ -895,14 +895,15 @@
     }
   }
 
-  // ---------- il primo avvio: «Scarica la voce», 53 MB, «Preparo la voce…», «Pronta»; poi nella riunione si sceglie
-  // «Kalliope» come microfono e il tuo riquadro si accende. I tre requisiti seguono il racconto (correzioni P9) ----------
-  const avvioBox = $('.primo-avvio'), avvio = $('.avvio', avvioBox), aStato = $('.f-stato', avvio), aBarra = $('.f-barra i', avvio);
-  const aBottone = $('.f-primario', avvio), scelte = $$('.scelta', avvioBox), rivedi = $('.rivedi', avvioBox);
+  // ---------- il primo avvio della 0.1: le voci sono nel pacchetto, niente da scaricare: «Preparo la voce…», «Pronta»; poi nella
+  // riunione si sceglie «Kalliope» come microfono e il tuo riquadro si accende. I tre requisiti seguono il racconto (correzioni P9).
+  // Senza lo scarico di prima (2,54 s), il racconto è lo stesso, solo più corto ----------
+  const avvioBox = $('.primo-avvio'), avvio = $('.avvio', avvioBox), aStato = $('.f-stato', avvio);
+  const scelte = $$('.scelta', avvioBox), rivedi = $('.rivedi', avvioBox);
   const app = $('.riunione-app', avvioBox);
   const requisiti = $('.requisiti'), req = $$('li', requisiti);
-  const PRIMO = aStato.textContent, SCARICA = aBottone.textContent, PRONTA = TESTO_PRONTA;   // i testi che la pagina mostra all'arrivo
-  let agendaAvvio = [], corsaAvvio = 0;
+  const PRIMO = aStato.textContent, PRONTA = TESTO_PRONTA;   // i testi che la pagina mostra all'arrivo
+  let agendaAvvio = [];
   function requisito(k, ms) {   // k = requisito del momento; quelli prima sono fatti; ms = quanto dura il suo momento
     req.forEach((li, i) => { li.classList.toggle('fatto', i < k || k >= req.length); li.classList.toggle('attivo', i === k); });
     if (req[k]) req[k].style.setProperty('--durata', `${ms}ms`);
@@ -913,35 +914,20 @@
   }
   function animaAvvio() {
     annulla(agendaAvvio);
-    const corsa = ++corsaAvvio;
-    avvio.classList.remove('scarica', 'prepara', 'pronta');
-    aStato.textContent = PRIMO; aBottone.textContent = SCARICA; aBottone.classList.remove('f-annulla', 'premuto');
-    aBarra.style.transform = 'scaleX(0)';
+    avvio.classList.remove('pronta'); avvio.classList.add('prepara');
+    aStato.textContent = PRIMO;
     microfonoScelto(false);
     rivedi.classList.add('in-scena');
-    if (ridotto) { avvio.classList.add('pronta'); aStato.textContent = PRONTA; microfonoScelto(true); requisito(req.length); rivedi.classList.remove('in-scena'); return; }
+    if (ridotto) { avvio.classList.remove('prepara'); avvio.classList.add('pronta'); aStato.textContent = PRONTA; microfonoScelto(true); requisito(req.length); rivedi.classList.remove('in-scena'); return; }
     requisiti.classList.add('in-scena'); requisito(0, 860);
     const quando = (ms, f) => agendaAvvio.push(dopo(ms, f));
-    quando(700, () => aBottone.classList.add('premuto'));
-    quando(860, () => {
-      requisito(1, 3440);
-      aBottone.classList.remove('premuto'); aBottone.textContent = T('avvio.annulla'); aBottone.classList.add('f-annulla'); avvio.classList.add('scarica');
-      const t0 = tScena(), D = 2400;
-      const passo = () => {
-        if (corsa !== corsaAvvio) return;
-        const q = Math.min(1, (tScena() - t0) / D), mb = Math.round(53 * q);
-        aStato.textContent = fmt(T('avvio.scarico'), {mb: window.Testi.numero(mb)}); aBarra.style.transform = `scaleX(${q.toFixed(3)})`;
-        if (q < 1 && avvio.classList.contains('scarica')) requestAnimationFrame(passo);
-      };
-      requestAnimationFrame(passo);
-    });
-    quando(3400, () => { avvio.classList.remove('scarica'); avvio.classList.add('prepara'); aStato.textContent = T('avvio.preparo'); });
-    quando(4300, () => { avvio.classList.remove('prepara'); avvio.classList.add('pronta'); aStato.textContent = PRONTA; requisito(2, 1400); });
-    quando(4700, () => { scelte[1].classList.add('puntata'); });
-    quando(5050, () => { scelte[1].classList.add('premuta'); });
-    quando(5250, () => { scelte[0].classList.remove('scelto'); scelte[1].classList.remove('puntata', 'premuta'); scelte[1].classList.add('scelto'); });
-    quando(5600, () => { microfonoScelto(true); requisito(req.length); });
-    quando(5900, () => { rivedi.classList.remove('in-scena'); if (document.activeElement === avvio) rivedi.focus({preventScroll: true}); });
+    quando(860, () => requisito(1, 900));
+    quando(1760, () => { avvio.classList.remove('prepara'); avvio.classList.add('pronta'); aStato.textContent = PRONTA; requisito(2, 1400); });
+    quando(2160, () => { scelte[1].classList.add('puntata'); });
+    quando(2510, () => { scelte[1].classList.add('premuta'); });
+    quando(2710, () => { scelte[0].classList.remove('scelto'); scelte[1].classList.remove('puntata', 'premuta'); scelte[1].classList.add('scelto'); });
+    quando(3060, () => { microfonoScelto(true); requisito(req.length); });
+    quando(3360, () => { rivedi.classList.remove('in-scena'); if (document.activeElement === avvio) rivedi.focus({preventScroll: true}); });
   }
   // «Rivedi» sta sempre nell'ordine di Tab, anche prima che la scena parta e mentre gira: allora non si vede (come prima: compare
   // a fine scena), ma se il fuoco ci arriva si mostra da sé (stile.css, `.in-scena`). Così chi scende con Tab non lo scavalca perché

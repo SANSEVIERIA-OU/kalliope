@@ -264,49 +264,34 @@
   }
 
   // =================================================================================================================
-  // APRI: il primo avvio vero (le frasi di main.rs della 0.1-rc.1), poi le frasi che possono comparire al posto di «Pronta»
+  // APRI: il primo avvio vero (le frasi di main.rs della 0.1: le voci sono nel pacchetto, niente da scaricare), poi le frasi che
+  // possono comparire al posto di «Pronta»
   // =================================================================================================================
   const avvio = $('.passo-apri .avvio');
   if (avvio) {
-    const aStato = $('.f-stato', avvio), aBarra = $('.f-barra i', avvio), aBottone = $('.f-primario', avvio);
-    const PRONTA = aStato.textContent, SCARICA = aBottone ? aBottone.textContent : '';
+    const aStato = $('.f-stato', avvio);
+    const PRONTA = aStato.textContent;
     let corsaAvvio = null;
-    const megabyte = parseFloat(avvio.dataset.mb);   // i MB della voce, come li dice la pagina (data-mb): lo script non li scrive
-    const prontaOra = () => { avvio.classList.remove('scarica', 'prepara', 'errore'); avvio.classList.add('pronta'); aStato.textContent = PRONTA; aStato.classList.remove('allarme'); };
+    const prontaOra = () => { avvio.classList.remove('prepara', 'errore'); avvio.classList.add('pronta'); aStato.textContent = PRONTA; aStato.classList.remove('allarme'); };
     const dice = riga => annuncia(fmt(T('in.annuncio.finestra'), {frase: riga}));   // la riga della finestra cambia: chi non la vede la sente
     const mostraFinestra = bottone => inVista(avvio, bottone);   // la frase premuta cambia la finestra: la finestra resta in vista
+    // «Preparo la voce…» dura quanto nel racconto di sempre (da --avvio-prepara a --avvio-pronta), poi «Pronta».
     function animaAvvio() {
       corsaAvvio = nuovaCorsa(corsaAvvio);
       const corsa = corsaAvvio;
-      avvio.classList.remove('scarica', 'prepara', 'pronta', 'errore');
+      avvio.classList.remove('pronta', 'errore');
+      avvio.classList.add('prepara');
       aStato.classList.remove('allarme');
-      aStato.textContent = T('avvio.primo');
-      if (aBottone) { aBottone.textContent = SCARICA; aBottone.classList.remove('f-annulla', 'premuto'); }
-      if (aBarra) aBarra.style.transform = 'scaleX(0)';
-      const quando = (ms, f) => corsa.voci.push(dopo(ms, f));
-      quando(tempo('--avvio-premi'), () => aBottone && aBottone.classList.add('premuto'));
-      quando(tempo('--avvio-scarica'), () => {
-        if (aBottone) { aBottone.classList.remove('premuto'); aBottone.textContent = T('avvio.annulla'); aBottone.classList.add('f-annulla'); }
-        avvio.classList.add('scarica');
-        const t0 = tScena(), D = tempo('--avvio-scarico-durata');
-        const passo = () => {
-          if (corsa.ferma) return;
-          const q = Math.min(1, (tScena() - t0) / D), mb = Math.round(megabyte * q);
-          aStato.textContent = fmt(T('avvio.scarico'), {mb: window.Testi.numero(mb)}); if (aBarra) aBarra.style.transform = `scaleX(${q.toFixed(3)})`;
-          if (q < 1 && avvio.classList.contains('scarica')) requestAnimationFrame(passo);
-        };
-        requestAnimationFrame(passo);
-      });
-      quando(tempo('--avvio-prepara'), () => { avvio.classList.remove('scarica'); avvio.classList.add('prepara'); aStato.textContent = T('avvio.preparo'); });
-      quando(tempo('--avvio-pronta'), prontaOra);
+      aStato.textContent = T('avvio.preparo');
+      corsa.voci.push(dopo(tempo('--avvio-pronta') - tempo('--avvio-prepara'), prontaOra));
     }
     if (ridotto) prontaOra();
     else {
-      aStato.textContent = T('avvio.primo');
+      aStato.textContent = T('avvio.preparo');
       avvio.addEventListener('rivelato', () => dopo(tempo('--ritardo-avvio'), () => { if (!avvio.classList.contains('provata')) animaAvvio(); }));
     }
 
-    // le frasi: con lo script diventano pulsanti; premuta una, la finestra la mostra (e, se è un errore dello scarico, torna «Scarica la voce»)
+    // le frasi: con lo script diventano pulsanti; premuta una, la finestra la mostra
     const bottoni = $$('.frase-detta').map(p => {
       const b = document.createElement('button');
       b.type = 'button'; b.className = 'frase-bottone'; b.dataset.stato = p.dataset.stato; b.setAttribute('aria-pressed', 'false');
@@ -318,10 +303,10 @@
       corsaAvvio = nuovaCorsa(corsaAvvio);
       avvio.classList.add('provata');
       if (!su) { prontaOra(); dice(PRONTA); requestAnimationFrame(() => mostraFinestra(b)); return; }
-      const st = b.dataset.stato, scarico = st !== 'microfono';
-      avvio.classList.remove('scarica', 'prepara', 'pronta');
-      avvio.classList.toggle('errore', scarico); if (!scarico) avvio.classList.add('pronta');
-      if (aBottone) { aBottone.textContent = SCARICA; aBottone.classList.remove('f-annulla', 'premuto'); }
+      // «Manca la voce» è lo stato d'errore della finestra; con il microfono che non si apre, la voce è pronta
+      const st = b.dataset.stato, errore = st !== 'microfono';
+      avvio.classList.remove('prepara', 'pronta');
+      avvio.classList.toggle('errore', errore); if (!errore) avvio.classList.add('pronta');
       aStato.textContent = T(`in.stato.${st}`); aStato.classList.add('allarme'); dice(aStato.textContent);
       requestAnimationFrame(() => mostraFinestra(b));
     }));

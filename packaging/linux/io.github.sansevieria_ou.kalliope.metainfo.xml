@@ -37,9 +37,17 @@
   </supports>
   <content_rating type="oars-1.1"/>
   <releases>
-    <release version="0.1" date="2026-11-12" type="development">
+    <release version="0.1" date="2026-11-20">
       <description>
-        <p>The first version, for Linux: the Kalliope window, the virtual microphone called “Kalliope” (with PipeWire), and the Klein voice, made on your computer.</p>
+        <p>The first version, for Linux.</p>
+        <ul>
+          <li>The Kalliope window: type, press Enter, and Kalliope speaks, with Giulia or Marco.</li>
+          <li>A virtual microphone called “Kalliope” (with PipeWire), to choose in Zoom, Teams, Meet, Jitsi or the browser.</li>
+          <li>The voices are made on your computer and come inside the package: Kalliope downloads nothing and works without internet.</li>
+          <li>A first step towards the voice of the person who uses Kalliope: a voice imitated from a recording, which for now is prepared from a terminal with kalliope-cli and then offered by the window.</li>
+          <li>Italian read the way people say it: numbers, dates, money, abbreviations and chat shorthand become words.</li>
+          <li>A new logo.</li>
+        </ul>
       </description>
     </release>
   </releases>

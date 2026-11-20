@@ -201,8 +201,7 @@
         <span class="vecchio-indirizzo" id="passo-1" aria-hidden="true"></span>
         <h2 id="scarica-titolo" class="entra entra-titolo" data-t="in.file.titolo">Il file giusto, e uguale a quello pubblicato.</h2>
         <p data-t="in.file.testo">Serve un computer Linux a 64 bit (x86_64), con Wayland o X11 e con PipeWire e pipewire-pulse: è così nei desktop recenti di Fedora, Ubuntu, Debian, Arch e openSUSE.</p>
-        <!-- cambia con la prossima versione: la voce sarà dentro il pacchetto, niente curl e niente internet al primo avvio -->
-        <p class="requisito-voce" data-cambia="voce-nel-pacchetto" data-t="in.file.voce">Al primo avvio Kalliope scarica la voce: 53 MB, una volta sola, con il programma curl. I pacchetti lo chiedono da soli; con l'archivio controlla di averlo.</p>
+        <p class="requisito-voce" data-t="in.file.voce">Le voci sono dentro il file: una volta installato, Kalliope non scarica niente e funziona senza internet dal primo avvio.</p>
 
         <div class="passo" id="passo-scarica">
           <h3 class="passo-nome" data-t="in.file.scarica.titolo">Scarica</h3>
@@ -233,8 +232,7 @@
             <p class="se-no" data-t="in.file.controlla.se-no"><strong>Se no</strong>, non installare il file: scaricalo di nuovo e rifai il controllo. Se il numero resta diverso, <a href="https://github.com/SANSEVIERIA-OU/kalliope/issues">segnalalo</a>.</p>
           </div>
           <p class="nota-passo" data-t="in.file.controlla.tutti">Per controllare tutti i file insieme c'è il file <a href="{{kalliope.sums.url}}">SHA256SUMS</a>: scaricalo nella stessa cartella e scrivi <code data-t-no="un comando">sha256sum -c SHA256SUMS --ignore-missing</code>.</p>
-          <!-- cambia con la prossima versione: dalla prossima l'attestazione c'è (docs/releasing.md) -->
-          <p class="nota-passo" data-cambia="voce-nel-pacchetto" data-t="in.file.controlla.attestazione">Questa versione non ha l'attestazione di provenienza (<code data-t-no="un comando">gh attestation verify</code>): è stata pubblicata quando il codice non era ancora pubblico. Le prossime l'avranno; il resto per chi controlla è in <a href="../stato/#controllare">Stato e limiti</a>.</p>
+          <p class="nota-passo" data-t="in.file.controlla.attestazione">Ogni file ha anche l'attestazione di provenienza: <code data-t-no="un comando">gh attestation verify</code>, il comando di GitHub, dice se è stato costruito da questa versione del codice. Il resto per chi controlla è in <a href="../stato/#controllare">Stato e limiti</a>.</p>
         </div>
       </div>
 
@@ -295,7 +293,7 @@
           <div class="comando" data-sistema="arch"><pre><code data-t-no="un comando">mkdir kalliope &amp;&amp; cd kalliope</code></pre></div>
           <div class="comando" data-sistema="arch"><pre><code data-t-no="un comando">curl -L -o PKGBUILD {{kalliope.aur.url}}</code></pre></div>
           <div class="comando" data-sistema="arch"><pre><code data-t-no="un comando">makepkg -si</code></pre></div>
-          <p class="nota-passo" data-sistema="arch" data-t="in.installa.arch.nota">Non è ancora su AUR: si usa la ricetta pubblicata con la versione.</p>
+          <p class="nota-passo" data-sistema="arch" data-t="in.installa.arch.nota">La stessa ricetta è anche su AUR, con il nome kalliope-bin, aggiornata da ogni versione.</p>
           <div class="comando" data-sistema="tar"><pre><code data-t-no="un comando">tar -xzf {{kalliope.tar.name}}</code></pre></div>
           <div class="comando" data-sistema="tar"><pre><code data-t-no="un comando">cd {{kalliope.tar.dir}}</code></pre></div>
           <div class="comando" data-sistema="tar"><pre><code data-t-no="un comando">./install</code></pre></div>
@@ -314,9 +312,8 @@
               <li data-sistema="arch"><code data-t-no="un comando">sudo pacman -R kalliope-bin</code></li>
               <li data-sistema="tar" data-t="in.togli.tar">dalla cartella dell'archivio, <code data-t-no="un comando">./install --remove</code></li>
             </ul>
-            <!-- cambia con la prossima versione: la voce non si scarica più nella cartella personale -->
-            <p data-cambia="voce-nel-pacchetto" data-t="in.togli.restano">Nella tua cartella personale restano le preferenze, <code data-t-no="una cartella">~/.config/kalliope</code>, e la voce scaricata, <code data-t-no="una cartella">~/.local/share/kalliope</code> (53 MB): né il gestore dei pacchetti né <code data-t-no="un comando">./install --remove</code> le toccano. Per toglierle, cancella le due cartelle.</p>
-            <p class="nota-passo" data-cambia="voce-nel-pacchetto" data-t="in.togli.verificato" data-t-nota="Says what was checked and what was not. Keep the last sentence as honest as it is: removing the package on a real computer was not tried.">Come lo sappiamo: i pacchetti hanno soltanto file in /usr e nessuno script, e <code data-t-no="un comando">./install --remove</code> cancella soltanto i file messi da <code data-t-no="un comando">./install</code> (provato in una cartella di prova). Togliere il pacchetto con <code data-t-no="un comando">apt</code>, <code data-t-no="un comando">dnf</code> o <code data-t-no="un comando">pacman</code> su un computer vero non l'abbiamo provato.</p>
+            <p data-t="in.togli.restano">Le voci se ne vanno con il programma. Nella tua cartella personale restano le preferenze, <code data-t-no="una cartella">~/.config/kalliope</code>, e le voci che hai preparato da una registrazione, <code data-t-no="una cartella">~/.local/share/kalliope</code>: né il gestore dei pacchetti né <code data-t-no="un comando">./install --remove</code> le toccano. Per toglierle, cancella le due cartelle.</p>
+            <p class="nota-passo" data-t="in.togli.verificato" data-t-nota="Says what was checked and what was not. Keep the last sentence as honest as it is: removing the package on a real computer was not tried.">Come lo sappiamo: i pacchetti hanno soltanto file in /usr e nessuno script, e <code data-t-no="un comando">./install --remove</code> cancella soltanto i file messi da <code data-t-no="un comando">./install</code>. Prima di uscire, ogni pacchetto si toglie con <code data-t-no="un comando">apt</code>, <code data-t-no="un comando">dnf</code> o <code data-t-no="un comando">pacman</code> in un sistema di prova, e la prova controlla che non resti niente, voci comprese. Su un computer vero non l'abbiamo provato.</p>
           </details>
         </div>
 
@@ -357,12 +354,8 @@
       <span class="luce-tratto" aria-hidden="true"></span>
       <span class="vecchio-indirizzo" id="passo-4" aria-hidden="true"></span>
       <div class="apri-finestra">
-        <!-- cambia con la prossima versione: la voce non si scarica più (data-mb e il racconto del primo avvio) -->
-        <div class="finestra avvio pronta entra entra-finestra" data-mb="53" role="group" tabindex="-1" aria-label="Ricostruzione della finestra di Kalliope 0.1 al primo avvio" data-t-aria-label="in.avvio.etichetta">
+        <div class="finestra avvio pronta entra entra-finestra" role="group" tabindex="-1" aria-label="Ricostruzione della finestra di Kalliope 0.1 al primo avvio" data-t-aria-label="in.avvio.etichetta">
           <div class="f-stato" data-stato="pronta" data-t="finestra.pronta">Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono.</div>
-          <!-- cambia con la prossima versione: niente da scaricare al primo avvio -->
-          <div class="f-scarico" aria-hidden="true" data-cambia="voce-nel-pacchetto"><span class="f-barra"><i></i></span></div>
-          <div class="f-riga f-riga-scarica" data-cambia="voce-nel-pacchetto"><span class="f-pulsante f-primario" data-t="avvio.scarica">Scarica la voce</span></div>
           <div class="f-riga">
             <div class="f-campo spento" aria-hidden="true"><span class="f-segnaposto" data-t="finestra.segnaposto">Scrivi qui e premi Invio per parlare</span></div>
             <span class="f-pulsante f-parla" aria-hidden="true" data-t="finestra.parla">Parla</span>
@@ -374,8 +367,7 @@
       </div>
       <div class="tratto-testo">
         <h2 id="apri-titolo" class="entra entra-titolo" data-t="in.apri.titolo">Apri Kalliope, e aspetta «Pronta».</h2>
-        <!-- cambia con la prossima versione: la voce è già nel pacchetto -->
-        <p data-cambia="voce-nel-pacchetto" data-t="in.apri.testo">Dal menu delle applicazioni. La prima volta la finestra chiede di scaricare la voce: premi «Scarica la voce» e aspetta, sono 53 MB una volta sola, poi funziona senza internet.</p>
+        <p data-t="in.apri.testo">Dal menu delle applicazioni. Le voci sono già lì, nel pacchetto: non c'è niente da scaricare, nemmeno la prima volta.</p>
         <p data-t="in.apri.ogni-volta">A ogni avvio dice «Preparo la voce…» per un po': il campo si accende quando ha finito.</p>
         <div class="esito-passo">
           <p class="riuscito" data-t="in.apri.riuscito"><strong>Riuscito</strong> se la riga in alto dice «Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono.»</p>
@@ -383,18 +375,9 @@
         <div class="frasi-finestra">
           <h3 class="frasi-nome" data-t="in.frasi.titolo">Se la riga dice altro</h3>
           <ul class="frasi-elenco">
-            <!-- cambia con la prossima versione: i quattro errori dello scarico spariscono con lo scarico -->
-            <li class="frase-finestra" data-cambia="voce-nel-pacchetto">
-              <p class="frase-detta" data-stato="curl"><span data-t="in.frasi.curl.frase">«Per scaricare la voce serve il programma curl: …»</span></p>
-              <p class="frase-rimedio" data-t="in.frasi.curl.rimedio">Installa curl con il gestore dei pacchetti della tua distribuzione, poi premi di nuovo «Scarica la voce».</p>
-            </li>
-            <li class="frase-finestra" data-cambia="voce-nel-pacchetto">
-              <p class="frase-detta" data-stato="rete"><span data-t="in.frasi.rete.frase">«Download non riuscito: …» o «Download annullato.»</span></p>
-              <p class="frase-rimedio" data-t="in.frasi.rete.rimedio">Controlla la connessione e premi di nuovo «Scarica la voce»: lo scarico riparte da capo.</p>
-            </li>
-            <li class="frase-finestra" data-cambia="voce-nel-pacchetto">
-              <p class="frase-detta" data-stato="impronta"><span data-t="in.frasi.impronta.frase">«Il file … scaricato non corrisponde all'impronta attesa: l'ho scartato.»</span></p>
-              <p class="frase-rimedio" data-t="in.frasi.impronta.rimedio">Kalliope ha buttato via il file guasto da sé: premi di nuovo «Scarica la voce».</p>
+            <li class="frase-finestra">
+              <p class="frase-detta" data-stato="manca"><span data-t="in.frasi.manca.frase">«Manca la voce: in … non trovo …. Reinstalla Kalliope.»</span></p>
+              <p class="frase-rimedio" data-t="in.frasi.manca.rimedio">Un file delle voci non è dove il programma lo cerca: installa di nuovo il pacchetto o l'archivio, con i passi qui sopra.</p>
             </li>
             <li class="frase-finestra">
               <p class="frase-detta" data-stato="microfono"><span data-t="in.frasi.microfono.frase">«La voce è pronta, ma …: per ora nessuno ti sentirà nelle chiamate.»</span></p>
@@ -497,13 +480,8 @@
   <p data-t="in.annuncio.copiato">Copiato negli appunti.</p>
   <p data-t="in.annuncio.finestra" data-t-nota="Read by screen readers when a phrase of the window is pressed. {frase} is what the status line of the window then says.">La riga della finestra dice: {frase}</p>
   <p data-t="in.annuncio.sistema" data-t-nota="Read by screen readers when a distribution is chosen. {sistema} is its name.">I comandi della pagina sono quelli per {sistema}.</p>
-  <p data-t="avvio.primo">Per parlare, Kalliope deve scaricare la voce: 53 MB, una volta sola. Poi funziona senza internet.</p>
-  <p data-t="avvio.scarico" data-t-nota="The first-start story: {mb} goes from 0 to 53, in megabytes.">Scarico la voce… {mb} di 53 MB</p>
   <p data-t="avvio.preparo">Preparo la voce…</p>
-  <p data-t="avvio.annulla">Annulla</p>
-  <p data-t="in.stato.curl" data-t-nota="A status line of Kalliope's window: keep it as the program writes it in Italian; … stands for the cause, which the program adds.">Per scaricare la voce serve il programma curl: …</p>
-  <p data-t="in.stato.rete">Download non riuscito: …</p>
-  <p data-t="in.stato.impronta">Il file … scaricato non corrisponde all'impronta attesa: l'ho scartato.</p>
+  <p data-t="in.stato.manca" data-t-nota="A status line of Kalliope's window: keep it as the program writes it in Italian; each … stands for what the program adds (a folder, then the names of the missing files).">Manca la voce: in … non trovo …. Reinstalla Kalliope.</p>
   <p data-t="in.stato.microfono">La voce è pronta, ma …: per ora nessuno ti sentirà nelle chiamate.</p>
 </template>
 </body>

@@ -456,15 +456,9 @@ msgstr "Αναπαράσταση της πρώτης εκκίνησης του K
 
 #: index.html installa/index.html
 #, kalliope-markup
-msgctxt "avvio.primo"
-msgid "Per parlare, Kalliope deve scaricare la voce: 53 MB, una volta sola. Poi funziona senza internet."
-msgstr "Για να μιλήσει, το Kalliope πρέπει να κατεβάσει τη φωνή: 53 MB, μία φορά μόνο. Μετά λειτουργεί χωρίς διαδίκτυο."
-
-#: index.html installa/index.html
-#, kalliope-markup
-msgctxt "avvio.scarica"
-msgid "Scarica la voce"
-msgstr "Λήψη της φωνής"
+msgctxt "avvio.preparo"
+msgid "Preparo la voce…"
+msgstr "Προετοιμάζω τη φωνή…"
 
 #: index.html installa/index.html
 #, kalliope-markup
@@ -530,8 +524,8 @@ msgstr "<1>Ένας υπολογιστής Linux 64 bit</1> με PipeWire."
 #: index.html
 #, kalliope-markup
 msgctxt "serve.2"
-msgid "<1>53 MB per la voce</1>, scaricati una volta sola: poi funziona senza internet."
-msgstr "<1>53 MB για τη φωνή</1>, που κατεβαίνουν μία φορά μόνο: μετά λειτουργεί χωρίς διαδίκτυο."
+msgid "<1>Niente da scaricare per la voce</1>: è dentro il pacchetto, e funziona senza internet dal primo avvio."
+msgstr "<1>Τίποτα για λήψη για τη φωνή</1>: είναι μέσα στο πακέτο, και λειτουργεί χωρίς διαδίκτυο από την πρώτη εκκίνηση."
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <strong>
@@ -728,26 +722,6 @@ msgstr "Άκουσε ξανά"
 msgctxt "ascolto.azione.formato"
 msgid "{azione}: {frase}"
 msgstr "{azione}: {frase}"
-
-#. The first-start story: {mb} goes from 0 to 53, in megabytes.
-#. Placeholders to leave as they are: {mb}
-#: index.html installa/index.html
-#, kalliope-markup, python-brace-format
-msgctxt "avvio.scarico"
-msgid "Scarico la voce… {mb} di 53 MB"
-msgstr "Κατεβάζω τη φωνή… {mb} από 53 MB"
-
-#: index.html installa/index.html
-#, kalliope-markup
-msgctxt "avvio.preparo"
-msgid "Preparo la voce…"
-msgstr "Προετοιμάζω τη φωνή…"
-
-#: index.html installa/index.html
-#, kalliope-markup
-msgctxt "avvio.annulla"
-msgid "Annulla"
-msgstr "Ακύρωση"
 
 #. The word of sentence 2 that is Paola's name, written as it is in the sentence, punctuation included: when the voice says it, Paola turns to look.
 #: index.html
@@ -959,8 +933,8 @@ msgstr "Serve un computer Linux a 64 bit (x86_64), con Wayland o X11 e con PipeW
 #: installa/index.html
 #, kalliope-markup
 msgctxt "in.file.voce"
-msgid "Al primo avvio Kalliope scarica la voce: 53 MB, una volta sola, con il programma curl. I pacchetti lo chiedono da soli; con l'archivio controlla di averlo."
-msgstr "Al primo avvio Kalliope scarica la voce: 53 MB, una volta sola, con il programma curl. I pacchetti lo chiedono da soli; con l'archivio controlla di averlo."
+msgid "Le voci sono dentro il file: una volta installato, Kalliope non scarica niente e funziona senza internet dal primo avvio."
+msgstr "Le voci sono dentro il file: una volta installato, Kalliope non scarica niente e funziona senza internet dal primo avvio."
 
 #: installa/index.html
 #, kalliope-markup
@@ -1048,8 +1022,8 @@ msgstr "Per controllare tutti i file insieme c'è il file <1>SHA256SUMS</1>: sca
 #: installa/index.html
 #, kalliope-markup
 msgctxt "in.file.controlla.attestazione"
-msgid "Questa versione non ha l'attestazione di provenienza (<1>gh attestation verify</1>): è stata pubblicata quando il codice non era ancora pubblico. Le prossime l'avranno; il resto per chi controlla è in <2>Stato e limiti</2>."
-msgstr "Questa versione non ha l'attestazione di provenienza (<1>gh attestation verify</1>): è stata pubblicata quando il codice non era ancora pubblico. Le prossime l'avranno; il resto per chi controlla è in <2>Stato e limiti</2>."
+msgid "Ogni file ha anche l'attestazione di provenienza: <1>gh attestation verify</1>, il comando di GitHub, dice se è stato costruito da questa versione del codice. Il resto per chi controlla è in <2>Stato e limiti</2>."
+msgstr "Ogni file ha anche l'attestazione di provenienza: <1>gh attestation verify</1>, il comando di GitHub, dice se è stato costruito da questa versione del codice. Il resto per chi controlla è in <2>Stato e limiti</2>."
 
 #: installa/index.html
 #, kalliope-markup
@@ -1108,8 +1082,8 @@ msgstr "Il pacchetto non è firmato: dnf mostra un avviso e lo installa dopo l'a
 #: installa/index.html
 #, kalliope-markup
 msgctxt "in.installa.arch.nota"
-msgid "Non è ancora su AUR: si usa la ricetta pubblicata con la versione."
-msgstr "Non è ancora su AUR: si usa la ricetta pubblicata con la versione."
+msgid "La stessa ricetta è anche su AUR, con il nome kalliope-bin, aggiornata da ogni versione."
+msgstr "La stessa ricetta è anche su AUR, con il nome kalliope-bin, aggiornata da ogni versione."
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <strong>
@@ -1169,8 +1143,8 @@ msgstr "dalla cartella dell'archivio, <1>./install --remove</1>"
 #: installa/index.html
 #, kalliope-markup
 msgctxt "in.togli.restano"
-msgid "Nella tua cartella personale restano le preferenze, <1>~/.config/kalliope</1>, e la voce scaricata, <2>~/.local/share/kalliope</2> (53 MB): né il gestore dei pacchetti né <3>./install --remove</3> le toccano. Per toglierle, cancella le due cartelle."
-msgstr "Nella tua cartella personale restano le preferenze, <1>~/.config/kalliope</1>, e la voce scaricata, <2>~/.local/share/kalliope</2> (53 MB): né il gestore dei pacchetti né <3>./install --remove</3> le toccano. Per toglierle, cancella le due cartelle."
+msgid "Le voci se ne vanno con il programma. Nella tua cartella personale restano le preferenze, <1>~/.config/kalliope</1>, e le voci che hai preparato da una registrazione, <2>~/.local/share/kalliope</2>: né il gestore dei pacchetti né <3>./install --remove</3> le toccano. Per toglierle, cancella le due cartelle."
+msgstr "Le voci se ne vanno con il programma. Nella tua cartella personale restano le preferenze, <1>~/.config/kalliope</1>, e le voci che hai preparato da una registrazione, <2>~/.local/share/kalliope</2>: né il gestore dei pacchetti né <3>./install --remove</3> le toccano. Per toglierle, cancella le due cartelle."
 
 #. Says what was checked and what was not. Keep the last sentence as honest as it is: removing the package on a real computer was not tried.
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
@@ -1182,8 +1156,8 @@ msgstr "Nella tua cartella personale restano le preferenze, <1>~/.config/kalliop
 #: installa/index.html
 #, kalliope-markup
 msgctxt "in.togli.verificato"
-msgid "Come lo sappiamo: i pacchetti hanno soltanto file in /usr e nessuno script, e <1>./install --remove</1> cancella soltanto i file messi da <2>./install</2> (provato in una cartella di prova). Togliere il pacchetto con <3>apt</3>, <4>dnf</4> o <5>pacman</5> su un computer vero non l'abbiamo provato."
-msgstr "Come lo sappiamo: i pacchetti hanno soltanto file in /usr e nessuno script, e <1>./install --remove</1> cancella soltanto i file messi da <2>./install</2> (provato in una cartella di prova). Togliere il pacchetto con <3>apt</3>, <4>dnf</4> o <5>pacman</5> su un computer vero non l'abbiamo provato."
+msgid "Come lo sappiamo: i pacchetti hanno soltanto file in /usr e nessuno script, e <1>./install --remove</1> cancella soltanto i file messi da <2>./install</2>. Prima di uscire, ogni pacchetto si toglie con <3>apt</3>, <4>dnf</4> o <5>pacman</5> in un sistema di prova, e la prova controlla che non resti niente, voci comprese. Su un computer vero non l'abbiamo provato."
+msgstr "Come lo sappiamo: i pacchetti hanno soltanto file in /usr e nessuno script, e <1>./install --remove</1> cancella soltanto i file messi da <2>./install</2>. Prima di uscire, ogni pacchetto si toglie con <3>apt</3>, <4>dnf</4> o <5>pacman</5> in un sistema di prova, e la prova controlla che non resti niente, voci comprese. Su un computer vero non l'abbiamo provato."
 
 #: installa/index.html
 #, kalliope-markup
@@ -1230,8 +1204,8 @@ msgstr "Apri Kalliope, e aspetta «Pronta»."
 #: installa/index.html
 #, kalliope-markup
 msgctxt "in.apri.testo"
-msgid "Dal menu delle applicazioni. La prima volta la finestra chiede di scaricare la voce: premi «Scarica la voce» e aspetta, sono 53 MB una volta sola, poi funziona senza internet."
-msgstr "Dal menu delle applicazioni. La prima volta la finestra chiede di scaricare la voce: premi «Scarica la voce» e aspetta, sono 53 MB una volta sola, poi funziona senza internet."
+msgid "Dal menu delle applicazioni. Le voci sono già lì, nel pacchetto: non c'è niente da scaricare, nemmeno la prima volta."
+msgstr "Dal menu delle applicazioni. Le voci sono già lì, nel pacchetto: non c'è niente da scaricare, nemmeno la prima volta."
 
 #: installa/index.html
 #, kalliope-markup
@@ -1255,39 +1229,15 @@ msgstr "Se la riga dice altro"
 
 #: installa/index.html
 #, kalliope-markup
-msgctxt "in.frasi.curl.frase"
-msgid "«Per scaricare la voce serve il programma curl: …»"
-msgstr "«Per scaricare la voce serve il programma curl: …»"
+msgctxt "in.frasi.manca.frase"
+msgid "«Manca la voce: in … non trovo …. Reinstalla Kalliope.»"
+msgstr "«Manca la voce: in … non trovo …. Reinstalla Kalliope.»"
 
 #: installa/index.html
 #, kalliope-markup
-msgctxt "in.frasi.curl.rimedio"
-msgid "Installa curl con il gestore dei pacchetti della tua distribuzione, poi premi di nuovo «Scarica la voce»."
-msgstr "Installa curl con il gestore dei pacchetti della tua distribuzione, poi premi di nuovo «Scarica la voce»."
-
-#: installa/index.html
-#, kalliope-markup
-msgctxt "in.frasi.rete.frase"
-msgid "«Download non riuscito: …» o «Download annullato.»"
-msgstr "«Download non riuscito: …» o «Download annullato.»"
-
-#: installa/index.html
-#, kalliope-markup
-msgctxt "in.frasi.rete.rimedio"
-msgid "Controlla la connessione e premi di nuovo «Scarica la voce»: lo scarico riparte da capo."
-msgstr "Controlla la connessione e premi di nuovo «Scarica la voce»: lo scarico riparte da capo."
-
-#: installa/index.html
-#, kalliope-markup
-msgctxt "in.frasi.impronta.frase"
-msgid "«Il file … scaricato non corrisponde all'impronta attesa: l'ho scartato.»"
-msgstr "«Il file … scaricato non corrisponde all'impronta attesa: l'ho scartato.»"
-
-#: installa/index.html
-#, kalliope-markup
-msgctxt "in.frasi.impronta.rimedio"
-msgid "Kalliope ha buttato via il file guasto da sé: premi di nuovo «Scarica la voce»."
-msgstr "Kalliope ha buttato via il file guasto da sé: premi di nuovo «Scarica la voce»."
+msgctxt "in.frasi.manca.rimedio"
+msgid "Un file delle voci non è dove il programma lo cerca: installa di nuovo il pacchetto o l'archivio, con i passi qui sopra."
+msgstr "Un file delle voci non è dove il programma lo cerca: installa di nuovo il pacchetto o l'archivio, con i passi qui sopra."
 
 #: installa/index.html
 #, kalliope-markup
@@ -1483,24 +1433,12 @@ msgctxt "in.annuncio.sistema"
 msgid "I comandi della pagina sono quelli per {sistema}."
 msgstr "I comandi della pagina sono quelli per {sistema}."
 
-#. A status line of Kalliope's window: keep it as the program writes it in Italian; … stands for the cause, which the program adds.
+#. A status line of Kalliope's window: keep it as the program writes it in Italian; each … stands for what the program adds (a folder, then the names of the missing files).
 #: installa/index.html
 #, kalliope-markup
-msgctxt "in.stato.curl"
-msgid "Per scaricare la voce serve il programma curl: …"
-msgstr "Per scaricare la voce serve il programma curl: …"
-
-#: installa/index.html
-#, kalliope-markup
-msgctxt "in.stato.rete"
-msgid "Download non riuscito: …"
-msgstr "Download non riuscito: …"
-
-#: installa/index.html
-#, kalliope-markup
-msgctxt "in.stato.impronta"
-msgid "Il file … scaricato non corrisponde all'impronta attesa: l'ho scartato."
-msgstr "Il file … scaricato non corrisponde all'impronta attesa: l'ho scartato."
+msgctxt "in.stato.manca"
+msgid "Manca la voce: in … non trovo …. Reinstalla Kalliope."
+msgstr "Manca la voce: in … non trovo …. Reinstalla Kalliope."
 
 #: installa/index.html
 #, kalliope-markup
@@ -2143,8 +2081,8 @@ msgstr "Chi lo installa?"
 #: stato/index.html
 #, kalliope-markup
 msgctxt "st.d.installa.a"
-msgid "Una persona che sa usare il terminale di Linux: i passi e i comandi da copiare sono nella <1>pagina Installa</1>. Poi Kalliope scarica la voce, 53 MB, una volta sola."
-msgstr "Una persona che sa usare il terminale di Linux: i passi e i comandi da copiare sono nella <1>pagina Installa</1>. Poi Kalliope scarica la voce, 53 MB, una volta sola."
+msgid "Una persona che sa usare il terminale di Linux: i passi e i comandi da copiare sono nella <1>pagina Installa</1>. Le voci sono già nel pacchetto: Kalliope non scarica niente."
+msgstr "Una persona che sa usare il terminale di Linux: i passi e i comandi da copiare sono nella <1>pagina Installa</1>. Le voci sono già nel pacchetto: Kalliope non scarica niente."
 
 #: stato/index.html
 #, kalliope-markup
@@ -2243,8 +2181,8 @@ msgstr "Per chi deve controllare: che cosa entra nel computer, che cosa resta e 
 #: stato/index.html
 #, kalliope-markup
 msgctxt "st.varco.fuori"
-msgid "huggingface.co"
-msgstr "huggingface.co"
+msgid "github.com"
+msgstr "github.com"
 
 #: stato/index.html
 #, kalliope-markup
@@ -2291,8 +2229,8 @@ msgstr "il programma"
 #: stato/index.html
 #, kalliope-markup
 msgctxt "st.varco.voce"
-msgid "la voce · 53 MB"
-msgstr "la voce · 53 MB"
+msgid "le voci, dal pacchetto"
+msgstr "le voci, dal pacchetto"
 
 #: stato/index.html
 #, kalliope-markup
@@ -2318,18 +2256,18 @@ msgstr "Non viene mandato da nessuna parte e non viene salvato. Kalliope non usa
 #: stato/index.html
 #, kalliope-markup
 msgctxt "st.passo.scarico.titolo"
-msgid "Una sola connessione, una volta."
-msgstr "Una sola connessione, una volta."
+msgid "Nessuna connessione: tutto arriva con il pacchetto."
+msgstr "Nessuna connessione: tutto arriva con il pacchetto."
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <span class="fonte">
-#.   <2> = <a href="{{kalliope.source.url}}/crates/app/src/download.rs" title="crates/app/src/downloa
+#.   <2> = <a href="{{kalliope.source.url}}/tools/assets.json" title="tools/assets.json" data-t-no="i
 #.   <3> = <a href="{{kalliope.source.url}}/crates/app/src/catalog.rs" title="crates/app/src/catalog.
 #: stato/index.html
 #, kalliope-markup
 msgctxt "st.passo.scarico.testo"
-msgid "Al primo avvio Kalliope scarica la voce con il programma curl, da huggingface.co, a una revisione fissata: tre file, 53 MB. Controlla l'impronta SHA-256 di ciascuno e scarta quello che non corrisponde. Poi funziona senza internet. <1><2>download.rs</2>, <3>catalog.rs</3></1>"
-msgstr "Al primo avvio Kalliope scarica la voce con il programma curl, da huggingface.co, a una revisione fissata: tre file, 53 MB. Controlla l'impronta SHA-256 di ciascuno e scarta quello che non corrisponde. Poi funziona senza internet. <1><2>download.rs</2>, <3>catalog.rs</3></1>"
+msgid "Kalliope non si collega a niente, né al primo avvio né dopo, e funziona senza internet. L'unica cosa che entra è il pacchetto che scarichi tu da github.com: dentro ci sono le voci e ONNX Runtime, copie fissate con l'impronta SHA-256 di ogni file, e il programma le cerca accanto a sé. <1><2>assets.json</2>, <3>catalog.rs</3></1>"
+msgstr "Kalliope non si collega a niente, né al primo avvio né dopo, e funziona senza internet. L'unica cosa che entra è il pacchetto che scarichi tu da github.com: dentro ci sono le voci e ONNX Runtime, copie fissate con l'impronta SHA-256 di ogni file, e il programma le cerca accanto a sé. <1><2>assets.json</2>, <3>catalog.rs</3></1>"
 
 #: stato/index.html
 #, kalliope-markup
@@ -2346,8 +2284,8 @@ msgstr "Che cosa scrive sul disco."
 #: stato/index.html
 #, kalliope-markup
 msgctxt "st.passo.disco.testo"
-msgid "Il programma: con il pacchetto .deb o .rpm in /usr, e servono i permessi di amministratore; con l'archivio e ./install in ~/.local, senza. Poi la voce scelta e «Senti anche tu» in un file di preferenze, settings.conf, e la voce scaricata in una cartella dell'utente. Fuori dalle sue cartelle non modifica niente. Le frasi dette restano in un elenco, fino a 30, solo finché la finestra è aperta. Nessun account. <1><2>docs/releasing.md</2>, <3>settings.rs</3>, <4>paths.rs</4>, <5>main.rs</5></1>"
-msgstr "Il programma: con il pacchetto .deb o .rpm in /usr, e servono i permessi di amministratore; con l'archivio e ./install in ~/.local, senza. Poi la voce scelta e «Senti anche tu» in un file di preferenze, settings.conf, e la voce scaricata in una cartella dell'utente. Fuori dalle sue cartelle non modifica niente. Le frasi dette restano in un elenco, fino a 30, solo finché la finestra è aperta. Nessun account. <1><2>docs/releasing.md</2>, <3>settings.rs</3>, <4>paths.rs</4>, <5>main.rs</5></1>"
+msgid "Il programma e le voci: con il pacchetto .deb o .rpm in /usr, e servono i permessi di amministratore; con l'archivio e ./install in ~/.local, senza. Poi la voce scelta e «Senti anche tu» in un file di preferenze, settings.conf, e le voci che prepari da una registrazione in una cartella dell'utente. Fuori dalle sue cartelle non modifica niente. Le frasi dette restano in un elenco, fino a 30, solo finché la finestra è aperta. Nessun account. <1><2>docs/releasing.md</2>, <3>settings.rs</3>, <4>paths.rs</4>, <5>main.rs</5></1>"
+msgstr "Il programma e le voci: con il pacchetto .deb o .rpm in /usr, e servono i permessi di amministratore; con l'archivio e ./install in ~/.local, senza. Poi la voce scelta e «Senti anche tu» in un file di preferenze, settings.conf, e le voci che prepari da una registrazione in una cartella dell'utente. Fuori dalle sue cartelle non modifica niente. Le frasi dette restano in un elenco, fino a 30, solo finché la finestra è aperta. Nessun account. <1><2>docs/releasing.md</2>, <3>settings.rs</3>, <4>paths.rs</4>, <5>main.rs</5></1>"
 
 #: stato/index.html
 #, kalliope-markup
@@ -2362,8 +2300,8 @@ msgstr "Quando chiudi la finestra, si chiude."
 #: stato/index.html
 #, kalliope-markup
 msgctxt "st.passo.chiudi.testo"
-msgid "Kalliope non si avvia da solo e non lascia un servizio acceso: con la finestra sparisce l'elenco delle frasi, e il microfono «Kalliope» sparisce dall'elenco dei microfoni. Si toglie con ./install --remove o togliendo il pacchetto; se così si toglie anche la voce scaricata, non l'abbiamo verificato. <1><2>packaging/linux</2>, <3>docs/releasing.md</3></1>"
-msgstr "Kalliope non si avvia da solo e non lascia un servizio acceso: con la finestra sparisce l'elenco delle frasi, e il microfono «Kalliope» sparisce dall'elenco dei microfoni. Si toglie con ./install --remove o togliendo il pacchetto; se così si toglie anche la voce scaricata, non l'abbiamo verificato. <1><2>packaging/linux</2>, <3>docs/releasing.md</3></1>"
+msgid "Kalliope non si avvia da solo e non lascia un servizio acceso: con la finestra sparisce l'elenco delle frasi, e il microfono «Kalliope» sparisce dall'elenco dei microfoni. Si toglie con ./install --remove o togliendo il pacchetto, voci comprese: prima di uscire, ogni pacchetto si toglie in un sistema di prova e la prova controlla che non resti niente. Restano le preferenze e le voci preparate da una registrazione. <1><2>packaging/linux</2>, <3>docs/releasing.md</3></1>"
+msgstr "Kalliope non si avvia da solo e non lascia un servizio acceso: con la finestra sparisce l'elenco delle frasi, e il microfono «Kalliope» sparisce dall'elenco dei microfoni. Si toglie con ./install --remove o togliendo il pacchetto, voci comprese: prima di uscire, ogni pacchetto si toglie in un sistema di prova e la prova controlla che non resti niente. Restano le preferenze e le voci preparate da una registrazione. <1><2>packaging/linux</2>, <3>docs/releasing.md</3></1>"
 
 #: stato/index.html
 #, kalliope-markup

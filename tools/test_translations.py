@@ -1045,12 +1045,7 @@ class FontiEIndirizzo(unittest.TestCase):
         testo = (RADICE / "website" / "stato" / "index.html").read_text(encoding="utf-8")
         trovate = re.findall(r'href="\{\{kalliope\.(source|tree)\.url\}\}/([^"#?]+)"', testo)
         self.assertGreaterEqual(len(trovate), 14, trovate)
-        # Tolte dal repository dopo la versione che la pagina descrive (v0.1-rc.1, dove esistono: la costruzione collega le fonti a
-        # quella versione). Si tolgono da qui quando la pagina descrive la versione nuova.
-        tolte_dopo = {"crates/app/src/download.rs"}
         for tipo, percorso in trovate:
-            if percorso in tolte_dopo:
-                continue
             f = RADICE / percorso
             self.assertTrue(f.is_dir() if tipo == "tree" else f.is_file(), f"{tipo}: {percorso}")
 
@@ -1187,14 +1182,15 @@ class PaginaInstalla(unittest.TestCase):
 
     def test_lo_script_non_scrive_i_numeri_che_stanno_nei_token_o_nella_pagina(self):
         """I moltiplicatori e le misure di «installa» vengono da token.css e dalla pagina (come «stato», incarico 3b-b): né il numero di righe prima dei file,
-        né le cifre di un gruppo dell'impronta, né i MB della voce, né l'attesa dell'annuncio sono scritti in installa.js."""
+        né le cifre di un gruppo dell'impronta, né i MB della voce, né l'attesa dell'annuncio sono scritti in installa.js. Dalla 0.1 le voci
+        sono nel pacchetto: nessun MB da scaricare, nemmeno nella pagina."""
         js = (RADICE / "website" / "installa" / "installa.js").read_text(encoding="utf-8")
         for scritto in (r"\b3 \* tempo", r"i \+= 8\b", r"slice\(i, i \+ 8\)", r"Math\.round\(53 \*", r"\}, 60\)"):
             self.assertIsNone(re.search(scritto, js), scritto)
         tokens = (RADICE / "design-system" / "token.css").read_text(encoding="utf-8")
         for nome in ("--righe-prima-dei-file", "--impronta-cifre-gruppo", "--annuncio-attesa", "--primo-comando-aria-sotto"):
             self.assertIn(nome + ":", tokens)
-        self.assertIn('data-mb="53"', self.TESTO)
+        self.assertNotIn('data-mb=', self.TESTO)
 
     def test_la_prova_dei_numeri_riconosce_uno_script_di_prima(self):
         prima = subprocess_git_show("548a6f2", "website/installa/installa.js")
