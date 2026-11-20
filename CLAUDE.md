@@ -54,6 +54,14 @@ come si lavora.
   l'aggiornamento in `docs/releasing.md`. Caricare i file nella release `assets` e pubblicare si chiede ogni volta, e la release
   va creata prima del push, perché la CI scarica da lì. Le dipendenze del programma si portano tutte all'ultima versione («si, aggiorniamo
   tutto», P-1).
+- **Rilasci e AUR** (scelte del proprietario del 20/11/2026, fra le alternative proposte dopo la ricerca, `design/lavoro/ricerca/rilasci.md`).
+  - Le release si fanno con il nostro strumento: `tools/version.py` e `CHANGELOG.md` scritto a mano per chi usa Kalliope.
+  - Partono da sole quando la versione cambia su `main`, come in Kalipso.
+  - Niente più versioni di prova: «ogni passo è finale», e la prossima release è la 0.1, marcata latest.
+  - Su AUR va `kalliope-bin`, solo con le versioni finali, pubblicato dalla release con una chiave SSH dedicata a Kalliope. La chiave
+    sta nel secret `AUR_SSH_KEY` e in copia nel `.env`; la parte pubblica sta nel profilo AUR del proprietario.
+  - Per un repository pubblico GitHub Actions è gratuito. Una release parte con un push su `main`, quindi resta un passo chiesto al
+    proprietario ogni volta.
 - **Il telefono** (17/11/2026): «non è per telefono: è solo desktop per il momento». Il sito non dice «non ancora» per
   il telefono.
 
