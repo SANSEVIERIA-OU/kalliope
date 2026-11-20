@@ -1,0 +1,69 @@
+{
+ "pagina": "http://127.0.0.1:38665/lente.html?p=it/&vw=390&vh=844&x=0&y=0&w=390&h=56&s=3",
+ "misura": "1170x168",
+ "sequenza": "barra-ridotto-390",
+ "gesto": null,
+ "ridotto": true,
+ "lento": 1,
+ "istanti": [
+  1,
+  5,
+  8,
+  10,
+  12,
+  14,
+  16
+ ],
+ "fotogrammi": [
+  {
+   "file": "barra-ridotto-390-1170x168-f01.jpg",
+   "chiesto": 1,
+   "scattato": 1,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-ridotto-390-1170x168-f02.jpg",
+   "chiesto": 5,
+   "scattato": 5,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-ridotto-390-1170x168-f03.jpg",
+   "chiesto": 8,
+   "scattato": 8,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-ridotto-390-1170x168-f04.jpg",
+   "chiesto": 10,
+   "scattato": 10,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-ridotto-390-1170x168-f05.jpg",
+   "chiesto": 12,
+   "scattato": 12,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-ridotto-390-1170x168-f06.jpg",
+   "chiesto": 14,
+   "scattato": 14,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-ridotto-390-1170x168-f07.jpg",
+   "chiesto": 16,
+   "scattato": 16,
+   "scorrimento": 0
+  }
+ ],
+ "foglio": "barra-ridotto-390-1170x168-foglio.jpg",
+ "video": "barra-ridotto-390-1170x168.webm",
+ "orologio": {
+  "pagina": 1,
+  "media": []
+ },
+ "errori": [],
+ "misurato": "2026-11-20T00:58:21.990Z"
+}

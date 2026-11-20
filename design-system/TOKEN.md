@@ -966,7 +966,7 @@ _nessuna_
 - **Gradini a numero**: le scale (`--corpo-N`, `--spazio-N`…) hanno nomi ordinali perché lo stesso valore serve ruoli diversi; dare a ogni gradino un nome di ruolo è una scelta di progetto.
 - **Testo in px**: tutte le grandezze del testo sono in px come nella pagina (non crescono con la grandezza del testo del sistema). Passarle a rem cambia la pagina per chi ha cambiato la grandezza di base.
 - **`.f-stato.allarme`** (`--app-stato-allarme`): la riga di stato in allarme della finestra è definita ma nessun elemento e nessuno script la usa; si tiene perché è uno stato della finestra ricostruita.
-- **Colori nell'HTML**: il marchio (`#2fb39a`, `#16806f`, bianco) e `theme-color` (`#420017`) stanno nell'HTML, non nel CSS; non sono tokenizzati.
+- **Colori nell'HTML**: `theme-color` (`#420017`) sta nell'HTML, non nel CSS; non è tokenizzato. Il marchio non è più qui: il verde di prima (`#2fb39a`, `#16806f`) è stato tolto, e i colori del marchio nuovo sono i token `--segno-*` (sezione «Il marchio» in fondo).
 - **Valori in `scena.js`**: curve, durate, colori delle onde e ritardi dell'arrivo scritti nello script (`ENTRA`, `rgba(255,219,225,…)` nel disegno delle onde, durate di 360/520/820/1100 ms…) non passano ancora dai token.
 
 ## Dichiarazioni scritte e mai in uso (36): non portate
@@ -1266,3 +1266,22 @@ Un token nuovo in fondo a `token.css` (blocco «Rifinitura di «stato»»); ness
 | `--varco-disco-aria-lato` | `16px` | l'aria ai lati del riquadro «Sul disco»: `--varco-disco-spazio-interno` ora la nomina (`14px var(--varco-disco-aria-lato) 16px`, lo stesso valore di prima) e le etichette dei file possono occuparla fino al bordo del riquadro (`varco.css`, `.varco-file`) |
 
 Variabile data dallo script: `--scorre-sposta` (`stato.js`, sulla `.domande-bolla.scorre`: dove sta, accanto alla domanda).
+
+## Il marchio (incarico L-3, 19/11/2026)
+
+Dieci token nuovi in fondo a `token.css` (blocco «Il marchio»); nessun valore di quelli che c'erano è cambiato. Sono i colori e i tempi del marchio: la geometria sta in `marchio/disegno.json`. `tools/marchio.py` legge da qui i colori (risolve anche `var()`) e scrive i file di `marchio/` e le icone del programma; `--check` fallisce se non tornano. I tempi e `--segno-fronte-pieno` li legge `marchio/marchio.js` all'uso. Numeri senza unità si leggono con `parseFloat`.
+
+| Token | Valore | Ruolo |
+|---|---|---|
+| `--segno-colore` | `#e6396e` | la parte detta (piena) e il contorno, pieno o tratteggiato; oklch(62% 0.21 8), 3,9:1 sul chiaro e sullo scuro; `marchio.css` (`.m-detto`, `.m-bordo`) e tutte le forme |
+| `--segno-parola` | `var(--testo)` (`#ffedef`) | le parole dette, chiare sul pieno; `.m-dette` e le forme libera, piena e piccola |
+| `--segno-piastra` | `#fab7c2` | la forma piena per macOS: il quadrato rosa chiaro |
+| `--segno-simbolo` | `#2e3436` | la versione simbolica di GNOME: il grigio dei simboli di Adwaita (GTK la ricolora comunque) |
+| `--segno-fronte-pieno` | `62` | di quanto si sposta il fronte della voce (unità della tela, 128) dal riposo quando la frase è tutta detta; il riposo è il disegno com'è (0) e non è un valore |
+| `--segno-inseguimento` | `220ms` | la costante di tempo con cui il fronte insegue le parole della bolla vera (la dissolvenza della bolla della home, D2) |
+| `--segno-sosta` | `600ms` | con l'ultima parola (o a gesto fatto) la bolla resta tutta piena |
+| `--segno-ritorno` | `800ms` | e torna a riposo in questo tempo fisso, con `--curva-dolce-doppia` |
+| `--segno-prova-chiaro` | `#fafafb` | il fondo chiaro su cui il catalogo prova il segno: la finestra chiara di GNOME (libadwaita 1.10.0, `_colors.scss`) |
+| `--segno-prova-scuro` | `#222226` | il fondo scuro: la finestra scura di GNOME (libadwaita 1.10.0; GNOME Shell 51.1) |
+
+Il marchio non usa nessun altro valore: ombre, bagliori e sfumature non ci sono (GNOME le sconsiglia fuori dalla sagoma, Flathub le vieta cotte nell'icona). I fondi su cui il catalogo lo mostra sono `--segno-prova-chiaro`, `--segno-prova-scuro` e `--fondo` (il bordeaux del sito).

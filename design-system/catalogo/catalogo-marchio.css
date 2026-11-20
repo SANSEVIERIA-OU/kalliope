@@ -1,0 +1,33 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
+/* Il catalogo del marchio (catalogo-marchio.js): i fondi di prova e l'impaginazione delle forme, del movimento e dell'icona della scheda. Nessun valore
+   proprio: i colori sono i token del sistema (../token.css, compresi i fondi di prova --segno-prova-*), le distanze sono relative al testo (em). */
+.cm-fila { display: flex; flex-wrap: wrap; gap: 1em; align-items: flex-end; }
+.cm-forme { display: grid; gap: 1.6em; }
+.cm-forma > h4 { margin: 0 0 0.4em; font-weight: var(--peso-forte); }
+.cm-forma .cm-fila { padding: 0.8em 1em; border-radius: 0.8em; margin-bottom: 0.4em; border: var(--filetto-sottile) solid var(--bordo-cornice); }
+.cm-et { flex: 1 0 100%; font-size: smaller; letter-spacing: 0.03em; opacity: 0.75; }
+.cm-fig { margin: 0; display: grid; justify-items: center; gap: 0.3em; }
+.cm-fig figcaption { font-size: smaller; opacity: 0.75; text-align: center; }
+.cm-fondo-chiaro { background: var(--segno-prova-chiaro); color: var(--scuro); }
+.cm-fondo-scuro { background: var(--segno-prova-scuro); color: var(--testo); }
+.cm-fondo-bordeaux { background: var(--fondo); color: var(--testo); }
+.cm-fondo-chiaro code, .cm-fondo-scuro code, .cm-fondo-bordeaux code { background: none; padding: 0; }
+.cm-fondo-scuro .cm-ricolorata, .cm-fondo-bordeaux .cm-ricolorata { filter: invert(1); }   /* GTK ricolora la simbolica con il colore del testo: sul fondo scuro la rende chiara */
+.cat-quadro.bordeaux { background: var(--fondo); color: var(--testo); }
+.cm-effetto { grid-template-columns: minmax(0, 28em) minmax(0, 1fr) auto; }
+.cm-campo { gap: 1em; flex-wrap: wrap; }
+.cm-quadro { display: flex; align-items: center; justify-content: center; min-height: 8em; min-width: 8em; }
+.cm-dati { display: block; font-family: var(--font-app); font-size: smaller; margin-top: 0.8em; color: var(--testo-didascalia); }
+.cm-ridotto { display: inline-flex; gap: 0.4em; align-items: center; font-size: smaller; cursor: pointer; }
+.cm-fasi { display: flex; flex-wrap: wrap; gap: 1em; }
+.cm-fase { padding: 1em 1.2em; border-radius: 0.8em; border: var(--filetto-sottile) solid var(--bordo-cornice); }
+.cm-paginetta { min-height: 5em; }
+.cm-scheda { display: inline-flex; gap: 0.6em; align-items: center; padding: 0.55em 1em; border-radius: 0.7em 0.7em 0 0; font-size: smaller; border: var(--filetto-sottile) solid var(--bordo-cornice); border-bottom: 0; }
+.cm-ico-blocco { padding: 1em 1.2em; border-radius: 0.8em; margin: 1em 0; border: var(--filetto-sottile) solid var(--bordo-cornice); display: grid; gap: 0.8em; }
+.cm-ico .cm-fig { justify-items: start; }
+.cm-pixel { display: block; image-rendering: pixelated; }
+.cm-fondo-chiaro .cat-et, .cm-fondo-chiaro figcaption { color: inherit; }
+.cm-fondo-scuro .cat-et, .cm-fondo-bordeaux .cat-et { color: inherit; }
+.cm-scorre { overflow-x: auto; max-width: 100%; }   /* le tabelle larghe scorrono dentro il loro riquadro, non allargano la pagina */
+.cat-quadro > iframe.cat-anteprima { max-width: 100%; }   /* l'anteprima del telefono non esce dallo schermo stretto: lì vede la pagina alla larghezza che c'è */
+#marchio code { overflow-wrap: anywhere; }   /* i percorsi lunghi vanno a capo anche su uno schermo stretto */

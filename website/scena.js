@@ -460,6 +460,8 @@
   function calcola(d) {
     d.tParole = tempiParole(d.n, d.file); d.picchi = picchi(d.file); d.fine = TEMPI.file[d.file].durata_s;
   }
+  // La voce della pagina si dice a chi la segue (il segno della barra, design-system/marchio/marchio.js) con un evento sul documento: quanta frase è detta, come finisce.
+  const voceDice = (stato, frazione) => document.dispatchEvent(new CustomEvent('kalliope:voce', {detail: {stato, frazione}}));
   function parla({palco, n, file, orologio, audio = null}) {
     ferma(false);
     clearTimeout(palco.ritorno);
@@ -483,6 +485,7 @@
     d.parole.forEach(p => p.classList.remove('attesa'));
     $$('.scritto', d.corpo).forEach(p => p.classList.remove('attesa'));
     d.palco.finisce(d.n, posa);
+    voceDice(fine ? 'finita' : 'interrotta');
     if (posa) {
       annuisci(d.palco.persone[FRASI[d.n].annuisce]);
       d.palco.ritorno = setTimeout(() => Object.values(d.palco.persone).forEach(p => p.classList.remove('guarda')), 1700);
@@ -495,6 +498,7 @@
       if (d.audio && isFinite(d.audio.duration)) { assicuraTempi(d.file, d.audio.duration); calcola(d); } else return;
     }
     const t = d.orologio();
+    let dette = 0;
     d.parole.forEach((p, i) => {
       if (p.classList.contains('attesa') && t >= d.tParole[i]) {
         const g = d.gruppi[i];
@@ -502,7 +506,9 @@
         p.classList.remove('attesa');
         if (p.dataset.chi) annuisci(d.palco.persone[p.dataset.chi]);
       }
+      if (!p.classList.contains('attesa')) dette++;
     });
+    voceDice('parla', dette / Math.max(1, d.parole.length));
     d.palco.env(envA(d.file, t), t, d.file);
     while (d.prossimo < d.picchi.length && t >= d.picchi[d.prossimo]) {
       if (!ridotto && t - d.picchi[d.prossimo] < 0.3) { d.palco.onde.push({t: ora(), toccati: new Set()}); d.palco.sporca = true; }

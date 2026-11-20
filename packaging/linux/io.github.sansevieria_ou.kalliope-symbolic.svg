@@ -1,0 +1,6 @@
+<!-- SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 -->
+<!-- File generato da tools/marchio.py da design-system/marchio/disegno.json e dai token segno-* di design-system/token.css: non si modifica a mano. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <path d="M8 11.5L5 14.1A0.6 0.6 0 0 1 4 13.65V11.5A2.5 2.5 0 0 1 1.5 9V5A2.5 2.5 0 0 1 4 2.5H8L8 11.5z" fill="#2e3436"/>
+  <path d="M8 2.5H12A2.5 2.5 0 0 1 14.5 5V9A2.5 2.5 0 0 1 12 11.5H8" fill="none" stroke="#2e3436" stroke-width="1.5" stroke-dasharray="2 1.2" stroke-dashoffset="0.8" stroke-linejoin="round"/>
+</svg>

@@ -255,7 +255,7 @@
     s.append(el('ul', {class: 'cat-non-ancora', html: [
       ['Persone e percorsi', 'il sistema è ricavato da una sola superficie (la home); persone, compiti e livelli di tutto il sito stanno in <code>design/direzione-2/PIANO.md</code>, non qui.'],
       ['Anteprime delle schermate dei compiti reali', 'in questo sistema esiste una sola schermata (la home); le altre pagine non sono ancora state ridisegnate.'],
-      ['Icone e immagini', 'solo il marchio e le figure della riunione (inline); non c\'è un inventario completo né regole di disegno delle icone.'],
+      ['Icone e immagini', 'il marchio è in «Il marchio» (<code>catalogo-marchio.js</code>), con le regole e le prove; le figure della riunione sono inline; non c\'è un inventario completo delle altre icone.'],
       ['Interazioni', 'tastiera, tocco e recupero sono provati sulla home (<code>design/direzione-2/COSTRUZIONE.md</code>), non ripetuti qui; gli stati forzati qui sono una simulazione delle regole, non un test del gesto.'],
       ['Dati e media', 'l\'audio vero (voci Giulia e Marco) suona solo nella home; il catalogo non lo riproduce.'],
       ['Accessibilità e testo grande', 'questo incarico non ripete le prove di testo grande, zoom e tastiera; valgono quelle della home consegnata.'],

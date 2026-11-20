@@ -10,7 +10,7 @@ come si lavora.
 
 ## Il sito e il design system: da dove si riparte
 
-**Stato al 19/11/2026.** Aggiorna questa sezione ogni volta che lo stato cambia.
+**Stato al 20/11/2026.** Aggiorna questa sezione ogni volta che lo stato cambia.
 
 - **Il sito è `website/`** (prima si chiamava `site/`). La home è quella nuova, nella direzione 2 «Alla pari, in
   riunione», scelta dal proprietario il 14/11/2026 fra tre direzioni rese.
@@ -21,8 +21,9 @@ come si lavora.
   «installa».
 - **Il logo nuovo** (decisione del proprietario del 19/11/2026: «rifarei il logo perché con il nuovo sito c'entra poco»):
   fra tre direzioni rese e giudicate il proprietario ha scelto la 3, «La frase che si accende», una bolla metà piena (detto)
-  e metà tratteggiata (non ancora detto) (`design/lavoro/L-logo/`). Entra in `design-system/` come disegno unico per barra,
-  icona della scheda e icona del programma; il verde del logo di prima, unica eccezione ai colori, se ne va.
+  e metà tratteggiata (non ancora detto) (`design/lavoro/L-logo/`). È in `design-system/marchio/`, generato dai token da
+  `tools/marchio.py`: la costruzione lo mette nella barra di ogni pagina e nell'icona della scheda, i pacchetti lo installano
+  come icona del programma. Il verde del logo di prima non c'è più (la nota di `design/direzione-2/D2.md` è superata).
 - **Pubblicare** (19/11/2026): il proprietario ha detto di «cominciare a mergiare in main e caricare il nuovo sito». Il sito
   nuovo va in linea con le pagine fatte; le altre arrivano una alla volta. Ogni push resta un passo detto al proprietario.
 - **Le altre pagine non sono ancora state rifatte.** Ascolta, installa, in riunione, aiuto e la pagina 404

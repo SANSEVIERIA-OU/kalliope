@@ -48,6 +48,9 @@ cp -a %{staging}/. %{buildroot}/
 /usr/share/kalliope/
 /usr/share/applications/io.github.sansevieria_ou.kalliope.desktop
 /usr/share/icons/hicolor/scalable/apps/io.github.sansevieria_ou.kalliope.svg
+/usr/share/icons/hicolor/symbolic/apps/io.github.sansevieria_ou.kalliope-symbolic.svg
+/usr/share/icons/hicolor/48x48/apps/io.github.sansevieria_ou.kalliope.png
+/usr/share/icons/hicolor/256x256/apps/io.github.sansevieria_ou.kalliope.png
 /usr/share/metainfo/io.github.sansevieria_ou.kalliope.metainfo.xml
 %dir /usr/share/doc/kalliope
 %license /usr/share/doc/kalliope/LICENSE

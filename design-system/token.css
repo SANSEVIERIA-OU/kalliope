@@ -1377,3 +1377,20 @@
 :root {
   --varco-disco-aria-lato: 16px;   /* l'aria ai lati del riquadro «Sul disco»: è la stessa di --varco-disco-spazio-interno (che ora la nomina); le etichette dei file possono occuparla (a 390 px e a 326 l'italiano la occupa quasi tutta: il riquadro intero è il loro limite) */
 }
+
+/* ---------- Il marchio · «La frase che si accende» (incarico L-3, 19/11/2026) ---------- */
+/* Il segno nella barra, l'icona della scheda e l'icona del programma: la bolla della frase detta a metà, piena dove è detta e solo contorno
+   tratteggiato dove non lo è ancora. Qui stanno i colori e i tempi; la geometria è in marchio/disegno.json. tools/marchio.py scrive da qui e da lì
+   tutti i file di marchio/ e le icone del programma (packaging/linux/), e fallisce se non tornano. Ruoli e prove: TOKEN.md, «Il marchio». */
+:root {
+  --segno-colore: #e6396e;   /* la parte detta (piena) e il contorno, pieno o tratteggiato: oklch(62% 0.21 8), 3,9:1 sul chiaro e sullo scuro (la regola di Windows per le icone) */
+  --segno-parola: var(--testo);   /* le parole dette, chiare sul pieno: il chiaro della bolla della home */
+  --segno-piastra: #fab7c2;   /* la forma piena per macOS: il rosa chiaro che fa risaltare il tratteggio sullo scuro */
+  --segno-simbolo: #2e3436;   /* la versione simbolica di GNOME: il grigio dei simboli di Adwaita (GTK la ricolora comunque) */
+  --segno-fronte-pieno: 62;   /* di quanto il fronte della voce (in unità della tela, 128) si sposta dal riposo, dov'è disegnato (detto a metà: la forma dei menu e della scheda), quando la frase è tutta detta: la bolla è tutta piena */
+  --segno-inseguimento: 220ms;   /* il fronte insegue le parole della bolla vera con questa costante di tempo: la dissolvenza della bolla della home */
+  --segno-sosta: 600ms;   /* finita la frase (o fatto il gesto) la bolla resta tutta piena un momento… */
+  --segno-ritorno: 800ms;   /* …e torna a riposo in questo tempo, con curva dolce: a riposo ci arriva davvero, non a poco a poco */
+  --segno-prova-chiaro: #fafafb;   /* il fondo chiaro su cui si prova il segno (il catalogo): la finestra chiara di GNOME, libadwaita 1.10.0, _colors.scss */
+  --segno-prova-scuro: #222226;   /* il fondo scuro: la finestra scura di GNOME e la sua griglia delle applicazioni (libadwaita 1.10.0, GNOME Shell 51.1) */
+}

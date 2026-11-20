@@ -45,6 +45,12 @@ for f in "$model_dir"/{encoder.onnx,decoder.onnx,model.json,LICENSE,NOTICE.txt} 
     fi
 done
 
+# The icons must be those the drawing and the tokens make: a stale one stops the build here, not in a user's menu.
+(cd "$root" && python3 -I tools/marchio.py --check >/dev/null) || {
+    echo "build-packages.sh: the icons do not match design-system/marchio; run python3 -I tools/marchio.py" >&2
+    exit 1
+}
+
 work=$(mktemp -d)
 trap 'rm -rf "$work"' EXIT
 mkdir -p "$out"
@@ -77,7 +83,13 @@ stage() {
     install -Dm755 "$ort_lib" "$prefix/$libdir/$ort_name"
     ln -s "$ort_name" "$prefix/$libdir/libonnxruntime.so.1"
     install -Dm644 -t "$prefix/share/applications" "$root/packaging/linux/$id.desktop"
+    # The icons, all written by tools/marchio.py from design-system/marchio/disegno.json and the --segno-* tokens (python3 -I tools/marchio.py --check):
+    # the free form, the symbolic one for GNOME (hicolor/symbolic/apps/NAME-symbolic.svg) and the PNGs freedesktop asks for (at least 48x48).
     install -Dm644 -t "$prefix/share/icons/hicolor/scalable/apps" "$root/packaging/linux/$id.svg"
+    install -Dm644 -t "$prefix/share/icons/hicolor/symbolic/apps" "$root/packaging/linux/$id-symbolic.svg"
+    for size in 48 256; do
+        install -Dm644 "$root/packaging/linux/$id-$size.png" "$prefix/share/icons/hicolor/${size}x$size/apps/$id.png"
+    done
     install -Dm644 -t "$prefix/share/metainfo" "$root/packaging/linux/$id.metainfo.xml"
     install -Dm644 -t "$prefix/share/doc/kalliope" \
         "$root/LICENSE" "$root/NOTICE" "$root/THIRD_PARTY_NOTICES.md" "$root/CHANGELOG.md" \

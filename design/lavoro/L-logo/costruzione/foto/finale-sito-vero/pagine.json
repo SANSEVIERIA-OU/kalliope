@@ -1,0 +1,512 @@
+[
+ {
+  "larghezza": 1440,
+  "pagina": "404.html",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "aiuto/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "ascolta/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "installa/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "it/aiuto/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "it/ascolta/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "it/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "it/installa/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "it/non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "it/riunione/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "it/sistema/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "it/sistema/ricerca/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "it/stato/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "riunione/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "sistema/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "sistema/ricerca/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "stato/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "404.html",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "aiuto/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "ascolta/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "installa/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "it/aiuto/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "it/ascolta/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "it/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "it/installa/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "it/non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "it/riunione/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "it/sistema/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "it/sistema/ricerca/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "it/stato/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "riunione/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "sistema/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "sistema/ricerca/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "stato/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "404.html",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "aiuto/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "ascolta/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "installa/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "it/aiuto/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "it/ascolta/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "it/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "it/installa/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "it/non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "it/riunione/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "it/sistema/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "it/sistema/ricerca/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "it/stato/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "riunione/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "sistema/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "sistema/ricerca/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "stato/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ }
+]

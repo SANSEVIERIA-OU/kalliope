@@ -101,11 +101,13 @@ Linux x86_64 only, for now:
 
 | File | For | Contents |
 | --- | --- | --- |
-| `kalliope-X.Y-linux-x86_64.tar.gz` | any Linux | `bin/kalliope`, `bin/kalliope-cli`, `lib/libonnxruntime.so.1.32.0` and its `.so.1` link, `share/kalliope/` (the voice models), `share/` (desktop file, icon, AppStream metadata, `doc/kalliope/`), and `./install`, which copies everything into `~/.local` (`./install --remove` takes it away) |
+| `kalliope-X.Y-linux-x86_64.tar.gz` | any Linux | `bin/kalliope`, `bin/kalliope-cli`, `lib/libonnxruntime.so.1.32.0` and its `.so.1` link, `share/kalliope/` (the voice models), `share/` (desktop file, icons, AppStream metadata, `doc/kalliope/`), and `./install`, which copies everything into `~/.local` (`./install --remove` takes it away) |
 | `kalliope-X.Y-amd64.deb` | Debian 13, Ubuntu 24.04 or newer | the same files under `/usr`, with ONNX Runtime in `/usr/lib/kalliope/` and the models in `/usr/share/kalliope/` |
 | `kalliope-X.Y-x86_64.rpm` | current Fedora | the same as the `.deb` |
 | `kalliope-bin.PKGBUILD` | Arch Linux | `packaging/aur/PKGBUILD` with this tarball's checksum |
 | `SHA256SUMS` | | the checksum of every file above |
+
+The icons (the free SVG in `hicolor/scalable`, the symbolic one in `hicolor/symbolic`, PNGs of 48 and 256 px) are written by `tools/marchio.py` from `design-system/marchio/disegno.json` and the `--segno-*` tokens; `build-packages.sh` stops if they no longer match (`python3 -I tools/marchio.py --check`, which CI also runs).
 
 The packages contain everything Kalliope needs: once installed, it downloads nothing. On 19 November
 2026 the `.deb` was 187 MB and the tarball 205 MB (320 MB installed), against 16 and 22 MB when the

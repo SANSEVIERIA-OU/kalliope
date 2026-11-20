@@ -1,0 +1,160 @@
+{
+ "pagina": "http://127.0.0.1:42629/lente.html?p=it/&vw=1440&vh=900&x=70&y=0&w=400&h=72&s=3",
+ "misura": "1200x216",
+ "sequenza": "barra-1440",
+ "gesto": null,
+ "ridotto": false,
+ "lento": 1,
+ "istanti": [
+  0.5,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  13.5,
+  14,
+  14.5,
+  15,
+  16,
+  18
+ ],
+ "fotogrammi": [
+  {
+   "file": "barra-1440-1200x216-f01.jpg",
+   "chiesto": 0.5,
+   "scattato": 0.5,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-1440-1200x216-f02.jpg",
+   "chiesto": 1,
+   "scattato": 1,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-1440-1200x216-f03.jpg",
+   "chiesto": 2,
+   "scattato": 2,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-1440-1200x216-f04.jpg",
+   "chiesto": 3,
+   "scattato": 3,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-1440-1200x216-f05.jpg",
+   "chiesto": 4,
+   "scattato": 4,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-1440-1200x216-f06.jpg",
+   "chiesto": 5,
+   "scattato": 5,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-1440-1200x216-f07.jpg",
+   "chiesto": 6,
+   "scattato": 6,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-1440-1200x216-f08.jpg",
+   "chiesto": 7,
+   "scattato": 7,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-1440-1200x216-f09.jpg",
+   "chiesto": 8,
+   "scattato": 8,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-1440-1200x216-f10.jpg",
+   "chiesto": 9,
+   "scattato": 9,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-1440-1200x216-f11.jpg",
+   "chiesto": 10,
+   "scattato": 10,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-1440-1200x216-f12.jpg",
+   "chiesto": 11,
+   "scattato": 11,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-1440-1200x216-f13.jpg",
+   "chiesto": 12,
+   "scattato": 12,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-1440-1200x216-f14.jpg",
+   "chiesto": 13,
+   "scattato": 13,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-1440-1200x216-f15.jpg",
+   "chiesto": 13.5,
+   "scattato": 13.5,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-1440-1200x216-f16.jpg",
+   "chiesto": 14,
+   "scattato": 14,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-1440-1200x216-f17.jpg",
+   "chiesto": 14.5,
+   "scattato": 14.5,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-1440-1200x216-f18.jpg",
+   "chiesto": 15,
+   "scattato": 15,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-1440-1200x216-f19.jpg",
+   "chiesto": 16,
+   "scattato": 16,
+   "scorrimento": 0
+  },
+  {
+   "file": "barra-1440-1200x216-f20.jpg",
+   "chiesto": 18,
+   "scattato": 18,
+   "scorrimento": 0
+  }
+ ],
+ "foglio": "barra-1440-1200x216-foglio.jpg",
+ "video": "barra-1440-1200x216.webm",
+ "orologio": {
+  "pagina": 1,
+  "media": []
+ },
+ "errori": [],
+ "misurato": "2026-11-20T00:57:29.875Z"
+}

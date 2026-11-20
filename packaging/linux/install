@@ -20,6 +20,9 @@ if $remove; then
     rm -f "$prefix/bin/kalliope" "$prefix/bin/kalliope-cli" \
         "$prefix/share/applications/$id.desktop" \
         "$prefix/share/icons/hicolor/scalable/apps/$id.svg" \
+        "$prefix/share/icons/hicolor/symbolic/apps/$id-symbolic.svg" \
+        "$prefix/share/icons/hicolor/48x48/apps/$id.png" \
+        "$prefix/share/icons/hicolor/256x256/apps/$id.png" \
         "$prefix/share/metainfo/$id.metainfo.xml"
     rm -rf "$prefix/lib/kalliope" "$prefix/share/kalliope" "$prefix/share/doc/kalliope"
     echo "Kalliope is removed from $prefix."
@@ -27,7 +30,8 @@ if $remove; then
 fi
 
 mkdir -p "$prefix/bin" "$prefix/lib/kalliope" "$prefix/share/applications" \
-    "$prefix/share/icons/hicolor/scalable/apps" "$prefix/share/metainfo" "$prefix/share/doc"
+    "$prefix/share/icons/hicolor/scalable/apps" "$prefix/share/icons/hicolor/symbolic/apps" \
+    "$prefix/share/icons/hicolor/48x48/apps" "$prefix/share/icons/hicolor/256x256/apps" "$prefix/share/metainfo" "$prefix/share/doc"
 cp "$here/bin/kalliope" "$here/bin/kalliope-cli" "$prefix/bin/"
 rm -f "$prefix"/lib/kalliope/libonnxruntime.so*
 cp -P "$here"/lib/libonnxruntime.so* "$prefix/lib/kalliope/"
@@ -35,6 +39,9 @@ cp -P "$here"/lib/libonnxruntime.so* "$prefix/lib/kalliope/"
 sed "s|^Exec=kalliope\$|Exec=\"$prefix/bin/kalliope\"|" "$here/share/applications/$id.desktop" \
     > "$prefix/share/applications/$id.desktop"
 cp "$here/share/icons/hicolor/scalable/apps/$id.svg" "$prefix/share/icons/hicolor/scalable/apps/"
+cp "$here/share/icons/hicolor/symbolic/apps/$id-symbolic.svg" "$prefix/share/icons/hicolor/symbolic/apps/"
+cp "$here/share/icons/hicolor/48x48/apps/$id.png" "$prefix/share/icons/hicolor/48x48/apps/"
+cp "$here/share/icons/hicolor/256x256/apps/$id.png" "$prefix/share/icons/hicolor/256x256/apps/"
 cp "$here/share/metainfo/$id.metainfo.xml" "$prefix/share/metainfo/"
 # The voice models, next to the programs as they look for them.
 rm -rf "$prefix/share/kalliope"

@@ -37,6 +37,7 @@ package() {
   install -Dm755 -t "$pkgdir/usr/bin" bin/kalliope bin/kalliope-cli
   install -d "$pkgdir/usr/lib/kalliope"
   cp -P lib/libonnxruntime.so.* "$pkgdir/usr/lib/kalliope/"
+  # share/ holds the desktop file, the icons (scalable, symbolic, 48 and 256 px), the AppStream metadata and the voice models
   cp -r share "$pkgdir/usr/"
   install -d "$pkgdir/usr/share/licenses/$pkgname"
   ln -s /usr/share/doc/kalliope/LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"

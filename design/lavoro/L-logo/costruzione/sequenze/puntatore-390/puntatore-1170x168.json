@@ -1,0 +1,66 @@
+{
+ "pagina": "http://127.0.0.1:8962/kalliope/lente.html?p=it/&vw=390&vh=844&x=0&y=0&w=390&h=56&s=3",
+ "punto": [
+  54,
+  84
+ ],
+ "fotogrammi": [
+  {
+   "file": "puntatore-1170x168-f01.jpg",
+   "chiesto": 0,
+   "scattato": 0.03
+  },
+  {
+   "file": "puntatore-1170x168-f02.jpg",
+   "chiesto": 0.1,
+   "scattato": 0.13
+  },
+  {
+   "file": "puntatore-1170x168-f03.jpg",
+   "chiesto": 0.2,
+   "scattato": 0.23
+  },
+  {
+   "file": "puntatore-1170x168-f04.jpg",
+   "chiesto": 0.3,
+   "scattato": 0.33
+  },
+  {
+   "file": "puntatore-1170x168-f05.jpg",
+   "chiesto": 0.4,
+   "scattato": 0.42
+  },
+  {
+   "file": "puntatore-1170x168-f06.jpg",
+   "chiesto": 0.6,
+   "scattato": 0.63
+  },
+  {
+   "file": "puntatore-1170x168-f07.jpg",
+   "chiesto": 0.8,
+   "scattato": 0.83
+  },
+  {
+   "file": "puntatore-1170x168-f08.jpg",
+   "chiesto": 1,
+   "scattato": 1.03
+  },
+  {
+   "file": "puntatore-1170x168-f09.jpg",
+   "chiesto": 1.2,
+   "scattato": 1.23
+  },
+  {
+   "file": "puntatore-1170x168-f10.jpg",
+   "chiesto": 1.5,
+   "scattato": 1.52
+  },
+  {
+   "file": "puntatore-1170x168-f11.jpg",
+   "chiesto": 2,
+   "scattato": 2.02
+  }
+ ],
+ "video": "puntatore-1170x168.webm",
+ "misurato": "2026-11-20T00:58:40.030Z"
+}

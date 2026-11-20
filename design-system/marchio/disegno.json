@@ -1,0 +1,34 @@
+{
+  "_nota": "Il disegno del marchio, la sola fonte della sua geometria: la frase che si accende (direzione 3 di L-1, scelta dal proprietario il 19/11/2026). I colori e i tempi stanno in ../token.css (--segno-*). tools/marchio.py scrive da qui e da lì tutti gli altri file di questa cartella; non si copia a mano. Unità: la tela di ciascuna forma.",
+  "forme": {
+    "libero": {
+      "_nota": "Il disegno libero su fondo trasparente (Linux, Windows, la barra del sito): tela 128, griglia di 2. La bolla detta a metà: piena e con le parole dove è detta, solo contorno tratteggiato dove non lo è ancora.",
+      "tela": 128,
+      "sagoma": "M32 22h64a20 20 0 0 1 20 20v34a20 20 0 0 1-20 20H60l-22 16a3 3 0 0 1-5-2.4V96h-1A20 20 0 0 1 12 76V42a20 20 0 0 1 20-20z",
+      "fronte": {"curva": [[50, 0], [74, 30], [74, 90], [50, 128]], "lontano_sinistra": -200, "lontano_destra": 400},
+      "contorno": {"spessore": 12, "tratteggio": [14, 9]},
+      "parole": [[28, 44, 26, 11], [28, 64, 18, 11]]
+    },
+    "piccola": {
+      "_nota": "Il disegno per le grandezze piccole (16 e 24 px, la scheda del browser): sulla griglia di 16, un pixel = 8 unità; un tratto di un pixel, il contorno tratteggiato due pieni e uno vuoto, una parola.",
+      "tela": 128,
+      "sagoma": "M32 20h64a20 20 0 0 1 20 20v32a20 20 0 0 1-20 20H56l-20 18a3 3 0 0 1-5-2.2V92a20 20 0 0 1-19-20V40a20 20 0 0 1 20-20z",
+      "fronte": {"retta": 64},
+      "contorno": {"spessore": 8, "tratteggio": [16, 8]},
+      "parole": [[24, 48, 32, 16]]
+    },
+    "simbolica": {
+      "_nota": "La versione simbolica di GNOME: 16×16, un colore solo; la bolla piena fino al fronte, poi il contorno tratteggiato; senza parole.",
+      "tela": 16,
+      "sagoma": "M4 2.5h8a2.5 2.5 0 0 1 2.5 2.5v4a2.5 2.5 0 0 1-2.5 2.5H8l-3 2.6a.6.6 0 0 1-1-.45V11.5A2.5 2.5 0 0 1 1.5 9V5A2.5 2.5 0 0 1 4 2.5z",
+      "fronte": {"retta": 8},
+      "contorno": {"spessore": 1.5, "tratteggio": [2, 1.2], "solo_tratteggiato": true},
+      "parole": []
+    }
+  },
+  "piena": {
+    "_nota": "La forma piena per macOS: il quadrato è il rosa chiaro, il disegno libero sta al centro a 0,84 (spostamento in x e y, scala).",
+    "da": "libero",
+    "trasformazione": [10.24, 7, 0.84]
+  }
+}

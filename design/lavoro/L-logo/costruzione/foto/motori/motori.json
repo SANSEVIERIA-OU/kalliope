@@ -1,0 +1,47 @@
+{
+ "chromium": {
+  "versione": "148.0.7778.96",
+  "segno": {
+   "x": 80,
+   "y": 18,
+   "w": 36,
+   "h": 36
+  },
+  "errori": [],
+  "foto": {
+   "0": "chromium-fronte0.png",
+   "31": "chromium-fronte31.png",
+   "62": "chromium-fronte62.png"
+  }
+ },
+ "firefox": {
+  "versione": "150.0.2",
+  "segno": {
+   "x": 80,
+   "y": 18,
+   "w": 36,
+   "h": 36
+  },
+  "errori": [],
+  "foto": {
+   "0": "firefox-fronte0.png",
+   "31": "firefox-fronte31.png",
+   "62": "firefox-fronte62.png"
+  }
+ },
+ "webkit": {
+  "versione": "26.4",
+  "segno": {
+   "x": 80,
+   "y": 18,
+   "w": 36,
+   "h": 36
+  },
+  "errori": [],
+  "foto": {
+   "0": "webkit-fronte0.png",
+   "31": "webkit-fronte31.png",
+   "62": "webkit-fronte62.png"
+  }
+ }
+}

@@ -1,0 +1,9 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
+/* Componente · il segno del marchio (incarico L-3, 19/11/2026): «La frase che si accende», la bolla detta a metà. I colori sono i token del segno
+   (token.css, --segno-*); il disegno lo mette la costruzione dentro il collegamento della barra (tools/site.py, da marchio/barra.svg, dalla stessa
+   geometria delle icone: marchio/disegno.json); il fronte della voce, cioè il confine fra la parte piena e quella solo tratteggiata, lo sposta
+   marchio/marchio.js. A riposo, senza script e con «riduci movimento» il segno sta fermo com'è nei menu e nella scheda: detto a metà.
+   Non si specchia da destra a sinistra: il marchio si mostra sempre nella sua forma (non ha un verso, né uno spostamento fisico qui). */
+.m-segno .m-detto { fill: var(--segno-colore); }
+.m-segno .m-bordo { stroke: var(--segno-colore); }
+.m-segno .m-dette { fill: var(--segno-parola); }

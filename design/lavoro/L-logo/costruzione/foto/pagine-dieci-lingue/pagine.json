@@ -1,0 +1,1601 @@
+[
+ {
+  "larghezza": 1440,
+  "pagina": "404.html",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "aiuto/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "ar/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "ar/non-ancora/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "ar/stato/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "ar-XB/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "ar-XB/non-ancora/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "ar-XB/stato/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "ascolta/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "bg/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "bg/non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "bg/stato/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "bn/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "bn/non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "bn/stato/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "de/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "de/non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "de/stato/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "el/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "el/non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "el/stato/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "en-XA/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "en-XA/non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "en-XA/stato/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "fi/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "fi/non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "fi/stato/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "hi/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "hi/non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "hi/stato/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "installa/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "it/aiuto/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "it/ascolta/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "it/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "it/installa/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "it/non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "it/riunione/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "it/sistema/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "it/sistema/ricerca/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "it/stato/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "riunione/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "sistema/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "sistema/ricerca/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "stato/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "ur/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "ur/non-ancora/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "ur/stato/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "zh/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "zh/non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "zh/stato/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "404.html",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "aiuto/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "ar/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "ar/non-ancora/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "ar/stato/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "ar-XB/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "ar-XB/non-ancora/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "ar-XB/stato/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "ascolta/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "bg/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "bg/non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "bg/stato/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "bn/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "bn/non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "bn/stato/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "de/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "de/non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "de/stato/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "el/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "el/non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "el/stato/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "en-XA/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "en-XA/non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "en-XA/stato/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "fi/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "fi/non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "fi/stato/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "hi/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "hi/non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "hi/stato/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "installa/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "it/aiuto/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "it/ascolta/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "it/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "it/installa/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "it/non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "it/riunione/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "it/sistema/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "it/sistema/ricerca/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "it/stato/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "riunione/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "sistema/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "sistema/ricerca/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "stato/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "ur/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "ur/non-ancora/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "ur/stato/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "zh/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "zh/non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "zh/stato/",
+  "dir": "ltr",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "404.html",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "aiuto/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "ar/",
+  "dir": "rtl",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "ar/non-ancora/",
+  "dir": "rtl",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "ar/stato/",
+  "dir": "rtl",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "ar-XB/",
+  "dir": "rtl",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "ar-XB/non-ancora/",
+  "dir": "rtl",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "ar-XB/stato/",
+  "dir": "rtl",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "ascolta/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "bg/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "bg/non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "bg/stato/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "bn/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "bn/non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "bn/stato/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "de/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "de/non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "de/stato/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "el/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "el/non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "el/stato/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "en-XA/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "en-XA/non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "en-XA/stato/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "fi/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "fi/non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "fi/stato/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "hi/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "hi/non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "hi/stato/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "installa/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "it/aiuto/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "it/ascolta/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "it/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "it/installa/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "it/non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "it/riunione/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "it/sistema/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "it/sistema/ricerca/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "it/stato/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "riunione/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "sistema/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "sistema/ricerca/",
+  "dir": "ltr",
+  "segno": null,
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "stato/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "ur/",
+  "dir": "rtl",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "ur/non-ancora/",
+  "dir": "rtl",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "ur/stato/",
+  "dir": "rtl",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "zh/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "zh/non-ancora/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "zh/stato/",
+  "dir": "ltr",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ }
+]

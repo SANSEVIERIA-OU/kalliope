@@ -18,6 +18,12 @@ A page of a language whose script has its own font file (Arabic, Greek, Bulgaria
 first screen shows in the right font instead of going through the fallback; the Italian page does not change by a byte. The
 file comes from token.css (the :lang() rule of the language), and only small files are preloaded (PRECARICO_FINO_A).
 
+The mark of Kalliope is never written into a page. A page marks where it goes, <svg data-marchio="barra"></svg> in the bar of the new pages and
+<svg data-marchio="libero" width="40" height="40"></svg> in the old ones, and the build puts the drawing there from design-system/marchio/ (the bar's
+mark inline, with the names of its parts; the free form as an image), and writes the icon of the tab into the <head> of every page: favicon.ico
+(sizes any) and piccola.svg, the small form. A page that writes its own <link rel="icon"> stops the build. The build also checks, with tools/marchio.py,
+that the files of design-system/marchio/ still match their drawing and the --segno-* tokens, and stops if they do not.
+
 While one language only is published (today Italian) there is nothing to choose: the selector of the bar and the list of
 languages of the foot are left out of every page, and the top address, /, is one more of those small pages that send to
 /it/ (with the query and the fragment). The second complete language brings them all back, with no other change.
@@ -86,6 +92,7 @@ import urllib.request
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from i18n import catalogo, cldr, pagina, plurali, pseudo  # noqa: E402
+import marchio  # noqa: E402
 
 REPO = "SANSEVIERIA-OU/kalliope"
 BASE_URL = "https://sansevieria-ou.github.io/kalliope/"
@@ -605,6 +612,52 @@ def precarica_carattere(testo, rel, lingua, nome_file):
     return pagina.applica(testo, [(ancora.s, ancora.s, riga + "\n" + _spazio_prima(testo, ancora.s))])
 
 
+# ---------- il marchio: il disegno dalla fonte unica, e l'icona della scheda ----------
+# Nessuna pagina scrive il disegno: segna dove va con <svg data-marchio="barra"></svg> (il segno della barra, in linea, con i nomi delle sue
+# parti: i colori li dà componenti/marchio.css, il fronte della voce lo muove marchio/marchio.js) o <svg data-marchio="libero" width="40" height="40">
+# </svg> (la forma libera, come immagine: le pagine di prima non hanno i token). Lo stesso disegno, i token e la prova sono in design-system/marchio/.
+def marchio_del_sistema(system):
+    """Il marchio di `system` (design-system/ o una sua copia): {"barra": il segno in linea, "forme": i nomi dei file .svg}. None se il sistema non ne ha uno.
+    Ferma la costruzione se i file del marchio non tornano con il suo disegno e con i token."""
+    cartella = system / "marchio"
+    if not (cartella / "disegno.json").exists():
+        return None
+    errori = marchio.controlla_sistema(system)
+    if errori:
+        sys.exit("site.py: the mark of the design system does not match its drawing and tokens (run python3 -I tools/marchio.py):\n  " + "\n  ".join(errori))
+    forme = {f.stem for f in cartella.glob("*.svg")}
+    return {"barra": re.sub(r"<!--.*?-->\s*", "", (cartella / "barra.svg").read_text(encoding="utf-8"), flags=re.S).strip(), "forme": forme}
+
+
+def passo_marchio(testo, alla_radice, mar, rel):
+    """Il disegno del marchio al posto dei segnaposto data-marchio, e nella testa l'icona della scheda (favicon.ico e la forma piccola in SVG).
+    `alla_radice`: il percorso dalla pagina alla radice del sito («../», «../../», o vuoto in cima)."""
+    if mar is None:
+        return testo
+    radice = pagina.leggi(testo)
+    nodi = [n for n in pagina.cammina(radice) if isinstance(n, pagina.Nodo)]
+    mod = []
+    for n in nodi:
+        if not n.ha("data-marchio"):
+            continue
+        forma = n.attr("data-marchio")
+        fine = n.cf if n.cf is not None else n.se
+        if forma == "barra":
+            mod.append((n.s, fine, mar["barra"]))
+        elif forma in mar["forme"] and forma != "barra":
+            mod.append((n.s, fine, f'<img src="{alla_radice}{SYSTEM_IN_SITE}/marchio/{forma}.svg" alt="" width="{n.attr("width") or 40}" height="{n.attr("height") or 40}">'))
+        else:
+            sys.exit(f'site.py: {rel}: data-marchio="{forma}" is not a form of the mark ({", ".join(sorted(mar["forme"]))})')
+    head = next((n for n in nodi if n.tag == "head"), None)
+    if head is not None:
+        if any(n.tag == "link" and "icon" in (n.attr("rel") or "").lower().split() for n in nodi):
+            sys.exit(f"site.py: {rel}: the page writes its own <link rel=\"icon\">; the build writes the icon of the tab from design-system/marchio/")
+        icone = (f'<link rel="icon" href="{alla_radice}{SYSTEM_IN_SITE}/marchio/favicon.ico" sizes="any">\n'
+                 f'<link rel="icon" href="{alla_radice}{SYSTEM_IN_SITE}/marchio/piccola.svg" type="image/svg+xml">\n')
+        mod.append((head.ce, head.ce, icone))
+    return pagina.applica(testo, mod)
+
+
 def passo_release(testo, v, rel):
     """Toglie gli elementi che valgono per l'altro tipo di versione: data-release="prova" resta se la versione offerta è di prova,
     data-release="stabile" se non lo è."""
@@ -661,6 +714,7 @@ def costruisci_pagina(rel, testo, lingua, reali, sito, disponibile, v_lingua, sc
     # prima gli indirizzi scritti nella pagina, poi ciò che la costruzione aggiunge (che è già scritto per la cartella della lingua)
     testo = passo_indirizzi(testo, rel, lingua.codice, sito, disponibile, avvisi, opzioni["base_url"])
     testo = passo_struttura(testo, rel, lingua, reali, sito, opzioni["senza_selettore"], opzioni["base_url"])
+    testo = passo_marchio(testo, posixpath.relpath(".", f"{lingua.codice}/{posixpath.dirname(rel)}".rstrip("/") or ".") + "/", opzioni.get("marchio"), f"{lingua.codice}/{rel}")
     # l'indirizzo della pagina in questa lingua è lo stesso del suo canonical: chi lo mostra e chi lo copia lo prendono da qui
     v_pagina = {**v_lingua, "page.url": indirizzo_pagina(opzioni["base_url"], lingua.codice, sito.indirizzo(rel))}
     testo = riempi(testo, v_pagina, f"{lingua.codice}/{rel}", sconosciuti)
@@ -679,6 +733,7 @@ def pagina_scelta(testo, reali, sito, v_it, sconosciuti, opzioni):
     h = next(n for n in pagina.cammina(radice) if isinstance(n, pagina.Nodo) and n.tag == "html")
     testo = testo[:h.s] + tag_html(h, lingua)[:-1] + f' data-lingue="{codici}">' + testo[h.se:]
     testo = passo_struttura(testo, "index.html", lingua, reali, sito, opzioni["senza_selettore"], opzioni["base_url"], nella_radice=True)
+    testo = passo_marchio(testo, "", opzioni.get("marchio"), "index.html")
     return riempi(testo, v_it, "index.html", sconosciuti)
 
 
@@ -752,7 +807,7 @@ def build(out, v, grezzi, opzioni):
     # il file del carattere di ogni scrittura, da precaricare (token.css dice quale)
     tutti_i_caratteri = caratteri_per_lingua((opzioni["system"] / "token.css").read_text(encoding="utf-8"))
     opzioni = {**opzioni, "caratteri": {c: f.removeprefix("caratteri/") for c, f in da_precaricare(tutti_i_caratteri, opzioni["system"]).items()},
-               "fonti_mancanti": set()}
+               "fonti_mancanti": set(), "marchio": marchio_del_sistema(opzioni["system"])}
     # le pagine di ogni lingua: le traducibili in ogni lingua, le altre soltanto in italiano
     disponibile = {c: (set(sito.pagine) if c == SORGENTE else set(sito.traducibili)) for c in reali}
     sconosciuti, avvisi = set(), []
@@ -785,6 +840,7 @@ def build(out, v, grezzi, opzioni):
         else:
             # un'altra pagina in cima al sito (la 404): anche lei ha lang e dir
             testo = passo_struttura(testo, nome, reali[SORGENTE], reali, sito, opzioni["senza_selettore"], opzioni["base_url"])
+            testo = passo_marchio(testo, "", opzioni.get("marchio"), nome)
             html = riempi(testo, v_lingue[SORGENTE], nome, sconosciuti)
         (out / nome).write_text(html, encoding="utf-8")
     if "index.html" in sito.radice and "index.html" in sito.pagine:

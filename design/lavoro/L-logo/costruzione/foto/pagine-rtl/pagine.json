@@ -1,0 +1,299 @@
+[
+ {
+  "larghezza": 1440,
+  "pagina": "ar/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "ar/non-ancora/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "ar/stato/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "ar-XB/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "ar-XB/non-ancora/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "ar-XB/stato/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "ur/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "ur/non-ancora/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 1440,
+  "pagina": "ur/stato/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "ar/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "ar/non-ancora/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "ar/stato/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "ar-XB/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "ar-XB/non-ancora/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "ar-XB/stato/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "ur/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "ur/non-ancora/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 768,
+  "pagina": "ur/stato/",
+  "dir": "rtl",
+  "segno": [
+   36,
+   36
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "ar/",
+  "dir": "rtl",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "ar/non-ancora/",
+  "dir": "rtl",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "ar/stato/",
+  "dir": "rtl",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "ar-XB/",
+  "dir": "rtl",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "ar-XB/non-ancora/",
+  "dir": "rtl",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "ar-XB/stato/",
+  "dir": "rtl",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "ur/",
+  "dir": "rtl",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "ur/non-ancora/",
+  "dir": "rtl",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ },
+ {
+  "larghezza": 390,
+  "pagina": "ur/stato/",
+  "dir": "rtl",
+  "segno": [
+   30,
+   30
+  ],
+  "orizzontale": false,
+  "errori": []
+ }
+]

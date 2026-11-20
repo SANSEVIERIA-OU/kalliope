@@ -9,7 +9,7 @@ name: Website
 on:
   push:
     branches: [main]
-    paths: ["website/**", "design-system/**", "tools/site.py", "tools/i18n/**", "tools/data/**", ".github/workflows/pages.yml"]
+    paths: ["website/**", "design-system/**", "tools/site.py", "tools/marchio.py", "tools/marchio_raster.py", "tools/i18n/**", "tools/data/**", ".github/workflows/pages.yml"]
   # A release made by the Release workflow does not send a release event (GitHub never starts a
   # workflow from one made with its own token), so the site follows that workflow instead.
   workflow_run:

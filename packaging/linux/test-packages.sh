@@ -30,6 +30,30 @@ if [ -n "$recording" ]; then recording=$(cd "$(dirname "$recording")" && pwd)/$(
 here=$(cd "$(dirname "$0")" && pwd)
 sudo=$([ "$(id -u)" = 0 ] || echo sudo)
 
+# The icons the packages install (tools/marchio.py): the free SVG, the symbolic one for GNOME and the two PNGs (freedesktop asks for 48x48 at least).
+id=io.github.sansevieria_ou.kalliope
+icons=(scalable/apps/$id.svg symbolic/apps/$id-symbolic.svg 48x48/apps/$id.png 256x256/apps/$id.png)
+
+# Every icon is installed under SHARE/icons/hicolor, not empty, and is what it says (PNG signature and size, SVG root).
+icons_present() {
+    local share=$1 f
+    for f in "${icons[@]}"; do
+        test -s "$share/icons/hicolor/$f" || { echo "$share/icons/hicolor/$f is missing" >&2; return 1; }
+    done
+    for size in 48 256; do
+        f=$share/icons/hicolor/${size}x$size/apps/$id.png
+        [ "$(head -c 8 "$f" | od -An -tx1 | tr -d ' \n')" = 89504e470d0a1a0a ] || { echo "$f is not a PNG" >&2; return 1; }
+        [ "$(od -An -tu1 -j19 -N1 "$f" | tr -d ' ')" = $((size % 256)) ] && [ "$(od -An -tu1 -j18 -N1 "$f" | tr -d ' ')" = $((size / 256)) ] || { echo "$f is not ${size}x$size" >&2; return 1; }
+    done
+    grep -q '<svg' "$share/icons/hicolor/scalable/apps/$id.svg" && grep -q '<svg' "$share/icons/hicolor/symbolic/apps/$id-symbolic.svg" || { echo "an icon is not an SVG" >&2; return 1; }
+}
+
+# The icons after the program is removed, for gone().
+icon_paths() {
+    local share=$1 f
+    for f in "${icons[@]}"; do echo "$share/icons/hicolor/$f"; done
+}
+
 # The installed programs run as people run them: no variable says where ONNX Runtime or the models are.
 bare() {
     env -u KALLIOPE_ORT_LIB -u KALLIOPE_MODEL_DIR -u KALLIOPE_POCKET_DIR -u KALLIOPE_VOICES_DIR "$@"
@@ -55,6 +79,7 @@ check() {
     echo "$out"
     grep -q $'^ciao\t.' <<<"$out" || { echo "expected ciao and its phonemes" >&2; return 1; }
     test -f "$ort" || { echo "$ort is missing" >&2; return 1; }
+    icons_present "$(dirname "$bin")/share"
     tmp=$(mktemp -d)
     echo "--- $bin/kalliope-cli say, with Giulia"
     bare "$bin/kalliope-cli" say -o "$tmp/giulia.wav" "Ciao a tutti, mi sentite?"
@@ -94,7 +119,7 @@ rpm)
     rpm -q --requires kalliope
     check /usr/bin /usr/lib/kalliope/libonnxruntime.so.1
     dnf remove -y -q kalliope
-    gone /usr/bin/kalliope /usr/bin/kalliope-cli /usr/lib/kalliope /usr/share/kalliope
+    gone /usr/bin/kalliope /usr/bin/kalliope-cli /usr/lib/kalliope /usr/share/kalliope $(icon_paths /usr/share)
     exit 0
     ;;
 arch)
@@ -110,7 +135,7 @@ arch)
     check /usr/bin /usr/lib/kalliope/libonnxruntime.so.1
     test -L /usr/share/licenses/kalliope-bin/LICENSE
     pacman -R --noconfirm kalliope-bin
-    gone /usr/bin/kalliope /usr/bin/kalliope-cli /usr/lib/kalliope /usr/share/kalliope
+    gone /usr/bin/kalliope /usr/bin/kalliope-cli /usr/lib/kalliope /usr/share/kalliope $(icon_paths /usr/share)
     exit 0
     ;;
 esac
@@ -124,7 +149,7 @@ check "$tmp/prefix/bin" "$tmp/prefix/lib/kalliope/libonnxruntime.so.1"
 grep -qx "Exec=\"$tmp/prefix/bin/kalliope\"" \
     "$tmp/prefix/share/applications/io.github.sansevieria_ou.kalliope.desktop"
 "$tmp/kalliope-$version-linux-x86_64/install" --remove "$tmp/prefix"
-gone "$tmp/prefix/bin/kalliope" "$tmp/prefix/lib/kalliope" "$tmp/prefix/share/kalliope" "$tmp/prefix/share/doc/kalliope"
+gone "$tmp/prefix/bin/kalliope" "$tmp/prefix/lib/kalliope" "$tmp/prefix/share/kalliope" "$tmp/prefix/share/doc/kalliope" $(icon_paths "$tmp/prefix/share")
 
 if command -v apt-get >/dev/null; then
     echo "=== .deb"
@@ -132,7 +157,7 @@ if command -v apt-get >/dev/null; then
     dpkg -s kalliope | grep -E '^(Version|Depends|Recommends):'
     check /usr/bin /usr/lib/kalliope/libonnxruntime.so.1
     $sudo env DEBIAN_FRONTEND=noninteractive apt-get remove -y -q kalliope >/dev/null
-    gone /usr/bin/kalliope /usr/bin/kalliope-cli /usr/lib/kalliope /usr/share/kalliope
+    gone /usr/bin/kalliope /usr/bin/kalliope-cli /usr/lib/kalliope /usr/share/kalliope $(icon_paths /usr/share)
 else
     echo "=== .deb: skipped (no apt-get)"
 fi

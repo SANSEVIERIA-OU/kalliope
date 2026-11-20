@@ -1,0 +1,61 @@
+{
+ "scelta": "http://127.0.0.1:8968/it/",
+ "adesso": "http://127.0.0.1:8969/it/",
+ "attesa": 1500,
+ "ridotto": false,
+ "tolleranza": 1,
+ "esiti": [
+  {
+   "misura": "1440x900",
+   "y": 0,
+   "cose": 53,
+   "differenze": [],
+   "ammesse": [],
+   "stessa_cosa": [],
+   "in_movimento": [
+    "div.bolla-corpo",
+    "span «Buongiorno»",
+    "span «a»",
+    "span «tutti!»",
+    "span «Scrivo»",
+    "span «invece»",
+    "span «di»",
+    "span «parlare,»",
+    "span «ma»",
+    "span «vi»",
+    "span «seguo»",
+    "span «benissimo.»",
+    "svg.coda"
+   ],
+   "pixel_diversi_percento": 0.13,
+   "errori": []
+  },
+  {
+   "misura": "390x844",
+   "y": 0,
+   "cose": 46,
+   "differenze": [],
+   "ammesse": [],
+   "stessa_cosa": [],
+   "in_movimento": [
+    "div.bolla-corpo",
+    "span «Buongiorno»",
+    "span «a»",
+    "span «tutti!»",
+    "span «Scrivo»",
+    "span «invece»",
+    "span «di»",
+    "span «parlare,»",
+    "span «ma»",
+    "span «vi»",
+    "span «seguo»",
+    "span «benissimo.»",
+    "svg.coda"
+   ],
+   "pixel_diversi_percento": 0.3,
+   "errori": []
+  }
+ ],
+ "dichiarazioni_non_usate": [],
+ "misurato": "2026-11-20T00:21:22.611Z"
+}
