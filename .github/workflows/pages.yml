@@ -20,9 +20,11 @@ on:
 permissions:
   contents: read
 
+# One deployment at a time. A deployment already running is never cancelled half-way; a newer run waits and
+# replaces any run still queued, so the site always ends at the newest state.
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   # A push that brings a new version (tools/version.py due) does not deploy: its pages already speak of the
@@ -42,7 +44,11 @@ jobs:
           # shellcheck disable=SC2046 # one tag per word
           python3 tools/version.py due $(git ls-remote --tags --refs origin | cut -f2) | tee -a "$GITHUB_OUTPUT"
 
-  deploy:
+  # Building and deploying are two jobs. Deploying in the job that had just uploaded the site failed on
+  # 20 November 2026: deploy-pages asked for the artifact 0.3 s after it was finalized and GitHub listed none
+  # yet («No artifacts named "github-pages" were found»), and re-running that run then found two. The
+  # deploy job starts only after the build job has finished, as in GitHub's own Pages workflows.
+  build:
     needs: due
     if: >-
       !cancelled() &&
@@ -51,11 +57,7 @@ jobs:
     timeout-minutes: 10
     permissions:
       contents: read
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      pages: read
     steps:
       - uses: actions/checkout@v7
       - name: Build the site for the current release
@@ -66,6 +68,19 @@ jobs:
       - uses: actions/upload-pages-artifact@v5
         with:
           path: _site
+
+  deploy:
+    needs: build
+    if: ${{ !cancelled() && needs.build.result == 'success' }}
+    runs-on: ubuntu-26.04
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v5

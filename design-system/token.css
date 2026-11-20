@@ -1469,9 +1469,6 @@
   --cartella-file-da: -14px;   /* e scende da sopra */
   --pacco-da: -18px;
   /* · il primo avvio nella finestra (i tempi della home, scena.js) */
-  --avvio-premi: 700ms;   /* «Scarica la voce» si preme */
-  --avvio-scarica: 860ms;   /* comincia lo scarico */
-  --avvio-scarico-durata: 2400ms;   /* 0 → 53 MB */
   --avvio-prepara: 3400ms;   /* «Preparo la voce…» */
   --avvio-pronta: 4300ms;   /* «Pronta» */
   --ritardo-avvio: 420ms;   /* il racconto parte dopo che la finestra si è aperta */

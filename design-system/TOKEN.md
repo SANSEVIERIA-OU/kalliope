@@ -1319,7 +1319,7 @@ file condiviso riordinato. Le scelte senza una fonte sono progettuali (piano: `d
 | `--passo-riga-terminale`, `--pausa-invio`, `--passo-gruppo-impronta` | `300ms`, `260ms`, `130ms` | fra una risposta e l'altra; prima di Invio; fra un gruppo di otto cifre e il successivo |
 | `--ritardo-terminale-scrive`, `--ritardo-installata`, `--durata-installata`, `--ritardo-installata-tu` | `2000ms`, `380ms`, `420ms`, `260ms` | il primo schermo: il terminale comincia a scrivere; «Kalliope» compare fra i microfoni; il posto si riempie; il tuo riquadro segue |
 | `--passo-pacchi`, `--ritardo-cartella-file`, `--cartella-file-da`, `--pacco-da` | `150ms`, `160ms`, `-14px`, `-18px` | i file che arrivano nella cartella (download; `/usr` o `~/.local`) scendendo da sopra |
-| `--avvio-premi`, `--avvio-scarica`, `--avvio-scarico-durata`, `--avvio-prepara`, `--avvio-pronta`, `--ritardo-avvio` | `700`, `860`, `2400`, `3400`, `4300`, `420ms` | il primo avvio della finestra: i tempi della home (`scena.js`), qui nei token |
+| `--avvio-prepara`, `--avvio-pronta`, `--ritardo-avvio` | `3400`, `4300`, `420ms` | il primo avvio della finestra di «installa»: «Preparo la voce…» fino a «Pronta». Dalla 0.1 la voce è nel pacchetto e non c'è più lo scarico (tolti `--avvio-premi`, `--avvio-scarica`, `--avvio-scarico-durata`) |
 | `--palco-terminale-altezza`, `--palco-terminale-sotto` | `88px`, `16px` | il terminale del primo schermo, al posto della bolla |
 | `--oggetto-fermo-sopra` | `96px` | l'oggetto accanto al testo resta fermo sotto la barra (72) con 24 px d'aria |
 | `--passo-distanza`, `-telefono` | `44px`, `32px` | fra un passo e l'altro dello stesso tratto |
