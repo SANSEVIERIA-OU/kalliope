@@ -17,8 +17,10 @@ come si lavora.
 - **«non ancora» è rifatta** nella direzione 2 (mostrata al proprietario il 17/11/2026) e fissa la cornice delle pagine
   interne (`website/cornice.js`, `design-system/componenti/pagina.css`). La pagina della scelta della lingua (`/`) è
   nuova anche lei.
-- **«stato» è rifatta** nella direzione 2 e approvata dal proprietario il 19/11/2026 («ok per tutto»). La prossima è
-  «installa».
+- **«stato» è rifatta** nella direzione 2 e approvata dal proprietario il 19/11/2026 («ok per tutto»).
+- **«installa» è rifatta** nella direzione 2, approvata dal proprietario il 20/11/2026 («va bene», vista senza giudice per sua
+  scelta) e pubblicata lo stesso giorno («pubblica tutto»). Restano aperti i nove punti d'aspetto della costruzione
+  (`design/lavoro/3c-installa/costruzione/progresso.md`, «Consegna della ripresa»). La prossima è «in riunione», con «aiuto».
 - **Il logo nuovo** (decisione del proprietario del 19/11/2026: «rifarei il logo perché con il nuovo sito c'entra poco»):
   fra tre direzioni rese e giudicate il proprietario ha scelto la 3, «La frase che si accende», una bolla metà piena (detto)
   e metà tratteggiata (non ancora detto) (`design/lavoro/L-logo/`). È in `design-system/marchio/`, generato dai token da
@@ -26,11 +28,11 @@ come si lavora.
   come icona del programma. Il verde del logo di prima non c'è più (la nota di `design/direzione-2/D2.md` è superata).
 - **Pubblicare** (19/11/2026): il proprietario ha detto di «cominciare a mergiare in main e caricare il nuovo sito». Il sito
   nuovo va in linea con le pagine fatte; le altre arrivano una alla volta. Ogni push resta un passo detto al proprietario.
-- **Le altre pagine non sono ancora state rifatte.** Ascolta, installa, in riunione, aiuto e la pagina 404
+- **Le altre pagine non sono ancora state rifatte.** Ascolta, in riunione, aiuto e la pagina 404
   hanno l'aspetto di prima, con i loro fogli in `website/stile/`, gli script in `website/script/` e il vecchio
   catalogo in `website/sistema/`. Restano solo perché le pagine nuove rimandano a loro.
 - **Il design system è `design-system/`**, fuori dal sito: token, base, componenti, caratteri, catalogo vivo,
-  `SISTEMA.md` e `TOKEN.md`. Lo usano la home, «non ancora», «stato» e la scelta della lingua.
+  `SISTEMA.md` e `TOKEN.md`. Lo usano la home, «non ancora», «stato», «installa» e la scelta della lingua.
 - **In linea c'è il sito nuovo** dal 20/11/2026 (push su `main` autorizzato dal proprietario): le pagine rifatte, il logo nuovo
   anche sulle pagine ancora da rifare, che hanno ancora i colori di prima.
 - **Il lavoro in corso** (dal 16/11/2026: lingue, poi le altre pagine, poi l'applicazione) è in `design/lavoro/`:
