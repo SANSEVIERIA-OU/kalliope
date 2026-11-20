@@ -120,8 +120,12 @@ jobs:
               out=$(kalliope --version)
               echo "$out"
               [ "$out" = "kalliope $VERSION" ] || { echo "expected kalliope $VERSION" >&2; exit 1; }
-              test -e /usr/share/licenses/kalliope-bin/LICENSE
-              pacman -R --noconfirm kalliope-bin >/dev/null'
+              # The link only, as test-packages.sh does: in the Arch image its target is not there (the image installs
+              # nothing under /usr/share/doc).
+              [ "$(readlink /usr/share/licenses/kalliope-bin/LICENSE)" = /usr/share/doc/kalliope/LICENSE ] ||
+                { echo "the licence link of kalliope-bin is missing" >&2; exit 1; }
+              pacman -R --noconfirm kalliope-bin >/dev/null
+              echo "kalliope-bin $VERSION: built, installed, run and removed"'
           sudo chown -R "$(id -u):$(id -g)" out
           cat out/.SRCINFO
           grep -qxF "$(printf '\tpkgver = %s' "${VERSION#v}")" out/.SRCINFO
