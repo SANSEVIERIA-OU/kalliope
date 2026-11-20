@@ -60,6 +60,9 @@ come si lavora.
   - Niente più versioni di prova: «ogni passo è finale», e la prossima release è la 0.1, marcata latest.
   - Su AUR va `kalliope-bin`, solo con le versioni finali, pubblicato dalla release con una chiave SSH dedicata a Kalliope. La chiave
     sta nel secret `AUR_SSH_KEY` e in copia nel `.env`; la parte pubblica sta nel profilo AUR del proprietario.
+  - La ricetta su AUR (PKGBUILD e `.SRCINFO`) resta sotto la SANSEVIERIA 1.1 come il resto del repository, non 0BSD (scelta del
+    proprietario del 20/11/2026).
+  - La 0.1 è pubblicata il 20/11/2026 («Sì, pubblica ora»).
   - Per un repository pubblico GitHub Actions è gratuito. Una release parte con un push su `main`, quindi resta un passo chiesto al
     proprietario ogni volta.
 - **Il telefono** (17/11/2026): «non è per telefono: è solo desktop per il momento». Il sito non dice «non ancora» per
