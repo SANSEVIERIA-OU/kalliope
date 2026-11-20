@@ -1,0 +1,8 @@
+# H3-frasi-altezze-390 · 20/11/2026 04:51 · sito: /tmp/lavoro-3cb-sito-H3 · albero: /tmp/lavoro-3cb-radice-H3 · esame-impaginazione.mjs chromium normale installa 390x500,390x501,390x699,390x700,390x759,390x760,390x799,390x800,390x802,390x803,390x819,390x820
+La configurazione dichiara male i limiti:
+  limiti[0]: la pagina «non-ancora-errore-audio» non è fra le pagine della configurazione
+  limiti[1]: la pagina «non-ancora-errore-audio» non è fra le pagine della configurazione
+  limiti[2]: la pagina «non-ancora-errore-audio» non è fra le pagine della configurazione
+  limiti[3]: la pagina «stato-domanda» non è fra le pagine della configurazione
+  limiti[4]: la pagina «stato-domanda» non è fra le pagine della configurazione
+# uscita: 2

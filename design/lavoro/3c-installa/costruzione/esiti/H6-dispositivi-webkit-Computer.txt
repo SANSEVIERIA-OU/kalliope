@@ -1,0 +1,15 @@
+# H6-dispositivi-webkit-Computer · 20/11/2026 13:56 · carico: PSI CPU some avg10=8.04 avg60=9.31 · load 10.29 7.48 5.74 su 12 CPU · memoria disponibile 5563 MB · sito: /tmp/lavoro-3cb-sito-H6 · albero: /tmp/lavoro-3cb-radice-H6 · dispositivi-qa.mjs webkit installa Computer
+--  installa-menu · Computer 1440×900: lo stato non c'è a questa misura
+ok  installa · Computer 1440×900
+ok  installa-archivio · Computer 1440×900
+ok  installa-frase · Computer 1440×900
+ok  installa-frase-microfono · Computer 1440×900
+ok  installa-frase-tolta · Computer 1440×900
+ok  installa-copia-fatta · Computer 1440×900
+ok  installa-copia-non-riuscita · Computer 1440×900
+ok  installa-indirizzo-copiato · Computer 1440×900
+ok  installa-indirizzo-non-copiato · Computer 1440×900
+
+9 casi puliti (9 in questo giro; foto in /tmp/lavoro-3cb-qa-H6-dispositivi-webkit-Computer/dispositivi/webkit). Sono simulazioni, non telefoni veri.
+  365 casi della matrice non eseguiti (filtro o giro interrotto: --continua li riprende)
+# uscita: 0

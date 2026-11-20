@@ -1,0 +1,22 @@
+# confronta-scelta · installa a 0 px · 20/11/2026 16:22
+CONFRONTO 1440×900: uguale su 50 cose nello schermo · pixel diversi 0%
+CONFRONTO 390×844: uguale su 37 cose nello schermo · pixel diversi 0,03%
+CONFRONTO 1366×640: uguale su 48 cose nello schermo · pixel diversi 0%
+CONFRONTO 1024×768: uguale su 46 cose nello schermo · pixel diversi 0%
+CONFRONTO 844×390: 19 differenze su 17 cose nello schermo · pixel diversi 21,98%
+  SPOSTATE 6 cose della stessa quantità, y -36 px: label «Debian e Ubuntu» · label «Fedora» · label «Arch» …
+  SPOSTATO span «Installa Kalliope.»: y 81→83 (+2)
+  MISURA span «Installa Kalliope.»: 406.5×60 → 255.5×38
+  CARATTERE span «Installa Kalliope.»: Lexend 700 48px → Lexend 700 30px
+  SPOSTATO span «Ogni passo»: x 468.5→313 (-155,5), y 81→83 (+2)
+  MISURA span «Ogni passo»: 265.5×60 → 166.5×38
+  CARATTERE span «Ogni passo»: Lexend 700 48px → Lexend 700 30px
+  SPOSTATO span «si vede riuscire.»: y 132→116 (-16)
+  MISURA span «si vede riuscire.»: 363.5×60 → 233×38
+  CARATTERE span «si vede riuscire.»: Lexend 700 48px → Lexend 700 30px
+  SPOSTATO p «Per un computer Linux a 64 bit con PipeWire, anc»: y 204→162 (-42)
+  SPOSTATO a «Scarica il .deb»: y 364→320 (-44)
+  SPOSTATO span «14,1 MB»: y 380.5→336.5 (-44)
+  SPOSTATO a «Lo installa un'altra persona»: y 368→324 (-44)
+Il confronto con la scelta non regge a 1 misure (foto e differenze in /tmp/lavoro-3cb-conf/H13/installa-0)
+# uscita: 1

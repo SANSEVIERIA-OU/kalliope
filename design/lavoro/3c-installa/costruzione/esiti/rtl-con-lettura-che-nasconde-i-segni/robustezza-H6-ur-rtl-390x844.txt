@@ -1,0 +1,1 @@
+# robustezza · H6 · ur da destra a sinistra · chromium 390x844 · 20/11/2026 15:10 · carico: PSI CPU some avg10=7.99 avg60=6.35 · load 10.02 10.38 10.08 su 12 CPU · memoria disponibile 5880 MB

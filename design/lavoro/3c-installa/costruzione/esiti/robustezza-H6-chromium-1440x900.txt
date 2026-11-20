@@ -1,0 +1,132 @@
+# robustezza · H6 · chromium 1440x900 · ancore,sistema,tastiera,tastiera-veloce · 20/11/2026 11:54 · carico: PSI CPU some avg10=0.20 avg60=0.14 · load 1.24 1.37 2.04 su 12 CPU · memoria disponibile 5643 MB
+
+== ancore · chromium 1440x900
+ok   /#fedora sceglie «Fedora» e porta al punto giusto: «#installa-titolo» sotto la barra, nello schermo, opaco · {"titolo":88,"bottom":144,"barra":72,"vh":900,"op":1,"scelta":"rpm","y":2359}
+ok     console pulita
+ok     /#fedora con gli script che arrivano dopo 1200 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":144,"barra":72,"vh":900,"op":1,"scelta":"rpm","y":2359}
+ok     /#fedora con i caratteri che arrivano dopo 1500 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":144,"barra":72,"vh":900,"op":1,"scelta":"rpm","y":2359}
+ok   /#debian-ubuntu sceglie «Debian e Ubuntu» e porta al punto giusto: «#installa-titolo» sotto la barra, nello schermo, opaco · {"titolo":88,"bottom":144,"barra":72,"vh":900,"op":1,"scelta":"deb","y":2361}
+ok     console pulita
+ok     /#debian-ubuntu con gli script che arrivano dopo 1200 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":144,"barra":72,"vh":900,"op":1,"scelta":"deb","y":2361}
+ok     /#debian-ubuntu con i caratteri che arrivano dopo 1500 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":144,"barra":72,"vh":900,"op":1,"scelta":"deb","y":2361}
+ok   /#arch sceglie «Arch» e porta al punto giusto: «#installa-titolo» sotto la barra, nello schermo, opaco · {"titolo":88,"bottom":144,"barra":72,"vh":900,"op":1,"scelta":"arch","y":2301}
+ok     console pulita
+ok     /#arch con gli script che arrivano dopo 1200 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":144,"barra":72,"vh":900,"op":1,"scelta":"arch","y":2301}
+ok     /#arch con i caratteri che arrivano dopo 1500 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":144,"barra":72,"vh":900,"op":1,"scelta":"arch","y":2301}
+ok   /#altre sceglie «Altre» e porta al punto giusto: «#installa-titolo» sotto la barra, nello schermo, opaco · {"titolo":88,"bottom":144,"barra":72,"vh":900,"op":1,"scelta":"tar","y":2445}
+ok     console pulita
+ok     /#altre con gli script che arrivano dopo 1200 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":144,"barra":72,"vh":900,"op":1,"scelta":"tar","y":2445}
+ok     /#altre con i caratteri che arrivano dopo 1500 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":144,"barra":72,"vh":900,"op":1,"scelta":"tar","y":2445}
+ok   /#passo-1 e porta al punto giusto: «#scarica-titolo» sotto la barra, nello schermo, opaco · {"titolo":88,"bottom":200,"barra":72,"vh":900,"op":1,"scelta":"deb","y":914}
+ok     console pulita
+ok     /#passo-1 con gli script che arrivano dopo 1200 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":200,"barra":72,"vh":900,"op":1,"scelta":"deb","y":914}
+ok     /#passo-1 con i caratteri che arrivano dopo 1500 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":200,"barra":72,"vh":900,"op":1,"scelta":"deb","y":914}
+ok   /#passo-2 e porta al punto giusto: «#passo-controlla .passo-nome» sotto la barra, nello schermo, opaco · {"titolo":88,"bottom":118,"barra":72,"vh":900,"op":1,"scelta":"deb","y":1536}
+ok     console pulita
+ok     /#passo-2 con gli script che arrivano dopo 1200 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":118,"barra":72,"vh":900,"op":1,"scelta":"deb","y":1536}
+ok     /#passo-2 con i caratteri che arrivano dopo 1500 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":118,"barra":72,"vh":900,"op":1,"scelta":"deb","y":1536}
+ok   /#passo-3 e porta al punto giusto: «#installa-titolo» sotto la barra, nello schermo, opaco · {"titolo":88,"bottom":144,"barra":72,"vh":900,"op":1,"scelta":"deb","y":2361}
+ok     console pulita
+ok     /#passo-3 con gli script che arrivano dopo 1200 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":144,"barra":72,"vh":900,"op":1,"scelta":"deb","y":2361}
+ok     /#passo-3 con i caratteri che arrivano dopo 1500 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":144,"barra":72,"vh":900,"op":1,"scelta":"deb","y":2361}
+ok   /#passo-4 e porta al punto giusto: «#apri-titolo» sotto la barra, nello schermo, opaco · {"titolo":200,"bottom":312,"barra":72,"vh":900,"op":1,"scelta":"deb","y":3077}
+ok     console pulita
+ok     /#passo-4 con gli script che arrivano dopo 1200 ms: il punto sta dove sta con tutto subito (200) · {"titolo":200,"bottom":312,"barra":72,"vh":900,"op":1,"scelta":"deb","y":3077}
+ok     /#passo-4 con i caratteri che arrivano dopo 1500 ms: il punto sta dove sta con tutto subito (200) · {"titolo":200,"bottom":312,"barra":72,"vh":900,"op":1,"scelta":"deb","y":3077}
+ok   /#passo-5 e porta al punto giusto: «#microfono-titolo» sotto la barra, nello schermo, opaco · {"titolo":88,"bottom":156,"barra":72,"vh":900,"op":1,"scelta":"deb","y":4388}
+ok     console pulita
+ok     /#passo-5 con gli script che arrivano dopo 1200 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":156,"barra":72,"vh":900,"op":1,"scelta":"deb","y":4388}
+ok     /#passo-5 con i caratteri che arrivano dopo 1500 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":156,"barra":72,"vh":900,"op":1,"scelta":"deb","y":4388}
+ok   /#ripresa e porta al punto giusto: «#ripresa-titolo» sotto la barra, nello schermo, opaco · {"titolo":200,"bottom":230,"barra":72,"vh":900,"op":1,"scelta":"deb","y":5126}
+ok     console pulita
+ok     /#ripresa con gli script che arrivano dopo 1200 ms: il punto sta dove sta con tutto subito (200) · {"titolo":200,"bottom":230,"barra":72,"vh":900,"op":1,"scelta":"deb","y":5126}
+ok     /#ripresa con i caratteri che arrivano dopo 1500 ms: il punto sta dove sta con tutto subito (200) · {"titolo":200,"bottom":230,"barra":72,"vh":900,"op":1,"scelta":"deb","y":5126}
+ok   /#indirizzo-installa e porta al punto giusto: «#inoltra h3» sotto la barra, nello schermo, opaco · {"titolo":200,"bottom":230,"barra":72,"vh":900,"op":1,"scelta":"deb","y":5126}
+ok     console pulita
+ok     /#indirizzo-installa con gli script che arrivano dopo 1200 ms: il punto sta dove sta con tutto subito (200) · {"titolo":200,"bottom":230,"barra":72,"vh":900,"op":1,"scelta":"deb","y":5126}
+ok     /#indirizzo-installa con i caratteri che arrivano dopo 1500 ms: il punto sta dove sta con tutto subito (200) · {"titolo":200,"bottom":230,"barra":72,"vh":900,"op":1,"scelta":"deb","y":5126}
+ok   con la pagina aperta, cambiare l'ancora in #fedora sceglie Fedora e porta ai comandi · {"scelta":"rpm","titolo":88,"barra":72}
+ok   poi #passo-2 porta al controllo e lascia la scelta com'era (Fedora) · {"scelta":"rpm","passo":88,"barra":72}
+ok   console pulita
+ok   senza JavaScript /#fedora porta ai comandi (sceglierla toccherebbe a chi legge), la pagina non scorre di lato · {"titolo":88,"barra":72,"larghezza":1440}
+
+== sistema · chromium 1440x900
+ok   all'arrivo: Debian e Ubuntu scelta, un solo pulsante, una sola riga, un comando in «Installa» · {"scelta":"deb","pulsanti":["Scarica il .deb 14,1 MB"],"dice":["Debian 13, Ubuntu 24.04 o successive: il pacchetto .deb"],"comandiInstalla":1,"comandiControllo":2,"cartellaFile":1,"terminale":["sudo apt install ./kalliope-0.1-rc.1-amd64.deb"],"togli":1}
+ok   quattro bottoni d'opzione dello stesso gruppo, ognuno con la sua etichetta, nel gruppo con la sua legenda · {"n":4,"legenda":true,"etichette":true}
+ok   clic su «Fedora»: scelta, un pulsante giusto, la sua riga, i suoi comandi (1 in «Installa», 2 nel controllo) · {"scelta":"rpm","pulsanti":["Scarica il .rpm 19,2 MB"],"dice":["Fedora attuale: il pacchetto .rpm"],"comandiInstalla":1,"comandiControllo":2,"cartellaFile":1,"terminale":["sudo dnf install ./kalliope-0.1-rc.1-x86_64.rpm"],"togli":1}
+ok     l'annuncio dice per quale distribuzione sono i comandi («Fedora») · I comandi della pagina sono quelli per Fedora.
+ok   clic su «Arch»: scelta, un pulsante giusto, la sua riga, i suoi comandi (3 in «Installa», 0 nel controllo) · {"scelta":"arch","pulsanti":["Vai ai comandi per Arch"],"dice":["Arch Linux: la ricetta PKGBUILD, che non compila nulla"],"comandiInstalla":3,"comandiControllo":0,"cartellaFile":1,"terminale":["makepkg -si"],"togli":1}
+ok     l'annuncio dice per quale distribuzione sono i comandi («Arch») · I comandi della pagina sono quelli per Arch.
+ok   clic su «Altre»: scelta, un pulsante giusto, la sua riga, i suoi comandi (3 in «Installa», 2 nel controllo) · {"scelta":"tar","pulsanti":["Scarica l'archivio 19,2 MB"],"dice":["Le altre distribuzioni: l'archivio, che si installa senza password"],"comandiInstalla":3,"comandiControllo":2,"cartellaFile":1,"terminale":["./install"],"togli":1}
+ok     l'annuncio dice per quale distribuzione sono i comandi («Altre») · I comandi della pagina sono quelli per Altre.
+ok   clic su «Debian e Ubuntu»: scelta, un pulsante giusto, la sua riga, i suoi comandi (1 in «Installa», 2 nel controllo) · {"scelta":"deb","pulsanti":["Scarica il .deb 14,1 MB"],"dice":["Debian 13, Ubuntu 24.04 o successive: il pacchetto .deb"],"comandiInstalla":1,"comandiControllo":2,"cartellaFile":1,"terminale":["sudo apt install ./kalliope-0.1-rc.1-amd64.deb"],"togli":1}
+ok     l'annuncio dice per quale distribuzione sono i comandi («Debian e Ubuntu») · I comandi della pagina sono quelli per Debian e Ubuntu.
+ok   il terminale del primo schermo scrive il comando di «Arch» intero · ["makepkg -si"]
+ok   il terminale del primo schermo scrive il comando di «Fedora» intero · ["sudo dnf install ./kalliope-0.1-rc.1-x86_64.rpm"]
+ok   console pulita
+ok   Tab arriva al gruppo delle quattro scelte, con una sola sosta (sulla scelta fatta), con il contorno del fuoco sull'etichetta · {"k":8,"nome":"Debian e Ubuntu","classe":"sistema-voce","tag":"input","top":474,"left":80,"bottom":514,"right":81,"opacita":1,"visibilita":"visible","anello":true,"anelloRapporto":13.2,"sotto":false,"inSchermo":true,"yDoc":474,"y":0}
+ok   freccia: la scelta passa alla seguente e il fuoco la segue, l'annuncio dice la nuova · {"prima":"deb","scelta":"rpm","fuoco":"rpm","ann":"I comandi della pagina sono quelli per Fedora."}
+ok   quattro frecce giù: fanno il giro e tornano alla stessa scelta · rpm
+ok   Tab dal gruppo va a «Non uso Linux» (non alle altre tre scelte) · Non uso Linux
+ok   «Vai ai comandi per Arch» porta al passo «Installa»: titolo sotto la barra, opaco · {"titolo":200,"barra":72,"vh":900,"hash":"#installa","op":1}
+ok   console pulita
+
+== tastiera · chromium 1440x900
+   [Debian e Ubuntu] soste: 53 Vai al contenuto → Kalliope, pagina iniziale → Ascolta → Stato e limiti → Installa → In riunione → Aiuto → Cambia lingua: Italiano → Debian e Ubuntu → Non uso Linux → Scarica il .deb 14,1 MB → Lo installa un'altra persona → kalliope-0.1-rc.1-amd64.deb → Copia: sha256sum kalliope-0.1-rc.1-amd64 → Copia: 737a98ea05b5085e54b2cae1569709698 → segnalalo → SHA256SUMS → Stato e limiti → Copia: sudo apt install ./kalliope-0.1-r → segnalalo → Fin dove è provato → Per togliere Kalliope → «Per scaricare la voce serve il programm → «Download non riuscito: …» o «Download a → «Il file … scaricato non corrisponde all → «La voce è pronta, ma …: per ora nessuno → Che cosa fare → pagina Aiuto → Copia: pactl li
+ok   [Debian e Ubuntu] il giro tocca ogni comando una volta, in un ordine · 53 soste
+ok   [Debian e Ubuntu] i pulsanti «Copia» nell'ordine del fuoco sono tutti quelli che si vedono (4) · 4 di 4
+ok   [Debian e Ubuntu] le quattro frasi della finestra sono quattro soste (pulsanti)
+ok   [Debian e Ubuntu] le cinque tappe della ripresa e «Copia l'indirizzo» sono nell'ordine del fuoco
+ok   [Debian e Ubuntu] «Per togliere Kalliope» è una sosta
+ok   [Debian e Ubuntu] la scelta è una sola sosta (le altre tre non sono soste), seguita da «Non uso Linux»
+ok   [Debian e Ubuntu] ogni sosta ha il comando in vista, opaco e non sotto la barra
+ok   [Debian e Ubuntu] all'indietro (Maiusc+Tab) 53 soste, ognuna in vista, opaca e non sotto la barra
+ok   [Debian e Ubuntu] nessuna sosta sta sotto la barra
+ok   [Debian e Ubuntu] il contorno del fuoco si vede su ogni sosta
+ok   [Debian e Ubuntu] il contorno del fuoco si distingue dal fondo (almeno 1,8 : 1 dove il fondo è pieno) · 53 soste misurate
+ok   [Debian e Ubuntu] l'ordine del fuoco va dall'alto in basso (e da una colonna alla seguente)
+ok   [Debian e Ubuntu] console pulita
+   [Arch] soste: 52 Vai al contenuto → Kalliope, pagina iniziale → Ascolta → Stato e limiti → Installa → In riunione → Aiuto → Cambia lingua: Italiano → Arch → Non uso Linux → Vai ai comandi per Arch → Lo installa un'altra persona → leggerla prima → SHA256SUMS → Stato e limiti → Copia: mkdir kalliope && cd kalliope → Copia: curl -L -o PKGBUILD https://githu → Copia: makepkg -si → segnalalo → Fin dove è provato → Per togliere Kalliope → «Per scaricare la voce serve il programm → «Download non riuscito: …» o «Download a → «Il file … scaricato non corrisponde all → «La voce è pronta, ma …: per ora nessuno → Che cosa fare → pagina Aiuto → Copia: pactl list short sources → che cosa fare → Usalo in una riunione → Se 
+ok   [Arch] il giro tocca ogni comando una volta, in un ordine · 52 soste
+ok   [Arch] i pulsanti «Copia» nell'ordine del fuoco sono tutti quelli che si vedono (4) · 4 di 4
+ok   [Arch] le quattro frasi della finestra sono quattro soste (pulsanti)
+ok   [Arch] le cinque tappe della ripresa e «Copia l'indirizzo» sono nell'ordine del fuoco
+ok   [Arch] «Per togliere Kalliope» è una sosta
+ok   [Arch] la scelta è una sola sosta (le altre tre non sono soste), seguita da «Non uso Linux»
+ok   [Arch] ogni sosta ha il comando in vista, opaco e non sotto la barra
+ok   [Arch] nessuna sosta sta sotto la barra
+ok   [Arch] il contorno del fuoco si vede su ogni sosta
+ok   [Arch] il contorno del fuoco si distingue dal fondo (almeno 1,8 : 1 dove il fondo è pieno) · 52 soste misurate
+ok   [Arch] l'ordine del fuoco va dall'alto in basso (e da una colonna alla seguente)
+ok   [Arch] console pulita
+
+== tastiera-veloce · chromium 1440x900
+   [Debian e Ubuntu] soste: 53 Vai al contenuto → Kalliope, pagina iniziale → Ascolta → Stato e limiti → Installa → In riunione → Aiuto → Cambia lingua: Italiano → Debian e Ubuntu → Non uso Linux → Scarica il .deb 14,1 MB → Lo installa un'altra persona → kalliope-0.1-rc.1-amd64.deb → Copia: sha256sum kalliope-0.1-rc.1-amd64 → Copia: 737a98ea05b5085e54b2cae1569709698 → segnalalo → SHA256SUMS → Stato e limiti → Copia: sudo apt install ./kalliope-0.1-r → segnalalo → Fin dove è provato → Per togliere Kalliope → «Per scaricare la voce serve il programm → «Download non riuscito: …» o «Download a → «Il file … scaricato non corrisponde all → «La voce è pronta, ma …: per ora nessuno → Che cosa fare → pagina Aiuto → Copia: pactl li
+ok   [Debian e Ubuntu] il giro tocca ogni comando una volta, in un ordine · 53 soste
+ok   [Debian e Ubuntu] i pulsanti «Copia» nell'ordine del fuoco sono tutti quelli che si vedono (4) · 4 di 4
+ok   [Debian e Ubuntu] le quattro frasi della finestra sono quattro soste (pulsanti)
+ok   [Debian e Ubuntu] le cinque tappe della ripresa e «Copia l'indirizzo» sono nell'ordine del fuoco
+ok   [Debian e Ubuntu] «Per togliere Kalliope» è una sosta
+ok   [Debian e Ubuntu] la scelta è una sola sosta (le altre tre non sono soste), seguita da «Non uso Linux»
+ok   [Debian e Ubuntu] a passo svelto il giro è lo stesso · Debian e Ubuntu (op 0.00, in vista), Non uso Linux (op 0.00, in vista), Scarica il .deb 14,1 MB (op 0.00, in vista), Lo installa un'altra persona (op 0.00, in vista), Se un passo non va, segnalalo (serve un  (op 0.99, in vista)
+ok   [Debian e Ubuntu] nessuna sosta sta sotto la barra
+ok   [Debian e Ubuntu] il contorno del fuoco si vede su ogni sosta
+ok   [Debian e Ubuntu] il contorno del fuoco si distingue dal fondo (almeno 1,8 : 1 dove il fondo è pieno) · 53 soste misurate
+ok   [Debian e Ubuntu] l'ordine del fuoco va dall'alto in basso (e da una colonna alla seguente)
+ok   [Debian e Ubuntu] console pulita
+   [Arch] soste: 52 Vai al contenuto → Kalliope, pagina iniziale → Ascolta → Stato e limiti → Installa → In riunione → Aiuto → Cambia lingua: Italiano → Arch → Non uso Linux → Vai ai comandi per Arch → Lo installa un'altra persona → leggerla prima → SHA256SUMS → Stato e limiti → Copia: mkdir kalliope && cd kalliope → Copia: curl -L -o PKGBUILD https://githu → Copia: makepkg -si → segnalalo → Fin dove è provato → Per togliere Kalliope → «Per scaricare la voce serve il programm → «Download non riuscito: …» o «Download a → «Il file … scaricato non corrisponde all → «La voce è pronta, ma …: per ora nessuno → Che cosa fare → pagina Aiuto → Copia: pactl list short sources → che cosa fare → Usalo in una riunione → Se 
+ok   [Arch] il giro tocca ogni comando una volta, in un ordine · 52 soste
+ok   [Arch] i pulsanti «Copia» nell'ordine del fuoco sono tutti quelli che si vedono (4) · 4 di 4
+ok   [Arch] le quattro frasi della finestra sono quattro soste (pulsanti)
+ok   [Arch] le cinque tappe della ripresa e «Copia l'indirizzo» sono nell'ordine del fuoco
+ok   [Arch] «Per togliere Kalliope» è una sosta
+ok   [Arch] la scelta è una sola sosta (le altre tre non sono soste), seguita da «Non uso Linux»
+ok   [Arch] a passo svelto il giro è lo stesso · Arch (op 0.58, in vista), Non uso Linux (op 0.69, in vista)
+ok   [Arch] nessuna sosta sta sotto la barra
+ok   [Arch] il contorno del fuoco si vede su ogni sosta
+ok   [Arch] il contorno del fuoco si distingue dal fondo (almeno 1,8 : 1 dove il fondo è pieno) · 52 soste misurate
+ok   [Arch] l'ordine del fuoco va dall'alto in basso (e da una colonna alla seguente)
+ok   [Arch] console pulita
+
+116/116 ok
+# uscita: 0

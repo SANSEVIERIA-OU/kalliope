@@ -1,0 +1,38 @@
+# confronta-scelta · installa a 5200 px · 20/11/2026 16:24
+CONFRONTO 1440×900 a 5200 px: 2 differenze su 39 cose nello schermo · pixel diversi 0,18%
+  MANCA span «https://sansevieria-ou.github.io/kalliope/it/ins»: era a 786,383, 423×20
+  IN PIÙ span «https:/ / sansevieria-ou.github.io/ kalliope/ it»: a 786,383, 424×20
+CONFRONTO 390×844 a 5200 px: 25 differenze su 27 cose nello schermo · pixel diversi 27,18%
+  SPOSTATE 18 cose della stessa quantità, y -44 px: p «Controlla la connessione e premi di nuovo «Scari» · button.frase-bottone #2 · span ««Il file … scaricato non corrisponde all'impront» …
+  SPOSTATO section#apri: y -864→-908 (-44)
+  SPOSTATO span.luce-tratto: y -640.5→-684.5 (-44)
+  MANCA p «Installa curl con il gestore dei pacchetti della»: era a 20,-31, 350×42
+  SPOSTATO button.frase-bottone: y 23→-21 (-44)
+  SPOSTATO span ««Download non riuscito: …» o «Download annullato»: y 34→-10 (-44)
+  IN PIÙ div.terminale.terminale-microfono: a 20,805, 350×130
+  IN PIÙ span «Terminale»: a 166,813, 58×15
+CONFRONTO 1366×640 a 5200 px: 29 differenze su 36 cose nello schermo · pixel diversi 8,13%
+  SPOSTATE 24 cose della stessa quantità, y -22 px: h3 «Se ti sei fermato, riprendi da qui.» · p «Il sito non salva niente: dove eri lo dice ciò c» · span.ripresa-segno …
+  SPOSTATO section#microfono: y -937→-959 (-22)
+  SPOSTATO span.luce-tratto: y -921→-943 (-22)
+  SPOSTATO div.riprendi: y -24→-46 (-22)
+  MANCA span «https://sansevieria-ou.github.io/kalliope/it/ins»: era a 749,148, 423×20
+  IN PIÙ span «https:/ / sansevieria-ou.github.io/ kalliope/ it»: a 749,126, 424×20
+CONFRONTO 1024×768 a 5200 px: 24 differenze su 31 cose nello schermo · pixel diversi 22,25%
+  SPOSTATE 20 cose della stessa quantità, y -48 px: section#microfono · span.luce-tratto · h2 ««Kalliope» è fra i microfoni.» …
+  SPOSTATO section#apri: y -1227→-1249 (-22)
+  MISURA section#apri: 1024×1713 → 1024×1687
+  SPOSTATO p «Se dice un'altra cosa, cerca la frase nella : og»: y 9→-39 (-48)
+  MANCA a «pagina Aiuto»: era a 332,10, 91×18
+CONFRONTO 844×390 a 5200 px: 14 differenze su 16 cose nello schermo · pixel diversi 20,34%
+  SPOSTATE 6 cose della stessa quantità, y -92 px: p «Kalliope ha buttato via il file guasto da sé: pr» · span ««La voce è pronta, ma …: per ora nessuno ti sent» · p «Il microfono «Kalliope» non si è creato: di soli» …
+  SPOSTATO section#apri: y -999→-1065 (-66)
+  MISURA section#apri: 844×1618 → 844×1592
+  SPOSTATO span.luce-tratto: y -827→-903 (-76)
+  MANCA p «Controlla la connessione e premi di nuovo «Scari»: era a 48,-20, 460×42
+  SPOSTATO button.frase-bottone: y 34→58 (+24)
+  MANCA span ««Il file … scaricato non corrisponde all'impront»: era a 61,45, 388×34
+  MANCA button.frase-bottone #2: era a 48,150, 460×56
+  IN PIÙ section#microfono: a 0,371, 844×1612
+Il confronto con la scelta non regge a 5 misure (foto e differenze in /tmp/lavoro-3cb-conf/H13/installa-5200)
+# uscita: 1

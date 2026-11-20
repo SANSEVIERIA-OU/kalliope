@@ -1,0 +1,15 @@
+# robustezza · H4 · chromium 1280x520 · primo,stabile · 20/11/2026 06:21
+
+== primo · chromium 1280x520
+ok   primo schermo: il pulsante del file sta nello schermo (347–403 su 520; gradino: titolo-ridotto titolo-minimo; lo stato «Oggi:» 423–489) · {"top":347,"bottom":403,"vh":520,"statoTop":423,"statoBottom":489,"classi":"titolo-ridotto titolo-minimo","largo":1280}
+ok     nessuno scorrimento di lato · 1280 contro 1280
+ok     console pulita
+
+== stabile · chromium 1280x520
+ok   il primo schermo con «riduci movimento»: le classi dell'adattamento non cambiano più (10 cambi all'arrivo, 10 dopo la scelta) e «Altre» si preme (ok) · {"n1":10,"fermo":true,"a1":20,"a2":20,"preme":"ok"}
+ok     console pulita
+ok   il primo schermo con il movimento: le classi dell'adattamento non cambiano più (10 cambi all'arrivo, 10 dopo la scelta) e «Altre» si preme (ok) · {"n1":10,"fermo":true,"a1":20,"a2":20,"preme":"ok"}
+ok     console pulita
+
+7/7 ok
+# uscita: 0

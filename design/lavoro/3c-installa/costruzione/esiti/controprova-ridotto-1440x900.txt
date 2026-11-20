@@ -1,0 +1,14 @@
+# controprova · ridotto-1440x900 · sito P2 (548a6f2) · chromium 1440x900 · ridotto  · 20/11/2026 04:22
+
+== ridotto · chromium 1440x900
+ok   «riduci movimento»: il primo schermo è già al suo stato finale (installata), nessuna riga nascosta, i gruppi dell'impronta tutti uguali · {"installata":true,"righeNascoste":0,"uguali":true,"finestra":true,"cursoreScrive":false}
+NO   con «riduci movimento» i file sono già nella cartella e «kalliope --version» c'è · {"pacchi":false,"animazioni":8,"versione":"visible"}
+ok   la finestra è già su «Pronta»
+ok   con «riduci movimento» la scelta cambia i comandi subito
+ok   la frase premuta risponde (la finestra mostra la riga) senza dissolvenze
+ok   «Copia» risponde (Copiato) e l'alone è il bordo fermo
+ok   il microfono: la riga «kalliope» c'è e «Kalliope» è già scelto nella barra
+ok   console pulita
+
+7/8 ok
+# uscita: 1

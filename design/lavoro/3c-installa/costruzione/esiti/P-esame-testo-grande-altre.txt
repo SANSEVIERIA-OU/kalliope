@@ -1,0 +1,105 @@
+# P-esame-testo-grande-altre · 20/11/2026 13:46 · carico: PSI CPU some avg10=1.81 avg60=1.67 · load 4.11 3.91 4.40 su 12 CPU · memoria disponibile 4817 MB · sito: /tmp/lavoro-3cb-sito-P · albero: /tmp/lavoro-3cb-radice-P · esame-impaginazione.mjs chromium tutti  360x760
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+non-ancora · 360×760 · testo 100%: pulito
+home · 360×760 · testo 100%: pulito
+stato · 360×760 · testo 100%: pulito
+non-ancora · 360×760 · testo 125%: pulito
+home · 360×760 · testo 125%: pulito
+stato · 360×760 · testo 125%: pulito
+non-ancora · 360×760 · testo 150%: pulito
+home · 360×760 · testo 150%: pulito
+stato · 360×760 · testo 150%: pulito
+non-ancora · 360×760 · testo 200%: pulito
+home · 360×760 · testo 200%: pulito
+stato · 360×760 · testo 200%: pulito
+non-ancora · 360×760 · zoom 125% (288×608): 
+  A CAPO NEL MEZZO «e-mail» in p
+home · 360×760 · zoom 125% (288×608): pulito
+stato · 360×760 · zoom 125% (288×608): pulito
+non-ancora · 360×760 · zoom 150% (240×507): 
+  STRETTO span.tappa-nome «Scrivi la frase» largo 88px, circa 8 caratteri, su 2 righe
+  STRETTO span.tappa-nome «La voce nasce qui» largo 88px, circa 8 caratteri, su 2 righe
+  STRETTO span.tappa-nome «Microfono «Kalliope»: non c'è an» largo 94px, circa 9 caratteri, su 2 righe
+  STRETTO span.tappa-nome «Zoom, Teams, Meet» largo 88px, circa 8 caratteri, su 3 righe
+  STRETTO span.tappa-nome «Gli altri ti sentono» largo 88px, circa 8 caratteri, su 2 righe
+home · 360×760 · zoom 150% (240×507): 
+  FUORI button.voce «Marco» 139→253
+  ESCE button.voce «Marco» da section.tratto.ascolto-voce
+  STRETTO span.tappa-nome «Scrivi la frase» largo 88px, circa 8 caratteri, su 2 righe
+  STRETTO span.tappa-nome «La voce nasce qui» largo 88px, circa 8 caratteri, su 2 righe
+  STRETTO span.tappa-nome «Microfono «Kalliope»» largo 94px, circa 9 caratteri, su 2 righe
+  STRETTO span.tappa-nome «Zoom, Teams, Meet» largo 88px, circa 8 caratteri, su 3 righe
+  STRETTO span.tappa-nome «Gli altri ti sentono» largo 88px, circa 8 caratteri, su 2 righe
+stato · 360×760 · zoom 150% (240×507): 
+  FUORI li «.deb · Ubuntu 24.04» 99→244
+  SPEZZATA «releasing» in a
+  ESCE li «.deb · Ubuntu 24.04» da li.anello.fatto
+  ESCE li «PKGBUILD · Arch» da li.anello.fatto
+  STRETTO h3.anello-nome «Scrivi la frase» largo 104px, circa 9 caratteri, su 2 righe
+  STRETTO h3.anello-nome «La voce nasce qui» largo 104px, circa 9 caratteri, su 2 righe
+  STRETTO p.cifra-numero «0,07 s» largo 104px, circa 4 caratteri, su 2 righe
+  STRETTO h3.anello-nome «Microfono «Kalliope»» largo 104px, circa 9 caratteri, su 2 righe
+  STRETTO h3.anello-nome «L'app della riunione» largo 104px, circa 9 caratteri, su 2 righe
+non-ancora · 360×760 · zoom 200% (180×380): 
+  FUORI a.pulsante-menu «Menu» 149→230
+  FUORI span.tappa-nome «Scrivi la frase» 132→184
+  FUORI span.tappa-nome «La voce nasce qui» 132→185
+  FUORI span.tappa-nome «Microfono «Kalliope»: non c'è an» 132→226
+  FUORI span.tappa-nome «Zoom, Teams, Meet» 132→195
+  ESCE span.tappa-nome «Scrivi la frase» da section.tratto.scena-notte
+  ESCE span.tappa-nome «La voce nasce qui» da section.tratto.scena-notte
+  ESCE span.tappa-nome «Microfono «Kalliope»: non c'è an» da section.tratto.scena-notte
+  ESCE span.tappa-nome «Zoom, Teams, Meet» da section.tratto.scena-notte
+  ESCE span.tappa-nome «Gli altri ti sentono» da section.tratto.scena-notte
+  STRETTO h1 «Su Windows e macOS: non ancora.» largo 140px, circa 9 caratteri, su 2 righe
+  STRETTO span.riga «non ancora.» largo 140px, circa 9 caratteri, su 2 righe
+  STRETTO a.pillola.azione «Come saperlo quando arriva» largo 80px, circa 8 caratteri, su 4 righe
+  STRETTO span.tappa-nome «Scrivi la frase» largo 52px, circa 5 caratteri, su 3 righe
+  STRETTO span.tappa-nome «La voce nasce qui» largo 53px, circa 5 caratteri, su 4 righe
+  COPERTO a.collegamento.a-capo «Intanto, senti la voce» sotto div.bolla-corpo
+home · 360×760 · zoom 200% (180×380): 
+  FUORI a.pulsante-menu «Menu» 149→230
+  FUORI button.voce «Marco» 139→253
+  FUORI span.tappa-nome «Scrivi la frase» 132→184
+  FUORI span.tappa-nome «La voce nasce qui» 132→185
+  FUORI span.tappa-nome «Microfono «Kalliope»» 132→226
+  ESCE button.voce «Marco» da section.tratto.ascolto-voce
+  ESCE span.tappa-nome «Scrivi la frase» da section.tratto.strada-voce
+  ESCE span.tappa-nome «La voce nasce qui» da section.tratto.strada-voce
+  ESCE span.tappa-nome «Microfono «Kalliope»» da section.tratto.strada-voce
+  ESCE span.tappa-nome «Zoom, Teams, Meet» da section.tratto.strada-voce
+  STRETTO h1 «In riunione, alla pari. Tu scriv» largo 140px, circa 9 caratteri, su 2 righe
+  STRETTO span.riga «Tu scrivi, gli altri» largo 140px, circa 9 caratteri, su 2 righe
+  STRETTO a.pillola.azione «Scarica e installa» largo 80px, circa 8 caratteri, su 2 righe
+  STRETTO span.tappa-nome «Scrivi la frase» largo 52px, circa 5 caratteri, su 3 righe
+  STRETTO span.tappa-nome «La voce nasce qui» largo 53px, circa 5 caratteri, su 4 righe
+stato · 360×760 · zoom 200% (180×380): 
+  FUORI a.pulsante-menu «Menu» 149→230
+  FUORI li «.deb · Ubuntu 24.04» 99→244
+  FUORI li «.rpm · Fedora» 99→205
+  FUORI li «PKGBUILD · Arch» 99→232
+  FUORI li «.tar.gz · ./install» 99→220
+  SPEZZATA «docs» in a
+  SPEZZATA «releasing» in a
+  SPEZZATA «README» in a
+  SPEZZATA «linux» in a
+  ESCE li «.deb · Ubuntu 24.04» da li.anello.fatto
+  ESCE li «.rpm · Fedora» da li.anello.fatto
+  ESCE li «PKGBUILD · Arch» da li.anello.fatto
+  ESCE li «.tar.gz · ./install» da li.anello.fatto
+  ESCE strong «non misurato» da li.anello.fatto
+  UNA PAROLA PER RIGA p «Uno script installa ogni pacchet» (19 parole, 16 righe)
+  UNA PAROLA PER RIGA p «Numeri, date, orari, importi e s» (10 parole, 10 righe)
+  UNA PAROLA PER RIGA p.anello-forse «Con la tastiera. Con un lettore » (14 parole, 13 righe)
+  UNA PAROLA PER RIGA p.cifra-detto «di processore per ogni secondo d» (11 parole, 11 righe)
+  UNA PAROLA PER RIGA p.anello-forse «Quanto dura «Preparo la voce…» a» (8 parole, 8 righe)
+  STRETTO h1 «Provato fino al microfono. In ri» largo 140px, circa 9 caratteri, su 2 righe
+  STRETTO span.riga «In riunione,» largo 140px, circa 9 caratteri, su 2 righe
+  STRETTO span.riga «non ancora.» largo 140px, circa 9 caratteri, su 2 righe
+  STRETTO a.pillola.azione «Per chi è, e per chi no» largo 80px, circa 8 caratteri, su 3 righe
+  STRETTO h3.anello-nome «Si installa» largo 44px, circa 4 caratteri, su 2 righe
+  COPERTO a.collegamento.a-capo «Se devi controllare» sotto div.bolla-corpo
+
+A CAPO NEL MEZZO: 1 · STRETTO: 30 · FUORI: 17 · ESCE: 18 · SPEZZATA: 5 · COPERTO: 2 · UNA PAROLA PER RIGA: 5
+78 cose da guardare (foto in /tmp/lavoro-3cb-qa-P-esame-testo-grande-altre/esame/chromium)
+# uscita: 1

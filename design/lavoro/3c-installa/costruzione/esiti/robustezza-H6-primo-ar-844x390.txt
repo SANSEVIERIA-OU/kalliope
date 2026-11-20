@@ -1,0 +1,15 @@
+# robustezza · H6 · primo e stabile in ar · chromium 844x390 · 20/11/2026 14:34 · carico: PSI CPU some avg10=0.64 avg60=3.34 · load 5.85 8.16 9.99 su 12 CPU · memoria disponibile 6756 MB
+
+== primo · chromium 844x390
+NO   primo schermo ar: il pulsante del file sta nello schermo (344–400 su 390; gradino: titolo-ridotto titolo-minimo; lo stato «Oggi:» 414–464) · {"top":344,"bottom":400,"vh":390,"statoTop":414,"statoBottom":464,"classi":"titolo-ridotto titolo-minimo","largo":844}
+ok     nessuno scorrimento di lato · 844 contro 844
+ok     console pulita
+
+== stabile · chromium 844x390
+ok   il primo schermo ar con «riduci movimento»: le classi dell'adattamento non cambiano più (10 cambi all'arrivo, 5 dopo la scelta) e «Altre» si preme (ok) · {"n1":10,"fermo":true,"a1":15,"a2":15,"preme":"ok"}
+ok     console pulita
+ok   il primo schermo ar con il movimento: le classi dell'adattamento non cambiano più (10 cambi all'arrivo, 5 dopo la scelta) e «Altre» si preme (ok) · {"n1":10,"fermo":true,"a1":15,"a2":15,"preme":"ok"}
+ok     console pulita
+
+6/7 ok
+# uscita: 1

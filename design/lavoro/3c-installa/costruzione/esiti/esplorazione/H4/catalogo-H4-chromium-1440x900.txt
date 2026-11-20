@@ -1,0 +1,20 @@
+# catalogo · H4 · chromium 1440x900 · 20/11/2026 06:01
+ok   il catalogo principale si costruisce senza errori · {"errori":[]}
+ok   le pagine interne e «stato» si costruiscono senza errori · {"pagine":{"errori":[],"schermi":8},"stato":[]}
+ok   la sezione «installa» si costruisce senza errori · {"errori":[],"schermi":13}
+ok   quattro schede: la scelta del sistema, il comando, il terminale, l'installazione · 4 schede, 68 prove, 13 pagine vive: La scelta del sistema | Il comando da copiare | Il terminale ricostruito | L'installazione che si vede riuscire
+ok   la sezione sta nell'indice e dopo quella di «stato» · pagina-installa
+ok   ogni scheda ha le sette voci (con movimento e verifica) e almeno cinque prove · [15,13,14,26]
+ok   il catalogo non scorre di lato · {"pagina":1440,"finestra":1440}
+ok   nessun quadro di prova è vuoto
+ok   nessun contenuto esce dal suo quadro
+ok   la scelta: le prime quattro prove hanno scelta una voce ciascuna (deb, rpm, arch, tar) · deb,rpm,arch,tar
+ok   ciò che dipende dalla scelta: 1 comando per Debian e per Fedora, 3 per Arch e per le altre (:has, dal foglio di stile) · 1,1,3,3
+ok   il comando del catalogo preme la scelta vera nel riquadro: Fedora, e il pulsante diventa quello del .rpm · {"scelta":"rpm","pulsante":"Scarica il .deb 14,1 MB|Scarica il .rpm 19,2 MB|Vai ai comandi per Arch|Scarica l'archivio 19,2 MB"}
+ok   «Copia» dal vivo: «Copiato» e poi torna «Copia» · copiato true, tornato true
+ok   «Riproduci» dell'impronta: i gruppi si accendono uno alla volta, alla fine tutti e 16 · {"meta":{"uguali":10,"gruppi":16},"fine":{"uguali":16,"gruppi":16,"attesa":false}}
+ok   «Riproduci» del comando: lettera per lettera (a metà c'è il cursore e ne manca un pezzo), alla fine il comando intero · {"mezzo":{"fatto":5,"intero":11,"cursore":true},"scritto":{"testo":"makepkg -si","cursore":false}}
+ok   console pulita
+
+16/16 ok
+# uscita: 0

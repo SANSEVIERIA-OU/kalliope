@@ -91,9 +91,15 @@ riunione. Piano dei tratti e fonti: `design/lavoro/3c-installa/PIANO.md`; che co
   tratteggiato di «Kalliope» che si riempie, il tuo riquadro che si accende); «Riuscito se… / Se no…» di ogni passo (`.esito-passo`); il file
   con la cartella e il terminale fermi accanto; la cartella `/usr` o `~/.local` che riceve i file; la finestra di Kalliope con le frasi che
   si provano; la chiusura con il microfono, la strada della ripresa e l'indirizzo per chi installa al posto tuo.
-- I token: blocco «La pagina «installa»» in fondo a `token.css`, documentati in fondo a `TOKEN.md`. Gli stati della pagina sono in
-  `metodo.config.mjs` (riposo, menu, archivio scelto, frase premuta, copia fatta e non riuscita, indirizzo copiato). Il catalogo non li
-  mostra ancora: lo completa il ruolo di costruzione, con un file per area come `catalogo-stato.js`.
+- I token: blocco «La pagina «installa»» e blocco «Costruzione di «installa»» in fondo a `token.css`, documentati in fondo a `TOKEN.md`. Gli stati
+  della pagina sono in `metodo.config.mjs` (riposo, menu, archivio scelto, frase premuta, frase tolta, copia fatta e non riuscita, indirizzo copiato e
+  non copiato). **Il catalogo** li mostra in `catalogo/catalogo-installa.js` e `.css` (4 schede, con varianti e stati, e la pagina viva a 1440, 390 e
+  844×390 con comandi che premono i comandi veri del riquadro).
+- **Completato dalla costruzione (3c-b)**: gli indirizzi della pagina di prima (`.vecchio-indirizzo`: punti senza misura, `#passo-1`…, `#fedora`…; con lo
+  script l'ancora di una distribuzione la sceglie); il comando principale nel primo schermo in ogni lingua (`installa.js`, `adattaPrimo`: se il pulsante
+  non ci sta, il titolo scende di un gradino, `titolo-ridotto` e `titolo-minimo` in `installazione.css`); le voci non scelte del pulsante del file restano
+  invisibili e ferme invece di sparire con `display: none` (così senza script l'entrata non si ripete a ogni scelta); la finestra che cambia con una frase
+  premuta resta in vista; con «riduci movimento» i file arrivano senza attesa.
 
 ## Il marchio (19/11/2026, incarico L-3)
 

@@ -1,0 +1,5 @@
+# rtl prima/dopo · ur/stato/index.html · y 4000 · scelta H6 · adesso H12 · 20/11/2026 15:49 · carico: PSI CPU some avg10=1.42 avg60=1.88 · load 3.58 3.74 5.40 su 12 CPU · memoria disponibile 6219 MB
+CONFRONTO 1440×900 a 4000 px: uguale su 35 cose nello schermo · pixel diversi 0%
+CONFRONTO 390×844 a 4000 px: uguale su 18 cose nello schermo · pixel diversi 0%
+Uguale alla scelta, salvo le differenze ammesse (foto in /tmp/lavoro-3cb-rtl-pd-H12/ur-stato-y4000)
+# uscita: 0

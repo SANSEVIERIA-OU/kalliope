@@ -1,0 +1,128 @@
+# H4-esame-altezze-1366 · 20/11/2026 05:45 · sito: /tmp/lavoro-3cb-sito-H4 · albero: /tmp/lavoro-3cb-radice-H4 · esame-impaginazione.mjs chromium normale installa 1366x500,1366x501,1366x699,1366x700,1366x759,1366x760,1366x799,1366x800,1366x802,1366x803,1366x819,1366x820
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+installa-menu · 1366×500 · testo 100%: lo stato non c'è a questa misura
+installa · 1366×500 · testo 100%: pulito
+installa-archivio · 1366×500 · testo 100%: pulito
+installa-frase · 1366×500 · testo 100%: pulito
+installa-frase-microfono · 1366×500 · testo 100%: pulito
+installa-frase-tolta · 1366×500 · testo 100%: pulito
+installa-copia-fatta · 1366×500 · testo 100%: pulito
+installa-copia-non-riuscita · 1366×500 · testo 100%: pulito
+installa-indirizzo-copiato · 1366×500 · testo 100%: pulito
+installa-indirizzo-non-copiato · 1366×500 · testo 100%: pulito
+installa-menu · 1366×501 · testo 100%: lo stato non c'è a questa misura
+installa · 1366×501 · testo 100%: pulito
+installa-archivio · 1366×501 · testo 100%: pulito
+installa-frase · 1366×501 · testo 100%: pulito
+installa-frase-microfono · 1366×501 · testo 100%: pulito
+installa-frase-tolta · 1366×501 · testo 100%: pulito
+installa-copia-fatta · 1366×501 · testo 100%: pulito
+installa-copia-non-riuscita · 1366×501 · testo 100%: pulito
+installa-indirizzo-copiato · 1366×501 · testo 100%: pulito
+installa-indirizzo-non-copiato · 1366×501 · testo 100%: pulito
+installa-menu · 1366×699 · testo 100%: lo stato non c'è a questa misura
+installa · 1366×699 · testo 100%: pulito
+installa-archivio · 1366×699 · testo 100%: pulito
+installa-frase · 1366×699 · testo 100%: pulito
+installa-frase-microfono · 1366×699 · testo 100%: pulito
+installa-frase-tolta · 1366×699 · testo 100%: pulito
+installa-copia-fatta · 1366×699 · testo 100%: pulito
+installa-copia-non-riuscita · 1366×699 · testo 100%: pulito
+installa-indirizzo-copiato · 1366×699 · testo 100%: pulito
+installa-indirizzo-non-copiato · 1366×699 · testo 100%: pulito
+installa-menu · 1366×700 · testo 100%: lo stato non c'è a questa misura
+installa · 1366×700 · testo 100%: pulito
+installa-archivio · 1366×700 · testo 100%: pulito
+installa-frase · 1366×700 · testo 100%: pulito
+installa-frase-microfono · 1366×700 · testo 100%: pulito
+installa-frase-tolta · 1366×700 · testo 100%: pulito
+installa-copia-fatta · 1366×700 · testo 100%: pulito
+installa-copia-non-riuscita · 1366×700 · testo 100%: pulito
+installa-indirizzo-copiato · 1366×700 · testo 100%: pulito
+installa-indirizzo-non-copiato · 1366×700 · testo 100%: pulito
+installa-menu · 1366×759 · testo 100%: lo stato non c'è a questa misura
+installa · 1366×759 · testo 100%: pulito
+installa-archivio · 1366×759 · testo 100%: pulito
+installa-frase · 1366×759 · testo 100%: pulito
+installa-frase-microfono · 1366×759 · testo 100%: pulito
+installa-frase-tolta · 1366×759 · testo 100%: pulito
+installa-copia-fatta · 1366×759 · testo 100%: pulito
+installa-copia-non-riuscita · 1366×759 · testo 100%: pulito
+installa-indirizzo-copiato · 1366×759 · testo 100%: pulito
+installa-indirizzo-non-copiato · 1366×759 · testo 100%: pulito
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+installa-menu · 1366×760 · testo 100%: lo stato non c'è a questa misura
+installa · 1366×760 · testo 100%: pulito
+installa-archivio · 1366×760 · testo 100%: pulito
+installa-frase · 1366×760 · testo 100%: pulito
+installa-frase-microfono · 1366×760 · testo 100%: pulito
+installa-frase-tolta · 1366×760 · testo 100%: pulito
+installa-copia-fatta · 1366×760 · testo 100%: pulito
+installa-copia-non-riuscita · 1366×760 · testo 100%: pulito
+installa-indirizzo-copiato · 1366×760 · testo 100%: pulito
+installa-indirizzo-non-copiato · 1366×760 · testo 100%: pulito
+installa-menu · 1366×799 · testo 100%: lo stato non c'è a questa misura
+installa · 1366×799 · testo 100%: pulito
+installa-archivio · 1366×799 · testo 100%: pulito
+installa-frase · 1366×799 · testo 100%: pulito
+installa-frase-microfono · 1366×799 · testo 100%: pulito
+installa-frase-tolta · 1366×799 · testo 100%: pulito
+installa-copia-fatta · 1366×799 · testo 100%: pulito
+installa-copia-non-riuscita · 1366×799 · testo 100%: pulito
+installa-indirizzo-copiato · 1366×799 · testo 100%: pulito
+installa-indirizzo-non-copiato · 1366×799 · testo 100%: pulito
+installa-menu · 1366×800 · testo 100%: lo stato non c'è a questa misura
+installa · 1366×800 · testo 100%: pulito
+installa-archivio · 1366×800 · testo 100%: pulito
+installa-frase · 1366×800 · testo 100%: pulito
+installa-frase-microfono · 1366×800 · testo 100%: pulito
+installa-frase-tolta · 1366×800 · testo 100%: pulito
+installa-copia-fatta · 1366×800 · testo 100%: pulito
+installa-copia-non-riuscita · 1366×800 · testo 100%: pulito
+installa-indirizzo-copiato · 1366×800 · testo 100%: pulito
+installa-indirizzo-non-copiato · 1366×800 · testo 100%: pulito
+installa-menu · 1366×802 · testo 100%: lo stato non c'è a questa misura
+installa · 1366×802 · testo 100%: pulito
+installa-archivio · 1366×802 · testo 100%: pulito
+installa-frase · 1366×802 · testo 100%: pulito
+installa-frase-microfono · 1366×802 · testo 100%: pulito
+installa-frase-tolta · 1366×802 · testo 100%: pulito
+installa-copia-fatta · 1366×802 · testo 100%: pulito
+installa-copia-non-riuscita · 1366×802 · testo 100%: pulito
+installa-indirizzo-copiato · 1366×802 · testo 100%: pulito
+installa-indirizzo-non-copiato · 1366×802 · testo 100%: pulito
+installa-menu · 1366×803 · testo 100%: lo stato non c'è a questa misura
+installa · 1366×803 · testo 100%: pulito
+installa-archivio · 1366×803 · testo 100%: pulito
+installa-frase · 1366×803 · testo 100%: pulito
+installa-frase-microfono · 1366×803 · testo 100%: pulito
+installa-frase-tolta · 1366×803 · testo 100%: pulito
+installa-copia-fatta · 1366×803 · testo 100%: pulito
+installa-copia-non-riuscita · 1366×803 · testo 100%: pulito
+installa-indirizzo-copiato · 1366×803 · testo 100%: pulito
+installa-indirizzo-non-copiato · 1366×803 · testo 100%: pulito
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+installa-menu · 1366×819 · testo 100%: lo stato non c'è a questa misura
+installa · 1366×819 · testo 100%: pulito
+installa-archivio · 1366×819 · testo 100%: pulito
+installa-frase · 1366×819 · testo 100%: pulito
+installa-frase-microfono · 1366×819 · testo 100%: pulito
+installa-frase-tolta · 1366×819 · testo 100%: pulito
+installa-copia-fatta · 1366×819 · testo 100%: pulito
+installa-copia-non-riuscita · 1366×819 · testo 100%: pulito
+installa-indirizzo-copiato · 1366×819 · testo 100%: pulito
+installa-indirizzo-non-copiato · 1366×819 · testo 100%: pulito
+installa-menu · 1366×820 · testo 100%: lo stato non c'è a questa misura
+installa · 1366×820 · testo 100%: pulito
+installa-archivio · 1366×820 · testo 100%: pulito
+installa-frase · 1366×820 · testo 100%: pulito
+installa-frase-microfono · 1366×820 · testo 100%: pulito
+installa-frase-tolta · 1366×820 · testo 100%: pulito
+installa-copia-fatta · 1366×820 · testo 100%: pulito
+installa-copia-non-riuscita · 1366×820 · testo 100%: pulito
+installa-indirizzo-copiato · 1366×820 · testo 100%: pulito
+installa-indirizzo-non-copiato · 1366×820 · testo 100%: pulito
+
+
+Tutto pulito (foto in /tmp/lavoro-3cb-qa-H4-esame-altezze-1366/esame/chromium)
+# uscita: 0

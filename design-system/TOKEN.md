@@ -1311,7 +1311,7 @@ file condiviso riordinato. Le scelte senza una fonte sono progettuali (piano: `d
 | `--terminale-spazio-interno`, `-telefono`, `--terminale-confronto-spazio-interno` | `14px 20px 16px`, `10px 12px 12px`, `12px 20px 16px` | |
 | `--terminale-grandezza`, `--terminale-interlinea`, `-telefono` | `14px`/`22px`, `12px`/`19px` | |
 | `--terminale-riga-tua`, `--terminale-riga-tua-altezza`, `-lunga`, `-corta` | `rgba(255,237,239,0.16)`, `7px`, `72%`, `44%` | una riga del computer di chi installa: c'è, ma che cosa dice dipende da lui (la pagina non la inventa) |
-| `--terminale-numero-larghezza`, `--terminale-trovato-prima`, `--terminale-trovato-dopo` | `3.4em`, `2.4em`, `11em` | il numero della versione che risponde il programma; la riga con «kalliope» |
+| `--terminale-numero-larghezza`, `--terminale-trovato-prima`, `--terminale-trovato-dopo` | `3.4em`, `2.4em`, `11em` | la cartella di casa di chi installa, che la pagina non conosce; la riga con «kalliope» |
 | `--terminale-cursore-larghezza`, `--terminale-cursore-altezza` | `0.6em`, `1.15em` | il cursore (mentre il comando si scrive non occupa posto) |
 | `--terminale-uguale` | `rgba(255,92,141,0.36)` | un gruppo di cifre confrontato, la parola trovata: l'azione, velata |
 | `--durata-t-riga`, `--durata-t-gruppo` | `200ms`, `180ms` | una risposta che compare; un gruppo di cifre che si accende |
@@ -1332,3 +1332,16 @@ file condiviso riordinato. Le scelte senza una fonte sono progettuali (piano: `d
 | `--ripresa-linea-inizio`, `--ripresa-segno-scala` | `11px`, `1.15` | la strada dei cinque passi della ripresa |
 
 Soglie: nessuna nuova (760, 761, 699, 1180 della cornice).
+
+## Costruzione di «installa» (incarico 3c-b, 20/11/2026)
+
+Blocco `:root` in fondo a `token.css`: un solo token, e il suo ruolo. Il comando principale resta nel primo schermo in ogni lingua (`installa.js`, `adattaPrimo`).
+
+| Token | Valore | Ruolo |
+|---|---|---|
+| `--primo-comando-aria-sotto` | `12px` | l'aria che il pulsante del file tiene sotto di sé nel primo schermo: se non ci sta, il titolo scende di un gradino |
+| `--righe-prima-dei-file` | `3` | le righe del terminale che si vedono prima che i file comincino a scendere nella cartella (moltiplica `--passo-riga-terminale`) |
+| `--impronta-cifre-gruppo` | `8` | le cifre di un gruppo dell'impronta che si confronta |
+| `--annuncio-attesa` | `60ms` | l'annuncio si svuota e poi si riscrive: così un lettore di schermo lo legge anche se il testo è uguale al precedente |
+
+Soglie: `501px` (`installazione.css`: il titolo di «installa» alla misura del tablet vale da 501 px d'altezza in su; sotto vale la regola della cornice per il telefono girato).

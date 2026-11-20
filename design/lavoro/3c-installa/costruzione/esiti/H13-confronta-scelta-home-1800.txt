@@ -1,0 +1,5 @@
+# confronta-scelta · home dopo 1800 px · 20/11/2026 16:21
+CONFRONTO 1440×900 a 1800 px: uguale su 46 cose nello schermo · pixel diversi 0%
+CONFRONTO 390×844 a 1800 px: uguale su 46 cose nello schermo · pixel diversi 0%
+Uguale alla scelta, salvo le differenze ammesse (foto in /tmp/lavoro-3cb-conf/H13/home-1800)
+# uscita: 0

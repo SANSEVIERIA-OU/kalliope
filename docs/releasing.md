@@ -231,6 +231,10 @@ else the public API) and a source that is not there is left as its name, without
 `--release-json` and no local tag, the links stay unchecked (the build says so). The address a page shows of itself (the message to forward
 on «Stato e limiti») is `{{kalliope.page.url}}`, built like the page's `canonical`, so what is shown, what is copied and the canonical are one address.
 
+What `kalliope --version` answers on «Installa» is `kalliope {{kalliope.program.version}}`: the program writes its Cargo version without the last `.0`
+(`crates/app/src/main.rs`, `version()`), and a release tag is `vX.Y` or `vX.Y-prerelease` for a Cargo version `X.Y.0` (`tools/version.py`), so the marker is the
+tag's `X.Y` (0.1 for `v0.1-rc.1`). `tools/test_translations.py` (`VersioneDelProgramma`) fails if the program's source says it another way.
+
 The site has one folder per language (`/it/`, `/en/` …) with the same pages under the same names, and the top address is the
 page where a visitor chooses the language. The build makes only the languages whose catalogue, `website/lingue/<xx>.po`,
 is complete and checked, and says in its log which it left out and why; Italian, the language of the pages, is always

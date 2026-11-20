@@ -1,0 +1,55 @@
+# confronta-scelta · installa a 2400 px · 20/11/2026 16:23
+CONFRONTO 1440×900 a 2400 px: 30 differenze su 44 cose nello schermo · pixel diversi 6,25%
+  SPOSTATE 9 cose della stessa quantità, y -22 px: p «: se mancano dipendenze, o un messaggio parla di» · strong «Se no» · code «ldd --version | head -n 1» …
+  MISURA section#installa: 1440×1210 → 1440×1188
+  MANCA p «se, scrivendo , il terminale risponde con una ri»: era a 660,350, 460×66
+  MANCA p «Le preferenze e la voce scaricata restano nella »: era a 660,701, 460×110
+  SPOSTATO code «./install --remove»: x 955→682 (-273), y 724→746 (+22)
+  SPOSTATO code «~/.config/kalliope»: x 757→660 (-97), y 746→702 (-44)
+  SPOSTATO code «~/.local/share/kalliope»: y 768→724 (-44)
+  MANCA span «kalliope»: era a 101,281, 67.5×16
+  IN PIÙ p «se, scrivendo , il terminale risponde .»: a 660,350, 460×44
+  IN PIÙ code «kalliope 0.1»: a 743,373, 107.5×20
+  IN PIÙ p «Nella tua cartella personale restano le preferen»: a 660,679, 460×110
+  IN PIÙ p «Come lo sappiamo: i pacchetti hanno soltanto fil»: a 660,799, 460×108
+  IN PIÙ code «./install --remove» #2: a 718,821, 146.5×19
+  IN PIÙ code «./install»: a 660,843, 78.5×19
+  IN PIÙ code «apt»: a 688,865, 33×19
+  IN PIÙ code «dnf»: a 729,865, 33×19
+  IN PIÙ code «pacman»: a 778.5,865, 55.5×19
+  IN PIÙ span «kalliope 0.1»: a 101,281, 101×16
+  IN PIÙ li «bin/kalliope»: a 101,379, 112.5×24
+  IN PIÙ li «bin/kalliope-cli»: a 219.5,379, 141.5×24
+  IN PIÙ li «lib/kalliope · ONNX Runtime»: a 101,409, 221×24
+  IN PIÙ li «share/applications · nel menu»: a 101,439, 235.5×24
+CONFRONTO 390×844 a 2400 px: 1 differenze su 29 cose nello schermo · pixel diversi 0%
+  MISURA section#installa: 390×1592.5 → 390×1548.5
+CONFRONTO 1366×640 a 2400 px: 23 differenze su 41 cose nello schermo · pixel diversi 5,63%
+  SPOSTATE 8 cose della stessa quantità, y -22 px: p «: se mancano dipendenze, o un messaggio parla di» · strong «Se no» · code «ldd --version | head -n 1» …
+  MISURA section#installa: 1366×1106 → 1366×1084
+  MANCA p «se, scrivendo , il terminale risponde con una ri»: era a 660,227, 460×66
+  MANCA p «Le preferenze e la voce scaricata restano nella »: era a 660,578, 460×110
+  SPOSTATO code «./install --remove»: x 955→682 (-273), y 601→623 (+22)
+  SPOSTATO code «~/.config/kalliope»: x 757→660 (-97), y 623→579 (-44)
+  MANCA span «kalliope»: era a 101,232, 67.5×16
+  IN PIÙ p «se, scrivendo , il terminale risponde .»: a 660,227, 460×44
+  IN PIÙ code «kalliope 0.1»: a 743,250, 107.5×20
+  IN PIÙ p «Nella tua cartella personale restano le preferen»: a 660,556, 460×110
+  IN PIÙ code «~/.local/share/kalliope»: a 660,601, 197×20
+  IN PIÙ span «kalliope 0.1»: a 101,232, 101×16
+  IN PIÙ li «bin/kalliope»: a 101,330, 112.5×24
+  IN PIÙ li «bin/kalliope-cli»: a 219.5,330, 141.5×24
+  IN PIÙ li «lib/kalliope · ONNX Runtime»: a 101,360, 221×24
+  IN PIÙ li «share/applications · nel menu»: a 101,390, 235.5×24
+CONFRONTO 1024×768 a 2400 px: 3 differenze su 41 cose nello schermo · pixel diversi 0%
+  MISURA section#installa: 1024×1599 → 1024×1577
+  MANCA p «se, scrivendo , il terminale risponde con una ri»: era a 48,750, 460×66
+  IN PIÙ p «se, scrivendo , il terminale risponde .»: a 48,750, 460×44
+CONFRONTO 844×390 a 2400 px: 32 differenze su 36 cose nello schermo · pixel diversi 19,07%
+  SPOSTATE 28 cose della stessa quantità, y -44 px: div.cartella · span «Scaricati» · span «kalliope-0.1-rc.1-amd64.deb» …
+  SPOSTATO section#scarica: y -1268→-1312 (-44)
+  SPOSTATO p «Questa versione non ha l'attestazione di proveni»: y -35→-79 (-44)
+  MANCA code «gh attestation verify»: era a 48,-34, 389×41
+  SPOSTATO a «Stato e limiti»: y 31→-13 (-44)
+Il confronto con la scelta non regge a 5 misure (foto e differenze in /tmp/lavoro-3cb-conf/H13/installa-2400)
+# uscita: 1

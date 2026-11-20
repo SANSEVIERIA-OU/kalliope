@@ -51,6 +51,14 @@
 .js .chiamata-installa.installata .scelta-kalliope { animation: provato-acceso var(--durata-urto) var(--curva-uscita) 1; }
 .js .chiamata-installa.installata .nome-dopo { animation: appare var(--durata-scelta-nome) var(--curva-dolce) var(--ritardo-installata-tu) backwards; }
 
+/* gli indirizzi della pagina di prima (#passo-1…#passo-5, #fedora, #debian-ubuntu, #arch, #altre, #indirizzo-installa): un punto senza misura e fuori dal flusso,
+   dove il vecchio indirizzo porta anche senza JavaScript (con lo script, quello di una distribuzione la sceglie: installa.js). Fuori dal flusso, così
+   non aggiunge righe né spazi dove i tratti sono colonne con un intervallo fra gli elementi (al telefono). */
+.vecchio-indirizzo { position: absolute; width: var(--misura-1); height: var(--misura-1); overflow: hidden; pointer-events: none; }
+/* il fuoco porta in vista il comando che tocca, in ogni motore: Firefox scorre solo se il comando non si vede affatto, e uno mezzo sotto il bordo («Che cosa fare»
+   e una tappa della ripresa, 9 e 15 px fuori) restava tale. Come per il piede (pagina.css) il comando ha uno spazio sotto di sé, e Firefox lo porta in vista */
+.sistemi-pagina main :is(a, button, summary, label, input) { scroll-margin-bottom: var(--scorrimento-spazio-sotto); }
+
 /* ---------- il passo: com'è andato ---------- */
 .passo { margin-top: var(--passo-distanza); }
 .passo-nome {
@@ -144,6 +152,10 @@
 .cartelle-chiave { display: inline-block; margin-top: var(--spazio-10); font-size: var(--corpo-4); color: var(--testo-didascalia); }
 .js .disco:not(.visto) .pacco { opacity: 0; transform: translateY(var(--pacco-da)); }
 .js .disco.visto .pacco { transition: opacity var(--durata-pacco) var(--curva-dolce) var(--ritardo-pacco, 0ms), transform var(--durata-pacco) var(--curva-pacco) var(--ritardo-pacco, 0ms); }
+/* con «riduci movimento» (base.css: le durate sono di 1 ms e i ritardi delle animazioni 0) anche l'attesa delle transizioni è nulla: i file sono nella cartella subito */
+@media (prefers-reduced-motion: reduce) {
+  .js .controllo-scena.visto .cartella-file, .js .disco.visto .pacco { transition-delay: 0ms; }
+}
 .togli { margin-top: var(--spazio-16); max-width: var(--tratto-testo-larghezza-massima); font-size: var(--corpo-6); line-height: var(--interlinea-6); color: var(--testo-spiegazione); }
 .togli summary { cursor: pointer; font-weight: var(--peso-forte); color: var(--testo); }
 .togli-comandi { margin: var(--spazio-8) 0; padding-inline-start: var(--spazio-16); }
@@ -256,13 +268,31 @@
 .pillola.chiara:hover { background: var(--bianco); }
 
 /* ---------- larghezze ---------- */
-/* sugli schermi bassi del computer (sotto i 700 px: 1366×640) il titolo prende la misura del tablet, come quello di quattro righe di «stato»
-   (pagina.css): con la scelta della distribuzione, sotto il comando resta lo stato «Oggi:» */
-@media (min-width: 761px) and (max-height: 699px) {
+/* sugli schermi bassi del computer (da 501 a 699 px: 1366×640) il titolo prende la misura del tablet, come quello di quattro righe di «stato»
+   (pagina.css): con la scelta della distribuzione, sotto il comando resta lo stato «Oggi:». Sotto i 501 px (il telefono girato) vale la regola della
+   cornice (pagina.css, titolo e frase alla misura del telefono): questa non la scavalca (costruzione 3c-b: a 844×390 la scavalcava e il comando usciva dallo schermo) */
+@media (min-width: 761px) and (min-height: 501px) and (max-height: 699px) {
   .scena-pagina:has(.palco-installa) h1 { font-size: var(--h1-grandezza-medio); line-height: var(--h1-interlinea-medio); }
   .scena-pagina:has(.palco-installa) .presentazione { margin-top: var(--spazio-14); }
   .scena-pagina:has(.palco-installa) .sistemi { margin-top: var(--spazio-16); }
   .scena-pagina:has(.palco-installa) #comandi-apertura { margin-top: var(--spazio-17); }
+}
+/* mentre lo script misura il primo schermo (installa.js, `adattaPrimo`) le transizioni sono spente: con «riduci movimento» base.css dà 1 ms a ogni transizione e una misura
+   presa subito dopo un cambio di classe leggerebbe i valori di prima (il gradino oscillava a ogni fotogramma) */
+.scena-pagina.misura-in-corso, .scena-pagina.misura-in-corso * { transition: none !important; }
+/* il comando principale nel primo schermo, in ogni lingua: se il pulsante non ci sta (un testo più lungo del 40%, una scrittura con le righe alte,
+   uno schermo basso) lo script mette sul primo schermo un gradino per volta (installa.js, `adattaPrimo`): prima il titolo alla misura del tablet,
+   poi alla misura del telefono con le distanze della cornice per gli schermi bassi (pagina.css). In italiano, alle misure provate, non succede. */
+@media (min-width: 761px) {
+  .scena-pagina.titolo-ridotto:has(.palco-installa) h1 { font-size: var(--h1-grandezza-medio); line-height: var(--h1-interlinea-medio); }
+  .scena-pagina.titolo-ridotto:has(.palco-installa) .presentazione { margin-top: var(--spazio-14); }
+  .scena-pagina.titolo-ridotto:has(.palco-installa) .sistemi { margin-top: var(--spazio-16); }
+  .scena-pagina.titolo-ridotto:has(.palco-installa) #comandi-apertura { margin-top: var(--spazio-17); }
+  .scena-pagina.titolo-minimo:has(.palco-installa) .apertura { padding-top: 0; }
+  .scena-pagina.titolo-minimo:has(.palco-installa) h1 { font-size: var(--h1-grandezza-telefono); line-height: var(--h1-interlinea-telefono); }
+  .scena-pagina.titolo-minimo:has(.palco-installa) .presentazione { margin-top: var(--spazio-8); font-size: var(--corpo-6); line-height: var(--interlinea-6); }
+  .scena-pagina.titolo-minimo:has(.palco-installa) .sistemi { margin-top: var(--spazio-16); }
+  .scena-pagina.titolo-minimo:has(.palco-installa) #comandi-apertura { margin-top: var(--spazio-12); }
 }
 @media (min-width: 761px) and (max-width: 1180px) {
   .passo-file > .coppia-oggetto { position: static; grid-row: auto; }
@@ -270,8 +300,16 @@
   .installa-scena { grid-template-columns: minmax(0, 1fr); row-gap: var(--spazio-26); }
   .disco { position: static; max-width: var(--misura-31); grid-column: auto; grid-row: 2; }
   .installa-comandi { grid-column: auto; grid-row: 1; }
-  .passo-apri { grid-template-columns: minmax(0, 1fr); row-gap: var(--spazio-26); }
+  .passo-apri { grid-template-columns: minmax(0, 1fr); row-gap: var(--spazio-16); }
   .passo-apri > .tratto-testo, .passo-apri > .apri-finestra { grid-column: auto; grid-row: auto; position: static; }
+  /* come al telefono: la finestra sta dopo «Riuscito se…» e prima delle frasi che possono comparire al posto di «Pronta» (nell'ordine della pagina era sopra
+     il titolo, lontana dalle frasi: chi ne preme una non vedeva la finestra cambiare) */
+  .passo-apri > .tratto-testo { display: contents; }
+  .passo-apri h2 { order: 1; }
+  .passo-apri > .tratto-testo > p { order: 2; margin: 0; }
+  .passo-apri .esito-passo { order: 3; margin-top: 0; }
+  .passo-apri > .apri-finestra { order: 4; }
+  .passo-apri .frasi-finestra { order: 5; margin-top: var(--spazio-5); }
 }
 @media (max-width: 760px) {
   .passo-file > .coppia-oggetto { position: static; }

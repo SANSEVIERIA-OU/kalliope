@@ -1,0 +1,20 @@
+# H6-dispositivi-firefox-Telefono-girato · 20/11/2026 13:51 · carico: PSI CPU some avg10=4.54 avg60=3.23 · load 6.41 4.86 4.66 su 12 CPU · memoria disponibile 4277 MB · sito: /tmp/lavoro-3cb-sito-H6 · albero: /tmp/lavoro-3cb-radice-H6 · dispositivi-qa.mjs firefox installa Telefono girato
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+ok  installa · Telefono girato 844×390
+ok  installa-menu · Telefono girato 844×390
+ok  installa-archivio · Telefono girato 844×390
+ok  installa-frase · Telefono girato 844×390
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 844×390) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+ok  installa-frase-microfono · Telefono girato 844×390
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 844×390) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+ok  installa-frase-tolta · Telefono girato 844×390
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 844×390) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+ok  installa-copia-fatta · Telefono girato 844×390
+ok  installa-copia-non-riuscita · Telefono girato 844×390
+ok  installa-indirizzo-copiato · Telefono girato 844×390
+ok  installa-indirizzo-non-copiato · Telefono girato 844×390
+
+10 casi puliti (10 in questo giro; foto in /tmp/lavoro-3cb-qa-H6-dispositivi-firefox-Telefono-girato/dispositivi/firefox). Sono simulazioni, non telefoni veri.
+  3 limiti dichiarati, elencati a parte e non contati
+  365 casi della matrice non eseguiti (filtro o giro interrotto: --continua li riprende)
+# uscita: 0

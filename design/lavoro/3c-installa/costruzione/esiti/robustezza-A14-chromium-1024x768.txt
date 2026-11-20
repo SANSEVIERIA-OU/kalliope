@@ -1,0 +1,89 @@
+# robustezza · A14 · chromium 1024x768 · primo,frasi,sistema,copia · 20/11/2026 04:10
+
+== primo · chromium 1024x768
+ok   primo schermo: il pulsante del file sta nello schermo (536–592 su 768; gradino: -; lo stato «Oggi:» 678–744) · {"top":536,"bottom":592,"vh":768,"statoTop":678,"statoBottom":744,"classi":"-","largo":1024}
+ok     nessuno scorrimento di lato · 1024 contro 1024
+ok     console pulita
+
+== frasi · chromium 1024x768
+ok   con lo script le quattro frasi sono quattro pulsanti, nessuna premuta, ognuna con il suo rimedio sotto · {"bottoni":4,"premuti":0,"frasiFisse":0,"dopo":true}
+ok   «curl» premuta: la finestra mostra la frase in allarme e torna «Scarica la voce»; una sola frase premuta · {"classi":"provata errore","testo":"Per scaricare la voce serve il programma","premuti":["curl"]}
+ok     l'annuncio dice la riga della finestra («La riga della finestra dice: …») · La riga della finestra dice: Per scaricare la voce serve il programma curl: …
+ok     la riga della finestra sta nello schermo, sotto la barra, dopo che la frase è stata premuta (ciò che il gesto cambia si vede) · {"top":134,"bottom":196,"barra":72,"vh":768}
+ok     con la finestra resta in vista anche la frase premuta, quando insieme ci stanno nello schermo (ci stanno) · {"bottone":[451,488],"finestra":[124,315],"distanza":364,"spazio":696}
+ok   «rete» premuta: la finestra mostra la frase in allarme e torna «Scarica la voce»; una sola frase premuta · {"classi":"provata errore","testo":"Download non riuscito: …","premuti":["rete"]}
+ok     l'annuncio dice la riga della finestra («La riga della finestra dice: …») · La riga della finestra dice: Download non riuscito: …
+ok     la riga della finestra sta nello schermo, sotto la barra, dopo che la frase è stata premuta (ciò che il gesto cambia si vede) · {"top":134,"bottom":196,"barra":72,"vh":768}
+ok     con la finestra resta in vista anche la frase premuta, quando insieme ci stanno nello schermo (ci stanno) · {"bottone":[548,585],"finestra":[124,315],"distanza":461,"spazio":696}
+ok   «impronta» premuta: la finestra mostra la frase in allarme e torna «Scarica la voce»; una sola frase premuta · {"classi":"provata errore","testo":"Il file … scaricato non corrisponde all'","premuti":["impronta"]}
+ok     l'annuncio dice la riga della finestra («La riga della finestra dice: …») · La riga della finestra dice: Il file … scaricato non corrisponde all'impronta at
+ok     la riga della finestra sta nello schermo, sotto la barra, dopo che la frase è stata premuta (ciò che il gesto cambia si vede) · {"top":134,"bottom":196,"barra":72,"vh":768}
+ok     con la finestra resta in vista anche la frase premuta, quando insieme ci stanno nello schermo (ci stanno) · {"bottone":[645,701],"finestra":[124,315],"distanza":577,"spazio":696}
+ok   «microfono» premuta: la finestra mostra la frase in allarme ma resta «Pronta» (la causa è un'altra); una sola frase premuta · {"classi":"provata pronta","testo":"La voce è pronta, ma …: per ora nessuno ","premuti":["microfono"]}
+ok     l'annuncio dice la riga della finestra («La riga della finestra dice: …») · La riga della finestra dice: La voce è pronta, ma …: per ora nessuno ti sentirà 
+ok     la riga della finestra sta nello schermo, sotto la barra, dopo che la frase è stata premuta (ciò che il gesto cambia si vede) · {"top":96,"bottom":158,"barra":72,"vh":768}
+ok     con la finestra resta in vista anche la frase premuta, quando insieme ci stanno nello schermo (ci stanno) · {"bottone":[681,737],"finestra":[86,235],"distanza":651,"spazio":696}
+ok   premuta di nuovo, la stessa frase si toglie: «Pronta», nessuna frase premuta, l'annuncio dice «Pronta» · {"classi":"provata pronta","testo":"Pronta. In Zoom, Teams, Meet o","annuncio":"La riga della finestra dice: Pronta. In Zoom, Teams, Meet o "}
+ok     e la finestra sta nello schermo dopo averla tolta · {"top":96,"bottom":158}
+ok   Invio su una frase la preme, il fuoco resta sul pulsante · ["curl"]
+ok   Tab dalla prima frase va alla seconda (il rimedio non è una sosta, il collegamento «Che cosa fare» è dopo la quarta) · {"stato":"rete","tag":"BUTTON"}
+ok   Spazio sulla seconda la preme e toglie la prima: una frase sola · ["rete"]
+ok   passando a 390 px con una frase premuta la finestra mostra ancora quella frase e la frase resta premuta · {"premuti":["rete"],"testo":"Download non riuscito: …"}
+ok   e tornando alla misura di prima è come prima · {"premuti":["rete"]}
+ok   premendo una frase durante il racconto del primo avvio, il racconto si ferma e non riparte: resta la frase · {"classi":"finestra avvio entra entra-finestra visto provata errore","testo":"Per scaricare la voce serve il programma"}
+ok   console pulita
+
+== sistema · chromium 1024x768
+ok   all'arrivo: Debian e Ubuntu scelta, un solo pulsante, una sola riga, un comando in «Installa» · {"scelta":"deb","pulsanti":["Scarica il .deb 14,1 MB"],"dice":["Debian 13, Ubuntu 24.04 o successive: il pacchetto .deb"],"comandiInstalla":1,"comandiControllo":2,"cartellaFile":1,"terminale":["sudo apt install ./kalliope-0.1-rc.1-amd64.deb"],"togli":1}
+ok   quattro bottoni d'opzione dello stesso gruppo, ognuno con la sua etichetta, nel gruppo con la sua legenda · {"n":4,"legenda":true,"etichette":true}
+ok   clic su «Fedora»: scelta, un pulsante giusto, la sua riga, i suoi comandi (1 in «Installa», 2 nel controllo) · {"scelta":"rpm","pulsanti":["Scarica il .rpm 19,2 MB"],"dice":["Fedora attuale: il pacchetto .rpm"],"comandiInstalla":1,"comandiControllo":2,"cartellaFile":1,"terminale":["sudo dnf install ./kalliope-0.1-rc.1-x86_64.rpm"],"togli":1}
+ok     l'annuncio dice per quale distribuzione sono i comandi («Fedora») · I comandi della pagina sono quelli per Fedora.
+ok   clic su «Arch»: scelta, un pulsante giusto, la sua riga, i suoi comandi (3 in «Installa», 0 nel controllo) · {"scelta":"arch","pulsanti":["Vai ai comandi per Arch"],"dice":["Arch Linux: la ricetta PKGBUILD, che non compila nulla"],"comandiInstalla":3,"comandiControllo":0,"cartellaFile":1,"terminale":["makepkg -si"],"togli":1}
+ok     l'annuncio dice per quale distribuzione sono i comandi («Arch») · I comandi della pagina sono quelli per Arch.
+ok   clic su «Altre»: scelta, un pulsante giusto, la sua riga, i suoi comandi (3 in «Installa», 2 nel controllo) · {"scelta":"tar","pulsanti":["Scarica l'archivio 19,2 MB"],"dice":["Le altre distribuzioni: l'archivio, che si installa senza password"],"comandiInstalla":3,"comandiControllo":2,"cartellaFile":1,"terminale":["./install"],"togli":1}
+ok     l'annuncio dice per quale distribuzione sono i comandi («Altre») · I comandi della pagina sono quelli per Altre.
+ok   clic su «Debian e Ubuntu»: scelta, un pulsante giusto, la sua riga, i suoi comandi (1 in «Installa», 2 nel controllo) · {"scelta":"deb","pulsanti":["Scarica il .deb 14,1 MB"],"dice":["Debian 13, Ubuntu 24.04 o successive: il pacchetto .deb"],"comandiInstalla":1,"comandiControllo":2,"cartellaFile":1,"terminale":["sudo apt install ./kalliope-0.1-rc.1-amd64.deb"],"togli":1}
+ok     l'annuncio dice per quale distribuzione sono i comandi («Debian e Ubuntu») · I comandi della pagina sono quelli per Debian e Ubuntu.
+ok   il terminale del primo schermo scrive il comando di «Arch» intero · ["makepkg -si"]
+ok   il terminale del primo schermo scrive il comando di «Fedora» intero · ["sudo dnf install ./kalliope-0.1-rc.1-x86_64.rpm"]
+ok   console pulita
+ok   Tab arriva al gruppo delle quattro scelte, con una sola sosta (sulla scelta fatta), con il contorno del fuoco sull'etichetta · {"k":8,"nome":"Debian e Ubuntu","classe":"sistema-voce","tag":"input","top":402,"left":48,"bottom":442,"right":49,"opacita":1,"visibilita":"visible","anello":true,"anelloRapporto":13.2,"sotto":false,"inSchermo":true,"yDoc":402,"y":0}
+ok   freccia: la scelta passa alla seguente e il fuoco la segue, l'annuncio dice la nuova · {"prima":"deb","scelta":"rpm","fuoco":"rpm","ann":"I comandi della pagina sono quelli per Fedora."}
+ok   quattro frecce giù fanno il giro e tornano alla stessa scelta · rpm
+ok   Tab dal gruppo va a «Non uso Linux» (non alle altre tre scelte) · Non uso Linux
+ok   «Vai ai comandi per Arch» porta al passo «Installa»: titolo sotto la barra, opaco · {"titolo":200,"barra":72,"vh":768,"hash":"#installa","op":1}
+ok   console pulita
+
+== copia · chromium 1024x768
+ok   «Debian e Ubuntu»: ognuno dei 4 pulsanti «Copia» copia il suo comando com'è (senza spazi in più, senza invii) · {"n":4,"copiati":["sha256sum kalliope-0.1-rc.1-am","737a98ea05b5085e54b2cae1569709","sudo apt install ./kalliope-0.","pactl list short sources"]}
+ok   «Arch»: ognuno dei 4 pulsanti «Copia» copia il suo comando com'è (senza spazi in più, senza invii) · {"n":4,"copiati":["mkdir kalliope && cd kalliope","curl -L -o PKGBUILD https://gi","makepkg -si","pactl list short sources"]}
+ok   «Altre»: ognuno dei 6 pulsanti «Copia» copia il suo comando com'è (senza spazi in più, senza invii) · {"n":6,"copiati":["sha256sum kalliope-0.1-rc.1-li","21718a3815296547fccac02bc6be5d","tar -xzf kalliope-0.1-rc.1-lin","cd kalliope-0.1-rc.1-linux-x86","./install","pactl list short sources"]}
+ok   la copia riesce: «Copiato» nella stessa cella (il pulsante non cambia larghezza), nessun errore, l'annuncio dice «Copiato negli appunti.» · {"copiato":true,"fatto":"visible","fermo":"hidden","larghezza":86,"annuncio":"Copiato negli appunti.","errore":false,"top":271,"bottom":319,"barra":72,"vh":768}
+ok   dopo 1,6 s torna «Copia», la stessa larghezza · {"l0":86,"copiato":false,"larghezza":86}
+ok   il comando copiato sta nello schermo, sotto la barra · {"copiato":true,"fatto":"visible","fermo":"hidden","larghezza":86,"annuncio":"Copiato negli appunti.","errore":false,"top":271,"bottom":319,"barra":72,"vh":768}
+ok   premendo ancora l'annuncio si ripete (sparisce e ricompare) · ["annuncio:","annuncio:Copiato negli appunti."]
+ok   console pulita
+ok   la copia non riesce: sotto il comando compare la frase per copiarlo a mano, nessun «Copiato» · {"testo":"Non riesco a copiarlo da solo: seleziona il testo e copialo.","copiato":false}
+ok     il comando resta selezionato (si copia con la tastiera) · {"selezione":"sha256sum kalliope-0.1-rc.1-amd64.deb","comando":"sha256sum kalliope-0.1-rc.1-amd64.deb"}
+ok     la frase sta nello schermo per intero, sotto la barra, attaccata al comando (a meno di 24 px) · {"top":337,"bottom":389,"cBottom":319,"vh":768}
+ok     la frase è uno stato annunciato (role=status) e l'annuncio la dice · {"ruolo":"status","annuncio":"Non riesco a copiarlo da solo: seleziona il testo e copialo."}
+ok     la frase resta finché non si ripreme
+ok     premuto di nuovo (e fallito di nuovo) c'è una frase sola, non due
+ok     poi riesce: la frase d'errore sparisce e c'è «Copiato»
+ok   console pulita
+ok   senza appunti non c'è nessun «Copia» · 0
+ok   un clic sul comando lo seleziona intero (si copia con la tastiera) · {"s":"sha256sum kalliope-0.1-rc.1-amd64.deb","c":"sha256sum kalliope-0.1-rc.1-amd64.deb"}
+ok   console pulita
+ok   con gli appunti veri il testo copiato è il comando · "sha256sum kalliope-0.1-rc.1-amd64.deb"
+ok   console pulita
+ok   senza il permesso del browser (chromium) la risposta è una sola: «Copiato» (false) oppure la frase per copiarlo a mano (true) · {"copiato":false,"errore":true}
+ok   console pulita
+ok   «Copia l'indirizzo» riesce: il testo copiato è l'indirizzo mostrato, uguale al canonical; la risposta compare, l'anello è sulla bolla · {"copiato":["https://sansevieria-ou.github.io/kalliope/it/installa/"],"indirizzo":"https://sansevieria-ou.github.io/kalliope/it/installa/","canonical":"https://sansevieria-ou.github.io/kalliope/it/installa/"}
+ok     la risposta sta nello schermo per intero, sotto la barra · [true,561,579]
+ok     console pulita
+ok   «Copia l'indirizzo» non riesce: la frase per copiarlo a mano, nessun anello, l'indirizzo selezionato · {"sel":"https://sansevieria-ou.github.io/kalliope/it/installa/","indirizzo":"https://sansevieria-ou.github.io/kalliope/it/installa/"}
+ok     la risposta sta nello schermo per intero, sotto la barra · [true,561,579]
+ok     console pulita
+
+77/77 ok
+# uscita: 0

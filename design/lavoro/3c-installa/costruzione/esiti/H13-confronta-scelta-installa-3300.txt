@@ -1,0 +1,86 @@
+# confronta-scelta · installa a 3300 px · 20/11/2026 16:23
+CONFRONTO 1440×900 a 3300 px: 25 differenze su 38 cose nello schermo · pixel diversi 7,01%
+  SPOSTATE 19 cose della stessa quantità, y -22 px: span.luce-tratto · p «Dal menu delle applicazioni. La prima volta la f» · p «A ogni avvio dice «Preparo la voce…» per un po':» …
+  MISURA section#installa: 1440×1210 → 1440×1188
+  SPOSTATO section#apri: y -113→-135 (-22)
+  SPOSTATO h2 «Apri Kalliope, e aspetta «Pronta».»: y -1→-23 (-22)
+  IN PIÙ p «Come lo sappiamo: i pacchetti hanno soltanto fil»: a 660,-101, 460×108
+  IN PIÙ p «Se dice un'altra cosa, cerca la frase nella : og»: a 80,894, 460×42
+  IN PIÙ a «pagina Aiuto»: a 364,895, 91×18
+CONFRONTO 390×844 a 3300 px: 38 differenze su 37 cose nello schermo · pixel diversi 22,89%
+  SPOSTATE 16 cose della stessa quantità, y -44 px: p «: se mancano dipendenze, o un messaggio parla di» · strong «Se no» · code «ldd --version | head -n 1» …
+  MISURA section#installa: 390×1592.5 → 390×1548.5
+  MANCA p «se, scrivendo , il terminale risponde con una ri»: era a 20,201, 350×88
+  MANCA p «Le preferenze e la voce scaricata restano nella »: era a 20,596, 350×132
+  SPOSTATO code «./install --remove»: x 106→20 (-86), y 641→619 (-22)
+  MISURA code «./install --remove»: 156.5×20 → 318.5×42
+  SPOSTATO code «~/.config/kalliope»: x 20→107 (+87), y 663→575 (-88)
+  SPOSTATO code «~/.local/share/kalliope»: x 20→97 (+77), y 685→597 (-88)
+  MANCA span «kalliope»: era a 33,726, 58×14
+  IN PIÙ p «se, scrivendo , il terminale risponde .»: a 20,201, 350×44
+  IN PIÙ code «kalliope 0.1»: a 190,224, 107.5×20
+  IN PIÙ p «Nella tua cartella personale restano le preferen»: a 20,552, 350×132
+  IN PIÙ p «Come lo sappiamo: i pacchetti hanno soltanto fil»: a 20,694, 350×129
+  IN PIÙ code «./install --remove» #2: a 198,716, 146.5×19
+  IN PIÙ code «./install»: a 238,738, 78.5×19
+  IN PIÙ code «apt»: a 119,781, 33×19
+  IN PIÙ code «dnf»: a 160,781, 33×19
+  IN PIÙ code «pacman»: a 209.5,781, 55.5×19
+  IN PIÙ span «kalliope 0.1»: a 33,682, 86.5×14
+  IN PIÙ li «bin/kalliope»: a 41,774, 112.5×24
+  IN PIÙ li «bin/kalliope-cli»: a 159.5,774, 141.5×24
+  IN PIÙ li «lib/kalliope · ONNX Runtime»: a 41,804, 221×24
+  IN PIÙ li «share/applications · nel menu»: a 41,834, 235.5×24
+CONFRONTO 1366×640 a 3300 px: 19 differenze su 33 cose nello schermo · pixel diversi 6,54%
+  SPOSTATE 13 cose della stessa quantità, y -22 px: p «A ogni avvio dice «Preparo la voce…» per un po':» · p «se la riga in alto dice «Pronta. In Zoom, Teams,» · strong «Riuscito» …
+  MANCA section#installa: era a 0,-1086, 1366×1106
+  SPOSTATO section#apri: y -236→-258 (-22)
+  SPOSTATO span.luce-tratto: y -129→-151 (-22)
+  SPOSTATO p «Dal menu delle applicazioni. La prima volta la f»: y 6→-16 (-22)
+  IN PIÙ button.frase-bottone #4: a 80,628, 460×56
+  IN PIÙ span ««La voce è pronta, ma …: per ora nessuno ti sent»: a 93,639, 372×34
+CONFRONTO 1024×768 a 3300 px: 35 differenze su 30 cose nello schermo · pixel diversi 8,35%
+  SPOSTATE 14 cose della stessa quantità, y -22 px: p «Ogni pacchetto è provato da uno script prima di » · a «Fin dove è provato» · summary «Per togliere Kalliope» …
+  MISURA section#installa: 1024×1599 → 1024×1577
+  SPOSTATO p «: se mancano dipendenze, o un messaggio parla di»: y -74→-96 (-22)
+  MANCA a «segnalalo»: era a 302,-7, 73×19
+  MANCA p «Le preferenze e la voce scaricata restano nella »: era a 48,201, 460×110
+  SPOSTATO code «./install --remove»: x 343→70 (-273), y 224→246 (+22)
+  SPOSTATO code «~/.config/kalliope»: x 145→48 (-97), y 246→202 (-44)
+  SPOSTATO code «~/.local/share/kalliope»: y 268→224 (-44)
+  MANCA span «kalliope»: era a 69,343, 67.5×16
+  MISURA section#apri: 1024×1713 → 1024×1687
+  IN PIÙ p «Nella tua cartella personale restano le preferen»: a 48,179, 460×110
+  IN PIÙ p «Come lo sappiamo: i pacchetti hanno soltanto fil»: a 48,299, 460×108
+  IN PIÙ code «./install --remove» #2: a 106,321, 146.5×19
+  IN PIÙ code «./install»: a 48,343, 78.5×19
+  IN PIÙ code «apt»: a 76,365, 33×19
+  IN PIÙ code «dnf»: a 117,365, 33×19
+  IN PIÙ code «pacman»: a 166.5,365, 55.5×19
+  IN PIÙ span «kalliope 0.1»: a 69,321, 101×16
+  IN PIÙ li «bin/kalliope»: a 69,419, 112.5×24
+  IN PIÙ li «bin/kalliope-cli»: a 187.5,419, 141.5×24
+  IN PIÙ li «lib/kalliope · ONNX Runtime»: a 335.5,419, 221×24
+  IN PIÙ li «share/applications · nel menu»: a 69,449, 235.5×24
+CONFRONTO 844×390 a 3300 px: 25 differenze su 21 cose nello schermo · pixel diversi 12,25%
+  SPOSTATE 7 cose della stessa quantità, y -66 px: p «: se mancano dipendenze, o un messaggio parla di» · strong «Se no» · code «ldd --version | head -n 1» …
+  SPOSTATO section#installa: y -391→-435 (-44)
+  MISURA section#installa: 844×1448 → 844×1426
+  SPOSTATO span.luce-tratto: y -754→-798 (-44)
+  MANCA div.comando: era a 48,-7, 600×48
+  MANCA code «sudo apt install ./kalliope-0.1-rc.1-amd64.deb»: era a 65,6, 482×22
+  MANCA button.copia: era a 555,0, 86×32
+  MANCA span «Copia»: era a 579.5,8, 37×16
+  SPOSTATO p «Il pacchetto non è firmato.»: y 41→-3 (-44)
+  MANCA p «se, scrivendo , il terminale risponde con una ri»: era a 48,78, 460×66
+  SPOSTATO strong «Riuscito»: y 79→35 (-44)
+  SPOSTATO code «kalliope --version»: y 79→35 (-44)
+  IN PIÙ p «se, scrivendo , il terminale risponde .»: a 48,34, 460×44
+  IN PIÙ code «kalliope 0.1»: a 131,57, 107.5×20
+  IN PIÙ code «sudo apt remove kalliope»: a 68,332, 205×20
+  IN PIÙ p «Nella tua cartella personale restano le preferen»: a 48,363, 460×110
+  IN PIÙ code «~/.config/kalliope»: a 48,386, 156.5×20
+  IN PIÙ div.terminale.terminale-installa: a 48,369, 620×172
+  IN PIÙ span «Terminale»: a 329,377, 58×15
+Il confronto con la scelta non regge a 5 misure (foto e differenze in /tmp/lavoro-3cb-conf/H13/installa-3300)
+# uscita: 1

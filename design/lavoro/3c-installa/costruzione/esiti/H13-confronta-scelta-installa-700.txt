@@ -1,0 +1,12 @@
+# confronta-scelta · installa a 700 px · 20/11/2026 16:22
+CONFRONTO 1440×900 a 700 px: uguale su 52 cose nello schermo · pixel diversi 0%
+CONFRONTO 390×844 a 700 px: uguale su 22 cose nello schermo · pixel diversi 0%
+CONFRONTO 1366×640 a 700 px: uguale su 44 cose nello schermo · pixel diversi 0%
+CONFRONTO 1024×768 a 700 px: uguale su 21 cose nello schermo · pixel diversi 0%
+CONFRONTO 844×390 a 700 px: 21 differenze su 25 cose nello schermo · pixel diversi 25,58%
+  SPOSTATE 18 cose della stessa quantità, y -44 px: div.chiamata.chiamata-ferma · div.riquadro.tu · span «Tu» …
+  MANCA div.terminale.terminale-palco: era a 48,-108, 748×150
+  MANCA span «$»: era a 69,6, 8.5×16
+  IN PIÙ section#scarica: a 0,388, 844×1933
+Il confronto con la scelta non regge a 1 misure (foto e differenze in /tmp/lavoro-3cb-conf/H13/installa-700)
+# uscita: 1

@@ -151,3 +151,11 @@ nello schermo, a 1366×640 no); nulla esce dai bordi nelle foto fatte.
 - Che i gestori dei pacchetti non tocchino le preferenze e la voce scaricata: lo dice lo script dell'archivio; per i pacchetti è il modo in cui
   lavorano, non una prova (`CONTENUTI.md`, voce 46: in contrasto con «stato»).
 - I tempi delle sequenze sono di una macchina condivisa; il ritmo va guardato nei video.
+
+## Completato dalla costruzione (3c-b, 20/11/2026)
+
+Catalogo (`catalogo-installa.js`), indirizzi vecchi, stati ed errori (scelta, copia, frasi, tastiera, senza JavaScript, «riduci movimento», scorrimento, secondo
+piano, ritorno, ricarica), larghezze, lingue e motori: `costruzione/progresso.md`, con gli esiti in `costruzione/esiti/`. Le decisioni prese guardando, dichiarate:
+la finestra torna in vista dopo una frase premuta (`mostraFinestra`); a tablet la finestra di «Apri» sta dopo «Riuscito se…», come al telefono (stava sopra il titolo);
+il titolo scende di un gradino se il pulsante del file non sta nello schermo (`adattaPrimo`); sotto i 501 px d'altezza vale la regola della cornice per il titolo;
+la scelta della distribuzione resta con la cronologia della scheda (`history.state`); le voci non scelte del pulsante del file restano invisibili invece di sparire.

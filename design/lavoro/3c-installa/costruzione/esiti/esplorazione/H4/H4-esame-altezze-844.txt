@@ -1,0 +1,132 @@
+# H4-esame-altezze-844 · 20/11/2026 05:40 · sito: /tmp/lavoro-3cb-sito-H4 · albero: /tmp/lavoro-3cb-radice-H4 · esame-impaginazione.mjs chromium normale installa 844x500,844x501,844x699,844x700,844x759,844x760,844x799,844x800,844x802,844x803,844x819,844x820
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+installa · 844×500 · testo 100%: pulito
+installa-menu · 844×500 · testo 100%: pulito
+installa-archivio · 844×500 · testo 100%: pulito
+installa-frase · 844×500 · testo 100%: pulito
+installa-frase-microfono · 844×500 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 844×500) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+installa-frase-tolta · 844×500 · testo 100%: pulito
+installa-copia-fatta · 844×500 · testo 100%: pulito
+installa-copia-non-riuscita · 844×500 · testo 100%: pulito
+installa-indirizzo-copiato · 844×500 · testo 100%: pulito
+installa-indirizzo-non-copiato · 844×500 · testo 100%: pulito
+installa · 844×501 · testo 100%: pulito
+installa-menu · 844×501 · testo 100%: pulito
+installa-archivio · 844×501 · testo 100%: pulito
+installa-frase · 844×501 · testo 100%: pulito
+installa-frase-microfono · 844×501 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 844×501) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+installa-frase-tolta · 844×501 · testo 100%: pulito
+installa-copia-fatta · 844×501 · testo 100%: pulito
+installa-copia-non-riuscita · 844×501 · testo 100%: pulito
+installa-indirizzo-copiato · 844×501 · testo 100%: pulito
+installa-indirizzo-non-copiato · 844×501 · testo 100%: pulito
+installa · 844×699 · testo 100%: pulito
+installa-menu · 844×699 · testo 100%: pulito
+installa-archivio · 844×699 · testo 100%: pulito
+installa-frase · 844×699 · testo 100%: pulito
+installa-frase-microfono · 844×699 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: 38 px sotto (schermo 844×699) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+installa-frase-tolta · 844×699 · testo 100%: pulito
+installa-copia-fatta · 844×699 · testo 100%: pulito
+installa-copia-non-riuscita · 844×699 · testo 100%: pulito
+installa-indirizzo-copiato · 844×699 · testo 100%: pulito
+installa-indirizzo-non-copiato · 844×699 · testo 100%: pulito
+installa · 844×700 · testo 100%: pulito
+installa-menu · 844×700 · testo 100%: pulito
+installa-archivio · 844×700 · testo 100%: pulito
+installa-frase · 844×700 · testo 100%: pulito
+installa-frase-microfono · 844×700 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: 37 px sotto (schermo 844×700) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+installa-frase-tolta · 844×700 · testo 100%: pulito
+installa-copia-fatta · 844×700 · testo 100%: pulito
+installa-copia-non-riuscita · 844×700 · testo 100%: pulito
+installa-indirizzo-copiato · 844×700 · testo 100%: pulito
+installa-indirizzo-non-copiato · 844×700 · testo 100%: pulito
+installa · 844×759 · testo 100%: pulito
+installa-menu · 844×759 · testo 100%: pulito
+installa-archivio · 844×759 · testo 100%: pulito
+installa-frase · 844×759 · testo 100%: pulito
+installa-frase-microfono · 844×759 · testo 100%: pulito
+installa-frase-tolta · 844×759 · testo 100%: pulito
+installa-copia-fatta · 844×759 · testo 100%: pulito
+installa-copia-non-riuscita · 844×759 · testo 100%: pulito
+installa-indirizzo-copiato · 844×759 · testo 100%: pulito
+installa-indirizzo-non-copiato · 844×759 · testo 100%: pulito
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+installa · 844×760 · testo 100%: pulito
+installa-menu · 844×760 · testo 100%: pulito
+installa-archivio · 844×760 · testo 100%: pulito
+installa-frase · 844×760 · testo 100%: pulito
+installa-frase-microfono · 844×760 · testo 100%: pulito
+installa-frase-tolta · 844×760 · testo 100%: pulito
+installa-copia-fatta · 844×760 · testo 100%: pulito
+installa-copia-non-riuscita · 844×760 · testo 100%: pulito
+installa-indirizzo-copiato · 844×760 · testo 100%: pulito
+installa-indirizzo-non-copiato · 844×760 · testo 100%: pulito
+installa · 844×799 · testo 100%: pulito
+installa-menu · 844×799 · testo 100%: pulito
+installa-archivio · 844×799 · testo 100%: pulito
+installa-frase · 844×799 · testo 100%: pulito
+installa-frase-microfono · 844×799 · testo 100%: pulito
+installa-frase-tolta · 844×799 · testo 100%: pulito
+installa-copia-fatta · 844×799 · testo 100%: pulito
+installa-copia-non-riuscita · 844×799 · testo 100%: pulito
+installa-indirizzo-copiato · 844×799 · testo 100%: pulito
+installa-indirizzo-non-copiato · 844×799 · testo 100%: pulito
+installa · 844×800 · testo 100%: pulito
+installa-menu · 844×800 · testo 100%: pulito
+installa-archivio · 844×800 · testo 100%: pulito
+installa-frase · 844×800 · testo 100%: pulito
+installa-frase-microfono · 844×800 · testo 100%: pulito
+installa-frase-tolta · 844×800 · testo 100%: pulito
+installa-copia-fatta · 844×800 · testo 100%: pulito
+installa-copia-non-riuscita · 844×800 · testo 100%: pulito
+installa-indirizzo-copiato · 844×800 · testo 100%: pulito
+installa-indirizzo-non-copiato · 844×800 · testo 100%: pulito
+installa · 844×802 · testo 100%: pulito
+installa-menu · 844×802 · testo 100%: pulito
+installa-archivio · 844×802 · testo 100%: pulito
+installa-frase · 844×802 · testo 100%: pulito
+installa-frase-microfono · 844×802 · testo 100%: pulito
+installa-frase-tolta · 844×802 · testo 100%: pulito
+installa-copia-fatta · 844×802 · testo 100%: pulito
+installa-copia-non-riuscita · 844×802 · testo 100%: pulito
+installa-indirizzo-copiato · 844×802 · testo 100%: pulito
+installa-indirizzo-non-copiato · 844×802 · testo 100%: pulito
+installa · 844×803 · testo 100%: pulito
+installa-menu · 844×803 · testo 100%: pulito
+installa-archivio · 844×803 · testo 100%: pulito
+installa-frase · 844×803 · testo 100%: pulito
+installa-frase-microfono · 844×803 · testo 100%: pulito
+installa-frase-tolta · 844×803 · testo 100%: pulito
+installa-copia-fatta · 844×803 · testo 100%: pulito
+installa-copia-non-riuscita · 844×803 · testo 100%: pulito
+installa-indirizzo-copiato · 844×803 · testo 100%: pulito
+installa-indirizzo-non-copiato · 844×803 · testo 100%: pulito
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+installa · 844×819 · testo 100%: pulito
+installa-menu · 844×819 · testo 100%: pulito
+installa-archivio · 844×819 · testo 100%: pulito
+installa-frase · 844×819 · testo 100%: pulito
+installa-frase-microfono · 844×819 · testo 100%: pulito
+installa-frase-tolta · 844×819 · testo 100%: pulito
+installa-copia-fatta · 844×819 · testo 100%: pulito
+installa-copia-non-riuscita · 844×819 · testo 100%: pulito
+installa-indirizzo-copiato · 844×819 · testo 100%: pulito
+installa-indirizzo-non-copiato · 844×819 · testo 100%: pulito
+installa · 844×820 · testo 100%: pulito
+installa-menu · 844×820 · testo 100%: pulito
+installa-archivio · 844×820 · testo 100%: pulito
+installa-frase · 844×820 · testo 100%: pulito
+installa-frase-microfono · 844×820 · testo 100%: pulito
+installa-frase-tolta · 844×820 · testo 100%: pulito
+installa-copia-fatta · 844×820 · testo 100%: pulito
+installa-copia-non-riuscita · 844×820 · testo 100%: pulito
+installa-indirizzo-copiato · 844×820 · testo 100%: pulito
+installa-indirizzo-non-copiato · 844×820 · testo 100%: pulito
+
+
+Tutto pulito; 4 limiti dichiarati, elencati a parte e non contati (foto in /tmp/lavoro-3cb-qa-H4-esame-altezze-844/esame/chromium)
+# uscita: 0

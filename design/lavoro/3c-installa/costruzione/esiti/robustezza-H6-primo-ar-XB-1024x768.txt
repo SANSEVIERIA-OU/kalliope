@@ -1,0 +1,15 @@
+# robustezza · H6 · primo e stabile in ar-XB · chromium 1024x768 · 20/11/2026 14:33 · carico: PSI CPU some avg10=1.13 avg60=6.27 · load 7.07 8.68 10.24 su 12 CPU · memoria disponibile 6270 MB
+
+== primo · chromium 1024x768
+ok   primo schermo ar-XB: il pulsante del file sta nello schermo (545–601 su 768; gradino: titolo-ridotto titolo-minimo; lo stato «Oggi:» 687–763) · {"top":545,"bottom":601,"vh":768,"statoTop":687,"statoBottom":763,"classi":"titolo-ridotto titolo-minimo","largo":1024}
+ok     nessuno scorrimento di lato · 1024 contro 1024
+ok     console pulita
+
+== stabile · chromium 1024x768
+ok   il primo schermo ar-XB con «riduci movimento»: le classi dell'adattamento non cambiano più (10 cambi all'arrivo, 10 dopo la scelta) e «Altre» si preme (ok) · {"n1":10,"fermo":true,"a1":20,"a2":20,"preme":"ok"}
+ok     console pulita
+ok   il primo schermo ar-XB con il movimento: le classi dell'adattamento non cambiano più (10 cambi all'arrivo, 10 dopo la scelta) e «Altre» si preme (ok) · {"n1":10,"fermo":true,"a1":20,"a2":20,"preme":"ok"}
+ok     console pulita
+
+7/7 ok
+# uscita: 0

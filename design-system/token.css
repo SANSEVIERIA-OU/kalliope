@@ -1445,7 +1445,7 @@
   --terminale-riga-tua-altezza: 7px;
   --terminale-riga-tua-lunga: 72%;
   --terminale-riga-tua-corta: 44%;
-  --terminale-numero-larghezza: 3.4em;   /* il numero della versione che risponde il programma */
+  --terminale-numero-larghezza: 3.4em;   /* un pezzo che dipende dal computer di chi installa e la pagina non conosce: la sua cartella di casa */
   --terminale-trovato-prima: 2.4em;   /* la riga con «kalliope»: il numero della sorgente prima del nome… */
   --terminale-trovato-dopo: 11em;   /* …e il resto della riga dopo */
   --terminale-cursore-larghezza: 0.6em;
@@ -1496,4 +1496,14 @@
   --riprendi-larghezza: 1040px;
   --ripresa-linea-inizio: 11px;   /* la linea che unisce i segni dei passi: al centro del segno (24 px) */
   --ripresa-segno-scala: 1.15;
+}
+
+/* ---------- Costruzione di «installa» (incarico 3c-b, 20/11/2026) ----------
+   Il comando principale resta nel primo schermo in ogni lingua (installa.js, `adattaPrimo`): se il pulsante non ci sta, il titolo scende di un
+   gradino per volta. Qui l'aria che il pulsante tiene sotto di sé. */
+:root {
+  --primo-comando-aria-sotto: 12px;
+  --righe-prima-dei-file: 3;   /* le righe del terminale che si vedono (il comando e le due del computer) prima che i file comincino a scendere nella cartella */
+  --impronta-cifre-gruppo: 8;   /* le cifre di un gruppo dell'impronta che si confronta */
+  --annuncio-attesa: 60ms;   /* l'annuncio si svuota e poi si riscrive: un lettore di schermo lo legge anche se il testo è uguale al precedente */
 }

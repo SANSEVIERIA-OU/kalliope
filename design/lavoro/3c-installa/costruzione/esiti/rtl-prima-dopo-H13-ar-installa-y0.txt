@@ -1,0 +1,15 @@
+# rtl prima/dopo · ar/installa/index.html · y 0 · scelta H6 · adesso H13 · 20/11/2026 16:01 · carico: PSI CPU some avg10=0.68 avg60=3.64 · load 4.76 4.54 4.83 su 12 CPU · memoria disponibile 6447 MB
+CONFRONTO 1440×900: 6 differenze su 60 cose nello schermo · pixel diversi 0,01%
+  MANCA label «⁦Fedora⁩»: era a 1099,545, 88×40
+  MANCA label «⁦Arch⁩»: era a 1022,545, 69×40
+  MANCA span «⁦sudo apt install⁩ ./⁦kalliope-0.1-rc.1-amd64.de»: era a 118,150, 387.5×16
+  IN PIÙ label «Fedora»: a 1099,545, 88×40
+  IN PIÙ label «Arch»: a 1022,545, 69×40
+  IN PIÙ span «sudo apt install ./kalliope-0.1-rc.1-amd64.deb»: a 118,150, 387.5×16
+CONFRONTO 390×844: 4 differenze su 34 cose nello schermo · pixel diversi 0,03%
+  MANCA label «⁦Fedora⁩»: era a 20,796.5, 172×48
+  MANCA span «⁦sudo apt install⁩ ./⁦kalliope-0.1-rc.1-amd64.de»: era a 33,327.5, 282×33
+  IN PIÙ label «Fedora»: a 20,796.5, 172×48
+  IN PIÙ span «sudo apt install ./kalliope-0.1-rc.1-amd64.deb»: a 33,327.5, 282×33
+Il confronto con la scelta non regge a 2 misure (foto e differenze in /tmp/lavoro-3cb-rtl-pd-H13/ar-installa-y0)
+# uscita: 1

@@ -1,0 +1,26 @@
+# H-esame-soglie · 20/11/2026 04:25 · sito: /tmp/lavoro-3cb-sito-H · albero: /tmp/lavoro-3cb-radice-H · esame-impaginazione.mjs chromium normale installa 320x900
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+installa · 320×900 · testo 100%: 
+  SPEZZATA «installa» in span
+installa-menu · 320×900 · testo 100%: 
+  SPEZZATA «installa» in span
+installa-archivio · 320×900 · testo 100%: 
+  SPEZZATA «installa» in span
+installa-frase · 320×900 · testo 100%: 
+  SPEZZATA «installa» in span
+installa-frase-microfono · 320×900 · testo 100%: 
+  SPEZZATA «installa» in span
+installa-frase-tolta · 320×900 · testo 100%: 
+  SPEZZATA «installa» in span
+installa-copia-fatta · 320×900 · testo 100%: 
+  SPEZZATA «installa» in span
+installa-copia-non-riuscita · 320×900 · testo 100%: 
+  SPEZZATA «installa» in span
+installa-indirizzo-copiato · 320×900 · testo 100%: 
+  SPEZZATA «installa» in span
+installa-indirizzo-non-copiato · 320×900 · testo 100%: 
+  SPEZZATA «installa» in span
+
+SPEZZATA: 10
+10 cose da guardare (foto in /tmp/lavoro-3cb-qa-H-esame-soglie/esame/chromium)
+# uscita: 1

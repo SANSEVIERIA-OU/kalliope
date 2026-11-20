@@ -1,0 +1,83 @@
+# confronta-scelta · installa a 2400 px, con ammesse.json · scelta P (548a6f2) · adesso H13i · 20/11/2026 16:26 · carico: PSI CPU some avg10=0.34 avg60=0.13 · load 1.46 2.43 3.22 su 12 CPU · memoria disponibile 7242 MB
+CONFRONTO 1440×900 a 2400 px: solo differenze ammesse su 44 cose nello schermo · pixel diversi 6,25%
+  ammessa MISURA section#installa: 1440×1210 → 1440×1188, con 7 differenze di ciò che ha dentro · perché: il passo «Installa» ha ora «Per togliere Kalliope» riscritta (che cosa resta, come lo sappiamo, che cosa non è provato: risposta 2 della direzione, fonti in progresso.md) e il comando «kalliope --version» con la versione dai dati: l'altezza cambia
+  ammessa MANCA p «se, scrivendo , il terminale risponde con una ri»: era a 660,350, 460×66 · perché: «Per togliere Kalliope»: la frase sul terminale che risponde è stata riscritta (domanda 2)
+  ammessa SPOSTATO code «sudo apt remove kalliope»: y 670→648 (-22) · perché: i comandi di rimozione con apt, dnf e pacman: domanda 2
+  ammessa MANCA p «Le preferenze e la voce scaricata restano nella »: era a 660,701, 460×110 · perché: «Per togliere Kalliope» riscritta (domanda 2)
+  ammessa SPOSTATO code «./install --remove»: x 955→682 (-273), y 724→746 (+22) · perché: i comandi di rimozione e di installazione dell'archivio, con le cartelle vere (domanda 2)
+  ammessa SPOSTATO code «~/.config/kalliope»: x 757→660 (-97), y 746→702 (-44) · perché: le due cartelle che restano (`~/.config/kalliope`, `~/.local/share/kalliope`): domanda 2
+  ammessa SPOSTATO code «~/.local/share/kalliope»: y 768→724 (-44) · perché: le due cartelle che restano (`~/.config/kalliope`, `~/.local/share/kalliope`): domanda 2
+  ammessa MANCA span «kalliope»: era a 101,281, 67.5×16 · perché: il nome del microfono nel terminale, con la versione dai dati
+  ammessa SPOSTATO section#apri: y 787→765 (-22) · perché: a tablet e telefono la finestra sta dopo «Riuscito se…» (difetto 3 della tabella di progresso.md) e il passo segue l'altezza di quello sopra
+  ammessa IN PIÙ p «se, scrivendo , il terminale risponde .»: a 660,350, 460×44 · perché: «Per togliere Kalliope»: la frase sul terminale che risponde è stata riscritta (domanda 2)
+  ammessa IN PIÙ code «kalliope 0.1»: a 743,373, 107.5×20 · perché: il programma risponde «kalliope 0.1»: la versione viene dai dati ({{kalliope.program.version}}), domanda 1
+  ammessa IN PIÙ p «Nella tua cartella personale restano le preferen»: a 660,679, 460×110 · perché: «Per togliere Kalliope» riscritta: che cosa resta nella cartella personale (domanda 2, CONTENUTI.md voce 46)
+  ammessa IN PIÙ p «Come lo sappiamo: i pacchetti hanno soltanto fil»: a 660,799, 460×108 · perché: «Per togliere Kalliope» riscritta: come lo sappiamo e che cosa non è provato (domanda 2)
+  ammessa IN PIÙ code «./install --remove» #2: a 718,821, 146.5×19 · perché: i comandi di rimozione e di installazione dell'archivio, con le cartelle vere (domanda 2)
+  ammessa IN PIÙ code «./install»: a 660,843, 78.5×19 · perché: i comandi di rimozione e di installazione dell'archivio, con le cartelle vere (domanda 2)
+  ammessa IN PIÙ code «apt»: a 688,865, 33×19 · perché: i nomi dei gestori di pacchetti nel testo della rimozione: domanda 2
+  ammessa IN PIÙ code «dnf»: a 729,865, 33×19 · perché: idem
+  ammessa IN PIÙ code «pacman»: a 778.5,865, 55.5×19 · perché: idem
+  ammessa IN PIÙ span «kalliope 0.1»: a 101,281, 101×16 · perché: il programma risponde «kalliope 0.1»: la versione viene dai dati ({{kalliope.program.version}}), domanda 1
+  ammessa IN PIÙ li «bin/kalliope»: a 101,379, 112.5×24 · perché: l'elenco dei file messi dal pacchetto (con la cartella di casa sbiadita nel terminale: il programma scrive il percorso vero)
+  ammessa IN PIÙ li «bin/kalliope-cli»: a 219.5,379, 141.5×24 · perché: l'elenco dei file messi dal pacchetto (con la cartella di casa sbiadita nel terminale: il programma scrive il percorso vero)
+  ammessa IN PIÙ li «lib/kalliope · ONNX Runtime»: a 101,409, 221×24 · perché: idem
+  ammessa IN PIÙ li «share/applications · nel menu»: a 101,439, 235.5×24 · perché: idem
+CONFRONTO 390×844 a 2400 px: solo differenze ammesse su 29 cose nello schermo · pixel diversi 0%
+  ammessa MISURA section#installa: 390×1592.5 → 390×1548.5 · perché: il passo «Installa» ha ora «Per togliere Kalliope» riscritta (che cosa resta, come lo sappiamo, che cosa non è provato: risposta 2 della direzione, fonti in progresso.md) e il comando «kalliope --version» con la versione dai dati: l'altezza cambia
+CONFRONTO 1366×640 a 2400 px: solo differenze ammesse su 41 cose nello schermo · pixel diversi 5,63%
+  ammessa MISURA section#installa: 1366×1106 → 1366×1084, con 7 differenze di ciò che ha dentro · perché: il passo «Installa» ha ora «Per togliere Kalliope» riscritta (che cosa resta, come lo sappiamo, che cosa non è provato: risposta 2 della direzione, fonti in progresso.md) e il comando «kalliope --version» con la versione dai dati: l'altezza cambia
+  ammessa MANCA p «se, scrivendo , il terminale risponde con una ri»: era a 660,227, 460×66 · perché: «Per togliere Kalliope»: la frase sul terminale che risponde è stata riscritta (domanda 2)
+  ammessa SPOSTATO code «sudo apt remove kalliope»: y 547→525 (-22) · perché: i comandi di rimozione con apt, dnf e pacman: domanda 2
+  ammessa MANCA p «Le preferenze e la voce scaricata restano nella »: era a 660,578, 460×110 · perché: «Per togliere Kalliope» riscritta (domanda 2)
+  ammessa SPOSTATO code «./install --remove»: x 955→682 (-273), y 601→623 (+22) · perché: i comandi di rimozione e di installazione dell'archivio, con le cartelle vere (domanda 2)
+  ammessa SPOSTATO code «~/.config/kalliope»: x 757→660 (-97), y 623→579 (-44) · perché: le due cartelle che restano (`~/.config/kalliope`, `~/.local/share/kalliope`): domanda 2
+  ammessa MANCA span «kalliope»: era a 101,232, 67.5×16 · perché: il nome del microfono nel terminale, con la versione dai dati
+  ammessa IN PIÙ p «se, scrivendo , il terminale risponde .»: a 660,227, 460×44 · perché: «Per togliere Kalliope»: la frase sul terminale che risponde è stata riscritta (domanda 2)
+  ammessa IN PIÙ code «kalliope 0.1»: a 743,250, 107.5×20 · perché: il programma risponde «kalliope 0.1»: la versione viene dai dati ({{kalliope.program.version}}), domanda 1
+  ammessa IN PIÙ p «Nella tua cartella personale restano le preferen»: a 660,556, 460×110 · perché: «Per togliere Kalliope» riscritta: che cosa resta nella cartella personale (domanda 2, CONTENUTI.md voce 46)
+  ammessa IN PIÙ code «~/.local/share/kalliope»: a 660,601, 197×20 · perché: le due cartelle che restano (`~/.config/kalliope`, `~/.local/share/kalliope`): domanda 2
+  ammessa IN PIÙ span «kalliope 0.1»: a 101,232, 101×16 · perché: il programma risponde «kalliope 0.1»: la versione viene dai dati ({{kalliope.program.version}}), domanda 1
+  ammessa IN PIÙ li «bin/kalliope»: a 101,330, 112.5×24 · perché: l'elenco dei file messi dal pacchetto (con la cartella di casa sbiadita nel terminale: il programma scrive il percorso vero)
+  ammessa IN PIÙ li «bin/kalliope-cli»: a 219.5,330, 141.5×24 · perché: l'elenco dei file messi dal pacchetto (con la cartella di casa sbiadita nel terminale: il programma scrive il percorso vero)
+  ammessa IN PIÙ li «lib/kalliope · ONNX Runtime»: a 101,360, 221×24 · perché: idem
+  ammessa IN PIÙ li «share/applications · nel menu»: a 101,390, 235.5×24 · perché: idem
+CONFRONTO 1024×768 a 2400 px: solo differenze ammesse su 41 cose nello schermo · pixel diversi 0%
+  ammessa MISURA section#installa: 1024×1599 → 1024×1577 · perché: il passo «Installa» ha ora «Per togliere Kalliope» riscritta (che cosa resta, come lo sappiamo, che cosa non è provato: risposta 2 della direzione, fonti in progresso.md) e il comando «kalliope --version» con la versione dai dati: l'altezza cambia
+  ammessa MANCA p «se, scrivendo , il terminale risponde con una ri»: era a 48,750, 460×66 · perché: «Per togliere Kalliope»: la frase sul terminale che risponde è stata riscritta (domanda 2)
+  ammessa IN PIÙ p «se, scrivendo , il terminale risponde .»: a 48,750, 460×44 · perché: «Per togliere Kalliope»: la frase sul terminale che risponde è stata riscritta (domanda 2)
+CONFRONTO 844×390 a 2400 px: 1 differenze su 36 cose nello schermo · pixel diversi 19,07%
+  MANCA code «gh attestation verify»: era a 48,-34, 389×41
+  ammessa SPOSTATO section#scarica: y -1268→-1312 (-44), con 28 differenze di ciò che ha dentro · perché: ogni passo segue l'altezza dei passi sopra («Installa», «Apri»), che sono cambiati
+  ammessa SPOSTATO b «14,1 MB»: y 115→71 (-44) · perché: il pulsante del file segue il titolo (difetto 1)
+  ammessa SPOSTATO span.luce-tratto: y 146→102 (-44) · perché: le luci di tratto stanno dentro i passi e li seguono
+DICHIARAZIONE NON USATA «section#installa» (SPOSTATO, MANCA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «section#apri» (MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «section#» (MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Nella tua cartella personale» (MANCA, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Le preferenze e la voce scaricata» (IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Come lo sappiamo» (MANCA, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «se, scrivendo» (SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «./install» (MANCA, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «~/.» (MANCA, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «sudo apt» (MANCA, IN PIÙ, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «code «apt» (MANCA, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «code «dnf» (MANCA, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «code «pacman» (MANCA, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «kalliope 0.1» (MANCA, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «kalliope --version» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «bin/kalliope» (MANCA, SPOSTATO): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «lib/kalliope» (MANCA, SPOSTATO): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «share/applications» (MANCA, SPOSTATO): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «span «kalliope»» (IN PIÙ, SPOSTATO): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «https:» (MANCA, IN PIÙ, SPOSTATO): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Riuscito» (SPOSTATO, MISURA, MANCA, IN PIÙ): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Installa Kalliope» (SPOSTATO, MISURA, CARATTERE): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Ogni passo» (SPOSTATO, MISURA, CARATTERE): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «si vede riuscire» (SPOSTATO, MISURA, CARATTERE): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «frase-bottone» (SPOSTATO, MANCA, IN PIÙ): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «La voce è pronta» (SPOSTATO, MANCA, IN PIÙ): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Download non riuscito» (SPOSTATO, MANCA, IN PIÙ): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Il file …» (SPOSTATO, MANCA, IN PIÙ): qui quella differenza non c'è; se non serve più toglila
+Il confronto con la scelta non regge a 1 misure (foto e differenze in /tmp/lavoro-3cb-conf/H13a/installa-2400)
+# uscita: 1

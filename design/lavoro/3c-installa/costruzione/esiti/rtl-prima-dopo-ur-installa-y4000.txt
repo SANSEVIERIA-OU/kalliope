@@ -1,0 +1,41 @@
+# rtl prima/dopo · ur/installa/index.html · y 4000 · scelta H6 · adesso H8 · 20/11/2026 15:24 · carico: PSI CPU some avg10=1.60 avg60=4.66 · load 5.88 8.08 9.27 su 12 CPU · memoria disponibile 5859 MB
+CONFRONTO 1440×900 a 4000 px: 14 differenze su 52 cose nello schermo · pixel diversi 0%
+  MANCA code «~/.⁦local/share/kalliope⁩»: era a 583,-4.5, 197×20
+  MANCA code «./⁦install⁩ --⁦remove⁩»: era a 601.5,30.5, 156.5×20
+  MANCA code «./⁦install⁩ --⁦remove⁩» #2: era a 575.5,143.5, 146.5×19
+  MANCA code «./⁦install⁩»: era a 333.5,143.5, 446.5×52.5
+  MANCA code «⁦apt⁩»: era a 719.5,210.5, 33×19
+  MANCA code «⁦dnf⁩»: era a 678.5,210.5, 33×19
+  MANCA code «⁦pacman⁩»: era a 606,210.5, 55.5×19
+  IN PIÙ code «~/.local/share/kalliope»: a 583,-4.5, 197×20
+  IN PIÙ code «./install --remove»: a 601.5,30.5, 156.5×20
+  IN PIÙ code «./install --remove» #2: a 575.5,143.5, 146.5×19
+  IN PIÙ code «./install»: a 702,177, 78.5×19
+  IN PIÙ code «apt»: a 719.5,210.5, 33×19
+  IN PIÙ code «dnf»: a 678.5,210.5, 33×19
+  IN PIÙ code «pacman»: a 606,210.5, 55.5×19
+CONFRONTO 390×844 a 4000 px: 22 differenze su 37 cose nello schermo · pixel diversi 0%
+  MANCA code «⁦sudo apt install⁩ ./⁦kalliope-0.1-rc.1-amd64.de»: era a 106,56.5, 251×38
+  MANCA code «⁦kalliope⁩ --⁦version⁩»: era a 33.5,165, 156.5×20
+  MANCA code «⁦kalliope 0.1⁩»: era a 92.5,200.5, 107.5×20
+  MANCA code «⁦ldd⁩ --⁦version⁩ | ⁦head⁩ -⁦n 1⁩»: era a 34,316, 213.5×20
+  MANCA code «⁦sudo apt remove kalliope⁩»: era a 145,640.5, 205×20
+  MANCA code «~/.⁦config/kalliope⁩»: era a 126.5,721, 156.5×20
+  MANCA code «~/.⁦local/share/kalliope⁩»: era a 96,756.5, 197×20
+  MANCA code «./⁦install⁩ --⁦remove⁩»: era a 51.5,791.5, 318.5×55
+  MANCA span «⁦sudo apt install⁩ ./⁦kalliope-0.1-rc.1-amd64.de»: era a 33,699.5, 282×33
+  MANCA span «⁦kalliope⁩ --⁦version⁩»: era a 47.5,775.5, 130×14
+  MANCA span «⁦kalliope 0.1⁩»: era a 33,794.5, 86.5×14
+  IN PIÙ code «sudo apt install ./kalliope-0.1-rc.1-amd64.deb»: a 106,56.5, 251×38
+  IN PIÙ code «kalliope --version»: a 33.5,165, 156.5×20
+  IN PIÙ code «kalliope 0.1»: a 92.5,200.5, 107.5×20
+  IN PIÙ code «ldd --version | head -n 1»: a 34,316, 213×20
+  IN PIÙ code «sudo apt remove kalliope»: a 145,640.5, 205×20
+  IN PIÙ code «~/.config/kalliope»: a 126.5,721, 156.5×20
+  IN PIÙ code «~/.local/share/kalliope»: a 96,756.5, 197×20
+  IN PIÙ code «./install --remove»: a 51.5,791.5, 318.5×55
+  IN PIÙ span «sudo apt install ./kalliope-0.1-rc.1-amd64.deb»: a 33,699.5, 282×33
+  IN PIÙ span «kalliope --version»: a 47.5,775.5, 130×14
+  IN PIÙ span «kalliope 0.1»: a 33,794.5, 86.5×14
+Il confronto con la scelta non regge a 2 misure (foto e differenze in /tmp/lavoro-3cb-rtl-pd/ur-installa-y4000)
+# uscita: 1

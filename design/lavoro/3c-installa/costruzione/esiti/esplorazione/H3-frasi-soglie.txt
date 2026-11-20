@@ -1,0 +1,8 @@
+# H3-frasi-soglie · 20/11/2026 04:51 · sito: /tmp/lavoro-3cb-sito-H3 · albero: /tmp/lavoro-3cb-radice-H3 · esame-impaginazione.mjs chromium normale installa 320x900,334x900,349x900,350x900,355x900,360x900,361x900,367x900,374x900,375x900,407x900,440x900,441x900,600x900,760x900,761x900,860x900,959x900,960x900,979x900,999x900,1000x900,1005x900,1010x900,1011x900,1095x900,1180x900,1181x900,1195x900,1209x900,1210x900,1565x900,1920x900
+La configurazione dichiara male i limiti:
+  limiti[0]: la pagina «non-ancora-errore-audio» non è fra le pagine della configurazione
+  limiti[1]: la pagina «non-ancora-errore-audio» non è fra le pagine della configurazione
+  limiti[2]: la pagina «non-ancora-errore-audio» non è fra le pagine della configurazione
+  limiti[3]: la pagina «stato-domanda» non è fra le pagine della configurazione
+  limiti[4]: la pagina «stato-domanda» non è fra le pagine della configurazione
+# uscita: 2

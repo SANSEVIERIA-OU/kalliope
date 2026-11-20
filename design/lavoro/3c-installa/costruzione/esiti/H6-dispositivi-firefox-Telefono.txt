@@ -1,0 +1,41 @@
+# H6-dispositivi-firefox-Telefono · 20/11/2026 13:50 · carico: PSI CPU some avg10=0.27 avg60=0.84 · load 3.40 4.11 4.42 su 12 CPU · memoria disponibile 4916 MB · sito: /tmp/lavoro-3cb-sito-H6 · albero: /tmp/lavoro-3cb-radice-H6 · dispositivi-qa.mjs firefox installa Telefono
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+ok  installa · Telefono 390×844
+ok  installa-menu · Telefono 390×844
+ok  installa-archivio · Telefono 390×844
+ok  installa-frase · Telefono 390×844
+ok  installa-frase-microfono · Telefono 390×844
+ok  installa-frase-tolta · Telefono 390×844
+ok  installa-copia-fatta · Telefono 390×844
+ok  installa-copia-non-riuscita · Telefono 390×844
+ok  installa-indirizzo-copiato · Telefono 390×844
+ok  installa-indirizzo-non-copiato · Telefono 390×844
+ok  installa · Telefono piccolo 360×740
+ok  installa-menu · Telefono piccolo 360×740
+ok  installa-archivio · Telefono piccolo 360×740
+ok  installa-frase · Telefono piccolo 360×740
+ok  installa-frase-microfono · Telefono piccolo 360×740
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: 32 px sotto (schermo 360×740) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+ok  installa-frase-tolta · Telefono piccolo 360×740
+ok  installa-copia-fatta · Telefono piccolo 360×740
+ok  installa-copia-non-riuscita · Telefono piccolo 360×740
+ok  installa-indirizzo-copiato · Telefono piccolo 360×740
+ok  installa-indirizzo-non-copiato · Telefono piccolo 360×740
+ok  installa · Telefono girato 844×390
+ok  installa-menu · Telefono girato 844×390
+ok  installa-archivio · Telefono girato 844×390
+ok  installa-frase · Telefono girato 844×390
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 844×390) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+ok  installa-frase-microfono · Telefono girato 844×390
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 844×390) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+ok  installa-frase-tolta · Telefono girato 844×390
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 844×390) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+ok  installa-copia-fatta · Telefono girato 844×390
+ok  installa-copia-non-riuscita · Telefono girato 844×390
+ok  installa-indirizzo-copiato · Telefono girato 844×390
+ok  installa-indirizzo-non-copiato · Telefono girato 844×390
+
+30 casi puliti (30 in questo giro; foto in /tmp/lavoro-3cb-qa-H6-dispositivi-firefox-Telefono/dispositivi/firefox). Sono simulazioni, non telefoni veri.
+  4 limiti dichiarati, elencati a parte e non contati
+  345 casi della matrice non eseguiti (filtro o giro interrotto: --continua li riprende)
+# uscita: 0

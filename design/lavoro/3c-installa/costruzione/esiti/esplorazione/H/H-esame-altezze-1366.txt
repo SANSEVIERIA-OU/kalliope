@@ -1,0 +1,84 @@
+# H-esame-altezze-1366 · 20/11/2026 04:42 · sito: /tmp/lavoro-3cb-sito-H · albero: /tmp/lavoro-3cb-radice-H · esame-impaginazione.mjs chromium normale installa 1366x500,1366x501,1366x699,1366x700,1366x759,1366x760,1366x799,1366x800,1366x802,1366x803,1366x819,1366x820
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+installa-menu · 1366×500 · testo 100%: lo stato non c'è a questa misura
+installa · 1366×500 · testo 100%: pulito
+installa-archivio · 1366×500 · testo 100%: pulito
+installa-frase · 1366×500 · testo 100%: pulito
+installa-frase-microfono · 1366×500 · testo 100%: pulito
+installa-frase-tolta · 1366×500 · testo 100%: pulito
+installa-copia-fatta · 1366×500 · testo 100%: pulito
+installa-copia-non-riuscita · 1366×500 · testo 100%: pulito
+installa-indirizzo-copiato · 1366×500 · testo 100%: pulito
+installa-indirizzo-non-copiato · 1366×500 · testo 100%: pulito
+installa-menu · 1366×501 · testo 100%: lo stato non c'è a questa misura
+installa · 1366×501 · testo 100%: pulito
+installa-archivio · 1366×501 · testo 100%: 
+  ERRORE page.click: Timeout 30000ms exceeded.
+installa-frase · 1366×501 · testo 100%: 
+  ERRORE locator.scrollIntoViewIfNeeded: Timeout 29978.47ms exceeded.
+  FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 1366×501)
+installa-frase-microfono · 1366×501 · testo 100%: 
+  ERRORE locator.scrollIntoViewIfNeeded: Timeout 29977.249999999993ms exceeded.
+  FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 1366×501)
+installa-frase-tolta · 1366×501 · testo 100%: 
+  ERRORE locator.scrollIntoViewIfNeeded: Timeout 29977.576ms exceeded.
+  FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 1366×501)
+installa-copia-fatta · 1366×501 · testo 100%: 
+  ERRORE page.click: Timeout 30000ms exceeded.
+  NON APERTO #passo-controlla .comando.copiato: dopo il gesto non c'è niente da vedere
+installa-copia-non-riuscita · 1366×501 · testo 100%: 
+  ERRORE page.click: Timeout 30000ms exceeded.
+  NON APERTO #passo-controlla .comando-errore: dopo il gesto non c'è niente da vedere
+installa-indirizzo-copiato · 1366×501 · testo 100%: 
+  ERRORE page.click: Timeout 30000ms exceeded.
+installa-indirizzo-non-copiato · 1366×501 · testo 100%: 
+  ERRORE page.click: Timeout 30000ms exceeded.
+installa-menu · 1366×699 · testo 100%: lo stato non c'è a questa misura
+installa · 1366×699 · testo 100%: pulito
+installa-archivio · 1366×699 · testo 100%: pulito
+installa-frase · 1366×699 · testo 100%: pulito
+installa-frase-microfono · 1366×699 · testo 100%: pulito
+installa-frase-tolta · 1366×699 · testo 100%: pulito
+installa-copia-fatta · 1366×699 · testo 100%: pulito
+installa-copia-non-riuscita · 1366×699 · testo 100%: pulito
+installa-indirizzo-copiato · 1366×699 · testo 100%: pulito
+installa-indirizzo-non-copiato · 1366×699 · testo 100%: pulito
+installa-menu · 1366×700 · testo 100%: lo stato non c'è a questa misura
+installa · 1366×700 · testo 100%: pulito
+installa-archivio · 1366×700 · testo 100%: pulito
+installa-frase · 1366×700 · testo 100%: pulito
+installa-frase-microfono · 1366×700 · testo 100%: pulito
+installa-frase-tolta · 1366×700 · testo 100%: pulito
+installa-copia-fatta · 1366×700 · testo 100%: pulito
+installa-copia-non-riuscita · 1366×700 · testo 100%: pulito
+installa-indirizzo-copiato · 1366×700 · testo 100%: pulito
+installa-indirizzo-non-copiato · 1366×700 · testo 100%: pulito
+installa-menu · 1366×759 · testo 100%: lo stato non c'è a questa misura
+installa · 1366×759 · testo 100%: pulito
+installa-archivio · 1366×759 · testo 100%: pulito
+installa-frase · 1366×759 · testo 100%: pulito
+installa-frase-microfono · 1366×759 · testo 100%: pulito
+installa-frase-tolta · 1366×759 · testo 100%: pulito
+installa-copia-fatta · 1366×759 · testo 100%: pulito
+installa-copia-non-riuscita · 1366×759 · testo 100%: pulito
+installa-indirizzo-copiato · 1366×759 · testo 100%: pulito
+installa-indirizzo-non-copiato · 1366×759 · testo 100%: pulito
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+installa-menu · 1366×760 · testo 100%: lo stato non c'è a questa misura
+installa · 1366×760 · testo 100%: pulito
+installa-archivio · 1366×760 · testo 100%: pulito
+installa-frase · 1366×760 · testo 100%: pulito
+installa-frase-microfono · 1366×760 · testo 100%: pulito
+installa-frase-tolta · 1366×760 · testo 100%: pulito
+installa-copia-fatta · 1366×760 · testo 100%: pulito
+installa-copia-non-riuscita · 1366×760 · testo 100%: pulito
+installa-indirizzo-copiato · 1366×760 · testo 100%: pulito
+installa-indirizzo-non-copiato · 1366×760 · testo 100%: pulito
+installa-menu · 1366×799 · testo 100%: lo stato non c'è a questa misura
+installa · 1366×799 · testo 100%: pulito
+installa-archivio · 1366×799 · testo 100%: pulito
+installa-frase · 1366×799 · testo 100%: pulito
+installa-frase-microfono · 1366×799 · testo 100%: pulito
+installa-frase-tolta · 1366×799 · testo 100%: pulito
+installa-copia-fatta · 1366×799 · testo 100%: pulito
+installa-copia-non-riuscita · 1366×799 · testo 100%: pulito

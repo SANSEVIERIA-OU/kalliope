@@ -198,6 +198,7 @@
     <section class="tratto scena-notte coppia passo-file" id="scarica" aria-labelledby="scarica-titolo">
       <span class="luce-tratto" aria-hidden="true"></span>
       <div class="tratto-testo">
+        <span class="vecchio-indirizzo" id="passo-1" aria-hidden="true"></span>
         <h2 id="scarica-titolo" class="entra entra-titolo" data-t="in.file.titolo">Il file giusto, e uguale a quello pubblicato.</h2>
         <p data-t="in.file.testo">Serve un computer Linux a 64 bit (x86_64), con Wayland o X11 e con PipeWire e pipewire-pulse: è così nei desktop recenti di Fedora, Ubuntu, Debian, Arch e openSUSE.</p>
         <!-- cambia con la prossima versione: la voce sarà dentro il pacchetto, niente curl e niente internet al primo avvio -->
@@ -216,6 +217,7 @@
         </div>
 
         <div class="passo" id="passo-controlla">
+          <span class="vecchio-indirizzo" id="passo-2" aria-hidden="true"></span>
           <h3 class="passo-nome" data-t="in.file.controlla.titolo">Controlla che sia uguale</h3>
           <p data-t="in.file.controlla.testo">Consigliato: così sai che è il file pubblicato. Apri un terminale nella cartella dei download (di solito Scaricati) e scrivi:</p>
           <div class="comando" data-sistema="deb"><pre><code data-t-no="un comando">sha256sum {{kalliope.deb.name}}</code></pre></div>
@@ -271,6 +273,12 @@
     <!-- ===================== C · installa (stanza) ===================== -->
     <section class="tratto scena-stanza passo-installa" id="installa" aria-labelledby="installa-titolo">
       <span class="luce-tratto" aria-hidden="true"></span>
+      <!-- gli indirizzi della pagina di prima: #passo-3, e le distribuzioni (installa.js sceglie quella dell'ancora) -->
+      <span class="vecchio-indirizzo" id="passo-3" aria-hidden="true"></span>
+      <span class="vecchio-indirizzo" id="debian-ubuntu" data-sceglie="deb" aria-hidden="true"></span>
+      <span class="vecchio-indirizzo" id="fedora" data-sceglie="rpm" aria-hidden="true"></span>
+      <span class="vecchio-indirizzo" id="arch" data-sceglie="arch" aria-hidden="true"></span>
+      <span class="vecchio-indirizzo" id="altre" data-sceglie="tar" aria-hidden="true"></span>
       <div class="tratto-testo">
         <h2 id="installa-titolo" class="entra entra-titolo" data-t="in.installa.titolo">Installa: un comando, e Kalliope è nel menu.</h2>
       </div>
@@ -293,7 +301,7 @@
           <div class="comando" data-sistema="tar"><pre><code data-t-no="un comando">./install</code></pre></div>
 
           <div class="esito-passo">
-            <p class="riuscito" data-t="in.installa.riuscito"><strong>Riuscito</strong> se, scrivendo <code data-t-no="un comando">kalliope --version</code>, il terminale risponde con una riga che comincia con «kalliope» e il numero della versione.</p>
+            <p class="riuscito" data-t="in.installa.riuscito"><strong>Riuscito</strong> se, scrivendo <code data-t-no="un comando">kalliope --version</code>, il terminale risponde <code data-t-no="ciò che risponde il programma">kalliope {{kalliope.program.version}}</code>.</p>
             <p class="riuscito-tar" data-sistema="tar" data-t="in.installa.riuscito.tar">Se il comando non si trova, scrivi <code data-t-no="un comando">~/.local/bin/kalliope --version</code>: ~/.local/bin può non essere fra le cartelle dei comandi. Kalliope è comunque nel menu.</p>
             <p class="se-no" data-t="in.installa.se-no"><strong>Se no</strong>: se mancano dipendenze, o un messaggio parla di GLIBC, il sistema è troppo vecchio. Scrivi <code data-t-no="un comando">ldd --version | head -n 1</code>: il numero in fondo alla riga deve essere almeno 2.39. Se è così e non va lo stesso, <a href="https://github.com/SANSEVIERIA-OU/kalliope/issues">segnalalo</a> con il messaggio intero.</p>
           </div>
@@ -307,7 +315,8 @@
               <li data-sistema="tar" data-t="in.togli.tar">dalla cartella dell'archivio, <code data-t-no="un comando">./install --remove</code></li>
             </ul>
             <!-- cambia con la prossima versione: la voce non si scarica più nella cartella personale -->
-            <p data-cambia="voce-nel-pacchetto" data-t="in.togli.restano">Le preferenze e la voce scaricata restano nella tua cartella personale, che il gestore dei pacchetti e <code data-t-no="un comando">./install --remove</code> non toccano: <code data-t-no="una cartella">~/.config/kalliope</code> (le preferenze) e <code data-t-no="una cartella">~/.local/share/kalliope</code> (la voce, 53 MB). Per toglierle, cancella queste due cartelle.</p>
+            <p data-cambia="voce-nel-pacchetto" data-t="in.togli.restano">Nella tua cartella personale restano le preferenze, <code data-t-no="una cartella">~/.config/kalliope</code>, e la voce scaricata, <code data-t-no="una cartella">~/.local/share/kalliope</code> (53 MB): né il gestore dei pacchetti né <code data-t-no="un comando">./install --remove</code> le toccano. Per toglierle, cancella le due cartelle.</p>
+            <p class="nota-passo" data-cambia="voce-nel-pacchetto" data-t="in.togli.verificato" data-t-nota="Says what was checked and what was not. Keep the last sentence as honest as it is: removing the package on a real computer was not tried.">Come lo sappiamo: i pacchetti hanno soltanto file in /usr e nessuno script, e <code data-t-no="un comando">./install --remove</code> cancella soltanto i file messi da <code data-t-no="un comando">./install</code> (provato in una cartella di prova). Togliere il pacchetto con <code data-t-no="un comando">apt</code>, <code data-t-no="un comando">dnf</code> o <code data-t-no="un comando">pacman</code> su un computer vero non l'abbiamo provato.</p>
           </details>
         </div>
 
@@ -321,10 +330,10 @@
               <p class="t-riga t-comando" data-sistema="tar"><span class="t-prompt" data-t-no="il segno del terminale">$</span> <span data-t-no="un comando">./install</span></p>
               <p class="t-riga t-tuo" data-sistema="deb rpm arch"><i></i></p>
               <p class="t-riga t-tuo t-corto" data-sistema="deb rpm arch"><i></i></p>
-              <p class="t-riga t-risposta" data-sistema="tar" data-t-no="ciò che scrive ./install, in inglese">Kalliope is installed in ~/.local. Start it from the applications menu.</p>
+              <p class="t-riga t-risposta" data-sistema="tar" data-t-no="ciò che scrive ./install, in inglese">Kalliope is installed in <i class="t-numero"></i>/.local. Start it from the applications menu.</p>
               <p class="t-riga t-comando t-dopo" data-sistema="deb rpm arch"><span class="t-prompt" data-t-no="il segno del terminale">$</span> <span data-t-no="un comando">kalliope --version</span></p>
               <p class="t-riga t-comando t-dopo" data-sistema="tar"><span class="t-prompt" data-t-no="il segno del terminale">$</span> <span data-t-no="un comando">~/.local/bin/kalliope --version</span></p>
-              <p class="t-riga t-risposta t-dopo"><span data-t-no="ciò che risponde il programma">kalliope</span> <i class="t-numero"></i></p>
+              <p class="t-riga t-risposta t-dopo"><span data-t-no="ciò che risponde il programma">kalliope {{kalliope.program.version}}</span></p>
             </div>
           </div>
           <div class="cartelle">
@@ -346,8 +355,10 @@
     <!-- ===================== D · apri Kalliope (chiara) ===================== -->
     <section class="tratto scena-chiara passo-apri" id="apri" aria-labelledby="apri-titolo">
       <span class="luce-tratto" aria-hidden="true"></span>
+      <span class="vecchio-indirizzo" id="passo-4" aria-hidden="true"></span>
       <div class="apri-finestra">
-        <div class="finestra avvio pronta entra entra-finestra" role="group" tabindex="-1" aria-label="Ricostruzione della finestra di Kalliope 0.1 al primo avvio" data-t-aria-label="in.avvio.etichetta">
+        <!-- cambia con la prossima versione: la voce non si scarica più (data-mb e il racconto del primo avvio) -->
+        <div class="finestra avvio pronta entra entra-finestra" data-mb="53" role="group" tabindex="-1" aria-label="Ricostruzione della finestra di Kalliope 0.1 al primo avvio" data-t-aria-label="in.avvio.etichetta">
           <div class="f-stato" data-stato="pronta" data-t="finestra.pronta">Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono.</div>
           <!-- cambia con la prossima versione: niente da scaricare al primo avvio -->
           <div class="f-scarico" aria-hidden="true" data-cambia="voce-nel-pacchetto"><span class="f-barra"><i></i></span></div>
@@ -398,6 +409,7 @@
     <!-- ===================== E · il microfono (chiusura, stanza) ===================== -->
     <section class="tratto chiusura scena-stanza passo-microfono" id="microfono" aria-labelledby="microfono-titolo">
       <span class="luce-tratto" aria-hidden="true"></span><span class="luce-tratto luce-chiusa" aria-hidden="true"></span>
+      <span class="vecchio-indirizzo" id="passo-5" aria-hidden="true"></span>
       <h2 id="microfono-titolo" class="entra entra-titolo" data-t="in.microfono.titolo">«Kalliope» è fra i microfoni.</h2>
       <p class="sotto-titolo" data-t="in.microfono.sotto">Finché Kalliope è aperto, il computer ha un microfono in più. Per vederlo dal terminale:</p>
       <div class="microfono-scena entra">
@@ -432,7 +444,7 @@
       <p class="fatti segnala-come" data-t="in.microfono.segnala-come">Scrivi la distribuzione, la versione di PipeWire, che cosa è successo e la frase che la finestra mostrava; non incollare le frasi che hai detto.</p>
 
       <div class="riprendi">
-        <nav class="ripresa" aria-labelledby="ripresa-titolo">
+        <nav class="ripresa" id="ripresa" aria-labelledby="ripresa-titolo">
           <h3 id="ripresa-titolo" data-t="in.ripresa.titolo">Se ti sei fermato, riprendi da qui.</h3>
           <p data-t="in.ripresa.testo">Il sito non salva niente: dove eri lo dice ciò che vedi.</p>
           <ol class="ripresa-tappe">
@@ -444,6 +456,7 @@
           </ol>
         </nav>
         <div class="inoltra-installa" id="inoltra">
+          <span class="vecchio-indirizzo" id="indirizzo-installa" aria-hidden="true"></span>
           <h3 data-t="in.inoltra.titolo">Lo installa un'altra persona?</h3>
           <p data-t="in.inoltra.testo">Mandale l'indirizzo di questa pagina: trova i passi e i comandi da copiare.</p>
           <div class="bolla bolla-inoltra bolla-indirizzo">
@@ -482,6 +495,7 @@
   <p data-t="in.copia.errore" data-t-nota="Shown under a command when the browser does not let the page copy it.">Non riesco a copiarlo da solo: seleziona il testo e copialo.</p>
   <p data-t="in.copia.etichetta" data-t-nota="Read by screen readers on the copy button. {comando} is the command.">Copia: {comando}</p>
   <p data-t="in.annuncio.copiato">Copiato negli appunti.</p>
+  <p data-t="in.annuncio.finestra" data-t-nota="Read by screen readers when a phrase of the window is pressed. {frase} is what the status line of the window then says.">La riga della finestra dice: {frase}</p>
   <p data-t="in.annuncio.sistema" data-t-nota="Read by screen readers when a distribution is chosen. {sistema} is its name.">I comandi della pagina sono quelli per {sistema}.</p>
   <p data-t="avvio.primo">Per parlare, Kalliope deve scaricare la voce: 53 MB, una volta sola. Poi funziona senza internet.</p>
   <p data-t="avvio.scarico" data-t-nota="The first-start story: {mb} goes from 0 to 53, in megabytes.">Scarico la voce… {mb} di 53 MB</p>

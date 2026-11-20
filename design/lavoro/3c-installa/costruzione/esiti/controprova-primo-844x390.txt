@@ -1,0 +1,9 @@
+# controprova · primo-844x390 · sito P2 (548a6f2) · chromium 844x390 · primo  · 20/11/2026 04:21
+
+== primo · chromium 844x390
+NO   primo schermo: il pulsante del file sta nello schermo (364–420 su 390; gradino: -; lo stato «Oggi:» 434–500) · {"top":364,"bottom":420,"vh":390,"statoTop":434,"statoBottom":500,"classi":"-","largo":844}
+ok     nessuno scorrimento di lato · 844 contro 844
+ok     console pulita
+
+2/3 ok
+# uscita: 1

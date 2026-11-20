@@ -1,0 +1,91 @@
+# confronta-scelta · installa a 4300 px, con ammesse.json · scelta P (548a6f2) · adesso H13i · 20/11/2026 16:27 · carico: PSI CPU some avg10=0.19 avg60=0.12 · load 2.80 2.59 3.23 su 12 CPU · memoria disponibile 6890 MB
+CONFRONTO 1440×900 a 4300 px: solo differenze ammesse su 35 cose nello schermo · pixel diversi 12,38%
+  ammessa SPOSTATO section#apri: y -1113→-1135 (-22), con 7 differenze di ciò che ha dentro · perché: a tablet e telefono la finestra sta dopo «Riuscito se…» (difetto 3 della tabella di progresso.md) e il passo segue l'altezza di quello sopra
+  ammessa SPOSTATO section#microfono: y 86→64 (-22), con 14 differenze di ciò che ha dentro · perché: ogni passo segue l'altezza dei passi sopra («Installa», «Apri»), che sono cambiati
+  ammessa SPOSTATO span.luce-tratto: y 102→80 (-22) · perché: le luci di tratto stanno dentro i passi e li seguono
+  ammessa SPOSTATO span «kalliope»: y 532→510 (-22) · perché: il nome del microfono nel terminale, con la versione dai dati
+  ammessa SPOSTATO strong «Riuscito»: y 652→630 (-22) · perché: «Riuscito se» segue il comando e la versione dai dati
+  ammessa SPOSTATO p «, la finestra lo dice con «La voce è pronta, ma »: y 727→705 (-22) · perché: le frasi della finestra (difetto 3)
+CONFRONTO 390×844 a 4300 px: 1 differenze su 23 cose nello schermo · pixel diversi 23,83%
+  IN PIÙ p «Installa curl con il gestore dei pacchetti della»: a 20,825, 350×42
+  ammessa MISURA section#installa: 390×1592.5 → 390×1548.5, con 2 differenze di ciò che ha dentro · perché: il passo «Installa» ha ora «Per togliere Kalliope» riscritta (che cosa resta, come lo sappiamo, che cosa non è provato: risposta 2 della direzione, fonti in progresso.md) e il comando «kalliope --version» con la versione dai dati: l'altezza cambia
+  ammessa SPOSTATO section#apri: y 36→-8 (-44), con 12 differenze di ciò che ha dentro · perché: a tablet e telefono la finestra sta dopo «Riuscito se…» (difetto 3 della tabella di progresso.md) e il passo segue l'altezza di quello sopra
+  ammessa SPOSTATO span.luce-tratto: y 259.5→215.5 (-44) · perché: le luci di tratto stanno dentro i passi e li seguono
+  ammessa SPOSTATO strong «Riuscito»: y 447→403 (-44) · perché: «Riuscito se» segue il comando e la versione dai dati
+  ammessa SPOSTATO button.frase-bottone: y 807→763 (-44) · perché: la frase premuta e la finestra stanno in vista insieme (difetto 3); limiti in design-system/metodo.config.mjs
+CONFRONTO 1366×640 a 4300 px: solo differenze ammesse su 32 cose nello schermo · pixel diversi 12,64%
+  ammessa SPOSTATO section#apri: y -1236→-1258 (-22), con 2 differenze di ciò che ha dentro · perché: a tablet e telefono la finestra sta dopo «Riuscito se…» (difetto 3 della tabella di progresso.md) e il passo segue l'altezza di quello sopra
+  ammessa SPOSTATO section#microfono: y -37→-59 (-22), con 16 differenze di ciò che ha dentro · perché: ogni passo segue l'altezza dei passi sopra («Installa», «Apri»), che sono cambiati
+  ammessa SPOSTATO span.luce-tratto: y -21→-43 (-22) · perché: le luci di tratto stanno dentro i passi e li seguono
+  ammessa SPOSTATO span «kalliope»: y 409→387 (-22) · perché: il nome del microfono nel terminale, con la versione dai dati
+  ammessa SPOSTATO strong «Riuscito»: y 529→507 (-22) · perché: «Riuscito se» segue il comando e la versione dai dati
+  ammessa SPOSTATO p «, la finestra lo dice con «La voce è pronta, ma »: y 604→582 (-22) · perché: le frasi della finestra (difetto 3)
+CONFRONTO 1024×768 a 4300 px: 10 differenze su 26 cose nello schermo · pixel diversi 13,86%
+  MANCA h2 «Apri Kalliope, e aspetta «Pronta».»: era a 48,48, 928×56
+  MANCA p «Dal menu delle applicazioni. La prima volta la f»: era a 48,122, 460×120
+  IN PIÙ div.finestra.avvio: a 48,123, 540×149
+  IN PIÙ div «Pronta. In Zoom, Teams, Meet o nel browser scegl»: a 58,133, 520×62
+  IN PIÙ div.f-campo.spento: a 58,203, 369×32
+  IN PIÙ span «Scrivi qui e premi Invio per parlare»: a 69,210, 262×18
+  IN PIÙ span «Parla»: a 435,203, 62×32
+  IN PIÙ span «Ferma»: a 505,203, 73×32
+  IN PIÙ p «Le frasi che dici restano qui, per ripeterle.»: a 58,245, 520×15
+  IN PIÙ p «Ricostruzione della finestra di Kalliope 0.1, co»: a 48,300, 470×38
+  ammessa SPOSTATO section#apri: y -327→-349 (-22), con 7 differenze di ciò che ha dentro · perché: a tablet e telefono la finestra sta dopo «Riuscito se…» (difetto 3 della tabella di progresso.md) e il passo segue l'altezza di quello sopra
+  ammessa MISURA section#apri: 1024×1713 → 1024×1687 · perché: a tablet e telefono la finestra sta dopo «Riuscito se…» (difetto 3 della tabella di progresso.md) e il passo segue l'altezza di quello sopra
+  ammessa SPOSTATO span.luce-tratto: y -116.5→-149 (-32,5) · perché: le luci di tratto stanno dentro i passi e li seguono
+  ammessa SPOSTATO strong «Riuscito»: y 335→60 (-275) · perché: «Riuscito se» segue il comando e la versione dai dati
+  ammessa SPOSTATO button.frase-bottone: y 456→408 (-48) · perché: la frase premuta e la finestra stanno in vista insieme (difetto 3); limiti in design-system/metodo.config.mjs
+  ammessa SPOSTATO button.frase-bottone #2: y 553→505 (-48) · perché: la frase premuta e la finestra stanno in vista insieme (difetto 3); limiti in design-system/metodo.config.mjs
+  ammessa SPOSTATO span ««Download non riuscito: …» o «Download annullato»: y 564→516 (-48) · perché: idem
+  ammessa SPOSTATO button.frase-bottone #3: y 650→602 (-48) · perché: la frase premuta e la finestra stanno in vista insieme (difetto 3); limiti in design-system/metodo.config.mjs
+  ammessa SPOSTATO span ««Il file … scaricato non corrisponde all'impront»: y 661→613 (-48) · perché: idem
+  ammessa SPOSTATO button.frase-bottone #4: y 766→718 (-48) · perché: la frase premuta e la finestra stanno in vista insieme (difetto 3); limiti in design-system/metodo.config.mjs
+  ammessa IN PIÙ span ««La voce è pronta, ma …: per ora nessuno ti sent»: a 61,729, 372×34 · perché: le frasi della finestra (difetto 3)
+CONFRONTO 844×390 a 4300 px: 11 differenze su 16 cose nello schermo · pixel diversi 16,27%
+  MANCA div.finestra.avvio: era a 48,13, 540×149
+  MANCA div «Pronta. In Zoom, Teams, Meet o nel browser scegl»: era a 58,23, 520×62
+  MANCA div.f-campo.spento: era a 58,93, 369×32
+  MANCA span «Scrivi qui e premi Invio per parlare»: era a 69,100, 262×18
+  MANCA span «Parla»: era a 435,93, 62×32
+  MANCA span «Ferma»: era a 505,93, 73×32
+  MANCA p «Le frasi che dici restano qui, per ripeterle.»: era a 58,135, 520×15
+  MANCA p «Ricostruzione della finestra di Kalliope 0.1, co»: era a 48,190, 470×38
+  IN PIÙ p «Dal menu delle applicazioni. La prima volta la f»: a 48,79, 460×120
+  IN PIÙ p «A ogni avvio dice «Preparo la voce…» per un po':»: a 48,219, 460×60
+  IN PIÙ p «se la riga in alto dice «Pronta. In Zoom, Teams,»: a 48,299, 460×44
+  ammessa MANCA section#installa: era a 0,-1391, 844×1448 · perché: il passo «Installa» ha ora «Per togliere Kalliope» riscritta (che cosa resta, come lo sappiamo, che cosa non è provato: risposta 2 della direzione, fonti in progresso.md) e il comando «kalliope --version» con la versione dai dati: l'altezza cambia
+  ammessa SPOSTATO section#apri: y -99→-165 (-66), con una differenza di ciò che ha dentro · perché: a tablet e telefono la finestra sta dopo «Riuscito se…» (difetto 3 della tabella di progresso.md) e il passo segue l'altezza di quello sopra
+  ammessa MISURA section#apri: 844×1618 → 844×1592 · perché: a tablet e telefono la finestra sta dopo «Riuscito se…» (difetto 3 della tabella di progresso.md) e il passo segue l'altezza di quello sopra
+  ammessa SPOSTATO span.luce-tratto: y 73→-3 (-76) · perché: le luci di tratto stanno dentro i passi e li seguono
+  ammessa IN PIÙ strong «Riuscito»: a 64,300, 61×19 · perché: «Riuscito se» segue il comando e la versione dai dati
+DICHIARAZIONE NON USATA «section#installa» (SPOSTATO): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «section#» (MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Nella tua cartella personale» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Le preferenze e la voce scaricata» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Come lo sappiamo» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «se, scrivendo» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «./install» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «~/.» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «sudo apt» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «code «apt» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «code «dnf» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «code «pacman» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «kalliope 0.1» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «kalliope --version» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «bin/kalliope» (MANCA, IN PIÙ, SPOSTATO): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «lib/kalliope» (MANCA, IN PIÙ, SPOSTATO): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «share/applications» (MANCA, IN PIÙ, SPOSTATO): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «span «kalliope»» (MANCA, IN PIÙ): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «https:» (MANCA, IN PIÙ, SPOSTATO): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Riuscito» (MISURA, MANCA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Installa Kalliope» (SPOSTATO, MISURA, CARATTERE): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Ogni passo» (SPOSTATO, MISURA, CARATTERE): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «si vede riuscire» (SPOSTATO, MISURA, CARATTERE): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «14,1 MB» (SPOSTATO): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «frase-bottone» (MANCA, IN PIÙ): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «La voce è pronta» (MANCA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Download non riuscito» (MANCA, IN PIÙ): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Il file …» (MANCA, IN PIÙ): qui quella differenza non c'è; se non serve più toglila
+Il confronto con la scelta non regge a 3 misure (foto e differenze in /tmp/lavoro-3cb-conf/H13a/installa-4300)
+# uscita: 1

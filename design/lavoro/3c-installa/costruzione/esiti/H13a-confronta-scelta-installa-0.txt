@@ -1,0 +1,48 @@
+# confronta-scelta · installa a 0 px, con ammesse.json · scelta P (548a6f2) · adesso H13i · 20/11/2026 16:25 · carico: PSI CPU some avg10=0.00 avg60=0.11 · load 1.14 2.51 3.28 su 12 CPU · memoria disponibile 7808 MB
+CONFRONTO 1440×900: uguale su 50 cose nello schermo · pixel diversi 0%
+CONFRONTO 390×844: uguale su 37 cose nello schermo · pixel diversi 0%
+CONFRONTO 1366×640: uguale su 48 cose nello schermo · pixel diversi 0%
+CONFRONTO 1024×768: uguale su 46 cose nello schermo · pixel diversi 0%
+CONFRONTO 844×390: 9 differenze su 17 cose nello schermo · pixel diversi 21,98%
+  SPOSTATE 6 cose della stessa quantità, y -36 px: label «Debian e Ubuntu» · label «Fedora» · label «Arch» …
+  SPOSTATO p «Per un computer Linux a 64 bit con PipeWire, anc»: y 204→162 (-42)
+  SPOSTATO a «Scarica il .deb»: y 364→320 (-44)
+  SPOSTATO a «Lo installa un'altra persona»: y 368→324 (-44)
+  ammessa SPOSTATO span «Installa Kalliope.»: y 81→83 (+2) · perché: sotto i 501 px d'altezza il titolo ha la misura del telefono (difetto 1 della tabella: la regola dell'«installa» scavalcava quella della cornice)
+  ammessa MISURA span «Installa Kalliope.»: 406.5×60 → 255.5×38 · perché: sotto i 501 px d'altezza il titolo ha la misura del telefono (difetto 1 della tabella: la regola dell'«installa» scavalcava quella della cornice)
+  ammessa CARATTERE span «Installa Kalliope.»: Lexend 700 48px → Lexend 700 30px · perché: sotto i 501 px d'altezza il titolo ha la misura del telefono (difetto 1 della tabella: la regola dell'«installa» scavalcava quella della cornice)
+  ammessa SPOSTATO span «Ogni passo»: x 468.5→313 (-155,5), y 81→83 (+2) · perché: idem (difetto 1)
+  ammessa MISURA span «Ogni passo»: 265.5×60 → 166.5×38 · perché: idem (difetto 1)
+  ammessa CARATTERE span «Ogni passo»: Lexend 700 48px → Lexend 700 30px · perché: idem (difetto 1)
+  ammessa SPOSTATO span «si vede riuscire.»: y 132→116 (-16) · perché: idem (difetto 1)
+  ammessa MISURA span «si vede riuscire.»: 363.5×60 → 233×38 · perché: idem (difetto 1)
+  ammessa CARATTERE span «si vede riuscire.»: Lexend 700 48px → Lexend 700 30px · perché: idem (difetto 1)
+  ammessa SPOSTATO span «14,1 MB»: y 380.5→336.5 (-44) · perché: il pulsante del file segue il titolo (difetto 1)
+DICHIARAZIONE NON USATA «section#installa» (MISURA, SPOSTATO, MANCA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «section#apri» (MISURA, SPOSTATO): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «section#» (SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «span.luce-tratto» (SPOSTATO): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Nella tua cartella personale» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Le preferenze e la voce scaricata» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Come lo sappiamo» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «se, scrivendo» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «./install» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «~/.» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «sudo apt» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «code «apt» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «code «dnf» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «code «pacman» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «kalliope 0.1» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «kalliope --version» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «bin/kalliope» (MANCA, IN PIÙ, SPOSTATO): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «lib/kalliope» (MANCA, IN PIÙ, SPOSTATO): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «share/applications» (MANCA, IN PIÙ, SPOSTATO): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «span «kalliope»» (MANCA, IN PIÙ, SPOSTATO): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «https:» (MANCA, IN PIÙ, SPOSTATO): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Riuscito» (SPOSTATO, MISURA, MANCA, IN PIÙ): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «frase-bottone» (SPOSTATO, MANCA, IN PIÙ): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «La voce è pronta» (SPOSTATO, MANCA, IN PIÙ): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Download non riuscito» (SPOSTATO, MANCA, IN PIÙ): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Il file …» (SPOSTATO, MANCA, IN PIÙ): qui quella differenza non c'è; se non serve più toglila
+Il confronto con la scelta non regge a 1 misure (foto e differenze in /tmp/lavoro-3cb-conf/H13a/installa-0)
+# uscita: 1

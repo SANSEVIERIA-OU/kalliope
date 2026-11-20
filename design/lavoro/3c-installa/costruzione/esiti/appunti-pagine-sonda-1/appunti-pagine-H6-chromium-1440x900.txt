@@ -1,0 +1,55 @@
+# appunti in ogni pagina · H6 · ar,ur,ar-XB,it · chromium 1440x900 · 20/11/2026 15:30 · carico: PSI CPU some avg10=1.21 avg60=4.81 · load 9.39 8.09 8.83 su 12 CPU · memoria disponibile 4750 MB
+ok   ar/(home): selezione a mano di 0 elementi tecnici (0 nascosti) senza segni invisibili
+--   ar/(home): nessun pulsante «Copia» visibile
+ok   ar/(home): console pulita
+ok   ar/non-ancora/: selezione a mano di 1 elementi tecnici (0 nascosti) senza segni invisibili
+ok   ar/non-ancora/: gli appunti dopo «pillola.azione «⁦Copia l⁩'⁦indirizzo di »» senza segni invisibili · http://127.0.0.1:8890/ar/non-ancora/
+ok   ar/non-ancora/: console pulita
+NO   ar/stato/: selezione a mano di 22 elementi tecnici (0 nascosti) senza segni invisibili · 22 con segni, il primo: span: <U+2066>https://sansevieria-ou.github.io/kallio
+ok   ar/stato/: gli appunti dopo «pillola.azione «⁦Copia il messaggio⁩»» senza segni invisibili · Kalliope: scrivi una frase e una voce italiana la dice nella riunione. Oggi è un
+ok   ar/stato/: console pulita
+NO   ar/installa/: selezione a mano di 110 elementi tecnici (62 nascosti) senza segni invisibili · 29 con segni, il primo: pre: <U+2066>sha256sum kalliope-0.1-rc.1-amd64.deb<U+2069>
+NO   ar/installa/: gli appunti dopo «copia «⁦Copia⁩⁦Copiato⁩»» senza segni invisibili · <U+2066>sha256sum kalliope-0.1-rc.1-amd64.deb<U+2069>
+NO   ar/installa/: gli appunti dopo «pillola.chiara «⁦Copia l⁩'⁦indirizzo⁩»» senza segni invisibili · <U+2066>https://sansevieria-ou.github.io/kalliope/ar/installa<U+2069>/
+ok   ar/installa/: console pulita
+ok   ur/(home): selezione a mano di 0 elementi tecnici (0 nascosti) senza segni invisibili
+--   ur/(home): nessun pulsante «Copia» visibile
+ok   ur/(home): console pulita
+ok   ur/non-ancora/: selezione a mano di 1 elementi tecnici (0 nascosti) senza segni invisibili
+ok   ur/non-ancora/: gli appunti dopo «pillola.azione «⁦Copia l⁩'⁦indirizzo di »» senza segni invisibili · http://127.0.0.1:8890/ur/non-ancora/
+ok   ur/non-ancora/: console pulita
+NO   ur/stato/: selezione a mano di 22 elementi tecnici (0 nascosti) senza segni invisibili · 22 con segni, il primo: span: <U+2066>https://sansevieria-ou.github.io/kallio
+ok   ur/stato/: gli appunti dopo «pillola.azione «⁦Copia il messaggio⁩»» senza segni invisibili · Kalliope: scrivi una frase e una voce italiana la dice nella riunione. Oggi è un
+ok   ur/stato/: console pulita
+NO   ur/installa/: selezione a mano di 110 elementi tecnici (62 nascosti) senza segni invisibili · 31 con segni, il primo: pre: <U+2066>sha256sum kalliope-0.1-rc.1-amd64.deb<U+2069>
+NO   ur/installa/: gli appunti dopo «copia «⁦Copia⁩⁦Copiato⁩»» senza segni invisibili · <U+2066>sha256sum kalliope-0.1-rc.1-amd64.deb<U+2069>
+NO   ur/installa/: gli appunti dopo «pillola.chiara «⁦Copia l⁩'⁦indirizzo⁩»» senza segni invisibili · <U+2066>https://sansevieria-ou.github.io/kalliope/ur/installa<U+2069>/
+ok   ur/installa/: console pulita
+ok   ar-XB/(home): selezione a mano di 0 elementi tecnici (0 nascosti) senza segni invisibili
+--   ar-XB/(home): nessun pulsante «Copia» visibile
+ok   ar-XB/(home): console pulita
+ok   ar-XB/non-ancora/: selezione a mano di 1 elementi tecnici (0 nascosti) senza segni invisibili
+ok   ar-XB/non-ancora/: gli appunti dopo «pillola.azione «‮Copia l'indirizzo di qu»» senza segni invisibili · http://127.0.0.1:8890/ar-XB/non-ancora/
+ok   ar-XB/non-ancora/: console pulita
+ok   ar-XB/stato/: selezione a mano di 22 elementi tecnici (0 nascosti) senza segni invisibili
+NO   ar-XB/stato/: gli appunti dopo «pillola.azione «‮Copia il messaggio‬»» senza segni invisibili · <U+202E>Kalliope: scrivi una frase e una voce italiana la dice nella riunione. O
+ok   ar-XB/stato/: console pulita
+ok   ar-XB/installa/: selezione a mano di 110 elementi tecnici (62 nascosti) senza segni invisibili
+ok   ar-XB/installa/: gli appunti dopo «copia «‮Copia‬‮Copiato‬»» senza segni invisibili · sha256sum kalliope-0.1-rc.1-amd64.deb
+ok   ar-XB/installa/: gli appunti dopo «pillola.chiara «‮Copia l'indirizzo‬»» senza segni invisibili · https://sansevieria-ou.github.io/kalliope/ar-XB/installa/
+ok   ar-XB/installa/: console pulita
+ok   it/(home): selezione a mano di 1 elementi tecnici (0 nascosti) senza segni invisibili
+--   it/(home): nessun pulsante «Copia» visibile
+ok   it/(home): console pulita
+ok   it/non-ancora/: selezione a mano di 2 elementi tecnici (0 nascosti) senza segni invisibili
+ok   it/non-ancora/: gli appunti dopo «pillola.azione «Copia l'indirizzo di que»» senza segni invisibili · http://127.0.0.1:8890/it/non-ancora/
+ok   it/non-ancora/: console pulita
+ok   it/stato/: selezione a mano di 23 elementi tecnici (0 nascosti) senza segni invisibili
+ok   it/stato/: gli appunti dopo «pillola.azione «Copia il messaggio»» senza segni invisibili · Kalliope: scrivi una frase e una voce italiana la dice nella riunione. Oggi è un
+ok   it/stato/: console pulita
+ok   it/installa/: selezione a mano di 111 elementi tecnici (62 nascosti) senza segni invisibili
+ok   it/installa/: gli appunti dopo «copia «CopiaCopiato»» senza segni invisibili · sha256sum kalliope-0.1-rc.1-amd64.deb
+ok   it/installa/: gli appunti dopo «pillola.chiara «Copia l'indirizzo»» senza segni invisibili · https://sansevieria-ou.github.io/kalliope/it/installa/
+ok   it/installa/: console pulita
+39 ok, 9 NO
+# uscita: 1

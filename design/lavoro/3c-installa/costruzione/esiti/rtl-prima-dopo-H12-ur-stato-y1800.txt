@@ -1,0 +1,35 @@
+# rtl prima/dopo · ur/stato/index.html · y 1800 · scelta H6 · adesso H12 · 20/11/2026 15:49 · carico: PSI CPU some avg10=2.52 avg60=2.05 · load 3.86 3.80 5.43 su 12 CPU · memoria disponibile 6855 MB
+CONFRONTO 1440×900 a 1800 px: 16 differenze su 60 cose nello schermo · pixel diversi 0%
+  MANCA li «⁦PKGBUILD⁩ · ⁦Arch⁩»: era a 1100,-34.5, 133×34.5
+  MANCA li «.⁦tar.gz⁩ · ./⁦install⁩»: era a 973,-34.5, 121×34.5
+  MANCA a «⁦docs/releasing.md⁩»: era a 568,-24.5, 111×25
+  MANCA a «⁦README⁩»: era a 559,302.5, 51×25
+  MANCA a «⁦CHANGELOG.md⁩»: era a 452,302.5, 100×25
+  MANCA a «⁦README⁩» #2: era a 1027,678.5, 51×25
+  MANCA a «⁦engine.rs⁩»: era a 818,730.5, 54×25
+  MANCA a «⁦benchmarks/engines⁩»: era a 687,730.5, 124×25
+  IN PIÙ li «PKGBUILD · Arch»: a 1100,-34.5, 133×34.5
+  IN PIÙ li «.tar.gz · ./install»: a 973,-34.5, 121×34.5
+  IN PIÙ a «docs/releasing.md»: a 568,-24.5, 111×25
+  IN PIÙ a «README»: a 559,302.5, 51×25
+  IN PIÙ a «CHANGELOG.md»: a 452,302.5, 100×25
+  IN PIÙ a «README» #2: a 1027,678.5, 51×25
+  IN PIÙ a «engine.rs»: a 818,730.5, 54×25
+  IN PIÙ a «benchmarks/engines»: a 687,730.5, 124×25
+CONFRONTO 390×844 a 1800 px: 14 differenze su 31 cose nello schermo · pixel diversi 0,17%
+  MANCA li «.⁦deb⁩ · ⁦Ubuntu 24.04⁩»: era a 146,-12, 145×34.5
+  MANCA li «.⁦rpm⁩ · ⁦Fedora⁩»: era a 185,28.5, 106×34.5
+  MANCA li «⁦PKGBUILD⁩ · ⁦Arch⁩»: era a 46,28.5, 133×34.5
+  MANCA li «.⁦tar.gz⁩ · ./⁦install⁩»: era a 170,69, 121×34.5
+  MANCA a «⁦docs/releasing.md⁩»: era a 167,227.5, 111×25
+  MANCA a «⁦README⁩»: era a 182,828.5, 51×25
+  MANCA a «⁦CHANGELOG.md⁩»: era a 75,828.5, 100×25
+  IN PIÙ li «.deb · Ubuntu 24.04»: a 146,-12, 145×34.5
+  IN PIÙ li «.rpm · Fedora»: a 185,28.5, 106×34.5
+  IN PIÙ li «PKGBUILD · Arch»: a 46,28.5, 133×34.5
+  IN PIÙ li «.tar.gz · ./install»: a 170,69, 121×34.5
+  IN PIÙ a «docs/releasing.md»: a 167,227.5, 111×25
+  IN PIÙ a «README»: a 182,828.5, 51×25
+  IN PIÙ a «CHANGELOG.md»: a 75,828.5, 100×25
+Il confronto con la scelta non regge a 2 misure (foto e differenze in /tmp/lavoro-3cb-rtl-pd-H12/ur-stato-y1800)
+# uscita: 1

@@ -1,0 +1,35 @@
+# rtl prima/dopo · ar/installa/index.html · y 4000 · scelta H6 · adesso H13 · 20/11/2026 16:01 · carico: PSI CPU some avg10=0.16 avg60=2.57 · load 4.23 4.44 4.79 su 12 CPU · memoria disponibile 6686 MB
+CONFRONTO 1440×900 a 4000 px: uguale su 50 cose nello schermo · pixel diversi 0%
+CONFRONTO 390×844 a 4000 px: 30 differenze su 36 cose nello schermo · pixel diversi 0%
+  MANCA code «⁦sudo apt remove kalliope⁩»: era a 145,133.5, 205×20
+  MANCA code «~/.⁦config/kalliope⁩»: era a 126.5,194, 156.5×20
+  MANCA code «~/.⁦local/share/kalliope⁩»: era a 96,219.5, 197×20
+  MANCA code «./⁦install⁩ --⁦remove⁩»: era a 51.5,245, 318.5×45.5
+  MANCA code «./⁦install⁩ --⁦remove⁩» #2: era a 45.5,355, 146.5×19
+  MANCA code «./⁦install⁩»: era a 74,379, 78.5×19
+  MANCA code «⁦apt⁩»: era a 238.5,427.5, 33×19
+  MANCA code «⁦dnf⁩»: era a 197.5,427.5, 33×19
+  MANCA code «⁦pacman⁩»: era a 125,427.5, 55.5×19
+  MANCA span «⁦sudo apt install⁩ ./⁦kalliope-0.1-rc.1-amd64.de»: era a 33,197.5, 282×33
+  MANCA span «⁦kalliope⁩ --⁦version⁩»: era a 47.5,273.5, 130×14
+  MANCA span «⁦kalliope 0.1⁩»: era a 33,292.5, 86.5×14
+  MANCA span «/⁦usr⁩»: era a 41,351.5, 308×21
+  MANCA li «⁦bin/kalliope⁩»: era a 41,384.5, 112.5×24
+  MANCA li «⁦bin/kalliope-cli⁩»: era a 159.5,384.5, 141.5×24
+  IN PIÙ code «sudo apt remove kalliope»: a 145,133.5, 205×20
+  IN PIÙ code «~/.config/kalliope»: a 126.5,194, 156.5×20
+  IN PIÙ code «~/.local/share/kalliope»: a 96,219.5, 197×20
+  IN PIÙ code «./install --remove»: a 51.5,245, 318.5×45.5
+  IN PIÙ code «./install --remove» #2: a 45.5,355, 146.5×19
+  IN PIÙ code «./install»: a 74,379, 78.5×19
+  IN PIÙ code «apt»: a 238.5,427.5, 33×19
+  IN PIÙ code «dnf»: a 197.5,427.5, 33×19
+  IN PIÙ code «pacman»: a 125,427.5, 55.5×19
+  IN PIÙ span «sudo apt install ./kalliope-0.1-rc.1-amd64.deb»: a 33,197.5, 282×33
+  IN PIÙ span «kalliope --version»: a 47.5,273.5, 130×14
+  IN PIÙ span «kalliope 0.1»: a 33,292.5, 86.5×14
+  IN PIÙ span «/usr»: a 41,351.5, 308×21
+  IN PIÙ li «bin/kalliope»: a 41,384.5, 112.5×24
+  IN PIÙ li «bin/kalliope-cli»: a 159.5,384.5, 141.5×24
+Il confronto con la scelta non regge a 1 misure (foto e differenze in /tmp/lavoro-3cb-rtl-pd-H13/ar-installa-y4000)
+# uscita: 1

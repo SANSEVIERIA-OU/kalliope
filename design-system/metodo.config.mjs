@@ -47,10 +47,14 @@ const statiInstalla = [
   {nome: 'installa', url: IN},
   {nome: 'installa-menu', url: IN, dopo: async p => { if (!await p.isVisible('.pulsante-menu')) return false; await p.click('.pulsante-menu'); await p.waitForTimeout(500); }, inVista: '#menu.aperto'},
   {nome: 'installa-archivio', url: IN, dopo: async p => { await p.click('label[for=sistema-tar]'); await p.waitForTimeout(600); }, inVista: 'label[for=sistema-tar]'},
-  {nome: 'installa-frase', url: IN, dopo: async p => { await aTratto('#apri')(p); await p.click('.frase-bottone[data-stato=curl]'); await p.waitForTimeout(600); }, inVista: '.frase-bottone[data-stato=curl]'},
+  // la frase premuta: la finestra (la riga di stato che cambia) e la frase premuta stanno nello schermo sotto la barra; dove insieme non ci stanno vince la finestra (limiti, sotto)
+  {nome: 'installa-frase', url: IN, dopo: async p => { await aTratto('#apri')(p); await p.locator('.frase-bottone[data-stato=curl]').scrollIntoViewIfNeeded(); await p.click('.frase-bottone[data-stato=curl]'); await p.waitForTimeout(1200); }, inVista: '.finestra.avvio .f-stato, .frase-bottone[data-stato=curl]'},
+  {nome: 'installa-frase-microfono', url: IN, dopo: async p => { await aTratto('#apri')(p); await p.locator('.frase-bottone[data-stato=microfono]').scrollIntoViewIfNeeded(); await p.click('.frase-bottone[data-stato=microfono]'); await p.waitForTimeout(1200); }, inVista: '.finestra.avvio .f-stato, .frase-bottone[data-stato=microfono]'},
+  {nome: 'installa-frase-tolta', url: IN, dopo: async p => { await aTratto('#apri')(p); await p.locator('.frase-bottone[data-stato=rete]').scrollIntoViewIfNeeded(); await p.click('.frase-bottone[data-stato=rete]'); await p.waitForTimeout(900); await p.click('.frase-bottone[data-stato=rete]'); await p.waitForTimeout(1200); }, inVista: '.finestra.avvio .f-stato, .frase-bottone[data-stato=rete]'},
   {nome: 'installa-copia-fatta', url: IN, dopo: async p => { await p.evaluate(() => { navigator.clipboard.writeText = () => Promise.resolve(); }); await aTratto('#passo-controlla')(p); if (!await p.isVisible('#passo-controlla .copia')) return false; await p.click('#passo-controlla .copia'); await p.waitForTimeout(400); }, inVista: '#passo-controlla .comando.copiato'},
   {nome: 'installa-copia-non-riuscita', url: IN, dopo: async p => { await p.evaluate(() => { navigator.clipboard.writeText = () => Promise.reject(new Error('no')); }); await aTratto('#passo-controlla')(p); if (!await p.isVisible('#passo-controlla .copia')) return false; await p.click('#passo-controlla .copia'); await p.waitForTimeout(400); }, inVista: '#passo-controlla .comando-errore'},
   {nome: 'installa-indirizzo-copiato', url: IN, dopo: async p => { await p.evaluate(() => { navigator.clipboard.writeText = () => Promise.resolve(); }); await aTratto('#inoltra')(p); if (!await p.isVisible('.copia-indirizzo')) return false; await p.click('.copia-indirizzo'); await p.waitForTimeout(700); }, inVista: '.copia-indirizzo, .copia-fatto'},
+  {nome: 'installa-indirizzo-non-copiato', url: IN, dopo: async p => { await p.evaluate(() => { navigator.clipboard.writeText = () => Promise.reject(new Error('no')); }); await aTratto('#inoltra')(p); if (!await p.isVisible('.copia-indirizzo')) return false; await p.click('.copia-indirizzo'); await p.waitForTimeout(700); }, inVista: '.copia-indirizzo, .copia-errore'},
 ];
 
 export default {
@@ -69,7 +73,7 @@ export default {
     script: ['marchio/*.js', '../website/scena.js', '../website/testi.js', '../website/lingua.js', '../website/componenti.js', 'catalogo/*.js', '../website/cornice.js', '../website/non-ancora/non-ancora.js', '../website/stato/stato.js', '../website/installa/installa.js'],
     perElemento: [],
     // le larghezze a cui la pagina cambia impaginazione (@media, @container): non si leggono da una variabile
-    soglie: ['349px', '350px', '360px', '374px', '420px', '440px', '500px', '699px', '759px', '760px', '761px', '790px', '791px', '799px', '802px', '819px', '840px', '959px', '999px', '1000px', '1010px', '1180px', '1181px', '1209px'],
+    soglie: ['349px', '350px', '360px', '374px', '420px', '440px', '500px', '501px', '699px', '759px', '760px', '761px', '790px', '791px', '799px', '802px', '819px', '840px', '959px', '999px', '1000px', '1010px', '1180px', '1181px', '1209px'],
     vincoli: {},
   },
   // ciò che a una misura non può stare insieme (esame-impaginazione.mjs, dispositivi-qa.mjs): una voce per decisione
@@ -95,6 +99,14 @@ export default {
       perche: 'telefono girato: la bolla più alta dello spazio sotto la barra (362 contro 306 px) non è appiccicata: scorre con la pagina accanto alla sua domanda, comincia in vista e il fondo si legge scorrendo (3b-r)'},
     {pagina: 'stato-domanda', misure: '326x326', che: 'FUORI VISTA', cosa: 'button.domanda-bottone',
       perche: 'schermo quadrato: la bolla sta tutta nello schermo (234 px) ma con la domanda premuta sopra non ci sta (246 px di spazio sotto la barra): vince la bolla, che ripete la domanda in testa (3b-b, da confermare)'},
+    // limiti di installa (3c-b): la frase premuta sotto il bordo dove con la finestra non ci sta (misure lette dall'esame, una voce per stato)
+    {pagina: 'installa-frase', misure: '326x326, 844x390', che: 'FUORI VISTA', cosa: 'button.frase-bottone',
+      perche: 'la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/'},
+    {pagina: 'installa-frase-microfono', misure: '320x568, 326x326, 360x640, 360x740, 390x500, 390x501, 390x667, 390x699, 390x700, 421x616, 466x678, 844x390, 844x500, 844x501, 844x699, 844x700, 861x609, 951x669', che: 'FUORI VISTA', cosa: 'button.frase-bottone',
+      perche: 'la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/'},
+    {pagina: 'installa-frase-tolta', misure: '326x326, 390x500, 390x501, 844x390', che: 'FUORI VISTA', cosa: 'button.frase-bottone',
+      perche: 'la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/'},
+    // fine dei limiti di installa
   ],
   // il testo che si legge e non si vede (.solo-lettori) è ritagliato apposta
   escludi: '.solo-lettori',

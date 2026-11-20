@@ -1,0 +1,2 @@
+# H6i-fermo-webkit-Telefono-1 · 20/11/2026 14:19 · carico: PSI CPU some avg10=22.78 avg60=24.56 · load 26.02 20.52 13.79 su 12 CPU · memoria disponibile 5123 MB · sito: /tmp/lavoro-3cb-sito-H6i · albero: /tmp/lavoro-3cb-radice-H6i · dispositivi-qa.mjs webkit installa Telefono
+ok  installa · Telefono 390×844

@@ -1,0 +1,25 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
+/* Il catalogo della pagina «installa» (catalogo-installa.js): i fondi delle scene in cui stanno i pezzi copiati, e l'impaginazione delle prove. Nessun valore
+   proprio: i colori e le linee sono i token del sistema (../token.css), le distanze sono relative al testo (em), come in catalogo.css. */
+.cat-in-notte, .cat-in-chiara { padding: 1.2em; border-radius: 0.8em; max-width: 100%; }
+.cat-in-chiara { background: var(--scena-chiara-fondo); color: var(--scuro); }
+.cat-quadro.cat-quadro-chiaro { background: var(--scena-chiara-fondo); color: var(--scuro); }
+.cat-scelte-stati, .cat-comandi-stati, .cat-cartelle, .cat-coppia-scene { display: grid; gap: 1.2em; }
+.cat-scelte-stati .sistemi, .cat-comandi-stati .comando { margin: 0; }
+.cat-sistemi-pagina { display: grid; gap: 1em; }
+.cat-comandi-sistema { display: grid; gap: 0.2em; max-width: 36em; }
+.cat-terminale { max-width: 44em; }
+.cat-terminale.cat-stretto { max-width: 22em; }
+.cat-cartelle .cartella, .cat-cartelle .disco { max-width: 34em; }
+.cat-frasi, .cat-frasi-stati { display: grid; gap: 1.2em; max-width: 44em; }
+.cat-frasi .frasi-finestra, .cat-frasi-stati .frasi-finestra { margin-top: 0; }
+.cat-ripresa { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(18em, 100%), 1fr)); gap: 2em; width: 100%; }
+.cat-ripresa .riprendi { margin-top: 0; padding-top: 0; border-top: 0; grid-template-columns: minmax(0, 1fr); }
+.cat-togli { max-width: 44em; }
+#pagina-installa .cat-controlli { flex-wrap: wrap; }   /* i comandi che premono i comandi veri del riquadro vanno a capo su una finestra stretta */
+/* il codice dei comandi è quello del componente, non la pillola che il catalogo dà al codice delle sue descrizioni (catalogo.css: .cat-scheda code) */
+#pagina-installa .comando code { padding: 0; border-radius: 0; background: none; }
+/* nella pagina la cartella che riceve i file sta in una cella della scena (installazione.css: .disco { grid-column: 1; grid-row: 1 }): qui più cartelle una sotto l'altra, non una sopra l'altra */
+.cat-cartelle .disco { grid-column: auto; grid-row: auto; position: static; }
+/* la scena chiara del tratto «Apri» (.passo-apri) dà il colore al testo e alle note; qui è soltanto un fondo, non la griglia del tratto */
+.cat-in-chiara.passo-apri { display: block; }

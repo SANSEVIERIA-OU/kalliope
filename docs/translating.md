@@ -201,6 +201,15 @@ On a right-to-left page the build isolates every run of Latin letters, digits an
 and is never read backwards (`rc.1-0.1`); quotation marks around it follow the Arabic or Urdu text. Translators write the text as
 it is: nothing to add.
 
+Text that is not translated (an element marked `data-t-no`: a command, a hash, a file name, a path, the address of the page, a
+program name) and `<code>`, `<pre>`, `<kbd>`, `<samp>` are isolated by the markup instead: on a right-to-left page the build adds `dir="ltr"`
+to the element (its Latin text, with no right-to-left letter of its own), as the W3C recommends and the HTML specification defines
+(`dir` isolates the contents of the element, `unicode-bidi: isolate` in the browser's style sheet), and puts **no character** in the
+text. The characters are real: a command copied with «Copia», or selected by hand, would carry them to the terminal, where
+`./kalliope-….deb` with invisible marks around the name is «file not found». There is no list of kinds to keep up to date: the author's
+`data-t-no` is the declaration, and `tools/test_translations.py` (`DaDestraASinistra`) and `robustezza.mjs` (scenario `appunti`, which
+reads the real clipboard and `getSelection()` in ar and ur) fail if a page puts a mark in what is copied.
+
 The build also tells the browser to fetch the font of the script at once: a page in a language with a small font file (Arabic,
 Greek, Bulgarian: 22 KB) carries a `<link rel="preload">` for it, found in `design-system/token.css` (the `:lang()` rule of the
 language), so the first screen is drawn in the right font and does not flash the fallback (at 1.6 Mbps the text is in the right

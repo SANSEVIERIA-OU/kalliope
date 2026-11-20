@@ -1,0 +1,54 @@
+# robustezza · H5r · firefox 844x390 · ancore · 20/11/2026 10:49 · carico: PSI CPU some avg10=1.33 avg60=1.12 · load 2.22 2.98 4.76 su 12 CPU · memoria disponibile 6722 MB
+
+== ancore · firefox 844x390
+ok   /#fedora sceglie «Fedora» e porta al punto giusto: «#installa-titolo» sotto la barra, nello schermo, opaco · {"titolo":88,"bottom":200,"barra":72,"vh":390,"op":1,"scelta":"rpm","y":2889}
+ok     console pulita
+ok     /#fedora con gli script che arrivano dopo 1200 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":200,"barra":72,"vh":390,"op":1,"scelta":"rpm","y":2889}
+ok     /#fedora con i caratteri che arrivano dopo 1500 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":200,"barra":72,"vh":390,"op":1,"scelta":"rpm","y":2889}
+ok   /#debian-ubuntu sceglie «Debian e Ubuntu» e porta al punto giusto: «#installa-titolo» sotto la barra, nello schermo, opaco · {"titolo":88,"bottom":200,"barra":72,"vh":390,"op":1,"scelta":"deb","y":2891}
+ok     console pulita
+ok     /#debian-ubuntu con gli script che arrivano dopo 1200 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":200,"barra":72,"vh":390,"op":1,"scelta":"deb","y":2891}
+ok     /#debian-ubuntu con i caratteri che arrivano dopo 1500 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":200,"barra":72,"vh":390,"op":1,"scelta":"deb","y":2891}
+ok   /#arch sceglie «Arch» e porta al punto giusto: «#installa-titolo» sotto la barra, nello schermo, opaco · {"titolo":88,"bottom":200,"barra":72,"vh":390,"op":1,"scelta":"arch","y":2677}
+ok     console pulita
+ok     /#arch con gli script che arrivano dopo 1200 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":200,"barra":72,"vh":390,"op":1,"scelta":"arch","y":2677}
+ok     /#arch con i caratteri che arrivano dopo 1500 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":200,"barra":72,"vh":390,"op":1,"scelta":"arch","y":2677}
+ok   /#altre sceglie «Altre» e porta al punto giusto: «#installa-titolo» sotto la barra, nello schermo, opaco · {"titolo":88,"bottom":200,"barra":72,"vh":390,"op":1,"scelta":"tar","y":2889}
+ok     console pulita
+ok     /#altre con gli script che arrivano dopo 1200 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":200,"barra":72,"vh":390,"op":1,"scelta":"tar","y":2889}
+ok     /#altre con i caratteri che arrivano dopo 1500 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":200,"barra":72,"vh":390,"op":1,"scelta":"tar","y":2889}
+ok   /#passo-1 e porta al punto giusto: «#scarica-titolo» sotto la barra, nello schermo, opaco · {"titolo":88,"bottom":200,"barra":72,"vh":390,"op":1,"scelta":"deb","y":1111}
+ok     console pulita
+ok     /#passo-1 con gli script che arrivano dopo 1200 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":200,"barra":72,"vh":390,"op":1,"scelta":"deb","y":1111}
+ok     /#passo-1 con i caratteri che arrivano dopo 1500 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":200,"barra":72,"vh":390,"op":1,"scelta":"deb","y":1111}
+ok   /#passo-2 e porta al punto giusto: «#passo-controlla .passo-nome» sotto la barra, nello schermo, opaco · {"titolo":88,"bottom":118,"barra":72,"vh":390,"op":1,"scelta":"deb","y":1734}
+ok     console pulita
+ok     /#passo-2 con gli script che arrivano dopo 1200 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":118,"barra":72,"vh":390,"op":1,"scelta":"deb","y":1734}
+ok     /#passo-2 con i caratteri che arrivano dopo 1500 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":118,"barra":72,"vh":390,"op":1,"scelta":"deb","y":1734}
+ok   /#passo-3 e porta al punto giusto: «#installa-titolo» sotto la barra, nello schermo, opaco · {"titolo":88,"bottom":200,"barra":72,"vh":390,"op":1,"scelta":"deb","y":2891}
+ok     console pulita
+ok     /#passo-3 con gli script che arrivano dopo 1200 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":200,"barra":72,"vh":390,"op":1,"scelta":"deb","y":2891}
+ok     /#passo-3 con i caratteri che arrivano dopo 1500 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":200,"barra":72,"vh":390,"op":1,"scelta":"deb","y":2891}
+ok   /#passo-4 e porta al punto giusto: «#apri-titolo» sotto la barra, nello schermo, opaco · {"titolo":200,"bottom":312,"barra":72,"vh":390,"op":1,"scelta":"deb","y":4030}
+ok     console pulita
+ok     /#passo-4 con gli script che arrivano dopo 1200 ms: il punto sta dove sta con tutto subito (200) · {"titolo":200,"bottom":312,"barra":72,"vh":390,"op":1,"scelta":"deb","y":4030}
+ok     /#passo-4 con i caratteri che arrivano dopo 1500 ms: il punto sta dove sta con tutto subito (200) · {"titolo":200,"bottom":312,"barra":72,"vh":390,"op":1,"scelta":"deb","y":4030}
+ok   /#passo-5 e porta al punto giusto: «#microfono-titolo» sotto la barra, nello schermo, opaco · {"titolo":88,"bottom":224,"barra":72,"vh":390,"op":1,"scelta":"deb","y":5580}
+ok     console pulita
+ok     /#passo-5 con gli script che arrivano dopo 1200 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":224,"barra":72,"vh":390,"op":1,"scelta":"deb","y":5580}
+ok     /#passo-5 con i caratteri che arrivano dopo 1500 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":224,"barra":72,"vh":390,"op":1,"scelta":"deb","y":5580}
+ok   /#ripresa e porta al punto giusto: «#ripresa-titolo» sotto la barra, nello schermo, opaco · {"titolo":88,"bottom":148,"barra":72,"vh":390,"op":1,"scelta":"deb","y":6556}
+ok     console pulita
+ok     /#ripresa con gli script che arrivano dopo 1200 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":148,"barra":72,"vh":390,"op":1,"scelta":"deb","y":6556}
+ok     /#ripresa con i caratteri che arrivano dopo 1500 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":148,"barra":72,"vh":390,"op":1,"scelta":"deb","y":6556}
+ok   /#indirizzo-installa e porta al punto giusto: «#inoltra h3» sotto la barra, nello schermo, opaco · {"titolo":88,"bottom":148,"barra":72,"vh":390,"op":1,"scelta":"deb","y":6556}
+ok     console pulita
+ok     /#indirizzo-installa con gli script che arrivano dopo 1200 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":148,"barra":72,"vh":390,"op":1,"scelta":"deb","y":6556}
+ok     /#indirizzo-installa con i caratteri che arrivano dopo 1500 ms: il punto sta dove sta con tutto subito (88) · {"titolo":88,"bottom":148,"barra":72,"vh":390,"op":1,"scelta":"deb","y":6556}
+ok   con la pagina aperta, cambiare l'ancora in #fedora sceglie Fedora e porta ai comandi · {"scelta":"rpm","titolo":88,"barra":72}
+ok   poi #passo-2 porta al controllo e lascia la scelta com'era (Fedora) · {"scelta":"rpm","passo":88,"barra":72}
+ok   console pulita
+ok   senza JavaScript /#fedora porta ai comandi (sceglierla toccherebbe a chi legge), la pagina non scorre di lato · {"titolo":88,"barra":72,"larghezza":844}
+
+48/48 ok
+# uscita: 0

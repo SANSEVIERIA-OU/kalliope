@@ -1,0 +1,17 @@
+# rtl prima/dopo · ur/stato/index.html · y 1800 · scelta H6 · adesso H8 · 20/11/2026 15:23 · carico: PSI CPU some avg10=1.16 avg60=1.24 · load 5.10 8.45 9.48 su 12 CPU · memoria disponibile 5371 MB
+CONFRONTO 1440×900 a 1800 px: 4 differenze su 60 cose nello schermo · pixel diversi 0%
+  MANCA li «⁦PKGBUILD⁩ · ⁦Arch⁩»: era a 1100,-34.5, 133×34.5
+  MANCA li «.⁦tar.gz⁩ · ./⁦install⁩»: era a 973,-34.5, 121×34.5
+  IN PIÙ li «PKGBUILD · Arch»: a 1100,-34.5, 133×34.5
+  IN PIÙ li «.tar.gz · ./install»: a 973,-34.5, 121×34.5
+CONFRONTO 390×844 a 1800 px: 8 differenze su 31 cose nello schermo · pixel diversi 0,17%
+  MANCA li «.⁦deb⁩ · ⁦Ubuntu 24.04⁩»: era a 146,-12, 145×34.5
+  MANCA li «.⁦rpm⁩ · ⁦Fedora⁩»: era a 185,28.5, 106×34.5
+  MANCA li «⁦PKGBUILD⁩ · ⁦Arch⁩»: era a 46,28.5, 133×34.5
+  MANCA li «.⁦tar.gz⁩ · ./⁦install⁩»: era a 170,69, 121×34.5
+  IN PIÙ li «.deb · Ubuntu 24.04»: a 146,-12, 145×34.5
+  IN PIÙ li «.rpm · Fedora»: a 185,28.5, 106×34.5
+  IN PIÙ li «PKGBUILD · Arch»: a 46,28.5, 133×34.5
+  IN PIÙ li «.tar.gz · ./install»: a 170,69, 121×34.5
+Il confronto con la scelta non regge a 2 misure (foto e differenze in /tmp/lavoro-3cb-rtl-pd/ur-stato-y1800)
+# uscita: 1

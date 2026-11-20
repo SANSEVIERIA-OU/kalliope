@@ -32,6 +32,7 @@ The pages never write a version or a package name by hand. They use these marker
 and .webmanifest file, in the language of the page:
 
     {{kalliope.version}}        0.1-rc.1
+    {{kalliope.program.version}} 0.1                   (what `kalliope --version` prints after "kalliope ": the version without its prerelease part)
     {{kalliope.tag}}            v0.1-rc.1
     {{kalliope.date}}           12 novembre 2026          (publication date, long form of the language, no-break spaces)
     {{kalliope.date.iso}}       2026-11-12
@@ -142,6 +143,9 @@ def values(release):
     y, m, d = (int(x) for x in day.split("-"))
     v = {
         "version": tag.removeprefix("v"),
+        # `kalliope --version` writes "kalliope " and the version of Cargo without its last ".0" (crates/app/src/main.rs, `version()`).
+        # Cargo's version is always X.Y.0 and the tag vX.Y or vX.Y-prerelease (tools/version.py), so the program says X.Y for both.
+        "program.version": re.match(r"v(\d+\.\d+)", tag).group(1),
         "tag": tag,
         "date.iso": day,
         "prerelease": "true" if release.get("prerelease") else "false",
@@ -522,12 +526,62 @@ def _isola(raw):
     return "".join(pezzi)
 
 
+# Un testo che non si traduce (un comando, un'impronta, il nome di un file, un percorso, l'indirizzo della pagina, il nome di un programma) si isola con il markup, non con caratteri. Gli isolamenti U+2066/U+2069
+# sono caratteri veri: vanno negli appunti e una selezione a mano se li porta dietro, e «sudo apt install ./kalliope-….deb» con i segni intorno al nome, incollato in un terminale, dà «file non trovato» (incarico
+# 3c-b, ripresa del 20/11/2026: succedeva in arabo e in urdu, con ogni «Copia», con la selezione a mano e con l'indirizzo). Il W3C consiglia il markup dove c'è («use markup where it is available, rather than
+# these character pairs», W3C Internationalization, «Inline markup and bidirectional text in HTML») e la specifica HTML dice che `dir` isola il contenuto dell'elemento («the contents of the element are
+# explicitly directionally isolated left-to-right text»; il foglio del browser dà `unicode-bidi: isolate` a `[dir=ltr i]`): un elemento con dir="ltr" è isolato come LRI…PDI, senza un carattere nel testo.
+# La regola non ha un elenco di tipi da tenere aggiornato: lo dice l'autore della pagina con `data-t-no` («questo non si traduce»), e `<code>`, `<pre>`, `<kbd>`, `<samp>` lo sono per natura.
+#  - Un elemento di quelli, il cui testo proprio ha lettere latine e nessuna lettera da destra a sinistra, riceve dir="ltr" e il suo testo non ha isolamenti (anche i `data-t-no` che contiene);
+#  - lo stesso per ciò che sta dentro un elemento che dice già dir="ltr";
+#  - un elemento che contiene già un elemento con dir lo lascia com'è (l'indirizzo della pagina: un <p> con dentro uno <span dir="ltr">: non cambia verso al paragrafo).
+# I caratteri restano per i pezzi latini dentro una frase tradotta, dove non c'è un elemento da marcare. Le pagine in italiano non passano di qui.
+DA_SINISTRA = {"code", "pre", "kbd", "samp"}
+RTL_LETTERE = re.compile("[\u0590-\u08FF\uFB1D-\uFDFF\uFE70-\uFEFF]")
+
+
+def _dir(nodo):
+    return (nodo.attr("dir") or "").strip().lower()
+
+
+def _con_dir_ltr(nodo):
+    """Vero se questo nodo, o uno degli elementi che lo contengono, dice già dir="ltr"."""
+    x = nodo
+    while x is not None:
+        if _dir(x) == "ltr":
+            return True
+        x = x.padre
+    return False
+
+
+def _da_marcare(nodo):
+    """Vero se questo elemento va isolato con dir="ltr": non traducibile (data-t-no) o testo di computer, senza una scrittura da destra a sinistra, e senza un dir proprio o di un elemento dentro."""
+    if not (nodo.tag in DA_SINISTRA or nodo.ha("data-t-no")) or nodo.ha("dir"):
+        return False
+    testo = "".join(f.raw for f in nodo.figli if isinstance(f, pagina.Testo))   # il testo che l'elemento ha di suo: ciò che contiene (una dimensione con l'unità in arabo) non conta
+    if not re.search(f"[{LATINO}]", testo) or RTL_LETTERE.search(testo):
+        return False
+    return not any(isinstance(f, pagina.Nodo) and f.ha("dir") for f in pagina.cammina(nodo))
+
+
+def _dentro_marcato(nodo, marcati):
+    x = nodo
+    while x is not None:
+        if id(x) in marcati:
+            return True
+        x = x.padre
+    return False
+
+
 def isola_latino(testo):
     radice = pagina.leggi(testo)
     mod = []
+    marcati = set()   # gli elementi che ricevono dir="ltr" (si cammina dal contenitore al contenuto: il più esterno vince)
     for n in pagina.cammina(radice):
         if isinstance(n, pagina.Testo):
             if n.padre is not None and n.padre.tag in pagina.TESTO_PURO:
+                continue
+            if _con_dir_ltr(n.padre) or _dentro_marcato(n.padre, marcati):
                 continue
             # il nome di una lingua nel suo elenco («Deutsch» in una pagina araba) è l'unico testo del suo collegamento, con il suo lang: non ha un
             # verso da proteggere, e i caratteri invisibili finirebbero nel nome del collegamento (per chi lo detta o lo cerca per nome)
@@ -537,8 +591,13 @@ def isola_latino(testo):
             if nuovo != n.raw:
                 mod.append((n.s, n.e, nuovo))
         elif isinstance(n, pagina.Nodo):
+            dentro = _con_dir_ltr(n.padre) or _dentro_marcato(n.padre, marcati)
+            if not dentro and not n.autochiuso and _da_marcare(n):
+                marcati.add(id(n))
+                mod.append((n.se - 1, n.se - 1, ' dir="ltr"'))
+                dentro = True
             for nome, raw, _val, vs, ve in n.attrs:
-                if nome in pagina.ATTRIBUTI and raw and n.ha(f"data-t-{nome}"):   # soltanto gli attributi tradotti (non il content del viewport)
+                if nome in pagina.ATTRIBUTI and raw and n.ha(f"data-t-{nome}") and not dentro and _dir(n) != "ltr":   # soltanto gli attributi tradotti (non il content del viewport)
                     nuovo = _isola(testo[vs:ve])
                     if nuovo != testo[vs:ve]:
                         mod.append((vs, ve, nuovo))

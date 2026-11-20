@@ -1,0 +1,9 @@
+# rtl prima/dopo · ar/installa/index.html · y 0 · scelta H6 · adesso H9 · 20/11/2026 15:28 · carico: PSI CPU some avg10=0.20 avg60=2.06 · load 5.53 7.24 8.68 su 12 CPU · memoria disponibile 5098 MB
+CONFRONTO 1440×900: 2 differenze su 60 cose nello schermo · pixel diversi 0%
+  MANCA span «⁦sudo apt install⁩ ./⁦kalliope-0.1-rc.1-amd64.de»: era a 118,150, 387.5×16
+  IN PIÙ span «sudo apt install ./kalliope-0.1-rc.1-amd64.deb»: a 118,150, 387.5×16
+CONFRONTO 390×844: 2 differenze su 34 cose nello schermo · pixel diversi 0,03%
+  MANCA span «⁦sudo apt install⁩ ./⁦kalliope-0.1-rc.1-amd64.de»: era a 33,327.5, 282×33
+  IN PIÙ span «sudo apt install ./kalliope-0.1-rc.1-amd64.deb»: a 33,327.5, 282×33
+Il confronto con la scelta non regge a 2 misure (foto e differenze in /tmp/lavoro-3cb-rtl-pd-H9/ar-installa-y0)
+# uscita: 1

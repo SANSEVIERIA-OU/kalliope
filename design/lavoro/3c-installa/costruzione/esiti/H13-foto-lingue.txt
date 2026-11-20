@@ -1,0 +1,9 @@
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+en-XA 390x844 dir=ltr ok {"male":[],"esce":[],"largo":"390/390","errori":[]}
+en-XA 1440x900 dir=ltr ok {"male":[],"esce":[],"largo":"1440/1440","errori":[]}
+ar-XB 390x844 dir=rtl ok {"male":[],"esce":[],"largo":"390/390","errori":[]}
+ar-XB 1440x900 dir=rtl ok {"male":[],"esce":[],"largo":"1440/1440","errori":[]}
+ar 390x844 dir=rtl ok {"male":[],"esce":[],"largo":"390/390","errori":[]}
+ar 1440x900 dir=rtl ok {"male":[],"esce":[],"largo":"1440/1440","errori":[]}
+ur 390x844 dir=rtl ok {"male":[],"esce":[],"largo":"390/390","errori":[]}
+ur 1440x900 dir=rtl ok {"male":[],"esce":[],"largo":"1440/1440","errori":[]}

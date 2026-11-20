@@ -1,0 +1,8 @@
+# H3-frasi-altezze-844 · 20/11/2026 04:51 · sito: /tmp/lavoro-3cb-sito-H3 · albero: /tmp/lavoro-3cb-radice-H3 · esame-impaginazione.mjs chromium normale installa 844x500,844x501,844x699,844x700,844x759,844x760,844x799,844x800,844x802,844x803,844x819,844x820
+La configurazione dichiara male i limiti:
+  limiti[0]: la pagina «non-ancora-errore-audio» non è fra le pagine della configurazione
+  limiti[1]: la pagina «non-ancora-errore-audio» non è fra le pagine della configurazione
+  limiti[2]: la pagina «non-ancora-errore-audio» non è fra le pagine della configurazione
+  limiti[3]: la pagina «stato-domanda» non è fra le pagine della configurazione
+  limiti[4]: la pagina «stato-domanda» non è fra le pagine della configurazione
+# uscita: 2

@@ -1,0 +1,15 @@
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+de 390x844 dir=ltr ok {"male":[],"esce":[],"largo":"390/390","errori":[]}
+de 1440x900 dir=ltr ok {"male":[],"esce":[],"largo":"1440/1440","errori":[]}
+fi 390x844 dir=ltr ok {"male":[],"esce":[],"largo":"390/390","errori":[]}
+fi 1440x900 dir=ltr ok {"male":[],"esce":[],"largo":"1440/1440","errori":[]}
+el 390x844 dir=ltr ok {"male":[],"esce":[],"largo":"390/390","errori":[]}
+el 1440x900 dir=ltr ok {"male":[],"esce":[],"largo":"1440/1440","errori":[]}
+bg 390x844 dir=ltr ok {"male":[],"esce":[],"largo":"390/390","errori":[]}
+bg 1440x900 dir=ltr ok {"male":[],"esce":[],"largo":"1440/1440","errori":[]}
+hi 390x844 dir=ltr ok {"male":[],"esce":[],"largo":"390/390","errori":[]}
+hi 1440x900 dir=ltr ok {"male":[],"esce":[],"largo":"1440/1440","errori":[]}
+bn 390x844 dir=ltr ok {"male":[],"esce":[],"largo":"390/390","errori":[]}
+bn 1440x900 dir=ltr ok {"male":[],"esce":[],"largo":"1440/1440","errori":[]}
+zh 390x844 dir=ltr ok {"male":[],"esce":[],"largo":"390/390","errori":[]}
+zh 1440x900 dir=ltr ok {"male":[],"esce":[],"largo":"1440/1440","errori":[]}

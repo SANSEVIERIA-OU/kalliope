@@ -1,0 +1,10 @@
+# ancora-ripeti · H6i · firefox 1366x640 #indirizzo-installa · 8 volte, caricamento naturale · 20/11/2026 12:38 · carico: PSI CPU some avg10=10.28 avg60=6.18 · load 6.85 3.66 3.10 su 12 CPU · memoria disponibile 6988 MB
+ok firefox 1366x640 #indirizzo-installa prova 1 [PSI CPU avg10=6.13, load 6.95 3.84 3.17]: titolo a 88 (barra 72), scrollY 5096, pagina alta 5824 (scorrimento massimo 5184)
+ok firefox 1366x640 #indirizzo-installa prova 2 [PSI CPU avg10=4.11, load 6.56 3.81 3.16]: titolo a 88 (barra 72), scrollY 5096, pagina alta 5824 (scorrimento massimo 5184)
+ok firefox 1366x640 #indirizzo-installa prova 3 [PSI CPU avg10=2.75, load 6.27 3.79 3.16]: titolo a 88 (barra 72), scrollY 5096, pagina alta 5824 (scorrimento massimo 5184)
+ok firefox 1366x640 #indirizzo-installa prova 4 [PSI CPU avg10=1.84, load 6.27 3.79 3.16]: titolo a 88 (barra 72), scrollY 5096, pagina alta 5824 (scorrimento massimo 5184)
+ok firefox 1366x640 #indirizzo-installa prova 5 [PSI CPU avg10=1.23, load 5.77 3.73 3.14]: titolo a 88 (barra 72), scrollY 5096, pagina alta 5824 (scorrimento massimo 5184)
+ok firefox 1366x640 #indirizzo-installa prova 6 [PSI CPU avg10=0.97, load 5.55 3.72 3.14]: titolo a 88 (barra 72), scrollY 5096, pagina alta 5824 (scorrimento massimo 5184)
+ok firefox 1366x640 #indirizzo-installa prova 7 [PSI CPU avg10=0.98, load 5.42 3.72 3.15]: titolo a 88 (barra 72), scrollY 5096, pagina alta 5824 (scorrimento massimo 5184)
+ok firefox 1366x640 #indirizzo-installa prova 8 [PSI CPU avg10=0.66, load 5.42 3.72 3.15]: titolo a 88 (barra 72), scrollY 5096, pagina alta 5824 (scorrimento massimo 5184)
+8/8 nel punto giusto

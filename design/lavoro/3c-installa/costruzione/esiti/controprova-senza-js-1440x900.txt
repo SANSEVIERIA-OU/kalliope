@@ -1,0 +1,22 @@
+# controprova · senza-js-1440x900 · sito P2 (548a6f2) · chromium 1440x900 · senza-js  · 20/11/2026 04:22
+
+== senza-js · chromium 1440x900
+ok   senza JavaScript: niente classe «js»
+ok   senza JavaScript non c'è «Copia» né «Copia l'indirizzo»; le frasi della finestra sono testo con il loro rimedio (nessun pulsante) · {"copia":0,"copiaIndirizzo":"none","frasiFisse":4}
+ok   il primo schermo è allo stato finale: «Tu · microfono «Kalliope»», nessun tratteggio, il posto di «Kalliope» pieno · {"installata":true,"tratteggio":"0"}
+ok   i terminali hanno tutte le righe (nessuna nascosta), le impronte intere e «Uguale, cifra per cifra» scritto · {"nascoste":0,"intere":true,"esito":1}
+ok   la finestra dice «Pronta», i file stanno nella cartella, le entrate sono finite (titoli, file) · {"finestra":"Pronta. In Zoom, Tea","titoli":0,"pacchi":0}
+NO   la versione che il programma risponde c'è, scritta dalla costruzione (kalliope 0.1) · kalliope
+ok   l'indirizzo c'è (lo scrive la costruzione), nessuno scorrimento di lato · https://sansevieria-ou.github.io/kalliope/it/installa/, 1440 contro 1440
+ok   senza JavaScript «Fedora»: la scelta cambia pulsante, riga e comandi (1 in «Installa») · {"scelta":"rpm","pulsanti":["Scarica il .rpm 19,2 MB"],"dice":["Fedora attuale: il pacchetto .rpm"],"comandiInstalla":1,"comandiControllo":2,"cartellaFile":1,"terminale":["sudo dnf install ./kalliope-0.1-rc.1-x86_64.rpm"],"togli":1}
+ok   senza JavaScript «Arch»: la scelta cambia pulsante, riga e comandi (3 in «Installa») · {"scelta":"arch","pulsanti":["Vai ai comandi per Arch"],"dice":["Arch Linux: la ricetta PKGBUILD, che non compila nulla"],"comandiInstalla":3,"comandiControllo":0,"cartellaFile":1,"terminale":["makepkg -si"],"togli":1}
+ok   senza JavaScript «Altre»: la scelta cambia pulsante, riga e comandi (3 in «Installa») · {"scelta":"tar","pulsanti":["Scarica l'archivio 19,2 MB"],"dice":["Le altre distribuzioni: l'archivio, che si installa senza password"],"comandiInstalla":3,"comandiControllo":2,"cartellaFile":1,"terminale":["./install"],"togli":1}
+ok   senza JavaScript «Debian e Ubuntu»: la scelta cambia pulsante, riga e comandi (1 in «Installa») · {"scelta":"deb","pulsanti":["Scarica il .deb 14,1 MB"],"dice":["Debian 13, Ubuntu 24.04 o successive: il pacchetto .deb"],"comandiInstalla":1,"comandiControllo":2,"cartellaFile":1,"terminale":["sudo apt install ./kalliope-0.1-rc.1-amd64.deb"],"togli":1}
+NO   senza JavaScript cambiando distribuzione il pulsante del file e il collegamento non ripetono l'entrata · [1,0]
+NO     e così anche per Arch (il pulsante cambia contenuto) · [["pillola azione scarica",1],["collegamento",0]]
+ok   un clic su un comando lo seleziona intero · {"s":"sha256sum kalliope-0.1-rc.1-am"}
+ok   senza JavaScript il giro di tastiera arriva a ogni collegamento e alla scelta (barra, scelta, comandi, frasi non pulsanti, ripresa, piede) · 33 soste
+ok   console pulita
+
+13/16 ok
+# uscita: 1

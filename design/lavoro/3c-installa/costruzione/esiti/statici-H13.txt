@@ -1,0 +1,14 @@
+# controlli statici · 20/11/2026 16:29 · albero vivo = albero finale H13 (website, design-system, tools)
+## controlla-sorgenti.mjs (da design-system/)
+Sorgenti in ordine: 36 fogli di stile, valori solo nei token
+## css_logico.py
+css_logico.py: ok, no physical left/right, no asymmetric shorthand, no text in CSS (37 style sheets; 10 physical declarations kept on purpose)
+## translations.py extract --check
+translations.py: 363 messages, catalogues up to date
+## translations.py check --complete
+it: 363/363 entries ready
+## marchio.py --check
+marchio: tutti i file corrispondono a disegno.json e ai token
+## unittest (tools/test_*.py)
+Ran 154 tests in 4.701s
+OK (skipped=1)

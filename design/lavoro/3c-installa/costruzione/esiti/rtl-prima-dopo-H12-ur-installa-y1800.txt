@@ -1,0 +1,65 @@
+# rtl prima/dopo · ur/installa/index.html · y 1800 · scelta H6 · adesso H12 · 20/11/2026 15:50 · carico: PSI CPU some avg10=0.20 avg60=0.79 · load 3.60 3.70 5.27 su 12 CPU · memoria disponibile 7915 MB
+CONFRONTO 1440×900 a 1800 px: 32 differenze su 61 cose nello schermo · pixel diversi 1,22%
+  MANCA code «⁦sha256sum kalliope-0.1-rc.1-amd64.deb⁩»: era a 861,425.5, 482×22
+  MANCA code «⁦737a98ea05b5085e54b2cae156970969880829fa946146b»: era a 861,543, 482×44
+  MANCA code «⁦sha256sum⁩ -⁦c SHA256SUMS⁩ --⁦ignore-missing⁩»: era a 966,790, 394×52.5
+  MANCA code «⁦gh attestation verify⁩»: era a 971,873.5, 389×52.5
+  MANCA span «⁦kalliope-0.1-rc.1-amd64.deb⁩»: era a 200.5,107, 279.5×25
+  MANCA b «⁦14.1 MB⁩»: era a 422,112, 45×15
+  MANCA span «⁦sha256sum kalliope-0.1-rc.1-amd64.deb⁩»: era a 118,203, 312×16
+  MANCA p «⁦737a98ea05b5085e54b2cae156970969880829fa946146b»: era a 101,222, 438×44
+  MANCA p «⁦737a98ea05b5085e54b2cae156970969880829fa946146b» #2: era a 101,321, 438×44
+  IN PIÙ code «sha256sum kalliope-0.1-rc.1-amd64.deb»: a 861,425.5, 482×22
+  IN PIÙ code «737a98ea05b5085e54b2cae156970969880829fa946146bd»: a 861,543, 482×44
+  IN PIÙ code «sha256sum -c SHA256SUMS --ignore-missing»: a 966,790, 394×52.5
+  IN PIÙ code «gh attestation verify»: a 971,873.5, 389×52.5
+  IN PIÙ span «kalliope-0.1-rc.1-amd64.deb»: a 200.5,107, 279.5×25
+  IN PIÙ b «14.1 MB»: a 422,112, 45×15
+  IN PIÙ span «sha256sum kalliope-0.1-rc.1-amd64.deb»: a 118,203, 312×16
+  IN PIÙ span «737a98ea»: a 101,225, 67.5×16
+  IN PIÙ span «05b5085e»: a 168.5,225, 67.5×16
+  IN PIÙ span «54b2cae1»: a 236,225, 67.5×16
+  IN PIÙ span «56970969»: a 303.5,225, 67.5×16
+  IN PIÙ span «880829fa»: a 371,225, 67.5×16
+  IN PIÙ span «946146bd»: a 438,225, 67.5×16
+  IN PIÙ span «a1d458bb»: a 101,225, 430×38
+  IN PIÙ span «79def73c»: a 143,247, 67.5×16
+  IN PIÙ span «737a98ea» #2: a 101,324, 67.5×16
+  IN PIÙ span «05b5085e» #2: a 168.5,324, 67.5×16
+  IN PIÙ span «54b2cae1» #2: a 236,324, 67.5×16
+  IN PIÙ span «56970969» #2: a 303.5,324, 67.5×16
+  IN PIÙ span «880829fa» #2: a 371,324, 67.5×16
+  IN PIÙ span «946146bd» #2: a 438,324, 67.5×16
+  IN PIÙ span «a1d458bb» #2: a 101,324, 430×38
+  IN PIÙ span «79def73c» #2: a 143,346, 67.5×16
+CONFRONTO 390×844 a 1800 px: 28 differenze su 27 cose nello schermo · pixel diversi 3,62%
+  MANCA a «⁦kalliope-0.1-rc.1-amd64.deb⁩»: era a 126,579.5, 244×38.5
+  MANCA span «⁦14.1 MB⁩»: era a 64,579.5, 52×38.5
+  MANCA span «⁦kalliope-0.1-rc.1-amd64.deb⁩»: era a 77.5,196, 279.5×25
+  MANCA b «⁦14.1 MB⁩»: era a 299,201, 45×15
+  MANCA span «⁦sha256sum kalliope-0.1-rc.1-amd64.deb⁩»: era a 47.5,287, 267.5×14
+  MANCA p «⁦737a98ea05b5085e54b2cae156970969880829fa946146b»: era a 33,304, 324×38
+  MANCA p «⁦737a98ea05b5085e54b2cae156970969880829fa946146b» #2: era a 33,388, 324×38
+  IN PIÙ a «kalliope-0.1-rc.1-amd64.deb»: a 126,579.5, 244×38.5
+  IN PIÙ span «14.1 MB»: a 64,579.5, 52×38.5
+  IN PIÙ span «kalliope-0.1-rc.1-amd64.deb»: a 77.5,196, 279.5×25
+  IN PIÙ b «14.1 MB»: a 299,201, 45×15
+  IN PIÙ span «sha256sum kalliope-0.1-rc.1-amd64.deb»: a 47.5,287, 267.5×14
+  IN PIÙ span «737a98ea»: a 33,306, 58×14
+  IN PIÙ span «05b5085e»: a 91,306, 58×14
+  IN PIÙ span «54b2cae1»: a 148.5,306, 58×14
+  IN PIÙ span «56970969»: a 206.5,306, 58×14
+  IN PIÙ span «880829fa»: a 264,306, 58×14
+  IN PIÙ span «946146bd»: a 33,306, 318×33
+  IN PIÙ span «a1d458bb»: a 62,325, 58×14
+  IN PIÙ span «79def73c»: a 119.5,325, 58×14
+  IN PIÙ span «737a98ea» #2: a 33,390, 58×14
+  IN PIÙ span «05b5085e» #2: a 91,390, 58×14
+  IN PIÙ span «54b2cae1» #2: a 148.5,390, 58×14
+  IN PIÙ span «56970969» #2: a 206.5,390, 58×14
+  IN PIÙ span «880829fa» #2: a 264,390, 58×14
+  IN PIÙ span «946146bd» #2: a 33,390, 318×33
+  IN PIÙ span «a1d458bb» #2: a 62,409, 58×14
+  IN PIÙ span «79def73c» #2: a 119.5,409, 58×14
+Il confronto con la scelta non regge a 2 misure (foto e differenze in /tmp/lavoro-3cb-rtl-pd-H12/ur-installa-y1800)
+# uscita: 1

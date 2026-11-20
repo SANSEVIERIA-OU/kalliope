@@ -1,0 +1,10 @@
+# controprova · ricarica-chromium · sito P2 (548a6f2) · chromium 1440x900 · ricarica  · 20/11/2026 04:24
+
+== ricarica · chromium 1440x900
+NO   ricaricando a metà pagina (Altre, ai comandi) si resta lì, la scelta resta (chromium), la scena in vista finisce · {"prima":2541,"y":2541,"scelta":"deb","comandi":1,"discoInVista":true,"pacchi":true,"terminaleAttesa":false,"js":true}
+NO   ricaricando durante l'arrivo la pagina riparte da capo e arriva allo stato finale (con la scelta fatta) · {"installata":true,"attesa":false,"comando":"$ sudo apt install ./kalliope-0.1-rc.1-amd64.deb"}
+ok   ricaricando con una frase premuta si riparte senza (nessuna frase premuta, nessun errore in finestra)
+ok   console pulita
+
+2/4 ok
+# uscita: 1

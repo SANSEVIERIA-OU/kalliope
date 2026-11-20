@@ -1,0 +1,9 @@
+# controprova · primo-arXB-1024x768 · sito P2 (548a6f2) · chromium 1024x768 · primo --lingua=ar-XB · 20/11/2026 04:21
+
+== primo · chromium 1024x768
+NO   primo schermo ar-XB: il pulsante del file sta nello schermo (800–856 su 768; gradino: -; lo stato «Oggi:» 942–1017) · {"top":800,"bottom":856,"vh":768,"statoTop":942,"statoBottom":1017,"classi":"-","largo":1024}
+ok     nessuno scorrimento di lato · 1024 contro 1024
+ok     console pulita
+
+2/3 ok
+# uscita: 1

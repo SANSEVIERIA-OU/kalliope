@@ -1,0 +1,244 @@
+# H5-esame-misure · 20/11/2026 08:30 · sito: /tmp/lavoro-3cb-sito-H5 · albero: /tmp/lavoro-3cb-radice-H5 · esame-impaginazione.mjs chromium normale installa 390x844,360x740,844x390,412x915,750x832,466x678,951x669,326x326,440x706,440x744,421x616,861x609,820x1180,1180x820,1440x900,1366x640,1280x720,1024x768,390x667,360x640,320x568,1920x1080
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+installa · 390×844 · testo 100%: pulito
+installa-menu · 390×844 · testo 100%: pulito
+installa-archivio · 390×844 · testo 100%: pulito
+installa-frase · 390×844 · testo 100%: pulito
+installa-frase-microfono · 390×844 · testo 100%: pulito
+installa-frase-tolta · 390×844 · testo 100%: pulito
+installa-copia-fatta · 390×844 · testo 100%: pulito
+installa-copia-non-riuscita · 390×844 · testo 100%: pulito
+installa-indirizzo-copiato · 390×844 · testo 100%: pulito
+installa-indirizzo-non-copiato · 390×844 · testo 100%: pulito
+installa · 360×740 · testo 100%: pulito
+installa-menu · 360×740 · testo 100%: pulito
+installa-archivio · 360×740 · testo 100%: pulito
+installa-frase · 360×740 · testo 100%: pulito
+installa-frase-microfono · 360×740 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: 30 px sotto (schermo 360×740) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+installa-frase-tolta · 360×740 · testo 100%: pulito
+installa-copia-fatta · 360×740 · testo 100%: pulito
+installa-copia-non-riuscita · 360×740 · testo 100%: pulito
+installa-indirizzo-copiato · 360×740 · testo 100%: pulito
+installa-indirizzo-non-copiato · 360×740 · testo 100%: pulito
+installa · 844×390 · testo 100%: pulito
+installa-menu · 844×390 · testo 100%: pulito
+installa-archivio · 844×390 · testo 100%: pulito
+installa-frase · 844×390 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 844×390) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+installa-frase-microfono · 844×390 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 844×390) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+installa-frase-tolta · 844×390 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 844×390) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+installa-copia-fatta · 844×390 · testo 100%: pulito
+installa-copia-non-riuscita · 844×390 · testo 100%: pulito
+installa-indirizzo-copiato · 844×390 · testo 100%: pulito
+installa-indirizzo-non-copiato · 844×390 · testo 100%: pulito
+installa · 412×915 · testo 100%: pulito
+installa-menu · 412×915 · testo 100%: pulito
+installa-archivio · 412×915 · testo 100%: pulito
+installa-frase · 412×915 · testo 100%: pulito
+installa-frase-microfono · 412×915 · testo 100%: pulito
+installa-frase-tolta · 412×915 · testo 100%: pulito
+installa-copia-fatta · 412×915 · testo 100%: pulito
+installa-copia-non-riuscita · 412×915 · testo 100%: pulito
+installa-indirizzo-copiato · 412×915 · testo 100%: pulito
+installa-indirizzo-non-copiato · 412×915 · testo 100%: pulito
+installa · 750×832 · testo 100%: pulito
+installa-menu · 750×832 · testo 100%: pulito
+installa-archivio · 750×832 · testo 100%: pulito
+installa-frase · 750×832 · testo 100%: pulito
+installa-frase-microfono · 750×832 · testo 100%: pulito
+installa-frase-tolta · 750×832 · testo 100%: pulito
+installa-copia-fatta · 750×832 · testo 100%: pulito
+installa-copia-non-riuscita · 750×832 · testo 100%: pulito
+installa-indirizzo-copiato · 750×832 · testo 100%: pulito
+installa-indirizzo-non-copiato · 750×832 · testo 100%: pulito
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+installa · 466×678 · testo 100%: pulito
+installa-menu · 466×678 · testo 100%: pulito
+installa-archivio · 466×678 · testo 100%: pulito
+installa-frase · 466×678 · testo 100%: pulito
+installa-frase-microfono · 466×678 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: 33 px sotto (schermo 466×678) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+installa-frase-tolta · 466×678 · testo 100%: pulito
+installa-copia-fatta · 466×678 · testo 100%: pulito
+installa-copia-non-riuscita · 466×678 · testo 100%: pulito
+installa-indirizzo-copiato · 466×678 · testo 100%: pulito
+installa-indirizzo-non-copiato · 466×678 · testo 100%: pulito
+installa · 951×669 · testo 100%: pulito
+installa-menu · 951×669 · testo 100%: pulito
+installa-archivio · 951×669 · testo 100%: pulito
+installa-frase · 951×669 · testo 100%: pulito
+installa-frase-microfono · 951×669 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 951×669) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+installa-frase-tolta · 951×669 · testo 100%: pulito
+installa-copia-fatta · 951×669 · testo 100%: pulito
+installa-copia-non-riuscita · 951×669 · testo 100%: pulito
+installa-indirizzo-copiato · 951×669 · testo 100%: pulito
+installa-indirizzo-non-copiato · 951×669 · testo 100%: pulito
+installa · 326×326 · testo 100%: pulito
+installa-menu · 326×326 · testo 100%: pulito
+installa-archivio · 326×326 · testo 100%: pulito
+installa-frase · 326×326 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 326×326) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+installa-frase-microfono · 326×326 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 326×326) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+installa-frase-tolta · 326×326 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 326×326) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+installa-copia-fatta · 326×326 · testo 100%: pulito
+installa-copia-non-riuscita · 326×326 · testo 100%: pulito
+installa-indirizzo-copiato · 326×326 · testo 100%: pulito
+installa-indirizzo-non-copiato · 326×326 · testo 100%: pulito
+installa · 440×706 · testo 100%: pulito
+installa-menu · 440×706 · testo 100%: pulito
+installa-archivio · 440×706 · testo 100%: pulito
+installa-frase · 440×706 · testo 100%: pulito
+installa-frase-microfono · 440×706 · testo 100%: pulito
+installa-frase-tolta · 440×706 · testo 100%: pulito
+installa-copia-fatta · 440×706 · testo 100%: pulito
+installa-copia-non-riuscita · 440×706 · testo 100%: pulito
+installa-indirizzo-copiato · 440×706 · testo 100%: pulito
+installa-indirizzo-non-copiato · 440×706 · testo 100%: pulito
+installa · 440×744 · testo 100%: pulito
+installa-menu · 440×744 · testo 100%: pulito
+installa-archivio · 440×744 · testo 100%: pulito
+installa-frase · 440×744 · testo 100%: pulito
+installa-frase-microfono · 440×744 · testo 100%: pulito
+installa-frase-tolta · 440×744 · testo 100%: pulito
+installa-copia-fatta · 440×744 · testo 100%: pulito
+installa-copia-non-riuscita · 440×744 · testo 100%: pulito
+installa-indirizzo-copiato · 440×744 · testo 100%: pulito
+installa-indirizzo-non-copiato · 440×744 · testo 100%: pulito
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+installa · 421×616 · testo 100%: pulito
+installa-menu · 421×616 · testo 100%: pulito
+installa-archivio · 421×616 · testo 100%: pulito
+installa-frase · 421×616 · testo 100%: pulito
+installa-frase-microfono · 421×616 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 421×616) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+installa-frase-tolta · 421×616 · testo 100%: pulito
+installa-copia-fatta · 421×616 · testo 100%: pulito
+installa-copia-non-riuscita · 421×616 · testo 100%: pulito
+installa-indirizzo-copiato · 421×616 · testo 100%: pulito
+installa-indirizzo-non-copiato · 421×616 · testo 100%: pulito
+installa · 861×609 · testo 100%: pulito
+installa-menu · 861×609 · testo 100%: pulito
+installa-archivio · 861×609 · testo 100%: pulito
+installa-frase · 861×609 · testo 100%: pulito
+installa-frase-microfono · 861×609 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 861×609) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+installa-frase-tolta · 861×609 · testo 100%: pulito
+installa-copia-fatta · 861×609 · testo 100%: pulito
+installa-copia-non-riuscita · 861×609 · testo 100%: pulito
+installa-indirizzo-copiato · 861×609 · testo 100%: pulito
+installa-indirizzo-non-copiato · 861×609 · testo 100%: pulito
+installa · 820×1180 · testo 100%: pulito
+installa-menu · 820×1180 · testo 100%: pulito
+installa-archivio · 820×1180 · testo 100%: pulito
+installa-frase · 820×1180 · testo 100%: pulito
+installa-frase-microfono · 820×1180 · testo 100%: pulito
+installa-frase-tolta · 820×1180 · testo 100%: pulito
+installa-copia-fatta · 820×1180 · testo 100%: pulito
+installa-copia-non-riuscita · 820×1180 · testo 100%: pulito
+installa-indirizzo-copiato · 820×1180 · testo 100%: pulito
+installa-indirizzo-non-copiato · 820×1180 · testo 100%: pulito
+installa-menu · 1180×820 · testo 100%: lo stato non c'è a questa misura
+installa · 1180×820 · testo 100%: pulito
+installa-archivio · 1180×820 · testo 100%: pulito
+installa-frase · 1180×820 · testo 100%: pulito
+installa-frase-microfono · 1180×820 · testo 100%: pulito
+installa-frase-tolta · 1180×820 · testo 100%: pulito
+installa-copia-fatta · 1180×820 · testo 100%: pulito
+installa-copia-non-riuscita · 1180×820 · testo 100%: pulito
+installa-indirizzo-copiato · 1180×820 · testo 100%: pulito
+installa-indirizzo-non-copiato · 1180×820 · testo 100%: pulito
+installa-menu · 1440×900 · testo 100%: lo stato non c'è a questa misura
+installa · 1440×900 · testo 100%: pulito
+installa-archivio · 1440×900 · testo 100%: pulito
+installa-frase · 1440×900 · testo 100%: pulito
+installa-frase-microfono · 1440×900 · testo 100%: pulito
+installa-frase-tolta · 1440×900 · testo 100%: pulito
+installa-copia-fatta · 1440×900 · testo 100%: pulito
+installa-copia-non-riuscita · 1440×900 · testo 100%: pulito
+installa-indirizzo-copiato · 1440×900 · testo 100%: pulito
+installa-indirizzo-non-copiato · 1440×900 · testo 100%: pulito
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+installa-menu · 1366×640 · testo 100%: lo stato non c'è a questa misura
+installa · 1366×640 · testo 100%: pulito
+installa-archivio · 1366×640 · testo 100%: pulito
+installa-frase · 1366×640 · testo 100%: pulito
+installa-frase-microfono · 1366×640 · testo 100%: pulito
+installa-frase-tolta · 1366×640 · testo 100%: pulito
+installa-copia-fatta · 1366×640 · testo 100%: pulito
+installa-copia-non-riuscita · 1366×640 · testo 100%: pulito
+installa-indirizzo-copiato · 1366×640 · testo 100%: pulito
+installa-indirizzo-non-copiato · 1366×640 · testo 100%: pulito
+installa-menu · 1280×720 · testo 100%: lo stato non c'è a questa misura
+installa · 1280×720 · testo 100%: pulito
+installa-archivio · 1280×720 · testo 100%: pulito
+installa-frase · 1280×720 · testo 100%: pulito
+installa-frase-microfono · 1280×720 · testo 100%: pulito
+installa-frase-tolta · 1280×720 · testo 100%: pulito
+installa-copia-fatta · 1280×720 · testo 100%: pulito
+installa-copia-non-riuscita · 1280×720 · testo 100%: pulito
+installa-indirizzo-copiato · 1280×720 · testo 100%: pulito
+installa-indirizzo-non-copiato · 1280×720 · testo 100%: pulito
+installa-menu · 1024×768 · testo 100%: lo stato non c'è a questa misura
+installa · 1024×768 · testo 100%: pulito
+installa-archivio · 1024×768 · testo 100%: pulito
+installa-frase · 1024×768 · testo 100%: pulito
+installa-frase-microfono · 1024×768 · testo 100%: pulito
+installa-frase-tolta · 1024×768 · testo 100%: pulito
+installa-copia-fatta · 1024×768 · testo 100%: pulito
+installa-copia-non-riuscita · 1024×768 · testo 100%: pulito
+installa-indirizzo-copiato · 1024×768 · testo 100%: pulito
+installa-indirizzo-non-copiato · 1024×768 · testo 100%: pulito
+installa · 390×667 · testo 100%: pulito
+installa-menu · 390×667 · testo 100%: pulito
+installa-archivio · 390×667 · testo 100%: pulito
+installa-frase · 390×667 · testo 100%: pulito
+installa-frase-microfono · 390×667 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 390×667) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+installa-frase-tolta · 390×667 · testo 100%: pulito
+installa-copia-fatta · 390×667 · testo 100%: pulito
+installa-copia-non-riuscita · 390×667 · testo 100%: pulito
+installa-indirizzo-copiato · 390×667 · testo 100%: pulito
+installa-indirizzo-non-copiato · 390×667 · testo 100%: pulito
+installa · 360×640 · testo 100%: pulito
+installa-menu · 360×640 · testo 100%: pulito
+installa-archivio · 360×640 · testo 100%: pulito
+installa-frase · 360×640 · testo 100%: pulito
+installa-frase-microfono · 360×640 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 360×640) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+installa-frase-tolta · 360×640 · testo 100%: pulito
+installa-copia-fatta · 360×640 · testo 100%: pulito
+installa-copia-non-riuscita · 360×640 · testo 100%: pulito
+installa-indirizzo-copiato · 360×640 · testo 100%: pulito
+installa-indirizzo-non-copiato · 360×640 · testo 100%: pulito
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+installa · 320×568 · testo 100%: pulito
+installa-menu · 320×568 · testo 100%: pulito
+installa-archivio · 320×568 · testo 100%: pulito
+installa-frase · 320×568 · testo 100%: pulito
+installa-frase-microfono · 320×568 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 320×568) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+installa-frase-tolta · 320×568 · testo 100%: pulito
+installa-copia-fatta · 320×568 · testo 100%: pulito
+installa-copia-non-riuscita · 320×568 · testo 100%: pulito
+installa-indirizzo-copiato · 320×568 · testo 100%: pulito
+installa-indirizzo-non-copiato · 320×568 · testo 100%: pulito
+installa-menu · 1920×1080 · testo 100%: lo stato non c'è a questa misura
+installa · 1920×1080 · testo 100%: pulito
+installa-archivio · 1920×1080 · testo 100%: pulito
+installa-frase · 1920×1080 · testo 100%: pulito
+installa-frase-microfono · 1920×1080 · testo 100%: pulito
+installa-frase-tolta · 1920×1080 · testo 100%: pulito
+installa-copia-fatta · 1920×1080 · testo 100%: pulito
+installa-copia-non-riuscita · 1920×1080 · testo 100%: pulito
+installa-indirizzo-copiato · 1920×1080 · testo 100%: pulito
+installa-indirizzo-non-copiato · 1920×1080 · testo 100%: pulito
+
+
+Tutto pulito; 14 limiti dichiarati, elencati a parte e non contati (foto in /tmp/lavoro-3cb-qa-H5-esame-misure/esame/chromium)
+# uscita: 0

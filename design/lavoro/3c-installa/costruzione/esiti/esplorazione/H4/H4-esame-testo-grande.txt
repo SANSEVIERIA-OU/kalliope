@@ -1,0 +1,147 @@
+# H4-esame-testo-grande · 20/11/2026 05:58 · sito: /tmp/lavoro-3cb-sito-H4 · albero: /tmp/lavoro-3cb-radice-H4 · esame-impaginazione.mjs chromium tutti installa 360x760,820x1180,1440x900
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+installa · 360×760 · testo 100%: pulito
+installa-archivio · 360×760 · testo 100%: pulito
+installa-copia-non-riuscita · 360×760 · testo 100%: pulito
+installa-frase · 360×760 · testo 100%: pulito
+installa · 820×1180 · testo 100%: pulito
+installa-archivio · 820×1180 · testo 100%: pulito
+installa-copia-non-riuscita · 820×1180 · testo 100%: pulito
+installa-frase · 820×1180 · testo 100%: pulito
+installa · 1440×900 · testo 100%: pulito
+installa-archivio · 1440×900 · testo 100%: pulito
+installa-copia-non-riuscita · 1440×900 · testo 100%: pulito
+installa-frase · 1440×900 · testo 100%: pulito
+installa · 360×760 · testo 125%: pulito
+installa-archivio · 360×760 · testo 125%: pulito
+installa-copia-non-riuscita · 360×760 · testo 125%: pulito
+installa-frase · 360×760 · testo 125%: pulito
+installa · 820×1180 · testo 125%: pulito
+installa-archivio · 820×1180 · testo 125%: pulito
+installa-copia-non-riuscita · 820×1180 · testo 125%: pulito
+installa-frase · 820×1180 · testo 125%: pulito
+installa · 1440×900 · testo 125%: pulito
+installa-archivio · 1440×900 · testo 125%: pulito
+installa-copia-non-riuscita · 1440×900 · testo 125%: pulito
+installa-frase · 1440×900 · testo 125%: pulito
+installa · 360×760 · testo 150%: pulito
+installa-archivio · 360×760 · testo 150%: pulito
+installa-copia-non-riuscita · 360×760 · testo 150%: pulito
+installa-frase · 360×760 · testo 150%: pulito
+installa · 820×1180 · testo 150%: pulito
+installa-archivio · 820×1180 · testo 150%: pulito
+installa-copia-non-riuscita · 820×1180 · testo 150%: pulito
+installa-frase · 820×1180 · testo 150%: pulito
+installa · 1440×900 · testo 150%: pulito
+installa-archivio · 1440×900 · testo 150%: pulito
+installa-copia-non-riuscita · 1440×900 · testo 150%: pulito
+installa-frase · 1440×900 · testo 150%: pulito
+installa · 360×760 · testo 200%: pulito
+installa-archivio · 360×760 · testo 200%: pulito
+installa-copia-non-riuscita · 360×760 · testo 200%: pulito
+installa-frase · 360×760 · testo 200%: pulito
+installa · 820×1180 · testo 200%: pulito
+installa-archivio · 820×1180 · testo 200%: pulito
+installa-copia-non-riuscita · 820×1180 · testo 200%: pulito
+installa-frase · 820×1180 · testo 200%: pulito
+installa · 1440×900 · testo 200%: pulito
+installa-archivio · 1440×900 · testo 200%: pulito
+installa-copia-non-riuscita · 1440×900 · testo 200%: pulito
+installa-frase · 1440×900 · testo 200%: pulito
+installa · 360×760 · zoom 125% (288×608): 
+  STRETTO label «Debian e Ubuntu» largo 99px, circa 10 caratteri, su 2 righe
+  STRETTO span.peso «14,1 MB» largo 63px, circa 6 caratteri, su 2 righe
+installa-archivio · 360×760 · zoom 125% (288×608): 
+  STRETTO label «Debian e Ubuntu» largo 99px, circa 11 caratteri, su 2 righe
+installa-copia-non-riuscita · 360×760 · zoom 125% (288×608): 
+  STRETTO label «Debian e Ubuntu» largo 99px, circa 10 caratteri, su 2 righe
+  STRETTO span.peso «14,1 MB» largo 63px, circa 6 caratteri, su 2 righe
+installa-frase · 360×760 · zoom 125% (288×608): 
+  STRETTO label «Debian e Ubuntu» largo 99px, circa 10 caratteri, su 2 righe
+  STRETTO span.peso «14,1 MB» largo 63px, circa 6 caratteri, su 2 righe
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+installa · 820×1180 · zoom 125% (656×944): pulito
+installa-archivio · 820×1180 · zoom 125% (656×944): pulito
+installa-copia-non-riuscita · 820×1180 · zoom 125% (656×944): pulito
+installa-frase · 820×1180 · zoom 125% (656×944): pulito
+installa · 1440×900 · zoom 125% (1152×720): pulito
+installa-archivio · 1440×900 · zoom 125% (1152×720): pulito
+installa-copia-non-riuscita · 1440×900 · zoom 125% (1152×720): pulito
+installa-frase · 1440×900 · zoom 125% (1152×720): pulito
+installa · 360×760 · zoom 150% (240×507): 
+  STRETTO label «Debian e Ubuntu» largo 75px, circa 8 caratteri, su 2 righe
+  STRETTO span.peso «14,1 MB» largo 46px, circa 4 caratteri, su 2 righe
+installa-archivio · 360×760 · zoom 150% (240×507): 
+  STRETTO label «Debian e Ubuntu» largo 75px, circa 8 caratteri, su 2 righe
+  STRETTO span.peso «19,2 MB» largo 39px, circa 4 caratteri, su 2 righe
+installa-copia-non-riuscita · 360×760 · zoom 150% (240×507): 
+  STRETTO label «Debian e Ubuntu» largo 75px, circa 8 caratteri, su 2 righe
+  STRETTO span.peso «14,1 MB» largo 46px, circa 4 caratteri, su 2 righe
+  STRETTO h2.entra.entra-titolo «Il file giusto, e uguale a quell» largo 200px, circa 10 caratteri, su 5 righe
+installa-frase · 360×760 · zoom 150% (240×507): 
+  STRETTO label «Debian e Ubuntu» largo 75px, circa 8 caratteri, su 2 righe
+  STRETTO span.peso «14,1 MB» largo 46px, circa 4 caratteri, su 2 righe
+  STRETTO h2.entra.entra-titolo «Apri Kalliope, e aspetta «Pronta» largo 200px, circa 10 caratteri, su 4 righe
+installa · 820×1180 · zoom 150% (547×787): pulito
+installa-archivio · 820×1180 · zoom 150% (547×787): pulito
+installa-copia-non-riuscita · 820×1180 · zoom 150% (547×787): pulito
+installa-frase · 820×1180 · zoom 150% (547×787): pulito
+installa · 1440×900 · zoom 150% (960×600): pulito
+installa-archivio · 1440×900 · zoom 150% (960×600): pulito
+installa-copia-non-riuscita · 1440×900 · zoom 150% (960×600): pulito
+installa-frase · 1440×900 · zoom 150% (960×600): pulito
+installa · 360×760 · zoom 200% (180×380): 
+  FUORI a.pulsante-menu «Menu» 149→230
+  FUORI label «Fedora» 106→184
+  FUORI label «Altre» 106→184
+  STRETTO h1 «Installa Kalliope. Ogni passo si» largo 140px, circa 9 caratteri, su 2 righe
+  STRETTO span.riga «si vede riuscire.» largo 140px, circa 9 caratteri, su 2 righe
+  STRETTO label «Debian e Ubuntu» largo 58px, circa 6 caratteri, su 3 righe
+  STRETTO a.pillola.azione «Scarica il .deb 14,1 MB» largo 80px, circa 8 caratteri, su 2 righe
+  STRETTO span.peso «14,1 MB» largo 34px, circa 3 caratteri, su 2 righe
+installa-archivio · 360×760 · zoom 200% (180×380): 
+  FUORI VISTA label «Altre»: 4 px a destra (schermo 180×380)
+  FUORI a.pulsante-menu «Menu» 149→230
+  FUORI label «Fedora» 106→184
+  FUORI label «Altre» 106→184
+  ESCE a.pulsante-menu «Menu» da header.barra.compatta
+  STRETTO h1 «Installa Kalliope. Ogni passo si» largo 140px, circa 9 caratteri, su 2 righe
+  STRETTO span.riga «si vede riuscire.» largo 140px, circa 9 caratteri, su 2 righe
+  STRETTO label «Debian e Ubuntu» largo 58px, circa 6 caratteri, su 3 righe
+  STRETTO a.pillola.azione «Scarica l'archivio 19,2 MB» largo 80px, circa 8 caratteri, su 2 righe
+  STRETTO span.peso «19,2 MB» largo 33px, circa 3 caratteri, su 2 righe
+installa-copia-non-riuscita · 360×760 · zoom 200% (180×380): 
+  FUORI a.pulsante-menu «Menu» 149→230
+  FUORI label «Fedora» 106→184
+  FUORI label «Altre» 106→184
+  ESCE a.pulsante-menu «Menu» da header.barra.compatta
+  STRETTO h1 «Installa Kalliope. Ogni passo si» largo 140px, circa 9 caratteri, su 2 righe
+  STRETTO span.riga «si vede riuscire.» largo 140px, circa 9 caratteri, su 2 righe
+  STRETTO label «Debian e Ubuntu» largo 58px, circa 6 caratteri, su 3 righe
+  STRETTO a.pillola.azione «Scarica il .deb 14,1 MB» largo 80px, circa 8 caratteri, su 2 righe
+  STRETTO span.peso «14,1 MB» largo 34px, circa 3 caratteri, su 2 righe
+installa-frase · 360×760 · zoom 200% (180×380): 
+  FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 180×380)
+  FUORI a.pulsante-menu «Menu» 149→230
+  FUORI label «Fedora» 106→184
+  FUORI label «Altre» 106→184
+  FUORI span.f-pulsante.f-ferma «Ferma» 126→192
+  ESCE a.pulsante-menu «Menu» da header.barra.compatta
+  ESCE span.f-pulsante.f-ferma «Ferma» da div.finestra.avvio
+  STRETTO h1 «Installa Kalliope. Ogni passo si» largo 140px, circa 9 caratteri, su 2 righe
+  STRETTO span.riga «si vede riuscire.» largo 140px, circa 9 caratteri, su 2 righe
+  STRETTO label «Debian e Ubuntu» largo 58px, circa 6 caratteri, su 3 righe
+  STRETTO a.pillola.azione «Scarica il .deb 14,1 MB» largo 80px, circa 8 caratteri, su 2 righe
+  STRETTO span.peso «14,1 MB» largo 34px, circa 3 caratteri, su 2 righe
+installa · 820×1180 · zoom 200% (410×590): pulito
+installa-archivio · 820×1180 · zoom 200% (410×590): pulito
+installa-copia-non-riuscita · 820×1180 · zoom 200% (410×590): pulito
+installa-frase · 820×1180 · zoom 200% (410×590): pulito
+installa · 1440×900 · zoom 200% (720×450): pulito
+installa-archivio · 1440×900 · zoom 200% (720×450): pulito
+installa-copia-non-riuscita · 1440×900 · zoom 200% (720×450): pulito
+installa-frase · 1440×900 · zoom 200% (720×450): pulito
+
+STRETTO: 37 · FUORI: 13 · FUORI VISTA: 2 · ESCE: 4
+56 cose da guardare (foto in /tmp/lavoro-3cb-qa-H4-esame-testo-grande/esame/chromium)
+# uscita: 1

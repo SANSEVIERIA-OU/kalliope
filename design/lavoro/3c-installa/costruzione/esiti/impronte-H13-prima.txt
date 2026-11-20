@@ -1,0 +1,34 @@
+# impronte 20/11/2026 16:21:02
+## i file di questo incarico, nella copia provata (/tmp/lavoro-3cb-radice-H13) e nell'albero vivo (/workspace/kalliope): se le due colonne coincidono la copia è quella viva (primi 16 caratteri di sha256)
+155f2be52e29b1cb  155f2be52e29b1cb  =  website/installa/index.html
+ed465383f8e04260  ed465383f8e04260  =  website/installa/installa.js
+671e6cc402e43845  671e6cc402e43845  =  website/cornice.js
+30b55f8bd12043d4  30b55f8bd12043d4  =  website/componenti.js
+6a5c0c35b1a985bd  6a5c0c35b1a985bd  =  design-system/token.css
+bdcc505be12c71da  bdcc505be12c71da  =  design-system/base.css
+650e366bc3f96522  650e366bc3f96522  =  design-system/componenti/scelta-sistema.css
+34d45e1ca1ecb287  34d45e1ca1ecb287  =  design-system/componenti/comando.css
+1b6e62b34ac17eb3  1b6e62b34ac17eb3  =  design-system/componenti/terminale.css
+5f4ebc1f64c04416  5f4ebc1f64c04416  =  design-system/componenti/installazione.css
+0c8747892caa2122  0c8747892caa2122  =  design-system/componenti/pagina.css
+4054464db645b7f1  4054464db645b7f1  =  design-system/catalogo/catalogo-installa.js
+2ebad2561b39a3c7  2ebad2561b39a3c7  =  design-system/catalogo/catalogo-installa.css
+77e7d97be9f088a5  77e7d97be9f088a5  =  design-system/catalogo/index.html
+aed74e3681c5b481  aed74e3681c5b481  =  design-system/metodo.config.mjs
+2ae31599cf122e64  2ae31599cf122e64  =  design-system/SISTEMA.md
+cf7aed97d20a524c  cf7aed97d20a524c  =  design-system/TOKEN.md
+9fb52f72dda6e3d6  9fb52f72dda6e3d6  =  tools/site.py
+f9bbd079ce486efe  f9bbd079ce486efe  =  tools/test_translations.py
+63a0dc2d72581157  63a0dc2d72581157  =  website/lingue/site.pot
+dd242c8a50b039b6  dd242c8a50b039b6  =  website/lingue/it.po
+32256992dd1182be  32256992dd1182be  =  website/index.html
+e475646691ca0acc  e475646691ca0acc  =  website/non-ancora/index.html
+50169d5183ad9d21  50169d5183ad9d21  =  website/stato/index.html
+## la copia provata intera (website, design-system, tools): una sola impronta
+4705d8cc0c058abe7d8ce9c017f69bc0
+## l'albero vivo intero (website, design-system, tools): una sola impronta
+12e1ff85dde9c7db0ae74790867016f4
+## il sito costruito (/tmp/lavoro-3cb-sito-H13): una sola impronta
+94227099a77b2bbfd4cfd73be96893ce
+## il sito costruito (/tmp/lavoro-3cb-sito-H13i): una sola impronta
+788d646fac1e453cbd1ed01c8e8aa223

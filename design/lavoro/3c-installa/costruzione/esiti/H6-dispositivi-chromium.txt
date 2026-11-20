@@ -1,0 +1,170 @@
+# H6-dispositivi-chromium · 20/11/2026 13:38 · carico: PSI CPU some avg10=0.02 avg60=0.47 · load 2.55 3.70 4.88 su 12 CPU · memoria disponibile 5954 MB · sito: /tmp/lavoro-3cb-sito-H6 · albero: /tmp/lavoro-3cb-radice-H6 · dispositivi-qa.mjs chromium installa
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+ok  installa · Telefono 390×844
+ok  installa-menu · Telefono 390×844
+ok  installa-archivio · Telefono 390×844
+ok  installa-frase · Telefono 390×844
+ok  installa-frase-microfono · Telefono 390×844
+ok  installa-frase-tolta · Telefono 390×844
+ok  installa-copia-fatta · Telefono 390×844
+ok  installa-copia-non-riuscita · Telefono 390×844
+ok  installa-indirizzo-copiato · Telefono 390×844
+ok  installa-indirizzo-non-copiato · Telefono 390×844
+ok  installa · Telefono piccolo 360×740
+ok  installa-menu · Telefono piccolo 360×740
+ok  installa-archivio · Telefono piccolo 360×740
+ok  installa-frase · Telefono piccolo 360×740
+ok  installa-frase-microfono · Telefono piccolo 360×740
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: 30 px sotto (schermo 360×740) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+ok  installa-frase-tolta · Telefono piccolo 360×740
+ok  installa-copia-fatta · Telefono piccolo 360×740
+ok  installa-copia-non-riuscita · Telefono piccolo 360×740
+ok  installa-indirizzo-copiato · Telefono piccolo 360×740
+ok  installa-indirizzo-non-copiato · Telefono piccolo 360×740
+ok  installa · Telefono girato 844×390
+ok  installa-menu · Telefono girato 844×390
+ok  installa-archivio · Telefono girato 844×390
+ok  installa-frase · Telefono girato 844×390
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 844×390) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+ok  installa-frase-microfono · Telefono girato 844×390
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 844×390) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+ok  installa-frase-tolta · Telefono girato 844×390
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 844×390) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+ok  installa-copia-fatta · Telefono girato 844×390
+ok  installa-copia-non-riuscita · Telefono girato 844×390
+ok  installa-indirizzo-copiato · Telefono girato 844×390
+ok  installa-indirizzo-non-copiato · Telefono girato 844×390
+ok  installa · Galaxy Z Fold chiuso 412×915
+ok  installa-menu · Galaxy Z Fold chiuso 412×915
+ok  installa-archivio · Galaxy Z Fold chiuso 412×915
+ok  installa-frase · Galaxy Z Fold chiuso 412×915
+ok  installa-frase-microfono · Galaxy Z Fold chiuso 412×915
+ok  installa-frase-tolta · Galaxy Z Fold chiuso 412×915
+ok  installa-copia-fatta · Galaxy Z Fold chiuso 412×915
+ok  installa-copia-non-riuscita · Galaxy Z Fold chiuso 412×915
+ok  installa-indirizzo-copiato · Galaxy Z Fold chiuso 412×915
+ok  installa-indirizzo-non-copiato · Galaxy Z Fold chiuso 412×915
+ok  installa · Galaxy Z Fold aperto 750×832
+ok  installa-menu · Galaxy Z Fold aperto 750×832
+ok  installa-archivio · Galaxy Z Fold aperto 750×832
+ok  installa-frase · Galaxy Z Fold aperto 750×832
+ok  installa-frase-microfono · Galaxy Z Fold aperto 750×832
+ok  installa-frase-tolta · Galaxy Z Fold aperto 750×832
+ok  installa-copia-fatta · Galaxy Z Fold aperto 750×832
+ok  installa-copia-non-riuscita · Galaxy Z Fold aperto 750×832
+ok  installa-indirizzo-copiato · Galaxy Z Fold aperto 750×832
+ok  installa-indirizzo-non-copiato · Galaxy Z Fold aperto 750×832
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+ok  installa · iPhone Duo chiuso 466×678
+ok  installa-menu · iPhone Duo chiuso 466×678
+ok  installa-archivio · iPhone Duo chiuso 466×678
+ok  installa-frase · iPhone Duo chiuso 466×678
+ok  installa-frase-microfono · iPhone Duo chiuso 466×678
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: 33 px sotto (schermo 466×678) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+ok  installa-frase-tolta · iPhone Duo chiuso 466×678
+ok  installa-copia-fatta · iPhone Duo chiuso 466×678
+ok  installa-copia-non-riuscita · iPhone Duo chiuso 466×678
+ok  installa-indirizzo-copiato · iPhone Duo chiuso 466×678
+ok  installa-indirizzo-non-copiato · iPhone Duo chiuso 466×678
+ok  installa · iPhone Duo aperto 951×669
+ok  installa-menu · iPhone Duo aperto 951×669
+ok  installa-archivio · iPhone Duo aperto 951×669
+ok  installa-frase · iPhone Duo aperto 951×669
+ok  installa-frase-microfono · iPhone Duo aperto 951×669
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 951×669) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+ok  installa-frase-tolta · iPhone Duo aperto 951×669
+ok  installa-copia-fatta · iPhone Duo aperto 951×669
+ok  installa-copia-non-riuscita · iPhone Duo aperto 951×669
+ok  installa-indirizzo-copiato · iPhone Duo aperto 951×669
+ok  installa-indirizzo-non-copiato · iPhone Duo aperto 951×669
+ok  installa · Huawei Pura X chiuso 326×326
+ok  installa-menu · Huawei Pura X chiuso 326×326
+ok  installa-archivio · Huawei Pura X chiuso 326×326
+ok  installa-frase · Huawei Pura X chiuso 326×326
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 326×326) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+ok  installa-frase-microfono · Huawei Pura X chiuso 326×326
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 326×326) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+ok  installa-frase-tolta · Huawei Pura X chiuso 326×326
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 326×326) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+ok  installa-copia-fatta · Huawei Pura X chiuso 326×326
+ok  installa-copia-non-riuscita · Huawei Pura X chiuso 326×326
+ok  installa-indirizzo-copiato · Huawei Pura X chiuso 326×326
+ok  installa-indirizzo-non-copiato · Huawei Pura X chiuso 326×326
+ok  installa · Huawei Pura X aperto 440×706
+ok  installa-menu · Huawei Pura X aperto 440×706
+ok  installa-archivio · Huawei Pura X aperto 440×706
+ok  installa-frase · Huawei Pura X aperto 440×706
+ok  installa-frase-microfono · Huawei Pura X aperto 440×706
+ok  installa-frase-tolta · Huawei Pura X aperto 440×706
+ok  installa-copia-fatta · Huawei Pura X aperto 440×706
+ok  installa-copia-non-riuscita · Huawei Pura X aperto 440×706
+ok  installa-indirizzo-copiato · Huawei Pura X aperto 440×706
+ok  installa-indirizzo-non-copiato · Huawei Pura X aperto 440×706
+ok  installa · Huawei Pura X View 440×744
+ok  installa-menu · Huawei Pura X View 440×744
+ok  installa-archivio · Huawei Pura X View 440×744
+ok  installa-frase · Huawei Pura X View 440×744
+ok  installa-frase-microfono · Huawei Pura X View 440×744
+ok  installa-frase-tolta · Huawei Pura X View 440×744
+ok  installa-copia-fatta · Huawei Pura X View 440×744
+ok  installa-copia-non-riuscita · Huawei Pura X View 440×744
+ok  installa-indirizzo-copiato · Huawei Pura X View 440×744
+ok  installa-indirizzo-non-copiato · Huawei Pura X View 440×744
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+ok  installa · Huawei Pura X Max chiuso 421×616
+ok  installa-menu · Huawei Pura X Max chiuso 421×616
+ok  installa-archivio · Huawei Pura X Max chiuso 421×616
+ok  installa-frase · Huawei Pura X Max chiuso 421×616
+ok  installa-frase-microfono · Huawei Pura X Max chiuso 421×616
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 421×616) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+ok  installa-frase-tolta · Huawei Pura X Max chiuso 421×616
+ok  installa-copia-fatta · Huawei Pura X Max chiuso 421×616
+ok  installa-copia-non-riuscita · Huawei Pura X Max chiuso 421×616
+ok  installa-indirizzo-copiato · Huawei Pura X Max chiuso 421×616
+ok  installa-indirizzo-non-copiato · Huawei Pura X Max chiuso 421×616
+ok  installa · Huawei Pura X Max aperto 861×609
+ok  installa-menu · Huawei Pura X Max aperto 861×609
+ok  installa-archivio · Huawei Pura X Max aperto 861×609
+ok  installa-frase · Huawei Pura X Max aperto 861×609
+ok  installa-frase-microfono · Huawei Pura X Max aperto 861×609
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 861×609) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+ok  installa-frase-tolta · Huawei Pura X Max aperto 861×609
+ok  installa-copia-fatta · Huawei Pura X Max aperto 861×609
+ok  installa-copia-non-riuscita · Huawei Pura X Max aperto 861×609
+ok  installa-indirizzo-copiato · Huawei Pura X Max aperto 861×609
+ok  installa-indirizzo-non-copiato · Huawei Pura X Max aperto 861×609
+ok  installa · Tablet 820×1180
+ok  installa-menu · Tablet 820×1180
+ok  installa-archivio · Tablet 820×1180
+ok  installa-frase · Tablet 820×1180
+ok  installa-frase-microfono · Tablet 820×1180
+ok  installa-frase-tolta · Tablet 820×1180
+ok  installa-copia-fatta · Tablet 820×1180
+ok  installa-copia-non-riuscita · Tablet 820×1180
+ok  installa-indirizzo-copiato · Tablet 820×1180
+ok  installa-indirizzo-non-copiato · Tablet 820×1180
+--  installa-menu · Tablet girato 1180×820: lo stato non c'è a questa misura
+ok  installa · Tablet girato 1180×820
+ok  installa-archivio · Tablet girato 1180×820
+ok  installa-frase · Tablet girato 1180×820
+ok  installa-frase-microfono · Tablet girato 1180×820
+ok  installa-frase-tolta · Tablet girato 1180×820
+ok  installa-copia-fatta · Tablet girato 1180×820
+ok  installa-copia-non-riuscita · Tablet girato 1180×820
+ok  installa-indirizzo-copiato · Tablet girato 1180×820
+ok  installa-indirizzo-non-copiato · Tablet girato 1180×820
+--  installa-menu · Computer 1440×900: lo stato non c'è a questa misura
+ok  installa · Computer 1440×900
+ok  installa-archivio · Computer 1440×900
+ok  installa-frase · Computer 1440×900
+ok  installa-frase-microfono · Computer 1440×900
+ok  installa-frase-tolta · Computer 1440×900
+ok  installa-copia-fatta · Computer 1440×900
+ok  installa-copia-non-riuscita · Computer 1440×900
+ok  installa-indirizzo-copiato · Computer 1440×900
+ok  installa-indirizzo-non-copiato · Computer 1440×900
+
+148 casi puliti (148 in questo giro; foto in /tmp/lavoro-3cb-qa-H6-dispositivi-chromium/dispositivi/chromium). Sono simulazioni, non telefoni veri.
+  11 limiti dichiarati, elencati a parte e non contati
+  225 casi della matrice non eseguiti (filtro o giro interrotto: --continua li riprende)
+# uscita: 0

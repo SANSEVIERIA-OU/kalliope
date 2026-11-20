@@ -1,0 +1,27 @@
+# ancora-ripeti · H5r · firefox 1366x640 #indirizzo-installa · 8 volte, caricamento naturale · 20/11/2026 12:38 · carico: PSI CPU some avg10=1.47 avg60=3.48 · load 3.22 2.67 2.77 su 12 CPU · memoria disponibile 7885 MB
+NO firefox 1366x640 #indirizzo-installa prova 1 [PSI CPU avg10=6.33, load 4.72 3.01 2.88]: titolo a 0 (barra 72), scrollY 5184, pagina alta 5824 (scorrimento massimo 5184)
+     ms 354 · 5281 · 88 · 6019 · loading · interactive · 0/16
+     ms 475 · 5184 · 0 · 5824 · loading · interactive · 1/16
+     ms 576 · 5184 · 0 · 5824 · loaded · complete · 2/16
+NO firefox 1366x640 #indirizzo-installa prova 2 [PSI CPU avg10=6.83, load 4.66 3.03 2.89]: titolo a 0 (barra 72), scrollY 5184, pagina alta 5824 (scorrimento massimo 5184)
+     ms 192 · 5281 · 88 · 6019 · loading · interactive · 0/16
+     ms 299 · 5184 · 0 · 5824 · loaded · complete · 2/16
+NO firefox 1366x640 #indirizzo-installa prova 3 [PSI CPU avg10=5.38, load 4.29 2.98 2.87]: titolo a 0 (barra 72), scrollY 5184, pagina alta 5824 (scorrimento massimo 5184)
+     ms 112 · 5281 · 88 · 6019 · loading · interactive · 0/16
+     ms 212 · 5184 · 0 · 5824 · loaded · complete · 2/16
+NO firefox 1366x640 #indirizzo-installa prova 4 [PSI CPU avg10=5.44, load 5.15 3.18 2.94]: titolo a 0 (barra 72), scrollY 5184, pagina alta 5824 (scorrimento massimo 5184)
+     ms 130 · 5281 · 88 · 6019 · loading · interactive · 0/16
+     ms 231 · 5184 · 0 · 5824 · loaded · complete · 2/16
+NO firefox 1366x640 #indirizzo-installa prova 5 [PSI CPU avg10=7.42, load 6.26 3.44 3.02]: titolo a 0 (barra 72), scrollY 5184, pagina alta 5824 (scorrimento massimo 5184)
+     ms 187 · 5281 · 88 · 6019 · loading · interactive · 0/16
+     ms 292 · 5184 · 0 · 5824 · loaded · complete · 2/16
+NO firefox 1366x640 #indirizzo-installa prova 6 [PSI CPU avg10=8.74, load 6.26 3.44 3.02]: titolo a 0 (barra 72), scrollY 5184, pagina alta 5824 (scorrimento massimo 5184)
+     ms 217 · 5281 · 88 · 6019 · loading · interactive · 0/16
+     ms 319 · 5184 · 0 · 5824 · loaded · complete · 2/16
+NO firefox 1366x640 #indirizzo-installa prova 7 [PSI CPU avg10=10.44, load 6.40 3.52 3.05]: titolo a 0 (barra 72), scrollY 5184, pagina alta 5824 (scorrimento massimo 5184)
+     ms 183 · 5281 · 88 · 6019 · loading · interactive · 0/16
+     ms 290 · 5184 · 0 · 5824 · loaded · complete · 2/16
+NO firefox 1366x640 #indirizzo-installa prova 8 [PSI CPU avg10=10.28, load 6.85 3.66 3.10]: titolo a 0 (barra 72), scrollY 5184, pagina alta 5824 (scorrimento massimo 5184)
+     ms 254 · 5281 · 88 · 6019 · loading · interactive · 0/16
+     ms 361 · 5184 · 0 · 5824 · loaded · complete · 2/16
+0/8 nel punto giusto

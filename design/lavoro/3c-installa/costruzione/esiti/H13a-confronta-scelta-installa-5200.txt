@@ -1,0 +1,73 @@
+# confronta-scelta · installa a 5200 px, con ammesse.json · scelta P (548a6f2) · adesso H13i · 20/11/2026 16:27 · carico: PSI CPU some avg10=0.19 avg60=0.11 · load 2.05 2.43 3.16 su 12 CPU · memoria disponibile 6833 MB
+CONFRONTO 1440×900 a 5200 px: solo differenze ammesse su 39 cose nello schermo · pixel diversi 0,18%
+  ammessa MANCA span «https://sansevieria-ou.github.io/kalliope/it/ins»: era a 786,383, 423×20 · perché: l'indirizzo della pagina va a capo dopo una barra (`<wbr>`), il testo copiato non cambia (esame a 320 px, SPEZZATA)
+  ammessa IN PIÙ span «https:/ / sansevieria-ou.github.io/ kalliope/ it»: a 786,383, 424×20 · perché: l'indirizzo della pagina va a capo dopo una barra (`<wbr>`), il testo copiato non cambia (esame a 320 px, SPEZZATA)
+CONFRONTO 390×844 a 5200 px: 3 differenze su 27 cose nello schermo · pixel diversi 27,18%
+  MANCA p «Installa curl con il gestore dei pacchetti della»: era a 20,-31, 350×42
+  IN PIÙ div.terminale.terminale-microfono: a 20,805, 350×130
+  IN PIÙ span «Terminale»: a 166,813, 58×15
+  ammessa SPOSTATO section#apri: y -864→-908 (-44), con 12 differenze di ciò che ha dentro · perché: a tablet e telefono la finestra sta dopo «Riuscito se…» (difetto 3 della tabella di progresso.md) e il passo segue l'altezza di quello sopra
+  ammessa SPOSTATO span.luce-tratto: y -640.5→-684.5 (-44) · perché: le luci di tratto stanno dentro i passi e li seguono
+  ammessa SPOSTATO button.frase-bottone: y 23→-21 (-44) · perché: la frase premuta e la finestra stanno in vista insieme (difetto 3); limiti in design-system/metodo.config.mjs
+  ammessa SPOSTATO span ««Download non riuscito: …» o «Download annullato»: y 34→-10 (-44) · perché: idem
+  ammessa SPOSTATO button.frase-bottone #2: y 139→95 (-44) · perché: la frase premuta e la finestra stanno in vista insieme (difetto 3); limiti in design-system/metodo.config.mjs
+  ammessa SPOSTATO span ««Il file … scaricato non corrisponde all'impront»: y 150→106 (-44) · perché: idem
+  ammessa SPOSTATO button.frase-bottone #3: y 255→211 (-44) · perché: la frase premuta e la finestra stanno in vista insieme (difetto 3); limiti in design-system/metodo.config.mjs
+  ammessa SPOSTATO span ««La voce è pronta, ma …: per ora nessuno ti sent»: y 266→222 (-44) · perché: le frasi della finestra (difetto 3)
+  ammessa SPOSTATO section#microfono: y 545→501 (-44) · perché: ogni passo segue l'altezza dei passi sopra («Installa», «Apri»), che sono cambiati
+  ammessa SPOSTATO span.luce-tratto #2: y 680→636 (-44) · perché: le luci di tratto stanno dentro i passi e li seguono
+CONFRONTO 1366×640 a 5200 px: 7 differenze su 36 cose nello schermo · pixel diversi 8,13%
+  SPOSTATE 7 cose della stessa quantità, y -22 px: footer.piede.scena-notte · a «Ascolta» #2 · a «Stato e limiti» #2 …
+  ammessa SPOSTATO section#microfono: y -937→-959 (-22), con 17 differenze di ciò che ha dentro · perché: ogni passo segue l'altezza dei passi sopra («Installa», «Apri»), che sono cambiati
+  ammessa SPOSTATO span.luce-tratto: y -921→-943 (-22) · perché: le luci di tratto stanno dentro i passi e li seguono
+  ammessa SPOSTATO span «kalliope --version non risponde»: y 203.5→181.5 (-22) · perché: domanda 1
+  ammessa MANCA span «https://sansevieria-ou.github.io/kalliope/it/ins»: era a 749,148, 423×20 · perché: l'indirizzo della pagina va a capo dopo una barra (`<wbr>`), il testo copiato non cambia (esame a 320 px, SPEZZATA)
+  ammessa IN PIÙ span «https:/ / sansevieria-ou.github.io/ kalliope/ it»: a 749,126, 424×20 · perché: l'indirizzo della pagina va a capo dopo una barra (`<wbr>`), il testo copiato non cambia (esame a 320 px, SPEZZATA)
+CONFRONTO 1024×768 a 5200 px: 1 differenze su 31 cose nello schermo · pixel diversi 22,25%
+  MANCA a «pagina Aiuto»: era a 332,10, 91×18
+  ammessa SPOSTATO section#apri: y -1227→-1249 (-22), con 7 differenze di ciò che ha dentro · perché: a tablet e telefono la finestra sta dopo «Riuscito se…» (difetto 3 della tabella di progresso.md) e il passo segue l'altezza di quello sopra
+  ammessa MISURA section#apri: 1024×1713 → 1024×1687 · perché: a tablet e telefono la finestra sta dopo «Riuscito se…» (difetto 3 della tabella di progresso.md) e il passo segue l'altezza di quello sopra
+  ammessa SPOSTATO section#microfono: y 179→131 (-48), con 10 differenze di ciò che ha dentro · perché: ogni passo segue l'altezza dei passi sopra («Installa», «Apri»), che sono cambiati
+  ammessa SPOSTATO span.luce-tratto: y 199→151 (-48) · perché: le luci di tratto stanno dentro i passi e li seguono
+  ammessa SPOSTATO span «kalliope»: y 625→577 (-48) · perché: il nome del microfono nel terminale, con la versione dai dati
+  ammessa SPOSTATO strong «Riuscito»: y 745→697 (-48) · perché: «Riuscito se» segue il comando e la versione dai dati
+CONFRONTO 844×390 a 5200 px: 2 differenze su 16 cose nello schermo · pixel diversi 20,34%
+  MANCA p «Controlla la connessione e premi di nuovo «Scari»: era a 48,-20, 460×42
+  IN PIÙ section#microfono: a 0,371, 844×1612
+  ammessa SPOSTATO section#apri: y -999→-1065 (-66), con 5 differenze di ciò che ha dentro · perché: a tablet e telefono la finestra sta dopo «Riuscito se…» (difetto 3 della tabella di progresso.md) e il passo segue l'altezza di quello sopra
+  ammessa MISURA section#apri: 844×1618 → 844×1592 · perché: a tablet e telefono la finestra sta dopo «Riuscito se…» (difetto 3 della tabella di progresso.md) e il passo segue l'altezza di quello sopra
+  ammessa SPOSTATO span.luce-tratto: y -827→-903 (-76) · perché: le luci di tratto stanno dentro i passi e li seguono
+  ammessa SPOSTATO button.frase-bottone: y 34→58 (+24) · perché: la frase premuta e la finestra stanno in vista insieme (difetto 3); limiti in design-system/metodo.config.mjs
+  ammessa MANCA span ««Il file … scaricato non corrisponde all'impront»: era a 61,45, 388×34 · perché: idem
+  ammessa MANCA button.frase-bottone #2: era a 48,150, 460×56 · perché: la frase premuta e la finestra stanno in vista insieme (difetto 3); limiti in design-system/metodo.config.mjs
+  ammessa SPOSTATO span ««La voce è pronta, ma …: per ora nessuno ti sent»: y 161→69 (-92) · perché: le frasi della finestra (difetto 3)
+DICHIARAZIONE NON USATA «section#installa» (MISURA, SPOSTATO, MANCA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «section#» (MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Nella tua cartella personale» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Le preferenze e la voce scaricata» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Come lo sappiamo» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «se, scrivendo» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «./install» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «~/.» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «sudo apt» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «code «apt» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «code «dnf» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «code «pacman» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «kalliope 0.1» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «kalliope --version» (MANCA, IN PIÙ, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «bin/kalliope» (MANCA, IN PIÙ, SPOSTATO): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «lib/kalliope» (MANCA, IN PIÙ, SPOSTATO): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «share/applications» (MANCA, IN PIÙ, SPOSTATO): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «span «kalliope»» (MANCA, IN PIÙ): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «https:» (SPOSTATO): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Riuscito» (MISURA, MANCA, IN PIÙ): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Installa Kalliope» (SPOSTATO, MISURA, CARATTERE): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Ogni passo» (SPOSTATO, MISURA, CARATTERE): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «si vede riuscire» (SPOSTATO, MISURA, CARATTERE): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «14,1 MB» (SPOSTATO): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «frase-bottone» (IN PIÙ): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «La voce è pronta» (MANCA, IN PIÙ): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Download non riuscito» (MANCA, IN PIÙ): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Il file …» (IN PIÙ): qui quella differenza non c'è; se non serve più toglila
+Il confronto con la scelta non regge a 4 misure (foto e differenze in /tmp/lavoro-3cb-conf/H13a/installa-5200)
+# uscita: 1

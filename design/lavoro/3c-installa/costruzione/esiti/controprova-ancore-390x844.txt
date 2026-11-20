@@ -1,0 +1,32 @@
+# controprova · ancore-390x844 · sito P2 (548a6f2) · chromium 390x844 · ancore  · 20/11/2026 04:23
+
+== ancore · chromium 390x844
+NO   /#fedora sceglie «Fedora» e porta al punto giusto: «#installa-titolo» sotto la barra, nello schermo, opaco · {"titolo":3177,"bottom":3288,"barra":56,"vh":844,"op":0,"scelta":"deb","y":0}
+ok     console pulita
+NO   /#debian-ubuntu sceglie «Debian e Ubuntu» e porta al punto giusto: «#installa-titolo» sotto la barra, nello schermo, opaco · {"titolo":3177,"bottom":3288,"barra":56,"vh":844,"op":0,"scelta":"deb","y":0}
+ok     console pulita
+NO   /#arch sceglie «Arch» e porta al punto giusto: «#installa-titolo» sotto la barra, nello schermo, opaco · {"titolo":3177,"bottom":3288,"barra":56,"vh":844,"op":0,"scelta":"deb","y":0}
+ok     console pulita
+NO   /#altre sceglie «Altre» e porta al punto giusto: «#installa-titolo» sotto la barra, nello schermo, opaco · {"titolo":3177,"bottom":3288,"barra":56,"vh":844,"op":0,"scelta":"deb","y":0}
+ok     console pulita
+NO   /#passo-1 e porta al punto giusto: «#scarica-titolo» sotto la barra, nello schermo, opaco · {"titolo":1295,"bottom":1406,"barra":56,"vh":844,"op":0,"scelta":"deb","y":0}
+ok     console pulita
+NO   /#passo-2 e porta al punto giusto: «#passo-controlla .passo-nome» sotto la barra, nello schermo, opaco · {"titolo":2310,"bottom":2336,"barra":56,"vh":844,"op":1,"scelta":"deb","y":0}
+ok     console pulita
+NO   /#passo-3 e porta al punto giusto: «#installa-titolo» sotto la barra, nello schermo, opaco · {"titolo":3177,"bottom":3288,"barra":56,"vh":844,"op":0,"scelta":"deb","y":0}
+ok     console pulita
+NO   /#passo-4 e porta al punto giusto: «#apri-titolo» sotto la barra, nello schermo, opaco · {"titolo":4434,"bottom":4508,"barra":56,"vh":844,"op":0,"scelta":"deb","y":0}
+ok     console pulita
+NO   /#passo-5 e porta al punto giusto: «#microfono-titolo» sotto la barra, nello schermo, opaco · {"titolo":5843,"bottom":5927,"barra":56,"vh":844,"op":0,"scelta":"deb","y":0}
+ok     console pulita
+NO   /#ripresa e porta al punto giusto: «#ripresa-titolo» sotto la barra, nello schermo, opaco · {"titolo":6755,"bottom":6781,"barra":56,"vh":844,"op":1,"scelta":"deb","y":0}
+ok     console pulita
+NO   /#indirizzo-installa e porta al punto giusto: «#inoltra h3» sotto la barra, nello schermo, opaco · {"titolo":7117,"bottom":7143,"barra":56,"vh":844,"op":1,"scelta":"deb","y":0}
+ok     console pulita
+NO   con la pagina aperta, cambiare l'ancora in #fedora sceglie Fedora e porta ai comandi · {"scelta":"deb","titolo":3177,"barra":56}
+NO   poi #passo-2 porta al controllo e lascia la scelta com'era (Fedora) · {"scelta":"deb","passo":2310,"barra":56}
+ok   console pulita
+NO   senza JavaScript /#fedora porta ai comandi (sceglierla toccherebbe a chi legge), la pagina non scorre di lato · {"titolo":3119,"barra":56,"larghezza":390}
+
+12/26 ok
+# uscita: 1

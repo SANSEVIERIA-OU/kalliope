@@ -1,0 +1,158 @@
+# catalogo · H4 · chromium 390x844 · 20/11/2026 06:01
+ok   il catalogo principale si costruisce senza errori · {"errori":[]}
+ok   le pagine interne e «stato» si costruiscono senza errori · {"pagine":{"errori":[],"schermi":8},"stato":[]}
+ok   la sezione «installa» si costruisce senza errori · {"errori":[],"schermi":13}
+ok   quattro schede: la scelta del sistema, il comando, il terminale, l'installazione · 4 schede, 68 prove, 13 pagine vive: La scelta del sistema | Il comando da copiare | Il terminale ricostruito | L'installazione che si vede riuscire
+ok   la sezione sta nell'indice e dopo quella di «stato» · pagina-installa
+ok   ogni scheda ha le sette voci (con movimento e verifica) e almeno cinque prove · [15,13,14,26]
+ok   il catalogo non scorre di lato · {"pagina":1034,"finestra":1034}
+ok   nessun quadro di prova è vuoto
+NO   nessun contenuto esce dal suo quadro · da dove riprendere: i cinque passi, ognuno con ciò che vedi se ti sei 
+ok   la scelta: le prime quattro prove hanno scelta una voce ciascuna (deb, rpm, arch, tar) · deb,rpm,arch,tar
+ok   ciò che dipende dalla scelta: 1 comando per Debian e per Fedora, 3 per Arch e per le altre (:has, dal foglio di stile) · 1,1,3,3
+ok   il comando del catalogo preme la scelta vera nel riquadro: Fedora, e il pulsante diventa quello del .rpm · {"scelta":"rpm","pulsante":"Scarica il .deb 14,1 MB|Scarica il .rpm 19,2 MB|Vai ai comandi per Arch|Scarica l'archivio 19,2 MB"}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('#pagina-installa .cat-prova').filter({ hasText: 'dal vivo: premi «Copia» (la risposta è la stessa' }).locator('.copia')[22m
+[2m    - locator resolved to <button type="button" class="copia" aria-label="Copia: makepkg -si">…</button>[22m
+[2m  - attempting click action[22m
+[2m    - waiting for element to be visible, enabled and stable[22m
+[2m    - element is visible, enabled and stable[22m
+[2m    - scrolling into view if needed[22m
+[2m    - done scrolling[22m
+[2m    - <dd>…</dd> from <dl>…</dl> subtree intercepts pointer events[22m
+[2m  - retrying click action[22m
+[2m    - waiting for element to be visible, enabled and stable[22m
+[2m    - element is visible, enabled and stable[22m
+[2m    - scrolling into view if needed[22m
+[2m    - done scrolling[22m
+[2m    - <div class="comando">…</div> from <div class="cat-prova intero">…</div> subtree intercepts pointer events[22m
+[2m  - retrying click action[22m
+[2m    - waiting 20ms[22m
+[2m    - waiting for element to be visible, enabled and stable[22m
+[2m    - element is visible, enabled and stable[22m
+[2m    - scrolling into view if needed[22m
+[2m    - done scrolling[22m
+[2m    - <dd>…</dd> from <dl>…</dl> subtree intercepts pointer events[22m
+[2m  2 × retrying click action[22m
+[2m      - waiting 100ms[22m
+[2m      - waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <article class="cat-scheda">…</article> intercepts pointer events[22m
+[2m  13 × retrying click action[22m
+[2m       - waiting 500ms[22m
+[2m       - waiting for element to be visible, enabled and stable[22m
+[2m       - element is visible, enabled and stable[22m
+[2m       - scrolling into view if needed[22m
+[2m       - done scrolling[22m
+[2m       - <button type="button" class="copia sim-premuto" aria-label="Copia: sudo dnf install ./kalliope-0.1-rc.1-x86_64.rpm">…</button> from <div class="cat-prova intero">…</div> subtree intercepts pointer events[22m
+[2m     - retrying click action[22m
+[2m       - waiting 500ms[22m
+[2m       - waiting for element to be visible, enabled and stable[22m
+[2m       - element is visible, enabled and stable[22m
+[2m       - scrolling into view if needed[22m
+[2m       - done scrolling[22m
+[2m       - <div class="comando">…</div> from <div class="cat-prova intero">…</div> subtree intercepts pointer events[22m
+[2m     - retrying click action[22m
+[2m       - waiting 500ms[22m
+[2m       - waiting for element to be visible, enabled and stable[22m
+[2m       - element is visible, enabled and stable[22m
+[2m       - scrolling into view if needed[22m
+[2m       - done scrolling[22m
+[2m       - <article class="cat-scheda">…</article> intercepts pointer events[22m
+[2m     - retrying click action[22m
+[2m       - waiting 500ms[22m
+[2m       - waiting for element to be visible, enabled and stable[22m
+[2m       - element is visible, enabled and stable[22m
+[2m       - scrolling into view if needed[22m
+[2m       - done scrolling[22m
+[2m       - <article class="cat-scheda">…</article> intercepts pointer events[22m
+[2m  - retrying click action[22m
+[2m    - waiting 500ms[22m
+[2m    - waiting for element to be visible, enabled and stable[22m
+[2m    - element is visible, enabled and stable[22m
+[2m    - scrolling into view if needed[22m
+[2m    - done scrolling[22m
+[2m    - <button type="button" class="copia sim-premuto" aria-label="Copia: sudo dnf install ./kalliope-0.1-rc.1-x86_64.rpm">…</button> from <div class="cat-prova intero">…</div> subtree intercepts pointer events[22m
+[2m  - retrying click action[22m
+[2m    - waiting 500ms[22m
+
+    at /workspace/kalliope/design/lavoro/3c-installa/costruzione/prove/catalogo.mjs:58:69 {
+  log: [
+    "  - waiting for locator('#pagina-installa .cat-prova').filter({ hasText: 'dal vivo: premi «Copia» (la risposta è la stessa' }).locator('.copia')",
+    '    - locator resolved to <button type="button" class="copia" aria-label="Copia: makepkg -si">…</button>',
+    '  - attempting click action',
+    '    - waiting for element to be visible, enabled and stable',
+    '    - element is visible, enabled and stable',
+    '    - scrolling into view if needed',
+    '    - done scrolling',
+    '    - <dd>…</dd> from <dl>…</dl> subtree intercepts pointer events',
+    '  - retrying click action',
+    '    - waiting for element to be visible, enabled and stable',
+    '    - element is visible, enabled and stable',
+    '    - scrolling into view if needed',
+    '    - done scrolling',
+    '    - <div class="comando">…</div> from <div class="cat-prova intero">…</div> subtree intercepts pointer events',
+    '  - retrying click action',
+    '    - waiting 20ms',
+    '    - waiting for element to be visible, enabled and stable',
+    '    - element is visible, enabled and stable',
+    '    - scrolling into view if needed',
+    '    - done scrolling',
+    '    - <dd>…</dd> from <dl>…</dl> subtree intercepts pointer events',
+    '  2 × retrying click action',
+    '      - waiting 100ms',
+    '      - waiting for element to be visible, enabled and stable',
+    '      - element is visible, enabled and stable',
+    '      - scrolling into view if needed',
+    '      - done scrolling',
+    '      - <article class="cat-scheda">…</article> intercepts pointer events',
+    '  13 × retrying click action',
+    '       - waiting 500ms',
+    '       - waiting for element to be visible, enabled and stable',
+    '       - element is visible, enabled and stable',
+    '       - scrolling into view if needed',
+    '       - done scrolling',
+    '       - <button type="button" class="copia sim-premuto" aria-label="Copia: sudo dnf install ./kalliope-0.1-rc.1-x86_64.rpm">…</button> from <div class="cat-prova intero">…</div> subtree intercepts pointer events',
+    '     - retrying click action',
+    '       - waiting 500ms',
+    '       - waiting for element to be visible, enabled and stable',
+    '       - element is visible, enabled and stable',
+    '       - scrolling into view if needed',
+    '       - done scrolling',
+    '       - <div class="comando">…</div> from <div class="cat-prova intero">…</div> subtree intercepts pointer events',
+    '     - retrying click action',
+    '       - waiting 500ms',
+    '       - waiting for element to be visible, enabled and stable',
+    '       - element is visible, enabled and stable',
+    '       - scrolling into view if needed',
+    '       - done scrolling',
+    '       - <article class="cat-scheda">…</article> intercepts pointer events',
+    '     - retrying click action',
+    '       - waiting 500ms',
+    '       - waiting for element to be visible, enabled and stable',
+    '       - element is visible, enabled and stable',
+    '       - scrolling into view if needed',
+    '       - done scrolling',
+    '       - <article class="cat-scheda">…</article> intercepts pointer events',
+    '  - retrying click action',
+    '    - waiting 500ms',
+    '    - waiting for element to be visible, enabled and stable',
+    '    - element is visible, enabled and stable',
+    '    - scrolling into view if needed',
+    '    - done scrolling',
+    '    - <button type="button" class="copia sim-premuto" aria-label="Copia: sudo dnf install ./kalliope-0.1-rc.1-x86_64.rpm">…</button> from <div class="cat-prova intero">…</div> subtree intercepts pointer events',
+    '  - retrying click action',
+    '    - waiting 500ms'
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v24.22.3
+# uscita: 1

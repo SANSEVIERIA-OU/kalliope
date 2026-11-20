@@ -1,0 +1,15 @@
+# robustezza · H6 · primo e stabile in en-XA · chromium 1366x640 · 20/11/2026 14:32 · carico: PSI CPU some avg10=8.86 avg60=10.93 · load 9.33 9.29 10.50 su 12 CPU · memoria disponibile 6852 MB
+
+== primo · chromium 1366x640
+ok   primo schermo en-XA: il pulsante del file sta nello schermo (419–475 su 640; gradino: titolo-ridotto titolo-minimo; lo stato «Oggi:» 553–619) · {"top":419,"bottom":475,"vh":640,"statoTop":553,"statoBottom":619,"classi":"titolo-ridotto titolo-minimo","largo":1366}
+ok     nessuno scorrimento di lato · 1366 contro 1366
+ok     console pulita
+
+== stabile · chromium 1366x640
+ok   il primo schermo en-XA con «riduci movimento»: le classi dell'adattamento non cambiano più (10 cambi all'arrivo, 5 dopo la scelta) e «Altre» si preme (ok) · {"n1":10,"fermo":true,"a1":15,"a2":15,"preme":"ok"}
+ok     console pulita
+ok   il primo schermo en-XA con il movimento: le classi dell'adattamento non cambiano più (10 cambi all'arrivo, 5 dopo la scelta) e «Altre» si preme (ok) · {"n1":10,"fermo":true,"a1":15,"a2":15,"preme":"ok"}
+ok     console pulita
+
+7/7 ok
+# uscita: 0

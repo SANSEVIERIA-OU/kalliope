@@ -1,0 +1,261 @@
+# robustezza · H5 · firefox 390x844 · tutti · 20/11/2026 07:06
+
+== primo · firefox 390x844
+ok   primo schermo: il pulsante del file sta nello schermo (947–995 su 844; gradino: -; lo stato «Oggi:» 1047–1101) · {"top":947,"bottom":995,"vh":844,"statoTop":1047,"statoBottom":1101,"classi":"-","largo":390}
+ok     nessuno scorrimento di lato · 390 contro 390
+ok     console pulita
+
+== stabile · firefox 390x844
+ok   il primo schermo con «riduci movimento»: le classi dell'adattamento non cambiano più (3 cambi all'arrivo, 3 dopo la scelta) e «Altre» si preme (ok) · {"n1":3,"fermo":true,"a1":6,"a2":6,"preme":"ok"}
+ok     console pulita
+ok   il primo schermo con il movimento: le classi dell'adattamento non cambiano più (3 cambi all'arrivo, 3 dopo la scelta) e «Altre» si preme (ok) · {"n1":3,"fermo":true,"a1":6,"a2":6,"preme":"ok"}
+ok     console pulita
+
+== sistema · firefox 390x844
+ok   all'arrivo: Debian e Ubuntu scelta, un solo pulsante, una sola riga, un comando in «Installa» · {"scelta":"deb","pulsanti":["Scarica il .deb 14,1 MB"],"dice":["Debian 13, Ubuntu 24.04 o successive: il pacchetto .deb"],"comandiInstalla":1,"comandiControllo":2,"cartellaFile":1,"terminale":["sudo apt install ./kalliope-0.1-rc.1-amd64.deb"],"togli":1}
+ok   quattro bottoni d'opzione dello stesso gruppo, ognuno con la sua etichetta, nel gruppo con la sua legenda · {"n":4,"legenda":true,"etichette":true}
+ok   tocco su «Fedora»: scelta, un pulsante giusto, la sua riga, i suoi comandi (1 in «Installa», 2 nel controllo) · {"scelta":"rpm","pulsanti":["Scarica il .rpm 19,2 MB"],"dice":["Fedora attuale: il pacchetto .rpm"],"comandiInstalla":1,"comandiControllo":2,"cartellaFile":1,"terminale":["sudo dnf install ./kalliope-0.1-rc.1-x86_64.rpm"],"togli":1}
+ok     l'annuncio dice per quale distribuzione sono i comandi («Fedora») · I comandi della pagina sono quelli per Fedora.
+ok   tocco su «Arch»: scelta, un pulsante giusto, la sua riga, i suoi comandi (3 in «Installa», 0 nel controllo) · {"scelta":"arch","pulsanti":["Vai ai comandi per Arch"],"dice":["Arch Linux: la ricetta PKGBUILD, che non compila nulla"],"comandiInstalla":3,"comandiControllo":0,"cartellaFile":1,"terminale":["makepkg -si"],"togli":1}
+ok     l'annuncio dice per quale distribuzione sono i comandi («Arch») · I comandi della pagina sono quelli per Arch.
+ok   tocco su «Altre»: scelta, un pulsante giusto, la sua riga, i suoi comandi (3 in «Installa», 2 nel controllo) · {"scelta":"tar","pulsanti":["Scarica l'archivio 19,2 MB"],"dice":["Le altre distribuzioni: l'archivio, che si installa senza password"],"comandiInstalla":3,"comandiControllo":2,"cartellaFile":1,"terminale":["./install"],"togli":1}
+ok     l'annuncio dice per quale distribuzione sono i comandi («Altre») · I comandi della pagina sono quelli per Altre.
+ok   tocco su «Debian e Ubuntu»: scelta, un pulsante giusto, la sua riga, i suoi comandi (1 in «Installa», 2 nel controllo) · {"scelta":"deb","pulsanti":["Scarica il .deb 14,1 MB"],"dice":["Debian 13, Ubuntu 24.04 o successive: il pacchetto .deb"],"comandiInstalla":1,"comandiControllo":2,"cartellaFile":1,"terminale":["sudo apt install ./kalliope-0.1-rc.1-amd64.deb"],"togli":1}
+ok     l'annuncio dice per quale distribuzione sono i comandi («Debian e Ubuntu») · I comandi della pagina sono quelli per Debian e Ubuntu.
+ok   il terminale del primo schermo scrive il comando di «Arch» intero · ["makepkg -si"]
+ok   il terminale del primo schermo scrive il comando di «Fedora» intero · ["sudo dnf install ./kalliope-0.1-rc.1-x86_64.rpm"]
+ok   console pulita
+ok   Tab arriva al gruppo delle quattro scelte, con una sola sosta (sulla scelta fatta), con il contorno del fuoco sull'etichetta · {"k":3,"nome":"Debian e Ubuntu","classe":"sistema-voce","tag":"input","top":750,"left":20,"bottom":798,"right":21,"opacita":1,"visibilita":"visible","anello":true,"anelloRapporto":13.2,"sotto":false,"inSchermo":true,"yDoc":750,"y":0}
+ok   freccia: la scelta passa alla seguente e il fuoco la segue, l'annuncio dice la nuova · {"prima":"deb","scelta":"rpm","fuoco":"rpm","ann":"I comandi della pagina sono quelli per Fedora."}
+ok   quattro frecce giù: fanno il giro e tornano alla stessa scelta · rpm
+ok   Tab dal gruppo va a «Non uso Linux» (non alle altre tre scelte) · Non uso Linux
+ok   «Vai ai comandi per Arch» porta al passo «Installa»: titolo sotto la barra, opaco · {"titolo":164,"barra":56,"vh":844,"hash":"#installa","op":1}
+ok   console pulita
+
+== ancore · firefox 390x844
+ok   /#fedora sceglie «Fedora» e porta al punto giusto: «#installa-titolo» sotto la barra, nello schermo, opaco · {"titolo":88,"bottom":199,"barra":56,"vh":844,"op":1,"scelta":"rpm","y":3046}
+ok     console pulita
+ok   /#debian-ubuntu sceglie «Debian e Ubuntu» e porta al punto giusto: «#installa-titolo» sotto la barra, nello schermo, opaco · {"titolo":88,"bottom":199,"barra":56,"vh":844,"op":1,"scelta":"deb","y":3069}
+ok     console pulita
+ok   /#arch sceglie «Arch» e porta al punto giusto: «#installa-titolo» sotto la barra, nello schermo, opaco · {"titolo":88,"bottom":199,"barra":56,"vh":844,"op":1,"scelta":"arch","y":2747}
+ok     console pulita
+ok   /#altre sceglie «Altre» e porta al punto giusto: «#installa-titolo» sotto la barra, nello schermo, opaco · {"titolo":88,"bottom":199,"barra":56,"vh":844,"op":1,"scelta":"tar","y":3116}
+ok     console pulita
+ok   /#passo-1 e porta al punto giusto: «#scarica-titolo» sotto la barra, nello schermo, opaco · {"titolo":88,"bottom":199,"barra":56,"vh":844,"op":1,"scelta":"deb","y":1185}
+ok     console pulita
+ok   /#passo-2 e porta al punto giusto: «#passo-controlla .passo-nome» sotto la barra, nello schermo, opaco · {"titolo":88,"bottom":114,"barra":56,"vh":844,"op":1,"scelta":"deb","y":2221}
+ok     console pulita
+ok   /#passo-3 e porta al punto giusto: «#installa-titolo» sotto la barra, nello schermo, opaco · {"titolo":88,"bottom":199,"barra":56,"vh":844,"op":1,"scelta":"deb","y":3069}
+ok     console pulita
+ok   /#passo-4 e porta al punto giusto: «#apri-titolo» sotto la barra, nello schermo, opaco · {"titolo":88,"bottom":162,"barra":56,"vh":844,"op":1,"scelta":"deb","y":4288}
+ok     console pulita
+ok   /#passo-5 e porta al punto giusto: «#microfono-titolo» sotto la barra, nello schermo, opaco · {"titolo":88,"bottom":172,"barra":56,"vh":844,"op":1,"scelta":"deb","y":5699}
+ok     console pulita
+ok   /#ripresa e porta al punto giusto: «#ripresa-titolo» sotto la barra, nello schermo, opaco · {"titolo":88,"bottom":114,"barra":56,"vh":844,"op":1,"scelta":"deb","y":6629}
+ok     console pulita
+NO   /#indirizzo-installa e porta al punto giusto: «#inoltra h3» sotto la barra, nello schermo, opaco · {"titolo":-8,"bottom":18,"barra":56,"vh":844,"op":1,"scelta":"deb","y":7087}
+ok     console pulita
+ok   con la pagina aperta, cambiare l'ancora in #fedora sceglie Fedora e porta ai comandi · {"scelta":"rpm","titolo":88,"barra":56}
+ok   poi #passo-2 porta al controllo e lascia la scelta com'era (Fedora) · {"scelta":"rpm","passo":88,"barra":56}
+ok   console pulita
+ok   senza JavaScript /#fedora porta ai comandi (sceglierla toccherebbe a chi legge), la pagina non scorre di lato · {"titolo":88,"barra":56,"larghezza":390}
+
+== tastiera · firefox 390x844
+   [Debian e Ubuntu] soste: 48 Vai al contenuto → Kalliope, pagina iniziale → Menu → Debian e Ubuntu → Non uso Linux → Scarica il .deb 14,1 MB → Lo installa un'altra persona → kalliope-0.1-rc.1-amd64.deb → Copia: sha256sum kalliope-0.1-rc.1-amd64 → Copia: 737a98ea05b5085e54b2cae1569709698 → segnalalo → SHA256SUMS → Stato e limiti → Copia: sudo apt install ./kalliope-0.1-r → segnalalo → Fin dove è provato → Per togliere Kalliope → «Per scaricare la voce serve il programm → «Download non riuscito: …» o «Download a → «Il file … scaricato non corrisponde all → «La voce è pronta, ma …: per ora nessuno → Che cosa fare → pagina Aiuto → Copia: pactl list short sources → che cosa fare → Usalo in una riunione → Se un passo non va, 
+ok   [Debian e Ubuntu] il giro tocca ogni comando una volta, in un ordine · 48 soste
+ok   [Debian e Ubuntu] i pulsanti «Copia» nell'ordine del fuoco sono tutti quelli che si vedono (4) · 4 di 4
+ok   [Debian e Ubuntu] le quattro frasi della finestra sono quattro soste (pulsanti)
+ok   [Debian e Ubuntu] le cinque tappe della ripresa e «Copia l'indirizzo» sono nell'ordine del fuoco
+ok   [Debian e Ubuntu] «Per togliere Kalliope» è una sosta
+ok   [Debian e Ubuntu] la scelta è una sola sosta (le altre tre non sono soste), seguita da «Non uso Linux»
+ok   [Debian e Ubuntu] ogni sosta ha il comando in vista, opaco e non sotto la barra
+ok   [Debian e Ubuntu] all'indietro (Maiusc+Tab) 48 soste, ognuna in vista, opaca e non sotto la barra
+ok   [Debian e Ubuntu] nessuna sosta sta sotto la barra
+ok   [Debian e Ubuntu] il contorno del fuoco si vede su ogni sosta
+ok   [Debian e Ubuntu] il contorno del fuoco si distingue dal fondo (almeno 1,8 : 1 dove il fondo è pieno) · 48 soste misurate
+ok   [Debian e Ubuntu] l'ordine del fuoco va dall'alto in basso (e da una colonna alla seguente)
+ok   [Debian e Ubuntu] console pulita
+   [Arch] soste: 47 Vai al contenuto → Kalliope, pagina iniziale → Menu → Arch → Non uso Linux → Vai ai comandi per Arch → Lo installa un'altra persona → leggerla prima → SHA256SUMS → Stato e limiti → Copia: mkdir kalliope && cd kalliope → Copia: curl -L -o PKGBUILD https://githu → Copia: makepkg -si → segnalalo → Fin dove è provato → Per togliere Kalliope → «Per scaricare la voce serve il programm → «Download non riuscito: …» o «Download a → «Il file … scaricato non corrisponde all → «La voce è pronta, ma …: per ora nessuno → Che cosa fare → pagina Aiuto → Copia: pactl list short sources → che cosa fare → Usalo in una riunione → Se un passo non va, segnalalo (serve un  → Non trovi il file → Il numero non è ugu
+ok   [Arch] il giro tocca ogni comando una volta, in un ordine · 47 soste
+ok   [Arch] i pulsanti «Copia» nell'ordine del fuoco sono tutti quelli che si vedono (4) · 4 di 4
+ok   [Arch] le quattro frasi della finestra sono quattro soste (pulsanti)
+ok   [Arch] le cinque tappe della ripresa e «Copia l'indirizzo» sono nell'ordine del fuoco
+ok   [Arch] «Per togliere Kalliope» è una sosta
+ok   [Arch] la scelta è una sola sosta (le altre tre non sono soste), seguita da «Non uso Linux»
+ok   [Arch] ogni sosta ha il comando in vista, opaco e non sotto la barra
+ok   [Arch] nessuna sosta sta sotto la barra
+ok   [Arch] il contorno del fuoco si vede su ogni sosta
+ok   [Arch] il contorno del fuoco si distingue dal fondo (almeno 1,8 : 1 dove il fondo è pieno) · 47 soste misurate
+ok   [Arch] l'ordine del fuoco va dall'alto in basso (e da una colonna alla seguente)
+ok   [Arch] console pulita
+
+== tastiera-veloce · firefox 390x844
+   [Debian e Ubuntu] soste: 48 Vai al contenuto → Kalliope, pagina iniziale → Menu → Debian e Ubuntu → Non uso Linux → Scarica il .deb 14,1 MB → Lo installa un'altra persona → kalliope-0.1-rc.1-amd64.deb → Copia: sha256sum kalliope-0.1-rc.1-amd64 → Copia: 737a98ea05b5085e54b2cae1569709698 → segnalalo → SHA256SUMS → Stato e limiti → Copia: sudo apt install ./kalliope-0.1-r → segnalalo → Fin dove è provato → Per togliere Kalliope → «Per scaricare la voce serve il programm → «Download non riuscito: …» o «Download a → «Il file … scaricato non corrisponde all → «La voce è pronta, ma …: per ora nessuno → Che cosa fare → pagina Aiuto → Copia: pactl list short sources → che cosa fare → Usalo in una riunione → Se un passo non va, 
+ok   [Debian e Ubuntu] il giro tocca ogni comando una volta, in un ordine · 48 soste
+ok   [Debian e Ubuntu] i pulsanti «Copia» nell'ordine del fuoco sono tutti quelli che si vedono (4) · 4 di 4
+ok   [Debian e Ubuntu] le quattro frasi della finestra sono quattro soste (pulsanti)
+ok   [Debian e Ubuntu] le cinque tappe della ripresa e «Copia l'indirizzo» sono nell'ordine del fuoco
+ok   [Debian e Ubuntu] «Per togliere Kalliope» è una sosta
+ok   [Debian e Ubuntu] la scelta è una sola sosta (le altre tre non sono soste), seguita da «Non uso Linux»
+ok   [Debian e Ubuntu] a passo svelto il giro è lo stesso · Debian e Ubuntu (op 0.00, in vista), Non uso Linux (op 0.00, in vista), Scarica il .deb 14,1 MB (op 0.00, in vista), Lo installa un'altra persona (op 0.00, in vista), Se un passo non va, segnalalo (serve un  (op 0.99, in vista)
+ok   [Debian e Ubuntu] nessuna sosta sta sotto la barra
+ok   [Debian e Ubuntu] il contorno del fuoco si vede su ogni sosta
+ok   [Debian e Ubuntu] il contorno del fuoco si distingue dal fondo (almeno 1,8 : 1 dove il fondo è pieno) · 48 soste misurate
+ok   [Debian e Ubuntu] l'ordine del fuoco va dall'alto in basso (e da una colonna alla seguente)
+ok   [Debian e Ubuntu] console pulita
+   [Arch] soste: 47 Vai al contenuto → Kalliope, pagina iniziale → Menu → Arch → Non uso Linux → Vai ai comandi per Arch → Lo installa un'altra persona → leggerla prima → SHA256SUMS → Stato e limiti → Copia: mkdir kalliope && cd kalliope → Copia: curl -L -o PKGBUILD https://githu → Copia: makepkg -si → segnalalo → Fin dove è provato → Per togliere Kalliope → «Per scaricare la voce serve il programm → «Download non riuscito: …» o «Download a → «Il file … scaricato non corrisponde all → «La voce è pronta, ma …: per ora nessuno → Che cosa fare → pagina Aiuto → Copia: pactl list short sources → che cosa fare → Usalo in una riunione → Se un passo non va, segnalalo (serve un  → Non trovi il file → Il numero non è ugu
+ok   [Arch] il giro tocca ogni comando una volta, in un ordine · 47 soste
+ok   [Arch] i pulsanti «Copia» nell'ordine del fuoco sono tutti quelli che si vedono (4) · 4 di 4
+ok   [Arch] le quattro frasi della finestra sono quattro soste (pulsanti)
+ok   [Arch] le cinque tappe della ripresa e «Copia l'indirizzo» sono nell'ordine del fuoco
+ok   [Arch] «Per togliere Kalliope» è una sosta
+ok   [Arch] la scelta è una sola sosta (le altre tre non sono soste), seguita da «Non uso Linux»
+ok   [Arch] a passo svelto il giro è lo stesso · Arch (op 0.42, in vista), Non uso Linux (op 0.58, in vista)
+ok   [Arch] nessuna sosta sta sotto la barra
+ok   [Arch] il contorno del fuoco si vede su ogni sosta
+ok   [Arch] il contorno del fuoco si distingue dal fondo (almeno 1,8 : 1 dove il fondo è pieno) · 47 soste misurate
+ok   [Arch] l'ordine del fuoco va dall'alto in basso (e da una colonna alla seguente)
+ok   [Arch] console pulita
+
+== frasi · firefox 390x844
+ok   con lo script le quattro frasi sono quattro pulsanti, nessuna premuta, ognuna con il suo rimedio sotto · {"bottoni":4,"premuti":0,"frasiFisse":0,"dopo":true}
+ok   «curl» premuta: la finestra mostra la frase in allarme e torna «Scarica la voce»; una sola frase premuta · {"classi":"provata errore","testo":"Per scaricare la voce serve il programma","premuti":["curl"]}
+ok     l'annuncio dice la riga della finestra («La riga della finestra dice: …») · La riga della finestra dice: Per scaricare la voce serve il programma curl: …
+ok     la riga della finestra sta nello schermo, sotto la barra, dopo che la frase è stata premuta (ciò che il gesto cambia si vede) · {"top":171,"bottom":233,"barra":56,"vh":844}
+ok     con la finestra resta in vista anche la frase premuta, quando insieme ci stanno nello schermo (ci stanno) · {"bottone":[480,536],"finestra":[161,354],"distanza":375,"spazio":788}
+ok   «rete» premuta: la finestra mostra la frase in allarme e torna «Scarica la voce»; una sola frase premuta · {"classi":"provata errore","testo":"Download non riuscito: …","premuti":["rete"]}
+ok     l'annuncio dice la riga della finestra («La riga della finestra dice: …») · La riga della finestra dice: Download non riuscito: …
+ok     la riga della finestra sta nello schermo, sotto la barra, dopo che la frase è stata premuta (ciò che il gesto cambia si vede) · {"top":171,"bottom":233,"barra":56,"vh":844}
+ok     con la finestra resta in vista anche la frase premuta, quando insieme ci stanno nello schermo (ci stanno) · {"bottone":[596,652],"finestra":[161,354],"distanza":491,"spazio":788}
+ok   «impronta» premuta: la finestra mostra la frase in allarme e torna «Scarica la voce»; una sola frase premuta · {"classi":"provata errore","testo":"Il file … scaricato non corrisponde all'","premuti":["impronta"]}
+ok     l'annuncio dice la riga della finestra («La riga della finestra dice: …») · La riga della finestra dice: Il file … scaricato non corrisponde all'impronta at
+ok     la riga della finestra sta nello schermo, sotto la barra, dopo che la frase è stata premuta (ciò che il gesto cambia si vede) · {"top":171,"bottom":233,"barra":56,"vh":844}
+ok     con la finestra resta in vista anche la frase premuta, quando insieme ci stanno nello schermo (ci stanno) · {"bottone":[712,768],"finestra":[161,354],"distanza":607,"spazio":788}
+ok   «microfono» premuta: la finestra mostra la frase in allarme ma resta «Pronta» (la causa è un'altra); una sola frase premuta · {"classi":"provata pronta","testo":"La voce è pronta, ma …: per ora nessuno ","premuti":["microfono"]}
+ok     l'annuncio dice la riga della finestra («La riga della finestra dice: …») · La riga della finestra dice: La voce è pronta, ma …: per ora nessuno ti sentirà 
+ok     la riga della finestra sta nello schermo, sotto la barra, dopo che la frase è stata premuta (ciò che il gesto cambia si vede) · {"top":80,"bottom":142,"barra":56,"vh":844}
+ok     con la finestra resta in vista anche la frase premuta, quando insieme ci stanno nello schermo (ci stanno) · {"bottone":[695,751],"finestra":[70,221],"distanza":681,"spazio":788}
+ok   premuta di nuovo, la stessa frase si toglie: «Pronta», nessuna frase premuta, l'annuncio dice «Pronta» · {"classi":"provata pronta","testo":"Pronta. In Zoom, Teams, Meet o","annuncio":"La riga della finestra dice: Pronta. In Zoom, Teams, Meet o "}
+ok     e la finestra sta nello schermo dopo averla tolta · {"top":80,"bottom":142}
+ok   Invio su una frase la preme, il fuoco resta sul pulsante · ["curl"]
+ok   Tab dalla prima frase va alla seconda (il rimedio non è una sosta, il collegamento «Che cosa fare» è dopo la quarta) · {"stato":"rete","tag":"BUTTON"}
+ok   Spazio sulla seconda la preme e toglie la prima: una frase sola · ["rete"]
+ok   passando al computer (1280 px) con una frase premuta la finestra mostra ancora quella frase · {"premuti":["rete"],"testo":"Download non riuscito: …"}
+ok   premendo una frase durante il racconto del primo avvio, il racconto si ferma e non riparte: resta la frase · {"classi":"finestra avvio entra entra-finestra visto provata errore","testo":"Per scaricare la voce serve il programma"}
+ok   console pulita
+
+== copia · firefox 390x844
+ok   «Debian e Ubuntu»: ognuno dei 4 pulsanti «Copia» copia il suo comando com'è (senza spazi in più, senza invii) · {"n":4,"copiati":["sha256sum kalliope-0.1-rc.1-am","737a98ea05b5085e54b2cae1569709","sudo apt install ./kalliope-0.","pactl list short sources"]}
+ok   «Arch»: ognuno dei 4 pulsanti «Copia» copia il suo comando com'è (senza spazi in più, senza invii) · {"n":4,"copiati":["mkdir kalliope && cd kalliope","curl -L -o PKGBUILD https://gi","makepkg -si","pactl list short sources"]}
+ok   «Altre»: ognuno dei 6 pulsanti «Copia» copia il suo comando com'è (senza spazi in più, senza invii) · {"n":6,"copiati":["sha256sum kalliope-0.1-rc.1-li","21718a3815296547fccac02bc6be5d","tar -xzf kalliope-0.1-rc.1-lin","cd kalliope-0.1-rc.1-linux-x86","./install","pactl list short sources"]}
+ok   la copia riesce: «Copiato» nella stessa cella (il pulsante non cambia larghezza), nessun errore, l'annuncio dice «Copiato negli appunti.» · {"copiato":true,"fatto":"visible","fermo":"hidden","larghezza":73,"annuncio":"Copiato negli appunti.","errore":false,"top":248,"bottom":312,"barra":56,"vh":844}
+ok   dopo 1,6 s torna «Copia», la stessa larghezza · {"l0":73,"copiato":false,"larghezza":73}
+ok   il comando copiato sta nello schermo, sotto la barra · {"copiato":true,"fatto":"visible","fermo":"hidden","larghezza":73,"annuncio":"Copiato negli appunti.","errore":false,"top":248,"bottom":312,"barra":56,"vh":844}
+ok   premendo ancora l'annuncio si ripete (sparisce e ricompare) · ["annuncio:","annuncio:Copiato negli appunti."]
+ok   console pulita
+ok   la copia non riesce: sotto il comando compare la frase per copiarlo a mano, nessun «Copiato» · {"testo":"Non riesco a copiarlo da solo: seleziona il testo e copialo.","copiato":false}
+ok     il comando resta selezionato (si copia con la tastiera) · {"selezione":"sha256sum kalliope-0.1-rc.1-amd64.deb","comando":"sha256sum kalliope-0.1-rc.1-amd64.deb"}
+ok     la frase sta nello schermo per intero, sotto la barra, attaccata al comando (a meno di 24 px) · {"top":330,"bottom":378,"cBottom":312,"vh":844}
+ok     la frase è uno stato annunciato (role=status) e l'annuncio la dice · {"ruolo":"status","annuncio":"Non riesco a copiarlo da solo: seleziona il testo e copialo."}
+ok     la frase resta finché non si ripreme
+ok     premuto di nuovo (e fallito di nuovo) c'è una frase sola, non due
+ok     poi riesce: la frase d'errore sparisce e c'è «Copiato»
+ok   console pulita
+ok   senza appunti non c'è nessun «Copia» · 0
+ok   un clic sul comando lo seleziona intero (si copia con la tastiera) · {"s":"sha256sum kalliope-0.1-rc.1-amd64.deb","c":"sha256sum kalliope-0.1-rc.1-amd64.deb"}
+ok   console pulita
+ok   senza il permesso del browser (firefox) la risposta è una sola: «Copiato» (true) oppure la frase per copiarlo a mano (false) · {"copiato":true,"errore":false}
+ok   console pulita
+ok   «Copia l'indirizzo» riesce: il testo copiato è l'indirizzo mostrato, uguale al canonical; la risposta compare, l'anello è sulla bolla · {"copiato":["https://sansevieria-ou.github.io/kalliope/it/installa/"],"indirizzo":"https://sansevieria-ou.github.io/kalliope/it/installa/","canonical":"https://sansevieria-ou.github.io/kalliope/it/installa/"}
+ok     la risposta sta nello schermo per intero, sotto la barra · [true,588,605]
+ok     console pulita
+ok   «Copia l'indirizzo» non riesce: la frase per copiarlo a mano, nessun anello, l'indirizzo selezionato · {"sel":"https://sansevieria-ou.github.io/kalliope/it/installa/","indirizzo":"https://sansevieria-ou.github.io/kalliope/it/installa/"}
+ok     la risposta sta nello schermo per intero, sotto la barra · [true,588,627]
+ok     console pulita
+
+== senza-js · firefox 390x844
+ok   senza JavaScript: niente classe «js»
+ok   senza JavaScript non c'è «Copia» né «Copia l'indirizzo»; le frasi della finestra sono testo con il loro rimedio (nessun pulsante) · {"copia":0,"copiaIndirizzo":"none","frasiFisse":4}
+ok   il primo schermo è allo stato finale: «Tu · microfono «Kalliope»», nessun tratteggio, il posto di «Kalliope» pieno · {"installata":true,"tratteggio":"0"}
+ok   i terminali hanno tutte le righe (nessuna nascosta), le impronte intere e «Uguale, cifra per cifra» scritto · {"nascoste":0,"intere":true,"esito":1}
+ok   la finestra dice «Pronta», i file stanno nella cartella, le entrate sono finite (titoli, file) · {"finestra":"Pronta. In Zoom, Tea","titoli":0,"pacchi":0}
+ok   la versione che il programma risponde c'è, scritta dalla costruzione (kalliope 0.1) · kalliope 0.1
+ok   l'indirizzo c'è (lo scrive la costruzione), nessuno scorrimento di lato · https://sansevieria-ou.github.io/kalliope/it/installa/, 390 contro 390
+ok   senza JavaScript «Fedora»: la scelta cambia pulsante, riga e comandi (1 in «Installa») · {"scelta":"rpm","pulsanti":["Scarica il .rpm 19,2 MB"],"dice":["Fedora attuale: il pacchetto .rpm"],"comandiInstalla":1,"comandiControllo":2,"cartellaFile":1,"terminale":["sudo dnf install ./kalliope-0.1-rc.1-x86_64.rpm"],"togli":1}
+ok   senza JavaScript «Arch»: la scelta cambia pulsante, riga e comandi (3 in «Installa») · {"scelta":"arch","pulsanti":["Vai ai comandi per Arch"],"dice":["Arch Linux: la ricetta PKGBUILD, che non compila nulla"],"comandiInstalla":3,"comandiControllo":0,"cartellaFile":1,"terminale":["makepkg -si"],"togli":1}
+ok   senza JavaScript «Altre»: la scelta cambia pulsante, riga e comandi (3 in «Installa») · {"scelta":"tar","pulsanti":["Scarica l'archivio 19,2 MB"],"dice":["Le altre distribuzioni: l'archivio, che si installa senza password"],"comandiInstalla":3,"comandiControllo":2,"cartellaFile":1,"terminale":["./install"],"togli":1}
+ok   senza JavaScript «Debian e Ubuntu»: la scelta cambia pulsante, riga e comandi (1 in «Installa») · {"scelta":"deb","pulsanti":["Scarica il .deb 14,1 MB"],"dice":["Debian 13, Ubuntu 24.04 o successive: il pacchetto .deb"],"comandiInstalla":1,"comandiControllo":2,"cartellaFile":1,"terminale":["sudo apt install ./kalliope-0.1-rc.1-amd64.deb"],"togli":1}
+ok   senza JavaScript cambiando distribuzione il pulsante del file e il collegamento non ripetono l'entrata · [0,0,0,0,0]
+ok     e così anche per Arch (il pulsante cambia contenuto) · [["pillola azione scarica",0],["pillola azione scarica",0],["pillola azione scarica",0],["pillola azione scarica",0],["collegamento",0]]
+ok   un clic su un comando lo seleziona intero · {"s":"sha256sum kalliope-0.1-rc.1-am"}
+ok   senza JavaScript il giro di tastiera arriva a ogni collegamento e alla scelta (barra, scelta, comandi, frasi non pulsanti, ripresa, piede) · 39 soste
+ok   al telefono «Menu» porta al piede · #piede-sezioni
+ok   console pulita
+
+== senza-stili · firefox 390x844
+ok   senza i fogli di stile la pagina non diventa enorme (nessun disegno più largo di 300 px, pagina sotto i 30.000 px) · {"alto":8341,"svg":200,"pagina":true,"js":true,"installata":true,"scelte":4}
+ok   nessun errore dello script
+ok   la scelta della distribuzione risponde anche così (il bottone vero è del browser)
+
+== senza-token · firefox 390x844
+ok   senza token.css lo script riconosce che manca e la pagina si carica: il primo schermo è allo stato finale, nessun racconto che parte · {"alto":3467,"svg":195,"pagina":true,"js":true,"installata":true,"scelte":4}
+ok   nessun errore dello script
+ok   la scelta della distribuzione risponde anche così (il bottone vero è del browser)
+
+== ridotto · firefox 390x844
+ok   «riduci movimento»: il primo schermo è già al suo stato finale (installata), nessuna riga nascosta, i gruppi dell'impronta tutti uguali · {"installata":true,"righeNascoste":0,"uguali":true,"finestra":true,"cursoreScrive":false}
+ok   con «riduci movimento» i file sono già nella cartella e «kalliope --version» c'è · {"pacchi":true,"animazioni":0,"versione":"visible"}
+ok   la finestra è già su «Pronta»
+ok   con «riduci movimento» la scelta cambia i comandi subito
+ok   la frase premuta risponde (la finestra mostra la riga) senza dissolvenze
+ok   «Copia» risponde (Copiato) e l'alone è il bordo fermo
+ok   il microfono: la riga «kalliope» c'è e «Kalliope» è già scelto nella barra
+ok   console pulita
+
+== scorrimento · firefox 390x844
+ok   saltando in fondo con End ciò che è in vista entra · subito: 0 spenti
+ok   dopo una scorsa veloce fino al tratto E la scena arriva al suo stato finale (3 ms) · 3 ms
+ok   dopo una scorsa veloce fino al tratto D la scena arriva al suo stato finale (1134 ms) · 1134 ms
+ok   dopo una scorsa veloce fino al tratto C la scena arriva al suo stato finale (4 ms) · 4 ms
+ok   dopo una scorsa veloce fino al tratto B la scena arriva al suo stato finale (3 ms) · 3 ms
+ok   risalendo in cima: il titolo c'è, il primo schermo è finito, nessun terminale è rimasto in attesa · {"y":0,"titolo":1,"installata":true,"compatta":false,"attesa":0}
+ok   l'ancora #passo-controlla porta al punto: titolo sotto la barra, opaco · {"titolo":88,"op":1,"barra":56,"vh":844}
+ok   l'ancora #comandi-apertura porta al punto: titolo sotto la barra, opaco · {"titolo":88,"op":1,"barra":56,"vh":844}
+ok   console pulita
+
+== secondo-piano · firefox 390x844
+ok   con la scheda in secondo piano l'arrivo non va avanti (il posto di «Kalliope» non si è riempito) · {"installata":false,"cursore":true}
+ok   tornando alla scheda l'arrivo riparte da dov'era e arriva allo stato finale · 4553 ms dopo il ritorno
+ok   con la scheda in secondo piano durante il confronto dell'impronta, tornando i gruppi finiscono e nessuno resta a metà · 1005 ms
+ok   con la scheda in secondo piano durante la discesa dei file, tornando i file arrivano tutti · 739 ms
+ok   con la scheda in secondo piano durante il primo avvio della finestra, tornando il racconto arriva a «Pronta» · 2570 ms
+ok   un tratto che arriva con la scheda nascosta non va avanti, e si racconta tornando · 1895 ms
+ok   console pulita
+
+== ritorno · firefox 390x844
+ok   il collegamento porta alla pagina Stato · http://127.0.0.1:8898/it/stato/
+ok   tornando indietro con «Indietro» la scelta resta (Fedora): il bottone, il pulsante e i comandi sono quelli di Fedora (firefox) · {"url":"/it/installa/","js":true,"y":4231,"scelta":"rpm","mostrato":"Scarica il .rpm 19,2 MB","installa":1,"finestraPronta":false,"righeNascoste":4}
+ok     e si è dove si era (a meno di 120 px) · {"prima":4231,"dopo":4231}
+ok     le scene in vista tornano a raccontarsi e finiscono (nessun terminale in vista resta in attesa) · {"finestraTesto":"Pronta. In Zoom, Teams, Meet o","attesa":0}
+ok   dopo il ritorno la copia funziona di nuovo
+ok   console pulita
+
+== ricarica · firefox 390x844
+ok   ricaricando a metà pagina (Altre, ai comandi) si resta lì, la scelta resta (firefox), la scena in vista finisce · {"prima":3247,"y":3247,"scelta":"tar","comandi":3,"discoInVista":false,"pacchi":true,"terminaleAttesa":false,"js":true}
+ok   ricaricando durante l'arrivo la pagina riparte da capo e arriva allo stato finale (con la scelta fatta) · {"installata":true,"attesa":false,"comando":"$ ./install"}
+ok   ricaricando con una frase premuta si riparte senza (nessuna frase premuta, nessun errore in finestra)
+ok   console pulita
+
+== a-meta · firefox 390x844
+ok   cambiata mentre il comando si scrive: alla fine il terminale del primo schermo ha il comando di «Arch» intero, e pulsante, riga e comandi sono i suoi · {"t":1334,"scelta":"arch","pulsanti":["Vai ai comandi per Arch"],"dice":["Arch Linux: la ricetta PKGBUILD, che non compila nulla"],"comandiInstalla":3,"comandiControllo":0,"cartellaFile":1,"terminale":["makepkg -si"],"togli":1}
+ok     il posto di «Kalliope» si riempie (dopo il comando) e non richiude
+ok     console pulita
+ok   cambiata a metà del confronto dell'impronta: alla fine i gruppi visibili sono tutti uguali, «Uguale» c'è, la scelta è Fedora · {"f":1,"scelta":"rpm"}
+ok     console pulita
+ok   cambiata a metà della discesa dei file: alla fine i quattro file sono nella cartella, il terminale ha finito · 796 ms
+ok     console pulita
+ok   sei scelte in mezzo secondo: alla fine il terminale del primo schermo ha il comando di «Altre» intero, e pulsante, riga e comandi sono i suoi · {"t":1241,"scelta":"tar","pulsanti":["Scarica l'archivio 19,2 MB"],"dice":["Le altre distribuzioni: l'archivio, che si installa senza password"],"comandiInstalla":3,"comandiControllo":2,"cartellaFile":1,"terminale":["./install"],"togli":1}
+ok     console pulita
+
+218/219 ok
+# uscita: 1

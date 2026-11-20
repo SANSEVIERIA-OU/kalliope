@@ -1,0 +1,9 @@
+# controprova · primo-enXA-1366x640 · sito P2 (548a6f2) · chromium 1366x640 · primo --lingua=en-XA · 20/11/2026 04:21
+
+== primo · chromium 1366x640
+NO   primo schermo en-XA: il pulsante del file sta nello schermo (608–664 su 640; gradino: -; lo stato «Oggi:» 742–808) · {"top":608,"bottom":664,"vh":640,"statoTop":742,"statoBottom":808,"classi":"-","largo":1366}
+ok     nessuno scorrimento di lato · 1366 contro 1366
+ok     console pulita
+
+2/3 ok
+# uscita: 1

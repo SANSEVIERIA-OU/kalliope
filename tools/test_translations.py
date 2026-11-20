@@ -786,6 +786,92 @@ class DaDestraASinistra(unittest.TestCase):
         self.assertIn('content="\u2066Kalliope 0.1\u2069 للحاسوب"', fuori)
         self.assertIn('title="\u2066Kalliope\u2069، الصفحة"', fuori)
 
+    PAGINA_CON_CODICE = ('<html lang="ar" dir="rtl"><body><p data-t="a">تثبيت Linux مع <span data-t-no="nome di un programma">PipeWire 1.2</span> الآن</p>'
+                         '<div class="comando"><pre><code data-t-no="un comando">sudo apt install ./kalliope-0.1-rc.1-amd64.deb</code></pre></div>'
+                         '<p>اضغط <kbd>Ctrl</kbd> و<code>kalliope --version</code></p><div dir="ltr"><span>x86_64 pkg</span></div>'
+                         '<p><a class="file" data-t-no="nome di un file" href="x/">kalliope-0.1-rc.1-amd64.deb</a></p>'
+                         '<p><span class="cartella-file" data-t-no="nome di un file">kalliope-0.1-rc.1-amd64.deb <b data-t-no="dimensione">14.1 MB</b></span></p>'
+                         '<p><span class="cartella-file" data-t-no="nome di un file">kalliope-0.1-rc.1-amd64.deb <b data-t-no="dimensione">14.1 م.ب</b></span></p>'
+                         '<div class="t-corpo"><p class="t-riga" data-t-no="un\'impronta">737a98ea05b5085e54b2cae156970969880829fa946146bda1d458bb79def73c</p></div>'
+                         # un tipo di testo che nessuna tabella nomina, come ne arriveranno in «in riunione» e in «aiuto»: deve essere isolato senza che nessuno aggiorni niente
+                         '<ul><li data-t-no="un tipo mai visto">.deb · Ubuntu 24.04</li></ul><p><span data-t-no="un altro tipo mai visto">pactl list short sources</span></p>'
+                         '<p class="inoltra-indirizzo" data-t-no="l\'indirizzo della pagina"><span dir="ltr">https://sansevieria-ou.github.io/kalliope/ar/installa/</span></p></body></html>')
+    COPIABILI = ("sudo apt install ./kalliope-0.1-rc.1-amd64.deb", "Ctrl", "kalliope --version", "x86_64 pkg", "kalliope-0.1-rc.1-amd64.deb",
+                 "737a98ea05b5085e54b2cae156970969880829fa946146bda1d458bb79def73c", "https://sansevieria-ou.github.io/kalliope/ar/installa/", "14.1 MB",
+                 ".deb · Ubuntu 24.04", "pactl list short sources")
+
+    def test_il_testo_da_copiare_non_ha_isolamenti(self):
+        """Un comando, un'impronta, il nome di un file e l'indirizzo si copiano negli appunti o a mano: gli isolamenti sono caratteri veri e finirebbero nel terminale («file non trovato»).
+        Un elemento che non si traduce (`data-t-no`, di qualunque tipo: nessun elenco) o `<code>`, `<pre>`, `<kbd>`, `<samp>` si isola con dir="ltr", come raccomandano il W3C e la
+        specifica HTML, e il suo testo non ha caratteri; la prosa tradotta tiene i suoi isolamenti (incarico 3c-b, ripresa del 20/11/2026: succedeva in arabo e in urdu con ogni «Copia»)."""
+        fuori = sito_py.isola_latino(self.PAGINA_CON_CODICE)
+        for pezzo in self.COPIABILI:
+            self.assertIn(">" + pezzo + "<", fuori, pezzo)
+        self.assertIn("\u2066Linux\u2069", fuori)                                        # la prosa tradotta
+        self.assertIn('<span data-t-no="nome di un programma" dir="ltr">PipeWire 1.2</span>', fuori)   # un nome dentro una frase: isolato dal suo elemento, senza caratteri
+        self.assertIn('<li data-t-no="un tipo mai visto" dir="ltr">', fuori)               # un tipo che nessuno ha elencato
+        self.assertIn('<p class="inoltra-indirizzo" data-t-no="l\'indirizzo della pagina"><span dir="ltr">', fuori)   # chi contiene già un dir resta com'è (il verso del paragrafo non cambia)
+
+    def test_la_prova_riconosce_gli_isolamenti_nel_testo_da_copiare(self):
+        salvata = sito_py._da_marcare
+        sito_py._da_marcare = lambda nodo: False   # com'era: ogni testo isolato con i caratteri, anche quello dei comandi
+        try:
+            guasto = sito_py.isola_latino(self.PAGINA_CON_CODICE)
+        finally:
+            sito_py._da_marcare = salvata
+        for pezzo in ("sudo apt install ./kalliope-0.1-rc.1-amd64.deb", "kalliope --version", ".deb · Ubuntu 24.04", "pactl list short sources"):
+            self.assertNotIn(">" + pezzo + "<", guasto, pezzo)
+        self.assertIn("\u2066sudo apt install\u2069", guasto)
+
+    PAGINE_DEL_SITO = ("index.html", "non-ancora/index.html", "stato/index.html", "installa/index.html")
+    RTL_LETTERE = re.compile("[\u0590-\u08FF\uFB1D-\uFDFF\uFE70-\uFEFF]")
+
+    def _segni_nel_testo_tecnico(self):
+        """Per ogni pagina vera del sito, costruita da destra a sinistra: i testi con un segno di isolamento o di direzione dentro ciò che non si traduce (`data-t-no`) o è testo di computer
+        (code, pre, kbd, samp) e non ha lettere da destra a sinistra, e quanti testi di prosa tradotta ne hanno (devono averne: il markup non li sostituisce dove non c'è un elemento)."""
+        segni = re.compile("[\u2066-\u2069\u200e\u200f\u202a-\u202e]")
+        cattivi, prosa = [], 0
+        for nome in self.PAGINE_DEL_SITO:
+            testo = (RADICE / "website" / nome).read_text(encoding="utf-8")
+            for n in pagina.cammina(pagina.leggi(sito_py.isola_latino(testo))):
+                if not isinstance(n, pagina.Testo) or n.padre is None or not segni.search(n.raw):
+                    continue
+                antenati, x = [], n.padre
+                while x is not None:
+                    antenati.append(x)
+                    x = x.padre
+                tecnico = any((a.tag in ("code", "pre", "kbd", "samp") or a.ha("data-t-no")) and not self.RTL_LETTERE.search("".join(f.raw for f in a.figli if isinstance(f, pagina.Testo)))
+                              for a in antenati)
+                if tecnico:
+                    cattivi.append(f"{nome}: {n.raw[:40]!r}")
+                elif any(a.ha("data-t") for a in antenati):
+                    prosa += 1
+        return cattivi, prosa
+
+    def test_nelle_pagine_vere_il_testo_tecnico_non_ha_segni_e_la_prosa_li_tiene(self):
+        cattivi, prosa = self._segni_nel_testo_tecnico()
+        self.assertEqual(cattivi, [])
+        self.assertGreater(prosa, 100)   # la prosa tradotta tiene i suoi isolamenti (nelle pagine vere sono centinaia di testi)
+
+    def test_la_prova_delle_pagine_vere_riconosce_il_comportamento_di_prima(self):
+        salvata = sito_py._da_marcare
+        sito_py._da_marcare = lambda nodo: False
+        try:
+            cattivi, _ = self._segni_nel_testo_tecnico()
+        finally:
+            sito_py._da_marcare = salvata
+        self.assertGreater(len(cattivi), 100)   # su H6 erano centinaia: ogni comando, impronta, nome di file, percorso e nome
+
+    def test_un_data_t_no_nuovo_in_una_pagina_vera_e_isolato_senza_aggiornare_niente(self):
+        """Il caso che ha fatto tornare il difetto tre volte con un elenco di tipi: una pagina futura («in riunione», «aiuto») aggiunge un comando o un nome con un `data-t-no` di un tipo che nessuno ha
+        elencato. Qui lo si aggiunge a «stato» vera, e dopo la costruzione da destra a sinistra è isolato dal suo elemento e non ha segni nel testo."""
+        stato = (RADICE / "website" / "stato" / "index.html").read_text(encoding="utf-8")
+        nuova = stato.replace("</main>", '<p><code data-t-no="un comando di una pagina futura">pw-cli ls Node</code> <span data-t-no="qualcosa che nessuno ha previsto">Kalliope-Virtual 2.0</span></p></main>', 1)
+        self.assertNotEqual(nuova, stato)
+        fuori = sito_py.isola_latino(nuova)
+        self.assertIn('>pw-cli ls Node<', fuori)
+        self.assertIn('data-t-no="qualcosa che nessuno ha previsto" dir="ltr">Kalliope-Virtual 2.0<', fuori)
+
     def test_il_nome_di_una_lingua_nel_suo_elenco_resta_com_e(self):
         pagina_con_elenco = '<html lang="ar" dir="rtl"><body><p>اللغة Linux</p><ul><li><a href="../de/" hreflang="de" lang="de">Deutsch</a></li></ul></body></html>'
         fuori = sito_py.isola_latino(pagina_con_elenco)
@@ -973,6 +1059,152 @@ class FontiEIndirizzo(unittest.TestCase):
         self.assertIn("{{kalliope.page.url}}", testo)
         self.assertNotIn("github.io/kalliope/stato/</p>", testo)
         self.assertNotIn("location.href", (RADICE / "website" / "stato" / "stato.js").read_text(encoding="utf-8"))   # il messaggio copiato non dipende da dov'è aperta la pagina
+
+
+class VersioneDelProgramma(unittest.TestCase):
+    """«kalliope --version» risponde «kalliope X.Y»: la pagina «installa» non scrive il numero a mano, lo dà la costruzione dal tag della versione
+    offerta (incarico 3c-b). Il segnaposto è vero finché il programma dice la versione a quel modo: lo si controlla sul suo sorgente."""
+    PAGINA = """<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><title data-t="t">Prova</title></head>
+<body><p data-t="frase">Scrivi <code data-t-no="un comando">kalliope --version</code>: risponde «kalliope {{kalliope.program.version}}».</p></body></html>
+"""
+
+    def numero(self, tag):
+        return sito_py.values({**RILASCIO, "tag_name": tag})[0]["program.version"]
+
+    @staticmethod
+    def il_programma_dice(sorgente):
+        """Il sorgente del programma scrive «kalliope » e la versione di Cargo senza il «.0» finale, e lo fa per --version."""
+        togli_zero = re.search(r"fn version\(\) -> String \{[^}]*CARGO_PKG_VERSION[^}]*strip_suffix\(\"\.0\"\)", sorgente, re.S)
+        risponde = re.search(r'Some\("--version"[^)]*\)\s*=>\s*\{\s*println!\("kalliope \{\}", version\(\)\)', sorgente)
+        return bool(togli_zero and risponde)
+
+    def test_il_numero_viene_dal_tag_della_versione_offerta(self):
+        for tag, atteso in (("v0.1-rc.1", "0.1"), ("v0.1", "0.1"), ("v1.0", "1.0"), ("v0.12-beta.2", "0.12"), ("v2.3-rc.10", "2.3")):
+            self.assertEqual(self.numero(tag), atteso, tag)
+
+    def test_non_e_la_versione_con_la_parte_di_prova(self):
+        v, _ = sito_py.values({**RILASCIO, "tag_name": "v0.1-rc.1"})
+        self.assertEqual((v["version"], v["program.version"]), ("0.1-rc.1", "0.1"))
+
+    def test_il_programma_dice_la_versione_come_il_segnaposto(self):
+        self.assertTrue(self.il_programma_dice((RADICE / "crates" / "app" / "src" / "main.rs").read_text(encoding="utf-8")))
+
+    def test_la_prova_riconosce_un_programma_che_la_dice_in_un_altro_modo(self):
+        buono = (RADICE / "crates" / "app" / "src" / "main.rs").read_text(encoding="utf-8")
+        self.assertFalse(self.il_programma_dice(buono.replace('.strip_suffix(".0").unwrap_or(v)', "")), "senza togliere lo zero")
+        self.assertFalse(self.il_programma_dice(buono.replace('println!("kalliope {}", version())', 'println!("Kalliope {}", version())')), "con un altro nome")
+        self.assertFalse(self.il_programma_dice(buono.replace('Some("--version" | "-V")', 'Some("--versione")')), "con un altro comando")
+
+    def test_la_costruzione_lo_scrive_dove_la_pagina_lo_segna(self):
+        tmp = pathlib.Path(tempfile.mkdtemp(prefix="lavoro-3cb-versione-"))
+        self.addCleanup(shutil.rmtree, tmp, True)
+        w = tmp / "website"
+        w.mkdir()
+        (w / "index.html").write_text(self.PAGINA, encoding="utf-8")
+        (w / "lingue.html").write_text(SCELTA, encoding="utf-8")
+        (w / "lingua.js").write_text("//", encoding="utf-8")
+        (tmp / "design-system").mkdir()
+        (tmp / "design-system" / "token.css").write_text(":root{}", encoding="utf-8")
+        v, grezzi = sito_py.values({**RILASCIO, "tag_name": "v0.1-rc.1", "prerelease": True})
+        opzioni = {"pseudo": False, "senza_selettore": False, "base_url": "https://esempio.test/k/", "lingue": None, "website": w, "system": tmp / "design-system"}
+        sito_py.build(tmp / "out", v, grezzi, opzioni)
+        html = (tmp / "out" / "it" / "index.html").read_text(encoding="utf-8")
+        self.assertIn("risponde «kalliope 0.1».", html)
+        self.assertNotIn("rc.1", html)
+
+    def test_la_pagina_installa_non_scrive_il_numero_a_mano(self):
+        testo = (RADICE / "website" / "installa" / "index.html").read_text(encoding="utf-8")
+        self.assertIn("{{kalliope.program.version}}", testo)
+        self.assertNotRegex(testo, r"kalliope 0\.\d", "il numero che il programma scrive viene dalla costruzione")
+        self.assertNotRegex(testo, r"kalliope \d", "il numero che il programma scrive viene dalla costruzione")
+
+
+def subprocess_git_show(rev, percorso):
+    """Il file com'era a una revisione (per le controprove: la copia di partenza); None se il repository non c'è o la revisione manca."""
+    import subprocess
+    try:
+        return subprocess.run(["git", "-C", str(RADICE), "show", f"{rev}:{percorso}"], capture_output=True, text=True, timeout=30, check=True).stdout
+    except (OSError, subprocess.SubprocessError):
+        return None
+
+
+class PaginaInstalla(unittest.TestCase):
+    """La pagina «installa» rifatta tiene gli indirizzi della pagina di prima (incarico 3c-b) e non ha due elementi con lo stesso id; ogni elemento che dipende dalla
+    distribuzione nomina soltanto distribuzioni che la scelta ha."""
+    TESTO = (RADICE / "website" / "installa" / "index.html").read_text(encoding="utf-8")
+    # gli id della pagina di prima (website/installa/index.html a 1c6ba5a) a cui qualcuno può avere scritto un collegamento
+    VECCHI = ["altre", "arch", "debian-ubuntu", "fedora", "passo-1", "passo-2", "passo-3", "passo-4", "passo-5", "ripresa", "indirizzo-installa"]
+
+    def test_gli_indirizzi_della_pagina_di_prima_ci_sono(self):
+        ids = re.findall(r'\bid="([^"]+)"', self.TESTO)
+        for vecchio in self.VECCHI:
+            self.assertIn(vecchio, ids, f"manca #{vecchio}")
+
+    def test_la_prova_riconosce_un_indirizzo_che_manca(self):
+        senza = self.TESTO.replace('id="fedora"', 'id="fedora-no"')
+        self.assertNotIn("fedora", re.findall(r'\bid="([^"]+)"', senza))
+
+    def test_nessun_id_ripetuto(self):
+        ids = re.findall(r'\bid="([^"]+)"', self.TESTO)
+        ripetuti = sorted({i for i in ids if ids.count(i) > 1})
+        self.assertEqual(ripetuti, [])
+
+    def test_un_indirizzo_di_distribuzione_sceglie_una_distribuzione_che_c_e(self):
+        scelte = set(re.findall(r'<input class="sistema-voce"[^>]*value="([^"]+)"', self.TESTO))
+        self.assertEqual(scelte, {"deb", "rpm", "arch", "tar"})
+        for valore in re.findall(r'data-sceglie="([^"]+)"', self.TESTO):
+            self.assertIn(valore, scelte)
+        for elenco in re.findall(r'data-sistema="([^"]+)"', self.TESTO):
+            for valore in elenco.split():
+                self.assertIn(valore, scelte, elenco)
+
+    @staticmethod
+    def _riporta_ogni_indirizzo(js):
+        """Vero se `dalleAncore` riporta al punto ogni indirizzo con ancora (`assesta`), non soltanto quelli che scelgono una distribuzione."""
+        corpo = js[js.index("function dalleAncore()"):js.index("function assesta(")]
+        return "if (!voce) return" not in corpo and re.search(r"\n    assesta\(ancora\)", corpo) is not None
+
+    def test_ogni_indirizzo_con_ancora_si_riporta_al_suo_punto(self):
+        """Firefox porta al punto sulla pagina com'è in quel momento e non lo ripete quando arrivano script e caratteri: a 412×915 il titolo di #ripresa finiva dietro la barra,
+        a 1366×640 quelli di #ripresa, #inoltra e #indirizzo-installa stavano a 0 con la barra a 72 (incarico 3c-b, ripresa del 20/11/2026). Vale per ogni indirizzo, non solo per i cinque
+        che scelgono una distribuzione (`data-sceglie`)."""
+        js = (RADICE / "website" / "installa" / "installa.js").read_text(encoding="utf-8")
+        self.assertTrue(self._riporta_ogni_indirizzo(js))
+
+    def test_la_prova_riconosce_dalle_ancore_che_riporta_solo_chi_sceglie(self):
+        prima = """  function dalleAncore() {
+    let id = ''; try { id = decodeURIComponent(location.hash.slice(1)); } catch { return; }
+    const ancora = id && document.getElementById(id), scelta = ancora && ancora.dataset.sceglie;
+    const voce = scelta && $(`.sistema-voce[value="${scelta}"]`);
+    if (!voce) return;
+    if (!voce.checked) { voce.checked = true; voce.dispatchEvent(new Event('change', {bubbles: true})); }
+    ancora.scrollIntoView();
+    assesta(ancora);
+  }
+  function assesta(ancora) {}"""
+        self.assertFalse(self._riporta_ogni_indirizzo(prima))
+
+    def test_lo_script_non_scrive_i_numeri_che_stanno_nei_token_o_nella_pagina(self):
+        """I moltiplicatori e le misure di «installa» vengono da token.css e dalla pagina (come «stato», incarico 3b-b): né il numero di righe prima dei file,
+        né le cifre di un gruppo dell'impronta, né i MB della voce, né l'attesa dell'annuncio sono scritti in installa.js."""
+        js = (RADICE / "website" / "installa" / "installa.js").read_text(encoding="utf-8")
+        for scritto in (r"\b3 \* tempo", r"i \+= 8\b", r"slice\(i, i \+ 8\)", r"Math\.round\(53 \*", r"\}, 60\)"):
+            self.assertIsNone(re.search(scritto, js), scritto)
+        tokens = (RADICE / "design-system" / "token.css").read_text(encoding="utf-8")
+        for nome in ("--righe-prima-dei-file", "--impronta-cifre-gruppo", "--annuncio-attesa", "--primo-comando-aria-sotto"):
+            self.assertIn(nome + ":", tokens)
+        self.assertIn('data-mb="53"', self.TESTO)
+
+    def test_la_prova_dei_numeri_riconosce_uno_script_di_prima(self):
+        prima = subprocess_git_show("548a6f2", "website/installa/installa.js")
+        if prima is None:
+            self.skipTest("la copia di partenza (548a6f2) non c'è in questo repository")
+        self.assertTrue(re.search(r"\b3 \* tempo", prima), "lo script di partenza li scriveva")
+
+    def test_ogni_distribuzione_ha_il_suo_pulsante_del_file(self):
+        for valore in ("deb", "rpm", "arch", "tar"):
+            self.assertEqual(len(re.findall(rf'<a class="pillola azione scarica" data-sistema="{valore}"', self.TESTO)), 1, valore)
 
 
 class Repository(unittest.TestCase):

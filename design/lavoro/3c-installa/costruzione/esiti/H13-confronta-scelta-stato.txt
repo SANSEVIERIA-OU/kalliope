@@ -1,0 +1,8 @@
+# confronta-scelta · stato · scelta /tmp/lavoro-3cb-sito-P · adesso /tmp/lavoro-3cb-sito-H13i · 20/11/2026 16:21
+CONFRONTO 1440×900: uguale su 46 cose nello schermo · pixel diversi 0%
+CONFRONTO 390×844: uguale su 38 cose nello schermo · pixel diversi 0%
+CONFRONTO 1366×640: uguale su 45 cose nello schermo · pixel diversi 0%
+CONFRONTO 844×390: uguale su 11 cose nello schermo · pixel diversi 0%
+CONFRONTO 360×640: uguale su 29 cose nello schermo · pixel diversi 0%
+Uguale alla scelta, salvo le differenze ammesse (foto in /tmp/lavoro-3cb-conf/H13/stato)
+# uscita: 0

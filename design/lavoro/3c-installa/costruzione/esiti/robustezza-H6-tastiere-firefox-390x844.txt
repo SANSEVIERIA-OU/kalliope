@@ -1,0 +1,82 @@
+# robustezza · H6 · firefox 390x844 · sistema,tastiera,tastiera-veloce · 20/11/2026 12:23 · carico: PSI CPU some avg10=2.76 avg60=1.43 · load 5.47 3.99 3.46 su 12 CPU · memoria disponibile 7588 MB
+
+== sistema · firefox 390x844
+ok   all'arrivo: Debian e Ubuntu scelta, un solo pulsante, una sola riga, un comando in «Installa» · {"scelta":"deb","pulsanti":["Scarica il .deb 14,1 MB"],"dice":["Debian 13, Ubuntu 24.04 o successive: il pacchetto .deb"],"comandiInstalla":1,"comandiControllo":2,"cartellaFile":1,"terminale":["sudo apt install ./kalliope-0.1-rc.1-amd64.deb"],"togli":1}
+ok   quattro bottoni d'opzione dello stesso gruppo, ognuno con la sua etichetta, nel gruppo con la sua legenda · {"n":4,"legenda":true,"etichette":true}
+ok   tocco su «Fedora»: scelta, un pulsante giusto, la sua riga, i suoi comandi (1 in «Installa», 2 nel controllo) · {"scelta":"rpm","pulsanti":["Scarica il .rpm 19,2 MB"],"dice":["Fedora attuale: il pacchetto .rpm"],"comandiInstalla":1,"comandiControllo":2,"cartellaFile":1,"terminale":["sudo dnf install ./kalliope-0.1-rc.1-x86_64.rpm"],"togli":1}
+ok     l'annuncio dice per quale distribuzione sono i comandi («Fedora») · I comandi della pagina sono quelli per Fedora.
+ok   tocco su «Arch»: scelta, un pulsante giusto, la sua riga, i suoi comandi (3 in «Installa», 0 nel controllo) · {"scelta":"arch","pulsanti":["Vai ai comandi per Arch"],"dice":["Arch Linux: la ricetta PKGBUILD, che non compila nulla"],"comandiInstalla":3,"comandiControllo":0,"cartellaFile":1,"terminale":["makepkg -si"],"togli":1}
+ok     l'annuncio dice per quale distribuzione sono i comandi («Arch») · I comandi della pagina sono quelli per Arch.
+ok   tocco su «Altre»: scelta, un pulsante giusto, la sua riga, i suoi comandi (3 in «Installa», 2 nel controllo) · {"scelta":"tar","pulsanti":["Scarica l'archivio 19,2 MB"],"dice":["Le altre distribuzioni: l'archivio, che si installa senza password"],"comandiInstalla":3,"comandiControllo":2,"cartellaFile":1,"terminale":["./install"],"togli":1}
+ok     l'annuncio dice per quale distribuzione sono i comandi («Altre») · I comandi della pagina sono quelli per Altre.
+ok   tocco su «Debian e Ubuntu»: scelta, un pulsante giusto, la sua riga, i suoi comandi (1 in «Installa», 2 nel controllo) · {"scelta":"deb","pulsanti":["Scarica il .deb 14,1 MB"],"dice":["Debian 13, Ubuntu 24.04 o successive: il pacchetto .deb"],"comandiInstalla":1,"comandiControllo":2,"cartellaFile":1,"terminale":["sudo apt install ./kalliope-0.1-rc.1-amd64.deb"],"togli":1}
+ok     l'annuncio dice per quale distribuzione sono i comandi («Debian e Ubuntu») · I comandi della pagina sono quelli per Debian e Ubuntu.
+ok   il terminale del primo schermo scrive il comando di «Arch» intero · ["makepkg -si"]
+ok   il terminale del primo schermo scrive il comando di «Fedora» intero · ["sudo dnf install ./kalliope-0.1-rc.1-x86_64.rpm"]
+ok   console pulita
+ok   Tab arriva al gruppo delle quattro scelte, con una sola sosta (sulla scelta fatta), con il contorno del fuoco sull'etichetta · {"k":3,"nome":"Debian e Ubuntu","classe":"sistema-voce","tag":"input","top":750,"left":20,"bottom":798,"right":21,"opacita":1,"visibilita":"visible","anello":true,"anelloRapporto":13.2,"sotto":false,"inSchermo":true,"yDoc":750,"y":0}
+ok   freccia: la scelta passa alla seguente e il fuoco la segue, l'annuncio dice la nuova · {"prima":"deb","scelta":"rpm","fuoco":"rpm","ann":"I comandi della pagina sono quelli per Fedora."}
+ok   quattro frecce giù: fanno il giro e tornano alla stessa scelta · rpm
+ok   Tab dal gruppo va a «Non uso Linux» (non alle altre tre scelte) · Non uso Linux
+ok   «Vai ai comandi per Arch» porta al passo «Installa»: titolo sotto la barra, opaco · {"titolo":164,"barra":56,"vh":844,"hash":"#installa","op":1}
+ok   console pulita
+
+== tastiera · firefox 390x844
+   [Debian e Ubuntu] soste: 48 Vai al contenuto → Kalliope, pagina iniziale → Menu → Debian e Ubuntu → Non uso Linux → Scarica il .deb 14,1 MB → Lo installa un'altra persona → kalliope-0.1-rc.1-amd64.deb → Copia: sha256sum kalliope-0.1-rc.1-amd64 → Copia: 737a98ea05b5085e54b2cae1569709698 → segnalalo → SHA256SUMS → Stato e limiti → Copia: sudo apt install ./kalliope-0.1-r → segnalalo → Fin dove è provato → Per togliere Kalliope → «Per scaricare la voce serve il programm → «Download non riuscito: …» o «Download a → «Il file … scaricato non corrisponde all → «La voce è pronta, ma …: per ora nessuno → Che cosa fare → pagina Aiuto → Copia: pactl list short sources → che cosa fare → Usalo in una riunione → Se un passo non va, 
+ok   [Debian e Ubuntu] il giro tocca ogni comando una volta, in un ordine · 48 soste
+ok   [Debian e Ubuntu] i pulsanti «Copia» nell'ordine del fuoco sono tutti quelli che si vedono (4) · 4 di 4
+ok   [Debian e Ubuntu] le quattro frasi della finestra sono quattro soste (pulsanti)
+ok   [Debian e Ubuntu] le cinque tappe della ripresa e «Copia l'indirizzo» sono nell'ordine del fuoco
+ok   [Debian e Ubuntu] «Per togliere Kalliope» è una sosta
+ok   [Debian e Ubuntu] la scelta è una sola sosta (le altre tre non sono soste), seguita da «Non uso Linux»
+ok   [Debian e Ubuntu] ogni sosta ha il comando in vista, opaco e non sotto la barra
+ok   [Debian e Ubuntu] all'indietro (Maiusc+Tab) 48 soste, ognuna in vista, opaca e non sotto la barra
+ok   [Debian e Ubuntu] nessuna sosta sta sotto la barra
+ok   [Debian e Ubuntu] il contorno del fuoco si vede su ogni sosta
+ok   [Debian e Ubuntu] il contorno del fuoco si distingue dal fondo (almeno 1,8 : 1 dove il fondo è pieno) · 48 soste misurate
+ok   [Debian e Ubuntu] l'ordine del fuoco va dall'alto in basso (e da una colonna alla seguente)
+ok   [Debian e Ubuntu] console pulita
+   [Arch] soste: 47 Vai al contenuto → Kalliope, pagina iniziale → Menu → Arch → Non uso Linux → Vai ai comandi per Arch → Lo installa un'altra persona → leggerla prima → SHA256SUMS → Stato e limiti → Copia: mkdir kalliope && cd kalliope → Copia: curl -L -o PKGBUILD https://githu → Copia: makepkg -si → segnalalo → Fin dove è provato → Per togliere Kalliope → «Per scaricare la voce serve il programm → «Download non riuscito: …» o «Download a → «Il file … scaricato non corrisponde all → «La voce è pronta, ma …: per ora nessuno → Che cosa fare → pagina Aiuto → Copia: pactl list short sources → che cosa fare → Usalo in una riunione → Se un passo non va, segnalalo (serve un  → Non trovi il file → Il numero non è ugu
+ok   [Arch] il giro tocca ogni comando una volta, in un ordine · 47 soste
+ok   [Arch] i pulsanti «Copia» nell'ordine del fuoco sono tutti quelli che si vedono (4) · 4 di 4
+ok   [Arch] le quattro frasi della finestra sono quattro soste (pulsanti)
+ok   [Arch] le cinque tappe della ripresa e «Copia l'indirizzo» sono nell'ordine del fuoco
+ok   [Arch] «Per togliere Kalliope» è una sosta
+ok   [Arch] la scelta è una sola sosta (le altre tre non sono soste), seguita da «Non uso Linux»
+ok   [Arch] ogni sosta ha il comando in vista, opaco e non sotto la barra
+ok   [Arch] nessuna sosta sta sotto la barra
+ok   [Arch] il contorno del fuoco si vede su ogni sosta
+ok   [Arch] il contorno del fuoco si distingue dal fondo (almeno 1,8 : 1 dove il fondo è pieno) · 47 soste misurate
+ok   [Arch] l'ordine del fuoco va dall'alto in basso (e da una colonna alla seguente)
+ok   [Arch] console pulita
+
+== tastiera-veloce · firefox 390x844
+   [Debian e Ubuntu] soste: 48 Vai al contenuto → Kalliope, pagina iniziale → Menu → Debian e Ubuntu → Non uso Linux → Scarica il .deb 14,1 MB → Lo installa un'altra persona → kalliope-0.1-rc.1-amd64.deb → Copia: sha256sum kalliope-0.1-rc.1-amd64 → Copia: 737a98ea05b5085e54b2cae1569709698 → segnalalo → SHA256SUMS → Stato e limiti → Copia: sudo apt install ./kalliope-0.1-r → segnalalo → Fin dove è provato → Per togliere Kalliope → «Per scaricare la voce serve il programm → «Download non riuscito: …» o «Download a → «Il file … scaricato non corrisponde all → «La voce è pronta, ma …: per ora nessuno → Che cosa fare → pagina Aiuto → Copia: pactl list short sources → che cosa fare → Usalo in una riunione → Se un passo non va, 
+ok   [Debian e Ubuntu] il giro tocca ogni comando una volta, in un ordine · 48 soste
+ok   [Debian e Ubuntu] i pulsanti «Copia» nell'ordine del fuoco sono tutti quelli che si vedono (4) · 4 di 4
+ok   [Debian e Ubuntu] le quattro frasi della finestra sono quattro soste (pulsanti)
+ok   [Debian e Ubuntu] le cinque tappe della ripresa e «Copia l'indirizzo» sono nell'ordine del fuoco
+ok   [Debian e Ubuntu] «Per togliere Kalliope» è una sosta
+ok   [Debian e Ubuntu] la scelta è una sola sosta (le altre tre non sono soste), seguita da «Non uso Linux»
+ok   [Debian e Ubuntu] a passo svelto il giro è lo stesso · Debian e Ubuntu (op 0.00, in vista), Non uso Linux (op 0.00, in vista), Scarica il .deb 14,1 MB (op 0.00, in vista), Lo installa un'altra persona (op 0.00, in vista)
+ok   [Debian e Ubuntu] nessuna sosta sta sotto la barra
+ok   [Debian e Ubuntu] il contorno del fuoco si vede su ogni sosta
+ok   [Debian e Ubuntu] il contorno del fuoco si distingue dal fondo (almeno 1,8 : 1 dove il fondo è pieno) · 48 soste misurate
+ok   [Debian e Ubuntu] l'ordine del fuoco va dall'alto in basso (e da una colonna alla seguente)
+ok   [Debian e Ubuntu] console pulita
+   [Arch] soste: 47 Vai al contenuto → Kalliope, pagina iniziale → Menu → Arch → Non uso Linux → Vai ai comandi per Arch → Lo installa un'altra persona → leggerla prima → SHA256SUMS → Stato e limiti → Copia: mkdir kalliope && cd kalliope → Copia: curl -L -o PKGBUILD https://githu → Copia: makepkg -si → segnalalo → Fin dove è provato → Per togliere Kalliope → «Per scaricare la voce serve il programm → «Download non riuscito: …» o «Download a → «Il file … scaricato non corrisponde all → «La voce è pronta, ma …: per ora nessuno → Che cosa fare → pagina Aiuto → Copia: pactl list short sources → che cosa fare → Usalo in una riunione → Se un passo non va, segnalalo (serve un  → Non trovi il file → Il numero non è ugu
+ok   [Arch] il giro tocca ogni comando una volta, in un ordine · 47 soste
+ok   [Arch] i pulsanti «Copia» nell'ordine del fuoco sono tutti quelli che si vedono (4) · 4 di 4
+ok   [Arch] le quattro frasi della finestra sono quattro soste (pulsanti)
+ok   [Arch] le cinque tappe della ripresa e «Copia l'indirizzo» sono nell'ordine del fuoco
+ok   [Arch] «Per togliere Kalliope» è una sosta
+ok   [Arch] la scelta è una sola sosta (le altre tre non sono soste), seguita da «Non uso Linux»
+ok   [Arch] a passo svelto il giro è lo stesso · Arch (op 0.58, in vista), Non uso Linux (op 0.78, in vista)
+ok   [Arch] nessuna sosta sta sotto la barra
+ok   [Arch] il contorno del fuoco si vede su ogni sosta
+ok   [Arch] il contorno del fuoco si distingue dal fondo (almeno 1,8 : 1 dove il fondo è pieno) · 47 soste misurate
+ok   [Arch] l'ordine del fuoco va dall'alto in basso (e da una colonna alla seguente)
+ok   [Arch] console pulita
+
+68/68 ok
+# uscita: 0

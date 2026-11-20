@@ -1,0 +1,98 @@
+[
+ {
+  "lingua": "en-XA",
+  "misura": "390x844",
+  "buono": true,
+  "dir": "ltr",
+  "male": [],
+  "dentro": true,
+  "esce": [],
+  "largo": 390,
+  "vh": 390,
+  "errori": []
+ },
+ {
+  "lingua": "en-XA",
+  "misura": "1440x900",
+  "buono": true,
+  "dir": "ltr",
+  "male": [],
+  "dentro": true,
+  "esce": [],
+  "largo": 1440,
+  "vh": 1440,
+  "errori": []
+ },
+ {
+  "lingua": "ar-XB",
+  "misura": "390x844",
+  "buono": true,
+  "dir": "rtl",
+  "male": [],
+  "dentro": true,
+  "esce": [],
+  "largo": 390,
+  "vh": 390,
+  "errori": []
+ },
+ {
+  "lingua": "ar-XB",
+  "misura": "1440x900",
+  "buono": true,
+  "dir": "rtl",
+  "male": [],
+  "dentro": true,
+  "esce": [],
+  "largo": 1440,
+  "vh": 1440,
+  "errori": []
+ },
+ {
+  "lingua": "ar",
+  "misura": "390x844",
+  "buono": true,
+  "dir": "rtl",
+  "male": [],
+  "dentro": true,
+  "esce": [],
+  "largo": 390,
+  "vh": 390,
+  "errori": []
+ },
+ {
+  "lingua": "ar",
+  "misura": "1440x900",
+  "buono": true,
+  "dir": "rtl",
+  "male": [],
+  "dentro": true,
+  "esce": [],
+  "largo": 1440,
+  "vh": 1440,
+  "errori": []
+ },
+ {
+  "lingua": "ur",
+  "misura": "390x844",
+  "buono": true,
+  "dir": "rtl",
+  "male": [],
+  "dentro": true,
+  "esce": [],
+  "largo": 390,
+  "vh": 390,
+  "errori": []
+ },
+ {
+  "lingua": "ur",
+  "misura": "1440x900",
+  "buono": true,
+  "dir": "rtl",
+  "male": [],
+  "dentro": true,
+  "esce": [],
+  "largo": 1440,
+  "vh": 1440,
+  "errori": []
+ }
+]

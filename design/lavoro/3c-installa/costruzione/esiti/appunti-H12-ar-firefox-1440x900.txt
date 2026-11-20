@@ -1,0 +1,23 @@
+# appunti · H12 · ar · firefox 1440x900 · 20/11/2026 15:53 · carico: PSI CPU some avg10=4.66 avg60=2.50 · load 4.43 3.46 4.87 su 12 CPU · memoria disponibile 7770 MB
+
+== appunti · firefox 1440x900
+ok   «Debian e Ubuntu»: dopo ognuno dei 4 «Copia» gli appunti hanno il comando come nella pagina italiana, senza segni invisibili · {"n":4,"attesi":4,"conSegni":0,"primo":null}
+ok   «Debian e Ubuntu»: selezionando a mano ognuno dei 4 comandi si ottiene il comando come nella pagina italiana, senza segni invisibili · {"conSegni":0,"primo":null}
+ok   «Fedora»: dopo ognuno dei 4 «Copia» gli appunti hanno il comando come nella pagina italiana, senza segni invisibili · {"n":4,"attesi":4,"conSegni":0,"primo":null}
+ok   «Fedora»: selezionando a mano ognuno dei 4 comandi si ottiene il comando come nella pagina italiana, senza segni invisibili · {"conSegni":0,"primo":null}
+ok   «Arch»: dopo ognuno dei 4 «Copia» gli appunti hanno il comando come nella pagina italiana, senza segni invisibili · {"n":4,"attesi":4,"conSegni":0,"primo":null}
+ok   «Arch»: selezionando a mano ognuno dei 4 comandi si ottiene il comando come nella pagina italiana, senza segni invisibili · {"conSegni":0,"primo":null}
+ok   «Altre»: dopo ognuno dei 6 «Copia» gli appunti hanno il comando come nella pagina italiana, senza segni invisibili · {"n":6,"attesi":6,"conSegni":0,"primo":null}
+ok   «Altre»: selezionando a mano ognuno dei 6 comandi si ottiene il comando come nella pagina italiana, senza segni invisibili · {"conSegni":0,"primo":null}
+ok   selezionando a mano riga del terminale (30) non si portano dietro segni invisibili · {"conSegni":0,"primo":null}
+ok   selezionando a mano comando scritto nel terminale (4) non si portano dietro segni invisibili · {"conSegni":0,"primo":null}
+ok   selezionando a mano nome del file (1) non si portano dietro segni invisibili · {"conSegni":0,"primo":null}
+NO   selezionando a mano file nella cartella (1) non si portano dietro segni invisibili · {"conSegni":1,"primo":"<U+2066>kalliope-0.1-rc.1-linux-x86_64.tar.gz<U+20"}
+ok   selezionando a mano cartella (1) non si portano dietro segni invisibili · {"conSegni":0,"primo":null}
+ok   selezionando a mano percorso nel pacchetto (2) non si portano dietro segni invisibili · {"conSegni":0,"primo":null}
+ok   selezionando a mano indirizzo della pagina (1) non si portano dietro segni invisibili · {"conSegni":0,"primo":null}
+ok   «Copia l'indirizzo»: gli appunti hanno l'indirizzo della pagina, senza segni invisibili · {"appunti":"https://sansevieria-ou.github.io/kalliope/ar/installa/","canonico":"https://sansevieria-ou.github.io/kalliope/ar/installa/"}
+ok   console pulita
+
+16/17 ok
+# uscita: 1

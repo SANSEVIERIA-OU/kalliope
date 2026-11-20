@@ -50,6 +50,12 @@
   .sistemi-pagina:has(#sistema-rpm:checked) [data-sistema]:not([data-sistema~="rpm"]),
   .sistemi-pagina:has(#sistema-arch:checked) [data-sistema]:not([data-sistema~="arch"]),
   .sistemi-pagina:has(#sistema-tar:checked) [data-sistema]:not([data-sistema~="tar"]) { display: none !important; }
+  /* i pulsanti del file nel primo schermo hanno l'entrata della pagina (animation): con display: none a ogni scelta quello nuovo la ripeterebbe
+     (640 ms), e senza JavaScript nessuno può togliergliela. Le voci non scelte restano ferme e invisibili, fuori dal flusso, invece di sparire */
+  .sistemi-pagina:has(#sistema-deb:checked) #comandi-apertura > .scarica[data-sistema]:not([data-sistema~="deb"]),
+  .sistemi-pagina:has(#sistema-rpm:checked) #comandi-apertura > .scarica[data-sistema]:not([data-sistema~="rpm"]),
+  .sistemi-pagina:has(#sistema-arch:checked) #comandi-apertura > .scarica[data-sistema]:not([data-sistema~="arch"]),
+  .sistemi-pagina:has(#sistema-tar:checked) #comandi-apertura > .scarica[data-sistema]:not([data-sistema~="tar"]) { display: inline-flex !important; position: absolute; visibility: hidden; pointer-events: none; }
 }
 
 /* sul tablet la colonna del primo schermo è stretta (430 px a 1024): i quattro sistemi più stretti, perché stiano in una riga */

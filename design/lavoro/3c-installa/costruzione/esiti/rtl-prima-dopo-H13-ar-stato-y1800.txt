@@ -1,0 +1,29 @@
+# rtl prima/dopo · ar/stato/index.html · y 1800 · scelta H6 · adesso H13 · 20/11/2026 16:00 · carico: PSI CPU some avg10=1.36 avg60=2.80 · load 3.71 4.16 4.73 su 12 CPU · memoria disponibile 7381 MB
+CONFRONTO 1440×900 a 1800 px: 16 differenze su 55 cose nello schermo · pixel diversi 0%
+  MANCA a «⁦README⁩»: era a 559,52.5, 51×25
+  MANCA a «⁦CHANGELOG.md⁩»: era a 452,52.5, 100×25
+  MANCA a «⁦README⁩» #2: era a 1027,372, 51×25
+  MANCA a «⁦engine.rs⁩»: era a 818,386, 54×25
+  MANCA a «⁦benchmarks/engines⁩»: era a 687,386, 124×25
+  MANCA a «⁦README⁩» #3: era a 977,746, 51×25
+  MANCA a «⁦README⁩» #4: era a 794,672, 51×25
+  MANCA a «⁦docs/virtual-microphone.md⁩»: era a 478,803.5, 169×25
+  IN PIÙ a «README»: a 559,52.5, 51×25
+  IN PIÙ a «CHANGELOG.md»: a 452,52.5, 100×25
+  IN PIÙ a «README» #2: a 1027,372, 51×25
+  IN PIÙ a «engine.rs»: a 818,386, 54×25
+  IN PIÙ a «benchmarks/engines»: a 687,386, 124×25
+  IN PIÙ a «README» #3: a 977,746, 51×25
+  IN PIÙ a «README» #4: a 794,672, 51×25
+  IN PIÙ a «docs/virtual-microphone.md»: a 478,803.5, 169×25
+CONFRONTO 390×844 a 1800 px: 8 differenze su 32 cose nello schermo · pixel diversi 0%
+  MANCA a «⁦docs/releasing.md⁩»: era a 167,46, 111×25
+  MANCA a «⁦README⁩»: era a 182,530, 51×25
+  MANCA a «⁦CHANGELOG.md⁩»: era a 75,530, 100×25
+  MANCA a «⁦README⁩» #2: era a 170,714, 51×25
+  IN PIÙ a «docs/releasing.md»: a 167,46, 111×25
+  IN PIÙ a «README»: a 182,530, 51×25
+  IN PIÙ a «CHANGELOG.md»: a 75,530, 100×25
+  IN PIÙ a «README» #2: a 170,714, 51×25
+Il confronto con la scelta non regge a 2 misure (foto e differenze in /tmp/lavoro-3cb-rtl-pd-H13/ar-stato-y1800)
+# uscita: 1

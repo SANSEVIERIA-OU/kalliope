@@ -1,0 +1,43 @@
+# H6-lingue-ur · 20/11/2026 14:23 · carico: PSI CPU some avg10=3.91 avg60=2.85 · load 7.77 13.13 12.48 su 12 CPU · memoria disponibile 4621 MB · sito: /tmp/lavoro-3cb-sito-H6 · albero: /tmp/lavoro-3cb-radice-H6 · esame-impaginazione.mjs chromium normale ur_in 390x844,1440x900,844x390,326x326,1366x640
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+ur_in · 390×844 · testo 100%: pulito
+ur_in_menu · 390×844 · testo 100%: pulito
+ur_in_archivio · 390×844 · testo 100%: pulito
+ur_in_copia · 390×844 · testo 100%: pulito
+ur_in_frase · 390×844 · testo 100%: pulito
+ur_in_copia_no · 390×844 · testo 100%: pulito
+ur_in_indirizzo · 390×844 · testo 100%: pulito
+ur_in_menu · 1440×900 · testo 100%: lo stato non c'è a questa misura
+ur_in · 1440×900 · testo 100%: pulito
+ur_in_archivio · 1440×900 · testo 100%: pulito
+ur_in_copia · 1440×900 · testo 100%: pulito
+ur_in_frase · 1440×900 · testo 100%: pulito
+ur_in_copia_no · 1440×900 · testo 100%: pulito
+ur_in_indirizzo · 1440×900 · testo 100%: pulito
+ur_in · 844×390 · testo 100%: pulito
+ur_in_menu · 844×390 · testo 100%: pulito
+ur_in_archivio · 844×390 · testo 100%: pulito
+ur_in_copia · 844×390 · testo 100%: pulito
+ur_in_frase · 844×390 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 844×390) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+ur_in_copia_no · 844×390 · testo 100%: pulito
+ur_in_indirizzo · 844×390 · testo 100%: pulito
+ur_in · 326×326 · testo 100%: pulito
+ur_in_menu · 326×326 · testo 100%: pulito
+ur_in_archivio · 326×326 · testo 100%: pulito
+ur_in_copia · 326×326 · testo 100%: pulito
+ur_in_frase · 326×326 · testo 100%: pulito, con un limite dichiarato
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 326×326) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+ur_in_copia_no · 326×326 · testo 100%: pulito
+ur_in_indirizzo · 326×326 · testo 100%: pulito
+ur_in_menu · 1366×640 · testo 100%: lo stato non c'è a questa misura
+ur_in · 1366×640 · testo 100%: pulito
+ur_in_archivio · 1366×640 · testo 100%: pulito
+ur_in_copia · 1366×640 · testo 100%: pulito
+ur_in_frase · 1366×640 · testo 100%: pulito
+ur_in_copia_no · 1366×640 · testo 100%: pulito
+ur_in_indirizzo · 1366×640 · testo 100%: pulito
+
+
+Tutto pulito; 2 limiti dichiarati, elencati a parte e non contati (foto in /tmp/lavoro-3cb-qa-lingue/esame/chromium)
+# uscita: 0

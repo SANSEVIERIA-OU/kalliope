@@ -1,0 +1,41 @@
+# H5x-fermo-webkit-Telefono-6 · 20/11/2026 14:17 · carico: PSI CPU some avg10=25.20 avg60=17.44 · load 34.51 18.76 12.55 su 12 CPU · memoria disponibile 7347 MB · sito: /tmp/lavoro-3cb-sito-H5x · albero: /tmp/lavoro-3cb-radice-H5x · dispositivi-qa.mjs webkit installa Telefono
+ok  installa · Telefono 390×844
+ok  installa-menu · Telefono 390×844
+ok  installa-archivio · Telefono 390×844
+ok  installa-frase · Telefono 390×844
+ok  installa-frase-microfono · Telefono 390×844
+ok  installa-frase-tolta · Telefono 390×844
+ok  installa-copia-fatta · Telefono 390×844
+ok  installa-copia-non-riuscita · Telefono 390×844
+NO  installa-indirizzo-copiato · Telefono 390×844
+  FERMO A METÀ p.t-riga.t-trovato.t-mostra.t-entra opacità 0.88→1.00
+ok  installa-indirizzo-non-copiato · Telefono 390×844
+ok  installa · Telefono piccolo 360×740
+ok  installa-menu · Telefono piccolo 360×740
+ok  installa-archivio · Telefono piccolo 360×740
+ok  installa-frase · Telefono piccolo 360×740
+ok  installa-frase-microfono · Telefono piccolo 360×740
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: 30 px sotto (schermo 360×740) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+ok  installa-frase-tolta · Telefono piccolo 360×740
+ok  installa-copia-fatta · Telefono piccolo 360×740
+ok  installa-copia-non-riuscita · Telefono piccolo 360×740
+ok  installa-indirizzo-copiato · Telefono piccolo 360×740
+ok  installa-indirizzo-non-copiato · Telefono piccolo 360×740
+ok  installa · Telefono girato 844×390
+ok  installa-menu · Telefono girato 844×390
+ok  installa-archivio · Telefono girato 844×390
+ok  installa-frase · Telefono girato 844×390
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 844×390) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+ok  installa-frase-microfono · Telefono girato 844×390
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 844×390) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+ok  installa-frase-tolta · Telefono girato 844×390
+  LIMITE DICHIARATO FUORI VISTA button.frase-bottone: tutto sotto il bordo (schermo 844×390) · la frase premuta cambia la finestra: la finestra sta nello schermo, sotto la barra, e la frase premuta con lei dove ci stanno insieme; dove insieme non ci stanno vince ciò che il gesto ha aperto, cioè la finestra (regola della cornice, 3a-non-ancora/PIANO.md «La cornice», punto 2). Scritto dalla costruzione 3c-b, da confermare alla direzione, con le foto in 3c-installa/costruzione/foto/difetti/
+ok  installa-copia-fatta · Telefono girato 844×390
+ok  installa-copia-non-riuscita · Telefono girato 844×390
+ok  installa-indirizzo-copiato · Telefono girato 844×390
+ok  installa-indirizzo-non-copiato · Telefono girato 844×390
+
+1 cose da guardare su 30 casi (30 in questo giro; foto in /tmp/lavoro-3cb-qa-H5x-fermo-webkit-Telefono-6/dispositivi/webkit). Sono simulazioni, non telefoni veri.
+  4 limiti dichiarati, elencati a parte e non contati
+  345 casi della matrice non eseguiti (filtro o giro interrotto: --continua li riprende)
+# uscita: 1

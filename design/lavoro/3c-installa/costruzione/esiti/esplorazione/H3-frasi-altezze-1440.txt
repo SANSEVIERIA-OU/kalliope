@@ -1,0 +1,8 @@
+# H3-frasi-altezze-1440 · 20/11/2026 04:51 · sito: /tmp/lavoro-3cb-sito-H3 · albero: /tmp/lavoro-3cb-radice-H3 · esame-impaginazione.mjs chromium normale installa 1440x500,1440x501,1440x699,1440x700,1440x759,1440x760,1440x799,1440x800,1440x802,1440x803,1440x819,1440x820
+La configurazione dichiara male i limiti:
+  limiti[0]: la pagina «non-ancora-errore-audio» non è fra le pagine della configurazione
+  limiti[1]: la pagina «non-ancora-errore-audio» non è fra le pagine della configurazione
+  limiti[2]: la pagina «non-ancora-errore-audio» non è fra le pagine della configurazione
+  limiti[3]: la pagina «stato-domanda» non è fra le pagine della configurazione
+  limiti[4]: la pagina «stato-domanda» non è fra le pagine della configurazione
+# uscita: 2

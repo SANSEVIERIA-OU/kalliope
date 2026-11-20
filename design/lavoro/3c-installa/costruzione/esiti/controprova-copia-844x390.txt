@@ -1,0 +1,35 @@
+# controprova · copia-844x390 · sito P2 (548a6f2) · chromium 844x390 · copia  · 20/11/2026 04:24
+
+== copia · chromium 844x390
+ok   «Debian e Ubuntu»: ognuno dei 4 pulsanti «Copia» copia il suo comando com'è (senza spazi in più, senza invii) · {"n":4,"copiati":["sha256sum kalliope-0.1-rc.1-am","737a98ea05b5085e54b2cae1569709","sudo apt install ./kalliope-0.","pactl list short sources"]}
+ok   «Arch»: ognuno dei 4 pulsanti «Copia» copia il suo comando com'è (senza spazi in più, senza invii) · {"n":4,"copiati":["mkdir kalliope && cd kalliope","curl -L -o PKGBUILD https://gi","makepkg -si","pactl list short sources"]}
+ok   «Altre»: ognuno dei 6 pulsanti «Copia» copia il suo comando com'è (senza spazi in più, senza invii) · {"n":6,"copiati":["sha256sum kalliope-0.1-rc.1-li","21718a3815296547fccac02bc6be5d","tar -xzf kalliope-0.1-rc.1-lin","cd kalliope-0.1-rc.1-linux-x86","./install","pactl list short sources"]}
+ok   la copia riesce: «Copiato» nella stessa cella (il pulsante non cambia larghezza), nessun errore, l'annuncio dice «Copiato negli appunti.» · {"copiato":true,"fatto":"visible","fermo":"hidden","larghezza":86,"annuncio":"Copiato negli appunti.","errore":false,"top":82,"bottom":130,"barra":72,"vh":390}
+ok   dopo 1,6 s torna «Copia», la stessa larghezza · {"l0":86,"copiato":false,"larghezza":86}
+ok   il comando copiato sta nello schermo, sotto la barra · {"copiato":true,"fatto":"visible","fermo":"hidden","larghezza":86,"annuncio":"Copiato negli appunti.","errore":false,"top":82,"bottom":130,"barra":72,"vh":390}
+ok   premendo ancora l'annuncio si ripete (sparisce e ricompare) · ["annuncio:","annuncio:Copiato negli appunti."]
+ok   console pulita
+ok   la copia non riesce: sotto il comando compare la frase per copiarlo a mano, nessun «Copiato» · {"testo":"Non riesco a copiarlo da solo: seleziona il testo e copialo.","copiato":false}
+ok     il comando resta selezionato (si copia con la tastiera) · {"selezione":"sha256sum kalliope-0.1-rc.1-amd64.deb","comando":"sha256sum kalliope-0.1-rc.1-amd64.deb"}
+ok     la frase sta nello schermo per intero, sotto la barra, attaccata al comando (a meno di 24 px) · {"top":148,"bottom":200,"cBottom":130,"vh":390}
+NO     la frase è uno stato annunciato (role=status) e l'annuncio la dice · {"ruolo":"status","annuncio":""}
+ok     la frase resta finché non si ripreme
+ok     premuto di nuovo (e fallito di nuovo) c'è una frase sola, non due
+ok     poi riesce: la frase d'errore sparisce e c'è «Copiato»
+ok   console pulita
+ok   senza appunti non c'è nessun «Copia» · 0
+ok   un clic sul comando lo seleziona intero (si copia con la tastiera) · {"s":"sha256sum kalliope-0.1-rc.1-amd64.deb","c":"sha256sum kalliope-0.1-rc.1-amd64.deb"}
+ok   console pulita
+ok   con gli appunti veri il testo copiato è il comando · "sha256sum kalliope-0.1-rc.1-amd64.deb"
+ok   console pulita
+ok   senza il permesso del browser (chromium) la risposta è una sola: «Copiato» (false) oppure la frase per copiarlo a mano (true) · {"copiato":false,"errore":true}
+ok   console pulita
+ok   «Copia l'indirizzo» riesce: il testo copiato è l'indirizzo mostrato, uguale al canonical; la risposta compare, l'anello è sulla bolla · {"copiato":["https://sansevieria-ou.github.io/kalliope/it/installa/"],"indirizzo":"https://sansevieria-ou.github.io/kalliope/it/installa/","canonical":"https://sansevieria-ou.github.io/kalliope/it/installa/"}
+NO     la risposta sta nello schermo per intero, sotto la barra · [true,381,399]
+ok     console pulita
+ok   «Copia l'indirizzo» non riesce: la frase per copiarlo a mano, nessun anello, l'indirizzo selezionato · {"sel":"https://sansevieria-ou.github.io/kalliope/it/installa/","indirizzo":"https://sansevieria-ou.github.io/kalliope/it/installa/"}
+NO     la risposta sta nello schermo per intero, sotto la barra · [true,381,421]
+ok     console pulita
+
+26/29 ok
+# uscita: 1

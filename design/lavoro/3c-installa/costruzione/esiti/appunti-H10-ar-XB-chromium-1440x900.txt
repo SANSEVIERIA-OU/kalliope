@@ -1,0 +1,23 @@
+# appunti · H10 · ar-XB · chromium 1440x900 · 20/11/2026 15:38 · carico: PSI CPU some avg10=0.05 avg60=0.24 · load 3.88 5.15 7.12 su 12 CPU · memoria disponibile 5599 MB
+
+== appunti · chromium 1440x900
+ok   «Debian e Ubuntu»: dopo ognuno dei 4 «Copia» gli appunti hanno il comando come nella pagina italiana, senza segni invisibili · {"n":4,"attesi":4,"conSegni":0,"primo":null}
+ok   «Debian e Ubuntu»: selezionando a mano ognuno dei 4 comandi si ottiene il comando come nella pagina italiana, senza segni invisibili · {"conSegni":0,"primo":null}
+ok   «Fedora»: dopo ognuno dei 4 «Copia» gli appunti hanno il comando come nella pagina italiana, senza segni invisibili · {"n":4,"attesi":4,"conSegni":0,"primo":null}
+ok   «Fedora»: selezionando a mano ognuno dei 4 comandi si ottiene il comando come nella pagina italiana, senza segni invisibili · {"conSegni":0,"primo":null}
+ok   «Arch»: dopo ognuno dei 4 «Copia» gli appunti hanno il comando come nella pagina italiana, senza segni invisibili · {"n":4,"attesi":4,"conSegni":0,"primo":null}
+ok   «Arch»: selezionando a mano ognuno dei 4 comandi si ottiene il comando come nella pagina italiana, senza segni invisibili · {"conSegni":0,"primo":null}
+ok   «Altre»: dopo ognuno dei 6 «Copia» gli appunti hanno il comando come nella pagina italiana, senza segni invisibili · {"n":6,"attesi":6,"conSegni":0,"primo":null}
+ok   «Altre»: selezionando a mano ognuno dei 6 comandi si ottiene il comando come nella pagina italiana, senza segni invisibili · {"conSegni":0,"primo":null}
+ok   selezionando a mano riga del terminale (30) non si portano dietro segni invisibili · {"conSegni":0,"primo":null}
+ok   selezionando a mano comando scritto nel terminale (4) non si portano dietro segni invisibili · {"conSegni":0,"primo":null}
+ok   selezionando a mano nome del file (1) non si portano dietro segni invisibili · {"conSegni":0,"primo":null}
+ok   selezionando a mano file nella cartella (1) non si portano dietro segni invisibili · {"conSegni":0,"primo":null}
+ok   selezionando a mano cartella (1) non si portano dietro segni invisibili · {"conSegni":0,"primo":null}
+ok   selezionando a mano percorso nel pacchetto (2) non si portano dietro segni invisibili · {"conSegni":0,"primo":null}
+ok   selezionando a mano indirizzo della pagina (1) non si portano dietro segni invisibili · {"conSegni":0,"primo":null}
+ok   «Copia l'indirizzo»: gli appunti hanno l'indirizzo della pagina, senza segni invisibili · {"appunti":"https://sansevieria-ou.github.io/kalliope/ar-XB/installa/","canonico":"https://sansevieria-ou.github.io/kalliope/ar-XB/installa/"}
+ok   console pulita
+
+17/17 ok
+# uscita: 0

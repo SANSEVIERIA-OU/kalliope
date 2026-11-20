@@ -1,0 +1,16 @@
+# H6-dispositivi-firefox-Computer · 20/11/2026 13:52 · carico: PSI CPU some avg10=0.45 avg60=1.96 · load 5.62 4.85 4.66 su 12 CPU · memoria disponibile 4008 MB · sito: /tmp/lavoro-3cb-sito-H6 · albero: /tmp/lavoro-3cb-radice-H6 · dispositivi-qa.mjs firefox installa Computer
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+--  installa-menu · Computer 1440×900: lo stato non c'è a questa misura
+ok  installa · Computer 1440×900
+ok  installa-archivio · Computer 1440×900
+ok  installa-frase · Computer 1440×900
+ok  installa-frase-microfono · Computer 1440×900
+ok  installa-frase-tolta · Computer 1440×900
+ok  installa-copia-fatta · Computer 1440×900
+ok  installa-copia-non-riuscita · Computer 1440×900
+ok  installa-indirizzo-copiato · Computer 1440×900
+ok  installa-indirizzo-non-copiato · Computer 1440×900
+
+9 casi puliti (9 in questo giro; foto in /tmp/lavoro-3cb-qa-H6-dispositivi-firefox-Computer/dispositivi/firefox). Sono simulazioni, non telefoni veri.
+  365 casi della matrice non eseguiti (filtro o giro interrotto: --continua li riprende)
+# uscita: 0

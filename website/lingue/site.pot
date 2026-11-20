@@ -1115,10 +1115,12 @@ msgstr ""
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <strong>
 #.   <2> = <code data-t-no="un comando">
+#.   <3> = <code data-t-no="ciò che risponde il programma">
+#. Placeholders to leave as they are: {{kalliope.program.version}}
 #: installa/index.html
-#, kalliope-markup
+#, kalliope-markup, python-brace-format
 msgctxt "in.installa.riuscito"
-msgid "<1>Riuscito</1> se, scrivendo <2>kalliope --version</2>, il terminale risponde con una riga che comincia con «kalliope» e il numero della versione."
+msgid "<1>Riuscito</1> se, scrivendo <2>kalliope --version</2>, il terminale risponde <3>kalliope {{kalliope.program.version}}</3>."
 msgstr ""
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
@@ -1162,13 +1164,26 @@ msgid "dalla cartella dell'archivio, <1>./install --remove</1>"
 msgstr ""
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
-#.   <1> = <code data-t-no="un comando">
+#.   <1> = <code data-t-no="una cartella">
 #.   <2> = <code data-t-no="una cartella">
-#.   <3> = <code data-t-no="una cartella">
+#.   <3> = <code data-t-no="un comando">
 #: installa/index.html
 #, kalliope-markup
 msgctxt "in.togli.restano"
-msgid "Le preferenze e la voce scaricata restano nella tua cartella personale, che il gestore dei pacchetti e <1>./install --remove</1> non toccano: <2>~/.config/kalliope</2> (le preferenze) e <3>~/.local/share/kalliope</3> (la voce, 53 MB). Per toglierle, cancella queste due cartelle."
+msgid "Nella tua cartella personale restano le preferenze, <1>~/.config/kalliope</1>, e la voce scaricata, <2>~/.local/share/kalliope</2> (53 MB): né il gestore dei pacchetti né <3>./install --remove</3> le toccano. Per toglierle, cancella le due cartelle."
+msgstr ""
+
+#. Says what was checked and what was not. Keep the last sentence as honest as it is: removing the package on a real computer was not tried.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <code data-t-no="un comando">
+#.   <2> = <code data-t-no="un comando">
+#.   <3> = <code data-t-no="un comando">
+#.   <4> = <code data-t-no="un comando">
+#.   <5> = <code data-t-no="un comando">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.togli.verificato"
+msgid "Come lo sappiamo: i pacchetti hanno soltanto file in /usr e nessuno script, e <1>./install --remove</1> cancella soltanto i file messi da <2>./install</2> (provato in una cartella di prova). Togliere il pacchetto con <3>apt</3>, <4>dnf</4> o <5>pacman</5> su un computer vero non l'abbiamo provato."
 msgstr ""
 
 #: installa/index.html
@@ -1451,6 +1466,14 @@ msgstr ""
 #, kalliope-markup
 msgctxt "in.annuncio.copiato"
 msgid "Copiato negli appunti."
+msgstr ""
+
+#. Read by screen readers when a phrase of the window is pressed. {frase} is what the status line of the window then says.
+#. Placeholders to leave as they are: {frase}
+#: installa/index.html
+#, kalliope-markup, python-brace-format
+msgctxt "in.annuncio.finestra"
+msgid "La riga della finestra dice: {frase}"
 msgstr ""
 
 #. Read by screen readers when a distribution is chosen. {sistema} is its name.

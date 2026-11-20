@@ -1,0 +1,42 @@
+# confronta-scelta · installa a 700 px, con ammesse.json · scelta P (548a6f2) · adesso H13i · 20/11/2026 16:26 · carico: PSI CPU some avg10=0.00 avg60=0.07 · load 1.68 2.55 3.28 su 12 CPU · memoria disponibile 7133 MB
+CONFRONTO 1440×900 a 700 px: uguale su 52 cose nello schermo · pixel diversi 0%
+CONFRONTO 390×844 a 700 px: uguale su 22 cose nello schermo · pixel diversi 0%
+CONFRONTO 1366×640 a 700 px: uguale su 44 cose nello schermo · pixel diversi 0%
+CONFRONTO 1024×768 a 700 px: uguale su 21 cose nello schermo · pixel diversi 0%
+CONFRONTO 844×390 a 700 px: 21 differenze su 25 cose nello schermo · pixel diversi 25,58%
+  SPOSTATE 18 cose della stessa quantità, y -44 px: div.chiamata.chiamata-ferma · div.riquadro.tu · span «Tu» …
+  MANCA div.terminale.terminale-palco: era a 48,-108, 748×150
+  MANCA span «$»: era a 69,6, 8.5×16
+  IN PIÙ section#scarica: a 0,388, 844×1933
+DICHIARAZIONE NON USATA «section#installa» (MISURA, SPOSTATO, MANCA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «section#apri» (MISURA, SPOSTATO): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «section#» (SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «span.luce-tratto» (SPOSTATO): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Nella tua cartella personale» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Le preferenze e la voce scaricata» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Come lo sappiamo» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «se, scrivendo» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «./install» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «~/.» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «sudo apt» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «code «apt» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «code «dnf» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «code «pacman» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «kalliope 0.1» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «kalliope --version» (MANCA, IN PIÙ, SPOSTATO, MISURA): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «bin/kalliope» (MANCA, IN PIÙ, SPOSTATO): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «lib/kalliope» (MANCA, IN PIÙ, SPOSTATO): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «share/applications» (MANCA, IN PIÙ, SPOSTATO): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «span «kalliope»» (MANCA, IN PIÙ, SPOSTATO): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «https:» (MANCA, IN PIÙ, SPOSTATO): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Riuscito» (SPOSTATO, MISURA, MANCA, IN PIÙ): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Installa Kalliope» (SPOSTATO, MISURA, CARATTERE): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Ogni passo» (SPOSTATO, MISURA, CARATTERE): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «si vede riuscire» (SPOSTATO, MISURA, CARATTERE): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «14,1 MB» (SPOSTATO): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «frase-bottone» (SPOSTATO, MANCA, IN PIÙ): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «La voce è pronta» (SPOSTATO, MANCA, IN PIÙ): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Download non riuscito» (SPOSTATO, MANCA, IN PIÙ): qui quella differenza non c'è; se non serve più toglila
+DICHIARAZIONE NON USATA «Il file …» (SPOSTATO, MANCA, IN PIÙ): qui quella differenza non c'è; se non serve più toglila
+Il confronto con la scelta non regge a 1 misure (foto e differenze in /tmp/lavoro-3cb-conf/H13a/installa-700)
+# uscita: 1

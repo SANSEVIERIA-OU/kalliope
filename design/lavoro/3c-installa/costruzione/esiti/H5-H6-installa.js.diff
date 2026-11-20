@@ -1,0 +1,36 @@
+--- /tmp/lavoro-3cb-radice-H5r/website/installa/installa.js	2026-11-20 06:47:00.213364914 +0000
++++ /tmp/lavoro-3cb-radice-H6/website/installa/installa.js	2026-11-20 10:50:04.588630667 +0000
+@@ -182,20 +182,23 @@
+ 
+   // gli indirizzi della pagina di prima: #passo-1…, #fedora… portano al punto giusto (gli ancoraggi sono nella pagina e funzionano anche senza
+   // script); l'ancora di una distribuzione la sceglie, e poi riporta lì, perché cambiando i comandi di ogni tratto la pagina sopra cambia altezza
++  const indirizzoDi = () => { try { return decodeURIComponent(location.hash.slice(1)); } catch { return ''; } };
+   function dalleAncore() {
+-    let id = ''; try { id = decodeURIComponent(location.hash.slice(1)); } catch { return; }
+-    const ancora = id && document.getElementById(id), scelta = ancora && ancora.dataset.sceglie;
+-    const voce = scelta && $(`.sistema-voce[value="${scelta}"]`);
+-    if (!voce) return;
+-    if (!voce.checked) { voce.checked = true; voce.dispatchEvent(new Event('change', {bubbles: true})); }
+-    ancora.scrollIntoView();
+-    assesta(ancora);
++    const id = indirizzoDi(), ancora = id && document.getElementById(id);
++    if (!ancora) return;
++    const scelta = ancora.dataset.sceglie, voce = scelta && $(`.sistema-voce[value="${scelta}"]`);
++    if (voce) {
++      if (!voce.checked) { voce.checked = true; voce.dispatchEvent(new Event('change', {bubbles: true})); }
++      ancora.scrollIntoView();
++    }
++    assesta(ancora);   // ogni indirizzo con ancora, non solo quelli che scelgono: il browser porta al punto sulla pagina com'è in quel momento
+   }
+-  // i caratteri arrivano dopo lo scorrimento e ogni riga cambia altezza (Firefox: il titolo finiva 175 px sopra, sotto la barra): finché la persona non scorre da sé,
+-  // il punto si riporta dove deve stare appena i caratteri e la pagina sono arrivati (due fotogrammi dopo, perché anche il primo schermo si adatta)
++  // i caratteri e gli script arrivano dopo lo scorrimento e ogni riga cambia altezza: Firefox portava il titolo 175 px sopra, sotto la barra (#fedora…), e l'indirizzo in
++  // fondo alla pagina (#indirizzo-installa) restava fermo in fondo alla pagina di prima, 111 px più in basso o dietro la barra, a seconda di chi arrivava per primo. Finché la
++  // persona non scorre da sé, il punto si riporta dove deve stare appena i caratteri e la pagina sono arrivati (due fotogrammi dopo, perché anche il primo schermo si adatta)
+   let daSe = false; ['wheel', 'touchstart', 'keydown', 'pointerdown'].forEach(e => addEventListener(e, () => { daSe = true; }, {passive: true, once: true}));
+   function assesta(ancora) {
+-    const riporta = () => requestAnimationFrame(() => requestAnimationFrame(() => { if (!daSe && ancora.isConnected && decodeURIComponent(location.hash.slice(1)) === ancora.id) ancora.scrollIntoView(); }));
++    const riporta = () => requestAnimationFrame(() => requestAnimationFrame(() => { if (!daSe && ancora.isConnected && indirizzoDi() === ancora.id) ancora.scrollIntoView(); }));
+     if (document.fonts && document.fonts.status !== 'loaded') document.fonts.ready.then(riporta);
+     if (document.readyState !== 'complete') addEventListener('load', riporta, {once: true});
+   }

@@ -36,8 +36,21 @@
     if (document.hidden) { if (nascostoDa === null) nascostoDa = performance.now(); }
     else { if (nascostoDa !== null) { fermoTot += performance.now() - nascostoDa; nascostoDa = null; } if (agenda.length && !giraAgenda) giraAgenda = requestAnimationFrame(passoAgenda); }
   });
+  // ciò che un gesto apre o cambia (la riga della finestra, la frase per copiare a mano, la risposta della copia) resta in vista, sotto la barra, e con lui il comando
+  // premuto se ci stanno insieme nello schermo (altrimenti vince ciò che il gesto ha aperto: il comando che sparisce sotto il dito non serve a chi non vede il risultato)
+  function inVista(cosa, comando) {
+    const barra = $('.barra'), alto = barra ? barra.getBoundingClientRect().bottom : 0, aria = parseFloat(tok('--spazio-12')) || 0;
+    const c = cosa.getBoundingClientRect(), b = (comando || cosa).getBoundingClientRect();
+    const su = Math.min(c.top, b.top), giu = Math.max(c.bottom, b.bottom);
+    let sposta = 0;
+    // se i due ci stanno nello schermo, con un po' d'aria (quanta ce n'è, fino a quella dei token) sopra e sotto; se non ci stanno vince ciò che il gesto ha aperto
+    const spazio = innerHeight - alto, margine = Math.max(0, Math.min(aria, (spazio - (giu - su)) / 2));
+    if (giu - su <= spazio) { if (su < alto + margine) sposta = su - (alto + margine); else if (giu > innerHeight - margine) sposta = giu - (innerHeight - margine); }
+    else if (c.top < alto + aria || c.bottom > innerHeight - aria) sposta = c.top - (alto + aria);
+    if (Math.abs(sposta) >= 1) scrollBy({top: sposta, behavior: ridotto ? 'instant' : 'smooth'});
+  }
   const annuncio = $('#annuncio');
-  function annuncia(t) { if (!annuncio) return; annuncio.textContent = ''; setTimeout(() => { annuncio.textContent = t; }, 60); }
+  function annuncia(t) { if (!annuncio) return; annuncio.textContent = ''; setTimeout(() => { annuncio.textContent = t; }, tempo('--annuncio-attesa')); }
   const visibile = el => el && el.getClientRects().length > 0;
 
   // ---------- il terminale: righe che compaiono, un comando che si scrive ----------
@@ -118,16 +131,78 @@
   // =================================================================================================================
   // LA DISTRIBUZIONE: la scelta è dei fogli di stile (funziona senza script); qui si annuncia e il comando del primo schermo si riscrive
   // =================================================================================================================
+  // la scelta resta tornando indietro e ricaricando: il browser la restituisce da sé (stato dei campi) in Firefox e tornando indietro, non ricaricando in Chromium e WebKit.
+  // La tiene la cronologia della scheda (history.state di questa voce): non è un deposito del sito (niente cookie, niente localStorage), sparisce con la scheda.
+  const ricorda = v => { try { history.replaceState({...(history.state || {}), sistema: v}, ''); } catch (e) { /* una pagina in un riquadro senza cronologia: nulla da ricordare */ } };
+  const ricordata = (() => { try { return history.state && history.state.sistema; } catch (e) { return null; } })();
+  const daRiprendere = ricordata && $$('.sistema-voce').find(v => v.value === ricordata);
+  if (daRiprendere && !daRiprendere.checked) daRiprendere.checked = true;
   $$('.sistema-voce').forEach(r => r.addEventListener('change', () => {
     if (!r.checked) return;
+    ricorda(r.value);
     // il pulsante della distribuzione nuova c'è subito: non ripete l'entrata del primo schermo (pagina.css, «senza-arrivo»)
     $$('#comandi-apertura > *').forEach(e => e.classList.add('senza-arrivo'));
+    adattaPresto();   // il pulsante della distribuzione nuova può avere un'altra larghezza (e andare a capo)
     const nome = $(`label[for="${r.id}"]`);
     annuncia(fmt(T('in.annuncio.sistema'), {sistema: nome ? nome.textContent.trim() : r.value}));
     if (!ridotto && tPalco && (palcoFatto || tPalco.dataset.partito)) arrivoPalco(palcoFatto);   // durante l'arrivo il comando nuovo riparte da capo
     // le scene già raccontate mostrano subito la loro fine anche per la distribuzione nuova (le impronte confrontate, le righe scritte)
     $$('.terminale').forEach(t => { if (t !== tPalco && !t.classList.contains('in-attesa')) $$('.t-riga', t).forEach(x => x.classList.add('t-mostra')); });
   }));
+
+  // =================================================================================================================
+  // IL COMANDO NEL PRIMO SCHERMO, in ogni lingua: se il pulsante del file non ci sta (un testo più lungo del 40%, una scrittura con le righe alte,
+  // uno schermo basso) il titolo scende di un gradino per volta (installazione.css: titolo-ridotto, titolo-minimo). Con l'italiano non serve.
+  // =================================================================================================================
+  const primoSchermo = $('.scena-pagina'), gradini = ['titolo-ridotto', 'titolo-minimo'];
+  const yDi = el => { let y = 0; for (let e = el; e; e = e.offsetParent) y += e.offsetTop; return y; };   // dove sta nella pagina, senza le trasformazioni dell'arrivo
+  function adattaPrimo() {
+    if (!primoSchermo) return;
+    // con «riduci movimento» (base.css) ogni cambio di proprietà è una transizione di 1 ms: una misura presa subito dopo un cambio di classe leggerebbe i valori di prima.
+    // Durante la misura le transizioni sono spente (installazione.css, «misura-in-corso»): si misura il layout vero, e il gradino scelto non cambia più a ogni giro
+    primoSchermo.classList.add('misura-in-corso');
+    primoSchermo.classList.remove(...gradini);
+    if (!(window.Cornice && window.Cornice.telefono.matches)) {   // al telefono i comandi hanno il loro ordine (pagina.css)
+      const aria = parseFloat(tok('--primo-comando-aria-sotto')) || 0;
+      for (const gradino of [null, ...gradini]) {
+        if (gradino) primoSchermo.classList.add(gradino);
+        const pulsante = $$('#comandi-apertura .scarica').find(e => visibile(e) && getComputedStyle(e).visibility !== 'hidden');   // quelli non scelti restano invisibili (scelta-sistema.css)
+        if (!pulsante || yDi(pulsante) + pulsante.offsetHeight + aria <= innerHeight) break;
+      }
+    }
+    void primoSchermo.offsetHeight;   // il layout finale è calcolato mentre le transizioni sono ancora spente
+    primoSchermo.classList.remove('misura-in-corso');
+  }
+  let adattaChiesta = false;
+  const adattaPresto = () => { if (!adattaChiesta) { adattaChiesta = true; requestAnimationFrame(() => { adattaChiesta = false; adattaPrimo(); }); } };
+  adattaPrimo(); addEventListener('resize', adattaPresto); addEventListener('load', adattaPresto);
+  // i caratteri di una scrittura arrivano quando servono (e le righe cambiano altezza, senza un evento che lo dica): si misura di nuovo ogni volta
+  // che il primo schermo cambia misura
+  if (primoSchermo && 'ResizeObserver' in window) new ResizeObserver(adattaPresto).observe($('.apertura', primoSchermo));
+
+  // gli indirizzi della pagina di prima: #passo-1…, #fedora… portano al punto giusto (gli ancoraggi sono nella pagina e funzionano anche senza
+  // script); l'ancora di una distribuzione la sceglie, e poi riporta lì, perché cambiando i comandi di ogni tratto la pagina sopra cambia altezza
+  const indirizzoDi = () => { try { return decodeURIComponent(location.hash.slice(1)); } catch { return ''; } };
+  function dalleAncore() {
+    const id = indirizzoDi(), ancora = id && document.getElementById(id);
+    if (!ancora) return;
+    const scelta = ancora.dataset.sceglie, voce = scelta && $(`.sistema-voce[value="${scelta}"]`);
+    if (voce) {
+      if (!voce.checked) { voce.checked = true; voce.dispatchEvent(new Event('change', {bubbles: true})); }
+      ancora.scrollIntoView();
+    }
+    assesta(ancora);   // ogni indirizzo con ancora, non solo quelli che scelgono: il browser porta al punto sulla pagina com'è in quel momento
+  }
+  // i caratteri e gli script arrivano dopo lo scorrimento e ogni riga cambia altezza: Firefox portava il titolo 175 px sopra, sotto la barra (#fedora…), e l'indirizzo in
+  // fondo alla pagina (#indirizzo-installa) restava fermo in fondo alla pagina di prima, 111 px più in basso o dietro la barra, a seconda di chi arrivava per primo. Finché la
+  // persona non scorre da sé, il punto si riporta dove deve stare appena i caratteri e la pagina sono arrivati (due fotogrammi dopo, perché anche il primo schermo si adatta)
+  let daSe = false; ['wheel', 'touchstart', 'keydown', 'pointerdown'].forEach(e => addEventListener(e, () => { daSe = true; }, {passive: true, once: true}));
+  function assesta(ancora) {
+    const riporta = () => requestAnimationFrame(() => requestAnimationFrame(() => { if (!daSe && ancora.isConnected && indirizzoDi() === ancora.id) ancora.scrollIntoView(); }));
+    if (document.fonts && document.fonts.status !== 'loaded') document.fonts.ready.then(riporta);
+    if (document.readyState !== 'complete') addEventListener('load', riporta, {once: true});
+  }
+  dalleAncore(); addEventListener('hashchange', dalleAncore);
 
   // =================================================================================================================
   // IL FILE: arriva nella cartella dei download; l'impronta del terminale si confronta con quella pubblicata, otto cifre alla volta
@@ -137,7 +212,8 @@
     const s = el.textContent.trim();
     if (!/^[0-9a-f]{16,}$/i.test(s)) return;
     el.textContent = '';
-    for (let i = 0; i < s.length; i += 8) { const g = document.createElement('span'); g.className = 't-gruppo'; g.textContent = s.slice(i, i + 8); el.append(g); }
+    const cifre = parseFloat(tok('--impronta-cifre-gruppo'));
+    for (let i = 0; i < s.length; i += cifre) { const g = document.createElement('span'); g.className = 't-gruppo'; g.textContent = s.slice(i, i + cifre); el.append(g); }
   });
   const scenaControllo = $('.controllo-scena'), tControllo = $('.terminale-controllo');
   function confronta(corsa) {
@@ -169,7 +245,7 @@
   const disco = $('.disco'), tInstalla = $('.terminale-installa');
   if (disco && tInstalla) {
     const pacchi = $$('.pacco', disco);
-    const base = 3 * tempo('--passo-riga-terminale');
+    const base = parseFloat(tok('--righe-prima-dei-file')) * tempo('--passo-riga-terminale');
     pacchi.forEach((p, i) => p.style.setProperty('--ritardo-pacco', `${base + i * tempo('--passo-pacchi')}ms`));
     if (!ridotto) {
       tInstalla.classList.add('in-attesa');
@@ -195,7 +271,10 @@
     const aStato = $('.f-stato', avvio), aBarra = $('.f-barra i', avvio), aBottone = $('.f-primario', avvio);
     const PRONTA = aStato.textContent, SCARICA = aBottone ? aBottone.textContent : '';
     let corsaAvvio = null;
+    const megabyte = parseFloat(avvio.dataset.mb);   // i MB della voce, come li dice la pagina (data-mb): lo script non li scrive
     const prontaOra = () => { avvio.classList.remove('scarica', 'prepara', 'errore'); avvio.classList.add('pronta'); aStato.textContent = PRONTA; aStato.classList.remove('allarme'); };
+    const dice = riga => annuncia(fmt(T('in.annuncio.finestra'), {frase: riga}));   // la riga della finestra cambia: chi non la vede la sente
+    const mostraFinestra = bottone => inVista(avvio, bottone);   // la frase premuta cambia la finestra: la finestra resta in vista
     function animaAvvio() {
       corsaAvvio = nuovaCorsa(corsaAvvio);
       const corsa = corsaAvvio;
@@ -212,7 +291,7 @@
         const t0 = tScena(), D = tempo('--avvio-scarico-durata');
         const passo = () => {
           if (corsa.ferma) return;
-          const q = Math.min(1, (tScena() - t0) / D), mb = Math.round(53 * q);
+          const q = Math.min(1, (tScena() - t0) / D), mb = Math.round(megabyte * q);
           aStato.textContent = fmt(T('avvio.scarico'), {mb: window.Testi.numero(mb)}); if (aBarra) aBarra.style.transform = `scaleX(${q.toFixed(3)})`;
           if (q < 1 && avvio.classList.contains('scarica')) requestAnimationFrame(passo);
         };
@@ -238,12 +317,13 @@
       bottoni.forEach(x => x.setAttribute('aria-pressed', String(x === b && su)));
       corsaAvvio = nuovaCorsa(corsaAvvio);
       avvio.classList.add('provata');
-      if (!su) { prontaOra(); return; }
+      if (!su) { prontaOra(); dice(PRONTA); requestAnimationFrame(() => mostraFinestra(b)); return; }
       const st = b.dataset.stato, scarico = st !== 'microfono';
       avvio.classList.remove('scarica', 'prepara', 'pronta');
       avvio.classList.toggle('errore', scarico); if (!scarico) avvio.classList.add('pronta');
       if (aBottone) { aBottone.textContent = SCARICA; aBottone.classList.remove('f-annulla', 'premuto'); }
-      aStato.textContent = T(`in.stato.${st}`); aStato.classList.add('allarme');
+      aStato.textContent = T(`in.stato.${st}`); aStato.classList.add('allarme'); dice(aStato.textContent);
+      requestAnimationFrame(() => mostraFinestra(b));
     }));
   }
 
@@ -288,12 +368,19 @@
         }, () => {
           let err = c.nextElementSibling;
           if (!err || !err.classList.contains('comando-errore')) { err = document.createElement('p'); err.className = 'comando-errore'; err.setAttribute('role', 'status'); c.after(err); }
-          err.textContent = T('in.copia.errore'); seleziona(code);
+          err.textContent = T('in.copia.errore'); seleziona(code); annuncia(T('in.copia.errore'));   // la frase compare insieme al suo annuncio: un'area nuova non sempre viene letta
+          requestAnimationFrame(() => inVista(err, b));
         });
       });
     });
   }
   const copiaIndirizzo = $('.copia-indirizzo'), fatto = $('.copia-fatto'), errore = $('.copia-errore'), bolla = $('.bolla-indirizzo'), indirizzo = $('.inoltra-indirizzo');
+  // l'indirizzo della pagina va a capo dopo una barra e non a metà di una parola (con «installa» a 320 px finiva «instal-la»): un <wbr> non è testo, quello che si copia non cambia
+  const parteIndirizzo = indirizzo && $('span', indirizzo);
+  if (parteIndirizzo) {
+    const pezzi = parteIndirizzo.textContent.split('/'); parteIndirizzo.textContent = '';
+    pezzi.forEach((pezzo, i) => { parteIndirizzo.append(i < pezzi.length - 1 ? pezzo + '/' : pezzo); if (i < pezzi.length - 1) parteIndirizzo.append(document.createElement('wbr')); });
+  }
   if (copiaIndirizzo && appunti) {
     copiaIndirizzo.hidden = false;
     copiaIndirizzo.addEventListener('click', () => {
@@ -301,7 +388,8 @@
       navigator.clipboard.writeText(testo).then(() => {
         fatto.hidden = false; errore.hidden = true;
         if (bolla) { bolla.classList.remove('copiata'); void bolla.offsetWidth; bolla.classList.add('copiata'); }
-      }, () => { errore.hidden = false; fatto.hidden = true; if (indirizzo) seleziona(indirizzo); });
+        requestAnimationFrame(() => inVista(fatto, copiaIndirizzo));
+      }, () => { errore.hidden = false; fatto.hidden = true; if (indirizzo) seleziona(indirizzo); requestAnimationFrame(() => inVista(errore, copiaIndirizzo)); });
     });
   }
 
