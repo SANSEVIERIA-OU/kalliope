@@ -1,17 +1,25 @@
 # SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
-# Builds the Linux packages and installs, runs and removes each one. For a tag vX.Y it then
-# publishes them as a GitHub release. Started by hand (Actions → Release → Run workflow), it only
-# builds and tests the packages. See docs/releasing.md.
+# Releases Kalliope. Every version is final (owner's decision, 20 November 2026: «ogni passo è finale»).
+# - A push to main releases the version of Cargo.toml when CHANGELOG.md marks it released and it has no tag
+#   yet (tools/version.py due). It builds the Linux packages, installs, runs and removes each one, attests where
+#   each file was built, publishes the GitHub release vX.Y as the latest (which makes the tag), rebuilds the
+#   website and publishes kalliope-bin on AUR (aur.yml). Any other push to main does nothing.
+# - A tag vX.Y pushed by hand releases the same way. A tag v0.0-test.N tries the whole workflow: a prerelease,
+#   never the latest, never on AUR and never on the website.
+# - Started by hand on a branch (Actions → Release → Run workflow), it builds and tests the packages and the
+#   AUR recipe, says what a push of that commit to main would do, and publishes nothing.
+# See docs/releasing.md.
 name: Release
 
 on:
   push:
+    branches: [main]
     tags: ["v*"]
   workflow_dispatch:
 
-# A release is never cancelled half-way.
+# A release is never cancelled half-way, and two releases never run at once.
 concurrency:
-  group: release-${{ github.ref }}
+  group: release-${{ (github.ref == 'refs/heads/main' || github.ref_type == 'tag') && 'publish' || github.ref }}
   cancel-in-progress: false
 
 permissions:
@@ -21,16 +29,17 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  linux:
-    name: Linux packages
-    # The oldest Ubuntu Kalliope supports, on purpose: the system that builds the programs sets the
-    # oldest glibc they run on (2.39 here, so Debian 13 and Ubuntu 24.04 keep working), and the .deb
-    # is installed and tried here. A newer runner would drop those systems (docs/releasing.md).
-    runs-on: ubuntu-24.04
-    timeout-minutes: 40
+  version:
+    name: What to release
+    runs-on: ubuntu-26.04
+    timeout-minutes: 5
     outputs:
+      build: ${{ steps.version.outputs.build }}
+      publish: ${{ steps.version.outputs.publish }}
+      aur: ${{ steps.version.outputs.aur }}
+      tag: ${{ steps.version.outputs.tag }}
       version: ${{ steps.version.outputs.version }}
-      prerelease: ${{ steps.version.outputs.prerelease }}
+      test: ${{ steps.version.outputs.test }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -38,18 +47,75 @@ jobs:
       - name: Version
         id: version
         run: |
-          if [ "$GITHUB_REF_TYPE" != tag ]; then
-            python3 tools/version.py check
-            echo "version=$(python3 tools/version.py)" | tee -a "$GITHUB_OUTPUT"
-            exit 0
+          set -euo pipefail
+          info=$RUNNER_TEMP/version.txt
+          # The tags the repository has now: a tag this workflow makes starts no other run, so the
+          # repository, not the event, says what is already released.
+          tags=$(git ls-remote --tags --refs origin | cut -f2)
+          if [ "$GITHUB_REF_TYPE" = tag ]; then
+            # A tag pushed by hand, or Run workflow on a tag: that tag is released.
+            tag=$GITHUB_REF_NAME
+            python3 tools/version.py tag "$tag" > "$info"
+            # Versions are released from main; test tags (v0.0-test.N) may point anywhere.
+            if grep -qx test=false "$info" && ! git merge-base --is-ancestor "$GITHUB_SHA" origin/main; then
+              echo "::error::$tag is not on main"
+              exit 1
+            fi
+            build=true publish=true
+          else
+            # shellcheck disable=SC2086 # one tag per word
+            if ! reason=$(python3 tools/version.py due $tags 2>&1 > "$info"); then
+              echo "$reason" >&2
+              exit 1
+            fi
+            echo "::notice::A push of this commit to main: $reason."
+            tag=$(sed -n 's/^tag=//p' "$info")
+            if [ "$GITHUB_EVENT_NAME" = push ] && grep -qx release=false "$info"; then
+              echo "Nothing to release."
+              echo "build=false" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            if grep -qx release=true "$info"; then
+              # Fails here, before anything is built, if the version is not completely marked released.
+              python3 tools/version.py tag "$tag" > "$info"
+            else
+              python3 tools/version.py check
+              printf 'version=%s\nprerelease=false\ntest=false\n' "$(python3 tools/version.py)" > "$info"
+            fi
+            build=true
+            # Only a push to main publishes; Run workflow on a branch builds and tests.
+            if [ "$GITHUB_EVENT_NAME" = push ] && [ "$GITHUB_REF" = refs/heads/main ]; then
+              publish=true
+            else
+              publish=false
+              echo "::notice::Build and test only: only a push to main publishes, and this is $GITHUB_EVENT_NAME on $GITHUB_REF_NAME."
+            fi
           fi
-          python3 tools/version.py tag "$GITHUB_REF_NAME" | tee -a "$GITHUB_OUTPUT"
-          # Releases are made from main; test tags (v0.0-test.N) may point anywhere.
-          if ! grep -qx test=true "$GITHUB_OUTPUT" &&
-            ! git merge-base --is-ancestor "$GITHUB_SHA" origin/main; then
-            echo "::error::$GITHUB_REF_NAME is not on main"
-            exit 1
+          if grep -qx test=true "$info"; then aur=none
+          elif [ "$publish" = true ]; then aur=publish
+          else aur=try
           fi
+          {
+            echo "build=$build"
+            echo "publish=$publish"
+            echo "aur=$aur"
+            echo "tag=$tag"
+            grep -E '^(version|test)=' "$info"
+          } | tee -a "$GITHUB_OUTPUT"
+
+  linux:
+    name: Linux packages
+    needs: version
+    if: needs.version.outputs.build == 'true'
+    # The oldest Ubuntu Kalliope supports, on purpose: the system that builds the programs sets the
+    # oldest glibc they run on (2.39 here, so Debian 13 and Ubuntu 24.04 keep working), and the .deb
+    # is installed and tried here. A newer runner would drop those systems (docs/releasing.md).
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    env:
+      VERSION: ${{ needs.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v7
       - name: Build tools
         run: |
           sudo apt-get update -q
@@ -70,20 +136,14 @@ jobs:
             python3 tools/fetch_assets.py "$part" "$RUNNER_TEMP/assets" >> "$GITHUB_ENV"
           done
       - name: Packages
-        env:
-          VERSION: ${{ steps.version.outputs.version }}
         run: |
           packaging/linux/build-packages.sh "$VERSION" target/release \
             "$KALLIOPE_ORT_LIB" "$KALLIOPE_MODEL_DIR" "$KALLIOPE_POCKET_DIR" dist
       # Each installed package speaks without any KALLIOPE_* variable, with Giulia and with a voice
       # prepared from the recording.
       - name: Install, run and remove each package
-        env:
-          VERSION: ${{ steps.version.outputs.version }}
         run: packaging/linux/test-packages.sh dist "$VERSION" "$(python3 tools/version.py)" "$KALLIOPE_TEST_RECORDING"
       - name: Checksums and release notes
-        env:
-          VERSION: ${{ steps.version.outputs.version }}
         run: |
           (cd dist && sha256sum -- * > SHA256SUMS && cat SHA256SUMS)
           {
@@ -102,14 +162,21 @@ jobs:
 
   publish:
     name: Publish
-    if: github.ref_type == 'tag'
-    needs: linux
+    needs: [version, linux]
+    if: needs.version.outputs.publish == 'true'
     runs-on: ubuntu-26.04
     timeout-minutes: 10
     permissions:
       contents: write
       id-token: write
       attestations: write
+      # To start the Website workflow (below).
+      actions: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      TAG: ${{ needs.version.outputs.tag }}
+      VERSION: ${{ needs.version.outputs.version }}
+      TEST: ${{ needs.version.outputs.test }}
     steps:
       - uses: actions/download-artifact@v8
         with:
@@ -117,16 +184,48 @@ jobs:
       # Free for public repositories; private ones need GitHub Enterprise Cloud, so there a
       # failure only leaves a warning.
       - name: Attest where each file was built
-        uses: actions/attest-build-provenance@v4
+        uses: actions/attest@v4
         continue-on-error: ${{ github.event.repository.private }}
         with:
           subject-path: dist/*
       - name: Publish the release
-        env:
-          GH_TOKEN: ${{ github.token }}
-          VERSION: ${{ needs.linux.outputs.version }}
-          PRERELEASE: ${{ needs.linux.outputs.prerelease }}
         run: |
-          flags=(--verify-tag --title "Kalliope $VERSION" --notes-file notes.md)
-          if [ "$PRERELEASE" = true ]; then flags+=(--prerelease); else flags+=(--latest); fi
-          gh release create "$GITHUB_REF_NAME" dist/* "${flags[@]}" --repo "$GITHUB_REPOSITORY"
+          set -euo pipefail
+          flags=(--title "Kalliope $VERSION" --notes-file notes.md)
+          if [ "$TEST" = true ]; then flags+=(--prerelease --latest=false); else flags+=(--latest); fi
+          if [ "$GITHUB_REF_TYPE" = tag ]; then
+            flags+=(--verify-tag)
+          else
+            # The release makes the tag, on the commit of this push. A tag made with this run's token starts
+            # no other workflow (GitHub's documentation), so this run is the only one for it.
+            if gh api "repos/$GITHUB_REPOSITORY/git/matching-refs/tags/$TAG" --jq '.[].ref' | grep -qx "refs/tags/$TAG"; then
+              echo "::error::$TAG was made while this run was building: release it from its own run."
+              exit 1
+            fi
+            flags+=(--target "$GITHUB_SHA")
+          fi
+          gh release create "$TAG" dist/* "${flags[@]}" --repo "$GITHUB_REPOSITORY"
+      # A release made with this run's token sends no release event to the Website workflow; starting a
+      # workflow by hand is the exception GitHub makes. The site then offers the new version.
+      - name: Rebuild the website
+        if: needs.version.outputs.test != 'true'
+        run: gh workflow run pages.yml --ref main --repo "$GITHUB_REPOSITORY"
+
+  aur:
+    name: AUR
+    needs: [version, linux, publish]
+    # After the release for a version, or as a try when nothing is published; never for a test tag.
+    if: >-
+      !cancelled() && needs.linux.result == 'success' &&
+      (needs.version.outputs.aur == 'try' || (needs.version.outputs.aur == 'publish' && needs.publish.result == 'success'))
+    permissions:
+      contents: read
+    uses: ./.github/workflows/aur.yml
+    with:
+      version: ${{ needs.version.outputs.version }}
+      publish: ${{ needs.version.outputs.aur == 'publish' }}
+      # A try takes the tarball this run built; a release, the one it published.
+      artifact: ${{ needs.version.outputs.aur == 'try' && 'linux-packages' || '' }}
+    secrets:
+      # The key reaches AUR's job only when it publishes.
+      AUR_SSH_KEY: ${{ needs.version.outputs.aur == 'publish' && secrets.AUR_SSH_KEY || '' }}

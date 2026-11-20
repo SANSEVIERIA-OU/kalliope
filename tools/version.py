@@ -3,15 +3,20 @@
 """Kalliope's version, kept the same everywhere it is written. Development only; stdlib only.
 
 People see "0.1"; Cargo needs "0.1.0". The version in Cargo.toml is the next one to be
-released (or the one just released, until `set` moves on).
+released (or the one just released, until `set` moves on). Every version is final: there are no
+test versions (owner's decision, 20 November 2026: «ogni passo è finale»). The only other tags the
+Release workflow takes are v0.0-test.N, which try the workflow itself and are never a version.
 
   version.py                   print the version, e.g. 0.1
   version.py check             fail if Cargo.lock, AppStream, PKGBUILD or CHANGELOG disagree, or if
                                rust-version in Cargo.toml is not the Rust of rust-toolchain.toml
   version.py next              print the version after this one (0.9 is followed by 1.0)
   version.py set X.Y           write X.Y everywhere; add AppStream and CHANGELOG entries for it
-  version.py release [DATE]    mark this version released on DATE (default today, YYYY-MM-DD)
-  version.py tag TAG           check a release tag; print version=, package_version=, prerelease=
+  version.py release [DATE]    mark this version released on DATE (default today, YYYY-MM-DD); run it
+                               again with another DATE to change the date
+  version.py due [TAG...]      given the tags that exist, does a push of this tree to main release a
+                               version? print release=true|false and tag=vX.Y
+  version.py tag TAG           check a release tag; print version=, package_version=, prerelease=, test=
   version.py notes TAG         print the CHANGELOG section for a release tag
 """
 
@@ -29,8 +34,9 @@ CHANGELOG = ROOT / "CHANGELOG.md"
 TOOLCHAIN = ROOT / "rust-toolchain.toml"
 
 VERSION = re.compile(r"(\d+)\.(\d+)")
-# vX.Y, or vX.Y-PRE for a prerelease (v0.1-rc.1). v0.0-test.N only tries the release workflow.
-TAG = re.compile(r"v(\d+\.\d+)(?:-([0-9A-Za-z]+(?:\.[0-9A-Za-z]+)*))?")
+# vX.Y is a version. v0.0-test.N only tries the release workflow: always a prerelease, never a version.
+TAG = re.compile(r"v(\d+\.\d+)")
+TEST_TAG = re.compile(r"v0\.0-(test\.\d+)")
 NOT_RELEASED = "not yet released"
 MONTHS = "January February March April May June July August September October November December"
 
@@ -221,33 +227,66 @@ def release(date):
         fail(f"CHANGELOG.md has no section ## {version}")
     human = f"{day.day} {MONTHS.split()[day.month - 1]} {day.year}"
     write(CHANGELOG, heading.sub(f"## {version} — {human}", text, count=1))
-    print(f"{version} released on {human}. Commit, merge, then tag v{version}.")
+    print(f"{version} released on {human}. Commit it: the push that brings it to main releases v{version} "
+          "(docs/releasing.md). Run this again with another date to change it.")
+
+
+def released(version):
+    """Whether CHANGELOG.md marks VERSION released: its heading has a date, no longer "not yet released"."""
+    section = next((s for s in changelog_sections(read(CHANGELOG)) if s[0] == version), None)
+    return section is not None and NOT_RELEASED not in section[1]
+
+
+def due(tags):
+    """Whether a push of this tree to main releases a version, given the tags the repository has: yes when
+    the version of Cargo.toml has no tag yet and CHANGELOG.md marks it released. A version that is already
+    tagged, or not marked, releases nothing. Whether the release is complete (no TODO, AppStream marked)
+    is checked afterwards by `tag`, which fails loudly: a push that marks a version means to release it."""
+    version = current()
+    tag = f"v{version}"
+    existing = {t.removeprefix("refs/tags/").removesuffix("^{}") for t in tags}
+    if tag in existing:
+        reason, release = f"{tag} is already tagged: nothing to release", False
+    elif not released(version):
+        reason, release = f"CHANGELOG.md says {version} is {NOT_RELEASED}: nothing to release", False
+    else:
+        reason, release = f"{version} is marked released and {tag} does not exist yet: this releases {tag}", True
+    print(reason, file=sys.stderr)
+    print(f"tag={tag}")
+    print(f"release={'true' if release else 'false'}")
 
 
 def tag_info(tag):
-    """What a release tag means; fails if it does not match the version in the tree."""
-    match = TAG.fullmatch(tag)
-    if not match:
-        fail(f"{tag!r} is not a release tag like v0.1 or v0.1-rc.1")
-    version, pre = match.groups()
-    test = pre is not None and version == "0.0" and re.fullmatch(r"test\.\d+", pre) is not None
-    if not test:
+    """What a release tag means; fails if it does not match the version in the tree, or if that version is
+    not completely marked released."""
+    test = TEST_TAG.fullmatch(tag)
+    if test:
+        # Only tries the workflow: no version checks, always a prerelease. Debian and RPM sort a tilde
+        # before everything, so its packages (0.0~test.N) never come after a version.
+        name, package_version = f"0.0-{test.group(1)}", f"0.0~{test.group(1)}"
+    else:
+        match = TAG.fullmatch(tag)
+        if not match:
+            if re.fullmatch(r"v\d+\.\d+-.+", tag):
+                fail(f"{tag!r}: Kalliope has no test versions, every step is final. A version is tagged like v0.1; "
+                     "v0.0-test.N only tries the release workflow")
+            fail(f"{tag!r} is not a release tag like v0.1")
+        version = match.group(1)
         if version != current():
             fail(f"tag {tag} does not match the version in Cargo.toml ({current()})")
         check()
-        section = next((s for s in changelog_sections(read(CHANGELOG)) if s[0] == version), None)
-        if pre is None and NOT_RELEASED in section[1]:
+        section = next(s for s in changelog_sections(read(CHANGELOG)) if s[0] == version)
+        if NOT_RELEASED in section[1]:
             fail(f"CHANGELOG.md still says {version} is {NOT_RELEASED}: run version.py release")
         newest = metainfo_releases(read(METAINFO))[0]
-        if pre is None and newest[1] == "development":
+        if newest[1] == "development":
             fail(f"AppStream still marks {version} as a development release: run version.py release")
-        if pre is None and ("TODO" in section[2] or "TODO" in read(METAINFO)):
+        if "TODO" in section[2] or "TODO" in read(METAINFO):
             fail(f"CHANGELOG.md or the AppStream entry for {version} still has a TODO")
-    name = version if pre is None else f"{version}-{pre}"
+        name = package_version = version
     print(f"version={name}")
-    # Debian and RPM sort a tilde before everything, so 0.1~rc.1 comes before 0.1.
-    print(f"package_version={version if pre is None else f'{version}~{pre}'}")
-    print(f"prerelease={'true' if pre is not None else 'false'}")
+    print(f"package_version={package_version}")
+    print(f"prerelease={'true' if test else 'false'}")
     print(f"test={'true' if test else 'false'}")
 
 
@@ -275,13 +314,13 @@ def unwrap(markdown):
 
 
 def notes(tag):
-    match = TAG.fullmatch(tag)
-    if not match:
-        fail(f"{tag!r} is not a release tag like v0.1 or v0.1-rc.1")
-    version, pre = match.groups()
-    if version == "0.0" and pre and pre.startswith("test."):
+    if TEST_TAG.fullmatch(tag):
         print("A test of the release workflow. Not for use; it will be deleted.")
         return
+    match = TAG.fullmatch(tag)
+    if not match:
+        fail(f"{tag!r} is not a release tag like v0.1")
+    version = match.group(1)
     for found, _, body in changelog_sections(read(CHANGELOG)):
         if found == version:
             print(unwrap(body))
@@ -302,6 +341,8 @@ def main(args):
         set_version(args[1])
     elif command == "release" and len(args) <= 2:
         release(args[1] if len(args) == 2 else datetime.date.today().isoformat())
+    elif command == "due":
+        due(args[1:])
     elif command == "tag" and len(args) == 2:
         tag_info(args[1])
     elif command == "notes" and len(args) == 2:

@@ -6,7 +6,7 @@
 #
 #   packaging/linux/build-packages.sh VERSION BIN_DIR ORT_LIB MODEL_DIR POCKET_DIR OUT_DIR
 #
-# VERSION is what people see: 0.1, or 0.1-rc.1 for a prerelease. BIN_DIR holds kalliope and
+# VERSION is what people see: 0.1 (0.0-test.N for a test of the release workflow). BIN_DIR holds kalliope and
 # kalliope-cli (target/release). ORT_LIB is libonnxruntime.so.X.Y.Z, MODEL_DIR the Klein model and
 # POCKET_DIR the Pocket TTS model, as tools/fetch_assets.py unpacks them (each with its LICENSE and
 # notices). Everything goes inside the packages: once installed, Kalliope downloads nothing.
@@ -20,7 +20,7 @@ fi
 version=$1 bin_dir=$2 ort_lib=$3 model_dir=$4 pocket_dir=$5 out=$6
 root=$(cd "$(dirname "$0")/../.." && pwd)
 id=io.github.sansevieria_ou.kalliope
-# Debian and RPM sort a tilde before everything else, so 0.1~rc.1 comes before 0.1.
+# Debian and RPM sort a tilde before everything else, so a test of the workflow, 0.0~test.N, comes before any version.
 package_version=${version/-/\~}
 
 for program in kalliope kalliope-cli; do
@@ -153,7 +153,7 @@ rpmbuild -bb --quiet --nodeps --target x86_64 \
     "$root/packaging/linux/kalliope.spec"
 mv "$work"/rpmbuild/RPMS/x86_64/kalliope-*.rpm "$out/kalliope-$version-x86_64.rpm"
 
-# The AUR recipe for this tarball. pkgver cannot contain "-": 0.1-rc.1 becomes 0.1_rc.1.
+# The AUR recipe for this tarball. pkgver cannot contain "-": 0.0-test.N becomes 0.0_test.N.
 sha=$(sha256sum "$out/$name.tar.gz" | cut -d' ' -f1)
 sed -e "s/^pkgver=.*/pkgver=${version//-/_}/" -e "s/^sha256sums=.*/sha256sums=('$sha')/" \
     "$root/packaging/aur/PKGBUILD" > "$out/kalliope-bin.PKGBUILD"

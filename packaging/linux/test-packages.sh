@@ -8,7 +8,7 @@
 #
 #   packaging/linux/test-packages.sh DIST_DIR VERSION APP_VERSION [RECORDING]
 #
-# VERSION is the one in the file names (0.1, 0.1-rc.1); APP_VERSION is what kalliope --version
+# VERSION is the one in the file names (0.1, or 0.0-test.N); APP_VERSION is what kalliope --version
 # must print (tools/version.py). Each installed copy speaks a sentence with Giulia, with the ONNX
 # Runtime and the model it brought and no KALLIOPE_* variable. With RECORDING, a WAV file
 # (tools/fetch_assets.py recording), it also prepares a voice from it and speaks with that voice.

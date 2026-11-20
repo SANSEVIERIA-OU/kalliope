@@ -10,12 +10,9 @@ on:
   push:
     branches: [main]
     paths: ["website/**", "design-system/**", "tools/site.py", "tools/marchio.py", "tools/marchio_raster.py", "tools/i18n/**", "tools/data/**", ".github/workflows/pages.yml"]
-  # A release made by the Release workflow does not send a release event (GitHub never starts a
-  # workflow from one made with its own token), so the site follows that workflow instead.
-  workflow_run:
-    workflows: [Release]
-    types: [completed]
-  # Releases edited, published or deleted by hand on GitHub.
+  # Releases edited, published or deleted by hand on GitHub. A release made by the Release workflow sends no
+  # release event (GitHub starts no workflow from what a run's own token does): that workflow starts this
+  # one by hand once the release is out (workflow_dispatch, the exception GitHub makes).
   release:
     types: [published, edited, deleted]
   workflow_dispatch:
@@ -28,8 +25,28 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  # A push that brings a new version (tools/version.py due) does not deploy: its pages already speak of the
+  # new version, whose packages are not out yet. The Release workflow publishes them, then starts this
+  # workflow, and the site changes in one go. If that release fails, the site stays as it was.
+  due:
+    name: Is a release on its way
+    if: github.event_name == 'push'
+    runs-on: ubuntu-26.04
+    timeout-minutes: 5
+    outputs:
+      release: ${{ steps.due.outputs.release }}
+    steps:
+      - uses: actions/checkout@v7
+      - id: due
+        run: |
+          # shellcheck disable=SC2046 # one tag per word
+          python3 tools/version.py due $(git ls-remote --tags --refs origin | cut -f2) | tee -a "$GITHUB_OUTPUT"
+
   deploy:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    needs: due
+    if: >-
+      !cancelled() &&
+      (needs.due.result == 'skipped' || (needs.due.result == 'success' && needs.due.outputs.release != 'true'))
     runs-on: ubuntu-26.04
     timeout-minutes: 10
     permissions:

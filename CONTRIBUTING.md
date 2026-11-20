@@ -74,4 +74,10 @@ CI runs these checks on Linux for every push, and also on Windows and macOS for 
 packages are made by `packaging/linux/build-packages.sh`; [docs/releasing.md](docs/releasing.md)
 explains versions, releases and what CI costs.
 
+Versions go up one step at a time (0.1, 0.2 … 0.9, 1.0), and every step is final: there are no test
+versions. A change that people will notice adds a line to the version's section of
+[CHANGELOG.md](CHANGELOG.md), written for them. A version is released by the push to `main` that marks
+it released (`python3 tools/version.py release`): the Release workflow then builds, tests and publishes
+it, on GitHub and on AUR. Pushing to `main` is for maintainers, with the owner's permission.
+
 Every source file starts with `SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1`.

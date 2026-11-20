@@ -1,0 +1,178 @@
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
+# Publishes kalliope-bin on AUR (https://aur.archlinux.org/packages/kalliope-bin) for a published version: the
+# Release workflow calls it after every release of a version (never for a test tag), and it can be started by
+# hand (Actions → AUR → Run workflow) to put a published version on AUR again. It writes the PKGBUILD from
+# packaging/aur/PKGBUILD with the checksum of the published tarball (tools/aur.py) and .SRCINFO with makepkg,
+# builds, installs and runs the package in an Arch Linux container, then pushes to AUR with the key in the secret
+# AUR_SSH_KEY. Without that secret it warns and publishes nothing. Unticked "publish", or called for a try by the
+# Release workflow, it does everything but the push. See docs/releasing.md, "Arch Linux (AUR)".
+name: AUR
+
+on:
+  workflow_call:
+    inputs:
+      version:
+        description: The version, for example 0.1
+        type: string
+        required: true
+      publish:
+        description: Push to AUR
+        type: boolean
+        required: true
+      artifact:
+        description: For a try, the artifact of this run with dist/ (the tarball and SHA256SUMS); empty for the published release
+        type: string
+        default: ""
+    secrets:
+      AUR_SSH_KEY:
+        required: false
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Published version to put on AUR again (0.1)
+        type: string
+        required: true
+      publish:
+        description: Push to AUR (unticked, it only writes and tries the recipe)
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  kalliope-bin:
+    name: kalliope-bin
+    runs-on: ubuntu-26.04
+    timeout-minutes: 20
+    concurrency:
+      group: aur
+      cancel-in-progress: false
+    env:
+      VERSION: ${{ inputs.version }}
+      PUBLISH: ${{ inputs.publish }}
+      ARTIFACT: ${{ inputs.artifact }}
+      GH_TOKEN: ${{ github.token }}
+      # aur.archlinux.org's Ed25519 host key, as AUR lists it on its home page (announced by Arch on
+      # 28 July 2020, https://archlinux.org/news/aur-migration-new-ssh-hostkeys/; checked on 20 November 2026).
+      AUR_HOST_KEY: SHA256:RFzBCUItH9LZS0cKB5UE6ceAYhBD5C8GeOBip8Z11+4
+    steps:
+      - uses: actions/checkout@v7
+      - name: The tarball this run built
+        if: inputs.artifact != ''
+        uses: actions/download-artifact@v8
+        with:
+          name: ${{ inputs.artifact }}
+          path: built
+      - name: Write the PKGBUILD
+        id: recipe
+        run: |
+          set -euo pipefail
+          VERSION=${VERSION#v}
+          if [ "$PUBLISH" = true ] && [ -n "$ARTIFACT" ]; then
+            echo "::error::Only the published tarball goes on AUR."
+            exit 1
+          fi
+          tarball=kalliope-$VERSION-linux-x86_64.tar.gz
+          if [ -n "$ARTIFACT" ]; then
+            sums=built/dist/SHA256SUMS
+            mkdir -p source && cp "built/dist/$tarball" source/
+          else
+            # A version, published and not a prerelease: AUR has only versions.
+            if [ "$(gh release view "v$VERSION" --repo "$GITHUB_REPOSITORY" --json isPrerelease,isDraft \
+              --jq '.isPrerelease or .isDraft')" != false ]; then
+              echo "::error::v$VERSION is not a published version."
+              exit 1
+            fi
+            gh release download "v$VERSION" --repo "$GITHUB_REPOSITORY" --pattern SHA256SUMS --dir "$RUNNER_TEMP/release"
+            sums=$RUNNER_TEMP/release/SHA256SUMS
+          fi
+          sha=$(awk -v f="$tarball" '$2 == f || $2 == "*" f { print $1 }' "$sums")
+          if [ -z "$sha" ]; then
+            echo "::error::$sums has no $tarball."
+            exit 1
+          fi
+          # What AUR has now (an empty repository for a package it does not have yet).
+          git clone -q --depth 1 https://aur.archlinux.org/kalliope-bin.git "$RUNNER_TEMP/aur-now"
+          python3 tools/aur.py write "$VERSION" "$sha" out --current "$RUNNER_TEMP/aur-now" | tee -a "$GITHUB_OUTPUT"
+          if [ -f "$RUNNER_TEMP/aur-now/PKGBUILD" ]; then
+            git diff --no-index "$RUNNER_TEMP/aur-now/PKGBUILD" out/PKGBUILD || true
+          fi
+      # makepkg reads the PKGBUILD as Arch does. Without a tarball next to it, it downloads the published one
+      # and checks its SHA-256, as people's makepkg will.
+      - name: .SRCINFO, then the package built, installed and run on Arch Linux
+        run: |
+          set -euo pipefail
+          mkdir -p source
+          docker run --rm -e VERSION="${VERSION#v}" -v "$PWD/out:/out" -v "$PWD/source:/source:ro" \
+            archlinux:base-devel bash -euo pipefail -c '
+              pacman -Syu --noconfirm >/dev/null
+              useradd -m builder
+              build=/home/builder/kalliope-bin
+              install -d -o builder "$build"
+              install -o builder -m644 /out/PKGBUILD "$build/"
+              find /source -name "*.tar.gz" -exec install -o builder -m644 {} "$build/" \;
+              cd "$build"
+              su builder -c "cd $build && makepkg --printsrcinfo" > /out/.SRCINFO
+              # Not compressed: the package is only tried here. pacman -U below installs the dependencies.
+              su builder -c "cd $build && PKGEXT=.pkg.tar makepkg --noconfirm --nodeps"
+              pacman -U --noconfirm kalliope-bin-*.pkg.tar >/dev/null
+              out=$(kalliope --version)
+              echo "$out"
+              [ "$out" = "kalliope $VERSION" ] || { echo "expected kalliope $VERSION" >&2; exit 1; }
+              test -e /usr/share/licenses/kalliope-bin/LICENSE
+              pacman -R --noconfirm kalliope-bin >/dev/null'
+          sudo chown -R "$(id -u):$(id -g)" out
+          cat out/.SRCINFO
+          grep -qxF "$(printf '\tpkgver = %s' "${VERSION#v}")" out/.SRCINFO
+      - uses: actions/upload-artifact@v7
+        with:
+          name: aur-kalliope-bin
+          path: |
+            out/PKGBUILD
+            out/.SRCINFO
+            out/LICENSE
+          include-hidden-files: true
+          retention-days: 7
+          if-no-files-found: error
+      - name: Publish to AUR
+        if: inputs.publish
+        env:
+          AUR_SSH_KEY: ${{ secrets.AUR_SSH_KEY }}
+          PKGREL: ${{ steps.recipe.outputs.pkgrel }}
+          CHANGED: ${{ steps.recipe.outputs.changed }}
+        run: |
+          set -euo pipefail
+          VERSION=${VERSION#v}
+          if [ -z "${AUR_SSH_KEY:-}" ]; then
+            echo "::warning::No AUR_SSH_KEY secret: kalliope-bin was not published on AUR (docs/releasing.md)."
+            exit 0
+          fi
+          if [ "$CHANGED" != true ]; then
+            echo "::notice::AUR already has kalliope-bin $VERSION-$PKGREL with these files."
+            exit 0
+          fi
+          key=$RUNNER_TEMP/aur-key known=$RUNNER_TEMP/aur-known-hosts
+          (umask 077 && printf '%s\n' "$AUR_SSH_KEY" > "$key")
+          ssh-keyscan -t ed25519 aur.archlinux.org > "$known" 2>/dev/null
+          if [ "$(ssh-keygen -lf "$known" | awk '{ print $2 }')" != "$AUR_HOST_KEY" ]; then
+            echo "::error::aur.archlinux.org did not show its known key: nothing published."
+            exit 1
+          fi
+          export GIT_SSH_COMMAND="ssh -i $key -o IdentitiesOnly=yes -o UserKnownHostsFile=$known -o StrictHostKeyChecking=yes"
+          if ! git clone -q ssh://aur@aur.archlinux.org/kalliope-bin.git "$RUNNER_TEMP/aur"; then
+            echo "::error::AUR did not let this key in: is its public half in the AUR profile? (docs/releasing.md)"
+            exit 1
+          fi
+          cp out/PKGBUILD out/.SRCINFO out/LICENSE "$RUNNER_TEMP/aur/"
+          cd "$RUNNER_TEMP/aur"
+          git config user.name "Kalliope release"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add PKGBUILD .SRCINFO LICENSE
+          if git diff --cached --quiet; then
+            echo "::notice::AUR already has these files."
+            exit 0
+          fi
+          git commit -q -m "Kalliope $VERSION ($VERSION-$PKGREL)"
+          git push origin HEAD:master
+          echo "::notice::kalliope-bin $VERSION-$PKGREL is on AUR: https://aur.archlinux.org/packages/kalliope-bin"

@@ -2,12 +2,12 @@
 # Maintainer: Davide Briani <116493713+brianidavide@users.noreply.github.com>
 #
 # Kalliope from a published release, already built: unpacks the Linux tarball, compiles nothing.
-# The release workflow attaches a copy with the tarball's checksum filled in
-# (kalliope-bin.PKGBUILD); that copy is the one to publish on AUR. See docs/releasing.md.
+# The release workflow attaches a copy with the tarball's checksum filled in (kalliope-bin.PKGBUILD),
+# and publishes it on AUR as kalliope-bin (.github/workflows/aur.yml). See docs/releasing.md.
 
 pkgname=kalliope-bin
 pkgver=0.1
-# A prerelease such as 0.1-rc.1 is written 0.1_rc.1 here: pkgver cannot contain "-".
+# A test of the release workflow, 0.0-test.N, is written 0.0_test.N here: pkgver cannot contain "-".
 _version=${pkgver//_/-}
 pkgrel=1
 pkgdesc='Type, and be heard in video calls: a local voice through a virtual microphone'
