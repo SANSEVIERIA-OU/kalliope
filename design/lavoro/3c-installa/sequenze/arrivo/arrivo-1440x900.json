@@ -1,0 +1,118 @@
+{
+ "pagina": "http://127.0.0.1:45617/it/installa/index.html",
+ "misura": "1440x900",
+ "sequenza": "arrivo",
+ "gesto": null,
+ "ridotto": false,
+ "lento": 1,
+ "istanti": [
+  0,
+  0.5,
+  1,
+  1.5,
+  2,
+  2.5,
+  3,
+  3.5,
+  4,
+  4.5,
+  5,
+  5.5,
+  6,
+  7
+ ],
+ "fotogrammi": [
+  {
+   "file": "arrivo-1440x900-f01.jpg",
+   "chiesto": 0,
+   "scattato": 0,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-1440x900-f02.jpg",
+   "chiesto": 0.5,
+   "scattato": 0.5,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-1440x900-f03.jpg",
+   "chiesto": 1,
+   "scattato": 1,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-1440x900-f04.jpg",
+   "chiesto": 1.5,
+   "scattato": 1.5,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-1440x900-f05.jpg",
+   "chiesto": 2,
+   "scattato": 2,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-1440x900-f06.jpg",
+   "chiesto": 2.5,
+   "scattato": 2.5,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-1440x900-f07.jpg",
+   "chiesto": 3,
+   "scattato": 3,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-1440x900-f08.jpg",
+   "chiesto": 3.5,
+   "scattato": 3.5,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-1440x900-f09.jpg",
+   "chiesto": 4,
+   "scattato": 4,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-1440x900-f10.jpg",
+   "chiesto": 4.5,
+   "scattato": 4.5,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-1440x900-f11.jpg",
+   "chiesto": 5,
+   "scattato": 5,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-1440x900-f12.jpg",
+   "chiesto": 5.5,
+   "scattato": 5.5,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-1440x900-f13.jpg",
+   "chiesto": 6,
+   "scattato": 6,
+   "scorrimento": 0
+  },
+  {
+   "file": "arrivo-1440x900-f14.jpg",
+   "chiesto": 7,
+   "scattato": 7,
+   "scorrimento": 0
+  }
+ ],
+ "foglio": "arrivo-1440x900-foglio.jpg",
+ "video": "arrivo-1440x900.webm",
+ "orologio": {
+  "pagina": 1,
+  "media": []
+ },
+ "errori": [],
+ "misurato": "2026-11-20T02:30:46.597Z"
+}

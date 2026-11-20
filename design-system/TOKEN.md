@@ -1285,3 +1285,50 @@ Dieci token nuovi in fondo a `token.css` (blocco «Il marchio»); nessun valore 
 | `--segno-prova-scuro` | `#222226` | il fondo scuro: la finestra scura di GNOME (libadwaita 1.10.0; GNOME Shell 51.1) |
 
 Il marchio non usa nessun altro valore: ombre, bagliori e sfumature non ci sono (GNOME le sconsiglia fuori dalla sagoma, Flathub le vieta cotte nell'icona). I fondi su cui il catalogo lo mostra sono `--segno-prova-chiaro`, `--segno-prova-scuro` e `--fondo` (il bordeaux del sito).
+
+## La pagina «installa» (incarico 3c, 20/11/2026)
+
+Blocco `:root` in fondo a `token.css` («La pagina «installa»»), dopo quello del marchio (`tools/marchio.py` legge i token per nome: l'ordine non
+conta). Componenti nuovi: `scelta-sistema.css`, `comando.css`, `terminale.css`, `installazione.css`. Nessun token esistente è cambiato; nessun
+file condiviso riordinato. Le scelte senza una fonte sono progettuali (piano: `design/lavoro/3c-installa/PIANO.md`).
+
+| Token | Valore | Ruolo |
+|---|---|---|
+| `--font-terminale` | `"DejaVu Sans Mono", "Liberation Mono", "Noto Sans Mono", ui-monospace, monospace` | il carattere dei comandi e del terminale: quello a spaziatura fissa del computer di chi legge, nessun file da scaricare (come il cinese, `caratteri/LEGGIMI.md`) |
+| `--sistemi-margine`, `--sistemi-margine-telefono` | `26px 0 0`, `18px 0 0` | la scelta della distribuzione sotto la presentazione |
+| `--sistemi-distanza`, `--sistemi-voce-altezza`, `--sistemi-voce-spazio-inline` | `8px`, `40px`, `15px` | i quattro sistemi: pulsanti-voce alti 40 px (la riga di voci della home) |
+| `--sistemi-dice-margine` | `12px 0 0` | la riga che dice che cosa vuol dire la scelta, con «Non uso Linux» |
+| `--ritardo-sistemi` | `580ms` | la scelta entra fra la presentazione (520 ms) e i comandi (640 ms) |
+| `--comando-fondo`, `--comando-bordo`, `--comando-fondo-in-riga` | `rgba(12,1,5,0.5)`, `rgba(255,219,225,0.2)`, `rgba(255,237,239,0.1)` | il comando da copiare: più scuro della scena, con il bordo dei pannelli; un comando dentro una frase |
+| `--comando-raggio`, `--comando-margine`, `--comando-spazio-inizio`, `--comando-spazio-blocco` | `12px`, `10px 0 0`, `16px`, `6px` | la sua forma |
+| `--comando-grandezza`, `--comando-interlinea`, `-telefono` | `15px`/`22px`, `13px`/`19px` | il comando, un passo sotto il testo |
+| `--comando-grandezza-in-riga` | `0.9em` | un comando dentro una frase (la spaziatura fissa è più larga) |
+| `--comando-larghezza-massima` | `600px` | |
+| `--comando-numero-spaziatura` | `0.04em` | un'impronta: cifre un poco più distanti, si confrontano a occhio |
+| `--comando-copia-altezza`, `--comando-copia-larghezza` | `32px`, `86px` | «Copia»: «Copia» e «Copiato» nella stessa cella, larghezza ferma |
+| `--comando-copiato-ombra`, `--durata-comando-copiato` | luce della voce, `1600ms` | copiato: la luce intorno al comando e quanto resta «Copiato» |
+| `--terminale-fondo`, `--terminale-barra`, `--terminale-barra-altezza`, `--terminale-raggio`, `--terminale-ombra` | `#1c030b`, `rgba(255,237,239,0.04)`, `30px`, `16px`, ombra della cornice | il terminale ricostruito: la notte più scura (come il menu aperto), la barra del titolo |
+| `--terminale-spazio-interno`, `-telefono`, `--terminale-confronto-spazio-interno` | `14px 20px 16px`, `10px 12px 12px`, `12px 20px 16px` | |
+| `--terminale-grandezza`, `--terminale-interlinea`, `-telefono` | `14px`/`22px`, `12px`/`19px` | |
+| `--terminale-riga-tua`, `--terminale-riga-tua-altezza`, `-lunga`, `-corta` | `rgba(255,237,239,0.16)`, `7px`, `72%`, `44%` | una riga del computer di chi installa: c'è, ma che cosa dice dipende da lui (la pagina non la inventa) |
+| `--terminale-numero-larghezza`, `--terminale-trovato-prima`, `--terminale-trovato-dopo` | `3.4em`, `2.4em`, `11em` | il numero della versione che risponde il programma; la riga con «kalliope» |
+| `--terminale-cursore-larghezza`, `--terminale-cursore-altezza` | `0.6em`, `1.15em` | il cursore (mentre il comando si scrive non occupa posto) |
+| `--terminale-uguale` | `rgba(255,92,141,0.36)` | un gruppo di cifre confrontato, la parola trovata: l'azione, velata |
+| `--durata-t-riga`, `--durata-t-gruppo` | `200ms`, `180ms` | una risposta che compare; un gruppo di cifre che si accende |
+| `--passo-lettera`, `--passo-lettera-rapido` | `33ms`, `14ms` | il comando si scrive come la frase della home (33 ms a carattere); riscritto in fretta quando si cambia distribuzione |
+| `--passo-riga-terminale`, `--pausa-invio`, `--passo-gruppo-impronta` | `300ms`, `260ms`, `130ms` | fra una risposta e l'altra; prima di Invio; fra un gruppo di otto cifre e il successivo |
+| `--ritardo-terminale-scrive`, `--ritardo-installata`, `--durata-installata`, `--ritardo-installata-tu` | `2000ms`, `380ms`, `420ms`, `260ms` | il primo schermo: il terminale comincia a scrivere; «Kalliope» compare fra i microfoni; il posto si riempie; il tuo riquadro segue |
+| `--passo-pacchi`, `--ritardo-cartella-file`, `--cartella-file-da`, `--pacco-da` | `150ms`, `160ms`, `-14px`, `-18px` | i file che arrivano nella cartella (download; `/usr` o `~/.local`) scendendo da sopra |
+| `--avvio-premi`, `--avvio-scarica`, `--avvio-scarico-durata`, `--avvio-prepara`, `--avvio-pronta`, `--ritardo-avvio` | `700`, `860`, `2400`, `3400`, `4300`, `420ms` | il primo avvio della finestra: i tempi della home (`scena.js`), qui nei token |
+| `--palco-terminale-altezza`, `--palco-terminale-sotto` | `88px`, `16px` | il terminale del primo schermo, al posto della bolla |
+| `--oggetto-fermo-sopra` | `96px` | l'oggetto accanto al testo resta fermo sotto la barra (72) con 24 px d'aria |
+| `--passo-distanza`, `-telefono` | `44px`, `32px` | fra un passo e l'altro dello stesso tratto |
+| `--passo-nome-grandezza`, `--passo-nome-interlinea`, `-telefono` | `24px`/`30px`, `20px`/`26px` (per i fattori delle scritture) | il nome di un passo («Scarica», «Controlla che sia uguale», «Se la riga dice altro») |
+| `--esito-riuscito-bordo` | `var(--voce)` | «Riuscito se…»: la riga piena (quella di «Se no…» è tratteggiata, il segno di «non ancora») |
+| `--installa-colonne`, `--apri-colonne` | `minmax(0,500px) minmax(0,1fr)`, `minmax(0,1fr) minmax(0,540px)` | i tratti cambiano lato: la cartella prima dei comandi; il testo prima della finestra |
+| `--apri-finestra-larghezza`, `--apri-stato-altezza` | `540px`, `62px` | la finestra di «Apri»; la riga di stato tiene due righe (le frasi lunghe non la spostano) |
+| `--frase-finestra-bordo` | `rgba(91,1,35,0.2)` | una frase della finestra, sulla scena chiara |
+| `--microfono-scena-larghezza`, `--riprendi-colonne`, `--riprendi-larghezza` | `560px`, due colonne, `1040px` | la chiusura: comando, terminale e microfono; poi «Se ti sei fermato» e l'indirizzo |
+| `--ripresa-linea-inizio`, `--ripresa-segno-scala` | `11px`, `1.15` | la strada dei cinque passi della ripresa |
+
+Soglie: nessuna nuova (760, 761, 699, 1180 della cornice).

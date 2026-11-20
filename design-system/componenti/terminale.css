@@ -1,0 +1,104 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
+/* Componente · Il terminale ricostruito
+   La finestra del terminale di chi installa, disegnata nel mondo della pagina (il fondo della notte, il bordo dei pannelli): nessun
+   terminale di un sistema copiato. Dentro, il testo vero dove lo conosciamo (il comando, ciò che scrive ./install, l'impronta, la
+   parola «kalliope») e una riga sbiadita dove la risposta dipende dal computer di chi installa (ciò che stampa apt, il numero
+   della versione, le altre sorgenti audio): la pagina non inventa ciò che non sa. Il comando si scrive lettera per lettera, le
+   risposte compaiono una riga alla volta; un'impronta si confronta a gruppi di otto cifre che si accendono. Il contenuto si legge
+   da sinistra a destra anche da destra a sinistra; la finestra, nella pagina, sta dove la mette la scena.
+   Prima pagina che lo usa: website/installa/. Ogni valore viene da ../token.css. */
+
+.terminale {
+  position: relative;
+  border-radius: var(--terminale-raggio);
+  background: var(--terminale-fondo);
+  border: var(--filetto-sottile) solid var(--bordo-pannello);
+  box-shadow: var(--terminale-ombra);
+  color: var(--testo);
+  overflow: hidden;
+}
+.t-barra {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--terminale-barra-altezza);
+  border-bottom: var(--filetto-sottile) solid var(--bordo-sezione);
+  background: var(--terminale-barra);
+}
+.t-titolo { font-size: var(--corpo-3); font-weight: var(--peso-medio); color: var(--testo-didascalia); }
+.t-corpo {
+  padding: var(--terminale-spazio-interno);
+  font-family: var(--font-terminale);
+  font-size: var(--terminale-grandezza);
+  line-height: var(--terminale-interlinea);
+  direction: ltr;
+  text-align: start;
+}
+.t-riga { margin: 0; min-height: var(--terminale-interlinea); white-space: pre-wrap; overflow-wrap: anywhere; }
+.t-prompt { color: var(--rosa); font-weight: var(--peso-forte); }
+.t-risposta { color: var(--testo-spiegazione); }
+/* una riga del tuo computer: c'è, ma che cosa dice dipende da lui */
+.t-tuo i, .t-numero, .t-trovato i {
+  display: inline-block;
+  vertical-align: middle;
+  height: var(--terminale-riga-tua-altezza);
+  border-radius: var(--raggio-pillola);
+  background: var(--terminale-riga-tua);
+}
+.t-tuo i { width: var(--terminale-riga-tua-lunga); }
+.t-tuo.t-corto i { width: var(--terminale-riga-tua-corta); }
+.t-numero { width: var(--terminale-numero-larghezza); }
+.t-trovato i.t-prima { width: var(--terminale-trovato-prima); }
+.t-trovato i.t-dopo-nome { width: var(--terminale-trovato-dopo); }
+.t-trovato span { padding-block: 0; padding-inline: var(--spazio-3); border-radius: var(--raggio-2); color: var(--testo); }
+.t-cursore {
+  display: inline-block;
+  vertical-align: text-bottom;
+  width: var(--terminale-cursore-larghezza);
+  height: var(--terminale-cursore-altezza);
+  background: var(--voce);
+  animation: lampeggia var(--durata-f-campo-f-cursore) var(--curva-a-scatti) infinite;
+}
+/* mentre il comando si scrive: il cursore non occupa posto, ciò che manca c'è già ma non si vede (la riga non cambia altezza) */
+.t-scrive .t-cursore { margin-inline-end: calc(-1 * var(--terminale-cursore-larghezza)); }
+.t-resto { visibility: hidden; }
+@keyframes lampeggia {
+  50% { opacity: 0; }
+}
+/* l'impronta a gruppi di otto cifre (li mette lo script): quello confrontato prende la luce della voce */
+.t-gruppo { border-radius: var(--raggio-1); transition: background-color var(--durata-t-gruppo) var(--curva-dolce), color var(--durata-t-gruppo) var(--curva-dolce); }
+.t-gruppo.uguale { background: var(--terminale-uguale); color: var(--testo); }
+.t-confronto {
+  padding: var(--terminale-confronto-spazio-interno);
+  border-top: var(--filetto-sottile) dashed var(--bordo-pannello);
+  font-family: var(--font-terminale);
+  font-size: var(--terminale-grandezza);
+  line-height: var(--terminale-interlinea);
+  direction: ltr;
+  text-align: start;
+}
+.t-confronto-nome { display: block; margin-bottom: var(--spazio-3); font-family: var(--font-testo); font-size: var(--corpo-3); color: var(--testo-didascalia); }
+.t-esito {
+  display: inline-flex;
+  margin-top: var(--spazio-8);
+  padding-block: var(--spazio-3); padding-inline: var(--spazio-10);
+  border-radius: var(--raggio-pillola);
+  background: var(--voce);
+  color: var(--bordeaux);
+  font-family: var(--font-testo);
+  font-size: var(--corpo-4);
+  font-weight: var(--peso-forte);
+}
+
+/* ---------- il movimento (con lo script; senza, tutto è già scritto) ---------- */
+.js .terminale.in-attesa .t-riga:not(.t-mostra) { visibility: hidden; }
+.js .terminale .t-riga.t-entra { animation: appare var(--durata-t-riga) var(--curva-dolce) backwards; }
+.js .terminale.in-attesa .t-esito { opacity: 0; transform: scale(var(--bolla-nasce-scala)); }
+.js .terminale .t-esito { transform-origin: var(--origine-inizio-x) 50%; transition: opacity var(--durata-bolla-nasce) var(--curva-dolce), transform var(--durata-bolla-nasce) var(--entra); }
+.js .terminale.in-attesa .t-trovato span { background: transparent; }
+.t-trovato span { background: var(--terminale-uguale); transition: background-color var(--durata-t-gruppo) var(--curva-dolce); }
+
+@media (max-width: 760px) {
+  .t-corpo, .t-confronto { font-size: var(--terminale-grandezza-telefono); line-height: var(--terminale-interlinea-telefono); padding: var(--terminale-spazio-interno-telefono); }
+  .t-riga { min-height: var(--terminale-interlinea-telefono); }
+}

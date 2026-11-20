@@ -1,0 +1,55 @@
+{
+ "pagina": "http://127.0.0.1:40673/it/installa/index.html",
+ "misura": "1440x900",
+ "sequenza": "frase",
+ "gesto": "premi:.frase-bottone[data-stato=curl]",
+ "ridotto": false,
+ "lento": 1,
+ "istanti": [
+  0,
+  0.2,
+  0.5,
+  1,
+  2
+ ],
+ "fotogrammi": [
+  {
+   "file": "frase-1440x900-f01.jpg",
+   "chiesto": 0,
+   "scattato": 0,
+   "scorrimento": 3288
+  },
+  {
+   "file": "frase-1440x900-f02.jpg",
+   "chiesto": 0.2,
+   "scattato": 0.2,
+   "scorrimento": 3288
+  },
+  {
+   "file": "frase-1440x900-f03.jpg",
+   "chiesto": 0.5,
+   "scattato": 0.5,
+   "scorrimento": 3288
+  },
+  {
+   "file": "frase-1440x900-f04.jpg",
+   "chiesto": 1,
+   "scattato": 1,
+   "scorrimento": 3288
+  },
+  {
+   "file": "frase-1440x900-f05.jpg",
+   "chiesto": 2,
+   "scattato": 2,
+   "scorrimento": 3288
+  }
+ ],
+ "foglio": "frase-1440x900-foglio.jpg",
+ "video": "frase-1440x900.webm",
+ "orologio": {
+  "pagina": 1,
+  "media": []
+ },
+ "errori": [],
+ "misurato": "2026-11-20T02:32:41.469Z"
+}

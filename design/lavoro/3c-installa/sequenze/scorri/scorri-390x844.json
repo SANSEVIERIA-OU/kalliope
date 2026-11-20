@@ -1,0 +1,111 @@
+{
+ "pagina": "http://127.0.0.1:39901/it/installa/index.html",
+ "misura": "390x844",
+ "sequenza": "scorri",
+ "gesto": "scorri",
+ "ridotto": false,
+ "lento": 1,
+ "istanti": [
+  0,
+  1.5,
+  3,
+  4.5,
+  6,
+  7.5,
+  9,
+  10.5,
+  12,
+  13.5,
+  15,
+  16.5,
+  18
+ ],
+ "fotogrammi": [
+  {
+   "file": "scorri-390x844-f01.jpg",
+   "chiesto": 0,
+   "scattato": 0,
+   "scorrimento": 2
+  },
+  {
+   "file": "scorri-390x844-f02.jpg",
+   "chiesto": 1.5,
+   "scattato": 1.5,
+   "scorrimento": 582
+  },
+  {
+   "file": "scorri-390x844-f03.jpg",
+   "chiesto": 3,
+   "scattato": 3,
+   "scorrimento": 1163
+  },
+  {
+   "file": "scorri-390x844-f04.jpg",
+   "chiesto": 4.5,
+   "scattato": 4.5,
+   "scorrimento": 1743
+  },
+  {
+   "file": "scorri-390x844-f05.jpg",
+   "chiesto": 6,
+   "scattato": 6,
+   "scorrimento": 2324
+  },
+  {
+   "file": "scorri-390x844-f06.jpg",
+   "chiesto": 7.5,
+   "scattato": 7.5,
+   "scorrimento": 2905
+  },
+  {
+   "file": "scorri-390x844-f07.jpg",
+   "chiesto": 9,
+   "scattato": 9,
+   "scorrimento": 3485
+  },
+  {
+   "file": "scorri-390x844-f08.jpg",
+   "chiesto": 10.5,
+   "scattato": 10.5,
+   "scorrimento": 4072
+  },
+  {
+   "file": "scorri-390x844-f09.jpg",
+   "chiesto": 12,
+   "scattato": 12,
+   "scorrimento": 4646
+  },
+  {
+   "file": "scorri-390x844-f10.jpg",
+   "chiesto": 13.5,
+   "scattato": 13.5,
+   "scorrimento": 5227
+  },
+  {
+   "file": "scorri-390x844-f11.jpg",
+   "chiesto": 15,
+   "scattato": 15,
+   "scorrimento": 5807
+  },
+  {
+   "file": "scorri-390x844-f12.jpg",
+   "chiesto": 16.5,
+   "scattato": 16.5,
+   "scorrimento": 6388
+  },
+  {
+   "file": "scorri-390x844-f13.jpg",
+   "chiesto": 18,
+   "scattato": 18,
+   "scorrimento": 6967
+  }
+ ],
+ "foglio": "scorri-390x844-foglio.jpg",
+ "video": "scorri-390x844.webm",
+ "orologio": {
+  "pagina": 1,
+  "media": []
+ },
+ "errori": [],
+ "misurato": "2026-11-20T02:39:49.174Z"
+}

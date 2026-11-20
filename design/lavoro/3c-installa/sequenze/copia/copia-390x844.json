@@ -1,0 +1,55 @@
+{
+ "pagina": "http://127.0.0.1:41223/it/installa/index.html",
+ "misura": "390x844",
+ "sequenza": "copia",
+ "gesto": "premi:#passo-controlla .comando .copia",
+ "ridotto": false,
+ "lento": 1,
+ "istanti": [
+  0,
+  0.2,
+  0.6,
+  1.2,
+  2
+ ],
+ "fotogrammi": [
+  {
+   "file": "copia-390x844-f01.jpg",
+   "chiesto": 0,
+   "scattato": 0,
+   "scorrimento": 1993
+  },
+  {
+   "file": "copia-390x844-f02.jpg",
+   "chiesto": 0.2,
+   "scattato": 0.2,
+   "scorrimento": 1993
+  },
+  {
+   "file": "copia-390x844-f03.jpg",
+   "chiesto": 0.6,
+   "scattato": 0.6,
+   "scorrimento": 1993
+  },
+  {
+   "file": "copia-390x844-f04.jpg",
+   "chiesto": 1.2,
+   "scattato": 1.2,
+   "scorrimento": 1993
+  },
+  {
+   "file": "copia-390x844-f05.jpg",
+   "chiesto": 2,
+   "scattato": 2,
+   "scorrimento": 1993
+  }
+ ],
+ "foglio": "copia-390x844-foglio.jpg",
+ "video": "copia-390x844.webm",
+ "orologio": {
+  "pagina": 1,
+  "media": []
+ },
+ "errori": [],
+ "misurato": "2026-11-20T02:32:54.827Z"
+}

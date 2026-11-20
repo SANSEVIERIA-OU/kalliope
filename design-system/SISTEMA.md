@@ -72,6 +72,29 @@ fino al microfono, in riunione non ancora. Piano dei tratti e fonti: `design/lav
   ci stanno (`varco.css`, `--varco-disco-aria-lato`); **le cifre con la virgola decimale** in arabo e urdu («0,07 s») restano dentro la parte latina isolata (`tools/site.py`, `PARTE_LATINA`); **il catalogo** mostra gli
   esemplari della tappa uno per riga, larghi come nella pagina (`catalogo-stato.css`).
 
+## La pagina «installa»: quattro pezzi nuovi (20/11/2026, incarico 3c, resa della direzione: da completare)
+
+La terza pagina interna, `website/installa/` (con `installa.js`), sulla cornice di «non ancora» e «stato». Idea: **ogni passo si vede
+riuscire**: accanto a ciò che si copia, ciò che il computer di chi installa risponde, fino a «Pronta» e al microfono «Kalliope» nella
+riunione. Piano dei tratti e fonti: `design/lavoro/3c-installa/PIANO.md`; che cosa dice la pagina: `design/lavoro/3c-installa/CONTENUTI.md`.
+
+- **`scelta-sistema.css`**: quattro bottoni d'opzione disegnati come i pulsanti-voce (Debian e Ubuntu, Fedora, Arch, Altre); ogni elemento con
+  `data-sistema="…"` si vede solo se fra i suoi valori c'è il sistema scelto. Lo fanno i fogli di stile con `:has` (funziona senza
+  JavaScript; senza `:has` si vede tutto). La pagina che lo usa mette la classe `sistemi-pagina` sul contenitore.
+- **`comando.css`**: il comando da copiare, nel carattere del terminale, da sinistra a destra anche da destra a sinistra; «Copia» alla fine
+  della riga (lo mette lo script) con «Copiato» nella stessa cella e la frase per copiare a mano se il browser non lascia; senza script un
+  clic seleziona il comando intero. Variante `comando-numero` per un'impronta; i comandi dentro una frase come pillola sottile.
+- **`terminale.css`**: il terminale ricostruito nel mondo della pagina. Testo vero dove lo sappiamo, una riga sbiadita dove la risposta dipende
+  dal computer di chi installa; il comando che si scrive senza cambiare l'altezza della riga; le risposte una riga alla volta; l'impronta
+  confrontata a gruppi di otto cifre.
+- **`installazione.css`**: la pagina. Il primo schermo con il terminale al posto della bolla e la riunione di «non ancora» (il posto
+  tratteggiato di «Kalliope» che si riempie, il tuo riquadro che si accende); «Riuscito se… / Se no…» di ogni passo (`.esito-passo`); il file
+  con la cartella e il terminale fermi accanto; la cartella `/usr` o `~/.local` che riceve i file; la finestra di Kalliope con le frasi che
+  si provano; la chiusura con il microfono, la strada della ripresa e l'indirizzo per chi installa al posto tuo.
+- I token: blocco «La pagina «installa»» in fondo a `token.css`, documentati in fondo a `TOKEN.md`. Gli stati della pagina sono in
+  `metodo.config.mjs` (riposo, menu, archivio scelto, frase premuta, copia fatta e non riuscita, indirizzo copiato). Il catalogo non li
+  mostra ancora: lo completa il ruolo di costruzione, con un file per area come `catalogo-stato.js`.
+
 ## Il marchio (19/11/2026, incarico L-3)
 
 Il marchio è la direzione 3 della ricerca L-1, **«La frase che si accende»**, scelta dal proprietario il 19/11/2026: la bolla della frase detta a metà, piena e con le parole dove è detta, solo contorno tratteggiato (il segno di «non ancora» del sito) dove non lo è ancora. Nella barra vive con la voce della home: il confine fra le due parti, il **fronte della voce**, avanza con le parole della bolla vera. Il verde del logo di prima, l'unica eccezione ai colori del sito, non c'è più.

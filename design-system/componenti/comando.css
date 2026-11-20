@@ -1,0 +1,90 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
+/* Componente · Il comando da copiare
+   Un comando del terminale com'è, nel carattere del terminale, con il suo «Copia» alla fine della riga. Si legge sempre da sinistra
+   a destra, anche in una pagina da destra a sinistra (un comando non si traduce né si specchia). Senza JavaScript non c'è «Copia»:
+   un clic seleziona il comando intero (user-select: all) e si copia con la tastiera. Con lo script, premuto «Copia», l'etichetta dice
+   «Copiato» per un momento e il bordo prende la luce della voce; se il browser non lascia copiare, sotto compare la frase per farlo a
+   mano e il comando resta selezionato. Un numero da confrontare (un'impronta) è un comando-numero: lo stesso pezzo, con le cifre più
+   distanziate perché si confrontino a occhio.
+   Prima pagina che lo usa: website/installa/. Servirà all'aiuto e a «In riunione» (i comandi di PipeWire). Ogni valore viene da ../token.css. */
+
+.comando {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--spazio-7);
+  max-width: var(--comando-larghezza-massima);
+  margin: var(--comando-margine);
+  padding-block: var(--spazio-5); padding-inline: var(--comando-spazio-inizio) var(--spazio-5);
+  border-radius: var(--comando-raggio);
+  background: var(--comando-fondo);
+  border: var(--filetto-sottile) solid var(--comando-bordo);
+  transition: border-color var(--durata-voce-bordo) var(--curva-dolce), box-shadow var(--durata-voce-bordo) var(--curva-dolce);
+}
+.comando pre { flex: 1; min-width: 0; margin: 0; padding-block: var(--comando-spazio-blocco); direction: ltr; text-align: start; }
+.comando code, .esito-passo code, .nota-passo code, .togli code, .tratto-testo code {
+  font-family: var(--font-terminale);
+  font-size: var(--comando-grandezza);
+  line-height: var(--comando-interlinea);
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+.comando code { display: block; color: var(--testo); white-space: pre-wrap; overflow-wrap: anywhere; -webkit-user-select: all; user-select: all; }
+/* un comando dentro una frase: una pillola sottile, come le etichette dei file della pagina «stato» */
+.esito-passo code, .nota-passo code, .togli code, .tratto-testo p code {
+  padding-block: var(--spazio-1); padding-inline: var(--spazio-4);
+  border-radius: var(--raggio-2);
+  background: var(--comando-fondo-in-riga);
+  font-size: var(--comando-grandezza-in-riga);
+  overflow-wrap: anywhere;
+  -webkit-user-select: all; user-select: all;
+}
+.comando-numero code { letter-spacing: var(--comando-numero-spaziatura); color: var(--voce); }
+
+/* «Copia»: lo mette lo script, alla fine della riga */
+.copia {
+  flex: none;
+  align-self: start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--comando-copia-altezza);
+  min-width: var(--comando-copia-larghezza);
+  padding-block: 0; padding-inline: var(--spazio-12);
+  border-radius: var(--raggio-pillola);
+  border: var(--filetto-sottile) solid var(--bordo-comando-quieto);
+  background: var(--velo-comando);
+  color: var(--testo);
+  font: inherit;
+  font-size: var(--corpo-4);
+  font-weight: var(--peso-forte);
+  cursor: pointer;
+  transition: background-color var(--durata-voce-sfondo) var(--curva-dolce), border-color var(--durata-voce-bordo) var(--curva-dolce), color var(--durata-voce-sfondo) var(--curva-dolce);
+}
+.copia:hover { border-color: var(--rosa); background: var(--velo-sopra); }
+.copia:active { transform: scale(var(--voce-premuto-scala)); }
+/* le due etichette nella stessa cella: il pulsante ha la larghezza della più lunga e non cambia */
+.copia .etichette { display: inline-grid; justify-items: center; }
+.copia .etichette > span { grid-area: 1 / 1; }
+.copia .se-fatto { visibility: hidden; }
+.comando.copiato .copia { background: var(--testo); border-color: var(--testo); color: var(--bordeaux); }
+.comando.copiato .copia .se-fermo { visibility: hidden; }
+.comando.copiato .copia .se-fatto { visibility: visible; }
+.comando.copiato { border-color: var(--voce); box-shadow: var(--comando-copiato-ombra); }
+.comando-errore {
+  margin: var(--spazio-3) 0 var(--spazio-10);
+  max-width: var(--comando-larghezza-massima);
+  font-size: var(--corpo-5);
+  line-height: var(--interlinea-5);
+  color: var(--testo-spiegazione);
+}
+
+/* sulla scena chiara: il comando scuro, come la finestra della riunione sulla stessa scena */
+.scena-chiara .comando { background: var(--riquadro-scuro); border-color: var(--riquadro-scuro); }
+.scena-chiara .esito-passo code, .scena-chiara .nota-passo code { background: var(--requisito-traccia); color: var(--bordeaux); }
+
+@media (max-width: 760px) {
+  .comando { padding-inline: var(--spazio-10) var(--spazio-4); }
+  .comando code { font-size: var(--comando-grandezza-telefono); line-height: var(--comando-interlinea-telefono); }
+  .copia { min-width: 0; padding-inline: var(--spazio-8); }
+}

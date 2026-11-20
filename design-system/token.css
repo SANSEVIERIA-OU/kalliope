@@ -1394,3 +1394,106 @@
   --segno-prova-chiaro: #fafafb;   /* il fondo chiaro su cui si prova il segno (il catalogo): la finestra chiara di GNOME, libadwaita 1.10.0, _colors.scss */
   --segno-prova-scuro: #222226;   /* il fondo scuro: la finestra scura di GNOME e la sua griglia delle applicazioni (libadwaita 1.10.0, GNOME Shell 51.1) */
 }
+
+/* ---------- La pagina «installa» (incarico 3c, 20/11/2026) ----------
+   Componenti nuovi: scelta-sistema.css (la distribuzione), comando.css (il comando da copiare), terminale.css (il terminale ricostruito),
+   installazione.css (la pagina: il primo schermo con il terminale al posto della bolla, il file, l'installazione, la finestra, il microfono).
+   Ruoli e scelte: TOKEN.md, «La pagina «installa»»; il piano: design/lavoro/3c-installa/PIANO.md. */
+:root {
+  /* · il carattere del terminale: quello a spaziatura fissa del computer di chi legge (nessun file da scaricare: un comando si legge nel suo carattere) */
+  --font-terminale: "DejaVu Sans Mono", "Liberation Mono", "Noto Sans Mono", ui-monospace, monospace;
+  /* · la scelta della distribuzione (i pulsanti-voce della home) */
+  --sistemi-margine: 26px 0 0;   /* sotto la presentazione */
+  --sistemi-margine-telefono: 18px 0 0;
+  --sistemi-distanza: 8px;   /* fra un sistema e l'altro */
+  --sistemi-voce-altezza: 40px;   /* un sistema: alto come un pulsante-voce */
+  --sistemi-voce-spazio-inline: 15px;
+  --sistemi-dice-margine: 12px 0 0;   /* la riga che dice che cosa vuol dire la scelta */
+  --ritardo-sistemi: 580ms;   /* entra fra la presentazione (520 ms) e i comandi (640 ms) */
+  /* · il comando da copiare */
+  --comando-fondo: rgba(12, 1, 5, 0.5);   /* il fondo del comando: più scuro della scena su cui sta, come il terminale */
+  --comando-bordo: rgba(255, 219, 225, 0.2);   /* il suo bordo: quello dei pannelli */
+  --comando-fondo-in-riga: rgba(255, 237, 239, 0.1);   /* un comando dentro una frase */
+  --comando-raggio: 12px;
+  --comando-margine: 10px 0 0;
+  --comando-spazio-inizio: 16px;
+  --comando-spazio-blocco: 6px;
+  --comando-grandezza: 15px;   /* il carattere del terminale, un passo sotto il testo */
+  --comando-interlinea: 22px;
+  --comando-grandezza-telefono: 13px;
+  --comando-interlinea-telefono: 19px;
+  --comando-grandezza-in-riga: 0.9em;   /* dentro una frase: un poco più piccolo del testo, perché il carattere a spaziatura fissa è più largo */
+  --comando-larghezza-massima: 600px;
+  --comando-numero-spaziatura: 0.04em;   /* un'impronta: le cifre un poco più distanti, si confrontano a occhio */
+  --comando-copia-altezza: 32px;
+  --comando-copia-larghezza: 86px;   /* «Copia» e «Copiato» nella stessa cella: larga quanto la più lunga anche se il testo cambia */
+  --comando-copiato-ombra: 0 0 0 1px var(--voce), 0 0 22px 2px var(--luce-filo-centro);   /* copiato: la luce della voce intorno al comando, un momento */
+  --durata-comando-copiato: 1600ms;   /* quanto resta «Copiato» */
+  /* · il terminale ricostruito */
+  --terminale-fondo: #1c030b;   /* il fondo: la notte più scura, come il menu aperto */
+  --terminale-barra: rgba(255, 237, 239, 0.04);   /* la barra del titolo */
+  --terminale-barra-altezza: 30px;
+  --terminale-raggio: 16px;
+  --terminale-ombra: 0 24px 50px -22px var(--ombra-cornice);
+  --terminale-spazio-interno: 14px 20px 16px;
+  --terminale-spazio-interno-telefono: 10px 12px 12px;
+  --terminale-grandezza: 14px;
+  --terminale-interlinea: 22px;
+  --terminale-grandezza-telefono: 12px;
+  --terminale-interlinea-telefono: 19px;
+  --terminale-riga-tua: rgba(255, 237, 239, 0.16);   /* una riga del tuo computer: c'è, ma che cosa dice dipende da lui */
+  --terminale-riga-tua-altezza: 7px;
+  --terminale-riga-tua-lunga: 72%;
+  --terminale-riga-tua-corta: 44%;
+  --terminale-numero-larghezza: 3.4em;   /* il numero della versione che risponde il programma */
+  --terminale-trovato-prima: 2.4em;   /* la riga con «kalliope»: il numero della sorgente prima del nome… */
+  --terminale-trovato-dopo: 11em;   /* …e il resto della riga dopo */
+  --terminale-cursore-larghezza: 0.6em;
+  --terminale-cursore-altezza: 1.15em;
+  --terminale-uguale: rgba(255, 92, 141, 0.36);   /* un gruppo di cifre confrontato, e la parola trovata: l'azione, velata */
+  --terminale-confronto-spazio-interno: 12px 20px 16px;
+  --durata-t-riga: 200ms;   /* una risposta che compare */
+  --durata-t-gruppo: 180ms;   /* un gruppo di cifre che si accende */
+  /* · i tempi del terminale (installa.js) */
+  --passo-lettera: 33ms;   /* il comando si scrive come la frase della home: 33 ms a carattere (scrittura accelerata, detto nella didascalia) */
+  --passo-lettera-rapido: 14ms;   /* quando si cambia distribuzione: il comando nuovo si riscrive in fretta */
+  --passo-riga-terminale: 300ms;   /* fra una risposta e la successiva */
+  --pausa-invio: 260ms;   /* dopo l'ultima lettera, prima di Invio */
+  --passo-gruppo-impronta: 130ms;   /* fra un gruppo di otto cifre e il successivo */
+  --ritardo-terminale-scrive: 2000ms;   /* nel primo schermo: il terminale è entrato (1500 ms + 360), comincia a scrivere */
+  --ritardo-installata: 380ms;   /* dopo l'ultima risposta, «Kalliope» compare fra i microfoni */
+  --durata-installata: 420ms;   /* il posto tratteggiato che si riempie, il tuo riquadro che si accende */
+  --ritardo-installata-tu: 260ms;   /* il tuo riquadro segue il microfono */
+  --passo-pacchi: 150ms;   /* i file che arrivano nella cartella, uno dopo l'altro */
+  --ritardo-cartella-file: 160ms;   /* il file arriva nella cartella dei download */
+  --cartella-file-da: -14px;   /* e scende da sopra */
+  --pacco-da: -18px;
+  /* · il primo avvio nella finestra (i tempi della home, scena.js) */
+  --avvio-premi: 700ms;   /* «Scarica la voce» si preme */
+  --avvio-scarica: 860ms;   /* comincia lo scarico */
+  --avvio-scarico-durata: 2400ms;   /* 0 → 53 MB */
+  --avvio-prepara: 3400ms;   /* «Preparo la voce…» */
+  --avvio-pronta: 4300ms;   /* «Pronta» */
+  --ritardo-avvio: 420ms;   /* il racconto parte dopo che la finestra si è aperta */
+  /* · la composizione della pagina */
+  --palco-terminale-altezza: 88px;   /* il terminale del primo schermo: quattro righe, al posto della bolla */
+  --palco-terminale-sotto: 16px;
+  --oggetto-fermo-sopra: 96px;   /* l'oggetto accanto al testo resta fermo sotto la barra (72) con 24 px d'aria */
+  --passo-distanza: 44px;   /* fra un passo e l'altro, nello stesso tratto */
+  --passo-distanza-telefono: 32px;
+  --passo-nome-grandezza: calc(24px * var(--grandezza-titoli-scrittura));
+  --passo-nome-interlinea: calc(30px * var(--interlinea-titoli-scrittura));
+  --passo-nome-grandezza-telefono: calc(20px * var(--grandezza-titoli-scrittura));
+  --passo-nome-interlinea-telefono: calc(26px * var(--interlinea-titoli-scrittura));
+  --esito-riuscito-bordo: var(--voce);   /* «Riuscito se…»: la riga piena; «Se no…» tratteggiata */
+  --installa-colonne: minmax(0, 500px) minmax(0, 1fr);   /* la cartella dove comincia la riga, i comandi accanto */
+  --apri-colonne: minmax(0, 1fr) minmax(0, 540px);   /* il testo, poi la finestra */
+  --apri-finestra-larghezza: 540px;
+  --apri-stato-altezza: 62px;   /* la riga di stato tiene due righe: le frasi lunghe non spostano la finestra */
+  --frase-finestra-bordo: rgba(91, 1, 35, 0.2);   /* una frase della finestra, sulla scena chiara */
+  --microfono-scena-larghezza: 560px;
+  --riprendi-colonne: minmax(0, 1fr) minmax(0, 1fr);
+  --riprendi-larghezza: 1040px;
+  --ripresa-linea-inizio: 11px;   /* la linea che unisce i segni dei passi: al centro del segno (24 px) */
+  --ripresa-segno-scala: 1.15;
+}

@@ -1,0 +1,70 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
+/* Componente · La scelta del sistema
+   Quattro bottoni d'opzione disegnati come i pulsanti-voce della home (la riga di R51, attraverso filo.css): la distribuzione che si
+   sceglie è piena, le altre hanno il bordo. Da quella scelta dipende che cosa la pagina mostra: ogni elemento con data-sistema="…"
+   si vede soltanto se fra i suoi valori c'è il sistema scelto («deb rpm» vale per due). Lo fanno i fogli di stile, con :has: senza
+   JavaScript la scelta funziona; dove :has non c'è si vede tutto, ogni comando con il suo sistema. Sotto, una riga dice che cosa vuol
+   dire la scelta (le versioni, il tipo di file).
+   Prima pagina che lo usa: website/installa/. Potrà servire all'aiuto (comandi per sistema). Ogni valore viene da ../token.css. */
+
+.sistemi { min-width: 0; margin: var(--sistemi-margine); padding: 0; border: 0; animation: sale12 var(--durata-comandi) var(--entra) var(--ritardo-sistemi) backwards; }
+.sistemi-scelte { display: flex; flex-wrap: wrap; gap: var(--sistemi-distanza); }
+/* il bottone vero resta (tastiera, lettori di schermo, senza script) ma non si vede: si vede la sua etichetta */
+.sistema-voce { position: absolute; width: var(--misura-1); height: var(--misura-1); margin: 0; opacity: 0; pointer-events: none; }
+.sistema-voce + label {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--sistemi-voce-altezza);
+  padding-block: 0; padding-inline: var(--sistemi-voce-spazio-inline);
+  border-radius: var(--raggio-pillola);
+  border: var(--filetto-comando) solid var(--bordo-voce);
+  background: var(--velo-comando);
+  color: var(--testo);
+  font-size: var(--corpo-7);
+  font-weight: var(--peso-medio);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color var(--durata-voce-sfondo) var(--curva-dolce), border-color var(--durata-voce-bordo) var(--curva-dolce), color var(--durata-voce-sfondo) var(--curva-dolce);
+}
+.sistema-voce + label:hover { border-color: var(--rosa); background: var(--velo-sopra); }
+.sistema-voce:checked + label { background: var(--testo); border-color: var(--testo); color: var(--bordeaux); font-weight: var(--peso-forte); }
+.sistema-voce:focus-visible + label { outline: var(--filetto-forte) solid var(--voce); outline-offset: var(--fuoco-scarto); }
+.sistema-voce + label:active { transform: scale(var(--voce-premuto-scala)); }
+.sistemi-dice {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: var(--spazio-14);
+  row-gap: var(--spazio-5);
+  margin: var(--sistemi-dice-margine);
+  font-size: var(--corpo-6);
+  line-height: var(--interlinea-6);
+  color: var(--testo-spiegazione);
+}
+/* «Non uso Linux»: alla fine della riga che dice la scelta, la risposta di chi non ha Linux (porta a «non ancora») */
+.sistemi-dice .non-linux { min-height: 0; font-size: var(--corpo-6); }
+
+/* ciò che dipende dal sistema: si vede soltanto quello del sistema scelto (senza :has, tutto) */
+@supports selector(:has(*)) {
+  .sistemi-pagina:has(#sistema-deb:checked) [data-sistema]:not([data-sistema~="deb"]),
+  .sistemi-pagina:has(#sistema-rpm:checked) [data-sistema]:not([data-sistema~="rpm"]),
+  .sistemi-pagina:has(#sistema-arch:checked) [data-sistema]:not([data-sistema~="arch"]),
+  .sistemi-pagina:has(#sistema-tar:checked) [data-sistema]:not([data-sistema~="tar"]) { display: none !important; }
+}
+
+/* sul tablet la colonna del primo schermo è stretta (430 px a 1024): i quattro sistemi più stretti, perché stiano in una riga */
+@media (min-width: 761px) and (max-width: 1180px) {
+  .sistemi-scelte { gap: var(--spazio-5); }
+  .sistema-voce + label { padding-inline: var(--spazio-10); }
+}
+@media (max-width: 760px) {
+  .sistemi { margin: var(--sistemi-margine-telefono); }
+  /* nel primo schermo di una pagina interna (pagina.css) la scelta sta subito prima dei comandi, con loro */
+  .scena-pagina .sistemi { order: 5; }
+  .sistemi-scelte { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spazio-5); }
+  .sistema-voce + label { justify-content: center; min-height: var(--misura-22); padding-inline: var(--spazio-8); font-size: var(--corpo-7); text-align: center; }
+  .sistemi-dice { font-size: var(--corpo-5); line-height: var(--interlinea-5); }
+}
+@media (max-width: 760px) and (max-height: 759px) {
+  .scena-pagina .sistemi { order: 2; }
+}

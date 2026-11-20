@@ -38,20 +38,35 @@ const statiStato = [
   {nome: 'stato-copia-non-riuscita', url: ST, dopo: async p => { await p.evaluate(() => { navigator.clipboard.writeText = () => Promise.reject(new Error('no')); }); await allInoltra(p); if (!await p.isVisible('.copia-messaggio')) return false; await p.click('.copia-messaggio'); await p.waitForTimeout(700); }, inVista: '.copia-messaggio, .inoltra-esito .copia-errore'},
 ];
 
+// «installa» (incarico 3c): la pagina a riposo e gli stati che ne cambiano l'impaginazione. La distribuzione scelta (cambia i comandi di ogni tratto:
+// l'archivio ne ha di più), la frase della finestra premuta (la finestra cambia riga di stato e torna «Scarica la voce»), il menu aperto, la copia di un
+// comando e dell'indirizzo (gli appunti si simulano, come per «non ancora» e «stato»).
+const IN = 'it/installa/';
+const aTratto = sel => async p => { await p.evaluate(s => document.querySelector(s).scrollIntoView({block: 'start'}), sel); await p.waitForTimeout(900); };
+const statiInstalla = [
+  {nome: 'installa', url: IN},
+  {nome: 'installa-menu', url: IN, dopo: async p => { if (!await p.isVisible('.pulsante-menu')) return false; await p.click('.pulsante-menu'); await p.waitForTimeout(500); }, inVista: '#menu.aperto'},
+  {nome: 'installa-archivio', url: IN, dopo: async p => { await p.click('label[for=sistema-tar]'); await p.waitForTimeout(600); }, inVista: 'label[for=sistema-tar]'},
+  {nome: 'installa-frase', url: IN, dopo: async p => { await aTratto('#apri')(p); await p.click('.frase-bottone[data-stato=curl]'); await p.waitForTimeout(600); }, inVista: '.frase-bottone[data-stato=curl]'},
+  {nome: 'installa-copia-fatta', url: IN, dopo: async p => { await p.evaluate(() => { navigator.clipboard.writeText = () => Promise.resolve(); }); await aTratto('#passo-controlla')(p); if (!await p.isVisible('#passo-controlla .copia')) return false; await p.click('#passo-controlla .copia'); await p.waitForTimeout(400); }, inVista: '#passo-controlla .comando.copiato'},
+  {nome: 'installa-copia-non-riuscita', url: IN, dopo: async p => { await p.evaluate(() => { navigator.clipboard.writeText = () => Promise.reject(new Error('no')); }); await aTratto('#passo-controlla')(p); if (!await p.isVisible('#passo-controlla .copia')) return false; await p.click('#passo-controlla .copia'); await p.waitForTimeout(400); }, inVista: '#passo-controlla .comando-errore'},
+  {nome: 'installa-indirizzo-copiato', url: IN, dopo: async p => { await p.evaluate(() => { navigator.clipboard.writeText = () => Promise.resolve(); }); await aTratto('#inoltra')(p); if (!await p.isVisible('.copia-indirizzo')) return false; await p.click('.copia-indirizzo'); await p.waitForTimeout(700); }, inVista: '.copia-indirizzo, .copia-fatto'},
+];
+
 export default {
   // il sito costruito e servito in locale (docs/releasing.md, «Website»)
   base: process.env.ANTEPRIMA || 'http://127.0.0.1:8765/kalliope/',
   // il sito costruito ha una cartella per lingua: la home in italiano sta in it/, l'indirizzo principale è la scelta della lingua
-  pagine: [{nome: 'home', url: 'it/'}, {nome: 'scelta-lingua', url: ''}, {nome: 'catalogo', url: 'design-system/catalogo/'}, ...statiNonAncora, ...statiStato],
+  pagine: [{nome: 'home', url: 'it/'}, {nome: 'scelta-lingua', url: ''}, {nome: 'catalogo', url: 'design-system/catalogo/'}, ...statiNonAncora, ...statiStato, ...statiInstalla],
   sorgenti: {
     token: 'token.css',
     css: ['base.css', 'componenti/*.css', 'catalogo/*.css'],
     // le pagine che devono avere la riga text-scale: la home non l'ha (SISTEMA.md, «Da decidere»), il catalogo sì
     html: ['catalogo/index.html'],
     // gli stili dentro le pagine (<style>)
-    pagine: ['../website/index.html', '../website/lingue.html', 'catalogo/index.html', '../website/non-ancora/index.html', '../website/stato/index.html'],
+    pagine: ['../website/index.html', '../website/lingue.html', 'catalogo/index.html', '../website/non-ancora/index.html', '../website/stato/index.html', '../website/installa/index.html'],
     // gli script che mettono variabili sugli elementi (setProperty('--x', …)): la scena e il catalogo
-    script: ['marchio/*.js', '../website/scena.js', '../website/testi.js', '../website/lingua.js', '../website/componenti.js', 'catalogo/*.js', '../website/cornice.js', '../website/non-ancora/non-ancora.js', '../website/stato/stato.js'],
+    script: ['marchio/*.js', '../website/scena.js', '../website/testi.js', '../website/lingua.js', '../website/componenti.js', 'catalogo/*.js', '../website/cornice.js', '../website/non-ancora/non-ancora.js', '../website/stato/stato.js', '../website/installa/installa.js'],
     perElemento: [],
     // le larghezze a cui la pagina cambia impaginazione (@media, @container): non si leggono da una variabile
     soglie: ['349px', '350px', '360px', '374px', '420px', '440px', '500px', '699px', '759px', '760px', '761px', '790px', '791px', '799px', '802px', '819px', '840px', '959px', '999px', '1000px', '1010px', '1180px', '1181px', '1209px'],

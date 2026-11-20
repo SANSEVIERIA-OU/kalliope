@@ -1,0 +1,305 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
+/* Componente · L'installazione che si vede riuscire
+   La pagina «installa» sulla cornice delle pagine interne (pagina.css): ogni passo ha accanto ciò che il computer di chi installa
+   risponde, fino a «Pronta» e al microfono «Kalliope» nella riunione.
+   · Il primo schermo: al posto della bolla, il terminale. Il comando si scrive, il computer lavora, e nella barra del microfono
+     dell'app il posto tratteggiato di «Kalliope» (lo stesso di «non ancora») si riempie; il tuo riquadro smette di essere
+     tratteggiato e prende il nome «Tu · microfono «Kalliope»». Senza script, e con «riduci movimento», la scena è già così.
+   · Il file (notte): il testo dei due passi, accanto la cartella dei download e il terminale che confronta l'impronta, fermi
+     mentre si legge.
+   · Installa (stanza): i comandi, e accanto la cartella dove il pacchetto mette i suoi file, con la password o senza.
+   · Apri (chiara): la finestra di Kalliope con le sue frasi vere; le frasi che possono comparire al posto di «Pronta» si
+     provano: premuta una, la finestra la mostra, e sotto c'è che cosa fare.
+   · Il microfono (chiusura): il comando, la riga «kalliope», la barra del microfono con «Kalliope» scelto; poi da dove riprendere
+     e l'indirizzo per chi installa al posto tuo.
+   Ogni passo dice come sai che è riuscito («Riuscito se…») e che cosa fare se no. Ogni valore viene da ../token.css. */
+
+/* ---------- il primo schermo ---------- */
+.palco-installa .terminale-palco { margin-bottom: var(--palco-terminale-sotto); animation: sale12 var(--durata-posto-bolla) var(--entra) var(--ritardo-posto-bolla) backwards; }
+.terminale-palco .t-corpo { min-height: var(--palco-terminale-altezza); }
+/* i comandi del primo schermo: il pulsante della distribuzione scelta (uno dei quattro) e il collegamento, nell'ordine della cornice */
+#comandi-apertura > .scarica { animation-delay: var(--ritardo-comandi-1); }
+#comandi-apertura > .collegamento { animation-delay: var(--ritardo-comandi-2); }
+.chiamata-installa .nome-prima { display: none; }
+.chiamata-installa .riquadro.tu .barre i { background: var(--voce); }
+.chiamata-installa .riquadro.tu .bordo { opacity: var(--opacita-provato-bordo); }
+.chiamata-installa .riquadro.tu::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: var(--filetto-medio) dashed var(--tratteggio);
+  opacity: 0;
+  pointer-events: none;
+}
+.chiamata-installa .scelta { border: var(--filetto-sottile) solid transparent; }
+.chiamata-installa .scelta-kalliope { background: var(--testo); color: var(--bordeaux); font-weight: var(--peso-forte); }
+/* prima del comando (con lo script): il tuo posto è tratteggiato e senza voce, «Kalliope» un posto vuoto nella barra */
+.js .chiamata-installa:not(.installata) .nome-prima { display: inline; }
+.js .chiamata-installa:not(.installata) .nome-dopo { display: none; }
+.js .chiamata-installa:not(.installata) .riquadro.tu { background: transparent; }
+.js .chiamata-installa:not(.installata) .riquadro.tu::before { opacity: 1; }
+.js .chiamata-installa:not(.installata) .riquadro.tu .bordo { opacity: 0; }
+.js .chiamata-installa:not(.installata) .riquadro.tu .barre i { background: var(--barre-spente); transform: scaleY(var(--barre-ferme-scala-y)); }
+.js .chiamata-installa:not(.installata) .scelta-kalliope { background: transparent; color: var(--testo-spento); font-weight: var(--peso-medio); border: var(--filetto-sottile) dashed var(--tratteggio); }
+.js .chiamata-installa:not(.installata) .scelta-computer { background: var(--testo); color: var(--bordeaux); font-weight: var(--peso-forte); }
+/* il momento: il posto si riempie (anello della voce), il tuo riquadro si accende */
+.js .chiamata-installa .riquadro.tu { transition: background-color var(--durata-installata) var(--curva-dolce); }
+.js .chiamata-installa .riquadro.tu::before { transition: opacity var(--durata-installata) var(--curva-dolce); }
+.js .chiamata-installa .riquadro.tu .bordo { transition: opacity var(--durata-installata) var(--curva-dolce) var(--ritardo-installata-tu); }
+.js .chiamata-installa .riquadro.tu .barre i { transition: background-color var(--durata-installata) var(--curva-dolce) var(--ritardo-installata-tu), transform var(--durata-installata) var(--entra) var(--ritardo-installata-tu); }
+.js .chiamata-installa.installata .scelta-kalliope { animation: provato-acceso var(--durata-urto) var(--curva-uscita) 1; }
+.js .chiamata-installa.installata .nome-dopo { animation: appare var(--durata-scelta-nome) var(--curva-dolce) var(--ritardo-installata-tu) backwards; }
+
+/* ---------- il passo: com'è andato ---------- */
+.passo { margin-top: var(--passo-distanza); }
+.passo-nome {
+  margin: 0;
+  font-size: var(--passo-nome-grandezza);
+  line-height: var(--passo-nome-interlinea);
+  font-weight: var(--peso-titolo);
+}
+.passo p, .passo-installa .installa-comandi > p, .tratto-testo .requisito-voce {
+  margin: var(--spazi-10);
+  max-width: var(--tratto-testo-larghezza-massima);
+  font-size: var(--corpo-8);
+  line-height: var(--interlinea-8);
+  color: var(--testo-spiegazione);
+  text-wrap: pretty;
+}
+.esito-passo { margin-top: var(--spazio-14); display: grid; gap: var(--spazio-8); max-width: var(--tratto-testo-larghezza-massima); }
+.esito-passo p {
+  margin: 0 !important;
+  padding-inline-start: var(--spazio-12);
+  border-inline-start: var(--filetto-medio) solid var(--esito-riuscito-bordo);
+  font-size: var(--corpo-6) !important;
+  line-height: var(--interlinea-6) !important;
+  color: var(--testo-spiegazione);
+}
+.esito-passo .se-no { border-inline-start-style: dashed; border-inline-start-color: var(--tratteggio); }
+.esito-passo strong { color: var(--testo); font-weight: var(--peso-forte); }
+.esito-passo a, .nota-passo a, .passo a, .togli a { color: inherit; font-weight: var(--peso-forte); text-underline-offset: var(--spazio-3); text-decoration-color: var(--sottolineatura); }
+.nota-passo { margin: var(--spazi-10); max-width: var(--tratto-testo-larghezza-massima); font-size: var(--corpo-5) !important; line-height: var(--interlinea-5) !important; color: var(--testo-nota) !important; }
+.passo-file-nome { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--spazio-8); }
+.file { font-family: var(--font-terminale); font-size: var(--comando-grandezza); color: var(--testo); overflow-wrap: anywhere; direction: ltr; unicode-bidi: isolate; }
+.file-peso { font-size: var(--corpo-5); color: var(--testo-didascalia); }
+
+/* ---------- B · il file: il testo, e accanto la cartella e il terminale, fermi mentre si legge ---------- */
+.passo-file { align-items: start; }
+.passo-file .tratto-testo { grid-row: 1 / span 2; }
+.passo-file > .coppia-oggetto { align-self: start; position: sticky; top: var(--oggetto-fermo-sopra); grid-row: 1; }
+.controllo-scena { display: grid; gap: var(--spazio-10); }
+.cartella {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spazio-8);
+  padding: var(--spazio-8) var(--spazio-10);
+  border-radius: var(--raggio-7);
+  border: var(--filetto-sottile) solid var(--bordo-pannello);
+  background: var(--velo-computer);
+}
+.cartella-nome { font-size: var(--corpo-4); font-weight: var(--peso-forte); color: var(--testo-didascalia); }
+.cartella-file {
+  padding-block: var(--spazio-3); padding-inline: var(--spazio-10);
+  border-radius: var(--raggio-pillola);
+  background: var(--velo-scelto);
+  border: var(--filetto-sottile) solid var(--bordo-voce);
+  font-family: var(--font-terminale);
+  font-size: var(--corpo-3);
+  color: var(--testo);
+  overflow-wrap: anywhere;
+  direction: ltr;
+}
+.cartella-file b { font-family: var(--font-testo); font-weight: var(--peso-medio); color: var(--testo-didascalia); margin-inline-start: var(--spazio-5); }
+.js .controllo-scena:not(.visto) .cartella-file { opacity: 0; transform: translateY(var(--cartella-file-da)); }
+.js .controllo-scena.visto .cartella-file { transition: opacity var(--durata-pacco) var(--curva-dolce) var(--ritardo-cartella-file), transform var(--durata-pacco) var(--entra) var(--ritardo-cartella-file); }
+
+/* ---------- C · installa: i comandi, e la cartella che riceve i file ---------- */
+.installa-scena { display: grid; grid-template-columns: var(--installa-colonne); column-gap: var(--spazio-30); align-items: start; margin-top: var(--spazio-24); }
+.installa-comandi > p:first-child, .installa-comandi > p[data-sistema] { margin-top: 0; margin-bottom: var(--spazio-14); }
+/* la cartella che riceve i file sta dalla parte dove comincia la riga, i comandi accanto: la scena cambia lato rispetto al file */
+.disco { grid-column: 1; grid-row: 1; }
+.installa-comandi { grid-column: 2; grid-row: 1; }
+.disco { display: grid; gap: var(--spazio-10); position: sticky; top: var(--oggetto-fermo-sopra); }
+.cartelle {
+  position: relative;
+  padding: var(--spazio-14) var(--spazio-16) var(--spazio-16);
+  border-radius: var(--raggio-10);
+  border: var(--filetto-sottile) solid var(--bordo-pannello);
+  background: var(--velo-computer);
+}
+.cartelle-nome { display: block; font-family: var(--font-terminale); font-size: var(--corpo-9); font-weight: var(--peso-forte); color: var(--testo); direction: ltr; text-align: start; }
+.cartelle-file { list-style: none; margin: var(--spazio-10) 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--spazio-5); direction: ltr; }
+.pacco {
+  padding-block: var(--spazio-3); padding-inline: var(--spazio-10);
+  border-radius: var(--raggio-pillola);
+  background: var(--velo-scelto);
+  border: var(--filetto-sottile) solid var(--bordo-voce);
+  font-family: var(--font-terminale);
+  font-size: var(--corpo-3);
+  color: var(--testo);
+}
+.pacco-menu { background: var(--testo); color: var(--bordeaux); border-color: var(--testo); font-weight: var(--peso-forte); }
+.cartelle-chiave { display: inline-block; margin-top: var(--spazio-10); font-size: var(--corpo-4); color: var(--testo-didascalia); }
+.js .disco:not(.visto) .pacco { opacity: 0; transform: translateY(var(--pacco-da)); }
+.js .disco.visto .pacco { transition: opacity var(--durata-pacco) var(--curva-dolce) var(--ritardo-pacco, 0ms), transform var(--durata-pacco) var(--curva-pacco) var(--ritardo-pacco, 0ms); }
+.togli { margin-top: var(--spazio-16); max-width: var(--tratto-testo-larghezza-massima); font-size: var(--corpo-6); line-height: var(--interlinea-6); color: var(--testo-spiegazione); }
+.togli summary { cursor: pointer; font-weight: var(--peso-forte); color: var(--testo); }
+.togli-comandi { margin: var(--spazio-8) 0; padding-inline-start: var(--spazio-16); }
+.togli p { margin: var(--spazio-8) 0 0; }
+
+/* ---------- D · apri: la finestra, e le frasi che si provano ---------- */
+.passo-apri { display: grid; grid-template-columns: var(--apri-colonne); column-gap: var(--spazio-30); align-items: start; }
+/* il testo dove comincia la riga, la finestra accanto, ferma mentre si leggono le frasi */
+.passo-apri > .tratto-testo { grid-column: 1; grid-row: 1; }
+.passo-apri > .apri-finestra { grid-column: 2; grid-row: 1; position: sticky; top: var(--oggetto-fermo-sopra); }
+.passo-apri .luce-tratto { inset-inline-start: 70%; top: 40%; }
+.apri-finestra { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--spazio-12); justify-items: start; min-width: 0; }
+.apri-finestra .finestra.avvio { width: var(--apri-finestra-larghezza); max-width: 100%; font-size: var(--corpo-6); }
+.apri-finestra .f-stato { min-height: var(--apri-stato-altezza); }
+.apri-finestra .nota-ricostruzione { margin: 0; }
+.passo-apri .esito-passo p { color: var(--testo-spiegazione-chiara); border-inline-start-color: var(--magenta); }
+.passo-apri .esito-passo .se-no { border-inline-start-color: var(--bordo-rivedi-chiaro); }
+.passo-apri .esito-passo strong { color: var(--bordeaux); }
+.frasi-finestra { margin-top: var(--spazio-21); max-width: var(--tratto-testo-larghezza-massima); }
+.frasi-nome { margin: 0; font-size: var(--passo-nome-grandezza); line-height: var(--passo-nome-interlinea); font-weight: var(--peso-titolo); color: var(--bordeaux); }
+.frasi-elenco { list-style: none; margin: var(--spazio-12) 0 0; padding: 0; display: grid; gap: var(--spazio-10); }
+.frasi-finestra .frase-detta, .frase-bottone {
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: var(--spazio-7) var(--spazio-10);
+  border-radius: var(--raggio-4);
+  border: var(--filetto-sottile) solid var(--frase-finestra-bordo);
+  background: var(--app-campo);
+  color: var(--app-testo);
+  font-family: var(--font-app);
+  font-size: var(--corpo-4);
+  line-height: var(--interlinea-4);
+  text-align: start;
+}
+.frase-bottone { cursor: pointer; transition: border-color var(--durata-voce-bordo) var(--curva-dolce), background-color var(--durata-voce-sfondo) var(--curva-dolce); }
+.frase-bottone:hover { border-color: var(--bordeaux); }
+.frase-bottone[aria-pressed="true"] { background: var(--app-stato-allarme); border-color: var(--bordeaux); }
+.frasi-finestra .frase-rimedio { max-width: none; margin: var(--spazio-5) 0 0; font-size: var(--corpo-5); line-height: var(--interlinea-5); color: var(--testo-spiegazione-chiara); }
+.frase-rimedio a, .passo-apri .nota-passo a { color: var(--bordeaux); font-weight: var(--peso-forte); text-decoration-color: var(--bordo-rivedi-chiaro); }
+.passo-apri .nota-passo { color: var(--testo-nota-chiara) !important; }
+
+/* ---------- E · il microfono: la chiusura ---------- */
+.microfono-scena { display: grid; justify-items: center; gap: var(--spazio-10); width: var(--microfono-scena-larghezza); max-width: 100%; margin-top: var(--spazio-16); text-align: start; }
+.comando-centro { width: 100%; margin: 0; }
+.terminale-microfono { width: 100%; }
+.microfono-app { display: flex; justify-content: center; width: 100%; margin-top: var(--spazio-5); }
+.microfono-app .microfono { font-size: var(--corpo-6); }
+.microfono-app .scelta { border: var(--filetto-sottile) solid transparent; }
+.microfono-app .scelta-kalliope { background: var(--testo); color: var(--bordeaux); font-weight: var(--peso-forte); }
+.js .microfono-scena:not(.visto) .scelta-kalliope, .js .microfono-scena.in-attesa .scelta-kalliope { background: transparent; color: var(--testo-spento); font-weight: var(--peso-medio); border: var(--filetto-sottile) dashed var(--tratteggio); }
+.js .microfono-scena.trovato .scelta-kalliope { animation: provato-acceso var(--durata-urto) var(--curva-uscita) 1; }
+.esito-centro { margin-inline: auto; margin-top: var(--spazio-16); text-align: start; }
+.chiusura .segnala-come { margin-top: var(--spazio-12); font-size: var(--corpo-5); line-height: var(--interlinea-5); color: var(--testo-nota); }
+
+/* da dove riprendere, e l'indirizzo per chi installa al posto tuo: due cose diverse, una accanto all'altra */
+.riprendi {
+  display: grid;
+  grid-template-columns: var(--riprendi-colonne);
+  column-gap: var(--spazio-30);
+  row-gap: var(--spazio-26);
+  width: 100%;
+  max-width: var(--riprendi-larghezza);
+  margin-top: var(--spazio-30);
+  padding-top: var(--spazio-26);
+  border-top: var(--filetto-sottile) solid var(--bordo-sezione);
+  text-align: start;
+}
+.riprendi h3 { margin: 0; font-size: var(--passo-nome-grandezza); line-height: var(--passo-nome-interlinea); font-weight: var(--peso-titolo); }
+.riprendi p { margin: var(--spazio-7) 0 0; font-size: var(--corpo-6); line-height: var(--interlinea-6); color: var(--testo-spiegazione); }
+.ripresa-tappe { position: relative; list-style: none; margin: var(--spazio-16) 0 0; padding: 0; display: grid; gap: var(--spazio-3); }
+.ripresa-tappe::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: var(--ripresa-linea-inizio);
+  top: var(--spazio-16);
+  bottom: var(--spazio-16);
+  border-inline-start: var(--filetto-medio) solid var(--bordo-tappa-forse);
+}
+.ripresa-tappe a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--spazio-12);
+  min-height: var(--misura-19);
+  padding-block: var(--spazio-3); padding-inline: 0 var(--spazio-8);
+  border-radius: var(--raggio-pillola);
+  color: var(--testo);
+  font-size: var(--corpo-6);
+  font-weight: var(--peso-medio);
+  text-decoration: none;
+}
+.ripresa-segno {
+  flex: none;
+  width: var(--misura-11);
+  height: var(--misura-11);
+  border-radius: 50%;
+  background: var(--riquadro-scuro);
+  border: var(--filetto-medio) solid var(--bordo-tappa-raggiunta);
+  transition: background-color var(--durata-nodo-sfondo) var(--curva-dolce), transform var(--durata-nodo-trasforma) var(--entra);
+}
+.ripresa-tappe a:hover .ripresa-segno, .ripresa-tappe a:focus-visible .ripresa-segno { background: var(--voce); transform: scale(var(--ripresa-segno-scala)); }
+.ripresa-tappe a:hover span:last-child { text-decoration: underline; text-decoration-color: var(--sottolineatura); text-underline-offset: var(--spazio-3); }
+.inoltra-installa .bolla-indirizzo { margin-top: var(--spazio-16); }
+.inoltra-installa .inoltra-indirizzo { margin: 0; font-size: var(--corpo-7); color: var(--magenta); }
+.inoltra-installa .copia-indirizzo { margin-top: var(--spazio-5); }
+.inoltra-installa .copia-esito { min-height: var(--interlinea-6); margin: var(--spazio-8) 0 0; font-size: var(--corpo-5); line-height: var(--interlinea-6); color: var(--testo-spiegazione); }
+.pillola.chiara { background: var(--testo); color: var(--bordeaux); }
+.pillola.chiara:hover { background: var(--bianco); }
+
+/* ---------- larghezze ---------- */
+/* sugli schermi bassi del computer (sotto i 700 px: 1366×640) il titolo prende la misura del tablet, come quello di quattro righe di «stato»
+   (pagina.css): con la scelta della distribuzione, sotto il comando resta lo stato «Oggi:» */
+@media (min-width: 761px) and (max-height: 699px) {
+  .scena-pagina:has(.palco-installa) h1 { font-size: var(--h1-grandezza-medio); line-height: var(--h1-interlinea-medio); }
+  .scena-pagina:has(.palco-installa) .presentazione { margin-top: var(--spazio-14); }
+  .scena-pagina:has(.palco-installa) .sistemi { margin-top: var(--spazio-16); }
+  .scena-pagina:has(.palco-installa) #comandi-apertura { margin-top: var(--spazio-17); }
+}
+@media (min-width: 761px) and (max-width: 1180px) {
+  .passo-file > .coppia-oggetto { position: static; grid-row: auto; }
+  .passo-file .tratto-testo { grid-row: auto; }
+  .installa-scena { grid-template-columns: minmax(0, 1fr); row-gap: var(--spazio-26); }
+  .disco { position: static; max-width: var(--misura-31); grid-column: auto; grid-row: 2; }
+  .installa-comandi { grid-column: auto; grid-row: 1; }
+  .passo-apri { grid-template-columns: minmax(0, 1fr); row-gap: var(--spazio-26); }
+  .passo-apri > .tratto-testo, .passo-apri > .apri-finestra { grid-column: auto; grid-row: auto; position: static; }
+}
+@media (max-width: 760px) {
+  .passo-file > .coppia-oggetto { position: static; }
+  .passo { margin-top: var(--passo-distanza-telefono); }
+  .passo-nome, .frasi-nome, .riprendi h3 { font-size: var(--passo-nome-grandezza-telefono); line-height: var(--passo-nome-interlinea-telefono); }
+  .passo p, .passo-installa .installa-comandi > p, .tratto-testo .requisito-voce { font-size: var(--corpo-7); line-height: var(--interlinea-7); }
+  .installa-scena { display: flex; flex-direction: column; gap: var(--spazio-21); margin-top: var(--spazio-16); }
+  .disco { position: static; order: 2; }
+  .passo-apri { display: flex; flex-direction: column; gap: var(--spazio-21); }
+  .passo-apri { gap: var(--spazio-16); }
+  .passo-apri > .apri-finestra { position: static; width: 100%; }
+  .apri-finestra .finestra.avvio { width: 100%; font-size: var(--corpo-4); }
+  .passo-file { gap: var(--spazio-16); }
+  /* al telefono la finestra sta dopo «Riuscito se…», prima delle frasi che possono comparire al posto di «Pronta»: chi preme una frase la
+     trova sopra di sé, appena letta */
+  .passo-apri > .tratto-testo { display: contents; }
+  .passo-apri h2 { order: 1; }
+  .passo-apri > .tratto-testo > p { order: 2; margin: 0; }
+  .passo-apri .esito-passo { order: 3; margin-top: 0; }
+  .passo-apri > .apri-finestra { order: 4; }
+  .passo-apri .frasi-finestra { order: 5; margin-top: 0; }
+  /* il file: la cartella e il terminale subito dopo ciò che serve, prima dei due passi (si vede che cosa si sta per fare) */
+  .passo-file > .tratto-testo { display: contents; }
+  .passo-file h2 { order: 1; }
+  .passo-file > .tratto-testo > p { order: 2; margin: 0; }
+  .passo-file > .coppia-oggetto { order: 3; }
+  .passo-file .passo { order: 4; margin-top: var(--spazio-5); }
+  .passo-apri .tratto-testo { order: -1; }
+  .riprendi { grid-template-columns: minmax(0, 1fr); margin-top: var(--spazio-26); }
+  .microfono-app .microfono { font-size: var(--microfono-grandezza-telefono); }
+}

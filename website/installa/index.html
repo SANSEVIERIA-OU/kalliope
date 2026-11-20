@@ -1,309 +1,496 @@
-<!DOCTYPE html>
+<!doctype html>
 <!-- SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 -->
 <html lang="it">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light dark">
-<meta name="text-scale" content="scale">
-<title>Installa Kalliope su Linux: cinque passi con comandi da copiare</title>
-<meta name="description" content="Come installare Kalliope su Debian, Ubuntu, Fedora, Arch e altre distribuzioni Linux: comandi da copiare, controllo dopo ogni passo e cosa fare se non va.">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="it_IT">
-<meta property="og:site_name" content="Kalliope">
-<meta property="og:title" content="Installa Kalliope su Linux: cinque passi con comandi da copiare">
-<meta property="og:description" content="Come installare Kalliope su Debian, Ubuntu, Fedora, Arch e altre distribuzioni Linux: comandi da copiare, controllo dopo ogni passo e cosa fare se non va.">
-<meta property="og:url" content="https://sansevieria-ou.github.io/kalliope/installa/">
-<meta property="og:image" content="https://sansevieria-ou.github.io/kalliope/immagini/kalliope-finestra.png">
-<meta property="og:image:alt" content="La finestra di Kalliope: un campo dove scrivere, i pulsanti Parla e Ferma, la scelta della voce.">
+<title data-t="in.titolo">Installa Kalliope su Linux: i comandi da copiare, e come sai che ogni passo è riuscito</title>
+<meta name="description" content="Come installare Kalliope su Debian, Ubuntu, Fedora, Arch e le altre distribuzioni Linux: il file giusto, il controllo dell'impronta, il comando da copiare, la voce, e il microfono «Kalliope» nell'app della riunione." data-t-content="in.descrizione">
+<meta name="theme-color" content="#420017">
 <link rel="canonical" href="https://sansevieria-ou.github.io/kalliope/installa/">
-<link rel="stylesheet" href="../stile/token.css">
-<link rel="stylesheet" href="../stile/base.css">
-<link rel="stylesheet" href="../stile/componenti.css">
-<script src="../script/kalliope.js" defer></script>
+<link rel="preload" href="../design-system/caratteri/lexend/Lexend-wght-latino.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../design-system/token.css">
+<link rel="stylesheet" href="../design-system/base.css">
+<link rel="stylesheet" href="../design-system/componenti/barra.css">
+<link rel="stylesheet" href="../design-system/componenti/marchio.css">
+<link rel="stylesheet" href="../design-system/componenti/pulsanti.css">
+<link rel="stylesheet" href="../design-system/componenti/apertura.css">
+<link rel="stylesheet" href="../design-system/componenti/bolla.css">
+<link rel="stylesheet" href="../design-system/componenti/riunione.css">
+<link rel="stylesheet" href="../design-system/componenti/riunione-app.css">
+<link rel="stylesheet" href="../design-system/componenti/finestra.css">
+<link rel="stylesheet" href="../design-system/componenti/strada.css">
+<link rel="stylesheet" href="../design-system/componenti/tratti.css">
+<link rel="stylesheet" href="../design-system/componenti/piede.css">
+<link rel="stylesheet" href="../design-system/componenti/arrivo.css">
+<link rel="stylesheet" href="../design-system/componenti/pagina.css">
+<link rel="stylesheet" href="../design-system/componenti/riunione-ferma.css">
+<link rel="stylesheet" href="../design-system/componenti/riunione-provata.css">
+<link rel="stylesheet" href="../design-system/componenti/inoltra.css">
+<link rel="stylesheet" href="../design-system/componenti/lingue.css">
+<link rel="stylesheet" href="../design-system/componenti/comando.css">
+<link rel="stylesheet" href="../design-system/componenti/terminale.css">
+<link rel="stylesheet" href="../design-system/componenti/scelta-sistema.css">
+<link rel="stylesheet" href="../design-system/componenti/installazione.css">
+<script src="../lingua.js" defer></script>
+<script src="../design-system/marchio/marchio.js" defer></script>
+<script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.__pagina||!window.Cornice)document.documentElement.classList.remove('js')},4000)</script>
+<script src="../testi.js" defer></script>
+<script src="../componenti.js" defer></script>
+<script src="../cornice.js" defer></script>
+<script src="installa.js" defer></script>
 </head>
-<body data-prerelease="{{kalliope.prerelease}}" data-versione="{{kalliope.version}}">
-<a class="salta" href="#contenuto">Vai al contenuto</a>
-<header class="sito-intestazione">
-<div class="pagina">
-<a class="marca" href="../" aria-label="Kalliope, pagina iniziale"><svg data-marchio="libero" width="40" height="40"></svg><span>Kalliope</span></a>
-<nav class="nav" aria-label="Principale">
-<ul>
-<li><a href="../ascolta/">Ascolta</a></li><li><a href="../stato/">Stato e limiti</a></li><li><a href="../installa/" aria-current="page">Installa</a></li><li><a href="../riunione/">In riunione</a></li><li><a href="../aiuto/">Aiuto</a></li>
-</ul>
-</nav>
-</div>
-</header>
-<main id="contenuto" tabindex="-1">
-<div class="pagina testo">
-<p class="percorso">Passo <b>3</b> di 5: <b>Installa</b></p>
-<h1>Installa Kalliope su Linux</h1>
-<p>Cinque passi. Ogni passo dice come capire se è riuscito. Serve un computer Linux a 64 bit con PipeWire e curl, e internet una volta per la voce (53 MB).</p>
-<div class="avviso avviso--attenzione" role="note">
-<p><strong>Versione <span class="solo-prova">di prova </span>{{kalliope.version}}.</strong> Non è ancora provata in una riunione vera. <a href="../stato/">Stato e limiti</a></p>
-</div>
-<div class="avviso avviso--attenzione avviso--riga" data-banner-sistema hidden
- data-testo-windows="Questa guida non funziona su Windows: Kalliope oggi esiste solo per Linux."
- data-testo-macos="Questa guida non funziona su macOS: Kalliope oggi esiste solo per Linux."
- data-testo-telefono="Questa guida serve a un computer Linux.">
-<div class="avviso__corpo"><span class="avviso__titolo" data-banner-testo></span> <a href="../non-ancora/">Perché, e novità</a></div>
-<button type="button" class="btn btn--piccolo" data-banner-chiudi>Chiudi</button>
-</div>
-<nav class="indice-pagina" aria-label="In questa pagina">
-<details class="dettagli"><summary>In questa pagina</summary><div class="dettagli__corpo">
-<ul>
-<li><a href="#passo-1">Passo 1: scarica</a></li>
-<li><a href="#passo-2">Passo 2: controlla il file</a></li>
-<li><a href="#passo-3">Passo 3: installa</a></li>
-<li><a href="#passo-4">Passo 4: apri e scarica la voce</a></li>
-<li><a href="#passo-5">Passo 5: controlla il microfono</a></li>
-<li><a href="#ripresa">Se ti sei fermato qui</a></li>
-</ul>
-</div></details>
-</nav>
-<details class="dettagli"><summary>Requisiti in dettaglio</summary><div class="dettagli__corpo">
-<ul>
-<li>Un computer Linux a 64 bit (x86_64): Debian 13 o Ubuntu 24.04 e successive; Fedora attuale; Arch; oppure un'altra distribuzione con l'archivio.</li>
-<li>La libreria di sistema glibc 2.39 o più recente. Per controllare, scrivi in un terminale <code>ldd --version | head -n 1</code>: il numero in fondo alla riga deve essere almeno 2.39.</li>
-<li>PipeWire con pipewire-pulse. È l'impostazione normale dei desktop recenti di Fedora, Ubuntu, Debian, Arch e openSUSE.</li>
-<li>Il programma curl. I pacchetti lo richiedono; con l'archivio può mancare.</li>
-<li>Internet, una volta sola, per scaricare la voce (53 MB).</li>
-</ul>
-</div></details>
+<body>
+<a class="salta" href="#contenuto" data-t="salta">Vai al contenuto</a>
+<p class="solo-lettori" id="annuncio" role="status" aria-live="polite"></p>
 
-<ol class="passi">
-<li class="passo" id="passo-1">
-<h2>Scegli e scarica il file</h2>
-<p>Scegli la tua distribuzione. Con JavaScript la scelta tiene in vista solo i suoi comandi; senza, restano tutte le sezioni.</p>
-<nav class="scelta-sistema" aria-label="Scegli la distribuzione">
-<ul class="scelta-sistema__indice">
-<li><a href="#debian-ubuntu">Debian e Ubuntu</a></li>
-<li><a href="#fedora">Fedora</a></li>
-<li><a href="#arch">Arch</a></li>
-<li><a href="#altre">Altre distribuzioni</a></li>
-<li><button type="button" class="btn btn--piccolo" data-sistema-tutte hidden>Mostra tutte</button></li>
-</ul>
-</nav>
-<section class="sistema" id="debian-ubuntu" data-sistema="debian-ubuntu" aria-labelledby="t-debian">
-<h3 id="t-debian">Debian 13, Ubuntu 24.04 e successive</h3>
-<p><a class="btn btn--primario" href="{{kalliope.deb.url}}">Scarica il file .deb<span class="btn__nota">{{kalliope.deb.size}}</span></a></p>
-<dl><dt>Nome del file</dt><dd><code>{{kalliope.deb.name}}</code></dd>
-<dt>Cosa si guadagna</dt><dd>Si installa e si toglie con il gestore dei pacchetti.</dd>
-<dt>Cosa costa</dt><dd>Chiede la password di amministratore.</dd></dl>
-</section>
-<section class="sistema" id="fedora" data-sistema="fedora" aria-labelledby="t-fedora">
-<h3 id="t-fedora">Fedora</h3>
-<p><a class="btn btn--primario" href="{{kalliope.rpm.url}}">Scarica il file .rpm<span class="btn__nota">{{kalliope.rpm.size}}</span></a></p>
-<dl><dt>Nome del file</dt><dd><code>{{kalliope.rpm.name}}</code></dd>
-<dt>Cosa si guadagna</dt><dd>Si installa e si toglie con dnf.</dd>
-<dt>Cosa costa</dt><dd>Chiede la password di amministratore. Il pacchetto non è firmato: dnf mostra un avviso e lo accetta dopo l'avviso. È previsto per questa versione.</dd></dl>
-</section>
-<section class="sistema" id="arch" data-sistema="arch" aria-labelledby="t-arch">
-<h3 id="t-arch">Arch Linux</h3>
-<p><a class="btn btn--primario" href="{{kalliope.aur.url}}">Scarica la ricetta (PKGBUILD)</a></p>
-<dl><dt>Nome del file</dt><dd><code>kalliope-bin.PKGBUILD</code></dd>
-<dt>Cosa si guadagna</dt><dd>Non compila nulla: la ricetta scarica l'archivio della versione e lo impacchetta. Si toglie con pacman.</dd>
-<dt>Cosa costa</dt><dd>Non è ancora pubblicata su AUR: si usa il file della versione. Il passo 3 la scarica da solo: questo pulsante serve a leggerla prima.</dd></dl>
-</section>
-<section class="sistema" id="altre" data-sistema="altre" aria-labelledby="t-altre">
-<h3 id="t-altre">Altre distribuzioni (archivio)</h3>
-<p><a class="btn btn--primario" href="{{kalliope.tar.url}}">Scarica l'archivio .tar.gz<span class="btn__nota">{{kalliope.tar.size}}</span></a></p>
-<dl><dt>Nome del file</dt><dd><code>{{kalliope.tar.name}}</code></dd>
-<dt>Cosa si guadagna</dt><dd>Non chiede la password di amministratore: copia i file in <code>~/.local</code>, solo per te.</dd>
-<dt>Cosa costa</dt><dd>Per aggiornare scarichi la versione nuova e lanci di nuovo <code>./install</code>.</dd></dl>
-</section>
-<div class="controllo"><span class="controllo__titolo">Come sai che è andata bene</span>Nella cartella dei download c'è un file con il nome indicato sopra, della dimensione indicata sul pulsante.</div>
-<div class="se-non-va"><span class="se-non-va__titolo">Se non è andata</span>Scarica di nuovo. Se il browser dice che il file non esiste, la versione può essere cambiata: riparti da questa pagina.</div>
-</li>
+<!-- La scelta della distribuzione (nel primo schermo) sono quattro bottoni d'opzione: i fogli di stile mostrano in ogni tratto soltanto
+     i comandi della distribuzione scelta (scelta-sistema.css, con :has); senza :has si vedono tutte. Funziona senza JavaScript. -->
+<div class="mondo sistemi-pagina">
+  <div class="luce" aria-hidden="true"></div>
 
-<li class="passo" id="passo-2">
-<h2>Controlla il file (consigliato)</h2>
-<p>Serve a essere sicuri che il file sia quello pubblicato. Apri un terminale nella cartella dove hai scaricato il file (di solito Scaricati o Downloads).</p>
-<div data-sistema="debian-ubuntu">
-<h3>Debian e Ubuntu</h3>
-<p>Scrivi questo comando:</p>
-<div class="comando">
-<pre><code>sha256sum {{kalliope.deb.name}}</code></pre>
-<div class="comando__barra"><button type="button" class="btn btn--piccolo" data-copia data-testo-ok="Copiato." data-testo-no="Non riesco a copiare da solo: seleziona il testo e copialo.">Copia il comando</button><span class="comando__stato" role="status"></span></div>
-</div>
-<p>Il numero che compare deve essere uguale a questo:</p>
-<div class="comando">
-<pre><code>{{kalliope.sha256.deb}}</code></pre>
-<div class="comando__barra"><button type="button" class="btn btn--piccolo" data-copia data-testo-ok="Copiato." data-testo-no="Non riesco a copiare da solo: seleziona il testo e copialo.">Copia il numero</button><span class="comando__stato" role="status"></span></div>
-</div>
-</div>
-<div data-sistema="fedora">
-<h3>Fedora</h3>
-<p>Scrivi questo comando:</p>
-<div class="comando">
-<pre><code>sha256sum {{kalliope.rpm.name}}</code></pre>
-<div class="comando__barra"><button type="button" class="btn btn--piccolo" data-copia data-testo-ok="Copiato." data-testo-no="Non riesco a copiare da solo: seleziona il testo e copialo.">Copia il comando</button><span class="comando__stato" role="status"></span></div>
-</div>
-<p>Il numero che compare deve essere uguale a questo:</p>
-<div class="comando">
-<pre><code>{{kalliope.sha256.rpm}}</code></pre>
-<div class="comando__barra"><button type="button" class="btn btn--piccolo" data-copia data-testo-ok="Copiato." data-testo-no="Non riesco a copiare da solo: seleziona il testo e copialo.">Copia il numero</button><span class="comando__stato" role="status"></span></div>
-</div>
-</div>
-<div data-sistema="arch">
-<h3>Arch Linux</h3>
-<p>Il controllo lo fa la ricetta. Non c'è nulla da scrivere.</p>
-</div>
-<div data-sistema="altre">
-<h3>Altre distribuzioni</h3>
-<p>Scrivi questo comando:</p>
-<div class="comando">
-<pre><code>sha256sum {{kalliope.tar.name}}</code></pre>
-<div class="comando__barra"><button type="button" class="btn btn--piccolo" data-copia data-testo-ok="Copiato." data-testo-no="Non riesco a copiare da solo: seleziona il testo e copialo.">Copia il comando</button><span class="comando__stato" role="status"></span></div>
-</div>
-<p>Il numero che compare deve essere uguale a questo:</p>
-<div class="comando">
-<pre><code>{{kalliope.sha256.tar}}</code></pre>
-<div class="comando__barra"><button type="button" class="btn btn--piccolo" data-copia data-testo-ok="Copiato." data-testo-no="Non riesco a copiare da solo: seleziona il testo e copialo.">Copia il numero</button><span class="comando__stato" role="status"></span></div>
-</div>
-</div>
-<p>Per controllare tutti i file insieme c'è <a href="{{kalliope.sums.url}}">SHA256SUMS</a>.</p>
-<p class="solo-rc1">Questa versione non ha l'attestazione di provenienza (<code>gh attestation verify</code>): fu pubblicata quando il repository era ancora privato. Le versioni successive l'avranno.</p>
-<div class="controllo"><span class="controllo__titolo">Come sai che è andata bene</span>Il numero scritto dal terminale è identico a quello della pagina, cifra per cifra.</div>
-<div class="se-non-va"><span class="se-non-va__titolo">Se non è andata</span>Non installare il file. Scaricalo di nuovo e rifai il controllo. Se il numero resta diverso, <a href="../aiuto/#segnala">segnalalo</a>.</div>
-</li>
+  <header class="barra">
+    <a class="marchio" href="../" aria-label="Kalliope, pagina iniziale" data-t-aria-label="barra.marchio">
+      <svg data-marchio="barra"></svg>
+      <span data-t="marchio.nome" data-t-nota="The name of the program. Keep it, or write it in the script of the language.">Kalliope</span>
+    </a>
+    <nav class="menu" id="menu" aria-label="Sezioni del sito" data-t-aria-label="barra.sezioni">
+      <ul>
+        <li><a href="../ascolta/" data-t="menu.ascolta">Ascolta</a></li>
+        <li><a href="../stato/" data-t="menu.stato">Stato e limiti</a></li>
+        <li><a href="../installa/" aria-current="page" data-t="menu.installa">Installa</a></li>
+        <li><a href="../riunione/" data-t="menu.riunione">In riunione</a></li>
+        <li><a href="../aiuto/" data-t="menu.aiuto">Aiuto</a></li>
+        <li class="lingua-voce">
+          <details class="lingua-scelta">
+            <summary data-t-title="barra.lingua" title="Cambia lingua"><span data-lingua-corrente data-t-no="il nome della lingua lo mette la costruzione, dai dati CLDR">Italiano</span><span class="lingua-segno" aria-hidden="true"></span></summary>
+            <ul class="lingue-elenco" data-lingue="elenco">
+              <li><a data-lingua data-t-no="il nome della lingua lo mette la costruzione, dai dati CLDR" href="#">Italiano</a></li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </nav>
+    <a class="pulsante-menu" href="#piede-sezioni" aria-controls="menu" data-t="barra.menu">Menu</a>
+  </header>
 
-<li class="passo" id="passo-3">
-<h2>Installa</h2>
-<p>Scrivi i comandi nella stessa cartella. Per i pacchetti il computer chiede la password di amministratore.</p>
-<div data-sistema="debian-ubuntu">
-<h3>Debian e Ubuntu</h3>
-<div class="comando">
-<pre><code>sudo apt install ./{{kalliope.deb.name}}</code></pre>
-<div class="comando__barra"><button type="button" class="btn btn--piccolo" data-copia data-testo-ok="Copiato." data-testo-no="Non riesco a copiare da solo: seleziona il testo e copialo.">Copia il comando</button><span class="comando__stato" role="status"></span></div>
-</div>
-</div>
-<div data-sistema="fedora">
-<h3>Fedora</h3>
-<div class="comando">
-<pre><code>sudo dnf install ./{{kalliope.rpm.name}}</code></pre>
-<div class="comando__barra"><button type="button" class="btn btn--piccolo" data-copia data-testo-ok="Copiato." data-testo-no="Non riesco a copiare da solo: seleziona il testo e copialo.">Copia il comando</button><span class="comando__stato" role="status"></span></div>
-</div>
-</div>
-<div data-sistema="arch">
-<h3>Arch Linux</h3>
-<p>Crea una cartella vuota, scarica la ricetta e costruisci il pacchetto:</p>
-<div class="comando">
-<pre><code>mkdir kalliope &amp;&amp; cd kalliope</code></pre>
-<div class="comando__barra"><button type="button" class="btn btn--piccolo" data-copia data-testo-ok="Copiato." data-testo-no="Non riesco a copiare da solo: seleziona il testo e copialo.">Copia il comando</button><span class="comando__stato" role="status"></span></div>
-</div>
-<div class="comando">
-<pre><code>curl -L -o PKGBUILD {{kalliope.aur.url}}</code></pre>
-<div class="comando__barra"><button type="button" class="btn btn--piccolo" data-copia data-testo-ok="Copiato." data-testo-no="Non riesco a copiare da solo: seleziona il testo e copialo.">Copia il comando</button><span class="comando__stato" role="status"></span></div>
-</div>
-<div class="comando">
-<pre><code>makepkg -si</code></pre>
-<div class="comando__barra"><button type="button" class="btn btn--piccolo" data-copia data-testo-ok="Copiato." data-testo-no="Non riesco a copiare da solo: seleziona il testo e copialo.">Copia il comando</button><span class="comando__stato" role="status"></span></div>
-</div>
-</div>
-<div data-sistema="altre">
-<h3>Altre distribuzioni</h3>
-<div class="comando">
-<pre><code>tar -xzf {{kalliope.tar.name}}</code></pre>
-<div class="comando__barra"><button type="button" class="btn btn--piccolo" data-copia data-testo-ok="Copiato." data-testo-no="Non riesco a copiare da solo: seleziona il testo e copialo.">Copia il comando</button><span class="comando__stato" role="status"></span></div>
-</div>
-<div class="comando">
-<pre><code>cd {{kalliope.tar.dir}}</code></pre>
-<div class="comando__barra"><button type="button" class="btn btn--piccolo" data-copia data-testo-ok="Copiato." data-testo-no="Non riesco a copiare da solo: seleziona il testo e copialo.">Copia il comando</button><span class="comando__stato" role="status"></span></div>
-</div>
-<div class="comando">
-<pre><code>./install</code></pre>
-<div class="comando__barra"><button type="button" class="btn btn--piccolo" data-copia data-testo-ok="Copiato." data-testo-no="Non riesco a copiare da solo: seleziona il testo e copialo.">Copia il comando</button><span class="comando__stato" role="status"></span></div>
-</div>
-</div>
-<div class="controllo"><span class="controllo__titolo">Come sai che è andata bene</span>Scrivi <code>kalliope --version</code>: il terminale risponde con il numero della versione. Se usi l'archivio e il comando non si trova, scrivi <code>~/.local/bin/kalliope --version</code>: <code>~/.local/bin</code> può non essere nel percorso dei comandi.</div>
-<div class="se-non-va"><span class="se-non-va__titolo">Se non è andata</span>Se il gestore dei pacchetti dice che mancano dipendenze, controlla la distribuzione: serve glibc 2.39 o più recente (vedi «Requisiti in dettaglio»). Se il problema resta, <a href="../aiuto/#segnala">segnalalo</a> con il messaggio intero.</div>
-<details class="dettagli"><summary>Per togliere Kalliope</summary><div class="dettagli__corpo">
-<p>Togli il programma:</p>
-<ul>
-<li>Debian e Ubuntu: <code>sudo apt remove kalliope</code></li>
-<li>Fedora: <code>sudo dnf remove kalliope</code></li>
-<li>Arch: <code>sudo pacman -R kalliope-bin</code></li>
-<li>Archivio: dalla cartella dell'archivio, <code>./install --remove</code></li>
-</ul>
-<p>Le tue preferenze e la voce scaricata restano: stanno nella tua cartella personale, che i gestori dei pacchetti e <code>./install --remove</code> non toccano mai. Per toglierle, cancella le due cartelle:</p>
-<ul>
-<li><code>~/.config/kalliope</code> (le preferenze)</li>
-<li><code>~/.local/share/kalliope</code> (la voce, 53 MB)</li>
-</ul>
-</div></details>
-</li>
+  <main id="contenuto">
+    <div class="scena scena-pagina">
+      <section class="apertura" aria-labelledby="titolo">
+        <h1 id="titolo" data-t="in.apertura.titolo" data-t-nota="Three lines, one under the other: install Kalliope; every step can be seen to succeed.">
+          <span class="riga">Installa Kalliope.</span>
+          <span class="riga">Ogni passo</span>
+          <span class="riga">si vede riuscire.</span>
+        </h1>
+        <p class="presentazione" data-t="in.apertura.presentazione">Per un computer Linux a 64 bit con PipeWire, anche se lo installi per un'altra persona. Scegli la distribuzione: i comandi diventano i suoi.</p>
 
-<li class="passo" id="passo-4">
-<h2>Apri Kalliope e scarica la voce</h2>
-<p>Apri Kalliope dal menu delle applicazioni. La prima volta la finestra dice che deve scaricare la voce. Premi «Scarica la voce» e aspetta: sono 53 MB, una volta sola.</p>
-<p>Poi, a ogni avvio, la finestra dice «Preparo la voce…» per un po'. Il campo di testo si accende quando ha finito.</p>
-<div class="controllo"><span class="controllo__titolo">Come sai che è andata bene</span>La riga in alto dice: «Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono.»</div>
-<div class="se-non-va"><span class="se-non-va__titolo">Se non è andata</span>Cerca la frase che vedi nella <a href="../aiuto/">pagina Aiuto</a>: ogni frase della finestra ha la sua spiegazione.</div>
-</li>
+        <fieldset class="sistemi" id="distribuzione">
+          <legend class="solo-lettori" data-t="in.sistemi.legenda">La tua distribuzione</legend>
+          <div class="sistemi-scelte">
+            <input class="sistema-voce" type="radio" name="sistema" id="sistema-deb" value="deb" checked>
+            <label for="sistema-deb" data-t="in.sistemi.deb">Debian e Ubuntu</label>
+            <input class="sistema-voce" type="radio" name="sistema" id="sistema-rpm" value="rpm">
+            <label for="sistema-rpm" data-t-no="nome di una distribuzione">Fedora</label>
+            <input class="sistema-voce" type="radio" name="sistema" id="sistema-arch" value="arch">
+            <label for="sistema-arch" data-t-no="nome di una distribuzione">Arch</label>
+            <input class="sistema-voce" type="radio" name="sistema" id="sistema-tar" value="tar">
+            <label for="sistema-tar" data-t="in.sistemi.tar">Altre</label>
+          </div>
+          <p class="sistemi-dice">
+            <span data-sistema="deb" data-t="in.sistemi.deb.dice">Debian 13, Ubuntu 24.04 o successive: il pacchetto&nbsp;.deb</span>
+            <span data-sistema="rpm" data-t="in.sistemi.rpm.dice">Fedora attuale: il pacchetto&nbsp;.rpm</span>
+            <span data-sistema="arch" data-t="in.sistemi.arch.dice">Arch Linux: la ricetta&nbsp;PKGBUILD, che non compila nulla</span>
+            <span data-sistema="tar" data-t="in.sistemi.tar.dice">Le altre distribuzioni: l'archivio, che si installa senza&nbsp;password</span>
+            <a class="collegamento non-linux" href="../non-ancora/" data-t="in.sistemi.non-linux">Non uso Linux<span class="freccia" aria-hidden="true"></span></a>
+          </p>
+        </fieldset>
 
-<li class="passo" id="passo-5">
-<h2>Controlla che «Kalliope» sia un microfono</h2>
-<p>Kalliope crea un microfono che esiste solo dentro il computer. Per vederlo, scrivi:</p>
-<div class="comando">
-<pre><code>pactl list short sources</code></pre>
-<div class="comando__barra"><button type="button" class="btn btn--piccolo" data-copia data-testo-ok="Copiato." data-testo-no="Non riesco a copiare da solo: seleziona il testo e copialo.">Copia il comando</button><span class="comando__stato" role="status"></span></div>
-</div>
-<p>Se il comando <code>pactl</code> non c'è, salta questo passo: lo vedrai comunque nella <a href="../riunione/">pagina successiva</a>.</p>
-<div class="controllo"><span class="controllo__titolo">Come sai che è andata bene</span>Fra le righe ce n'è una che contiene la parola <code>kalliope</code>. Kalliope deve essere aperto.</div>
-<div class="se-non-va"><span class="se-non-va__titolo">Se non è andata</span>Se non c'è, la finestra lo dice: «La voce è pronta, ma …». Vai alla <a href="../aiuto/#f-senza-microfono">spiegazione di questa frase</a>.</div>
-</li>
-</ol>
+        <div class="comandi" id="comandi-apertura">
+          <a class="pillola azione scarica" data-sistema="deb" href="{{kalliope.deb.url}}" data-t="in.scarica.deb" data-t-nota="The download button. Tag 1 is the size of the file, written by the build.">Scarica il .deb <span class="peso" data-t-no="dimensione">{{kalliope.deb.size}}</span></a>
+          <a class="pillola azione scarica" data-sistema="rpm" href="{{kalliope.rpm.url}}" data-t="in.scarica.rpm">Scarica il .rpm <span class="peso" data-t-no="dimensione">{{kalliope.rpm.size}}</span></a>
+          <a class="pillola azione scarica" data-sistema="arch" href="#installa" data-t="in.scarica.arch">Vai ai comandi per Arch</a>
+          <a class="pillola azione scarica" data-sistema="tar" href="{{kalliope.tar.url}}" data-t="in.scarica.tar">Scarica l'archivio <span class="peso" data-t-no="dimensione">{{kalliope.tar.size}}</span></a>
+          <a class="collegamento" href="#inoltra" data-t="in.apertura.inoltra">Lo installa un'altra persona<span class="freccia" aria-hidden="true"></span></a>
+        </div>
+        <p class="stato" data-release="prova" data-t="apertura.stato"><strong>Oggi:</strong> versione di prova {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Non ancora provata in una riunione vera con Zoom, Teams o Meet.</p>
+        <p class="stato" data-release="stabile" data-t="apertura.stato-stabile"><strong>Oggi:</strong> versione {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Non ancora provata in una riunione vera con Zoom, Teams o Meet.</p>
+        <p class="didascalia" data-t="in.apertura.didascalia" data-t-nota="The caption of the scene: the first word says what it is; the part in tag 1 says what it shows. On narrow screens it goes to a second line.">Ricostruzione<span class="d-lunga"> · dal comando nel terminale al microfono «Kalliope» nell'app della riunione, a tempi accelerati</span></p>
+      </section>
 
-<h2 id="ripresa">Se ti sei fermato qui</h2>
-<p>Il sito non salva nulla: questa lista dice da dove riprendere.</p>
-<ul>
-<li>Non trovi il file: riparti dal <a href="#passo-1">passo 1</a>.</li>
-<li>Il numero non coincide: <a href="#passo-2">passo 2</a>.</li>
-<li><code>kalliope --version</code> non risponde: <a href="#passo-3">passo 3</a>.</li>
-<li>La finestra non dice «Pronta»: <a href="#passo-4">passo 4</a> e la <a href="../aiuto/">pagina Aiuto</a>.</li>
-<li>«Kalliope» non è tra i microfoni: <a href="#passo-5">passo 5</a> e la <a href="../aiuto/#f-senza-microfono">pagina Aiuto</a>.</li>
-<li>Tutto a posto: vai a <a href="../riunione/">Usalo in una riunione</a>.</li>
-</ul>
-<div class="condividi">
-<label for="indirizzo-installa">Indirizzo di questa pagina, da inoltrare a chi installerà</label>
-<div class="condividi__riga">
-<input id="indirizzo-installa" type="text" readonly value="https://sansevieria-ou.github.io/kalliope/installa/">
-<button type="button" class="btn" data-copia data-testo-ok="Copiato." data-testo-no="Non riesco a copiare da solo: seleziona l'indirizzo e copialo.">Copia l'indirizzo</button>
-<span class="comando__stato" role="status"></span>
+      <section class="palco palco-installa" aria-label="Ricostruzione: un comando nel terminale installa Kalliope, e nell'app della riunione compare il microfono «Kalliope»" data-t-aria-label="in.palco.etichetta">
+        <div class="terminale terminale-palco" aria-hidden="true">
+          <div class="t-barra"><span class="t-titolo" data-t="in.terminale.titolo">Terminale</span></div>
+          <div class="t-corpo">
+            <p class="t-riga t-comando" data-sistema="deb"><span class="t-prompt" data-t-no="il segno del terminale">$</span> <span class="t-scrive" data-t-no="un comando">sudo apt install ./{{kalliope.deb.name}}</span></p>
+            <p class="t-riga t-comando" data-sistema="rpm"><span class="t-prompt" data-t-no="il segno del terminale">$</span> <span class="t-scrive" data-t-no="un comando">sudo dnf install ./{{kalliope.rpm.name}}</span></p>
+            <p class="t-riga t-comando" data-sistema="arch"><span class="t-prompt" data-t-no="il segno del terminale">$</span> <span class="t-scrive" data-t-no="un comando">makepkg -si</span></p>
+            <p class="t-riga t-comando" data-sistema="tar"><span class="t-prompt" data-t-no="il segno del terminale">$</span> <span class="t-scrive" data-t-no="un comando">./install</span></p>
+            <p class="t-riga t-tuo"><i></i></p>
+            <p class="t-riga t-tuo t-corto"><i></i></p>
+            <p class="t-riga t-pronto"><span class="t-prompt" data-t-no="il segno del terminale">$</span> <span class="t-cursore"></span></p>
+          </div>
+        </div>
+
+        <div class="chiamata chiamata-ferma chiamata-installa" aria-hidden="true">
+          <div class="griglia">
+            <div class="riquadro tu">
+              <span class="bordo"></span>
+              <span class="barre"><i></i><i></i><i></i><i></i><i></i></span>
+              <span class="nome nome-prima" data-t="na.tu-senza-voce" data-t-nota="The name on the tile of the person who writes, who has no voice here. The part in tag 1 is the long one and is dropped on narrow screens.">Tu<span class="nome-lungo"> · senza voce</span></span>
+              <span class="nome nome-dopo" data-t="st.tu-voce" data-t-nota="The name on the tile of the person who writes. The part in tag 1 is the long one and is dropped on narrow screens.">Tu<span class="nome-lungo"> · microfono «Kalliope»</span></span>
+            </div>
+            <div class="riquadro persona paola">
+              <svg class="figura" width="200" height="120" viewBox="0 0 200 120" preserveAspectRatio="xMidYMax meet">
+                <path class="capelli-dietro" d="M75 56C74 30 126 30 125 56L128 98C118 104 82 104 72 98Z"/>
+                <path class="corpo" d="M50 120C50 95 73 84 100 84C127 84 150 95 150 120Z"/>
+                <rect class="collo" x="92" y="72" width="16" height="17" rx="6"/>
+                <g class="cenno"><g class="testa">
+                  <ellipse class="pelle" cx="100" cy="55" rx="21" ry="24"/>
+                  <path class="capelli" d="M78 52C78 30 122 28 122 52C118 41 104 36 92 39C86 41 81 45 78 52Z"/>
+                  <g class="occhi"><ellipse cx="92" cy="58" rx="2.4" ry="3.1"/><ellipse cx="108" cy="58" rx="2.4" ry="3.1"/></g><path class="bocca" d="M95.5 67.5Q100 70.5 104.5 67.5"/>
+                </g></g>
+              </svg>
+              <span class="lume"></span><span class="nome" data-t="persona.paola">Paola</span>
+            </div>
+            <div class="riquadro persona luca">
+              <svg class="figura" width="200" height="120" viewBox="0 0 200 120" preserveAspectRatio="xMidYMax meet">
+                <path class="corpo" d="M48 120C48 94 72 83 100 83C128 83 152 94 152 120Z"/>
+                <rect class="collo" x="92" y="71" width="16" height="17" rx="6"/>
+                <g class="cenno"><g class="testa">
+                  <ellipse class="pelle" cx="100" cy="54" rx="21" ry="24"/>
+                  <path class="capelli" d="M79 51C77 31 123 29 121 51C117 42 108 39 100 39C91 39 83 42 79 51Z"/>
+                  <path class="cuffia" d="M76 58C74 26 126 26 124 58" fill="none"/>
+                  <rect class="cuffia-pad" x="71" y="50" width="8" height="15" rx="4"/><rect class="cuffia-pad" x="121" y="50" width="8" height="15" rx="4"/>
+                  <path class="cuffia" d="M75 63C76 74 84 78 92 78" fill="none"/>
+                  <g class="occhi"><ellipse cx="92" cy="57" rx="2.4" ry="3.1"/><ellipse cx="108" cy="57" rx="2.4" ry="3.1"/></g><path class="bocca" d="M95.5 66.5Q100 69.5 104.5 66.5"/>
+                </g></g>
+              </svg>
+              <span class="lume"></span><span class="nome" data-t="persona.luca">Luca</span>
+            </div>
+            <div class="riquadro persona anna">
+              <svg class="figura" width="200" height="120" viewBox="0 0 200 120" preserveAspectRatio="xMidYMax meet">
+                <path class="corpo" d="M52 120C52 96 74 85 100 85C126 85 148 96 148 120Z"/>
+                <rect class="collo" x="92" y="73" width="16" height="17" rx="6"/>
+                <g class="cenno"><g class="testa">
+                  <circle class="capelli" cx="100" cy="27" r="10"/>
+                  <ellipse class="pelle" cx="100" cy="56" rx="20" ry="23"/>
+                  <path class="capelli" d="M80 54C78 33 122 31 120 54C114 44 106 40 100 40C93 40 85 44 80 54Z"/>
+                  <g class="occhi"><ellipse cx="92" cy="59" rx="2.3" ry="3"/><ellipse cx="108" cy="59" rx="2.3" ry="3"/></g><path class="bocca" d="M96 68Q100 70.8 104 68"/>
+                </g></g>
+              </svg>
+              <span class="lume"></span><span class="nome" data-t="persona.anna">Anna</span>
+            </div>
+          </div>
+          <div class="app-comandi">
+            <div class="microfono">
+              <span class="microfono-titolo" data-t="app.microfono"><span class="app-icona"></span>Microfono</span>
+              <ul class="microfono-scelte">
+                <li class="scelta scelta-computer" data-t="app.scelta.computer">Microfono del computer</li>
+                <li class="scelta scelta-kalliope" data-t="app.scelta.kalliope" data-t-nota="The name of the virtual microphone, as a meeting app lists it: keep it as it is.">Kalliope</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ===================== B · il file giusto, e uguale (notte) ===================== -->
+    <section class="tratto scena-notte coppia passo-file" id="scarica" aria-labelledby="scarica-titolo">
+      <span class="luce-tratto" aria-hidden="true"></span>
+      <div class="tratto-testo">
+        <h2 id="scarica-titolo" class="entra entra-titolo" data-t="in.file.titolo">Il file giusto, e uguale a quello pubblicato.</h2>
+        <p data-t="in.file.testo">Serve un computer Linux a 64 bit (x86_64), con Wayland o X11 e con PipeWire e pipewire-pulse: è così nei desktop recenti di Fedora, Ubuntu, Debian, Arch e openSUSE.</p>
+        <!-- cambia con la prossima versione: la voce sarà dentro il pacchetto, niente curl e niente internet al primo avvio -->
+        <p class="requisito-voce" data-cambia="voce-nel-pacchetto" data-t="in.file.voce">Al primo avvio Kalliope scarica la voce: 53 MB, una volta sola, con il programma curl. I pacchetti lo chiedono da soli; con l'archivio controlla di averlo.</p>
+
+        <div class="passo" id="passo-scarica">
+          <h3 class="passo-nome" data-t="in.file.scarica.titolo">Scarica</h3>
+          <p class="passo-file-nome" data-sistema="deb"><a class="file" href="{{kalliope.deb.url}}" data-t-no="nome di un file">{{kalliope.deb.name}}</a> <span class="file-peso" data-t-no="dimensione">{{kalliope.deb.size}}</span></p>
+          <p class="passo-file-nome" data-sistema="rpm"><a class="file" href="{{kalliope.rpm.url}}" data-t-no="nome di un file">{{kalliope.rpm.name}}</a> <span class="file-peso" data-t-no="dimensione">{{kalliope.rpm.size}}</span></p>
+          <p class="passo-file-nome" data-sistema="arch" data-t="in.file.scarica.arch">Per Arch non c'è un file da scaricare qui: la ricetta lo fa da sola, al passo «Installa». Puoi <a href="{{kalliope.aur.url}}">leggerla prima</a>.</p>
+          <p class="passo-file-nome" data-sistema="tar"><a class="file" href="{{kalliope.tar.url}}" data-t-no="nome di un file">{{kalliope.tar.name}}</a> <span class="file-peso" data-t-no="dimensione">{{kalliope.tar.size}}</span></p>
+          <div class="esito-passo">
+            <p class="riuscito" data-t="in.file.scarica.riuscito"><strong>Riuscito</strong> se nella cartella dei download c'è un file con questo nome e questa dimensione.</p>
+            <p class="se-no" data-t="in.file.scarica.se-no"><strong>Se no</strong>, scaricalo di nuovo. Se il browser dice che il file non esiste, è uscita una versione nuova: ricarica questa pagina.</p>
+          </div>
+        </div>
+
+        <div class="passo" id="passo-controlla">
+          <h3 class="passo-nome" data-t="in.file.controlla.titolo">Controlla che sia uguale</h3>
+          <p data-t="in.file.controlla.testo">Consigliato: così sai che è il file pubblicato. Apri un terminale nella cartella dei download (di solito Scaricati) e scrivi:</p>
+          <div class="comando" data-sistema="deb"><pre><code data-t-no="un comando">sha256sum {{kalliope.deb.name}}</code></pre></div>
+          <div class="comando" data-sistema="rpm"><pre><code data-t-no="un comando">sha256sum {{kalliope.rpm.name}}</code></pre></div>
+          <div class="comando" data-sistema="tar"><pre><code data-t-no="un comando">sha256sum {{kalliope.tar.name}}</code></pre></div>
+          <p data-sistema="deb rpm tar" data-t="in.file.controlla.numero">Il numero che compare deve essere questo:</p>
+          <div class="comando comando-numero" data-sistema="deb"><pre><code data-t-no="un'impronta">{{kalliope.sha256.deb}}</code></pre></div>
+          <div class="comando comando-numero" data-sistema="rpm"><pre><code data-t-no="un'impronta">{{kalliope.sha256.rpm}}</code></pre></div>
+          <div class="comando comando-numero" data-sistema="tar"><pre><code data-t-no="un'impronta">{{kalliope.sha256.tar}}</code></pre></div>
+          <p data-sistema="arch" data-t="in.file.controlla.arch">Per Arch il controllo lo fa la ricetta: prima di installare, makepkg confronta l'impronta dell'archivio che scarica. Non c'è niente da scrivere.</p>
+          <div class="esito-passo" data-sistema="deb rpm tar">
+            <p class="riuscito" data-t="in.file.controlla.riuscito"><strong>Riuscito</strong> se i due numeri sono identici, cifra per cifra.</p>
+            <p class="se-no" data-t="in.file.controlla.se-no"><strong>Se no</strong>, non installare il file: scaricalo di nuovo e rifai il controllo. Se il numero resta diverso, <a href="https://github.com/SANSEVIERIA-OU/kalliope/issues">segnalalo</a>.</p>
+          </div>
+          <p class="nota-passo" data-t="in.file.controlla.tutti">Per controllare tutti i file insieme c'è il file <a href="{{kalliope.sums.url}}">SHA256SUMS</a>: scaricalo nella stessa cartella e scrivi <code data-t-no="un comando">sha256sum -c SHA256SUMS --ignore-missing</code>.</p>
+          <!-- cambia con la prossima versione: dalla prossima l'attestazione c'è (docs/releasing.md) -->
+          <p class="nota-passo" data-cambia="voce-nel-pacchetto" data-t="in.file.controlla.attestazione">Questa versione non ha l'attestazione di provenienza (<code data-t-no="un comando">gh attestation verify</code>): è stata pubblicata quando il codice non era ancora pubblico. Le prossime l'avranno; il resto per chi controlla è in <a href="../stato/#controllare">Stato e limiti</a>.</p>
+        </div>
+      </div>
+
+      <div class="coppia-oggetto controllo-scena entra" aria-hidden="true">
+        <div class="cartella">
+          <span class="cartella-nome" data-t="in.cartella.nome">Scaricati</span>
+          <span class="cartella-file" data-sistema="deb" data-t-no="nome di un file">{{kalliope.deb.name}} <b data-t-no="dimensione">{{kalliope.deb.size}}</b></span>
+          <span class="cartella-file" data-sistema="rpm" data-t-no="nome di un file">{{kalliope.rpm.name}} <b data-t-no="dimensione">{{kalliope.rpm.size}}</b></span>
+          <span class="cartella-file" data-sistema="arch" data-t-no="nome di un file">kalliope-bin.PKGBUILD</span>
+          <span class="cartella-file" data-sistema="tar" data-t-no="nome di un file">{{kalliope.tar.name}} <b data-t-no="dimensione">{{kalliope.tar.size}}</b></span>
+        </div>
+        <div class="terminale terminale-controllo">
+          <div class="t-barra"><span class="t-titolo" data-t="in.terminale.titolo">Terminale</span></div>
+          <div class="t-corpo">
+            <p class="t-riga t-comando" data-sistema="deb"><span class="t-prompt" data-t-no="il segno del terminale">$</span> <span data-t-no="un comando">sha256sum {{kalliope.deb.name}}</span></p>
+            <p class="t-riga t-comando" data-sistema="rpm"><span class="t-prompt" data-t-no="il segno del terminale">$</span> <span data-t-no="un comando">sha256sum {{kalliope.rpm.name}}</span></p>
+            <p class="t-riga t-comando" data-sistema="tar"><span class="t-prompt" data-t-no="il segno del terminale">$</span> <span data-t-no="un comando">sha256sum {{kalliope.tar.name}}</span></p>
+            <p class="t-riga t-comando" data-sistema="arch"><span class="t-prompt" data-t-no="il segno del terminale">$</span> <span data-t-no="un comando">makepkg -si</span></p>
+            <p class="t-riga t-risposta t-impronta" data-sistema="deb" data-t-no="un'impronta">{{kalliope.sha256.deb}}</p>
+            <p class="t-riga t-risposta t-impronta" data-sistema="rpm" data-t-no="un'impronta">{{kalliope.sha256.rpm}}</p>
+            <p class="t-riga t-risposta t-impronta" data-sistema="tar" data-t-no="un'impronta">{{kalliope.sha256.tar}}</p>
+            <p class="t-riga t-risposta" data-sistema="arch" data-t-no="ciò che scrive makepkg">==&gt; Validating source files with sha256sums...</p>
+            <p class="t-riga t-tuo" data-sistema="arch"><i></i></p>
+          </div>
+          <div class="t-confronto" data-sistema="deb rpm tar">
+            <span class="t-confronto-nome" data-t="in.controllo.pubblicato">Il numero pubblicato</span>
+            <p class="t-riga t-impronta t-pubblicato" data-sistema="deb" data-t-no="un'impronta">{{kalliope.sha256.deb}}</p>
+            <p class="t-riga t-impronta t-pubblicato" data-sistema="rpm" data-t-no="un'impronta">{{kalliope.sha256.rpm}}</p>
+            <p class="t-riga t-impronta t-pubblicato" data-sistema="tar" data-t-no="un'impronta">{{kalliope.sha256.tar}}</p>
+            <span class="t-esito" data-t="in.controllo.uguale">Uguale, cifra per cifra</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== C · installa (stanza) ===================== -->
+    <section class="tratto scena-stanza passo-installa" id="installa" aria-labelledby="installa-titolo">
+      <span class="luce-tratto" aria-hidden="true"></span>
+      <div class="tratto-testo">
+        <h2 id="installa-titolo" class="entra entra-titolo" data-t="in.installa.titolo">Installa: un comando, e Kalliope è nel menu.</h2>
+      </div>
+
+      <div class="installa-scena">
+        <div class="installa-comandi">
+          <p data-sistema="deb rpm" data-t="in.installa.testo.pacchetto">Nella stessa cartella. Con il pacchetto Kalliope va in /usr, e il computer chiede la password di amministratore. Fuori dalle sue cartelle non tocca niente.</p>
+          <p data-sistema="arch" data-t="in.installa.testo.arch">In una cartella vuota: la ricetta scarica l'archivio della versione, controlla l'impronta e ne fa un pacchetto, senza compilare. Kalliope va in /usr, e il computer chiede la password di amministratore.</p>
+          <p data-sistema="tar" data-t="in.installa.testo.tar">Nella stessa cartella. Con l'archivio Kalliope va in ~/.local, solo per te: non serve la password di amministratore. Fuori dalle sue cartelle non tocca niente.</p>
+          <div class="comando" data-sistema="deb"><pre><code data-t-no="un comando">sudo apt install ./{{kalliope.deb.name}}</code></pre></div>
+          <p class="nota-passo" data-sistema="deb" data-t="in.installa.deb.nota">Il pacchetto non è firmato.</p>
+          <div class="comando" data-sistema="rpm"><pre><code data-t-no="un comando">sudo dnf install ./{{kalliope.rpm.name}}</code></pre></div>
+          <p class="nota-passo" data-sistema="rpm" data-t="in.installa.rpm.nota">Il pacchetto non è firmato: dnf mostra un avviso e lo installa dopo l'avviso. Per questa versione è previsto.</p>
+          <div class="comando" data-sistema="arch"><pre><code data-t-no="un comando">mkdir kalliope &amp;&amp; cd kalliope</code></pre></div>
+          <div class="comando" data-sistema="arch"><pre><code data-t-no="un comando">curl -L -o PKGBUILD {{kalliope.aur.url}}</code></pre></div>
+          <div class="comando" data-sistema="arch"><pre><code data-t-no="un comando">makepkg -si</code></pre></div>
+          <p class="nota-passo" data-sistema="arch" data-t="in.installa.arch.nota">Non è ancora su AUR: si usa la ricetta pubblicata con la versione.</p>
+          <div class="comando" data-sistema="tar"><pre><code data-t-no="un comando">tar -xzf {{kalliope.tar.name}}</code></pre></div>
+          <div class="comando" data-sistema="tar"><pre><code data-t-no="un comando">cd {{kalliope.tar.dir}}</code></pre></div>
+          <div class="comando" data-sistema="tar"><pre><code data-t-no="un comando">./install</code></pre></div>
+
+          <div class="esito-passo">
+            <p class="riuscito" data-t="in.installa.riuscito"><strong>Riuscito</strong> se, scrivendo <code data-t-no="un comando">kalliope --version</code>, il terminale risponde con una riga che comincia con «kalliope» e il numero della versione.</p>
+            <p class="riuscito-tar" data-sistema="tar" data-t="in.installa.riuscito.tar">Se il comando non si trova, scrivi <code data-t-no="un comando">~/.local/bin/kalliope --version</code>: ~/.local/bin può non essere fra le cartelle dei comandi. Kalliope è comunque nel menu.</p>
+            <p class="se-no" data-t="in.installa.se-no"><strong>Se no</strong>: se mancano dipendenze, o un messaggio parla di GLIBC, il sistema è troppo vecchio. Scrivi <code data-t-no="un comando">ldd --version | head -n 1</code>: il numero in fondo alla riga deve essere almeno 2.39. Se è così e non va lo stesso, <a href="https://github.com/SANSEVIERIA-OU/kalliope/issues">segnalalo</a> con il messaggio intero.</p>
+          </div>
+          <p class="nota-passo" data-t="in.installa.provato">Ogni pacchetto è provato da uno script prima di uscire: si installa, Kalliope dice una frase con la voce, poi si toglie. <a href="../stato/#provato">Fin dove è provato</a></p>
+          <details class="togli">
+            <summary data-t="in.togli.titolo">Per togliere Kalliope</summary>
+            <ul class="togli-comandi">
+              <li data-sistema="deb"><code data-t-no="un comando">sudo apt remove kalliope</code></li>
+              <li data-sistema="rpm"><code data-t-no="un comando">sudo dnf remove kalliope</code></li>
+              <li data-sistema="arch"><code data-t-no="un comando">sudo pacman -R kalliope-bin</code></li>
+              <li data-sistema="tar" data-t="in.togli.tar">dalla cartella dell'archivio, <code data-t-no="un comando">./install --remove</code></li>
+            </ul>
+            <!-- cambia con la prossima versione: la voce non si scarica più nella cartella personale -->
+            <p data-cambia="voce-nel-pacchetto" data-t="in.togli.restano">Le preferenze e la voce scaricata restano nella tua cartella personale, che il gestore dei pacchetti e <code data-t-no="un comando">./install --remove</code> non toccano: <code data-t-no="una cartella">~/.config/kalliope</code> (le preferenze) e <code data-t-no="una cartella">~/.local/share/kalliope</code> (la voce, 53 MB). Per toglierle, cancella queste due cartelle.</p>
+          </details>
+        </div>
+
+        <div class="disco entra" aria-hidden="true">
+          <div class="terminale terminale-installa">
+            <div class="t-barra"><span class="t-titolo" data-t="in.terminale.titolo">Terminale</span></div>
+            <div class="t-corpo">
+              <p class="t-riga t-comando" data-sistema="deb"><span class="t-prompt" data-t-no="il segno del terminale">$</span> <span data-t-no="un comando">sudo apt install ./{{kalliope.deb.name}}</span></p>
+              <p class="t-riga t-comando" data-sistema="rpm"><span class="t-prompt" data-t-no="il segno del terminale">$</span> <span data-t-no="un comando">sudo dnf install ./{{kalliope.rpm.name}}</span></p>
+              <p class="t-riga t-comando" data-sistema="arch"><span class="t-prompt" data-t-no="il segno del terminale">$</span> <span data-t-no="un comando">makepkg -si</span></p>
+              <p class="t-riga t-comando" data-sistema="tar"><span class="t-prompt" data-t-no="il segno del terminale">$</span> <span data-t-no="un comando">./install</span></p>
+              <p class="t-riga t-tuo" data-sistema="deb rpm arch"><i></i></p>
+              <p class="t-riga t-tuo t-corto" data-sistema="deb rpm arch"><i></i></p>
+              <p class="t-riga t-risposta" data-sistema="tar" data-t-no="ciò che scrive ./install, in inglese">Kalliope is installed in ~/.local. Start it from the applications menu.</p>
+              <p class="t-riga t-comando t-dopo" data-sistema="deb rpm arch"><span class="t-prompt" data-t-no="il segno del terminale">$</span> <span data-t-no="un comando">kalliope --version</span></p>
+              <p class="t-riga t-comando t-dopo" data-sistema="tar"><span class="t-prompt" data-t-no="il segno del terminale">$</span> <span data-t-no="un comando">~/.local/bin/kalliope --version</span></p>
+              <p class="t-riga t-risposta t-dopo"><span data-t-no="ciò che risponde il programma">kalliope</span> <i class="t-numero"></i></p>
+            </div>
+          </div>
+          <div class="cartelle">
+            <span class="cartelle-nome" data-sistema="deb rpm arch" data-t-no="una cartella">/usr</span>
+            <span class="cartelle-nome" data-sistema="tar" data-t-no="una cartella">~/.local</span>
+            <ul class="cartelle-file">
+              <li class="pacco" data-t-no="il percorso di un file">bin/kalliope</li>
+              <li class="pacco" data-t-no="il percorso di un file">bin/kalliope-cli</li>
+              <li class="pacco" data-t="in.disco.libreria">lib/kalliope · ONNX Runtime</li>
+              <li class="pacco pacco-menu" data-t="in.disco.menu">share/applications · nel menu</li>
+            </ul>
+            <span class="cartelle-chiave" data-sistema="deb rpm arch" data-t="in.disco.password">con la password di amministratore</span>
+            <span class="cartelle-chiave" data-sistema="tar" data-t="in.disco.senza">solo per te, senza password</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== D · apri Kalliope (chiara) ===================== -->
+    <section class="tratto scena-chiara passo-apri" id="apri" aria-labelledby="apri-titolo">
+      <span class="luce-tratto" aria-hidden="true"></span>
+      <div class="apri-finestra">
+        <div class="finestra avvio pronta entra entra-finestra" role="group" tabindex="-1" aria-label="Ricostruzione della finestra di Kalliope 0.1 al primo avvio" data-t-aria-label="in.avvio.etichetta">
+          <div class="f-stato" data-stato="pronta" data-t="finestra.pronta">Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono.</div>
+          <!-- cambia con la prossima versione: niente da scaricare al primo avvio -->
+          <div class="f-scarico" aria-hidden="true" data-cambia="voce-nel-pacchetto"><span class="f-barra"><i></i></span></div>
+          <div class="f-riga f-riga-scarica" data-cambia="voce-nel-pacchetto"><span class="f-pulsante f-primario" data-t="avvio.scarica">Scarica la voce</span></div>
+          <div class="f-riga">
+            <div class="f-campo spento" aria-hidden="true"><span class="f-segnaposto" data-t="finestra.segnaposto">Scrivi qui e premi Invio per parlare</span></div>
+            <span class="f-pulsante f-parla" aria-hidden="true" data-t="finestra.parla">Parla</span>
+            <span class="f-pulsante f-ferma" data-t="finestra.ferma">Ferma</span>
+          </div>
+          <p class="f-nota" data-t="avvio.nota">Le frasi che dici restano qui, per ripeterle.</p>
+        </div>
+        <p class="nota-ricostruzione" data-t="in.avvio.ricostruzione">Ricostruzione della finestra di Kalliope 0.1, con le sue frasi vere · tempi accelerati</p>
+      </div>
+      <div class="tratto-testo">
+        <h2 id="apri-titolo" class="entra entra-titolo" data-t="in.apri.titolo">Apri Kalliope, e aspetta «Pronta».</h2>
+        <!-- cambia con la prossima versione: la voce è già nel pacchetto -->
+        <p data-cambia="voce-nel-pacchetto" data-t="in.apri.testo">Dal menu delle applicazioni. La prima volta la finestra chiede di scaricare la voce: premi «Scarica la voce» e aspetta, sono 53 MB una volta sola, poi funziona senza internet.</p>
+        <p data-t="in.apri.ogni-volta">A ogni avvio dice «Preparo la voce…» per un po': il campo si accende quando ha finito.</p>
+        <div class="esito-passo">
+          <p class="riuscito" data-t="in.apri.riuscito"><strong>Riuscito</strong> se la riga in alto dice «Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono.»</p>
+        </div>
+        <div class="frasi-finestra">
+          <h3 class="frasi-nome" data-t="in.frasi.titolo">Se la riga dice altro</h3>
+          <ul class="frasi-elenco">
+            <!-- cambia con la prossima versione: i quattro errori dello scarico spariscono con lo scarico -->
+            <li class="frase-finestra" data-cambia="voce-nel-pacchetto">
+              <p class="frase-detta" data-stato="curl"><span data-t="in.frasi.curl.frase">«Per scaricare la voce serve il programma curl: …»</span></p>
+              <p class="frase-rimedio" data-t="in.frasi.curl.rimedio">Installa curl con il gestore dei pacchetti della tua distribuzione, poi premi di nuovo «Scarica la voce».</p>
+            </li>
+            <li class="frase-finestra" data-cambia="voce-nel-pacchetto">
+              <p class="frase-detta" data-stato="rete"><span data-t="in.frasi.rete.frase">«Download non riuscito: …» o «Download annullato.»</span></p>
+              <p class="frase-rimedio" data-t="in.frasi.rete.rimedio">Controlla la connessione e premi di nuovo «Scarica la voce»: lo scarico riparte da capo.</p>
+            </li>
+            <li class="frase-finestra" data-cambia="voce-nel-pacchetto">
+              <p class="frase-detta" data-stato="impronta"><span data-t="in.frasi.impronta.frase">«Il file … scaricato non corrisponde all'impronta attesa: l'ho scartato.»</span></p>
+              <p class="frase-rimedio" data-t="in.frasi.impronta.rimedio">Kalliope ha buttato via il file guasto da sé: premi di nuovo «Scarica la voce».</p>
+            </li>
+            <li class="frase-finestra">
+              <p class="frase-detta" data-stato="microfono"><span data-t="in.frasi.microfono.frase">«La voce è pronta, ma …: per ora nessuno ti sentirà nelle chiamate.»</span></p>
+              <p class="frase-rimedio" data-t="in.frasi.microfono.rimedio">Il microfono «Kalliope» non si è creato: di solito manca PipeWire, o non è acceso. La causa è scritta in inglese dopo «ma». <a href="../aiuto/#f-senza-microfono">Che cosa fare</a></p>
+            </li>
+          </ul>
+          <p class="nota-passo" data-t="in.frasi.altro">Se dice un'altra cosa, cerca la frase nella <a href="../aiuto/">pagina Aiuto</a>: ogni frase della finestra ha la sua spiegazione.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== E · il microfono (chiusura, stanza) ===================== -->
+    <section class="tratto chiusura scena-stanza passo-microfono" id="microfono" aria-labelledby="microfono-titolo">
+      <span class="luce-tratto" aria-hidden="true"></span><span class="luce-tratto luce-chiusa" aria-hidden="true"></span>
+      <h2 id="microfono-titolo" class="entra entra-titolo" data-t="in.microfono.titolo">«Kalliope» è fra i microfoni.</h2>
+      <p class="sotto-titolo" data-t="in.microfono.sotto">Finché Kalliope è aperto, il computer ha un microfono in più. Per vederlo dal terminale:</p>
+      <div class="microfono-scena entra">
+        <div class="comando comando-centro"><pre><code data-t-no="un comando">pactl list short sources</code></pre></div>
+        <div class="terminale terminale-microfono" aria-hidden="true">
+          <div class="t-barra"><span class="t-titolo" data-t="in.terminale.titolo">Terminale</span></div>
+          <div class="t-corpo">
+            <p class="t-riga t-comando"><span class="t-prompt" data-t-no="il segno del terminale">$</span> <span data-t-no="un comando">pactl list short sources</span></p>
+            <p class="t-riga t-tuo"><i></i></p>
+            <p class="t-riga t-tuo t-corto"><i></i></p>
+            <p class="t-riga t-trovato"><i class="t-prima"></i> <span data-t-no="il nome del microfono nel sistema">kalliope</span> <i class="t-dopo-nome"></i></p>
+          </div>
+        </div>
+        <div class="microfono-app" aria-hidden="true">
+          <div class="microfono">
+            <span class="microfono-titolo" data-t="app.microfono"><span class="app-icona"></span>Microfono</span>
+            <ul class="microfono-scelte">
+              <li class="scelta scelta-computer" data-t="app.scelta.computer">Microfono del computer</li>
+              <li class="scelta scelta-kalliope" data-t="app.scelta.kalliope" data-t-nota="The name of the virtual microphone, as a meeting app lists it: keep it as it is.">Kalliope</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="esito-passo esito-centro">
+        <p class="riuscito" data-t="in.microfono.riuscito"><strong>Riuscito</strong> se fra le righe ce n'è una con la parola kalliope. Se il comando pactl non c'è, salta: lo vedrai nell'app della riunione.</p>
+        <p class="se-no" data-t="in.microfono.se-no"><strong>Se no</strong>, la finestra lo dice con «La voce è pronta, ma …»: <a href="../aiuto/#f-senza-microfono">che cosa fare</a>.</p>
+      </div>
+      <div class="comandi">
+        <a class="pillola azione" href="../riunione/" data-t="in.microfono.riunione">Usalo in una riunione</a>
+        <a class="collegamento" href="https://github.com/SANSEVIERIA-OU/kalliope/issues" data-t="in.microfono.segnala">Se un passo non va, segnalalo (serve un account GitHub)<span class="freccia" aria-hidden="true"></span></a>
+      </div>
+      <p class="fatti segnala-come" data-t="in.microfono.segnala-come">Scrivi la distribuzione, la versione di PipeWire, che cosa è successo e la frase che la finestra mostrava; non incollare le frasi che hai detto.</p>
+
+      <div class="riprendi">
+        <nav class="ripresa" aria-labelledby="ripresa-titolo">
+          <h3 id="ripresa-titolo" data-t="in.ripresa.titolo">Se ti sei fermato, riprendi da qui.</h3>
+          <p data-t="in.ripresa.testo">Il sito non salva niente: dove eri lo dice ciò che vedi.</p>
+          <ol class="ripresa-tappe">
+            <li><a href="#passo-scarica"><span class="ripresa-segno" aria-hidden="true"></span><span data-t="in.ripresa.file">Non trovi il file</span></a></li>
+            <li><a href="#passo-controlla"><span class="ripresa-segno" aria-hidden="true"></span><span data-t="in.ripresa.numero">Il numero non è uguale</span></a></li>
+            <li><a href="#installa"><span class="ripresa-segno" aria-hidden="true"></span><span data-t="in.ripresa.versione">kalliope --version non risponde</span></a></li>
+            <li><a href="#apri"><span class="ripresa-segno" aria-hidden="true"></span><span data-t="in.ripresa.pronta">La finestra non dice «Pronta»</span></a></li>
+            <li><a href="#microfono"><span class="ripresa-segno" aria-hidden="true"></span><span data-t="in.ripresa.microfono">«Kalliope» non è fra i microfoni</span></a></li>
+          </ol>
+        </nav>
+        <div class="inoltra-installa" id="inoltra">
+          <h3 data-t="in.inoltra.titolo">Lo installa un'altra persona?</h3>
+          <p data-t="in.inoltra.testo">Mandale l'indirizzo di questa pagina: trova i passi e i comandi da copiare.</p>
+          <div class="bolla bolla-inoltra bolla-indirizzo">
+            <div class="bolla-corpo"><p class="inoltra-indirizzo" data-t-no="l'indirizzo della pagina, lo scrive la costruzione dai dati del sito"><span dir="ltr">{{kalliope.page.url}}</span></p></div>
+            <svg class="coda" width="32" height="24" viewBox="0 0 32 24" aria-hidden="true"><path d="M0 0h31L7.6 21.6A3.5 3.5 0 0 1 2 18.8V0z"/></svg>
+          </div>
+          <button class="pillola chiara copia-indirizzo" type="button" hidden data-t="in.inoltra.copia">Copia l'indirizzo</button>
+          <p class="copia-esito" role="status"><span class="copia-fatto" hidden data-t="in.inoltra.fatto">Copiato: incollalo in un messaggio.</span><span class="copia-errore" hidden data-t="in.inoltra.errore">Non riesco a copiarlo: seleziona l'indirizzo e copialo.</span></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="piede scena-notte">
+    <nav aria-label="Sezioni del sito, in fondo" id="piede-sezioni" data-t-aria-label="piede.sezioni">
+      <ul>
+        <li><a href="../ascolta/" data-t="menu.ascolta">Ascolta</a></li>
+        <li><a href="../stato/" data-t="menu.stato">Stato e limiti</a></li>
+        <li><a href="../installa/" data-t="menu.installa">Installa</a></li>
+        <li><a href="../riunione/" data-t="menu.riunione">In riunione</a></li>
+        <li><a href="../aiuto/" data-t="menu.aiuto">Aiuto</a></li>
+      </ul>
+    </nav>
+    <nav class="lingue" id="lingue" aria-label="Lingue" data-t-aria-label="piede.lingue">
+      <ul data-lingue="elenco">
+        <li><a data-lingua data-t-no="il nome della lingua lo mette la costruzione, dai dati CLDR" href="#">Italiano</a></li>
+      </ul>
+    </nav>
+    <p data-t="piede.testo">Versione {{kalliope.version}} del {{kalliope.date}}. Codice sorgente disponibile, licenza SANSEVIERIA 1.1 (non «open source» nel senso dell'OSI). Prodotto da SANSEVIERIA OÜ. Questo sito non usa cookie né statistiche.</p>
+  </footer>
 </div>
-</div>
-<nav class="avanti" aria-label="Indietro e avanti">
-<a href="../stato/"><small>Indietro</small>Stato e limiti</a>
-<a href="../riunione/"><small>Avanti</small>Usalo in una riunione</a>
-</nav>
-</div>
-</main>
-<footer class="sito-piede">
-<div class="pagina">
-<div>
-<h2>Kalliope</h2>
-<p>Un programma per scrivere e farsi sentire nelle riunioni. <span class="solo-prova">Versione di prova {{kalliope.version}}, pubblicata il {{kalliope.date}}.</span></p>
-<p>Codice sorgente disponibile, licenza SANSEVIERIA 1.1. Non è software «open source» nel senso dell'OSI. Prodotto da SANSEVIERIA OÜ.</p>
-<p>Questo sito non usa cookie, non ha statistiche e non carica nulla da altri siti. I file li serve GitHub Pages, che registra le richieste come ogni host.</p>
-</div>
-<div>
-<h2>Nel sito</h2>
-<ul>
-<li><a href="../non-ancora/">Windows e macOS: non ancora</a></li>
-<li><a href="../sistema/">Come è fatto questo sito</a></li>
-<li><a href="../aiuto/#segnala">Segnala un problema</a></li>
-</ul>
-</div>
-<div>
-<h2>Fuori da questo sito</h2>
-<ul>
-<li><a href="https://github.com/SANSEVIERIA-OU/kalliope">Codice sorgente su GitHub</a></li>
-<li><a href="{{kalliope.release.url}}">Pagina della versione {{kalliope.version}}</a></li>
-<li><a href="https://github.com/SANSEVIERIA-OU/kalliope/issues">Segnalazioni su GitHub (serve un account)</a></li>
-</ul>
-</div>
-</div>
-</footer>
+
+<template id="testi-pagina">
+  <p data-t="in.copia" data-t-nota="The button next to every command: it copies the command.">Copia</p>
+  <p data-t="in.copia.fatto" data-t-nota="Shown on the button for a moment after the command is copied.">Copiato</p>
+  <p data-t="in.copia.errore" data-t-nota="Shown under a command when the browser does not let the page copy it.">Non riesco a copiarlo da solo: seleziona il testo e copialo.</p>
+  <p data-t="in.copia.etichetta" data-t-nota="Read by screen readers on the copy button. {comando} is the command.">Copia: {comando}</p>
+  <p data-t="in.annuncio.copiato">Copiato negli appunti.</p>
+  <p data-t="in.annuncio.sistema" data-t-nota="Read by screen readers when a distribution is chosen. {sistema} is its name.">I comandi della pagina sono quelli per {sistema}.</p>
+  <p data-t="avvio.primo">Per parlare, Kalliope deve scaricare la voce: 53 MB, una volta sola. Poi funziona senza internet.</p>
+  <p data-t="avvio.scarico" data-t-nota="The first-start story: {mb} goes from 0 to 53, in megabytes.">Scarico la voce… {mb} di 53 MB</p>
+  <p data-t="avvio.preparo">Preparo la voce…</p>
+  <p data-t="avvio.annulla">Annulla</p>
+  <p data-t="in.stato.curl" data-t-nota="A status line of Kalliope's window: keep it as the program writes it in Italian; … stands for the cause, which the program adds.">Per scaricare la voce serve il programma curl: …</p>
+  <p data-t="in.stato.rete">Download non riuscito: …</p>
+  <p data-t="in.stato.impronta">Il file … scaricato non corrisponde all'impronta attesa: l'ho scartato.</p>
+  <p data-t="in.stato.microfono">La voce è pronta, ma …: per ora nessuno ti sentirà nelle chiamate.</p>
+</template>
 </body>
 </html>

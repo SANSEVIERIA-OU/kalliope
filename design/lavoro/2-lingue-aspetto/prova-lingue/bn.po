@@ -21,63 +21,63 @@ msgctxt "pagina.descrizione"
 msgid "Kalliope è un programma per il computer, per chi non può parlare o fa fatica: scrivi una frase, premi Invio, e nella riunione gli altri la sentono con una voce italiana naturale."
 msgstr "Kalliope কম্পিউটারের একটি প্রোগ্রাম, যাঁরা কথা বলতে পারেন না বা কষ্ট করে বলেন তাঁদের জন্য: আপনি একটি বাক্য লেখেন, Enter চাপেন, আর মিটিংয়ে অন্যরা সেটি একটি স্বাভাবিক ইতালীয় কণ্ঠে শোনেন।"
 
-#: index.html non-ancora/index.html stato/index.html
+#: index.html installa/index.html non-ancora/index.html stato/index.html
 #, kalliope-markup
 msgctxt "salta"
 msgid "Vai al contenuto"
 msgstr "বিষয়বস্তুতে যান"
 
 #. Attribute «aria-label» of an element of the page: plain text, no tags.
-#: index.html non-ancora/index.html stato/index.html
+#: index.html installa/index.html non-ancora/index.html stato/index.html
 msgctxt "barra.marchio"
 msgid "Kalliope, pagina iniziale"
 msgstr "Kalliope, প্রথম পাতা"
 
 #. The name of the program. Keep it, or write it in the script of the language.
-#: index.html non-ancora/index.html stato/index.html
+#: index.html installa/index.html non-ancora/index.html stato/index.html
 #, kalliope-markup
 msgctxt "marchio.nome"
 msgid "Kalliope"
 msgstr "Kalliope"
 
 #. Attribute «aria-label» of an element of the page: plain text, no tags.
-#: index.html non-ancora/index.html stato/index.html
+#: index.html installa/index.html non-ancora/index.html stato/index.html
 msgctxt "barra.sezioni"
 msgid "Sezioni del sito"
 msgstr "সাইটের অংশ"
 
-#: index.html non-ancora/index.html stato/index.html
+#: index.html installa/index.html non-ancora/index.html stato/index.html
 #, kalliope-markup
 msgctxt "menu.ascolta"
 msgid "Ascolta"
 msgstr "শুনুন"
 
-#: index.html non-ancora/index.html stato/index.html
+#: index.html installa/index.html non-ancora/index.html stato/index.html
 #, kalliope-markup
 msgctxt "menu.stato"
 msgid "Stato e limiti"
 msgstr "অবস্থা ও সীমা"
 
-#: index.html non-ancora/index.html stato/index.html
+#: index.html installa/index.html non-ancora/index.html stato/index.html
 #, kalliope-markup
 msgctxt "menu.installa"
 msgid "Installa"
 msgstr "ইনস্টল করুন"
 
-#: index.html non-ancora/index.html stato/index.html
+#: index.html installa/index.html non-ancora/index.html stato/index.html
 #, kalliope-markup
 msgctxt "menu.riunione"
 msgid "In riunione"
 msgstr "মিটিংয়ে"
 
-#: index.html non-ancora/index.html stato/index.html
+#: index.html installa/index.html non-ancora/index.html stato/index.html
 #, kalliope-markup
 msgctxt "menu.aiuto"
 msgid "Aiuto"
 msgstr "সাহায্য"
 
 #. Attribute «title» of an element of the page: plain text, no tags.
-#: index.html non-ancora/index.html stato/index.html
+#: index.html installa/index.html non-ancora/index.html stato/index.html
 msgctxt "barra.lingua"
 msgid "Cambia lingua"
 msgstr "ভাষা বদলান"
@@ -88,7 +88,7 @@ msgctxt "cta.scarica"
 msgid "Scarica e installa"
 msgstr "ডাউনলোড করে ইনস্টল করুন"
 
-#: index.html non-ancora/index.html stato/index.html
+#: index.html installa/index.html non-ancora/index.html stato/index.html
 #, kalliope-markup
 msgctxt "barra.menu"
 msgid "Menu"
@@ -123,7 +123,7 @@ msgstr "আমি Linux ব্যবহার করি না: আমি কী
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <strong>
 #. Placeholders to leave as they are: {{kalliope.version}}
-#: index.html non-ancora/index.html stato/index.html
+#: index.html installa/index.html non-ancora/index.html stato/index.html
 #, kalliope-markup, python-brace-format
 msgctxt "apertura.stato"
 msgid "<1>Oggi:</1> versione di prova {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Non ancora provata in una riunione vera con Zoom, Teams o Meet."
@@ -133,7 +133,7 @@ msgstr "<1>আজ:</1> পরীক্ষামূলক সংস্করণ {
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <strong>
 #. Placeholders to leave as they are: {{kalliope.version}}
-#: index.html non-ancora/index.html stato/index.html
+#: index.html installa/index.html non-ancora/index.html stato/index.html
 #, kalliope-markup, python-brace-format
 msgctxt "apertura.stato-stabile"
 msgid "<1>Oggi:</1> versione {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Non ancora provata in una riunione vera con Zoom, Teams o Meet."
@@ -172,19 +172,19 @@ msgctxt "riunione.tu-lungo"
 msgid "Tu<1> · microfono «Kalliope»</1>"
 msgstr "আপনি<1> · মাইক্রোফোন “Kalliope”</1>"
 
-#: index.html non-ancora/index.html stato/index.html
+#: index.html installa/index.html non-ancora/index.html stato/index.html
 #, kalliope-markup
 msgctxt "persona.paola"
 msgid "Paola"
 msgstr "পাওলা"
 
-#: index.html non-ancora/index.html stato/index.html
+#: index.html installa/index.html non-ancora/index.html stato/index.html
 #, kalliope-markup
 msgctxt "persona.luca"
 msgid "Luca"
 msgstr "লুকা"
 
-#: index.html non-ancora/index.html stato/index.html
+#: index.html installa/index.html non-ancora/index.html stato/index.html
 #, kalliope-markup
 msgctxt "persona.anna"
 msgid "Anna"
@@ -196,25 +196,25 @@ msgctxt "finestra.etichetta"
 msgid "Ricostruzione della finestra di Kalliope 0.1"
 msgstr "Kalliope 0.1-এর জানালার পুনর্গঠন"
 
-#: index.html
+#: index.html installa/index.html
 #, kalliope-markup
 msgctxt "finestra.pronta"
 msgid "Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono."
 msgstr "প্রস্তুত। Zoom, Teams, Meet বা ব্রাউজারে মাইক্রোফোন হিসেবে “Kalliope” বেছে নিন।"
 
-#: index.html
+#: index.html installa/index.html
 #, kalliope-markup
 msgctxt "finestra.segnaposto"
 msgid "Scrivi qui e premi Invio per parlare"
 msgstr "এখানে লিখুন আর বলতে Enter চাপুন"
 
-#: index.html
+#: index.html installa/index.html
 #, kalliope-markup
 msgctxt "finestra.parla"
 msgid "Parla"
 msgstr "বলুন"
 
-#: index.html
+#: index.html installa/index.html
 #, kalliope-markup
 msgctxt "finestra.ferma"
 msgid "Ferma"
@@ -454,19 +454,19 @@ msgctxt "avvio.etichetta"
 msgid "Ricostruzione del primo avvio di Kalliope 0.1"
 msgstr "Kalliope 0.1-এর প্রথম চালুর পুনর্গঠন"
 
-#: index.html
+#: index.html installa/index.html
 #, kalliope-markup
 msgctxt "avvio.primo"
 msgid "Per parlare, Kalliope deve scaricare la voce: 53 MB, una volta sola. Poi funziona senza internet."
 msgstr "কথা বলতে Kalliope-কে কণ্ঠ ডাউনলোড করতে হয়: ৫৩ MB, কেবল একবার। তারপর ইন্টারনেট ছাড়াই চলে।"
 
-#: index.html
+#: index.html installa/index.html
 #, kalliope-markup
 msgctxt "avvio.scarica"
 msgid "Scarica la voce"
 msgstr "কণ্ঠ ডাউনলোড করুন"
 
-#: index.html
+#: index.html installa/index.html
 #, kalliope-markup
 msgctxt "avvio.nota"
 msgid "Le frasi che dici restano qui, per ripeterle."
@@ -480,20 +480,20 @@ msgstr "পুনর্গঠন: মিটিংয়ের অ্যাপে
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <span class="app-icona">
-#: index.html non-ancora/index.html stato/index.html
+#: index.html installa/index.html non-ancora/index.html stato/index.html
 #, kalliope-markup
 msgctxt "app.microfono"
 msgid "<1/>Microfono"
 msgstr "<1/>মাইক্রোফোন"
 
-#: index.html non-ancora/index.html stato/index.html
+#: index.html installa/index.html non-ancora/index.html stato/index.html
 #, kalliope-markup
 msgctxt "app.scelta.computer"
 msgid "Microfono del computer"
 msgstr "কম্পিউটারের মাইক্রোফোন"
 
 #. The name of the virtual microphone, as a meeting app lists it: keep it as it is.
-#: index.html
+#: index.html installa/index.html
 #, kalliope-markup
 msgctxt "app.scelta.kalliope"
 msgid "Kalliope"
@@ -569,19 +569,19 @@ msgid "Kalliope non è un dispositivo medico e non sostituisce la valutazione di
 msgstr "Kalliope কোনো চিকিৎসা যন্ত্র নয় এবং স্পিচ থেরাপিস্টের মূল্যায়নের বিকল্প নয়।"
 
 #. Attribute «aria-label» of an element of the page: plain text, no tags.
-#: index.html non-ancora/index.html stato/index.html
+#: index.html installa/index.html non-ancora/index.html stato/index.html
 msgctxt "piede.sezioni"
 msgid "Sezioni del sito, in fondo"
 msgstr "সাইটের অংশ, নিচে"
 
 #. Attribute «aria-label» of an element of the page: plain text, no tags.
-#: index.html non-ancora/index.html stato/index.html
+#: index.html installa/index.html non-ancora/index.html stato/index.html
 msgctxt "piede.lingue"
 msgid "Lingue"
 msgstr "ভাষা"
 
 #. Placeholders to leave as they are: {{kalliope.date}} {{kalliope.version}}
-#: index.html non-ancora/index.html stato/index.html
+#: index.html installa/index.html non-ancora/index.html stato/index.html
 #, kalliope-markup, python-brace-format
 msgctxt "piede.testo"
 msgid "Versione {{kalliope.version}} del {{kalliope.date}}. Codice sorgente disponibile, licenza SANSEVIERIA 1.1 (non «open source» nel senso dell'OSI). Prodotto da SANSEVIERIA OÜ. Questo sito non usa cookie né statistiche."
@@ -731,19 +731,19 @@ msgstr "{azione}: {frase}"
 
 #. The first-start story: {mb} goes from 0 to 53, in megabytes.
 #. Placeholders to leave as they are: {mb}
-#: index.html
+#: index.html installa/index.html
 #, kalliope-markup, python-brace-format
 msgctxt "avvio.scarico"
 msgid "Scarico la voce… {mb} di 53 MB"
 msgstr "কণ্ঠ ডাউনলোড হচ্ছে… ৫৩ MB-এর মধ্যে {mb}"
 
-#: index.html
+#: index.html installa/index.html
 #, kalliope-markup
 msgctxt "avvio.preparo"
 msgid "Preparo la voce…"
 msgstr "কণ্ঠ প্রস্তুত হচ্ছে…"
 
-#: index.html
+#: index.html installa/index.html
 #, kalliope-markup
 msgctxt "avvio.annulla"
 msgid "Annulla"
@@ -783,6 +783,707 @@ msgstr "৩১"
 msgctxt "frase.3.detto.2"
 msgid "trentuno"
 msgstr "একত্রিশে"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.titolo"
+msgid "Installa Kalliope su Linux: i comandi da copiare, e come sai che ogni passo è riuscito"
+msgstr "Installa Kalliope su Linux: i comandi da copiare, e come sai che ogni passo è riuscito"
+
+#. Attribute «content» of an element of the page: plain text, no tags.
+#: installa/index.html
+msgctxt "in.descrizione"
+msgid "Come installare Kalliope su Debian, Ubuntu, Fedora, Arch e le altre distribuzioni Linux: il file giusto, il controllo dell'impronta, il comando da copiare, la voce, e il microfono «Kalliope» nell'app della riunione."
+msgstr "Come installare Kalliope su Debian, Ubuntu, Fedora, Arch e le altre distribuzioni Linux: il file giusto, il controllo dell'impronta, il comando da copiare, la voce, e il microfono «Kalliope» nell'app della riunione."
+
+#. Three lines, one under the other: install Kalliope; every step can be seen to succeed.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="riga">
+#.   <2> = <span class="riga">
+#.   <3> = <span class="riga">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.apertura.titolo"
+msgid "<1>Installa Kalliope.</1> <2>Ogni passo</2> <3>si vede riuscire.</3>"
+msgstr "<1>Installa Kalliope.</1> <2>Ogni passo</2> <3>si vede riuscire.</3>"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.apertura.presentazione"
+msgid "Per un computer Linux a 64 bit con PipeWire, anche se lo installi per un'altra persona. Scegli la distribuzione: i comandi diventano i suoi."
+msgstr "Per un computer Linux a 64 bit con PipeWire, anche se lo installi per un'altra persona. Scegli la distribuzione: i comandi diventano i suoi."
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.sistemi.legenda"
+msgid "La tua distribuzione"
+msgstr "La tua distribuzione"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.sistemi.deb"
+msgid "Debian e Ubuntu"
+msgstr "Debian e Ubuntu"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.sistemi.tar"
+msgid "Altre"
+msgstr "Altre"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.sistemi.deb.dice"
+msgid "Debian 13, Ubuntu 24.04 o successive: il pacchetto .deb"
+msgstr "Debian 13, Ubuntu 24.04 o successive: il pacchetto .deb"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.sistemi.rpm.dice"
+msgid "Fedora attuale: il pacchetto .rpm"
+msgstr "Fedora attuale: il pacchetto .rpm"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.sistemi.arch.dice"
+msgid "Arch Linux: la ricetta PKGBUILD, che non compila nulla"
+msgstr "Arch Linux: la ricetta PKGBUILD, che non compila nulla"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.sistemi.tar.dice"
+msgid "Le altre distribuzioni: l'archivio, che si installa senza password"
+msgstr "Le altre distribuzioni: l'archivio, che si installa senza password"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="freccia" aria-hidden="true">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.sistemi.non-linux"
+msgid "Non uso Linux<1/>"
+msgstr "Non uso Linux<1/>"
+
+#. The download button. Tag 1 is the size of the file, written by the build.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="peso" data-t-no="dimensione">
+#. Placeholders to leave as they are: {{kalliope.deb.size}}
+#: installa/index.html
+#, kalliope-markup, python-brace-format
+msgctxt "in.scarica.deb"
+msgid "Scarica il .deb <1>{{kalliope.deb.size}}</1>"
+msgstr "Scarica il .deb <1>{{kalliope.deb.size}}</1>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="peso" data-t-no="dimensione">
+#. Placeholders to leave as they are: {{kalliope.rpm.size}}
+#: installa/index.html
+#, kalliope-markup, python-brace-format
+msgctxt "in.scarica.rpm"
+msgid "Scarica il .rpm <1>{{kalliope.rpm.size}}</1>"
+msgstr "Scarica il .rpm <1>{{kalliope.rpm.size}}</1>"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.scarica.arch"
+msgid "Vai ai comandi per Arch"
+msgstr "Vai ai comandi per Arch"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="peso" data-t-no="dimensione">
+#. Placeholders to leave as they are: {{kalliope.tar.size}}
+#: installa/index.html
+#, kalliope-markup, python-brace-format
+msgctxt "in.scarica.tar"
+msgid "Scarica l'archivio <1>{{kalliope.tar.size}}</1>"
+msgstr "Scarica l'archivio <1>{{kalliope.tar.size}}</1>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="freccia" aria-hidden="true">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.apertura.inoltra"
+msgid "Lo installa un'altra persona<1/>"
+msgstr "Lo installa un'altra persona<1/>"
+
+#. The caption of the scene: the first word says what it is; the part in tag 1 says what it shows. On narrow screens it goes to a second line.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="d-lunga">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.apertura.didascalia"
+msgid "Ricostruzione<1> · dal comando nel terminale al microfono «Kalliope» nell'app della riunione, a tempi accelerati</1>"
+msgstr "Ricostruzione<1> · dal comando nel terminale al microfono «Kalliope» nell'app della riunione, a tempi accelerati</1>"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: installa/index.html
+msgctxt "in.palco.etichetta"
+msgid "Ricostruzione: un comando nel terminale installa Kalliope, e nell'app della riunione compare il microfono «Kalliope»"
+msgstr "Ricostruzione: un comando nel terminale installa Kalliope, e nell'app della riunione compare il microfono «Kalliope»"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.terminale.titolo"
+msgid "Terminale"
+msgstr "Terminale"
+
+#. The name on the tile of the person who writes, who has no voice here. The part in tag 1 is the long one and is dropped on narrow screens.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="nome-lungo">
+#: installa/index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.tu-senza-voce"
+msgid "Tu<1> · senza voce</1>"
+msgstr "Tu<1> · senza voce</1>"
+
+#. The name on the tile of the person who writes. The part in tag 1 is the long one and is dropped on narrow screens.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="nome-lungo">
+#: installa/index.html stato/index.html
+#, kalliope-markup
+msgctxt "st.tu-voce"
+msgid "Tu<1> · microfono «Kalliope»</1>"
+msgstr "Tu<1> · microfono «Kalliope»</1>"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.file.titolo"
+msgid "Il file giusto, e uguale a quello pubblicato."
+msgstr "Il file giusto, e uguale a quello pubblicato."
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.file.testo"
+msgid "Serve un computer Linux a 64 bit (x86_64), con Wayland o X11 e con PipeWire e pipewire-pulse: è così nei desktop recenti di Fedora, Ubuntu, Debian, Arch e openSUSE."
+msgstr "Serve un computer Linux a 64 bit (x86_64), con Wayland o X11 e con PipeWire e pipewire-pulse: è così nei desktop recenti di Fedora, Ubuntu, Debian, Arch e openSUSE."
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.file.voce"
+msgid "Al primo avvio Kalliope scarica la voce: 53 MB, una volta sola, con il programma curl. I pacchetti lo chiedono da soli; con l'archivio controlla di averlo."
+msgstr "Al primo avvio Kalliope scarica la voce: 53 MB, una volta sola, con il programma curl. I pacchetti lo chiedono da soli; con l'archivio controlla di averlo."
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.file.scarica.titolo"
+msgid "Scarica"
+msgstr "Scarica"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="{{kalliope.aur.url}}">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.file.scarica.arch"
+msgid "Per Arch non c'è un file da scaricare qui: la ricetta lo fa da sola, al passo «Installa». Puoi <1>leggerla prima</1>."
+msgstr "Per Arch non c'è un file da scaricare qui: la ricetta lo fa da sola, al passo «Installa». Puoi <1>leggerla prima</1>."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.file.scarica.riuscito"
+msgid "<1>Riuscito</1> se nella cartella dei download c'è un file con questo nome e questa dimensione."
+msgstr "<1>Riuscito</1> se nella cartella dei download c'è un file con questo nome e questa dimensione."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.file.scarica.se-no"
+msgid "<1>Se no</1>, scaricalo di nuovo. Se il browser dice che il file non esiste, è uscita una versione nuova: ricarica questa pagina."
+msgstr "<1>Se no</1>, scaricalo di nuovo. Se il browser dice che il file non esiste, è uscita una versione nuova: ricarica questa pagina."
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.file.controlla.titolo"
+msgid "Controlla che sia uguale"
+msgstr "Controlla che sia uguale"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.file.controlla.testo"
+msgid "Consigliato: così sai che è il file pubblicato. Apri un terminale nella cartella dei download (di solito Scaricati) e scrivi:"
+msgstr "Consigliato: così sai che è il file pubblicato. Apri un terminale nella cartella dei download (di solito Scaricati) e scrivi:"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.file.controlla.numero"
+msgid "Il numero che compare deve essere questo:"
+msgstr "Il numero che compare deve essere questo:"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.file.controlla.arch"
+msgid "Per Arch il controllo lo fa la ricetta: prima di installare, makepkg confronta l'impronta dell'archivio che scarica. Non c'è niente da scrivere."
+msgstr "Per Arch il controllo lo fa la ricetta: prima di installare, makepkg confronta l'impronta dell'archivio che scarica. Non c'è niente da scrivere."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.file.controlla.riuscito"
+msgid "<1>Riuscito</1> se i due numeri sono identici, cifra per cifra."
+msgstr "<1>Riuscito</1> se i due numeri sono identici, cifra per cifra."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#.   <2> = <a href="https://github.com/SANSEVIERIA-OU/kalliope/issues">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.file.controlla.se-no"
+msgid "<1>Se no</1>, non installare il file: scaricalo di nuovo e rifai il controllo. Se il numero resta diverso, <2>segnalalo</2>."
+msgstr "<1>Se no</1>, non installare il file: scaricalo di nuovo e rifai il controllo. Se il numero resta diverso, <2>segnalalo</2>."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="{{kalliope.sums.url}}">
+#.   <2> = <code data-t-no="un comando">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.file.controlla.tutti"
+msgid "Per controllare tutti i file insieme c'è il file <1>SHA256SUMS</1>: scaricalo nella stessa cartella e scrivi <2>sha256sum -c SHA256SUMS --ignore-missing</2>."
+msgstr "Per controllare tutti i file insieme c'è il file <1>SHA256SUMS</1>: scaricalo nella stessa cartella e scrivi <2>sha256sum -c SHA256SUMS --ignore-missing</2>."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <code data-t-no="un comando">
+#.   <2> = <a href="../stato/#controllare">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.file.controlla.attestazione"
+msgid "Questa versione non ha l'attestazione di provenienza (<1>gh attestation verify</1>): è stata pubblicata quando il codice non era ancora pubblico. Le prossime l'avranno; il resto per chi controlla è in <2>Stato e limiti</2>."
+msgstr "Questa versione non ha l'attestazione di provenienza (<1>gh attestation verify</1>): è stata pubblicata quando il codice non era ancora pubblico. Le prossime l'avranno; il resto per chi controlla è in <2>Stato e limiti</2>."
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.cartella.nome"
+msgid "Scaricati"
+msgstr "Scaricati"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.controllo.pubblicato"
+msgid "Il numero pubblicato"
+msgstr "Il numero pubblicato"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.controllo.uguale"
+msgid "Uguale, cifra per cifra"
+msgstr "Uguale, cifra per cifra"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.installa.titolo"
+msgid "Installa: un comando, e Kalliope è nel menu."
+msgstr "Installa: un comando, e Kalliope è nel menu."
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.installa.testo.pacchetto"
+msgid "Nella stessa cartella. Con il pacchetto Kalliope va in /usr, e il computer chiede la password di amministratore. Fuori dalle sue cartelle non tocca niente."
+msgstr "Nella stessa cartella. Con il pacchetto Kalliope va in /usr, e il computer chiede la password di amministratore. Fuori dalle sue cartelle non tocca niente."
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.installa.testo.arch"
+msgid "In una cartella vuota: la ricetta scarica l'archivio della versione, controlla l'impronta e ne fa un pacchetto, senza compilare. Kalliope va in /usr, e il computer chiede la password di amministratore."
+msgstr "In una cartella vuota: la ricetta scarica l'archivio della versione, controlla l'impronta e ne fa un pacchetto, senza compilare. Kalliope va in /usr, e il computer chiede la password di amministratore."
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.installa.testo.tar"
+msgid "Nella stessa cartella. Con l'archivio Kalliope va in ~/.local, solo per te: non serve la password di amministratore. Fuori dalle sue cartelle non tocca niente."
+msgstr "Nella stessa cartella. Con l'archivio Kalliope va in ~/.local, solo per te: non serve la password di amministratore. Fuori dalle sue cartelle non tocca niente."
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.installa.deb.nota"
+msgid "Il pacchetto non è firmato."
+msgstr "Il pacchetto non è firmato."
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.installa.rpm.nota"
+msgid "Il pacchetto non è firmato: dnf mostra un avviso e lo installa dopo l'avviso. Per questa versione è previsto."
+msgstr "Il pacchetto non è firmato: dnf mostra un avviso e lo installa dopo l'avviso. Per questa versione è previsto."
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.installa.arch.nota"
+msgid "Non è ancora su AUR: si usa la ricetta pubblicata con la versione."
+msgstr "Non è ancora su AUR: si usa la ricetta pubblicata con la versione."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#.   <2> = <code data-t-no="un comando">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.installa.riuscito"
+msgid "<1>Riuscito</1> se, scrivendo <2>kalliope --version</2>, il terminale risponde con una riga che comincia con «kalliope» e il numero della versione."
+msgstr "<1>Riuscito</1> se, scrivendo <2>kalliope --version</2>, il terminale risponde con una riga che comincia con «kalliope» e il numero della versione."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <code data-t-no="un comando">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.installa.riuscito.tar"
+msgid "Se il comando non si trova, scrivi <1>~/.local/bin/kalliope --version</1>: ~/.local/bin può non essere fra le cartelle dei comandi. Kalliope è comunque nel menu."
+msgstr "Se il comando non si trova, scrivi <1>~/.local/bin/kalliope --version</1>: ~/.local/bin può non essere fra le cartelle dei comandi. Kalliope è comunque nel menu."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#.   <2> = <code data-t-no="un comando">
+#.   <3> = <a href="https://github.com/SANSEVIERIA-OU/kalliope/issues">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.installa.se-no"
+msgid "<1>Se no</1>: se mancano dipendenze, o un messaggio parla di GLIBC, il sistema è troppo vecchio. Scrivi <2>ldd --version | head -n 1</2>: il numero in fondo alla riga deve essere almeno 2.39. Se è così e non va lo stesso, <3>segnalalo</3> con il messaggio intero."
+msgstr "<1>Se no</1>: se mancano dipendenze, o un messaggio parla di GLIBC, il sistema è troppo vecchio. Scrivi <2>ldd --version | head -n 1</2>: il numero in fondo alla riga deve essere almeno 2.39. Se è così e non va lo stesso, <3>segnalalo</3> con il messaggio intero."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="../stato/#provato">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.installa.provato"
+msgid "Ogni pacchetto è provato da uno script prima di uscire: si installa, Kalliope dice una frase con la voce, poi si toglie. <1>Fin dove è provato</1>"
+msgstr "Ogni pacchetto è provato da uno script prima di uscire: si installa, Kalliope dice una frase con la voce, poi si toglie. <1>Fin dove è provato</1>"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.togli.titolo"
+msgid "Per togliere Kalliope"
+msgstr "Per togliere Kalliope"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <code data-t-no="un comando">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.togli.tar"
+msgid "dalla cartella dell'archivio, <1>./install --remove</1>"
+msgstr "dalla cartella dell'archivio, <1>./install --remove</1>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <code data-t-no="un comando">
+#.   <2> = <code data-t-no="una cartella">
+#.   <3> = <code data-t-no="una cartella">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.togli.restano"
+msgid "Le preferenze e la voce scaricata restano nella tua cartella personale, che il gestore dei pacchetti e <1>./install --remove</1> non toccano: <2>~/.config/kalliope</2> (le preferenze) e <3>~/.local/share/kalliope</3> (la voce, 53 MB). Per toglierle, cancella queste due cartelle."
+msgstr "Le preferenze e la voce scaricata restano nella tua cartella personale, che il gestore dei pacchetti e <1>./install --remove</1> non toccano: <2>~/.config/kalliope</2> (le preferenze) e <3>~/.local/share/kalliope</3> (la voce, 53 MB). Per toglierle, cancella queste due cartelle."
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.disco.libreria"
+msgid "lib/kalliope · ONNX Runtime"
+msgstr "lib/kalliope · ONNX Runtime"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.disco.menu"
+msgid "share/applications · nel menu"
+msgstr "share/applications · nel menu"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.disco.password"
+msgid "con la password di amministratore"
+msgstr "con la password di amministratore"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.disco.senza"
+msgid "solo per te, senza password"
+msgstr "solo per te, senza password"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: installa/index.html
+msgctxt "in.avvio.etichetta"
+msgid "Ricostruzione della finestra di Kalliope 0.1 al primo avvio"
+msgstr "Ricostruzione della finestra di Kalliope 0.1 al primo avvio"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.avvio.ricostruzione"
+msgid "Ricostruzione della finestra di Kalliope 0.1, con le sue frasi vere · tempi accelerati"
+msgstr "Ricostruzione della finestra di Kalliope 0.1, con le sue frasi vere · tempi accelerati"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.apri.titolo"
+msgid "Apri Kalliope, e aspetta «Pronta»."
+msgstr "Apri Kalliope, e aspetta «Pronta»."
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.apri.testo"
+msgid "Dal menu delle applicazioni. La prima volta la finestra chiede di scaricare la voce: premi «Scarica la voce» e aspetta, sono 53 MB una volta sola, poi funziona senza internet."
+msgstr "Dal menu delle applicazioni. La prima volta la finestra chiede di scaricare la voce: premi «Scarica la voce» e aspetta, sono 53 MB una volta sola, poi funziona senza internet."
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.apri.ogni-volta"
+msgid "A ogni avvio dice «Preparo la voce…» per un po': il campo si accende quando ha finito."
+msgstr "A ogni avvio dice «Preparo la voce…» per un po': il campo si accende quando ha finito."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.apri.riuscito"
+msgid "<1>Riuscito</1> se la riga in alto dice «Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono.»"
+msgstr "<1>Riuscito</1> se la riga in alto dice «Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono.»"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.frasi.titolo"
+msgid "Se la riga dice altro"
+msgstr "Se la riga dice altro"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.frasi.curl.frase"
+msgid "«Per scaricare la voce serve il programma curl: …»"
+msgstr "«Per scaricare la voce serve il programma curl: …»"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.frasi.curl.rimedio"
+msgid "Installa curl con il gestore dei pacchetti della tua distribuzione, poi premi di nuovo «Scarica la voce»."
+msgstr "Installa curl con il gestore dei pacchetti della tua distribuzione, poi premi di nuovo «Scarica la voce»."
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.frasi.rete.frase"
+msgid "«Download non riuscito: …» o «Download annullato.»"
+msgstr "«Download non riuscito: …» o «Download annullato.»"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.frasi.rete.rimedio"
+msgid "Controlla la connessione e premi di nuovo «Scarica la voce»: lo scarico riparte da capo."
+msgstr "Controlla la connessione e premi di nuovo «Scarica la voce»: lo scarico riparte da capo."
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.frasi.impronta.frase"
+msgid "«Il file … scaricato non corrisponde all'impronta attesa: l'ho scartato.»"
+msgstr "«Il file … scaricato non corrisponde all'impronta attesa: l'ho scartato.»"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.frasi.impronta.rimedio"
+msgid "Kalliope ha buttato via il file guasto da sé: premi di nuovo «Scarica la voce»."
+msgstr "Kalliope ha buttato via il file guasto da sé: premi di nuovo «Scarica la voce»."
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.frasi.microfono.frase"
+msgid "«La voce è pronta, ma …: per ora nessuno ti sentirà nelle chiamate.»"
+msgstr "«La voce è pronta, ma …: per ora nessuno ti sentirà nelle chiamate.»"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="../aiuto/#f-senza-microfono">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.frasi.microfono.rimedio"
+msgid "Il microfono «Kalliope» non si è creato: di solito manca PipeWire, o non è acceso. La causa è scritta in inglese dopo «ma». <1>Che cosa fare</1>"
+msgstr "Il microfono «Kalliope» non si è creato: di solito manca PipeWire, o non è acceso. La causa è scritta in inglese dopo «ma». <1>Che cosa fare</1>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="../aiuto/">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.frasi.altro"
+msgid "Se dice un'altra cosa, cerca la frase nella <1>pagina Aiuto</1>: ogni frase della finestra ha la sua spiegazione."
+msgstr "Se dice un'altra cosa, cerca la frase nella <1>pagina Aiuto</1>: ogni frase della finestra ha la sua spiegazione."
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.microfono.titolo"
+msgid "«Kalliope» è fra i microfoni."
+msgstr "«Kalliope» è fra i microfoni."
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.microfono.sotto"
+msgid "Finché Kalliope è aperto, il computer ha un microfono in più. Per vederlo dal terminale:"
+msgstr "Finché Kalliope è aperto, il computer ha un microfono in più. Per vederlo dal terminale:"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.microfono.riuscito"
+msgid "<1>Riuscito</1> se fra le righe ce n'è una con la parola kalliope. Se il comando pactl non c'è, salta: lo vedrai nell'app della riunione."
+msgstr "<1>Riuscito</1> se fra le righe ce n'è una con la parola kalliope. Se il comando pactl non c'è, salta: lo vedrai nell'app della riunione."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#.   <2> = <a href="../aiuto/#f-senza-microfono">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.microfono.se-no"
+msgid "<1>Se no</1>, la finestra lo dice con «La voce è pronta, ma …»: <2>che cosa fare</2>."
+msgstr "<1>Se no</1>, la finestra lo dice con «La voce è pronta, ma …»: <2>che cosa fare</2>."
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.microfono.riunione"
+msgid "Usalo in una riunione"
+msgstr "Usalo in una riunione"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="freccia" aria-hidden="true">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.microfono.segnala"
+msgid "Se un passo non va, segnalalo (serve un account GitHub)<1/>"
+msgstr "Se un passo non va, segnalalo (serve un account GitHub)<1/>"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.microfono.segnala-come"
+msgid "Scrivi la distribuzione, la versione di PipeWire, che cosa è successo e la frase che la finestra mostrava; non incollare le frasi che hai detto."
+msgstr "Scrivi la distribuzione, la versione di PipeWire, che cosa è successo e la frase che la finestra mostrava; non incollare le frasi che hai detto."
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.ripresa.titolo"
+msgid "Se ti sei fermato, riprendi da qui."
+msgstr "Se ti sei fermato, riprendi da qui."
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.ripresa.testo"
+msgid "Il sito non salva niente: dove eri lo dice ciò che vedi."
+msgstr "Il sito non salva niente: dove eri lo dice ciò che vedi."
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.ripresa.file"
+msgid "Non trovi il file"
+msgstr "Non trovi il file"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.ripresa.numero"
+msgid "Il numero non è uguale"
+msgstr "Il numero non è uguale"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.ripresa.versione"
+msgid "kalliope --version non risponde"
+msgstr "kalliope --version non risponde"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.ripresa.pronta"
+msgid "La finestra non dice «Pronta»"
+msgstr "La finestra non dice «Pronta»"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.ripresa.microfono"
+msgid "«Kalliope» non è fra i microfoni"
+msgstr "«Kalliope» non è fra i microfoni"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.inoltra.titolo"
+msgid "Lo installa un'altra persona?"
+msgstr "Lo installa un'altra persona?"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.inoltra.testo"
+msgid "Mandale l'indirizzo di questa pagina: trova i passi e i comandi da copiare."
+msgstr "Mandale l'indirizzo di questa pagina: trova i passi e i comandi da copiare."
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.inoltra.copia"
+msgid "Copia l'indirizzo"
+msgstr "Copia l'indirizzo"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.inoltra.fatto"
+msgid "Copiato: incollalo in un messaggio."
+msgstr "Copiato: incollalo in un messaggio."
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.inoltra.errore"
+msgid "Non riesco a copiarlo: seleziona l'indirizzo e copialo."
+msgstr "Non riesco a copiarlo: seleziona l'indirizzo e copialo."
+
+#. The button next to every command: it copies the command.
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.copia"
+msgid "Copia"
+msgstr "Copia"
+
+#. Shown on the button for a moment after the command is copied.
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.copia.fatto"
+msgid "Copiato"
+msgstr "Copiato"
+
+#. Shown under a command when the browser does not let the page copy it.
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.copia.errore"
+msgid "Non riesco a copiarlo da solo: seleziona il testo e copialo."
+msgstr "Non riesco a copiarlo da solo: seleziona il testo e copialo."
+
+#. Read by screen readers on the copy button. {comando} is the command.
+#. Placeholders to leave as they are: {comando}
+#: installa/index.html
+#, kalliope-markup, python-brace-format
+msgctxt "in.copia.etichetta"
+msgid "Copia: {comando}"
+msgstr "Copia: {comando}"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.annuncio.copiato"
+msgid "Copiato negli appunti."
+msgstr "Copiato negli appunti."
+
+#. Read by screen readers when a distribution is chosen. {sistema} is its name.
+#. Placeholders to leave as they are: {sistema}
+#: installa/index.html
+#, kalliope-markup, python-brace-format
+msgctxt "in.annuncio.sistema"
+msgid "I comandi della pagina sono quelli per {sistema}."
+msgstr "I comandi della pagina sono quelli per {sistema}."
+
+#. A status line of Kalliope's window: keep it as the program writes it in Italian; … stands for the cause, which the program adds.
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.stato.curl"
+msgid "Per scaricare la voce serve il programma curl: …"
+msgstr "Per scaricare la voce serve il programma curl: …"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.stato.rete"
+msgid "Download non riuscito: …"
+msgstr "Download non riuscito: …"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.stato.impronta"
+msgid "Il file … scaricato non corrisponde all'impronta attesa: l'ho scartato."
+msgstr "Il file … scaricato non corrisponde all'impronta attesa: l'ho scartato."
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.stato.microfono"
+msgid "La voce è pronta, ma …: per ora nessuno ti sentirà nelle chiamate."
+msgstr "La voce è pronta, ma …: per ora nessuno ti sentirà nelle chiamate."
 
 #: non-ancora/index.html
 #, kalliope-markup
@@ -841,15 +1542,6 @@ msgstr "Ricostruzione<1> · su Windows e macOS «Kalliope» non compare fra i mi
 msgctxt "na.palco.etichetta"
 msgid "Ricostruzione: su Windows e macOS, nell'app della riunione, il microfono «Kalliope» non c'è e la tua frase resta senza voce"
 msgstr "Ricostruzione: su Windows e macOS, nell'app della riunione, il microfono «Kalliope» non c'è e la tua frase resta senza voce"
-
-#. The name on the tile of the person who writes, who has no voice here. The part in tag 1 is the long one and is dropped on narrow screens.
-#. Tags in the text (move the words, keep every tag, each inside the same tag):
-#.   <1> = <span class="nome-lungo">
-#: non-ancora/index.html
-#, kalliope-markup
-msgctxt "na.tu-senza-voce"
-msgid "Tu<1> · senza voce</1>"
-msgstr "Tu<1> · senza voce</1>"
 
 #. The name of the virtual microphone as a meeting app lists it (keep it as it is), and what follows it where the program is not installed: the part in tag 2 appears when the person tries to choose it.
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
@@ -1120,15 +1812,6 @@ msgstr "Ricostruzione<1> · la voce arriva al microfono «Kalliope»: provato. D
 msgctxt "st.palco.etichetta"
 msgid "Ricostruzione: la tua frase diventa voce e arriva al microfono «Kalliope», ed è provato; da lì all'app della riunione e alle altre persone non è ancora provato"
 msgstr "Ricostruzione: la tua frase diventa voce e arriva al microfono «Kalliope», ed è provato; da lì all'app della riunione e alle altre persone non è ancora provato"
-
-#. The name on the tile of the person who writes. The part in tag 1 is the long one and is dropped on narrow screens.
-#. Tags in the text (move the words, keep every tag, each inside the same tag):
-#.   <1> = <span class="nome-lungo">
-#: stato/index.html
-#, kalliope-markup
-msgctxt "st.tu-voce"
-msgid "Tu<1> · microfono «Kalliope»</1>"
-msgstr "Tu<1> · microfono «Kalliope»</1>"
 
 #. The name of the virtual microphone as a meeting app lists it (keep it as it is), and the note that appears when the voice reaches it.
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
