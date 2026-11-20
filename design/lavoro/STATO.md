@@ -88,6 +88,11 @@ Sulle tre domande lasciate da «non ancora»:
     per la release `assets` con i suoi file, che deve esistere prima perché la CI scarica da lì;
   - poi si continua con le pagine («installa» per prima).
 
+- Pubblicazione (20/11): `main` inviato con il permesso del proprietario (merge della licenza 1.1, P-1, P-2, il logo). CI verde
+  su Linux, Windows e macOS; il sito nuovo è in linea, controllato dall'indirizzo vero da chi coordina (home a 1440 e 390,
+  «stato», 404, icona della scheda). Ramo di prova `prova-ci` tolto. Chi scarica riceve ancora v0.1-rc.1: una versione nuova
+  è una decisione del proprietario, proposta il 20/11.
+
 ## Fasi
 
 | Fase | Stato | Ruolo e modello | Tempi | Esito / prossimo passo |

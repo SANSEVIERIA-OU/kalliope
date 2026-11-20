@@ -31,7 +31,8 @@ come si lavora.
   catalogo in `website/sistema/`. Restano solo perché le pagine nuove rimandano a loro.
 - **Il design system è `design-system/`**, fuori dal sito: token, base, componenti, caratteri, catalogo vivo,
   `SISTEMA.md` e `TOKEN.md`. Lo usano la home, «non ancora», «stato» e la scelta della lingua.
-- **In linea c'è ancora il sito di prima** finché il proprietario non dice di pubblicare.
+- **In linea c'è il sito nuovo** dal 20/11/2026 (push su `main` autorizzato dal proprietario): le pagine rifatte, il logo nuovo
+  anche sulle pagine ancora da rifare, che hanno ancora i colori di prima.
 - **Il lavoro in corso** (dal 16/11/2026: lingue, poi le altre pagine, poi l'applicazione) è in `design/lavoro/`:
   `STATO.md` dice fasi, decisioni prese a lavoro avviato e incarichi; `ricerca/lingue.md` i fatti con le fonti.
 - **La voce di chi usa Kalliope** (decisione del proprietario del 17/11/2026: «voglio che lo faccia già adesso (non "la
