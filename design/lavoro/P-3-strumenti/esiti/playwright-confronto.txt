@@ -1,0 +1,18 @@
+chromium/it-home-1440              uguale byte per byte
+chromium/it-home-390               uguale byte per byte
+chromium/it-non-ancora-1440        uguale byte per byte
+chromium/it-non-ancora-390         uguale byte per byte
+chromium/it-stato-1440             uguale byte per byte
+chromium/it-stato-390              uguale byte per byte
+firefox/it-home-1440               uguale nei pixel (cambia la codifica del PNG)
+firefox/it-home-390                4 pixel diversi (0.000%), scarto massimo 1/255, riquadro x 9–140, y 1204–1225
+firefox/it-non-ancora-1440         uguale nei pixel (cambia la codifica del PNG)
+firefox/it-non-ancora-390          uguale nei pixel (cambia la codifica del PNG)
+firefox/it-stato-1440              4 pixel diversi (0.000%), scarto massimo 1/255, riquadro x 237–237, y 1957–1964
+firefox/it-stato-390               4 pixel diversi (0.000%), scarto massimo 1/255, riquadro x 129–129, y 2238–2245
+webkit/it-home-1440                946 pixel diversi (0.014%), scarto massimo 57/255, riquadro x 1177–1286, y 2196–2257
+webkit/it-home-390                 498 pixel diversi (0.022%), scarto massimo 48/255, riquadro x 46–105, y 2815–2874
+webkit/it-non-ancora-1440          852 pixel diversi (0.016%), scarto massimo 18/255, riquadro x 1177–1286, y 1257–1318
+webkit/it-non-ancora-390           420 pixel diversi (0.023%), scarto massimo 14/255, riquadro x 46–105, y 1694–1753
+webkit/it-stato-1440               uguale byte per byte
+webkit/it-stato-390                uguale byte per byte

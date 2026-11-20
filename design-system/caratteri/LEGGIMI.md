@@ -11,20 +11,20 @@ scarica soltanto `lexend/Lexend-wght-latino.woff2`** (e `dejavu/DejaVuSans-latin
 |---|---|---|---|---|
 | it, en, es, fr, de, pt, nl, da, sv, fi, ga, id… | latino | Lexend (OFL) | `lexend/Lexend-wght-latino.woff2` | 37 644 |
 | cs, sk, pl, hu, lt, lv, ro, hr, sl, mt, et (e ogni lettera latina estesa) | latino esteso | Lexend (famiglia «Lexend esteso», dopo Lexend nelle pile) | `lexend/Lexend-wght-latino-esteso.woff2` | 37 112 |
-| el, bg | greco, cirillico (in bulgaro con le forme bulgare, `locl BGR`) | Geologica (OFL) | `geologica/Geologica-wght.woff2` | 21 984 |
-| ar | arabo | Readex Pro (OFL), l'arabo di Lexend | `readex-pro/ReadexPro-wght.woff2` | 21 984 |
-| ur | arabo in nastaliq | Noto Nastaliq Urdu (OFL) | `noto-nastaliq-urdu/NotoNastaliqUrdu-wght.woff2` | 234 220 |
-| hi | devanagari | Noto Sans Devanagari (OFL) | `noto-sans-devanagari/NotoSansDevanagari-wght.woff2` | 118 276 |
-| bn | bengali | Noto Sans Bengali (OFL) | `noto-sans-bengali/NotoSansBengali-wght.woff2` | 101 724 |
+| el, bg | greco, cirillico (in bulgaro con le forme bulgare, `locl BGR`) | Geologica (OFL) | `geologica/Geologica-wght.woff2` | 21 936 |
+| ar | arabo | Readex Pro (OFL), l'arabo di Lexend | `readex-pro/ReadexPro-wght.woff2` | 21 740 |
+| ur | arabo in nastaliq | Noto Nastaliq Urdu (OFL) | `noto-nastaliq-urdu/NotoNastaliqUrdu-wght.woff2` | 216 232 |
+| hi | devanagari | Noto Sans Devanagari (OFL) | `noto-sans-devanagari/NotoSansDevanagari-wght.woff2` | 114 460 |
+| bn | bengali | Noto Sans Bengali (OFL) | `noto-sans-bengali/NotoSansBengali-wght.woff2` | 100 316 |
 | zh | cinese semplificato | il carattere di sistema (`--font-cinese`: PingFang SC, Microsoft YaHei, Noto Sans CJK SC…) | nessuno | 0 |
 
 I nomi delle lingue (l'elenco in ogni pagina, la scelta nella barra, la pagina della scelta) hanno file con le sole lettere dei
-nomi: `lexend/Lexend-wght-nomi.woff2` (ăČčšų, 3 788 byte), `geologica/Geologica-wght-nomi.woff2` (Ελληνικά, български, 4 828),
-`readex-pro/ReadexPro-wght-nomi.woff2` (العربية, 6 056), `noto-nastaliq-urdu/NotoNastaliqUrdu-wght-nomi.woff2` (اردو, 2 104),
-`noto-sans-devanagari/NotoSansDevanagari-wght-nomi.woff2` (हिन्दी, 5 168), `noto-sans-bengali/NotoSansBengali-wght-nomi.woff2`
-(বাংলা, 2 168). Il latino di base dei nomi è lo stesso file di Lexend: la famiglia dei nomi non ha una faccia latina sua (con lo
+nomi: `lexend/Lexend-wght-nomi.woff2` (ăČčšų, 3 788 byte), `geologica/Geologica-wght-nomi.woff2` (Ελληνικά, български, 4 840),
+`readex-pro/ReadexPro-wght-nomi.woff2` (العربية, 5 984), `noto-nastaliq-urdu/NotoNastaliqUrdu-wght-nomi.woff2` (اردو, 2 056),
+`noto-sans-devanagari/NotoSansDevanagari-wght-nomi.woff2` (हिन्दी, 5 136), `noto-sans-bengali/NotoSansBengali-wght-nomi.woff2`
+(বাংলা, 2 120). Il latino di base dei nomi è lo stesso file di Lexend: la famiglia dei nomi non ha una faccia latina sua (con lo
 stesso indirizzo il browser lo scaricava una seconda volta, correzione del 17/11/2026) e le pile `--font-nomi-lingue` cominciano da
-`"Lexend"`. In una pagina italiana con l'elenco di tutte le lingue questi file pesano 24 112 byte, e si scaricano soltanto quando
+`"Lexend"`. In una pagina italiana con l'elenco di tutte le lingue questi file pesano 23 924 byte, e si scaricano soltanto quando
 l'elenco si impagina: la scelta aperta, o il piede vicino allo schermo (`content-visibility: auto`). A riposo la pagina italiana
 scarica 2 file, 59 480 byte (Lexend latino e DejaVu latino).
 
@@ -51,4 +51,23 @@ Lexend viene da `lexend/Lexend-wght.ttf`, già in questa cartella. Il latino est
 
 **Come si rifanno i sottoinsiemi**: `python3 design/lavoro/2-lingue-aspetto/prove/sottoinsiemi.py <cartella dei file scaricati>
 design-system/caratteri` (fontTools con brotli). Gli assi si fermano al valore predefinito (Readex `HEXP` 0, Geologica `CRSV` 0
-`SHRP` 0 `slnt` 0, Noto `wdth` 100) e resta il peso; `--layout-features=*`, senza hinting.
+`SHRP` 0 `slnt` 0, Noto `wdth` 100) e resta il peso; `--layout-features=*`, senza hinting. Lo script scrive nella cartella che gli si dà,
+sopra i file che ci trova: lanciarlo su una copia di questa cartella (ci legge anche `lexend/Lexend-wght.ttf` e `lexend/Lexend-wght-latino.woff2`).
+Sono 12 i file che rifà; `lexend/Lexend-wght-latino.woff2` e `dejavu/DejaVuSans-latino.woff2` non sono suoi e restano come sono.
+
+**Strumenti usati** (20/11/2026, incarico P-3): **fontTools 4.68.0 e brotli 1.2.1**, le ultime di oggi (PyPI; prima 4.63.0 e 1.2.0), in
+un ambiente a parte con le versioni fissate (`/workspace/kalliope-playwright/requirements.txt`). Con i sorgenti qui sopra, lo stesso script e la
+stessa data i file sono questi: di Lexend, identici a quelli di prima byte per byte; delle cinque famiglie, più piccoli (Nastaliq −18 KB, Devanagari
+−3,8 KB, Bengali −1,4 KB, Readex −244 byte, Geologica −48 byte) con gli stessi glifi, la stessa `cmap`, gli stessi contorni e le stesse regole di
+composizione (cambia l'impacchettamento binario di `GSUB` e `GPOS`; in Geologica la 4.68.0 mette l'involucro «Extension» in altri lookup di `GPOS`,
+con le stesse sottotabelle). Le pagine non cambiano: 180 foto per prova (home, «stato» e «non ancora», 1440 e 390, tre motori, dieci lingue) uguali
+byte per byte prima e dopo (`design/lavoro/P-3-strumenti/progresso.md`).
+
+**Gli stessi byte a ogni corsa: la data.** Le cinque famiglie passano da `instantiateVariableFont` e da `TTFont.save`, che scrivono nella tavola `head`
+la data e l'ora della corsa (`modified`, e con lei `checkSumAdjustment`): due corse identiche danno file di byte diversi. fontTools rispetta
+`SOURCE_DATE_EPOCH`. I file di qui portano la data del 17/11/2026 (00:34:17 UTC per Readex, 00:34:18 Nastaliq, 00:34:29 Devanagari, 00:34:34
+Bengali, 00:34:38 Geologica; si leggono in `head.modified`) e `design/lavoro/P-3-strumenti/strumenti/sottoinsiemi-datati.py vecchio|nuovo
+<cartella dei file scaricati> <uscita>` rifà tutto con quella data (e i 14 file vengono identici byte per byte, anche con le versioni di prima).
+Gli SHA-256 dei file di oggi: `design/lavoro/P-3-strumenti/esiti/caratteri-sha256-dopo.txt`. Noto Nastaliq Urdu 4.000 (`notofonts/nastaliq`,
+17/7/2024) non è ancora in `google/fonts`, dove la cartella resta alla commit scritta sopra (controllato il 20/11/2026: per tutte e cinque le
+famiglie quella è ancora l'ultima commit della cartella).
