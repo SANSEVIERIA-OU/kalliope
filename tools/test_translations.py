@@ -555,6 +555,26 @@ class SitoVero(unittest.TestCase):
 
     PAGINE_CON_BARRA = ["it/index.html", "it/non-ancora/index.html"]
 
+    def test_gli_esempi_del_catalogo_distinguono_lingue_pubblicate_e_dimostrazioni(self):
+        for out, pubblicate in [(self.una, {"it"}), (self.due, {"it", "en", "ar"})]:
+            for nome in ("esempio-home.html", "esempio-scelta.html"):
+                testo = (out / "design-system" / "catalogo" / nome).read_text(encoding="utf-8")
+                viste = set()
+                for nodo in pagina.cammina(pagina.leggi(testo)):
+                    if not isinstance(nodo, pagina.Nodo) or nodo.tag != "a" or not nodo.attr("hreflang"):
+                        continue
+                    codice = nodo.attr("data-lingua-codice")
+                    viste.add(codice)
+                    if codice in pubblicate:
+                        self.assertTrue(nodo.attr("href"), f"{nome}: {codice} è pubblicata")
+                        self.assertNotEqual(nodo.attr("aria-disabled"), "true")
+                    else:
+                        self.assertIsNone(nodo.attr("href"), f"{nome}: {codice} non deve portare a un 404")
+                        self.assertEqual(nodo.attr("aria-disabled"), "true")
+                        self.assertEqual(nodo.attr("data-demo"), "lingua-non-pubblicata")
+                self.assertEqual(viste, set(cldr.lingue()))
+
+
     def test_con_una_lingua_sola_niente_selettore_in_nessuna_pagina(self):
         for rel in self.PAGINE_CON_BARRA:
             html = (self.una / rel).read_text(encoding="utf-8")
@@ -1201,6 +1221,49 @@ class PaginaInstalla(unittest.TestCase):
     def test_ogni_distribuzione_ha_il_suo_pulsante_del_file(self):
         for valore in ("deb", "rpm", "arch", "tar"):
             self.assertEqual(len(re.findall(rf'<a class="pillola azione scarica" data-sistema="{valore}"', self.TESTO)), 1, valore)
+
+
+class IndirizziStato(unittest.TestCase):
+    """I segnalibri anteriori al rifacimento e i link delle pagine rimaste aprono sezioni reali, anche senza JS."""
+    def test_i_vecchi_indirizzi_restano_univoci_nell_html(self):
+        testo = (RADICE / "website" / "stato" / "index.html").read_text(encoding="utf-8")
+        ids = re.findall(r'\bid="([^"]+)"', testo)
+        for ancora in ("contenuto", "stato-titolo", "per-chi", "provato-per-app", "detta-a-chi", "controllare", "misure", "chi"):
+            self.assertEqual(ids.count(ancora), 1, f"#{ancora} deve avere una sola destinazione")
+        # L'alias apre il contenuto cui si riferisce, senza una seconda copia da tenere allineata.
+        self.assertRegex(testo, r'<li[^>]*id="provato-per-app"[^>]*data-anello="app"')
+        self.assertRegex(testo, r'<div class="inoltra entra" id="detta-a-chi"')
+
+
+class RimandiPagineRitirate(unittest.TestCase):
+    def test_ascolta_sceglie_la_home_della_lingua_con_ancora_e_query(self):
+        regola = {"destinazione": "{lingua}/#campioni", "ancore": {"a2-titolo": "a2-titolo"}}
+        self.assertEqual(sito_py.destinazione_rimando(regola, "ar-XB"), "ar-XB/#campioni")
+        self.assertEqual(sito_py.destinazione_rimando(regola, "it", "?prova=1#a2-titolo"), "it/?prova=1#a2-titolo")
+
+    def test_una_vecchia_ancora_di_catalogo_va_alla_sezione_equivalente(self):
+        regola = {"destinazione": "design-system/catalogo/#identita", "ancore": {"t-colori": "colori"}}
+        self.assertEqual(sito_py.destinazione_rimando(regola, "it", "#t-colori"), "design-system/catalogo/#colori")
+
+    def test_i_vecchi_indirizzi_aiuto_trovano_il_blocco_in_riunione(self):
+        import json
+        regola = json.loads((RADICE / "website" / "rimandi.json").read_text(encoding="utf-8"))["aiuto/index.html"]
+        testo = (RADICE / "website" / "riunione" / "index.html").read_text(encoding="utf-8")
+        ids = re.findall(r'\bid="([^"]+)"', testo)
+        self.assertFalse((RADICE / "website" / "aiuto").exists())
+        self.assertEqual(sito_py.destinazione_rimando(regola, "ar-XB"), "ar-XB/riunione/#aiuto")
+        for vecchio, nuovo in regola["ancore"].items():
+            self.assertEqual(ids.count(nuovo), 1, f"{vecchio}: destinazione #{nuovo} assente o duplicata")
+
+    def test_la_404_radica_i_file_e_conserva_il_salto_nel_documento(self):
+        html = '<a href="#contenuto">Salta</a><a href="it/aiuto/">Aiuto</a><link href="design-system/base.css"><img src="immagini/a.png"><a href="https://esempio.test/">Fuori</a>'
+        for base, prefisso in [("https://esempio.test/kalliope/", "/kalliope/"), ("http://localhost:8726/", "/")]:
+            risultato = sito_py.indirizzi_radice(html, base)
+            self.assertIn('href="#contenuto"', risultato)
+            self.assertIn(f'href="{prefisso}it/aiuto/"', risultato)
+            self.assertIn(f'href="{prefisso}design-system/base.css"', risultato)
+            self.assertIn(f'src="{prefisso}immagini/a.png"', risultato)
+            self.assertIn('href="https://esempio.test/"', risultato)
 
 
 class Repository(unittest.TestCase):

@@ -163,3 +163,8 @@
   .messaggio[data-frase="3"] .filo-bolla .bolla-testo { font-size: var(--corpo-11); line-height: var(--interlinea-13); }
   .messaggio:nth-child(2) { margin-inline-start: var(--spazio-18); }
 }
+
+/* Provenienza dei sei campioni: dettaglio nativo dopo l'ascolto, dalla pagina storica. */
+.campioni-provenienza { margin-block-start: var(--spazio-26); padding-block: var(--spazio-17); border-block-start: var(--filetto-sottile) solid var(--bordo-pannello); }
+.campioni-provenienza summary { cursor: pointer; font-size: var(--corpo-9); line-height: var(--interlinea-9); }
+.campioni-provenienza p { max-width: var(--tratto-testo-larghezza-massima); margin-block: var(--spazio-17); font-size: var(--corpo-7); line-height: var(--interlinea-8); color: var(--testo-spiegazione); }

@@ -311,3 +311,19 @@ html:has(.barra:focus-within) { scroll-padding-top: 0; }
    del telefono: dice dove sei senza diventare un comando (l'azione resta l'unico rosa pieno). Vale per ogni pagina il cui nome sta nel menu */
 .menu a[aria-current="page"] { background: var(--velo-scelto); font-weight: var(--peso-forte); }
 .menu a[aria-current="page"]:hover { background: var(--velo-menu-premuto); }
+
+/* 26/11: a forte ingrandimento (180 px CSS) il nome non deve spingere Menu fuori.
+   Il marchio conserva il nome accessibile; l'azione, quando presente, ha una riga intera. */
+@media (max-width: 280px) {
+  .barra { flex-wrap: wrap; height: auto; min-height: var(--misura-23); padding-block: var(--spazio-7); }
+  .barra .marchio { gap: 0; }
+  .barra .marchio span { display: none; }
+  .barra .pulsante-menu { flex-shrink: 0; margin-inline-start: auto; }
+  .barra .barra-azione { display: none; position: static; margin: 0; transform: none; }
+  .barra.con-azione .barra-azione, .barra.con-azione.azione-a-capo .barra-azione {
+    display: inline-flex; order: 1; width: 100%; max-width: 100%; white-space: normal;
+    min-height: var(--misura-21); font-size: var(--corpo-6);
+  }
+  .js .barra .menu.aperto { top: 100%; }
+  .barra .menu.aperto a { white-space: normal; overflow-wrap: anywhere; padding-inline: var(--spazio-7); }
+}

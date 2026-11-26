@@ -50,6 +50,9 @@
   const pagina = !!$('.scena-pagina'), dopoLaScena = matchMedia(pagina ? '(max-width: 760px) and (min-height: 760px)' : '(max-width: 760px)');
   let sotto = false;
   function ordine() {
+    // Installa: la distribuzione e il file precedono sempre la dimostrazione, anche sul telefono alto.
+    // Il DOM sorgente contiene già scelta, comandi e stato in questo ordine; resta invariato anche al resize.
+    if (palco && palco.closest("[data-comandi-prima]")) return;
     if (!palco || !comandi || dopoLaScena.matches === sotto) return;
     sotto = dopoLaScena.matches;
     if (document.readyState === 'complete') [comandi, ...comandi.children, stato].forEach(e => e && e.classList.add('senza-arrivo'));

@@ -294,13 +294,15 @@ def lingue_da_costruire(mod, totale, cartella, solo, con_pseudo, giornale):
 class Sito:
     def __init__(self, website, system):
         self.website, self.system = website, system
+        rimandi = website / "rimandi.json"
+        self.rimandi = json.loads(rimandi.read_text(encoding="utf-8")) if rimandi.exists() else {}
         self.pagine = {}        # percorso relativo → testo, per le pagine delle lingue
         self.traducibili = {}   # percorso relativo → (testo, radice, messaggi)
         self.radice = {}        # nome pubblicato → testo, per le pagine in cima al sito
         self.risorse = []       # percorsi relativi dei file che non sono pagine
         for f in sorted(website.rglob("*")):
             rel = f.relative_to(website).as_posix()
-            if f.is_dir() or rel.split("/")[0] == "lingue":
+            if f.is_dir() or rel.split("/")[0] == "lingue" or rel == "rimandi.json":
                 continue
             if f.suffix == ".html":
                 if rel in PAGINE_RADICE:
@@ -346,7 +348,11 @@ def rimappa(valore, rel, cartella_lingua, sito, disponibile, avvisi, base_url=No
         pagina_rel, e_dir = indice, True
     else:
         pagina_rel, e_dir = destinazione, False
-    if pagina_rel in sito.pagine:
+    if pagina_rel in sito.rimandi:
+        uscita = destinazione_rimando(sito.rimandi[pagina_rel], cartella_lingua, coda)
+        coda = ""
+        e_pagina = True
+    elif pagina_rel in sito.pagine:
         lingua = cartella_lingua if pagina_rel in disponibile.get(cartella_lingua, ()) else SORGENTE
         if pagina_rel not in disponibile.get(lingua, ()):
             avvisi.append(f"{rel}: {valore!r} does not lead to a built page")
@@ -761,6 +767,32 @@ def passo_fonti(testo, v, percorsi, mancanti):
     return pagina.applica(testo, mod)
 
 
+def indirizzi_radice(testo, base_url):
+    """Una 404 servita a qualsiasi profondità conserva #ancore nel documento e radica i file al prefisso del sito."""
+    prefisso = urllib.parse.urlsplit(base_url).path or "/"
+    modifiche = []
+    for nodo in pagina.cammina(pagina.leggi(testo)):
+        if not isinstance(nodo, pagina.Nodo):
+            continue
+        for nome, raw, valore, ini, fine in nodo.attrs:
+            if nome not in ATTRIBUTI_URL or raw is None or not valore or valore.startswith(("#", "/", "//")) or urllib.parse.urlsplit(valore).scheme:
+                continue
+            nuovo = urllib.parse.urljoin(prefisso, valore)
+            modifiche.append((ini, fine, pagina.rendi_attributo(nuovo)))
+    return pagina.applica(testo, modifiche)
+
+
+def tema_del_sistema(testo, colore):
+    """La barra del browser segue il fondo dei token nelle pagine del sistema nuovo."""
+    if not colore or not re.search(r'href=[\"\'][^\"\']*design-system/token\.css[\"\']', testo):
+        return testo
+    meta = f'<meta name="theme-color" content="{colore}">'
+    esistente = r'<meta\b[^>]*\bname=[\"\']theme-color[\"\'][^>]*>'
+    if re.search(esistente, testo, flags=re.I):
+        return re.sub(esistente, meta, testo, flags=re.I)
+    return testo.replace('</head>', meta + '\n</head>', 1)
+
+
 def costruisci_pagina(rel, testo, lingua, reali, sito, disponibile, v_lingua, sconosciuti, avvisi, opzioni):
     """L'HTML di una pagina in una lingua."""
     if rel in sito.traducibili:
@@ -781,6 +813,7 @@ def costruisci_pagina(rel, testo, lingua, reali, sito, disponibile, v_lingua, sc
     file = opzioni.get("caratteri", {}).get(lingua.codice)
     if file and rel in sito.traducibili and not lingua.finta:   # una pseudo-lingua non ha lettere della scrittura: il file non servirebbe
         testo = precarica_carattere(testo, rel, lingua, file)
+    testo = tema_del_sistema(testo, opzioni.get("tema"))
     return isola_latino(testo) if lingua.direzione == "rtl" and not lingua.finta else testo
 
 
@@ -793,7 +826,7 @@ def pagina_scelta(testo, reali, sito, v_it, sconosciuti, opzioni):
     testo = testo[:h.s] + tag_html(h, lingua)[:-1] + f' data-lingue="{codici}">' + testo[h.se:]
     testo = passo_struttura(testo, "index.html", lingua, reali, sito, opzioni["senza_selettore"], opzioni["base_url"], nella_radice=True)
     testo = passo_marchio(testo, "", opzioni.get("marchio"), "index.html")
-    return riempi(testo, v_it, "index.html", sconosciuti)
+    return tema_del_sistema(riempi(testo, v_it, "index.html", sconosciuti), opzioni.get("tema"))
 
 
 def esempi_per_il_catalogo(out, sito, reali, v_lingue, sconosciuti, opzioni):
@@ -814,6 +847,19 @@ def esempi_per_il_catalogo(out, sito, reali, v_lingue, sconosciuti, opzioni):
 
     def per_il_catalogo(html, base):
         html = re.sub(r'<link rel="(?:canonical|alternate)"[^>]*>\n?', "", html)   # non sono pagine del sito: né canonical né hreflang
+        # Il registro completo dimostra gli alfabeti, non promette traduzioni inesistenti.
+        pubblicate = {c for c, lingua in reali.items() if lingua.pubblicata}
+        modifiche = []
+        for nodo in pagina.cammina(pagina.leggi(html)):
+            if not isinstance(nodo, pagina.Nodo) or nodo.tag != "a" or not nodo.attr("hreflang"):
+                continue
+            if nodo.attr("data-lingua-codice") in pubblicate:
+                continue
+            apertura = html[nodo.s:nodo.se]
+            apertura = re.sub(r'\s+href="[^"]*"', "", apertura)
+            apertura = apertura[:-1] + ' role="link" aria-disabled="true" data-demo="lingua-non-pubblicata" title="Esempio: questa lingua non è pubblicata">'
+            modifiche.append((nodo.s, nodo.se, apertura))
+        html = pagina.applica(html, modifiche)
         return html.replace('<meta charset="utf-8">', f'<meta charset="utf-8">\n<base href="{base}">\n<meta name="robots" content="noindex">', 1)
 
     home = costruisci_pagina("index.html", sito.pagine["index.html"], tutte[SORGENTE], tutte, sito, disponibile, v_lingue[SORGENTE], sconosciuti, [], opz)
@@ -824,7 +870,30 @@ def esempi_per_il_catalogo(out, sito, reali, v_lingue, sconosciuti, opzioni):
     (cartella / "esempio-scelta.html").write_text(per_il_catalogo(scelta, "../../"), encoding="utf-8")
 
 
-def pagina_rimando(relativo, assoluto):
+def destinazione_rimando(regola, lingua, coda=""):
+    destinazione = urllib.parse.urlsplit(regola["destinazione"].replace("{lingua}", lingua))
+    vecchio = urllib.parse.urlsplit("." + coda)
+    frammento = regola.get("ancore", {}).get(vecchio.fragment, vecchio.fragment) if vecchio.fragment else destinazione.fragment
+    return urllib.parse.urlunsplit(("", "", destinazione.path, vecchio.query, frammento))
+
+
+def pagina_rimando(relativo, assoluto, ancore=None):
+    script = f"location.replace({json.dumps(relativo)} + location.search + location.hash)"
+    if ancore is not None or "#" in relativo:
+        script = f"""
+const destinazione = new URL({json.dumps(relativo)}, location.href);
+const ancore = {json.dumps(ancore or {})};
+destinazione.search = location.search;
+if (location.hash) {{
+    try {{
+        const id = decodeURIComponent(location.hash.slice(1));
+        destinazione.hash = Object.hasOwn(ancore, id) ? ancore[id] : id;
+    }} catch {{
+        // Un frammento incompleto lascia la sezione predefinita del vecchio indirizzo.
+    }}
+}}
+location.replace(destinazione.href);
+"""
     return f"""<!doctype html>
 <!-- SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 -->
 <html lang="it" dir="ltr">
@@ -834,7 +903,7 @@ def pagina_rimando(relativo, assoluto):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="refresh" content="0; url={relativo}">
 <link rel="canonical" href="{assoluto}">
-<script>location.replace({json.dumps(relativo)} + location.search + location.hash)</script>
+<script>{script}</script>
 </head>
 <body>
 <p>Questa pagina si è spostata: <a href="{relativo}">{relativo}</a></p>
@@ -854,7 +923,7 @@ def build(out, v, grezzi, opzioni):
             errori.append(f"{rel}: marks texts but cannot be read")
     if errori:
         sys.exit("site.py: the pages mark their texts wrongly:\n  " + "\n  ".join(errori))
-    sito.traducibili = {rel: sito.pagine[rel] for rel in pagine}
+    sito.traducibili = {rel: sito.pagine[rel] for rel in pagine if rel in sito.pagine}
     mod = catalogo.modello(pagine, tutti)
     giornale = []
     reali = lingue_da_costruire(mod, len(mod.voci), opzioni["website"] / "lingue", opzioni["lingue"], opzioni["pseudo"], giornale)
@@ -864,7 +933,10 @@ def build(out, v, grezzi, opzioni):
     if lingua_sola:
         opzioni = {**opzioni, "senza_selettore": True}
     # il file del carattere di ogni scrittura, da precaricare (token.css dice quale)
-    tutti_i_caratteri = caratteri_per_lingua((opzioni["system"] / "token.css").read_text(encoding="utf-8"))
+    token_css = (opzioni["system"] / "token.css").read_text(encoding="utf-8")
+    tutti_i_caratteri = caratteri_per_lingua(token_css)
+    fondo = re.search(r"--fondo:\s*(#[0-9a-fA-F]{3,8})\s*;", token_css)
+    opzioni = {**opzioni, "tema": fondo.group(1) if fondo else None}
     opzioni = {**opzioni, "caratteri": {c: f.removeprefix("caratteri/") for c, f in da_precaricare(tutti_i_caratteri, opzioni["system"]).items()},
                "fonti_mancanti": set(), "marchio": marchio_del_sistema(opzioni["system"])}
     # le pagine di ogni lingua: le traducibili in ogni lingua, le altre soltanto in italiano
@@ -900,7 +972,9 @@ def build(out, v, grezzi, opzioni):
             # un'altra pagina in cima al sito (la 404): anche lei ha lang e dir
             testo = passo_struttura(testo, nome, reali[SORGENTE], reali, sito, opzioni["senza_selettore"], opzioni["base_url"])
             testo = passo_marchio(testo, "", opzioni.get("marchio"), nome)
-            html = riempi(testo, v_lingue[SORGENTE], nome, sconosciuti)
+            html = riempi(testo, {**v_lingue[SORGENTE], "base.path": urllib.parse.urlsplit(opzioni["base_url"]).path or "/"}, nome, sconosciuti)
+            html = tema_del_sistema(html, opzioni.get("tema"))
+            html = indirizzi_radice(html, opzioni["base_url"])
         (out / nome).write_text(html, encoding="utf-8")
     if "index.html" in sito.radice and "index.html" in sito.pagine:
         esempi_per_il_catalogo(out, sito, reali, v_lingue, sconosciuti, opzioni)
@@ -916,6 +990,20 @@ def build(out, v, grezzi, opzioni):
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(pagina_rimando(relativo, opzioni["base_url"] + nuovo), encoding="utf-8")
         rimandi.append(sito.indirizzo(rel))
+    # Indirizzi ritirati: ogni lingua arriva alla propria home; il catalogo è condiviso.
+    for rel, regola in sito.rimandi.items():
+        for codice in [None, *reali]:
+            lingua = codice or SORGENTE
+            nuovo = destinazione_rimando(regola, lingua)
+            percorso = f"{codice}/{rel}" if codice else rel
+            target = urllib.parse.urlsplit(nuovo)
+            relativo = posixpath.relpath(target.path.rstrip("/") or ".", posixpath.dirname(percorso) or ".")
+            if target.path.endswith("/"): relativo = relativo.rstrip("/") + "/"
+            if target.fragment: relativo += "#" + target.fragment
+            dest = out / percorso
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            dest.write_text(pagina_rimando(relativo, opzioni["base_url"] + nuovo, regola.get("ancore")), encoding="utf-8")
+            if codice is None: rimandi.append(sito.indirizzo(rel))
     # ciò che non torna
     if sconosciuti:
         sys.exit("site.py: markers without a value:\n  " + "\n  ".join(sorted(sconosciuti)))

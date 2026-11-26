@@ -5,6 +5,26 @@
 (async () => {
   const $ = (s, r = document) => r.querySelector(s);
   const el = (tag, att = {}, ...figli) => { const e = document.createElement(tag); for (const [k, v] of Object.entries(att)) { if (typeof v === 'function') e.addEventListener(k.replace(/^on/, ''), v); else if (k === 'html') e.innerHTML = v; else if (k === 'testo') e.textContent = v; else if (v !== false && v !== undefined) e.setAttribute(k, v === true ? '' : v); } for (const f of figli.flat()) if (f) e.append(f); return e; };
+  // Le tabelle restano tabelle: solo il loro contenitore scorre, anche con tastiera.
+  // Le sezioni aggiunte dai cataloghi specialistici passano dallo stesso presidio.
+  const tabelle = new WeakSet();
+  const rendiTabelleScorrevoli = () => {
+    document.querySelectorAll('.cat-tabella').forEach(tabella => {
+      if (tabelle.has(tabella)) return;
+      tabelle.add(tabella);
+      const titolo = tabella.closest('.cat-sezione')?.querySelector('h2')?.textContent || 'Catalogo';
+      let cornice = tabella.parentElement;
+      if (!cornice.classList.contains('cm-scorre')) {
+        cornice = el('div'); tabella.before(cornice); cornice.append(tabella);
+      }
+      cornice.classList.add('cat-scorre');
+      cornice.setAttribute('role', 'region');
+      cornice.setAttribute('aria-label', `${titolo}: tabella a scorrimento orizzontale`);
+      cornice.tabIndex = 0;
+    });
+  };
+  new MutationObserver(rendiTabelleScorrevoli).observe(document.querySelector('main.cat'), {childList: true, subtree: true});
+  rendiTabelleScorrevoli();
   const stato = $('#stato-catalogo');
   const errori = [];
   const prova = (nome, f) => { try { return f(); } catch (e) { errori.push(`${nome}: ${e.message}`); return null; } };
@@ -58,7 +78,7 @@
   const fSim = new CSSStyleSheet(); fSim.replaceSync(forzati.join('\n')); document.adoptedStyleSheets = [...document.adoptedStyleSheets, fSim];
 
   // ---------- la home vera, da cui si copiano i componenti ----------
-  const home = new DOMParser().parseFromString(await (await fetch('../../it/index.html')).text(), 'text/html');
+  const home = await window.CatalogoDocumenti.leggi('../../it/index.html');
   const da = (sel, n = 0) => { const e = home.querySelectorAll(sel)[n]; if (!e) throw new Error('nella home manca ' + sel); const c = e.cloneNode(true); c.removeAttribute('id'); c.querySelectorAll('[id]').forEach(x => x.removeAttribute('id')); return c; };
   const sblocca = n => { n.querySelectorAll('[hidden]').forEach(x => x.removeAttribute('hidden')); return n; };
   const html = s => { const t = document.createElement('template'); t.innerHTML = s.trim(); return t.content.firstElementChild; };
@@ -84,9 +104,9 @@
     const s = apri('identita', 'Identità e stato', 'Che cosa è questo sistema, da dove viene e quanto è adottato.');
     s.append(el('table', {class: 'cat-tabella'}, el('tbody', {}, ...[
       ['Scopo', 'Dare un nome e un posto a ogni valore della home di Kalliope («In riunione, alla pari») e ai suoi componenti, perché il sito intero ripartì da qui senza ricopiare valori.'],
-      ['Direzione scelta', 'D2 «Alla pari, in riunione»: una stanza di un solo colore (bordeaux), una riunione di quattro riquadri uguali; tu scrivi, la frase sale in una bolla, la voce accende la stanza e gli altri si girano verso di te. Fonte: <code>design/direzione-2/D2.md</code>, <code>design/direzione-2/COSTRUZIONE.md</code>.'],
+      ['Direzione scelta', 'D2 «Alla pari, in riunione»: quattro riquadri di pari dimensioni. Tu scrivi, la frase sale in una bolla, la voce accende la stanza e gli altri si girano verso di te. Fonte: <code>design/direzione-2/D2.md</code>, <code>design/direzione-2/COSTRUZIONE.md</code>.'],
       ['Vincolo che comanda', 'L\'aspetto non cambia di un pixel rispetto alla home scelta dal proprietario e costruita nella prova (il termine di confronto): ogni valore del foglio originale è qui con lo stesso valore; i nomi sono nuovi.'],
-      ['Superfici', 'Una: la home (<code>website/index.html</code>). Le altre pagine del sito (ascolta, stato, installa, in riunione, aiuto, non ancora) hanno ancora l\'aspetto di prima, con i loro fogli in <code>website/stile/</code>: non usano questo sistema.'],
+      ['Superfici', 'Il sito: pagina iniziale con i campioni vocali, stato, installa, in riunione, aiuto, non ancora e pagina non trovata. L\'applicazione non lo usa ancora.'],
       ['Stato di adozione', `La home usa il sistema per intero: <b>${tutti.length}</b> token in <code>token.css</code>, base e 14 componenti. Nessun valore scritto a mano nei fogli di stile (<code>controlla-sorgenti.mjs</code>); restano nello script <code>scena.js</code> e nell'HTML i valori elencati in <code>TOKEN.md</code> («Altro da decidere»).`],
       ['Fonti', '<code>token.css</code> (valori), <code>TOKEN.md</code> (ruolo e usi di ogni token, valori quasi uguali da decidere), <code>SISTEMA.md</code> (come si usa e che cosa è provato).'],
     ].map(([a, b]) => el('tr', {}, el('th', {testo: a, style: 'white-space: nowrap'}), el('td', {html: b}))))));
@@ -131,7 +151,7 @@
     const s = apri('componenti', 'Componenti', 'I componenti veri della home, copiati da <code>website/index.html</code> e coperti dagli stessi fogli. Gli stati si forzano con le stesse regole del sistema (la classe <code>sim-sopra</code> vale <code>:hover</code>, <code>sim-fuoco</code> vale <code>:focus-visible</code>, <code>sim-premuto</code> vale <code>:active</code>). «Disattivato» è l\'attributo <code>disabled</code>; «in corso» e «errore» stanno dove il componente li ha.');
     const comuni = {verifica: ''};
     // --- barra e menu
-    s.append(scheda({nome: 'Barra e menu', id: '<code>.barra</code> <code>.marchio</code> <code>.menu</code> <code>.barra-azione</code> <code>.pulsante-menu</code> (stile/componenti/barra.css)',
+    s.append(scheda({nome: 'Barra e menu', id: '<code>.barra</code> <code>.marchio</code> <code>.menu</code> <code>.barra-azione</code> <code>.pulsante-menu</code> (componenti/barra.css)',
       regola: 'La barra resta in alto; a riposo è trasparente sulla stanza, scorrendo diventa piena (<code>.compatta</code>) e l\'azione «Scarica e installa» le entra accanto (<code>.con-azione</code>), il menu le fa posto. Sotto 960 px le cinque voci stanno dietro «Menu».',
       confine: 'Non per navigazioni interne a un tratto; l\'azione in barra è una sola.', persona: 'Chi arriva e vuole sapere dove andare o scaricare, a ogni larghezza.', provenienza: 'Direzione D2 (primo schermo scelto) e correzioni 6a/8b della home: barra compatta piena, menu a una riga da 960 px.',
       prove: [['a riposo, in cima (la home viva)', 0], ['scorrendo: barra piena con l\'azione in barra', 700]].map(([n, y]) => prova1(n, el('iframe', {class: 'cat-anteprima', src: '../../it/index.html', title: n, style: 'height: 6em', onload: ev => { try { ev.target.contentWindow.scrollTo(0, y); } catch (e) { /* stessa origine: non succede */ } }}), 'largo'))}));
@@ -141,10 +161,10 @@
       regola: 'Una sola azione piena per schermo (<code>.azione</code>, il colore di ciò che si preme per scegliere); il chiaro è il colore della voce (<code>.voce-chiara</code>); i comandi secondari hanno solo il contorno; i collegamenti nel testo sono sottolineati e hanno la freccia.',
       confine: 'Mai due azioni piene vicine; non usare la pillola chiara per un comando che non fa sentire una voce.', persona: 'Chi scrive e chi ascolta: scegliere, avviare, chiudere.', provenienza: 'Direzione D2; stati di 4b (premuto, fuoco, non disponibile su ogni comando).',
       prove: cp.map(([n, cl, t, ex]) => el('div', {class: 'cat-prova'}, el('b', {testo: n}), el('div', {class: 'cat-prove'}, stati(pulsante(cl, t, ex), cl.includes('azione') || cl.includes('chiara') ? ['riposo', 'passaggio', 'fuoco', 'premuto', 'disattivato'] : ['riposo', 'passaggio', 'fuoco', 'premuto', 'disattivato']))))
-        .concat(el('div', {class: 'cat-prova'}, el('b', {testo: 'Collegamento con freccia'}), el('div', {class: 'cat-prove'}, ['riposo', 'passaggio', 'fuoco', 'premuto'].map(n => { const a = html('<a class="collegamento" href="#pulsanti">Non uso Linux: cosa posso fare<span class="freccia" aria-hidden="true"></span></a>'); if (n === 'passaggio') a.classList.add('sim-sopra'); if (n === 'fuoco') a.classList.add('sim-fuoco'); if (n === 'premuto') a.classList.add('sim-premuto'); return prova1(n, a); }))))}));
+        .concat(el('div', {class: 'cat-prova'}, el('b', {testo: 'Collegamento con freccia'}), el('div', {class: 'cat-prove'}, ['riposo', 'passaggio', 'fuoco', 'premuto'].map(n => { const a = html('<a class="collegamento" href="../../it/non-ancora/">Non uso Linux: cosa posso fare<span class="freccia" aria-hidden="true"></span></a>'); if (n === 'passaggio') a.classList.add('sim-sopra'); if (n === 'fuoco') a.classList.add('sim-fuoco'); if (n === 'premuto') a.classList.add('sim-premuto'); return prova1(n, a); }))))}));
     // --- la bolla
     s.append(scheda({nome: 'Bolla', id: '<code>.posto-bolla</code> <code>.bolla</code> <code>.bolla-corpo</code> <code>.bolla-testo</code> <code>.coda</code> (bolla.css)',
-      regola: 'Ciò che scrivi sale in una bolla chiara con la coda verso di te; la parte già detta passa al magenta (<code>.detto</code>), la bolla già detta è più tenue (<code>.detta</code>).',
+      regola: 'Ciò che scrivi sale in una bolla chiara con la coda verso di te; la parte già detta prende il colore della voce (<code>.detto</code>), la bolla già detta è più tenue (<code>.detta</code>).',
       confine: 'Solo per le frasi dell\'utente; non per messaggi del sistema (quelli sono «messaggi d\'errore»).', persona: 'Chi scrive: vede la frase prima che suoni.', provenienza: 'Direzione D2, idea centrale (la frase sale in una bolla).',
       prove: [['riposo', ''], ['già detta', 'detta']].map(([n, c]) => { const p = da('.posto-bolla'); p.removeAttribute('aria-hidden'); if (c) p.querySelector('.bolla').classList.add(c); return prova1(n, p, 'largo'); })}));
     // --- i riquadri della riunione
@@ -177,7 +197,7 @@
       confine: 'Una frase alla volta; senza JavaScript il comando è un lettore nativo.', persona: 'Chi prova le frasi vere con il testo accanto.', provenienza: 'Direzione D2 e correzioni P3/P4 (il filo con la riunione accanto); contenuti in <code>design/direzione-2/CONTENUTI.md</code>.',
       prove: stMsg.map(([n, f]) => { return prova1(n, msg(f), 'largo'); })}));
     // --- i messaggi d'errore
-    const err = (testo, mod) => { const x = html(`<div class="errore-ascolto" role="alert"><p>${testo}</p><div class="errore-azioni"><button class="riprova" type="button">Riprova</button><a class="scarica-file" href="#errori">Scarica il file e ascoltalo</a></div></div>`); mod?.(x); return x; };
+    const err = (testo, mod) => { const x = html(`<div class="errore-ascolto" role="alert"><p>${testo}</p><div class="errore-azioni"><button class="riprova" type="button">Riprova</button><a class="scarica-file" href="../../voce/giulia-1.mp3" download>Scarica il file e ascoltalo</a></div></div>`); mod?.(x); return x; };
     s.append(scheda({nome: 'Messaggi d\'errore', id: '<code>.errore-ascolto</code> <code>.errore-azioni</code> <code>.riprova</code> <code>.scarica-file</code> (errori.css)',
       regola: 'Il messaggio sta vicino al comando che l\'ha causato, dice che cosa fare, offre «Riprova» e l\'alternativa; il testo resta sempre leggibile. Nella scheda in alto sta al posto delle frasi, senza riquadro dentro il riquadro.',
       confine: 'Solo per l\'audio che non parte o si interrompe; non per conferme.', persona: 'Chi non sente la voce: la rete, il file o il browser.', provenienza: 'Costruzione 4b (errori e recupero) e correzioni 6b/8d.',
@@ -262,7 +282,7 @@
       ['Prestazioni e canali', 'la fase delle prestazioni non è ancora stata fatta; nessun budget qui.'],
       ['Provenienza e decisioni', 'la direzione scelta è in <code>design/direzione-2/D2.md</code>; le schede dei riferimenti e la matrice del confronto non sono in questo repository.'],
       ['Tutti i dispositivi (15 voci) nei tre motori', 'per decisione dell\'incarico: solo un confronto pixel per pixel su quattro misure in Chromium; niente matrici. Qui tre larghezze vive come anteprima.'],
-      ['Prove con i log', 'gli esiti dei confronti stanno in <code>sistema/prove/</code> e in <code>SISTEMA.md</code>, non letti dal catalogo.'],
+      ['Prove con i log', 'gli esiti delle prove stanno in <code>design/lavoro/</code>; il catalogo mostra i componenti vivi e le loro fonti.'],
       ['Lingue e alfabeti', 'sono nelle sezioni «Le scritture», «La scelta della lingua» e «Lo specchio» (<code>catalogo-lingue.js</code>); le traduzioni vere non ci sono ancora: i testi si riscrivono, il catalogo mostra i caratteri, la scelta e lo specchio.'],
       ['Valori in <code>scena.js</code>', 'curve, durate e colori delle onde scritti nello script non sono ancora token (<code>TOKEN.md</code>, «Altro da decidere»).'],
     ].map(([a, b]) => `<li><b>${a}</b>: ${b}</li>`).join('')}));

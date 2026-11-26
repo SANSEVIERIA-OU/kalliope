@@ -3,6 +3,37 @@
 Da dove si riparte: `CLAUDE.md`. Qui: fasi, decisioni prese a lavoro avviato, incarichi, tempi e ciò che resta.
 Metodo: skill vibe-next `design-system-generator` 0.46.1, ruoli nativi di Claude Code.
 
+## Anteprima locale del 26 novembre 2026
+
+Il proprietario ha chiesto di completare il sito e di rivedere la dominante rossa. Il ramo
+`sito-completo-anteprima-26-novembre` contiene la proposta grafite e verde acqua. La pubblicazione del 20 novembre è su GitHub Pages. La scelta dei colori e la pubblicazione del ramo restano al proprietario.
+
+La guida «In riunione» conduce dai controlli del microfono alla ricerca dei messaggi in `#aiuto`.
+La home ospita tutte e sei le registrazioni, con i testi e la provenienza dei campioni. I vecchi indirizzi di ascolto,
+aiuto e sistema sono descritti in `website/rimandi.json`. La 404 consente di tornare alla home da indirizzi profondi.
+Il catalogo usa i componenti reali e permette di provare gli stati della ricerca.
+
+Le visite hanno portato a correggere il download fuori dal primo schermo sui telefoni alti, il menu a forte
+ingrandimento, i collegamenti storici di «Stato», le tabelle del catalogo che allargavano l'intera pagina e i
+collegamenti dei suoi esempi. Gli esempi di distribuzione hanno etichette e gruppi indipendenti. Aprire la
+dimostrazione di «Aiuto» nel catalogo mantiene fermo il documento che la ospita.
+
+La QA ha usato i ruoli di visita, direzione, giudizio indipendente e costruzione del metodo 0.53.1. Le prove e i confronti
+sono in `materiali-locali/verifica-sito-26/` e `materiali-locali/verifica-funzionale-26-a/` sulla macchina del progetto.
+Le nove lingue di prova e le due pseudo-lingue servono a verificare impaginazione, scritture e verso. Le traduzioni
+pubblicabili in questa versione sono quelle italiane.
+
+Sulla build della 0.1 sotto il prefisso `/kalliope/` sono stati eseguiti 486 casi di caricamento,
+navigazione e impaginazione. La verifica comprende 15 viewport, i motori Chromium, Firefox e WebKit e un
+sottoinsieme con JavaScript spento. Audio, ricerca, copia, scelte della distribuzione, ancore e percorsi 404
+hanno prove mirate. Le foto della matrice comprendono anche stati durante l’arrivo della pagina. Le visite
+interattive, i video e le foto assestate sono conservati a parte. Si tratta di simulazioni su questa macchina.
+
+I controlli degli strumenti comprendono 185 test (uno saltato), il marchio, i CSS, il controllo dei valori
+nel sistema e 498 messaggi italiani pronti. Le registrazioni dimostrative appartengono alla 0.1-rc.1.
+Nella risposta sulla voce personale, «Stato» distingue la precedente versione di prova dalla 0.1, che prepara
+la voce dal terminale e la offre nell'elenco della finestra.
+
 ## Decisioni del proprietario (16/11/2026)
 
 - «chissenefrega dei testi tanto anno rifatti da capo: preoccupati solo di rendere predisposto sito e applicazione per
@@ -103,7 +134,7 @@ Sulle tre domande lasciate da «non ancora»:
 | 2-g. Lingue: giudizio | fatto | design-judge (opus) | 17/11, 59 min, 333k token | `2-lingue-aspetto/giudizio/GIUDIZIO.md`: 1 bloccante (B1 la barra con l'azione nelle lingue lunghe fra 960 e 1440 px, foto rivista da chi coordina), 4 importanti (I1 versione al contrario in ar e ur, I2 etichetta di «Tu» al telefono, I3 pagina della scelta vuota, I4 20 KB di caratteri in più nella pagina italiana), 8 minori |
 | 2-c. Lingue: correzione | fatta, commit `82823d5` | design-direction (opus), lo stesso worker | 17/11, 155 min, 222k token | B1 I1 I2 I3 I4 e M1–M8 (M4 lasciato con le prove: il nastaliq non ha pesi oltre 700); barra 0 rotte su 828 larghezze; verificato da chi coordina (controlli, foto prima e dopo) |
 | 2-b. Lingue: costruzione (lingua sola, precarico, tastiera e stati del selettore, larghezze e motori per lingua, tabella dei token nel catalogo) | fatta, salvata con 3a-r | design-build (sonnet) | 17/11, 190 min, 860k token | `2-lingue-aspetto/costruzione/progresso.md`; 72 prove verdi; barra 0 rotte su 1 892; 3 000 pagine d'esame; precarico solo per ar, el, bg (misurato: per bn, hi, ur il primo disegno arriva dopo; accettato da chi coordina) |
-| 3. Pagine nella direzione 2: non ancora, stato, installa, in riunione (con aiuto), 404 | in corso | per pagina: direzione → giudice → correzione → costruzione → proprietario | | una alla volta, ciascuna mostrata al proprietario |
+| 3. Pagine nella direzione 2: non ancora, stato, installa, in riunione (con aiuto), 404 | complete sul ramo locale, palette in visione | per pagina: direzione → giudice → correzione → costruzione → proprietario | | una alla volta, ciascuna mostrata al proprietario |
 | 3a. «non ancora»: aspetto e movimento | fatta | design-direction (opus) | 16/11, 42 min, 544k token | `3a-non-ancora/` (PIANO, CONTENUTI, sequenze, confronti); 4 componenti nuovi, 24 token; controlla-sorgenti verde; solo Chromium |
 | 3a-g. «non ancora»: giudizio | fatto | design-judge (opus) | 16/11, 35 min, 351k token | `3a-non-ancora/giudizio/GIUDIZIO.md`: 0 bloccanti, 6 importanti (I1 stato della prova, I2 «non ancora» per ciò che non è, I3 feed come unica decisione, I4 catalogo, I5 schermi bassi senza comandi, I6 tratto fermo), 8 minori |
 | 3a-c. «non ancora»: correzioni d'aspetto e contenuti | fatta, commit `0cf5c64` | design-direction (opus), lo stesso worker | 16/11 | I1, I2, I3, I5, I6 e i fatti decisi da chi coordina |
@@ -132,7 +163,7 @@ Sulle tre domande lasciate da «non ancora»:
 | 3c. «installa»: aspetto e movimento | fatta (548a6f2): «ogni passo si vede riuscire», terminale e riunione nel primo schermo, impronte che si confrontano, finestra con le frasi vere, posto tratteggiato di «Kalliope» che si riempie; 4 componenti e 89 token nuovi; frasi della prossima versione segnate `data-cambia`. **3c-b, costruzione, in corso** (`incarichi/3c-installa-costruzione.md`). Il 20/11 il riavvio della sessione ha perso il costruttore e svuotato `/tmp` a giro finale su H5 a metà: 13 esiti di robustezza su 14 verdi, uno no (in Firefox a 390×844 `#indirizzo-installa` porta il titolo 8 px sotto la barra); `finale-4.sh` e `testo-confronto.sh` mai girati. Ripresa con un costruttore nuovo, via del proprietario («via», 20/11): `incarichi/3c-installa-ripresa.md`, skill 0.52.0. **3c-b consegnata** (20/11, design-build sonnet, 10:35 → 16:50, circa 6 ore e 15 minuti, 689k token, 441 comandi; il proprietario: «ma è sei ore che vai avanti», chiusura chiesta da chi coordina alle 16:20): `3c-installa/costruzione/progresso.md`, «Consegna della ripresa», albero finale H13. Due difetti veri corretti alla causa: 15, in Firefox i punti in fondo alla pagina (`#indirizzo-installa`, `#ripresa`, `#inoltra`) portavano il titolo dietro la barra (a 1366×640 a ogni caricamento; 17 NO su 36 → 0); e in arabo e urdu «Copia» e la selezione a mano mettevano U+2066/U+2069 nei comandi (`tools/site.py`: l'isolamento dei testi che non si traducono e di `code`/`pre`/`kbd`/`samp` ora lo fa `dir="ltr"`, senza elenco, come raccomandano W3C e HTML; italiano e altre nove lingue byte per byte uguali). Trovato per strada: `soglie.mjs` della skill ignora `--pagina` con un indirizzo (le soglie di H5 erano della radice; da segnalare a vibe-next). Tempo perso: il riavvio (alberi in `/tmp` da rifare), gli script del costruttore precedente con errori (soglie, lingue), il carico della macchina da un altro progetto, e due allargamenti chiesti da chi coordina sugli isolamenti (più di un'ora). Non chiusi: il confronto di «installa» con la scelta (`ammesse.json`, differenze non dichiarate), il caso WebKit del marchio «fermo a metà» (anche prima della correzione), primo schermo ai dispositivi e catalogo non rifatti, `appunti` in WebKit. Verificato da chi coordina: controlli statici verdi, sito vero e a dieci lingue identici a H13, foto di «installa» in italiano e arabo a 1440 e 390 senza errori. Difetti d'aspetto 1–9 per il giudice e il proprietario. Il proprietario ha scelto di vederla subito, senza giudice («A», 20/11), l'ha approvata («va bene») e ha chiesto di pubblicare («pubblica tutto», 20/11): in linea con il push del 20/11 sera. Il giudice non è stato fatto; i punti 1–9 restano aperti | design-direction (opus), poi design-build (sonnet) | 20/11 | `incarichi/3c-installa-aspetto.md`, lavoro in `3c-installa/`: P4 per intero, la versione offerta (v0.1-rc.1) con i segnaposto, le frasi che cambiano con la prossima versione raccolte; poi costruzione, giudizio, proprietario |
 | R-1. Release automatiche, AUR e la 0.1 pronta | **fatta; 0.1 pubblicata il 20/11** (release latest, sito con la 0.1; AUR in attesa della chiave nel profilo del proprietario). Dopo: il sito si pubblica in due job (la ripubblicazione avviata dalla release era fallita per i tempi di GitHub), il catalogo non mostra più lo scarico della voce. **Resta**: la finestra «Informazioni» non nomina Pocket TTS (l'attribuzione chiesta da CC BY 4.0 è nel pacchetto, `share/doc/kalliope/pocket-tts/NOTICE.txt`, e in `THIRD_PARTY_NOTICES.md`): si aggiunge con il prossimo lavoro sulla finestra, dopo aver rifatto il banco delle foto (`P-1-dipendenze/strumenti/`, sparito con il riavvio) | general-purpose (opus) | 20/11 sera, stima 3–4 ore | `incarichi/R-1-rilasci.md`, lavoro in `R-rilasci/`. Scelte del proprietario del 20/11 (risposte alle domande dopo la ricerca `ricerca/rilasci.md`): nostro strumento con release automatica al cambio di versione su `main`; chiave SSH nuova solo per Kalliope (creata da chi coordina: secret `AUR_SSH_KEY` e copia in `.env`; la parte pubblica va nel profilo AUR del proprietario); su AUR solo versioni finali; ogni passo è finale, la prossima è la 0.1 |
 | 4. Applicazione: token per Slint, prova delle scritture, `@tr`, finestra nella direzione 2 (due varianti) | da fare | design-build, design-direction, design-judge | | dopo il sito |
-| 5. Matrice completa (15 dispositivi × 3 motori) e pulizia di `website/stile/`, `script/`, `sistema/` | da fare | design-build | | alla fine |
+| 5. Matrice completa (15 dispositivi × 3 motori) e pulizia di `website/stile/`, `script/`, `sistema/` | fatta sul ramo locale | costruzione, visita e giudizio indipendente | 26/11 | 405 casi con JavaScript e 81 senza. I tre alberi sono ritirati; gli indirizzi pubblici passano dalla mappa dei rimandi. |
 
 ## Ambiente delle prove (16/11/2026, aggiornato il 20/11)
 

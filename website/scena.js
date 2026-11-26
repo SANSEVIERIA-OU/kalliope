@@ -411,6 +411,10 @@
   }
 
   // ---------- le onde: da chi parla fino all'ultimo che ascolta, 900 ms lineari ----------
+  // I colori si leggono una volta: il canvas segue il sistema senza interrogare gli stili a ogni fotogramma.
+  const stileOnde = getComputedStyle(document.documentElement);
+  const coloreOnde = stileOnde.getPropertyValue('--voce').trim();
+  const aloneOnde = stileOnde.getPropertyValue('--alone-tu').trim();
   function preparaTela(p) {
     const g = p.misura(), dpr = Math.min(2, devicePixelRatio || 1), w = g.rc.width, h = g.rc.height;
     p.tela.width = Math.round(w * dpr); p.tela.height = Math.round(h * dpr);
@@ -440,10 +444,11 @@
     ctx.beginPath(); ctx.rect(0, 0, w, h);
     if (p.geo.escludi) { const e = p.geo.escludi; ctx.rect(e.x0 - 1, e.y0 - 1, e.x1 - e.x0 + 2, e.y1 - e.y0 + 2); ctx.clip('evenodd'); }
     else if (p.geo.destra) { ctx.beginPath(); ctx.rect(o.x + 2, 0, w, h); ctx.clip(); }
-    ctx.shadowColor = 'rgba(255,219,225,0.8)'; ctx.shadowBlur = 12; ctx.lineWidth = 3.5;
+    ctx.shadowColor = aloneOnde; ctx.shadowBlur = 12; ctx.lineWidth = 3.5;
+    ctx.strokeStyle = coloreOnde;
     for (const x of p.onde) {
       const q = Math.min(1, Math.max(0, (t - x.t) / 0.9)), r = p.geo.r0 + (p.geo.r1 - p.geo.r0) * q;
-      ctx.strokeStyle = `rgba(255,219,225,${(0.62 * (q < 0.8 ? 1 : (1 - q) / 0.2)).toFixed(3)})`;
+      ctx.globalAlpha = Number((0.62 * (q < 0.8 ? 1 : (1 - q) / 0.2)).toFixed(3));
       ctx.beginPath(); ctx.arc(o.x, o.y, r, 0, Math.PI * 2); ctx.stroke();
       p.geo.bersagli.forEach((b, i) => { if (!x.toccati.has(i) && r >= b.d) { x.toccati.add(i); accendi(b.el); b.el.classList.add('guarda'); } });
     }

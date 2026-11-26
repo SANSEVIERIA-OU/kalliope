@@ -12,7 +12,7 @@
   const errori = [];
   const prova = async (nome, f) => { try { return await f(); } catch (e) { errori.push(`${nome}: ${e.message}`); return null; } };
   await new Promise(fine => { const t0 = performance.now(); (function chiedi() { if (window.__catalogo || performance.now() - t0 > 20000) fine(); else setTimeout(chiedi, 40); })(); });
-  const leggi = async u => new DOMParser().parseFromString(await (await fetch(u)).text(), 'text/html');
+  const leggi = window.CatalogoDocumenti.leggi;
   const [home, scelta] = await Promise.all([leggi('esempio-home.html'), leggi('esempio-scelta.html')]);
   const da = (doc, sel) => { const e = doc.querySelector(sel); if (!e) throw new Error('manca ' + sel); const c = e.cloneNode(true); c.querySelectorAll('[id]').forEach(x => x.removeAttribute('id')); return c; };
   const prova1 = (et, nodo, classe = '') => el('div', {class: 'cat-prova' + (classe.includes('largo') ? ' intero' : '')}, el('span', {class: 'cat-et', html: et}), el('div', {class: 'cat-quadro ' + classe}, nodo));
@@ -82,7 +82,7 @@
     const elenco = () => { const u = da(home, '.lingua-scelta .lingue-elenco'); u.style.position = 'static'; return u; };
     const stato = (n, f) => { const u = elenco(); const a = u.querySelector('a:not([aria-current])'); if (f) f(a, u); return prova1(n, el('nav', {class: 'menu'}, el('div', {class: 'lingua-scelta'}, u))); };
     s.append(scheda({nome: 'Elenco delle lingue', id: '<code>.lingue-elenco</code> · <code>a[aria-current]</code> · <code>.lingue-in-bolla</code> <code>.preferita</code>',
-      regola: 'Un pulsante-voce per lingua, con il nome nella sua scrittura (<code>--font-nomi-lingue</code>); la lingua di adesso è piena come la voce scelta. Dentro la bolla della pagina della scelta i nomi sono scuri sul chiaro e la lingua del browser è accesa in bordeaux.',
+      regola: 'Un pulsante-voce per lingua, con il nome nella sua scrittura (<code>--font-nomi-lingue</code>); la lingua di adesso è piena come la voce scelta. Dentro la bolla della pagina della scelta i nomi sono scuri sul chiaro e la lingua del browser è evidenziata sul fondo chiaro.',
       confine: 'Non per scegliere altro che la lingua; mai con le bandiere; il nome non si traduce (lo scrive la costruzione dai dati CLDR).',
       persona: 'Chi arriva in una lingua che non è la sua e cerca la propria, anche senza saper leggere quella della pagina.',
       provenienza: 'I pulsanti-voce con il nome di R51 (un tratto già nel sistema, <code>ascolto.css</code>); W3C qa-link-lang (niente bandiere, ogni nome con il suo lang).',
@@ -112,7 +112,7 @@
   await prova('specchio', async () => {
     const s = apri('specchio', 'Lo specchio: da destra a sinistra',
       'Con <code>&lt;html dir="rtl"&gt;</code> le proprietà logiche specchiano la disposizione da sole; ciò che ha un verso (uno spostamento, l\'origine di una crescita, una freccia, la coda della bolla, gli sguardi verso «Tu», le luci) moltiplica <code>--verso</code>, che vale −1 sotto <code>:root:dir(rtl)</code>. Non si specchiano il triangolo ▶ dei comandi di riproduzione, i numeri, il marchio. Qui la stessa piccola pagina nei due versi; l\'elenco punto per punto, con la decisione e il perché: <code>design/lavoro/2-lingue-aspetto/progresso.md</code>.', 'lingue');
-    const corpo = (link, bolla, ascolta) => `<p><a class="collegamento" href="#">${link}<span class="freccia" aria-hidden="true"></span></a></p>`
+    const corpo = (link, bolla, ascolta) => `<p><a class="collegamento" href="${new URL('../../it/non-ancora/', location.href).href}">${link}<span class="freccia" aria-hidden="true"></span></a></p>`
       + `<div class="bolla filo-bolla"><div class="bolla-corpo"><p class="bolla-testo">${bolla}</p></div><svg class="coda" viewBox="0 0 32 24" aria-hidden="true"><path d="M0 0h31L7.6 21.6A3.5 3.5 0 0 1 2 18.8V0z"/></svg></div>`
       + `<p><button class="pillola voce-chiara" type="button"><span class="tondo" aria-hidden="true"></span>${ascolta}</button></p>`;
     // correzione dopo il giudizio (M8): da destra a sinistra un testo arabo vero (dai cataloghi di prova), con la parte latina isolata come

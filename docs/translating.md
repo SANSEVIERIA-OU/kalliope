@@ -37,9 +37,10 @@ and the fragment are kept when a script runs). The second complete language brin
 with no other change. The catalogue (`design-system/catalogo/`) still shows them, from `esempio-home.html` and `esempio-scelta.html`,
 which the build writes with the 30 languages of the registry (`noindex`, only for the catalogue). The selector's name for a screen
 reader is «Change language: English» (the `title` of the control, already translated, and the language of the page: nothing new to
-translate). Pages not yet
-redone for the new design exist only in Italian, and the other languages link to that Italian page. The old addresses
-(`/installa/`, `/ascolta/` …) are small pages that send to `/it/…`, keeping the query and the fragment. Files shared by the
+translate). The site builder keeps old addresses working. For example, `/installa/` opens the Italian installation guide,
+`/ascolta/` opens the voice samples on the home page, and `/sistema/` opens the design-system catalogue.
+The mappings live in `website/rimandi.json`. With JavaScript, redirects keep query parameters and map old fragments.
+Without JavaScript, a meta refresh and a plain link lead to the default destination. Files shared by the
 languages stay where they were: `/voce/…`, `/immagini/…`, `/design-system/…`.
 
 ## Add a language

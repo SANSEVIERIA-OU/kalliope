@@ -6,7 +6,7 @@ import pathlib, sys
 QUI = pathlib.Path(__file__).resolve().parent
 RADICE = QUI.parents[3]
 sys.path.insert(0, str(RADICE / 'tools')); sys.path.insert(0, str(QUI))
-from i18n import catalogo, po  # noqa: E402
+from i18n import catalogo, cldr, po  # noqa: E402
 import testi_europa, testi_mondo  # noqa: E402
 sito = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else RADICE / 'website'
 pagine, tutti, errori = catalogo.raccogli(sito)
@@ -25,11 +25,13 @@ for codice, testi in LINGUE.items():
         if v.ctx not in testi:
             if any(r.split(':')[0] != 'index.html' for r in v.riferimenti) and not any(r.split(':')[0] == 'index.html' for r in v.riferimenti):
                 # una voce di un'altra pagina (non della home): resta in italiano, e si dice
-                v.str = [v.id] if v.id_plurale is None else [v.id, v.id_plurale][:len(v.str) or 2]
+                v.str = [v.id] if v.id_plurale is None else [v.id if forma == "one" else v.id_plurale for forma in cldr.info(codice)["plurali"]["forme"]]
                 altre.setdefault(codice, []).append(v.ctx); continue
             male.append(f'{codice}: manca {v.ctx}'); continue
         v.str = [testi[v.ctx]]
     male += [f'{codice}: in più {k}' for k in testi if k not in chiavi]
+    controllo = catalogo.controlla(cat, mod, codice)
+    male += [f'{codice}: {errore}' for errore in controllo.errori]
     (QUI / f'{codice}.po').write_text(po.scrivi(cat), encoding='utf-8')
 if male:
     sys.exit('\n'.join(male))

@@ -64,3 +64,18 @@ main.cat { max-width: 90em; margin-inline: auto; padding: 0 var(--margine) 6em; 
 .cat-frame-barra > .cat-spazio { height: 40em; }
 .cat-quadro.alto { padding-bottom: 9em; }
 .cat-prova.intero { flex: 1 1 100%; }
+
+/* I dati larghi scorrono localmente, senza allargare la pagina né tagliare colonne. */
+.cat-scorre { max-width: 100%; overflow-x: auto; }
+.cat-scheda, .cat-scheda dd, .cat-prova, .cat-effetto > *, .cat-colore > * { min-width: 0; overflow-wrap: anywhere; }
+.cat-prova, .cat-quadro { max-width: 100%; }
+.cat-scheda dl { grid-template-columns: minmax(0, 9em) minmax(0, 1fr); }
+.cat-griglia-colori { grid-template-columns: repeat(auto-fill, minmax(min(100%, 15em), 1fr)); }
+.cat-controlli, .cat-misure { flex-wrap: wrap; }
+@media (max-width: 760px) {
+  .cat-scheda dl, .cat-riga-scala, .cat-effetto { grid-template-columns: minmax(0, 1fr); }
+  .cat-scheda dd { margin-block-end: 0.6em; }
+}
+
+.cat-quadro .sotto, .cat-campo .sotto { max-width: 100%; min-width: 0; }
+.cat-quadro .sotto .finestra, .cat-campo .sotto .finestra { min-width: 0; max-width: 100%; }

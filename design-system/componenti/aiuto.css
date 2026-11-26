@@ -1,0 +1,39 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
+/* Aiuto: una frase porta alla sua spiegazione e al recupero. Stessi token D2,
+   ricerca e details nativi; nessun movimento aggiunto. */
+.aiuto-esempio { padding-block-start: var(--spazio-24); gap: var(--spazio-21); }
+.aiuto-esempio .bolla { position: static; opacity: 1; transform: none; }
+.aiuto-esempio > p { margin: 0; font-size: var(--corpo-10); line-height: var(--interlinea-12); }
+.aiuto-esempio > a { align-self: start; }
+.guida-aiuto .aiuto-frasi > *, .guida-aiuto .aiuto-casi > *, .guida-aiuto .aiuto-segnala > * { max-width: var(--riunione-guida-larghezza); margin-inline: auto; }
+.guida-aiuto .filtro { margin-block: var(--spazio-26); }
+.guida-aiuto .filtro label { display: block; font-size: var(--corpo-9); margin-block-end: var(--spazio-12); }
+.guida-aiuto input[type=search] { width: 100%; min-height: var(--misura-22); font: inherit; padding: var(--spazio-14); border: var(--filetto-medio) solid var(--bordeaux); border-radius: var(--raggio-3); color: var(--scuro); background: var(--bianco); }
+.guida-aiuto .filtro__stato { min-height: var(--interlinea-8); font-size: var(--corpo-7); line-height: var(--interlinea-8); }
+.guida-aiuto .aiuto-indice { padding-block: var(--spazio-17); border-block: var(--filetto-sottile) solid var(--requisito-traccia); }
+.guida-aiuto summary { cursor: pointer; font-size: var(--corpo-9); line-height: var(--interlinea-9); }
+.guida-aiuto .indice-frasi { padding-inline-start: var(--spazio-21); }
+.guida-aiuto .indice-frasi li { padding-block: var(--spazio-10); }
+.guida-aiuto .scheda-frase { padding-block: var(--spazio-26); border-block-end: var(--filetto-sottile) solid var(--bordo-pannello); }
+.guida-aiuto .scena-chiara .scheda-frase { border-color: var(--requisito-traccia); }
+.guida-aiuto .scheda-frase h3 { margin-block: 0 var(--spazio-21); font-size: var(--corpo-12); line-height: var(--interlinea-13); font-weight: var(--peso-forte); }
+.guida-aiuto .frase-finestra { font: inherit; }
+.guida-aiuto dl { margin: 0; }
+.guida-aiuto dt { font-weight: var(--peso-forte); margin-block-start: var(--spazio-17); font-size: var(--corpo-7); }
+.guida-aiuto dd { margin: var(--spazio-8) 0 0; font-size: var(--corpo-9); line-height: var(--interlinea-9); }
+.guida-aiuto .scheda-frase details { margin-block-start: var(--spazio-21); }
+.guida-aiuto .comando { display: block; margin-block: var(--spazio-17); }
+.guida-aiuto .comando pre { overflow-wrap: anywhere; white-space: pre-wrap; }
+.guida-aiuto .comando__barra { padding: var(--spazio-14); }
+.guida-aiuto .comando__stato { display: block; margin-block-start: var(--spazio-12); }
+.guida-aiuto .aiuto-segnala p, .guida-aiuto .aiuto-segnala li { font-size: var(--corpo-9); line-height: var(--interlinea-9); }
+.guida-aiuto .aiuto-segnala p { margin-block: var(--spazio-21); }
+.guida-aiuto .aiuto-segnala li { margin-block: var(--spazio-12); }
+.guida-aiuto .aiuto-segnala .avviso { margin-block-start: var(--spazio-26); padding-inline-start: var(--spazio-17); border-inline-start: var(--filetto-medio) solid var(--voce); }
+@media (max-width: 760px) {
+ .guida-aiuto .aiuto-frasi, .guida-aiuto .aiuto-casi, .guida-aiuto .aiuto-segnala { padding-inline: var(--riunione-guida-aria-telefono); }
+ .guida-aiuto .aiuto-esempio { padding-block-start: 0; margin-block: var(--spazio-21); }
+ .guida-aiuto .scheda-frase h3 { font-size: var(--corpo-10); line-height: var(--interlinea-12); }
+}
+/* L'esito della copia vive sul fondo scuro del comando, anche nella scena chiara. */
+.guida-aiuto .comando__stato { color: var(--testo); }

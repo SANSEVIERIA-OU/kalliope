@@ -46,15 +46,22 @@
 <link rel="stylesheet" href="catalogo-marchio.css">
 <link rel="icon" href="../marchio/favicon.ico" sizes="any">
 <link rel="icon" href="../marchio/piccola.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../componenti/guida-riunione.css">
 </head>
 <body>
 <header class="cat-intesta">
   <h1>Catalogo del sistema di Kalliope</h1>
-  <p>Il design system della home «In riunione, alla pari» (direzione 2), ricavato dalla pagina consegnata senza cambiarne l'aspetto. Tutto ciò che vedi usa soltanto <code>token.css</code>, la base e i componenti veri (<code>base.css</code>, <code>componenti/</code>): nessuno stile parallelo. La tabella dei token è letta da <code>token.css</code> mentre la pagina si apre; i componenti sono copiati dalla home vera (<code>website/index.html</code>).</p>
+  <p>Il design system della home «In riunione, alla pari» (direzione 2), con la proposta cromatica del 26 novembre, ancora da scegliere. Tutto ciò che vedi usa soltanto <code>token.css</code>, la base e i componenti veri (<code>base.css</code>, <code>componenti/</code>): nessuno stile parallelo. La tabella dei token è letta da <code>token.css</code> mentre la pagina si apre; i componenti sono copiati dalla home vera (<code>website/index.html</code>).</p>
   <p id="stato-catalogo">Carico i token e la home…</p>
-  <ul class="cat-indice" id="indice"></ul>
+  <ul class="cat-indice" id="indice">
+    <li><a href="#pagina-riunione">Proposta e pagina In riunione</a></li>
+    <li><a href="#pagina-aiuto">Aiuto e pagina non trovata</a></li>
+  </ul>
 </header>
 <main class="cat" id="cat">
+  <noscript><p>Il catalogo vivo richiede JavaScript. Puoi leggere la <a href="../token.css">fonte dei token</a>, oppure visitare le pagine che usano il sistema: <a href="../../it/">pagina iniziale</a>, <a href="../../it/stato/">stato</a>, <a href="../../it/installa/">installa</a>, <a href="../../it/riunione/">in riunione</a>, <a href="../../it/riunione/#aiuto">aiuto</a>.</p></noscript>
+  <section class="cat-sezione" id="pagina-riunione"></section>
+  <section class="cat-sezione" id="pagina-aiuto"></section>
   <section class="cat-sezione" id="identita"></section>
   <section class="cat-sezione" id="colori"></section>
   <section class="cat-sezione" id="caratteri"></section>
@@ -65,6 +72,7 @@
   <section class="cat-sezione" id="tabella"></section>
   <section class="cat-sezione" id="non-ancora"></section>
 </main>
+<script src="catalogo-documenti.js"></script>
 <script src="catalogo.js"></script>
 <script src="catalogo-pagine.js"></script>
 <script src="catalogo-stato.js"></script>
@@ -72,5 +80,7 @@
 <script src="catalogo-lingue.js"></script>
 <script src="../marchio/marchio.js"></script>
 <script src="catalogo-marchio.js"></script>
+<script src="catalogo-riunione.js"></script>
+<script src="catalogo-aiuto.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 /* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
 // Il catalogo del marchio (incarico L-3, 19/11/2026): «La frase che si accende», la bolla detta a metà. Mostra il disegno unico (marchio/disegno.json) nelle sue
-// forme e in tutte le grandezze da 16 a 256 su chiaro, su scuro e sul bordeaux; la barra con e senza il nome (la home vera, a tre larghezze); il movimento con
+// forme e in tutte le grandezze da 16 a 256 su chiaro, su scuro e sul fondo del sito; la barra con e senza il nome (la home vera, a tre larghezze); il movimento con
 // «Riproduci» e «Ferma», il gesto del puntatore e la variante con «riduci movimento»; la pagina da destra a sinistra, dove il segno non si specchia; l'icona della
 // scheda, letta dai file veri (l'SVG disegnato a 16 e 32 px, le tre immagini dell'ICO decodificate dal file). Come gli altri non ha stili né markup suoi per il
 // marchio: copia i file che la costruzione e il generatore hanno scritto (marchio/*.svg, esempio-home.html) e usa lo stesso marchio.js della barra. I valori
@@ -14,7 +14,7 @@
   const testo = async u => { const r = await fetch(u); if (!r.ok) throw new Error(`${u}: ${r.status}`); return r.text(); };
   const [barraTesto, disegno, tokenCss, icoBuf, homeTesto] = await Promise.all([testo('../marchio/barra.svg'), testo('../marchio/disegno.json').then(JSON.parse), testo('../token.css'),
     fetch('../marchio/favicon.ico').then(r => r.arrayBuffer()), testo('esempio-home.html')]);
-  const home = new DOMParser().parseFromString(homeTesto, 'text/html');
+  const home = window.CatalogoDocumenti.daTesto(homeTesto, 'esempio-home.html');
   const M = window.Marchio;
   if (!M) throw new Error('marchio.js non è caricato');
   const prova1 = (et, nodo, classe = '') => el('div', {class: 'cat-prova' + (classe.includes('largo') ? ' intero' : '')}, el('span', {class: 'cat-et', html: et}), el('div', {class: 'cat-quadro ' + classe}, nodo));
@@ -56,10 +56,10 @@
   // ---------- tutte le forme, tutte le grandezze, tre fondi ----------
   await prova('forme', async () => {
     s.append(el('h3', {testo: 'Le forme e le grandezze, da 16 a 256 px'}),
-      el('p', {class: 'cat-nota', html: 'Cinque forme dello stesso disegno, ognuna su chiaro (<code>--segno-prova-chiaro</code>), su scuro (<code>--segno-prova-scuro</code>) e sul bordeaux del sito (<code>--fondo</code>). <b>Libera</b>: fondo trasparente, per Linux (<code>hicolor/scalable</code>), Windows e le pagine di prima. <b>Piena</b>: il quadrato rosa chiaro di macOS. <b>Piccola</b>: sulla griglia di 16 pixel, per 16 e 24 px e per la scheda del browser. <b>Simbolica</b>: 16×16, un colore, per GNOME (qui ricolorata come la ricolora GTK sul fondo scuro). <b>Della barra</b>: in linea nella pagina, con le sue parti (quella che si muove).'}));
+      el('p', {class: 'cat-nota', html: 'Cinque forme dello stesso disegno, ognuna su chiaro (<code>--segno-prova-chiaro</code>), su scuro (<code>--segno-prova-scuro</code>) e sul fondo del sito (<code>--fondo</code>). <b>Libera</b>: fondo trasparente, per Linux (<code>hicolor/scalable</code>), Windows e le pagine di prima. <b>Piena</b>: il quadrato rosa chiaro di macOS. <b>Piccola</b>: sulla griglia di 16 pixel, per 16 e 24 px e per la scheda del browser. <b>Simbolica</b>: 16×16, un colore, per GNOME (qui ricolorata come la ricolora GTK sul fondo scuro). <b>Della barra</b>: in linea nella pagina, con le sue parti (quella che si muove).'}));
     const FORME = [['libero', 'Libera'], ['piena', 'Piena (macOS)'], ['piccola', 'Piccola (16 e 24 px, scheda)'], ['simbolica', 'Simbolica (GNOME)'], ['barra', 'Della barra (in linea)']];
     const GRANDEZZE = [16, 24, 32, 48, 64, 96, 128, 256];
-    const FONDI = [['chiaro', 'su chiaro'], ['scuro', 'su scuro'], ['bordeaux', 'sul bordeaux']];
+    const FONDI = [['chiaro', 'su chiaro'], ['scuro', 'su scuro'], ['bordeaux', 'sul fondo del sito']];
     const blocco = el('div', {class: 'cm-forme'});
     for (const [forma, nome] of FORME) {
       const riga = el('div', {class: 'cm-forma'}, el('h4', {testo: nome}));

@@ -372,14 +372,15 @@ class NelSito(unittest.TestCase):
             self.assertIn('sizes="any"', icone[0][1])
             self.assertIn('type="image/svg+xml"', icone[1][1])
             for href, _ in icone:
-                base = f.parent if not t.count("<base href") else self.out
+                base = self.out if href.startswith("/k/") else (f.parent if not t.count("<base href") else self.out)
+                href = href.removeprefix("/k/")
                 self.assertTrue((base / href).resolve().is_file(), f"{rel}: {href} non porta a un file")
             if 'class="marchio"' in t:
                 self.assertEqual(len(re.findall(r'<svg class="m-segno"', t)), 1, rel)
             else:
                 self.assertRegex(t, r'<a class="marca"[^>]*><img src="[^"]*design-system/marchio/libero\.svg" alt="" width="40" height="40">', rel)
             viste += 1
-        self.assertGreaterEqual(viste, 9)   # le sei pagine di prima, «non ancora», «stato», la home, la 404 e la scelta della lingua (se pubblicata)
+        self.assertEqual(viste, 6)   # cinque pagine nella lingua e la 404; Ascolta è nella home, Aiuto in riunione, sistema è il catalogo condiviso
 
     def test_il_segno_inserito_e_quello_generato(self):
         barra = re.sub(r"<!--.*?-->\s*", "", (MARCHIO / "barra.svg").read_text(encoding="utf-8"), flags=re.S).strip()
@@ -441,7 +442,7 @@ class NelSitoDiProva(unittest.TestCase):
         vecchia = (out / "it" / "vecchia" / "index.html").read_text(encoding="utf-8")
         self.assertIn('<img src="../../design-system/marchio/libero.svg" alt="" width="40" height="40">', vecchia)
         self.assertIn('href="../../design-system/marchio/piccola.svg"', vecchia)
-        self.assertIn('<link rel="icon" href="design-system/marchio/favicon.ico" sizes="any">', (out / "404.html").read_text(encoding="utf-8"))
+        self.assertIn('<link rel="icon" href="/k/design-system/marchio/favicon.ico" sizes="any">', (out / "404.html").read_text(encoding="utf-8"))
 
     def test_una_pagina_che_scrive_la_sua_icona_ferma_la_costruzione(self):
         with self.assertRaises(SystemExit) as e:

@@ -8,64 +8,67 @@
   /* Direzione di scrittura */
   --verso: 1;   /* 1 con la scrittura da sinistra a destra, −1 da destra a sinistra (la cambia :root:dir(rtl), più sotto). Ciò che ha un verso (uno spostamento orizzontale, l'origine di una crescita, l'asse di una barra) la moltiplica; scena.js la legge da qui */
 
-  /* Colori e materiali */
-  --azione: #ff5c8d;   /* l'unico colore di ciò che si preme per scegliere */
-  --fondo: #420017;   /* la stanza: il fondo di tutta la pagina */
-  --scuro: #26060f;   /* testo scuro sul chiaro (bolla, occhi e bocca delle figure) */
-  --bordeaux: #5b0123;   /* testo e segni scuri sul chiaro; capelli di Paola */
-  --magenta: #c50f56;   /* la voce dentro la bolla; cuffia di Luca; maglia di Anna */
-  --rosa: #e3718a;   /* il bordo che risponde al passaggio sulle voci; maglia di Paola */
-  --voce: #ffdbe1;   /* la voce che suona: contorni, barre di «Tu», tappe accese, maglia di Luca */
-  --testo: #ffedef;   /* il testo e la voce chiara: bolla, pillola chiara, fine della scena chiara */
-  --barra-piena: #2e0010;   /* la barra compatta e la fascia della riunione agganciata: piene, senza sfocatura */
-  --bordo-barra: rgba(255, 219, 225, 0.1);   /* il filo sotto la barra compatta e sotto la fascia agganciata */
-  --pannello-menu: rgba(28, 3, 11, 0.94);   /* il menu aperto */
-  --pannello-menu-fondo: rgba(28, 3, 11, 0.98);   /* il velo sul fondo del menu che scorre */
-  --pannello-trasparente: rgba(28, 3, 11, 0);   /* il pannello a zero: inizio del velo sul fondo del menu */
-  --velo-menu-premuto: rgba(255, 237, 239, 0.18);   /* una voce del menu premuta */
-  --velo-menu-sopra: rgba(255, 237, 239, 0.1);   /* una voce del menu al passaggio */
-  --velo-scelto: rgba(255, 237, 239, 0.14);   /* una frase attiva, «Menu» al passaggio */
-  --azione-sopra: #ff7ba3;   /* l'azione al passaggio */
-  --azione-testo: #33040f;   /* il testo sull'azione */
+  /* Colori e materiali — proposta 26/11, non approvata.
+     scelta: stanza grafite per togliere la dominante rossa richiesta dal proprietario;
+     menta per voce e comandi, personaggi terracotta/blu/lilla per distinguerli.
+     Logo scelto, disegno, tipografia e tempi conservati. */
+  --azione: #91dfbd;   /* l'unico colore di ciò che si preme per scegliere */
+  --fondo: #1b2223;   /* la stanza: il fondo di tutta la pagina */
+  --scuro: #171d1d;   /* testo scuro sul chiaro (bolla, occhi e bocca delle figure) */
+  --bordeaux: #253331;   /* testo e segni scuri sul chiaro; capelli di Paola */
+  --magenta: #27795f;   /* la voce dentro la bolla; cuffia di Luca; maglia di Anna */
+  --rosa: #82b4a3;   /* il bordo che risponde al passaggio sulle voci; maglia di Paola */
+  --voce: #b5e8d2;   /* la voce che suona: contorni, barre di «Tu», tappe accese, maglia di Luca */
+  --testo: #f2f5f4;   /* il testo e la voce chiara: bolla, pillola chiara, fine della scena chiara */
+  --barra-piena: #151b1c;   /* la barra compatta e la fascia della riunione agganciata: piene, senza sfocatura */
+  --bordo-barra: rgba(181, 218, 206, 0.1);   /* il filo sotto la barra compatta e sotto la fascia agganciata */
+  --pannello-menu: rgba(20, 25, 26, 0.94);   /* il menu aperto */
+  --pannello-menu-fondo: rgba(20, 25, 26, 0.98);   /* il velo sul fondo del menu che scorre */
+  --pannello-trasparente: rgba(20, 25, 26, 0);   /* il pannello a zero: inizio del velo sul fondo del menu */
+  --velo-menu-premuto: rgba(242, 245, 244, 0.18);   /* una voce del menu premuta */
+  --velo-menu-sopra: rgba(242, 245, 244, 0.1);   /* una voce del menu al passaggio */
+  --velo-scelto: rgba(242, 245, 244, 0.14);   /* una frase attiva, «Menu» al passaggio */
+  --azione-sopra: #b4edcf;   /* l'azione al passaggio */
+  --azione-testo: #152c24;   /* il testo sull'azione */
   --bianco: #fff;   /* il bianco: pillola chiara al passaggio, impulso, testo sui comandi della finestra */
-  --bordo-comando-quieto: rgba(255, 219, 225, 0.35);   /* il bordo di un comando secondario: «Chiudi», «Rivedi» */
-  --bordo-rivedi-chiaro: rgba(91, 1, 35, 0.35);   /* il bordo di «Rivedi» sulla scena chiara */
-  --ombra-azione: rgba(255, 92, 141, 0.7);   /* l'ombra dell'azione */
-  --sottolineatura: rgba(255, 219, 225, 0.55);   /* la sottolineatura dei collegamenti */
-  --bordo-evidente: rgba(255, 219, 225, 0.4);   /* il bordo che si nota: la riga dello stato, il messaggio d'errore, l'alone di una frase in voce */
-  --testo-didascalia: rgba(255, 237, 239, 0.78);   /* la didascalia e il titolo del microfono */
-  --testo-spiegazione: rgba(255, 237, 239, 0.88);   /* la spiegazione sotto un titolo: stato, testo del tratto, esiti */
-  --ombra-bolla: rgba(20, 2, 8, 0.85);   /* ombra della bolla */
-  --alone-tu: rgba(255, 219, 225, 0.8);   /* l'alone di chi parla */
-  --anna-capelli: #8a1a42;   /* Anna: capelli */
-  --anna-corpo: var(--magenta);   /* anna: corpo */
-  --anna-fondo-alto: #a62a58;   /* Anna: fondo del riquadro, alto */
-  --anna-fondo-basso: #701537;   /* Anna: fondo del riquadro, basso */
-  --anna-ombra: #dc93a3;   /* Anna: collo e ombre */
-  --anna-pelle: #efb4c0;   /* Anna: pelle */
-  --barre-spente: #7e1840;   /* le barre della voce quando nessuno parla */
-  --bordo-cornice: rgba(255, 219, 225, 0.14);   /* il bordo di una cornice della riunione e il filo sopra il piede */
-  --luca-capelli: #2c0612;   /* Luca: capelli */
-  --luca-corpo: var(--voce);   /* luca: corpo */
-  --luca-cuffia: var(--magenta);   /* luca: cuffia */
-  --luca-fondo-alto: #771838;   /* Luca: fondo del riquadro, alto */
-  --luca-fondo-basso: #4f0a25;   /* Luca: fondo del riquadro, basso */
-  --luca-ombra: #e6aab6;   /* Luca: collo e ombre */
-  --luca-pelle: #f8d0d7;   /* Luca: pelle */
+  --bordo-comando-quieto: rgba(181, 218, 206, 0.35);   /* il bordo di un comando secondario: «Chiudi», «Rivedi» */
+  --bordo-rivedi-chiaro: rgba(30, 39, 39, 0.35);   /* il bordo di «Rivedi» sulla scena chiara */
+  --ombra-azione: rgba(117, 205, 174, 0.7);   /* l'ombra dell'azione */
+  --sottolineatura: rgba(181, 218, 206, 0.55);   /* la sottolineatura dei collegamenti */
+  --bordo-evidente: rgba(181, 218, 206, 0.4);   /* il bordo che si nota: la riga dello stato, il messaggio d'errore, l'alone di una frase in voce */
+  --testo-didascalia: rgba(242, 245, 244, 0.78);   /* la didascalia e il titolo del microfono */
+  --testo-spiegazione: rgba(242, 245, 244, 0.88);   /* la spiegazione sotto un titolo: stato, testo del tratto, esiti */
+  --ombra-bolla: rgba(10, 14, 15, 0.85);   /* ombra della bolla */
+  --alone-tu: rgba(181, 218, 206, 0.8);   /* l'alone di chi parla */
+  --anna-capelli: #3b2e29;   /* Anna: capelli */
+  --anna-corpo: #b194bf;   /* anna: corpo */
+  --anna-fondo-alto: #55465c;   /* Anna: fondo del riquadro, alto */
+  --anna-fondo-basso: #332d3e;   /* Anna: fondo del riquadro, basso */
+  --anna-ombra: #a16b51;   /* Anna: collo e ombre */
+  --anna-pelle: #c99574;   /* Anna: pelle */
+  --barre-spente: #496259;   /* le barre della voce quando nessuno parla */
+  --bordo-cornice: rgba(181, 218, 206, 0.14);   /* il bordo di una cornice della riunione e il filo sopra il piede */
+  --luca-capelli: #252522;   /* Luca: capelli */
+  --luca-corpo: #a4b9d1;   /* luca: corpo */
+  --luca-cuffia: #48617e;   /* luca: cuffia */
+  --luca-fondo-alto: #3d4e62;   /* Luca: fondo del riquadro, alto */
+  --luca-fondo-basso: #27323f;   /* Luca: fondo del riquadro, basso */
+  --luca-ombra: #ca9778;   /* Luca: collo e ombre */
+  --luca-pelle: #e9be9a;   /* Luca: pelle */
   --ombra-banda: rgba(0, 0, 0, 0.8);   /* ombra della fascia agganciata */
-  --ombra-cornice: rgba(10, 0, 4, 0.9);   /* ombra di una cornice o di un pannello */
+  --ombra-cornice: rgba(5, 9, 10, 0.9);   /* ombra di una cornice o di un pannello */
   --ombra-nera: rgba(0, 0, 0, 0.9);   /* ombra della riunione accanto al filo */
-  --paola-capelli: var(--bordeaux);   /* paola: capelli */
-  --paola-corpo: var(--rosa);   /* paola: corpo */
-  --paola-fondo-alto: #902149;   /* Paola: fondo del riquadro, alto */
-  --paola-fondo-basso: #5f0f2d;   /* Paola: fondo del riquadro, basso */
-  --paola-ombra: #e2a1ae;   /* Paola: collo e ombre */
-  --paola-pelle: #f4c2cb;   /* Paola: pelle */
-  --tu-fondo-alto: #3a0816;   /* il riquadro «Tu»: parte alta del fondo */
-  --tu-fondo-basso: #24040d;   /* il riquadro «Tu»: parte bassa del fondo */
-  --vetro-cornice: rgba(18, 2, 7, 0.42);   /* la cornice della riunione */
-  --vetro-nome: rgba(20, 2, 8, 0.52);   /* l'etichetta di un riquadro */
-  --vetro-riunione-filo: rgba(18, 2, 7, 0.6);   /* la riunione accanto al filo */
+  --paola-capelli: #3c2926;   /* paola: capelli */
+  --paola-corpo: #c99078;   /* paola: corpo */
+  --paola-fondo-alto: #655147;   /* Paola: fondo del riquadro, alto */
+  --paola-fondo-basso: #3e3531;   /* Paola: fondo del riquadro, basso */
+  --paola-ombra: #b77e61;   /* Paola: collo e ombre */
+  --paola-pelle: #e1ad8b;   /* Paola: pelle */
+  --tu-fondo-alto: #263b35;   /* il riquadro «Tu»: parte alta del fondo */
+  --tu-fondo-basso: #172923;   /* il riquadro «Tu»: parte bassa del fondo */
+  --vetro-cornice: rgba(14, 20, 21, 0.42);   /* la cornice della riunione */
+  --vetro-nome: rgba(10, 14, 15, 0.52);   /* l'etichetta di un riquadro */
+  --vetro-riunione-filo: rgba(14, 20, 21, 0.6);   /* la riunione accanto al filo */
   --app-accento: #005fb8;   /* l'accento della finestra: «Parla», riga attiva, barra di avanzamento */
   --app-accento-premuto: #004c94;   /* l'accento premuto */
   --app-barra-vuota: #e2e2e2;   /* la barra di avanzamento vuota */
@@ -85,58 +88,58 @@
   --app-stato-parla: #e8f5e9;   /* la riga di stato mentre parla */
   --app-testo: #1d1d1f;   /* la finestra di Kalliope: testo e cursore */
   --finestra-anello: rgba(0, 0, 0, 0.06);   /* il filo intorno alla finestra di Kalliope */
-  --finestra-chiara-anello: rgba(91, 1, 35, 0.08);   /* il filo intorno alla finestra sulla scena chiara */
-  --ombra-finestra: rgba(10, 0, 4, 0.85);   /* ombra della finestra di Kalliope */
-  --ombra-finestra-chiara: rgba(91, 1, 35, 0.5);   /* ombra della finestra sulla scena chiara */
-  --testo-nota-chiara: rgba(38, 6, 15, 0.66);   /* la nota sulla scena chiara */
-  --bordo-pannello: rgba(255, 219, 225, 0.2);   /* il bordo di un pannello: scheda, menu aperto, computer, microfono */
-  --bordo-sezione: rgba(255, 219, 225, 0.12);   /* il filo che divide: tra «Non esiste» e la strada, intorno alla riunione ricostruita */
-  --ombra-riunione-app: rgba(70, 0, 25, 0.75);   /* ombra della riunione ricostruita */
-  --riquadro-scuro: #2a0510;   /* il nodo della strada e la finestra della riunione ricostruita */
-  --velo-comando: rgba(255, 237, 239, 0.08);   /* il fondo di un comando: voce, «Menu», microfono */
-  --velo-puntata: rgba(255, 237, 239, 0.2);   /* la scelta del microfono puntata */
-  --alone-forte: rgba(255, 219, 225, 0.7);   /* un alone netto: impulso, voce scelta, tratteggio dei «forse» */
-  --bordo-frase: rgba(255, 219, 225, 0.22);   /* il bordo di una frase */
-  --bordo-voce: rgba(255, 219, 225, 0.34);   /* il bordo di una voce a riposo */
-  --frase-punto: rgba(255, 219, 225, 0.45);   /* il punto di una frase non ancora suonata */
-  --pannello-ascolto: rgba(28, 3, 11, 0.72);   /* la scheda dell'ascolto */
-  --tratteggio: rgba(255, 219, 225, 0.6);   /* il tratteggio di «non ancora» (linea e pulsazione) */
-  --velo-sopra: rgba(255, 237, 239, 0.06);   /* una voce al passaggio */
-  --voce-trasparente: rgba(255, 219, 225, 0);   /* la voce a zero: fine di un alone che si spegne */
-  --pannello-errore: rgba(28, 3, 11, 0.78);   /* il messaggio d'errore (fuori dalla scheda) */
-  --fondo-trasparente: rgba(66, 0, 23, 0);   /* il fondo a zero: fine di ogni luce che sfuma */
-  --luce-filo-bordo: rgba(197, 15, 86, 0.16);   /* la luce del filo: a metà */
-  --luce-filo-centro: rgba(255, 92, 141, 0.42);   /* la luce del filo: centro */
-  --testo-durata: rgba(255, 237, 239, 0.7);   /* la durata di una frase */
-  --testo-nota: rgba(255, 237, 239, 0.82);   /* una nota sotto una frase e il testo di «Non esiste» */
-  --tratto-lieve: rgba(255, 219, 225, 0.5);   /* sottolineatura di «altra voce» e alone della linea fatta */
-  --bordo-comando: rgba(255, 219, 225, 0.3);   /* il bordo di un comando: «Menu», nodo della strada */
-  --bordo-tappa-forse: rgba(255, 219, 225, 0.42);   /* la tappa «forse»: bordo tratteggiato, e l'alone della tappa accesa */
-  --bordo-tappa-raggiunta: rgba(255, 219, 225, 0.75);   /* la tappa «forse» quando la voce ci arriva */
-  --bordo-voce-vecchio: rgba(255, 219, 225, 0.28);   /* il bordo di una voce (primo disegno; la pagina ora usa quello sotto) */
-  --riquadro-scuro-forse: rgba(42, 5, 16, 0.6);   /* il nodo «forse» */
-  --testo-forte: rgba(255, 237, 239, 0.9);   /* la riga sulla riservatezza */
-  --testo-secondario: rgba(255, 237, 239, 0.8);   /* testo di sostegno: piede, nome del computer, tappa «forse» */
-  --testo-spento: rgba(255, 237, 239, 0.6);   /* il segno di una tappa non accesa */
-  --velo-computer: rgba(255, 237, 239, 0.035);   /* il computer della strada */
+  --finestra-chiara-anello: rgba(30, 39, 39, 0.08);   /* il filo intorno alla finestra sulla scena chiara */
+  --ombra-finestra: rgba(5, 9, 10, 0.85);   /* ombra della finestra di Kalliope */
+  --ombra-finestra-chiara: rgba(30, 39, 39, 0.5);   /* ombra della finestra sulla scena chiara */
+  --testo-nota-chiara: rgba(23, 29, 29, 0.66);   /* la nota sulla scena chiara */
+  --bordo-pannello: rgba(181, 218, 206, 0.2);   /* il bordo di un pannello: scheda, menu aperto, computer, microfono */
+  --bordo-sezione: rgba(181, 218, 206, 0.12);   /* il filo che divide: tra «Non esiste» e la strada, intorno alla riunione ricostruita */
+  --ombra-riunione-app: rgba(12, 20, 21, 0.75);   /* ombra della riunione ricostruita */
+  --riquadro-scuro: #202b2b;   /* il nodo della strada e la finestra della riunione ricostruita */
+  --velo-comando: rgba(242, 245, 244, 0.08);   /* il fondo di un comando: voce, «Menu», microfono */
+  --velo-puntata: rgba(242, 245, 244, 0.2);   /* la scelta del microfono puntata */
+  --alone-forte: rgba(181, 218, 206, 0.7);   /* un alone netto: impulso, voce scelta, tratteggio dei «forse» */
+  --bordo-frase: rgba(181, 218, 206, 0.22);   /* il bordo di una frase */
+  --bordo-voce: rgba(181, 218, 206, 0.34);   /* il bordo di una voce a riposo */
+  --frase-punto: rgba(181, 218, 206, 0.45);   /* il punto di una frase non ancora suonata */
+  --pannello-ascolto: rgba(20, 25, 26, 0.72);   /* la scheda dell'ascolto */
+  --tratteggio: rgba(181, 218, 206, 0.6);   /* il tratteggio di «non ancora» (linea e pulsazione) */
+  --velo-sopra: rgba(242, 245, 244, 0.06);   /* una voce al passaggio */
+  --voce-trasparente: rgba(181, 218, 206, 0);   /* la voce a zero: fine di un alone che si spegne */
+  --pannello-errore: rgba(20, 25, 26, 0.78);   /* il messaggio d'errore (fuori dalla scheda) */
+  --fondo-trasparente: rgba(27, 34, 35, 0);   /* il fondo a zero: fine di ogni luce che sfuma */
+  --luce-filo-bordo: rgba(65, 94, 86, 0.16);   /* la luce del filo: a metà */
+  --luce-filo-centro: rgba(117, 205, 174, 0.42);   /* la luce del filo: centro */
+  --testo-durata: rgba(242, 245, 244, 0.7);   /* la durata di una frase */
+  --testo-nota: rgba(242, 245, 244, 0.82);   /* una nota sotto una frase e il testo di «Non esiste» */
+  --tratto-lieve: rgba(181, 218, 206, 0.5);   /* sottolineatura di «altra voce» e alone della linea fatta */
+  --bordo-comando: rgba(181, 218, 206, 0.3);   /* il bordo di un comando: «Menu», nodo della strada */
+  --bordo-tappa-forse: rgba(181, 218, 206, 0.42);   /* la tappa «forse»: bordo tratteggiato, e l'alone della tappa accesa */
+  --bordo-tappa-raggiunta: rgba(181, 218, 206, 0.75);   /* la tappa «forse» quando la voce ci arriva */
+  --bordo-voce-vecchio: rgba(181, 218, 206, 0.28);   /* il bordo di una voce (primo disegno; la pagina ora usa quello sotto) */
+  --riquadro-scuro-forse: rgba(27, 35, 36, 0.6);   /* il nodo «forse» */
+  --testo-forte: rgba(242, 245, 244, 0.9);   /* la riga sulla riservatezza */
+  --testo-secondario: rgba(242, 245, 244, 0.8);   /* testo di sostegno: piede, nome del computer, tappa «forse» */
+  --testo-spento: rgba(242, 245, 244, 0.6);   /* il segno di una tappa non accesa */
+  --velo-computer: rgba(242, 245, 244, 0.035);   /* il computer della strada */
   --bianco-trasparente: rgba(255, 255, 255, 0);   /* il bianco a zero: fine della luce della scena chiara */
-  --chiara-fondo-basso: #fcdce2;   /* la scena chiara: parte bassa del fondo */
+  --chiara-fondo-basso: #dfe7e3;   /* la scena chiara: parte bassa del fondo */
   --luce-chiara-bordo: rgba(255, 255, 255, 0.3);   /* la luce della scena chiara: a metà */
   --luce-chiara-centro: rgba(255, 255, 255, 0.85);   /* la luce della scena chiara: centro */
-  --luce-chiusa-bordo: rgba(197, 15, 86, 0.2);   /* la luce della chiusura: a metà */
-  --luce-chiusa-centro: rgba(255, 92, 141, 0.5);   /* la luce della chiusura: centro */
-  --luce-stanza-bordo: rgba(137, 26, 62, 0.3);   /* la luce della stanza: a metà */
-  --luce-stanza-centro: rgba(197, 15, 86, 0.62);   /* la luce della stanza: centro */
-  --luce-tratto-bordo: rgba(137, 26, 62, 0.15);   /* la luce di un tratto: a metà */
-  --luce-tratto-centro: rgba(197, 15, 86, 0.36);   /* la luce di un tratto: centro */
-  --luce-voce-bordo: rgba(197, 15, 86, 0.22);   /* la luce che segue la voce: a metà */
-  --luce-voce-centro: rgba(255, 92, 141, 0.55);   /* la luce che segue la voce: centro */
-  --notte: #24040e;   /* la scena «notte» (il filo) e il piede */
-  --requisito-traccia: rgba(91, 1, 35, 0.16);   /* la traccia di un requisito */
-  --testo-avvertenza: rgba(255, 237, 239, 0.72);   /* l'avvertenza */
-  --testo-avvertenza-chiusura: rgba(255, 237, 239, 0.66);   /* l'avvertenza della chiusura */
-  --testo-dettaglio: rgba(255, 237, 239, 0.86);   /* il dettaglio che chiude (i fatti) */
-  --testo-requisiti-chiara: rgba(38, 6, 15, 0.86);   /* i requisiti sulla scena chiara */
+  --luce-chiusa-bordo: rgba(65, 94, 86, 0.2);   /* la luce della chiusura: a metà */
+  --luce-chiusa-centro: rgba(117, 205, 174, 0.5);   /* la luce della chiusura: centro */
+  --luce-stanza-bordo: rgba(63, 82, 79, 0.3);   /* la luce della stanza: a metà */
+  --luce-stanza-centro: rgba(65, 94, 86, 0.62);   /* la luce della stanza: centro */
+  --luce-tratto-bordo: rgba(63, 82, 79, 0.15);   /* la luce di un tratto: a metà */
+  --luce-tratto-centro: rgba(65, 94, 86, 0.36);   /* la luce di un tratto: centro */
+  --luce-voce-bordo: rgba(65, 94, 86, 0.22);   /* la luce che segue la voce: a metà */
+  --luce-voce-centro: rgba(117, 205, 174, 0.55);   /* la luce che segue la voce: centro */
+  --notte: #111819;   /* la scena «notte» (il filo) e il piede */
+  --requisito-traccia: rgba(30, 39, 39, 0.16);   /* la traccia di un requisito */
+  --testo-avvertenza: rgba(242, 245, 244, 0.72);   /* l'avvertenza */
+  --testo-avvertenza-chiusura: rgba(242, 245, 244, 0.66);   /* l'avvertenza della chiusura */
+  --testo-dettaglio: rgba(242, 245, 244, 0.86);   /* il dettaglio che chiude (i fatti) */
+  --testo-requisiti-chiara: rgba(23, 29, 29, 0.86);   /* i requisiti sulla scena chiara */
 
   /* Caratteri */
   /* · Base: caratteri, ripristino, fuoco, utilità */
@@ -1176,8 +1179,8 @@
   --scelta-luce-sopra: 52%;
   --scelta-bolla-spazio-interno: var(--bolla-corpo-spazio-interno);
   --bordo-lingua-in-bolla: var(--bordo-rivedi-chiaro);   /* il bordo di un comando sul chiaro (come «Rivedi» sulla scena chiara) */
-  --velo-lingua-in-bolla: rgba(91, 1, 35, 0.07);   /* un nome al passaggio, sul chiaro della bolla */
-  --lingua-preferita-ombra: 0 10px 22px -12px rgba(91, 1, 35, 0.6);   /* la lingua del browser, accesa: l'ombra della voce scelta, in scuro sul chiaro */
+  --velo-lingua-in-bolla: rgba(30, 39, 39, 0.07);   /* un nome al passaggio, sul chiaro della bolla */
+  --lingua-preferita-ombra: 0 10px 22px -12px rgba(30, 39, 39, 0.6);   /* la lingua del browser, accesa: l'ombra della voce scelta, in scuro sul chiaro */
   --scelta-barre-scala-y: var(--barre-1-scala-y);   /* le barre di «Tu» fra un nome e l'altro */
   /* · L'arrivo della pagina della scelta */
   --ritardo-scelta-bolla: 760ms;   /* la bolla nasce dalla coda quando «Tu», l'ultimo a entrare (400 ms + 520), è quasi fermo */
@@ -1194,7 +1197,7 @@
 :root {
   /* · La riunione con il confine del provato (primo schermo) */
   --opacita-provato-bordo: 0.55;   /* il bordo di chi parla, dopo l'arrivo: resta acceso a metà (la voce è arrivata al microfono) */
-  --velo-oltre: rgba(36, 4, 14, 0.32);   /* il velo sugli altri, oltre il confine del provato: un poco più spenti, non nascosti */
+  --velo-oltre: rgba(17, 24, 25, 0.32);   /* il velo sugli altri, oltre il confine del provato: un poco più spenti, non nascosti */
   --durata-provato-bordo: var(--durata-bordo);   /* il bordo di «Tu» si accende come quello di chi parla nella home */
   --durata-provato-barre: 260ms;   /* le barre di «Tu» mentre parla: su e giù (come le barre della pagina della scelta) */
   --ripetizioni-provato-barre: 6;   /* poco più di un secondo e mezzo: la frase detta, poi si ferma */
@@ -1262,6 +1265,7 @@
   --domanda-spazio-interno-inline: 16px 22px;   /* inizio e fine: il tondo all'inizio, aria dopo la domanda */
   --domanda-spazio-interno-telefono-blocco: 10px 11px;
   --domanda-spazio-interno-telefono-inline: 14px 18px;   /* inizio e fine */
+  --domande-indirizzo-centro: 50vh;   /* un indirizzo diretto mette la domanda a metà schermo e lascia sopra posto alla risposta appiccicosa */
   --domande-bolla-sopra: calc(var(--barra-altezza) + 32px);   /* la bolla resta in vista sotto la barra mentre si scorrono le domande */
   --domande-bolla-larghezza: 640px;
   --domande-bolla-grandezza: var(--bolla-testo-grandezza);   /* la risposta grande come la frase della riunione */
@@ -1343,7 +1347,7 @@
    dipendere da una sfocatura che può non arrivare: in Firefox il menu aperto è quasi pieno (il 99,5%: con il 98,5% si leggeva ancora, appena, il titolo dietro; la
    regola sta in barra.css, dentro `@supports (-moz-appearance: none)`, che solo Firefox conosce). Se un Firefox con la scheda grafica sfoca, perde il vetro (la sfocatura
    del 94% si vede poco): da guardare su una macchina vera; per tornare indietro basta togliere quella regola. Chromium e WebKit non cambiano. */
-:root { --pannello-menu-pieno: rgba(28, 3, 11, 0.995); }
+:root { --pannello-menu-pieno: rgba(20, 25, 26, 0.995); }
 /* L2 · le barre della voce di «Tu» e la sua etichetta (componenti.js misura, riunione.css applica) */
 :root {
   --barre-etichetta-distanza: 3px;   /* quanto resta fra l'etichetta di «Tu» e la barra più vicina, anche alla massima altezza della voce */
@@ -1384,7 +1388,7 @@
    tutti i file di marchio/ e le icone del programma (packaging/linux/), e fallisce se non tornano. Ruoli e prove: TOKEN.md, «Il marchio». */
 :root {
   --segno-colore: #e6396e;   /* la parte detta (piena) e il contorno, pieno o tratteggiato: oklch(62% 0.21 8), 3,9:1 sul chiaro e sullo scuro (la regola di Windows per le icone) */
-  --segno-parola: var(--testo);   /* le parole dette, chiare sul pieno: il chiaro della bolla della home */
+  --segno-parola: #ffedef;   /* le parole dette, chiare sul pieno: il chiaro della bolla della home */
   --segno-piastra: #fab7c2;   /* la forma piena per macOS: il rosa chiaro che fa risaltare il tratteggio sullo scuro */
   --segno-simbolo: #2e3436;   /* la versione simbolica di GNOME: il grigio dei simboli di Adwaita (GTK la ricolora comunque) */
   --segno-fronte-pieno: 62;   /* di quanto il fronte della voce (in unità della tela, 128) si sposta dal riposo, dov'è disegnato (detto a metà: la forma dei menu e della scheda), quando la frase è tutta detta: la bolla è tutta piena */
@@ -1411,9 +1415,9 @@
   --sistemi-dice-margine: 12px 0 0;   /* la riga che dice che cosa vuol dire la scelta */
   --ritardo-sistemi: 580ms;   /* entra fra la presentazione (520 ms) e i comandi (640 ms) */
   /* · il comando da copiare */
-  --comando-fondo: rgba(12, 1, 5, 0.5);   /* il fondo del comando: più scuro della scena su cui sta, come il terminale */
-  --comando-bordo: rgba(255, 219, 225, 0.2);   /* il suo bordo: quello dei pannelli */
-  --comando-fondo-in-riga: rgba(255, 237, 239, 0.1);   /* un comando dentro una frase */
+  --comando-fondo: rgba(10, 15, 16, 0.5);   /* il fondo del comando: più scuro della scena su cui sta, come il terminale */
+  --comando-bordo: rgba(181, 218, 206, 0.2);   /* il suo bordo: quello dei pannelli */
+  --comando-fondo-in-riga: rgba(242, 245, 244, 0.1);   /* un comando dentro una frase */
   --comando-raggio: 12px;
   --comando-margine: 10px 0 0;
   --comando-spazio-inizio: 16px;
@@ -1430,8 +1434,8 @@
   --comando-copiato-ombra: 0 0 0 1px var(--voce), 0 0 22px 2px var(--luce-filo-centro);   /* copiato: la luce della voce intorno al comando, un momento */
   --durata-comando-copiato: 1600ms;   /* quanto resta «Copiato» */
   /* · il terminale ricostruito */
-  --terminale-fondo: #1c030b;   /* il fondo: la notte più scura, come il menu aperto */
-  --terminale-barra: rgba(255, 237, 239, 0.04);   /* la barra del titolo */
+  --terminale-fondo: #141b1c;   /* il fondo: la notte più scura, come il menu aperto */
+  --terminale-barra: rgba(242, 245, 244, 0.04);   /* la barra del titolo */
   --terminale-barra-altezza: 30px;
   --terminale-raggio: 16px;
   --terminale-ombra: 0 24px 50px -22px var(--ombra-cornice);
@@ -1441,7 +1445,7 @@
   --terminale-interlinea: 22px;
   --terminale-grandezza-telefono: 12px;
   --terminale-interlinea-telefono: 19px;
-  --terminale-riga-tua: rgba(255, 237, 239, 0.16);   /* una riga del tuo computer: c'è, ma che cosa dice dipende da lui */
+  --terminale-riga-tua: rgba(242, 245, 244, 0.16);   /* una riga del tuo computer: c'è, ma che cosa dice dipende da lui */
   --terminale-riga-tua-altezza: 7px;
   --terminale-riga-tua-lunga: 72%;
   --terminale-riga-tua-corta: 44%;
@@ -1450,7 +1454,7 @@
   --terminale-trovato-dopo: 11em;   /* …e il resto della riga dopo */
   --terminale-cursore-larghezza: 0.6em;
   --terminale-cursore-altezza: 1.15em;
-  --terminale-uguale: rgba(255, 92, 141, 0.36);   /* un gruppo di cifre confrontato, e la parola trovata: l'azione, velata */
+  --terminale-uguale: rgba(117, 205, 174, 0.36);   /* un gruppo di cifre confrontato, e la parola trovata: l'azione, velata */
   --terminale-confronto-spazio-interno: 12px 20px 16px;
   --durata-t-riga: 200ms;   /* una risposta che compare */
   --durata-t-gruppo: 180ms;   /* un gruppo di cifre che si accende */
@@ -1487,7 +1491,7 @@
   --apri-colonne: minmax(0, 1fr) minmax(0, 540px);   /* il testo, poi la finestra */
   --apri-finestra-larghezza: 540px;
   --apri-stato-altezza: 62px;   /* la riga di stato tiene due righe: le frasi lunghe non spostano la finestra */
-  --frase-finestra-bordo: rgba(91, 1, 35, 0.2);   /* una frase della finestra, sulla scena chiara */
+  --frase-finestra-bordo: rgba(30, 39, 39, 0.2);   /* una frase della finestra, sulla scena chiara */
   --microfono-scena-larghezza: 560px;
   --riprendi-colonne: minmax(0, 1fr) minmax(0, 1fr);
   --riprendi-larghezza: 1040px;
@@ -1504,3 +1508,11 @@
   --impronta-cifre-gruppo: 8;   /* le cifre di un gruppo dell'impronta che si confronta */
   --annuncio-attesa: 60ms;   /* l'annuncio si svuota e poi si riscrive: un lettore di schermo lo legge anche se il testo è uguale al precedente */
 }
+
+/* In riunione — scelta: i passaggi discorsivi hanno la stessa misura delle scene interne,
+   per tenere insieme azione, risultato e recupero senza una griglia di schede. */
+:root { --riunione-guida-larghezza: 860px; }
+
+:root { --riunione-catalogo-altezza: 844px; } /* scelta: una finestra viva alta come il telefono di confronto */
+
+:root { --riunione-guida-aria-telefono: 32px; } /* scelta: distacco fra testo e bordo delle scene sovrapposte al telefono */

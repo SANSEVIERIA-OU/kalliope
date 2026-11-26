@@ -23,63 +23,63 @@ numerato in ordine di valore (`--corpo-7`, `--spazio-12`): il numero è il posto
 
 | Token | Valore | Ruolo | Dove è usato |
 |---|---|---|---|
-| `--azione` | `#ff5c8d` | l'unico colore di ciò che si preme per scegliere | 0 usi:  |
-| `--fondo` | `#420017` | la stanza: il fondo di tutta la pagina | 0 usi:  |
-| `--scuro` | `#26060f` | testo scuro sul chiaro (bolla, occhi e bocca delle figure) | 0 usi:  |
-| `--bordeaux` | `#5b0123` | testo e segni scuri sul chiaro; capelli di Paola | 1 uso: `.paola` capelli |
-| `--magenta` | `#c50f56` | la voce dentro la bolla; cuffia di Luca; maglia di Anna | 2 usi: `.luca` cuffia; `.anna` corpo |
-| `--rosa` | `#e3718a` | il bordo che risponde al passaggio sulle voci; maglia di Paola | 1 uso: `.paola` corpo |
-| `--voce` | `#ffdbe1` | la voce che suona: contorni, barre di «Tu», tappe accese, maglia di Luca | 1 uso: `.luca` corpo |
-| `--testo` | `#ffedef` | il testo e la voce chiara: bolla, pillola chiara, fine della scena chiara | 1 uso: `.scena-chiara` background |
-| `--barra-piena` | `#2e0010` | la barra compatta e la fascia della riunione agganciata: piene, senza sfocatura | 5 usi in 2 componenti: `.barra.compatta` background; `.barra.compatta` box-shadow; `html:not(.js) .barra` background; +2 |
-| `--bordo-barra` | `rgba(255, 219, 225, 0.1)` | il filo sotto la barra compatta e sotto la fascia agganciata | 3 usi in 2 componenti: `.barra.compatta` box-shadow; `html:not(.js) .barra` box-shadow; `.banda-riunione.agganciata` box-shadow ((max-width: 760px)) |
-| `--pannello-menu` | `rgba(28, 3, 11, 0.94)` | il menu aperto | 1 uso: `.js .menu.aperto` background ((max-width: 959px)) |
-| `--pannello-menu-fondo` | `rgba(28, 3, 11, 0.98)` | il velo sul fondo del menu che scorre | 1 uso: `.js .menu.aperto::after` background (@supports (animation-timeline:) |
-| `--pannello-trasparente` | `rgba(28, 3, 11, 0)` | il pannello a zero: inizio del velo sul fondo del menu | 1 uso: `.js .menu.aperto::after` background (@supports (animation-timeline:) |
-| `--velo-menu-premuto` | `rgba(255, 237, 239, 0.18)` | una voce del menu premuta | 1 uso: `.menu a:active` background |
-| `--velo-menu-sopra` | `rgba(255, 237, 239, 0.1)` | una voce del menu al passaggio | 1 uso: `.menu a:hover` background |
-| `--velo-scelto` | `rgba(255, 237, 239, 0.14)` | una frase attiva, «Menu» al passaggio | 2 usi in 2 componenti: `.pulsante-menu:hover` background; `.frase[aria-current="true"]` background |
-| `--azione-sopra` | `#ff7ba3` | l'azione al passaggio | 1 uso: `.pillola.azione:hover` background |
-| `--azione-testo` | `#33040f` | il testo sull'azione | 1 uso: `.pillola.azione` color |
+| `--azione` | `#91dfbd` | l'unico colore di ciò che si preme per scegliere | 0 usi:  |
+| `--fondo` | `#1b2223` | la stanza: il fondo di tutta la pagina | 0 usi:  |
+| `--scuro` | `#171d1d` | testo scuro sul chiaro (bolla, occhi e bocca delle figure) | 0 usi:  |
+| `--bordeaux` | `#253331` | testo e segni scuri sul chiaro; capelli di Paola | 1 uso: `.paola` capelli |
+| `--magenta` | `#27795f` | la voce dentro la bolla; cuffia di Luca; maglia di Anna | 2 usi: `.luca` cuffia; `.anna` corpo |
+| `--rosa` | `#82b4a3` | il bordo che risponde al passaggio sulle voci; maglia di Paola | 1 uso: `.paola` corpo |
+| `--voce` | `#b5e8d2` | la voce che suona: contorni, barre di «Tu», tappe accese, maglia di Luca | 1 uso: `.luca` corpo |
+| `--testo` | `#f2f5f4` | il testo e la voce chiara: bolla, pillola chiara, fine della scena chiara | 1 uso: `.scena-chiara` background |
+| `--barra-piena` | `#151b1c` | la barra compatta e la fascia della riunione agganciata: piene, senza sfocatura | 5 usi in 2 componenti: `.barra.compatta` background; `.barra.compatta` box-shadow; `html:not(.js) .barra` background; +2 |
+| `--bordo-barra` | `rgba(181, 218, 206, 0.1)` | il filo sotto la barra compatta e sotto la fascia agganciata | 3 usi in 2 componenti: `.barra.compatta` box-shadow; `html:not(.js) .barra` box-shadow; `.banda-riunione.agganciata` box-shadow ((max-width: 760px)) |
+| `--pannello-menu` | `rgba(20, 25, 26, 0.94)` | il menu aperto | 1 uso: `.js .menu.aperto` background ((max-width: 959px)) |
+| `--pannello-menu-fondo` | `rgba(20, 25, 26, 0.98)` | il velo sul fondo del menu che scorre | 1 uso: `.js .menu.aperto::after` background (@supports (animation-timeline:) |
+| `--pannello-trasparente` | `rgba(20, 25, 26, 0)` | il pannello a zero: inizio del velo sul fondo del menu | 1 uso: `.js .menu.aperto::after` background (@supports (animation-timeline:) |
+| `--velo-menu-premuto` | `rgba(242, 245, 244, 0.18)` | una voce del menu premuta | 1 uso: `.menu a:active` background |
+| `--velo-menu-sopra` | `rgba(242, 245, 244, 0.1)` | una voce del menu al passaggio | 1 uso: `.menu a:hover` background |
+| `--velo-scelto` | `rgba(242, 245, 244, 0.14)` | una frase attiva, «Menu» al passaggio | 2 usi in 2 componenti: `.pulsante-menu:hover` background; `.frase[aria-current="true"]` background |
+| `--azione-sopra` | `#b4edcf` | l'azione al passaggio | 1 uso: `.pillola.azione:hover` background |
+| `--azione-testo` | `#152c24` | il testo sull'azione | 1 uso: `.pillola.azione` color |
 | `--bianco` | `#fff` | il bianco: pillola chiara al passaggio, impulso, testo sui comandi della finestra | 5 usi in 4 componenti: `.pillola.voce-chiara:hover` background; `.f-parla` color; `.f-primario` color; +2 |
-| `--bordo-comando-quieto` | `rgba(255, 219, 225, 0.35)` | il bordo di un comando secondario: «Chiudi», «Rivedi» | 2 usi: `.chiudi` border; `.rivedi` border |
-| `--bordo-rivedi-chiaro` | `rgba(91, 1, 35, 0.35)` | il bordo di «Rivedi» sulla scena chiara | 1 uso: `.scena-chiara .rivedi` border-color |
-| `--ombra-azione` | `rgba(255, 92, 141, 0.7)` | l'ombra dell'azione | 1 uso: `.pillola.azione` box-shadow |
-| `--sottolineatura` | `rgba(255, 219, 225, 0.55)` | la sottolineatura dei collegamenti | 2 usi in 2 componenti: `.collegamento` text-decoration-color; `.scarica-file` text-decoration-color |
-| `--bordo-evidente` | `rgba(255, 219, 225, 0.4)` | il bordo che si nota: la riga dello stato, il messaggio d'errore, l'alone di una frase in voce | 3 usi in 3 componenti: `.stato` border-inline-start; `.errore-ascolto` border; `.messaggio.in-voce .filo-bolla .bol…` box-shadow |
-| `--testo-didascalia` | `rgba(255, 237, 239, 0.78)` | la didascalia e il titolo del microfono | 2 usi in 2 componenti: `.didascalia` color; `.microfono-titolo` color |
-| `--testo-spiegazione` | `rgba(255, 237, 239, 0.88)` | la spiegazione sotto un titolo: stato, testo del tratto, esiti | 3 usi in 3 componenti: `.stato` color; `.esito p` color; `.tratto-testo p` color |
-| `--ombra-bolla` | `rgba(20, 2, 8, 0.85)` | ombra della bolla | 3 usi in 2 componenti: `.bolla-corpo` box-shadow; `.messaggio.in-voce .filo-bolla .bol…` box-shadow; `.messaggio.in-pausa .filo-bolla .bo…` box-shadow |
-| `--alone-tu` | `rgba(255, 219, 225, 0.8)` | l'alone di chi parla | 1 uso: `.alone` box-shadow |
-| `--anna-capelli` | `#8a1a42` | Anna: capelli | 1 uso: `.anna` capelli |
-| `--anna-corpo` | `var(--magenta)` | anna: corpo | 1 uso: `.anna` corpo |
-| `--anna-fondo-alto` | `#a62a58` | Anna: fondo del riquadro, alto | 1 uso: `.anna` background |
-| `--anna-fondo-basso` | `#701537` | Anna: fondo del riquadro, basso | 1 uso: `.anna` background |
-| `--anna-ombra` | `#dc93a3` | Anna: collo e ombre | 1 uso: `.anna` ombra |
-| `--anna-pelle` | `#efb4c0` | Anna: pelle | 1 uso: `.anna` pelle |
-| `--barre-spente` | `#7e1840` | le barre della voce quando nessuno parla | 1 uso: `.barre i` background |
-| `--bordo-cornice` | `rgba(255, 219, 225, 0.14)` | il bordo di una cornice della riunione e il filo sopra il piede | 4 usi in 2 componenti: `.chiamata` border; `.riunione-filo` border; `.tavolo-cornice` border; +1 |
-| `--luca-capelli` | `#2c0612` | Luca: capelli | 1 uso: `.luca` capelli |
-| `--luca-corpo` | `var(--voce)` | luca: corpo | 1 uso: `.luca` corpo |
-| `--luca-cuffia` | `var(--magenta)` | luca: cuffia | 1 uso: `.luca` cuffia |
-| `--luca-fondo-alto` | `#771838` | Luca: fondo del riquadro, alto | 1 uso: `.luca` background |
-| `--luca-fondo-basso` | `#4f0a25` | Luca: fondo del riquadro, basso | 1 uso: `.luca` background |
-| `--luca-ombra` | `#e6aab6` | Luca: collo e ombre | 1 uso: `.luca` ombra |
-| `--luca-pelle` | `#f8d0d7` | Luca: pelle | 1 uso: `.luca` pelle |
+| `--bordo-comando-quieto` | `rgba(181, 218, 206, 0.35)` | il bordo di un comando secondario: «Chiudi», «Rivedi» | 2 usi: `.chiudi` border; `.rivedi` border |
+| `--bordo-rivedi-chiaro` | `rgba(30, 39, 39, 0.35)` | il bordo di «Rivedi» sulla scena chiara | 1 uso: `.scena-chiara .rivedi` border-color |
+| `--ombra-azione` | `rgba(117, 205, 174, 0.7)` | l'ombra dell'azione | 1 uso: `.pillola.azione` box-shadow |
+| `--sottolineatura` | `rgba(181, 218, 206, 0.55)` | la sottolineatura dei collegamenti | 2 usi in 2 componenti: `.collegamento` text-decoration-color; `.scarica-file` text-decoration-color |
+| `--bordo-evidente` | `rgba(181, 218, 206, 0.4)` | il bordo che si nota: la riga dello stato, il messaggio d'errore, l'alone di una frase in voce | 3 usi in 3 componenti: `.stato` border-inline-start; `.errore-ascolto` border; `.messaggio.in-voce .filo-bolla .bol…` box-shadow |
+| `--testo-didascalia` | `rgba(242, 245, 244, 0.78)` | la didascalia e il titolo del microfono | 2 usi in 2 componenti: `.didascalia` color; `.microfono-titolo` color |
+| `--testo-spiegazione` | `rgba(242, 245, 244, 0.88)` | la spiegazione sotto un titolo: stato, testo del tratto, esiti | 3 usi in 3 componenti: `.stato` color; `.esito p` color; `.tratto-testo p` color |
+| `--ombra-bolla` | `rgba(10, 14, 15, 0.85)` | ombra della bolla | 3 usi in 2 componenti: `.bolla-corpo` box-shadow; `.messaggio.in-voce .filo-bolla .bol…` box-shadow; `.messaggio.in-pausa .filo-bolla .bo…` box-shadow |
+| `--alone-tu` | `rgba(181, 218, 206, 0.8)` | l'alone di chi parla | 1 uso: `.alone` box-shadow |
+| `--anna-capelli` | `#3b2e29` | Anna: capelli | 1 uso: `.anna` capelli |
+| `--anna-corpo` | `#b194bf` | anna: corpo | 1 uso: `.anna` corpo |
+| `--anna-fondo-alto` | `#55465c` | Anna: fondo del riquadro, alto | 1 uso: `.anna` background |
+| `--anna-fondo-basso` | `#332d3e` | Anna: fondo del riquadro, basso | 1 uso: `.anna` background |
+| `--anna-ombra` | `#a16b51` | Anna: collo e ombre | 1 uso: `.anna` ombra |
+| `--anna-pelle` | `#c99574` | Anna: pelle | 1 uso: `.anna` pelle |
+| `--barre-spente` | `#496259` | le barre della voce quando nessuno parla | 1 uso: `.barre i` background |
+| `--bordo-cornice` | `rgba(181, 218, 206, 0.14)` | il bordo di una cornice della riunione e il filo sopra il piede | 4 usi in 2 componenti: `.chiamata` border; `.riunione-filo` border; `.tavolo-cornice` border; +1 |
+| `--luca-capelli` | `#252522` | Luca: capelli | 1 uso: `.luca` capelli |
+| `--luca-corpo` | `#a4b9d1` | luca: corpo | 1 uso: `.luca` corpo |
+| `--luca-cuffia` | `#48617e` | luca: cuffia | 1 uso: `.luca` cuffia |
+| `--luca-fondo-alto` | `#3d4e62` | Luca: fondo del riquadro, alto | 1 uso: `.luca` background |
+| `--luca-fondo-basso` | `#27323f` | Luca: fondo del riquadro, basso | 1 uso: `.luca` background |
+| `--luca-ombra` | `#ca9778` | Luca: collo e ombre | 1 uso: `.luca` ombra |
+| `--luca-pelle` | `#e9be9a` | Luca: pelle | 1 uso: `.luca` pelle |
 | `--ombra-banda` | `rgba(0, 0, 0, 0.8)` | ombra della fascia agganciata | 1 uso: `.banda-riunione.agganciata` box-shadow ((max-width: 760px)) |
-| `--ombra-cornice` | `rgba(10, 0, 4, 0.9)` | ombra di una cornice o di un pannello | 3 usi in 2 componenti: `.chiamata` box-shadow; `.tavolo-cornice` box-shadow; `.ascolto` box-shadow |
+| `--ombra-cornice` | `rgba(5, 9, 10, 0.9)` | ombra di una cornice o di un pannello | 3 usi in 2 componenti: `.chiamata` box-shadow; `.tavolo-cornice` box-shadow; `.ascolto` box-shadow |
 | `--ombra-nera` | `rgba(0, 0, 0, 0.9)` | ombra della riunione accanto al filo | 1 uso: `.riunione-filo` box-shadow |
-| `--paola-capelli` | `var(--bordeaux)` | paola: capelli | 1 uso: `.paola` capelli |
-| `--paola-corpo` | `var(--rosa)` | paola: corpo | 1 uso: `.paola` corpo |
-| `--paola-fondo-alto` | `#902149` | Paola: fondo del riquadro, alto | 1 uso: `.paola` background |
-| `--paola-fondo-basso` | `#5f0f2d` | Paola: fondo del riquadro, basso | 1 uso: `.paola` background |
-| `--paola-ombra` | `#e2a1ae` | Paola: collo e ombre | 1 uso: `.paola` ombra |
-| `--paola-pelle` | `#f4c2cb` | Paola: pelle | 1 uso: `.paola` pelle |
-| `--tu-fondo-alto` | `#3a0816` | il riquadro «Tu»: parte alta del fondo | 1 uso: `.riquadro.tu` background |
-| `--tu-fondo-basso` | `#24040d` | il riquadro «Tu»: parte bassa del fondo | 1 uso: `.riquadro.tu` background |
-| `--vetro-cornice` | `rgba(18, 2, 7, 0.42)` | la cornice della riunione | 2 usi: `.chiamata` background; `.tavolo-cornice` background |
-| `--vetro-nome` | `rgba(20, 2, 8, 0.52)` | l'etichetta di un riquadro | 1 uso: `.nome` background |
-| `--vetro-riunione-filo` | `rgba(18, 2, 7, 0.6)` | la riunione accanto al filo | 1 uso: `.riunione-filo` background |
+| `--paola-capelli` | `#3c2926` | paola: capelli | 1 uso: `.paola` capelli |
+| `--paola-corpo` | `#c99078` | paola: corpo | 1 uso: `.paola` corpo |
+| `--paola-fondo-alto` | `#655147` | Paola: fondo del riquadro, alto | 1 uso: `.paola` background |
+| `--paola-fondo-basso` | `#3e3531` | Paola: fondo del riquadro, basso | 1 uso: `.paola` background |
+| `--paola-ombra` | `#b77e61` | Paola: collo e ombre | 1 uso: `.paola` ombra |
+| `--paola-pelle` | `#e1ad8b` | Paola: pelle | 1 uso: `.paola` pelle |
+| `--tu-fondo-alto` | `#263b35` | il riquadro «Tu»: parte alta del fondo | 1 uso: `.riquadro.tu` background |
+| `--tu-fondo-basso` | `#172923` | il riquadro «Tu»: parte bassa del fondo | 1 uso: `.riquadro.tu` background |
+| `--vetro-cornice` | `rgba(14, 20, 21, 0.42)` | la cornice della riunione | 2 usi: `.chiamata` background; `.tavolo-cornice` background |
+| `--vetro-nome` | `rgba(10, 14, 15, 0.52)` | l'etichetta di un riquadro | 1 uso: `.nome` background |
+| `--vetro-riunione-filo` | `rgba(14, 20, 21, 0.6)` | la riunione accanto al filo | 1 uso: `.riunione-filo` background |
 | `--app-accento` | `#005fb8` | l'accento della finestra: «Parla», riga attiva, barra di avanzamento | 4 usi: `.f-campo.fuoco` border-bottom; `.f-parla.attivo` background; `.f-barra i` background; +1 |
 | `--app-accento-premuto` | `#004c94` | l'accento premuto | 1 uso: `.f-primario.premuto` background |
 | `--app-barra-vuota` | `#e2e2e2` | la barra di avanzamento vuota | 1 uso: `.f-barra` background |
@@ -99,58 +99,58 @@ numerato in ordine di valore (`--corpo-7`, `--spazio-12`): il numero è il posto
 | `--app-stato-parla` | `#e8f5e9` | la riga di stato mentre parla | 1 uso: `.f-stato.parla` background |
 | `--app-testo` | `#1d1d1f` | la finestra di Kalliope: testo e cursore | 4 usi: `.finestra` color; `.f-cursore` background; `.f-ferma.attivo, .f-ferma:enabled` color; +1 |
 | `--finestra-anello` | `rgba(0, 0, 0, 0.06)` | il filo intorno alla finestra di Kalliope | 1 uso: `.finestra` box-shadow |
-| `--finestra-chiara-anello` | `rgba(91, 1, 35, 0.08)` | il filo intorno alla finestra sulla scena chiara | 1 uso: `.scena-chiara .finestra` box-shadow |
-| `--ombra-finestra` | `rgba(10, 0, 4, 0.85)` | ombra della finestra di Kalliope | 1 uso: `.finestra` box-shadow |
-| `--ombra-finestra-chiara` | `rgba(91, 1, 35, 0.5)` | ombra della finestra sulla scena chiara | 1 uso: `.scena-chiara .finestra` box-shadow |
-| `--testo-nota-chiara` | `rgba(38, 6, 15, 0.66)` | la nota sulla scena chiara | 1 uso: `.nota-ricostruzione` color |
-| `--bordo-pannello` | `rgba(255, 219, 225, 0.2)` | il bordo di un pannello: scheda, menu aperto, computer, microfono | 4 usi in 4 componenti: `.microfono` border; `.ascolto` border; `.computer` border; +1 |
-| `--bordo-sezione` | `rgba(255, 219, 225, 0.12)` | il filo che divide: tra «Non esiste» e la strada, intorno alla riunione ricostruita | 2 usi in 2 componenti: `.riunione-app` border; `.non-esiste` border-top |
-| `--ombra-riunione-app` | `rgba(70, 0, 25, 0.75)` | ombra della riunione ricostruita | 1 uso: `.riunione-app` box-shadow |
-| `--riquadro-scuro` | `#2a0510` | il nodo della strada e la finestra della riunione ricostruita | 3 usi in 2 componenti: `.riunione-app` background; `.nodo` background; `.js .tappa.fatta:not(.acceso) .nodo` background |
-| `--velo-comando` | `rgba(255, 237, 239, 0.08)` | il fondo di un comando: voce, «Menu», microfono | 2 usi in 2 componenti: `.microfono` background; `.pulsante-menu` background ((max-width: 959px)) |
-| `--velo-puntata` | `rgba(255, 237, 239, 0.2)` | la scelta del microfono puntata | 1 uso: `.scelta.puntata` background |
-| `--alone-forte` | `rgba(255, 219, 225, 0.7)` | un alone netto: impulso, voce scelta, tratteggio dei «forse» | 3 usi in 2 componenti: `.voce[aria-pressed="true"]` box-shadow; `.impulso` box-shadow; `.esito-forse h3::before` background |
-| `--bordo-frase` | `rgba(255, 219, 225, 0.22)` | il bordo di una frase | 1 uso: `.frase` border |
-| `--bordo-voce` | `rgba(255, 219, 225, 0.34)` | il bordo di una voce a riposo | 1 uso: `.voce` border |
-| `--frase-punto` | `rgba(255, 219, 225, 0.45)` | il punto di una frase non ancora suonata | 1 uso: `.frase::before` background |
-| `--pannello-ascolto` | `rgba(28, 3, 11, 0.72)` | la scheda dell'ascolto | 1 uso: `.ascolto` background |
-| `--tratteggio` | `rgba(255, 219, 225, 0.6)` | il tratteggio di «non ancora» (linea e pulsazione) | 2 usi in 2 componenti: `@keyframes pulsa 0%, 100%` box-shadow; `.linea-forse` background ((max-width: 760px)) |
-| `--velo-sopra` | `rgba(255, 237, 239, 0.06)` | una voce al passaggio | 1 uso: `.voce:hover, .voce:focus-visible` background |
-| `--voce-trasparente` | `rgba(255, 219, 225, 0)` | la voce a zero: fine di un alone che si spegne | 1 uso: `@keyframes pulsa 50%` box-shadow |
-| `--pannello-errore` | `rgba(28, 3, 11, 0.78)` | il messaggio d'errore (fuori dalla scheda) | 1 uso: `.errore-ascolto` background |
-| `--fondo-trasparente` | `rgba(66, 0, 23, 0)` | il fondo a zero: fine di ogni luce che sfuma | 6 usi in 2 componenti: `.ascolto-voce .luce-filo` background; `.luce` background; `.luce-voce` background; +3 |
-| `--luce-filo-bordo` | `rgba(197, 15, 86, 0.16)` | la luce del filo: a metà | 1 uso: `.ascolto-voce .luce-filo` background |
-| `--luce-filo-centro` | `rgba(255, 92, 141, 0.42)` | la luce del filo: centro | 1 uso: `.ascolto-voce .luce-filo` background |
-| `--testo-durata` | `rgba(255, 237, 239, 0.7)` | la durata di una frase | 1 uso: `.durata` color |
-| `--testo-nota` | `rgba(255, 237, 239, 0.82)` | una nota sotto una frase e il testo di «Non esiste» | 2 usi in 2 componenti: `.detto-riga` color; `.non-esiste p` color |
-| `--tratto-lieve` | `rgba(255, 219, 225, 0.5)` | sottolineatura di «altra voce» e alone della linea fatta | 2 usi in 2 componenti: `.altra-voce` text-decoration-color; `.linea-fatta` box-shadow |
-| `--bordo-comando` | `rgba(255, 219, 225, 0.3)` | il bordo di un comando: «Menu», nodo della strada | 3 usi in 2 componenti: `.nodo` border; `.js .tappa.fatta:not(.acceso) .nodo` border-color; `.pulsante-menu` border ((max-width: 959px)) |
-| `--bordo-tappa-forse` | `rgba(255, 219, 225, 0.42)` | la tappa «forse»: bordo tratteggiato, e l'alone della tappa accesa | 2 usi: `.tappa.forse .nodo` border-color; `.tappa.fatta.acceso .nodo` box-shadow |
-| `--bordo-tappa-raggiunta` | `rgba(255, 219, 225, 0.75)` | la tappa «forse» quando la voce ci arriva | 1 uso: `.tappa.forse.raggiunta .nodo` border-color |
-| `--bordo-voce-vecchio` | `rgba(255, 219, 225, 0.28)` | il bordo di una voce (primo disegno; la pagina ora usa quello sotto) | 1 uso: `.impulso` box-shadow |
-| `--riquadro-scuro-forse` | `rgba(42, 5, 16, 0.6)` | il nodo «forse» | 1 uso: `.tappa.forse .nodo` background |
-| `--testo-forte` | `rgba(255, 237, 239, 0.9)` | la riga sulla riservatezza | 1 uso: `.riservato` color |
-| `--testo-secondario` | `rgba(255, 237, 239, 0.8)` | testo di sostegno: piede, nome del computer, tappa «forse» | 3 usi in 2 componenti: `.computer-nome` color; `.tappa.forse .tappa-nome` color; `.piede p` color |
-| `--testo-spento` | `rgba(255, 237, 239, 0.6)` | il segno di una tappa non accesa | 2 usi: `.nodo` color; `.js .tappa.fatta:not(.acceso) .nodo` color |
-| `--velo-computer` | `rgba(255, 237, 239, 0.035)` | il computer della strada | 1 uso: `.computer` background |
+| `--finestra-chiara-anello` | `rgba(30, 39, 39, 0.08)` | il filo intorno alla finestra sulla scena chiara | 1 uso: `.scena-chiara .finestra` box-shadow |
+| `--ombra-finestra` | `rgba(5, 9, 10, 0.85)` | ombra della finestra di Kalliope | 1 uso: `.finestra` box-shadow |
+| `--ombra-finestra-chiara` | `rgba(30, 39, 39, 0.5)` | ombra della finestra sulla scena chiara | 1 uso: `.scena-chiara .finestra` box-shadow |
+| `--testo-nota-chiara` | `rgba(23, 29, 29, 0.66)` | la nota sulla scena chiara | 1 uso: `.nota-ricostruzione` color |
+| `--bordo-pannello` | `rgba(181, 218, 206, 0.2)` | il bordo di un pannello: scheda, menu aperto, computer, microfono | 4 usi in 4 componenti: `.microfono` border; `.ascolto` border; `.computer` border; +1 |
+| `--bordo-sezione` | `rgba(181, 218, 206, 0.12)` | il filo che divide: tra «Non esiste» e la strada, intorno alla riunione ricostruita | 2 usi in 2 componenti: `.riunione-app` border; `.non-esiste` border-top |
+| `--ombra-riunione-app` | `rgba(12, 20, 21, 0.75)` | ombra della riunione ricostruita | 1 uso: `.riunione-app` box-shadow |
+| `--riquadro-scuro` | `#202b2b` | il nodo della strada e la finestra della riunione ricostruita | 3 usi in 2 componenti: `.riunione-app` background; `.nodo` background; `.js .tappa.fatta:not(.acceso) .nodo` background |
+| `--velo-comando` | `rgba(242, 245, 244, 0.08)` | il fondo di un comando: voce, «Menu», microfono | 2 usi in 2 componenti: `.microfono` background; `.pulsante-menu` background ((max-width: 959px)) |
+| `--velo-puntata` | `rgba(242, 245, 244, 0.2)` | la scelta del microfono puntata | 1 uso: `.scelta.puntata` background |
+| `--alone-forte` | `rgba(181, 218, 206, 0.7)` | un alone netto: impulso, voce scelta, tratteggio dei «forse» | 3 usi in 2 componenti: `.voce[aria-pressed="true"]` box-shadow; `.impulso` box-shadow; `.esito-forse h3::before` background |
+| `--bordo-frase` | `rgba(181, 218, 206, 0.22)` | il bordo di una frase | 1 uso: `.frase` border |
+| `--bordo-voce` | `rgba(181, 218, 206, 0.34)` | il bordo di una voce a riposo | 1 uso: `.voce` border |
+| `--frase-punto` | `rgba(181, 218, 206, 0.45)` | il punto di una frase non ancora suonata | 1 uso: `.frase::before` background |
+| `--pannello-ascolto` | `rgba(20, 25, 26, 0.72)` | la scheda dell'ascolto | 1 uso: `.ascolto` background |
+| `--tratteggio` | `rgba(181, 218, 206, 0.6)` | il tratteggio di «non ancora» (linea e pulsazione) | 2 usi in 2 componenti: `@keyframes pulsa 0%, 100%` box-shadow; `.linea-forse` background ((max-width: 760px)) |
+| `--velo-sopra` | `rgba(242, 245, 244, 0.06)` | una voce al passaggio | 1 uso: `.voce:hover, .voce:focus-visible` background |
+| `--voce-trasparente` | `rgba(181, 218, 206, 0)` | la voce a zero: fine di un alone che si spegne | 1 uso: `@keyframes pulsa 50%` box-shadow |
+| `--pannello-errore` | `rgba(20, 25, 26, 0.78)` | il messaggio d'errore (fuori dalla scheda) | 1 uso: `.errore-ascolto` background |
+| `--fondo-trasparente` | `rgba(27, 34, 35, 0)` | il fondo a zero: fine di ogni luce che sfuma | 6 usi in 2 componenti: `.ascolto-voce .luce-filo` background; `.luce` background; `.luce-voce` background; +3 |
+| `--luce-filo-bordo` | `rgba(65, 94, 86, 0.16)` | la luce del filo: a metà | 1 uso: `.ascolto-voce .luce-filo` background |
+| `--luce-filo-centro` | `rgba(117, 205, 174, 0.42)` | la luce del filo: centro | 1 uso: `.ascolto-voce .luce-filo` background |
+| `--testo-durata` | `rgba(242, 245, 244, 0.7)` | la durata di una frase | 1 uso: `.durata` color |
+| `--testo-nota` | `rgba(242, 245, 244, 0.82)` | una nota sotto una frase e il testo di «Non esiste» | 2 usi in 2 componenti: `.detto-riga` color; `.non-esiste p` color |
+| `--tratto-lieve` | `rgba(181, 218, 206, 0.5)` | sottolineatura di «altra voce» e alone della linea fatta | 2 usi in 2 componenti: `.altra-voce` text-decoration-color; `.linea-fatta` box-shadow |
+| `--bordo-comando` | `rgba(181, 218, 206, 0.3)` | il bordo di un comando: «Menu», nodo della strada | 3 usi in 2 componenti: `.nodo` border; `.js .tappa.fatta:not(.acceso) .nodo` border-color; `.pulsante-menu` border ((max-width: 959px)) |
+| `--bordo-tappa-forse` | `rgba(181, 218, 206, 0.42)` | la tappa «forse»: bordo tratteggiato, e l'alone della tappa accesa | 2 usi: `.tappa.forse .nodo` border-color; `.tappa.fatta.acceso .nodo` box-shadow |
+| `--bordo-tappa-raggiunta` | `rgba(181, 218, 206, 0.75)` | la tappa «forse» quando la voce ci arriva | 1 uso: `.tappa.forse.raggiunta .nodo` border-color |
+| `--bordo-voce-vecchio` | `rgba(181, 218, 206, 0.28)` | il bordo di una voce (primo disegno; la pagina ora usa quello sotto) | 1 uso: `.impulso` box-shadow |
+| `--riquadro-scuro-forse` | `rgba(27, 35, 36, 0.6)` | il nodo «forse» | 1 uso: `.tappa.forse .nodo` background |
+| `--testo-forte` | `rgba(242, 245, 244, 0.9)` | la riga sulla riservatezza | 1 uso: `.riservato` color |
+| `--testo-secondario` | `rgba(242, 245, 244, 0.8)` | testo di sostegno: piede, nome del computer, tappa «forse» | 3 usi in 2 componenti: `.computer-nome` color; `.tappa.forse .tappa-nome` color; `.piede p` color |
+| `--testo-spento` | `rgba(242, 245, 244, 0.6)` | il segno di una tappa non accesa | 2 usi: `.nodo` color; `.js .tappa.fatta:not(.acceso) .nodo` color |
+| `--velo-computer` | `rgba(242, 245, 244, 0.035)` | il computer della strada | 1 uso: `.computer` background |
 | `--bianco-trasparente` | `rgba(255, 255, 255, 0)` | il bianco a zero: fine della luce della scena chiara | 1 uso: `.scena-chiara .luce-tratto` background |
-| `--chiara-fondo-basso` | `#fcdce2` | la scena chiara: parte bassa del fondo | 1 uso: `.scena-chiara` background |
+| `--chiara-fondo-basso` | `#dfe7e3` | la scena chiara: parte bassa del fondo | 1 uso: `.scena-chiara` background |
 | `--luce-chiara-bordo` | `rgba(255, 255, 255, 0.3)` | la luce della scena chiara: a metà | 1 uso: `.scena-chiara .luce-tratto` background |
 | `--luce-chiara-centro` | `rgba(255, 255, 255, 0.85)` | la luce della scena chiara: centro | 1 uso: `.scena-chiara .luce-tratto` background |
-| `--luce-chiusa-bordo` | `rgba(197, 15, 86, 0.2)` | la luce della chiusura: a metà | 1 uso: `.chiusura .luce-chiusa` background |
-| `--luce-chiusa-centro` | `rgba(255, 92, 141, 0.5)` | la luce della chiusura: centro | 1 uso: `.chiusura .luce-chiusa` background |
-| `--luce-stanza-bordo` | `rgba(137, 26, 62, 0.3)` | la luce della stanza: a metà | 2 usi: `.luce` background; `.chiusura .luce-tratto` background |
-| `--luce-stanza-centro` | `rgba(197, 15, 86, 0.62)` | la luce della stanza: centro | 2 usi: `.luce` background; `.chiusura .luce-tratto` background |
-| `--luce-tratto-bordo` | `rgba(137, 26, 62, 0.15)` | la luce di un tratto: a metà | 1 uso: `.luce-tratto` background |
-| `--luce-tratto-centro` | `rgba(197, 15, 86, 0.36)` | la luce di un tratto: centro | 1 uso: `.luce-tratto` background |
-| `--luce-voce-bordo` | `rgba(197, 15, 86, 0.22)` | la luce che segue la voce: a metà | 1 uso: `.luce-voce` background |
-| `--luce-voce-centro` | `rgba(255, 92, 141, 0.55)` | la luce che segue la voce: centro | 1 uso: `.luce-voce` background |
-| `--notte` | `#24040e` | la scena «notte» (il filo) e il piede | 1 uso: `.scena-notte` background |
-| `--requisito-traccia` | `rgba(91, 1, 35, 0.16)` | la traccia di un requisito | 1 uso: `.requisiti li::before` background |
-| `--testo-avvertenza` | `rgba(255, 237, 239, 0.72)` | l'avvertenza | 1 uso: `.avvertenza` color |
-| `--testo-avvertenza-chiusura` | `rgba(255, 237, 239, 0.66)` | l'avvertenza della chiusura | 1 uso: `.chiusura .avvertenza` color |
-| `--testo-dettaglio` | `rgba(255, 237, 239, 0.86)` | il dettaglio che chiude (i fatti) | 1 uso: `.fatti` color |
-| `--testo-requisiti-chiara` | `rgba(38, 6, 15, 0.86)` | i requisiti sulla scena chiara | 1 uso: `.requisiti li` color |
+| `--luce-chiusa-bordo` | `rgba(65, 94, 86, 0.2)` | la luce della chiusura: a metà | 1 uso: `.chiusura .luce-chiusa` background |
+| `--luce-chiusa-centro` | `rgba(117, 205, 174, 0.5)` | la luce della chiusura: centro | 1 uso: `.chiusura .luce-chiusa` background |
+| `--luce-stanza-bordo` | `rgba(63, 82, 79, 0.3)` | la luce della stanza: a metà | 2 usi: `.luce` background; `.chiusura .luce-tratto` background |
+| `--luce-stanza-centro` | `rgba(65, 94, 86, 0.62)` | la luce della stanza: centro | 2 usi: `.luce` background; `.chiusura .luce-tratto` background |
+| `--luce-tratto-bordo` | `rgba(63, 82, 79, 0.15)` | la luce di un tratto: a metà | 1 uso: `.luce-tratto` background |
+| `--luce-tratto-centro` | `rgba(65, 94, 86, 0.36)` | la luce di un tratto: centro | 1 uso: `.luce-tratto` background |
+| `--luce-voce-bordo` | `rgba(65, 94, 86, 0.22)` | la luce che segue la voce: a metà | 1 uso: `.luce-voce` background |
+| `--luce-voce-centro` | `rgba(117, 205, 174, 0.55)` | la luce che segue la voce: centro | 1 uso: `.luce-voce` background |
+| `--notte` | `#111819` | la scena «notte» (il filo) e il piede | 1 uso: `.scena-notte` background |
+| `--requisito-traccia` | `rgba(30, 39, 39, 0.16)` | la traccia di un requisito | 1 uso: `.requisiti li::before` background |
+| `--testo-avvertenza` | `rgba(242, 245, 244, 0.72)` | l'avvertenza | 1 uso: `.avvertenza` color |
+| `--testo-avvertenza-chiusura` | `rgba(242, 245, 244, 0.66)` | l'avvertenza della chiusura | 1 uso: `.chiusura .avvertenza` color |
+| `--testo-dettaglio` | `rgba(242, 245, 244, 0.86)` | il dettaglio che chiude (i fatti) | 1 uso: `.fatti` color |
+| `--testo-requisiti-chiara` | `rgba(23, 29, 29, 0.86)` | i requisiti sulla scena chiara | 1 uso: `.requisiti li` color |
 
 ## Caratteri (2)
 
@@ -1139,7 +1139,7 @@ tiene `--spaziatura-marchio`.
 | `--lingue-pannello-sopra`, `-larghezza`, `-colonne`, `-colonne-telefono`, `-altezza-massima`, `-sposta-y` | `calc(100% + 8px)`, `min(460px, …)`, tre colonne, due colonne, `calc(100vh − 96px)`, `-6px` | il pannello di vetro scuro della barra |
 | `--scelta-lingua-spazio-interno`, `-telefono`, `--scelta-altezza-minima` | `56px var(--margine) 96px`, `24px var(--margine) 64px`, `calc(100vh − var(--barra-altezza))` | la pagina della scelta: la bolla e il riquadro a metà schermo |
 | `--scelta-bolla-larghezza-massima`, `--scelta-bolla-spazio-interno` | `980px`, `var(--bolla-corpo-spazio-interno)` | la bolla delle lingue |
-| `--bordo-lingua-in-bolla`, `--velo-lingua-in-bolla`, `--lingua-preferita-ombra` | `var(--bordo-rivedi-chiaro)`, `rgba(91, 1, 35, 0.07)`, `0 10px 22px -12px rgba(91, 1, 35, 0.6)` | un nome sul chiaro della bolla: bordo, passaggio, la lingua del browser accesa |
+| `--bordo-lingua-in-bolla`, `--velo-lingua-in-bolla`, `--lingua-preferita-ombra` | `var(--bordo-rivedi-chiaro)`, `rgba(30, 39, 39, 0.07)`, `0 10px 22px -12px rgba(30, 39, 39, 0.6)` | un nome sul chiaro della bolla: bordo, passaggio, la lingua del browser accesa |
 | `--scelta-tu-larghezza`, `-altezza`, `-larghezza-telefono`, `-altezza-telefono`, `--scelta-tu-scarto`, `-telefono` | `220px`, `128px`, `148px`, `88px`, `var(--spazio-14)`, `var(--spazio-8)` | il tuo riquadro sotto la coda |
 | `--scelta-luce-inizio`, `--scelta-luce-sopra` | `34%`, `46%` | la luce della stanza dietro la bolla |
 | `--scelta-barre-scala-y` | `var(--barre-1-scala-y)` | le barre di «Tu» fra un nome e l'altro |
@@ -1174,7 +1174,7 @@ aggiunta (un titolo di quattro righe sugli schermi bassi del computer prende la 
 | Token | Valore | Ruolo |
 |---|---|---|
 | `--opacita-provato-bordo` | `0.55` | il bordo di «Tu» dopo l'arrivo: resta acceso a metà (la voce è arrivata al microfono) |
-| `--velo-oltre` | `rgba(36, 4, 14, 0.32)` | il velo sugli altri, oltre il confine del provato |
+| `--velo-oltre` | `rgba(17, 24, 25, 0.32)` | il velo sugli altri, oltre il confine del provato |
 | `--durata-provato-bordo`, `--durata-provato-barre`, `--ripetizioni-provato-barre`, `--ritardo-provato-barre`, `--provato-barre-da` | `var(--durata-bordo)`, `260ms`, `6`, `130ms`, `0.35` | «Tu» parla: il bordo si accende, le barre salgono e scendono per un secondo e mezzo |
 | `--durata-oltre`, `--onda-oltre-da`, `--opacita-onda-oltre`, `--ritardo-oltre-luca`, `-paola`, `-anna` | `360ms`, `0.02`, `0.75`, `220ms`, `440ms`, `500ms` | l'onda tratteggiata che parte da «Tu»: dove tocca un riquadro, lo lascia tratteggiato |
 | `--provato-acceso-ombra`, `--durata-provato-frase` | anello della voce, `800ms` | il microfono «Kalliope» quando la voce ci arriva; la frase della bolla che si accende |
@@ -1255,6 +1255,7 @@ Tredici token nuovi in fondo a `token.css` (blocco «Costruzione di «stato»»)
 | `--varco-fascia-sopra`, `--varco-fascia-sotto` | `0.42`, `0.42` | la fascia dello schermo (frazione dell'altezza) in cui un passo del varco «conta», al computer |
 | `--varco-fascia-sopra-telefono`, `--varco-fascia-sotto-telefono` | `0.56`, `0.24` | la stessa, al telefono (sotto il computer agganciato) |
 | `--gesto-aria` | `12px` | ciò che un gesto apre (bolla della risposta, dettagli aperti, conferma della copia) resta in vista con questa aria sotto la barra e sotto il bordo |
+| `--domande-indirizzo-centro` | `50vh` | al computer, un collegamento diretto lascia la domanda al centro del viewport e spazio per leggere la risposta sopra |
 | `--domande-bolla-sopra-basso` | `calc(var(--barra-altezza) + var(--gesto-aria))` | sugli schermi bassi del computer (altezza ≤ 500 px) la bolla appiccicosa sta a ridosso della barra: ci stanno risposte più alte (domande.css) |
 
 ## Rifinitura di «stato» (incarico 3b-r, 17/11/2026)
@@ -1274,7 +1275,7 @@ Dieci token nuovi in fondo a `token.css` (blocco «Il marchio»); nessun valore 
 | Token | Valore | Ruolo |
 |---|---|---|
 | `--segno-colore` | `#e6396e` | la parte detta (piena) e il contorno, pieno o tratteggiato; oklch(62% 0.21 8), 3,9:1 sul chiaro e sullo scuro; `marchio.css` (`.m-detto`, `.m-bordo`) e tutte le forme |
-| `--segno-parola` | `var(--testo)` (`#ffedef`) | le parole dette, chiare sul pieno; `.m-dette` e le forme libera, piena e piccola |
+| `--segno-parola` | `#ffedef` | le parole dette, chiare sul pieno; `.m-dette` e le forme libera, piena e piccola |
 | `--segno-piastra` | `#fab7c2` | la forma piena per macOS: il quadrato rosa chiaro |
 | `--segno-simbolo` | `#2e3436` | la versione simbolica di GNOME: il grigio dei simboli di Adwaita (GTK la ricolora comunque) |
 | `--segno-fronte-pieno` | `62` | di quanto si sposta il fronte della voce (unità della tela, 128) dal riposo quando la frase è tutta detta; il riposo è il disegno com'è (0) e non è un valore |
@@ -1299,7 +1300,7 @@ file condiviso riordinato. Le scelte senza una fonte sono progettuali (piano: `d
 | `--sistemi-distanza`, `--sistemi-voce-altezza`, `--sistemi-voce-spazio-inline` | `8px`, `40px`, `15px` | i quattro sistemi: pulsanti-voce alti 40 px (la riga di voci della home) |
 | `--sistemi-dice-margine` | `12px 0 0` | la riga che dice che cosa vuol dire la scelta, con «Non uso Linux» |
 | `--ritardo-sistemi` | `580ms` | la scelta entra fra la presentazione (520 ms) e i comandi (640 ms) |
-| `--comando-fondo`, `--comando-bordo`, `--comando-fondo-in-riga` | `rgba(12,1,5,0.5)`, `rgba(255,219,225,0.2)`, `rgba(255,237,239,0.1)` | il comando da copiare: più scuro della scena, con il bordo dei pannelli; un comando dentro una frase |
+| `--comando-fondo`, `--comando-bordo`, `--comando-fondo-in-riga` | `rgba(10, 15, 16, 0.5)`, `rgba(181, 218, 206, 0.2)`, `rgba(242, 245, 244, 0.1)` | il comando da copiare: più scuro della scena, con il bordo dei pannelli; un comando dentro una frase |
 | `--comando-raggio`, `--comando-margine`, `--comando-spazio-inizio`, `--comando-spazio-blocco` | `12px`, `10px 0 0`, `16px`, `6px` | la sua forma |
 | `--comando-grandezza`, `--comando-interlinea`, `-telefono` | `15px`/`22px`, `13px`/`19px` | il comando, un passo sotto il testo |
 | `--comando-grandezza-in-riga` | `0.9em` | un comando dentro una frase (la spaziatura fissa è più larga) |
@@ -1313,7 +1314,7 @@ file condiviso riordinato. Le scelte senza una fonte sono progettuali (piano: `d
 | `--terminale-riga-tua`, `--terminale-riga-tua-altezza`, `-lunga`, `-corta` | `rgba(255,237,239,0.16)`, `7px`, `72%`, `44%` | una riga del computer di chi installa: c'è, ma che cosa dice dipende da lui (la pagina non la inventa) |
 | `--terminale-numero-larghezza`, `--terminale-trovato-prima`, `--terminale-trovato-dopo` | `3.4em`, `2.4em`, `11em` | la cartella di casa di chi installa, che la pagina non conosce; la riga con «kalliope» |
 | `--terminale-cursore-larghezza`, `--terminale-cursore-altezza` | `0.6em`, `1.15em` | il cursore (mentre il comando si scrive non occupa posto) |
-| `--terminale-uguale` | `rgba(255,92,141,0.36)` | un gruppo di cifre confrontato, la parola trovata: l'azione, velata |
+| `--terminale-uguale` | `rgba(117, 205, 174, 0.36)` | un gruppo di cifre confrontato, la parola trovata: l'azione, velata |
 | `--durata-t-riga`, `--durata-t-gruppo` | `200ms`, `180ms` | una risposta che compare; un gruppo di cifre che si accende |
 | `--passo-lettera`, `--passo-lettera-rapido` | `33ms`, `14ms` | il comando si scrive come la frase della home (33 ms a carattere); riscritto in fretta quando si cambia distribuzione |
 | `--passo-riga-terminale`, `--pausa-invio`, `--passo-gruppo-impronta` | `300ms`, `260ms`, `130ms` | fra una risposta e l'altra; prima di Invio; fra un gruppo di otto cifre e il successivo |
@@ -1327,7 +1328,7 @@ file condiviso riordinato. Le scelte senza una fonte sono progettuali (piano: `d
 | `--esito-riuscito-bordo` | `var(--voce)` | «Riuscito se…»: la riga piena (quella di «Se no…» è tratteggiata, il segno di «non ancora») |
 | `--installa-colonne`, `--apri-colonne` | `minmax(0,500px) minmax(0,1fr)`, `minmax(0,1fr) minmax(0,540px)` | i tratti cambiano lato: la cartella prima dei comandi; il testo prima della finestra |
 | `--apri-finestra-larghezza`, `--apri-stato-altezza` | `540px`, `62px` | la finestra di «Apri»; la riga di stato tiene due righe (le frasi lunghe non la spostano) |
-| `--frase-finestra-bordo` | `rgba(91,1,35,0.2)` | una frase della finestra, sulla scena chiara |
+| `--frase-finestra-bordo` | `rgba(30, 39, 39, 0.2)` | una frase della finestra, sulla scena chiara |
 | `--microfono-scena-larghezza`, `--riprendi-colonne`, `--riprendi-larghezza` | `560px`, due colonne, `1040px` | la chiusura: comando, terminale e microfono; poi «Se ti sei fermato» e l'indirizzo |
 | `--ripresa-linea-inizio`, `--ripresa-segno-scala` | `11px`, `1.15` | la strada dei cinque passi della ripresa |
 
@@ -1345,3 +1346,17 @@ Blocco `:root` in fondo a `token.css`: un solo token, e il suo ruolo. Il comando
 | `--annuncio-attesa` | `60ms` | l'annuncio si svuota e poi si riscrive: così un lettore di schermo lo legge anche se il testo è uguale al precedente |
 
 Soglie: `501px` (`installazione.css`: il titolo di «installa» alla misura del tablet vale da 501 px d'altezza in su; sotto vale la regola della cornice per il telefono girato).
+
+## Anteprima del 26 novembre — non ancora scelta
+
+I token dei colori conservano i loro ruoli e ricevono valori candidati: superfici grafite, testo neutro, azione e voce menta; colori delle figure separati dagli accenti funzionali. I nomi storici `--bordeaux`, `--rosa` e `--magenta` restano per compatibilità con i componenti: in questa proposta rappresentano rispettivamente segni scuri, bordo reattivo e voce nella bolla. I token `--segno-*` conservano il logo scelto.
+
+| Token aggiunto | Valore | Ruolo |
+| --- | --- | --- |
+| `--riunione-guida-larghezza` | 860px | Misura dei tratti discorsivi delle guide |
+| `--riunione-catalogo-altezza` | 844px | Altezza della pagina viva nel catalogo |
+| `--riunione-guida-aria-telefono` | 32px | Distacco del testo dal bordo delle scene al telefono |
+
+Le tre misure sono scelte progettuali rese e viste sulla guida, derivate dalla cornice e dal telefono di confronto; non modificano la home.
+
+Soglia aggiunta: 280px, barra a forte ingrandimento. Il marchio mostra il simbolo e Menu; l’azione usa una riga propria. È una scelta circoscritta al difetto osservato a 180px CSS, con controprove a 326 e 390. Come le altre soglie è elencata in metodo.config.mjs perché le media query non leggono variabili CSS.

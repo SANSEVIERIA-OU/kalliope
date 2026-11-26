@@ -68,12 +68,12 @@ export default {
     // le pagine che devono avere la riga text-scale: la home non l'ha (SISTEMA.md, «Da decidere»), il catalogo sì
     html: ['catalogo/index.html'],
     // gli stili dentro le pagine (<style>)
-    pagine: ['../website/index.html', '../website/lingue.html', 'catalogo/index.html', '../website/non-ancora/index.html', '../website/stato/index.html', '../website/installa/index.html'],
+    pagine: ['../website/index.html', '../website/lingue.html', 'catalogo/index.html', '../website/non-ancora/index.html', '../website/stato/index.html', '../website/installa/index.html', '../website/riunione/index.html', '../website/404.html'],
     // gli script che mettono variabili sugli elementi (setProperty('--x', …)): la scena e il catalogo
-    script: ['marchio/*.js', '../website/scena.js', '../website/testi.js', '../website/lingua.js', '../website/componenti.js', 'catalogo/*.js', '../website/cornice.js', '../website/non-ancora/non-ancora.js', '../website/stato/stato.js', '../website/installa/installa.js'],
+    script: ['marchio/*.js', '../website/scena.js', '../website/testi.js', '../website/lingua.js', '../website/componenti.js', 'catalogo/*.js', '../website/cornice.js', '../website/non-ancora/non-ancora.js', '../website/stato/stato.js', '../website/installa/installa.js', '../website/riunione/aiuto.js'],
     perElemento: [],
     // le larghezze a cui la pagina cambia impaginazione (@media, @container): non si leggono da una variabile
-    soglie: ['349px', '350px', '360px', '374px', '420px', '440px', '500px', '501px', '699px', '759px', '760px', '761px', '790px', '791px', '799px', '802px', '819px', '840px', '959px', '999px', '1000px', '1010px', '1180px', '1181px', '1209px'],
+    soglie: ['280px', '349px', '350px', '360px', '374px', '420px', '440px', '500px', '501px', '699px', '759px', '760px', '761px', '790px', '791px', '799px', '802px', '819px', '840px', '959px', '999px', '1000px', '1010px', '1180px', '1181px', '1209px'],
     vincoli: {},
   },
   // ciò che a una misura non può stare insieme (esame-impaginazione.mjs, dispositivi-qa.mjs): una voce per decisione

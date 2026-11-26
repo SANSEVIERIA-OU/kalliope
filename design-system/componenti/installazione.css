@@ -341,3 +341,13 @@
   .riprendi { grid-template-columns: minmax(0, 1fr); margin-top: var(--spazio-26); }
   .microfono-app .microfono { font-size: var(--microfono-grandezza-telefono); }
 }
+
+/* 26/11: sul telefono la scelta e il file sono il compito principale. La scena segue;
+   cornice.js conserva il loro ordine sorgente anche al cambio di misura. Desktop invariato. */
+@media (max-width: 760px) {
+  .scena-pagina[data-comandi-prima] .sistemi { order: 3; }
+  .scena-pagina[data-comandi-prima] #comandi-apertura { order: 4; }
+  .scena-pagina[data-comandi-prima] .stato { order: 5; }
+  .scena-pagina[data-comandi-prima] .palco { order: 6; margin-top: var(--spazio-21); }
+  .scena-pagina[data-comandi-prima] .didascalia { order: 7; }
+}

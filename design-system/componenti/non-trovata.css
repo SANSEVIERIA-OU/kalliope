@@ -1,0 +1,3 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
+/* La 404 riusa la chiusura senza riordinare il titolo al telefono. */
+.pagina-non-trovata h1 { order: 0; }

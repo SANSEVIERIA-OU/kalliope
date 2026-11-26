@@ -18,7 +18,7 @@
   await aspetta(() => window.__catalogo);
   await aspetta(() => window.__catalogoPagine || $('#pagine-interne'));
   const PAGINA = '../../it/stato/index.html';
-  const doc = new DOMParser().parseFromString(await (await fetch(PAGINA)).text(), 'text/html');
+  const doc = await window.CatalogoDocumenti.leggi(PAGINA);
   const da = (sel, n = 0) => { const e = doc.querySelectorAll(sel)[n]; if (!e) throw new Error('nella pagina «stato» manca ' + sel); const c = e.cloneNode(true); c.removeAttribute('id'); c.querySelectorAll('[id]').forEach(x => x.removeAttribute('id')); return c; };
   const sblocca = n => { n.querySelectorAll('[hidden]').forEach(x => x.removeAttribute('hidden')); return n; };
   const prova1 = (et, nodo, classe = '') => el('div', {class: 'cat-prova' + (classe.includes('largo') ? ' intero' : '')}, el('span', {class: 'cat-et', html: et}), el('div', {class: 'cat-quadro ' + classe}, nodo));
@@ -179,7 +179,7 @@
       persona: 'Chi deve controllare (P7): «dove va il mio testo, che cosa si scarica, che cosa resta sul disco, che cosa sparisce chiudendo».',
       provenienza: 'Il computer della strada della home («Sul tuo computer»); la schermata del prodotto con le didascalie sulle parti: R51 (<code>R/sequenze/R51/fotogrammi/scorri-istantaneo-1440x900-f03.jpg</code>), un tratto; l\'impronta detta in pagina: R50; la riunione ferma a lato mentre si scorre: home («Le tue frasi»); il filo, i file che scendono e «solo finché la finestra è aperta»: progettuali (<code>design/lavoro/3b-stato/PIANO.md</code>); i moltiplicatori della discesa sono token (<code>--pacco-corsa-*</code>).',
       prove: [
-        el('div', {class: 'cat-prova intero'}, el('span', {class: 'cat-et', testo: 'i cinque passi: scegli quale mostra il computer (il passo accanto prende il bordo magenta)'}),
+        el('div', {class: 'cat-prova intero'}, el('span', {class: 'cat-et', testo: 'i cinque passi: scegli quale mostra il computer (il passo accanto prende il bordo di selezione)'}),
           (() => { const cont = el('div', {class: 'cat-quadro scena-chiara largo'}), mostra = p => { cont.replaceChildren(scenaVarco(p)); }; const barra = el('div', {class: 'cat-misure cat-passi'}); passiNomi.forEach(([p, et], i) => barra.append(el('button', {type: 'button', 'aria-pressed': String(i === 0), testo: p, title: et, onclick: ev => { $$('button', barra).forEach(b => b.setAttribute('aria-pressed', 'false')); ev.target.setAttribute('aria-pressed', 'true'); mostra(p); }}))); mostra('tutto'); return el('div', {}, barra, cont); })()),
         ...passiNomi.map(([p, et]) => prova1(`<code>data-passo="${p}"</code>: ${et}`, soloVarco(p), 'scena-chiara')),
         prova1('senza JavaScript: tutto in vista, i passi accanto', (() => { const x = da('.varco-scena'); return x; })(), 'scena-chiara largo'),

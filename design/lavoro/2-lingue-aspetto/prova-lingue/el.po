@@ -9,6 +9,105 @@ msgstr ""
 "Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n==1 ? 0 : 1);\n"
 
+#: 404.html
+#, kalliope-markup
+msgctxt "nf.titolo"
+msgid "Pagina non trovata · Kalliope"
+msgstr "Pagina non trovata · Kalliope"
+
+#. Attribute «content» of an element of the page: plain text, no tags.
+#: 404.html
+msgctxt "nf.descrizione"
+msgid "Questa pagina non c’è. Torna alla pagina iniziale di Kalliope o trova aiuto."
+msgstr "Questa pagina non c’è. Torna alla pagina iniziale di Kalliope o trova aiuto."
+
+#: 404.html index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
+#, kalliope-markup
+msgctxt "salta"
+msgid "Vai al contenuto"
+msgstr "Μετάβαση στο περιεχόμενο"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: 404.html index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
+msgctxt "barra.marchio"
+msgid "Kalliope, pagina iniziale"
+msgstr "Kalliope, αρχική σελίδα"
+
+#: 404.html index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
+#, kalliope-markup
+msgctxt "marchio.nome"
+msgid "Kalliope"
+msgstr "Kalliope"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <br/>
+#: 404.html
+#, kalliope-markup
+msgctxt "nf.h1"
+msgid "Questa pagina<1/>non c'è."
+msgstr "Questa pagina<1/>non c'è."
+
+#: 404.html
+#, kalliope-markup
+msgctxt "nf.spiegazione"
+msgid "L'indirizzo potrebbe essere cambiato. Riparti dalla pagina iniziale, oppure cerca la frase che vedi in Kalliope."
+msgstr "L'indirizzo potrebbe essere cambiato. Riparti dalla pagina iniziale, oppure cerca la frase che vedi in Kalliope."
+
+#: 404.html
+#, kalliope-markup
+msgctxt "nf.home"
+msgid "Torna alla pagina iniziale"
+msgstr "Torna alla pagina iniziale"
+
+#: 404.html index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
+#, kalliope-markup
+msgctxt "menu.aiuto"
+msgid "Aiuto"
+msgstr "Βοήθεια"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: 404.html index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
+msgctxt "piede.sezioni"
+msgid "Sezioni del sito, in fondo"
+msgstr "Ενότητες του ιστότοπου, στο τέλος"
+
+#: 404.html index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
+#, kalliope-markup
+msgctxt "menu.ascolta"
+msgid "Ascolta"
+msgstr "Άκουσε"
+
+#: 404.html index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
+#, kalliope-markup
+msgctxt "menu.stato"
+msgid "Stato e limiti"
+msgstr "Κατάσταση και όρια"
+
+#: 404.html index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
+#, kalliope-markup
+msgctxt "menu.installa"
+msgid "Installa"
+msgstr "Εγκατάσταση"
+
+#: 404.html index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
+#, kalliope-markup
+msgctxt "menu.riunione"
+msgid "In riunione"
+msgstr "Σε σύσκεψη"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: 404.html index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
+msgctxt "piede.lingue"
+msgid "Lingue"
+msgstr "Γλώσσες"
+
+#. Placeholders to leave as they are: {{kalliope.date}} {{kalliope.version}}
+#: 404.html index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
+#, kalliope-markup, python-brace-format
+msgctxt "piede.testo"
+msgid "Versione {{kalliope.version}} del {{kalliope.date}}. Codice sorgente disponibile, licenza SANSEVIERIA 1.1 (non «open source» nel senso dell'OSI). Prodotto da SANSEVIERIA OÜ. Questo sito non usa cookie né statistiche."
+msgstr "Έκδοση {{kalliope.version}} της {{kalliope.date}}. Διαθέσιμος πηγαίος κώδικας, άδεια SANSEVIERIA 1.1 (όχι «ανοιχτού κώδικα» κατά την έννοια του OSI). Παραγωγή της SANSEVIERIA OÜ. Αυτός ο ιστότοπος δεν χρησιμοποιεί cookies ούτε στατιστικά."
+
 #: index.html
 #, kalliope-markup
 msgctxt "pagina.titolo"
@@ -21,63 +120,14 @@ msgctxt "pagina.descrizione"
 msgid "Kalliope è un programma per il computer, per chi non può parlare o fa fatica: scrivi una frase, premi Invio, e nella riunione gli altri la sentono con una voce italiana naturale."
 msgstr "Το Kalliope είναι ένα πρόγραμμα για τον υπολογιστή, για όσους δεν μπορούν να μιλήσουν ή μιλούν με δυσκολία: γράφεις μια φράση, πατάς Enter, και στη σύσκεψη οι άλλοι την ακούν με μια φυσική ιταλική φωνή."
 
-#: index.html installa/index.html non-ancora/index.html stato/index.html
-#, kalliope-markup
-msgctxt "salta"
-msgid "Vai al contenuto"
-msgstr "Μετάβαση στο περιεχόμενο"
-
 #. Attribute «aria-label» of an element of the page: plain text, no tags.
-#: index.html installa/index.html non-ancora/index.html stato/index.html
-msgctxt "barra.marchio"
-msgid "Kalliope, pagina iniziale"
-msgstr "Kalliope, αρχική σελίδα"
-
-#. The name of the program. Keep it, or write it in the script of the language.
-#: index.html installa/index.html non-ancora/index.html stato/index.html
-#, kalliope-markup
-msgctxt "marchio.nome"
-msgid "Kalliope"
-msgstr "Kalliope"
-
-#. Attribute «aria-label» of an element of the page: plain text, no tags.
-#: index.html installa/index.html non-ancora/index.html stato/index.html
+#: index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
 msgctxt "barra.sezioni"
 msgid "Sezioni del sito"
 msgstr "Ενότητες του ιστότοπου"
 
-#: index.html installa/index.html non-ancora/index.html stato/index.html
-#, kalliope-markup
-msgctxt "menu.ascolta"
-msgid "Ascolta"
-msgstr "Άκουσε"
-
-#: index.html installa/index.html non-ancora/index.html stato/index.html
-#, kalliope-markup
-msgctxt "menu.stato"
-msgid "Stato e limiti"
-msgstr "Κατάσταση και όρια"
-
-#: index.html installa/index.html non-ancora/index.html stato/index.html
-#, kalliope-markup
-msgctxt "menu.installa"
-msgid "Installa"
-msgstr "Εγκατάσταση"
-
-#: index.html installa/index.html non-ancora/index.html stato/index.html
-#, kalliope-markup
-msgctxt "menu.riunione"
-msgid "In riunione"
-msgstr "Σε σύσκεψη"
-
-#: index.html installa/index.html non-ancora/index.html stato/index.html
-#, kalliope-markup
-msgctxt "menu.aiuto"
-msgid "Aiuto"
-msgstr "Βοήθεια"
-
 #. Attribute «title» of an element of the page: plain text, no tags.
-#: index.html installa/index.html non-ancora/index.html stato/index.html
+#: index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
 msgctxt "barra.lingua"
 msgid "Cambia lingua"
 msgstr "Αλλαγή γλώσσας"
@@ -88,7 +138,7 @@ msgctxt "cta.scarica"
 msgid "Scarica e installa"
 msgstr "Λήψη και εγκατάσταση"
 
-#: index.html installa/index.html non-ancora/index.html stato/index.html
+#: index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
 #, kalliope-markup
 msgctxt "barra.menu"
 msgid "Menu"
@@ -123,7 +173,7 @@ msgstr "Δεν χρησιμοποιώ Linux: τι μπορώ να κάνω<1/>"
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <strong>
 #. Placeholders to leave as they are: {{kalliope.version}}
-#: index.html installa/index.html non-ancora/index.html stato/index.html
+#: index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
 #, kalliope-markup, python-brace-format
 msgctxt "apertura.stato"
 msgid "<1>Oggi:</1> versione di prova {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Non ancora provata in una riunione vera con Zoom, Teams o Meet."
@@ -133,7 +183,7 @@ msgstr "<1>Σήμερα:</1> δοκιμαστική έκδοση {{kalliope.vers
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <strong>
 #. Placeholders to leave as they are: {{kalliope.version}}
-#: index.html installa/index.html non-ancora/index.html stato/index.html
+#: index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
 #, kalliope-markup, python-brace-format
 msgctxt "apertura.stato-stabile"
 msgid "<1>Oggi:</1> versione {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Non ancora provata in una riunione vera con Zoom, Teams o Meet."
@@ -172,19 +222,19 @@ msgctxt "riunione.tu-lungo"
 msgid "Tu<1> · microfono «Kalliope»</1>"
 msgstr "Εσύ<1> · μικρόφωνο «Kalliope»</1>"
 
-#: index.html installa/index.html non-ancora/index.html stato/index.html
+#: index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
 #, kalliope-markup
 msgctxt "persona.paola"
 msgid "Paola"
 msgstr "Πάολα"
 
-#: index.html installa/index.html non-ancora/index.html stato/index.html
+#: index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
 #, kalliope-markup
 msgctxt "persona.luca"
 msgid "Luca"
 msgstr "Λούκα"
 
-#: index.html installa/index.html non-ancora/index.html stato/index.html
+#: index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
 #, kalliope-markup
 msgctxt "persona.anna"
 msgid "Anna"
@@ -299,8 +349,8 @@ msgstr "Άκου πώς ακούγεται, με το κείμενο δίπλα.
 #: index.html
 #, kalliope-markup
 msgctxt "campioni.testo"
-msgid "Le frasi sono tue, dette con le registrazioni vere di Kalliope 0.1. <1>Scegli la voce, poi premi una frase: le parole si accendono mentre Paola, Luca e Anna la sentono.</1><2>Premi il lettore sotto ogni frase per ascoltarla. Accanto trovi il collegamento alla stessa frase con la voce di Marco.</2>"
-msgstr "Οι φράσεις είναι δικές σου, ειπωμένες με τις πραγματικές ηχογραφήσεις του Kalliope 0.1. <1>Διάλεξε τη φωνή και πάτα μια φράση: οι λέξεις ανάβουν καθώς την ακούνε η Πάολα, ο Λούκα και η Άννα.</1><2>Πάτα το πρόγραμμα αναπαραγωγής κάτω από κάθε φράση για να την ακούσεις. Δίπλα βρίσκεις τον σύνδεσμο για την ίδια φράση με τη φωνή του Μάρκο.</2>"
+msgid "Le frasi sono tue, dette con le registrazioni vere di Kalliope 0.1-rc.1. <1>Scegli la voce, poi premi una frase: le parole si accendono mentre Paola, Luca e Anna la sentono.</1><2>Premi il lettore sotto ogni frase per ascoltarla. Accanto trovi il collegamento alla stessa frase con la voce di Marco.</2>"
+msgstr "Οι φράσεις είναι δικές σου, ειπωμένες με τις πραγματικές ηχογραφήσεις του Kalliope 0.1-rc.1. <1>Διάλεξε τη φωνή και πάτα μια φράση: οι λέξεις ανάβουν καθώς την ακούνε η Πάολα, ο Λούκα και η Άννα.</1><2>Πάτα το πρόγραμμα αναπαραγωγής κάτω από κάθε φράση για να την ακούσεις. Δίπλα βρίσκεις τον σύνδεσμο για την ίδια φράση με τη φωνή του Μάρκο.</2>"
 
 #. Attribute «aria-label» of an element of the page: plain text, no tags.
 #: index.html
@@ -322,7 +372,7 @@ msgctxt "riunione.tu-microfono"
 msgid "· microfono «Kalliope»"
 msgstr "· μικρόφωνο «Kalliope»"
 
-#: index.html non-ancora/index.html
+#: index.html non-ancora/index.html riunione/index.html
 #, kalliope-markup
 msgctxt "frase.1"
 msgid "Buongiorno a tutti! Scrivo invece di parlare, ma vi seguo benissimo."
@@ -361,6 +411,36 @@ msgstr "Συμφωνώ με την Πάολα. Όμως η παράδοση στ
 msgctxt "frase.3.detto-riga"
 msgid "<1>Detto:</1> «Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
 msgstr "<1>Ειπώθηκε:</1> «Η προσφορά είναι χίλια διακόσια πενήντα ευρώ συν ΦΠΑ, ισχύει έως τις τριάντα μία Δεκεμβρίου.»"
+
+#: index.html
+#, kalliope-markup
+msgctxt "campioni.provenienza.titolo"
+msgid "Come sono state fatte queste registrazioni"
+msgstr "Πώς έγιναν αυτές οι ηχογραφήσεις"
+
+#: index.html
+#, kalliope-markup
+msgctxt "campioni.provenienza.file"
+msgid "Sono l'uscita di Kalliope 0.1-rc.1, senza ritocchi, convertita in MP3 (64 kbit/s, mono, 24 kHz)."
+msgstr "Είναι η έξοδος του Kalliope 0.1-rc.1, χωρίς επεξεργασία, σε μορφή MP3 (64 kbit/s, μονοφωνικά, 24 kHz)."
+
+#: index.html
+#, kalliope-markup
+msgctxt "campioni.provenienza.whisper"
+msgid "Un programma di riconoscimento del parlato, Whisper, le trascrive con circa una parola sbagliata su 45. È una misura del progetto sui sei campioni."
+msgstr "Το Whisper, ένα πρόγραμμα αναγνώρισης ομιλίας, τις μεταγράφει με περίπου μία λανθασμένη λέξη στις 45. Πρόκειται για μέτρηση του έργου στα έξι δείγματα."
+
+#: index.html
+#, kalliope-markup
+msgctxt "campioni.provenienza.limiti"
+msgid "Non abbiamo misurato quanto si capiscano in una riunione vera, né quanto tempo passa fra il tasto Invio e il suono."
+msgstr "Δεν έχουμε μετρήσει πόσο κατανοητές είναι σε μια πραγματική συνάντηση ούτε πόσος χρόνος περνά από το πάτημα του Enter μέχρι τον ήχο."
+
+#: index.html
+#, kalliope-markup
+msgctxt "campioni.provenienza.testi"
+msgid "Il testo «scrivi» è quello che hai digitato. Il testo «dice» è quello che Kalliope prepara prima di parlare: cifre, date e orari diventano parole."
+msgstr "Το κείμενο «γράφεις» είναι αυτό που πληκτρολόγησες. Το κείμενο «λέει» είναι αυτό που ετοιμάζει το Kalliope πριν μιλήσει: αριθμοί, ημερομηνίες και ώρες γίνονται λέξεις."
 
 #: index.html
 #, kalliope-markup
@@ -474,7 +554,7 @@ msgstr "Αναπαράσταση: στην εφαρμογή της σύσκεψ�
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <span class="app-icona">
-#: index.html installa/index.html non-ancora/index.html stato/index.html
+#: index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
 #, kalliope-markup
 msgctxt "app.microfono"
 msgid "<1/>Microfono"
@@ -561,25 +641,6 @@ msgstr "Έκδοση {{kalliope.version}}, μόνο για Linux (x86_64 με Pi
 msgctxt "chiusura.avvertenza"
 msgid "Kalliope non è un dispositivo medico e non sostituisce la valutazione di un logopedista."
 msgstr "Το Kalliope δεν είναι ιατροτεχνολογικό προϊόν και δεν αντικαθιστά την αξιολόγηση από λογοθεραπευτή."
-
-#. Attribute «aria-label» of an element of the page: plain text, no tags.
-#: index.html installa/index.html non-ancora/index.html stato/index.html
-msgctxt "piede.sezioni"
-msgid "Sezioni del sito, in fondo"
-msgstr "Ενότητες του ιστότοπου, στο τέλος"
-
-#. Attribute «aria-label» of an element of the page: plain text, no tags.
-#: index.html installa/index.html non-ancora/index.html stato/index.html
-msgctxt "piede.lingue"
-msgid "Lingue"
-msgstr "Γλώσσες"
-
-#. Placeholders to leave as they are: {{kalliope.date}} {{kalliope.version}}
-#: index.html installa/index.html non-ancora/index.html stato/index.html
-#, kalliope-markup, python-brace-format
-msgctxt "piede.testo"
-msgid "Versione {{kalliope.version}} del {{kalliope.date}}. Codice sorgente disponibile, licenza SANSEVIERIA 1.1 (non «open source» nel senso dell'OSI). Prodotto da SANSEVIERIA OÜ. Questo sito non usa cookie né statistiche."
-msgstr "Έκδοση {{kalliope.version}} της {{kalliope.date}}. Διαθέσιμος πηγαίος κώδικας, άδεια SANSEVIERIA 1.1 (όχι «ανοιχτού κώδικα» κατά την έννοια του OSI). Παραγωγή της SANSEVIERIA OÜ. Αυτός ο ιστότοπος δεν χρησιμοποιεί cookies ούτε στατιστικά."
 
 #. Says that the voice is speaking; shown in Kalliope's window while a sentence plays.
 #: index.html
@@ -1715,6 +1776,909 @@ msgctxt "na.annuncio.parte"
 msgid "Sto leggendo la frase, voce di {voce}."
 msgstr "Sto leggendo la frase, voce di {voce}."
 
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.titolo"
+msgid "Usare Kalliope in una riunione: scegli il microfono e controlla che ti sentano"
+msgstr "Usare Kalliope in una riunione: scegli il microfono e controlla che ti sentano"
+
+#. Attribute «content» of an element of the page: plain text, no tags.
+#: riunione/index.html
+msgctxt "riu.descrizione"
+msgid "Come scegliere «Kalliope» come microfono nell'app della riunione e come controllare che gli altri ti sentano, anche quando qualcosa non va."
+msgstr "Come scegliere «Kalliope» come microfono nell'app della riunione e come controllare che gli altri ti sentano, anche quando qualcosa non va."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="riga">
+#.   <2> = <span class="riga">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.apertura.titolo"
+msgid "<1>Entra in riunione.</1> <2>Con le tue parole.</2>"
+msgstr "<1>Entra in riunione.</1> <2>Con le tue parole.</2>"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.apertura.testo"
+msgid "Apri Kalliope, scegli il suo microfono e fai una prova con qualcuno. Poi scrivi: la voce porta le tue parole nella riunione."
+msgstr "Apri Kalliope, scegli il suo microfono e fai una prova con qualcuno. Poi scrivi: la voce porta le tue parole nella riunione."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.inizia"
+msgid "Prepara la riunione"
+msgstr "Prepara la riunione"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span aria-hidden="true" class="freccia">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.aiuto.scorciatoia"
+msgid "Se non ti sentono<1/>"
+msgstr "Se non ti sentono<1/>"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.didascalia"
+msgid "Ricostruzione · la scelta del microfono, non una prova di compatibilità"
+msgstr "Ricostruzione · la scelta del microfono, non una prova di compatibilità"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: riunione/index.html
+msgctxt "riu.palco"
+msgid "Ricostruzione: il microfono Kalliope scelto nella riunione"
+msgstr "Ricostruzione: il microfono Kalliope scelto nella riunione"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.tu"
+msgid "Tu · microfono Kalliope"
+msgstr "Tu · microfono Kalliope"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.1"
+msgid "Apri Kalliope e aspetta «Pronta»"
+msgstr "Apri Kalliope e aspetta «Pronta»"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.2"
+msgid "Non ancora provato in una riunione vera"
+msgstr "Non ancora provato in una riunione vera"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="../stato/#provato-per-app">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.3"
+msgid "La voce arriva fino al microfono «Kalliope». Con Zoom, Teams o Meet su un computer di tutti i giorni non l'abbiamo ancora provata. Prima di una riunione importante fai una prova con una persona di fiducia. <1>Vedi la tabella app per app</1>."
+msgstr "La voce arriva fino al microfono «Kalliope». Con Zoom, Teams o Meet su un computer di tutti i giorni non l'abbiamo ancora provata. Prima di una riunione importante fai una prova con una persona di fiducia. <1>Vedi la tabella app per app</1>."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.4"
+msgid "Apri Kalliope prima di entrare nella riunione. Aspetta che la riga in alto dica «Pronta»."
+msgstr "Apri Kalliope prima di entrare nella riunione. Aspetta che la riga in alto dica «Pronta»."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="controllo__titolo">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.5"
+msgid "<1>Come sai che è andata bene</1>La riga dice: «Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono.»"
+msgstr "<1>Come sai che è andata bene</1>La riga dice: «Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono.»"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="se-non-va__titolo">
+#.   <2> = <a href="#aiuto">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.6"
+msgid "<1>Se non è andata</1>Se dice «La voce è pronta, ma …» o un'altra frase, <2>cercala nella sezione Aiuto</2>."
+msgstr "<1>Se non è andata</1>Se dice «La voce è pronta, ma …» o un'altra frase, <2>cercala nella sezione Aiuto</2>."
+
+#. Attribute «alt» of an element of the page: plain text, no tags.
+#: riunione/index.html
+msgctxt "riu.immagine.8"
+msgid "La finestra di Kalliope. In alto una riga di stato: «Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono.» Sotto, un campo con la scritta «Scrivi qui e premi Invio per parlare» e i pulsanti Parla e Ferma. In basso la scelta della voce (Giulia), la casella «Senti anche tu» spuntata e il pulsante Informazioni."
+msgstr "La finestra di Kalliope. In alto una riga di stato: «Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono.» Sotto, un campo con la scritta «Scrivi qui e premi Invio per parlare» e i pulsanti Parla e Ferma. In basso la scelta della voce (Giulia), la casella «Senti anche tu» spuntata e il pulsante Informazioni."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.7"
+msgid "La finestra di Kalliope: la riga di stato in alto, il campo dove scrivi con «Parla» e «Ferma», in basso la voce e «Senti anche tu»."
+msgstr "La finestra di Kalliope: la riga di stato in alto, il campo dove scrivi con «Parla» e «Ferma», in basso la voce e «Senti anche tu»."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.9"
+msgid "Scegli «Kalliope» come microfono"
+msgstr "Scegli «Kalliope» come microfono"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.10"
+msgid "Apri le impostazioni audio dell'app della riunione e scegli «Kalliope» fra i microfoni."
+msgstr "Apri le impostazioni audio dell'app della riunione e scegli «Kalliope» fra i microfoni."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.11"
+msgid "In Zoom: Impostazioni, Audio, Microfono, «Kalliope»."
+msgstr "In Zoom: Impostazioni, Audio, Microfono, «Kalliope»."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.12"
+msgid "Per le altre app non descriviamo i menu: ognuna è diversa e non le abbiamo provate. Cerca le impostazioni audio. In un browser, scegli il microfono nella richiesta del browser o nella pagina della riunione."
+msgstr "Per le altre app non descriviamo i menu: ognuna è diversa e non le abbiamo provate. Cerca le impostazioni audio. In un browser, scegli il microfono nella richiesta del browser o nella pagina della riunione."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.13"
+msgid "Kalliope diventa il microfono predefinito del computer solo se è l'unico. Altrimenti scegli «Kalliope» in ogni app."
+msgstr "Kalliope diventa il microfono predefinito del computer solo se è l'unico. Altrimenti scegli «Kalliope» in ogni app."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="controllo__titolo">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.14"
+msgid "<1>Come sai che è andata bene</1>«Kalliope» compare nell'elenco, accanto ai microfoni veri, e resta scelto."
+msgstr "<1>Come sai che è andata bene</1>«Kalliope» compare nell'elenco, accanto ai microfoni veri, e resta scelto."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="se-non-va__titolo">
+#.   <2> = <a href="#non-compare">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.15"
+msgid "<1>Se non è andata</1>Se «Kalliope» non compare: Kalliope deve essere aperto prima. Poi chiudi e riapri l'elenco dei microfoni dell'app. Se non basta, <2>leggi la spiegazione</2>."
+msgstr "<1>Se non è andata</1>Se «Kalliope» non compare: Kalliope deve essere aperto prima. Poi chiudi e riapri l'elenco dei microfoni dell'app. Se non basta, <2>leggi la spiegazione</2>."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.16"
+msgid "Esempio di scelta"
+msgstr "Esempio di scelta"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.17"
+msgid "Microfono"
+msgstr "Microfono"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.18"
+msgid "Microfono del computer"
+msgstr "Microfono del computer"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.19"
+msgid "Kalliope"
+msgstr "Kalliope"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.20"
+msgid "Qui puoi provare il menu. Nella riunione, scegli «Kalliope» nelle impostazioni audio dell'app che usi."
+msgstr "Qui puoi provare il menu. Nella riunione, scegli «Kalliope» nelle impostazioni audio dell'app che usi."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.21"
+msgid "Controlla che ti sentano"
+msgstr "Controlla che ti sentano"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.22"
+msgid "Hai tre modi. Il primo è il più semplice, il terzo il più sicuro."
+msgstr "Hai tre modi. Il primo è il più semplice, il terzo il più sicuro."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.23"
+msgid "1. La finestra ti avvisa"
+msgstr "1. La finestra ti avvisa"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.24"
+msgid "<1>Cosa fare.</1> Togli la spunta da «Senti anche tu». Scrivi una frase e premi Invio."
+msgstr "<1>Cosa fare.</1> Togli la spunta da «Senti anche tu». Scrivi una frase e premi Invio."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.25"
+msgid "<1>Come sai che è andata.</1> Se compare «Nessuna chiamata sta usando il microfono «Kalliope»…», nessuna app ti ascolta. Se non compare, una app ti ascolta."
+msgstr "<1>Come sai che è andata.</1> Se compare «Nessuna chiamata sta usando il microfono «Kalliope»…», nessuna app ti ascolta. Se non compare, una app ti ascolta."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.26"
+msgid "Così dice il programma. Non l'abbiamo provato in una riunione vera."
+msgstr "Così dice il programma. Non l'abbiamo provato in una riunione vera."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.27"
+msgid "2. La barra dell'app"
+msgstr "2. La barra dell'app"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.28"
+msgid "<1>Cosa fare.</1> Apri la prova del microfono dell'app, se ce l'ha. Scrivi una frase."
+msgstr "<1>Cosa fare.</1> Apri la prova del microfono dell'app, se ce l'ha. Scrivi una frase."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.29"
+msgid "<1>Come sai che è andata.</1> La barra del livello si muove mentre Kalliope parla."
+msgstr "<1>Come sai che è andata.</1> La barra del livello si muove mentre Kalliope parla."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.30"
+msgid "3. Una prova con una persona"
+msgstr "3. Una prova con una persona"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.31"
+msgid "<1>Cosa fare.</1> Prima di una riunione importante, entra in una chiamata con una persona di fiducia. Scrivi una frase."
+msgstr "<1>Cosa fare.</1> Prima di una riunione importante, entra in una chiamata con una persona di fiducia. Scrivi una frase."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.32"
+msgid "<1>Come sai che è andata.</1> La persona ti dice cosa sente."
+msgstr "<1>Come sai che è andata.</1> La persona ti dice cosa sente."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.33"
+msgid "«Senti anche tu» fa sentire la voce anche sulle casse del tuo computer. Serve a te per sapere cosa esce. Non vuol dire che l'app della riunione la riceva."
+msgstr "«Senti anche tu» fa sentire la voce anche sulle casse del tuo computer. Serve a te per sapere cosa esce. Non vuol dire che l'app della riunione la riceva."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="se-non-va__titolo">
+#.   <2> = <a href="#aiuto">
+#.   <3> = <a href="#segnala">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.34"
+msgid "<1>Se non è andata</1>Segui le frasi della finestra nella <2>sezione Aiuto</2>. Se vuoi, <3>dicci come è andata</3>."
+msgstr "<1>Se non è andata</1>Segui le frasi della finestra nella <2>sezione Aiuto</2>. Se vuoi, <3>dicci come è andata</3>."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.35"
+msgid "Da terminale, senza la finestra"
+msgstr "Da terminale, senza la finestra"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <code>
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.36"
+msgid "Con la finestra chiusa, <1>kalliope --say \"prova\"</1> fa dire «prova» al microfono «Kalliope». Non l'abbiamo provato con la finestra aperta nello stesso momento."
+msgstr "Con la finestra chiusa, <1>kalliope --say \"prova\"</1> fa dire «prova» al microfono «Kalliope». Non l'abbiamo provato con la finestra aperta nello stesso momento."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.37"
+msgid "Una frase, con la voce di Giulia"
+msgstr "Una frase, con la voce di Giulia"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.38"
+msgid "Una registrazione da ascoltare qui. Non prova il microfono della tua riunione."
+msgstr "Una registrazione da ascoltare qui. Non prova il microfono della tua riunione."
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: riunione/index.html
+msgctxt "riu.audio"
+msgid "Registrazione della voce di Giulia"
+msgstr "Registrazione della voce di Giulia"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="../voce/giulia-1.mp3">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.39"
+msgid "<1>Apri la registrazione</1>"
+msgstr "<1>Apri la registrazione</1>"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.40"
+msgid "Scrivi e parla"
+msgstr "Scrivi e parla"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.41"
+msgid "Scrivi nel campo e premi Invio, o premi «Parla». «Ferma» interrompe subito il suono e svuota la coda. Se scrivi mentre Kalliope parla, il nuovo testo si mette in coda."
+msgstr "Scrivi nel campo e premi Invio, o premi «Parla». «Ferma» interrompe subito il suono e svuota la coda. Se scrivi mentre Kalliope parla, il nuovo testo si mette in coda."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.42"
+msgid "Le frasi già dette restano in un elenco, la più recente in alto. Un clic su una frase la ripete. L'elenco sparisce quando chiudi la finestra."
+msgstr "Le frasi già dette restano in un elenco, la più recente in alto. Un clic su una frase la ripete. L'elenco sparisce quando chiudi la finestra."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.43"
+msgid "La finestra di Kalliope e quella della riunione sono due finestre. Kalliope non ha scorciatoie da tastiera che funzionino fuori dalla sua finestra: per scrivere devi passare a quella di Kalliope. Per chi scrive con un solo interruttore o con lo sguardo non abbiamo provato come funziona in una riunione."
+msgstr "La finestra di Kalliope e quella della riunione sono due finestre. Kalliope non ha scorciatoie da tastiera che funzionino fuori dalla sua finestra: per scrivere devi passare a quella di Kalliope. Per chi scrive con un solo interruttore o con lo sguardo non abbiamo provato come funziona in una riunione."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.44"
+msgid "Come per un microfono vero, le frasi dette mentre nessuna app registra vengono scartate. Così una riunione non comincia con parole vecchie."
+msgstr "Come per un microfono vero, le frasi dette mentre nessuna app registra vengono scartate. Così una riunione non comincia con parole vecchie."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.aiuto.titolo"
+msgid "Se non ti sentono, cerca la frase."
+msgstr "Se non ti sentono, cerca la frase."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.10"
+msgid "Scrivi una parte della frase"
+msgstr "Scrivi una parte della frase"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.11"
+msgid "Tutte le frasi, a colpo d’occhio"
+msgstr "Tutte le frasi, a colpo d’occhio"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="#f-manca">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.12"
+msgid "<1>«Manca la voce: in … non trovo …. Reinstalla Kalliope.»</1>"
+msgstr "<1>«Manca la voce: in … non trovo …. Reinstalla Kalliope.»</1>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="#f-preparo">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.13"
+msgid "<1>«Preparo la voce…»</1>"
+msgstr "<1>«Preparo la voce…»</1>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="#f-pronta">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.14"
+msgid "<1>«Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono.»</1>"
+msgstr "<1>«Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono.»</1>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="#f-senza-microfono">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.15"
+msgid "<1>«La voce è pronta, ma …: per ora nessuno ti sentirà nelle chiamate.»</1>"
+msgstr "<1>«La voce è pronta, ma …: per ora nessuno ti sentirà nelle chiamate.»</1>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="#f-parlo">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.16"
+msgid "<1>«Sto parlando…»</1>"
+msgstr "<1>«Sto parlando…»</1>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="#f-nessuna-chiamata">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.17"
+msgid "<1>«Nessuna chiamata sta usando il microfono «Kalliope»: sceglilo come microfono nell'app della riunione.»</1>"
+msgstr "<1>«Nessuna chiamata sta usando il microfono «Kalliope»: sceglilo come microfono nell'app della riunione.»</1>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="#f-errori">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.18"
+msgid "<1>«Non riesco a preparare la voce: …»</1>"
+msgstr "<1>«Non riesco a preparare la voce: …»</1>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <q class="frase-finestra">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.19"
+msgid "<1>Manca la voce: in … non trovo …. Reinstalla Kalliope.</1>"
+msgstr "<1>Manca la voce: in … non trovo …. Reinstalla Kalliope.</1>"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.20"
+msgid "Cosa significa"
+msgstr "Cosa significa"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.21"
+msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: la frase dice quale cartella e quali file. L'installazione è rotta. Il campo di testo resta spento."
+msgstr "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: la frase dice quale cartella e quali file. L'installazione è rotta. Il campo di testo resta spento."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.22"
+msgid "Cosa fare"
+msgstr "Cosa fare"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="../installa/">
+#.   <2> = <a href="#segnala">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.23"
+msgid "Installa di nuovo Kalliope, con i passi della <1>pagina Installa</1>. Se la frase ricompare, <2>segnalala</2> intera."
+msgstr "Installa di nuovo Kalliope, con i passi della <1>pagina Installa</1>. Se la frase ricompare, <2>segnalala</2> intera."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <q class="frase-finestra">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.24"
+msgid "<1>Preparo la voce…</1>"
+msgstr "<1>Preparo la voce…</1>"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.25"
+msgid "Cosa significa"
+msgstr "Cosa significa"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.26"
+msgid "La voce si sta caricando in memoria. Succede a ogni avvio. Il campo di testo resta spento."
+msgstr "La voce si sta caricando in memoria. Succede a ogni avvio. Il campo di testo resta spento."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.27"
+msgid "Cosa fare"
+msgstr "Cosa fare"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.28"
+msgid "Aspetta. Non abbiamo misurato quanto dura."
+msgstr "Aspetta. Non abbiamo misurato quanto dura."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <q class="frase-finestra">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.29"
+msgid "<1>Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono.</1>"
+msgstr "<1>Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono.</1>"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.30"
+msgid "Cosa significa"
+msgstr "Cosa significa"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.31"
+msgid "Tutto a posto: Kalliope può parlare."
+msgstr "Tutto a posto: Kalliope può parlare."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.32"
+msgid "Cosa fare"
+msgstr "Cosa fare"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="../riunione/">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.33"
+msgid "Nell'app della riunione scegli «Kalliope» come microfono. <1>I passi sono nella pagina In riunione</1>."
+msgstr "Nell'app della riunione scegli «Kalliope» come microfono. <1>I passi sono nella pagina In riunione</1>."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <q class="frase-finestra">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.34"
+msgid "<1>La voce è pronta, ma …: per ora nessuno ti sentirà nelle chiamate.</1>"
+msgstr "<1>La voce è pronta, ma …: per ora nessuno ti sentirà nelle chiamate.</1>"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.35"
+msgid "Cosa significa"
+msgstr "Cosa significa"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.36"
+msgid "La voce funziona, ma il microfono «Kalliope» non si è creato. Al posto dei puntini c'è la causa, spesso in inglese."
+msgstr "La voce funziona, ma il microfono «Kalliope» non si è creato. Al posto dei puntini c'è la causa, spesso in inglese."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.37"
+msgid "Cosa fare"
+msgstr "Cosa fare"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <code>
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.78"
+msgid "Se la causa dice <1>PipeWire is not running</1>, avvia PipeWire con questo comando:"
+msgstr "Se la causa dice <1>PipeWire is not running</1>, avvia PipeWire con questo comando:"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.38"
+msgid "Copia il comando"
+msgstr "Copia il comando"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <code>
+#.   <2> = <code>
+#.   <3> = <code>
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.39"
+msgid "Se dice <1>PipeWire is not available</1>, manca la libreria: installa <2>pipewire</2> e <3>pipewire-pulse</3>. Se il computer usa solo PulseAudio, il microfono di Kalliope oggi non è disponibile."
+msgstr "Se dice <1>PipeWire is not available</1>, manca la libreria: installa <2>pipewire</2> e <3>pipewire-pulse</3>. Se il computer usa solo PulseAudio, il microfono di Kalliope oggi non è disponibile."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.40"
+msgid "Dopo aver sistemato"
+msgstr "Dopo aver sistemato"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.41"
+msgid "Chiudi e riapri Kalliope. Non abbiamo provato se serva, ma è il modo più semplice per cominciare da capo."
+msgstr "Chiudi e riapri Kalliope. Non abbiamo provato se serva, ma è il modo più semplice per cominciare da capo."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <q class="frase-finestra">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.42"
+msgid "<1>Sto parlando…</1>"
+msgstr "<1>Sto parlando…</1>"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.43"
+msgid "Cosa significa"
+msgstr "Cosa significa"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.44"
+msgid "Kalliope sta dicendo la frase."
+msgstr "Kalliope sta dicendo la frase."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.45"
+msgid "Cosa fare"
+msgstr "Cosa fare"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.46"
+msgid "«Ferma» interrompe subito e svuota la coda. Il testo che scrivi nel frattempo si mette in coda."
+msgstr "«Ferma» interrompe subito e svuota la coda. Il testo che scrivi nel frattempo si mette in coda."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <q class="frase-finestra">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.47"
+msgid "<1>Nessuna chiamata sta usando il microfono «Kalliope»: sceglilo come microfono nell'app della riunione.</1>"
+msgstr "<1>Nessuna chiamata sta usando il microfono «Kalliope»: sceglilo come microfono nell'app della riunione.</1>"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.48"
+msgid "Cosa significa"
+msgstr "Cosa significa"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.49"
+msgid "Nessuna app sta registrando dal microfono «Kalliope», quindi gli altri non ti sentono. Il suono viene scartato, come per un microfono vero. La frase compare solo se «Senti anche tu» è spento."
+msgstr "Nessuna app sta registrando dal microfono «Kalliope», quindi gli altri non ti sentono. Il suono viene scartato, come per un microfono vero. La frase compare solo se «Senti anche tu» è spento."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.50"
+msgid "Cosa fare"
+msgstr "Cosa fare"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.51"
+msgid "Nell'app della riunione scegli «Kalliope» come microfono. Se lo hai già scelto, controlla che nell'app il microfono non sia disattivato. Kalliope è il microfono predefinito del computer solo se è l'unico: altrimenti va scelto in ogni app."
+msgstr "Nell'app della riunione scegli «Kalliope» come microfono. Se lo hai già scelto, controlla che nell'app il microfono non sia disattivato. Kalliope è il microfono predefinito del computer solo se è l'unico: altrimenti va scelto in ogni app."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <q class="frase-finestra">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.52"
+msgid "<1>Non riesco a preparare la voce: …</1>"
+msgstr "<1>Non riesco a preparare la voce: …</1>"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.53"
+msgid "Cosa significa"
+msgstr "Cosa significa"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.54"
+msgid "Qualcosa non va nel programma o nei file della voce. Lo stesso vale per «Errore della voce: …» e «Non riesco a cambiare voce: …»."
+msgstr "Qualcosa non va nel programma o nei file della voce. Lo stesso vale per «Errore della voce: …» e «Non riesco a cambiare voce: …»."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.55"
+msgid "Cosa fare"
+msgstr "Cosa fare"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="#segnala">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.56"
+msgid "Chiudi e riapri Kalliope. Se la frase ricompare, <1>segnalala</1> intera, compreso ciò che segue i due punti. Non abbiamo una soluzione provata per questi errori."
+msgstr "Chiudi e riapri Kalliope. Se la frase ricompare, <1>segnalala</1> intera, compreso ciò che segue i due punti. Non abbiamo una soluzione provata per questi errori."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.57"
+msgid "La mia frase non c'è"
+msgstr "La mia frase non c'è"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.58"
+msgid "«Kalliope» non compare fra i microfoni dell'app"
+msgstr "«Kalliope» non compare fra i microfoni dell'app"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.59"
+msgid "Cosa fare"
+msgstr "Cosa fare"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <code>
+#.   <2> = <code>
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.60"
+msgid "Kalliope deve essere aperto, con la riga «Pronta» in alto. Poi scrivi in un terminale <1>pactl list short sources</1>: deve esserci una riga con <2>kalliope</2>. Se non c'è, vedi la frase «La voce è pronta, ma …». Se c'è ma l'app non lo mostra, chiudi e riapri l'elenco dei microfoni dell'app; non abbiamo provato se serva riavviare l'app."
+msgstr "Kalliope deve essere aperto, con la riga «Pronta» in alto. Poi scrivi in un terminale <1>pactl list short sources</1>: deve esserci una riga con <2>kalliope</2>. Se non c'è, vedi la frase «La voce è pronta, ma …». Se c'è ma l'app non lo mostra, chiudi e riapri l'elenco dei microfoni dell'app; non abbiamo provato se serva riavviare l'app."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.61"
+msgid "Gli altri non mi sentono"
+msgstr "Gli altri non mi sentono"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.62"
+msgid "Cosa fare"
+msgstr "Cosa fare"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="../riunione/#passo-3">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.63"
+msgid "Segui i tre controlli della <1>pagina In riunione</1>. Ricorda che «Senti anche tu» fa sentire la voce a te, non all'app."
+msgstr "Segui i tre controlli della <1>pagina In riunione</1>. Ricorda che «Senti anche tu» fa sentire la voce a te, non all'app."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.64"
+msgid "La voce va a scatti nella riunione"
+msgstr "La voce va a scatti nella riunione"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.65"
+msgid "Cosa fare"
+msgstr "Cosa fare"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="#segnala">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.66"
+msgid "Prova ad abbassare la soppressione del rumore nelle impostazioni audio dell'app. Non l'abbiamo provato: se ti aiuta, o se non cambia nulla, <1>dicci come è andata</1>."
+msgstr "Prova ad abbassare la soppressione del rumore nelle impostazioni audio dell'app. Non l'abbiamo provato: se ti aiuta, o se non cambia nulla, <1>dicci come è andata</1>."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.67"
+msgid "Segnala un problema, o dicci come è andata"
+msgstr "Segnala un problema, o dicci come è andata"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="nowrap">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.68"
+msgid "Non c'è un indirizzo <1>e-mail</1>. Le segnalazioni passano dalle issue di GitHub, che richiedono un account GitHub."
+msgstr "Non c'è un indirizzo <1>e-mail</1>. Le segnalazioni passano dalle issue di GitHub, che richiedono un account GitHub."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a class="pillola azione" href="https://github.com/SANSEVIERIA-OU/kalliope/issues/new">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.69"
+msgid "<1>Apri una segnalazione su GitHub</1>"
+msgstr "<1>Apri una segnalazione su GitHub</1>"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.70"
+msgid "Una segnalazione utile dice:"
+msgstr "Una segnalazione utile dice:"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.71"
+msgid "quale app di riunione usi, e quale versione;"
+msgstr "quale app di riunione usi, e quale versione;"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <code>
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.72"
+msgid "la tua distribuzione Linux e la sua versione (<1>cat /etc/os-release</1>);"
+msgstr "la tua distribuzione Linux e la sua versione (<1>cat /etc/os-release</1>);"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <code>
+#.   <2> = <code>
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.73"
+msgid "la versione di PipeWire (<1>pipewire --version</1>) e quella di Kalliope (<2>kalliope --version</2>);"
+msgstr "la versione di PipeWire (<1>pipewire --version</1>) e quella di Kalliope (<2>kalliope --version</2>);"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.74"
+msgid "la frase che la finestra di Kalliope mostrava, intera;"
+msgstr "la frase che la finestra di Kalliope mostrava, intera;"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.75"
+msgid "che cosa hai fatto, e che cosa è successo."
+msgstr "che cosa hai fatto, e che cosa è successo."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.76"
+msgid "Non incollare le frasi che hai detto"
+msgstr "Non incollare le frasi che hai detto"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.77"
+msgid "Sono private. Per una segnalazione bastano la frase della finestra e i passi che hai fatto."
+msgstr "Sono private. Per una segnalazione bastano la frase della finestra e i passi che hai fatto."
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <br/>
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.45"
+msgid "Prima una prova.<1/>Poi, la riunione."
+msgstr "Prima una prova.<1/>Poi, la riunione."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.46"
+msgid "Una persona di fiducia può dirti davvero che cosa sente."
+msgstr "Una persona di fiducia può dirti davvero che cosa sente."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.47"
+msgid "Se qualcosa non va, trova aiuto"
+msgstr "Se qualcosa non va, trova aiuto"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.48"
+msgid "Torna all’installazione"
+msgstr "Torna all’installazione"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.filtro.tutte"
+msgid "Tutte le frasi."
+msgstr "Tutte le frasi."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.filtro.una"
+msgid "1 frase"
+msgstr "1 frase"
+
+#. Placeholders to leave as they are: {n}
+#: riunione/index.html
+#, kalliope-markup, python-brace-format
+msgctxt "ai.filtro.numero"
+msgid "{n} frase"
+msgid_plural "{n} frasi"
+msgstr[0] "{n} frase"
+msgstr[1] "{n} frasi"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.filtro.nessuna"
+msgid "Nessuna frase trovata. Prova una parola sola, per esempio «pronta» o «microfono». Oppure guarda i tre casi qui sotto, o segnala il problema."
+msgstr "Nessuna frase trovata. Prova una parola sola, per esempio «pronta» o «microfono». Oppure guarda i tre casi qui sotto, o segnala il problema."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.copia.ok"
+msgid "Copiato."
+msgstr "Copiato."
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.copia.no"
+msgid "Non riesco a copiare da solo: seleziona il testo e copialo."
+msgstr "Non riesco a copiare da solo: seleziona il testo e copialo."
+
 #: stato/index.html
 #, kalliope-markup
 msgctxt "st.titolo"
@@ -2109,6 +3073,12 @@ msgstr "Parla con la sua voce?"
 msgctxt "st.d.voce.a"
 msgid "Oggi no: con la voce di Giulia o di Marco, a scelta. Parla solo italiano."
 msgstr "Oggi no: con la voce di Giulia o di Marco, a scelta. Parla solo italiano."
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.d.voce.personale"
+msgid "Sì. Puoi preparare la tua voce dal terminale con una registrazione WAV. Alla riapertura di Kalliope la trovi nell’elenco accanto a Giulia e Marco. Il programma parla in italiano."
+msgstr "Sì. Puoi preparare la tua voce dal terminale con una registrazione WAV. Alla riapertura di Kalliope la trovi nell’elenco accanto a Giulia e Marco. Il programma parla in italiano."
 
 #: stato/index.html
 #, kalliope-markup

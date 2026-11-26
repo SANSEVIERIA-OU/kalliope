@@ -49,7 +49,7 @@
         <li><a href="stato/" data-t="menu.stato">Stato e limiti</a></li>
         <li><a href="installa/" data-t="menu.installa">Installa</a></li>
         <li><a href="riunione/" data-t="menu.riunione">In riunione</a></li>
-        <li><a href="aiuto/" data-t="menu.aiuto">Aiuto</a></li>
+        <li><a href="riunione/#aiuto" data-t="menu.aiuto">Aiuto</a></li>
         <li class="lingua-voce">
           <details class="lingua-scelta">
             <summary data-t-title="barra.lingua" title="Cambia lingua"><span data-lingua-corrente data-t-no="il nome della lingua lo mette la costruzione, dai dati CLDR">Italiano</span><span class="lingua-segno" aria-hidden="true"></span></summary>
@@ -182,7 +182,7 @@
       <span class="luce-tratto" aria-hidden="true"></span><span class="luce-tratto luce-filo" aria-hidden="true"></span>
       <div class="tratto-testo">
         <h2 id="campioni-titolo" class="entra entra-titolo" data-t="campioni.titolo">Senti come suona, con il testo accanto.</h2>
-        <p class="entra" data-t="campioni.testo" data-t-nota="Two versions of one sentence: the part in tag 1 is read when the page runs with JavaScript, the part in tag 2 when it does not. Write both.">Le frasi sono tue, dette con le registrazioni vere di Kalliope 0.1. <span class="con-js">Scegli la voce, poi premi una frase: le parole si accendono mentre Paola, Luca e Anna la sentono.</span><span class="senza-js">Premi il lettore sotto ogni frase per ascoltarla. Accanto trovi il collegamento alla stessa frase con la voce di Marco.</span></p>
+        <p class="entra" data-t="campioni.testo" data-t-nota="Two versions of one sentence: the part in tag 1 is read when the page runs with JavaScript, the part in tag 2 when it does not. Write both.">Le frasi sono tue, dette con le registrazioni vere di Kalliope 0.1-rc.1. <span class="con-js">Scegli la voce, poi premi una frase: le parole si accendono mentre Paola, Luca e Anna la sentono.</span><span class="senza-js">Premi il lettore sotto ogni frase per ascoltarla. Accanto trovi il collegamento alla stessa frase con la voce di Marco.</span></p>
         <div class="voci voci-filo entra" role="group" aria-label="Voce delle frasi" data-t-aria-label="campioni.voce" hidden>
           <button class="voce" type="button" data-voce="giulia" aria-pressed="true" data-t="voce.giulia"><span class="voce-tondo" aria-hidden="true"></span>Giulia</button>
           <button class="voce" type="button" data-voce="marco" aria-pressed="false" data-t="voce.marco"><span class="voce-tondo" aria-hidden="true"></span>Marco</button>
@@ -243,7 +243,7 @@
       </div>
       <div class="filo">
         <ol class="messaggi">
-        <li class="messaggio entra" data-frase="1" data-annuisce="paola">
+        <li class="messaggio entra" id="a1-titolo" data-frase="1" data-annuisce="paola">
           <div class="bolla filo-bolla"><div class="bolla-corpo"><p class="bolla-testo" data-t="frase.1">Buongiorno a tutti! Scrivo invece di parlare, ma vi seguo benissimo.</p></div><svg class="coda" viewBox="0 0 32 24" aria-hidden="true"><path d="M0 0h31L7.6 21.6A3.5 3.5 0 0 1 2 18.8V0z"/></svg></div>
           <div class="messaggio-sotto">
             <button class="pillola voce-chiara suona-frase" type="button" data-frase="1" hidden><span class="tondo" aria-hidden="true"></span><span class="etichetta-suona" data-t="ascolto.verbo.fermo">Ascolta</span></button>
@@ -252,7 +252,7 @@
             <a class="altra-voce" href="voce/marco-1.mp3" data-t="campioni.altra-voce">La stessa frase con Marco</a>
           </div>
         </li>
-        <li class="messaggio entra" data-frase="2" data-annuisce="luca" data-lunghezze="14/3=17 15:30?=18">
+        <li class="messaggio entra" id="a2-titolo" data-frase="2" data-annuisce="luca" data-lunghezze="14/3=17 15:30?=18">
           <div class="bolla filo-bolla"><div class="bolla-corpo"><p class="bolla-testo" data-t="frase.2">Sono d'accordo con Paola. Però la consegna del 14/3 mi sembra stretta: possiamo sentirci venerdì <span class="unita">alle 15:30?</span></p></div><svg class="coda" viewBox="0 0 32 24" aria-hidden="true"><path d="M0 0h31L7.6 21.6A3.5 3.5 0 0 1 2 18.8V0z"/></svg></div>
           <div class="messaggio-sotto">
             <button class="pillola voce-chiara suona-frase" type="button" data-frase="2" hidden><span class="tondo" aria-hidden="true"></span><span class="etichetta-suona" data-t="ascolto.verbo.fermo">Ascolta</span></button>
@@ -261,7 +261,7 @@
             <a class="altra-voce" href="voce/marco-2.mp3" data-t="campioni.altra-voce">La stessa frase con Marco</a>
           </div>
         </li>
-        <li class="messaggio entra" data-frase="3" data-annuisce="anna">
+        <li class="messaggio entra" id="a3-titolo" data-frase="3" data-annuisce="anna">
           <div class="bolla filo-bolla"><div class="bolla-corpo"><p class="bolla-testo" data-t="frase.3">Il preventivo è di <span class="unita">1.250 € +</span> IVA, valido fino al <span class="unita">31 dicembre.</span></p></div><svg class="coda" viewBox="0 0 32 24" aria-hidden="true"><path d="M0 0h31L7.6 21.6A3.5 3.5 0 0 1 2 18.8V0z"/></svg></div>
           <div class="messaggio-sotto">
             <button class="pillola voce-chiara suona-frase" type="button" data-frase="3" hidden><span class="tondo" aria-hidden="true"></span><span class="etichetta-suona" data-t="ascolto.verbo.fermo">Ascolta</span></button>
@@ -272,6 +272,13 @@
           <p class="detto-riga" data-t="frase.3.detto-riga"><span>Detto:</span> «Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»</p>
         </li>
         </ol>
+      <details class="campioni-provenienza" id="provenienza-campioni">
+        <summary data-t="campioni.provenienza.titolo">Come sono state fatte queste registrazioni</summary>
+        <p data-t="campioni.provenienza.file">Sono l'uscita di Kalliope 0.1-rc.1, senza ritocchi, convertita in MP3 (64 kbit/s, mono, 24 kHz).</p>
+        <p data-t="campioni.provenienza.whisper">Un programma di riconoscimento del parlato, Whisper, le trascrive con circa una parola sbagliata su 45. È una misura del progetto sui sei campioni.</p>
+        <p data-t="campioni.provenienza.limiti">Non abbiamo misurato quanto si capiscano in una riunione vera, né quanto tempo passa fra il tasto Invio e il suono.</p>
+        <p data-t="campioni.provenienza.testi">Il testo «scrivi» è quello che hai digitato. Il testo «dice» è quello che Kalliope prepara prima di parlare: cifre, date e orari diventano parole.</p>
+      </details>
       </div>
     </section>
 
@@ -467,7 +474,7 @@
         <li><a href="stato/" data-t="menu.stato">Stato e limiti</a></li>
         <li><a href="installa/" data-t="menu.installa">Installa</a></li>
         <li><a href="riunione/" data-t="menu.riunione">In riunione</a></li>
-        <li><a href="aiuto/" data-t="menu.aiuto">Aiuto</a></li>
+        <li><a href="riunione/#aiuto" data-t="menu.aiuto">Aiuto</a></li>
       </ul>
     </nav>
     <nav class="lingue" id="lingue" aria-label="Lingue" data-t-aria-label="piede.lingue">

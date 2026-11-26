@@ -77,7 +77,7 @@
     document.addEventListener('focusin', e => scelte.forEach(d => { if (!d.contains(e.target)) chiudi(d, false); }));
     document.addEventListener('click', e => {
       const a = e.target.closest && e.target.closest('[data-lingue="elenco"] a[hreflang]');
-      if (a && a.getAttribute('data-lingua-codice')) scrivi(a.getAttribute('data-lingua-codice'));
+      if (a && a.hasAttribute('href') && a.getAttribute('data-lingua-codice')) scrivi(a.getAttribute('data-lingua-codice'));
     });
   };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', pronta); else pronta();

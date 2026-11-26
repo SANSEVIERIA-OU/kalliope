@@ -18,7 +18,7 @@
   await aspetta(() => window.__catalogo);
   await aspetta(() => window.__catalogoStato || $('#pagina-stato'));
   const PAGINA = '../../it/installa/index.html';
-  const doc = new DOMParser().parseFromString(await (await fetch(PAGINA)).text(), 'text/html');
+  const doc = await window.CatalogoDocumenti.leggi(PAGINA);
   const tutti = (sel, n = 0) => { const e = doc.querySelectorAll(sel)[n]; if (!e) throw new Error('nella pagina «installa» manca ' + sel); return e; };
   // una copia di un pezzo della pagina; gli id si tolgono (nel catalogo ce ne sono più copie), salvo dove una regola li nomina
   const da = (sel, n = 0, tieniId = false) => { const c = tutti(sel, n).cloneNode(true); if (!tieniId) { c.removeAttribute('id'); c.querySelectorAll('[id]').forEach(x => x.removeAttribute('id')); } return c; };
@@ -81,8 +81,17 @@
     // le quattro scelte, inerti (le vere stanno nei riquadri vivi): un nome di gruppo per esemplare, perché in una pagina i bottoni d'opzione dello stesso nome sono un gruppo solo
     const scelta = (valore, f = () => {}) => {
       const x = da('.sistemi', 0, true); x.removeAttribute('id'); gruppi++;
-      $$('label', x).forEach(l => l.removeAttribute('for'));
+      const riferimenti = new Map($$('[id]', x).map(n => [n.id, `cat-sistema-${gruppi}-${n.id}`]));
+      $$('[id]', x).forEach(n => { n.id = riferimenti.get(n.id); });
+      $$('[for], [aria-labelledby], [aria-describedby], [aria-controls]', x).forEach(n => {
+        for (const attributo of ['for', 'aria-labelledby', 'aria-describedby', 'aria-controls']) {
+          if (n.hasAttribute(attributo)) n.setAttribute(attributo, n.getAttribute(attributo).split(/\s+/).map(id => riferimenti.get(id) || id).join(' '));
+        }
+      });
       $$('.sistema-voce', x).forEach(r => { r.name = 'cat-sistema-' + gruppi; r.checked = r.value === valore; });
+      x.disabled = true;
+      x.dataset.catalogo = 'illustrativo';
+      x.title = 'Campione illustrativo: usa le anteprime dal vivo per cambiare sistema.';
       x.style.animation = 'none'; f(x); x.inert = true; return x;
     };
     // dentro la pagina (.sistemi-pagina): così i fogli di stile mostrano della riga sotto le scelte soltanto quella della voce scelta

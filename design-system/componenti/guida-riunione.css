@@ -1,0 +1,33 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
+/* In riunione: la guida mantiene i quattro passi e i controlli nativi.
+   Composizione e misure riusano la cornice approvata; nessun movimento nuovo. */
+.passo-riunione .tratto-testo { min-width: 0; }
+.passo-riunione:not(.coppia) .tratto-testo { max-width: var(--riunione-guida-larghezza); margin-inline: auto; }
+.passo-riunione .tratto-testo p { max-width: none; }
+.passo-riunione h3 { font-size: var(--corpo-12); line-height: var(--interlinea-13); margin-block: var(--spazio-26) var(--spazio-12); }
+.passo-riunione .controllo, .passo-riunione .se-non-va { font-size: var(--corpo-7); line-height: var(--interlinea-8); margin-block-start: var(--spazio-17); padding-inline-start: var(--spazio-14); border-inline-start: var(--filetto-medio) solid currentColor; }
+.passo-riunione .controllo__titolo, .passo-riunione .se-non-va__titolo { display: block; font-weight: var(--peso-forte); }
+.nota-riunione { margin-block: var(--spazio-21); padding-block: var(--spazio-14); border-block: var(--filetto-sottile) solid var(--requisito-traccia); }
+.nota-riunione p { font-size: var(--corpo-7); line-height: var(--interlinea-8); }
+.nota-riunione .avviso__titolo { font-weight: var(--peso-forte); }
+.riunione-finestra { margin: 0; }
+.riunione-finestra img { display: block; width: 100%; height: auto; border-radius: var(--raggio-5); }
+.riunione-finestra figcaption { margin-block-start: var(--spazio-14); font-size: var(--corpo-6); line-height: var(--interlinea-6); }
+.prova-microfono { padding: var(--spazio-26); background: var(--riquadro-scuro); border: var(--filetto-sottile) solid var(--bordo-pannello); border-radius: var(--raggio-5); }
+.prova-microfono label { display: block; font-size: var(--corpo-10); margin-block: var(--spazio-21) var(--spazio-12); }
+.prova-microfono select { width: 100%; min-height: var(--misura-22); padding: var(--spazio-12); font: inherit; color: var(--azione-testo); background: var(--azione); border: var(--filetto-medio) solid var(--azione); border-radius: var(--raggio-3); }
+.prova-microfono p { font-size: var(--corpo-7); line-height: var(--interlinea-8); margin-block: var(--spazio-17); }
+.prova-microfono .prova-intestazione { color: var(--testo-didascalia); margin-block-start: 0; }
+.campione-riunione { max-width: var(--riunione-guida-larghezza); margin: var(--spazio-26) auto 0; padding-block-start: var(--spazio-21); border-block-start: var(--filetto-sottile) solid var(--bordo-pannello); }
+.campione-riunione p { font-size: var(--corpo-7); line-height: var(--interlinea-8); }
+.campione-riunione audio { width: 100%; margin-block: var(--spazio-14); }
+.passo-riunione details { margin-block-start: var(--spazio-21); border-block: var(--filetto-sottile) solid var(--bordo-pannello); padding-block: var(--spazio-17); }
+.passo-riunione summary { cursor: pointer; font-size: var(--corpo-9); }
+.passo-riunione a { text-underline-offset: var(--spazio-3); }
+.guida-riunione .posto-bolla .bolla { opacity: 1; }
+
+.catalogo-riunione-viva { width: 100%; height: var(--riunione-catalogo-altezza); border: var(--filetto-sottile) solid var(--bordo-pannello); }
+
+@media (max-width: 760px) {
+  .guida-riunione .passo-riunione { padding-inline: var(--riunione-guida-aria-telefono); }
+}

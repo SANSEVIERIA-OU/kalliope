@@ -117,3 +117,9 @@
 /* N2: una risposta più alta dello spazio sotto la barra non si appiccica (stato.js, adatta()): sta accanto alla sua domanda, dove sta adesso, e scorre con la pagina, così si legge
    intera. La scritta, i tempi e il resto restano quelli di prima */
 .domande-bolla.scorre { position: static; margin-block-start: var(--scorre-sposta, 0px); }
+
+/* Un indirizzo a una domanda lascia sopra spazio alla risposta appiccicosa, che
+   può cominciare prima del titolo. Il salto resta nativo, anche senza JavaScript. */
+@media (min-width: 761px) {
+  .js .domande.viva .domanda, .js .domande.viva .domanda-chiede { scroll-margin-block-start: calc(var(--domande-indirizzo-centro) - var(--spazio-31)); }
+}

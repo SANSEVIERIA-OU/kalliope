@@ -57,7 +57,7 @@
         <li><a href="../stato/" aria-current="page" data-t="menu.stato">Stato e limiti</a></li>
         <li><a href="../installa/" data-t="menu.installa">Installa</a></li>
         <li><a href="../riunione/" data-t="menu.riunione">In riunione</a></li>
-        <li><a href="../aiuto/" data-t="menu.aiuto">Aiuto</a></li>
+        <li><a href="../riunione/#aiuto" data-t="menu.aiuto">Aiuto</a></li>
         <li class="lingua-voce">
           <details class="lingua-scelta">
             <summary data-t-title="barra.lingua" title="Cambia lingua"><span data-lingua-corrente data-t-no="il nome della lingua lo mette la costruzione, dai dati CLDR">Italiano</span><span class="lingua-segno" aria-hidden="true"></span></summary>
@@ -73,7 +73,7 @@
 
   <main id="contenuto">
     <div class="scena scena-pagina">
-      <section class="apertura" aria-labelledby="titolo">
+      <section class="apertura" id="stato-titolo" aria-labelledby="titolo">
         <h1 id="titolo" data-t="st.apertura.titolo" data-t-nota="Four lines, one under the other. The answer comes first: tested up to the microphone, not yet in a real meeting.">
           <span class="riga">Provato fino</span>
           <span class="riga">al microfono.</span>
@@ -168,7 +168,7 @@
         <p data-t="st.provato.testo">Ogni cifra sta nel punto della strada in cui è stata misurata, con il file da cui viene. Dove la strada è tratteggiata nessuno l'ha ancora provata.</p>
       </div>
 
-      <div class="catena">
+      <div class="catena" id="misure">
         <div class="catena-misura"><p class="catena-misura-testo" data-t="st.catena.misura">Dal tasto Invio al suono nella riunione: <strong>non misurato</strong></p></div>
         <div class="catena-computer">
           <p class="catena-computer-nome" data-t="st.catena.computer">Le cifre: su un solo computer, un portatile con Ryzen 5 PRO 6650U. Su altri non le conosciamo.</p>
@@ -223,7 +223,7 @@
               <details class="anello-dettagli" open><summary data-t="st.dettagli.apri">I dettagli e le fonti</summary><p data-t="st.microfono.differenze">Negli ascolti di verifica le differenze che restano sono soprattutto di scrittura: «10 e 30» per «10:30», «ancora» per «àncora». Sui sei campioni di questo sito, una misura a parte: circa una parola su 45. <span class="fonte"><a href="{{kalliope.source.url}}/README.md" title="README.md" data-t-no="il percorso di un file del repository">README</a></span></p><p data-t="st.microfono.fatto">Provato con un PipeWire preparato per la prova. Se nessuna app ascolta non usa il processore, e ciò che si dice va perso, come con un microfono vero; mentre un'app registra usa circa lo 0,26% di un core, con un ritardo di circa 21 ms. <span class="fonte"><a href="{{kalliope.source.url}}/docs/virtual-microphone.md" title="docs/virtual-microphone.md" data-t-no="il percorso di un file del repository">docs/virtual-microphone.md</a></span></p></details>
             </div>
           </li>
-          <li class="anello forse entra" data-anello="app">
+          <li class="anello forse entra" id="provato-per-app" data-anello="app">
             <span class="anello-nodo" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="2.4"><rect x="6" y="9" width="12.5" height="10" rx="2.5"/><rect x="21.5" y="9" width="12.5" height="10" rx="2.5"/><rect x="6" y="22" width="12.5" height="10" rx="2.5"/><rect x="21.5" y="22" width="12.5" height="10" rx="2.5"/></g></svg></span>
             <h3 class="anello-nome" data-t="st.anello.app">L'app della riunione</h3>
             <div class="anello-fatti">
@@ -307,7 +307,10 @@
           </li>
           <li class="domanda" id="d-voce">
             <h3 class="domanda-chiede" data-t="st.d.voce.q">Parla con la sua voce?</h3>
-            <div class="domanda-risponde"><p data-t="st.d.voce.a">Oggi no: con la voce di Giulia o di Marco, a scelta. Parla solo italiano.</p></div>
+            <div class="domanda-risponde">
+              <p data-release="prova" data-t="st.d.voce.a">Oggi no: con la voce di Giulia o di Marco, a scelta. Parla solo italiano.</p>
+              <p data-release="stabile" data-t="st.d.voce.personale">Sì. Puoi preparare la tua voce dal terminale con una registrazione WAV. Alla riapertura di Kalliope la trovi nell’elenco accanto a Giulia e Marco. Il programma parla in italiano.</p>
+            </div>
           </li>
           <li class="domanda" id="d-sottotitoli">
             <h3 class="domanda-chiede" data-t="st.d.sottotitoli.q">Fa i sottotitoli?</h3>
@@ -322,7 +325,7 @@
             <div class="domanda-risponde"><p data-t="st.d.online.a">No: è un programma che sta sul computer. Non è un servizio online né un'estensione del browser, e il testo non esce dal computer.</p></div>
           </li>
           <li class="domanda" id="d-chi">
-            <h3 class="domanda-chiede" data-t="st.d.chi.q">Chi c'è dietro?</h3>
+            <h3 class="domanda-chiede" id="chi" data-t="st.d.chi.q">Chi c'è dietro?</h3>
             <div class="domanda-risponde"><p data-t="st.d.chi.a">SANSEVIERIA OÜ; gli autori sono nel file NOTICE del codice. Non c'è un'assistenza telefonica, né un indirizzo e‑mail, né una certificazione: le segnalazioni passano da GitHub.</p></div>
           </li>
         </ol>
@@ -404,7 +407,7 @@
       <span class="luce-tratto" aria-hidden="true"></span><span class="luce-tratto luce-chiusa" aria-hidden="true"></span>
       <h2 id="inoltra-titolo" class="entra entra-titolo" data-t="st.inoltra.titolo">Da mandare a chi ti aiuta.</h2>
       <p class="sotto-titolo" data-t="st.inoltra.sotto">Lo stato di oggi in poche righe, con l'indirizzo di questa pagina: da incollare in un messaggio.</p>
-      <div class="inoltra entra">
+      <div class="inoltra entra" id="detta-a-chi">
         <div class="bolla bolla-inoltra">
           <div class="bolla-corpo">
             <p class="bolla-testo inoltra-testo" data-release="prova" data-t="st.inoltra.messaggio">Kalliope: scrivi una frase e una voce italiana la dice nella riunione. Oggi è una versione di prova, solo per Linux, provata fino al microfono e non ancora in una riunione vera. Senza account e senza prezzo; il testo resta sul computer.</p>
@@ -430,7 +433,7 @@
         <li><a href="../stato/" data-t="menu.stato">Stato e limiti</a></li>
         <li><a href="../installa/" data-t="menu.installa">Installa</a></li>
         <li><a href="../riunione/" data-t="menu.riunione">In riunione</a></li>
-        <li><a href="../aiuto/" data-t="menu.aiuto">Aiuto</a></li>
+        <li><a href="../riunione/#aiuto" data-t="menu.aiuto">Aiuto</a></li>
       </ul>
     </nav>
     <nav class="lingue" id="lingue" aria-label="Lingue" data-t-aria-label="piede.lingue">

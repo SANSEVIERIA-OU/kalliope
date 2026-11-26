@@ -42,9 +42,9 @@
   // ciò che un gesto apre resta in vista (regola della cornice, pagina.css): la bolla della risposta, i dettagli aperti, la conferma della copia. Scorre quanto serve
   // perché «cosa» si veda tutta sotto la barra; se è più alta dello spazio che c'è, ne comincia la parte alta (il gesto non la lascia a metà sopra la barra). «inizio»
   // è ciò che deve restare con lei (il comando, se ci sta). La misura si prende dopo che ha la sua altezza (la bolla la cambia mentre prende la misura nuova)
-  function inVista(cosa, inizio = cosa) {
+  function inVista(cosa, inizio = cosa, permesso = () => true) {
     requestAnimationFrame(() => {
-      if (!cosa.isConnected) return;
+      if (!cosa.isConnected || !permesso()) return;
       const aria = num('--gesto-aria'), barra = $('.barra'), alto = (barra ? barra.getBoundingClientRect().bottom : 0) + aria;
       const r = cosa.getBoundingClientRect(), giu = r.bottom - (innerHeight - aria);
       // con il suo comando, se ci stanno insieme; se no da sola (la bolla ripete la domanda in testa: il pulsante premuto può restare sopra)
@@ -223,7 +223,38 @@
       b.addEventListener('click', () => scegli(v, true));
     });
     domande.classList.add('viva');
-    scegli(voci[0], false);
+    // Un vecchio indirizzo (#chi) o quello di una domanda mostra anche la risposta giusta.
+    // Gli id restano nell'HTML, così il collegamento funziona anche senza questo script.
+    let interrompiIndirizzo = () => {};
+    function domandaDallIndirizzo() {
+      interrompiIndirizzo();
+      const destinazione = document.getElementById(location.hash.slice(1));
+      const voce = destinazione && destinazione.closest('.domanda');
+      if (!voce || !voci.includes(voce)) return false;
+      scegli(voce, false);
+      if (window.Cornice) window.Cornice.rivela(domande);
+      destinazione.scrollIntoView({block: 'start', behavior: 'instant'});
+      // Una sola verifica dopo il layout finale: il salto può precedere caratteri e
+      // animazione d'arrivo. Qualunque gesto della persona annulla l'assestamento.
+      const attesa = new AbortController(), indirizzo = location.hash;
+      interrompiIndirizzo = () => attesa.abort();
+      for (const evento of ['wheel', 'touchstart', 'pointerdown', 'keydown']) {
+        addEventListener(evento, interrompiIndirizzo, {capture: true, passive: true, signal: attesa.signal});
+      }
+      const caricata = document.readyState === 'complete' ? Promise.resolve()
+        : new Promise(fine => addEventListener('load', fine, {once: true, signal: attesa.signal}));
+      Promise.all([caricata, document.fonts ? document.fonts.ready : Promise.resolve()])
+        .then(() => new Promise(fine => requestAnimationFrame(fine)))
+        .then(() => Promise.all([...domande.getAnimations(), ...bolla.getAnimations()].map(a => a.finished.catch(() => {}))))
+        .then(() => inVista(bolla, inizioBolla(voce), () => {
+          const permesso = !attesa.signal.aborted && location.hash === indirizzo;
+          attesa.abort();
+          return permesso;
+        }));
+      return true;
+    }
+    if (!domandaDallIndirizzo()) scegli(voci[0], false);
+    addEventListener('hashchange', domandaDallIndirizzo);
     const riadatta = () => { if (scelta) adatta(scelta, corpo.offsetHeight); };
     telefono.addEventListener('change', () => { if (scelta) { posto(scelta); riadatta(); } });
     addEventListener('resize', riadatta);   // l'altezza dello schermo (il telefono che gira, la finestra) cambia lo spazio sotto la barra

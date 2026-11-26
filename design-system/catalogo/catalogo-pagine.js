@@ -14,7 +14,7 @@
   // aspetta il catalogo principale (ha finito quando espone window.__catalogo)
   await new Promise(fine => { const t0 = performance.now(); (function chiedi() { if (window.__catalogo || performance.now() - t0 > 20000) fine(); else setTimeout(chiedi, 40); })(); });
   const PAGINA = '../../it/non-ancora/index.html';
-  const doc = new DOMParser().parseFromString(await (await fetch(PAGINA)).text(), 'text/html');
+  const doc = await window.CatalogoDocumenti.leggi(PAGINA);
   const da = (sel, n = 0) => { const e = doc.querySelectorAll(sel)[n]; if (!e) throw new Error('nella pagina «non ancora» manca ' + sel); const c = e.cloneNode(true); c.removeAttribute('id'); c.querySelectorAll('[id]').forEach(x => x.removeAttribute('id')); return c; };
   const sblocca = n => { n.querySelectorAll('[hidden]').forEach(x => x.removeAttribute('hidden')); return n; };
   const html = s => { const t = document.createElement('template'); t.innerHTML = s.trim(); return t.content.firstElementChild; };
@@ -180,7 +180,7 @@
     const comando = stato => { const x = sblocca(da('.comandi-ascolto')); $$('.lettore-ferma', x).forEach(n => n.remove()); const b = $('.ascolta-ferma', x); if (stato !== 'fermo') b.classList.add(stato); return x; };
     const tavolo = (f = () => {}) => { const x = da('.chiusura .tavolo'); f(x); return x; };
     const scritta = x => { const t = $('.bolla-testo', x); if (!t.querySelector('.p')) { const parole = t.textContent.trim().split(/\s+/); t.textContent = ''; parole.forEach((p, i) => { if (i) t.append(' '); t.append(el('span', {class: 'p', testo: p})); }); $('.bolla-chiusa', x).classList.add('divisa'); } return $$('.bolla-testo .p', x); };
-    const nota = (testo, ruolo = 'alert') => el('div', {class: 'errore-ascolto', role: ruolo}, el('p', {testo}), el('div', {class: 'errore-azioni'}, el('button', {class: 'riprova', type: 'button', testo: 'Riprova'}), el('a', {class: 'scarica-file', href: '#ascolto-chiusura', testo: 'Scarica la registrazione (Giulia, mp3)'})));
+    const nota = (testo, ruolo = 'alert') => el('div', {class: 'errore-ascolto', role: ruolo}, el('p', {testo}), el('div', {class: 'errore-azioni'}, el('button', {class: 'riprova', type: 'button', testo: 'Riprova'}), el('a', {class: 'scarica-file', href: '../../voce/giulia-1.mp3', download: '', testo: 'Scarica la registrazione (Giulia, mp3)'})));
     const larghezze = el('span', {class: 'cat-et', testo: 'larghezza del comando negli stati: …'});
     queueMicrotask(() => setTimeout(() => { const w = [...new Set($$('.cap-stati .ascolta-ferma').map(b => b.offsetWidth))]; larghezze.textContent = `larghezza del comando misurata in tutti gli stati mostrati: ${w.join(' · ')} px${w.length === 1 ? ' (la stessa: le etichette stanno nella stessa cella, vale la più lunga)' : ' (DIVERSA)'}`; }, 600));
     s.append(scheda({nome: 'L\'ascolto della chiusura: «Ascolta Giulia» e i suoi stati', id: '<code>.ascolta-ferma</code> (<code>.suona-frase</code>, <code>.pillola.voce-chiara</code>) <code>.etichette</code> <code>.se-fermo</code> <code>.se-carica</code> <code>.se-suona</code> <code>.se-pausa</code> · <code>.errore-ascolto</code> · <code>.lettore-ferma</code> · <code>.bolla-chiusa</code> (pagina.css; sopra: pulsanti.css, filo.css, errori.css, bolla.css)',
