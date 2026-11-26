@@ -22,6 +22,9 @@ use ort::{Env, Session, SessionConfig, Tensor};
 pub const MAX_TOKENS: usize = 510;
 /// Silence between chunks, as in the official package.
 pub const PAUSE_SECONDS: f32 = 0.12;
+/// Frames decoded on each side of a piece cut from a sentence and then dropped (see
+/// [`Voice::synthesize_in_context`]).
+const CONTEXT_FRAMES: usize = 8;
 
 /// Public voice names (from the Klein-TTS model card) for the model's internal voice ids.
 const VOICE_NAMES: &[(&str, &str)] = &[
@@ -242,18 +245,75 @@ impl Voice {
         })
     }
 
+    /// Splits one sentence's phonemes at clause punctuation (`, ; : —`), with the tokens of each
+    /// clause, for streaming: a caller joins neighbouring clauses into pieces as long as it can
+    /// afford, so speech starts after the first piece and a sentence is never cut inside a clause.
+    /// A clause is cut between words only when it alone exceeds the model's limit
+    /// ([`MAX_TOKENS`]).
+    pub fn clauses(&self, phonemes: &str) -> Vec<(String, usize)> {
+        clauses(phonemes, &|s| self.model.tokens(s).count())
+    }
+
     /// Synthesizes one chunk. `seed` fixes the decoder noise, so equal input gives equal audio.
     pub fn synthesize_chunk(&self, phonemes: &str, seed: u32) -> Result<Vec<f32>, Error> {
+        self.synthesize_in_context("", phonemes, "", seed)
+    }
+
+    /// Synthesizes `text`, one piece of a longer sentence, as the model would say it inside the
+    /// whole sentence: the neighbouring clauses `before` and `after` are read, so the intonation
+    /// and the pause at each cut are those of the sentence said in one go, but they are not said.
+    /// The audio ends where `after` would start, its pause included. Either may be empty, at the
+    /// start or at the end of the sentence. A context that does not fit in one model call is left
+    /// out.
+    pub fn synthesize_in_context(
+        &self,
+        before: &str,
+        text: &str,
+        after: &str,
+        seed: u32,
+    ) -> Result<Vec<f32>, Error> {
         let m = &self.model;
-        let ids: Vec<i64> = m.tokens(phonemes).take(MAX_TOKENS).collect();
+        let count = |s: &str| m.tokens(s).count();
         // Nothing to pronounce (only spaces or punctuation): no audio rather than a short breath.
-        let speakable = phonemes
+        let speakable = text
             .chars()
             .any(|c| c.is_alphabetic() && m.vocab.contains_key(&c));
-        if ids.is_empty() || !speakable {
+        if count(text) == 0 || !speakable {
             return Ok(Vec::new());
         }
+        let (mut before, mut after) = (before.trim(), after.trim());
+        if count(before) + count(text) + count(after) + 2 > MAX_TOKENS {
+            before = "";
+        }
+        if count(text) + count(after) + 1 > MAX_TOKENS {
+            after = "";
+        }
+        let left = if before.is_empty() {
+            String::new()
+        } else {
+            format!("{before} ")
+        };
+        let middle = if after.is_empty() {
+            text.to_owned()
+        } else {
+            format!("{text} ")
+        };
+        let ids: Vec<i64> = m
+            .tokens(&format!("{left}{middle}{after}"))
+            .take(MAX_TOKENS)
+            .collect();
         let n = ids.len() + 2;
+        // The tokens said, the boundary tokens included at the start and end of the sentence.
+        let keep_start = if before.is_empty() {
+            0
+        } else {
+            1 + count(&left)
+        };
+        let keep_end = if after.is_empty() {
+            n
+        } else {
+            (1 + count(&left) + count(&middle)).min(n)
+        };
         let mut tokens = Vec::with_capacity(n);
         tokens.push(0);
         tokens.extend_from_slice(&ids);
@@ -293,18 +353,38 @@ impl Voice {
             .iter()
             .map(|&d| js_round(d).max(1) as usize * m.frames_per_duration)
             .collect();
-        let total_frames: usize = reps.iter().sum();
-        let mut frames = Vec::with_capacity(total_frames * width);
+        let total: usize = reps.iter().sum();
+        let start: usize = reps[..keep_start].iter().sum();
+        let end: usize = reps[..keep_end].iter().sum();
+        // A few frames of context on each side are decoded too, then dropped, so the decoder
+        // does not start or end abruptly at a cut. They fall in the pause at a comma.
+        let margin_before = if keep_start > 0 {
+            CONTEXT_FRAMES.min(start)
+        } else {
+            0
+        };
+        let margin_after = if keep_end < n {
+            CONTEXT_FRAMES.min(total - end)
+        } else {
+            0
+        };
+        let (from, to) = (start - margin_before, end + margin_after);
+        let decoded = to - from;
+        let mut frames = Vec::with_capacity(decoded * width);
+        let mut frame = 0;
         for (row, &r) in features.data.chunks_exact(width).zip(&reps) {
             for _ in 0..r {
-                frames.extend_from_slice(row);
+                if (from..to).contains(&frame) {
+                    frames.extend_from_slice(row);
+                }
+                frame += 1;
             }
         }
         drop(features);
-        let samples = total_frames * m.hop;
+        let samples = decoded * m.hop;
         let mut noise = noise::gaussian(m.noise_channels * samples, seed);
 
-        let frames_t = Tensor::f32(env, &mut frames, &[1, total_frames as i64, width as i64])?;
+        let frames_t = Tensor::f32(env, &mut frames, &[1, decoded as i64, width as i64])?;
         let style_t = Tensor::f32(env, &mut style, &style_shape)?;
         let noise_t = Tensor::f32(
             env,
@@ -319,7 +399,11 @@ impl Voice {
             ],
             &[c"audio"],
         )?;
-        Ok(out.pop().expect("one output").data)
+        let mut audio = out.pop().expect("one output").data;
+        let cut_end = audio.len().saturating_sub(margin_after * m.hop);
+        audio.truncate(cut_end);
+        audio.drain(..(margin_before * m.hop).min(audio.len()));
+        Ok(audio)
     }
 
     /// Synthesizes any amount of phonemes, chunk by chunk, with a short pause between chunks.
@@ -397,6 +481,39 @@ fn chunk(phonemes: &str, limit: usize, count: &dyn Fn(&str) -> usize) -> Vec<Str
         }
     }
     chunks
+}
+
+/// See [`Voice::clauses`].
+fn clauses(phonemes: &str, count: &dyn Fn(&str) -> usize) -> Vec<(String, usize)> {
+    let mut out = Vec::new();
+    for clause in split_after(phonemes, &[',', ';', ':', '—']) {
+        let n = count(clause);
+        if n <= MAX_TOKENS {
+            out.push((clause.to_owned(), n));
+            continue;
+        }
+        // Too long for the model: as many words as fit, then the next ones.
+        let mut current = String::new();
+        for word in clause.split_whitespace() {
+            let candidate = if current.is_empty() {
+                word.to_owned()
+            } else {
+                format!("{current} {word}")
+            };
+            if !current.is_empty() && count(&candidate) > MAX_TOKENS {
+                let done = std::mem::replace(&mut current, word.to_owned());
+                let n = count(&done);
+                out.push((done, n));
+            } else {
+                current = candidate;
+            }
+        }
+        if !current.is_empty() {
+            let n = count(&current);
+            out.push((current, n));
+        }
+    }
+    out
 }
 
 /// Trimmed, non-empty pieces of `s`, cut after any of `marks` that is followed by whitespace.
@@ -501,6 +618,30 @@ mod tests {
         let chunks = chunk(&long_clause, MAX_TOKENS, &count);
         assert!(chunks.len() >= 3 && chunks.iter().all(|c| count(c) <= MAX_TOKENS));
         assert_eq!(chunks.join(" "), long_clause);
+    }
+
+    #[test]
+    fn streaming_cuts_only_at_clauses() {
+        let count = |s: &str| s.chars().filter(|c| c.is_alphabetic()).count();
+        let s = "aaaa bbbb, cccc dddd; eeee: ffff — gggg hhhh. iiii";
+        assert_eq!(
+            clauses(s, &count),
+            [
+                ("aaaa bbbb,".to_owned(), 8),
+                ("cccc dddd;".to_owned(), 8),
+                ("eeee:".to_owned(), 4),
+                ("ffff —".to_owned(), 4),
+                ("gggg hhhh. iiii".to_owned(), 12)
+            ]
+        );
+        // Only a clause too long for the model is cut between words.
+        let word = "x".repeat(20);
+        let long_clause = vec![word.as_str(); 60].join(" ");
+        let cut = clauses(&long_clause, &count);
+        assert_eq!(cut.len(), 3);
+        assert!(cut.iter().all(|(p, n)| *n <= MAX_TOKENS && count(p) == *n));
+        let joined: Vec<&str> = cut.iter().map(|(p, _)| p.as_str()).collect();
+        assert_eq!(joined.join(" "), long_clause);
     }
 
     #[test]
