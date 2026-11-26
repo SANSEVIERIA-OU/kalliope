@@ -248,15 +248,16 @@ fn abbreviations_and_acronyms() {
 /// A capital letter with a dot before a capitalized word is an initial, as in Festival's
 /// end-of-utterance tree and espeak-ng's English rule; unless the letter labels a noun, the
 /// next word starts a sentence, or the letter is a Roman numeral after a name (issue #10).
+/// The initials keep a light break (a comma) before the surname, not a sentence end.
 #[test]
 fn initials_and_sentence_ends() {
     check(&[
-        ("via G. Verdi 3", "via gi verdi tre"),
-        ("M. Rossi", "emme rossi"),
-        ("Ho parlato con M. Rossi.", "ho parlato con emme rossi."),
-        ("J. R. R. Tolkien", "i lunga erre erre tolkien"),
-        ("A. E. Rossi", "a e rossi"),
-        ("A. Manzoni scrisse", "a manzoni scrisse"),
+        ("via G. Verdi 3", "via gi, verdi tre"),
+        ("M. Rossi", "emme, rossi"),
+        ("Ho parlato con M. Rossi.", "ho parlato con emme, rossi."),
+        ("J. R. R. Tolkien", "i lunga erre erre, tolkien"),
+        ("A. E. Rossi", "a e, rossi"),
+        ("A. Manzoni scrisse", "a, manzoni scrisse"),
         ("la classe A. Poi basta", "la classe a. | poi basta"),
         ("Il voto è A. Poi vediamo.", "il voto è a. | poi vediamo."),
         ("la serie B. Il campionato", "la serie bi. | il campionato"),
@@ -267,7 +268,7 @@ fn initials_and_sentence_ends() {
         ("Ciao M.", "ciao emme."),
         (
             "Vado a Roma. A. Bianchi mi aspetta.",
-            "vado a roma. | a bianchi mi aspetta.",
+            "vado a roma. | a, bianchi mi aspetta.",
         ),
         ("È. Davvero", "è. | davvero"),
     ]);

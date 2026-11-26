@@ -459,6 +459,12 @@ impl<'a> Verbalizer<'a> {
     fn punctuation(&mut self, t: &Token) {
         let c = t.text.chars().next().unwrap_or(',');
         if c == '.' && self.after_initial() {
+            // A light break before the surname, none between initials ("J. R. R. Tolkien"):
+            // espeak-ng gives an initial's dot a short pause without the final fall, and a
+            // comma is that boundary for the voices. Without it "via gi verdi" runs together.
+            if !self.letter_and_dot_at(1) {
+                self.punct(',');
+            }
             return;
         }
         self.punct(c);
@@ -479,31 +485,36 @@ impl<'a> Verbalizer<'a> {
     /// one that starts sentences ("…A. Il giorno dopo"), or for a Roman numeral after a name
     /// ("Carlo V. Fu…").
     fn after_initial(&self) -> bool {
-        let Some(letter) = self.prev().filter(|p| p.is(Kind::Word)) else {
+        let Some(letter) = self.prev() else {
             return false;
         };
-        let mut chars = letter.text.chars();
-        let (Some(l), None) = (chars.next(), chars.next()) else {
-            return false;
-        };
-        let dot_glued = self.at(0).is_some_and(|t| !t.space_before);
         let Some(next) = self.next().filter(|n| n.is(Kind::Word) && n.first_upper()) else {
             return false;
         };
         let next_lower = next.text.to_lowercase();
-        // "A. E. Rossi": the next letter is another initial, even if it is also a word.
-        let next_initial = next.text.chars().count() == 1
-            && self
-                .at(2)
-                .is_some_and(|d| d.is(Kind::Punct) && d.text == "." && !d.space_before);
-        l.is_ascii_uppercase()
-            && dot_glued
-            && (next_initial || !NOT_NAMES.contains(&next_lower.as_str()))
+        self.letter_and_dot_at(-1)
+            // "A. E. Rossi": the next letter is another initial, even if it is also a word.
+            && (self.letter_and_dot_at(1) || !NOT_NAMES.contains(&next_lower.as_str()))
             && !self
                 .word_at(-2)
                 .is_some_and(|w| LETTER_LABELS.contains(&w.as_str()))
             && !(roman_value(&letter.text).is_some()
                 && self.roman_context(&letter.text, -1).is_some())
+    }
+
+    /// Whether the token at `offset` is one capital letter A–Z with a dot glued after it.
+    fn letter_and_dot_at(&self, offset: isize) -> bool {
+        let letter = self
+            .at(offset)
+            .filter(|t| t.is(Kind::Word))
+            .map(|t| t.text.as_str());
+        let mut chars = letter.unwrap_or("").chars();
+        let one_capital =
+            matches!((chars.next(), chars.next()), (Some(l), None) if l.is_ascii_uppercase());
+        one_capital
+            && self
+                .at(offset + 1)
+                .is_some_and(|d| d.is(Kind::Punct) && d.text == "." && !d.space_before)
     }
 
     // ----------------------------------------------------------------- addresses
