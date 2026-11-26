@@ -41,7 +41,7 @@ un colore con due valori diventa `dark ? scuro : chiaro`. Un tema chiaro incompl
   (lo stesso colore nei due temi: il marchio, il bianco sul pulsante);
 - un colore `-fisso` a cui il chiaro dà un altro valore;
 - un valore di un tipo nel tema scuro e di un altro nel chiaro.
-Finché non esiste nessuna regola chiara, ogni colore ha un solo valore. I colori `--app-*` che ci sono oggi (`--app-fondo`, `--app-campo`, `--app-accento`… del disegno della finestra sulla pagina «installa»)
+Finché non esiste nessuna regola chiara, ogni colore ha un solo valore. I colori `--app-*` che ci sono oggi (`--ricostruita-fondo`, `--ricostruita-campo`, `--ricostruita-accento`… del disegno della finestra sulla pagina «installa»)
 sono i valori di allora, un solo tema: quando arriva il tema chiaro, ognuno va ridisegnato, tolto o chiamato `-fisso`.
 
 **Caratteri.** Una riga `--app-carattere-NOME: url("caratteri/…/Faccia.ttf")` porta un file nel programma. Lexend (`caratteri/lexend/Lexend-wght.ttf`, tutti i pesi) è il primo. Un carattere per scrittura si
@@ -130,24 +130,24 @@ numerato in ordine di valore (`--corpo-7`, `--spazio-12`): il numero è il posto
 | `--vetro-cornice` | `rgba(14, 20, 21, 0.42)` | la cornice della riunione | 2 usi: `.chiamata` background; `.tavolo-cornice` background |
 | `--vetro-nome` | `rgba(10, 14, 15, 0.52)` | l'etichetta di un riquadro | 1 uso: `.nome` background |
 | `--vetro-riunione-filo` | `rgba(14, 20, 21, 0.6)` | la riunione accanto al filo | 1 uso: `.riunione-filo` background |
-| `--app-accento` | `#005fb8` | l'accento della finestra: «Parla», riga attiva, barra di avanzamento | 4 usi: `.f-campo.fuoco` border-bottom; `.f-parla.attivo` background; `.f-barra i` background; +1 |
-| `--app-accento-premuto` | `#004c94` | l'accento premuto | 1 uso: `.f-primario.premuto` background |
-| `--app-barra-vuota` | `#e2e2e2` | la barra di avanzamento vuota | 1 uso: `.f-barra` background |
-| `--app-bordo-attivo` | `#d0d0d0` | il bordo dei comandi chiari attivi | 2 usi: `.f-ferma.attivo, .f-ferma:enabled` border-color; `.f-annulla` border-color |
-| `--app-bordo-forte` | `#c9c9c9` | il bordo basso del campo e di «Ferma» spento | 2 usi: `.f-campo` border-bottom-color; `.f-ferma` border-color |
-| `--app-campo` | `#fdfdfd` | il campo di testo e i comandi chiari | 3 usi: `.f-campo` background; `.f-ferma.attivo, .f-ferma:enabled` background; `.f-annulla` background |
-| `--app-campo-bordo` | `#e3e3e3` | il bordo del campo di testo | 1 uso: `.f-campo` border |
-| `--app-ferma-fondo` | `#f9f9f9` | «Ferma» spento: fondo | 1 uso: `.f-ferma` background |
-| `--app-ferma-sopra` | `#f3f3f3` | «Ferma» al passaggio | 1 uso: `button.f-ferma:enabled:hover` background |
-| `--app-ferma-testo` | `#a0a0a0` | «Ferma» spento: testo | 1 uso: `.f-ferma` color |
-| `--app-fondo` | `#fafafa` | la finestra di Kalliope: fondo | 1 uso: `.finestra` background |
-| `--app-nota` | `#555` | la nota nella finestra del primo avvio | 1 uso: `.avvio .f-nota` color |
-| `--app-parla-spento` | `#c3c3c3` | «Parla» non disponibile | 1 uso: `.f-parla` background |
-| `--app-segnaposto` | `#656565` | il testo suggerito del campo | 1 uso: `.f-segnaposto` color |
-| `--app-stato` | `#eef3fb` | la riga di stato della finestra | 1 uso: `.f-stato` background |
-| `--app-stato-allarme` | `#fff4e5` | la riga di stato in allarme (variante definita, non usata dalla pagina) | 1 uso: `.f-stato.allarme` background |
-| `--app-stato-parla` | `#e8f5e9` | la riga di stato mentre parla | 1 uso: `.f-stato.parla` background |
-| `--app-testo` | `#1d1d1f` | la finestra di Kalliope: testo e cursore | 4 usi: `.finestra` color; `.f-cursore` background; `.f-ferma.attivo, .f-ferma:enabled` color; +1 |
+| `--ricostruita-accento` | `#005fb8` | l'accento della finestra: «Parla», riga attiva, barra di avanzamento | 4 usi: `.f-campo.fuoco` border-bottom; `.f-parla.attivo` background; `.f-barra i` background; +1 |
+| `--ricostruita-accento-premuto` | `#004c94` | l'accento premuto | 1 uso: `.f-primario.premuto` background |
+| `--ricostruita-barra-vuota` | `#e2e2e2` | la barra di avanzamento vuota | 1 uso: `.f-barra` background |
+| `--ricostruita-bordo-attivo` | `#d0d0d0` | il bordo dei comandi chiari attivi | 2 usi: `.f-ferma.attivo, .f-ferma:enabled` border-color; `.f-annulla` border-color |
+| `--ricostruita-bordo-forte` | `#c9c9c9` | il bordo basso del campo e di «Ferma» spento | 2 usi: `.f-campo` border-bottom-color; `.f-ferma` border-color |
+| `--ricostruita-campo` | `#fdfdfd` | il campo di testo e i comandi chiari | 3 usi: `.f-campo` background; `.f-ferma.attivo, .f-ferma:enabled` background; `.f-annulla` background |
+| `--ricostruita-campo-bordo` | `#e3e3e3` | il bordo del campo di testo | 1 uso: `.f-campo` border |
+| `--ricostruita-ferma-fondo` | `#f9f9f9` | «Ferma» spento: fondo | 1 uso: `.f-ferma` background |
+| `--ricostruita-ferma-sopra` | `#f3f3f3` | «Ferma» al passaggio | 1 uso: `button.f-ferma:enabled:hover` background |
+| `--ricostruita-ferma-testo` | `#a0a0a0` | «Ferma» spento: testo | 1 uso: `.f-ferma` color |
+| `--ricostruita-fondo` | `#fafafa` | la finestra di Kalliope: fondo | 1 uso: `.finestra` background |
+| `--ricostruita-nota` | `#555` | la nota nella finestra del primo avvio | 1 uso: `.avvio .f-nota` color |
+| `--ricostruita-parla-spento` | `#c3c3c3` | «Parla» non disponibile | 1 uso: `.f-parla` background |
+| `--ricostruita-segnaposto` | `#656565` | il testo suggerito del campo | 1 uso: `.f-segnaposto` color |
+| `--ricostruita-stato` | `#eef3fb` | la riga di stato della finestra | 1 uso: `.f-stato` background |
+| `--ricostruita-stato-allarme` | `#fff4e5` | la riga di stato in allarme (variante definita, non usata dalla pagina) | 1 uso: `.f-stato.allarme` background |
+| `--ricostruita-stato-parla` | `#e8f5e9` | la riga di stato mentre parla | 1 uso: `.f-stato.parla` background |
+| `--ricostruita-testo` | `#1d1d1f` | la finestra di Kalliope: testo e cursore | 4 usi: `.finestra` color; `.f-cursore` background; `.f-ferma.attivo, .f-ferma:enabled` color; +1 |
 | `--finestra-anello` | `rgba(0, 0, 0, 0.06)` | il filo intorno alla finestra di Kalliope | 1 uso: `.finestra` box-shadow |
 | `--finestra-chiara-anello` | `rgba(30, 39, 39, 0.08)` | il filo intorno alla finestra sulla scena chiara | 1 uso: `.scena-chiara .finestra` box-shadow |
 | `--ombra-finestra` | `rgba(5, 9, 10, 0.85)` | ombra della finestra di Kalliope | 1 uso: `.finestra` box-shadow |
@@ -1015,7 +1015,7 @@ _nessuna_
 ### Altro da decidere
 - **Gradini a numero**: le scale (`--corpo-N`, `--spazio-N`…) hanno nomi ordinali perché lo stesso valore serve ruoli diversi; dare a ogni gradino un nome di ruolo è una scelta di progetto.
 - **Testo in px**: tutte le grandezze del testo sono in px come nella pagina (non crescono con la grandezza del testo del sistema). Passarle a rem cambia la pagina per chi ha cambiato la grandezza di base.
-- **`.f-stato.allarme`** (`--app-stato-allarme`): la riga di stato in allarme della finestra è definita ma nessun elemento e nessuno script la usa; si tiene perché è uno stato della finestra ricostruita.
+- **`.f-stato.allarme`** (`--ricostruita-stato-allarme`): la riga di stato in allarme della finestra è definita ma nessun elemento e nessuno script la usa; si tiene perché è uno stato della finestra ricostruita.
 - **Colori nell'HTML**: `theme-color` (`#420017`) sta nell'HTML, non nel CSS; non è tokenizzato. Il marchio non è più qui: il verde di prima (`#2fb39a`, `#16806f`) è stato tolto, e i colori del marchio nuovo sono i token `--segno-*` (sezione «Il marchio» in fondo).
 - **Valori in `scena.js`**: curve, durate, colori delle onde e ritardi dell'arrivo scritti nello script (`ENTRA`, `rgba(255,219,225,…)` nel disegno delle onde, durate di 360/520/820/1100 ms…) non passano ancora dai token.
 

@@ -69,18 +69,18 @@
   gap: var(--spazio-5);
   padding: var(--varco-finestra-spazio-interno);
   border-radius: var(--raggio-7);
-  background: var(--app-fondo);
-  color: var(--app-testo);
+  background: var(--ricostruita-fondo);
+  color: var(--ricostruita-testo);
   font-family: var(--font-app);
   box-shadow: var(--finestra-chiara-ombra-varco);
   transition: opacity var(--durata-varco) var(--curva-dolce), transform var(--durata-varco) var(--entra), box-shadow var(--durata-varco) var(--curva-dolce);
 }
-.varco-finestra .varco-etichetta { color: var(--app-nota); font-family: var(--font-testo); }
-.varco-campo { display: block; padding: var(--riscrive-campo-spazio-interno); border-radius: var(--raggio-4); background: var(--app-campo); border: var(--filetto-sottile) solid var(--app-campo-bordo); border-bottom-color: var(--app-bordo-forte); font-size: var(--corpo-6); line-height: var(--interlinea-5); transition: box-shadow var(--durata-varco) var(--curva-dolce), outline-color var(--durata-varco) var(--curva-dolce); outline: var(--filetto-medio) dashed transparent; outline-offset: var(--spazio-1); }
-.varco-gia { margin-top: var(--spazio-7); font-size: var(--corpo-3); font-weight: var(--peso-forte); color: var(--app-nota); }
+.varco-finestra .varco-etichetta { color: var(--ricostruita-nota); font-family: var(--font-testo); }
+.varco-campo { display: block; padding: var(--riscrive-campo-spazio-interno); border-radius: var(--raggio-4); background: var(--ricostruita-campo); border: var(--filetto-sottile) solid var(--ricostruita-campo-bordo); border-bottom-color: var(--ricostruita-bordo-forte); font-size: var(--corpo-6); line-height: var(--interlinea-5); transition: box-shadow var(--durata-varco) var(--curva-dolce), outline-color var(--durata-varco) var(--curva-dolce); outline: var(--filetto-medio) dashed transparent; outline-offset: var(--spazio-1); }
+.varco-gia { margin-top: var(--spazio-7); font-size: var(--corpo-3); font-weight: var(--peso-forte); color: var(--ricostruita-nota); }
 .varco-elenco { display: flex; flex-direction: column; gap: var(--spazio-3); padding: var(--spazio-3); border-radius: var(--raggio-2); outline: var(--filetto-medio) dashed transparent; outline-offset: var(--spazio-1); transition: outline-color var(--durata-varco) var(--curva-dolce), opacity var(--durata-varco) var(--curva-dolce); }
 .varco-memoria { font-family: var(--font-testo); font-size: var(--corpo-2); line-height: var(--interlinea-1); font-weight: var(--peso-forte); color: var(--magenta); transition: opacity var(--durata-varco) var(--curva-dolce); }
-.varco-elenco i { display: block; height: var(--misura-6); border-radius: var(--raggio-1); background: var(--app-barra-vuota); }
+.varco-elenco i { display: block; height: var(--misura-6); border-radius: var(--raggio-1); background: var(--ricostruita-barra-vuota); }
 .varco-elenco i:nth-child(1) { width: 92%; }
 .varco-elenco i:nth-child(2) { width: 70%; }
 .varco-elenco i:nth-child(3) { width: 82%; }

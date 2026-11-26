@@ -9,8 +9,8 @@
      con un ruolo --app-* che lo richiama (--app-spazio-controlli: var(--spazio-10)). Il tema chiaro, quando c'è, sta in
      :root[data-tema="chiaro"]; questo :root è lo scuro. La convenzione è in TOKEN.md, «La finestra del programma». */
   /* Dimensioni all'apertura e minime, in pixel logici. */
-  --app-native-width: 560px;
-  --app-native-height: 460px;
+  --app-native-width: 920px;   /* scelta (direzione della finestra, 26/11): la scrittura grande chiede spazio; la 0.2 a 560 × 460 era «minuscola» per il proprietario. 920 × 640 sta intera su un portatile 1366 × 768 */
+  --app-native-height: 640px;   /* scelta: vedi la larghezza */
   --app-native-min-width: 360px;
   --app-native-min-height: 320px;
   --app-spazio-controlli: var(--spazio-10);   /* lo spazio comune fra i controlli della finestra */
@@ -83,24 +83,24 @@
   --vetro-cornice: rgba(14, 20, 21, 0.42);   /* la cornice della riunione */
   --vetro-nome: rgba(10, 14, 15, 0.52);   /* l'etichetta di un riquadro */
   --vetro-riunione-filo: rgba(14, 20, 21, 0.6);   /* la riunione accanto al filo */
-  --app-accento: #005fb8;   /* l'accento della finestra: «Parla», riga attiva, barra di avanzamento */
-  --app-accento-premuto: #004c94;   /* l'accento premuto */
-  --app-barra-vuota: #e2e2e2;   /* la barra di avanzamento vuota */
-  --app-bordo-attivo: #d0d0d0;   /* il bordo dei comandi chiari attivi */
-  --app-bordo-forte: #c9c9c9;   /* il bordo basso del campo e di «Ferma» spento */
-  --app-campo: #fdfdfd;   /* il campo di testo e i comandi chiari */
-  --app-campo-bordo: #e3e3e3;   /* il bordo del campo di testo */
-  --app-ferma-fondo: #f9f9f9;   /* «Ferma» spento: fondo */
-  --app-ferma-sopra: #f3f3f3;   /* «Ferma» al passaggio */
-  --app-ferma-testo: #a0a0a0;   /* «Ferma» spento: testo */
-  --app-fondo: #fafafa;   /* la finestra di Kalliope: fondo */
-  --app-nota: #555;   /* la nota nella finestra del primo avvio */
-  --app-parla-spento: #c3c3c3;   /* «Parla» non disponibile */
-  --app-segnaposto: #656565;   /* il testo suggerito del campo */
-  --app-stato: #eef3fb;   /* la riga di stato della finestra */
-  --app-stato-allarme: #fff4e5;   /* la riga di stato in allarme (variante definita, non usata dalla pagina) */
-  --app-stato-parla: #e8f5e9;   /* la riga di stato mentre parla */
-  --app-testo: #1d1d1f;   /* la finestra di Kalliope: testo e cursore */
+  --ricostruita-accento: #005fb8;   /* l'accento della finestra: «Parla», riga attiva, barra di avanzamento */
+  --ricostruita-accento-premuto: #004c94;   /* l'accento premuto */
+  --ricostruita-barra-vuota: #e2e2e2;   /* la barra di avanzamento vuota */
+  --ricostruita-bordo-attivo: #d0d0d0;   /* il bordo dei comandi chiari attivi */
+  --ricostruita-bordo-forte: #c9c9c9;   /* il bordo basso del campo e di «Ferma» spento */
+  --ricostruita-campo: #fdfdfd;   /* il campo di testo e i comandi chiari */
+  --ricostruita-campo-bordo: #e3e3e3;   /* il bordo del campo di testo */
+  --ricostruita-ferma-fondo: #f9f9f9;   /* «Ferma» spento: fondo */
+  --ricostruita-ferma-sopra: #f3f3f3;   /* «Ferma» al passaggio */
+  --ricostruita-ferma-testo: #a0a0a0;   /* «Ferma» spento: testo */
+  --ricostruita-fondo: #fafafa;   /* la finestra di Kalliope: fondo */
+  --ricostruita-nota: #555;   /* la nota nella finestra del primo avvio */
+  --ricostruita-parla-spento: #c3c3c3;   /* «Parla» non disponibile */
+  --ricostruita-segnaposto: #656565;   /* il testo suggerito del campo */
+  --ricostruita-stato: #eef3fb;   /* la riga di stato della finestra */
+  --ricostruita-stato-allarme: #fff4e5;   /* la riga di stato in allarme (variante definita, non usata dalla pagina) */
+  --ricostruita-stato-parla: #e8f5e9;   /* la riga di stato mentre parla */
+  --ricostruita-testo: #1d1d1f;   /* la finestra di Kalliope: testo e cursore */
   --finestra-anello: rgba(0, 0, 0, 0.06);   /* il filo intorno alla finestra di Kalliope */
   --finestra-chiara-anello: rgba(30, 39, 39, 0.08);   /* il filo intorno alla finestra sulla scena chiara */
   --ombra-finestra: rgba(5, 9, 10, 0.85);   /* ombra della finestra di Kalliope */
@@ -1530,3 +1530,147 @@
 :root { --riunione-catalogo-altezza: 844px; } /* scelta: una finestra viva alta come il telefono di confronto */
 
 :root { --riunione-guida-aria-telefono: 32px; } /* scelta: distacco fra testo e bordo delle scene sovrapposte al telefono */
+
+/* La finestra del programma, direzione «La frase che si accende» (direzione della finestra, 26/11/2026; proposta, non ancora
+   approvata). Il :root è il tema scuro; :root[data-tema="chiaro"] più sotto è il chiaro. Fonti: «fonte:» il sito (base misurata,
+   design/lavoro/4-app/direzione/base.json) o il marchio; «visione:» i colori approvati dal proprietario il 26/11 (visione.json);
+   «scelta:» una scelta di chi rende, con il perché. Ruoli e prove: TOKEN.md, «La finestra: direzione del 26/11». */
+:root {
+  /* Superfici e testo */
+  --app-fondo: var(--fondo);   /* visione: la stanza grafite; il fondo della finestra */
+  --app-barra: var(--barra-piena);   /* visione: la barra in alto, piena */
+  --app-campo: rgba(242, 245, 244, 0.04);   /* scelta: il fondo della scrittura, appena più chiaro della stanza (il --testo al 4%) perché la bolla tratteggiata si legga come un luogo */
+  --app-pannello: var(--riquadro-scuro);   /* visione: un pannello che si apre (voce, informazioni) */
+  --app-velo-modale: rgba(10, 14, 15, 0.6);   /* fonte: il colore di --ombra-bolla, meno denso; il velo sotto un pannello aperto */
+  --app-testo: var(--testo);   /* visione: il testo */
+  --app-testo-tenue: var(--testo-secondario);   /* fonte: il testo di sostegno del sito */
+  --app-testo-spento: var(--testo-spento);   /* fonte: ciò che non si può usare adesso */
+  --app-segnaposto: rgba(242, 245, 244, 0.46);   /* scelta: il suggerimento nel campo, più tenue del testo spento perché non sembri già scritto */
+  --app-bordo: var(--bordo-cornice);   /* fonte: il filo che divide */
+  --app-bordo-comando: var(--bordo-comando-quieto);   /* fonte: il bordo di un comando secondario */
+  --app-velo-sopra: var(--velo-sopra);   /* fonte: al passaggio del puntatore */
+  --app-velo-scelto: var(--velo-scelto);   /* fonte: una frase scelta o al passaggio */
+  --app-velo-premuto: var(--velo-menu-premuto);   /* fonte: premuto */
+  --app-ombra: var(--ombra-bolla);   /* fonte: l'ombra della bolla */
+
+  /* L'azione, la voce, il tratteggio del «non ancora detto» */
+  --app-azione: var(--azione);   /* visione: l'unico colore di ciò che si preme per parlare o per andare avanti */
+  --app-azione-sopra: var(--azione-sopra);   /* fonte: l'azione al passaggio */
+  --app-azione-testo: var(--azione-testo);   /* visione: il testo sull'azione */
+  --app-voce: var(--voce);   /* visione: la voce che suona: barre, anelli, il fuoco */
+  --app-tratteggio: rgba(145, 223, 189, 0.5);   /* scelta: il contorno tratteggiato della scrittura, il --azione a metà: il «non ancora detto» del marchio, in verde acqua perché nella finestra il rosa è del marchio soltanto */
+  --app-tratteggio-fuoco: var(--azione);   /* visione: il tratteggio quando la scrittura ha il fuoco */
+  --app-bolla: var(--testo);   /* fonte: la bolla chiara della home, dove la voce dice la frase */
+  --app-bolla-testo: var(--scuro);   /* visione: le parole già dette nella bolla */
+  --app-bolla-da-dire: rgba(23, 29, 29, 0.34);   /* fonte: le parole non ancora dette della bolla della home (--scuro, attenuato) */
+  --app-detta: var(--velo-comando);   /* fonte: una frase già detta, nella cronologia */
+  --app-registra-fisso: var(--segno-colore);   /* fonte: il rosa del marchio, per il solo «registra»: la voce propria nasce con il colore della bolla del logo */
+  --app-segno-fisso: var(--segno-colore);   /* fonte: il colore del marchio, uguale nei due temi */
+
+  /* Ciò che non va: nessuno ascolta, manca il microfono, la voce non parte */
+  --app-attenzione: var(--paola-pelle);   /* visione: la tinta calda dei partecipanti approvata il 26/11; il solo colore caldo della finestra, per dire che la voce non arriva */
+  --app-attenzione-fondo: rgba(201, 144, 120, 0.16);   /* visione: --paola-corpo al 16%, il fondo della riga di stato quando qualcosa non va */
+
+  /* Le voci come partecipanti: ogni voce ha la tinta di un riquadro della riunione del sito */
+  --app-tinta-propria: var(--tu-fondo-alto);   /* visione: la voce propria ha la tinta di «Tu» */
+  --app-tinta-voce-1: var(--paola-fondo-alto);   /* visione: Giulia, la tinta di Paola */
+  --app-tinta-voce-2: var(--luca-fondo-alto);   /* visione: Marco, la tinta di Luca */
+  --app-tinta-voce-3: var(--anna-fondo-alto);   /* visione: un'altra voce propria, la tinta di Anna */
+
+  /* Caratteri e scala del testo (al 100%; il testo regolabile li moltiplica tutti) */
+  --app-peso-medio: var(--peso-medio);   /* fonte: la bolla della home, 500 */
+  --app-peso-titolo: var(--peso-titolo);   /* fonte: il titolo della home, 700 */
+  --app-corpo-scrittura: 30px;   /* scelta: ciò che si scrive, grande come il testo di lettura della finestra di Kalipso fatto stare in una finestra da 920 (~40 px a 800 nelle sue foto): leggibile da chi ha poca energia e da chi guarda lo schermo accanto */
+  --app-corpo-bolla: 24px;   /* fonte: la bolla della home, 24 px (D2) */
+  --app-corpo-detta: var(--corpo-8);   /* fonte: 17 px, una frase già detta */
+  --app-corpo-comando: var(--corpo-7);   /* fonte: 16 px, i comandi */
+  --app-corpo-stato: var(--corpo-6);   /* fonte: 15 px, la spiegazione dello stato */
+  --app-corpo-nota: var(--corpo-4);   /* fonte: 13 px, una nota */
+  --app-corpo-marchio: var(--corpo-9);   /* fonte: 18 px, «Kalliope» accanto al logo */
+  --app-corpo-titolo: 28px;   /* scelta: il titolo di un passo della voce propria, una frase che dice che cosa fare (come «Read the Phrase» di Apple Personal Voice) */
+  --app-corpo-lettura: 34px;   /* scelta: il testo da leggere ad alta voce, il più grande della finestra: si legge a un braccio dallo schermo con il microfono davanti */
+  --app-scala-passo: 0.25;   /* scelta: un gradino del testo regolabile (100, 125, 150, 175, 200%) */
+  --app-scala-massima: 2;   /* scelta: il testo arriva al 200%, come le prove di Kalipso */
+
+  /* Spazi e misure */
+  --app-spazio-minimo: var(--spazio-3);   /* fonte: 4 px */
+  --app-spazio-stretto: var(--spazio-7);   /* fonte: 8 px */
+  --app-spazio-medio: var(--spazio-14);   /* fonte: 16 px */
+  --app-spazio-largo: var(--spazio-18);   /* fonte: 24 px, il margine della finestra */
+  --app-spazio-ampio: var(--spazio-26);   /* fonte: 48 px */
+  --app-altezza-barra: var(--spazio-28);   /* fonte: la barra del sito al telefono, 56 px */
+  --app-altezza-comando: var(--spazio-25);   /* fonte: 44 px, un comando */
+  --app-altezza-comando-piccolo: var(--spazio-21);   /* fonte: 34 px, un comando nella barra e nella cronologia */
+  --app-marchio: var(--spazio-20);   /* fonte: 30 px, il logo nella barra */
+  --app-punto: var(--spazio-8);   /* fonte: 10 px, il punto dello stato */
+  --app-barra-voce: var(--spazio-3);   /* fonte: 4 px, una barra della voce (le barre di «Tu» nella home) */
+  --app-barra-voce-alta: var(--spazio-15);   /* fonte: 18 px, la barra della voce più alta */
+  --app-tratto: var(--spazio-2);   /* fonte: 3 px, il contorno della scrittura e il bordo di chi parla (D2) */
+  --app-tratteggio-pieno: var(--spazio-12);   /* fonte: 14, il trattino del contorno del marchio (marchio/disegno.json, tratteggio 14 9) */
+  --app-tratteggio-vuoto: var(--spazio-8);   /* fonte: 10, lo spazio fra i trattini del marchio (9 nella tela, 10 per stare sulla griglia) */
+  --app-raggio-bolla: var(--raggio-12);   /* fonte: 24 px, la bolla della home */
+  --app-raggio-coda: var(--raggio-4);   /* fonte: 6 px, l'angolo della coda della bolla, in basso all'inizio come nel logo */
+  --app-raggio-scrittura: var(--raggio-13);   /* fonte: 26 px, la scrittura è una bolla più grande */
+  --app-raggio-pannello: var(--raggio-10);   /* fonte: 20 px, i riquadri della riunione */
+  --app-raggio-pillola: 999px;   /* fonte: le pillole del sito */
+  --app-ombra-sfocatura: var(--spazio-18);   /* fonte: 24 px, l'ombra della bolla */
+  --app-ombra-scarto: var(--spazio-7);   /* fonte: 8 px */
+  --app-bolla-larghezza: 720px;   /* scelta: la bolla che parla non va oltre ~60 caratteri per riga a 24 px */
+  --app-scrittura-altezza: 200px;   /* scelta: l'altezza della scrittura all'apertura (cresce con la finestra) */
+  --app-scrittura-altezza-minima: 112px;   /* scelta: due righe di scrittura e la riga dei comandi */
+  --app-livello-altezza: 72px;   /* scelta: il livello del microfono mentre si registra */
+  --app-registra-diametro: 76px;   /* scelta: il tondo «registra», grande come lo stop di Apple Personal Voice in proporzione */
+  --app-scelta-altezza: 168px;   /* scelta: le due strade per creare la voce (registra, importa) */
+  --app-compatta-larghezza: 400px;   /* scelta: la modalità riunione accanto alla finestra di Zoom o Meet su uno schermo da 1366 */
+  --app-compatta-altezza: 300px;   /* scelta: stato, scrittura e Ferma, niente altro */
+  --app-spostamento-entrata: var(--spazio-18);   /* fonte: 24 px, i riquadri entrano dal basso di 24 px (D2) */
+  --app-scala-coda: 0.6;   /* fonte: la bolla nasce dalla coda da 0,6 a 1 (D2) */
+
+  /* Movimento */
+  --app-curva-entrata: cubic-bezier(0.19, 1, 0.22, 1);   /* fonte: la curva delle trasformazioni del sito */
+  --app-curva-dolce: var(--curva-dolce);   /* fonte: ease, i colori del sito */
+  --app-curva-lineare: var(--curva-lineare);   /* fonte: linear, le opacità del sito */
+  --app-durata-bolla: 520ms;   /* fonte: la bolla nasce dalla coda in 520 ms (D2) */
+  --app-durata-parola: 360ms;   /* fonte: una parola ogni 0,36 s nella bolla della home (17 parole in 6085 ms, misurato) */
+  --app-durata-scurisce: 200ms;   /* fonte: 200 ms ease, il cambio di colore del sito */
+  --app-durata-dissolvenza: 160ms;   /* fonte: 160 ms lineare, le opacità del sito */
+  --app-durata-pannello: 300ms;   /* fonte: 300 ms, una trasformazione del sito */
+  --app-durata-pannello-uscita: 240ms;   /* fonte: 240 ms, l'uscita un po' più breve dell'entrata */
+  --app-durata-barre: 460ms;   /* fonte: 460 ms, una trasformazione del sito: il respiro delle barre della voce */
+  --app-durata-cammino: 1400ms;   /* fonte: 1,4 s, la durata più lunga del sito: il tratteggio che cammina mentre la voce si prepara */
+  --app-durata-anello: 900ms;   /* fonte: l'anello va da «Tu» all'ultimo riquadro in 900 ms (D2) */
+}
+
+:root[data-tema="chiaro"] {
+  --app-fondo: var(--testo);   /* visione: la stanza chiara è il testo chiaro approvato */
+  --app-barra: var(--chiara-fondo-basso);   /* visione: la scena chiara del sito */
+  --app-campo: var(--bianco);   /* fonte: il bianco del sistema */
+  --app-pannello: var(--bianco);   /* fonte: il bianco */
+  --app-velo-modale: rgba(23, 29, 29, 0.32);   /* visione: --scuro al 32% */
+  --app-testo: var(--scuro);   /* visione: il testo scuro */
+  --app-testo-tenue: var(--testo-nota-chiara);   /* fonte: la nota sulla scena chiara */
+  --app-testo-spento: rgba(23, 29, 29, 0.46);   /* visione: --scuro al 46% */
+  --app-segnaposto: rgba(23, 29, 29, 0.42);   /* visione: --scuro al 42% */
+  --app-bordo: rgba(23, 29, 29, 0.12);   /* visione: --scuro al 12% */
+  --app-bordo-comando: var(--bordo-rivedi-chiaro);   /* fonte: il bordo di «Rivedi» sulla scena chiara */
+  --app-velo-sopra: rgba(23, 29, 29, 0.05);   /* visione: --scuro al 5% */
+  --app-velo-scelto: rgba(23, 29, 29, 0.09);   /* visione: --scuro al 9% */
+  --app-velo-premuto: rgba(23, 29, 29, 0.14);   /* visione: --scuro al 14% */
+  --app-ombra: rgba(30, 39, 39, 0.22);   /* fonte: l'ombra della finestra sulla scena chiara, meno densa */
+  --app-azione: var(--magenta);   /* visione: il verde acqua profondo approvato (--magenta, nome storico): sul chiaro il menta non si stacca dal fondo */
+  --app-azione-sopra: #1f6a52;   /* scelta: il verde acqua profondo un gradino più scuro, al passaggio */
+  --app-azione-testo: var(--bianco);   /* fonte: il bianco sui comandi pieni */
+  --app-voce: var(--magenta);   /* visione: la voce che suona, sul chiaro */
+  --app-tratteggio: rgba(39, 121, 95, 0.5);   /* visione: --magenta a metà */
+  --app-tratteggio-fuoco: var(--magenta);   /* visione */
+  --app-bolla: var(--fondo);   /* visione: nella stanza chiara la bolla che parla è grafite: è sempre il contrario della stanza */
+  --app-bolla-testo: var(--testo);   /* visione */
+  --app-bolla-da-dire: rgba(242, 245, 244, 0.4);   /* visione: --testo al 40%, come le parole non ancora dette di D2 */
+  --app-detta: rgba(23, 29, 29, 0.06);   /* visione: --scuro al 6% */
+  --app-attenzione: #8f4f36;   /* scelta: la tinta calda di --paola-ombra scurita perché si legga sul chiaro */
+  --app-attenzione-fondo: rgba(201, 144, 120, 0.2);   /* visione: --paola-corpo al 20% */
+  --app-tinta-propria: var(--voce);   /* visione: «Tu» sul chiaro è la voce */
+  --app-tinta-voce-1: var(--paola-corpo);   /* visione */
+  --app-tinta-voce-2: var(--luca-corpo);   /* visione */
+  --app-tinta-voce-3: var(--anna-corpo);   /* visione */
+}

@@ -198,10 +198,10 @@
 .riscrive-da {
   padding: var(--riscrive-campo-spazio-interno);
   border-radius: var(--raggio-4);
-  background: var(--app-campo);
-  border: var(--filetto-sottile) solid var(--app-campo-bordo);
-  border-bottom-color: var(--app-bordo-forte);
-  color: var(--app-testo);
+  background: var(--ricostruita-campo);
+  border: var(--filetto-sottile) solid var(--ricostruita-campo-bordo);
+  border-bottom-color: var(--ricostruita-bordo-forte);
+  color: var(--ricostruita-testo);
   font-family: var(--font-app);
   font-size: var(--corpo-5);
   line-height: var(--interlinea-3);

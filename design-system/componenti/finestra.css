@@ -10,20 +10,20 @@
   max-width: 100%;
   font-family: var(--font-app);
   font-size: var(--corpo-5);
-  color: var(--app-testo);
-  background: var(--app-fondo);
+  color: var(--ricostruita-testo);
+  background: var(--ricostruita-fondo);
   border-radius: var(--finestra-raggio);
   padding: var(--spazio-8);
   box-shadow: var(--finestra-ombra);
 }
 .f-stato {
-  background: var(--app-stato);
+  background: var(--ricostruita-stato);
   border-radius: var(--raggio-4);
   padding: var(--f-stato-spazio-interno);
   line-height: var(--f-stato-interlinea);
   transition: background-color var(--durata-f-stato) var(--curva-dolce);
 }
-.f-stato.parla { background: var(--app-stato-parla); }
+.f-stato.parla { background: var(--ricostruita-stato-parla); }
 .f-riga { display: flex; gap: var(--spazio-7); margin-top: var(--spazio-7); }
 .f-campo {
   position: relative;
@@ -33,26 +33,26 @@
   padding: var(--spazi-1);
   overflow: hidden;
   white-space: nowrap;
-  background: var(--app-campo);
-  border: var(--filetto-sottile) solid var(--app-campo-bordo);
-  border-bottom-color: var(--app-bordo-forte);
+  background: var(--ricostruita-campo);
+  border: var(--filetto-sottile) solid var(--ricostruita-campo-bordo);
+  border-bottom-color: var(--ricostruita-bordo-forte);
   border-radius: var(--raggio-2);
   display: flex;
   align-items: center;
 }
-.f-segnaposto { color: var(--app-segnaposto); overflow: hidden; text-overflow: ellipsis; }
+.f-segnaposto { color: var(--ricostruita-segnaposto); overflow: hidden; text-overflow: ellipsis; }
 .f-linea { display: inline-flex; align-items: center; white-space: pre; }
 .f-campo.pieno .f-segnaposto { display: none; }
 .f-cursore {
   display: none;
   width: var(--misura-1);
   height: var(--misura-9);
-  background: var(--app-testo);
+  background: var(--ricostruita-testo);
   margin-inline-start: var(--f-cursore-margine-inizio);
   flex: none;
 }
 .f-campo.fuoco .f-cursore { display: block; animation: lampeggia var(--durata-f-campo-f-cursore) var(--curva-a-scatti) infinite; }
-.f-campo.fuoco { border-bottom: var(--filetto-medio) solid var(--app-accento); }
+.f-campo.fuoco { border-bottom: var(--filetto-medio) solid var(--ricostruita-accento); }
 @keyframes lampeggia {
   50% { opacity: 0; }
 }
@@ -69,12 +69,12 @@
   border: var(--filetto-sottile) solid transparent;
   transition: background-color var(--durata-f-pulsante), color var(--durata-f-pulsante);
 }
-.f-parla { background: var(--app-parla-spento); color: var(--bianco); }
-.f-parla.attivo { background: var(--app-accento); }
-.f-ferma { background: var(--app-ferma-fondo); color: var(--app-ferma-testo); border-color: var(--app-bordo-forte); }
-.f-ferma.attivo, .f-ferma:enabled { background: var(--app-campo); color: var(--app-testo); border-color: var(--app-bordo-attivo); }
+.f-parla { background: var(--ricostruita-parla-spento); color: var(--bianco); }
+.f-parla.attivo { background: var(--ricostruita-accento); }
+.f-ferma { background: var(--ricostruita-ferma-fondo); color: var(--ricostruita-ferma-testo); border-color: var(--ricostruita-bordo-forte); }
+.f-ferma.attivo, .f-ferma:enabled { background: var(--ricostruita-campo); color: var(--ricostruita-testo); border-color: var(--ricostruita-bordo-attivo); }
 button.f-ferma:enabled, button.f-parla:enabled { cursor: pointer; }
-button.f-ferma:enabled:hover { background: var(--app-ferma-sopra); }
+button.f-ferma:enabled:hover { background: var(--ricostruita-ferma-sopra); }
 .sotto { animation: sale var(--durata-sotto) var(--entra) var(--ritardo-sotto) backwards; }
 @media (max-width: 760px) {
   .sotto { margin-top: var(--sotto-margine-sopra-telefono); }
@@ -93,24 +93,24 @@ button.f-ferma:enabled:hover { background: var(--app-ferma-sopra); }
   width: var(--finestra-larghezza-2);
   font-size: var(--corpo-6);
 }
-.avvio .f-nota { margin: var(--f-nota-margine); font-size: var(--corpo-4); color: var(--app-nota); }
+.avvio .f-nota { margin: var(--f-nota-margine); font-size: var(--corpo-4); color: var(--ricostruita-nota); }
 .f-scarico { display: none; margin-top: var(--spazio-8); }
 .avvio.scarica .f-scarico { display: block; }
-.f-barra { display: block; height: var(--misura-4); border-radius: var(--raggio-2); background: var(--app-barra-vuota); overflow: hidden; }
-.f-barra i { display: block; height: 100%; background: var(--app-accento); transform-origin: var(--origine-inizio-x) 50%; transform: scaleX(0); }
+.f-barra { display: block; height: var(--misura-4); border-radius: var(--raggio-2); background: var(--ricostruita-barra-vuota); overflow: hidden; }
+.f-barra i { display: block; height: 100%; background: var(--ricostruita-accento); transform-origin: var(--origine-inizio-x) 50%; transform: scaleX(0); }
 .f-riga-scarica { margin-top: var(--spazio-8); }
 .avvio.pronta .f-riga-scarica, .avvio.prepara .f-riga-scarica { display: none; }
 .f-primario {
-  background: var(--app-accento);
+  background: var(--ricostruita-accento);
   color: var(--bianco);
   padding: var(--spazi-2);
   transition: transform var(--durata-f-primario) var(--curva-dolce), background-color var(--durata-f-primario) var(--curva-dolce);
 }
-.f-primario.premuto { transform: scale(var(--f-primario-scala)); background: var(--app-accento-premuto); }
-.f-annulla { background: var(--app-campo); color: var(--app-testo); border-color: var(--app-bordo-attivo); }
+.f-primario.premuto { transform: scale(var(--f-primario-scala)); background: var(--ricostruita-accento-premuto); }
+.f-annulla { background: var(--ricostruita-campo); color: var(--ricostruita-testo); border-color: var(--ricostruita-bordo-attivo); }
 .f-campo.spento { opacity: var(--opacita-f-campo); }
 .avvio.pronta .f-campo.spento { opacity: 1; }
-.f-stato.allarme { background: var(--app-stato-allarme); }
+.f-stato.allarme { background: var(--ricostruita-stato-allarme); }
 /* correzioni 6b: quando la colonna è stretta (tavoletta 761-880 px, e 1181-1400 px dove la riunione ha accanto il testo) la finestra
    della riunione, tirata su di 22 px a destra, copriva la fine della nota «Le frasi che dici restano qui, per ripeterle.»: allora sta
    sotto la finestra di Kalliope, senza sovrapporsi. La larghezza si misura sulla colonna, non sullo schermo */

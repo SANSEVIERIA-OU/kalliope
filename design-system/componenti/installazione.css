@@ -185,8 +185,8 @@
   padding: var(--spazio-7) var(--spazio-10);
   border-radius: var(--raggio-4);
   border: var(--filetto-sottile) solid var(--frase-finestra-bordo);
-  background: var(--app-campo);
-  color: var(--app-testo);
+  background: var(--ricostruita-campo);
+  color: var(--ricostruita-testo);
   font-family: var(--font-app);
   font-size: var(--corpo-4);
   line-height: var(--interlinea-4);
@@ -194,7 +194,7 @@
 }
 .frase-bottone { cursor: pointer; transition: border-color var(--durata-voce-bordo) var(--curva-dolce), background-color var(--durata-voce-sfondo) var(--curva-dolce); }
 .frase-bottone:hover { border-color: var(--bordeaux); }
-.frase-bottone[aria-pressed="true"] { background: var(--app-stato-allarme); border-color: var(--bordeaux); }
+.frase-bottone[aria-pressed="true"] { background: var(--ricostruita-stato-allarme); border-color: var(--bordeaux); }
 .frasi-finestra .frase-rimedio { max-width: none; margin: var(--spazio-5) 0 0; font-size: var(--corpo-5); line-height: var(--interlinea-5); color: var(--testo-spiegazione-chiara); }
 .frase-rimedio a, .passo-apri .nota-passo a { color: var(--bordeaux); font-weight: var(--peso-forte); text-decoration-color: var(--bordo-rivedi-chiaro); }
 .passo-apri .nota-passo { color: var(--testo-nota-chiara) !important; }
