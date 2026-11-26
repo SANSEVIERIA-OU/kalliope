@@ -33,7 +33,14 @@ per i caratteri stanno in `materiali-locali/playwright/`. I campioni vocali, i m
   `tools/marchio.py`: la costruzione lo mette nella barra di ogni pagina e nell'icona della scheda, i pacchetti lo installano
   come icona del programma. Il verde del logo di prima non c'è più (la nota di `design/direzione-2/D2.md` è superata).
 - **Pubblicare** (19/11/2026): il proprietario ha detto di «cominciare a mergiare in main e caricare il nuovo sito». Il sito
-  nuovo va in linea con le pagine fatte; le altre arrivano una alla volta. Ogni push resta un passo detto al proprietario.
+  nuovo va in linea con le pagine fatte; le altre arrivano una alla volta.
+- **Commit, push e release senza chiedere** (decisione del proprietario del 26/11/2026, che supera le regole «ogni push si chiede»
+  più sotto): «man mano che sviluppi, TESTI (e2e e personas come "utente deficiente", compreso test di UX e UI GUARDANDO) e tutto
+  funziona e ti soddisfa, per me puoi fare commit e push e nuova release». Vale per i commit, il push su `main`, la ripubblicazione
+  del sito, le release con AUR e il caricamento nella release `assets`. La condizione è sempre la stessa: prove da capo a fondo
+  sul programma o sul sito veri, il giro con le personas di #20 (compreso il principiante che non legge e sbaglia), prove di UX e
+  UI con foto e video guardati, e un risultato che soddisfa. Le scelte d'aspetto restano del proprietario: la direzione resa si
+  mostra prima di costruirla.
 - **Il sito completo ha il via alla pubblicazione del 26/11/2026.** La guida «In riunione»
   comprende la ricerca di «Aiuto». «Ascolta» apre i tre campioni della home, con Giulia e Marco. I vecchi indirizzi
   passano dalle regole di `website/rimandi.json`. La 404 usa gli stili condivisi e funziona anche a indirizzi profondi.
@@ -57,8 +64,8 @@ per i caratteri stanno in `materiali-locali/playwright/`. I campioni vocali, i m
   programma e a noi l'onere di tenerlo aggiornato così come il modello kyutai». Proposta approvata il 19/11/2026 («ok per tutto»): una release
   di GitHub di Kalliope fa da magazzino dei file, i pacchetti contengono tutto (Giulia e Marco compresi), un controllo ogni
   settimana segnala le versioni nuove (`design/lavoro/STATO.md`, P-2). Costruito il 19/11/2026: i file stanno in `tools/assets.json`,
-  l'aggiornamento in `docs/releasing.md`. Caricare i file nella release `assets` e pubblicare si chiede ogni volta, e la release
-  va creata prima del push, perché la CI scarica da lì. Le dipendenze del programma si portano tutte all'ultima versione («si, aggiorniamo
+  l'aggiornamento in `docs/releasing.md`. La release `assets` va creata prima del push, perché la CI scarica da lì (caricare e
+  pubblicare: vedi «Commit, push e release senza chiedere»). Le dipendenze del programma si portano tutte all'ultima versione («si, aggiorniamo
   tutto», P-1).
 - **Rilasci e AUR** (scelte del proprietario del 20/11/2026, fra le alternative proposte dopo la ricerca, `design/lavoro/ricerca/rilasci.md`).
   - Le release si fanno con il nostro strumento: `tools/version.py` e `CHANGELOG.md` scritto a mano per chi usa Kalliope.
@@ -69,8 +76,8 @@ per i caratteri stanno in `materiali-locali/playwright/`. I campioni vocali, i m
   - La ricetta su AUR (PKGBUILD e `.SRCINFO`) resta sotto la SANSEVIERIA 1.1 come il resto del repository, non 0BSD (scelta del
     proprietario del 20/11/2026).
   - La 0.1 è pubblicata su GitHub dal 20/11/2026 e su AUR dal 26/11/2026 come [kalliope-bin 0.1-1](https://aur.archlinux.org/packages/kalliope-bin).
-  - Per un repository pubblico GitHub Actions è gratuito. Una release parte con un push su `main`, quindi resta un passo chiesto al
-    proprietario ogni volta.
+  - Per un repository pubblico GitHub Actions è gratuito. Una release parte con un push su `main` che cambia la versione (dal
+    26/11/2026 senza chiedere, alle condizioni di «Commit, push e release senza chiedere»).
 - **Il telefono** (17/11/2026): «non è per telefono: è solo desktop per il momento». Il sito non dice «non ancora» per
   il telefono.
 
@@ -151,8 +158,8 @@ mondo.»
   (`docs/translating.md`); una lingua con voci mancanti o da rivedere non si pubblica. I testi da tradurre si segnano
   nell'HTML con `data-t`; `tools/translations.py check`, `tools/css_logico.py` (niente sinistra/destra nel CSS) e
   `tools/test_translations.py` girano in CI. Le pseudo-lingue `en-XA` e `ar-XB` si costruiscono solo per le prove.
-- **Un push su `main` che tocca `website/`, `design-system/` o `tools/site.py` ripubblica il sito.** Il push si fa
-  solo su autorizzazione esplicita del proprietario, ogni volta.
+- **Un push su `main` che tocca `website/`, `design-system/` o `tools/site.py` ripubblica il sito.** Dal 26/11/2026 il
+  push non si chiede più, alle condizioni di «Commit, push e release senza chiedere».
 
 ## Come si lavora
 
