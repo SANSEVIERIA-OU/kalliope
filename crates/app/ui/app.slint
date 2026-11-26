@@ -36,6 +36,7 @@ export component AppWindow inherits Window {
     property <bool> can-speak: root.phase == Phase.ready || root.phase == Phase.speaking;
 
     main-scroll := ScrollView {
+        horizontal-scrollbar-policy: always-off;
         content-width: self.visible-width;
         content-height: max(self.visible-height, content.min-height);
         content := VerticalBox {
@@ -101,8 +102,9 @@ export component AppWindow inherits Window {
             }
 
             history-list := ListView {
+                horizontal-scrollbar-policy: always-off;
                 vertical-stretch: 1;
-                min-height: NativeTokens.spacing * 4;
+                min-height: max(NativeTokens.spacing * 4, history-button-measure.min-height + NativeTokens.spacing);
                 for phrase in root.history: HorizontalBox {
                     width: history-list.visible-width;
                     spacing: NativeTokens.spacing;
@@ -168,6 +170,8 @@ export component AppWindow inherits Window {
     }
     // Measure two lines with the active platform font, independently of status text.
     status-lines := Text { text: "M\nM"; visible: false; }
+    // Keep a full native row visible even when the platform increases control height.
+    history-button-measure := Button { text: "Ripeti"; visible: false; enabled: false; }
 
     about-popup := PopupWindow {
         width: max(root.width, NativeTokens.min-window-width);
@@ -194,6 +198,7 @@ export component AppWindow inherits Window {
                         padding: 0px;
                         spacing: NativeTokens.spacing;
                         about-scroll := ScrollView {
+                            horizontal-scrollbar-policy: always-off;
                             content-width: self.visible-width;
                             content-height: max(self.visible-height, about.min-height);
                             about := VerticalBox {
