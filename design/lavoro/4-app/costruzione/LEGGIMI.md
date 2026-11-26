@@ -95,3 +95,13 @@ Movimenti toccati (`movimento-visibile.mjs`, video del gesto, zona della cronolo
 - Provato dal binario ma non da una persona: tutto ciò che sta in `costruzione-personas.md`; il proprietario vede la finestra finita prima del rilascio.
 - Test e strumenti aggiunti: `KALLIOPE_AVANZAMENTO=1` (traccia con l'orologio di sistema), `KALLIOPE_SENZA_PRIMO_PIANO=1` (si comporta come sotto Wayland), `KALLIOPE_DEMO_FOTO=file.ppm` (la finestra di prova si fotografa da sola),
   `tools/portale_finto.py --scegli FILE|@CONTROLLO --annulla --ritardo --registro` (risponde a `FileChooser.OpenFile`, 5 test).
+
+## Impronte e verifiche sugli stessi file finali
+
+- Ramo `direzione-finestra`, commit `6639bef` (sopra `c57d0cd`, 4 commit di costruzione). Albero `crates/ design-system/ tools/ Cargo.toml Cargo.lock`: sha256 `a2dd666f49770fa4…`. Binario di rilascio `target-direzione/release/kalliope`: sha256 `c3c746345701deae…`.
+- `cargo fmt --all -- --check` pulito; `cargo clippy --workspace --all-targets -- -D warnings` pulito; `cargo test --workspace` con i modelli: verde (73 test nell'app, 11 in `kalliope-mic`, 14+9 nei token, 19+2+3 nella voce, 6+5 in `kalliope-sample`, e gli altri);
+  `python3 -I -m unittest discover -s tools -p 'test_*.py'`: 214 test, verde; `tools/slint_valori.py`: nessun valore scritto a mano.
+- Misure rifatte sul binario finale (`costruzione-prove/misure/finale-*.txt`): demo a riposo 28 MB e 0,25% di un core; motore vero a riposo 135 MB e 0,4%; parlando per 20 s 6,8% di un core (voce 4,4%, finestra 2,4%), picco 247 MB, a riposo di nuovo 136 MB.
+  (Le prove con la tastiera e le foto sono state fatte sui binari intermedi, di cui l'ultimo cambia dal finale solo per le correzioni descritte nei commit `684ab0e` e successivo, ripetute a mano sul binario rapido: fuoco dopo «Riunione», «Aiuto», scorrimento dei riconoscimenti, «ne mancano» a capo.)
+- Test che falliscono sulla copia di prima: `a_name_of_only_spaces…` (nome valido, vedi `crea.rs`), `a_missing_or_forbidden_file_is_explained_without_the_system_s_english`, `what_a_killed_kalliope_left_goes_at_the_next_start_and_what_runs_stays`,
+  `the_extensions_offered_to_the_chooser_cover_the_formats_in_both_cases`, `only_a_wayland_session_leaves_staying_on_top_to_the_person`, i nove di `avanzamento.rs`, i tredici di `crea.rs`, i due di `guida.rs`, i cinque di `tools/test_portale_finto.py`.
