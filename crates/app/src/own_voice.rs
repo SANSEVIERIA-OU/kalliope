@@ -308,7 +308,7 @@ fn record(
         "registrazione-{}.wav",
         TAKES.fetch_add(1, Ordering::SeqCst) + 1
     ));
-    let wav = std::fs::create_dir_all(temp)
+    let wav = crate::paths::create_private_dir(temp)
         .and_then(|()| std::fs::write(&wav, kalliope_sample::wav::encode(&audio.samples, rate)))
         .map(|()| wav)
         .map_err(|e| {
@@ -607,7 +607,10 @@ pub struct TempFolder(pub PathBuf);
 
 impl TempFolder {
     pub fn new() -> TempFolder {
-        TempFolder(std::env::temp_dir().join(format!("kalliope-{}", std::process::id())))
+        TempFolder(crate::paths::private_temp(&format!(
+            "kalliope-{}",
+            std::process::id()
+        )))
     }
 }
 

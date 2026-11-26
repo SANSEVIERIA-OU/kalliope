@@ -58,16 +58,20 @@ The model comes inside Kalliope's packages (`share/kalliope/pocket-tts-italian/`
 attribution in `share/doc/kalliope/pocket-tts/`: "Pocket TTS by Kyutai (kyutai.org), CC BY 4.0;
 converted to ONNX and quantized by Kalliope". Kalliope exports it from Kyutai's weights with Kyutai's
 code (`tools/pocket_export/`); [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) says what was changed.
-To prepare a voice:
+To prepare a voice from a terminal:
 
 ```sh
+kalliope --registra-voce Mia                 # records from the microphone (kalliope --microfoni lists them)
+kalliope --importa-voce messaggio.opus Mia   # or from an audio or video file
 kalliope-cli voice my-voice.wav -o ~/.local/share/kalliope/voices/Mia.safetensors
 kalliope-cli say --voice ~/.local/share/kalliope/voices/Mia.safetensors -o prova.wav "Buongiorno a tutti."
 ```
 
-The recording is a WAV file of the person speaking naturally, as clean as possible (the model also
-imitates noise and echo); Kalliope uses its first 12 seconds (longer prompts make the model end
-sentences early). The voice file (4 to 7 MB) is then listed in the app next to Giulia and Marco,
+The recording is the person speaking naturally, as clean as possible (the model also imitates noise
+and echo): from a microphone, or a WAV, FLAC, MP3, Ogg, M4A, MP4, MKV or WebM file, or a WhatsApp or
+Telegram voice message (Opus, read with the system's libopus). Kalliope measures the speech, its level,
+distortion and background noise, says in plain words what is wrong, and makes the voice from the
+clearest 12 seconds of speech (longer prompts make the model end sentences early). The voice file (4 to 7 MB) is then listed in the app next to Giulia and Marco,
 and speaks into the microphone while it is being generated: on the Ryzen 5 PRO 6650U, about 0.43
 CPU-seconds per second of speech with two threads, the first audio about 50 ms after the text is
 ready, 294 MB of memory (measures in [benchmarks/voce-propria](benchmarks/voce-propria/README.md)).
