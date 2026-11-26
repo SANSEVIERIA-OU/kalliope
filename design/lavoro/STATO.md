@@ -3,10 +3,9 @@
 Da dove si riparte: `CLAUDE.md`. Qui: fasi, decisioni prese a lavoro avviato, incarichi, tempi e ciò che resta.
 Metodo: skill vibe-next `design-system-generator` 0.46.1, ruoli nativi di Claude Code.
 
-## Anteprima locale del 26 novembre 2026
+## Sito del 26 novembre 2026
 
-Il proprietario ha chiesto di completare il sito e di rivedere la dominante rossa. Il ramo
-`sito-completo-anteprima-26-novembre` contiene la proposta grafite e verde acqua. La pubblicazione del 20 novembre è su GitHub Pages. La scelta dei colori e la pubblicazione del ramo restano al proprietario.
+Il proprietario ha chiesto di completare il sito e di rivedere la dominante rossa. Dopo aver visto il sito, il proprietario ha approvato la palette grafite e verde acqua e autorizzato commit, push e deploy su GitHub Pages.
 
 La guida «In riunione» conduce dai controlli del microfono alla ricerca dei messaggi in `#aiuto`.
 La home ospita tutte e sei le registrazioni, con i testi e la provenienza dei campioni. I vecchi indirizzi di ascolto,
@@ -17,6 +16,8 @@ Le visite hanno portato a correggere il download fuori dal primo schermo sui tel
 ingrandimento, i collegamenti storici di «Stato», le tabelle del catalogo che allargavano l'intera pagina e i
 collegamenti dei suoi esempi. Gli esempi di distribuzione hanno etichette e gruppi indipendenti. Aprire la
 dimostrazione di «Aiuto» nel catalogo mantiene fermo il documento che la ospita.
+
+Nella home «Parla» avvia la registrazione della frase di apertura. La scena usa subito i tempi di riserva, anche con una connessione lenta. Le prove nel browser controllano il primo clic, l’avanzamento dell’audio e delle parole.
 
 La QA ha usato i ruoli di visita, direzione, giudizio indipendente e costruzione del metodo 0.53.1. Le prove e i confronti
 sono in `materiali-locali/verifica-sito-26/` e `materiali-locali/verifica-funzionale-26-a/` sulla macchina del progetto.
@@ -134,7 +135,7 @@ Sulle tre domande lasciate da «non ancora»:
 | 2-g. Lingue: giudizio | fatto | design-judge (opus) | 17/11, 59 min, 333k token | `2-lingue-aspetto/giudizio/GIUDIZIO.md`: 1 bloccante (B1 la barra con l'azione nelle lingue lunghe fra 960 e 1440 px, foto rivista da chi coordina), 4 importanti (I1 versione al contrario in ar e ur, I2 etichetta di «Tu» al telefono, I3 pagina della scelta vuota, I4 20 KB di caratteri in più nella pagina italiana), 8 minori |
 | 2-c. Lingue: correzione | fatta, commit `82823d5` | design-direction (opus), lo stesso worker | 17/11, 155 min, 222k token | B1 I1 I2 I3 I4 e M1–M8 (M4 lasciato con le prove: il nastaliq non ha pesi oltre 700); barra 0 rotte su 828 larghezze; verificato da chi coordina (controlli, foto prima e dopo) |
 | 2-b. Lingue: costruzione (lingua sola, precarico, tastiera e stati del selettore, larghezze e motori per lingua, tabella dei token nel catalogo) | fatta, salvata con 3a-r | design-build (sonnet) | 17/11, 190 min, 860k token | `2-lingue-aspetto/costruzione/progresso.md`; 72 prove verdi; barra 0 rotte su 1 892; 3 000 pagine d'esame; precarico solo per ar, el, bg (misurato: per bn, hi, ur il primo disegno arriva dopo; accettato da chi coordina) |
-| 3. Pagine nella direzione 2: non ancora, stato, installa, in riunione (con aiuto), 404 | complete sul ramo locale, palette in visione | per pagina: direzione → giudice → correzione → costruzione → proprietario | | una alla volta, ciascuna mostrata al proprietario |
+| 3. Pagine nella direzione 2: non ancora, stato, installa, in riunione (con aiuto), 404 | complete, palette approvata il 26/11 | per pagina: direzione → giudice → correzione → costruzione → proprietario | | una alla volta, ciascuna mostrata al proprietario |
 | 3a. «non ancora»: aspetto e movimento | fatta | design-direction (opus) | 16/11, 42 min, 544k token | `3a-non-ancora/` (PIANO, CONTENUTI, sequenze, confronti); 4 componenti nuovi, 24 token; controlla-sorgenti verde; solo Chromium |
 | 3a-g. «non ancora»: giudizio | fatto | design-judge (opus) | 16/11, 35 min, 351k token | `3a-non-ancora/giudizio/GIUDIZIO.md`: 0 bloccanti, 6 importanti (I1 stato della prova, I2 «non ancora» per ciò che non è, I3 feed come unica decisione, I4 catalogo, I5 schermi bassi senza comandi, I6 tratto fermo), 8 minori |
 | 3a-c. «non ancora»: correzioni d'aspetto e contenuti | fatta, commit `0cf5c64` | design-direction (opus), lo stesso worker | 16/11 | I1, I2, I3, I5, I6 e i fatti decisi da chi coordina |

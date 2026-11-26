@@ -1347,9 +1347,9 @@ Blocco `:root` in fondo a `token.css`: un solo token, e il suo ruolo. Il comando
 
 Soglie: `501px` (`installazione.css`: il titolo di «installa» alla misura del tablet vale da 501 px d'altezza in su; sotto vale la regola della cornice per il telefono girato).
 
-## Anteprima del 26 novembre — non ancora scelta
+## Palette approvata il 26 novembre
 
-I token dei colori conservano i loro ruoli e ricevono valori candidati: superfici grafite, testo neutro, azione e voce menta; colori delle figure separati dagli accenti funzionali. I nomi storici `--bordeaux`, `--rosa` e `--magenta` restano per compatibilità con i componenti: in questa proposta rappresentano rispettivamente segni scuri, bordo reattivo e voce nella bolla. I token `--segno-*` conservano il logo scelto.
+I token dei colori conservano i loro ruoli e ricevono i valori approvati il 26 novembre: superfici grafite, testo neutro, azione e voce menta; colori delle figure separati dagli accenti funzionali. I nomi storici `--bordeaux`, `--rosa` e `--magenta` restano per compatibilità con i componenti: in questa palette rappresentano rispettivamente segni scuri, bordo reattivo e voce nella bolla. I token `--segno-*` conservano il logo scelto.
 
 | Token aggiunto | Valore | Ruolo |
 | --- | --- | --- |

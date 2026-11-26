@@ -73,7 +73,7 @@
 .f-parla.attivo { background: var(--app-accento); }
 .f-ferma { background: var(--app-ferma-fondo); color: var(--app-ferma-testo); border-color: var(--app-bordo-forte); }
 .f-ferma.attivo, .f-ferma:enabled { background: var(--app-campo); color: var(--app-testo); border-color: var(--app-bordo-attivo); }
-button.f-ferma:enabled { cursor: pointer; }
+button.f-ferma:enabled, button.f-parla:enabled { cursor: pointer; }
 button.f-ferma:enabled:hover { background: var(--app-ferma-sopra); }
 .sotto { animation: sale var(--durata-sotto) var(--entra) var(--ritardo-sotto) backwards; }
 @media (max-width: 760px) {

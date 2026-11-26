@@ -2,7 +2,7 @@
 
 Ricavato dalla home nella direzione scelta (D2 «Alla pari, in riunione») **senza cambiarne l'aspetto**: ogni valore del foglio di stile della home è qui con lo stesso valore, un nome e un posto. Nessuno ha deciso un colore, un carattere, una curva o una durata nel ricavarlo.
 
-Sta in questa cartella, fuori dal sito, perché dovrà servire anche all'applicazione. Nell'anteprima del 26/11 la home, le pagine interne, la scelta della lingua e la 404 usano questa stessa fonte. La guida raccoglie l'uso in riunione e la ricerca di aiuto, e l'ascolto delle due voci è nella home.
+Sta in questa cartella, fuori dal sito, perché dovrà servire anche all'applicazione. Dal 26/11 la home, le pagine interne, la scelta della lingua e la 404 usano questa stessa fonte. La guida raccoglie l'uso in riunione e la ricerca di aiuto, e l'ascolto delle due voci è nella home.
 
 ## Che cosa c'è e dove
 
@@ -193,12 +193,13 @@ Prove: `design/lavoro/1-lingue-sito/progresso.md`; foto e programmi: `design/lav
 
 Persone e percorsi di tutto il sito; anteprime dei compiti oltre la home; icone e immagini (il marchio è in «Il marchio»; le figure sono inline); interazioni (tastiera, tocco: provate sulla home, non qui; gli stati qui sono forzati); dati e media (nessun audio); accessibilità e testo grande; prestazioni e canali; provenienza e decisioni (la direzione è in `design/direzione-2/`); i quindici dispositivi nei tre motori (qui tre larghezze vive); gli esiti letti dai log; lingue. Il catalogo non si dichiara completo: l'elenco con i motivi è in fondo alla sua pagina («Non ancora»).
 
-## Anteprima del 26 novembre
+## Sito del 26 novembre
 
-Il fondo grafite, l’accento menta per la voce e i comandi e i tre colori dei partecipanti rispondono alla richiesta di ridurre la dominante rossa. La scelta del proprietario è in sospeso. Il marchio conserva il rosa. La home usa la geometria, i caratteri e i tempi della direzione scelta.
+Il fondo grafite, l’accento menta per la voce e i comandi e i tre colori dei partecipanti rispondono alla richiesta di ridurre la dominante rossa. Il proprietario ha approvato i colori il 26 novembre. Il marchio conserva il rosa. La home usa la geometria, i caratteri e i tempi della direzione scelta.
 
 - La guida usa `guida-riunione.css`. Presenta quattro passi, la finestra di Kalliope, un esempio di scelta del microfono, una registrazione e i dettagli da terminale.
 - La sezione `/it/riunione/#aiuto` usa `aiuto.css` e `website/riunione/aiuto.js`. La ricerca filtra sette messaggi. Le cause, le azioni e i casi speciali restano leggibili anche senza JavaScript. Un collegamento diretto riapre la risposta selezionata.
+- Nella finestra della home, «Parla» riproduce la frase dell’animazione iniziale e «Ferma» interrompe la voce. Le parole seguono la registrazione. Prima del gesto la scena usa i tempi di riserva già caricati.
 - Nella home, `#campioni` raccoglie tre frasi, due voci e i dettagli sulla provenienza delle registrazioni. Il canvas legge `--voce` e `--alone-tu` dal sistema per disegnare gli anelli.
 - La 404 usa `non-trovata.css`. Il costruttore scrive i percorsi delle risorse rispetto alla radice del sito e lascia i frammenti nel documento. Il salto al contenuto funziona anche da indirizzi profondi senza JavaScript.
 - Le sezioni del catalogo `pagina-riunione` e `pagina-aiuto` mostrano la guida e gli stati di ricerca. Le tabelle ampie scorrono nel proprio contenitore anche da tastiera. I campioni dei componenti risolvono i collegamenti rispetto alla pagina da cui provengono.

@@ -6,10 +6,10 @@
   const indirizzoPagina = new URL('../../it/riunione/', location.href);
   const sezione = document.querySelector('#pagina-riunione');
   sezione.innerHTML = `
-    <h2>Proposta del 26 novembre · In riunione</h2>
+    <h2>I colori di «In riunione»</h2>
     <p class="cat-nota">Stanza grafite, voce e comandi menta. Paola, Luca e Anna hanno colori propri.
       Il logo scelto conserva i suoi colori. La geometria e i tempi della home restano quelli della
-      direzione 2. Questi colori sono una proposta da scegliere, non una decisione già approvata.</p>
+      direzione 2.</p>
     <p><a href="../../it/">Apri la home</a> ·
       <a href="../../it/riunione/">Apri la guida intera</a></p>`;
 
@@ -48,7 +48,7 @@
   aggiungiEsempio('Se un passo non riesce · risultato e recupero', '#passo-2 .se-non-va');
 
   const anteprima = document.createElement('iframe');
-  anteprima.title = 'Pagina In riunione intera, proposta del 26 novembre';
+  anteprima.title = 'Guida completa «In riunione»';
   anteprima.src = indirizzoPagina;
   anteprima.loading = 'lazy';
   anteprima.className = 'catalogo-riunione-viva';

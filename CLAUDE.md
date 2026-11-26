@@ -28,15 +28,13 @@ come si lavora.
   come icona del programma. Il verde del logo di prima non c'è più (la nota di `design/direzione-2/D2.md` è superata).
 - **Pubblicare** (19/11/2026): il proprietario ha detto di «cominciare a mergiare in main e caricare il nuovo sito». Il sito
   nuovo va in linea con le pagine fatte; le altre arrivano una alla volta. Ogni push resta un passo detto al proprietario.
-- **Il sito completo è in anteprima locale** sul ramo `sito-completo-anteprima-26-novembre`. La guida «In riunione»
+- **Il sito completo ha il via alla pubblicazione del 26/11/2026.** La guida «In riunione»
   comprende la ricerca di «Aiuto». «Ascolta» apre i tre campioni della home, con Giulia e Marco. I vecchi indirizzi
   passano dalle regole di `website/rimandi.json`. La 404 usa gli stili condivisi e funziona anche a indirizzi profondi.
-- **La palette è una proposta del 26/11.** Dopo l'osservazione del proprietario sulla dominante rossa, l'anteprima usa
-  fondi grafite, accenti verde acqua e tinte distinte per i partecipanti. Il logo conserva i suoi colori. Il proprietario
-  sceglie la palette dopo aver visto la home e il catalogo. Per pubblicare serve il suo via al push.
+- **Il proprietario ha approvato i colori il 26/11/2026.** La home usa fondi grafite, accenti verde acqua e tinte distinte per i partecipanti. Il logo conserva i suoi colori.
 - **Il design system è `design-system/`**, con token, base, componenti, caratteri e catalogo vivo. Lo usano tutte le
-  pagine dell'anteprima. Gli alberi `website/stile/`, `website/script/` e `website/sistema/` sono ritirati.
-- **Su GitHub Pages c'è la pubblicazione del 20/11/2026**, con il bordeaux e i pacchetti della 0.1.
+  pagine del sito. Gli alberi `website/stile/`, `website/script/` e `website/sistema/` sono ritirati.
+- **La home su GitHub Pages** è <https://sansevieria-ou.github.io/kalliope/it/>. I pacchetti sono quelli della 0.1.
 - **Il lavoro in corso** (dal 16/11/2026: lingue, poi le altre pagine, poi l'applicazione) è in `design/lavoro/`:
   `STATO.md` dice fasi, decisioni prese a lavoro avviato e incarichi; `ricerca/lingue.md` i fatti con le fonti.
 - **La voce di chi usa Kalliope** (decisione del proprietario del 17/11/2026: «voglio che lo faccia già adesso (non "la

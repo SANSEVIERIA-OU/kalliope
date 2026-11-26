@@ -29,7 +29,7 @@
   // scheda va in secondo piano e riparte da dove era: nessuna animazione resta a metà o salta in avanti al ritorno.
   let fermoTot = 0, nascostoDa = document.hidden ? performance.now() : null;
   const tScena = () => (nascostoDa === null ? performance.now() : nascostoDa) - fermoTot;
-  const T0 = tScena();
+  let T0 = tScena();
   // le azioni a tempo (al posto di setTimeout) camminano sullo stesso orologio, nel ciclo dei fotogrammi
   const agenda = [];
   function dopo(ms, f) { const e = {t: tScena() + ms, f}; agenda.push(e); avvia(); return e; }
@@ -564,7 +564,7 @@
     const eraNelleFrasi = palco === eroe && $('.frasi', scheda).contains(document.activeElement);
     // in alto il messaggio prende il posto delle frasi finché c'è (stile.css, `.con-errore`): a 1440×900 e a 390×844 sta tutto
     // dentro lo schermo, accanto alla bolla che torna scritta, senza che la persona scorra
-    if (palco === eroe) scheda.classList.add('con-errore');
+    if (palco === eroe) { scheda.classList.add('con-errore'); if (!aperta) apri(); }
     el._ritorno = palco === eroe ? $(`#ascolto .frase[data-frase="${n}"]`) : $(`.suona-frase[data-frase="${n}"]`);
     if (eraNelleFrasi) riprova.focus({preventScroll: true});   // il comando premuto è sparito con le frasi: il fuoco va a «Riprova»
     // la scheda in alto è sovrapposta al resto: con il messaggio diventa più alta, e il tratto sotto deve scendere (non coprirla)
@@ -714,12 +714,16 @@
     } else if (arrivo === 'parla' && !discorso) { arrivo = false; eroe.campo.classList.remove('fuoco'); }
   }
   function fermaArrivo() { if (arrivo) { arrivo = false; scrivi(0); eroe.campo.classList.remove('fuoco'); } }
-  rendiFrase(eroe.testo, 1, true); eroe.bolla.classList.add('detta');
-  pronti.then(() => {
+  rendiFrase(eroe.testo, ridotto ? 2 : 1, true); eroe.bolla.classList.add('detta');
+  let arrivoAvviato = false;
+  function tempiPronti() {
     $$('.durata').forEach(d => { const f = TEMPI && TEMPI.file[`giulia-${d.dataset.frase}`]; if (f) d.textContent = mmss(f.durata_s); });
-    if (ridotto) { rendiFrase(eroe.testo, 2, true); return; }
-    avvia();
-  });
+    // La riserva è già disponibile: una richiesta lenta non tiene ferma la scena.
+    // I tempi arrivati dopo un gesto aggiornano solo le durate, mai la frase in ascolto.
+    if (arrivo && TEMPI && !arrivoAvviato) { arrivoAvviato = true; T0 = tScena(); avvia(); }
+  }
+  tempiPronti();
+  pronti.then(tempiPronti);
 
   // =================================================================================================================
   // I COMANDI DELL'ASCOLTO
@@ -832,6 +836,8 @@
     scheda.animate([{transform: 'none', borderRadius: '22px'}, {transform: morph(rp, rs), borderRadius: '999px'}], {duration: 360, easing: 'cubic-bezier(0.6,0,0.2,1)'}).finished.then(fatto, senzaErrori);
     pillola.animate([{opacity: 0}, {opacity: 0, offset: 0.65}, {opacity: 1}], {duration: 360});
   }
+  parlaBtn.disabled = false;
+  parlaBtn.addEventListener('click', () => { ultima = 2; suona(eroe, 2); });
   pillola.addEventListener('click', () => { ultima = 3; voce = 'giulia'; suona(eroe, 3); apri(); });
   chiudi.addEventListener('click', chiudiScheda);
   eroe.ferma.addEventListener('click', () => ferma(true));
@@ -862,7 +868,7 @@
   }));
   addEventListener('keydown', e => { if (e.key === 'Escape' && aperta) chiudiScheda(); });
   if (typeof Audio === 'undefined') {   // un browser senza audio: i comandi non ci sono, restano i lettori nativi e i file
-    [...vociEroe, ...vociFilo, ...frasiEroe, ...suonaFilo, pillola].forEach(b => { b.disabled = true; });
+    [...vociEroe, ...vociFilo, ...frasiEroe, ...suonaFilo, pillola, parlaBtn].forEach(b => { b.disabled = true; });
   }
 
   // =================================================================================================================
