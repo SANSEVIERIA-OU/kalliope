@@ -59,9 +59,15 @@ fn catalog_data(css: &str, slint: &str) -> String {
     let quote = |s: &str| s.replace('\\', "\\\\").replace('"', "\\\"");
     let (mut colours, mut lengths, mut times, mut others) = (vec![], vec![], vec![], vec![]);
     for line in slint.lines() {
-        let Some(rest) = line.trim().strip_prefix("out property <") else { continue };
-        let Some((ty, rest)) = rest.split_once("> ") else { continue };
-        let Some((name, expr)) = rest.split_once(": ") else { continue };
+        let Some(rest) = line.trim().strip_prefix("out property <") else {
+            continue;
+        };
+        let Some((ty, rest)) = rest.split_once("> ") else {
+            continue;
+        };
+        let Some((name, expr)) = rest.split_once(": ") else {
+            continue;
+        };
         let expr = expr.trim_end_matches(';');
         if name == "dark" {
             continue;

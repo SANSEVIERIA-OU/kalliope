@@ -52,7 +52,10 @@ pub fn collega(ui: &AppWindow) {
         let scale = window.scale_factor();
         if on {
             before.set(Some(window.size().to_logical(scale)));
-            window.set_size(LogicalSize::new(ui.get_compatta_larghezza(), ui.get_compatta_altezza()));
+            window.set_size(LogicalSize::new(
+                ui.get_compatta_larghezza(),
+                ui.get_compatta_altezza(),
+            ));
         } else if let Some(size) = before.take() {
             window.set_size(size);
         }
@@ -112,7 +115,11 @@ pub fn demo(scena: &str) -> ExitCode {
     };
     collega(&ui);
     ui.set_version(format!("{} · dimostrazione", env!("CARGO_PKG_VERSION")).into());
-    ui.set_voices(modello(vec!["Giulia".into(), "Marco".into(), "La voce di Anna".into()]));
+    ui.set_voices(modello(vec![
+        "Giulia".into(),
+        "Marco".into(),
+        "La voce di Anna".into(),
+    ]));
     let history = Rc::new(VecModel::<SharedString>::default());
     ui.set_history(ModelRc::from(history.clone()));
     let mut said: Vec<SharedString> = FRASI.iter().rev().map(|f| SharedString::from(*f)).collect();
@@ -172,18 +179,27 @@ pub fn demo(scena: &str) -> ExitCode {
     }
     if scena == "compatta" || scena == "compatta-parla" {
         ui.set_compatta(true);
-        ui.window().set_size(LogicalSize::new(ui.get_compatta_larghezza(), ui.get_compatta_altezza()));
+        ui.window().set_size(LogicalSize::new(
+            ui.get_compatta_larghezza(),
+            ui.get_compatta_altezza(),
+        ));
     }
     // KALLIOPE_DEMO_MISURA=360x320 opens the scene at another size (the smallest window, a low screen)
     if let Some((w, h)) = std::env::var("KALLIOPE_DEMO_MISURA")
         .ok()
-        .and_then(|m| m.split_once('x').map(|(w, h)| (w.parse::<f32>(), h.parse::<f32>())))
+        .and_then(|m| {
+            m.split_once('x')
+                .map(|(w, h)| (w.parse::<f32>(), h.parse::<f32>()))
+        })
         .and_then(|(w, h)| Some((w.ok()?, h.ok()?)))
     {
         ui.window().set_size(LogicalSize::new(w, h));
     }
     // KALLIOPE_DEMO_SCALA=1.75 opens the scene with another text size
-    if let Some(scala) = std::env::var("KALLIOPE_DEMO_SCALA").ok().and_then(|s| s.parse::<f32>().ok()) {
+    if let Some(scala) = std::env::var("KALLIOPE_DEMO_SCALA")
+        .ok()
+        .and_then(|s| s.parse::<f32>().ok())
+    {
         ui.global::<crate::Aspetto>().set_scala(scala);
     }
     history.set_vec(said);
@@ -208,19 +224,29 @@ pub fn demo(scena: &str) -> ExitCode {
         history_speak.set_vec(items);
         let words = parole(&text) as u64;
         let weak = weak.clone();
-        let step = weak.upgrade().map_or(360, |ui| ui.get_durata_parola() as u64);
+        let step = weak
+            .upgrade()
+            .map_or(360, |ui| ui.get_durata_parola() as u64);
         let timer2 = timer.clone();
-        timer.start(slint::TimerMode::SingleShot, Duration::from_millis(400), move || {
-            if let Some(ui) = weak.upgrade() {
-                ui.set_phase(Phase::Speaking);
-                let weak = ui.as_weak();
-                timer2.start(slint::TimerMode::SingleShot, Duration::from_millis(step * words + 300), move || {
-                    if let Some(ui) = weak.upgrade() {
-                        ui.set_phase(Phase::Ready);
-                    }
-                });
-            }
-        });
+        timer.start(
+            slint::TimerMode::SingleShot,
+            Duration::from_millis(400),
+            move || {
+                if let Some(ui) = weak.upgrade() {
+                    ui.set_phase(Phase::Speaking);
+                    let weak = ui.as_weak();
+                    timer2.start(
+                        slint::TimerMode::SingleShot,
+                        Duration::from_millis(step * words + 300),
+                        move || {
+                            if let Some(ui) = weak.upgrade() {
+                                ui.set_phase(Phase::Ready);
+                            }
+                        },
+                    );
+                }
+            },
+        );
         true
     });
     let weak = ui.as_weak();

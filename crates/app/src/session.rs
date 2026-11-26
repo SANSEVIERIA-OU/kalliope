@@ -487,7 +487,10 @@ mod tests {
         assert_eq!(state.situation(), crate::Situazione::Parla);
         state.update(Event::NotHeard, &voices);
         assert_eq!(state.situation(), crate::Situazione::NessunoAscolta);
-        state.update(Event::Microphone(Err("il microfono non c'è".into())), &voices);
+        state.update(
+            Event::Microphone(Err("il microfono non c'è".into())),
+            &voices,
+        );
         assert_eq!(state.situation(), crate::Situazione::SenzaMicrofono);
         state.update(Event::Error("la voce non parte".into()), &voices);
         assert_eq!(state.situation(), crate::Situazione::ProblemaVoce);
