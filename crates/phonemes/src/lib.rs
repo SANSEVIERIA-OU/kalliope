@@ -150,6 +150,11 @@ pub fn word(word: &str) -> String {
             lower.trim_end_matches('\'').to_string(),
         ),
     };
+    if let Some(phonemes) = data::loanword(&rest) {
+        // "l'email": the elided part as a clitic, then the whole word as listed.
+        let prefix = &joined[..joined.len() - rest.len()];
+        return rules::word(prefix, Hint::default(), Stress::None) + phonemes;
+    }
     let stress = if rest == "è" && rest != joined {
         Stress::Primary
     } else {
@@ -195,5 +200,44 @@ mod tests {
             "non o kapˈito lʊltˈimo pˈunto?"
         );
         assert_eq!(phonemize("un'ora"), "ʊnˈora");
+    }
+
+    /// Foreign names said in meetings, read the way Italian speakers say them, not spelled
+    /// out letter by letter with Italian rules (issue #10: "zoom" was ʣˈɔom, "teams" tˈɛams).
+    #[test]
+    fn loanwords() {
+        let cases = [
+            ("ci vediamo su zoom", "ʧɪ vedjˈamo sʊ ʣˈum"),
+            ("teams", "tˈims"),
+            ("google meet", "ɡˈuɡol mˈit"),
+            ("microsoft", "mˈaɪkrosɔft"),
+            ("whatsapp", "wɔʦˈap"),
+            ("youtube", "jʊtˈub"),
+            ("skype", "skˈaɪp"),
+            ("webex", "wˈɛbeks"),
+            ("jitsi", "ʤˈiʦɪ"),
+            ("email", "imˈɛɪl"),
+            ("computer", "kompjˈuter"),
+            ("mouse", "mˈaʊs"),
+            ("file", "fˈaɪl"),
+            ("chat", "ʧˈɛt"),
+            ("password", "pˈasword"),
+            ("ok", "okˈɛi"),
+            // Already right by the Italian rules, kept here so that they stay right.
+            ("link", "lˈink"),
+            ("web", "wˈɛb"),
+            // Elided articles and prepositions join the word.
+            ("l'email", "limˈɛɪl"),
+            ("un'email", "ʊnimˈɛɪl"),
+            ("dell'iphone", "dellˈaɪfon"),
+            // Punctuation stays where it is.
+            ("ok, ti mando il file.", "okˈɛi, tɪ mˈando il fˈaɪl."),
+        ];
+        let failures: Vec<String> = cases
+            .iter()
+            .filter(|(i, e)| phonemize(i) != *e)
+            .map(|(i, e)| format!("{i}: expected {e}, got {}", phonemize(i)))
+            .collect();
+        assert!(failures.is_empty(), "{}", failures.join("\n"));
     }
 }

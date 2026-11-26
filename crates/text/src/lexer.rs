@@ -9,7 +9,8 @@ pub enum Kind {
     /// Letters, possibly followed by digits ("covid19"); an elided word keeps its apostrophe
     /// ("l'") and the next token is glued to it.
     Word,
-    /// Digits with inner separators: "1.250,50", "10:30", "15/03/2027", "3-0".
+    /// Digits with inner separators: "1.250,50", "10:30", "15/03/2027", "3-0"; or one vulgar
+    /// fraction character, "½".
     Number,
     /// `,` `.` `;` `:` `?` `!` `…`; brackets and dashes become `,`.
     Punct,
@@ -289,6 +290,12 @@ pub fn lex(text: &str) -> Vec<Token> {
         }
         if SYMBOLS.contains(c) {
             push(&mut tokens, c.to_string(), Kind::Symbol, &mut space);
+            i += 1;
+            continue;
+        }
+        // "½", "¾": a number of their own, glued to an integer in "1½".
+        if lexicon::vulgar_fraction(c).is_some() {
+            push(&mut tokens, c.to_string(), Kind::Number, &mut space);
             i += 1;
             continue;
         }

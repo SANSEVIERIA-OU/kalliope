@@ -72,11 +72,51 @@ const PHONE_WORDS: &[&str] = &[
     "cell",
     "numero",
 ];
+/// Capitalized words that are not names: they start sentences. A single letter before them is
+/// not a Roman numeral ("Poi V…"), and a dot before them ends the sentence ("…classe A. Poi").
 const NOT_NAMES: &[&str] = &[
-    "il", "lo", "la", "gli", "le", "un", "una", "uno", "di", "da", "in", "con", "su", "per", "tra",
-    "fra", "ma", "se", "che", "non", "come", "dove", "quando", "ecco", "anche", "ora", "poi",
-    "allora", "questo", "questa", "sono", "ho", "ha", "vado", "siamo", "vitamina", "piano",
-    "classe", "lettera", "taglia", "modello", "serie", "tipo", "raggi", "gruppo", "punto", "fase",
+    "il", "lo", "la", "i", "gli", "le", "l'", "un", "una", "uno", "di", "da", "in", "con", "su",
+    "per", "tra", "fra", "a", "e", "ed", "o", "è", "c'", "al", "alla", "ai", "del", "della", "dei",
+    "dal", "dalla", "nel", "nella", "nei", "sul", "sulla", "ma", "se", "che", "non", "come",
+    "dove", "quando", "perché", "cosa", "chi", "quale", "quanto", "ecco", "anche", "ora", "poi",
+    "allora", "quindi", "però", "infatti", "inoltre", "invece", "comunque", "mentre", "così",
+    "dopo", "prima", "oggi", "domani", "ieri", "adesso", "questo", "questa", "questi", "queste",
+    "quello", "quella", "tutto", "tutti", "io", "tu", "lui", "lei", "noi", "voi", "loro", "mi",
+    "ti", "si", "ci", "vi", "ne", "sono", "sei", "siamo", "siete", "era", "ho", "ha", "hanno",
+    "abbiamo", "vado", "va", "grazie", "sì", "no", "ok", "certo", "bene",
+];
+/// Nouns that a single letter labels ("classe A", "serie B", "vitamina C"): after them the
+/// letter is neither a Roman numeral nor an initial.
+const LETTER_LABELS: &[&str] = &[
+    "vitamina",
+    "piano",
+    "classe",
+    "lettera",
+    "taglia",
+    "modello",
+    "serie",
+    "tipo",
+    "raggi",
+    "gruppo",
+    "punto",
+    "fase",
+    "categoria",
+    "girone",
+    "zona",
+    "sezione",
+    "opzione",
+    "variante",
+    "voto",
+    "lato",
+    "binario",
+    "scala",
+    "aula",
+    "formato",
+];
+/// Words after which a unit on its own is singular: "al kg", "per litro".
+const SINGULAR_BEFORE: &[&str] = &[
+    "al", "il", "un", "uno", "per", "ogni", "a", "del", "dal", "nel", "sul", "mezzo", "quel",
+    "questo",
 ];
 const SHORT_WORDS: &[&str] = &[
     "NO", "SI", "SÌ", "IO", "TU", "MA", "SE", "DA", "IL", "LA", "LO", "LE", "DI", "IN", "CI", "MI",
@@ -109,6 +149,20 @@ fn split_decimal(s: &str) -> Option<(String, &str)> {
     } else {
         None
     }
+}
+
+/// A number token that is one vulgar fraction character: "½" → (1, 2).
+fn vulgar(t: &str) -> Option<(u64, u64)> {
+    let mut chars = t.chars();
+    match (chars.next(), chars.next()) {
+        (Some(c), None) => lexicon::vulgar_fraction(c),
+        _ => None,
+    }
+}
+
+/// "mld", "mln": quantities that take "di" before a currency ("due miliardi di euro").
+fn is_multiplier(unit: &lexicon::Unit) -> bool {
+    matches!(unit.plural, "miliardi" | "milioni")
 }
 
 fn parse_u64(s: &str) -> Option<u64> {
@@ -404,6 +458,9 @@ impl<'a> Verbalizer<'a> {
 
     fn punctuation(&mut self, t: &Token) {
         let c = t.text.chars().next().unwrap_or(',');
+        if c == '.' && self.after_initial() {
+            return;
+        }
         self.punct(c);
         // A "…" ends the sentence only before a capital or at the end of the text.
         let ellipsis_ends = || {
@@ -413,6 +470,40 @@ impl<'a> Verbalizer<'a> {
         if matches!(c, '.' | '?' | '!') || (c == '…' && ellipsis_ends()) {
             self.end();
         }
+    }
+
+    /// Whether the dot at `self.i` closes an initial ("via G. Verdi", "M. Rossi", "J. R. R.
+    /// Tolkien") rather than a sentence. As in Festival's end-of-utterance tree and espeak-ng's
+    /// English rule, a single capital letter, a dot and a capitalized word make an initial; for
+    /// Italian, not when the letter labels a noun ("la classe A. Poi"), when the next word is
+    /// one that starts sentences ("…A. Il giorno dopo"), or for a Roman numeral after a name
+    /// ("Carlo V. Fu…").
+    fn after_initial(&self) -> bool {
+        let Some(letter) = self.prev().filter(|p| p.is(Kind::Word)) else {
+            return false;
+        };
+        let mut chars = letter.text.chars();
+        let (Some(l), None) = (chars.next(), chars.next()) else {
+            return false;
+        };
+        let dot_glued = self.at(0).is_some_and(|t| !t.space_before);
+        let Some(next) = self.next().filter(|n| n.is(Kind::Word) && n.first_upper()) else {
+            return false;
+        };
+        let next_lower = next.text.to_lowercase();
+        // "A. E. Rossi": the next letter is another initial, even if it is also a word.
+        let next_initial = next.text.chars().count() == 1
+            && self
+                .at(2)
+                .is_some_and(|d| d.is(Kind::Punct) && d.text == "." && !d.space_before);
+        l.is_ascii_uppercase()
+            && dot_glued
+            && (next_initial || !NOT_NAMES.contains(&next_lower.as_str()))
+            && !self
+                .word_at(-2)
+                .is_some_and(|w| LETTER_LABELS.contains(&w.as_str()))
+            && !(roman_value(&letter.text).is_some()
+                && self.roman_context(&letter.text, -1).is_some())
     }
 
     // ----------------------------------------------------------------- addresses
@@ -563,6 +654,19 @@ impl<'a> Verbalizer<'a> {
             {
                 self.say(if c == '<' { "minore di" } else { "maggiore di" })
             }
+            '/' if self.unit_after_slash().is_some() => {
+                let unit = self.unit_after_slash().map_or("", |u| u.singular);
+                if !lexicon::looks_feminine(unit) {
+                    self.say("al");
+                } else if lexicon::starts_with_vowel(unit) {
+                    self.say("all'");
+                    self.glue();
+                } else {
+                    self.say("alla");
+                }
+                self.say(unit);
+                self.i += 1;
+            }
             '/' if !t.space_before
                 && prev.is_some_and(|p| p.is(Kind::Word))
                 && next.is_some_and(|n| n.is(Kind::Word) && !n.space_before) =>
@@ -571,6 +675,33 @@ impl<'a> Verbalizer<'a> {
             }
             _ => {}
         }
+    }
+
+    /// The unit after the slash at `self.i`, read "al": "€/kg" → "euro al chilo", "€/h" →
+    /// "euro all'ora", "m/s" → "metri al secondo", "prezzo/kg". A single letter only after a
+    /// currency or a unit, so that "S/M" stays "esse o emme".
+    fn unit_after_slash(&self) -> Option<lexicon::Unit> {
+        let t = self.at(0)?;
+        let next = self
+            .next()
+            .filter(|n| n.is(Kind::Word) && !n.space_before)?;
+        if t.space_before {
+            return None;
+        }
+        let unit = lexicon::unit(&next.text)?;
+        let letters = next.text.chars().count();
+        if letters == 1 && next.first_upper() {
+            return None;
+        }
+        let prev = self.prev()?;
+        let after_currency = prev.is(Kind::Symbol) && lexicon::currency(&prev.text).is_some();
+        let after_unit = prev.is(Kind::Word)
+            && prev.text.chars().any(char::is_lowercase)
+            && lexicon::unit(&prev.text).is_some();
+        let fits = after_currency
+            || (after_unit && matches!(next.text.as_str(), "h" | "s"))
+            || (letters > 1 && (prev.is(Kind::Word) || prev.is(Kind::Symbol)));
+        fits.then_some(unit)
     }
 
     // ----------------------------------------------------------------- numbers
@@ -592,6 +723,9 @@ impl<'a> Verbalizer<'a> {
         self.phone = false;
         let prev = self.word_at(-1);
 
+        if let Some((a, b)) = vulgar(t) {
+            return self.vulgar_fraction(a, b);
+        }
         if is_digits(t) {
             return self.integer_token(t);
         }
@@ -622,18 +756,7 @@ impl<'a> Verbalizer<'a> {
                 return self.date(a, b, None);
             }
             if (2..=9).contains(&b) && (1..b).contains(&a) {
-                if a == 1 {
-                    self.say("un");
-                    self.say(&if b == 2 {
-                        "mezzo".to_string()
-                    } else {
-                        numbers::ordinal(b, false)
-                    });
-                } else {
-                    self.say_all(numbers::cardinal(a));
-                    self.say(&numbers::denominator_plural(b));
-                }
-                return;
+                return self.fraction(a, b);
             }
             self.say_all(numbers::cardinal(a));
             self.say("su");
@@ -693,6 +816,112 @@ impl<'a> Verbalizer<'a> {
         }
     }
 
+    /// "un mezzo", "un terzo", "tre quarti".
+    fn fraction(&mut self, a: u64, b: u64) {
+        if a == 1 {
+            self.say("un");
+            self.say(&if b == 2 {
+                "mezzo".to_string()
+            } else {
+                numbers::ordinal(b, false)
+            });
+        } else {
+            self.say_all(numbers::cardinal(a));
+            self.say(&numbers::denominator_plural(b));
+        }
+    }
+
+    /// "mezzo litro", "mezza tazza", "mezz'ora".
+    fn half_before(&mut self, noun: &str) {
+        let first = noun.split(' ').next().unwrap_or(noun);
+        if !lexicon::looks_feminine(first) {
+            self.say("mezzo");
+        } else if lexicon::starts_with_vowel(first) {
+            self.say("mezz'");
+            self.glue();
+        } else {
+            self.say("mezza");
+        }
+    }
+
+    /// A fraction character on its own: "½" → "un mezzo", "½ kg" → "mezzo chilo", "¾ h" →
+    /// "tre quarti d'ora", "le 9 e ½" → "le nove e mezzo".
+    fn vulgar_fraction(&mut self, a: u64, b: u64) {
+        let after_and = self.word_at(-1).as_deref() == Some("e");
+        if (a, b) == (1, 2) && after_and {
+            return self.say("mezzo");
+        }
+        let Some((used, unit)) = self.unit_after() else {
+            return self.fraction(a, b);
+        };
+        if (a, b) == (1, 2) {
+            self.half_before(unit.singular);
+        } else {
+            self.fraction(a, b);
+            if lexicon::starts_with_vowel(unit.singular) {
+                self.say("d'");
+                self.glue();
+            } else {
+                self.say("di");
+            }
+        }
+        self.say(unit.singular);
+        self.i += used;
+        self.unit_dot();
+    }
+
+    /// An integer and a fraction: "2½" → "due e mezzo", "1½ kg" → "un chilo e mezzo",
+    /// "2 ½ h" → "due ore e mezza". The fraction token is at `self.i + 1`.
+    fn mixed_number(&mut self, n: u64, (a, b): (u64, u64)) {
+        self.i += 1;
+        let unit = self.unit_after();
+        if let Some((used, unit)) = unit {
+            self.quantity(n, unit);
+            self.i += used;
+        } else if n == 1 {
+            self.say("uno");
+        } else {
+            self.say_all(numbers::cardinal(n));
+        }
+        self.say("e");
+        if (a, b) == (1, 2) {
+            let feminine = unit.is_some_and(|(_, u)| lexicon::looks_feminine(u.singular));
+            self.say(if feminine { "mezza" } else { "mezzo" });
+        } else {
+            self.fraction(a, b);
+        }
+        if unit.is_some() {
+            self.unit_dot();
+        }
+    }
+
+    /// A number with its unit: "un chilo", "cinque metri".
+    fn quantity(&mut self, n: u64, unit: lexicon::Unit) {
+        if n == 1 {
+            self.one_before(Some(
+                unit.singular.split(' ').next().unwrap_or(unit.singular),
+            ));
+            self.say(unit.singular);
+        } else {
+            self.say_all(numbers::cardinal(n));
+            self.say(unit.plural);
+        }
+    }
+
+    /// After a unit written with a dot ("5 min.", "2 mld."), that dot also ends the sentence
+    /// when the text ends or a capitalized word follows. The unit token is at `self.i`.
+    fn unit_dot(&mut self) {
+        let unit = &self.toks[self.i];
+        if !(unit.is(Kind::Abbrev) && unit.text.ends_with('.')) {
+            return;
+        }
+        let next = self.next();
+        if next.is_none_or(|n| n.is(Kind::Break) || (n.is(Kind::Word) && n.first_upper())) {
+            self.punct('.');
+            self.end();
+        }
+    }
+
     fn phone_digits(&mut self, group: &str) {
         for (k, chunk) in numbers::phone_chunks(group).into_iter().enumerate() {
             if k > 0 {
@@ -742,8 +971,8 @@ impl<'a> Verbalizer<'a> {
         found
     }
 
-    /// A unit after the number at `self.i`: (tokens used, singular, plural).
-    fn unit_after(&self) -> Option<(usize, &'static str, &'static str)> {
+    /// A unit after the number at `self.i`: (tokens used, unit).
+    fn unit_after(&self) -> Option<(usize, lexicon::Unit)> {
         let w = self
             .next()
             .filter(|n| n.is(Kind::Word) || n.is(Kind::Abbrev))?;
@@ -752,9 +981,9 @@ impl<'a> Verbalizer<'a> {
             && !slash.space_before
             && w2.is(Kind::Word)
             && !w2.space_before
-            && let Some((s, p, _)) = lexicon::unit(&format!("{}/{}", w.text, w2.text))
+            && let Some(unit) = lexicon::unit(&format!("{}/{}", w.text, w2.text))
         {
-            return Some((3, s, p));
+            return Some((3, unit));
         }
         let key = w.text.trim_end_matches('.');
         if key.chars().count() == 1
@@ -764,11 +993,11 @@ impl<'a> Verbalizer<'a> {
         {
             return None;
         }
-        let (s, p, glued_only) = lexicon::unit(key)?;
-        if glued_only && w.space_before {
+        let unit = lexicon::unit(key)?;
+        if !unit.spaced && w.space_before {
             return None;
         }
-        Some((1, s, p))
+        Some((1, unit))
     }
 
     /// "1" in front of a noun: "un libro", "uno studente", "una casa", "un'ora".
@@ -792,6 +1021,30 @@ impl<'a> Verbalizer<'a> {
 
     fn integer(&mut self, n: u64) {
         let next = self.next();
+        if let Some(f) = next.and_then(|x| vulgar(&x.text).filter(|_| x.is(Kind::Number))) {
+            self.currency_before = None;
+            return self.mixed_number(n, f);
+        }
+        // "10k": thousands, glued to the number.
+        if next.is_some_and(|x| {
+            x.is(Kind::Word) && !x.space_before && (x.text == "k" || x.text == "K")
+        }) && let Some(thousands) = n.checked_mul(1000).filter(|&t| t <= numbers::MAX_CARDINAL)
+        {
+            self.i += 1;
+            return self.integer(thousands);
+        }
+        // "€ 2 mld": "due miliardi di euro".
+        if let Some((_, plural)) = self.currency_before
+            && let Some((used, unit)) = self.unit_after().filter(|(_, u)| is_multiplier(u))
+        {
+            self.currency_before = None;
+            self.quantity(n, unit);
+            self.say("di");
+            self.say(plural);
+            self.i += used;
+            self.unit_dot();
+            return;
+        }
         if next.is_some_and(|x| {
             !x.space_before && (x.is_symbol('°') || x.is_symbol('º') || x.is_symbol('ª'))
         }) {
@@ -813,15 +1066,10 @@ impl<'a> Verbalizer<'a> {
         if let Some(cur) = self.take_currency() {
             return self.amount(n, None, cur);
         }
-        if let Some((used, singular, plural)) = self.unit_after() {
-            if n == 1 {
-                self.one_before(Some(singular.split(' ').next().unwrap_or(singular)));
-                self.say(singular);
-            } else {
-                self.say_all(numbers::cardinal(n));
-                self.say(plural);
-            }
+        if let Some((used, unit)) = self.unit_after() {
+            self.quantity(n, unit);
             self.i += used;
+            self.unit_dot();
             return;
         }
         let prev = self.word_at(-1);
@@ -971,9 +1219,10 @@ impl<'a> Verbalizer<'a> {
         if self.next().is_some_and(|x| x.is_symbol('%')) {
             self.say("per cento");
             self.i += 1;
-        } else if let Some((used, _, plural)) = self.unit_after() {
-            self.say(plural);
+        } else if let Some((used, unit)) = self.unit_after() {
+            self.say(unit.plural);
             self.i += used;
+            self.unit_dot();
         }
     }
 
@@ -1102,8 +1351,10 @@ impl<'a> Verbalizer<'a> {
         let _ = digits;
     }
 
-    fn roman_context(&self, raw: &str) -> Option<bool> {
-        let next = self.word_at(1);
+    /// Whether the single letter or numeral `raw` at `offset` is a Roman numeral, and if so
+    /// whether it is feminine ("Elisabetta I").
+    fn roman_context(&self, raw: &str, offset: isize) -> Option<bool> {
+        let next = self.word_at(offset + 1);
         let century = next
             .as_deref()
             .is_some_and(|w| matches!(w, "secolo" | "secoli" | "millennio"));
@@ -1115,10 +1366,12 @@ impl<'a> Verbalizer<'a> {
         }
         // A single I, V or X only after a name: "Carlo V", "Elisabetta I".
         let prev = self
-            .prev()
+            .at(offset - 1)
             .filter(|p| p.is(Kind::Word) && p.first_upper() && p.text.chars().count() >= 3)?;
         let lower = prev.text.to_lowercase();
-        if NOT_NAMES.contains(&lower.as_str()) || !prev.text.chars().skip(1).all(char::is_lowercase)
+        if NOT_NAMES.contains(&lower.as_str())
+            || LETTER_LABELS.contains(&lower.as_str())
+            || !prev.text.chars().skip(1).all(char::is_lowercase)
         {
             return None;
         }
@@ -1133,12 +1386,23 @@ impl<'a> Verbalizer<'a> {
         if is_laughter(&lower) {
             return self.say("ah ah");
         }
+        // A unit without a number: "al kg" → "al chilo", "quanti km?" → "quanti chilometri?".
+        // Not in capitals, where "GB" or "TB" are something else.
+        if raw.chars().any(char::is_lowercase)
+            && let Some(unit) = lexicon::unit(raw).filter(|u| u.alone)
+        {
+            let singular = self.prev().is_some_and(|p| p.is_symbol('/'))
+                || self
+                    .word_at(-1)
+                    .is_some_and(|w| SINGULAR_BEFORE.contains(&w.as_str()));
+            return self.say(if singular { unit.singular } else { unit.plural });
+        }
         let len = raw.chars().count();
         let upper = !raw.chars().any(char::is_lowercase) && raw.chars().any(char::is_uppercase);
 
         if upper && !self.shouting {
             if let Some(n) = roman_value(raw)
-                && let Some(feminine) = self.roman_context(raw)
+                && let Some(feminine) = self.roman_context(raw, 0)
             {
                 return self.say(&numbers::ordinal(n, feminine));
             }

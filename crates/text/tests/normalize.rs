@@ -99,6 +99,30 @@ fn money_percent_units() {
         ("1 h", "un'ora"),
         ("100 m²", "cento metri quadri"),
         ("5G", "cinque gi"),
+        // Quantities and units, also spaced as SI writes them, and alone (issue #10).
+        ("2 mld", "due miliardi"),
+        ("1 mld", "un miliardo"),
+        ("2,5 mld di euro", "due virgola cinque miliardi di euro"),
+        ("€ 2 mld", "due miliardi di euro"),
+        ("3 mln. Poi basta", "tre milioni. | poi basta"),
+        ("10k", "diecimila"),
+        ("costa 3 euro al kg", "costa tre euro al chilo"),
+        ("quanti km?", "quanti chilometri?"),
+        ("3 €/kg", "tre euro al chilo"),
+        ("15 €/h", "quindici euro all'ora"),
+        ("5 m", "cinque metri"),
+        ("5m", "cinque metri"),
+        ("100 g di burro", "cento grammi di burro"),
+        ("1 l di latte", "un litro di latte"),
+        ("60 W", "sessanta watt"),
+        ("12V", "dodici volt"),
+        ("Mancano 5 min.", "mancano cinque minuti."),
+        // Letters that are not units: alone, in capitals, a school class, a size.
+        ("m", "emme"),
+        ("il punto m", "il punto emme"),
+        ("KG", "cappa gi"),
+        ("la 5 V", "la cinque vu"),
+        ("taglia S/M", "taglia esse o emme"),
     ]);
 }
 
@@ -136,6 +160,19 @@ fn fractions_ranges_scores() {
         ("3-5 anni", "da tre a cinque anni"),
         ("finita 3-0", "finita tre a zero"),
         ("3:1", "tre a uno"),
+        // Vulgar fractions (issue #10).
+        ("½", "un mezzo"),
+        ("⅓", "un terzo"),
+        ("⅔ della classe", "due terzi della classe"),
+        ("aggiungi ½ kg di farina", "aggiungi mezzo chilo di farina"),
+        ("½ h", "mezz'ora"),
+        ("¾ h", "tre quarti d'ora"),
+        ("¼ di litro", "un quarto di litro"),
+        ("1½", "uno e mezzo"),
+        ("2 ½", "due e mezzo"),
+        ("2½ kg", "due chili e mezzo"),
+        ("1½ h", "un'ora e mezza"),
+        ("le 9 e ½", "le nove e mezzo"),
     ]);
 }
 
@@ -184,6 +221,12 @@ fn abbreviations_and_acronyms() {
         ("vedi art. 3 e n. 5", "vedi articolo tre e numero cinque"),
         ("a p. 12", "a pagina dodici"),
         ("nel 44 a.C.", "nel quarantaquattro avanti cristo."),
+        ("nel I secolo a.C.", "nel primo secolo avanti cristo."),
+        ("nel 14 d.C. Poi", "nel quattordici dopo cristo. | poi"),
+        (
+            "dal 27 a.C. al 14 d.C.",
+            "dal ventisette avanti cristo al quattordici dopo cristo.",
+        ),
         ("ad es. questo", "ad esempio questo"),
         ("IVA esclusa", "iva esclusa"),
         ("ti mando il PDF", "ti mando il pi di effe"),
@@ -199,6 +242,34 @@ fn abbreviations_and_acronyms() {
         ("mp3", "emme pi tre"),
         ("covid19", "covid diciannove"),
         ("aperto h24", "aperto acca ventiquattro"),
+    ]);
+}
+
+/// A capital letter with a dot before a capitalized word is an initial, as in Festival's
+/// end-of-utterance tree and espeak-ng's English rule; unless the letter labels a noun, the
+/// next word starts a sentence, or the letter is a Roman numeral after a name (issue #10).
+#[test]
+fn initials_and_sentence_ends() {
+    check(&[
+        ("via G. Verdi 3", "via gi verdi tre"),
+        ("M. Rossi", "emme rossi"),
+        ("Ho parlato con M. Rossi.", "ho parlato con emme rossi."),
+        ("J. R. R. Tolkien", "i lunga erre erre tolkien"),
+        ("A. E. Rossi", "a e rossi"),
+        ("A. Manzoni scrisse", "a manzoni scrisse"),
+        ("la classe A. Poi basta", "la classe a. | poi basta"),
+        ("Il voto è A. Poi vediamo.", "il voto è a. | poi vediamo."),
+        ("la serie B. Il campionato", "la serie bi. | il campionato"),
+        (
+            "Ho visto Carlo V. Fu un re.",
+            "ho visto carlo quinto. | fu un re.",
+        ),
+        ("Ciao M.", "ciao emme."),
+        (
+            "Vado a Roma. A. Bianchi mi aspetta.",
+            "vado a roma. | a bianchi mi aspetta.",
+        ),
+        ("È. Davvero", "è. | davvero"),
     ]);
 }
 

@@ -124,8 +124,11 @@ pub fn abbreviation(key: &str) -> Option<Abbreviation> {
         "q.tà" => a("quantità"),
         "tot." => a("totale"),
         "max." => a("massimo"),
-        "a.c." => after_number("avanti cristo"),
-        "d.c." => after_number("dopo cristo"),
+        // Unambiguous with or without a year: "nel 44 a.C.", "nel I secolo d.C.".
+        "a.c." | "a.c" => ending("avanti cristo"),
+        "d.c." | "d.c" => ending("dopo cristo"),
+        "mld." | "mrd." => after_number("miliardi"),
+        "mln." => after_number("milioni"),
         "gen." => after_number("gennaio"),
         "feb." => after_number("febbraio"),
         "mar." => after_number("marzo"),
@@ -468,43 +471,108 @@ pub fn is_month(word: &str) -> bool {
     (1..=12).any(|m| month(m) == Some(word))
 }
 
-/// A unit written after a number: (singular, plural). `glued_only` units are single letters
-/// that are only read as units when written against the number ("5m", "3g").
-pub fn unit(key: &str) -> Option<(&'static str, &'static str, bool)> {
+/// A unit or quantity abbreviation.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub struct Unit {
+    pub singular: &'static str,
+    pub plural: &'static str,
+    /// Read as a unit after a number also when a space separates them ("5 m", as SI writes
+    /// it). Letters that are often something else stay glued only ("12V", not "la 5 V").
+    pub spaced: bool,
+    /// Read as a unit on its own, without a number ("al kg"). Only for abbreviations that are
+    /// nothing else: never single letters ("m", "g"), nor "cm" ("come" in chat), "mm"
+    /// ("mmm"), "min", "sec", "gr", "lt", "ms", "mc", which have other readings.
+    pub alone: bool,
+}
+
+const fn u(singular: &'static str, plural: &'static str) -> Unit {
+    Unit {
+        singular,
+        plural,
+        spaced: true,
+        alone: false,
+    }
+}
+const fn alone(singular: &'static str, plural: &'static str) -> Unit {
+    Unit {
+        singular,
+        plural,
+        spaced: true,
+        alone: true,
+    }
+}
+const fn glued(singular: &'static str, plural: &'static str) -> Unit {
+    Unit {
+        singular,
+        plural,
+        spaced: false,
+        alone: false,
+    }
+}
+
+/// A unit or quantity written with a number ("5 km", "2 mld") or, for some, alone ("al kg").
+pub fn unit(key: &str) -> Option<Unit> {
     let lower = key.to_lowercase();
     Some(match lower.as_str() {
-        "km" => ("chilometro", "chilometri", false),
-        "m" => ("metro", "metri", true),
-        "cm" => ("centimetro", "centimetri", false),
-        "mm" => ("millimetro", "millimetri", false),
-        "kg" => ("chilo", "chili", false),
-        "g" => ("grammo", "grammi", true),
-        "gr" => ("grammo", "grammi", false),
-        "mg" => ("milligrammo", "milligrammi", false),
-        "l" => ("litro", "litri", true),
-        "lt" => ("litro", "litri", false),
-        "ml" => ("millilitro", "millilitri", false),
-        "cl" => ("centilitro", "centilitri", false),
-        "h" => ("ora", "ore", false),
-        "min" => ("minuto", "minuti", false),
-        "sec" => ("secondo", "secondi", false),
-        "s" => ("secondo", "secondi", true),
-        "ms" => ("millisecondo", "millisecondi", false),
-        "kb" => ("kilobyte", "kilobyte", false),
-        "mb" => ("megabyte", "megabyte", false),
-        "gb" => ("gigabyte", "gigabyte", false),
-        "tb" => ("terabyte", "terabyte", false),
-        "kw" => ("chilowatt", "chilowatt", false),
-        "kwh" => ("chilowattora", "chilowattora", false),
-        "w" => ("watt", "watt", true),
-        "v" => ("volt", "volt", true),
-        "hz" => ("hertz", "hertz", false),
-        "khz" => ("chilohertz", "chilohertz", false),
-        "mhz" => ("megahertz", "megahertz", false),
-        "ghz" => ("gigahertz", "gigahertz", false),
-        "mq" | "m²" | "m2" => ("metro quadro", "metri quadri", false),
-        "mc" | "m³" | "m3" => ("metro cubo", "metri cubi", false),
-        "km/h" => ("chilometro orario", "chilometri orari", false),
+        "km" => alone("chilometro", "chilometri"),
+        "m" => u("metro", "metri"),
+        "cm" => u("centimetro", "centimetri"),
+        "mm" => u("millimetro", "millimetri"),
+        "kg" => alone("chilo", "chili"),
+        "g" => u("grammo", "grammi"),
+        "gr" => u("grammo", "grammi"),
+        "mg" => alone("milligrammo", "milligrammi"),
+        "l" => u("litro", "litri"),
+        "lt" => u("litro", "litri"),
+        "ml" => alone("millilitro", "millilitri"),
+        "cl" => alone("centilitro", "centilitri"),
+        "h" => u("ora", "ore"),
+        "min" => u("minuto", "minuti"),
+        "sec" => u("secondo", "secondi"),
+        "s" => u("secondo", "secondi"),
+        "ms" => u("millisecondo", "millisecondi"),
+        "kb" => alone("kilobyte", "kilobyte"),
+        "mb" => alone("megabyte", "megabyte"),
+        "gb" => alone("gigabyte", "gigabyte"),
+        "tb" => alone("terabyte", "terabyte"),
+        "kw" => alone("chilowatt", "chilowatt"),
+        "kwh" => alone("chilowattora", "chilowattora"),
+        "w" => u("watt", "watt"),
+        "v" => glued("volt", "volt"),
+        "hz" => alone("hertz", "hertz"),
+        "khz" => alone("chilohertz", "chilohertz"),
+        "mhz" => alone("megahertz", "megahertz"),
+        "ghz" => alone("gigahertz", "gigahertz"),
+        "mq" | "m²" | "m2" => alone("metro quadro", "metri quadri"),
+        "mc" | "m³" | "m3" => u("metro cubo", "metri cubi"),
+        "km/h" => alone("chilometro orario", "chilometri orari"),
+        "mld" | "mrd" => alone("miliardo", "miliardi"),
+        "mln" => alone("milione", "milioni"),
+        _ => return None,
+    })
+}
+
+/// A vulgar fraction character: "½" → (1, 2).
+pub fn vulgar_fraction(c: char) -> Option<(u64, u64)> {
+    Some(match c {
+        '½' => (1, 2),
+        '⅓' => (1, 3),
+        '⅔' => (2, 3),
+        '¼' => (1, 4),
+        '¾' => (3, 4),
+        '⅕' => (1, 5),
+        '⅖' => (2, 5),
+        '⅗' => (3, 5),
+        '⅘' => (4, 5),
+        '⅙' => (1, 6),
+        '⅚' => (5, 6),
+        '⅐' => (1, 7),
+        '⅛' => (1, 8),
+        '⅜' => (3, 8),
+        '⅝' => (5, 8),
+        '⅞' => (7, 8),
+        '⅑' => (1, 9),
+        '⅒' => (1, 10),
         _ => return None,
     })
 }

@@ -4,12 +4,16 @@
 //!
 //! Both files are sorted tab-separated text, searched in place without building an index.
 //! They are derived from Wiktionary and licensed CC BY-SA 4.0; see `data/README.md`.
+//!
+//! A third file, written for Kalliope, gives the whole pronunciation of foreign words that
+//! people say in meetings ("zoom", "computer"), as an Italian speaker says them.
 
 use crate::rules::Hint;
 use std::cmp::Ordering;
 
 static LEXICON: &str = include_str!("../data/lexicon.tsv");
 static SUFFIXES: &str = include_str!("../data/suffixes.tsv");
+static LOANWORDS: &str = include_str!("../data/loanwords.tsv");
 
 /// Binary search over sorted `key\tvalue` lines.
 fn lookup<'a>(data: &'a str, key: &str) -> Option<&'a str> {
@@ -74,6 +78,11 @@ pub fn lexicon(word: &str) -> Option<Hint> {
     lookup(LEXICON, word).map(parse)
 }
 
+/// Phonemes of a foreign word whose spelling the Italian rules cannot read: "zoom" → ʣˈum.
+pub fn loanword(word: &str) -> Option<&'static str> {
+    lookup(LOANWORDS, word)
+}
+
 /// Hint from the longest known ending of `word`: lines are `ending \t syllable-from-end \t
 /// quality`, where the syllable is counted from the end (1 = next-to-last).
 pub fn suffix(word: &str) -> Option<Hint> {
@@ -96,7 +105,33 @@ pub fn suffix(word: &str) -> Option<Hint> {
 
 #[cfg(test)]
 mod tests {
-    use super::lookup;
+    use super::{LOANWORDS, lookup};
+
+    /// The loanword table must stay sorted for the binary search, give one stressed vowel per
+    /// word and use only the phonemes the Italian rules produce, which are the ones the voices
+    /// learned for Italian.
+    #[test]
+    fn loanword_table() {
+        const PHONEMES: &str = "aeiouɛɔɪʊjwbdfklmnprstvzɡɲʎʃʦʣʧʤŋɾSːˈ";
+        let keys: Vec<&str> = LOANWORDS
+            .lines()
+            .map(|l| l.split_once('\t').map_or(l, |(k, _)| k))
+            .collect();
+        assert!(
+            keys.windows(2).all(|w| w[0] < w[1]),
+            "loanwords.tsv not sorted"
+        );
+        for line in LOANWORDS.lines() {
+            let (word, phonemes) = line.split_once('\t').expect("word\tphonemes");
+            assert_eq!(lookup(LOANWORDS, word), Some(phonemes));
+            assert_eq!(phonemes.matches('ˈ').count(), 1, "{word}: one stress");
+            let odd: String = phonemes
+                .chars()
+                .filter(|&c| !PHONEMES.contains(c))
+                .collect();
+            assert!(odd.is_empty(), "{word}: {odd:?} is not an Italian phoneme");
+        }
+    }
 
     #[test]
     fn binary_search() {
