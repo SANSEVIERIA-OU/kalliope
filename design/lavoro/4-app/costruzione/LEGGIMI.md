@@ -105,3 +105,12 @@ Movimenti toccati (`movimento-visibile.mjs`, video del gesto, zona della cronolo
   (Le prove con la tastiera e le foto sono state fatte sui binari intermedi, di cui l'ultimo cambia dal finale solo per le correzioni descritte nei commit `684ab0e` e successivo, ripetute a mano sul binario rapido: fuoco dopo «Riunione», «Aiuto», scorrimento dei riconoscimenti, «ne mancano» a capo.)
 - Test che falliscono sulla copia di prima: `a_name_of_only_spaces…` (nome valido, vedi `crea.rs`), `a_missing_or_forbidden_file_is_explained_without_the_system_s_english`, `what_a_killed_kalliope_left_goes_at_the_next_start_and_what_runs_stays`,
   `the_extensions_offered_to_the_chooser_cover_the_formats_in_both_cases`, `only_a_wayland_session_leaves_staying_on_top_to_the_person`, i nove di `avanzamento.rs`, i tredici di `crea.rs`, i due di `guida.rs`, i cinque di `tools/test_portale_finto.py`.
+
+## Dove sono le prove (in `materiali-locali/costruzione-prove/`, ignorata da git)
+
+- Video: `video/crea-voce-tastiera.mp4` (tutta la creazione della voce con la sola tastiera, 52 s), `video/e2e1-parla.mp4` (frase detta con le parole accese), `video/giulia2-sync.mkv` e `video/propria2-sync.mkv` (schermo con l'orologio di sistema),
+  `video/invio-prima.mp4` e `invio-dopo*.mp4` (il passaggio a Invio), `video/info-apri-chiudi.mp4`; misure in `misure/`.
+- Foto: `foto/m-SCENA-MISURA-TESTO-TEMA.png` (84 scene demo: 920 × 640 chiaro e scuro; 360 × 320, 1600 × 1000, 150% e 175% per le scene principali), `foto/aff/` (accanto alle approvate), e le foto dei giri con il motore vero (`k*`, `rec-*`, `n*`, `c*`, `imp-*`, `zen1-*`, `p7*`, `mic2-*`, `comp1/2-*`, `info1-*`, `guida-*`).
+- Strumenti: `strumenti/` (`banco.sh`, `app.sh`, `foto.sh`, `matrice.sh`, `sync2.py`, `adatta-pesi.py`, `misura.sh`, `crea-gui.sh`, `crea-import.sh`, `wayland.sh`…).
+- Scene demo (`kalliope --demo SCENA`): vuota, prepara, scrive, parla, cronologia, nessuno, microfono, problema, compatta, compatta-parla, notizia, info, conferma, voce-1, voce-mic, voce-2, voce-suggerimento, voce-3, voce-tratti, voce-nome, voce-crea, voce-errore, voce-importa, grande.
+- Rimasti i testi del programma scritti in Rust (riga di stato, controlli del nome, consigli della registrazione): sono italiano scritto nel codice, non passano da `@tr`; per le traduzioni servirà un passo suo.
