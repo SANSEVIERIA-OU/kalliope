@@ -54,6 +54,24 @@ icon_paths() {
     for f in "${icons[@]}"; do echo "$share/icons/hicolor/$f"; done
 }
 
+# The libraries the window loads while running (dlopen), all required by the packages: after installing a package on a bare
+# system, each must be there, or the window cannot open (a missing libxkbcommon-x11 made it panic, found by CI on 26/11/2026).
+# tools/test_packaging.py checks this list against the packaging table.
+window_libs=(libxkbcommon.so.0 libxkbcommon-x11.so.0 libwayland-client.so.0 libX11.so.6 libX11-xcb.so.1 libXcursor.so.1 libXi.so.6)
+window_libraries_present() {
+    local lib missing=() cache
+    # ldconfig is in /sbin, which is not on every user's PATH.
+    cache=$("$(command -v ldconfig || echo /sbin/ldconfig)" -p)
+    for lib in "${window_libs[@]}"; do
+        grep -qE "^[[:space:]]+${lib//./\\.} " <<<"$cache" || missing+=("$lib")
+    done
+    if [ ${#missing[@]} -gt 0 ]; then
+        echo "the package did not bring what the window loads: ${missing[*]}" >&2
+        return 1
+    fi
+    echo "--- the window's libraries are installed: ${window_libs[*]}"
+}
+
 # The installed programs run as people run them: no variable says where ONNX Runtime or the models are.
 bare() {
     env -u KALLIOPE_ORT_LIB -u KALLIOPE_MODEL_DIR -u KALLIOPE_POCKET_DIR -u KALLIOPE_VOICES_DIR "$@"
@@ -117,6 +135,7 @@ case $inside in
 rpm)
     dnf install -y -q "$dist/kalliope-$version-x86_64.rpm"
     rpm -q --requires kalliope
+    window_libraries_present
     check /usr/bin /usr/lib/kalliope/libonnxruntime.so.1
     dnf remove -y -q kalliope
     gone /usr/bin/kalliope /usr/bin/kalliope-cli /usr/lib/kalliope /usr/share/kalliope $(icon_paths /usr/share)
@@ -132,6 +151,7 @@ arch)
     # Only packing here; pacman -U below installs the dependencies.
     su builder -c "cd $build && makepkg --noconfirm --nodeps"
     pacman -U --noconfirm "$build"/kalliope-bin-*.pkg.tar.zst
+    window_libraries_present
     check /usr/bin /usr/lib/kalliope/libonnxruntime.so.1
     test -L /usr/share/licenses/kalliope-bin/LICENSE
     pacman -R --noconfirm kalliope-bin
@@ -155,6 +175,7 @@ if command -v apt-get >/dev/null; then
     echo "=== .deb"
     $sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y -q "$dist/kalliope-$version-amd64.deb" >/dev/null
     dpkg -s kalliope | grep -E '^(Version|Depends|Recommends):'
+    window_libraries_present
     check /usr/bin /usr/lib/kalliope/libonnxruntime.so.1
     $sudo env DEBIAN_FRONTEND=noninteractive apt-get remove -y -q kalliope >/dev/null
     gone /usr/bin/kalliope /usr/bin/kalliope-cli /usr/lib/kalliope /usr/share/kalliope $(icon_paths /usr/share)

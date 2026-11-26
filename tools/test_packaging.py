@@ -96,6 +96,14 @@ class PackagingFiles(unittest.TestCase):
             self.assertRegex(deb, rf"[ ,]{re.escape(d)}(,|$)", f"{soname}: {d} is not in the deb's Depends")
             self.assertRegex(rpm, rf"Requires:\s+{re.escape(r)}%", f"{soname}: {r} is not in the rpm's Requires")
 
+    def test_the_package_test_checks_the_window_libraries(self):
+        # test-packages.sh checks, after each install on a bare system, that every library the window loads is there.
+        script = (ROOT / "packaging/linux/test-packages.sh").read_text(encoding="utf-8")
+        listed = set(re.search(r"^window_libs=\((.*?)\)", script, re.M).group(1).split())
+        required = {soname for soname, package in LOADED.items() if package is not None and package[3]}
+        self.assertEqual(listed, required, "test-packages.sh and LOADED disagree on the window's libraries")
+        self.assertEqual(script.count("    window_libraries_present\n"), 3, "the check must run after the deb, rpm and Arch installs")
+
     def test_ci_opens_the_window_with_the_libraries_the_deb_requires(self):
         # CI must install what a person's system gets from the deb, and no toolkit that would bring those libraries by chance.
         ci = (ROOT / ".github/workflows/ci.yml").read_text(encoding="utf-8")
