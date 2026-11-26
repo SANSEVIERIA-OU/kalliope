@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! Kalliope: type, and be heard. The window and the speaking thread; the voice comes with the program.
 
+#![cfg_attr(target_os = "windows", windows_subsystem = "windows")]
+
 mod audio;
 mod catalog;
 mod engine;
@@ -127,6 +129,7 @@ fn run_window() -> Result<(), Box<dyn std::error::Error>> {
     let history = Rc::new(VecModel::<SharedString>::default());
     ui.set_history(ModelRc::from(history.clone()));
     let app = session.clone();
+    ui.on_has_speech_text(|text| !text.trim().is_empty());
     ui.on_speak(move |text| {
         let mut app = app.borrow_mut();
         if !app.speak(&text) {
@@ -148,8 +151,30 @@ fn run_window() -> Result<(), Box<dyn std::error::Error>> {
     Ok(ui.run()?)
 }
 
+// A normal desktop launch has no console window. Attach terminal invocations to
+// their caller while preserving the handles provided for redirected output.
+#[cfg(target_os = "windows")]
+fn attach_terminal() {
+    #[link(name = "kernel32")]
+    unsafe extern "system" {
+        fn AttachConsole(process: u32) -> i32;
+        fn GetStdHandle(which: u32) -> *mut std::ffi::c_void;
+    }
+    // STD_OUTPUT_HANDLE is -11. A pipe or file already works without a console.
+    unsafe {
+        let stdout = GetStdHandle(-11i32 as u32);
+        if stdout.is_null() || stdout as isize == -1 {
+            AttachConsole(u32::MAX);
+        }
+    }
+}
+
 fn main() -> ExitCode {
     let args: Vec<String> = std::env::args().skip(1).collect();
+    #[cfg(target_os = "windows")]
+    if !args.is_empty() {
+        attach_terminal();
+    }
     match args.first().map(String::as_str) {
         Some("--version" | "-V") => {
             println!("kalliope {}", version());

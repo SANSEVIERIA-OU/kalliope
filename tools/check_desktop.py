@@ -36,18 +36,16 @@ def windows_window(pid):
     return windows
 
 
-def mac_windows(pid):
-    # Window titles can require screen-recording permission. The owning PID, layer
-    # and bounds identify our visible window without inspecting another app.
-    result = subprocess.check_output(["osascript", "-l", "JavaScript", "-e", """
-        ObjC.import("CoreGraphics");
-        function run(argv) {
-            const all = ObjC.deepUnwrap($.CGWindowListCopyWindowInfo(17, 0));
-            return JSON.stringify(all.filter(w => w.kCGWindowOwnerPID === Number(argv[0])
-                && w.kCGWindowLayer === 0).map(w => [w.kCGWindowNumber, w.kCGWindowBounds.Width, w.kCGWindowBounds.Height]));
-        }
-    """, str(pid)], text=True)
-    return json.loads(result)
+def mac_inspector(work):
+    helper = Path(work) / "macos-window"
+    source = Path(__file__).with_name("macos_window.swift")
+    subprocess.run(["xcrun", "swiftc", str(source), "-o", helper], check=True, timeout=90)
+
+    def visible_windows(pid):
+        output = subprocess.check_output([helper, str(pid)], timeout=5)
+        return json.loads(output)
+
+    return visible_windows
 
 
 def take_window_picture(handle, path):
@@ -62,12 +60,15 @@ def take_window_picture(handle, path):
                 public class WindowBounds {
                     [StructLayout(LayoutKind.Sequential)] public struct Rect { public int x,y,r,b; }
                     [DllImport("user32.dll")] public static extern bool GetWindowRect(IntPtr h, out Rect rect);
+                    [DllImport("dwmapi.dll")] public static extern int DwmGetWindowAttribute(IntPtr h, int attr, out Rect rect, int size);
                     [DllImport("user32.dll")] public static extern bool SetForegroundWindow(IntPtr h);
                 }'
             $box = New-Object WindowBounds+Rect
             $handle = [IntPtr]::new([long]$env:KALLIOPE_TEST_HWND)
             [void][WindowBounds]::SetForegroundWindow($handle)
-            [void][WindowBounds]::GetWindowRect($handle, [ref]$box)
+            if ([WindowBounds]::DwmGetWindowAttribute($handle, 9, [ref]$box, 16) -ne 0) {
+                [void][WindowBounds]::GetWindowRect($handle, [ref]$box)
+            }
             $bitmap = [Drawing.Bitmap]::new($box.r-$box.x,$box.b-$box.y)
             $g = [Drawing.Graphics]::FromImage($bitmap)
             $g.CopyFromScreen($box.x,$box.y,0,0,$bitmap.Size)
@@ -95,9 +96,9 @@ def main():
             if not 1.5 < duration < 6 or not any(sound.readframes(sound.getnframes())):
                 raise RuntimeError("The recording has an unexpected duration or is silent")
         print(f"{actual}, generated {duration:.2f} s of speech", flush=True)
-        with subprocess.Popen([app], env={**os.environ, "XDG_CONFIG_HOME": work}) as window:
+        inspect = windows_window if sys.platform == "win32" else mac_inspector(work)
+        with subprocess.Popen([app]) as window:
             try:
-                inspect = windows_window if sys.platform == "win32" else mac_windows
                 deadline = time.monotonic() + 40
                 while time.monotonic() < deadline:
                     if window.poll() is not None:
