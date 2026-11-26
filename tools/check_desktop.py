@@ -3,7 +3,8 @@
 
 On Linux the window is found with xdotool and photographed with ImageMagick; a picture named desktop-window-dark.png or
 desktop-window-light.png must be dark or light on the whole (the system appearance reached the window). Run it under
-`xvfb-run -a dbus-run-session -- python3 -I tools/portale_finto.py dark -- python3 tools/check_desktop.py desktop-window-dark.png`.
+`xvfb-run -a -s "-screen 0 1280x900x24" dbus-run-session -- python3 -I tools/portale_finto.py dark -- python3 tools/check_desktop.py desktop-window-dark.png`
+(a true-colour screen: the default 8-bit one of xvfb-run is too poor for the window).
 KALLIOPE_BIN_DIR names the folder with the binaries (default target/debug)."""
 import ctypes
 import json

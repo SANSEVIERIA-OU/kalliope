@@ -8,7 +8,7 @@ xdg-desktop-portal does (ReadOne, Read, and the SettingChanged signal): Slint's 
 COMMAND, runs it once the service answers and exits with its status; without, serves until stopped. Needs the system's
 PyGObject (python3-gi) and a session bus of its own, e.g.:
 
-    xvfb-run -a dbus-run-session -- python3 -I tools/portale_finto.py dark -- python3 tools/check_desktop.py window.png
+    xvfb-run -a -s "-screen 0 1280x900x24" dbus-run-session -- python3 -I tools/portale_finto.py dark -- python3 tools/check_desktop.py window.png
 
 It never touches the user's session: dbus-run-session makes a bus that only this command's children see.
 """

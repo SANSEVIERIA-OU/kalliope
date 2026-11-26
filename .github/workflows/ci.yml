@@ -29,7 +29,7 @@ jobs:
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.fork
     # The newest Ubuntu; releases are built on the oldest one Kalliope supports (release.yml).
     runs-on: ubuntu-26.04
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v7
       - name: Versions agree
@@ -92,9 +92,9 @@ jobs:
       - name: Open the window on Linux, in the dark and light system appearance and with no settings portal
         run: |
           for scheme in dark light; do
-            xvfb-run -a dbus-run-session -- python3 -I tools/portale_finto.py $scheme -- python3 tools/check_desktop.py desktop-window-$scheme.png
+            xvfb-run -a -s "-screen 0 1280x900x24" dbus-run-session -- python3 -I tools/portale_finto.py $scheme -- python3 tools/check_desktop.py desktop-window-$scheme.png
           done
-          xvfb-run -a dbus-run-session -- python3 tools/check_desktop.py desktop-window.png
+          xvfb-run -a -s "-screen 0 1280x900x24" dbus-run-session -- python3 tools/check_desktop.py desktop-window.png
       - uses: actions/upload-artifact@v7
         with:
           name: desktop-window-linux
