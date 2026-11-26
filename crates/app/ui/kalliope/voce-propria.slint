@@ -297,7 +297,7 @@ export component CreaVoce inherits Rectangle {
                     horizontal-stretch: 1;
                     spacing: Token.spazio-minimo * Aspetto.scala;
                     Text {
-                        text: root.registra ? @tr("{} · ne mancano {}", root.tempo, max(0, ceil((Token.registrazione-utile - root.registrato) / 1s))) : @tr("Premi il tondo e leggi"); // fisso: un secondo, l'unità del conto alla rovescia
+                        text: !root.registra ? @tr("Premi il tondo e leggi") : root.registrato >= Token.registrazione-utile ? root.tempo : @tr("{} · ne mancano {}", root.tempo, ceil((Token.registrazione-utile - root.registrato) / 1s)); // fisso: un secondo, l'unità del conto alla rovescia
                         font-size: Token.corpo-bolla * Aspetto.scala;
                         font-weight: Token.peso-forte;
                         color: Token.testo;
