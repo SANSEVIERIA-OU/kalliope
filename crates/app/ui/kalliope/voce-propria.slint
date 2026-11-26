@@ -410,6 +410,7 @@ component PassoRegistra inherits VerticalLayout {
                     : !Creazione.registra ? @tr("Premi il tondo e leggi")
                     : root.basta ? root.tempo
                     : @tr("{} · ne mancano {}", root.tempo, ceil((Token.registrazione-utile - Creazione.parlato) / 1s)); // fisso: un secondo, l'unità del conto alla rovescia
+                wrap: word-wrap;
                 font-size: Token.corpo-bolla * Aspetto.scala;
                 font-weight: Token.peso-forte;
                 color: Token.testo;

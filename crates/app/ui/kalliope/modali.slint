@@ -87,7 +87,7 @@ export component Informazioni inherits Modale {
     // the keyboard scrolls the credits: a line for an arrow, most of the panel for a page
     scorri(passo) => {
         scorre.content-y = clamp(
-            scorre.content-y - (passo < 0 ? 1 : -1) * (abs(passo) == 2 ? scorre.height * 0.8 : Token.altezza-comando * Aspetto.scala * 1.5),
+            scorre.content-y - (passo < 0 ? -1 : 1) * (abs(passo) == 2 ? scorre.height * 0.8 : Token.altezza-comando * Aspetto.scala * 1.5),
             min(0px, scorre.height - scorre.content-height), 0px);
     }
     public function apri() { sito.focus(); }

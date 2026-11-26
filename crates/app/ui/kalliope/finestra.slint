@@ -202,7 +202,7 @@ export component Finestra inherits Rectangle {
                     y: (parent.height - self.height) / 2;
                     testo: @tr("Riunione"); piccolo: true; tipo: Tipo.quieto;
                     accessible-label: @tr("Modalità riunione: solo scrittura, stato e Ferma");
-                    premuto => { root.compatta = true; root.compatta-cambiata(true); }
+                    premuto => { root.compatta = true; root.compatta-cambiata(true); scrittura.focus(); }
                 }
                 altro := Pulsante {
                     y: (parent.height - self.height) / 2;
@@ -345,14 +345,16 @@ export component Finestra inherits Rectangle {
                 // where a problem has a way out, it is offered next to it (correction I6)
                 if root.male: Pulsante {
                     y: (parent.height - self.height) / 2;
-                    testo: @tr("Come si risolve"); piccolo: true; tipo: Tipo.quieto;
+                    // gathered, the word is short, so the row keeps «Intera» in view (a 400 px window)
+                    testo: root.raccolta ? @tr("Aiuto") : @tr("Come si risolve"); piccolo: true; tipo: Tipo.quieto;
+                    accessible-label: @tr("Come si risolve");
                     premuto => { root.apri-guida(root.situazione); }
                 }
                 if root.compatta: Pulsante {
                     y: (parent.height - self.height) / 2;
                     testo: root.minima ? @tr("Intera") : @tr("Finestra intera"); piccolo: true; tipo: Tipo.nudo;
                     accessible-label: @tr("Finestra intera");
-                    premuto => { root.compatta = false; root.compatta-cambiata(false); }
+                    premuto => { root.compatta = false; root.compatta-cambiata(false); scrittura.focus(); }
                 }
             }
             // the hint shows only where the system does not let a program stay above the others (Wayland), once, and only
@@ -439,7 +441,7 @@ export component Finestra inherits Rectangle {
         width: min(root.width - 2 * Token.spazio-medio * Aspetto.scala, Token.bolla-larghezza * Aspetto.scala / 2.2);
         scelta(i) => {
             root.menu-altro-aperto = false;
-            if (root.minima && i == 0) { root.compatta = true; root.compatta-cambiata(true); }
+            if (root.minima && i == 0) { root.compatta = true; root.compatta-cambiata(true); scrittura.focus(); }
             else {
                 // the item's place among «Crea la tua voce», «Informazioni», «Svuota la cronologia»
                 if (i - (root.minima ? 1 : 0) == 0) { root.apri-crea-voce(); root.schermata = Schermata.crea-voce; }
