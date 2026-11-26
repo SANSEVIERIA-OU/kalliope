@@ -72,6 +72,7 @@
   background: var(--app-fondo);
   color: var(--app-testo);
   font-family: var(--app-font-testo);
+  border: var(--app-filo) solid var(--app-bordo);
   box-shadow: var(--finestra-chiara-ombra-varco);
   transition: opacity var(--durata-varco) var(--curva-dolce), transform var(--durata-varco) var(--entra), box-shadow var(--durata-varco) var(--curva-dolce);
 }
