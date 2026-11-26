@@ -425,6 +425,17 @@ impl Voice {
     }
 }
 
+/// The loudest a sample of silence gets (about -50 dBFS). Both voices start each utterance with
+/// silence: Klein with about 0.23 s, Pocket TTS with up to half a second of its noise floor (peaks
+/// of 0.001, -60 dBFS); then the first syllable rises past 0.01 within a few milliseconds.
+pub const SILENCE: f32 = 0.003;
+
+/// Where the voice begins in `audio`: its first sample louder than [`SILENCE`]; `None` when it is
+/// all silence.
+pub fn voice_starts(audio: &[f32]) -> Option<usize> {
+    audio.iter().position(|s| s.abs() > SILENCE)
+}
+
 /// Returns memory freed after a synthesis to the operating system (glibc keeps it otherwise).
 /// Measured: resident memory between utterances 135–165 MB without, 95 MB with, and no
 /// measurable CPU cost. [`Voice::synthesize`] calls it; streaming callers using

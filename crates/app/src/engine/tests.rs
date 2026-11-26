@@ -74,11 +74,13 @@ impl Drop for FakeMic {
     }
 }
 
-/// A voice that takes `work` to synthesize each word and says it in `spoken`; a streaming one
-/// hands its audio over in four parts, `work` apart.
+/// A voice that takes `work` to synthesize each word and says it in `spoken`, after `lead` of
+/// silence; a streaming one hands the silence over first, on its own, then the voice in four
+/// parts, `work` apart.
 struct FakeVoice {
     work: Duration,
     spoken: Duration,
+    lead: Duration,
     streaming: bool,
 }
 
@@ -113,7 +115,11 @@ impl Speaker for FakeVoice {
     }
     fn speak(&self, _piece: &Piece, play: &mut dyn FnMut(&[f32]) -> bool) -> Result<(), String> {
         let samples = (self.spoken.as_secs_f32() * RATE as f32) as usize;
+        let silence = vec![0.0; (self.lead.as_secs_f32() * RATE as f32) as usize];
         if self.streaming {
+            if !silence.is_empty() && !play(&silence) {
+                return Ok(());
+            }
             for _ in 0..4 {
                 std::thread::sleep(self.work);
                 if !play(&vec![0.5; samples / 4]) {
@@ -123,7 +129,9 @@ impl Speaker for FakeVoice {
             return Ok(());
         }
         std::thread::sleep(self.work);
-        play(&vec![0.5; samples]);
+        let mut audio = silence;
+        audio.resize(audio.len() + samples, 0.5);
+        play(&audio);
         Ok(())
     }
 }
@@ -143,6 +151,7 @@ struct Setup {
     voice: VoiceId,
     work: Duration,
     spoken: Duration,
+    lead: Duration,
     streaming: bool,
     broken: Vec<VoiceId>,
     in_use: bool,
@@ -157,6 +166,7 @@ impl Default for Setup {
             voice: VoiceId::default(),
             work: Duration::from_millis(10),
             spoken: Duration::from_millis(100),
+            lead: Duration::ZERO,
             streaming: false,
             broken: Vec::new(),
             in_use: true,
@@ -184,8 +194,13 @@ fn rig(setup: Setup) -> Rig {
     let connected = Arc::new(AtomicBool::new(true));
     let most_queued = Arc::new(Mutex::new(0.0));
     let opened = Arc::new(AtomicU64::new(0));
-    let (work, spoken, streaming, broken) =
-        (setup.work, setup.spoken, setup.streaming, setup.broken);
+    let (work, spoken, lead, streaming, broken) = (
+        setup.work,
+        setup.spoken,
+        setup.lead,
+        setup.streaming,
+        setup.broken,
+    );
     let load: Loader = Box::new(move |_, id| {
         if broken.contains(id) {
             return Err(format!("{} rotta", id.key()));
@@ -193,6 +208,7 @@ fn rig(setup: Setup) -> Rig {
         Ok(Box::new(FakeVoice {
             work,
             spoken,
+            lead,
             streaming,
         }))
     });
@@ -833,6 +849,147 @@ fn a_streamed_piece_gets_its_exact_duration_once_known() {
         pieces[1].exact && close(pieces[1].duration, 800),
         "{pieces:?}"
     );
+}
+
+/// The first piece that sounds, when it was announced, and when the first audio was played.
+fn first_sounding(rig: &Rig, within: Duration) -> (Sounding, Instant, Instant) {
+    let deadline = Instant::now() + within;
+    while let Ok(e) = rig.events.recv_timeout(deadline - Instant::now()) {
+        if let Event::Sounding(s) = e {
+            let now = Instant::now();
+            return (
+                s,
+                now,
+                rig.log.first("play").expect("audio before the piece"),
+            );
+        }
+    }
+    panic!("no piece sounding within {within:?}");
+}
+
+#[test]
+fn a_piece_starts_sounding_with_its_voice_not_with_the_silence_before_it() {
+    // Giulia and Marco start a piece with about 0.23 s of silence: the first word is not said yet.
+    let rig = rig(Setup {
+        spoken: Duration::from_millis(500),
+        lead: Duration::from_millis(300),
+        ..Setup::default()
+    });
+    rig.ready();
+    rig.engine.send(Command::Speak("ciao".into()));
+    let (s, announced, played) = first_sounding(&rig, 2 * SECOND);
+    let wait = announced - played;
+    assert!(
+        (Duration::from_millis(270)..Duration::from_millis(380)).contains(&wait),
+        "{wait:?}"
+    );
+    assert!(s.exact && close(s.duration, 500), "{s:?}");
+    rig.until(&Event::Idle, 2 * SECOND);
+}
+
+#[test]
+fn a_streamed_piece_starts_sounding_when_its_voice_reaches_the_microphone() {
+    // A voice prepared from a recording hands over up to half a second of its noise floor first.
+    // It synthesizes for longer than the silence lasts.
+    let rig = rig(Setup {
+        work: Duration::from_millis(150),
+        spoken: Duration::from_millis(800),
+        lead: Duration::from_millis(400),
+        streaming: true,
+        ..Setup::default()
+    });
+    rig.ready();
+    rig.engine.send(Command::Speak("ciao".into()));
+    let (s, announced, played) = first_sounding(&rig, 2 * SECOND);
+    let wait = announced - played;
+    assert!(
+        (Duration::from_millis(370)..Duration::from_millis(480)).contains(&wait),
+        "{wait:?}"
+    );
+    assert!(!s.exact);
+    // The guess, then the exact duration: the voice only, not the silence before it.
+    let events = rig.until(&Event::Idle, 3 * SECOND);
+    let exact = soundings(&events);
+    assert!(
+        exact.len() == 1 && exact[0].exact && close(exact[0].duration, 800),
+        "{exact:?}"
+    );
+}
+
+#[test]
+fn a_piece_of_silence_still_sounds_from_its_first_sample() {
+    let rig = rig(Setup {
+        spoken: Duration::ZERO,
+        lead: Duration::from_millis(300),
+        ..Setup::default()
+    });
+    rig.ready();
+    rig.engine.send(Command::Speak("ciao".into()));
+    let (s, announced, played) = first_sounding(&rig, 2 * SECOND);
+    assert!(announced - played < Duration::from_millis(60));
+    assert!(s.exact && close(s.duration, 300), "{s:?}");
+    rig.until(&Event::Idle, 2 * SECOND);
+}
+
+#[test]
+fn stop_during_the_silence_before_the_voice_says_nothing_was_said() {
+    for streaming in [false, true] {
+        let rig = rig(Setup {
+            work: Duration::from_millis(20),
+            spoken: Duration::from_millis(600),
+            lead: Duration::from_millis(500),
+            streaming,
+            ..Setup::default()
+        });
+        rig.ready();
+        rig.engine.send(Command::Speak("uno due".into()));
+        let deadline = Instant::now() + SECOND;
+        while rig.log.first("play").is_none() && Instant::now() < deadline {
+            std::thread::sleep(Duration::from_millis(5));
+        }
+        std::thread::sleep(Duration::from_millis(200));
+        rig.engine.stop();
+        let events = rig.until(&Event::Idle, SECOND);
+        let said = events.iter().find_map(|e| match e {
+            Event::Interrupted(s) => Some(s.clone()),
+            _ => None,
+        });
+        assert_eq!(
+            said.map(|s| (s.done, s.cut)),
+            Some((0, None)),
+            "streaming {streaming}: {events:?}"
+        );
+        assert!(soundings(&events).is_empty(), "{events:?}");
+    }
+}
+
+#[test]
+fn each_voice_starts_from_the_first_guess_of_its_pace() {
+    let rig = rig(Setup {
+        work: Duration::from_millis(5),
+        spoken: Duration::from_millis(900),
+        streaming: true,
+        ..Setup::default()
+    });
+    rig.ready();
+    let guess = |rig: &Rig| {
+        rig.engine.send(Command::Speak("ciao".into()));
+        let events = rig.until(&Event::Idle, 3 * SECOND);
+        soundings(&events)
+            .into_iter()
+            .find(|s| !s.exact)
+            .expect("a guess")
+            .duration
+    };
+    let first = Duration::from_secs_f32(FIRST_GUESS_SECONDS_PER_WORD);
+    assert!(close(guess(&rig), first.as_millis() as u64));
+    // The same voice learns its pace from what it said...
+    assert!(guess(&rig) > first + Duration::from_millis(200));
+    // ...and another voice starts over.
+    rig.engine
+        .send(Command::Voice(VoiceId::Klein("Marco".into())));
+    rig.until(&Event::Voice(VoiceId::Klein("Marco".into())), SECOND);
+    assert!(close(guess(&rig), first.as_millis() as u64));
 }
 
 #[test]

@@ -397,10 +397,14 @@ fn say(
     ExitCode::SUCCESS
 }
 
-/// One line for a piece that starts sounding: when (ms since `start`), what it says and for how long.
+/// One line for a piece that starts sounding: when (ms since `start`, and on the wall clock, to set it against a recording
+/// of the microphone), what it says and for how long.
 pub fn trace(s: &crate::engine::Sounding, start: Instant) -> String {
+    let wall = std::time::SystemTime::now()
+        .duration_since(std::time::UNIX_EPOCH)
+        .map_or(0.0, |d| d.as_secs_f64());
     format!(
-        "avanzamento {:6} ms · {:5} ms{} · byte {}..{} · «{}»{}",
+        "avanzamento {:6} ms · ora {wall:.3} · {:5} ms{} · byte {}..{} · «{}»{}",
         start.elapsed().as_millis(),
         s.duration.as_millis(),
         if s.exact { "" } else { " (stima)" },

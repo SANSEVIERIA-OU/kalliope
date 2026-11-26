@@ -43,8 +43,10 @@ const LOOKAHEAD_SECONDS: f32 = 3.0;
 const WATCH: Duration = Duration::from_millis(500);
 /// How often it tries to open the microphone again while PipeWire does not answer.
 const RETRY: Duration = Duration::from_secs(1);
-/// Seconds per spoken word before anything is measured, to guess how long a streamed piece lasts.
-const FIRST_GUESS_SECONDS_PER_WORD: f32 = 0.36;
+/// Seconds per spoken word before anything is measured, to guess how long a streamed piece lasts
+/// from where its voice begins: a voice prepared from a recording said four phrases of 6 to 27
+/// words at 0.27 to 0.34 s per word.
+const FIRST_GUESS_SECONDS_PER_WORD: f32 = 0.30;
 
 /// A voice: Giulia or Marco, or one prepared from a recording (its file name without
 /// `.safetensors`). A prepared voice may have any name, Giulia and Marco included.
@@ -377,20 +379,37 @@ impl Line {
         slot.said = slot.cut(Instant::now());
     }
 
-    /// Plays `samples` unless a Stop came after `ticket` or the window closed. The first audio
-    /// of a piece also says when the piece will start sounding: after what is queued before it.
-    fn play(&self, ticket: u64, samples: &[f32], starts: Option<Sounding>) -> bool {
+    /// Plays `samples` unless a Stop came after `ticket` or the window closed, and tells when they
+    /// will start sounding: after what is queued before them. The audio where the voice of a piece
+    /// begins also says when the piece starts sounding: that far into `samples`.
+    fn play(
+        &self,
+        ticket: u64,
+        samples: &[f32],
+        starts: Option<(Sounding, Duration)>,
+    ) -> Option<Instant> {
         let mut slot = self.lock();
-        let Some(out) = slot.output.as_ref().filter(|_| self.ticket() == ticket) else {
-            return false;
-        };
+        let out = slot.output.as_ref().filter(|_| self.ticket() == ticket)?;
         let at = Instant::now() + Duration::from_secs_f32(out.queued_seconds().max(0.0));
         out.play(samples);
-        if let Some(sounding) = starts {
+        if let Some((sounding, offset)) = starts {
+            slot.marks.push_back(Mark {
+                at: at + offset,
+                sounding,
+            });
+            self.wake.notify_all();
+        }
+        Some(at)
+    }
+
+    /// A piece that starts sounding at `at`, unless a Stop came after `ticket`: one that was all
+    /// silence, announced once it is over.
+    fn mark(&self, ticket: u64, at: Instant, sounding: Sounding) {
+        let mut slot = self.lock();
+        if slot.output.is_some() && self.ticket() == ticket {
             slot.marks.push_back(Mark { at, sounding });
             self.wake.notify_all();
         }
-        true
     }
 
     /// The exact duration of a piece, once a streamed voice has finished it: corrected while it
@@ -698,7 +717,8 @@ struct Thread {
     phrases: u64,
     /// The phrase of the last piece taken to be synthesized.
     current: Option<Arc<Phrase>>,
-    /// Measured seconds per spoken word, to guess how long a streamed piece will last.
+    /// Measured seconds per spoken word of the voice in use, from where its voice begins, to guess
+    /// how long a streamed piece will last.
     seconds_per_word: f32,
 }
 
@@ -821,6 +841,10 @@ impl Thread {
     fn use_voice(&mut self, id: VoiceId, speaker: Box<dyn Speaker>) {
         let rate = speaker.sample_rate();
         let first = self.speaker.is_none();
+        if self.speaker.as_ref().is_none_or(|(old, _)| *old != id) {
+            // Each voice has its own pace.
+            self.seconds_per_word = FIRST_GUESS_SECONDS_PER_WORD;
+        }
         self.speaker = Some((id.clone(), speaker));
         self.emit(Event::Voice(id));
         if first || rate != self.rate {
@@ -1050,7 +1074,12 @@ impl Thread {
         let rate = speaker.sample_rate() as f32;
         let streams = speaker.streams();
         let words = piece_words(&piece);
-        let mut samples = 0usize;
+        let seconds = |samples: usize| Duration::from_secs_f32(samples as f32 / rate);
+        // Samples played, and those of silence before the voice begins.
+        let (mut samples, mut lead) = (0usize, 0usize);
+        let mut stopped = false;
+        // When the first sample of the piece sounds.
+        let mut first_at = None;
         let mut sounding = piece.phrase.as_ref().map(|phrase| Sounding {
             phrase: phrase.text.clone(),
             id: phrase.id,
@@ -1060,30 +1089,50 @@ impl Thread {
             last: piece.ends_phrase,
         });
         let result = speaker.speak(&piece, &mut |audio| {
-            // The first audio of the piece says when it will start sounding; a voice that hands
-            // over the whole piece at once gives its exact duration there.
-            let starts = sounding.take().map(|mut s| {
-                if !streams {
-                    s.duration = Duration::from_secs_f32(audio.len() as f32 / rate);
-                    s.exact = true;
-                }
-                s
-            });
-            let first = starts.is_some();
-            let played = line.play(ticket, audio, starts);
-            if played || !first {
-                samples += audio.len();
-            }
-            played
+            // The piece starts sounding with its voice, not with the silence the model puts
+            // before it; a voice that hands over the whole piece at once gives its exact duration
+            // there.
+            let voice = sounding
+                .as_ref()
+                .map(|_| kalliope_voice::voice_starts(audio));
+            let starts = match voice {
+                Some(Some(at)) => sounding.take().map(|mut s| {
+                    if !streams {
+                        s.duration = seconds(audio.len() - at);
+                        s.exact = true;
+                    }
+                    (s, seconds(at))
+                }),
+                _ => None,
+            };
+            let Some(at) = line.play(ticket, audio, starts) else {
+                stopped = true;
+                return false;
+            };
+            first_at.get_or_insert(at);
+            lead += match voice {
+                Some(Some(at)) => at,
+                Some(None) => audio.len(),
+                None => 0,
+            };
+            samples += audio.len();
+            true
         });
-        if samples > 0 {
-            let duration = Duration::from_secs_f32(samples as f32 / rate);
-            if let Some(phrase) = &piece.phrase
-                && let Some(update) = line.exact(phrase.id, piece.source.start, duration)
-            {
+        if samples > 0
+            && let Some(phrase) = &piece.phrase
+        {
+            if let (Some(mut s), Some(at)) = (sounding.take(), first_at) {
+                // All silence: it sounds from its first sample.
+                lead = 0;
+                s.duration = seconds(samples);
+                s.exact = true;
+                line.mark(ticket, at, s);
+            }
+            let duration = seconds(samples - lead);
+            if let Some(update) = line.exact(phrase.id, piece.source.start, duration) {
                 self.emit(Event::Sounding(update));
             }
-            if words > 0 {
+            if words > 0 && !stopped && result.is_ok() {
                 let measured = duration.as_secs_f32() / words as f32;
                 self.seconds_per_word = 0.5 * self.seconds_per_word + 0.5 * measured;
             }

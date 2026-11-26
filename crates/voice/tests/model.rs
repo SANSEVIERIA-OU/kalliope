@@ -4,7 +4,7 @@
 
 use std::path::PathBuf;
 
-use kalliope_voice::{Voice, VoiceOptions};
+use kalliope_voice::{SILENCE, Voice, VoiceOptions, voice_starts};
 
 #[test]
 fn speaks_a_sentence() {
@@ -68,4 +68,27 @@ fn a_sentence_said_in_pieces_keeps_the_pauses_of_the_whole() {
     eprintln!("whole {whole:.2} s, in context {in_context:.2} s, alone {alone:.2} s");
     assert!((in_context - whole).abs() < 0.35, "{in_context} vs {whole}");
     assert!(alone - whole > 0.8, "{alone} vs {whole}");
+}
+
+/// Giulia starts an utterance with silence, and her voice rises well past [`SILENCE`] as soon as
+/// it begins: the engine announces each piece there, so the words light up with the sound.
+#[test]
+fn the_voice_begins_after_a_silence_and_rises_at_once() {
+    let (Some(dir), Some(_)) = (
+        std::env::var_os("KALLIOPE_MODEL_DIR"),
+        std::env::var_os("KALLIOPE_ORT_LIB"),
+    ) else {
+        eprintln!("skipped: set KALLIOPE_MODEL_DIR and KALLIOPE_ORT_LIB to run");
+        return;
+    };
+    let voice = Voice::load(&PathBuf::from(dir), "Giulia", &VoiceOptions::default()).expect("load");
+    let audio = voice
+        .synthesize("bwɔnʤˈorno a tˈutːi, mi sentˈite bˈɛne?")
+        .expect("synthesis");
+    let rate = voice.sample_rate() as usize;
+    let start = voice_starts(&audio).expect("a voice");
+    assert!((rate / 20..rate / 2).contains(&start), "{start}");
+    let next = &audio[start..start + rate / 10];
+    let rms = (next.iter().map(|s| s * s).sum::<f32>() / next.len() as f32).sqrt();
+    assert!(rms > 3.0 * SILENCE, "rms {rms}");
 }
