@@ -39,10 +39,12 @@ LOADED = {
     "libpipewire-0.3.so.0": ("libpipewire", "libpipewire-0.3-0", "pipewire-libs", False),
     "libonnxruntime.so.1": None,  # in the package, next to the program
     "libXrender.so.1": None,  # opened on X11 as a dependency of libXcursor: the package manager brings it
+    "libxcb.so.1": None,  # opened on X11 as a dependency of libX11: the package manager brings it
 }
 # Names the program carries without ever opening them in the window it draws (the Skia CPU surface needs no OpenGL: checked with
 # LD_DEBUG=libs on X11, and by /proc/PID/maps on Wayland, in finestra-unica-prove/).
-NOT_OPENED = {"libEGL.so.1", "libwayland-egl.so.1"}
+# libGL.so.1 is named by the GLX table of x11-dl, which only debug builds keep: never opened either (LD_DEBUG=libs on X11).
+NOT_OPENED = {"libEGL.so.1", "libwayland-egl.so.1", "libGL.so.1"}
 
 
 def depends_lines():
@@ -104,8 +106,9 @@ class Binary(unittest.TestCase):
         strings = shutil.which("strings")
         self.assertTrue(strings, "needs binutils")
         out = subprocess.check_output([strings, "-a", str(self.binary)], text=True)
-        # A library the program opens is a name ending in .so.N (the X11 symbol tables around them are not).
-        names = set(re.findall(r"lib[A-Za-z0-9_+-]+?\.so\.[0-9]+(?:\.[0-9]+)*", out))
+        # A library the program opens is a name ending in .so.N. Rust keeps its string constants back to back, without separators, so
+        # a name can follow X11 symbol names directly ("…XkbGetXlibControls…libXrender.so.1"): it starts at the last "lib" before .so.
+        names = set(re.findall(r"lib(?:(?!lib)[A-Za-z0-9_+-])+\.so\.[0-9]+(?:\.[0-9]+)*", out))
         loaded = {n for n in names if n not in LINKED}
         unknown = {n for n in loaded if n not in LOADED and n not in NOT_OPENED}
         self.assertFalse(unknown, f"the program names {sorted(unknown)}: decide what the packages need and add them to LOADED")
