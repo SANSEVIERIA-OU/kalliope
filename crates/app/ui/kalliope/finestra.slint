@@ -60,13 +60,16 @@ export component Finestra inherits Rectangle {
     property <float> sfumatura: root.parla ? root.sfumatura-vera : 0;
     // a new phrase: false for one frame, then the bubble grows and the history slides up (correction I4)
     property <bool> nata: true;
+    // the phrase that was in the bubble when Enter was pressed, kept for its leaving
+    property <string> vecchia;
     property <length> storia-prima;
     property <length> salto: max(0px, frasi.preferred-height - root.storia-prima);
     property <float> fase-storia: root.nata ? 0 : 1;
     // the history slides evenly, so the passage is seen (the site's bubble passage: 2232 ms, mostly moving)
     animate fase-storia { duration: root.nata && !Aspetto.movimento-ridotto ? Token.durata-bolla : 0ms; easing: Token.curva-dolce; }
     property <float> nascita: root.nata || Aspetto.movimento-ridotto ? 1 : 0;
-    animate nascita { duration: root.nata && !Aspetto.movimento-ridotto ? Token.durata-bolla : 0ms; easing: Token.curva-entrata; }
+    // the new bubble is born when the old one has half gone (it fades in place, see «vecchia»), so the two texts never overlap
+    animate nascita { delay: root.nata && !Aspetto.movimento-ridotto ? Token.ritardo-bolla : 0ms; duration: root.nata && !Aspetto.movimento-ridotto ? Token.durata-bolla : 0ms; easing: Token.curva-entrata; }
     // the arrangement: wide (wordmark), narrow (no wordmark, «Riunione» goes into «Altro»), low (gathered)
     property <bool> stretta: root.width < Token.soglia-stretta * Aspetto.scala;
     property <bool> minima: root.width < Token.soglia-minima * Aspetto.scala;
@@ -90,6 +93,8 @@ export component Finestra inherits Rectangle {
     }
     function di(testo: string) -> bool {
         root.storia-prima = frasi.preferred-height;
+        // the bubble that is leaving stays a moment where it was and fades, while the new one grows and the old one joins the history
+        root.vecchia = root.history.length > 0 ? root.history[0] : "";
         if (root.speak(testo)) {
             root.nata = false;
             rinascita.running = true;
@@ -296,6 +301,24 @@ export component Finestra inherits Rectangle {
             // The phrase being said: outside the scroll, always whole (correction I1). It rises from the writing as it grows.
             if root.history.length > 0: Rectangle {
                 height: bolla.height;
+                // the old bubble does not vanish in one frame: it fades in the time the new one grows (correction of the weak point left
+                // in the direction, «a Invio c'è ancora un salto»)
+                if root.vecchia != "": BollaVoce {
+                    x: 0;
+                    y: parent.height - self.height;
+                    accessible-role: none;
+                    testo: root.vecchia;
+                    detto: root.vecchia;
+                    dicendo: root.vecchia;
+                    riga-sola: root.una-riga;
+                    corpo: (root.raccolta && !root.una-riga ? Token.corpo-detta : Token.corpo-bolla) * Aspetto.scala;
+                    larghezza-massima: root.una-riga ? root.width - 2 * Token.spazio-controlli * Aspetto.scala
+                        : min(root.width - 3 * Token.spazio-largo * Aspetto.scala, Token.bolla-larghezza * Aspetto.scala);
+                    // fase-storia starts at 1 when Enter is pressed and falls to 0 in the time of the passage: the old bubble is whole at
+                    // first and gone before the history has arrived
+                    opacity: clamp((root.fase-storia - 0.55) / 0.45, 0, 1);
+                    visible: self.opacity > 0;
+                }
                 bolla := BollaVoce {
                     x: 0;
                     y: (1 - root.nascita) * Token.spostamento-entrata * 2;

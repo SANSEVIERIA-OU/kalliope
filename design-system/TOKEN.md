@@ -92,7 +92,7 @@ finestra del programma: ora si chiamano `--ricostruita-*` (stessi valori; `compo
 | Testo | `corpo-scrittura` 30, `corpo-lettura` 34, `corpo-titolo` 28, `corpo-bolla` 24, `corpo-marchio` 18, `corpo-detta` 17, `corpo-comando` 16, `corpo-stato` 15, `corpo-nota` 13; `peso-medio`, `peso-titolo`; `scala-passo` 0,25, `scala-massima` 2 | sito (D2); scrittura, lettura e titolo scelte |
 | Spazi e misure | `spazio-minimo` 4, `spazio-stretto` 8, `spazio-medio` 16, `spazio-largo` 24, `spazio-ampio` 48, `spazio-parola` 7; `altezza-barra` 56, `altezza-comando` 44, `altezza-comando-piccolo` 34, `marchio` 30, `punto` 10, `barra-voce` 4, `barra-voce-alta` 18, `tratto` 3, `tratteggio-pieno` 14, `tratteggio-vuoto` 10, `filo` 1, `chiusura` 10; `bolla-larghezza` 720, `quota-scrittura` 2, `quota-storia` 1, `righe-scrittura` 3, `righe-scrittura-raccolta` 1, `interlinea` 1,3, `corpo-scrittura-raccolta` 24, `soglia-bassa` 440, `livello-altezza` 72, `registra-diametro` 76, `scelta-altezza` 168, `compatta-larghezza` 400, `compatta-altezza` 320, `soglia-stretta` 900, `soglia-minima` 560, `spostamento-entrata` 24, `ombra-sfocatura` 24, `ombra-scarto` 8 | gradini di scala del sito e marchio (tratteggio 14/9 del logo); le misure della finestra sono scelte |
 | Raggi | `raggio-bolla` 24, `raggio-coda` 6, `raggio-scrittura` 26, `raggio-pannello` 20, `raggio-pillola` 999 | sito |
-| Movimento | `curva-entrata` cubic-bezier(0.19, 1, 0.22, 1), `curva-dolce` ease, `curva-lineare`; `durata-bolla` 520, `durata-parola` 360, `durata-scurisce` 200, `durata-dissolvenza` 160, `durata-pannello` 300, `durata-pannello-uscita` 240, `durata-barre` 460, `durata-cammino` 1400, `durata-anello` 900; `intervallo-fotogramma` 16, `intervallo-registrazione` 100, `registrazione-utile` 12 s; `livello-barre` 28; `opacita-spento` 0,42; `scala-coda` 0,6 | sito (base misurata, D2); intervalli scelte |
+| Movimento | `curva-entrata` cubic-bezier(0.19, 1, 0.22, 1), `curva-dolce` ease, `curva-lineare`; `durata-bolla` 520, `durata-parola` 360, `durata-scurisce` 200, `durata-dissolvenza` 160, `durata-pannello` 300, `durata-pannello-uscita` 240, `durata-barre` 460, `durata-cammino` 1400, `durata-anello` 900, `ritardo-bolla` 110; `intervallo-fotogramma` 16, `intervallo-registrazione` 100, `registrazione-utile` 12 s; `livello-barre` 28; `opacita-spento` 0,42; `scala-coda` 0,6 | sito (base misurata, D2); intervalli scelte |
 | Finestra | `native-width` 920, `native-height` 640 (prima 560 × 460) | scelta: la scrittura grande |
 
 **Correzioni dopo il giudizio (26/11/2026).** Le proporzioni della finestra non sono più una fascia fissa: la scrittura prende due parti
@@ -105,6 +105,13 @@ verde delle barre spente: la tinta di Paola resta solo all'avviso.
 `controlla-valori.mjs` sui token della finestra (var() risolto, `design/lavoro/4-app/direzione/token-finestra-risolti.css`) con la base
 `design/lavoro/4-app/direzione/base.json`: 65 valori tracciati, 0 senza fonte; un tratto di stile di default da guardare (il caldo chiaro
 `#8f4f36`, variante della tinta di Paola).
+
+**Costruzione della finestra (26/11/2026).** Collegata al motore vero, la finestra non ha avuto bisogno di nuovi colori, caratteri o misure: ha un solo valore
+nuovo, `--app-ritardo-bolla` 110 ms, la scelta che mette in fila i due movimenti del passaggio a Invio (la bolla vecchia si sfuma sul posto, la nuova
+nasce quando la vecchia ha perso metà dell'opacità, così i due testi non si sovrappongono; misure prima e dopo in
+`design/lavoro/4-app/costruzione/LEGGIMI.md`). Le parti nuove (`Avviso`, `Attesa`, `Avanzamento`, `RigaMicrofono`, `RigaTratto`, la notizia nella riga di stato,
+`Informazioni`, `Conferma`) usano soltanto i token di prima: la tinta calda e il suo fondo per un problema, il menta per la barra e le scelte, il velo del
+modale. `tools/slint_valori.py` resta verde; il catalogo (`kalliope --catalogo`) le mostra con i loro stati.
 
 ## Direzione di scrittura (1)
 

@@ -11,7 +11,8 @@ PyGObject (python3-gi) and a session bus of its own, e.g.:
 
     xvfb-run -a -s "-screen 0 1280x900x24" dbus-run-session -- python3 -I tools/portale_finto.py dark -- python3 tools/check_desktop.py window.png
 
-With --scegli FILE (or --annulla) it also serves org.freedesktop.portal.FileChooser: OpenFile answers with FILE (or a cancel)
+With --scegli FILE (or --annulla; --scegli @CONTROL reads the file to answer with from CONTROL at each call, so one run can
+answer different files, and an empty CONTROL answers a cancel) it also serves org.freedesktop.portal.FileChooser: OpenFile answers with FILE (or a cancel)
 after --ritardo seconds (0.4), the way a person would take a moment, and --registro writes what the program asked for (title,
 filters, parent window) to a JSON file: Kalliope's «Usa vecchie registrazioni» reaches the real portal route, without a desktop.
 
@@ -97,11 +98,18 @@ def main(argv):
                 json.dump({"parent_window": parent, "title": title, "options": {k: str(v) for k, v in options.items()}}, f, indent=1)
         invocation.return_value(GLib.Variant("(o)", (request,)))
 
+        chosen = chooser["file"]
+        if chosen and chosen.startswith("@"):
+            try:
+                chosen = open(chosen[1:]).read().strip() or None
+            except OSError:
+                chosen = None
+
         def answer():
-            if chooser["cancel"] or not chooser["file"]:
+            if chooser["cancel"] or not chosen:
                 reply = GLib.Variant("(ua{sv})", (1, {}))
             else:
-                reply = GLib.Variant("(ua{sv})", (0, {"uris": GLib.Variant("as", ["file://" + chooser["file"]])}))
+                reply = GLib.Variant("(ua{sv})", (0, {"uris": GLib.Variant("as", ["file://" + chosen])}))
             connection.emit_signal(sender, request, "org.freedesktop.portal.Request", "Response", reply)
             return False
 

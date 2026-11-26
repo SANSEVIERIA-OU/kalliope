@@ -27,7 +27,8 @@ export component BollaVoce inherits Rectangle {
     property <length> riga: root.riga-sola ? root.larghezza-massima - 2 * root.aria-x
         : min(root.larghezza-massima - 2 * root.aria-x, naturale.preferred-width);
     // where the word being said ends, on one line; the line moves left to keep it in view
-    property <length> scorri: root.riga-sola ? max(0px, fine-dicendo.preferred-width - root.riga * 0.75) : 0px;
+    // (only while the phrase is being said: at rest the line shows its beginning, which is what one reads first)
+    property <length> scorri: root.riga-sola && root.parla ? max(0px, fine-dicendo.preferred-width - root.riga * 0.75) : 0px;
     animate scorri { duration: Token.durata-scurisce; easing: Token.curva-dolce; }
     accessible-role: text;
     accessible-label: root.testo;

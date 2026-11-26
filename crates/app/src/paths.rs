@@ -83,6 +83,61 @@ pub fn private_temp(name: &str) -> PathBuf {
     base.join(name)
 }
 
+/// Whether the process `pid` is still running (Linux; elsewhere it is not known, and a leftover is kept).
+fn running(pid: u32) -> bool {
+    if cfg!(target_os = "linux") {
+        std::path::Path::new(&format!("/proc/{pid}")).exists()
+    } else {
+        true
+    }
+}
+
+/// What a Kalliope closed in a hurry (killed, the system shutting down) leaves behind: a file written and not yet put in
+/// place (`.NAME.PID.part`, here or in the voices folder) and the recordings of a take (`kalliope-PID`, in the temporary
+/// folder). They go at the next start, once the process that made them is gone; another Kalliope's are left alone.
+pub fn clear_leftovers(dirs: &[PathBuf], temp_base: &std::path::Path) {
+    for dir in dirs {
+        let Ok(entries) = std::fs::read_dir(dir) else {
+            continue;
+        };
+        for entry in entries.flatten() {
+            let name = entry.file_name().to_string_lossy().into_owned();
+            let pid = name
+                .strip_prefix('.')
+                .and_then(|n| n.strip_suffix(".part"))
+                .and_then(|n| n.rsplit('.').next())
+                .and_then(|p| p.parse::<u32>().ok());
+            if let Some(pid) = pid
+                && !running(pid)
+            {
+                let _ = std::fs::remove_file(entry.path());
+            }
+        }
+    }
+    if let Ok(entries) = std::fs::read_dir(temp_base) {
+        for entry in entries.flatten() {
+            let name = entry.file_name().to_string_lossy().into_owned();
+            if let Some(pid) = name
+                .strip_prefix("kalliope-")
+                .and_then(|p| p.parse::<u32>().ok())
+                && pid != std::process::id()
+                && !running(pid)
+                && entry.path().is_dir()
+            {
+                let _ = std::fs::remove_dir_all(entry.path());
+            }
+        }
+    }
+}
+
+/// The folder `private_temp` puts its folders in.
+pub fn temp_base() -> PathBuf {
+    private_temp("x")
+        .parent()
+        .map(PathBuf::from)
+        .unwrap_or_else(env::temp_dir)
+}
+
 /// Creates `dir` so that only its owner can read it.
 pub fn create_private_dir(dir: &std::path::Path) -> std::io::Result<()> {
     let mut builder = std::fs::DirBuilder::new();
@@ -113,5 +168,51 @@ mod tests {
             "no part file left"
         );
         std::fs::remove_dir_all(&dir).unwrap();
+    }
+
+    #[test]
+    #[cfg(target_os = "linux")]
+    fn what_a_killed_kalliope_left_goes_at_the_next_start_and_what_runs_stays() {
+        let base = std::env::temp_dir().join(format!("kalliope-leftovers-{}", std::process::id()));
+        let voices = base.join("voci");
+        let temp = base.join("temp");
+        std::fs::create_dir_all(&voices).unwrap();
+        std::fs::create_dir_all(temp.join("kalliope-2147483000")).unwrap();
+        std::fs::create_dir_all(temp.join(format!("kalliope-{}", std::process::id()))).unwrap();
+        std::fs::create_dir_all(temp.join("altro")).unwrap();
+        let mine = format!(".Anna.{}.part", std::process::id());
+        for f in [
+            ".Anna.2147483000.part",
+            mine.as_str(),
+            "Anna.safetensors",
+            ".nascosto",
+        ] {
+            std::fs::write(voices.join(f), b"x").unwrap();
+        }
+        super::clear_leftovers(std::slice::from_ref(&voices), &temp);
+        let left = |d: &std::path::Path| {
+            let mut v: Vec<String> = std::fs::read_dir(d)
+                .unwrap()
+                .flatten()
+                .map(|e| e.file_name().to_string_lossy().into_owned())
+                .collect();
+            v.sort();
+            v
+        };
+        let mut kept = vec![
+            ".nascosto".to_string(),
+            mine,
+            "Anna.safetensors".to_string(),
+        ];
+        kept.sort();
+        assert_eq!(left(&voices), kept);
+        assert_eq!(
+            left(&temp),
+            vec![
+                "altro".to_string(),
+                format!("kalliope-{}", std::process::id())
+            ]
+        );
+        std::fs::remove_dir_all(&base).unwrap();
     }
 }

@@ -196,6 +196,15 @@ struct Making {
 
 impl Session {
     pub fn open(on_status: impl Fn(Status) + Send + 'static) -> Self {
+        // what a Kalliope closed in a hurry left (a half-written voice, a take's recordings) goes before anything starts
+        crate::paths::clear_leftovers(
+            &[
+                catalog::voices_dir(),
+                crate::paths::data_dir(),
+                crate::paths::config_dir(),
+            ],
+            &crate::paths::temp_base(),
+        );
         let choices = voices();
         let mut settings = Settings::load();
         if !choices.contains(&settings.voice) {

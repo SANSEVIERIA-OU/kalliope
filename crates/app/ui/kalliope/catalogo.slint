@@ -9,7 +9,10 @@ import { Tratteggio, Pulsante, Tipo, Punto, Freccia, Interruttore } from "forme.
 import { RigaStato, BarreVoce } from "stato.slint";
 import { BollaVoce, FraseDetta } from "bolla.slint";
 import { Scrittura } from "scrittura.slint";
-import { Passi, Livello, Registra, Consenso } from "voce-propria.slint";
+import { Passi, Livello, Registra, Consenso, RigaMicrofono, RigaTratto } from "voce-propria.slint";
+import { Tratto } from "creazione.slint";
+import { Avviso, Attesa, Avanzamento } from "avvisi.slint";
+import { Informazioni, Conferma } from "modali.slint";
 import { Menu } from "menu.slint";
 
 component Titolo inherits Text {
@@ -301,6 +304,44 @@ export component Catalogo inherits Window {
                     }
                     Consenso { testo: "È la mia voce, oppure la persona che parla mi ha dato il permesso di usarla."; dato: false; }
                     Consenso { testo: "Spuntato"; dato: true; }
+                }
+                Esempio {
+                    nome: "Un problema con la sua uscita · «Come si risolve» apre il punto della guida che lo spiega";
+                    fonte: "Costruzione, 26/11/2026: il messaggio sta per intero accanto al comando che l'ha causato, con la tinta calda di «Nessuno ti sente»; ogni indirizzo è costruito da guida.rs da una sola base (riunione/#non-mi-sentono, riunione/#non-compare, installa/#installa, riunione/#f-errori).";
+                    Avviso { testo: "Questo file non è un audio che Kalliope sa leggere. Vanno bene i file WAV, MP3, FLAC, OGG, OPUS (i messaggi vocali di WhatsApp e Telegram), M4A e i video MP4, MKV e WEBM."; con-guida: true; }
+                    Avviso { testo: "Non trovo un microfono. Collegane uno (meglio una cuffia con microfono), poi riprova."; }
+                }
+                Esempio {
+                    nome: "Un'attesa con la sua uscita · barra al 0%, al 42%, finita · leggere un file, creare la voce";
+                    fonte: "Costruzione: ogni attesa dice che cosa succede, fin dove è arrivata, e ha «Annulla».";
+                    Avanzamento { valore: 0; }
+                    Avanzamento { valore: 0.42; }
+                    Avanzamento { valore: 1; }
+                    Attesa { testo: "Leggo «Messaggio-vocale-di-nonna.opus»…"; dettaglio: "Cerco la parte in cui si sente meglio la voce."; valore: 0.42; }
+                }
+                Esempio {
+                    nome: "Scelta del microfono e dei tratti · una riga per microfono, una per tratto, con «Ascolta»";
+                    fonte: "Costruzione: la scelta compare solo se il computer ha più di un microfono (mai quello di Kalliope); i tratti sono i brani in cui si sente meglio la voce, il più chiaro per primo, e un tratto da cui non si può creare la voce dice perché.";
+                    RigaMicrofono { nome: "Cuffia USB"; scelto: true; }
+                    RigaMicrofono { nome: "Microfono del portatile"; scelto: false; }
+                    RigaTratto { tratto: { titolo: "Tratto 1 · il più chiaro", dettaglio: "da 0:12 a 0:24 · 12 s di voce", messaggi: "", utilizzabile: true }; scelto: true; }
+                    RigaTratto { tratto: { titolo: "Tratto 2", dettaglio: "da 1:05 a 1:17 · 9 s di voce", messaggi: "C'è molto rumore di fondo, e la voce creata lo imiterà.", utilizzabile: true }; scelto: false; ascolta: true; }
+                    RigaTratto { tratto: { titolo: "Tratto 3", dettaglio: "da 2:40 a 2:52 · 3 s di voce", messaggi: "C'è troppo poco parlato: servono almeno 4 secondi di voce, meglio 12.", utilizzabile: false }; scelto: false; }
+                }
+                Esempio {
+                    nome: "Notizia nella riga di stato · «Voce nuova»";
+                    fonte: "Costruzione: una voce creata si sceglie da sola e la finestra lo dice per dieci secondi, al posto del consiglio.";
+                    RigaStato { situazione: Situazione.pronta; notizia: "La voce «La voce di Anna» è pronta, e adesso parla lei."; }
+                }
+                Esempio {
+                    nome: "Informazioni e la domanda prima di svuotare la cronologia · sopra un velo, con Tab che gira dentro e Esc che chiude";
+                    fonte: "Costruzione: in «Altro». Informazioni ha il widget AboutSlint (licenza di Slint §2, decisione del proprietario, issue #21); Tab non esce, le frecce scorrono, Esc e il clic fuori chiudono. La domanda tiene il fuoco su «Annulla».";
+                    Rectangle { height: Token.native-height * 0.8; clip: true; border-radius: Token.raggio-pannello * Aspetto.scala; background: Token.fondo;
+                        Informazioni { x: 0; y: 0; width: parent.width; height: parent.height; aperta: true; versione: "0.3"; }
+                    }
+                    Rectangle { height: Token.native-height * 0.4; clip: true; border-radius: Token.raggio-pannello * Aspetto.scala; background: Token.fondo;
+                        Conferma { x: 0; y: 0; width: parent.width; height: parent.height; aperta: true; titolo: "Svuotare la cronologia?"; testo: "Le frasi già dette spariscono da questo computer. Non si può tornare indietro."; conferma-testo: "Svuota"; }
+                    }
                 }
             }
         }

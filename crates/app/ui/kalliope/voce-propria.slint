@@ -212,7 +212,7 @@ export component Consenso inherits Rectangle {
 }
 
 // One microphone to record from, when the computer has more than one: a row to choose, with the focus ring of the voice.
-component RigaMicrofono inherits Rectangle {
+export component RigaMicrofono inherits Rectangle {
     in property <string> nome;
     in property <bool> scelto;
     callback scelta();
@@ -252,7 +252,7 @@ component RigaMicrofono inherits Rectangle {
 }
 
 // A stretch the voice can be made from: choose it, and listen to it before choosing.
-component RigaTratto inherits Rectangle {
+export component RigaTratto inherits Rectangle {
     in property <Tratto> tratto;
     in property <bool> scelto;
     in property <bool> ascolta;
@@ -272,6 +272,14 @@ component RigaTratto inherits Rectangle {
     border-color: chiave.has-focus ? Token.voce : Token.bordo;
     animate background { duration: Token.durata-scurisce; easing: Token.curva-dolce; }
     tocco := TouchArea { mouse-cursor: root.tratto.utilizzabile ? pointer : default; clicked => { if (root.tratto.utilizzabile) { root.scelta(); } } }
+    // the focus and the keys sit under the controls of the row
+    chiave := FocusScope {
+        key-pressed(e) => {
+            if ((e.text == " " || e.text == Key.Return) && root.tratto.utilizzabile) { root.scelta(); return accept; }
+            return reject;
+        }
+        changed has-focus => { if (self.has-focus) { root.ensure-visible(ScrollBehavior.instant); } }
+    }
     colonna := VerticalLayout {
         padding: Token.spazio-controlli * Aspetto.scala;
         padding-left: Token.spazio-medio * Aspetto.scala;
@@ -307,14 +315,6 @@ component RigaTratto inherits Rectangle {
             font-size: Token.corpo-nota * Aspetto.scala;
             color: root.tratto.utilizzabile ? Token.testo-tenue : Token.attenzione;
         }
-    }
-    // the focus and the keys sit under the controls of the row
-    chiave := FocusScope {
-        key-pressed(e) => {
-            if ((e.text == " " || e.text == Key.Return) && root.tratto.utilizzabile) { root.scelta(); return accept; }
-            return reject;
-        }
-        changed has-focus => { if (self.has-focus) { root.ensure-visible(ScrollBehavior.instant); } }
     }
 }
 
@@ -435,6 +435,8 @@ component PassoRegistra inherits VerticalLayout {
 // Step 2: listen, choose the stretch, name the voice, say whose it is.
 component PassoAscolta inherits VerticalLayout {
     spacing: Token.spazio-medio * Aspetto.scala;
+    // the parts keep together under the title, as in the approved render; the room that is left stays empty below
+    alignment: start;
     property <bool> unico: Creazione.tratti.length <= 1;
     property <bool> si-puo: Creazione.tratti.length > 0 && Creazione.tratti[clamp(Creazione.tratto-scelto, 0, Creazione.tratti.length - 1)].utilizzabile;
     if Creazione.nota != "": Text { text: Creazione.nota; wrap: word-wrap; font-size: Token.corpo-stato * Aspetto.scala; color: Token.testo-tenue; }
@@ -444,7 +446,8 @@ component PassoAscolta inherits VerticalLayout {
             init => { self.focus(); }
             testo: Creazione.ascolto >= 0 ? @tr("Ferma l'ascolto") : @tr("Ascolta la registrazione");
             tipo: Tipo.quieto;
-            abilitato: root.si-puo;
+            // listening stays possible when no voice can be made: to hear why is the way to know what to record again
+            abilitato: Creazione.tratti.length > 0;
             premuto => { if (Creazione.ascolto >= 0) { Creazione.ferma-ascolto(); } else { Creazione.ascolta(0); } }
         }
         Livello { attivo: Creazione.ascolto >= 0; forma: true; forza: 0.6; horizontal-stretch: 1; height: Token.altezza-comando * Aspetto.scala; }
@@ -553,7 +556,7 @@ component PassoAscolta inherits VerticalLayout {
         Text {
             // why the button waits: never a silent grey
             text: !root.si-puo ? @tr("Da questa registrazione non si può creare la voce: rifai.")
-                : Creazione.nome == "" ? @tr("Manca il nome.")
+                : !Creazione.nome-valido(Creazione.nome) ? @tr("Manca il nome.")
                 : !Creazione.consenso ? @tr("Manca il permesso: spunta la casella.")
                 : "";
             vertical-alignment: center;
@@ -565,7 +568,7 @@ component PassoAscolta inherits VerticalLayout {
         Pulsante {
             testo: Creazione.nome-conferma != "" ? Creazione.nome-conferma : @tr("Crea la voce");
             tipo: Tipo.pieno;
-            abilitato: root.si-puo && Creazione.nome != "" && Creazione.consenso;
+            abilitato: root.si-puo && Creazione.nome-valido(Creazione.nome) && Creazione.consenso;
             premuto => { Creazione.crea(); }
         }
     }

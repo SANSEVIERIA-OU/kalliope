@@ -46,6 +46,23 @@ thread_local! {
     static BEFORE: Cell<Option<LogicalSize>> = const { Cell::new(None) };
 }
 
+/// The size the meeting mode asks for: 400 × 320 at the design's text size, and larger as the text grows, so a larger text
+/// is not squeezed into the same small window (everything grows together).
+fn compact_size(ui: &AppWindow) -> LogicalSize {
+    let k = ui.global::<crate::Aspetto>().get_scala();
+    LogicalSize::new(
+        ui.get_compatta_larghezza() * k,
+        ui.get_compatta_altezza() * k,
+    )
+}
+
+/// The text size changed while the window is in the meeting mode: the window follows it.
+pub fn compatta_riadatta(ui: &AppWindow) {
+    if ui.get_compatta() {
+        ui.window().set_size(compact_size(ui));
+    }
+}
+
 /// Makes the window small (the meeting mode) or gives it back its size. Started in the meeting mode there is no size before,
 /// and the window's own is given back.
 pub fn compatta_applica(ui: &AppWindow, on: bool) {
@@ -57,10 +74,7 @@ pub fn compatta_applica(ui: &AppWindow, on: bool) {
                 b.set(Some(window.size().to_logical(scale)));
             }
         });
-        window.set_size(LogicalSize::new(
-            ui.get_compatta_larghezza(),
-            ui.get_compatta_altezza(),
-        ));
+        window.set_size(compact_size(ui));
     } else {
         let size = BEFORE.with(|b| b.take()).unwrap_or_else(|| {
             LogicalSize::new(ui.get_nativa_larghezza(), ui.get_nativa_altezza())
@@ -81,6 +95,8 @@ pub fn collega(ui: &AppWindow, remember: impl Fn(bool) + 'static) {
         }
         remember(on);
     });
+    ui.global::<Creazione>()
+        .on_nome_valido(|name| !name.trim().is_empty());
     ui.on_apri_guida(|situazione| {
         if let Some(guida) = guida::per_situazione(situazione) {
             apri(&guida.url());
@@ -194,6 +210,13 @@ fn demo_tratti(ui: &AppWindow, n: usize) {
         .collect();
     ui.global::<Creazione>()
         .set_tratti(ModelRc::new(VecModel::from(items)));
+}
+
+/// The size asked for with `KALLIOPE_DEMO_MISURA=LARGHEZZAxALTEZZA`.
+fn demo_misura() -> Option<(f32, f32)> {
+    let m = std::env::var("KALLIOPE_DEMO_MISURA").ok()?;
+    let (w, h) = m.split_once('x')?;
+    Some((w.parse().ok()?, h.parse().ok()?))
 }
 
 /// A scene of the window driven by a demonstration state, without the engine: for what is designed and for screenshots that
@@ -324,20 +347,9 @@ pub fn demo(scena: &str) -> ExitCode {
     }
     if scena == "compatta" || scena == "compatta-parla" {
         ui.set_compatta(true);
-        ui.window().set_size(LogicalSize::new(
-            ui.get_compatta_larghezza(),
-            ui.get_compatta_altezza(),
-        ));
     }
     // KALLIOPE_DEMO_MISURA=360x320 opens the scene at another size (the smallest window, a low screen)
-    if let Some((w, h)) = std::env::var("KALLIOPE_DEMO_MISURA")
-        .ok()
-        .and_then(|m| {
-            m.split_once('x')
-                .map(|(w, h)| (w.parse::<f32>(), h.parse::<f32>()))
-        })
-        .and_then(|(w, h)| Some((w.ok()?, h.ok()?)))
-    {
+    if let Some((w, h)) = demo_misura() {
         ui.window().set_size(LogicalSize::new(w, h));
     }
     // KALLIOPE_DEMO_SCALA=1.75 opens the scene with another text size
@@ -347,14 +359,57 @@ pub fn demo(scena: &str) -> ExitCode {
     {
         ui.global::<crate::Aspetto>().set_scala(scala);
     }
+    if scena == "compatta" || scena == "compatta-parla" {
+        compatta_riadatta(&ui);
+        if let Some((w, h)) = demo_misura() {
+            ui.window().set_size(LogicalSize::new(w, h));
+        }
+    }
     // KALLIOPE_DEMO_SENZA_PRIMO_PIANO=1 shows the meeting mode as it is where the system does not let a program stay above
-    ui.set_senza_primo_piano(std::env::var_os("KALLIOPE_DEMO_SENZA_PRIMO_PIANO").is_some());
+    ui.set_senza_primo_piano(
+        std::env::var_os("KALLIOPE_DEMO_SENZA_PRIMO_PIANO").is_some()
+            || crate::collega::primo_piano_negato(
+                std::env::var_os("WAYLAND_DISPLAY").as_deref(),
+                false,
+            ),
+    );
     history.set_vec(said);
+    // a scene that stands in the middle of a phrase shows its words half said, as a photograph of the moment needs
+    if matches!(scena, "parla" | "nessuno" | "compatta-parla") {
+        ui.set_dette_vere(7);
+        ui.set_sfumatura_vera(0.5);
+    }
     ui.set_phase(phase);
     ui.set_status(status.into());
     if let Some(s) = situazione {
         ui.set_situazione(s);
         ui.set_warning(true);
+    }
+    // KALLIOPE_DEMO_FOTO=/percorso.ppm: the window takes its own picture after a moment (where nothing else can: a compositor
+    // with no screen, a Wayland session without a screenshot tool) and the demonstration goes on
+    let snapshot = slint::Timer::default();
+    if let Some(path) = std::env::var_os("KALLIOPE_DEMO_FOTO") {
+        let weak = ui.as_weak();
+        snapshot.start(
+            slint::TimerMode::SingleShot,
+            Duration::from_millis(2500),
+            move || {
+                let Some(ui) = weak.upgrade() else { return };
+                match ui.window().take_snapshot() {
+                    Ok(buffer) => {
+                        let mut out = format!("P6\n{} {}\n255\n", buffer.width(), buffer.height())
+                            .into_bytes();
+                        for p in buffer.as_slice() {
+                            out.extend_from_slice(&[p.r, p.g, p.b]);
+                        }
+                        if let Err(e) = std::fs::write(&path, out) {
+                            eprintln!("Non riesco a scrivere la foto: {e}");
+                        }
+                    }
+                    Err(e) => eprintln!("La finestra non sa fotografarsi: {e}"),
+                }
+            },
+        );
     }
     // the scenes that open over the window do it once it is on the screen
     let opens = scena.to_string();

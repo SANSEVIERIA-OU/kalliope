@@ -184,11 +184,15 @@ pub fn collega(ui: &AppWindow, session: Rc<RefCell<Session>>) {
     let remembered = session.borrow().settings.text_scale;
     ui.global::<crate::Aspetto>()
         .set_scala(remembered.clamp(1.0, ui.get_scala_massima()));
-    ui.set_senza_primo_piano(primo_piano_negato(
-        std::env::var_os("WAYLAND_DISPLAY").as_deref(),
-        std::env::var("WINIT_UNIX_BACKEND").is_ok_and(|b| b == "x11")
-            || std::env::var("SLINT_BACKEND").is_ok_and(|b| b.contains("x11")),
-    ));
+    // KALLIOPE_SENZA_PRIMO_PIANO=1 makes the window behave as under Wayland (for the tests that cannot run a compositor)
+    ui.set_senza_primo_piano(
+        std::env::var_os("KALLIOPE_SENZA_PRIMO_PIANO").is_some()
+            || primo_piano_negato(
+                std::env::var_os("WAYLAND_DISPLAY").as_deref(),
+                std::env::var("WINIT_UNIX_BACKEND").is_ok_and(|b| b == "x11")
+                    || std::env::var("SLINT_BACKEND").is_ok_and(|b| b.contains("x11")),
+            ),
+    );
     ui.set_suggerimento_sopra(!settings::Settings::load().hint_seen);
     let keep = session.clone();
     vista::collega(ui, move |on| keep.borrow_mut().set_compact(on));
@@ -221,8 +225,13 @@ pub fn collega(ui: &AppWindow, session: Rc<RefCell<Session>>) {
     let app = session.clone();
     ui.on_monitor_changed(move |on| app.borrow_mut().monitor(on));
     let app = session.clone();
+    let weak = ui.as_weak();
     ui.on_scala_cambiata(move |scale| {
         app.borrow_mut().set_text_scale(scale);
+        // in the meeting mode the window grows with the text
+        if let Some(ui) = weak.upgrade() {
+            vista::compatta_riadatta(&ui);
+        }
     });
     ui.on_suggerimento_letto(settings::save_hint_seen);
     let app = session.clone();
@@ -657,4 +666,33 @@ fn crea_collega(ui: &AppWindow, session: Rc<RefCell<Session>>) {
     ui.on_apri_crea_voce(|| {
         con(|c| c.open());
     });
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use std::ffi::OsStr;
+
+    #[test]
+    fn only_a_wayland_session_leaves_staying_on_top_to_the_person() {
+        assert!(primo_piano_negato(Some(OsStr::new("wayland-0")), false));
+        assert!(
+            !primo_piano_negato(None, false),
+            "X11, Windows, macOS: the program asks"
+        );
+        assert!(!primo_piano_negato(Some(OsStr::new("")), false));
+        assert!(
+            !primo_piano_negato(Some(OsStr::new("wayland-0")), true),
+            "a window forced onto X11 (XWayland) can ask"
+        );
+    }
+
+    #[test]
+    fn the_extensions_offered_to_the_chooser_cover_the_formats_in_both_cases() {
+        let all = extensions();
+        for wanted in ["opus", "oga", "m4a", "mp4", "webm", "OPUS", "MP4"] {
+            assert!(all.iter().any(|e| e == wanted), "{wanted}");
+        }
+        assert_eq!(all.len(), 2 * FORMATS.len());
+    }
 }

@@ -37,7 +37,7 @@ impl Audio {
 /// Why a file cannot be read.
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub enum ReadError {
-    /// The file cannot be opened.
+    /// The file cannot be opened: why, in words a person can use (the system's own message goes to standard error).
     Open(String),
     /// Empty file.
     Empty,
@@ -59,7 +59,7 @@ impl ReadError {
     /// What to tell the person, in plain Italian.
     pub fn message(&self) -> String {
         match self {
-            ReadError::Open(e) => format!("Non riesco ad aprire il file: {e}."),
+            ReadError::Open(e) => format!("Non riesco ad aprire il file: {e}. Scegline un altro."),
             ReadError::Empty => "Il file è vuoto.".into(),
             ReadError::NotAudio => "Questo file non è un audio che Kalliope sa leggere. Vanno bene i file WAV, MP3, FLAC, OGG, OPUS (i messaggi vocali di WhatsApp e Telegram), M4A e i video MP4, MKV e WEBM.".into(),
             ReadError::NoSound => "In questo file non c'è audio.".into(),
@@ -79,6 +79,17 @@ impl std::fmt::Display for ReadError {
 
 impl std::error::Error for ReadError {}
 
+/// Why a file did not open, in plain Italian: the system's message is English, and says «os error 2».
+fn open_reason(e: &std::io::Error) -> String {
+    use std::io::ErrorKind;
+    eprintln!("kalliope: opening a file: {e}");
+    match e.kind() {
+        ErrorKind::NotFound => "non c'è più, forse è stato spostato o cancellato".into(),
+        ErrorKind::PermissionDenied => "non ho il permesso di leggerlo".into(),
+        _ => "non si apre".into(),
+    }
+}
+
 /// Reads the sound of `path`, mixed to mono, up to [`MAX_SECONDS`]. `progress` gets the share of
 /// the file read so far (0 to 1); `cancel` stops it.
 pub fn read_file(
@@ -86,7 +97,7 @@ pub fn read_file(
     cancel: &AtomicBool,
     progress: &mut dyn FnMut(f32),
 ) -> Result<Audio, ReadError> {
-    let file = File::open(path).map_err(|e| ReadError::Open(e.to_string()))?;
+    let file = File::open(path).map_err(|e| ReadError::Open(open_reason(&e)))?;
     let len = file.metadata().map(|m| m.len()).unwrap_or(0);
     if len == 0 {
         return Err(ReadError::Empty);
@@ -107,7 +118,7 @@ pub fn read_file(
             SymphoniaError::IoError(e) if e.kind() == std::io::ErrorKind::UnexpectedEof => {
                 ReadError::NotAudio
             }
-            SymphoniaError::IoError(e) => ReadError::Open(e.to_string()),
+            SymphoniaError::IoError(e) => ReadError::Open(open_reason(&e)),
             _ => ReadError::NotAudio,
         })?;
     let track = reader
@@ -248,4 +259,30 @@ fn track_seconds(tracks: &[symphonia::core::formats::Track], id: u32) -> Option<
     let frames = t.num_frames?;
     let time = tb.calc_time(symphonia::core::units::Timestamp::new(frames as i64))?;
     Some(time.as_secs_f64() as f32)
+}
+
+#[cfg(test)]
+mod open_tests {
+    use super::*;
+
+    #[test]
+    fn a_missing_or_forbidden_file_is_explained_without_the_system_s_english() {
+        let cancel = AtomicBool::new(false);
+        let gone = read_file(
+            std::path::Path::new("/tmp/kalliope-non-c-e.opus"),
+            &cancel,
+            &mut |_| {},
+        )
+        .unwrap_err()
+        .message();
+        assert!(gone.contains("non c'è più"), "{gone}");
+        assert!(
+            !gone.contains("os error") && !gone.contains("No such file"),
+            "{gone}"
+        );
+        let dir = read_file(std::path::Path::new("/"), &cancel, &mut |_| {})
+            .unwrap_err()
+            .message();
+        assert!(!dir.contains("os error"), "{dir}");
+    }
 }
