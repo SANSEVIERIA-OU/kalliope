@@ -6,7 +6,7 @@ import { Aspetto } from "aspetto.slint";
 
 export component BollaVoce inherits Rectangle {
     in property <string> testo;
-    // the phrase up to the words already said, and up to the word being said now (session: vista::prefisso)
+    // the phrase up to the words already said, and up to the word being said now (vista::prefisso)
     in property <string> detto;
     in property <string> dicendo;
     // 0 → 1: how far the word being said has darkened
@@ -15,18 +15,26 @@ export component BollaVoce inherits Rectangle {
     in property <bool> parla;
     // nobody hears it: the ring of the voice turns to the warm colour of the status line
     in property <bool> non-sentita: false;
+    // one line only (meeting mode, a low window): the line slides so the word being said stays in view
+    in property <bool> riga-sola: false;
     in property <length> larghezza-massima: Token.bolla-larghezza * Aspetto.scala;
+    // the size of its words: smaller when the window gathers, so the writing keeps the larger share
+    in property <length> corpo: Token.corpo-bolla * Aspetto.scala;
     // 0 → 1 when the bubble is born: it grows from its tail (D2)
     in property <float> nascita: 1;
-    property <length> aria-x: Token.spazio-largo * Aspetto.scala * 0.85;
-    property <length> aria-y: Token.spazio-medio * Aspetto.scala;
-    property <length> riga: min(root.larghezza-massima - 2 * root.aria-x, naturale.preferred-width);
+    property <length> aria-x: Token.spazio-largo * Aspetto.scala * (root.riga-sola ? 0.6 : 0.85);
+    property <length> aria-y: Token.spazio-medio * Aspetto.scala * (root.riga-sola ? 0.5 : 1);
+    property <length> riga: root.riga-sola ? root.larghezza-massima - 2 * root.aria-x
+        : min(root.larghezza-massima - 2 * root.aria-x, naturale.preferred-width);
+    // where the word being said ends, on one line; the line moves left to keep it in view
+    property <length> scorri: root.riga-sola ? max(0px, fine-dicendo.preferred-width - root.riga * 0.75) : 0px;
+    animate scorri { duration: Token.durata-scurisce; easing: Token.curva-dolce; }
     accessible-role: text;
     accessible-label: root.testo;
     width: root.riga + 2 * root.aria-x;
-    height: tutto.preferred-height + 2 * root.aria-y;
+    height: (root.riga-sola ? naturale.preferred-height : tutto.preferred-height) + 2 * root.aria-y;
     background: Token.bolla;
-    border-radius: Token.raggio-bolla * Aspetto.scala;
+    border-radius: (root.riga-sola ? Token.raggio-pannello : Token.raggio-bolla) * Aspetto.scala;
     border-bottom-left-radius: Token.raggio-coda * Aspetto.scala;
     border-width: Token.tratto;
     border-color: !root.parla ? Token.bolla : root.non-sentita ? Token.attenzione : Token.voce;
@@ -39,26 +47,32 @@ export component BollaVoce inherits Rectangle {
     opacity: root.nascita;
     // the ring of the voice fades out at the end of the phrase, in the bubble's own time
     animate border-color, drop-shadow-color { duration: Token.durata-bolla; easing: Token.curva-dolce; }
-    naturale := Text { visible: false; text: root.testo; font-size: Token.corpo-bolla * Aspetto.scala; font-weight: Token.peso-medio; }
+    naturale := Text { visible: false; text: root.testo; font-size: root.corpo; font-weight: Token.peso-medio; }
+    fine-dicendo := Text { visible: false; text: root.dicendo; font-size: root.corpo; font-weight: Token.peso-medio; }
     // Three layers with the same width wrap the same way: what is not yet said, what is said, and the word being said.
-    tutto := Text {
-        x: root.aria-x; y: root.aria-y; width: root.riga;
-        text: root.testo; wrap: word-wrap;
-        font-size: Token.corpo-bolla * Aspetto.scala; font-weight: Token.peso-medio;
-        color: Token.bolla-da-dire;
-    }
-    Text {
-        x: root.aria-x; y: root.aria-y; width: root.riga;
-        text: root.dicendo; wrap: word-wrap;
-        font-size: Token.corpo-bolla * Aspetto.scala; font-weight: Token.peso-medio;
-        color: Token.bolla-testo;
-        opacity: root.sfumatura;
-    }
-    Text {
-        x: root.aria-x; y: root.aria-y; width: root.riga;
-        text: root.detto; wrap: word-wrap;
-        font-size: Token.corpo-bolla * Aspetto.scala; font-weight: Token.peso-medio;
-        color: Token.bolla-testo;
+    Rectangle {
+        x: root.aria-x; y: root.aria-y;
+        width: root.riga; height: root.height - 2 * root.aria-y;
+        clip: true;
+        tutto := Text {
+            x: -root.scorri; y: 0; width: root.riga-sola ? naturale.preferred-width : root.riga;
+            text: root.testo; wrap: root.riga-sola ? no-wrap : word-wrap;
+            font-size: root.corpo; font-weight: Token.peso-medio;
+            color: Token.bolla-da-dire;
+        }
+        Text {
+            x: -root.scorri; y: 0; width: root.riga-sola ? naturale.preferred-width : root.riga;
+            text: root.dicendo; wrap: root.riga-sola ? no-wrap : word-wrap;
+            font-size: root.corpo; font-weight: Token.peso-medio;
+            color: Token.bolla-testo;
+            opacity: root.sfumatura;
+        }
+        Text {
+            x: -root.scorri; y: 0; width: root.riga-sola ? naturale.preferred-width : root.riga;
+            text: root.detto; wrap: root.riga-sola ? no-wrap : word-wrap;
+            font-size: root.corpo; font-weight: Token.peso-medio;
+            color: Token.bolla-testo;
+        }
     }
 }
 

@@ -59,6 +59,24 @@ pub fn collega(ui: &AppWindow) {
     });
     ui.on_importa_voce(|| eprintln!("vista: importare un file audio non è ancora collegato"));
     ui.on_crea_voce(|name| eprintln!("vista: creare la voce «{name}» non è ancora collegato"));
+    ui.on_apri_guida(|url| apri(&url));
+}
+
+/// Opens a page of the guide in the browser: the way out of a problem the status line names.
+fn apri(url: &str) {
+    #[cfg(target_os = "linux")]
+    let mut command = std::process::Command::new("xdg-open");
+    #[cfg(target_os = "macos")]
+    let mut command = std::process::Command::new("open");
+    #[cfg(target_os = "windows")]
+    let mut command = {
+        let mut c = std::process::Command::new("cmd");
+        c.args(["/C", "start", ""]);
+        c
+    };
+    if let Err(e) = command.arg(url).spawn() {
+        eprintln!("Non riesco ad aprire {url}: {e}");
+    }
 }
 
 /// The live catalog of the design system: every token and every component in its states.
@@ -163,6 +181,10 @@ pub fn demo(scena: &str) -> ExitCode {
         .and_then(|(w, h)| Some((w.ok()?, h.ok()?)))
     {
         ui.window().set_size(LogicalSize::new(w, h));
+    }
+    // KALLIOPE_DEMO_SCALA=1.75 opens the scene with another text size
+    if let Some(scala) = std::env::var("KALLIOPE_DEMO_SCALA").ok().and_then(|s| s.parse::<f32>().ok()) {
+        ui.global::<crate::Aspetto>().set_scala(scala);
     }
     history.set_vec(said);
     ui.set_phase(phase);

@@ -85,8 +85,9 @@ export component Pulsante inherits Rectangle {
     min-width: riga.preferred-width + 2 * root.aria;
     horizontal-stretch: 0;
     border-radius: self.height / 2;
-    opacity: root.abilitato ? 1 : Token.opacita-spento;
-    background: root.tipo == Tipo.pieno ? (root.giu ? Token.azione-sopra : root.sopra ? Token.azione-sopra : Token.azione)
+    opacity: root.abilitato || root.tipo == Tipo.pieno ? 1 : Token.opacita-spento;
+    // a full command that cannot be used now stays readable: no pale mint with white letters
+    background: root.tipo == Tipo.pieno ? (!root.abilitato ? Token.velo-scelto : root.giu ? Token.azione-sopra : root.sopra ? Token.azione-sopra : Token.azione)
         : (root.giu ? Token.velo-premuto : root.sopra ? Token.velo-sopra : transparent);
     border-width: root.tipo == Tipo.quieto ? Token.filo : 0;
     border-color: Token.bordo-comando;
@@ -105,13 +106,13 @@ export component Pulsante inherits Rectangle {
             vertical-alignment: center;
             font-size: (root.piccolo ? Token.corpo-stato : Token.corpo-comando) * Aspetto.scala;
             font-weight: root.tipo == Tipo.pieno ? Token.peso-forte : Token.peso-medio;
-            color: root.tipo == Tipo.pieno ? Token.azione-testo : Token.testo;
+            color: root.tipo == Tipo.pieno ? (root.abilitato ? Token.azione-testo : Token.testo-spento) : Token.testo;
         }
         if root.tasto != "": Text {
             text: root.tasto;
             vertical-alignment: center;
             font-size: Token.corpo-nota * Aspetto.scala;
-            color: root.tipo == Tipo.pieno ? Token.azione-testo : Token.testo-tenue;
+            color: root.tipo == Tipo.pieno ? (root.abilitato ? Token.azione-testo : Token.testo-spento) : Token.testo-tenue;
             opacity: Token.opacita-spento + (1 - Token.opacita-spento) / 2;
         }
     }

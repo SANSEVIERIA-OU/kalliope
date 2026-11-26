@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 // The writing: a large bubble with the dashed outline of what is not yet said. Enter says it; there are no new lines.
+// It takes the room the window has (Finestra gives it the larger share); its minimum is a number of lines, never a band.
 import { Token } from "token.slint";
 import { Aspetto } from "aspetto.slint";
 import { Tratteggio, Pulsante, Tipo } from "forme.slint";
@@ -14,17 +15,22 @@ export component Scrittura inherits Rectangle {
     in property <bool> prepara: false;
     // the last phrase said: ↑ in the empty field brings it back
     in property <string> ultima;
+    // the gathered arrangement (meeting mode, a low window): smaller writing, short hint, small commands
     in property <bool> compatta: false;
+    // what the empty field says: it follows the state of the voice, it never promises what the voice cannot do now
+    in property <string> segnaposto: root.compatta ? @tr("Scrivi qui.") : @tr("Scrivi qui. Invio la dice.");
     // for the catalog: show the focused look without focus
     in property <bool> mostra-fuoco: false;
     callback dici(string) -> bool;
     callback ferma();
     out property <bool> ha-fuoco: campo.has-focus;
-    property <length> aria: (root.compatta ? Token.spazio-medio : Token.spazio-largo) * Aspetto.scala;
+    property <length> corpo: (root.compatta ? Token.corpo-scrittura-raccolta : Token.corpo-scrittura) * Aspetto.scala;
+    property <length> aria: (root.compatta ? Token.spazio-controlli : Token.spazio-largo) * Aspetto.scala;
     property <bool> acceso: campo.has-focus || root.mostra-fuoco;
     property <bool> ha-testo: root.testo != "";
+    property <int> righe: root.compatta ? Token.righe-scrittura-raccolta : Token.righe-scrittura;
     forward-focus: campo;
-    min-height: Token.scrittura-altezza-minima * Aspetto.scala;
+    min-height: root.aria * 1.5 + root.righe * root.corpo * Token.interlinea + comandi.height;
     background: Token.campo;
     border-radius: Token.raggio-scrittura * Aspetto.scala;
 
@@ -47,69 +53,70 @@ export component Scrittura inherits Rectangle {
     Rectangle {
         x: root.aria; y: root.aria * 0.8;
         width: root.width - 2 * root.aria;
-        height: max(0px, root.height - self.y - comandi.height - root.aria * 0.8);
+        height: max(0px, root.height - self.y - comandi.height - root.aria * 0.7);
         clip: true;
-    // a long phrase scrolls inside its place and follows the cursor, as the text being written must stay in view
-    scorre := Flickable {
-        x: 0; y: 0;
-        width: parent.width;
-        height: parent.height;
-        content-width: self.width;
-        content-height: max(self.height, campo.preferred-height);
-    tasti := FocusScope {
-        // it only listens for Enter, Esc and ↑ around the field: Tab goes to the field itself
-        focus-on-tab-navigation: false;
-        x: 0; y: 0;
-        width: scorre.width;
-        height: scorre.content-height;
-        capture-key-pressed(e) => {
-            if (e.text == Key.Return) { root.invia(); return accept; }
-            if (e.text == Key.Escape) { root.ferma(); return accept; }
-            if (e.text == Key.UpArrow && !root.ha-testo && root.ultima != "") { root.testo = root.ultima; return accept; }
-            return reject;
-        }
-        campo := TextInput {
-            width: 100%; height: 100%;
-            single-line: false;
-            wrap: word-wrap;
-            vertical-alignment: top;
-            font-size: Token.corpo-scrittura * Aspetto.scala;
-            font-weight: Token.peso-testo;
-            color: Token.testo;
-            selection-background-color: Token.velo-premuto;
-            selection-foreground-color: Token.testo;
-            text-cursor-width: Token.tratto;
-            text <=> root.testo;
-            accessible-label: @tr("Che cosa vuoi dire");
-            cursor-position-changed(punto) => {
-                if (punto.y + self.font-size * 1.5 > -scorre.content-y + scorre.height) {
-                    scorre.content-y = -(punto.y + self.font-size * 1.5 - scorre.height);
+        // a long phrase scrolls inside its place and follows the cursor, as the text being written must stay in view
+        scorre := Flickable {
+            x: 0; y: 0;
+            width: parent.width;
+            height: parent.height;
+            content-width: self.width;
+            content-height: max(self.height, campo.preferred-height);
+            tasti := FocusScope {
+                // it only listens for Enter, Esc and ↑ around the field: Tab goes to the field itself
+                focus-on-tab-navigation: false;
+                x: 0; y: 0;
+                width: scorre.width;
+                height: scorre.content-height;
+                capture-key-pressed(e) => {
+                    if (e.text == Key.Return) { root.invia(); return accept; }
+                    if (e.text == Key.Escape) { root.ferma(); return accept; }
+                    if (e.text == Key.UpArrow && !root.ha-testo && root.ultima != "") { root.testo = root.ultima; return accept; }
+                    return reject;
                 }
-                if (punto.y < -scorre.content-y) {
-                    scorre.content-y = -punto.y;
+                campo := TextInput {
+                    width: 100%; height: 100%;
+                    single-line: false;
+                    wrap: word-wrap;
+                    vertical-alignment: top;
+                    font-size: root.corpo;
+                    font-weight: Token.peso-testo;
+                    color: Token.testo;
+                    selection-background-color: Token.velo-premuto;
+                    selection-foreground-color: Token.testo;
+                    text-cursor-width: Token.tratto;
+                    text <=> root.testo;
+                    accessible-label: @tr("Che cosa vuoi dire");
+                    cursor-position-changed(punto) => {
+                        if (punto.y + self.font-size * Token.interlinea > -scorre.content-y + scorre.height) {
+                            scorre.content-y = -(punto.y + self.font-size * Token.interlinea - scorre.height);
+                        }
+                        if (punto.y < -scorre.content-y) {
+                            scorre.content-y = -punto.y;
+                        }
+                    }
+                }
+                if !root.ha-testo: Text {
+                    x: 0; y: 0;
+                    width: 100%;
+                    text: root.segnaposto;
+                    wrap: word-wrap;
+                    vertical-alignment: top;
+                    font-size: root.corpo;
+                    color: Token.segnaposto;
                 }
             }
         }
-        if !root.ha-testo: Text {
-            x: 0; y: 0;
-            width: 100%;
-            text: root.compatta || root.width < Token.soglia-minima * Aspetto.scala * 0.85 ? @tr("Scrivi. Invio la dice.") : @tr("Scrivi qui. Invio la dice.");
-            wrap: word-wrap;
-            vertical-alignment: top;
-            font-size: Token.corpo-scrittura * Aspetto.scala;
-            color: Token.segnaposto;
-        }
-    }
-    }
     }
     comandi := HorizontalLayout {
         x: root.aria; y: root.height - self.height - root.aria * 0.7;
         width: root.width - 2 * root.aria;
-        height: Token.altezza-comando * Aspetto.scala;
+        height: (root.compatta ? Token.altezza-comando-piccolo : Token.altezza-comando) * Aspetto.scala;
         spacing: Token.spazio-controlli * Aspetto.scala;
         Text {
-            visible: root.width > Token.soglia-minima * Aspetto.scala * 0.85;
-            text: root.compatta ? "" : (root.ultima != "" ? @tr("Invio la dice · Esc la ferma · ↑ l'ultima frase") : @tr("Invio la dice · Esc la ferma"));
+            // the keys are promised only when the voice can take the phrase
+            visible: root.pronta && !root.compatta && root.width > Token.soglia-minima * Aspetto.scala * 0.85;
+            text: root.ultima != "" ? @tr("Invio la dice · Esc la ferma · ↑ l'ultima frase") : @tr("Invio la dice · Esc la ferma");
             vertical-alignment: center;
             horizontal-stretch: 1;
             overflow: elide;
@@ -120,12 +127,14 @@ export component Scrittura inherits Rectangle {
             testo: @tr("Ferma");
             tasto: root.compatta ? "" : @tr("Esc");
             tipo: Tipo.quieto;
+            piccolo: root.compatta;
             premuto => { root.ferma(); campo.focus(); }
         }
         Pulsante {
             testo: @tr("Di'");
             tasto: @tr("Invio");
             tipo: Tipo.pieno;
+            piccolo: root.compatta;
             abilitato: root.pronta && root.ha-testo;
             premuto => { root.invia(); }
         }

@@ -1,0 +1,93 @@
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
+// A menu that opens inside the window: arrows move, Enter or Space choose, Esc closes and gives the focus back to the button
+// that opened it. It comes in and goes out with a visible movement.
+import { Token } from "token.slint";
+import { Aspetto } from "aspetto.slint";
+import { Punto } from "forme.slint";
+
+component VoceDelMenu inherits Rectangle {
+    in property <string> nome;
+    in property <color> tinta;
+    in property <bool> con-tinta;
+    in property <bool> in-uso;
+    in property <bool> evidenziata;
+    callback premuta();
+    accessible-role: button;
+    accessible-label: root.nome;
+    accessible-action-default => { root.premuta(); }
+    height: Token.altezza-comando * Aspetto.scala;
+    border-radius: self.height / 2;
+    background: root.evidenziata || tocco.has-hover ? Token.velo-scelto : transparent;
+    border-width: root.evidenziata ? Token.tratto : 0;
+    border-color: Token.voce;
+    HorizontalLayout {
+        padding-left: Token.spazio-controlli * Aspetto.scala;
+        padding-right: Token.spazio-medio * Aspetto.scala;
+        spacing: Token.spazio-controlli * Aspetto.scala;
+        if root.con-tinta: Punto { colore: root.tinta; lato: Token.punto * 1.8 * Aspetto.scala; y: (parent.height - self.height) / 2; }
+        Text { text: root.nome; vertical-alignment: center; horizontal-stretch: 1; overflow: elide; color: Token.testo; font-size: Token.corpo-comando * Aspetto.scala; font-weight: root.in-uso ? Token.peso-forte : Token.peso-testo; }
+        if root.in-uso: Text { text: @tr("in uso"); vertical-alignment: center; color: Token.azione; font-size: Token.corpo-nota * Aspetto.scala; }
+    }
+    tocco := TouchArea { mouse-cursor: pointer; clicked => { root.premuta(); } }
+}
+
+export component Menu inherits Rectangle {
+    in property <bool> aperto;
+    in property <string> titolo;
+    in property <[string]> voci;
+    in property <[color]> tinte;
+    in property <int> in-uso: -1;
+    in-out property <int> evidenziata: 0;
+    callback scelta(int);
+    callback chiudi();
+    out property <float> fase: root.aperto ? 1 : 0;
+    // the focus goes into the menu when it opens, on the item in use
+    public function entra() {
+        root.evidenziata = max(0, root.in-uso);
+        chiavi.focus();
+    }
+    animate fase {
+        duration: Aspetto.movimento-ridotto ? 0ms : (root.aperto ? Token.durata-pannello : Token.durata-pannello-uscita);
+        // it comes in fast and settles; it leaves evenly, so the way out is seen too
+        easing: root.aperto ? Token.curva-entrata : Token.curva-dolce;
+    }
+    visible: root.fase > 0;
+    opacity: root.fase;
+    height: elenco.preferred-height;
+    background: Token.pannello;
+    border-radius: Token.raggio-pannello * Aspetto.scala;
+    border-width: Token.filo;
+    border-color: Token.bordo;
+    drop-shadow-blur: Token.ombra-sfocatura;
+    drop-shadow-offset-y: Token.ombra-scarto;
+    drop-shadow-color: Token.ombra;
+    TouchArea { }
+    chiavi := FocusScope {
+        focus-on-tab-navigation: false;
+        key-pressed(e) => {
+            if (root.voci.length > 0 && e.text == Key.DownArrow) { root.evidenziata = mod(root.evidenziata + 1, root.voci.length); return accept; }
+            if (root.voci.length > 0 && e.text == Key.UpArrow) { root.evidenziata = mod(root.evidenziata - 1 + root.voci.length, root.voci.length); return accept; }
+            if (e.text == Key.Return || e.text == " ") { root.scelta(root.evidenziata); return accept; }
+            if (e.text == Key.Escape) { root.chiudi(); return accept; }
+            return reject;
+        }
+    }
+    elenco := VerticalLayout {
+        padding: Token.spazio-stretto * Aspetto.scala;
+        spacing: Token.spazio-minimo * Aspetto.scala;
+        if root.titolo != "": Text {
+            text: root.titolo;
+            color: Token.testo-tenue;
+            font-size: Token.corpo-nota * Aspetto.scala;
+        }
+        for v[i] in root.voci: VoceDelMenu {
+            nome: v;
+            con-tinta: root.tinte.length > 0;
+            tinta: root.tinte.length > i ? root.tinte[i] : Token.bordo;
+            in-uso: i == root.in-uso;
+            evidenziata: i == root.evidenziata && chiavi.has-focus;
+            premuta => { root.scelta(i); }
+        }
+        @children
+    }
+}

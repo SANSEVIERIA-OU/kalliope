@@ -74,8 +74,8 @@ export component RigaStato inherits Rectangle {
             }
         }
         VerticalLayout {
-            horizontal-stretch: root.impilata ? 1 : 0;
             alignment: center;
+            horizontal-stretch: root.impilata || root.compatta ? 1 : 0;
             Text {
                 text: root.titolo;
                 vertical-alignment: center;
@@ -90,7 +90,8 @@ export component RigaStato inherits Rectangle {
                 color: Token.testo-tenue;
             }
         }
-        if !root.impilata: Text {
+        // gathered: the state in a word (the whole sentence stays in the accessible label and in the full window)
+        if !root.impilata && !root.compatta: Text {
             text: root.detto;
             vertical-alignment: center;
             horizontal-stretch: 1;

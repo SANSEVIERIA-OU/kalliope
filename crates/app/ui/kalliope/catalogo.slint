@@ -10,6 +10,7 @@ import { RigaStato, BarreVoce } from "stato.slint";
 import { BollaVoce, FraseDetta } from "bolla.slint";
 import { Scrittura } from "scrittura.slint";
 import { Passi, Livello, Registra, Consenso } from "voce-propria.slint";
+import { Menu } from "menu.slint";
 
 component Titolo inherits Text {
     font-size: Token.corpo-titolo * Aspetto.scala;
@@ -252,12 +253,26 @@ export component Catalogo inherits Window {
                     nome: "Scrittura · vuota, con il fuoco, mentre la voce si prepara (il tratteggio cammina), con testo e Ferma";
                     fonte: "La metà tratteggiata del logo (tratteggio 14/10, tratto 3 px) attorno alla scrittura: il non ancora detto. Invio la dice, Esc la ferma, ↑ riporta l'ultima frase.";
                     HorizontalLayout { spacing: Token.spazio-medio * Aspetto.scala;
-                        Scrittura { height: Token.scrittura-altezza * Aspetto.scala; }
-                        Scrittura { height: Token.scrittura-altezza * Aspetto.scala; mostra-fuoco: true; }
+                        Scrittura { height: self.min-height; }
+                        Scrittura { height: self.min-height; mostra-fuoco: true; }
                     }
                     HorizontalLayout { spacing: Token.spazio-medio * Aspetto.scala;
-                        Scrittura { height: Token.scrittura-altezza * Aspetto.scala; prepara: true; pronta: false; }
-                        Scrittura { height: Token.scrittura-altezza * Aspetto.scala; testo: "Possiamo sentirci venerdì alle 15:30?"; parla: true; ultima: "Ho letto il documento."; }
+                        Scrittura { height: self.min-height; prepara: true; pronta: false; }
+                        Scrittura { height: self.min-height; testo: "Possiamo sentirci venerdì alle 15:30?"; parla: true; ultima: "Ho letto il documento."; }
+                    }
+                }
+                Esempio {
+                    nome: "Bolla su una riga · nella modalità riunione e nella finestra più piccola la riga scorre e tiene in vista la parola detta";
+                    fonte: "Correzione I3 dopo il giudizio: anche nella riunione si vede che cosa dice la voce.";
+                    HorizontalLayout { alignment: start; padding: Token.ombra-sfocatura;
+                        BollaVoce { testo: root.frase; detto: root.prefissi[root.dette]; dicendo: root.prefissi[min(root.parole-frase, root.dette + 1)]; sfumatura: root.sfumatura; parla: root.voce-in-corso; riga-sola: true; larghezza-massima: Token.compatta-larghezza * Aspetto.scala; }
+                    }
+                }
+                Esempio {
+                    nome: "Menu · aperto, con la voce in uso e una voce evidenziata dalle frecce";
+                    fonte: "Correzione B2: ↑ ↓ spostano, Invio o Spazio scelgono, Esc chiude e riporta il fuoco sul pulsante. Il fuoco entra nel menu quando si apre.";
+                    Rectangle { height: catalogo-menu.height + Token.ombra-sfocatura * 2;
+                        catalogo-menu := Menu { x: Token.ombra-sfocatura; y: Token.ombra-sfocatura; width: Token.bolla-larghezza / 2; aperto: true; titolo: "Con quale voce parli"; voci: ["Giulia", "Marco", "La voce di Anna"]; tinte: [Token.tinta-voce-1, Token.tinta-voce-2, Token.tinta-propria]; in-uso: 0; evidenziata: 2; }
                     }
                 }
                 Esempio {
@@ -274,14 +289,15 @@ export component Catalogo inherits Window {
                     }
                 }
                 Esempio {
-                    nome: "Voce propria · passi, livello fermo e vivo, registra e ferma, consenso";
+                    nome: "Voce propria · passi, livello fermo e vivo, registra e ferma con il cerchio dei dodici secondi (a metà, pieno), consenso";
                     fonte: "Passi con tre stati (da ElevenLabs IVC); il tondo «registra» ha il rosa del logo; il livello è fatto delle barre della voce.";
                     Passi { passo: 1; }
                     Livello { attivo: false; }
                     Livello { attivo: true; }
                     HorizontalLayout { alignment: start; spacing: Token.spazio-largo * Aspetto.scala;
                         Registra { registra: false; }
-                        Registra { registra: true; }
+                        Registra { registra: true; avanzamento: 0.6; }
+                        Registra { registra: true; avanzamento: 1; }
                     }
                     Consenso { testo: "È la mia voce, oppure la persona che parla mi ha dato il permesso di usarla."; dato: false; }
                     Consenso { testo: "Spuntato"; dato: true; }

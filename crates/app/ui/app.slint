@@ -61,6 +61,7 @@ export component AppWindow inherits Window {
     callback compatta-cambiata(bool);
     callback importa-voce();
     callback crea-voce(string);
+    callback apri-guida(string);
 
     finestra := Finestra {
         x: 0; y: 0; width: root.width; height: root.height;
@@ -90,5 +91,6 @@ export component AppWindow inherits Window {
         compatta-cambiata(on) => { root.compatta-cambiata(on); }
         importa-voce => { root.importa-voce(); }
         crea-voce(n) => { root.crea-voce(n); }
+        apri-guida(u) => { root.apri-guida(u); }
     }
 }

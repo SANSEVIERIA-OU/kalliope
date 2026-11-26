@@ -1573,9 +1573,9 @@
 
   /* Le voci come partecipanti: ogni voce ha la tinta di un riquadro della riunione del sito */
   --app-tinta-propria: var(--tu-fondo-alto);   /* visione: la voce propria ha la tinta di «Tu» */
-  --app-tinta-voce-1: var(--paola-fondo-alto);   /* visione: Giulia, la tinta di Paola */
+  --app-tinta-voce-1: var(--anna-fondo-alto);   /* visione: Giulia, la tinta di Anna (correzione dopo il giudizio: la tinta di Paola è quella dell'avviso) */
   --app-tinta-voce-2: var(--luca-fondo-alto);   /* visione: Marco, la tinta di Luca */
-  --app-tinta-voce-3: var(--anna-fondo-alto);   /* visione: un'altra voce propria, la tinta di Anna */
+  --app-tinta-voce-3: var(--barre-spente);   /* visione: un'altra voce propria, il grigio verde delle barre spente del sito (mai la tinta calda dell'avviso) */
 
   /* Caratteri e scala del testo (al 100%; il testo regolabile li moltiplica tutti) */
   --app-peso-medio: var(--peso-medio);   /* fonte: la bolla della home, 500 */
@@ -1622,8 +1622,13 @@
   --app-ombra-sfocatura: var(--spazio-18);   /* fonte: 24 px, l'ombra della bolla */
   --app-ombra-scarto: var(--spazio-7);   /* fonte: 8 px */
   --app-bolla-larghezza: 720px;   /* scelta: la bolla che parla non va oltre ~60 caratteri per riga a 24 px */
-  --app-scrittura-altezza: 200px;   /* scelta: l'altezza della scrittura all'apertura (cresce con la finestra) */
-  --app-scrittura-altezza-minima: 128px;   /* scelta: una riga di scrittura a 30 px e la riga dei comandi, anche nella finestra più piccola */
+  --app-quota-scrittura: 2;   /* scelta (correzione B1): lo spazio che avanza va per due parti alla scrittura e per una alla cronologia, a ogni misura: la scrittura è la protagonista */
+  --app-quota-storia: 1;   /* scelta: la cronologia cede spazio e scorre */
+  --app-righe-scrittura: 3;   /* scelta: la scrittura mostra almeno tre righe nella finestra intera */
+  --app-righe-scrittura-raccolta: 1;   /* scelta: nell'impianto raccolto (riunione, finestra bassa) almeno una riga, con il segnaposto corto */
+  --app-interlinea: 1.3;   /* scelta: l'altezza di una riga di Lexend in rapporto al corpo, per contare le righe */
+  --app-corpo-scrittura-raccolta: 24px;   /* scelta: la scrittura nell'impianto raccolto, grande come la bolla */
+  --app-soglia-bassa: 440px;   /* scelta (correzione I5): sotto questa altezza (per il testo regolabile) la finestra usa l'impianto raccolto: niente cronologia, la frase detta su una riga */
   --app-livello-altezza: 72px;   /* scelta: il livello del microfono mentre si registra */
   --app-registra-diametro: 76px;   /* scelta: il tondo «registra», grande come lo stop di Apple Personal Voice in proporzione */
   --app-scelta-altezza: 168px;   /* scelta: le due strade per creare la voce (registra, importa) */
@@ -1680,7 +1685,7 @@
   --app-attenzione: #8f4f36;   /* scelta: la tinta calda di --paola-ombra scurita perché si legga sul chiaro */
   --app-attenzione-fondo: rgba(201, 144, 120, 0.2);   /* visione: --paola-corpo al 20% */
   --app-tinta-propria: var(--voce);   /* visione: «Tu» sul chiaro è la voce */
-  --app-tinta-voce-1: var(--paola-corpo);   /* visione */
+  --app-tinta-voce-1: var(--anna-corpo);   /* visione */
   --app-tinta-voce-2: var(--luca-corpo);   /* visione */
-  --app-tinta-voce-3: var(--anna-corpo);   /* visione */
+  --app-tinta-voce-3: var(--rosa);   /* visione */
 }
