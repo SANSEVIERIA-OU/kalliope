@@ -38,7 +38,8 @@ export component Scrittura inherits Rectangle {
     Tratteggio {
         width: 100%; height: 100%;
         raggio: Token.raggio-scrittura * Aspetto.scala;
-        colore: root.acceso ? Token.tratteggio-fuoco : Token.tratteggio;
+        // the voice cannot speak at all: the place of what is not yet said goes quiet
+        colore: !root.pronta && !root.prepara ? Token.bordo-comando : root.acceso ? Token.tratteggio-fuoco : Token.tratteggio;
         cammino: root.prepara && !Aspetto.movimento-ridotto ? mod(animation-tick() / Token.durata-cammino, 1) : 0;
         animate colore { duration: Token.durata-scurisce; easing: Token.curva-dolce; }
     }
