@@ -6,11 +6,12 @@
 mod audio;
 mod catalog;
 mod engine;
+mod instance;
 mod paths;
 mod session;
 mod settings;
 
-use engine::{Command, Config, Engine, Event, KLEIN_VOICES};
+use engine::{Command, Config, Engine, Event, KLEIN_VOICES, VoiceId};
 use settings::Settings;
 use slint::{ComponentHandle, ModelRc, SharedString, VecModel};
 use std::cell::RefCell;
@@ -38,7 +39,7 @@ fn usage() -> String {
     )
 }
 
-fn config(voice: String, monitor: bool) -> Config {
+fn config(voice: VoiceId, monitor: bool) -> Config {
     Config {
         model_dir: catalog::model_dir(),
         voice,
@@ -49,27 +50,47 @@ fn config(voice: String, monitor: bool) -> Config {
     }
 }
 
-/// Giulia and Marco, then the voices prepared from a recording.
-fn voices() -> Vec<String> {
+/// Giulia and Marco, then the voices prepared from a recording, which may have any name.
+fn voices() -> Vec<VoiceId> {
     KLEIN_VOICES
         .iter()
-        .map(|&v| v.to_string())
-        .chain(catalog::own_voices())
+        .map(|&v| VoiceId::Klein(v.to_string()))
+        .chain(catalog::own_voices().into_iter().map(VoiceId::Own))
         .collect()
 }
 
 /// Speaks without a window: for tests, scripts and checking the microphone from a terminal.
 fn say(text: &str) -> ExitCode {
+    let text = text.trim();
+    if text.is_empty() {
+        eprintln!(
+            "Che cosa devo dire? Scrivi il testo dopo --say.\n\n{}",
+            usage()
+        );
+        return ExitCode::from(2);
+    }
+    if !engine::has_speech(text) {
+        eprintln!("Non c'è niente da dire in «{text}»: scrivi almeno una parola.");
+        return ExitCode::FAILURE;
+    }
     if let Some(missing) = catalog::missing_voice() {
         eprintln!("{missing}");
         return ExitCode::FAILURE;
     }
+    // One microphone only: while the window is open, the phrase is said from there.
+    let _owner = match instance::claim(&instance::folder()) {
+        instance::Start::First(owner) => owner,
+        instance::Start::Running(_) => {
+            eprintln!("Kalliope è già aperta: scrivi la frase nella sua finestra.");
+            return ExitCode::FAILURE;
+        }
+    };
     let settings = Settings::load();
     let (tx, rx) = std::sync::mpsc::channel();
     let engine = Engine::start(config(settings.voice, settings.monitor), move |e| {
         let _ = tx.send(e);
     });
-    let mut spoken = false;
+    let (mut spoken, mut failed) = (false, false);
     while let Ok(event) = rx.recv() {
         match event {
             Event::Ready { microphone } => {
@@ -83,11 +104,25 @@ fn say(text: &str) -> ExitCode {
                 // Apps receive audio in blocks: keep the microphone a moment longer, so the
                 // last syllables reach them before it disappears.
                 std::thread::sleep(std::time::Duration::from_millis(1000));
-                return ExitCode::SUCCESS;
+                return if failed {
+                    ExitCode::FAILURE
+                } else {
+                    ExitCode::SUCCESS
+                };
             }
-            Event::Error(e) | Event::Warning(e) => {
+            Event::NothingToSay => {
+                eprintln!("Non c'è niente da dire in «{text}»: scrivi almeno una parola.");
+                return ExitCode::FAILURE;
+            }
+            Event::Error(e) => {
                 eprintln!("{e}");
                 return ExitCode::FAILURE;
+            }
+            Event::Warning(e) => {
+                // A voice that failed and was replaced by Giulia still speaks; a phrase that
+                // failed makes the exit code say so.
+                eprintln!("{e}");
+                failed |= spoken;
             }
             _ => {}
         }
@@ -95,9 +130,34 @@ fn say(text: &str) -> ExitCode {
     ExitCode::FAILURE
 }
 
-fn run_window() -> Result<(), Box<dyn std::error::Error>> {
+/// Brings the window to the front for a second launch. Showing it again maps it on top (X11), or
+/// creates it again with the launcher's activation token, which Slint reads at creation (Wayland).
+fn bring_to_front(ui: &AppWindow, token: Option<String>) {
+    #[cfg(target_os = "linux")]
+    if let Some(token) = token {
+        // SAFETY: on the UI thread, right before Slint creates the window again; Slint's winit
+        // backend reads and removes this variable there, the same way, at every window creation.
+        unsafe { std::env::set_var("XDG_ACTIVATION_TOKEN", token) };
+    }
+    #[cfg(not(target_os = "linux"))]
+    let _ = token;
+    ui.window().set_minimized(false);
+    let _ = ui.hide();
+    let _ = ui.show();
+}
+
+fn run_window(owner: &instance::Owner) -> Result<(), Box<dyn std::error::Error>> {
     let ui = AppWindow::new()?;
     let _ = slint::set_xdg_app_id("io.github.sansevieria_ou.kalliope");
+    let weak = ui.as_weak();
+    owner.listen(move |token| {
+        let weak = weak.clone();
+        let _ = slint::invoke_from_event_loop(move || {
+            if let Some(ui) = weak.upgrade() {
+                bring_to_front(&ui, token);
+            }
+        });
+    });
     let weak = ui.as_weak();
     let session = Rc::new(RefCell::new(session::Session::open(move |status| {
         let weak = weak.clone();
@@ -106,6 +166,9 @@ fn run_window() -> Result<(), Box<dyn std::error::Error>> {
                 ui.set_phase(status.phase);
                 ui.set_warning(status.warning);
                 ui.set_status(status.text.into());
+                if let Some(index) = status.voice_index {
+                    ui.set_voice_index(index as i32);
+                }
             }
         });
     })));
@@ -142,7 +205,16 @@ fn run_window() -> Result<(), Box<dyn std::error::Error>> {
     let app = session.clone();
     ui.on_voice_changed(move |index| app.borrow_mut().change_voice(index as usize));
     ui.on_monitor_changed(move |on| session.borrow_mut().monitor(on));
-    Ok(ui.run()?)
+    // Bringing the window to the front hides and shows it again, so a hidden window must not end
+    // Kalliope: only closing it does.
+    ui.window().on_close_requested(|| {
+        let _ = slint::quit_event_loop();
+        slint::CloseRequestResponse::HideWindow
+    });
+    ui.show()?;
+    slint::run_event_loop_until_quit()?;
+    let _ = ui.hide();
+    Ok(())
 }
 
 // A normal desktop launch has no console window. Attach terminal invocations to
@@ -183,12 +255,23 @@ fn main() -> ExitCode {
             eprintln!("opzione sconosciuta: {other}\n\n{}", usage());
             ExitCode::FAILURE
         }
-        None => match run_window() {
-            Ok(()) => ExitCode::SUCCESS,
-            Err(e) => {
-                eprintln!("Non riesco ad aprire la finestra: {e}");
-                ExitCode::FAILURE
+        None => match instance::claim(&instance::folder()) {
+            instance::Start::Running(running) => {
+                if running.activate(instance::launch_token().as_deref()) {
+                    eprintln!("Kalliope è già aperta: ecco la sua finestra.");
+                    ExitCode::SUCCESS
+                } else {
+                    eprintln!("Kalliope è già in funzione: riprova fra un momento.");
+                    ExitCode::FAILURE
+                }
             }
+            instance::Start::First(owner) => match run_window(&owner) {
+                Ok(()) => ExitCode::SUCCESS,
+                Err(e) => {
+                    eprintln!("Non riesco ad aprire la finestra: {e}");
+                    ExitCode::FAILURE
+                }
+            },
         },
     }
 }

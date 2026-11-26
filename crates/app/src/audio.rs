@@ -21,6 +21,8 @@ pub trait Output: Send {
 }
 
 /// No audio device: counts time as if playing, so "speaking" and "ready" still follow the audio.
+/// It is never "connected" to anything: the engine keeps trying to open the microphone in its place
+/// when that can help.
 pub struct Silent {
     rate: f32,
     until: Mutex<Instant>,
@@ -57,7 +59,7 @@ impl Output for Silent {
         true
     }
     fn is_connected(&self) -> bool {
-        true
+        false
     }
 }
 
@@ -85,14 +87,40 @@ impl Output for kalliope_mic::VirtualMic {
     }
 }
 
-/// Opens the virtual microphone "Kalliope". When it is not available, returns the reason in
-/// Italian, to complete "La voce è pronta, ma …"; the technical details go to standard error.
-pub fn open(rate: u32) -> Result<Box<dyn Output>, String> {
+/// Why the virtual microphone is missing.
+#[derive(Clone, Debug, PartialEq)]
+pub struct MicError {
+    /// In Italian, to complete "La voce è pronta, ma …".
+    pub reason: String,
+    /// For developers, on standard error.
+    pub detail: String,
+    /// Trying again later can help: PipeWire is installed but not answering yet, or it restarted.
+    pub retry: bool,
+}
+
+impl MicError {
+    /// PipeWire went away while Kalliope was using it (an upgrade, a restart of the session audio).
+    pub fn lost() -> MicError {
+        MicError {
+            reason: explain(kalliope_mic::ErrorKind::NotRunning).into(),
+            detail: "PipeWire went away".into(),
+            retry: true,
+        }
+    }
+}
+
+/// Opens the virtual microphone "Kalliope". When it is not available, says why.
+pub fn open(rate: u32) -> Result<Box<dyn Output>, MicError> {
     kalliope_mic::VirtualMic::open("kalliope", "Kalliope", rate)
         .map(|mic| Box::new(mic) as Box<dyn Output>)
         .map_err(|e| {
-            eprintln!("kalliope: virtual microphone: {e}");
-            explain(e.kind()).to_string()
+            MicError {
+                detail: e.to_string(),
+                reason: explain(e.kind()).to_string(),
+                // A missing or too old PipeWire, or a system without the microphone, does not
+                // change while Kalliope runs.
+                retry: e.kind() != kalliope_mic::ErrorKind::Unavailable,
+            }
         })
 }
 
@@ -105,7 +133,7 @@ fn explain(kind: kalliope_mic::ErrorKind) -> &'static str {
         }
         ErrorKind::Unavailable => "su questo sistema il microfono «Kalliope» non c'è ancora",
         ErrorKind::NotRunning => {
-            "PipeWire, il servizio audio del computer, non risponde (prova a riavviare la sessione)"
+            "PipeWire, il servizio audio del computer, non risponde (riprovo da sola appena torna)"
         }
         _ => "il microfono «Kalliope» non si è aperto",
     }
