@@ -1,0 +1,113 @@
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
+// The bubble where the voice says the phrase: the words darken one after another while they are said, as on the home page,
+// and the phrases already said stay above, to repeat with one gesture.
+import { Token } from "token.slint";
+import { Aspetto } from "aspetto.slint";
+
+export component BollaVoce inherits Rectangle {
+    in property <string> testo;
+    // the phrase up to the words already said, and up to the word being said now (session: vista::prefisso)
+    in property <string> detto;
+    in property <string> dicendo;
+    // 0 → 1: how far the word being said has darkened
+    in property <float> sfumatura;
+    // the voice is saying it now
+    in property <bool> parla;
+    // nobody hears it: the ring of the voice turns to the warm colour of the status line
+    in property <bool> non-sentita: false;
+    in property <length> larghezza-massima: Token.bolla-larghezza * Aspetto.scala;
+    // 0 → 1 when the bubble is born: it grows from its tail (D2)
+    in property <float> nascita: 1;
+    property <length> aria-x: Token.spazio-largo * Aspetto.scala * 0.85;
+    property <length> aria-y: Token.spazio-medio * Aspetto.scala;
+    property <length> riga: min(root.larghezza-massima - 2 * root.aria-x, naturale.preferred-width);
+    accessible-role: text;
+    accessible-label: root.testo;
+    width: root.riga + 2 * root.aria-x;
+    height: tutto.preferred-height + 2 * root.aria-y;
+    background: Token.bolla;
+    border-radius: Token.raggio-bolla * Aspetto.scala;
+    border-bottom-left-radius: Token.raggio-coda * Aspetto.scala;
+    border-width: root.parla ? Token.tratto : 0;
+    border-color: root.non-sentita ? Token.attenzione : Token.voce;
+    drop-shadow-blur: Token.ombra-sfocatura;
+    drop-shadow-offset-y: root.parla ? 0 : Token.ombra-scarto;
+    drop-shadow-color: root.parla ? (root.non-sentita ? Token.attenzione : Token.voce) : Token.ombra;
+    transform-origin: { x: 0, y: self.height };
+    transform-scale-x: (Token.scala-coda + (1 - Token.scala-coda) * root.nascita) * 100%;
+    transform-scale-y: (Token.scala-coda + (1 - Token.scala-coda) * root.nascita) * 100%;
+    opacity: root.nascita;
+    animate border-color, drop-shadow-color { duration: Token.durata-scurisce; easing: Token.curva-dolce; }
+    naturale := Text { visible: false; text: root.testo; font-size: Token.corpo-bolla * Aspetto.scala; font-weight: Token.peso-medio; }
+    // Three layers with the same width wrap the same way: what is not yet said, what is said, and the word being said.
+    tutto := Text {
+        x: root.aria-x; y: root.aria-y; width: root.riga;
+        text: root.testo; wrap: word-wrap;
+        font-size: Token.corpo-bolla * Aspetto.scala; font-weight: Token.peso-medio;
+        color: Token.bolla-da-dire;
+    }
+    Text {
+        x: root.aria-x; y: root.aria-y; width: root.riga;
+        text: root.dicendo; wrap: word-wrap;
+        font-size: Token.corpo-bolla * Aspetto.scala; font-weight: Token.peso-medio;
+        color: Token.bolla-testo;
+        opacity: root.sfumatura;
+    }
+    Text {
+        x: root.aria-x; y: root.aria-y; width: root.riga;
+        text: root.detto; wrap: word-wrap;
+        font-size: Token.corpo-bolla * Aspetto.scala; font-weight: Token.peso-medio;
+        color: Token.bolla-testo;
+    }
+}
+
+// A phrase already said: one click, Enter or Space says it again.
+export component FraseDetta inherits Rectangle {
+    in property <string> testo;
+    in property <bool> abilitata: true;
+    in property <length> larghezza-massima: Token.bolla-larghezza * Aspetto.scala;
+    callback ripeti();
+    property <bool> sopra: tocco.has-hover || chiave.has-focus;
+    accessible-role: button;
+    accessible-label: @tr("Ripeti: {}", root.testo);
+    accessible-action-default => { root.ripeti(); }
+    forward-focus: chiave;
+    width: min(root.larghezza-massima, frase.preferred-width + ripeti.preferred-width + 3 * Token.spazio-medio * Aspetto.scala);
+    height: max(frase.preferred-height, ripeti.preferred-height) + 2 * Token.spazio-controlli * Aspetto.scala;
+    background: root.sopra ? Token.velo-scelto : Token.detta;
+    border-radius: Token.raggio-pannello * Aspetto.scala;
+    border-bottom-left-radius: Token.raggio-coda * Aspetto.scala;
+    border-width: chiave.has-focus ? Token.tratto : 0;
+    border-color: Token.voce;
+    animate background { duration: Token.durata-scurisce; easing: Token.curva-dolce; }
+    frase := Text {
+        x: Token.spazio-medio * Aspetto.scala;
+        width: root.width - self.x - ripeti.width - 2 * Token.spazio-medio * Aspetto.scala;
+        y: (root.height - self.height) / 2;
+        text: root.testo;
+        wrap: word-wrap;
+        font-size: Token.corpo-detta * Aspetto.scala;
+        color: Token.testo-tenue;
+    }
+    ripeti := Text {
+        x: root.width - self.width - Token.spazio-medio * Aspetto.scala;
+        y: (root.height - self.height) / 2;
+        text: @tr("Ripeti");
+        font-size: Token.corpo-stato * Aspetto.scala;
+        font-weight: Token.peso-forte;
+        color: Token.azione;
+        opacity: root.sopra ? 1 : 0;
+        animate opacity { duration: Token.durata-dissolvenza; easing: Token.curva-lineare; }
+    }
+    tocco := TouchArea {
+        mouse-cursor: root.abilitata ? pointer : default;
+        clicked => { if (root.abilitata) { root.ripeti(); } }
+    }
+    chiave := FocusScope {
+        key-pressed(e) => {
+            if (e.text == " " || e.text == Key.Return) { if (root.abilitata) { root.ripeti(); } return accept; }
+            return reject;
+        }
+        changed has-focus => { if (self.has-focus) { root.ensure-visible(ScrollBehavior.instant); } }
+    }
+}

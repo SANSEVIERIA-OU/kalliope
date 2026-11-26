@@ -101,6 +101,21 @@ impl Status {
         }
     }
 
+    /// The state the window's status line shows, from the real flags: a microphone problem first, then nobody
+    /// listening, then any other warning.
+    pub fn situation(&self) -> crate::Situazione {
+        use crate::Situazione as S;
+        match self.phase {
+            Phase::Loading => S::Preparazione,
+            Phase::Error => S::ProblemaVoce,
+            _ if self.mic_problem => S::SenzaMicrofono,
+            _ if self.not_heard => S::NessunoAscolta,
+            _ if self.warning => S::Avviso,
+            Phase::Speaking => S::Parla,
+            Phase::Ready => S::Pronta,
+        }
+    }
+
     fn microphone(&mut self, microphone: Result<(), String>) {
         match microphone {
             Err(e) => {
@@ -228,6 +243,23 @@ impl Session {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn the_status_line_names_the_real_problem() {
+        let voices: [VoiceId; 0] = [];
+        let mut state = Status::default();
+        assert_eq!(state.situation(), crate::Situazione::Preparazione);
+        state.update(Event::Ready { microphone: Ok(()) }, &voices);
+        assert_eq!(state.situation(), crate::Situazione::Pronta);
+        state.update(Event::Speaking, &voices);
+        assert_eq!(state.situation(), crate::Situazione::Parla);
+        state.update(Event::NotHeard, &voices);
+        assert_eq!(state.situation(), crate::Situazione::NessunoAscolta);
+        state.update(Event::Microphone(Err("il microfono non c'è".into())), &voices);
+        assert_eq!(state.situation(), crate::Situazione::SenzaMicrofono);
+        state.update(Event::Error("la voce non parte".into()), &voices);
+        assert_eq!(state.situation(), crate::Situazione::ProblemaVoce);
+    }
 
     fn session() -> (Session, Arc<Mutex<Vec<Status>>>) {
         let seen = Arc::new(Mutex::new(Vec::new()));

@@ -1,0 +1,187 @@
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
+// The shapes every part of the window is made of: the dashed outline of what is not yet said, buttons, chips, a switch.
+import { Token } from "token.slint";
+import { Aspetto } from "aspetto.slint";
+
+// The dashed half of the logo, drawn around a rounded box: the place of what is not yet said.
+// Corners are whole arcs, edges are dashes; `cammino` (0..1) moves the dashes along, clockwise.
+export component Tratteggio inherits Rectangle {
+    in property <color> colore: Token.tratteggio;
+    in property <length> tratto: Token.tratto;
+    in property <length> raggio: Token.raggio-scrittura;
+    in property <length> pieno: Token.tratteggio-pieno;
+    in property <length> vuoto: Token.tratteggio-vuoto;
+    in property <float> cammino: 0;
+    property <length> periodo: root.pieno + root.vuoto;
+    property <length> scarto: root.cammino * root.periodo;
+    property <length> lato-x: max(0px, root.width - 2 * root.raggio);
+    property <length> lato-y: max(0px, root.height - 2 * root.raggio);
+
+    Rectangle { x: 0; y: 0; width: root.raggio; height: root.raggio; clip: true;
+        Rectangle { x: 0; y: 0; width: root.width; height: root.height; border-width: root.tratto; border-radius: root.raggio; border-color: root.colore; }
+    }
+    Rectangle { x: root.width - root.raggio; y: 0; width: root.raggio; height: root.raggio; clip: true;
+        Rectangle { x: root.raggio - root.width; y: 0; width: root.width; height: root.height; border-width: root.tratto; border-radius: root.raggio; border-color: root.colore; }
+    }
+    Rectangle { x: 0; y: root.height - root.raggio; width: root.raggio; height: root.raggio; clip: true;
+        Rectangle { x: 0; y: root.raggio - root.height; width: root.width; height: root.height; border-width: root.tratto; border-radius: root.raggio; border-color: root.colore; }
+    }
+    Rectangle { x: root.width - root.raggio; y: root.height - root.raggio; width: root.raggio; height: root.raggio; clip: true;
+        Rectangle { x: root.raggio - root.width; y: root.raggio - root.height; width: root.width; height: root.height; border-width: root.tratto; border-radius: root.raggio; border-color: root.colore; }
+    }
+    // top, walking right
+    Rectangle { x: root.raggio; y: 0; width: root.lato-x; height: root.tratto; clip: true;
+        for i in ceil(root.lato-x / root.periodo) + 1: Rectangle {
+            x: (i - 1) * root.periodo + root.vuoto / 2 + root.scarto; y: 0;
+            width: root.pieno; height: root.tratto; border-radius: root.tratto / 2; background: root.colore;
+        }
+    }
+    // right, walking down
+    Rectangle { x: root.width - root.tratto; y: root.raggio; width: root.tratto; height: root.lato-y; clip: true;
+        for i in ceil(root.lato-y / root.periodo) + 1: Rectangle {
+            x: 0; y: (i - 1) * root.periodo + root.vuoto / 2 + root.scarto;
+            width: root.tratto; height: root.pieno; border-radius: root.tratto / 2; background: root.colore;
+        }
+    }
+    // bottom, walking left
+    Rectangle { x: root.raggio; y: root.height - root.tratto; width: root.lato-x; height: root.tratto; clip: true;
+        for i in ceil(root.lato-x / root.periodo) + 1: Rectangle {
+            x: root.lato-x - ((i - 1) * root.periodo + root.vuoto / 2 + root.scarto) - root.pieno; y: 0;
+            width: root.pieno; height: root.tratto; border-radius: root.tratto / 2; background: root.colore;
+        }
+    }
+    // left, walking up
+    Rectangle { x: 0; y: root.raggio; width: root.tratto; height: root.lato-y; clip: true;
+        for i in ceil(root.lato-y / root.periodo) + 1: Rectangle {
+            x: 0; y: root.lato-y - ((i - 1) * root.periodo + root.vuoto / 2 + root.scarto) - root.pieno;
+            width: root.tratto; height: root.pieno; border-radius: root.tratto / 2; background: root.colore;
+        }
+    }
+}
+
+export enum Tipo { pieno, quieto, nudo }
+
+// A command: a pill. `pieno` is the one action of a screen (mint), `quieto` has a hairline, `nudo` only text.
+export component Pulsante inherits Rectangle {
+    in property <string> testo;
+    in property <string> tasto;
+    in property <Tipo> tipo: Tipo.quieto;
+    in property <bool> abilitato: true;
+    in property <bool> piccolo: false;
+    // to show the states in the catalog
+    in property <bool> mostra-sopra: false;
+    in property <bool> mostra-premuto: false;
+    in property <bool> mostra-fuoco: false;
+    callback premuto();
+    property <bool> sopra: (tocco.has-hover || root.mostra-sopra) && root.abilitato;
+    property <bool> giu: (tocco.pressed || root.mostra-premuto) && root.abilitato;
+    property <length> aria: (root.piccolo ? Token.spazio-controlli : Token.spazio-medio) * Aspetto.scala;
+    accessible-role: button;
+    accessible-label: root.testo;
+    accessible-enabled: root.abilitato;
+    accessible-action-default => { if (root.abilitato) { root.premuto(); } }
+    forward-focus: chiave;
+    height: (root.piccolo ? Token.altezza-comando-piccolo : Token.altezza-comando) * Aspetto.scala;
+    min-width: riga.preferred-width + 2 * root.aria;
+    horizontal-stretch: 0;
+    border-radius: self.height / 2;
+    opacity: root.abilitato ? 1 : Token.opacita-spento;
+    background: root.tipo == Tipo.pieno ? (root.giu ? Token.azione-sopra : root.sopra ? Token.azione-sopra : Token.azione)
+        : (root.giu ? Token.velo-premuto : root.sopra ? Token.velo-sopra : transparent);
+    border-width: root.tipo == Tipo.quieto ? Token.filo : 0;
+    border-color: Token.bordo-comando;
+    animate background { duration: Token.durata-scurisce; easing: Token.curva-dolce; }
+    Rectangle {
+        x: -Token.tratto; y: -Token.tratto;
+        width: parent.width + 2 * Token.tratto; height: parent.height + 2 * Token.tratto;
+        border-radius: self.height / 2; border-width: Token.tratto;
+        border-color: (chiave.has-focus || root.mostra-fuoco) ? Token.voce : transparent;
+    }
+    riga := HorizontalLayout {
+        alignment: center;
+        spacing: Token.spazio-stretto * Aspetto.scala;
+        Text {
+            text: root.testo;
+            vertical-alignment: center;
+            font-size: (root.piccolo ? Token.corpo-stato : Token.corpo-comando) * Aspetto.scala;
+            font-weight: root.tipo == Tipo.pieno ? Token.peso-forte : Token.peso-medio;
+            color: root.tipo == Tipo.pieno ? Token.azione-testo : Token.testo;
+        }
+        if root.tasto != "": Text {
+            text: root.tasto;
+            vertical-alignment: center;
+            font-size: Token.corpo-nota * Aspetto.scala;
+            color: root.tipo == Tipo.pieno ? Token.azione-testo : Token.testo-tenue;
+            opacity: Token.opacita-spento + (1 - Token.opacita-spento) / 2;
+        }
+    }
+    tocco := TouchArea {
+        mouse-cursor: root.abilitato ? pointer : default;
+        clicked => { if (root.abilitato) { root.premuto(); } }
+    }
+    chiave := FocusScope {
+        enabled: root.abilitato;
+        key-pressed(e) => {
+            if (e.text == " " || e.text == Key.Return) { root.premuto(); return accept; }
+            return reject;
+        }
+    }
+}
+
+// A round dot of colour: a voice's tint, the state.
+export component Punto inherits Rectangle {
+    in property <color> colore: Token.voce;
+    in property <length> lato: Token.punto * Aspetto.scala;
+    width: root.lato; height: root.lato; border-radius: root.lato / 2;
+    background: root.colore;
+}
+
+// The small «open» chevron of a menu.
+export component Freccia inherits Path {
+    in property <color> colore: Token.testo-tenue;
+    width: Token.chiusura * Aspetto.scala; height: Token.chiusura * Aspetto.scala / 2;
+    viewbox-width: 10; viewbox-height: 5;
+    commands: "M 1 0.5 L 5 4.5 L 9 0.5";
+    stroke: root.colore; stroke-width: Token.filo * 2 * Aspetto.scala;
+    fill: transparent;
+}
+
+// On or off, said with words next to it.
+export component Interruttore inherits Rectangle {
+    in-out property <bool> acceso;
+    in property <string> testo;
+    callback cambiato(bool);
+    accessible-role: switch;
+    accessible-label: root.testo;
+    accessible-checked: root.acceso;
+    accessible-action-default => { root.acceso = !root.acceso; root.cambiato(root.acceso); }
+    forward-focus: chiave;
+    height: Token.altezza-comando-piccolo * Aspetto.scala;
+    HorizontalLayout {
+        spacing: Token.spazio-controlli * Aspetto.scala;
+        binario := Rectangle {
+            width: Token.altezza-comando * Aspetto.scala; height: Token.altezza-comando-piccolo * Aspetto.scala * 2 / 3;
+            y: (parent.height - self.height) / 2;
+            border-radius: self.height / 2;
+            background: root.acceso ? Token.azione : Token.velo-scelto;
+            border-width: Token.tratto; border-color: chiave.has-focus ? Token.voce : transparent;
+            animate background { duration: Token.durata-scurisce; easing: Token.curva-dolce; }
+            Rectangle {
+                width: parent.height - 2 * Token.tratto * 1.5; height: self.width;
+                y: (parent.height - self.height) / 2;
+                x: root.acceso ? parent.width - self.width - Token.tratto * 1.5 : Token.tratto * 1.5;
+                border-radius: self.width / 2;
+                background: root.acceso ? Token.azione-testo : Token.testo-tenue;
+                animate x { duration: Token.durata-pannello; easing: Token.curva-entrata; }
+            }
+        }
+        Text { text: root.testo; vertical-alignment: center; color: Token.testo; font-size: Token.corpo-stato * Aspetto.scala; }
+    }
+    TouchArea { clicked => { root.acceso = !root.acceso; root.cambiato(root.acceso); } }
+    chiave := FocusScope {
+        key-pressed(e) => {
+            if (e.text == " " || e.text == Key.Return) { root.acceso = !root.acceso; root.cambiato(root.acceso); return accept; }
+            return reject;
+        }
+    }
+}

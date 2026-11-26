@@ -1,0 +1,12 @@
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
+// What the whole window shares: the text size chosen by the person, and the state the window shows.
+
+// The truth the status line tells. The engine's real states map onto these (session.rs, Status::situation).
+export enum Situazione { preparazione, pronta, parla, nessuno-ascolta, senza-microfono, problema-voce, avviso }
+
+export global Aspetto {
+    // The text size: 1 is 100%. Every size of the window is multiplied by it, so everything grows together.
+    in-out property <float> scala: 1;
+    // Less motion: the dashes stop walking, the voice bars stand still, the bubble appears without growing.
+    in-out property <bool> movimento-ridotto: false;
+}

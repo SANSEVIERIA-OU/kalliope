@@ -1,0 +1,332 @@
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
+// Creating one's own voice inside the window: record a short text, or use a recording one already has; listen, name, consent.
+import { Token } from "token.slint";
+import { Aspetto } from "aspetto.slint";
+import { Pulsante, Tipo, Tratteggio, Punto } from "forme.slint";
+
+// Where the person is among the three steps: done, now, next (ElevenLabs IVC shows its steps this way).
+export component Passi inherits HorizontalLayout {
+    in property <int> passo;
+    in property <[string]> nomi: [@tr("Registra o importa"), @tr("Leggi ad alta voce"), @tr("Ascolta e dai un nome")];
+    spacing: Token.spazio-largo * Aspetto.scala;
+    for nome[i] in root.nomi: HorizontalLayout {
+        spacing: Token.spazio-stretto * Aspetto.scala;
+        Rectangle {
+            width: Token.punto * 1.6 * Aspetto.scala; height: self.width;
+            y: (parent.height - self.height) / 2;
+            border-radius: self.width / 2;
+            background: i < root.passo ? Token.azione : transparent;
+            border-width: i == root.passo ? Token.tratto : Token.filo;
+            border-color: i <= root.passo ? Token.azione : Token.bordo-comando;
+        }
+        Text {
+            text: nome;
+            vertical-alignment: center;
+            font-size: Token.corpo-stato * Aspetto.scala;
+            font-weight: i == root.passo ? Token.peso-forte : Token.peso-testo;
+            color: i <= root.passo ? Token.testo : Token.testo-spento;
+        }
+    }
+}
+
+// The level of the microphone while recording: the bars of the voice, many and live.
+export component Livello inherits Rectangle {
+    in property <bool> attivo;
+    in property <float> forza: 0.8;
+    property <int> quante: Token.livello-barre;
+    property <length> passo: self.width / self.quante;
+    height: Token.livello-altezza * Aspetto.scala;
+    for i in root.quante: Rectangle {
+        property <float> onda: root.attivo && !Aspetto.movimento-ridotto
+            ? root.forza * abs(sin(animation-tick() / Token.durata-barre * 0.37turn + i * 0.61turn)) * (0.35 + 0.65 * abs(sin(animation-tick() / Token.durata-cammino * 0.5turn + i * 0.13turn)))
+            : (root.attivo ? root.forza * 0.5 : 0);
+        x: i * root.passo + (root.passo - self.width) / 2;
+        width: Token.barra-voce * Aspetto.scala;
+        height: self.width + (root.height - self.width) * self.onda;
+        y: (root.height - self.height) / 2;
+        border-radius: self.width / 2;
+        background: root.attivo ? Token.voce : Token.bordo-comando;
+    }
+}
+
+// The round «record» button: the colour of the logo's bubble. While recording, its square says «stop».
+export component Registra inherits Rectangle {
+    in property <bool> registra;
+    callback premuto();
+    accessible-role: button;
+    accessible-label: root.registra ? @tr("Ferma la registrazione") : @tr("Registra");
+    accessible-action-default => { root.premuto(); }
+    forward-focus: chiave;
+    width: Token.registra-diametro * Aspetto.scala; height: self.width;
+    border-radius: self.width / 2;
+    border-width: Token.tratto;
+    border-color: chiave.has-focus ? Token.voce : Token.bordo-comando;
+    Rectangle {
+        width: root.registra ? parent.width * 0.36 : parent.width * 0.62;
+        height: self.width;
+        x: (parent.width - self.width) / 2; y: (parent.height - self.height) / 2;
+        border-radius: root.registra ? Token.raggio-coda * Aspetto.scala : self.width / 2;
+        background: Token.registra-fisso;
+        animate width, border-radius { duration: Token.durata-pannello; easing: Token.curva-entrata; }
+    }
+    TouchArea { mouse-cursor: pointer; clicked => { root.premuto(); } }
+    chiave := FocusScope {
+        key-pressed(e) => {
+            if (e.text == " " || e.text == Key.Return) { root.premuto(); return accept; }
+            return reject;
+        }
+    }
+}
+
+// One of the two ways in.
+component Strada inherits Rectangle {
+    in property <string> titolo;
+    in property <string> testo;
+    in property <bool> registra;
+    callback scelta();
+    property <bool> sopra: tocco.has-hover || chiave.has-focus;
+    accessible-role: button;
+    accessible-label: root.titolo;
+    accessible-action-default => { root.scelta(); }
+    forward-focus: chiave;
+    horizontal-stretch: 1;
+    min-height: Token.scelta-altezza * Aspetto.scala;
+    border-radius: Token.raggio-pannello * Aspetto.scala;
+    background: root.sopra ? Token.velo-scelto : Token.campo;
+    border-width: chiave.has-focus ? Token.tratto : Token.filo;
+    border-color: chiave.has-focus ? Token.voce : Token.bordo;
+    animate background { duration: Token.durata-scurisce; easing: Token.curva-dolce; }
+    VerticalLayout {
+        padding: Token.spazio-largo * Aspetto.scala;
+        spacing: Token.spazio-controlli * Aspetto.scala;
+        alignment: start;
+        Rectangle {
+            height: Token.altezza-comando * Aspetto.scala;
+            width: self.height;
+            if root.registra: Rectangle {
+                width: parent.height * 0.5; height: self.width; x: (parent.width - self.width) / 2; y: (parent.height - self.height) / 2;
+                border-radius: self.width / 2; background: Token.registra-fisso;
+            }
+            if !root.registra: Tratteggio {
+                width: parent.height * 0.62; height: parent.height * 0.8; x: (parent.width - self.width) / 2; y: (parent.height - self.height) / 2;
+                raggio: Token.raggio-coda * Aspetto.scala; tratto: Token.tratto; pieno: Token.tratteggio-vuoto * Aspetto.scala * 0.6; vuoto: Token.tratteggio-vuoto * Aspetto.scala * 0.4;
+                colore: Token.azione;
+            }
+        }
+        Text { text: root.titolo; font-size: Token.corpo-bolla * Aspetto.scala; font-weight: Token.peso-forte; color: Token.testo; wrap: word-wrap; }
+        Text { text: root.testo; font-size: Token.corpo-stato * Aspetto.scala; color: Token.testo-tenue; wrap: word-wrap; }
+    }
+    tocco := TouchArea { mouse-cursor: pointer; clicked => { root.scelta(); } }
+    chiave := FocusScope {
+        key-pressed(e) => {
+            if (e.text == " " || e.text == Key.Return) { root.scelta(); return accept; }
+            return reject;
+        }
+    }
+}
+
+// A box to tick, said with words.
+export component Consenso inherits Rectangle {
+    in-out property <bool> dato;
+    in property <string> testo;
+    accessible-role: checkbox;
+    accessible-checked: root.dato;
+    accessible-label: root.testo;
+    accessible-action-default => { root.dato = !root.dato; }
+    forward-focus: chiave;
+    min-height: riga.preferred-height;
+    riga := HorizontalLayout {
+        spacing: Token.spazio-controlli * Aspetto.scala;
+        alignment: start;
+        Rectangle {
+            width: Token.spazio-largo * Aspetto.scala; height: self.width;
+            border-radius: Token.raggio-coda * Aspetto.scala;
+            background: root.dato ? Token.azione : transparent;
+            border-width: chiave.has-focus ? Token.tratto : Token.tratto * 0.67;
+            border-color: chiave.has-focus ? Token.voce : (root.dato ? Token.azione : Token.bordo-comando);
+            Path {
+                visible: root.dato;
+                width: parent.width * 0.6; height: parent.height * 0.6;
+                viewbox-width: 10; viewbox-height: 10;
+                commands: "M 1.5 5.2 L 4 7.7 L 8.5 2.3";
+                stroke: Token.azione-testo; stroke-width: Token.tratto * 0.75;
+                fill: transparent;
+            }
+        }
+        Text { text: root.testo; wrap: word-wrap; horizontal-stretch: 1; font-size: Token.corpo-stato * Aspetto.scala; color: Token.testo; }
+    }
+    TouchArea { clicked => { root.dato = !root.dato; } }
+    chiave := FocusScope {
+        key-pressed(e) => {
+            if (e.text == " " || e.text == Key.Return) { root.dato = !root.dato; return accept; }
+            return reject;
+        }
+    }
+}
+
+export component CreaVoce inherits Rectangle {
+    // 0 choose, 1 read and record, 2 listen and name
+    in-out property <int> passo: 0;
+    in-out property <bool> registra: false;
+    in-out property <duration> registrato: 0ms;
+    in-out property <bool> ascolta: false;
+    in-out property <string> nome;
+    in-out property <bool> consenso;
+    in property <string> da-leggere: @tr("Ciao, sono io. Questa è la mia voce, per le riunioni e per le persone a cui voglio bene. La leggo con calma, come parlo ogni giorno.");
+    callback torna();
+    callback importa();
+    callback crea(string);
+    property <int> decimi: self.registrato / Token.intervallo-registrazione;
+    property <string> tempo: floor(self.decimi / 10) + "," + mod(self.decimi, 10) + " s";
+    background: Token.fondo;
+    forward-focus: primo;
+
+    Timer {
+        interval: Token.intervallo-registrazione;
+        running: root.registra;
+        triggered => { root.registrato += Token.intervallo-registrazione; }
+    }
+
+    VerticalLayout {
+        padding: Token.spazio-largo * Aspetto.scala;
+        padding-top: Token.spazio-medio * Aspetto.scala;
+        spacing: Token.spazio-largo * Aspetto.scala;
+        HorizontalLayout {
+            spacing: Token.spazio-largo * Aspetto.scala;
+            primo := Pulsante { testo: @tr("← Torna a scrivere"); tipo: Tipo.nudo; piccolo: true; premuto => { root.torna(); } }
+            Rectangle { horizontal-stretch: 1; }
+            Passi { passo: root.passo; }
+        }
+        Text {
+            text: root.passo == 0 ? @tr("Come vuoi creare la tua voce?")
+                : root.passo == 1 ? @tr("Leggi ad alta voce, con calma")
+                : @tr("Ascoltala e dalle un nome");
+            font-size: Token.corpo-titolo * Aspetto.scala;
+            font-weight: Token.peso-titolo;
+            color: Token.testo;
+            wrap: word-wrap;
+        }
+        if root.passo == 0: VerticalLayout {
+            spacing: Token.spazio-largo * Aspetto.scala;
+            HorizontalLayout {
+                spacing: Token.spazio-medio * Aspetto.scala;
+                Strada {
+                    registra: true;
+                    titolo: @tr("Registra adesso");
+                    testo: @tr("Leggi un breve testo al microfono. Bastano dodici secondi di voce chiara.");
+                    scelta => { root.passo = 1; }
+                }
+                Strada {
+                    registra: false;
+                    titolo: @tr("Usa una registrazione");
+                    testo: @tr("Un messaggio vocale, un video, una vecchia registrazione: WAV, FLAC, MP3 o OGG.");
+                    scelta => { root.importa(); }
+                }
+            }
+            Text {
+                text: @tr("Una stanza tranquilla e, se c'è, un microfono a cuffia. Puoi crearla anche per un'altra persona, con il suo permesso.");
+                wrap: word-wrap;
+                font-size: Token.corpo-stato * Aspetto.scala;
+                color: Token.testo-tenue;
+            }
+            Rectangle { vertical-stretch: 1; }
+        }
+        if root.passo == 1: VerticalLayout {
+            spacing: Token.spazio-largo * Aspetto.scala;
+            Text {
+                text: root.da-leggere;
+                wrap: word-wrap;
+                font-size: Token.corpo-lettura * Aspetto.scala;
+                font-weight: Token.peso-medio;
+                color: root.registra ? Token.testo : Token.testo-tenue;
+                animate color { duration: Token.durata-scurisce; easing: Token.curva-dolce; }
+                vertical-stretch: 1;
+            }
+            Livello { attivo: root.registra; }
+            HorizontalLayout {
+                spacing: Token.spazio-largo * Aspetto.scala;
+                alignment: start;
+                Registra {
+                    registra: root.registra;
+                    premuto => {
+                        if (root.registra) { root.registra = false; root.passo = 2; }
+                        else { root.registrato = 0ms; root.registra = true; }
+                    }
+                }
+                VerticalLayout {
+                    alignment: center;
+                    spacing: Token.spazio-minimo * Aspetto.scala;
+                    Text {
+                        text: root.registra ? root.tempo : @tr("Premi il tondo e leggi");
+                        font-size: Token.corpo-bolla * Aspetto.scala;
+                        font-weight: Token.peso-forte;
+                        color: Token.testo;
+                    }
+                    Text {
+                        text: root.registrato >= Token.registrazione-utile ? @tr("Basta così: premi di nuovo per fermare.") : @tr("Ne bastano dodici secondi. Il livello si muove con la tua voce.");
+                        font-size: Token.corpo-stato * Aspetto.scala;
+                        color: root.registrato >= Token.registrazione-utile ? Token.azione : Token.testo-tenue;
+                    }
+                }
+            }
+        }
+        if root.passo == 2: VerticalLayout {
+            spacing: Token.spazio-medio * Aspetto.scala;
+            HorizontalLayout {
+                spacing: Token.spazio-largo * Aspetto.scala;
+                Pulsante {
+                    testo: root.ascolta ? @tr("Ferma l'ascolto") : @tr("Ascolta la registrazione");
+                    tipo: Tipo.quieto;
+                    premuto => { root.ascolta = !root.ascolta; }
+                }
+                Livello { attivo: root.ascolta; forza: 0.6; horizontal-stretch: 1; height: Token.altezza-comando * Aspetto.scala; }
+                Pulsante {
+                    testo: @tr("Rifai");
+                    tipo: Tipo.nudo;
+                    premuto => { root.ascolta = false; root.registrato = 0ms; root.passo = 1; }
+                }
+            }
+            Text {
+                text: @tr("Come si chiama questa voce?");
+                font-size: Token.corpo-comando * Aspetto.scala;
+                font-weight: Token.peso-forte;
+                color: Token.testo;
+            }
+            Rectangle {
+                height: Token.altezza-comando * 1.3 * Aspetto.scala;
+                border-radius: Token.raggio-pannello * Aspetto.scala;
+                background: Token.campo;
+                Tratteggio { width: 100%; height: 100%; raggio: Token.raggio-pannello * Aspetto.scala; colore: nome-campo.has-focus ? Token.tratteggio-fuoco : Token.tratteggio; }
+                nome-campo := TextInput {
+                    x: Token.spazio-medio * Aspetto.scala;
+                    width: parent.width - 2 * self.x;
+                    vertical-alignment: center;
+                    text <=> root.nome;
+                    font-size: Token.corpo-bolla * Aspetto.scala;
+                    color: Token.testo;
+                    accessible-label: @tr("Nome della voce");
+                }
+                if root.nome == "": Text {
+                    x: Token.spazio-medio * Aspetto.scala;
+                    text: @tr("Per esempio: la voce di Anna");
+                    font-size: Token.corpo-bolla * Aspetto.scala;
+                    color: Token.segnaposto;
+                }
+            }
+            Consenso {
+                dato <=> root.consenso;
+                testo: @tr("È la mia voce, oppure la persona che parla mi ha dato il permesso di usarla.");
+            }
+            HorizontalLayout {
+                alignment: end;
+                Pulsante {
+                    testo: @tr("Crea la voce");
+                    tipo: Tipo.pieno;
+                    abilitato: root.nome != "" && root.consenso;
+                    premuto => { root.crea(root.nome); }
+                }
+            }
+            Rectangle { vertical-stretch: 1; }
+        }
+    }
+}

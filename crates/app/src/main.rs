@@ -10,6 +10,7 @@ mod instance;
 mod paths;
 mod session;
 mod settings;
+mod vista;
 
 use engine::{Command, Config, Engine, Event, KLEIN_VOICES, VoiceId};
 use settings::Settings;
@@ -165,6 +166,7 @@ fn run_window(owner: &instance::Owner) -> Result<(), Box<dyn std::error::Error>>
             if let Some(ui) = weak.upgrade() {
                 ui.set_phase(status.phase);
                 ui.set_warning(status.warning);
+                ui.set_situazione(status.situation());
                 ui.set_status(status.text.into());
                 if let Some(index) = status.voice_index {
                     ui.set_voice_index(index as i32);
@@ -185,6 +187,7 @@ fn run_window(owner: &instance::Owner) -> Result<(), Box<dyn std::error::Error>>
     ui.set_monitor(session.borrow().settings.monitor);
     let history = Rc::new(VecModel::<SharedString>::default());
     ui.set_history(ModelRc::from(history.clone()));
+    vista::collega(&ui);
     let app = session.clone();
     ui.on_has_speech_text(|text| !text.trim().is_empty());
     ui.on_speak(move |text| {
@@ -251,6 +254,8 @@ fn main() -> ExitCode {
             ExitCode::SUCCESS
         }
         Some("--say") => say(&args[1..].join(" ")),
+        Some("--catalogo") => vista::catalogo(),
+        Some("--demo") => vista::demo(args.get(1).map(String::as_str).unwrap_or("")),
         Some(other) => {
             eprintln!("opzione sconosciuta: {other}\n\n{}", usage());
             ExitCode::FAILURE

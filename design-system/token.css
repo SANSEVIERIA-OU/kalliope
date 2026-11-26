@@ -1613,6 +1613,11 @@
   --app-raggio-scrittura: var(--raggio-13);   /* fonte: 26 px, la scrittura è una bolla più grande */
   --app-raggio-pannello: var(--raggio-10);   /* fonte: 20 px, i riquadri della riunione */
   --app-raggio-pillola: 999px;   /* fonte: le pillole del sito */
+  --app-filo: 1px;   /* fonte: il filo dei bordi del sito, un pixel */
+  --app-opacita-spento: 0.42;   /* scelta: un comando che adesso non si può usare resta leggibile */
+  --app-soglia-stretta: 640px;   /* scelta: sotto questa larghezza la barra mostra solo i segni e la cronologia si stringe */
+  --app-spazio-parola: var(--spazio-6);   /* fonte: 7 px, lo spazio fra le parole della bolla (circa lo spazio di Lexend a 24 px) */
+  --app-chiusura: 10px;   /* scelta: il segno «freccia» di una tendina */
   --app-ombra-sfocatura: var(--spazio-18);   /* fonte: 24 px, l'ombra della bolla */
   --app-ombra-scarto: var(--spazio-7);   /* fonte: 8 px */
   --app-bolla-larghezza: 720px;   /* scelta: la bolla che parla non va oltre ~60 caratteri per riga a 24 px */
@@ -1622,7 +1627,7 @@
   --app-registra-diametro: 76px;   /* scelta: il tondo «registra», grande come lo stop di Apple Personal Voice in proporzione */
   --app-scelta-altezza: 168px;   /* scelta: le due strade per creare la voce (registra, importa) */
   --app-compatta-larghezza: 400px;   /* scelta: la modalità riunione accanto alla finestra di Zoom o Meet su uno schermo da 1366 */
-  --app-compatta-altezza: 300px;   /* scelta: stato, scrittura e Ferma, niente altro */
+  --app-compatta-altezza: 320px;   /* scelta: stato, scrittura e Ferma, niente altro; quanto la finestra più piccola */
   --app-spostamento-entrata: var(--spazio-18);   /* fonte: 24 px, i riquadri entrano dal basso di 24 px (D2) */
   --app-scala-coda: 0.6;   /* fonte: la bolla nasce dalla coda da 0,6 a 1 (D2) */
 
@@ -1639,6 +1644,10 @@
   --app-durata-barre: 460ms;   /* fonte: 460 ms, una trasformazione del sito: il respiro delle barre della voce */
   --app-durata-cammino: 1400ms;   /* fonte: 1,4 s, la durata più lunga del sito: il tratteggio che cammina mentre la voce si prepara */
   --app-durata-anello: 900ms;   /* fonte: l'anello va da «Tu» all'ultimo riquadro in 900 ms (D2) */
+  --app-intervallo-fotogramma: 16ms;   /* scelta: un fotogramma, il tempo per far ripartire un'entrata da capo */
+  --app-intervallo-registrazione: 100ms;   /* scelta: il contatore dei secondi mentre si registra, a decimi */
+  --app-registrazione-utile: 12s;   /* fonte: 12 secondi utili bastano a Pocket TTS (benchmarks/voce-propria/README.md, V-4) */
+  --app-livello-barre: 28;   /* scelta: le barre del livello del microfono */
 }
 
 :root[data-tema="chiaro"] {

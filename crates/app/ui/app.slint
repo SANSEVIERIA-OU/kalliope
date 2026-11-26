@@ -1,9 +1,12 @@
 // SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
-// Kalliope's window: write, press Enter, and the virtual microphone speaks.
-
-import { Button, LineEdit, ComboBox, CheckBox, AboutSlint, VerticalBox, HorizontalBox, ScrollView, Palette, GroupBox } from "std-widgets.slint";
+// Kalliope's window: write, press Enter, and the virtual microphone speaks. The look is the direction «La frase che si
+// accende» (design/lavoro/4-app/direzione/direzione.md), made of the components in kalliope/ and the values in Token.
 
 import { Token } from "token.slint";
+import { Aspetto, Situazione } from "kalliope/aspetto.slint";
+import { Finestra, Schermata } from "kalliope/finestra.slint";
+export { Catalogo } from "kalliope/catalogo.slint";
+export { Situazione, Schermata, Aspetto }
 
 export enum Phase { loading, ready, speaking, error }
 
@@ -14,233 +17,78 @@ export component AppWindow inherits Window {
     preferred-height: Token.native-height;
     min-width: Token.native-min-width;
     min-height: Token.native-min-height;
-    background: Palette.background;
-    forward-focus: input;
+    background: Token.fondo;
+    default-font-family: Token.font-testo;
+    default-font-size: Token.corpo-comando;
+    forward-focus: finestra;
 
     in property <Phase> phase: Phase.loading;
-    in property <string> status: "Preparo la voce…";
+    in property <string> status: @tr("Preparo la voce…");
     in property <bool> warning: false;
+    // the state the status line shows, from the engine's real flags (session.rs, Status::situation)
+    in property <Situazione> situazione:
+        root.phase == Phase.loading ? Situazione.preparazione
+        : root.phase == Phase.error ? Situazione.problema-voce
+        : root.warning ? Situazione.avviso
+        : root.phase == Phase.speaking ? Situazione.parla
+        : Situazione.pronta;
     in property <[string]> history;
     in property <[string]> voices: ["Giulia", "Marco"];
     in-out property <int> voice-index: 0;
     in-out property <bool> monitor: true;
     in property <string> version: "0.1";
     in-out property <string> draft;
+    in-out property <bool> compatta: false;
+    in-out property <Schermata> schermata: Schermata.scrivi;
+    in-out property <int> passo-voce: 0;
+    in-out property <bool> registra: false;
+    in-out property <duration> registrato: 0ms;
+    in-out property <string> nome-voce;
+    in-out property <bool> consenso-voce;
+    // the meeting mode's size and the bubble's pace, for Rust (the Token global has easing values Rust cannot see)
+    out property <length> compatta-larghezza: Token.compatta-larghezza;
+    out property <length> compatta-altezza: Token.compatta-altezza;
+    out property <duration> durata-parola: Token.durata-parola;
 
     pure callback has-speech-text(string) -> bool;
+    // the bubble darkens the words one by one: how many words a phrase has, and its beginning up to a number of words
+    pure callback conta-parole(string) -> int;
+    pure callback prefisso(string, int) -> string;
     callback speak(string) -> bool;
     callback stop();
     callback voice-changed(int);
     callback monitor-changed(bool);
+    callback compatta-cambiata(bool);
+    callback importa-voce();
+    callback crea-voce(string);
 
-    property <bool> can-speak: root.phase == Phase.ready || root.phase == Phase.speaking;
-
-    main-scroll := ScrollView {
-        horizontal-scrollbar-policy: always-off;
-        content-width: self.visible-width;
-        content-height: max(self.visible-height, content.min-height);
-        content := VerticalBox {
-            width: main-scroll.visible-width;
-            height: main-scroll.content-height;
-            spacing: Token.spazio-controlli;
-            padding: Token.spazio-controlli;
-
-            GroupBox {
-                title: root.warning ? "Attenzione" : "Stato";
-                vertical-stretch: 0;
-                status-text := Text {
-                    text: root.status;
-                    wrap: word-wrap;
-                    color: Palette.foreground;
-                    min-height: status-lines.preferred-height;
-                    accessible-role: text;
-                }
-            }
-            FlexboxLayout {
-                flex-wrap: wrap;
-                vertical-stretch: 0;
-                spacing: Token.spazio-controlli;
-                input := LineEdit {
-                    preferred-width: Token.native-width / 2;
-                    min-width: 0px;
-                    horizontal-stretch: 1;
-                    placeholder-text: "Scrivi qui e premi Invio per parlare";
-                    text <=> root.draft;
-                    accessible-label: "Testo da dire";
-                    accepted(text) => {
-                        if (root.can-speak && root.has-speech-text(text) && root.speak(text)) {
-                            root.draft = "";
-                        }
-                        input.focus();
-                    }
-                }
-                Button {
-                    text: "Parla";
-                    primary: true;
-                    enabled: root.can-speak && root.has-speech-text(root.draft);
-                    clicked => {
-                        if (root.speak(root.draft)) {
-                            root.draft = "";
-                        }
-                        input.focus();
-                    }
-                }
-                Button {
-                    text: "Ferma";
-                    enabled: root.phase == Phase.speaking;
-                    clicked => {
-                        root.stop();
-                        input.focus();
-                    }
-                }
-            }
-
-            FlexboxLayout {
-                flex-wrap: wrap;
-                vertical-stretch: 0;
-                spacing: Token.spazio-controlli;
-                HorizontalBox {
-                    padding: 0px;
-                    spacing: Token.spazio-controlli;
-                    preferred-width: Token.native-width / 3;
-                    horizontal-stretch: 1;
-                    Text {
-                        text: "Voce";
-                        color: Palette.foreground;
-                        vertical-alignment: center;
-                    }
-                    ComboBox {
-                        model: root.voices;
-                        current-index <=> root.voice-index;
-                        accessible-label: "Voce";
-                        selected => {
-                            root.voice-changed(self.current-index);
-                        }
-                    }
-                }
-                CheckBox {
-                    text: "Senti anche tu";
-                    checked <=> root.monitor;
-                    toggled => {
-                        root.monitor-changed(self.checked);
-                    }
-                }
-                Button {
-                    text: "Informazioni";
-                    clicked => {
-                        about-popup.show();
-                    }
-                }
-            }
-
-            Text {
-                text: root.history.length > 0 ? "Già detto: scegli una frase per ripeterla" : "Le frasi che dici restano qui, per ripeterle.";
-                color: Palette.foreground;
-                wrap: word-wrap;
-            }
-
-            for phrase in root.history: HorizontalBox {
-                spacing: Token.spazio-controlli;
-                padding: 0px;
-                vertical-stretch: 0;
-                Text {
-                    text: phrase;
-                    wrap: word-wrap;
-                    min-width: 0px;
-                    horizontal-stretch: 1;
-                    color: Palette.foreground;
-                }
-                Button {
-                    text: "Ripeti";
-                    vertical-stretch: 0;
-                    changed has-focus => {
-                        if (self.has-focus) { self.ensure-visible(ScrollBehavior.instant); }
-                    }
-                    enabled: root.can-speak;
-                    accessible-label: "Ripeti: " + phrase;
-                    clicked => {
-                        root.speak(phrase);
-                        input.focus();
-                    }
-                }
-            }
-            Rectangle { vertical-stretch: 1; }
-        }
-
-    }
-    // Measure two lines with the active platform font, independently of status text.
-    status-lines := Text { text: "M\nM"; visible: false; }
-
-    about-popup := PopupWindow {
-        width: max(root.width, Token.native-min-width);
-        height: max(root.height, Token.native-min-height);
-        close-policy: close-on-click-outside;
-        forward-focus: close-about;
-        Rectangle {
-            background: Palette.background;
-            TouchArea {
-                clicked => { about-popup.close(); }
-            }
-            Rectangle {
-                x: Token.spazio-controlli;
-                y: Token.spazio-controlli;
-                // Clicking inside the panel must not reach its dismissing backdrop.
-                TouchArea { }
-                width: parent.width - 2 * Token.spazio-controlli;
-                height: parent.height - 2 * Token.spazio-controlli;
-                GroupBox {
-                    width: parent.width;
-                    height: parent.height;
-                    title: "Informazioni";
-                    VerticalBox {
-                        padding: 0px;
-                        spacing: Token.spazio-controlli;
-                        about-scroll := ScrollView {
-                            horizontal-scrollbar-policy: always-off;
-                            content-width: self.visible-width;
-                            content-height: max(self.visible-height, about.min-height);
-                            about := VerticalBox {
-                                width: about-scroll.visible-width;
-                                height: about-scroll.content-height;
-                                spacing: Token.spazio-controlli;
-                                Text {
-                                    text: "Kalliope " + root.version;
-                                    color: Palette.foreground;
-                                }
-                                Text {
-                                    text: "Scrivi e fatti sentire nelle videochiamate. La voce viene creata su questo computer: nessun testo lascia la tua macchina.";
-                                    wrap: word-wrap;
-                                    color: Palette.foreground;
-                                }
-                                Text {
-                                    text: "Guida, aiuto e nuove versioni: sansevieria-ou.github.io/kalliope";
-                                    wrap: word-wrap;
-                                    color: Palette.foreground;
-                                }
-                                Text {
-                                    text: "© SANSEVIERIA OÜ. Licenza SANSEVIERIA 1.1. Voce: Klein-TTS-X1.5-Pro (Apache-2.0). ONNX Runtime (MIT). Dati di pronuncia da Wiktionary (CC BY-SA 4.0). Pocket TTS di Kyutai (kyutai.org), CC BY 4.0; convertito in ONNX e quantizzato da Kalliope. Fonte, modifiche e licenza nei file share/doc/kalliope/pocket-tts/NOTICE.txt e LICENSE del pacchetto.";
-                                    wrap: word-wrap;
-                                    color: Palette.foreground;
-                                }
-                                AboutSlint {
-                                    preferred-height: self.min-height;
-                                }
-                            }
-                        }
-                        HorizontalBox {
-                            padding: 0px;
-                            alignment: end;
-                            close-about := Button {
-                                text: "Chiudi";
-                                primary: true;
-                                clicked => {
-                                    about-popup.close();
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+    finestra := Finestra {
+        x: 0; y: 0; width: root.width; height: root.height;
+        situazione: root.situazione;
+        spiegazione: root.status;
+        pronta: root.phase == Phase.ready || root.phase == Phase.speaking;
+        parla: root.phase == Phase.speaking;
+        history: root.history;
+        parole: root.history.length > 0 ? root.conta-parole(root.history[0]) : 0;
+        prefisso(t, n) => { return root.prefisso(t, n); }
+        voices: root.voices;
+        voice-index <=> root.voice-index;
+        monitor <=> root.monitor;
+        version: root.version;
+        draft <=> root.draft;
+        compatta <=> root.compatta;
+        schermata <=> root.schermata;
+        passo-voce <=> root.passo-voce;
+        registra <=> root.registra;
+        registrato <=> root.registrato;
+        nome-voce <=> root.nome-voce;
+        consenso-voce <=> root.consenso-voce;
+        speak(t) => { return root.has-speech-text(t) && root.speak(t); }
+        stop => { root.stop(); }
+        voice-changed(i) => { root.voice-changed(i); }
+        monitor-changed(on) => { root.monitor-changed(on); }
+        compatta-cambiata(on) => { root.compatta-cambiata(on); }
+        importa-voce => { root.importa-voce(); }
+        crea-voce(n) => { root.crea-voce(n); }
     }
 }

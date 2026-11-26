@@ -1,0 +1,414 @@
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
+// The window of Kalliope, direction «La frase che si accende»: you write in the dashed bubble of what is not yet said,
+// Enter sends it up into the bubble where the voice says it, word after word, and it stays there, said, to repeat.
+import { AboutSlint } from "std-widgets.slint";
+import { Token } from "token.slint";
+import { Aspetto, Situazione } from "aspetto.slint";
+import { Pulsante, Tipo, Punto, Freccia, Interruttore, Tratteggio } from "forme.slint";
+import { RigaStato } from "stato.slint";
+import { BollaVoce, FraseDetta } from "bolla.slint";
+import { Scrittura } from "scrittura.slint";
+import { CreaVoce } from "voce-propria.slint";
+
+export enum Schermata { scrivi, crea-voce }
+
+// A voice in the menu: its tint (the participants of the home page), its name, and a mark if it is the one in use.
+component VoceNelMenu inherits Rectangle {
+    in property <string> nome;
+    in property <color> tinta;
+    in property <bool> scelta;
+    callback premuta();
+    property <bool> sopra: tocco.has-hover || chiave.has-focus;
+    accessible-role: button;
+    accessible-label: root.nome;
+    accessible-action-default => { root.premuta(); }
+    forward-focus: chiave;
+    height: Token.altezza-comando * Aspetto.scala;
+    border-radius: self.height / 2;
+    background: root.sopra ? Token.velo-scelto : transparent;
+    HorizontalLayout {
+        padding-left: Token.spazio-controlli * Aspetto.scala;
+        padding-right: Token.spazio-medio * Aspetto.scala;
+        spacing: Token.spazio-controlli * Aspetto.scala;
+        Punto { colore: root.tinta; lato: Token.punto * 1.8 * Aspetto.scala; y: (parent.height - self.height) / 2; }
+        Text { text: root.nome; vertical-alignment: center; horizontal-stretch: 1; color: Token.testo; font-size: Token.corpo-comando * Aspetto.scala; font-weight: root.scelta ? Token.peso-forte : Token.peso-testo; }
+        if root.scelta: Text { text: @tr("in uso"); vertical-alignment: center; color: Token.azione; font-size: Token.corpo-nota * Aspetto.scala; }
+    }
+    tocco := TouchArea { mouse-cursor: pointer; clicked => { root.premuta(); } }
+    chiave := FocusScope {
+        key-pressed(e) => {
+            if (e.text == " " || e.text == Key.Return) { root.premuta(); return accept; }
+            return reject;
+        }
+    }
+}
+
+export component Finestra inherits Rectangle {
+    in property <Situazione> situazione: Situazione.preparazione;
+    in property <string> spiegazione;
+    in property <bool> pronta: false;
+    in property <bool> parla: false;
+    in property <[string]> history;
+    // the number of words of the last phrase (history[0]), and its beginning up to a number of words
+    in property <int> parole;
+    pure callback prefisso(string, int) -> string;
+    in property <[string]> voices: ["Giulia", "Marco"];
+    in-out property <int> voice-index: 0;
+    in-out property <bool> monitor: true;
+    in property <string> version;
+    in-out property <string> draft;
+    in-out property <bool> compatta: false;
+    in-out property <Schermata> schermata: Schermata.scrivi;
+    in-out property <bool> suggerimento-sopra: true;
+    // «Crea la voce» passes here: which step the creation is on (the demo starts on any step)
+    in-out property <int> passo-voce: 0;
+    in-out property <bool> registra: false;
+    in-out property <duration> registrato: 0ms;
+    in-out property <string> nome-voce;
+    in-out property <bool> consenso-voce;
+    callback speak(string) -> bool;
+    callback stop();
+    callback voice-changed(int);
+    callback monitor-changed(bool);
+    callback compatta-cambiata(bool);
+    callback importa-voce();
+    callback crea-voce(string);
+
+    // The words darken at the speed of speech while the voice speaks. The engine says when a phrase starts and ends, not
+    // where each word is: this is an estimate at the home page's measured rate (one word every 0.36 s), held on the last
+    // word until the voice is done.
+    property <bool> in-attesa: false;
+    property <duration> partenza;
+    property <duration> trascorso: root.parla && !root.in-attesa ? animation-tick() - root.partenza : 0ms;
+    property <int> dette: root.in-attesa ? 0
+        : root.parla ? min(root.parole - 1, floor(root.trascorso / Token.durata-parola))
+        : root.parole;
+    property <float> sfumatura: root.parla && !root.in-attesa && root.dette < root.parole - 1
+        ? clamp((root.trascorso - root.dette * Token.durata-parola) / Token.durata-scurisce, 0, 1) : 0;
+    property <bool> nata: true;
+    property <bool> stretta: root.width < Token.soglia-stretta * Aspetto.scala;
+    changed parla => {
+        if (root.parla) { root.in-attesa = false; root.partenza = animation-tick(); }
+        else { root.in-attesa = false; }
+    }
+
+    function di(testo: string) -> bool {
+        if (root.speak(testo)) {
+            root.in-attesa = !root.parla;
+            root.nata = false;
+            rinascita.running = true;
+            return true;
+        }
+        return false;
+    }
+    public function metti-a-fuoco() { scrittura.focus(); }
+
+    background: Token.fondo;
+    forward-focus: scrittura;
+
+    rinascita := Timer {
+        interval: Token.intervallo-fotogramma;
+        running: false;
+        triggered => { root.nata = true; self.running = false; }
+    }
+
+    // One layout for both modes: the meeting mode keeps only the state, the writing and Stop, small enough to sit
+    // next to the call; the bar and the phrases already said step aside.
+    VerticalLayout {
+        x: 0; y: 0; width: root.width; height: root.height;
+        visible: root.schermata == Schermata.scrivi;
+        if !root.compatta: Rectangle {
+            height: Token.altezza-barra * Aspetto.scala;
+            background: Token.barra;
+            Rectangle { y: parent.height - self.height; height: Token.filo; background: Token.bordo; }
+            HorizontalLayout {
+                padding-left: Token.spazio-largo * Aspetto.scala * 0.75;
+                padding-right: Token.spazio-medio * Aspetto.scala;
+                spacing: Token.spazio-controlli * Aspetto.scala;
+                Image {
+                    source: @image-url("../../../../design-system/marchio/libero.svg");
+                    width: Token.marchio * Aspetto.scala; height: self.width;
+                    y: (parent.height - self.height) / 2;
+                    accessible-role: none;
+                }
+                if !root.stretta: Text {
+                    text: "Kalliope";
+                    vertical-alignment: center;
+                    font-size: Token.corpo-marchio * Aspetto.scala;
+                    font-weight: Token.peso-forte;
+                    color: Token.testo;
+                }
+                Rectangle { horizontal-stretch: 1; }
+                voce := Rectangle {
+                    property <bool> sopra: voce-tocco.has-hover || voce-chiave.has-focus;
+                    accessible-role: combobox;
+                    accessible-label: @tr("Voce: {}", root.voices[root.voice-index]);
+                    accessible-action-default => { menu-voce.show(); }
+                    y: (parent.height - self.height) / 2;
+                    height: Token.altezza-comando-piccolo * Aspetto.scala;
+                    width: voce-riga.preferred-width + 2 * Token.spazio-controlli * Aspetto.scala;
+                    border-radius: self.height / 2;
+                    background: self.sopra ? Token.velo-sopra : transparent;
+                    border-width: voce-chiave.has-focus ? Token.tratto : Token.filo;
+                    border-color: voce-chiave.has-focus ? Token.voce : Token.bordo-comando;
+                    voce-riga := HorizontalLayout {
+                        x: Token.spazio-controlli * Aspetto.scala;
+                        width: parent.width - 2 * self.x;
+                        spacing: Token.spazio-stretto * Aspetto.scala;
+                        Punto {
+                            y: (parent.height - self.height) / 2;
+                            colore: root.voice-index == 0 ? Token.tinta-voce-1 : root.voice-index == 1 ? Token.tinta-voce-2 : root.voice-index == 2 ? Token.tinta-propria : Token.tinta-voce-3;
+                            lato: Token.punto * 1.4 * Aspetto.scala;
+                        }
+                        Text { text: root.voices[root.voice-index]; vertical-alignment: center; color: Token.testo; font-size: Token.corpo-stato * Aspetto.scala; font-weight: Token.peso-medio; }
+                        Freccia { y: (parent.height - self.height) / 2; }
+                    }
+                    voce-tocco := TouchArea { mouse-cursor: pointer; clicked => { menu-voce.show(); } }
+                    voce-chiave := FocusScope {
+                        key-pressed(e) => {
+                            if (e.text == " " || e.text == Key.Return || e.text == Key.DownArrow) { menu-voce.show(); return accept; }
+                            return reject;
+                        }
+                    }
+                }
+                HorizontalLayout {
+                    spacing: 0;
+                    Pulsante {
+                        y: (parent.height - self.height) / 2;
+                        testo: "A−"; tipo: Tipo.nudo; piccolo: true;
+                        abilitato: Aspetto.scala > 1;
+                        accessible-label: @tr("Testo più piccolo");
+                        premuto => { Aspetto.scala = max(1, Aspetto.scala - Token.scala-passo); }
+                    }
+                    if !root.stretta: Text {
+                        text: round(Aspetto.scala * 100) + "%";
+                        vertical-alignment: center;
+                        color: Token.testo-tenue;
+                        font-size: Token.corpo-nota * Aspetto.scala;
+                    }
+                    Pulsante {
+                        y: (parent.height - self.height) / 2;
+                        testo: "A+"; tipo: Tipo.nudo; piccolo: true;
+                        abilitato: Aspetto.scala < Token.scala-massima;
+                        accessible-label: @tr("Testo più grande");
+                        premuto => { Aspetto.scala = min(Token.scala-massima, Aspetto.scala + Token.scala-passo); }
+                    }
+                }
+                Pulsante {
+                    y: (parent.height - self.height) / 2;
+                    testo: @tr("Riunione"); piccolo: true; tipo: Tipo.quieto;
+                    accessible-label: @tr("Modalità riunione: solo scrittura, stato e Ferma");
+                    premuto => { root.compatta = true; root.compatta-cambiata(true); }
+                }
+                if !root.stretta: Pulsante {
+                    y: (parent.height - self.height) / 2;
+                    testo: @tr("Crea la tua voce"); piccolo: true; tipo: Tipo.quieto;
+                    premuto => { root.schermata = Schermata.crea-voce; }
+                }
+                if !root.stretta: Pulsante {
+                    y: (parent.height - self.height) / 2;
+                    testo: @tr("Informazioni"); piccolo: true; tipo: Tipo.nudo;
+                    premuto => { informazioni.show(); }
+                }
+            }
+        }
+        if !root.compatta: conversazione := Flickable {
+            // the phrases scroll edge to edge, so the glow of the speaking bubble is never cut
+            vertical-stretch: 1;
+            min-height: 0;
+            content-width: self.width;
+            content-height: max(self.height, frasi.preferred-height);
+            content-y: min(0px, self.height - self.content-height);
+            frasi := VerticalLayout {
+                width: conversazione.width;
+                height: conversazione.content-height;
+                alignment: end;
+                padding-left: Token.spazio-largo * Aspetto.scala;
+                padding-right: Token.spazio-largo * Aspetto.scala;
+                padding-bottom: Token.ombra-sfocatura;
+                spacing: Token.spazio-stretto * Aspetto.scala;
+                // Nothing said yet: an outline of the bubble that will come, dashed like the logo's «not yet said».
+                if root.history.length == 0: HorizontalLayout {
+                    alignment: start;
+                    Rectangle {
+                        width: min(root.width - 2 * Token.spazio-largo * Aspetto.scala, Token.bolla-larghezza * Aspetto.scala * 0.75);
+                        height: vuota.preferred-height + 2 * Token.spazio-medio * Aspetto.scala;
+                        Tratteggio {
+                            width: 100%; height: 100%;
+                            raggio: Token.raggio-bolla * Aspetto.scala;
+                            tratto: Token.tratto * 0.67;
+                            colore: Token.bordo-comando;
+                        }
+                        vuota := Text {
+                            x: Token.spazio-largo * Aspetto.scala * 0.85;
+                            width: parent.width - 2 * self.x;
+                            text: @tr("Qui la voce dirà le tue frasi, una parola dopo l'altra. Restano anche dopo aver chiuso Kalliope: un clic, o Tab e Invio, le dice di nuovo.");
+                            wrap: word-wrap;
+                            color: Token.testo-tenue;
+                            font-size: Token.corpo-detta * Aspetto.scala;
+                        }
+                    }
+                }
+                for i in max(0, root.history.length - 1): HorizontalLayout {
+                    alignment: start;
+                    FraseDetta {
+                        testo: root.history[root.history.length - 1 - i];
+                        abilitata: root.pronta;
+                        larghezza-massima: min(root.width - 2 * Token.spazio-largo * Aspetto.scala, Token.bolla-larghezza * Aspetto.scala);
+                        ripeti => { root.di(self.testo); scrittura.focus(); }
+                    }
+                }
+                if root.history.length > 0: HorizontalLayout {
+                    alignment: start;
+                    padding-top: Token.spazio-stretto * Aspetto.scala;
+                    bolla := BollaVoce {
+                        testo: root.history[0];
+                        detto: root.prefisso(root.history[0], root.dette);
+                        dicendo: root.prefisso(root.history[0], root.dette + 1);
+                        sfumatura: root.sfumatura;
+                        parla: root.parla && !root.in-attesa;
+                        non-sentita: root.situazione == Situazione.nessuno-ascolta;
+                        larghezza-massima: min(root.width - 4 * Token.spazio-largo * Aspetto.scala, Token.bolla-larghezza * Aspetto.scala);
+                        nascita: root.nata || Aspetto.movimento-ridotto ? 1 : 0;
+                        animate nascita { duration: root.nata && !Aspetto.movimento-ridotto ? Token.durata-bolla : 0ms; easing: Token.curva-entrata; }
+                    }
+                }
+            }
+        }
+        corpo := VerticalLayout {
+            padding: (root.compatta ? Token.spazio-controlli : Token.spazio-largo) * Aspetto.scala;
+            padding-top: root.compatta ? Token.spazio-controlli * Aspetto.scala : 0;
+            spacing: (root.compatta ? Token.spazio-stretto : Token.spazio-controlli) * Aspetto.scala;
+            RigaStato {
+                situazione: root.situazione;
+                spiegazione: root.spiegazione;
+                compatta: root.compatta;
+                if root.compatta: Pulsante {
+                    testo: @tr("Finestra intera"); piccolo: true; tipo: Tipo.nudo;
+                    premuto => { root.compatta = false; root.compatta-cambiata(false); }
+                }
+            }
+            if root.compatta && root.suggerimento-sopra: HorizontalLayout {
+                spacing: Token.spazio-stretto * Aspetto.scala;
+                padding-left: Token.spazio-stretto * Aspetto.scala;
+                Text {
+                    text: @tr("Per tenerla sopra la riunione: Alt+Spazio, poi «Sempre in primo piano».");
+                    wrap: word-wrap;
+                    horizontal-stretch: 1;
+                    vertical-alignment: center;
+                    font-size: Token.corpo-nota * Aspetto.scala;
+                    color: Token.testo-tenue;
+                }
+                Pulsante { testo: @tr("Ho capito"); piccolo: true; tipo: Tipo.nudo; premuto => { root.suggerimento-sopra = false; } }
+            }
+            scrittura := Scrittura {
+                compatta: root.compatta;
+                vertical-stretch: root.compatta ? 1 : 0;
+                preferred-height: root.compatta ? self.min-height : max(self.min-height, min(Token.scrittura-altezza * Aspetto.scala, root.height * 0.4));
+                testo <=> root.draft;
+                pronta: root.pronta;
+                parla: root.parla;
+                prepara: root.situazione == Situazione.preparazione;
+                ultima: root.history.length > 0 ? root.history[0] : "";
+                dici(t) => { return root.di(t); }
+                ferma => { root.stop(); }
+            }
+        }
+    }
+
+    if root.schermata == Schermata.crea-voce: CreaVoce {
+        x: 0; y: 0; width: root.width; height: root.height;
+        passo <=> root.passo-voce;
+        registra <=> root.registra;
+        registrato <=> root.registrato;
+        nome <=> root.nome-voce;
+        consenso <=> root.consenso-voce;
+        torna => { root.schermata = Schermata.scrivi; root.registra = false; }
+        importa => { root.importa-voce(); }
+        crea(n) => { root.crea-voce(n); root.schermata = Schermata.scrivi; }
+    }
+
+    menu-voce := PopupWindow {
+        x: root.width - self.width - Token.spazio-medio * Aspetto.scala;
+        y: Token.altezza-barra * Aspetto.scala;
+        width: min(root.width - 2 * Token.spazio-medio * Aspetto.scala, Token.bolla-larghezza * Aspetto.scala / 2);
+        close-policy: close-on-click-outside;
+        Rectangle {
+            background: Token.pannello;
+            border-radius: Token.raggio-pannello * Aspetto.scala;
+            border-width: Token.filo;
+            border-color: Token.bordo;
+            drop-shadow-blur: Token.ombra-sfocatura;
+            drop-shadow-offset-y: Token.ombra-scarto;
+            drop-shadow-color: Token.ombra;
+            VerticalLayout {
+                padding: Token.spazio-stretto * Aspetto.scala;
+                spacing: Token.spazio-minimo * Aspetto.scala;
+                Text {
+                    text: @tr("Con quale voce parli");
+                    color: Token.testo-tenue;
+                    font-size: Token.corpo-nota * Aspetto.scala;
+                    horizontal-alignment: left;
+                }
+                for v[i] in root.voices: VoceNelMenu {
+                    nome: v;
+                    tinta: i == 0 ? Token.tinta-voce-1 : i == 1 ? Token.tinta-voce-2 : i == 2 ? Token.tinta-propria : Token.tinta-voce-3;
+                    scelta: i == root.voice-index;
+                    premuta => { root.voice-index = i; root.voice-changed(i); menu-voce.close(); }
+                }
+                Rectangle { height: Token.filo; background: Token.bordo; }
+                Interruttore {
+                    acceso <=> root.monitor;
+                    testo: @tr("Senti anche tu la voce");
+                    cambiato(on) => { root.monitor-changed(on); }
+                }
+                Pulsante {
+                    testo: @tr("+ Crea la tua voce"); tipo: Tipo.nudo; piccolo: true;
+                    premuto => { menu-voce.close(); root.schermata = Schermata.crea-voce; }
+                }
+                if root.stretta: Pulsante {
+                    testo: @tr("Informazioni"); tipo: Tipo.nudo; piccolo: true;
+                    premuto => { menu-voce.close(); informazioni.show(); }
+                }
+            }
+        }
+    }
+
+    informazioni := PopupWindow {
+        width: root.width;
+        height: root.height;
+        close-policy: close-on-click-outside;
+        Rectangle {
+            background: Token.velo-modale;
+            TouchArea { clicked => { informazioni.close(); } }
+            Rectangle {
+                x: Token.spazio-largo * Aspetto.scala;
+                y: Token.spazio-largo * Aspetto.scala;
+                width: parent.width - 2 * self.x;
+                height: parent.height - 2 * self.y;
+                background: Token.pannello;
+                border-radius: Token.raggio-pannello * Aspetto.scala;
+                TouchArea { }
+                VerticalLayout {
+                    padding: Token.spazio-largo * Aspetto.scala;
+                    spacing: Token.spazio-controlli * Aspetto.scala;
+                    Text { text: "Kalliope " + root.version; color: Token.testo; font-size: Token.corpo-bolla * Aspetto.scala; font-weight: Token.peso-titolo; }
+                    Text {
+                        text: @tr("Scrivi e fatti sentire nelle videochiamate. La voce viene creata su questo computer: nessun testo lascia la tua macchina.");
+                        wrap: word-wrap; color: Token.testo; font-size: Token.corpo-stato * Aspetto.scala;
+                    }
+                    Text {
+                        text: @tr("© SANSEVIERIA OÜ. Licenza SANSEVIERIA 1.1. Voce: Klein-TTS-X1.5-Pro (Apache-2.0). ONNX Runtime (MIT). Dati di pronuncia da Wiktionary (CC BY-SA 4.0). Pocket TTS di Kyutai (kyutai.org), CC BY 4.0; convertito in ONNX e quantizzato da Kalliope. Fonte, modifiche e licenza nei file share/doc/kalliope/pocket-tts/NOTICE.txt e LICENSE del pacchetto.");
+                        wrap: word-wrap; color: Token.testo-tenue; font-size: Token.corpo-nota * Aspetto.scala;
+                    }
+                    AboutSlint { preferred-height: self.min-height; }
+                    Rectangle { vertical-stretch: 1; }
+                    HorizontalLayout {
+                        alignment: end;
+                        Pulsante { testo: @tr("Chiudi"); tipo: Tipo.pieno; premuto => { informazioni.close(); } }
+                    }
+                }
+            }
+        }
+    }
+}

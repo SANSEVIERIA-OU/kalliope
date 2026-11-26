@@ -1,0 +1,91 @@
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
+// The status line: it always tells the truth about the voice, in words, with a sign that moves only while the voice speaks.
+import { Token } from "token.slint";
+import { Aspetto, Situazione } from "aspetto.slint";
+import { Punto } from "forme.slint";
+
+// The bars of «Tu» from the home page: they breathe while the voice speaks, and lie flat otherwise.
+export component BarreVoce inherits Rectangle {
+    in property <bool> attiva: true;
+    in property <color> colore: Token.voce;
+    in property <float> grandezza: 1;
+    property <length> passo: Token.barra-voce * 2 * root.grandezza * Aspetto.scala;
+    property <length> alta: Token.barra-voce-alta * root.grandezza * Aspetto.scala;
+    property <bool> vive: root.attiva && !Aspetto.movimento-ridotto;
+    width: 4 * root.passo - Token.barra-voce * root.grandezza * Aspetto.scala;
+    height: root.alta;
+    for i in 4: Rectangle {
+        property <float> onda: root.vive ? abs(sin(animation-tick() / Token.durata-barre * 0.5turn + i * 0.29turn)) : (root.attiva ? (i == 1 || i == 2 ? 1 : 0.55) : 0);
+        x: i * root.passo;
+        width: Token.barra-voce * root.grandezza * Aspetto.scala;
+        height: Token.barra-voce * root.grandezza * Aspetto.scala + (root.alta - self.width) * self.onda;
+        y: (root.alta - self.height) / 2;
+        border-radius: self.width / 2;
+        background: root.colore;
+    }
+}
+
+// The short name of each state, and what the line says when the engine has no words of its own.
+export component RigaStato inherits Rectangle {
+    in property <Situazione> situazione: Situazione.preparazione;
+    // the engine's own sentence (session.rs): used for every state that something must be done about
+    in property <string> spiegazione;
+    in property <bool> compatta: false;
+    property <bool> male: root.situazione == Situazione.nessuno-ascolta || root.situazione == Situazione.senza-microfono
+        || root.situazione == Situazione.problema-voce || root.situazione == Situazione.avviso;
+    property <string> titolo:
+        root.situazione == Situazione.preparazione ? @tr("Preparo la voce")
+        : root.situazione == Situazione.pronta ? @tr("Pronta")
+        : root.situazione == Situazione.parla ? @tr("Sto parlando")
+        : root.situazione == Situazione.nessuno-ascolta ? @tr("Nessuno ti sente")
+        : root.situazione == Situazione.senza-microfono ? @tr("Manca il microfono")
+        : root.situazione == Situazione.problema-voce ? @tr("La voce non parte")
+        : @tr("Attenzione");
+    property <string> detto:
+        root.situazione == Situazione.preparazione ? @tr("Fra poco puoi scrivere e farti sentire.")
+        : root.situazione == Situazione.pronta ? @tr("Nella riunione scegli «Kalliope» come microfono.")
+        : root.situazione == Situazione.parla ? @tr("Esc la ferma.")
+        : root.spiegazione;
+    accessible-role: text;
+    accessible-label: root.titolo + ". " + root.detto;
+    min-height: Token.altezza-comando-piccolo * Aspetto.scala;
+    border-radius: Token.raggio-pannello * Aspetto.scala;
+    background: root.male ? Token.attenzione-fondo : transparent;
+    animate background { duration: Token.durata-scurisce; easing: Token.curva-dolce; }
+    riga := HorizontalLayout {
+        padding-left: (root.male ? Token.spazio-medio : Token.spazio-stretto) * Aspetto.scala;
+        padding-right: Token.spazio-medio * Aspetto.scala;
+        padding-top: Token.spazio-stretto * Aspetto.scala;
+        padding-bottom: Token.spazio-stretto * Aspetto.scala;
+        spacing: Token.spazio-controlli * Aspetto.scala;
+        segno := Rectangle {
+            width: Token.barra-voce-alta * Aspetto.scala;
+            vertical-stretch: 0;
+            if root.situazione == Situazione.parla: BarreVoce { x: (parent.width - self.width) / 2; y: (parent.height - self.height) / 2; }
+            if root.situazione != Situazione.parla: Punto {
+                x: (parent.width - self.width) / 2; y: (parent.height - self.height) / 2;
+                colore: root.male ? Token.attenzione : Token.azione;
+                // getting ready: the dot breathes, like the dashes that walk
+                opacity: root.situazione == Situazione.preparazione && !Aspetto.movimento-ridotto
+                    ? Token.opacita-spento + (1 - Token.opacita-spento) * abs(sin(animation-tick() / Token.durata-cammino * 0.5turn)) : 1;
+            }
+        }
+        Text {
+            text: root.titolo;
+            vertical-alignment: center;
+            font-size: Token.corpo-comando * Aspetto.scala;
+            font-weight: Token.peso-forte;
+            color: root.male ? Token.attenzione : Token.testo;
+        }
+        Text {
+            text: root.detto;
+            vertical-alignment: center;
+            horizontal-stretch: 1;
+            wrap: root.compatta ? no-wrap : word-wrap;
+            overflow: elide;
+            font-size: Token.corpo-stato * Aspetto.scala;
+            color: Token.testo-tenue;
+        }
+        @children
+    }
+}

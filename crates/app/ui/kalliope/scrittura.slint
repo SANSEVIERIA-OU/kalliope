@@ -1,0 +1,106 @@
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
+// The writing: a large bubble with the dashed outline of what is not yet said. Enter says it; there are no new lines.
+import { Token } from "token.slint";
+import { Aspetto } from "aspetto.slint";
+import { Tratteggio, Pulsante, Tipo } from "forme.slint";
+
+export component Scrittura inherits Rectangle {
+    in-out property <string> testo;
+    // the voice can take a phrase now
+    in property <bool> pronta: true;
+    // the voice is speaking: «Ferma» shows
+    in property <bool> parla: false;
+    // the voice is getting ready: the dashes walk
+    in property <bool> prepara: false;
+    // the last phrase said: ↑ in the empty field brings it back
+    in property <string> ultima;
+    in property <bool> compatta: false;
+    // for the catalog: show the focused look without focus
+    in property <bool> mostra-fuoco: false;
+    callback dici(string) -> bool;
+    callback ferma();
+    out property <bool> ha-fuoco: campo.has-focus;
+    property <length> aria: (root.compatta ? Token.spazio-medio : Token.spazio-largo) * Aspetto.scala;
+    property <bool> acceso: campo.has-focus || root.mostra-fuoco;
+    property <bool> ha-testo: root.testo != "";
+    forward-focus: campo;
+    min-height: Token.scrittura-altezza-minima * Aspetto.scala;
+    background: Token.campo;
+    border-radius: Token.raggio-scrittura * Aspetto.scala;
+
+    function invia() {
+        if (root.pronta && root.ha-testo && root.dici(root.testo)) {
+            root.testo = "";
+        }
+        campo.focus();
+    }
+
+    Tratteggio {
+        width: 100%; height: 100%;
+        raggio: Token.raggio-scrittura * Aspetto.scala;
+        colore: root.acceso ? Token.tratteggio-fuoco : Token.tratteggio;
+        cammino: root.prepara && !Aspetto.movimento-ridotto ? mod(animation-tick() / Token.durata-cammino, 1) : 0;
+        animate colore { duration: Token.durata-scurisce; easing: Token.curva-dolce; }
+    }
+    tasti := FocusScope {
+        x: root.aria; y: root.aria * 0.8;
+        width: root.width - 2 * root.aria;
+        height: root.height - self.y - comandi.height - root.aria * 0.8;
+        capture-key-pressed(e) => {
+            if (e.text == Key.Return) { root.invia(); return accept; }
+            if (e.text == Key.Escape) { root.ferma(); return accept; }
+            if (e.text == Key.UpArrow && !root.ha-testo && root.ultima != "") { root.testo = root.ultima; return accept; }
+            return reject;
+        }
+        campo := TextInput {
+            width: 100%; height: 100%;
+            single-line: false;
+            wrap: word-wrap;
+            vertical-alignment: top;
+            font-size: Token.corpo-scrittura * Aspetto.scala;
+            font-weight: Token.peso-testo;
+            color: Token.testo;
+            selection-background-color: Token.velo-premuto;
+            selection-foreground-color: Token.testo;
+            text-cursor-width: Token.tratto;
+            text <=> root.testo;
+            accessible-label: @tr("Che cosa vuoi dire");
+        }
+        if !root.ha-testo: Text {
+            x: 0; y: 0;
+            width: 100%;
+            text: root.compatta ? @tr("Scrivi. Invio la dice.") : @tr("Scrivi qui. Invio la dice.");
+            wrap: word-wrap;
+            vertical-alignment: top;
+            font-size: Token.corpo-scrittura * Aspetto.scala;
+            color: Token.segnaposto;
+        }
+    }
+    comandi := HorizontalLayout {
+        x: root.aria; y: root.height - self.height - root.aria * 0.7;
+        width: root.width - 2 * root.aria;
+        height: Token.altezza-comando * Aspetto.scala;
+        spacing: Token.spazio-controlli * Aspetto.scala;
+        Text {
+            text: root.compatta ? "" : (root.ultima != "" ? @tr("Invio la dice · Esc la ferma · ↑ l'ultima frase") : @tr("Invio la dice · Esc la ferma"));
+            vertical-alignment: center;
+            horizontal-stretch: 1;
+            overflow: elide;
+            font-size: Token.corpo-nota * Aspetto.scala;
+            color: Token.testo-tenue;
+        }
+        if root.parla: Pulsante {
+            testo: @tr("Ferma");
+            tasto: root.compatta ? "" : @tr("Esc");
+            tipo: Tipo.quieto;
+            premuto => { root.ferma(); campo.focus(); }
+        }
+        Pulsante {
+            testo: @tr("Di'");
+            tasto: @tr("Invio");
+            tipo: Tipo.pieno;
+            abilitato: root.pronta && root.ha-testo;
+            premuto => { root.invia(); }
+        }
+    }
+}
