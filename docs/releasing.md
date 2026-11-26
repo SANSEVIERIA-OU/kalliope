@@ -183,20 +183,20 @@ The binaries are built on Ubuntu 24.04, so they need glibc 2.39 or newer. The re
 Ubuntu 24.04 on purpose while CI uses the newest Ubuntu: a newer build system would raise that
 minimum (Ubuntu 26.04 has glibc 2.43, Debian 13 has 2.41) and leave out the systems the packages are
 made for. The libraries they link are found by `dpkg-shlibdeps` and by rpm: glibc, libgcc,
-fontconfig, and libstdc++ for ONNX Runtime.
+fontconfig, Qt 6 and libstdc++ for ONNX Runtime.
 The others are loaded at run time and listed by hand. They were found by listing the library names
-in the app's program (Slint with winit, the software renderer, system fonts and AccessKit; the
-PipeWire microphone):
+in the app and its desktop frontends. GNOME opens the embedded Python frontend with the system interpreter and imports GTK 4 and libadwaita through PyGObject. Plasma uses Qt's QPA platform plugin and installed widget style.
 
 | Library | When | `.deb` | `.rpm` |
 | --- | --- | --- | --- |
+| Python 3, PyGObject, GTK 4 and libadwaita | GNOME window | Depends | Requires |
+| Qt 6 Widgets and the QPA plugins | Plasma and other Qt desktops | Depends | Requires |
 | libxkbcommon | always | Depends | Requires |
 | libwayland-client | Wayland | Depends (or libX11), Recommends | Requires (or libX11), Recommends |
 | libX11, libX11-xcb, libxcb, libXcursor, libXi, libxkbcommon-x11 | X11 | Recommends | Recommends |
 | libpipewire-0.3 | the virtual microphone | Recommends | Recommends |
 
-No OpenGL or EGL library is needed: the app draws with Slint's software renderer. Any desktop
-already has all of these. When the app changes its Slint features, check the list again:
+When the app changes its desktop backend, check both its linked libraries and its runtime modules:
 ```sh
 readelf -d target/release/kalliope | grep NEEDED
 strings target/release/kalliope | grep -oE 'lib[A-Za-z0-9_.+-]+\.so(\.[0-9]+)*' | sort -u

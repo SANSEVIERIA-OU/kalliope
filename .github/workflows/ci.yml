@@ -45,8 +45,8 @@ jobs:
         run: cargo fmt --all --check
       - name: Libraries the app links at build time
         run: |
-          pkg-config --exists fontconfig ||
-            { sudo apt-get update -q && sudo apt-get install -y -q --no-install-recommends libfontconfig-dev; }
+          pkg-config --exists fontconfig Qt6Widgets ||
+            { sudo apt-get update -q && sudo apt-get install -y -q --no-install-recommends libfontconfig-dev qt6-base-dev; }
       - uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2.9.3
       - name: Clippy
         run: cargo clippy --workspace --all-targets --locked -- -D warnings
@@ -105,3 +105,15 @@ jobs:
       # Not the examples: crates/voice/examples/measure.rs measures with Linux-only calls.
       - name: Tests, with the models
         run: cargo test --workspace --lib --bins --tests --locked
+      - name: Build the desktop application and CLI
+        run: cargo build --locked --workspace --bins
+      - name: Run both programs and open a native desktop window
+        run: |
+          python=$([ "$RUNNER_OS" = Windows ] && echo python || echo python3)
+          $python tools/check_desktop.py
+      - uses: actions/upload-artifact@v7
+        with:
+          name: desktop-window-${{ matrix.os }}
+          path: desktop-window.png
+          if-no-files-found: error
+          retention-days: 7

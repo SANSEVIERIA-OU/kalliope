@@ -17,7 +17,7 @@ license=('LicenseRef-SANSEVIERIA-1.1')
 # Linked: glibc, gcc-libs, fontconfig. Loaded at run time: libxkbcommon always, then wayland or
 # the X11 libraries for the window, and libpipewire for the virtual microphone. ONNX Runtime and
 # the voice models come in the tarball (lib/, share/kalliope/): nothing is downloaded.
-depends=('glibc' 'gcc-libs' 'fontconfig' 'libxkbcommon')
+depends=('glibc' 'gcc-libs' 'fontconfig' 'libxkbcommon' 'qt6-base' 'qt6-wayland' 'python-gobject' 'libadwaita')
 optdepends=(
   'libpipewire: the virtual microphone'
   'wayland: the window on Wayland'

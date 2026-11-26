@@ -60,7 +60,7 @@ pub struct Config {
 }
 
 impl Engine {
-    pub fn start(config: Config, on_event: impl Fn(Event) + Send + 'static) -> Engine {
+    pub fn start(config: Config, on_event: impl FnMut(Event) + Send + 'static) -> Engine {
         let (tx, rx) = channel();
         let thread = std::thread::Builder::new()
             .name("kalliope-voice".into())
@@ -69,8 +69,8 @@ impl Engine {
         Engine { tx, thread }
     }
 
-    pub fn send(&self, command: Command) {
-        let _ = self.tx.send(command);
+    pub fn send(&self, command: Command) -> bool {
+        self.tx.send(command).is_ok()
     }
 }
 
@@ -173,7 +173,7 @@ fn while_speaking(command: Command, inbox: &mut VecDeque<Command>) -> Interrupt 
     }
 }
 
-fn run(config: Config, rx: Receiver<Command>, on_event: impl Fn(Event)) {
+fn run(config: Config, rx: Receiver<Command>, mut on_event: impl FnMut(Event)) {
     on_event(Event::Loading);
     let mut speaker = match load(&config, &config.voice) {
         Ok(v) => v,
@@ -255,7 +255,7 @@ fn run(config: Config, rx: Receiver<Command>, on_event: impl Fn(Event)) {
                 output = out;
                 let _ = output.set_monitor(monitor);
             }
-            let started = |speaking: &mut bool, output: &dyn Output| {
+            let mut started = |speaking: &mut bool, output: &dyn Output| {
                 if !*speaking {
                     *speaking = true;
                     on_event(if output.in_use() || monitor {
@@ -332,6 +332,16 @@ fn run(config: Config, rx: Receiver<Command>, on_event: impl Fn(Event)) {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn send_reports_whether_the_command_was_queued() {
+        let (tx, rx) = channel();
+        let engine = Engine { tx, thread: None };
+        assert!(engine.send(Command::Speak("frase".into())));
+        assert!(matches!(rx.recv().unwrap(), Command::Speak(text) if text == "frase"));
+        drop(rx);
+        assert!(!engine.send(Command::Speak("bozza da conservare".into())));
+    }
 
     #[test]
     fn stop_while_speaking_drops_the_text_that_came_before_it() {

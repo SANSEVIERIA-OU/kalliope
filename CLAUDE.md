@@ -94,11 +94,10 @@ website; il design system in una cartella dedicata (dato che comunque dovrà ess
 all'applicazione)».
 
 - `design-system/` è l'unica fonte di colori, caratteri, forme, spazi e tempi, per il sito e per l'applicazione.
-- **Oggi l'applicazione non lo usa**: la finestra (`crates/app/ui/app.slint`) ha i suoi colori scritti a mano, e i
-  token sono variabili CSS, che Slint non legge. Come portarli nell'applicazione non è deciso.
-- Ogni volta che si tocca l'aspetto dell'applicazione, il primo passo è questo: proporre al proprietario come
-  ricavare da `design-system/token.css` i valori per Slint, con una sola fonte e senza copie a mano, e aspettare
-  il via. Un colore, un carattere o una misura nuovi scritti a mano nell'applicazione sono un errore.
+- **Decisione del 26/11/2026 per la 0.2.** Il proprietario approva i valori del sito e richiede che l'aspetto rispetti
+  il desktop installato. La compilazione ricava le misure da `design-system/token.css`. GNOME usa GTK/libadwaita,
+  Plasma il tema Qt di sistema, Windows Fluent e macOS Cupertino. Tema chiaro/scuro, testo e controlli seguono la piattaforma.
+- I valori condivisi hanno una sola fonte, senza copie a mano nelle finestre. Ogni nuovo valore di progetto entra nel sistema.
 - Ciò che serve all'applicazione e nel sistema manca si aggiunge al sistema, non all'applicazione.
 
 ## Pronti per le traduzioni

@@ -70,6 +70,8 @@ these variables: the packages bring ONNX Runtime and the models, and the program
 themselves. Updating those files is for maintainers, with the owner's permission to upload:
 [docs/releasing.md](docs/releasing.md).
 
+On Linux, install the Qt 6 base development kit before compiling the desktop binary (on Ubuntu, `qt6-base-dev`). The GNOME window also needs the distribution's Python 3 GTK bindings and Adwaita typelib (`python3-gi gir1.2-adw-1` on Ubuntu). KDE uses the Qt platform integration and widget style from the desktop session.
+
 CI runs these checks on Linux for every push, and also on Windows and macOS for `main`. The Linux
 packages are made by `packaging/linux/build-packages.sh`; [docs/releasing.md](docs/releasing.md)
 explains versions, releases and what CI costs.

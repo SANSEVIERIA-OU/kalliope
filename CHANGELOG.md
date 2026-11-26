@@ -6,6 +6,7 @@ what each version brings, for the people who use it.
 
 ## 0.2 — not yet released
 
+- The desktop window follows its platform. On GNOME it uses GTK and libadwaita, on Plasma the installed Qt widget style. Windows uses Fluent and macOS uses Cupertino.
 - Preparing a personal voice now creates its destination folder automatically. On a fresh installation you can save your first voice directly to the voices folder.
 
 ## 0.1 — 20 November 2026

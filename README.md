@@ -24,6 +24,10 @@ a real desktop. Windows and macOS builds compile and pass tests, but have no vir
 Needs PipeWire with pipewire-pulse (the default on current Fedora, Ubuntu, Debian, Arch and openSUSE desktops).
 From a terminal: `kalliope --say "Buongiorno a tutti"` speaks without opening the window.
 
+## Desktop appearance
+
+Kalliope 0.2 in development opens a GTK 4/libadwaita window in a GNOME session. On Plasma the Slint window draws its controls with the installed Qt 6 style. Both use the same speech engine, voice settings and phrase history behavior. Windows and macOS builds use Slint's Fluent and Cupertino controls respectively. The virtual microphone and distribution packages are currently available on Linux.
+
 ## How it works
 
 ```

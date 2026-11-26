@@ -4,6 +4,11 @@
    (componenti/) usano soltanto questi nomi. Ricavato dalla home senza cambiare un valore: dove due valori quasi
    uguali hanno lo stesso ruolo restano due token (vedi «Da decidere» in SISTEMA.md). Ruoli e usi: TOKEN.md. */
 :root {
+  /* Native desktop window, in logical pixels. GTK and Slint read these at build time. */
+  --app-native-width: 560px;
+  --app-native-height: 460px;
+  --app-native-min-width: 360px;
+  --app-native-min-height: 320px;
 
   /* Direzione di scrittura */
   --verso: 1;   /* 1 con la scrittura da sinistra a destra, −1 da destra a sinistra (la cambia :root:dir(rtl), più sotto). Ciò che ha un verso (uno spostamento orizzontale, l'origine di una crescita, l'asse di una barra) la moltiplica; scena.js la legge da qui */
