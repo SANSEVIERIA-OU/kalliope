@@ -7,7 +7,7 @@ Incarico: `design/lavoro/incarichi/P-3-strumenti-del-sito.md`. Data: 20/11/2026.
 | # | Unità | Stato |
 |---|---|---|
 | 0 | Lettura e verifica delle versioni di oggi | fatta |
-| 1 | Playwright 1.65.1 in `/workspace/kalliope-playwright/` con i tre motori | fatta (venv Python con fontTools 4.68.0 e brotli 1.2.1 accanto) |
+| 1 | Playwright 1.65.1 in `/workspace/kalliope/materiali-locali/playwright/` con i tre motori | fatta (venv Python con fontTools 4.68.0 e brotli 1.2.1 accanto) |
 | 2 | I tre motori partono dopo un riavvio | fatta: `motori-test.mjs` 8 controprove passate (Firefox senza uscita audio, come prima) |
 | 3 | Prove di sempre con la versione nuova (`controlla-sorgenti.mjs`) | fatta: 31 fogli in ordine, uscita identica alla 1.60 |
 | 4 | Foto prima e dopo (home, stato, non ancora; 1440 e 390; tre motori) e confronto | fatta (sotto, «Unità 4») |
@@ -26,7 +26,7 @@ Incarico: `design/lavoro/incarichi/P-3-strumenti-del-sito.md`. Data: 20/11/2026.
 
 ### Unità 1–3 (20/11)
 
-- `/workspace/kalliope-playwright/`: `package.json` con `"playwright": "1.65.1"` esatta, `package-lock.json`, `env.sh`,
+- `/workspace/kalliope/materiali-locali/playwright/`: `package.json` con `"playwright": "1.65.1"` esatta, `package-lock.json`, `env.sh`,
   `requirements.txt` e `venv/` (fontTools 4.68.0, brotli 1.2.1, Pillow 13.0.0, NumPy 2.5.5: le ultime di oggi).
 - I browser stanno **dentro la cartella** (`browsers/`, via `PLAYWRIGHT_BROWSERS_PATH`) e non nella cache condivisa
   `~/.cache/ms-playwright`: un `playwright install` di un altro progetto toglie i browser che non gli servono, e quella cache
@@ -71,7 +71,7 @@ due catene di strumenti), `prova-testo.py` e `prova-testo.mjs` (pagina con le fr
 con quelli di dopo, pesi diversi, confrontata pixel per pixel in ogni motore).
 
 - **Sorgenti**: i cinque file di `github.com/google/fonts` alle commit scritte in `LEGGIMI.md`, riscaricati in
-  `/workspace/kalliope-playwright/caratteri-sorgenti/` (fuori dal repository). **I cinque SHA-256 coincidono con quelli scritti**, e i cinque
+  `/workspace/kalliope/materiali-locali/playwright/caratteri-sorgenti/` (cartella esclusa da Git). **I cinque SHA-256 coincidono con quelli scritti**, e i cinque
   `OFL.txt` sono uguali a quelli di `design-system/caratteri/`. Lexend viene dal file già nel repository.
 - **Scoperta: la ricetta di `LEGGIMI.md` da sola non rifà gli stessi byte, nemmeno con gli strumenti di prima.** Le cinque famiglie passano da
   `instantiateVariableFont` e da `TTFont.save`, che scrivono nella tavola `head` la data e l'ora della corsa (`modified`, e di conseguenza
@@ -134,7 +134,7 @@ con quelli di dopo, pesi diversi, confrontata pixel per pixel in ogni motore).
   pubblicazione, non le prove, e un percorso di questa macchina non ci va.
 - **Non toccati, perché fuori dalla mia area, e da aggiornare a cura di chi coordina**: `design/lavoro/L-logo/strumenti/env.sh` (riga
   `PLAYWRIGHT=/workspace/test-playwright/…`, la 1.60.0: è la storia di L-1…L-3) e `design/lavoro/STATO.md`, «Ambiente delle prove (16/11/2026)» (Playwright 1.60,
-  `/tmp/metodo-motori`, «dopo un riavvio si rifà»). Per i lavori nuovi: `source /workspace/kalliope-playwright/env.sh`.
+  `/tmp/metodo-motori`, «dopo un riavvio si rifà»). Per i lavori nuovi: `source /workspace/kalliope/materiali-locali/playwright/env.sh`.
 
 ## Consegna
 
@@ -142,25 +142,25 @@ con quelli di dopo, pesi diversi, confrontata pixel per pixel in ogni motore).
 Firefox 150.0.2 → 159.0, WebKit 26.4 → 27.2); fontTools 4.63.0 → **4.68.0** e brotli 1.2.0 → **1.2.1** (PyPI, 27 e 22/10/2026). In più, solo come strumenti del
 confronto delle foto, Pillow 13.0.0 e NumPy 2.5.5 (le ultime di PyPI).
 
-**Dove sta, e che cosa usare**: `/workspace/kalliope-playwright/` (nuova; `/workspace/test-playwright/` mai toccata, resta alla 1.60.0).
+**Dove sta, e che cosa usare**: `/workspace/kalliope/materiali-locali/playwright/` (nuova; `/workspace/test-playwright/` mai toccata, resta alla 1.60.0).
 
 ```sh
-source /workspace/kalliope-playwright/env.sh
+source /workspace/kalliope/materiali-locali/playwright/env.sh
 # che esporta, fra l'altro:
-PLAYWRIGHT=/workspace/kalliope-playwright/node_modules/playwright/index.mjs
-PLAYWRIGHT_BROWSERS_PATH=/workspace/kalliope-playwright/browsers
-METODO_MOTORI=/workspace/kalliope-playwright/motori
+PLAYWRIGHT=/workspace/kalliope/materiali-locali/playwright/node_modules/playwright/index.mjs
+PLAYWRIGHT_BROWSERS_PATH=/workspace/kalliope/materiali-locali/playwright/browsers
+METODO_MOTORI=/workspace/kalliope/materiali-locali/playwright/motori
 PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS=1     # e toglie DISPLAY e WAYLAND_DISPLAY
 ```
 
 La riga `PLAYWRIGHT=…` da sola **non basta**: i browser stanno in `browsers/` (non nella cache condivisa, perché un `playwright install` di un altro progetto ripulisce
 quelli che non gli servono), e senza `PLAYWRIGHT_BROWSERS_PATH` Playwright cerca in `~/.cache/ms-playwright`, dove la 1.65.1 non ha browser. Python (fontTools, brotli, Pillow,
-NumPy): `/workspace/kalliope-playwright/venv/bin/python -I`.
+NumPy): `/workspace/kalliope/materiali-locali/playwright/venv/bin/python -I`.
 
 **Come partono i tre motori dopo un riavvio**: da soli, con `env.sh`. Niente sta in `/tmp`: le librerie di Firefox e WebKit (pacchetti Debian trixie scompattati da
 `prepara-motori.sh` della skill) stanno in `motori/`, che `env.sh` indica con `METODO_MOTORI`. Provato due volte: (1) `strumenti/dopo-riavvio.sh` mette un `/tmp`
 vuoto (spazio di mount proprio, `unshare -Urm`; il `/tmp` vero non si tocca) e lancia `motori-test.mjs`: **8 controprove passate**, Firefox senza uscita audio come prima;
-(2) `/workspace/kalliope-playwright/prepara.sh` rifà tutto da zero (`npm ci`, `playwright install`, `prepara-motori.sh` per Firefox e WebKit, venv, controprova), si può
+(2) `/workspace/kalliope/materiali-locali/playwright/prepara.sh` rifà tutto da zero (`npm ci`, `playwright install`, `prepara-motori.sh` per Firefox e WebKit, venv, controprova), si può
 rilanciare: 42 secondi con tutto già presente, stesso esito. Firefox e WebKit lanciati con l'API di Playwright e basta, senza passare da `avvia()` della skill (`lib/comune.mjs`, che trova le librerie preparate da `METODO_MOTORI`), non partono (provato): uno script che li lancia da sé deve usare `avvia()`. Chromium parte anche lanciato direttamente. Dipende dalla skill (percorso con la versione, oggi
 `…/vibe-next/0.49.0/skills/design-system-generator`, in `env.sh` come `SKILL`): se il plugin cambia versione si cambia quella riga.
 

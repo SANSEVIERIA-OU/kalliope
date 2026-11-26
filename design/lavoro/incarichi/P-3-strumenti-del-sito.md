@@ -12,7 +12,7 @@
 1. **Playwright.**
    - Oggi le prove del sito usano `PLAYWRIGHT=/workspace/test-playwright/node_modules/playwright/index.mjs`, cioè 1.60.0.
      È una cartella condivisa con altri lavori: **non toccarla**.
-   - Installa l'ultima versione in una cartella nuova, solo per Kalliope, `/workspace/kalliope-playwright/`, con la versione
+   - Installa l'ultima versione in una cartella nuova, solo per Kalliope, `/workspace/kalliope/materiali-locali/playwright/`, con la versione
      esatta fissata nel suo `package.json`.
    - Installa i tre motori, Chromium, Firefox e WebKit. Su questa macchina Firefox chiedeva librerie in più
      (`LD_LIBRARY_PATH=/tmp/metodo-motori/ff/radice/…`, che è in `/tmp` e sparisce a un riavvio). Usa lo script della skill
@@ -23,7 +23,7 @@
      - le foto della home, di «stato» e di «non ancora» a 1440 e 390 nei tre motori, con la vecchia e con la nuova versione,
        confrontate pixel per pixel. Una differenza si spiega.
 2. **fontTools e brotli.**
-   - In un ambiente Python proprio (`/workspace/kalliope-playwright/` va bene anche per il venv, o una cartella accanto),
+   - Usa l’ambiente Python del progetto in `materiali-locali/playwright/venv/`,
      con l'ultima versione di tutte e due.
    - Rifai i sottoinsiemi dei caratteri come dice `design-system/caratteri/LEGGIMI.md` («Come si rifanno i sottoinsiemi»),
      partendo dagli stessi file sorgente, con le impronte scritte lì. Se mancano, riscaricali dalle stesse revisioni.
@@ -39,7 +39,7 @@
 ## Regole
 
 - **Area tua**:
-  - `/workspace/kalliope-playwright/`, nuova;
+  - `/workspace/kalliope/materiali-locali/playwright/`, nuova;
   - `design-system/caratteri/`, solo se i file nuovi sono da tenere, e il suo `LEGGIMI.md`;
   - `docs/releasing.md`;
   - `design/lavoro/P-3-strumenti/` per `progresso.md`, esiti e foto.

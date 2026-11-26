@@ -2,7 +2,7 @@
 
 Ruolo design-build. Incarico: `design/lavoro/incarichi/3c-installa-costruzione.md`. Partenza `548a6f2` (HEAD `8d65053`: solo il documento dell'incarico).
 Porte 8890–8899, cartelle `/tmp/lavoro-3cb-*`. Nessun commit, nessun push, nessuna finestra, nessun altro agente.
-Ambiente: `source prove/env.sh` (Playwright 1.65.1 di `/workspace/kalliope-playwright/`, skill 0.49.0).
+Ambiente: `source prove/env.sh` (Playwright 1.65.1 di `/workspace/kalliope/materiali-locali/playwright/`, skill 0.49.0).
 
 **Stato: consegnato** (20/11/2026, ripresa dopo il riavvio): vedi in fondo «Consegna della ripresa», con l'albero finale **H13**.
 

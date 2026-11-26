@@ -84,7 +84,7 @@ a runtime, impostazioni obbligatorie niente spinning e niente arena), `crates/ap
 ## Regole
 
 - Area tua: `crates/` (senza `crates/app/ui/`), `tools/fetch_assets.py`, `packaging/`, `docs/`, `README.md`,
-  `THIRD_PARTY_NOTICES.md`, `benchmarks/voce-propria/`, e `/workspace/nomedadefinire/bench/voce-propria/` per i dati pesanti.
+  `THIRD_PARTY_NOTICES.md`, `benchmarks/voce-propria/`, e `/workspace/kalliope/materiali-locali/prove-voce/bench/voce-propria/` per i dati pesanti.
 - Non toccare `website/`, `design-system/`, `design/` (salvo `progresso.md` tuoi), `tools/site.py`: c'è una costruzione del
   sito in corso.
 - **Nessun commit, nessun push**, nessun altro agente, niente account, nessun accesso al repository gated, neppure con

@@ -7,7 +7,7 @@ unset DISPLAY WAYLAND_DISPLAY PLAYWRIGHT_BROWSERS_PATH METODO_MOTORI
 export PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS=1
 case "$quale" in
   vecchio) export PLAYWRIGHT=/workspace/test-playwright/node_modules/playwright/index.mjs METODO_MOTORI=/tmp/metodo-motori; cd /workspace/test-playwright ;;
-  nuovo)   source /workspace/kalliope-playwright/env.sh; cd /workspace/kalliope-playwright ;;
+  nuovo)   source /workspace/kalliope/materiali-locali/playwright/env.sh; cd /workspace/kalliope/materiali-locali/playwright ;;
   *) echo "vecchio o nuovo"; exit 2 ;;
 esac
 node /workspace/kalliope/design/lavoro/P-3-strumenti/strumenti/foto-motori.mjs "$sito" "$uscita" "$@" 2>&1 | grep -v Skipping

@@ -1,6 +1,6 @@
 #!/bin/bash
-# Starts the private PipeWire of /workspace/nomedadefinire/data/pw-tools (never the user's).
-. /workspace/nomedadefinire/data/pw-tools/env.sh
+# Starts the private PipeWire of /workspace/kalliope/materiali-locali/prove-voce/data/pw-tools (never the user's).
+. /workspace/kalliope/materiali-locali/prove-voce/data/pw-tools/env.sh
 mkdir -p /tmp/kmic-run /tmp/kmic-state /tmp/kmic-logs; chmod 700 /tmp/kmic-run
 for p in pipewire-pulse wireplumber pipewire; do pkill -f "^$R/usr/bin/$p\$"; done; sleep 0.5
 export LD_LIBRARY_PATH=$PW_LIBS

@@ -12,7 +12,7 @@ d'entrata `cubic-bezier(0.19,1,0.22,1)`, i titoli che salgono, la scrittura a 33
 **terminale**, disegnato nel mondo della pagina: dove nelle altre pagine c'è la bolla con la frase che scrivi, qui c'è il comando che scrivi.
 
 Percorsi: `R/` = `/workspace/prova-design-abc/prova-2/riferimenti/`, `K/` = `/workspace/kalliope/design/ricerca/prove/`. Prove di questa resa
-(fuori dal repository, `.gitignore`): `sequenze/` (arrivo, scorri, sistema, frase, copia), `foto/` (schermi bassi e medi, ridotto, senza
+(escluse da Git, `.gitignore`): `sequenze/` (arrivo, scorri, sistema, frase, copia), `foto/` (schermi bassi e medi, ridotto, senza
 JavaScript, `stati/`, `pagina/`, `lingue/` en-XA e ar-XB), `confronti/` (fogli a coppie nei due versi), `esiti/` (`confronta-scelta`).
 
 ## Prima di rendere: che cosa fanno i riferimenti, sotto il primo schermo e nelle pagine di installazione

@@ -3,7 +3,7 @@
 # Uso: RADICE=/tmp/lavoro-3cb-radice-<n> bash corsa.sh <nome> <porta> <cartella-sito> <programma-della-skill> <argomenti…>
 set -uo pipefail
 AQUI="$(cd "$(dirname "$0")/.." && pwd)"
-source /workspace/kalliope-playwright/env.sh
+source /workspace/kalliope/materiali-locali/playwright/env.sh
 S=$SKILL/scripts
 NOME=$1; PORTA=$2; SITO=$3; PROG=$4; shift 4
 export METODO_CONFIG=${CONFIG:-$AQUI/prove/config-prove.mjs} QA_CARTELLA=/tmp/lavoro-3cb-qa-$NOME

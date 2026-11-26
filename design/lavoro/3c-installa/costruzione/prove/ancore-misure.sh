@@ -4,7 +4,7 @@
 # Uso: bash ancore-misure.sh <sito> <porta> <motore> <WxH> [<WxH> …]
 set -uo pipefail
 AQUI="$(cd "$(dirname "$0")/.." && pwd)"
-source /workspace/kalliope-playwright/env.sh
+source /workspace/kalliope/materiali-locali/playwright/env.sh
 SITO=$1; PORTA=$2; MOTORE=$3; shift 3
 F="$AQUI/esiti/ancore-misure-$SITO-$MOTORE.txt"
 { echo "# ancore a più misure · $SITO · $MOTORE · script ritardati di 800 ms · $(date '+%d/%m/%Y %H:%M') · $(bash "$AQUI/prove/carico.sh")"

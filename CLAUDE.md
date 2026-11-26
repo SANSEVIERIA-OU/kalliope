@@ -8,6 +8,12 @@ dice in un microfono virtuale, per Zoom, Teams, Meet e gli altri. Che cosa fa e 
 `CONTRIBUTING.md`, `docs/`. Questo file dice ciò che lì non c'è: da dove si riparte sul sito e sul design system, e
 come si lavora.
 
+## Dove conservare i materiali locali
+
+Gli strumenti di prova e i dati di Kalliope si tengono nella cartella del progetto. Playwright, i browser e gli strumenti
+per i caratteri stanno in `materiali-locali/playwright/`. I campioni vocali, i modelli e i dati delle prove stanno in
+`materiali-locali/prove-voce/`. Git ignora `materiali-locali/` per tenere questi file su questa macchina.
+
 ## Il sito e il design system: da dove si riparte
 
 **Stato al 26/11/2026.** Aggiorna questa sezione ogni volta che lo stato cambia.
@@ -34,7 +40,7 @@ come si lavora.
 - **Il proprietario ha approvato i colori il 26/11/2026.** La home usa fondi grafite, accenti verde acqua e tinte distinte per i partecipanti. Il logo conserva i suoi colori.
 - **Il design system è `design-system/`**, con token, base, componenti, caratteri e catalogo vivo. Lo usano tutte le
   pagine del sito. Gli alberi `website/stile/`, `website/script/` e `website/sistema/` sono ritirati.
-- **La home su GitHub Pages** è <https://sansevieria-ou.github.io/kalliope/it/>. Il sito mostra i pacchetti dell’ultima release stabile di GitHub.
+- **La home su GitHub Pages** è <https://sansevieria-ou.github.io/kalliope/it/>. Il 26/11/2026 è stata pubblicata la 0.2 stabile per Linux (commit `086ea57`); Pages offre i nuovi pacchetti e AUR è stato aggiornato automaticamente a `kalliope-bin 0.2-1`. [Release](https://github.com/SANSEVIERIA-OU/kalliope/releases/tag/v0.2) · [Workflow](https://github.com/SANSEVIERIA-OU/kalliope/actions/runs/45821949619)
 - **Il lavoro in corso** (dal 16/11/2026: lingue, poi le altre pagine, poi l'applicazione) è in `design/lavoro/`:
   `STATO.md` dice fasi, decisioni prese a lavoro avviato e incarichi; `ricerca/lingue.md` i fatti con le fonti.
 - **La voce di chi usa Kalliope** (decisione del proprietario del 17/11/2026: «voglio che lo faccia già adesso (non "la
@@ -94,9 +100,21 @@ website; il design system in una cartella dedicata (dato che comunque dovrà ess
 all'applicazione)».
 
 - `design-system/` è l'unica fonte di colori, caratteri, forme, spazi e tempi, per il sito e per l'applicazione.
-- **Decisione del 26/11/2026 per la 0.2.** Il proprietario approva i valori del sito e richiede che l'aspetto rispetti
-  il desktop installato. La compilazione ricava le misure da `design-system/token.css`. GNOME usa GTK/libadwaita,
-  Plasma il tema Qt di sistema, Windows Fluent e macOS Cupertino. Tema chiaro/scuro, testo e controlli seguono la piattaforma.
+- **L'applicazione ha l'identità di Kalliope** (decisioni del proprietario del 26/11/2026, dopo aver provato la 0.2 e averla
+  giudicata «orripilante»). La finestra della 0.2, fatta con Codex, imitava GTK/libadwaita su GNOME (uno script Python lanciato dal
+  programma) e Qt altrove: è superata. Ora:
+  - un aspetto suo, dai token di `design-system/` come il sito, con tema chiaro e scuro che seguono il sistema; una sola
+    interfaccia Slint per Linux, Windows e macOS, senza Python e senza il backend Qt. Il metro di qualità è la finestra di Kalipso
+    (le idee, non il codice);
+  - il ponte approvato: la compilazione legge `design-system/token.css` e genera per Slint tutti i valori della finestra (colori
+    chiari e scuri, caratteri, raggi, spazi, tempi); la CI rifiuta colori, misure e tempi scritti a mano nei `.slint`; ciò che
+    manca al sistema (il tema chiaro, per esempio) si aggiunge al sistema con il suo ruolo;
+  - la voce propria si crea nell'app, registrandola dal microfono o importando un file audio;
+  - subito anche: una grande area di scrittura dove Invio parla (niente a capo: «ha poco senso andare a capo»), la modalità
+    riunione compatta, il testo regolabile, la cronologia salvata. Rinviate: le frasi pronte.
+  - Il lavoro si segue nelle issue della milestone 0.3 (coordinamento in #20, personas e protocollo di verifica lì): ogni issue
+    si chiude solo dopo test automatico, prova e2e, giro con le personas e risultato guardato. Il proprietario vede la
+    direzione resa prima della costruzione, e la finestra finita prima del rilascio.
 - I valori condivisi hanno una sola fonte, senza copie a mano nelle finestre. Ogni nuovo valore di progetto entra nel sistema.
 - Ciò che serve all'applicazione e nel sistema manca si aggiunge al sistema, non all'applicazione.
 

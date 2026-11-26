@@ -6,7 +6,7 @@ AQUI="$(cd "$(dirname "$0")/.." && pwd)"
 NOME=$1; PORTA=$2; BLOCCO=$3
 export RADICE=/tmp/lavoro-3cb-radice-$NOME; SITO=/tmp/lavoro-3cb-sito-$NOME
 C() { bash "$AQUI/prove/corsa.sh" "$@"; }
-source /workspace/kalliope-playwright/env.sh
+source /workspace/kalliope/materiali-locali/playwright/env.sh
 DISP="390x844,360x740,844x390,412x915,750x832,466x678,951x669,326x326,440x706,440x744,421x616,861x609,820x1180,1180x820,1440x900"
 EXTRA="1366x640,1280x720,1024x768,390x667,360x640,320x568,1920x1080"
 case "$BLOCCO" in

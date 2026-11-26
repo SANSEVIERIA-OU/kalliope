@@ -12,7 +12,7 @@
   `THIRD_PARTY_NOTICES.md` intatti). Nessun processo lanciato in background, nessuno in corso.
 - **Accesso al repository gated**: verso le 08:09 la riga `HF_TOKEN=` di `/workspace/kalliope/.env` era vuota (controllato solo con
   `[ -n "$HF_TOKEN" ]`); poi chi coordina ha scritto che la chiave c'è e che il repository risponde 206 con la chiave. **Dal
-  repository gated non ho ancora scaricato nulla.** `hf` non è nel PATH: si usa `/workspace/nomedadefinire/bench/voce-propria/.venv/bin/hf`
+  repository gated non ho ancora scaricato nulla.** `hf` non è nel PATH: si usa `/workspace/kalliope/materiali-locali/prove-voce/bench/voce-propria/.venv/bin/hf`
   (versione 2.4.0); `hf auth login` non va usato, la chiave si carica solo dentro il comando che scarica.
 
 ### Versioni verificate oggi (19/11) sulle fonti ufficiali
@@ -28,13 +28,13 @@
 
 ### Scaricato in V-4 (prima parte; i file del gated sono nel diario qui sotto)
 
-- `/workspace/nomedadefinire/bench/voce-propria/codice/dl-pocket-tts-a4a6054d/`: il codice ufficiale a `a4a6054d`
+- `/workspace/kalliope/materiali-locali/prove-voce/bench/voce-propria/codice/dl-pocket-tts-a4a6054d/`: il codice ufficiale a `a4a6054d`
   (archivio di GitHub, scaricato per intero ed estratto; nessuno scaricamento a metà).
 
 ### Piano deciso alle 08:10, poi seguito (diario)
 
 1. Scaricare dal gated, con la chiave caricata solo nel comando, in
-   `/workspace/nomedadefinire/bench/voce-propria/modelli/pocket-tts-gated/` i soli file
+   `/workspace/kalliope/materiali-locali/prove-voce/bench/voce-propria/modelli/pocket-tts-gated/` i soli file
    `languages/italian/model.safetensors` e `languages/italian_24l/model.safetensors` alla revisione `3e82814a`
    (comando: `bash -c 'set -a; . /workspace/kalliope/.env; set +a; H=…/.venv/bin/hf; $H auth whoami >/dev/null && $H download kyutai/pocket-tts languages/italian/model.safetensors --revision 3e82814a68665eec246ff649b14c71331f955c06 --local-dir …'`),
    La chiave resta solo nella variabile d'ambiente di quel comando: niente login, niente copia nella cache. Poi confronto tensore per tensore con i pesi aperti
@@ -59,7 +59,7 @@
   `languages/italian/model.safetensors@3e82814a` in `modelli/pocket-tts-gated/` (in primo piano). Se la sessione si ferma a metà,
   lo stesso comando `hf download` riprende dai file `.incomplete` in `modelli/pocket-tts-gated/.cache/`.
 - 19/11 08:12 **Scaricati dal gated, completi** (con la chiave caricata solo nel comando), in
-  `/workspace/nomedadefinire/bench/voce-propria/modelli/pocket-tts-gated/` (revisione in `REVISION`):
+  `/workspace/kalliope/materiali-locali/prove-voce/bench/voce-propria/modelli/pocket-tts-gated/` (revisione in `REVISION`):
   - `languages/italian/model.safetensors@3e82814a` (219 029 196 byte, sha256 `11c226c1…`);
   - `languages/italian_24l/model.safetensors@3e82814a` (672 178 676 byte, sha256 `b318edee…`).
   Controllato con `grep -rlF` senza stamparla: la chiave non compare in quella cartella, in `~/.cache/huggingface` né in

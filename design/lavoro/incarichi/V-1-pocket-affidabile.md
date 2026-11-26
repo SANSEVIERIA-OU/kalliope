@@ -7,7 +7,7 @@
   il punto 2 (metterlo nel programma) avrà il suo via.
 - **Chi lo fa**: lo stesso incaricato della misura V-m, che conosce già il banco di prova.
 - **Area tua**: `benchmarks/voce-propria/` (programmi, `README.md`: una sezione nuova «Rendere affidabile Pocket TTS»,
-  esiti in JSON, `progresso.md` aggiornato a ogni unità finita) e `/workspace/nomedadefinire/bench/voce-propria/` per i dati
+  esiti in JSON, `progresso.md` aggiornato a ogni unità finita) e `/workspace/kalliope/materiali-locali/prove-voce/bench/voce-propria/` per i dati
   pesanti.
 
 ## Che cosa fare

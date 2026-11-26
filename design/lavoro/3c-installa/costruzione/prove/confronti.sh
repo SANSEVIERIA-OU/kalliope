@@ -3,7 +3,7 @@
 # la sua resa (548a6f2), con le sole differenze dichiarate (ammesse.json). Uso: bash confronti.sh <sito costruito in italiano> <nome corsa>
 set -uo pipefail
 AQUI="$(cd "$(dirname "$0")/.." && pwd)"
-source /workspace/kalliope-playwright/env.sh
+source /workspace/kalliope/materiali-locali/playwright/env.sh
 ADESSO=$1; NOME=$2; P=/tmp/lavoro-3cb-sito-P; MIS=1440x900,390x844,1366x640,844x390,360x640
 mkdir -p "$AQUI/esiti"
 for voce in "home it/index.html" "non-ancora it/non-ancora/index.html" "stato it/stato/index.html"; do

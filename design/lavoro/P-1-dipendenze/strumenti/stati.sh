@@ -6,7 +6,7 @@
 BIN=$1 OUT=$2
 mkdir -p "$OUT"
 shots() { for i in 1 2 3; do $RIG/shot.sh "$OUT/$1-$i.png" >/dev/null; sleep 0.35; done; echo "$1"; }
-PWE=/workspace/nomedadefinire/data/pw-tools/env.sh
+PWE=/workspace/kalliope/materiali-locali/prove-voce/data/pw-tools/env.sh
 record() { (. $PWE; LD_LIBRARY_PATH=$PW_LIBS timeout -s INT "$1" pw-record --target kalliope --rate 48000 --channels 1 "$2" >/dev/null 2>&1 &); }
 NOMODEL=(-u KALLIOPE_MODEL_DIR -u KALLIOPE_ORT_LIB -u KALLIOPE_POCKET_DIR -u KALLIOPE_VOICES_DIR
   https_proxy=http://127.0.0.1:8931 HTTPS_PROXY=http://127.0.0.1:8931

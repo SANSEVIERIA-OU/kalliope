@@ -49,7 +49,7 @@
   valore nuovo scritto a mano (`CLAUDE.md`, «Il design system vale anche per l'applicazione»).
 - Prima e dopo l'aggiornamento:
   - foto della finestra nei suoi stati principali, sul display senza schermo di prova: Weston headless in
-    `/workspace/nomedadefinire/data/xvfb`, con `WESTON_MODULE_MAP`; `weston-screenshooter` vuole `--debug`;
+    `/workspace/kalliope/materiali-locali/prove-voce/data/xvfb`, con `WESTON_MODULE_MAP`; `weston-screenshooter` vuole `--debug`;
   - un confronto pixel per pixel.
 - **Non aprire mai finestre su `DISPLAY :0` o `wayland-1`**: sono lo schermo vero del proprietario.
 
@@ -57,14 +57,14 @@
 
 - I controlli di `CONTRIBUTING.md`:
   - `cargo fmt`, `clippy -D warnings`;
-  - `cargo test --workspace` con i modelli veri: `KALLIOPE_MODEL_DIR=/workspace/nomedadefinire/bench/models/klein/onnx`,
-    `KALLIOPE_POCKET_DIR=/workspace/nomedadefinire/bench/voce-propria/modelli/pocket-kalliope/italian`,
+  - `cargo test --workspace` con i modelli veri: `KALLIOPE_MODEL_DIR=/workspace/kalliope/materiali-locali/prove-voce/bench/models/klein/onnx`,
+    `KALLIOPE_POCKET_DIR=/workspace/kalliope/materiali-locali/prove-voce/bench/voce-propria/modelli/pocket-kalliope/italian`,
     `KALLIOPE_ORT_LIB=/tmp/voce-m-fetch/onnxruntime-linux-x64-1.32.0/lib/libonnxruntime.so.1.32.0`;
   - `tools/version.py check`.
 - **Da capo a fondo, come un utente**:
   - `kalliope-cli` con Giulia e con una voce preparata da una registrazione CC0 (quella di V-4);
   - l'applicazione che parla nel **microfono virtuale**, con Klein e con la voce preparata, attraverso il PipeWire privato di
-    prova: `source /workspace/nomedadefinire/data/pw-tools/env.sh`, script in quella cartella (`mic.sh`, `final.sh`).
+    prova: `source /workspace/kalliope/materiali-locali/prove-voce/data/pw-tools/env.sh`, script in quella cartella (`mic.sh`, `final.sh`).
     L'incaricato di V-4 ha scritto che qui non c'è PipeWire: invece c'è questo, usato il 12/11 per le prove del microfono.
   - Whisper sull'audio registrato dal microfono: le parole giuste e nessuna prima parola persa.
 - Le prove dei pacchetti di `packaging/linux/`, se si possono far girare qui. Se no, dillo.

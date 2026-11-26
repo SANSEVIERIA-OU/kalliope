@@ -11,7 +11,7 @@ import os
 import sys
 import time
 
-ROOT = "/workspace/nomedadefinire/data/xvfb/root/usr/lib/x86_64-linux-gnu/"
+ROOT = "/workspace/kalliope/materiali-locali/prove-voce/data/xvfb/root/usr/lib/x86_64-linux-gnu/"
 x11 = ctypes.CDLL("libX11.so.6")
 xtst = ctypes.CDLL(ROOT + "libXtst.so.6")
 x11.XOpenDisplay.restype = ctypes.c_void_p

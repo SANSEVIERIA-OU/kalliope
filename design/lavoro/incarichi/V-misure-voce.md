@@ -5,9 +5,9 @@
 - **Il via del proprietario** (17/11/2026): alla proposta «prima di scegliere, provo le tre strade su questo computer… poi
   ti porto i campioni da ascoltare» ha risposto «ok». È un via per **misurare**, non per costruire: il programma
   (`crates/`) non si tocca.
-- **Area tua**: `benchmarks/voce-propria/` nel repository (programmi di prova, `README.md` con il resoconto, esiti in
-  JSON; niente audio né modelli, che `.gitignore` esclude) e `/workspace/nomedadefinire/bench/voce-propria/` fuori dal
-  repository per i dati pesanti (registrazioni, modelli scaricati, audio generato). Tieni `benchmarks/voce-propria/progresso.md`
+- In `benchmarks/voce-propria/` conserva i programmi di prova, il resoconto e gli esiti JSON.
+  Salva registrazioni, modelli scaricati e audio generato in `materiali-locali/prove-voce/bench/voce-propria/`,
+  la cartella del progetto esclusa da Git. Tieni `benchmarks/voce-propria/progresso.md`
   aggiornato a ogni unità finita (fatto, in corso, prossimo passo, ultimo comando, problemi aperti).
 
 ## Leggi prima
@@ -17,8 +17,8 @@
 2. La ricerca: `design/lavoro/ricerca/voce/SINTESI.md` e, per ogni strada, il rapporto che la riguarda (`1-…` Pocket
    TTS, `2-…` conversione del timbro, `4-…` Klein e la ricerca nello spazio delle voci, `3-…` chi perde la parola).
 3. Il banco di prova già esistente: `benchmarks/engines/README.md` e i suoi programmi (`scripts/`: `engines.py`,
-   `worker.py`, `asr_check.py`, `run_bench.py`), l'ambiente Python in `/workspace/nomedadefinire/bench/.venv`, i modelli in
-   `/workspace/nomedadefinire/bench/models/` (c'è già `pocket-onnx`, esportazione ONNX di terzi di Pocket TTS con i pacchetti
+   `worker.py`, `asr_check.py`, `run_bench.py`), l'ambiente Python in `/workspace/kalliope/materiali-locali/prove-voce/bench/.venv`, i modelli in
+   `/workspace/kalliope/materiali-locali/prove-voce/bench/models/` (c'è già `pocket-onnx`, esportazione ONNX di terzi di Pocket TTS con i pacchetti
    `italian` e `italian_24l` e la clonazione da una registrazione). Le impostazioni obbligatorie di ONNX Runtime (niente
    spinning, niente arena) valgono anche qui.
 4. Come Kalliope dice una frase oggi: `crates/cli` (`kalliope-cli`, opzioni `--model-dir`, `--speaker`, `--threads`),
@@ -74,7 +74,7 @@
 - `benchmarks/voce-propria/README.md`: il metodo (macchina, versioni, licenze dei modelli usati, da dove vengono le voci),
   una tabella per strada e per persona (somiglianza, parole sbagliate, costo, costo una volta sola), i punti di riferimento,
   ciò che hai sentito, i limiti della prova. Nessuna raccomandazione finale: i fatti, poi le differenze che contano.
-- **Una pagina d'ascolto** per il proprietario, in `/workspace/nomedadefinire/bench/voce-propria/ascolto/index.html`
+- **Una pagina d'ascolto** per il proprietario, in `/workspace/kalliope/materiali-locali/prove-voce/bench/voce-propria/ascolto/index.html`
   (statica, solo HTML e `<audio>`, nessuna libreria): per ogni persona il riferimento e, frase per frase, la voce di oggi e
   le tre strade una accanto all'altra, con i numeri sotto ciascuna. Chi coordina la servirà al proprietario.
 - Nella risposta finale: le tabelle principali, ciò che hai sentito, i problemi trovati, ciò che non hai potuto misurare.

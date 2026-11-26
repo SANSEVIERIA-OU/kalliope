@@ -15,7 +15,7 @@ from scipy.signal import resample_poly
 OUT = Path(sys.argv[1]); OUT.mkdir(parents=True, exist_ok=True)
 P1 = Path("/tmp/p1-e2e/cli/dopo")
 CLI = "/usr/bin/kalliope-cli"
-REC = "/workspace/nomedadefinire/bench/voce-propria/audio/v4/e2e/giovanni.wav"
+REC = "/workspace/kalliope/materiali-locali/prove-voce/bench/voce-propria/audio/v4/e2e/giovanni.wav"
 ENV = {k: v for k, v in os.environ.items() if not k.startswith("KALLIOPE_") and k not in ("DISPLAY", "WAYLAND_DISPLAY")}
 FRASI = ["Buongiorno a tutti, scusate il ritardo.", "Possiamo rivedere insieme i numeri del terzo trimestre?",
          "Mi sentite bene? Ho cambiato microfono stamattina.",

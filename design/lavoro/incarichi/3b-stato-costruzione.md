@@ -54,7 +54,7 @@ finali: registra le impronte. Home e «non ancora» restano identiche a `c8d2aa3
 ## Lavoro in parallelo
 
 Nessun altro ruolo lavora adesso sul sito. Una misura (incarico V-m) lavora in `benchmarks/voce-propria/` e in
-`/workspace/nomedadefinire/bench/`: non riguarda il sito, ma usa la CPU; misura i tempi delle sequenze con questo in mente.
+`/workspace/kalliope/materiali-locali/prove-voce/bench/`: non riguarda il sito, ma usa la CPU; misura i tempi delle sequenze con questo in mente.
 
 ## Ambiente
 

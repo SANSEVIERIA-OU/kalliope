@@ -129,7 +129,7 @@ Nei file condivisi (`token.css`, `TOKEN.md`, `SISTEMA.md`, `metodo.config.mjs`, 
 
 ## Ambiente
 
-- `source /workspace/kalliope-playwright/env.sh`: Playwright 1.65.1 con i tre motori. Firefox e WebKit si lanciano con
+- `source /workspace/kalliope/materiali-locali/playwright/env.sh`: Playwright 1.65.1 con i tre motori. Firefox e WebKit si lanciano con
   `avvia()` della skill.
 - **Cartelle e porte**:
   - le tue cartelle sono sotto `/tmp/lavoro-3c-*`;

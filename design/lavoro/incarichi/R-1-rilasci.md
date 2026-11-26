@@ -78,7 +78,7 @@
    - Cerca anche le altre frasi che diventano false con la 0.1: «Slint 1.18» in «stato», `download.rs` saltato dalla prova delle
      fonti, i 53 MB.
 4. Le prove: controlli del sito (`marchio.py --check`, traduzioni, `css_logico.py`, i test degli strumenti, `controlla-sorgenti.mjs`
-   con `source /workspace/kalliope-playwright/env.sh`), il sito costruito con la release finta, e le foto di home, «installa» e
+   con `source /workspace/kalliope/materiali-locali/playwright/env.sh`), il sito costruito con la release finta, e le foto di home, «installa» e
    «stato» a 1440 e 390, guardate.
 5. Consegna il ramo spinto su `origin`, senza merge.
 

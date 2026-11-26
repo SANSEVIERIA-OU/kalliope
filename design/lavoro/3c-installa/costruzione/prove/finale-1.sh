@@ -4,7 +4,7 @@ set -uo pipefail
 AQUI="$(cd "$(dirname "$0")/.." && pwd)"
 until [ -f /tmp/lavoro-3cb-via-libera ]; do sleep 20; done
 NOME=$(cat /tmp/lavoro-3cb-via-libera)   # l'albero finale da provare (una cartella /tmp/lavoro-3cb-radice-<NOME>)
-source /workspace/kalliope-playwright/env.sh
+source /workspace/kalliope/materiali-locali/playwright/env.sh
 H=/tmp/lavoro-3cb-sito-$NOME
 cat_() { # motore misura
   local f="$AQUI/esiti/catalogo-$NOME-$1-$2.txt"

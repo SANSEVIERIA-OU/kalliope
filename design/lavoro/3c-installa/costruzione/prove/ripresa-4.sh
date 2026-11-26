@@ -4,7 +4,7 @@
 set -uo pipefail
 AQUI="$(cd "$(dirname "$0")/.." && pwd)"
 NOME=$1; PEZZO=$2
-source /workspace/kalliope-playwright/env.sh
+source /workspace/kalliope/materiali-locali/playwright/env.sh
 export RADICE=/tmp/lavoro-3cb-radice-$NOME
 H=/tmp/lavoro-3cb-sito-$NOME
 lingue_esame() {

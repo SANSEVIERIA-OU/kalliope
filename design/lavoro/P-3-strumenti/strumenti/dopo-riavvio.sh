@@ -6,5 +6,5 @@ set -euo pipefail
 unshare -Urm bash -c '
   mount -t tmpfs tmpfs /tmp
   echo "file in /tmp dentro lo spazio di prova: $(ls -A /tmp | wc -l)"
-  env -i HOME="$HOME" PATH="$PATH" bash -c "source /workspace/kalliope-playwright/env.sh && cd /workspace/kalliope-playwright && node \$SKILL/scripts/motori-test.mjs" 2>&1 | grep -v Skipping
+  env -i HOME="$HOME" PATH="$PATH" bash -c "source /workspace/kalliope/materiali-locali/playwright/env.sh && cd /workspace/kalliope/materiali-locali/playwright && node \$SKILL/scripts/motori-test.mjs" 2>&1 | grep -v Skipping
 '

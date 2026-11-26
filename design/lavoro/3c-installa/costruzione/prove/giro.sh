@@ -3,7 +3,7 @@
 # Uso: bash giro.sh <nome-sito> <porta> <motore:misura:scenari> [<motore:misura:scenari> …]     (scenari separati da virgole; «tutti» o la lista)
 set -uo pipefail
 AQUI="$(cd "$(dirname "$0")/.." && pwd)"
-source /workspace/kalliope-playwright/env.sh
+source /workspace/kalliope/materiali-locali/playwright/env.sh
 SITO=$1; PORTA=$2; shift 2
 mkdir -p "$AQUI/esiti"
 for voce in "$@"; do

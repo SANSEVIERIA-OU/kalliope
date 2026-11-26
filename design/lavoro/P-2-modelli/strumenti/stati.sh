@@ -7,7 +7,7 @@
 MODE=$1 BIN=$2 OUT=$3
 mkdir -p "$OUT"
 shots() { for i in 1 2 3; do $RIG/shot.sh "$OUT/$1-$i.png" >/dev/null; sleep 0.35; done; echo "$1"; }
-PWE=/workspace/nomedadefinire/data/pw-tools/env.sh
+PWE=/workspace/kalliope/materiali-locali/prove-voce/data/pw-tools/env.sh
 record() { (. $PWE; LD_LIBRARY_PATH=$PW_LIBS timeout -s INT "$1" pw-record --target kalliope --rate 48000 --channels 1 "$2" >/dev/null 2>&1 &); }
 if [ "$MODE" = prima ]; then ENVV=("${PRIMAENV[@]}"); else ENVV=("${DOPOENV[@]}"); fi
 

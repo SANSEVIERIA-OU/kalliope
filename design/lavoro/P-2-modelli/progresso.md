@@ -34,7 +34,7 @@ Incarico: `design/lavoro/incarichi/P-2-modelli-nel-programma.md`. Partenza: comm
 - **Esportazione** spostata in `tools/pocket_export/` (`export.py` da `v4_esporta.py`, `graphs.py` da `v4_grafi.py`,
   `requirements.txt` con tutte le 41 dipendenze fissate). Prima prova: grafi diversi da V-4 nei byte. Causa: torch.onnx scrive in
   ogni nodo lo stack trace con i percorsi dei file della macchina (`/workspace/kalliope/benchmarks/…/v4_grafi.py`,
-  `/workspace/nomedadefinire/…`) e il nome del modulo Python. Tolti (`strip_metadata`, con `ClearField`): con la stessa pulizia
+  `/workspace/kalliope/materiali-locali/prove-voce/…`) e il nome del modulo Python. Tolti (`strip_metadata`, con `ClearField`): con la stessa pulizia
   applicata ai file di V-4, **i quattro grafi sono identici byte per byte** (flow fp32, flow 8 bit, decoder, encoder);
   `pocket.json` e `tokenizer.json` identici. I file pubblicati non portano più i percorsi della macchina di chi esporta.
 - **Il controllo dell'esportazione** usa ora una registrazione CC0 (Selfie.wav di `kyutai/tts-voices`): con un segnale sintetico
@@ -129,7 +129,7 @@ Incarico: `design/lavoro/incarichi/P-2-modelli-nel-programma.md`. Partenza: comm
 
 `/tmp` non sopravvive a un riavvio: si rifanno uguali byte per byte con
 `python3 -I tools/release_assets.py build /tmp/p2-release --rebuild all --cache /tmp/p2-cache --venv /tmp/p2-venv` (la cache ha la
-copia dei pesi di V-4; se manca, copiarla da `/workspace/nomedadefinire/bench/voce-propria/modelli/pocket-tts-gated/` in
+copia dei pesi di V-4; se manca, copiarla da `/workspace/kalliope/materiali-locali/prove-voce/bench/voce-propria/modelli/pocket-tts-gated/` in
 `CACHE/huggingface/kyutai/pocket-tts/3e82814a68665eec246ff649b14c71331f955c06/languages/italian/`).
 
 ### Il comando per caricarli (dopo il permesso del proprietario)

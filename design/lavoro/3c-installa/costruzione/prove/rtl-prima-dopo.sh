@@ -3,7 +3,7 @@
 # Uso: bash rtl-prima-dopo.sh <pagina,pagina…> <y,y…>      pagine: percorsi come ar/stato/index.html
 set -uo pipefail
 AQUI="$(cd "$(dirname "$0")/.." && pwd)"
-source /workspace/kalliope-playwright/env.sh
+source /workspace/kalliope/materiali-locali/playwright/env.sh
 for pg in ${1//,/ }; do for y in ${2//,/ }; do
   nome=$(echo "$pg" | sed 's#/index.html##; s#/#-#g; s#^index.html$#home#')
   F="$AQUI/esiti/rtl-prima-dopo-${ADESSO:-H9}-$nome-y$y.txt"

@@ -3,7 +3,7 @@
 AQUI="$(cd "$(dirname "$0")/.." && pwd)"
 until [ -f /tmp/lavoro-3cb-via-libera ]; do sleep 20; done
 NOME=$(cat /tmp/lavoro-3cb-via-libera)   # l'albero finale da provare (una cartella /tmp/lavoro-3cb-radice-<NOME>)
-source /workspace/kalliope-playwright/env.sh
+source /workspace/kalliope/materiali-locali/playwright/env.sh
 export RADICE=/tmp/lavoro-3cb-radice-$NOME
 H=/tmp/lavoro-3cb-sito-$NOME
 # l'esame in ogni lingua (config-lingue.mjs): a tre misure, e alle misure strette e basse per le lingue che le mettono più alla prova

@@ -7,7 +7,7 @@ mette uguale alla data scritta nel file di design-system/caratteri/ della stessa
 se cambiano i caratteri, non l'orologio.
 
 Uso: venv/bin/python -I sottoinsiemi-datati.py vecchio|nuovo <cartella dei file scaricati> <uscita>
-  vecchio = fontTools 4.63.0 e brotli 1.2.0 (~/.local, quelli di prima); nuovo = il venv di /workspace/kalliope-playwright (4.68.0, 1.2.1).
+  vecchio = fontTools 4.63.0 e brotli 1.2.0 (~/.local, quelli di prima); nuovo = il venv di /workspace/kalliope/materiali-locali/playwright (4.68.0, 1.2.1).
 L'uscita è una copia di design-system/caratteri/ con i file rifatti al posto di quelli di prima (il repository non si tocca)."""
 import calendar, os, pathlib, shutil, subprocess, sys, time
 from fontTools.ttLib import TTFont
@@ -17,7 +17,7 @@ quale, src, uscita = sys.argv[1], pathlib.Path(sys.argv[2]), pathlib.Path(sys.ar
 REPO = pathlib.Path('/workspace/kalliope')
 SCRIPT = REPO / 'design/lavoro/2-lingue-aspetto/prove/sottoinsiemi.py'
 CARATTERI = REPO / 'design-system/caratteri'
-VENV = pathlib.Path('/workspace/kalliope-playwright/venv/bin')
+VENV = pathlib.Path('/workspace/kalliope/materiali-locali/playwright/venv/bin')
 FAMIGLIE = {'readex-pro': 'ReadexPro-wght', 'geologica': 'Geologica-wght', 'noto-nastaliq-urdu': 'NotoNastaliqUrdu-wght',
             'noto-sans-devanagari': 'NotoSansDevanagari-wght', 'noto-sans-bengali': 'NotoSansBengali-wght'}
 if quale == 'vecchio':

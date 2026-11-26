@@ -50,7 +50,7 @@ def main():
     voce = str(E2E / "giovanni.safetensors")
     out["say_breve"] = picco([cli, "say", "--pocket-dir", str(pocket_dir), "--voice", voce, "-o", "/tmp/voce-m-v4/mem.wav", "Va bene."], env)
     out["say_cinque_frasi"] = picco([cli, "say", "--pocket-dir", str(pocket_dir), "--voice", voce, "-o", "/tmp/voce-m-v4/mem.wav", " ".join(FRASI)], env)
-    out["klein_cinque_frasi"] = picco([cli, "say", "--model-dir", "/workspace/nomedadefinire/bench/models/klein/onnx", "-o", "/tmp/voce-m-v4/mem.wav", " ".join(FRASI)], env)
+    out["klein_cinque_frasi"] = picco([cli, "say", "--model-dir", "/workspace/kalliope/materiali-locali/prove-voce/bench/models/klein/onnx", "-o", "/tmp/voce-m-v4/mem.wav", " ".join(FRASI)], env)
     for k, v in out.items():
         print(k, f"{v['picco_mb']:.0f} MB", f"{v['secondi']:.1f} s", v["stderr"][:160], flush=True)
     (ESITI / "v4" / "memoria.json").write_text(json.dumps(out, ensure_ascii=False, indent=1))

@@ -42,7 +42,7 @@ Uno strumento che, quando esce una versione nuova:
   proprietario.
 
 Prova che lo strumento rifà gli stessi file di V-4. Il modello di Kyutai l'ha già scaricato l'incaricato di V-4 su
-questa macchina (`/workspace/nomedadefinire/bench/voce-propria/`): usa quello. Se manca qualcosa, valgono le regole della
+questa macchina (`/workspace/kalliope/materiali-locali/prove-voce/bench/voce-propria/`): usa quello. Se manca qualcosa, valgono le regole della
 chiave qui sotto. Confronta l'uscita con quella di V-4: identica, o con differenze spiegate e misurate. Se differisce, rifai
 le prove della voce di V-4.
 

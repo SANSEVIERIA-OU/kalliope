@@ -18,7 +18,7 @@
 4. **La skill, ora alla versione 0.52.0** (l'ultima, uscita il 20/11/2026):
    `/home/dev/.claude/plugins/cache/vibe-next/vibe-next/0.52.0/skills/design-system-generator/`. Leggi `SKILL.md`, poi
    `references/direzione.md` §6 punto 2, `references/prove.md`, `references/presidi.md` ed `references/esecuzione.md`.
-   - Chi coordina ha portato `SKILL` di `/workspace/kalliope-playwright/env.sh` a 0.52.0.
+   - Chi coordina ha portato `SKILL` di `/workspace/kalliope/materiali-locali/playwright/env.sh` a 0.52.0.
    - Gli strumenti che le tue prove usano sono identici byte per byte a quelli della 0.49.0 con cui sono stati scritti gli esiti di H5:
      `esame-impaginazione.mjs`, `dispositivi-qa.mjs`, `soglie.mjs`, `dispositivi.mjs`, `confronta-scelta.mjs`, `controlla-sorgenti.mjs`
      e `lib/comune.mjs`. Gli esiti di H5 restano quindi confrontabili.
@@ -31,7 +31,7 @@
   - Rifai ciò che ti serve: i dati della versione offerta, v0.1-rc.1, come per il sito vero (`docs/releasing.md`, «Website»), e P
     (`548a6f2`) con `prove/costruisci.sh`.
   - Non c'è nessun processo di prova vivo e nessun server sulle porte 8890–8899.
-  - Le librerie di Firefox e WebKit stanno in `/workspace/kalliope-playwright/motori/` e restano dopo un riavvio. Prima di tutto lancia
+  - Le librerie di Firefox e WebKit stanno in `/workspace/kalliope/materiali-locali/playwright/motori/` e restano dopo un riavvio. Prima di tutto lancia
     `motori-test.mjs` della skill, con `env.sh`. Se un motore non parte, scrivilo e fermati su quel motore: niente prove in silenzio
     nel solo Chromium (`references/esecuzione.md`, «Dopo un riavvio della macchina»).
 - **Il giro finale su H5 si è interrotto a metà.** Le date dei file in `esiti/` dicono questo:

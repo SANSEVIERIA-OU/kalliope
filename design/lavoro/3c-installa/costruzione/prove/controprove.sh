@@ -3,7 +3,7 @@
 # Uso: bash controprove.sh   (scrive esiti/controprova-*.txt: ognuno comincia con la riga che dice che cosa si prova)
 set -uo pipefail
 AQUI="$(cd "$(dirname "$0")/.." && pwd)"
-source /workspace/kalliope-playwright/env.sh
+source /workspace/kalliope/materiali-locali/playwright/env.sh
 R() { # nome, sito, motore, misura, scenari, [opzioni…]
   local nome=$1 sito=$2 motore=$3 misura=$4 scenari=$5; shift 5
   local file="$AQUI/esiti/controprova-$nome.txt"

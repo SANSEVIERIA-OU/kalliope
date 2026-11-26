@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """Shared paths, test sentences and helpers for the own-voice benchmark (V-m, 17/11/2026).
 
-Heavy data (recordings, downloaded models, generated audio) lives outside the repository in
+Heavy data (recordings, downloaded models, generated audio) lives in the Git-ignored project directory
 DATA; this folder keeps only programs and JSON results.
 """
 from __future__ import annotations
@@ -20,12 +20,12 @@ from scipy.signal import resample_poly
 HERE = Path(__file__).resolve().parent
 REPO_BENCH = HERE.parent                      # benchmarks/voce-propria
 ESITI = REPO_BENCH / "esiti"                  # JSON results (committed)
-DATA = Path("/workspace/nomedadefinire/bench/voce-propria")
+DATA = Path("/workspace/kalliope/materiali-locali/prove-voce/bench/voce-propria")
 PERSONE = DATA / "persone"
 AUDIO = DATA / "audio"
 MODELLI = DATA / "modelli"
 CODICE = DATA / "codice"
-OLD_MODELS = Path("/workspace/nomedadefinire/bench/models")   # models of the 12/11 benchmark
+OLD_MODELS = Path("/workspace/kalliope/materiali-locali/prove-voce/bench/models")   # models of the 12/11 benchmark
 KLEIN_DIR = OLD_MODELS / "klein" / "onnx"
 POCKET_DIR = OLD_MODELS / "pocket-onnx"
 CLI = Path("/tmp/voce-m-target/release/kalliope-cli")       # built from crates/ untouched

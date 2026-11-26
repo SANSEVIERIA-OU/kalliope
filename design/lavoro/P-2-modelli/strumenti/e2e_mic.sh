@@ -6,7 +6,7 @@
 . /tmp/p2-rig/common.sh
 BIN=$1 OUT=$2
 mkdir -p "$OUT"
-PWE=/workspace/nomedadefinire/data/pw-tools/env.sh
+PWE=/workspace/kalliope/materiali-locali/prove-voce/data/pw-tools/env.sh
 TEXTS=("Buongiorno a tutti, scusate il ritardo." "Possiamo rivedere insieme i numeri del terzo trimestre?"
   "Mi sentite bene? Ho cambiato microfono stamattina." "Certo." "Mi sentite?" "Grazie." "Arrivo subito." "A dopo.")
 printf '%s\n' "${TEXTS[@]}" > "$OUT/testi.txt"

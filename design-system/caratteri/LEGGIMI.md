@@ -56,7 +56,7 @@ sopra i file che ci trova: lanciarlo su una copia di questa cartella (ci legge a
 Sono 12 i file che rifà; `lexend/Lexend-wght-latino.woff2` e `dejavu/DejaVuSans-latino.woff2` non sono suoi e restano come sono.
 
 **Strumenti usati** (20/11/2026, incarico P-3): **fontTools 4.68.0 e brotli 1.2.1**, le ultime di oggi (PyPI; prima 4.63.0 e 1.2.0), in
-un ambiente a parte con le versioni fissate (`/workspace/kalliope-playwright/requirements.txt`). Con i sorgenti qui sopra, lo stesso script e la
+un ambiente a parte con le versioni fissate (`/workspace/kalliope/materiali-locali/playwright/requirements.txt`). Con i sorgenti qui sopra, lo stesso script e la
 stessa data i file sono questi: di Lexend, identici a quelli di prima byte per byte; delle cinque famiglie, più piccoli (Nastaliq −18 KB, Devanagari
 −3,8 KB, Bengali −1,4 KB, Readex −244 byte, Geologica −48 byte) con gli stessi glifi, la stessa `cmap`, gli stessi contorni e le stesse regole di
 composizione (cambia l'impacchettamento binario di `GSUB` e `GPOS`; in Geologica la 4.68.0 mette l'involucro «Extension» in altri lookup di `GPOS`,

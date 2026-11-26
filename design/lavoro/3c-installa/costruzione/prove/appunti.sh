@@ -3,7 +3,7 @@
 # Uso: bash appunti.sh <sito> <porta> <motore> <WxH> <lingua> [<lingua> …]      (lingua: it, ar, ur, ar-XB, …)
 set -uo pipefail
 AQUI="$(cd "$(dirname "$0")/.." && pwd)"
-source /workspace/kalliope-playwright/env.sh
+source /workspace/kalliope/materiali-locali/playwright/env.sh
 SITO=$1; PORTA=$2; MOTORE=$3; MISURA=$4; shift 4
 for L in "$@"; do
   F="$AQUI/esiti/appunti-$SITO-$L-$MOTORE-$MISURA.txt"

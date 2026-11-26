@@ -13,9 +13,9 @@ Metodo: skill vibe-next design-system-generator 0.45.0.
 | 2. Visite e schede | fatto | design-visual ×4 (sonnet): R01-R03, R04-R06, R20-R22, R50-R53+G01-G04 | 12/11 19:05 → 20:30 (45, 55, 49, 64 min; 484k, 569k, 492k, 639k token) | 13 schede, osservazioni valide (--controlla uscita 0), inventari del movimento, registro italiano. Solo Chromium, senza finestra (nessun Chrome MCP). Limiti: R06 WebGL a 4-5 fps; telefono 390×844 solo con script; nessun audio ascoltato |
 | 3. Confronto | fatto | design-build (sonnet) | 12/11 20:20 → 20:30 | 13 riferimenti: 0 identici, 16 meccanismi comuni, 432 varianti; `confronto.{json,md}`, `copertura.md` (C4 2/3, C2 con testo accanto 1, C7 ausili veri mai osservati) |
 | 4. Direzione | fatto | design-build (sonnet) | 12/11 20:30 → 20:35 | «Carta e voce»: cammino a pagine per compito (scartate: pagina narrata, porte per persona); ambizione A1-A5; controlla-direzione uscita 0, 73 decisioni, copertura 432/432 |
-| 5. Primo percorso completo (cancello) | in correzione | design-build (sonnet) → design-visual (sonnet) → design-build | 20:36 → 22:06 costruzione (91 min, 687k token); 22:15 → 22:45 revisione (28 min, 355k); 22:50 → correzioni | 8 pagine + catalogo; revisione: 2 bloccanti (Aiuto senza risultato, telefono), 9 importanti, riconoscibilità media; il coordinatore ha verificato i fatti (3 correzioni) |
+| 5. Primo percorso completo (cancello) | fatto, in attesa dell'approvazione del proprietario | design-build (sonnet) → design-visual (sonnet) → design-build | costruzione 91 min (687k token); revisione 28 min (355k); correzioni 34 min (840k) | 8 pagine + catalogo; revisione: 2 bloccanti (Aiuto senza risultato, telefono), 9 importanti, riconoscibilità media; il coordinatore ha verificato i fatti (3 correzioni) |
 | 6. Prove complete (15 dispositivi × 3 motori) | da fare, dopo l'approvazione | | | |
-| 7. Pubblicazione su Pages | da fare | coordinatore | | |
+| 7. Pubblicazione su Pages | fatto (primo percorso) | coordinatore | 12/11 23:00 | https://sansevieria-ou.github.io/kalliope/ (commit 6fdc377); campioni anche in Opus (Firefox di prova non decodificava l'MP3) |
 
 Correzioni al prodotto nate dalla scheda (coordinatore, 12/11): README «52 MB» → 53 MB; errori del microfono spiegati
 in italiano e avvisi che non bloccano la scrittura (commit 3701c7b); foto della finestra rifatta con le impostazioni

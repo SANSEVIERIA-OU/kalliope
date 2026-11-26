@@ -12,7 +12,7 @@ Le tre strade per far parlare Kalliope con la voce della persona:
 3. **Cercare la voce dentro quella di oggi**: modificare i 256 numeri di una voce di Klein finché un misuratore del parlante
    dice che assomiglia alla registrazione, sul modello di KVoiceWalk, con un tetto di un'ora di CPU per persona.
 
-La pagina d'ascolto per il proprietario è in `/workspace/nomedadefinire/bench/voce-propria/ascolto/index.html`
+La pagina d'ascolto per il proprietario è in `/workspace/kalliope/materiali-locali/prove-voce/bench/voce-propria/ascolto/index.html`
 (statica, solo HTML e `<audio>`; si può servire da sola, per esempio `python3 -m http.server 8900` in quella cartella).
 
 ## La versione ufficiale attuale, dentro il programma (V-4, 19/11/2026)
@@ -130,7 +130,7 @@ della voce di 16–28 MB, e tiene il passo solo decodificando un fotogramma per 
   `v4_esporta`: per rifarli, prenderle da `tools/pocket_export/export.py` (`session`, `step`, `compare`).
 - Esiti: `esiti/v4/` (compatibilità, riferimento, esportazione, quantizzazione, controllo, lunghezza, tokenizer, e2e, memoria,
   `dipendenze_cargo.txt`).
-- Dati (fuori dal repository): `modelli/pocket-tts-gated/` (scaricato con la chiave), `modelli/pocket-onnx-v4/` (esportazione),
+- Dati locali esclusi da Git: `modelli/pocket-tts-gated/` (scaricato con la chiave), `modelli/pocket-onnx-v4/` (esportazione),
   `modelli/pocket-kalliope/italian` e `italian_24l` (le cartelle del modello come le legge il programma), `audio/v4/`.
 
 ## Il trucco: la versione attuale con l'encoder di maggio (V-2 e V-3, parte A, 17/11/2026)
@@ -385,7 +385,7 @@ controllo dei vuoti, voce salvata), `scripts/onnx_cache.py` (la cache libera nel
 `scripts/v1_valuta.py`, `scripts/v1_ufficiale.py` (parità e prova sulla voce di Kyutai, con i pesi aperti), `scripts/v1_memoria.py`,
 `scripts/v1_passo.py`, `scripts/v1_pronuncia.py`, `scripts/v1_resoconto.py`; esiti in `esiti/v1/` (`valuta_*.json`,
 `genera_*.json`, `passo.jsonl`, `memoria.jsonl`, `memoria_coseni_italian_F1.json`, `parita.json`, `pronuncia.json`,
-`brevi.json`, `scelta.json`). I file ONNX con la cache libera sono in `voce-propria/modelli/pocket-onnx-kv/` (fuori dal repository).
+`brevi.json`, `scelta.json`). I file ONNX con la cache libera sono in `voce-propria/modelli/pocket-onnx-kv/` (esclusi da Git).
 
 ### Versioni (controllate il 17/11/2026 sulle fonti ufficiali)
 
@@ -656,7 +656,7 @@ Per ogni persona (`scripts/prepara_persone.py`, tagli nelle pause, `esiti/person
   a 8 kHz e MP3 a 16 kbit/s, riportato a 24 kHz («F1d», «M2d»). Per i due casi rovinati le strade vedono solo il
   riferimento rovinato; la somiglianza si misura sempre contro i brani veri e puliti.
 
-I campioni restano su questo computer (`/workspace/nomedadefinire/bench/voce-propria/`), fuori dal repository.
+I campioni restano su questo computer (`/workspace/kalliope/materiali-locali/prove-voce/bench/voce-propria/`), in una cartella esclusa da Git.
 
 ### Le frasi
 
@@ -770,7 +770,7 @@ Apache-2.0 dei pesi (già nella ricerca `2-…`, §4).
 ## Come rifare
 
 ```sh
-B=/workspace/nomedadefinire/bench/voce-propria      # dati pesanti, fuori dal repository
+B=/workspace/kalliope/materiali-locali/prove-voce/bench/voce-propria      # dati locali esclusi da Git
 S=benchmarks/voce-propria/scripts
 cargo build --release -p kalliope-cli --target-dir /tmp/voce-m-target
 python3 -m venv $B/.venv

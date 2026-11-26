@@ -12,7 +12,7 @@
   l'ultimissima versione di ogni dipendenza.
 - **Chi lo fa**: lo stesso incaricato di V-m e V-1.
 - **Area tua**: `benchmarks/voce-propria/` (una sezione nuova del `README.md`, «La versione attuale con l'encoder di
-  maggio», esiti in `esiti/v2/`, `progresso.md` aggiornato a ogni unità) e `/workspace/nomedadefinire/bench/voce-propria/`
+  maggio», esiti in `esiti/v2/`, `progresso.md` aggiornato a ogni unità) e `/workspace/kalliope/materiali-locali/prove-voce/bench/voce-propria/`
   per i dati pesanti.
 
 ## Che cosa fare

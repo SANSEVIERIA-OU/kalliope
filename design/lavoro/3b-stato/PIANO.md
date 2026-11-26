@@ -12,7 +12,7 @@ il tratteggio è ciò che nessuno ha ancora provato: le persone oltre il microfo
 tastiera, il tempo dal tasto al suono.
 
 Percorsi: `R/` = `/workspace/prova-design-abc/prova-2/riferimenti/`, `K/` = `/workspace/kalliope/design/ricerca/prove/`. Prove di questa
-resa (fuori dal repository, `.gitignore`): `sequenze/` (arrivo, scorri, domanda, copia, copia-riuscita, arrivo-basso), `foto/` (schermi
+resa (escluse da Git, `.gitignore`): `sequenze/` (arrivo, scorri, domanda, copia, copia-riuscita, arrivo-basso), `foto/` (schermi
 bassi, ridotto, senza JavaScript, pseudo-lingue in `foto/lingue/`), `confronti/` (fogli a coppie, nei due versi), `esiti/`
 (`confronta-scelta`).
 

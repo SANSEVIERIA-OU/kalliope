@@ -8,6 +8,7 @@
 *.wav
 models/
 artifacts/
+/materiali-locali/
 .venv/
 __pycache__/
 # Design research: screenshots and downloads of third-party sites stay local (their authors' rights)
