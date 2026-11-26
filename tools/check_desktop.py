@@ -45,7 +45,7 @@ def mac_inspector(work):
         output = subprocess.check_output([helper, str(pid)], timeout=5)
         return json.loads(output)
 
-    return visible_windows
+    return visible_windows, helper
 
 
 def take_window_picture(handle, path):
@@ -97,7 +97,7 @@ def main():
             if not 1.5 < duration < 6 or not any(sound.readframes(sound.getnframes())):
                 raise RuntimeError("The recording has an unexpected duration or is silent")
         print(f"{actual}, generated {duration:.2f} s of speech", flush=True)
-        inspect = windows_window if sys.platform == "win32" else mac_inspector(work)
+        inspect, helper = (windows_window, None) if sys.platform == "win32" else mac_inspector(work)
         with subprocess.Popen([app]) as window:
             try:
                 deadline = time.monotonic() + 40
@@ -109,6 +109,8 @@ def main():
                             print(f"Visible {sys.platform} window, {width} × {height}", flush=True)
                             time.sleep(2)
                             take_window_picture(handle, output)
+                            if helper and output.name == "desktop-window-dark.png":
+                                subprocess.run([helper, "--check-dark", output], check=True, timeout=10)
                             return
                     time.sleep(0.5)
                 raise RuntimeError("The operating system did not report a visible application window")

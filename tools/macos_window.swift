@@ -1,7 +1,18 @@
 // SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 // Report visible application windows for the desktop smoke test.
+import AppKit
 import CoreGraphics
 import Foundation
+
+if CommandLine.arguments[1] == "--check-dark" {
+    let appearance = NSApplication.shared.effectiveAppearance
+    let match = appearance.bestMatch(from: [.darkAqua, .aqua])
+    print("AppKit appearance: \(match?.rawValue ?? "unknown")")
+    let image = NSBitmapImageRep(data: try Data(contentsOf: URL(fileURLWithPath: CommandLine.arguments[2])))!
+    let background = image.colorAt(x: image.pixelsWide / 2, y: image.pixelsHigh / 4)!.usingColorSpace(.deviceRGB)!
+    print("Window background brightness: \(background.brightnessComponent)")
+    exit(match == .darkAqua && background.brightnessComponent < 0.5 ? 0 : 1)
+}
 
 let pid = Int32(CommandLine.arguments[1])!
 let windows = CGWindowListCopyWindowInfo([.optionOnScreenOnly, .excludeDesktopElements], kCGNullWindowID) as? [[String: Any]] ?? []

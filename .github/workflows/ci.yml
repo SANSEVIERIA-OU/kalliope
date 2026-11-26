@@ -118,7 +118,10 @@ jobs:
             reg.exe add 'HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize' //v AppsUseLightTheme //t REG_DWORD //d 0 //f
             python=python
           else
-            defaults write NSGlobalDomain AppleInterfaceStyle -string Dark
+            osascript -e 'with timeout of 15 seconds' \
+              -e 'tell application "System Events" to set dark mode of appearance preferences to true' \
+              -e 'end timeout'
+            test "$(osascript -e 'tell application "System Events" to get dark mode of appearance preferences')" = true
             python=python3
           fi
           $python tools/check_desktop.py desktop-window-dark.png
