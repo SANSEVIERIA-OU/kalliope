@@ -1,0 +1,80 @@
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
+// Messages and waits in the window: a problem with its way out next to it, a progress bar, a wait with a way out.
+import { Token } from "token.slint";
+import { Aspetto } from "aspetto.slint";
+import { Pulsante, Tipo, Punto } from "forme.slint";
+
+// A problem said in plain words, whole, next to the control that caused it, with the way out beside it. The warm band is
+// the one of the status line's «Nessuno ti sente».
+export component Avviso inherits Rectangle {
+    in property <string> testo;
+    // «Come si risolve» opens the website's guide
+    in property <bool> con-guida: false;
+    callback guida();
+    accessible-role: text;
+    accessible-label: root.testo;
+    min-height: colonna.preferred-height;
+    border-radius: Token.raggio-pannello * Aspetto.scala;
+    background: Token.attenzione-fondo;
+    colonna := VerticalLayout {
+        padding: Token.spazio-medio * Aspetto.scala;
+        padding-top: Token.spazio-controlli * Aspetto.scala;
+        padding-bottom: Token.spazio-controlli * Aspetto.scala;
+        spacing: Token.spazio-controlli * Aspetto.scala;
+        HorizontalLayout {
+            spacing: Token.spazio-controlli * Aspetto.scala;
+            Rectangle {
+                width: Token.barra-voce-alta * Aspetto.scala * 0.6;
+                Punto { y: Token.spazio-stretto * Aspetto.scala; colore: Token.attenzione; }
+            }
+            Text {
+                text: root.testo;
+                wrap: word-wrap;
+                horizontal-stretch: 1;
+                font-size: Token.corpo-stato * Aspetto.scala;
+                color: Token.attenzione;
+            }
+        }
+        if root.con-guida: HorizontalLayout {
+            alignment: start;
+            Pulsante { testo: @tr("Come si risolve"); piccolo: true; tipo: Tipo.quieto; premuto => { root.guida(); } }
+        }
+    }
+}
+
+// How far a wait has come: a track and what is done of it.
+export component Avanzamento inherits Rectangle {
+    in property <float> valore: 0;
+    accessible-role: progress-indicator;
+    accessible-value: round(root.valore * 100) + "%";
+    height: Token.tratto * 2;
+    border-radius: self.height / 2;
+    background: Token.velo-scelto;
+    Rectangle {
+        x: 0; y: 0;
+        width: parent.width * clamp(root.valore, 0, 1);
+        height: parent.height;
+        border-radius: parent.border-radius;
+        background: Token.azione;
+        animate width { duration: Token.durata-scurisce; easing: Token.curva-dolce; }
+    }
+}
+
+// A wait with a way out: what is happening, how far, and «Annulla».
+export component Attesa inherits VerticalLayout {
+    in property <string> testo;
+    in property <string> dettaglio;
+    in property <float> valore: 0;
+    callback annulla();
+    in property <string> annulla-testo: @tr("Annulla");
+    spacing: Token.spazio-controlli * Aspetto.scala;
+    alignment: start;
+    init => { annulla-comando.focus(); }
+    Text { text: root.testo; wrap: word-wrap; font-size: Token.corpo-bolla * Aspetto.scala; font-weight: Token.peso-forte; color: Token.testo; }
+    Avanzamento { valore: root.valore; }
+    if root.dettaglio != "": Text { text: root.dettaglio; wrap: word-wrap; font-size: Token.corpo-stato * Aspetto.scala; color: Token.testo-tenue; }
+    HorizontalLayout {
+        alignment: start;
+        annulla-comando := Pulsante { testo: root.annulla-testo; tipo: Tipo.quieto; premuto => { root.annulla(); } }
+    }
+}

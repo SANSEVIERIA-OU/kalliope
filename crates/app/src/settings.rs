@@ -13,6 +13,8 @@ pub struct Settings {
     pub text_scale: f32,
     /// The compact meeting mode.
     pub compact: bool,
+    /// The hint about keeping the meeting window above the others was read («Ho capito»): it is shown once.
+    pub hint_seen: bool,
 }
 
 /// The text can be made this much smaller or larger.
@@ -25,6 +27,7 @@ impl Default for Settings {
             monitor: true,
             text_scale: 1.0,
             compact: false,
+            hint_seen: false,
         }
     }
 }
@@ -60,6 +63,7 @@ impl Settings {
                         }
                     }
                     Some(("compact", v)) => s.compact = v.trim() == "true",
+                    Some(("hint_seen", v)) => s.hint_seen = v.trim() == "true",
                     _ => {}
                 }
             }
@@ -69,11 +73,12 @@ impl Settings {
 
     fn write(&self, path: &Path) {
         let text = format!(
-            "voice={}\nmonitor={}\ntext_scale={}\ncompact={}\n",
+            "voice={}\nmonitor={}\ntext_scale={}\ncompact={}\nhint_seen={}\n",
             self.voice.key(),
             self.monitor,
             self.text_scale,
-            self.compact
+            self.compact,
+            self.hint_seen
         );
         if let Err(e) = crate::paths::write_atomic(path, text.as_bytes()) {
             eprintln!(
@@ -108,6 +113,11 @@ pub fn save_compact(on: bool) {
     update_at(&file(), |s| s.compact = on);
 }
 
+/// The hint about keeping the meeting window above the others was read: it is not shown again.
+pub fn save_hint_seen() {
+    update_at(&file(), |s| s.hint_seen = true);
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -124,12 +134,17 @@ mod tests {
         assert!(!s.monitor);
         assert_eq!(
             std::fs::read_to_string(&path).unwrap(),
-            "voice=Marco.safetensors\nmonitor=false\ntext_scale=1\ncompact=false\n"
+            "voice=Marco.safetensors\nmonitor=false\ntext_scale=1\ncompact=false\nhint_seen=false\n"
         );
         update_at(&path, |s| s.text_scale = 1.5);
         update_at(&path, |s| s.compact = true);
+        update_at(&path, |s| s.hint_seen = true);
         let s = Settings::read(&path);
         assert_eq!((s.text_scale, s.compact, s.monitor), (1.5, true, false));
+        assert!(s.hint_seen, "the hint read once is remembered");
+        // and the other keys survive its being written
+        update_at(&path, |s| s.monitor = true);
+        assert!(Settings::read(&path).hint_seen);
         // A value out of range or not a number is brought back to what the window can show.
         std::fs::write(&path, "text_scale=40\ncompact=yes\n").unwrap();
         let s = Settings::read(&path);

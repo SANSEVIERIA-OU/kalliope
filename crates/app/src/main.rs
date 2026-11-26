@@ -4,9 +4,13 @@
 #![cfg_attr(target_os = "windows", windows_subsystem = "windows")]
 
 mod audio;
+mod avanzamento;
 mod catalog;
+mod collega;
+mod crea;
 mod drive;
 mod engine;
+mod guida;
 mod history;
 mod instance;
 mod own_voice;
@@ -17,7 +21,7 @@ mod vista;
 
 use engine::{Command, Config, Engine, Event, KLEIN_VOICES, VoiceId};
 use settings::Settings;
-use slint::{ComponentHandle, ModelRc, SharedString, VecModel};
+use slint::ComponentHandle;
 use std::cell::RefCell;
 use std::process::ExitCode;
 use std::rc::Rc;
@@ -173,50 +177,12 @@ fn run_window(owner: &instance::Owner) -> Result<(), Box<dyn std::error::Error>>
         let weak = weak.clone();
         let _ = slint::invoke_from_event_loop(move || {
             if let Some(ui) = weak.upgrade() {
-                ui.set_phase(status.phase);
-                ui.set_warning(status.warning);
-                ui.set_situazione(status.situation());
-                ui.set_status(status.text.into());
-                if let Some(index) = status.voice_index {
-                    ui.set_voice_index(index as i32);
-                }
+                collega::stato(&ui, &status);
             }
         });
     })));
     ui.set_version(version().into());
-    ui.set_voices(ModelRc::new(VecModel::from(
-        session
-            .borrow()
-            .voices
-            .iter()
-            .map(|v| SharedString::from(v.as_str()))
-            .collect::<Vec<_>>(),
-    )));
-    ui.set_voice_index(session.borrow().voice_index() as i32);
-    ui.set_monitor(session.borrow().settings.monitor);
-    let history = Rc::new(VecModel::from(session.borrow().history_model()));
-    ui.set_history(ModelRc::from(history.clone()));
-    vista::collega(&ui);
-    let app = session.clone();
-    ui.on_has_speech_text(|text| !text.trim().is_empty());
-    ui.on_speak(move |text| {
-        let mut app = app.borrow_mut();
-        if !app.speak(&text) {
-            return false;
-        }
-        history.set_vec(
-            app.history
-                .iter()
-                .map(|v| SharedString::from(v.as_str()))
-                .collect::<Vec<_>>(),
-        );
-        true
-    });
-    let app = session.clone();
-    ui.on_stop(move || app.borrow().stop());
-    let app = session.clone();
-    ui.on_voice_changed(move |index| app.borrow_mut().change_voice(index as usize));
-    ui.on_monitor_changed(move |on| session.borrow_mut().monitor(on));
+    collega::collega(&ui, session);
     // Bringing the window to the front hides and shows it again, so a hidden window must not end
     // Kalliope: only closing it does.
     ui.window().on_close_requested(|| {

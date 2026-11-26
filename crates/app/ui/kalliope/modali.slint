@@ -1,0 +1,174 @@
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
+// Things that sit over the window and ask for its whole attention: «Informazioni» and the confirmation before the history is
+// emptied. Over a veil, in a panel; Tab goes round inside, Esc closes, a click on the veil closes. The window behind cannot be
+// reached by keyboard while one is open.
+import { AboutSlint } from "std-widgets.slint";
+import { Token } from "token.slint";
+import { Aspetto } from "aspetto.slint";
+import { Pulsante, Tipo } from "forme.slint";
+
+export component Modale inherits Rectangle {
+    in property <bool> aperta: false;
+    // the panel's size, inside the veil
+    in property <length> larghezza: Token.bolla-larghezza * Aspetto.scala;
+    in property <length> margine: Token.spazio-largo * Aspetto.scala;
+    // a panel as high as its content (a question); 0 is the whole window less the margins (the credits)
+    in property <length> altezza: 0px;
+    property <length> alto: root.altezza > 0 ? min(root.altezza, root.height - 2 * root.margine) : root.height - 2 * root.margine;
+    // Esc, a click on the veil
+    callback chiudi();
+    // Tab (true) or Shift+Tab (false): the dialog moves its own focus
+    callback giro(bool);
+    // arrows and page keys: -1 / 1 a line, -2 / 2 a page
+    callback scorri(int);
+    out property <float> fase: root.aperta ? 1 : 0;
+    animate fase {
+        duration: Aspetto.movimento-ridotto ? 0ms : (root.aperta ? Token.durata-pannello : Token.durata-pannello-uscita);
+        easing: root.aperta ? Token.curva-entrata : Token.curva-dolce;
+    }
+    visible: root.fase > 0;
+    opacity: root.fase;
+    background: Token.velo-modale;
+    TouchArea { clicked => { root.chiudi(); } }
+    trappola := FocusScope {
+        capture-key-pressed(e) => {
+            if (!root.aperta) { return reject; }
+            if (e.text == Key.Escape) { root.chiudi(); return accept; }
+            if (e.text == Key.Tab) { root.giro(!e.modifiers.shift); return accept; }
+            if (e.text == Key.Backtab) { root.giro(false); return accept; }
+            if (e.text == Key.UpArrow) { root.scorri(-1); return accept; }
+            if (e.text == Key.DownArrow) { root.scorri(1); return accept; }
+            if (e.text == Key.PageUp) { root.scorri(-2); return accept; }
+            if (e.text == Key.PageDown) { root.scorri(2); return accept; }
+            return reject;
+        }
+        Rectangle {
+            x: max(root.margine, (root.width - root.larghezza) / 2);
+            y: (root.altezza > 0 ? (root.height - root.alto) / 2 : root.margine) + Token.spostamento-entrata * (1 - root.fase);
+            width: min(root.width - 2 * root.margine, root.larghezza);
+            height: root.alto;
+            background: Token.pannello;
+            border-radius: Token.raggio-pannello * Aspetto.scala;
+            border-width: Token.filo;
+            border-color: Token.bordo;
+            drop-shadow-blur: Token.ombra-sfocatura;
+            drop-shadow-offset-y: Token.ombra-scarto;
+            drop-shadow-color: Token.ombra;
+            TouchArea { }
+            @children
+        }
+    }
+    public function entra() { trappola.focus(); }
+}
+
+component Credito inherits VerticalLayout {
+    in property <string> nome;
+    in property <string> licenza;
+    in property <string> ruolo;
+    spacing: Token.spazio-minimo * Aspetto.scala;
+    HorizontalLayout {
+        spacing: Token.spazio-controlli * Aspetto.scala;
+        Text { text: root.nome; font-size: Token.corpo-stato * Aspetto.scala; font-weight: Token.peso-forte; color: Token.testo; wrap: word-wrap; }
+        Text { text: root.licenza; font-size: Token.corpo-nota * Aspetto.scala; color: Token.azione; vertical-alignment: center; horizontal-stretch: 1; }
+    }
+    Text { text: root.ruolo; font-size: Token.corpo-nota * Aspetto.scala; color: Token.testo-tenue; wrap: word-wrap; }
+}
+
+// What Kalliope is, what it keeps to itself, where the website is, and what it is made with. The Slint widget is here by the
+// licence of Slint (§2): showing it is one of the two ways it allows.
+export component Informazioni inherits Modale {
+    in property <string> versione;
+    callback apri-sito();
+    callback chiusa();
+    chiudi => { root.chiusa(); }
+    giro(avanti) => {
+        if (sito.ha-fuoco) { chiudi-comando.focus(); } else { sito.focus(); }
+    }
+    // the keyboard scrolls the credits: a line for an arrow, most of the panel for a page
+    scorri(passo) => {
+        scorre.content-y = clamp(
+            scorre.content-y - (passo < 0 ? 1 : -1) * (abs(passo) == 2 ? scorre.height * 0.8 : Token.altezza-comando * Aspetto.scala * 1.5),
+            min(0px, scorre.height - scorre.content-height), 0px);
+    }
+    public function apri() { sito.focus(); }
+    VerticalLayout {
+        padding: Token.spazio-largo * Aspetto.scala;
+        spacing: Token.spazio-controlli * Aspetto.scala;
+        Text { text: "Kalliope " + root.versione; color: Token.testo; font-size: Token.corpo-titolo * Aspetto.scala; font-weight: Token.peso-titolo; }
+        scorre := Flickable {
+            vertical-stretch: 1;
+            min-height: 0;
+            preferred-height: 0;
+            content-width: self.width;
+            content-height: testo.preferred-height;
+            testo := VerticalLayout {
+                width: scorre.width;
+                spacing: Token.spazio-medio * Aspetto.scala;
+                Text {
+                    text: @tr("Scrivi e fatti sentire nelle videochiamate. La voce viene creata su questo computer: nessun testo lascia la tua macchina.");
+                    wrap: word-wrap; color: Token.testo; font-size: Token.corpo-stato * Aspetto.scala;
+                }
+                HorizontalLayout {
+                    spacing: Token.spazio-controlli * Aspetto.scala;
+                    alignment: start;
+                    sito := Pulsante {
+                        init => { self.focus(); }
+                        testo: @tr("Il sito di Kalliope");
+                        piccolo: true;
+                        tipo: Tipo.quieto;
+                        accessible-label: @tr("Apri il sito di Kalliope nel browser");
+                        premuto => { root.apri-sito(); }
+                    }
+                }
+                Text { text: @tr("Che cosa c'è dentro"); color: Token.testo-tenue; font-size: Token.corpo-nota * Aspetto.scala; }
+                Credito { nome: "Klein-TTS-X1.5-Pro"; licenza: "Apache-2.0"; ruolo: @tr("Le voci Giulia e Marco."); }
+                Credito { nome: "ONNX Runtime"; licenza: "MIT"; ruolo: @tr("Fa girare le voci su questo computer."); }
+                Credito { nome: "Wiktionary"; licenza: "CC BY-SA 4.0"; ruolo: @tr("I dati di pronuncia."); }
+                Credito {
+                    nome: "Pocket TTS · Kyutai"; licenza: "CC BY 4.0";
+                    ruolo: @tr("La voce creata da una registrazione (kyutai.org). Convertito in ONNX e quantizzato da Kalliope. Fonte, modifiche e licenza nei file share/doc/kalliope/pocket-tts/NOTICE.txt e LICENSE del pacchetto.");
+                }
+                Credito { nome: "Skia"; licenza: "BSD-3-Clause"; ruolo: @tr("Disegna questa finestra."); }
+                Credito { nome: "symphonia"; licenza: "MPL-2.0"; ruolo: @tr("Legge i file audio e video."); }
+                Credito { nome: "libopus"; licenza: "BSD-3-Clause"; ruolo: @tr("Legge i messaggi vocali (.opus)."); }
+                Text {
+                    text: @tr("© SANSEVIERIA OÜ. Licenza SANSEVIERIA 1.1.");
+                    wrap: word-wrap; color: Token.testo-tenue; font-size: Token.corpo-nota * Aspetto.scala;
+                }
+                AboutSlint { preferred-height: self.min-height; }
+            }
+        }
+        HorizontalLayout {
+            alignment: end;
+            chiudi-comando := Pulsante { testo: @tr("Chiudi"); tipo: Tipo.pieno; premuto => { root.chiusa(); } }
+        }
+    }
+}
+
+// «Svuotare la cronologia?»: a question with two answers, the safe one first under the focus.
+export component Conferma inherits Modale {
+    in property <string> titolo;
+    in property <string> testo;
+    in property <string> conferma-testo;
+    callback confermato();
+    callback annullato();
+    chiudi => { root.annullato(); }
+    giro(avanti) => {
+        if (annulla.ha-fuoco) { conferma.focus(); } else { annulla.focus(); }
+    }
+    public function apri() { annulla.focus(); }
+    larghezza: Token.bolla-larghezza * Aspetto.scala * 0.75;
+    altezza: corpo.preferred-height;
+    corpo := VerticalLayout {
+        padding: Token.spazio-largo * Aspetto.scala;
+        spacing: Token.spazio-medio * Aspetto.scala;
+        Text { text: root.titolo; color: Token.testo; font-size: Token.corpo-bolla * Aspetto.scala; font-weight: Token.peso-titolo; wrap: word-wrap; }
+        Text { text: root.testo; color: Token.testo; font-size: Token.corpo-stato * Aspetto.scala; wrap: word-wrap; }
+        HorizontalLayout {
+            alignment: end;
+            spacing: Token.spazio-controlli * Aspetto.scala;
+            annulla := Pulsante { init => { self.focus(); } testo: @tr("Annulla"); tipo: Tipo.pieno; premuto => { root.annullato(); } }
+            conferma := Pulsante { testo: root.conferma-testo; tipo: Tipo.quieto; premuto => { root.confermato(); } }
+        }
+    }
+}

@@ -1,7 +1,8 @@
 # SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 """A stand-in for the XDG settings portal, for tests of the window's light and dark appearance on Linux.
 
-    python3 -I tools/portale_finto.py dark|light|none [--flip-after SECONDS dark|light|none] [-- COMMAND ...]
+    python3 -I tools/portale_finto.py dark|light|none [--flip-after SECONDS dark|light|none]
+        [--scegli FILE | --annulla] [--ritardo SECONDS] [--registro FILE.json] [-- COMMAND ...]
 
 Serves org.freedesktop.appearance `color-scheme` (1 dark, 2 light, 0 no preference) on the session bus it is run in, as
 xdg-desktop-portal does (ReadOne, Read, and the SettingChanged signal): Slint's winit backend reads exactly this. With a
@@ -9,6 +10,10 @@ COMMAND, runs it once the service answers and exits with its status; without, se
 PyGObject (python3-gi) and a session bus of its own, e.g.:
 
     xvfb-run -a -s "-screen 0 1280x900x24" dbus-run-session -- python3 -I tools/portale_finto.py dark -- python3 tools/check_desktop.py window.png
+
+With --scegli FILE (or --annulla) it also serves org.freedesktop.portal.FileChooser: OpenFile answers with FILE (or a cancel)
+after --ritardo seconds (0.4), the way a person would take a moment, and --registro writes what the program asked for (title,
+filters, parent window) to a JSON file: Kalliope's «Usa vecchie registrazioni» reaches the real portal route, without a desktop.
 
 It never touches the user's session: dbus-run-session makes a bus that only this command's children see.
 """
@@ -30,19 +35,41 @@ def parse(argv):
     if not argv or argv[0] not in VALUES:
         raise SystemExit(__doc__)
     scheme, flip, command = argv[0], None, []
+    chooser = {"file": None, "cancel": False, "delay": 0.4, "log": None}
     rest = argv[1:]
     if "--" in rest:
         i = rest.index("--")
         rest, command = rest[:i], rest[i + 1:]
-    if rest[:1] == ["--flip-after"] and len(rest) == 3 and rest[2] in VALUES:
-        flip = (float(rest[1]), rest[2])
-    elif rest:
-        raise SystemExit(__doc__)
-    return scheme, flip, command
+    while rest:
+        if rest[0] == "--flip-after" and len(rest) >= 3 and rest[2] in VALUES:
+            flip = (float(rest[1]), rest[2])
+            rest = rest[3:]
+        elif rest[0] == "--scegli" and len(rest) >= 2:
+            chooser["file"] = rest[1]
+            rest = rest[2:]
+        elif rest[0] == "--annulla":
+            chooser["cancel"] = True
+            rest = rest[1:]
+        elif rest[0] == "--ritardo" and len(rest) >= 2:
+            chooser["delay"] = float(rest[1])
+            rest = rest[2:]
+        elif rest[0] == "--registro" and len(rest) >= 2:
+            chooser["log"] = rest[1]
+            rest = rest[2:]
+        else:
+            raise SystemExit(__doc__)
+    return scheme, flip, command, chooser
+
+
+CHOOSER_XML = """
+<node><interface name="org.freedesktop.portal.FileChooser">
+  <method name="OpenFile"><arg type="s" direction="in"/><arg type="s" direction="in"/><arg type="a{sv}" direction="in"/><arg type="o" direction="out"/></method>
+  <property name="version" type="u" access="read"/>
+</interface></node>"""
 
 
 def main(argv):
-    scheme, flip, command = parse(argv)
+    scheme, flip, command, chooser = parse(argv)
     import gi
     gi.require_version("Gio", "2.0")
     from gi.repository import Gio, GLib
@@ -60,10 +87,34 @@ def main(argv):
         else:
             invocation.return_dbus_error("org.freedesktop.portal.Error.NotFound", "no such setting")
 
+    def open_file(connection, sender, path, iface, method, params, invocation):
+        import json
+        parent, title, options = params.unpack()
+        token = options.get("handle_token", "kalliope")
+        request = "/org/freedesktop/portal/desktop/request/%s/%s" % (sender.lstrip(":").replace(".", "_"), token)
+        if chooser["log"]:
+            with open(chooser["log"], "w") as f:
+                json.dump({"parent_window": parent, "title": title, "options": {k: str(v) for k, v in options.items()}}, f, indent=1)
+        invocation.return_value(GLib.Variant("(o)", (request,)))
+
+        def answer():
+            if chooser["cancel"] or not chooser["file"]:
+                reply = GLib.Variant("(ua{sv})", (1, {}))
+            else:
+                reply = GLib.Variant("(ua{sv})", (0, {"uris": GLib.Variant("as", ["file://" + chooser["file"]])}))
+            connection.emit_signal(sender, request, "org.freedesktop.portal.Request", "Response", reply)
+            return False
+
+        GLib.timeout_add(int(chooser["delay"] * 1000), answer)
+
     def acquired(connection, name):
         state["bus"] = connection
         node = Gio.DBusNodeInfo.new_for_xml(XML)
         connection.register_object(PATH, node.interfaces[0], call, None, None)
+        if chooser["file"] or chooser["cancel"]:
+            node2 = Gio.DBusNodeInfo.new_for_xml(CHOOSER_XML)
+            connection.register_object(PATH, node2.interfaces[0], open_file,
+                                       lambda *a: GLib.Variant("u", 3), None)
 
     def owned(connection, name):
         if command:

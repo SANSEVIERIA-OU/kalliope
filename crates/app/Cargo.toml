@@ -27,7 +27,12 @@ slint = { version = "1.19.1", default-features = false, features = [
     "backend-winit",
     "renderer-skia-software",
     "accessibility",
+    # the window's handle, so the file chooser opens over it and the system keeps it in front (rfd)
+    "raw-window-handle-06",
 ] }
+# The system's own dialog for choosing a file: the XDG desktop portal on Linux (it loads libdbus at run time and falls back to
+# zenity), the standard dialogs on Windows and macOS. One API for the three; evidence in design/lavoro/4-app/costruzione/.
+rfd = { version = "0.18.0", default-features = false, features = ["xdg-portal", "wayland"] }
 
 [build-dependencies]
 kalliope-tokens.workspace = true

@@ -1,0 +1,75 @@
+// SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
+// What «Crea la tua voce» shows and asks, in one place: Rust (crea.rs) drives it from the recording, the file and the engine, and
+// the screen (voce-propria.slint) only draws it. A global, so the screen has no list of forty properties to pass along.
+
+// One stretch of a recording or a file that a voice can be made from (the clearest first).
+export struct Tratto {
+    // «Tratto 1 · il più chiaro»
+    titolo: string,
+    // «da 0:12 a 0:24 · 12 s di voce»
+    dettaglio: string,
+    // what is wrong with it, in plain words (empty: nothing)
+    messaggi: string,
+    // a voice can be made from it
+    utilizzabile: bool,
+}
+
+export global Creazione {
+    // 0 choose, 1 read and record, 2 listen and name
+    in-out property <int> passo: 0;
+    // the last thing that went wrong at this step, in plain words, and whether the website's guide helps
+    in property <string> errore;
+    in property <bool> errore-aiuto: false;
+
+    // step 0: a file is being read
+    in property <bool> importa-in-corso: false;
+    in property <string> importa-file;
+    in property <float> importa-avanzamento: 0;
+
+    // step 1: the microphones, the recording and its level
+    in property <[string]> microfoni;
+    in-out property <int> microfono: 0;
+    // waiting for the microphone to open / checking the recording after Stop
+    in property <bool> apro: false;
+    in property <bool> controllo: false;
+    in property <bool> registra: false;
+    // 0 → 1, the level of the last moment (the bars follow the voice)
+    in property <float> livello: 0;
+    in property <duration> registrato: 0ms;
+    // the seconds of real speech in it: the ring of the twelve seconds fills with these
+    in property <duration> parlato: 0ms;
+    // while recording: what to do if the voice does not come, or is too loud (empty: nothing)
+    in property <string> suggerimento;
+
+    // step 2: the stretches, listening, the name, the permission, making the voice
+    in property <[Tratto]> tratti;
+    in-out property <int> tratto-scelto: 0;
+    in property <string> nota;
+    // the stretch playing now (-1: none) and how much of it is left, 0 → 1
+    in property <int> ascolto: -1;
+    in property <float> ascolto-resto: 0;
+    in-out property <string> nome;
+    in-out property <bool> consenso: false;
+    // what is wrong with the name, and, when the name needs a yes («Tienilo»), the words of that yes
+    in property <string> nome-messaggio;
+    in property <string> nome-conferma;
+    in property <string> permesso-messaggio;
+    in property <bool> crea-in-corso: false;
+    in property <float> crea-avanzamento: 0;
+
+    callback registra-scelta();
+    callback importa();
+    callback importa-annulla();
+    callback scegli-microfono(int);
+    callback registra-premuto();
+    callback registra-annulla();
+    callback ascolta(int);
+    callback ferma-ascolto();
+    callback rifai();
+    callback nome-modificato();
+    callback crea();
+    callback crea-annulla();
+    callback apri-guida();
+    // «Torna a scrivere», and Esc: whatever is under way is dropped
+    callback esci();
+}

@@ -73,6 +73,8 @@ export component Pulsante inherits Rectangle {
     in property <bool> mostra-premuto: false;
     in property <bool> mostra-fuoco: false;
     callback premuto();
+    // the command has the keyboard focus (a dialog that keeps Tab inside itself needs to know)
+    out property <bool> ha-fuoco: chiave.has-focus;
     property <bool> sopra: (tocco.has-hover || root.mostra-sopra) && root.abilitato;
     property <bool> giu: (tocco.pressed || root.mostra-premuto) && root.abilitato;
     property <length> aria: (root.piccolo ? Token.spazio-controlli : Token.spazio-medio) * Aspetto.scala;
@@ -122,6 +124,8 @@ export component Pulsante inherits Rectangle {
             if (e.text == " " || e.text == Key.Return) { root.premuto(); return accept; }
             return reject;
         }
+        // inside something that scrolls, the command that takes the focus comes into view
+        changed has-focus => { if (self.has-focus) { root.ensure-visible(ScrollBehavior.instant); } }
     }
     tocco := TouchArea {
         mouse-cursor: root.abilitato ? pointer : default;

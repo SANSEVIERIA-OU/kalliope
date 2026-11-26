@@ -3,6 +3,8 @@
 import { Token } from "token.slint";
 import { Aspetto } from "aspetto.slint";
 import { Pulsante, Tipo, Tratteggio, Punto } from "forme.slint";
+import { Creazione, Tratto } from "creazione.slint";
+import { Avviso, Attesa } from "avvisi.slint";
 
 // Where the person is among the three steps: done, now, next (ElevenLabs IVC shows its steps this way).
 export component Passi inherits HorizontalLayout {
@@ -65,15 +67,27 @@ export component Registra inherits Rectangle {
     in property <bool> registra;
     // 0 → 1: how much of the useful twelve seconds is recorded; the ring fills around the button
     in property <float> avanzamento: 0;
+    // the microphone is opening, or the recording is being checked: the button waits
+    in property <bool> occupato: false;
     callback premuto();
     accessible-role: button;
     accessible-label: root.registra ? @tr("Ferma la registrazione") : @tr("Registra");
-    accessible-action-default => { root.premuto(); }
+    accessible-enabled: !root.occupato;
+    accessible-action-default => { if (!root.occupato) { root.premuto(); } }
     forward-focus: chiave;
+    opacity: root.occupato ? Token.opacita-spento : 1;
     width: Token.registra-diametro * Aspetto.scala; height: self.width;
     border-radius: self.width / 2;
     border-width: Token.tratto;
-    border-color: chiave.has-focus ? Token.voce : Token.bordo-comando;
+    border-color: Token.bordo-comando;
+    // the keyboard focus is a ring outside the button, so the ring of the twelve seconds stays visible under it
+    Rectangle {
+        x: -Token.tratto * 2; y: -Token.tratto * 2;
+        width: parent.width + 4 * Token.tratto; height: self.width;
+        border-radius: self.width / 2;
+        border-width: Token.tratto;
+        border-color: chiave.has-focus ? Token.voce : transparent;
+    }
     // the ring of the twelve seconds (Apple shows «1 of 150»; here the seconds that are enough)
     if root.avanzamento > 0: Path {
         property <float> a: min(root.avanzamento, 0.9999);
@@ -94,11 +108,11 @@ export component Registra inherits Rectangle {
     }
     chiave := FocusScope {
         key-pressed(e) => {
-            if (e.text == " " || e.text == Key.Return) { root.premuto(); return accept; }
+            if (e.text == " " || e.text == Key.Return) { if (!root.occupato) { root.premuto(); } return accept; }
             return reject;
         }
     }
-    TouchArea { mouse-cursor: pointer; clicked => { root.premuto(); } }
+    TouchArea { mouse-cursor: root.occupato ? default : pointer; clicked => { if (!root.occupato) { root.premuto(); } } }
 }
 
 // One of the two ways in. The main way is large and shows the record button itself; the second way is a row under it.
@@ -192,33 +206,379 @@ export component Consenso inherits Rectangle {
             if (e.text == " " || e.text == Key.Return) { root.dato = !root.dato; return accept; }
             return reject;
         }
+        changed has-focus => { if (self.has-focus) { root.ensure-visible(ScrollBehavior.instant); } }
     }
     TouchArea { clicked => { root.dato = !root.dato; } }
 }
 
-export component CreaVoce inherits Rectangle {
-    // 0 choose, 1 read and record, 2 listen and name
-    in-out property <int> passo: 0;
-    in-out property <bool> registra: false;
-    in-out property <duration> registrato: 0ms;
-    in-out property <bool> ascolta: false;
-    in-out property <string> nome;
-    in-out property <bool> consenso;
-    in property <string> da-leggere: @tr("Ciao, sono io. Questa è la mia voce, per le riunioni e per le persone a cui voglio bene. La leggo con calma, come parlo ogni giorno.");
-    callback torna();
-    callback importa();
-    callback crea(string);
-    property <bool> stretta: root.width < Token.soglia-minima * Aspetto.scala;
-    property <int> decimi: self.registrato / Token.intervallo-registrazione;
+// One microphone to record from, when the computer has more than one: a row to choose, with the focus ring of the voice.
+component RigaMicrofono inherits Rectangle {
+    in property <string> nome;
+    in property <bool> scelto;
+    callback scelta();
+    property <bool> sopra: tocco.has-hover || chiave.has-focus;
+    accessible-role: radio-button;
+    accessible-label: root.nome;
+    accessible-checked: root.scelto;
+    accessible-action-default => { root.scelta(); }
+    forward-focus: chiave;
+    height: Token.altezza-comando-piccolo * Aspetto.scala;
+    border-radius: self.height / 2;
+    background: root.sopra ? Token.velo-sopra : transparent;
+    border-width: chiave.has-focus ? Token.tratto : 0;
+    border-color: Token.voce;
+    HorizontalLayout {
+        padding-left: Token.spazio-controlli * Aspetto.scala;
+        padding-right: Token.spazio-medio * Aspetto.scala;
+        spacing: Token.spazio-controlli * Aspetto.scala;
+        Rectangle {
+            width: Token.punto * 1.6 * Aspetto.scala; height: self.width;
+            y: (parent.height - self.height) / 2;
+            border-radius: self.width / 2;
+            background: root.scelto ? Token.azione : transparent;
+            border-width: Token.filo * 2;
+            border-color: root.scelto ? Token.azione : Token.bordo-comando;
+        }
+        Text { text: root.nome; vertical-alignment: center; overflow: elide; horizontal-stretch: 1; color: Token.testo; font-size: Token.corpo-stato * Aspetto.scala; font-weight: root.scelto ? Token.peso-forte : Token.peso-testo; }
+    }
+    chiave := FocusScope {
+        key-pressed(e) => {
+            if (e.text == " " || e.text == Key.Return) { root.scelta(); return accept; }
+            return reject;
+        }
+        changed has-focus => { if (self.has-focus) { root.ensure-visible(ScrollBehavior.instant); } }
+    }
+    tocco := TouchArea { mouse-cursor: pointer; clicked => { root.scelta(); } }
+}
+
+// A stretch the voice can be made from: choose it, and listen to it before choosing.
+component RigaTratto inherits Rectangle {
+    in property <Tratto> tratto;
+    in property <bool> scelto;
+    in property <bool> ascolta;
+    callback scelta();
+    callback ascolto();
+    property <bool> sopra: tocco.has-hover || chiave.has-focus;
+    accessible-role: radio-button;
+    accessible-label: root.tratto.titolo + ". " + root.tratto.dettaglio;
+    accessible-checked: root.scelto;
+    accessible-enabled: root.tratto.utilizzabile;
+    accessible-action-default => { if (root.tratto.utilizzabile) { root.scelta(); } }
+    forward-focus: chiave;
+    min-height: colonna.preferred-height;
+    border-radius: Token.raggio-pannello * Aspetto.scala;
+    background: root.scelto ? Token.velo-scelto : root.sopra ? Token.velo-sopra : transparent;
+    border-width: chiave.has-focus ? Token.tratto : Token.filo;
+    border-color: chiave.has-focus ? Token.voce : Token.bordo;
+    animate background { duration: Token.durata-scurisce; easing: Token.curva-dolce; }
+    tocco := TouchArea { mouse-cursor: root.tratto.utilizzabile ? pointer : default; clicked => { if (root.tratto.utilizzabile) { root.scelta(); } } }
+    colonna := VerticalLayout {
+        padding: Token.spazio-controlli * Aspetto.scala;
+        padding-left: Token.spazio-medio * Aspetto.scala;
+        spacing: Token.spazio-stretto * Aspetto.scala;
+        HorizontalLayout {
+            spacing: Token.spazio-controlli * Aspetto.scala;
+            Rectangle {
+                width: Token.punto * 1.6 * Aspetto.scala; height: self.width;
+                y: (parent.height - self.height) / 2;
+                border-radius: self.width / 2;
+                background: root.scelto ? Token.azione : transparent;
+                border-width: Token.filo * 2;
+                border-color: root.scelto ? Token.azione : Token.bordo-comando;
+            }
+            VerticalLayout {
+                alignment: center;
+                horizontal-stretch: 1;
+                Text { text: root.tratto.titolo; wrap: word-wrap; font-size: Token.corpo-comando * Aspetto.scala; font-weight: Token.peso-forte; color: root.tratto.utilizzabile ? Token.testo : Token.testo-spento; }
+                Text { text: root.tratto.dettaglio; wrap: word-wrap; font-size: Token.corpo-nota * Aspetto.scala; color: Token.testo-tenue; }
+            }
+            Pulsante {
+                y: (parent.height - self.height) / 2;
+                testo: root.ascolta ? @tr("Ferma") : @tr("Ascolta");
+                accessible-label: root.ascolta ? @tr("Ferma l'ascolto di {}", root.tratto.titolo) : @tr("Ascolta {}", root.tratto.titolo);
+                piccolo: true;
+                tipo: Tipo.quieto;
+                premuto => { root.ascolto(); }
+            }
+        }
+        if root.tratto.messaggi != "": Text {
+            text: root.tratto.messaggi;
+            wrap: word-wrap;
+            font-size: Token.corpo-nota * Aspetto.scala;
+            color: root.tratto.utilizzabile ? Token.testo-tenue : Token.attenzione;
+        }
+    }
+    // the focus and the keys sit under the controls of the row
+    chiave := FocusScope {
+        key-pressed(e) => {
+            if ((e.text == " " || e.text == Key.Return) && root.tratto.utilizzabile) { root.scelta(); return accept; }
+            return reject;
+        }
+        changed has-focus => { if (self.has-focus) { root.ensure-visible(ScrollBehavior.instant); } }
+    }
+}
+
+// Step 0: how to make the voice.
+component PassoScelta inherits VerticalLayout {
+    spacing: Token.spazio-medio * Aspetto.scala;
+    if Creazione.errore != "": Avviso {
+        testo: Creazione.errore;
+        con-guida: Creazione.errore-aiuto;
+        guida => { Creazione.apri-guida(); }
+    }
+    if Creazione.importa-in-corso: Attesa {
+        testo: @tr("Leggo «{}»…", Creazione.importa-file);
+        dettaglio: @tr("Cerco la parte in cui si sente meglio la voce.");
+        valore: Creazione.importa-avanzamento;
+        annulla => { Creazione.importa-annulla(); }
+    }
+    if !Creazione.importa-in-corso: principale := Strada {
+        // the focus enters the step on its main way, so the keyboard needs no search
+        init => { self.focus(); }
+        principale: true;
+        per-chi: @tr("Se hai ancora la voce");
+        titolo: @tr("Registrala adesso");
+        testo: @tr("Leggi ad alta voce un breve testo. Bastano dodici secondi di voce chiara, meglio finché la voce è forte.");
+        scelta => { Creazione.registra-scelta(); }
+    }
+    if !Creazione.importa-in-corso: Strada {
+        principale: false;
+        per-chi: @tr("Se la voce non c'è più");
+        titolo: @tr("Usa vecchie registrazioni");
+        testo: @tr("Un messaggio vocale, un video, una registrazione di prima: WAV, FLAC, MP3, OGG, OPUS, M4A, MP4 o WEBM.");
+        scelta => { Creazione.importa(); }
+    }
+    if !Creazione.importa-in-corso: Text {
+        text: @tr("Una stanza tranquilla e, se c'è, un microfono a cuffia. Puoi crearla anche per un'altra persona, con il suo permesso.");
+        wrap: word-wrap;
+        font-size: Token.corpo-stato * Aspetto.scala;
+        color: Token.testo-tenue;
+    }
+    Rectangle { vertical-stretch: 1; }
+}
+
+// Step 1: read the text aloud while the level and the twelve seconds show.
+component PassoRegistra inherits VerticalLayout {
+    in property <string> da-leggere;
+    init => { registra-tondo.focus(); }
+    property <duration> utile: Token.registrazione-utile;
+    property <int> decimi: Creazione.registrato / Token.intervallo-registrazione;
     property <string> tempo: floor(self.decimi / 10) + "," + mod(self.decimi, 10) + " s";
+    property <bool> basta: Creazione.parlato >= Token.registrazione-utile;
+    spacing: Token.spazio-largo * Aspetto.scala;
+    Text {
+        text: root.da-leggere;
+        wrap: word-wrap;
+        font-size: Token.corpo-lettura * Aspetto.scala;
+        font-weight: Token.peso-medio;
+        color: Creazione.registra ? Token.testo : Token.testo-tenue;
+        animate color { duration: Token.durata-scurisce; easing: Token.curva-dolce; }
+        vertical-stretch: 1;
+    }
+    // more than one microphone: the person chooses which hears the voice (never Kalliope's own)
+    if Creazione.microfoni.length > 1 && !Creazione.registra && !Creazione.apro && !Creazione.controllo: VerticalLayout {
+        spacing: Token.spazio-minimo * Aspetto.scala;
+        Text { text: @tr("Microfono"); font-size: Token.corpo-nota * Aspetto.scala; color: Token.testo-tenue; }
+        for m[i] in Creazione.microfoni: RigaMicrofono {
+            nome: m;
+            scelto: i == Creazione.microfono;
+            scelta => { Creazione.scegli-microfono(i); }
+        }
+    }
+    Livello { attivo: Creazione.registra; forza: clamp(Creazione.livello, 0.12, 1); }
+    if Creazione.errore != "": Avviso {
+        testo: Creazione.errore;
+        con-guida: Creazione.errore-aiuto;
+        guida => { Creazione.apri-guida(); }
+    }
+    HorizontalLayout {
+        spacing: Token.spazio-largo * Aspetto.scala;
+        alignment: start;
+        registra-tondo := Registra {
+            registra: Creazione.registra;
+            occupato: Creazione.apro || Creazione.controllo;
+            avanzamento: Creazione.parlato / Token.registrazione-utile;
+            premuto => { Creazione.registra-premuto(); }
+        }
+        VerticalLayout {
+            alignment: center;
+            horizontal-stretch: 1;
+            spacing: Token.spazio-minimo * Aspetto.scala;
+            Text {
+                text: Creazione.apro ? @tr("Apro il microfono…")
+                    : Creazione.controllo ? @tr("Controllo la registrazione…")
+                    : !Creazione.registra ? @tr("Premi il tondo e leggi")
+                    : root.basta ? root.tempo
+                    : @tr("{} · ne mancano {}", root.tempo, ceil((Token.registrazione-utile - Creazione.parlato) / 1s)); // fisso: un secondo, l'unità del conto alla rovescia
+                font-size: Token.corpo-bolla * Aspetto.scala;
+                font-weight: Token.peso-forte;
+                color: Token.testo;
+            }
+            Text {
+                text: Creazione.suggerimento != "" ? Creazione.suggerimento
+                    : root.basta ? @tr("Basta così: premi di nuovo per fermare.")
+                    : @tr("Ne bastano dodici secondi di voce: il cerchio si riempie. Il livello si muove con la tua voce.");
+                wrap: word-wrap;
+                font-size: Token.corpo-stato * Aspetto.scala;
+                color: Creazione.suggerimento != "" ? Token.attenzione : root.basta ? Token.azione : Token.testo-tenue;
+            }
+        }
+        if Creazione.registra: Pulsante {
+            y: (parent.height - self.height) / 2;
+            testo: @tr("Annulla");
+            tipo: Tipo.nudo;
+            premuto => { Creazione.registra-annulla(); }
+        }
+    }
+}
+
+// Step 2: listen, choose the stretch, name the voice, say whose it is.
+component PassoAscolta inherits VerticalLayout {
+    spacing: Token.spazio-medio * Aspetto.scala;
+    property <bool> unico: Creazione.tratti.length <= 1;
+    property <bool> si-puo: Creazione.tratti.length > 0 && Creazione.tratti[clamp(Creazione.tratto-scelto, 0, Creazione.tratti.length - 1)].utilizzabile;
+    if Creazione.nota != "": Text { text: Creazione.nota; wrap: word-wrap; font-size: Token.corpo-stato * Aspetto.scala; color: Token.testo-tenue; }
+    if root.unico: HorizontalLayout {
+        spacing: Token.spazio-largo * Aspetto.scala;
+        ascolta-comando := Pulsante {
+            init => { self.focus(); }
+            testo: Creazione.ascolto >= 0 ? @tr("Ferma l'ascolto") : @tr("Ascolta la registrazione");
+            tipo: Tipo.quieto;
+            abilitato: root.si-puo;
+            premuto => { if (Creazione.ascolto >= 0) { Creazione.ferma-ascolto(); } else { Creazione.ascolta(0); } }
+        }
+        Livello { attivo: Creazione.ascolto >= 0; forma: true; forza: 0.6; horizontal-stretch: 1; height: Token.altezza-comando * Aspetto.scala; }
+        Pulsante {
+            testo: @tr("Rifai");
+            tipo: Tipo.nudo;
+            premuto => { Creazione.rifai(); }
+        }
+    }
+    // a stretch that cannot make a voice is a problem; one that can, with a flaw, is a word of advice
+    if root.unico && Creazione.tratti.length == 1 && Creazione.tratti[0].messaggi != "" && !Creazione.tratti[0].utilizzabile: Avviso {
+        testo: Creazione.tratti[0].messaggi;
+    }
+    if root.unico && Creazione.tratti.length == 1 && Creazione.tratti[0].messaggi != "" && Creazione.tratti[0].utilizzabile: Text {
+        text: Creazione.tratti[0].messaggi;
+        wrap: word-wrap;
+        font-size: Token.corpo-stato * Aspetto.scala;
+        color: Token.testo-tenue;
+    }
+    if !root.unico: VerticalLayout {
+        spacing: Token.spazio-controlli * Aspetto.scala;
+        HorizontalLayout {
+            Text {
+                text: @tr("Ho trovato {} tratti in cui si sente la voce. Ascolta e scegli.", Creazione.tratti.length);
+                wrap: word-wrap;
+                horizontal-stretch: 1;
+                font-size: Token.corpo-stato * Aspetto.scala;
+                color: Token.testo-tenue;
+            }
+            Pulsante { testo: @tr("Rifai"); tipo: Tipo.nudo; premuto => { Creazione.rifai(); } }
+        }
+        for t[i] in Creazione.tratti: RigaTratto {
+            init => { if (i == 0) { self.focus(); } }
+            tratto: t;
+            scelto: i == Creazione.tratto-scelto;
+            ascolta: i == Creazione.ascolto;
+            scelta => { Creazione.tratto-scelto = i; }
+            ascolto => { if (i == Creazione.ascolto) { Creazione.ferma-ascolto(); } else { Creazione.ascolta(i); } }
+        }
+    }
+    if Creazione.crea-in-corso: Attesa {
+        testo: @tr("Creo la voce «{}»…", Creazione.nome);
+        dettaglio: @tr("Ci vuole poco. Quando è pronta la scegli da sola.");
+        valore: Creazione.crea-avanzamento;
+        annulla => { Creazione.crea-annulla(); }
+    }
+    if !Creazione.crea-in-corso: VerticalLayout {
+        spacing: Token.spazio-medio * Aspetto.scala;
+        alignment: start;
+        Text {
+            text: @tr("Come si chiama questa voce?");
+            font-size: Token.corpo-comando * Aspetto.scala;
+            font-weight: Token.peso-forte;
+            color: Token.testo;
+        }
+        Rectangle {
+            height: Token.altezza-comando * 1.3 * Aspetto.scala;
+            border-radius: Token.raggio-pannello * Aspetto.scala;
+            background: Token.campo;
+            Tratteggio { width: 100%; height: 100%; raggio: Token.raggio-pannello * Aspetto.scala; colore: Creazione.nome-messaggio != "" ? Token.attenzione : nome-campo.has-focus ? Token.tratteggio-fuoco : Token.tratteggio; }
+            nome-campo := TextInput {
+                x: Token.spazio-medio * Aspetto.scala;
+                width: parent.width - 2 * self.x;
+                vertical-alignment: center;
+                text <=> Creazione.nome;
+                font-size: Token.corpo-bolla * Aspetto.scala;
+                color: Token.testo;
+                accessible-label: @tr("Nome della voce");
+                edited => { Creazione.nome-modificato(); }
+                accepted => { consenso-voce.focus(); }
+                changed has-focus => { if (self.has-focus) { self.ensure-visible(ScrollBehavior.instant); } }
+            }
+            if Creazione.nome == "": Text {
+                x: Token.spazio-medio * Aspetto.scala;
+                text: @tr("Per esempio: la voce di Anna");
+                font-size: Token.corpo-bolla * Aspetto.scala;
+                color: Token.segnaposto;
+            }
+        }
+        if Creazione.nome-messaggio != "": Text {
+            text: Creazione.nome-messaggio;
+            wrap: word-wrap;
+            font-size: Token.corpo-stato * Aspetto.scala;
+            color: Token.attenzione;
+        }
+        consenso-voce := Consenso {
+            dato <=> Creazione.consenso;
+            testo: @tr("È la mia voce, oppure la persona che parla mi ha dato il permesso di usarla.");
+        }
+        if Creazione.permesso-messaggio != "": Text {
+            text: Creazione.permesso-messaggio;
+            wrap: word-wrap;
+            font-size: Token.corpo-stato * Aspetto.scala;
+            color: Token.attenzione;
+        }
+    }
+    if !Creazione.crea-in-corso && Creazione.errore != "": Avviso {
+        testo: Creazione.errore;
+        con-guida: Creazione.errore-aiuto;
+        guida => { Creazione.apri-guida(); }
+    }
+    if !Creazione.crea-in-corso: HorizontalLayout {
+        alignment: end;
+        vertical-stretch: 0;
+        spacing: Token.spazio-largo * Aspetto.scala;
+        Text {
+            // why the button waits: never a silent grey
+            text: !root.si-puo ? @tr("Da questa registrazione non si può creare la voce: rifai.")
+                : Creazione.nome == "" ? @tr("Manca il nome.")
+                : !Creazione.consenso ? @tr("Manca il permesso: spunta la casella.")
+                : "";
+            vertical-alignment: center;
+            horizontal-stretch: 1;
+            wrap: word-wrap;
+            font-size: Token.corpo-nota * Aspetto.scala;
+            color: Token.testo-tenue;
+        }
+        Pulsante {
+            testo: Creazione.nome-conferma != "" ? Creazione.nome-conferma : @tr("Crea la voce");
+            tipo: Tipo.pieno;
+            abilitato: root.si-puo && Creazione.nome != "" && Creazione.consenso;
+            premuto => { Creazione.crea(); }
+        }
+    }
+    Rectangle { vertical-stretch: 1; }
+}
+
+export component CreaVoce inherits Rectangle {
+    // the steps exist only while the screen is on: each takes the keyboard focus when it comes, so it never falls into the void
+    in property <bool> attiva: true;
+    in property <string> da-leggere: @tr("Ciao, sono io. Questa è la mia voce, per le riunioni e per le persone a cui voglio bene. La leggo con calma, come parlo ogni giorno.");
+    property <bool> stretta: root.width < Token.soglia-minima * Aspetto.scala;
     background: Token.fondo;
     forward-focus: primo;
-
-    Timer {
-        interval: Token.intervallo-registrazione;
-        running: root.registra;
-        triggered => { root.registrato += Token.intervallo-registrazione; }
-    }
 
     // in a small window the creation scrolls, nothing is cut
     scorre := Flickable {
@@ -232,143 +592,22 @@ export component CreaVoce inherits Rectangle {
         spacing: Token.spazio-largo * Aspetto.scala;
         HorizontalLayout {
             spacing: Token.spazio-largo * Aspetto.scala;
-            primo := Pulsante { testo: root.stretta ? @tr("←") : @tr("← Torna a scrivere"); accessible-label: @tr("Torna a scrivere"); tipo: Tipo.nudo; piccolo: true; premuto => { root.torna(); } }
+            primo := Pulsante { testo: root.stretta ? @tr("←") : @tr("← Torna a scrivere"); accessible-label: @tr("Torna a scrivere"); tipo: Tipo.nudo; piccolo: true; premuto => { Creazione.esci(); } }
             Rectangle { horizontal-stretch: 1; }
-            Passi { passo: root.passo; compatti: root.stretta; }
+            Passi { passo: Creazione.passo; compatti: root.stretta; }
         }
         Text {
-            text: root.passo == 0 ? @tr("Come vuoi creare la tua voce?")
-                : root.passo == 1 ? @tr("Leggi ad alta voce, con calma")
+            text: Creazione.passo == 0 ? @tr("Come vuoi creare la tua voce?")
+                : Creazione.passo == 1 ? @tr("Leggi ad alta voce, con calma")
                 : @tr("Ascoltala e dalle un nome");
             font-size: Token.corpo-titolo * Aspetto.scala;
             font-weight: Token.peso-titolo;
             color: Token.testo;
             wrap: word-wrap;
         }
-        if root.passo == 0: VerticalLayout {
-            spacing: Token.spazio-medio * Aspetto.scala;
-            Strada {
-                principale: true;
-                per-chi: @tr("Se hai ancora la voce");
-                titolo: @tr("Registrala adesso");
-                testo: @tr("Leggi ad alta voce un breve testo. Bastano dodici secondi di voce chiara, meglio finché la voce è forte.");
-                scelta => { root.passo = 1; }
-            }
-            Strada {
-                principale: false;
-                per-chi: @tr("Se la voce non c'è più");
-                titolo: @tr("Usa vecchie registrazioni");
-                testo: @tr("Un messaggio vocale, un video, una registrazione di prima: WAV, FLAC, MP3 o OGG.");
-                scelta => { root.importa(); }
-            }
-            Text {
-                text: @tr("Una stanza tranquilla e, se c'è, un microfono a cuffia. Puoi crearla anche per un'altra persona, con il suo permesso.");
-                wrap: word-wrap;
-                font-size: Token.corpo-stato * Aspetto.scala;
-                color: Token.testo-tenue;
-            }
-            Rectangle { vertical-stretch: 1; }
-        }
-        if root.passo == 1: VerticalLayout {
-            spacing: Token.spazio-largo * Aspetto.scala;
-            Text {
-                text: root.da-leggere;
-                wrap: word-wrap;
-                font-size: Token.corpo-lettura * Aspetto.scala;
-                font-weight: Token.peso-medio;
-                color: root.registra ? Token.testo : Token.testo-tenue;
-                animate color { duration: Token.durata-scurisce; easing: Token.curva-dolce; }
-                vertical-stretch: 1;
-            }
-            Livello { attivo: root.registra; }
-            HorizontalLayout {
-                spacing: Token.spazio-largo * Aspetto.scala;
-                alignment: start;
-                Registra {
-                    registra: root.registra;
-                    avanzamento: root.registrato / Token.registrazione-utile;
-                    premuto => {
-                        if (root.registra) { root.registra = false; root.passo = 2; }
-                        else { root.registrato = 0ms; root.registra = true; }
-                    }
-                }
-                VerticalLayout {
-                    alignment: center;
-                    horizontal-stretch: 1;
-                    spacing: Token.spazio-minimo * Aspetto.scala;
-                    Text {
-                        text: !root.registra ? @tr("Premi il tondo e leggi") : root.registrato >= Token.registrazione-utile ? root.tempo : @tr("{} · ne mancano {}", root.tempo, ceil((Token.registrazione-utile - root.registrato) / 1s)); // fisso: un secondo, l'unità del conto alla rovescia
-                        font-size: Token.corpo-bolla * Aspetto.scala;
-                        font-weight: Token.peso-forte;
-                        color: Token.testo;
-                    }
-                    Text {
-                        text: root.registrato >= Token.registrazione-utile ? @tr("Basta così: premi di nuovo per fermare.") : @tr("Ne bastano dodici secondi: il cerchio si riempie. Il livello si muove con la tua voce.");
-                        wrap: word-wrap;
-                        font-size: Token.corpo-stato * Aspetto.scala;
-                        color: root.registrato >= Token.registrazione-utile ? Token.azione : Token.testo-tenue;
-                    }
-                }
-            }
-        }
-        if root.passo == 2: VerticalLayout {
-            spacing: Token.spazio-medio * Aspetto.scala;
-            HorizontalLayout {
-                spacing: Token.spazio-largo * Aspetto.scala;
-                Pulsante {
-                    testo: root.ascolta ? @tr("Ferma l'ascolto") : @tr("Ascolta la registrazione");
-                    tipo: Tipo.quieto;
-                    premuto => { root.ascolta = !root.ascolta; }
-                }
-                Livello { attivo: root.ascolta; forma: true; forza: 0.6; horizontal-stretch: 1; height: Token.altezza-comando * Aspetto.scala; }
-                Pulsante {
-                    testo: @tr("Rifai");
-                    tipo: Tipo.nudo;
-                    premuto => { root.ascolta = false; root.registrato = 0ms; root.passo = 1; }
-                }
-            }
-            Text {
-                text: @tr("Come si chiama questa voce?");
-                font-size: Token.corpo-comando * Aspetto.scala;
-                font-weight: Token.peso-forte;
-                color: Token.testo;
-            }
-            Rectangle {
-                height: Token.altezza-comando * 1.3 * Aspetto.scala;
-                border-radius: Token.raggio-pannello * Aspetto.scala;
-                background: Token.campo;
-                Tratteggio { width: 100%; height: 100%; raggio: Token.raggio-pannello * Aspetto.scala; colore: nome-campo.has-focus ? Token.tratteggio-fuoco : Token.tratteggio; }
-                nome-campo := TextInput {
-                    x: Token.spazio-medio * Aspetto.scala;
-                    width: parent.width - 2 * self.x;
-                    vertical-alignment: center;
-                    text <=> root.nome;
-                    font-size: Token.corpo-bolla * Aspetto.scala;
-                    color: Token.testo;
-                    accessible-label: @tr("Nome della voce");
-                }
-                if root.nome == "": Text {
-                    x: Token.spazio-medio * Aspetto.scala;
-                    text: @tr("Per esempio: la voce di Anna");
-                    font-size: Token.corpo-bolla * Aspetto.scala;
-                    color: Token.segnaposto;
-                }
-            }
-            Consenso {
-                dato <=> root.consenso;
-                testo: @tr("È la mia voce, oppure la persona che parla mi ha dato il permesso di usarla.");
-            }
-            HorizontalLayout {
-                alignment: end;
-                Pulsante {
-                    testo: @tr("Crea la voce");
-                    tipo: Tipo.pieno;
-                    abilitato: root.nome != "" && root.consenso;
-                    premuto => { root.crea(root.nome); }
-                }
-            }
-            Rectangle { vertical-stretch: 1; }
-        }
+        if root.attiva && Creazione.passo == 0: PassoScelta { }
+        if root.attiva && Creazione.passo == 1: PassoRegistra { da-leggere: root.da-leggere; }
+        if root.attiva && Creazione.passo == 2: PassoAscolta { }
     }
     }
 }

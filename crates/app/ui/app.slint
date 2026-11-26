@@ -6,7 +6,8 @@ import { Token } from "token.slint";
 import { Aspetto, Situazione } from "kalliope/aspetto.slint";
 import { Finestra, Schermata } from "kalliope/finestra.slint";
 export { Catalogo } from "kalliope/catalogo.slint";
-export { Situazione, Schermata, Aspetto }
+import { Creazione, Tratto } from "kalliope/creazione.slint";
+export { Situazione, Schermata, Aspetto, Creazione, Tratto }
 
 export enum Phase { loading, ready, speaking, error }
 
@@ -21,6 +22,8 @@ export component AppWindow inherits Window {
     default-font-family: Token.font-testo;
     default-font-size: Token.corpo-comando;
     forward-focus: finestra;
+    // the meeting mode keeps the window above the others where the system allows a program to ask for it
+    always-on-top: root.compatta;
 
     in property <Phase> phase: Phase.loading;
     in property <string> status: @tr("Preparo la voce…");
@@ -40,15 +43,25 @@ export component AppWindow inherits Window {
     in-out property <string> draft;
     in-out property <bool> compatta: false;
     in-out property <Schermata> schermata: Schermata.scrivi;
-    in-out property <int> passo-voce: 0;
-    in-out property <bool> registra: false;
-    in-out property <duration> registrato: 0ms;
-    in-out property <string> nome-voce;
-    in-out property <bool> consenso-voce;
-    // the meeting mode's size and the bubble's pace, for Rust (the Token global has easing values Rust cannot see)
+    in-out property <bool> suggerimento-sopra: true;
+    in property <bool> senza-primo-piano: false;
+    in property <string> notizia;
+    // which words the voice has said (-1: all) and how far the next one has darkened: from the engine's pieces (avanzamento.rs)
+    in property <int> dette-vere: -1;
+    in property <float> sfumatura-vera: 0;
+    // the meeting mode's size, the window's own, and the pace of the words, for Rust (the Token global has easing values
+    // Rust cannot see)
     out property <length> compatta-larghezza: Token.compatta-larghezza;
     out property <length> compatta-altezza: Token.compatta-altezza;
+    out property <length> nativa-larghezza: Token.native-width;
+    out property <length> nativa-altezza: Token.native-height;
     out property <duration> durata-parola: Token.durata-parola;
+    out property <duration> durata-scurisce: Token.durata-scurisce;
+    out property <duration> intervallo-fotogramma: Token.intervallo-fotogramma;
+    out property <float> scala-massima: Token.scala-massima;
+    public function scrivi() { finestra.metti-a-fuoco(); }
+    public function mostra-informazioni() { finestra.apri-informazioni(); }
+    public function mostra-conferma() { finestra.apri-conferma(); }
 
     pure callback has-speech-text(string) -> bool;
     // the bubble darkens the words one by one: how many words a phrase has, and its beginning up to a number of words
@@ -59,9 +72,13 @@ export component AppWindow inherits Window {
     callback voice-changed(int);
     callback monitor-changed(bool);
     callback compatta-cambiata(bool);
-    callback importa-voce();
-    callback crea-voce(string);
-    callback apri-guida(string);
+    callback scala-cambiata(float);
+    callback suggerimento-letto();
+    callback notizia-chiusa();
+    callback apri-crea-voce();
+    callback svuota-cronologia();
+    callback apri-sito();
+    callback apri-guida(Situazione);
 
     finestra := Finestra {
         x: 0; y: 0; width: root.width; height: root.height;
@@ -70,6 +87,10 @@ export component AppWindow inherits Window {
         pronta: root.phase == Phase.ready || root.phase == Phase.speaking;
         parla: root.phase == Phase.speaking;
         history: root.history;
+        dette-vere: root.dette-vere;
+        sfumatura-vera: root.sfumatura-vera;
+        senza-primo-piano: root.senza-primo-piano;
+        notizia: root.notizia;
         parole: root.history.length > 0 ? root.conta-parole(root.history[0]) : 0;
         prefisso(t, n) => { return root.prefisso(t, n); }
         voices: root.voices;
@@ -79,18 +100,18 @@ export component AppWindow inherits Window {
         draft <=> root.draft;
         compatta <=> root.compatta;
         schermata <=> root.schermata;
-        passo-voce <=> root.passo-voce;
-        registra <=> root.registra;
-        registrato <=> root.registrato;
-        nome-voce <=> root.nome-voce;
-        consenso-voce <=> root.consenso-voce;
+        suggerimento-sopra <=> root.suggerimento-sopra;
         speak(t) => { return root.has-speech-text(t) && root.speak(t); }
         stop => { root.stop(); }
         voice-changed(i) => { root.voice-changed(i); }
         monitor-changed(on) => { root.monitor-changed(on); }
         compatta-cambiata(on) => { root.compatta-cambiata(on); }
-        importa-voce => { root.importa-voce(); }
-        crea-voce(n) => { root.crea-voce(n); }
-        apri-guida(u) => { root.apri-guida(u); }
+        scala-cambiata(f) => { root.scala-cambiata(f); }
+        suggerimento-letto => { root.suggerimento-letto(); }
+        notizia-chiusa => { root.notizia-chiusa(); }
+        apri-crea-voce => { root.apri-crea-voce(); }
+        svuota-cronologia => { root.svuota-cronologia(); }
+        apri-sito => { root.apri-sito(); }
+        apri-guida(s) => { root.apri-guida(s); }
     }
 }

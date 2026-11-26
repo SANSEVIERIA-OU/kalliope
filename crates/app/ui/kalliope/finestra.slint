@@ -4,7 +4,6 @@
 // Proportions (correction B1): the writing takes two parts of the room that is left, the phrases already said one part and
 // scroll; the phrase being said stays whole between them. Below a height, or in the meeting mode, the window gathers:
 // no history, the phrase being said on one line, the state in a word.
-import { AboutSlint } from "std-widgets.slint";
 import { Token } from "token.slint";
 import { Aspetto, Situazione } from "aspetto.slint";
 import { Pulsante, Tipo, Punto, Freccia, Interruttore, Tratteggio } from "forme.slint";
@@ -13,6 +12,8 @@ import { BollaVoce, FraseDetta } from "bolla.slint";
 import { Scrittura } from "scrittura.slint";
 import { CreaVoce } from "voce-propria.slint";
 import { Menu } from "menu.slint";
+import { Informazioni, Conferma } from "modali.slint";
+import { Creazione } from "creazione.slint";
 
 export enum Schermata { scrivi, crea-voce }
 
@@ -32,37 +33,31 @@ export component Finestra inherits Rectangle {
     in-out property <string> draft;
     in-out property <bool> compatta: false;
     in-out property <Schermata> schermata: Schermata.scrivi;
+    // the hint for keeping the window above the meeting: shown once, and only where the system does not let a program do it
     in-out property <bool> suggerimento-sopra: true;
-    // «Crea la voce» passes here: which step the creation is on (the demo starts on any step)
-    in-out property <int> passo-voce: 0;
-    in-out property <bool> registra: false;
-    in-out property <duration> registrato: 0ms;
-    in-out property <string> nome-voce;
-    in-out property <bool> consenso-voce;
+    in property <bool> senza-primo-piano: false;
+    // a short piece of news (a voice was made), which goes by itself
+    in property <string> notizia;
     callback speak(string) -> bool;
     callback stop();
     callback voice-changed(int);
     callback monitor-changed(bool);
     callback compatta-cambiata(bool);
-    callback importa-voce();
-    callback crea-voce(string);
-    // the page of the guide that resolves a problem (opened in the browser by vista.rs)
-    callback apri-guida(string);
+    callback scala-cambiata(float);
+    callback suggerimento-letto();
+    callback notizia-chiusa();
+    callback apri-crea-voce();
+    callback svuota-cronologia();
+    callback apri-sito();
+    // the page of the guide that answers the state the status line names (Rust builds the address, guida.rs)
+    callback apri-guida(Situazione);
 
-    // The words darken at the speed of speech while the voice speaks. The engine says when a phrase starts and ends, not
-    // where each word is: this is an estimate at the home page's measured rate (one word every 0.36 s), held on the last
-    // word until the voice is done.
-    property <bool> in-attesa: false;
-    property <duration> partenza;
-    property <duration> trascorso: root.parla && !root.in-attesa ? animation-tick() - root.partenza : 0ms;
-    // Stopped: the words not yet said stay faint, because they were not said (-1: not stopped)
-    property <int> dette-fermate: -1;
-    property <int> dette: root.dette-fermate >= 0 ? root.dette-fermate
-        : root.in-attesa ? 0
-        : root.parla ? min(root.parole - 1, floor(root.trascorso / Token.durata-parola))
-        : root.parole;
-    property <float> sfumatura: root.parla && !root.in-attesa && root.dette < root.parole - 1
-        ? clamp((root.trascorso - root.dette * Token.durata-parola) / Token.durata-scurisce, 0, 1) : 0;
+    // Which words are said comes from the engine's real pieces (avanzamento.rs): the words said so far (-1: all of them) and
+    // how far the next word has darkened. After Stop the words not said stay faint, because they were not said.
+    in property <int> dette-vere: -1;
+    in property <float> sfumatura-vera: 0;
+    property <int> dette: root.dette-vere >= 0 ? min(root.dette-vere, root.parole) : root.parole;
+    property <float> sfumatura: root.parla ? root.sfumatura-vera : 0;
     // a new phrase: false for one frame, then the bubble grows and the history slides up (correction I4)
     property <bool> nata: true;
     property <length> storia-prima;
@@ -82,25 +77,20 @@ export component Finestra inherits Rectangle {
     property <bool> una-riga: root.compatta || root.height < Token.soglia-bassa;
     property <bool> male: root.situazione == Situazione.nessuno-ascolta || root.situazione == Situazione.senza-microfono
         || root.situazione == Situazione.problema-voce;
-    property <string> guida: root.situazione == Situazione.problema-voce ? "https://sansevieria-ou.github.io/kalliope/it/installa/"
-        : "https://sansevieria-ou.github.io/kalliope/it/riunione/";
+    // Giulia, Marco, then each voice made from a recording: the first of them has the tint of «Tu», the others the grey green of
+    // the bars at rest
     property <[color]> tinte: [Token.tinta-voce-1, Token.tinta-voce-2, Token.tinta-propria, Token.tinta-voce-3, Token.tinta-voce-3, Token.tinta-voce-3];
     property <bool> menu-voce-aperto: false;
     property <bool> menu-altro-aperto: false;
-    changed parla => {
-        if (root.parla) { root.in-attesa = false; root.partenza = animation-tick(); }
-        else { root.in-attesa = false; }
-    }
+    property <bool> info-aperta: false;
+    property <bool> conferma-aperta: false;
 
     function ferma() {
-        if (root.parla) { root.dette-fermate = root.dette; }
         root.stop();
     }
     function di(testo: string) -> bool {
         root.storia-prima = frasi.preferred-height;
         if (root.speak(testo)) {
-            root.dette-fermate = -1;
-            root.in-attesa = !root.parla;
             root.nata = false;
             rinascita.running = true;
             return true;
@@ -111,8 +101,13 @@ export component Finestra inherits Rectangle {
     function chiudi-voce() { root.menu-voce-aperto = false; voce-chiave.focus(); }
     function apri-altro() { root.menu-voce-aperto = false; root.menu-altro-aperto = true; menu-altro.entra(); }
     function chiudi-altro() { root.menu-altro-aperto = false; altro.focus(); }
-    function piu-grande() { Aspetto.scala = min(Token.scala-massima, Aspetto.scala + Token.scala-passo); }
-    function piu-piccolo() { Aspetto.scala = max(1, Aspetto.scala - Token.scala-passo); }
+    function piu-grande() { Aspetto.scala = min(Token.scala-massima, Aspetto.scala + Token.scala-passo); root.scala-cambiata(Aspetto.scala); }
+    function piu-piccolo() { Aspetto.scala = max(1, Aspetto.scala - Token.scala-passo); root.scala-cambiata(Aspetto.scala); }
+    function testo-normale() { Aspetto.scala = 1; root.scala-cambiata(Aspetto.scala); }
+    public function apri-informazioni() { root.info-aperta = true; informazioni.apri(); }
+    function chiudi-informazioni() { root.info-aperta = false; altro.focus(); }
+    public function apri-conferma() { root.conferma-aperta = true; conferma-svuota.apri(); }
+    function chiudi-conferma() { root.conferma-aperta = false; altro.focus(); }
     public function metti-a-fuoco() { scrittura.focus(); }
 
     background: Token.fondo;
@@ -123,6 +118,22 @@ export component Finestra inherits Rectangle {
         running: false;
         triggered => { root.nata = true; self.running = false; }
     }
+
+    // Keys that work wherever the focus is: the text size (Ctrl and plus, minus, zero), and Esc, which stops the voice, or
+    // leaves «Crea la tua voce». A menu or a dialog that is open keeps its own Esc.
+    globali := FocusScope {
+        x: 0; y: 0; width: root.width; height: root.height;
+        focus-on-tab-navigation: false;
+        capture-key-pressed(e) => {
+            if (e.modifiers.control && (e.text == "+" || e.text == "=")) { root.piu-grande(); return accept; }
+            if (e.modifiers.control && (e.text == "-" || e.text == "_")) { root.piu-piccolo(); return accept; }
+            if (e.modifiers.control && e.text == "0") { root.testo-normale(); return accept; }
+            if (e.text == Key.Escape && !root.menu-voce-aperto && !root.menu-altro-aperto && !root.info-aperta && !root.conferma-aperta) {
+                if (root.schermata == Schermata.crea-voce) { Creazione.esci(); return accept; }
+                if (root.parla) { root.ferma(); return accept; }
+            }
+            return reject;
+        }
 
     VerticalLayout {
         x: 0; y: 0; width: root.width; height: root.height;
@@ -292,7 +303,7 @@ export component Finestra inherits Rectangle {
                     detto: root.prefisso(root.history[0], root.dette);
                     dicendo: root.prefisso(root.history[0], root.dette + 1);
                     sfumatura: root.sfumatura;
-                    parla: root.parla && !root.in-attesa;
+                    parla: root.parla;
                     non-sentita: root.situazione == Situazione.nessuno-ascolta;
                     riga-sola: root.una-riga;
                     corpo: (root.raccolta && !root.una-riga ? Token.corpo-detta : Token.corpo-bolla) * Aspetto.scala;
@@ -304,6 +315,7 @@ export component Finestra inherits Rectangle {
 
             RigaStato {
                 situazione: root.situazione;
+                notizia: root.notizia;
                 spiegazione: root.spiegazione;
                 compatta: root.raccolta;
                 impilata: root.minima && !root.raccolta;
@@ -311,7 +323,7 @@ export component Finestra inherits Rectangle {
                 if root.male: Pulsante {
                     y: (parent.height - self.height) / 2;
                     testo: @tr("Come si risolve"); piccolo: true; tipo: Tipo.quieto;
-                    premuto => { root.apri-guida(root.guida); }
+                    premuto => { root.apri-guida(root.situazione); }
                 }
                 if root.compatta: Pulsante {
                     y: (parent.height - self.height) / 2;
@@ -320,8 +332,9 @@ export component Finestra inherits Rectangle {
                     premuto => { root.compatta = false; root.compatta-cambiata(false); }
                 }
             }
-            // the hint shows only where it leaves room for the writing (correction I3)
-            if root.compatta && root.suggerimento-sopra && root.height >= Token.compatta-altezza * Aspetto.scala: HorizontalLayout {
+            // the hint shows only where the system does not let a program stay above the others (Wayland), once, and only
+            // where it leaves room for the writing (correction I3)
+            if root.compatta && root.suggerimento-sopra && root.senza-primo-piano && root.height >= Token.compatta-altezza * Aspetto.scala: HorizontalLayout {
                 spacing: Token.spazio-stretto * Aspetto.scala;
                 padding-left: Token.spazio-stretto * Aspetto.scala;
                 Text {
@@ -332,7 +345,7 @@ export component Finestra inherits Rectangle {
                     font-size: Token.corpo-nota * Aspetto.scala;
                     color: Token.testo-tenue;
                 }
-                Pulsante { testo: @tr("Ho capito"); piccolo: true; tipo: Tipo.nudo; premuto => { root.suggerimento-sopra = false; scrittura.focus(); } }
+                Pulsante { testo: @tr("Ho capito"); piccolo: true; tipo: Tipo.nudo; premuto => { root.suggerimento-sopra = false; root.suggerimento-letto(); scrittura.focus(); } }
             }
             scrittura := Scrittura {
                 compatta: root.raccolta;
@@ -360,17 +373,10 @@ export component Finestra inherits Rectangle {
             duration: Aspetto.movimento-ridotto ? 0ms : (root.schermata == Schermata.crea-voce ? Token.durata-pannello : Token.durata-pannello-uscita);
             easing: root.schermata == Schermata.crea-voce ? Token.curva-entrata : Token.curva-dolce;
         }
+        attiva: self.aperta > 0;
         visible: self.aperta > 0;
         opacity: self.aperta;
         x: Token.spostamento-entrata * 2 * (1 - self.aperta); y: 0; width: root.width; height: root.height;
-        passo <=> root.passo-voce;
-        registra <=> root.registra;
-        registrato <=> root.registrato;
-        nome <=> root.nome-voce;
-        consenso <=> root.consenso-voce;
-        torna => { root.schermata = Schermata.scrivi; root.registra = false; scrittura.focus(); }
-        importa => { root.importa-voce(); }
-        crea(n) => { root.crea-voce(n); root.schermata = Schermata.scrivi; scrittura.focus(); }
     }
 
     // A click outside an open menu closes it.
@@ -401,54 +407,41 @@ export component Finestra inherits Rectangle {
     }
     menu-altro := Menu {
         aperto: root.menu-altro-aperto;
-        voci: root.minima ? [@tr("Riunione"), @tr("Crea la tua voce"), @tr("Informazioni")] : [@tr("Crea la tua voce"), @tr("Informazioni")];
+        // «Riunione» joins when the bar has no room for it; «Svuota la cronologia» only when there is a history
+        voci: root.minima
+            ? (root.history.length > 0 ? [@tr("Riunione"), @tr("Crea la tua voce"), @tr("Informazioni"), @tr("Svuota la cronologia")] : [@tr("Riunione"), @tr("Crea la tua voce"), @tr("Informazioni")])
+            : (root.history.length > 0 ? [@tr("Crea la tua voce"), @tr("Informazioni"), @tr("Svuota la cronologia")] : [@tr("Crea la tua voce"), @tr("Informazioni")]);
         x: root.width - self.width - Token.spazio-medio * Aspetto.scala;
         y: Token.altezza-barra * Aspetto.scala - Token.spostamento-entrata / 2 * (1 - self.fase);
-        width: min(root.width - 2 * Token.spazio-medio * Aspetto.scala, Token.bolla-larghezza * Aspetto.scala / 2.5);
+        width: min(root.width - 2 * Token.spazio-medio * Aspetto.scala, Token.bolla-larghezza * Aspetto.scala / 2.2);
         scelta(i) => {
-            root.chiudi-altro();
+            root.menu-altro-aperto = false;
             if (root.minima && i == 0) { root.compatta = true; root.compatta-cambiata(true); }
-            else if (i == (root.minima ? 1 : 0)) { root.schermata = Schermata.crea-voce; }
-            else { informazioni.show(); }
+            else {
+                // the item's place among «Crea la tua voce», «Informazioni», «Svuota la cronologia»
+                if (i - (root.minima ? 1 : 0) == 0) { root.apri-crea-voce(); root.schermata = Schermata.crea-voce; }
+                else if (i - (root.minima ? 1 : 0) == 1) { root.apri-informazioni(); }
+                else { root.apri-conferma(); }
+            }
         }
         chiudi => { root.chiudi-altro(); }
     }
 
-    informazioni := PopupWindow {
-        width: root.width;
-        height: root.height;
-        close-policy: close-on-click-outside;
-        Rectangle {
-            background: Token.velo-modale;
-            TouchArea { clicked => { informazioni.close(); } }
-            Rectangle {
-                x: Token.spazio-largo * Aspetto.scala;
-                y: Token.spazio-largo * Aspetto.scala;
-                width: parent.width - 2 * self.x;
-                height: parent.height - 2 * self.y;
-                background: Token.pannello;
-                border-radius: Token.raggio-pannello * Aspetto.scala;
-                TouchArea { }
-                VerticalLayout {
-                    padding: Token.spazio-largo * Aspetto.scala;
-                    spacing: Token.spazio-controlli * Aspetto.scala;
-                    Text { text: "Kalliope " + root.version; color: Token.testo; font-size: Token.corpo-bolla * Aspetto.scala; font-weight: Token.peso-titolo; }
-                    Text {
-                        text: @tr("Scrivi e fatti sentire nelle videochiamate. La voce viene creata su questo computer: nessun testo lascia la tua macchina.");
-                        wrap: word-wrap; color: Token.testo; font-size: Token.corpo-stato * Aspetto.scala;
-                    }
-                    Text {
-                        text: @tr("© SANSEVIERIA OÜ. Licenza SANSEVIERIA 1.1. Voce: Klein-TTS-X1.5-Pro (Apache-2.0). ONNX Runtime (MIT). Dati di pronuncia da Wiktionary (CC BY-SA 4.0). Pocket TTS di Kyutai (kyutai.org), CC BY 4.0; convertito in ONNX e quantizzato da Kalliope. Fonte, modifiche e licenza nei file share/doc/kalliope/pocket-tts/NOTICE.txt e LICENSE del pacchetto.");
-                        wrap: word-wrap; color: Token.testo-tenue; font-size: Token.corpo-nota * Aspetto.scala;
-                    }
-                    AboutSlint { preferred-height: self.min-height; }
-                    Rectangle { vertical-stretch: 1; }
-                    HorizontalLayout {
-                        alignment: end;
-                        Pulsante { testo: @tr("Chiudi"); tipo: Tipo.pieno; premuto => { informazioni.close(); } }
-                    }
-                }
-            }
-        }
+    informazioni := Informazioni {
+        x: 0; y: 0; width: root.width; height: root.height;
+        aperta: root.info-aperta;
+        versione: root.version;
+        apri-sito => { root.apri-sito(); }
+        chiusa => { root.chiudi-informazioni(); }
+    }
+    conferma-svuota := Conferma {
+        x: 0; y: 0; width: root.width; height: root.height;
+        aperta: root.conferma-aperta;
+        titolo: @tr("Svuotare la cronologia?");
+        testo: @tr("Le frasi già dette spariscono da questo computer. Non si può tornare indietro.");
+        conferma-testo: @tr("Svuota");
+        confermato => { root.svuota-cronologia(); root.chiudi-conferma(); scrittura.focus(); }
+        annullato => { root.chiudi-conferma(); }
+    }
     }
 }

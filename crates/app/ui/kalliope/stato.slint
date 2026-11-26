@@ -31,12 +31,16 @@ export component RigaStato inherits Rectangle {
     // the engine's own sentence (session.rs): used for every state that something must be done about
     in property <string> spiegazione;
     in property <bool> compatta: false;
+    // a piece of good news (a voice was made) says itself in the line's place, in the colour of the action, and goes by itself
+    in property <string> notizia;
     // a narrow window: the name of the state above, its explanation below, wrapped at the whole width
     in property <bool> impilata: false;
     property <bool> male: root.situazione == Situazione.nessuno-ascolta || root.situazione == Situazione.senza-microfono
         || root.situazione == Situazione.problema-voce || root.situazione == Situazione.avviso;
+    property <bool> bene: root.notizia != "" && !root.male;
     property <string> titolo:
-        root.situazione == Situazione.preparazione ? @tr("Preparo la voce")
+        root.bene ? @tr("Voce nuova")
+        : root.situazione == Situazione.preparazione ? @tr("Preparo la voce")
         : root.situazione == Situazione.pronta ? @tr("Pronta")
         : root.situazione == Situazione.parla ? @tr("Sto parlando")
         : root.situazione == Situazione.nessuno-ascolta ? @tr("Nessuno ti sente")
@@ -44,7 +48,8 @@ export component RigaStato inherits Rectangle {
         : root.situazione == Situazione.problema-voce ? @tr("La voce non parte")
         : @tr("Attenzione");
     property <string> detto:
-        root.situazione == Situazione.preparazione ? @tr("Fra poco puoi scrivere e farti sentire.")
+        root.bene ? root.notizia
+        : root.situazione == Situazione.preparazione ? @tr("Fra poco puoi scrivere e farti sentire.")
         : root.situazione == Situazione.pronta ? @tr("Nella riunione scegli «Kalliope» come microfono.")
         : root.situazione == Situazione.parla ? @tr("Esc la ferma.")
         : root.spiegazione;
@@ -81,7 +86,7 @@ export component RigaStato inherits Rectangle {
                 vertical-alignment: center;
                 font-size: Token.corpo-comando * Aspetto.scala;
                 font-weight: Token.peso-forte;
-                color: root.male ? Token.attenzione : Token.testo;
+                color: root.male ? Token.attenzione : root.bene ? Token.azione : Token.testo;
             }
             if root.impilata: Text {
                 text: root.detto;

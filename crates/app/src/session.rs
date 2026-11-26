@@ -290,20 +290,12 @@ impl Session {
         self.history.iter().map(|h| h.as_str().into()).collect()
     }
 
-    #[allow(
-        dead_code,
-        reason = "called by the window, which the new window wires (#13)"
-    )]
     /// Empties the history, in the window and on the disk.
     pub fn clear_history(&mut self) {
         self.history.clear();
         history::save(&self.history_file, &self.history);
     }
 
-    #[allow(
-        dead_code,
-        reason = "called by the window, which the new window wires (#13)"
-    )]
     /// Sets and remembers the size of the text (1 is the design's); returns the size kept, within
     /// [`settings::TEXT_SCALE`].
     pub fn set_text_scale(&mut self, scale: f32) -> f32 {
@@ -318,10 +310,6 @@ impl Session {
         scale
     }
 
-    #[allow(
-        dead_code,
-        reason = "called by the window, which the new window wires (#13)"
-    )]
     /// Turns the compact meeting mode on or off, and remembers it.
     pub fn set_compact(&mut self, on: bool) {
         self.settings.compact = on;
@@ -346,10 +334,6 @@ impl Session {
         self.choices.iter().position(|v| v == id)
     }
 
-    #[allow(
-        dead_code,
-        reason = "called by the window, which the new window wires (#13)"
-    )]
     /// The microphones a voice can be recorded from, the default first; never Kalliope's own.
     pub fn microphones(&self) -> Result<Vec<Microphone>, String> {
         own_voice::microphones()
