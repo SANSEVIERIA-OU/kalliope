@@ -1,0 +1,10 @@
+[package]
+name = "kalliope-tokens"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+description = "The bridge from design-system/token.css to Slint: build-time values for the window"
+
+[dependencies]

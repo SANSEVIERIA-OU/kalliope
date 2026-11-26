@@ -4,11 +4,20 @@
    (componenti/) usano soltanto questi nomi. Ricavato dalla home senza cambiare un valore: dove due valori quasi
    uguali hanno lo stesso ruolo restano due token (vedi «Da decidere» in SISTEMA.md). Ruoli e usi: TOKEN.md. */
 :root {
-  /* Native desktop window, in logical pixels. GTK and Slint read these at build time. */
+  /* La finestra del programma (Slint). Ciò che la finestra usa sono i token --app-*: la compilazione li legge (crates/tokens), risolve
+     var() e ne fa il globale Token; la finestra non scrive nessun colore, misura o tempo suo. Un valore condiviso arriva alla finestra
+     con un ruolo --app-* che lo richiama (--app-spazio-controlli: var(--spazio-10)). Il tema chiaro, quando c'è, sta in
+     :root[data-tema="chiaro"]; questo :root è lo scuro. La convenzione è in TOKEN.md, «La finestra del programma». */
+  /* Dimensioni all'apertura e minime, in pixel logici. */
   --app-native-width: 560px;
   --app-native-height: 460px;
   --app-native-min-width: 360px;
   --app-native-min-height: 320px;
+  --app-spazio-controlli: var(--spazio-10);   /* lo spazio comune fra i controlli della finestra */
+  --app-font-testo: var(--font-testo);   /* il carattere del testo della finestra: Lexend (di una pila, la finestra prende la prima famiglia) */
+  --app-peso-testo: var(--peso-testo);   /* il peso del testo della finestra */
+  --app-peso-forte: var(--peso-forte);   /* il peso di ciò che conta nella finestra: titoli, comandi */
+  --app-carattere-testo: url("caratteri/lexend/Lexend-wght.ttf");   /* il file di Lexend, tutti i pesi, che il programma porta dentro di sé: una riga --app-carattere-* per ogni carattere (uno per scrittura) */
 
   /* Direzione di scrittura */
   --verso: 1;   /* 1 con la scrittura da sinistra a destra, −1 da destra a sinistra (la cambia :root:dir(rtl), più sotto). Ciò che ha un verso (uno spostamento orizzontale, l'origine di una crescita, l'asse di una barra) la moltiplica; scena.js la legge da qui */
@@ -418,11 +427,11 @@
   --sotto-margine-sopra: -14px;
   --sotto-margine-sopra-telefono: -16px;
   /* · La riunione ricostruita, con il microfono */
-  --app-comandi-spazio-interno: 8px 0 4px;
-  --app-griglia-barre-larghezza-telefono: 5px;
-  --app-griglia-nome-spazio-interno-telefono: 2px 7px;
-  --app-griglia-righe: 104px 104px;
-  --app-griglia-righe-telefono: 78px 78px;
+  --riunione-app-comandi-spazio-interno: 8px 0 4px;
+  --riunione-app-griglia-barre-larghezza-telefono: 5px;
+  --riunione-app-griglia-nome-spazio-interno-telefono: 2px 7px;
+  --riunione-app-griglia-righe: 104px 104px;
+  --riunione-app-griglia-righe-telefono: 78px 78px;
   --microfono-spazio-interno-blocco: 4px;
   --microfono-spazio-interno-inline: 6px 4px;   /* inizio e fine */
   --microfono-spazio-interno-telefono-blocco: 3px;
@@ -553,7 +562,7 @@
   /* · La finestra di Kalliope ricostruita */
   --finestra-raggio: 8px;
   /* · La riunione ricostruita, con il microfono */
-  --app-griglia-riquadro-raggio: 13px;
+  --riunione-app-griglia-riquadro-raggio: 13px;
   /* · La strada della voce */
   --computer-raggio: 30px;
   --nodo-altri-mini-raggio: 9px;
@@ -614,7 +623,7 @@
   --paola-fondo: linear-gradient(160deg, var(--paola-fondo-alto), var(--paola-fondo-basso));
   --riquadro-fondo: linear-gradient(160deg, var(--tu-fondo-alto), var(--tu-fondo-basso));
   /* · La riunione ricostruita, con il microfono */
-  --app-icona-prima-maschera: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect x='14' y='5' width='12' height='20' rx='6'/%3E%3Cpath d='M9 19a11 11 0 0 0 22 0M20 30v6' fill='none' stroke='%23000' stroke-width='3.5' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  --riunione-app-icona-prima-maschera: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect x='14' y='5' width='12' height='20' rx='6'/%3E%3Cpath d='M9 19a11 11 0 0 0 22 0M20 30v6' fill='none' stroke='%23000' stroke-width='3.5' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
   /* · La scheda dell'ascolto */
   --voce-tondo-prima-fondo: linear-gradient(90deg, var(--bordeaux) 0 4px, transparent 4px 8px, var(--bordeaux) 8px 12px);
   /* · Le frasi del filo */

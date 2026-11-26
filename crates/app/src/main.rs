@@ -6,8 +6,6 @@
 mod audio;
 mod catalog;
 mod engine;
-#[cfg(target_os = "linux")]
-mod gnome;
 mod paths;
 mod session;
 mod settings;
@@ -98,10 +96,6 @@ fn say(text: &str) -> ExitCode {
 }
 
 fn run_window() -> Result<(), Box<dyn std::error::Error>> {
-    #[cfg(target_os = "linux")]
-    if gnome::active() {
-        return Ok(gnome::run()?);
-    }
     let ui = AppWindow::new()?;
     let _ = slint::set_xdg_app_id("io.github.sansevieria_ou.kalliope");
     let weak = ui.as_weak();

@@ -14,10 +14,11 @@ pkgdesc='Type, and be heard in video calls: a local voice through a virtual micr
 arch=('x86_64')
 url='https://github.com/SANSEVIERIA-OU/kalliope'
 license=('LicenseRef-SANSEVIERIA-1.1')
-# Linked: glibc, gcc-libs, fontconfig. Loaded at run time: libxkbcommon always, then wayland or
-# the X11 libraries for the window, and libpipewire for the virtual microphone. ONNX Runtime and
-# the voice models come in the tarball (lib/, share/kalliope/): nothing is downloaded.
-depends=('glibc' 'gcc-libs' 'fontconfig' 'libxkbcommon' 'qt6-base' 'qt6-wayland' 'python-gobject' 'libadwaita')
+# One Slint window on every desktop, drawn by Skia on the CPU: no toolkit, no scripting runtime, no GPU driver. Linked: glibc, gcc-libs,
+# fontconfig. Loaded at run time: libxkbcommon always, then libwayland-client (Wayland) or libX11, libX11-xcb, libXcursor, libXi
+# and libxkbcommon-x11 (X11) for the window, and libpipewire for the virtual microphone. ONNX Runtime and the voice models
+# come in the tarball (lib/, share/kalliope/): nothing is downloaded. tools/test_packaging.py checks this list against the binary.
+depends=('glibc' 'gcc-libs' 'fontconfig' 'libxkbcommon')
 optdepends=(
   'libpipewire: the virtual microphone'
   'wayland: the window on Wayland'

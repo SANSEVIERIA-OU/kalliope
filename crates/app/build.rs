@@ -1,27 +1,34 @@
 // SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
-mod token_bridge;
+//! Writes `token.slint` from design-system/token.css (crates/tokens) and compiles the window with it.
+use std::path::PathBuf;
+
+/// The one style of the standard widgets on every platform: it needs no toolkit besides Slint and follows the
+/// system light or dark scheme. The look of the window will come from `Token`, not from a style.
+const STYLE: &str = "fluent";
 
 fn main() {
-    let manifest = std::path::PathBuf::from(std::env::var_os("CARGO_MANIFEST_DIR").unwrap());
-    let source = manifest.join("../../design-system/token.css");
+    let manifest = PathBuf::from(std::env::var_os("CARGO_MANIFEST_DIR").unwrap());
+    let system = manifest.join("../../design-system");
+    let source = system.join("token.css");
     println!("cargo:rerun-if-changed={}", source.display());
-    println!("cargo:rerun-if-changed=token_bridge.rs");
-    let css = std::fs::read_to_string(source).expect("design-system/token.css");
-    let (rust, slint) = token_bridge::render(&css).expect("native geometry tokens");
-    let output = std::path::PathBuf::from(std::env::var_os("OUT_DIR").unwrap());
-    for (name, content) in [("native_tokens.rs", rust), ("native_tokens.slint", slint)] {
-        let path = output.join(name);
-        if std::fs::read_to_string(&path).ok().as_ref() != Some(&content) {
-            std::fs::write(path, content).expect("write native geometry tokens");
+    let css = std::fs::read_to_string(&source).expect("design-system/token.css");
+    let tokens = match kalliope_tokens::render(&css) {
+        Ok(tokens) => tokens,
+        Err(e) => {
+            println!("cargo::error=design-system/token.css cannot become the window's tokens: {e}");
+            std::process::exit(1);
         }
-    }
-    let style = match std::env::var("CARGO_CFG_TARGET_OS").as_deref() {
-        Ok("linux") => "qt",
-        Ok("macos") => "cupertino",
-        _ => "fluent",
     };
+    for font in &tokens.fonts {
+        println!("cargo:rerun-if-changed={}", system.join(font).display());
+    }
+    let output = PathBuf::from(std::env::var_os("OUT_DIR").unwrap());
+    let path = output.join("token.slint");
+    if std::fs::read_to_string(&path).ok().as_deref() != Some(&tokens.slint) {
+        std::fs::write(&path, &tokens.slint).expect("write token.slint");
+    }
     let config = slint_build::CompilerConfiguration::new()
-        .with_include_paths(vec![output])
-        .with_style(style.into());
+        .with_include_paths(vec![output, system])
+        .with_style(STYLE.into());
     slint_build::compile_with_config("ui/app.slint", config).expect("ui/app.slint");
 }

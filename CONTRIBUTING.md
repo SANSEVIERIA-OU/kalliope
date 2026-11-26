@@ -70,7 +70,7 @@ these variables: the packages bring ONNX Runtime and the models, and the program
 themselves. Updating those files is for maintainers, with the owner's permission to upload:
 [docs/releasing.md](docs/releasing.md).
 
-On Linux, install the Qt 6 base development kit before compiling the desktop binary (on Ubuntu, `qt6-base-dev`). The GNOME window also needs the distribution's Python 3 GTK bindings and Adwaita typelib (`python3-gi gir1.2-adw-1` on Ubuntu). KDE uses the Qt platform integration and widget style from the desktop session.
+On Linux, install the fontconfig development files before compiling the desktop binary (on Ubuntu, `libfontconfig-dev`). The window is one Slint window on every desktop: there is no Qt, GTK or Python to install. Its values are generated from `design-system/token.css` (`crates/tokens`), and `python3 -I tools/slint_valori.py` rejects a colour, length, duration or typeface written by hand in `crates/app/ui/*.slint`.
 
 CI runs these checks on Linux for every push, and also on Windows and macOS for `main`. The Linux
 packages are made by `packaging/linux/build-packages.sh`; [docs/releasing.md](docs/releasing.md)

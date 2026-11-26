@@ -16,21 +16,18 @@ kalliope-text.workspace = true
 kalliope-phonemes.workspace = true
 kalliope-voice.workspace = true
 kalliope-mic.workspace = true
-# Windows/macOS use winit and the software renderer; Linux also has the Qt platform backend.
-# AccessKit for screen readers. Licensed to us under the Slint Royalty-free License 2.0, which
-# requires the AboutSlint widget in the About dialog.
+# One window through winit on every platform. The renderer is Skia on the CPU (renderer-skia-software): it needs no GPU,
+# driver or OpenGL library, draws the same pixels on every machine, shapes Arabic, Devanagari and the other scripts, and
+# supports the rotations and scaling that Slint's own software renderer lacks (measured: finestra-unica-prove/foto/testo).
+# AccessKit for screen readers.
 slint = { version = "1.19.1", default-features = false, features = [
     "std",
     "compat-1-2",
     "backend-winit",
-    "renderer-software",
-    "software-renderer-systemfonts",
+    "renderer-skia-software",
     "accessibility",
 ] }
 
-[target.'cfg(target_os = "linux")'.dependencies]
-slint = { version = "1.19.1", default-features = false, features = ["backend-qt"] }
-serde_json = "1"
-
 [build-dependencies]
+kalliope-tokens.workspace = true
 slint-build = "1.19.1"

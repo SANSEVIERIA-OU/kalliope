@@ -5,7 +5,55 @@ Per ogni token: il valore, il ruolo e dove è usato (componente, selettore, prop
 scritto nella pagina, identico; un token riunisce tutti gli usi di quel valore **dentro lo stesso ruolo**. Dove due valori quasi uguali potrebbero essere lo stesso ruolo
 restano due token: sono elencati in «Da decidere» (non li ho uniti, perché cambierebbe l'aspetto).
 
-**Finestra desktop (26/11/2026).** La 0.2 usa `--spazio-10` per lo spazio comune fra i controlli. Le dimensioni all'apertura sono `--app-native-width` (560 px) e `--app-native-height` (460 px). Alla dimensione minima, `--app-native-min-width` (360 px) e `--app-native-min-height` (320 px), il contenuto può scorrere. La compilazione legge questi valori da `token.css` per entrambe le interfacce. Caratteri e palette provengono dal desktop.
+## La finestra del programma (ponte `token.css` → Slint, 26/11/2026)
+
+Il programma ha una sola finestra Slint, per Linux, Windows e macOS. I suoi valori non si scrivono nei file `.slint`: li legge la compilazione da questo
+`token.css` (`crates/tokens`, chiamata da `crates/app/build.rs`) e ne fa un globale Slint, `Token`. `tools/slint_valori.py` (in CI) rifiuta in
+`crates/app/ui/*.slint` un colore, una misura diversa da zero, un tempo, una famiglia di caratteri o un peso scritti a mano. Un valore che alla finestra
+manca si aggiunge qui, con il suo ruolo.
+
+**Che cosa vede la finestra.** Soltanto i token `--app-*` dichiarati in `:root`, e soltanto lì: un `:root` dentro `@media`, `@font-face`, `:lang()` e ogni altro selettore
+sono del sito. `var()` si risolve alla compilazione: un valore condiviso arriva alla finestra con un ruolo `--app-*` che lo richiama
+(`--app-spazio-controlli: var(--spazio-10)`), così i nomi sono per ruolo anche nella finestra e il valore condiviso non ha due nomi. La finestra legge `Token.spazio-controlli`
+(il nome senza `--app-`). `--app-` è il nome della finestra del programma: i token della riunione ricostruita sul sito (la griglia, i comandi, l'icona di una
+videochiamata) si chiamano `--riunione-app-*` (rinominati il 26/11/2026, valori invariati).
+
+**Che cosa può essere un valore `--app-*`** (altro è un errore di compilazione, con il nome del token e il motivo):
+
+| Valore in `token.css` | Proprietà Slint | Note |
+|---|---|---|
+| colore: `#rgb`, `#rrggbb`, `#rrggbbaa`, `rgb()`, `rgba()`, `hsl()`, `hwb()`, `lab()`, `lch()`, `oklab()`, `oklch()`, `color(srgb …)`, `color-mix(in srgb\|srgb-linear\|oklab\|oklch\|lab\|lch\|hsl, …)`, `transparent`, `white`, `black` | `color` | convertito a 8 bit come lo dipinge Chromium (prove in `crates/tokens`); fuori dal gamut sRGB ogni canale è tagliato, come fa Chromium (non c'è riduzione di croma); alfa arrotondato come i browser; la mescola ha la tinta come Chromium (la tinta di un colore da sRGB con croma OKLCH sotto 0,02 manca) |
+| lunghezza: `12px`, `0.75rem` (1 rem = 16 px: `html` non ha una grandezza sua), `calc()`, `min()`, `max()`, `clamp()` con `px`, `rem` e numeri | `length` | `vw`, `vh`, `svh`, `em`, `ch` e gli angoli non hanno senso per una finestra: errore |
+| tempo: `320ms`, `1.1s` | `duration` | in millisecondi |
+| numero: `600`, `0.42` | `int` o `float` | pesi, opacità, rapporti |
+| percentuale: `42%` | `float` (0,42) | |
+| curva: `cubic-bezier(…)`, `ease`, `ease-in`, `ease-out`, `ease-in-out`, `linear` | `easing` | |
+| famiglia: `"Lexend", "Lexend esteso", system-ui…` | `string` | la prima famiglia della pila: i glifi che mancano li cerca Slint nei caratteri di riserva |
+| `url("caratteri/…/Faccia.ttf")` in un token `--app-carattere-*` | (non è una proprietà) | il file entra nel programma: `import` nel file generato. Slint incorpora TTF, OTF e TTC, non WOFF |
+
+Un valore composto (un `padding: 8px 0 4px`, un'ombra, una griglia, una maschera `url()` di un disegno, un gradiente) non è un valore della finestra: si divide in un token per ogni parte, o resta fuori da `--app-*`.
+
+**Chiaro e scuro.** Il `:root` è il tema **scuro**, che è anche quello del sito. Il tema chiaro è la regola `:root[data-tema="chiaro"] { --app-…: … }` (un attributo che il sito non imposta mai: il sito non cambia).
+`Token.dark` segue il sistema (`Palette.color-scheme`, che Slint legge dal portale delle impostazioni XDG su Linux, da Windows e da macOS; senza risposta è chiaro, come ogni controllo di Slint) e
+un colore con due valori diventa `dark ? scuro : chiaro`. Un tema chiaro incompleto ferma la compilazione, con un messaggio che nomina ogni colore che manca:
+- un token con un valore chiaro e nessuno scuro in `:root`;
+- un colore `--app-*` senza valore chiaro (né suo, né di un token che richiama: cambiare `--testo` nel chiaro cambia ogni ruolo che lo richiama), a meno che il suo nome finisca per `-fisso`
+  (lo stesso colore nei due temi: il marchio, il bianco sul pulsante);
+- un colore `-fisso` a cui il chiaro dà un altro valore;
+- un valore di un tipo nel tema scuro e di un altro nel chiaro.
+Finché non esiste nessuna regola chiara, ogni colore ha un solo valore. I colori `--app-*` che ci sono oggi (`--app-fondo`, `--app-campo`, `--app-accento`… del disegno della finestra sulla pagina «installa»)
+sono i valori di allora, un solo tema: quando arriva il tema chiaro, ognuno va ridisegnato, tolto o chiamato `-fisso`.
+
+**Caratteri.** Una riga `--app-carattere-NOME: url("caratteri/…/Faccia.ttf")` porta un file nel programma. Lexend (`caratteri/lexend/Lexend-wght.ttf`, tutti i pesi) è il primo. Un carattere per scrittura si
+aggiunge con una riga: il file `.ttf` si ricava dal `.woff2` del sottoinsieme con `tools/caratteri_ttf.py` (senza perdere nulla: gli stessi glifi, tabelle e regole; la CI controlla che il `.ttf` accanto a un `.woff2` sia quello che il `.woff2` dà),
+mai copiato a mano. Attenzione ai nomi interni: Geologica ha come famiglia «Geologica Thin» nel file istanziato al valore predefinito del peso (100).
+
+**Nomi.** `--app-nome-della-cosa` diventa `Token.nome-della-cosa`: minuscole, cifre, trattini singoli, prima una lettera; non una parola di Slint (`in`, `out`, `for`…) né `dark`.
+Due dichiarazioni dello stesso token in `:root` con valori diversi sono un'ambiguità e fermano la compilazione.
+
+**I ruoli di partenza** (26/11/2026; gli altri li aggiunge chi disegna la finestra): `--app-native-width`, `--app-native-height`, `--app-native-min-width`, `--app-native-min-height` (dimensioni all'apertura e minime: 560 × 460 e 360 × 320 px, il contenuto
+oltre il minimo scorre); `--app-spazio-controlli` (= `--spazio-10`, lo spazio comune fra i controlli); `--app-font-testo` (= `--font-testo`, Lexend); `--app-peso-testo` (= 400) e `--app-peso-forte` (= 600);
+`--app-carattere-testo` (il file di Lexend). Il resto di `--app-*` è il disegno della finestra sulla pagina «installa», con i valori di allora.
 
 **Specchio (16/11/2026).** Per poter specchiare la pagina da destra a sinistra, i fogli usano proprietà logiche (`margin-inline-start`, `inset-inline-end`, `padding-block`…) e i token non dicono più «sinistra» o «destra»: `--f-cursore-margine-inizio`, `--impulso-margine-inizio`, `--luce-inizio`, `--luce-inizio-medio`, `--tratto-scena-notte-spazio-inizio` e `-fine` (prima `-sinistra` e `-destra`). Le 11 scorciatoie con il lato sinistro diverso dal destro (`padding: 0 24px 0 8px`) sono due token, uno per l'altezza e uno per la riga: `--pillola-spazio-interno-2-blocco` (alto e basso) e `--pillola-spazio-interno-2-inline` (inizio e fine, nell'ordine: `8px 24px`). `--verso` è nuovo. I valori sono quelli di prima: in italiano la pagina è identica, pixel per pixel. `tools/css_logico.py` controlla che nessuna proprietà fisica, nessuna scorciatoia asimmetrica e nessun testo scritto nel CSS rientri.
 
@@ -415,11 +463,11 @@ numerato in ordine di valore (`--corpo-7`, `--spazio-12`): il numero è il posto
 | `--sotto-f-pulsante-spazio-interno` | `0 7px` | misura del componente «La finestra di Kalliope ricostruita» | 1 uso: `.sotto .f-pulsante` padding ((max-width: 760px)) |
 | `--sotto-margine-sopra` | `-14px` | misura del componente «La finestra di Kalliope ricostruita» | 1 uso: `.sotto` margin-top |
 | `--sotto-margine-sopra-telefono` | `-16px` | misura del componente «La finestra di Kalliope ricostruita» | 1 uso: `.sotto` margin-top ((max-width: 760px)) |
-| `--app-comandi-spazio-interno` | `8px 0 4px` | misura del componente «La riunione ricostruita, con il microfono» | 1 uso: `.app-comandi` padding ((max-width: 420px)) |
-| `--app-griglia-barre-larghezza-telefono` | `5px` | misura del componente «La riunione ricostruita, con il microfono» | 1 uso: `.app-griglia .barre i` width ((max-width: 760px)) |
-| `--app-griglia-nome-spazio-interno-telefono` | `2px 7px` | misura del componente «La riunione ricostruita, con il microfono» | 1 uso: `.app-griglia .nome` padding ((max-width: 760px)) |
-| `--app-griglia-righe` | `104px 104px` | misura del componente «La riunione ricostruita, con il microfono» | 1 uso: `.app-griglia` grid-template-rows |
-| `--app-griglia-righe-telefono` | `78px 78px` | misura del componente «La riunione ricostruita, con il microfono» | 1 uso: `.app-griglia` grid-template-rows ((max-width: 760px)) |
+| `--riunione-app-comandi-spazio-interno` | `8px 0 4px` | misura del componente «La riunione ricostruita, con il microfono» | 1 uso: `.app-comandi` padding ((max-width: 420px)) |
+| `--riunione-app-griglia-barre-larghezza-telefono` | `5px` | misura del componente «La riunione ricostruita, con il microfono» | 1 uso: `.app-griglia .barre i` width ((max-width: 760px)) |
+| `--riunione-app-griglia-nome-spazio-interno-telefono` | `2px 7px` | misura del componente «La riunione ricostruita, con il microfono» | 1 uso: `.app-griglia .nome` padding ((max-width: 760px)) |
+| `--riunione-app-griglia-righe` | `104px 104px` | misura del componente «La riunione ricostruita, con il microfono» | 1 uso: `.app-griglia` grid-template-rows |
+| `--riunione-app-griglia-righe-telefono` | `78px 78px` | misura del componente «La riunione ricostruita, con il microfono» | 1 uso: `.app-griglia` grid-template-rows ((max-width: 760px)) |
 | `--microfono-spazio-interno-blocco` | `4px` | misura del componente «La riunione ricostruita, con il microfono» | 1 uso: `.microfono` padding-block |
 | `--microfono-spazio-interno-inline` | `6px 4px` | misura del componente «La riunione ricostruita, con il microfono», inizio e fine | 1 uso: `.microfono` padding-inline |
 | `--microfono-spazio-interno-telefono-blocco` | `3px` | misura del componente «La riunione ricostruita, con il microfono» | 1 uso: `.microfono` padding-block ((max-width: 760px)) |
@@ -540,7 +588,7 @@ numerato in ordine di valore (`--corpo-7`, `--spazio-12`): il numero è il posto
 | `--barre-raggio-telefono` | `3px` | misura del componente «I riquadri della riunione» | 1 uso: `.barre i` border-radius ((max-width: 760px)) |
 | `--riunione-filo-riquadro-raggio` | `15px` | misura del componente «I riquadri della riunione» | 1 uso: `.riunione-filo .riquadro` border-radius |
 | `--finestra-raggio` | `8px` | misura del componente «La finestra di Kalliope ricostruita» | 1 uso: `.finestra` border-radius |
-| `--app-griglia-riquadro-raggio` | `13px` | misura del componente «La riunione ricostruita, con il microfono» | 1 uso: `.app-griglia .riquadro` border-radius |
+| `--riunione-app-griglia-riquadro-raggio` | `13px` | misura del componente «La riunione ricostruita, con il microfono» | 1 uso: `.app-griglia .riquadro` border-radius |
 | `--computer-raggio` | `30px` | misura del componente «La strada della voce» | 1 uso: `.computer` border-radius |
 | `--nodo-altri-mini-raggio` | `9px` | misura del componente «La strada della voce» | 1 uso: `.nodo-altri .mini` border-radius |
 
@@ -592,7 +640,7 @@ numerato in ordine di valore (`--corpo-7`, `--spazio-12`): il numero è il posto
 | `--luca-fondo` | `linear-gradient(160deg, var(--luca-fondo-alto), var(--luca-fondo-basso))` | misura del componente «I riquadri della riunione» | 1 uso: `.luca` background |
 | `--paola-fondo` | `linear-gradient(160deg, var(--paola-fondo-alto), var(--paola-fondo-basso))` | misura del componente «I riquadri della riunione» | 1 uso: `.paola` background |
 | `--riquadro-fondo` | `linear-gradient(160deg, var(--tu-fondo-alto), var(--tu-fondo-basso))` | misura del componente «I riquadri della riunione» | 1 uso: `.riquadro.tu` background |
-| `--app-icona-prima-maschera` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3…` | misura del componente «La riunione ricostruita, con il microfono» | 2 usi: `.app-icona::before` -webkit-mask; `.app-icona::before` mask |
+| `--riunione-app-icona-prima-maschera` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3…` | misura del componente «La riunione ricostruita, con il microfono» | 2 usi: `.app-icona::before` -webkit-mask; `.app-icona::before` mask |
 | `--voce-tondo-prima-fondo` | `linear-gradient(90deg, var(--bordeaux) 0 4px, transparent 4px 8px, var(--bordeaux) 8px …` | misura del componente «La scheda dell'ascolto» | 1 uso: `.voce.suona .voce-tondo::before` background |
 | `--ascolto-voce-luce-filo-fondo` | `radial-gradient(closest-side, var(--luce-filo-centro), var(--luce-filo-bordo) 50%, var(…` | misura del componente «Le frasi del filo» | 1 uso: `.ascolto-voce .luce-filo` background |
 | `--suona-frase-tondo-prima-fondo` | `linear-gradient(90deg, var(--testo) 0 4px, transparent 4px 8px, var(--testo) 8px 12px)` | misura del componente «Le frasi del filo» | 1 uso: `.suona-frase.suona .tondo::before` background |

@@ -19,8 +19,8 @@
   border: var(--filetto-sottile) solid var(--bordo-sezione);
   box-shadow: var(--riunione-app-ombra);
 }
-.app-griglia { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: var(--app-griglia-righe); gap: var(--spazio-5); }
-.app-griglia .riquadro { border-radius: var(--app-griglia-riquadro-raggio); }
+.app-griglia { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: var(--riunione-app-griglia-righe); gap: var(--spazio-5); }
+.app-griglia .riquadro { border-radius: var(--riunione-app-griglia-riquadro-raggio); }
 .app-griglia .barre { height: var(--misura-21); gap: var(--spazio-4); }
 .app-griglia .barre i { width: var(--misura-3); border-radius: var(--raggio-2); }
 .app-griglia .nome { inset-inline-start: var(--spazio-6); top: var(--spazio-6); font-size: var(--corpo-3); line-height: var(--interlinea-2); padding: var(--spazi-8); }
@@ -56,8 +56,8 @@
   position: absolute;
   inset: var(--spazio-5);
   background: var(--bordeaux);
-  -webkit-mask: var(--app-icona-prima-maschera);
-  mask: var(--app-icona-prima-maschera);
+  -webkit-mask: var(--riunione-app-icona-prima-maschera);
+  mask: var(--riunione-app-icona-prima-maschera);
 }
 .microfono-scelte { list-style: none; margin: 0; padding: 0; display: flex; gap: var(--spazio-1); }
 .scelta {
@@ -72,13 +72,13 @@
 .js .riunione-app.entra-finestra { transform-origin: var(--origine-fine-x) 0; --ritardo: var(--riunione-app-entra-finestra-ritardo); }
 @media (max-width: 760px) {
   .riunione-app { width: var(--riunione-app-larghezza-telefono); margin-top: 0; }
-  .app-griglia { grid-template-rows: var(--app-griglia-righe-telefono); gap: var(--spazio-4); }
+  .app-griglia { grid-template-rows: var(--riunione-app-griglia-righe-telefono); gap: var(--spazio-4); }
   .app-griglia .barre { height: var(--misura-14); gap: var(--spazio-2); }
-  .app-griglia .barre i { width: var(--app-griglia-barre-larghezza-telefono); }
+  .app-griglia .barre i { width: var(--riunione-app-griglia-barre-larghezza-telefono); }
   .app-griglia .nome {
     font-size: var(--corpo-1);
     line-height: var(--interlinea-1);
-    padding: var(--app-griglia-nome-spazio-interno-telefono);
+    padding: var(--riunione-app-griglia-nome-spazio-interno-telefono);
     inset-inline-start: var(--spazio-4);
     top: var(--spazio-4);
   }
@@ -92,7 +92,7 @@
 /* la riunione resta nel suo mondo scuro anche dentro la scena chiara */
 @media (max-width: 420px) {
   /* al telefono stretto le due voci della scelta stanno una sotto l'altra: nulla esce dallo schermo, con ogni carattere */
-  .app-comandi { height: auto; padding: var(--app-comandi-spazio-interno); }
+  .app-comandi { height: auto; padding: var(--riunione-app-comandi-spazio-interno); }
   .microfono { flex-direction: column; align-items: stretch; gap: var(--spazio-3); padding: var(--spazio-5); border-radius: var(--raggio-7); width: 100%; }
   .microfono-titolo { padding: var(--microfono-titolo-spazio-interno); }
   .microfono-scelte { flex-direction: column; }

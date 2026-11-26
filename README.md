@@ -26,7 +26,7 @@ From a terminal: `kalliope --say "Buongiorno a tutti"` speaks without opening th
 
 ## Desktop appearance
 
-Kalliope 0.2 opens a GTK 4/libadwaita window in a GNOME session. On Plasma the Slint window draws its controls with the installed Qt 6 style. Both use the same speech engine, voice settings and phrase history behavior. Windows and macOS builds use Slint's Fluent and Cupertino controls respectively. The virtual microphone and distribution packages are currently available on Linux.
+Kalliope has one window, drawn by Slint through winit on Linux (Wayland and X11), Windows and macOS, with the same controls everywhere. It follows the system's light or dark appearance (on Linux, the `org.freedesktop.appearance` setting of the XDG settings portal). It needs no GPU, no Qt and no Python. The window takes every colour, size, duration and typeface from `design-system/token.css` at build time ([design-system/TOKEN.md](design-system/TOKEN.md), «La finestra del programma»). The virtual microphone and distribution packages are currently available on Linux.
 
 ## How it works
 

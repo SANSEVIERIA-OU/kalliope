@@ -182,25 +182,23 @@ pinning, and cannot work out library dependencies; `dpkg-shlibdeps` and rpm do t
 The binaries are built on Ubuntu 24.04, so they need glibc 2.39 or newer. The release job stays on
 Ubuntu 24.04 on purpose while CI uses the newest Ubuntu: a newer build system would raise that
 minimum (Ubuntu 26.04 has glibc 2.43, Debian 13 has 2.41) and leave out the systems the packages are
-made for. The libraries they link are found by `dpkg-shlibdeps` and by rpm: glibc, libgcc,
-fontconfig, Qt 6 and libstdc++ for ONNX Runtime.
-The others are loaded at run time and listed by hand. They were found by listing the library names
-in the app and its desktop frontends. GNOME opens the embedded Python frontend with the system interpreter and imports GTK 4 and libadwaita through PyGObject. Plasma uses Qt's QPA platform plugin and installed widget style.
+made for. The libraries they link are found by `dpkg-shlibdeps` and by rpm: glibc, libgcc, fontconfig
+and libstdc++ (Skia and ONNX Runtime).
+The others are loaded at run time and listed by hand: the window is one Slint window drawn by Skia on the CPU through
+winit, so there is no Qt, GTK or Python and no GPU driver or OpenGL library to ask for.
 
 | Library | When | `.deb` | `.rpm` |
 | --- | --- | --- | --- |
-| Python 3, PyGObject, GTK 4 and libadwaita | GNOME window | Depends | Requires |
-| Qt 6 Widgets and the QPA plugins | Plasma and other Qt desktops | Depends | Requires |
 | libxkbcommon | always | Depends | Requires |
 | libwayland-client | Wayland | Depends (or libX11), Recommends | Requires (or libX11), Recommends |
 | libX11, libX11-xcb, libxcb, libXcursor, libXi, libxkbcommon-x11 | X11 | Recommends | Recommends |
 | libpipewire-0.3 | the virtual microphone | Recommends | Recommends |
 
-When the app changes its desktop backend, check both its linked libraries and its runtime modules:
-```sh
-readelf -d target/release/kalliope | grep NEEDED
-strings target/release/kalliope | grep -oE 'lib[A-Za-z0-9_.+-]+\.so(\.[0-9]+)*' | sort -u
-```
+`tools/test_packaging.py` keeps the table honest. Without a binary it rejects Qt, GTK, libadwaita and Python in the
+`PKGBUILD`, the `.deb` and the `.rpm`; with `KALLIOPE_BINARY=target/debug/kalliope` (CI does) it reads the libraries the
+program is linked with (`readelf -d … | grep NEEDED`) and the ones it names for `dlopen`
+(`strings … | grep -oE 'lib[A-Za-z0-9_.+-]+\.so\.[0-9.]+'`), and fails on any that the table does not account for. When the
+program gains a library, decide there which package brings it on Arch, Debian and Fedora, and whether it is required or recommended.
 
 ## Arch Linux (AUR)
 
@@ -266,7 +264,7 @@ and by hand:
 
 | Job | When | What |
 | --- | --- | --- |
-| Linux | always, on `ubuntu-26.04` | `tools/version.py check`, `cargo fmt --check`, clippy with `-D warnings`, `cargo test --workspace` with ONNX Runtime and both models (Klein, and Pocket TTS, whose tests prepare a voice and speak with it), and `kalliope-cli say`, which must produce 1.5 to 6 seconds of speech |
+| Linux | always, on `ubuntu-26.04` | `tools/version.py check`, the website and window checks (`translations.py`, `css_logico.py`, `marchio.py`, `slint_valori.py` for hand-written values in `crates/app/ui/*.slint`, `caratteri_ttf.py --check`) and the Python tests of `tools/`, `cargo fmt --check`, clippy with `-D warnings`, `cargo test --workspace` with ONNX Runtime and both models (Klein, and Pocket TTS, whose tests prepare a voice and speak with it; this includes the token bridge in `crates/tokens`), `kalliope-cli say`, which must produce 1.5 to 6 seconds of speech, then the program itself: `tools/test_packaging.py` against the built binary, and `tools/check_desktop.py` under Xvfb with the stub settings portal (`tools/portale_finto.py`) announcing the dark appearance, the light one and none, each photographed and checked for the right brightness |
 | Windows, macOS | pushes to `main`, and runs started by hand | the workspace's tests with both models, after Linux has passed, on `windows-latest` and `macos-latest` (Apple Silicon); not the examples, as `crates/voice/examples/measure.rs` uses Linux-only calls |
 | New versions (`versions.yml`) | Mondays, and by hand | compares the pinned versions with the newest ones and opens an issue for each new one (below) |
 

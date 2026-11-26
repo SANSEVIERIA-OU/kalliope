@@ -34,19 +34,25 @@ jobs:
       - uses: actions/checkout@v7
       - name: Versions agree
         run: python3 tools/version.py check
-      - name: Website translations, mirrored style sheets and the mark (the icons match the tokens)
+      # Xvfb, xdotool and ImageMagick open and photograph the window; PyGObject serves the stub settings portal (tools/portale_finto.py);
+      # fontTools and brotli derive the window's TTF faces from the woff2 files of the design system (tools/caratteri_ttf.py).
+      - name: Tools to open, photograph and test the window
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q --no-install-recommends xvfb xdotool imagemagick dbus python3-gi gir1.2-glib-2.0 python3-fonttools python3-brotli
+      - name: Website translations, mirrored style sheets, the mark, the window's values and typefaces
         run: |
           python3 -I tools/translations.py extract --check
           python3 -I tools/translations.py check
           python3 -I tools/css_logico.py
           python3 -I tools/marchio.py --check
+          python3 -I tools/slint_valori.py
+          python3 -I tools/caratteri_ttf.py --check
           python3 -I -m unittest discover -s tools -p 'test_*.py'
       - name: Format
         run: cargo fmt --all --check
       - name: Libraries the app links at build time
-        run: |
-          pkg-config --exists fontconfig Qt6Widgets ||
-            { sudo apt-get update -q && sudo apt-get install -y -q --no-install-recommends libfontconfig-dev qt6-base-dev; }
+        run: pkg-config --exists fontconfig || sudo apt-get install -y -q --no-install-recommends libfontconfig-dev
       - uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2.9.3
       - name: Clippy
         run: cargo clippy --workspace --all-targets --locked -- -D warnings
@@ -74,6 +80,27 @@ jobs:
           print(f"{seconds:.2f} s of speech")
           sys.exit(0 if 1.5 < seconds < 6 else "expected 1.5 to 6 seconds")
           EOF
+      # One Slint window on every desktop: no Qt, no GTK and no Python in the program, and the packages ask for no more than it loads.
+      - name: The program links and loads what the packages declare
+        run: |
+          cargo build --locked --workspace --bins
+          ldd target/debug/kalliope
+          if ldd target/debug/kalliope | grep -Ei 'qt|python|gtk|adwaita|gobject'; then echo "the program links a toolkit it must not need" >&2; exit 1; fi
+          KALLIOPE_BINARY=target/debug/kalliope python3 -I -m unittest discover -s tools -p 'test_packaging.py' -v
+      # The window opens under Xvfb with no GPU, and follows the system appearance that the stub portal announces; with no portal
+      # at all it still opens (light, like every Slint widget).
+      - name: Open the window on Linux, in the dark and light system appearance and with no settings portal
+        run: |
+          for scheme in dark light; do
+            xvfb-run -a dbus-run-session -- python3 -I tools/portale_finto.py $scheme -- python3 tools/check_desktop.py desktop-window-$scheme.png
+          done
+          xvfb-run -a dbus-run-session -- python3 tools/check_desktop.py desktop-window.png
+      - uses: actions/upload-artifact@v7
+        with:
+          name: desktop-window-linux
+          path: desktop-window*.png
+          if-no-files-found: error
+          retention-days: 7
 
   windows-and-macos:
     if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')

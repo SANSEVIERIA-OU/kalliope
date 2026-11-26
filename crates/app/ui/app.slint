@@ -3,17 +3,17 @@
 
 import { Button, LineEdit, ComboBox, CheckBox, AboutSlint, VerticalBox, HorizontalBox, ScrollView, Palette, GroupBox } from "std-widgets.slint";
 
-import { NativeTokens } from "native_tokens.slint";
+import { Token } from "token.slint";
 
 export enum Phase { loading, ready, speaking, error }
 
 export component AppWindow inherits Window {
     title: "Kalliope";
     icon: @image-url("../../../packaging/linux/io.github.sansevieria_ou.kalliope.svg");
-    preferred-width: NativeTokens.window-width;
-    preferred-height: NativeTokens.window-height;
-    min-width: NativeTokens.min-window-width;
-    min-height: NativeTokens.min-window-height;
+    preferred-width: Token.native-width;
+    preferred-height: Token.native-height;
+    min-width: Token.native-min-width;
+    min-height: Token.native-min-height;
     background: Palette.background;
     forward-focus: input;
 
@@ -42,8 +42,8 @@ export component AppWindow inherits Window {
         content := VerticalBox {
             width: main-scroll.visible-width;
             height: main-scroll.content-height;
-            spacing: NativeTokens.spacing;
-            padding: NativeTokens.spacing;
+            spacing: Token.spazio-controlli;
+            padding: Token.spazio-controlli;
 
             GroupBox {
                 title: root.warning ? "Attenzione" : "Stato";
@@ -59,9 +59,9 @@ export component AppWindow inherits Window {
             FlexboxLayout {
                 flex-wrap: wrap;
                 vertical-stretch: 0;
-                spacing: NativeTokens.spacing;
+                spacing: Token.spazio-controlli;
                 input := LineEdit {
-                    preferred-width: NativeTokens.window-width / 2;
+                    preferred-width: Token.native-width / 2;
                     min-width: 0px;
                     horizontal-stretch: 1;
                     placeholder-text: "Scrivi qui e premi Invio per parlare";
@@ -98,11 +98,11 @@ export component AppWindow inherits Window {
             FlexboxLayout {
                 flex-wrap: wrap;
                 vertical-stretch: 0;
-                spacing: NativeTokens.spacing;
+                spacing: Token.spazio-controlli;
                 HorizontalBox {
                     padding: 0px;
-                    spacing: NativeTokens.spacing;
-                    preferred-width: NativeTokens.window-width / 3;
+                    spacing: Token.spazio-controlli;
+                    preferred-width: Token.native-width / 3;
                     horizontal-stretch: 1;
                     Text {
                         text: "Voce";
@@ -140,7 +140,7 @@ export component AppWindow inherits Window {
             }
 
             for phrase in root.history: HorizontalBox {
-                spacing: NativeTokens.spacing;
+                spacing: Token.spazio-controlli;
                 padding: 0px;
                 vertical-stretch: 0;
                 Text {
@@ -172,8 +172,8 @@ export component AppWindow inherits Window {
     status-lines := Text { text: "M\nM"; visible: false; }
 
     about-popup := PopupWindow {
-        width: max(root.width, NativeTokens.min-window-width);
-        height: max(root.height, NativeTokens.min-window-height);
+        width: max(root.width, Token.native-min-width);
+        height: max(root.height, Token.native-min-height);
         close-policy: close-on-click-outside;
         forward-focus: close-about;
         Rectangle {
@@ -182,19 +182,19 @@ export component AppWindow inherits Window {
                 clicked => { about-popup.close(); }
             }
             Rectangle {
-                x: NativeTokens.spacing;
-                y: NativeTokens.spacing;
+                x: Token.spazio-controlli;
+                y: Token.spazio-controlli;
                 // Clicking inside the panel must not reach its dismissing backdrop.
                 TouchArea { }
-                width: parent.width - 2 * NativeTokens.spacing;
-                height: parent.height - 2 * NativeTokens.spacing;
+                width: parent.width - 2 * Token.spazio-controlli;
+                height: parent.height - 2 * Token.spazio-controlli;
                 GroupBox {
                     width: parent.width;
                     height: parent.height;
                     title: "Informazioni";
                     VerticalBox {
                         padding: 0px;
-                        spacing: NativeTokens.spacing;
+                        spacing: Token.spazio-controlli;
                         about-scroll := ScrollView {
                             horizontal-scrollbar-policy: always-off;
                             content-width: self.visible-width;
@@ -202,7 +202,7 @@ export component AppWindow inherits Window {
                             about := VerticalBox {
                                 width: about-scroll.visible-width;
                                 height: about-scroll.content-height;
-                                spacing: NativeTokens.spacing;
+                                spacing: Token.spazio-controlli;
                                 Text {
                                     text: "Kalliope " + root.version;
                                     color: Palette.foreground;

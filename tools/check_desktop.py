@@ -1,5 +1,10 @@
 # SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
-"""Exercise the linked binaries on a Windows or macOS runner with a desktop session."""
+"""Exercise the linked binaries with a desktop session: a Windows or macOS runner, or Linux under Xvfb.
+
+On Linux the window is found with xdotool and photographed with ImageMagick; a picture named desktop-window-dark.png or
+desktop-window-light.png must be dark or light on the whole (the system appearance reached the window). Run it under
+`xvfb-run -a dbus-run-session -- python3 -I tools/portale_finto.py dark -- python3 tools/check_desktop.py desktop-window-dark.png`.
+KALLIOPE_BIN_DIR names the folder with the binaries (default target/debug)."""
 import ctypes
 import json
 import os
@@ -48,7 +53,38 @@ def mac_inspector(work):
     return visible_windows, helper
 
 
+def linux_window(pid):
+    """(window id, width, height) of the visible windows titled Kalliope that the process owns."""
+    found = subprocess.run(["xdotool", "search", "--onlyvisible", "--pid", str(pid), "--name", "^Kalliope$"], capture_output=True, text=True)
+    windows = []
+    for handle in found.stdout.split():
+        geometry = subprocess.run(["xdotool", "getwindowgeometry", "--shell", handle], capture_output=True, text=True).stdout
+        size = dict(line.split("=") for line in geometry.split() if "=" in line)
+        windows.append((handle, int(size.get("WIDTH", 0)), int(size.get("HEIGHT", 0))))
+    return windows
+
+
+def mean_brightness(path):
+    """0 (black) to 1 (white): the mean of the picture, by ImageMagick."""
+    out = subprocess.check_output(["convert", str(path), "-colorspace", "Gray", "-format", "%[fx:mean]", "info:"], text=True)
+    return float(out)
+
+
+def check_appearance(path):
+    """A picture named for an appearance must be of that appearance: the window follows the system."""
+    wanted = {"desktop-window-dark.png": "dark", "desktop-window-light.png": "light"}.get(Path(path).name)
+    if wanted is None:
+        return
+    brightness = mean_brightness(path)
+    if (wanted == "dark" and brightness > 0.35) or (wanted == "light" and brightness < 0.65):
+        raise RuntimeError(f"{path} should be {wanted} but its mean brightness is {brightness:.2f}")
+    print(f"{path} is {wanted} (mean brightness {brightness:.2f})", flush=True)
+
+
 def take_window_picture(handle, path):
+    if sys.platform.startswith("linux"):
+        subprocess.run(["import", "-window", str(handle), str(path)], check=True, timeout=30)
+        return
     if sys.platform == "darwin":
         cmd = ["screencapture", "-x", "-o", "-l", str(handle), str(path)]
     else:
@@ -81,7 +117,7 @@ def take_window_picture(handle, path):
 
 def main():
     output = Path(sys.argv[1] if len(sys.argv) == 2 else "desktop-window.png").resolve()
-    binary_dir = Path("target/debug").resolve()
+    binary_dir = Path(os.environ.get("KALLIOPE_BIN_DIR", "target/debug")).resolve()
     suffix = ".exe" if sys.platform == "win32" else ""
     app = binary_dir / ("kalliope" + suffix)
     cli = binary_dir / ("kalliope-cli" + suffix)
@@ -97,7 +133,12 @@ def main():
             if not 1.5 < duration < 6 or not any(sound.readframes(sound.getnframes())):
                 raise RuntimeError("The recording has an unexpected duration or is silent")
         print(f"{actual}, generated {duration:.2f} s of speech", flush=True)
-        inspect, helper = (windows_window, None) if sys.platform == "win32" else mac_inspector(work)
+        if sys.platform.startswith("linux"):
+            inspect, helper = linux_window, None
+        elif sys.platform == "win32":
+            inspect, helper = windows_window, None
+        else:
+            inspect, helper = mac_inspector(work)
         with subprocess.Popen([app]) as window:
             try:
                 deadline = time.monotonic() + 40
@@ -111,6 +152,8 @@ def main():
                             take_window_picture(handle, output)
                             if helper and output.name == "desktop-window-dark.png":
                                 subprocess.run([helper, "--check-dark", output], check=True, timeout=10)
+                            if sys.platform.startswith("linux"):
+                                check_appearance(output)
                             return
                     time.sleep(0.5)
                 raise RuntimeError("The operating system did not report a visible application window")
