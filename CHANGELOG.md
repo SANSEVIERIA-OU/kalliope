@@ -4,6 +4,10 @@ Kalliope's versions go up one step at a time (0.1, 0.2 … 0.9, 1.0, 1.1 …). E
 published for every supported system (see [docs/releasing.md](docs/releasing.md)). This file lists
 what each version brings, for the people who use it.
 
+## 0.2 — not yet released
+
+- Preparing a personal voice now creates its destination folder automatically. On a fresh installation you can save your first voice directly to the voices folder.
+
 ## 0.1 — 20 November 2026
 
 The first version, for Linux.

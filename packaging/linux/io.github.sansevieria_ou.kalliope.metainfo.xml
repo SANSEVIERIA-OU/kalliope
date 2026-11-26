@@ -37,6 +37,11 @@
   </supports>
   <content_rating type="oars-1.1"/>
   <releases>
+    <release version="0.2" date="2026-11-26" type="development">
+      <description>
+        <p>Preparing a personal voice now creates the voices folder on first use.</p>
+      </description>
+    </release>
     <release version="0.1" date="2026-11-20">
       <description>
         <p>The first version, for Linux.</p>
