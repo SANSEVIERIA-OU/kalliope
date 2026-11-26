@@ -7,7 +7,9 @@
 //!   records, makes the voice and, with `--frase`, says the phrase with it in the «Kalliope»
 //!   microphone;
 //! - `kalliope --importa-voce FILE NOME [--tratto N] [--frase TESTO] [--sostituisci]` does the same
-//!   from an audio or video file.
+//!   from an audio or video file;
+//! - with `--ferma-dopo MS`, Stop is pressed that long after the phrase starts sounding, and what
+//!   was said of it is shown.
 
 use crate::engine::VoiceId;
 use crate::own_voice::{self, CreateEvent, ImportEvent, NameCheck, RecordingEvent, Take};
@@ -26,6 +28,8 @@ struct Options {
     stretch: usize,
     phrase: Option<String>,
     replace: bool,
+    /// Press Stop this long after the phrase starts sounding.
+    stop_after: Option<Duration>,
 }
 
 fn options(args: &[String]) -> Result<(Vec<String>, Options), String> {
@@ -47,6 +51,13 @@ fn options(args: &[String]) -> Result<(Vec<String>, Options), String> {
             }
             "--frase" => o.phrase = Some(value()?),
             "--sostituisci" => o.replace = true,
+            "--ferma-dopo" => {
+                o.stop_after = Some(Duration::from_millis(
+                    value()?
+                        .parse()
+                        .map_err(|_| "--ferma-dopo vuole i millisecondi")?,
+                ))
+            }
             s if s.starts_with("--") => return Err(format!("opzione sconosciuta: {s}")),
             s => plain.push(s.to_string()),
         }
@@ -288,7 +299,7 @@ fn finish(
     let Some(phrase) = &o.phrase else {
         return ExitCode::SUCCESS;
     };
-    say(session, status, &id, index, phrase)
+    say(session, status, &id, index, phrase, o.stop_after)
 }
 
 /// Chooses the voice and says `phrase` with it in the «Kalliope» microphone.
@@ -298,6 +309,7 @@ fn say(
     id: &VoiceId,
     index: usize,
     phrase: &str,
+    stop_after: Option<Duration>,
 ) -> ExitCode {
     let wait = |until: &dyn Fn(&Status) -> bool, within: Duration| -> Option<Status> {
         let deadline = Instant::now() + within;
@@ -326,11 +338,43 @@ fn say(
     let start = Instant::now();
     let deadline = start + Duration::from_secs(120);
     let (mut printed, mut speaking) = (None, false);
+    let mut sounding_since: Option<Instant> = None;
+    let mut stop_after = stop_after;
     loop {
-        let Ok(s) = status.recv_timeout(deadline.saturating_duration_since(Instant::now())) else {
-            eprintln!("la frase non è finita in tempo");
-            return ExitCode::FAILURE;
+        let wait = match (stop_after, sounding_since) {
+            (Some(after), Some(since)) => (since + after).saturating_duration_since(Instant::now()),
+            _ => deadline.saturating_duration_since(Instant::now()),
         };
+        let s = match status.recv_timeout(wait) {
+            Ok(s) => s,
+            Err(_) if stop_after.is_some() && sounding_since.is_some() => {
+                println!("Ferma, a {} ms", start.elapsed().as_millis());
+                session.stop();
+                stop_after = None;
+                continue;
+            }
+            Err(_) => {
+                eprintln!("la frase non è finita in tempo");
+                return ExitCode::FAILURE;
+            }
+        };
+        if let Some(said) = &s.interrupted {
+            let cut = said.cut.as_ref().map_or(String::new(), |(r, share)| {
+                format!(
+                    ", e «{}» solo al {:.0}%",
+                    &said.phrase[r.clone()],
+                    share * 100.0
+                )
+            });
+            println!(
+                "detto per intero fino al byte {}: «{}»{cut}",
+                said.done,
+                &said.phrase[..said.done]
+            );
+        }
+        if s.sounding.is_some() && sounding_since.is_none() {
+            sounding_since = Some(Instant::now());
+        }
         if s.phase == Phase::Error {
             eprintln!("{}", s.text);
             return ExitCode::FAILURE;
