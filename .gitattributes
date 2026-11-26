@@ -1,0 +1,16 @@
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
+# Every text file is checked out with LF on every system, Windows included: the program embeds data files (include_str!) and
+# splits their lines on \n, and the tools compare files byte for byte.
+* text=auto eol=lf
+# Binary files, never converted.
+*.png binary
+*.ico binary
+*.jpg binary
+*.ttf binary
+*.otf binary
+*.woff2 binary
+*.opus binary
+*.mp3 binary
+*.wav binary
+*.onnx binary
+*.safetensors binary

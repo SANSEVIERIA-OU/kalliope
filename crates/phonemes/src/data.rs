@@ -29,7 +29,10 @@ fn lookup<'a>(data: &'a str, key: &str) -> Option<&'a str> {
             .iter()
             .position(|&b| b == b'\n')
             .map_or(bytes.len(), |p| start + p);
-        let line = &data[start..end];
+        // A table checked out with Windows line endings must read the same (\r\n, not only \n).
+        let line = data[start..end]
+            .strip_suffix('\r')
+            .unwrap_or(&data[start..end]);
         let (k, rest) = line.split_once('\t').unwrap_or((line, ""));
         match k.cmp(key) {
             Ordering::Equal => return Some(rest),
@@ -106,6 +109,21 @@ pub fn suffix(word: &str) -> Option<Hint> {
 #[cfg(test)]
 mod tests {
     use super::{LOANWORDS, lookup};
+
+    /// The tables read the same with Windows line endings (a checkout that converts them).
+    #[test]
+    fn lookup_ignores_windows_line_endings() {
+        let crlf = "alfa\tx1\r\nbeta\tx2\r\ngamma\tx3\r\n";
+        assert_eq!(lookup(crlf, "alfa"), Some("x1"));
+        assert_eq!(lookup(crlf, "beta"), Some("x2"));
+        assert_eq!(lookup(crlf, "gamma"), Some("x3"));
+        assert_eq!(lookup(crlf, "delta"), None);
+        let converted = LOANWORDS.replace('\n', "\r\n");
+        for line in LOANWORDS.lines() {
+            let (word, phonemes) = line.split_once('\t').expect("word\tphonemes");
+            assert_eq!(lookup(&converted, word), Some(phonemes));
+        }
+    }
 
     /// The loanword table must stay sorted for the binary search, give one stressed vowel per
     /// word and use only the phonemes the Italian rules produce, which are the ones the voices
