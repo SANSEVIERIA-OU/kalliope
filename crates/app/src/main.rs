@@ -5,8 +5,11 @@
 
 mod audio;
 mod catalog;
+mod drive;
 mod engine;
+mod history;
 mod instance;
+mod own_voice;
 mod paths;
 mod session;
 mod settings;
@@ -34,6 +37,9 @@ fn usage() -> String {
         "Kalliope {}: scrivi e fatti sentire nelle videochiamate.\n\n\
          uso:\n  kalliope                   apre la finestra\n  \
          kalliope --say TESTO       dice TESTO nel microfono virtuale, senza finestra\n  \
+         kalliope --microfoni       mostra i microfoni da cui registrare una voce\n  \
+         kalliope --registra-voce NOME   registra una voce propria dal microfono\n  \
+         kalliope --importa-voce FILE NOME   crea una voce propria da un file audio\n  \
          kalliope --version         mostra la versione\n",
         version()
     )
@@ -183,7 +189,7 @@ fn run_window(owner: &instance::Owner) -> Result<(), Box<dyn std::error::Error>>
     )));
     ui.set_voice_index(session.borrow().voice_index() as i32);
     ui.set_monitor(session.borrow().settings.monitor);
-    let history = Rc::new(VecModel::<SharedString>::default());
+    let history = Rc::new(VecModel::from(session.borrow().history_model()));
     ui.set_history(ModelRc::from(history.clone()));
     let app = session.clone();
     ui.on_has_speech_text(|text| !text.trim().is_empty());
@@ -242,6 +248,9 @@ fn main() -> ExitCode {
         attach_terminal();
     }
     match args.first().map(String::as_str) {
+        Some("--microfoni") => drive::microphones(),
+        Some("--registra-voce") => drive::record(&args[1..]),
+        Some("--importa-voce") => drive::import(&args[1..]),
         Some("--version" | "-V") => {
             println!("kalliope {}", version());
             ExitCode::SUCCESS

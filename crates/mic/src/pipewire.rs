@@ -407,6 +407,17 @@ impl Drop for LoopLock<'_> {
 
 impl Mic {
     pub fn open(name: &str, description: &str, rate: u32) -> Result<Mic, Error> {
+        Mic::open_with(name, description, rate, true)
+    }
+
+    /// The speakers only, with no microphone: [`Mic::play`] goes to the monitor stream alone.
+    pub fn player(name: &str, description: &str, rate: u32) -> Result<Mic, Error> {
+        let mic = Mic::open_with(name, description, rate, false)?;
+        mic.set_monitor(true)?;
+        Ok(mic)
+    }
+
+    fn open_with(name: &str, description: &str, rate: u32, source: bool) -> Result<Mic, Error> {
         let loaded = load()?;
         let lib = &loaded.lib;
         let text = |s: &str| CString::new(s).map_err(|_| Error::new("name contains NUL"));
@@ -470,6 +481,10 @@ impl Mic {
             // So that Kalliope never records its own voice when the person records theirs.
             (capture::OWN_MARK, c"true"),
         ];
+        if !source {
+            drop(guard);
+            return Ok(mic);
+        }
         // No AUTOCONNECT: a source is linked by the apps that record from it.
         mic.connect(
             &shared.mic,

@@ -2247,6 +2247,7 @@ version = "0.2.0"
 dependencies = [
  "kalliope-mic",
  "kalliope-phonemes",
+ "kalliope-sample",
  "kalliope-text",
  "kalliope-tokens",
  "kalliope-voice",

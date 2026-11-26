@@ -7,6 +7,10 @@ use crate::{Error, ErrorKind};
 pub enum Mic {}
 
 impl Mic {
+    pub fn player(name: &str, description: &str, rate: u32) -> Result<Mic, Error> {
+        Mic::open(name, description, rate)
+    }
+
     pub fn open(_name: &str, _description: &str, _rate: u32) -> Result<Mic, Error> {
         Err(Error::with_kind(
             ErrorKind::Unavailable,

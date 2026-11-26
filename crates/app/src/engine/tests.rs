@@ -880,5 +880,11 @@ fn pieces_map_to_the_typed_text_by_their_words() {
     assert!(said.last().unwrap().ends_with("Tolkien."), "{said:?}");
     // A count that runs short still reaches the end of the text.
     let all = sources(&sentence.words, ["alle"].into_iter());
-    assert_eq!(all, vec![Range { start: 0, end: text.len() }]);
+    assert_eq!(
+        all,
+        vec![Range {
+            start: 0,
+            end: text.len()
+        }]
+    );
 }

@@ -9,13 +9,22 @@ use std::sync::Mutex;
 pub struct Settings {
     pub voice: VoiceId,
     pub monitor: bool,
+    /// How large the text is: 1 is the design's size.
+    pub text_scale: f32,
+    /// The compact meeting mode.
+    pub compact: bool,
 }
+
+/// The text can be made this much smaller or larger.
+pub const TEXT_SCALE: std::ops::RangeInclusive<f32> = 0.75..=3.0;
 
 impl Default for Settings {
     fn default() -> Self {
         Settings {
             voice: VoiceId::default(),
             monitor: true,
+            text_scale: 1.0,
+            compact: false,
         }
     }
 }
@@ -43,6 +52,14 @@ impl Settings {
                         }
                     }
                     Some(("monitor", v)) => s.monitor = v.trim() != "false",
+                    Some(("text_scale", v)) => {
+                        if let Ok(scale) = v.trim().parse::<f32>()
+                            && scale.is_finite()
+                        {
+                            s.text_scale = scale.clamp(*TEXT_SCALE.start(), *TEXT_SCALE.end());
+                        }
+                    }
+                    Some(("compact", v)) => s.compact = v.trim() == "true",
                     _ => {}
                 }
             }
@@ -51,13 +68,19 @@ impl Settings {
     }
 
     fn write(&self, path: &Path) {
-        if let Some(dir) = path.parent() {
-            let _ = std::fs::create_dir_all(dir);
-        }
-        let _ = std::fs::write(
-            path,
-            format!("voice={}\nmonitor={}\n", self.voice.key(), self.monitor),
+        let text = format!(
+            "voice={}\nmonitor={}\ntext_scale={}\ncompact={}\n",
+            self.voice.key(),
+            self.monitor,
+            self.text_scale,
+            self.compact
         );
+        if let Err(e) = crate::paths::write_atomic(path, text.as_bytes()) {
+            eprintln!(
+                "kalliope: cannot save the settings in {}: {e}",
+                path.display()
+            );
+        }
     }
 }
 
@@ -77,6 +100,14 @@ pub fn save_monitor(on: bool) {
     update_at(&file(), |s| s.monitor = on);
 }
 
+pub fn save_text_scale(scale: f32) {
+    update_at(&file(), |s| s.text_scale = scale);
+}
+
+pub fn save_compact(on: bool) {
+    update_at(&file(), |s| s.compact = on);
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -93,8 +124,18 @@ mod tests {
         assert!(!s.monitor);
         assert_eq!(
             std::fs::read_to_string(&path).unwrap(),
-            "voice=Marco.safetensors\nmonitor=false\n"
+            "voice=Marco.safetensors\nmonitor=false\ntext_scale=1\ncompact=false\n"
         );
+        update_at(&path, |s| s.text_scale = 1.5);
+        update_at(&path, |s| s.compact = true);
+        let s = Settings::read(&path);
+        assert_eq!((s.text_scale, s.compact, s.monitor), (1.5, true, false));
+        // A value out of range or not a number is brought back to what the window can show.
+        std::fs::write(&path, "text_scale=40\ncompact=yes\n").unwrap();
+        let s = Settings::read(&path);
+        assert_eq!((s.text_scale, s.compact), (3.0, false));
+        std::fs::write(&path, "text_scale=NaN\n").unwrap();
+        assert_eq!(Settings::read(&path).text_scale, 1.0);
         std::fs::write(&path, "voice=Anna\nmonitor=true\n").unwrap();
         assert_eq!(Settings::read(&path).voice, VoiceId::Own("Anna".into()));
         std::fs::remove_dir_all(&dir).unwrap();

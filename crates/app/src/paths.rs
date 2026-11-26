@@ -45,3 +45,25 @@ pub fn config_dir() -> PathBuf {
         xdg("XDG_CONFIG_HOME", ".config").join("kalliope")
     }
 }
+
+/// Writes `bytes` to `path` in one step: into a file beside it, flushed to the disk, then renamed
+/// over it. A crash or a full disk leaves the old file or the new one, never half of one.
+pub fn write_atomic(path: &std::path::Path, bytes: &[u8]) -> std::io::Result<()> {
+    use std::io::Write;
+    let dir = path
+        .parent()
+        .filter(|d| !d.as_os_str().is_empty())
+        .unwrap_or(std::path::Path::new("."));
+    std::fs::create_dir_all(dir)?;
+    let name = path.file_name().unwrap_or_default().to_string_lossy();
+    let part = dir.join(format!(".{name}.{}.part", std::process::id()));
+    let written = std::fs::File::create(&part).and_then(|mut f| {
+        f.write_all(bytes)?;
+        f.sync_all()
+    });
+    let done = written.and_then(|()| std::fs::rename(&part, path));
+    if done.is_err() {
+        let _ = std::fs::remove_file(&part);
+    }
+    done
+}

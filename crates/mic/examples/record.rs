@@ -48,7 +48,7 @@ fn main() {
             );
             break;
         }
-        if block.len() > 0 && before % 48_000 < block.len() {
+        if !block.is_empty() && before % 48_000 < block.len() {
             println!("{:.1} s peak {peak:.3}", samples.len() as f32 / 48_000.0);
         }
     }
@@ -57,9 +57,7 @@ fn main() {
     wav.extend_from_slice(b"RIFF");
     wav.extend_from_slice(&(36 + n).to_le_bytes());
     wav.extend_from_slice(b"WAVEfmt ");
-    for v in [16u32] {
-        wav.extend_from_slice(&v.to_le_bytes());
-    }
+    wav.extend_from_slice(&16u32.to_le_bytes());
     wav.extend_from_slice(&[1, 0, 1, 0]);
     wav.extend_from_slice(&48_000u32.to_le_bytes());
     wav.extend_from_slice(&96_000u32.to_le_bytes());

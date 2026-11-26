@@ -144,6 +144,37 @@ impl VirtualMic {
     }
 }
 
+/// Plays mono `f32` samples on the default speakers only: for listening to a recording, never heard
+/// in a call. All methods take `&self`. Dropping it stops the sound.
+pub struct Player(platform::Mic);
+
+impl Player {
+    /// `name` is the stable node name, `description` what the system's volume control shows.
+    pub fn open(name: &str, description: &str, sample_rate: u32) -> Result<Player, Error> {
+        if !(8_000..=192_000).contains(&sample_rate) {
+            return Err(Error::new(format!(
+                "unsupported sample rate {sample_rate} Hz"
+            )));
+        }
+        platform::Mic::player(name, description, sample_rate).map(Player)
+    }
+
+    /// Appends samples to play; never waits.
+    pub fn play(&self, samples: &[f32]) {
+        self.0.play(samples);
+    }
+
+    /// Stops at once.
+    pub fn clear(&self) {
+        self.0.clear();
+    }
+
+    /// Seconds still to play.
+    pub fn queued_seconds(&self) -> f32 {
+        self.0.queued_seconds()
+    }
+}
+
 /// A sound input a person can record their voice from: a microphone, a headset, a sound card.
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct Source {
