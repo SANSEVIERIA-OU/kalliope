@@ -11,17 +11,16 @@ URL:            https://github.com/SANSEVIERIA-OU/kalliope
 ExclusiveArch:  x86_64
 
 # Linked libraries (glibc, libgcc, fontconfig, and libstdc++ for ONNX Runtime) are found by rpm.
-# These are loaded at run time: xkbcommon always, then Wayland or X11 for the window.
+# Loaded at run time for the window, all required: it falls back to X11 where Wayland is missing, and a missing X11 library stops it.
 Requires:       libxkbcommon%{?_isa}
-Requires:       (libwayland-client%{?_isa} or libX11%{?_isa})
+Requires:       libxkbcommon-x11%{?_isa}
+Requires:       libwayland-client%{?_isa}
+Requires:       libX11%{?_isa}
+Requires:       libX11-xcb%{?_isa}
+Requires:       libXcursor%{?_isa}
+Requires:       libXi%{?_isa}
 # The virtual microphone.
 Recommends:     pipewire-libs%{?_isa}
-Recommends:     libwayland-client%{?_isa}
-Recommends:     libX11%{?_isa}
-Recommends:     libX11-xcb%{?_isa}
-Recommends:     libXcursor%{?_isa}
-Recommends:     libXi%{?_isa}
-Recommends:     libxkbcommon-x11%{?_isa}
 
 # Already built, stripped and linked: no debug package, no post-processing, no build-id links
 # (another package with the same ONNX Runtime build would otherwise conflict).

@@ -15,17 +15,13 @@ arch=('x86_64')
 url='https://github.com/SANSEVIERIA-OU/kalliope'
 license=('LicenseRef-SANSEVIERIA-1.1')
 # One Slint window on every desktop, drawn by Skia on the CPU: no toolkit, no scripting runtime, no GPU driver. Linked: glibc, gcc-libs,
-# fontconfig. Loaded at run time: libxkbcommon always, then libwayland-client (Wayland) or libX11, libX11-xcb, libXcursor, libXi
-# and libxkbcommon-x11 (X11) for the window, and libpipewire for the virtual microphone. ONNX Runtime and the voice models
-# come in the tarball (lib/, share/kalliope/): nothing is downloaded. tools/test_packaging.py checks this list against the binary.
-depends=('glibc' 'gcc-libs' 'fontconfig' 'libxkbcommon')
+# fontconfig. Loaded at run time for the window: libxkbcommon, libwayland-client (Wayland), libX11, libX11-xcb, libXcursor, libXi and
+# libxkbcommon-x11 (X11). All are required: the window falls back to X11 where Wayland is missing, and a missing X11 library stops it
+# (a desktop already has them all). libpipewire is the virtual microphone. ONNX Runtime and the voice models come in the tarball
+# (lib/, share/kalliope/): nothing is downloaded. tools/test_packaging.py checks this list against the binary and the CI.
+depends=('glibc' 'gcc-libs' 'fontconfig' 'libxkbcommon' 'libxkbcommon-x11' 'wayland' 'libx11' 'libxcursor' 'libxi')
 optdepends=(
   'libpipewire: the virtual microphone'
-  'wayland: the window on Wayland'
-  'libx11: the window on X11'
-  'libxcursor: the window on X11'
-  'libxi: the window on X11'
-  'libxkbcommon-x11: the window on X11'
 )
 provides=('kalliope')
 conflicts=('kalliope')

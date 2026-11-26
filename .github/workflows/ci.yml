@@ -40,6 +40,8 @@ jobs:
         run: |
           sudo apt-get update -q
           sudo apt-get install -y -q --no-install-recommends xvfb xdotool imagemagick dbus python3-gi gir1.2-glib-2.0 python3-fonttools python3-brotli
+          # What the deb requires for the window, and nothing that would bring it by chance (tools/test_packaging.py checks the list).
+          sudo apt-get install -y -q --no-install-recommends libxkbcommon0 libxkbcommon-x11-0 libwayland-client0 libx11-6 libx11-xcb1 libxcb1 libxcursor1 libxi6
       - name: Website translations, mirrored style sheets, the mark, the window's values and typefaces
         run: |
           python3 -I tools/translations.py extract --check

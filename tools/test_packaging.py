@@ -27,15 +27,17 @@ LINKED = {
     "libfontconfig.so.1", "libfreetype.so.6",
 }
 # Loaded while running, with the package of each on Arch, Debian and Fedora and whether the packages require it (True) or only recommend it.
+# The window's libraries are required: winit falls back to X11 where Wayland is missing, and a missing X11 library makes it panic
+# ("Library libxkbcommon-x11.so could not be loaded", found by CI on 26/11/2026).
 # libonnxruntime comes inside the package; libpipewire is the virtual microphone.
 LOADED = {
     "libxkbcommon.so.0": ("libxkbcommon", "libxkbcommon0", "libxkbcommon", True),
-    "libxkbcommon-x11.so.0": ("libxkbcommon-x11", "libxkbcommon-x11-0", "libxkbcommon-x11", False),
-    "libwayland-client.so.0": ("wayland", "libwayland-client0", "libwayland-client", False),
-    "libX11.so.6": ("libx11", "libx11-6", "libX11", False),
-    "libX11-xcb.so.1": ("libx11", "libx11-xcb1", "libX11-xcb", False),
-    "libXcursor.so.1": ("libxcursor", "libxcursor1", "libXcursor", False),
-    "libXi.so.6": ("libxi", "libxi6", "libXi", False),
+    "libxkbcommon-x11.so.0": ("libxkbcommon-x11", "libxkbcommon-x11-0", "libxkbcommon-x11", True),
+    "libwayland-client.so.0": ("wayland", "libwayland-client0", "libwayland-client", True),
+    "libX11.so.6": ("libx11", "libx11-6", "libX11", True),
+    "libX11-xcb.so.1": ("libx11", "libx11-xcb1", "libX11-xcb", True),
+    "libXcursor.so.1": ("libxcursor", "libxcursor1", "libXcursor", True),
+    "libXi.so.6": ("libxi", "libxi6", "libXi", True),
     "libpipewire-0.3.so.0": ("libpipewire", "libpipewire-0.3-0", "pipewire-libs", False),
     "libonnxruntime.so.1": None,  # in the package, next to the program
     "libXrender.so.1": None,  # opened on X11 as a dependency of libXcursor: the package manager brings it
@@ -47,10 +49,10 @@ LOADED = {
 NOT_OPENED = {"libEGL.so.1", "libwayland-egl.so.1", "libGL.so.1"}
 
 
-def depends_lines():
-    pkgbuild = re.findall(r"^(?:depends|optdepends)=\(.*?\)", PKGBUILD, re.S | re.M)
-    deb = [line for line in BUILD.splitlines() if re.match(r"(Depends|Recommends):", line)]
-    rpm = [line for line in SPEC.splitlines() if re.match(r"(Requires|Recommends):", line)]
+def depends_lines(required_only=False):
+    pkgbuild = re.findall(r"^depends=\(.*?\)" if required_only else r"^(?:depends|optdepends)=\(.*?\)", PKGBUILD, re.S | re.M)
+    deb = [line for line in BUILD.splitlines() if re.match(r"Depends:" if required_only else r"(Depends|Recommends):", line)]
+    rpm = [line for line in SPEC.splitlines() if re.match(r"Requires:" if required_only else r"(Requires|Recommends):", line)]
     return "\n".join(pkgbuild), "\n".join(deb), "\n".join(rpm)
 
 
@@ -83,6 +85,24 @@ class PackagingFiles(unittest.TestCase):
             self.assertRegex(arch, rf"'{re.escape(a)}[':]", f"{soname}: {a} is not in the PKGBUILD")
             self.assertIn(d, deb, f"{soname}: {d} is not in the deb")
             self.assertIn(r, rpm, f"{soname}: {r} is not in the rpm")
+
+    def test_the_window_libraries_are_required(self):
+        arch, deb, rpm = depends_lines(required_only=True)
+        for soname, package in LOADED.items():
+            if package is None or not package[3]:
+                continue
+            a, d, r, _ = package
+            self.assertRegex(arch, rf"'{re.escape(a)}'", f"{soname}: {a} is not in the PKGBUILD's depends")
+            self.assertRegex(deb, rf"[ ,]{re.escape(d)}(,|$)", f"{soname}: {d} is not in the deb's Depends")
+            self.assertRegex(rpm, rf"Requires:\s+{re.escape(r)}%", f"{soname}: {r} is not in the rpm's Requires")
+
+    def test_ci_opens_the_window_with_the_libraries_the_deb_requires(self):
+        # CI must install what a person's system gets from the deb, and no toolkit that would bring those libraries by chance.
+        ci = (ROOT / ".github/workflows/ci.yml").read_text(encoding="utf-8")
+        for soname, package in LOADED.items():
+            if package is None or not package[3]:
+                continue
+            self.assertRegex(ci, rf"apt-get install[^\n]*\s{re.escape(package[1])}(\s|$)", f"{soname}: CI does not install {package[1]}")
 
 
 @unittest.skipUnless(os.environ.get("KALLIOPE_BINARY"), "set KALLIOPE_BINARY to the built program")
