@@ -112,6 +112,8 @@ all'applicazione)».
   - la voce propria si crea nell'app, registrandola dal microfono o importando un file audio;
   - subito anche: una grande area di scrittura dove Invio parla (niente a capo: «ha poco senso andare a capo»), la modalità
     riunione compatta, il testo regolabile, la cronologia salvata. Rinviate: le frasi pronte.
+  - Attribuzione a Slint (decisione del proprietario del 26/11/2026): entrambe le forme ammesse dalla licenza, il widget
+    `AboutSlint` in «Informazioni» e il distintivo ufficiale «Made with Slint» sulla pagina «installa» (issue #21).
   - Il lavoro si segue nelle issue della milestone 0.3 (coordinamento in #20, personas e protocollo di verifica lì): ogni issue
     si chiude solo dopo test automatico, prova e2e, giro con le personas e risultato guardato. Il proprietario vede la
     direzione resa prima della costruzione, e la finestra finita prima del rilascio.
