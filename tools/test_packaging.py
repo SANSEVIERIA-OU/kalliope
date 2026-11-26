@@ -29,7 +29,9 @@ LINKED = {
 # Loaded while running, with the package of each on Arch, Debian and Fedora and whether the packages require it (True) or only recommend it.
 # The window's libraries are required: winit falls back to X11 where Wayland is missing, and a missing X11 library makes it panic
 # ("Library libxkbcommon-x11.so could not be loaded", found by CI on 26/11/2026).
-# libonnxruntime comes inside the package; libpipewire is the virtual microphone.
+# libonnxruntime comes inside the package; libpipewire is the virtual microphone and records a personal voice; libopus reads the Opus
+# voice messages of WhatsApp and Telegram a personal voice can be made from, and only that: recommended, since without it Kalliope works
+# and says what to install when such a file is chosen.
 LOADED = {
     "libxkbcommon.so.0": ("libxkbcommon", "libxkbcommon0", "libxkbcommon", True),
     "libxkbcommon-x11.so.0": ("libxkbcommon-x11", "libxkbcommon-x11-0", "libxkbcommon-x11", True),
@@ -39,6 +41,7 @@ LOADED = {
     "libXcursor.so.1": ("libxcursor", "libxcursor1", "libXcursor", True),
     "libXi.so.6": ("libxi", "libxi6", "libXi", True),
     "libpipewire-0.3.so.0": ("libpipewire", "libpipewire-0.3-0", "pipewire-libs", False),
+    "libopus.so.0": ("opus", "libopus0", "opus", False),
     "libonnxruntime.so.1": None,  # in the package, next to the program
     "libXrender.so.1": None,  # opened on X11 as a dependency of libXcursor: the package manager brings it
     "libxcb.so.1": None,  # opened on X11 as a dependency of libX11: the package manager brings it

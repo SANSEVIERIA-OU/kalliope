@@ -25,6 +25,7 @@ use std::path::{Path, PathBuf};
 use crate::json::Json;
 use crate::ort::{Env, Session, SessionConfig, Tensor};
 use crate::{Error, find_runtime, noise};
+pub use audio::resample;
 pub use text::TextOptions;
 pub use tokenizer::Tokenizer;
 

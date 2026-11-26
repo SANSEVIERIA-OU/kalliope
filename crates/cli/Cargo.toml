@@ -14,3 +14,4 @@ path = "src/main.rs"
 kalliope-text.workspace = true
 kalliope-phonemes.workspace = true
 kalliope-voice.workspace = true
+kalliope-sample.workspace = true

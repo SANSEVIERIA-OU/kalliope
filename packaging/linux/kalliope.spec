@@ -19,8 +19,10 @@ Requires:       libX11%{?_isa}
 Requires:       libX11-xcb%{?_isa}
 Requires:       libXcursor%{?_isa}
 Requires:       libXi%{?_isa}
-# The virtual microphone.
+# The virtual microphone, and recording a personal voice.
 Recommends:     pipewire-libs%{?_isa}
+# Making a personal voice from Opus voice messages (WhatsApp, Telegram).
+Recommends:     opus%{?_isa}
 
 # Already built, stripped and linked: no debug package, no post-processing, no build-id links
 # (another package with the same ONNX Runtime build would otherwise conflict).

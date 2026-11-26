@@ -1,8 +1,7 @@
 // SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! `kalliope`: development command line (text → normalized text → phonemes → audio).
 
-mod wav;
-
+use kalliope_sample::wav;
 use std::io::Write;
 use std::path::PathBuf;
 use std::process::ExitCode;
@@ -14,7 +13,7 @@ use kalliope_voice::{Voice, VoiceOptions};
 const USAGE: &str = "\
 usage:
   kalliope-cli say [options] TEXT...    speak TEXT into a WAV file
-  kalliope-cli voice [options] RECORDING.wav -o VOICE.safetensors
+  kalliope-cli voice [options] RECORDING -o VOICE.safetensors
                                         prepare a voice from a recording of its owner
   kalliope-cli phonemes TEXT...         print each normalized sentence and its phonemes
 
@@ -34,9 +33,12 @@ options for say:
   --phonemes        TEXT is already phonemes: skip normalization and phonemization (Klein)
   -o FILE           output WAV (default: kalliope.wav; - for standard output)
 
-options for voice: --pocket-dir, --threads, --ort-lib as above. The recording is a WAV file; only its
-first 12 seconds are used. Use your own voice, or the voice of someone who has given explicit consent:
-the model's terms forbid imitating anyone else.";
+options for voice: --pocket-dir, --threads, --ort-lib as above, and
+  --stretch N       make the voice from the Nth clearest stretch (default: 1, the clearest)
+The recording is an audio or video file: WAV, FLAC, MP3, OGG, OPUS (WhatsApp and Telegram voice
+messages, with libopus), M4A, MP4, MKV or WEBM. The voice is made from its clearest 12 seconds of
+speech. Use your own voice, or the voice of someone who has given explicit consent: the model's terms
+forbid imitating anyone else.";
 
 struct SayArgs {
     model_dir: PathBuf,
@@ -209,6 +211,7 @@ fn prepare_voice(args: &[String]) -> Result<(), String> {
     let mut options = PocketOptions::default();
     let mut output = None;
     let mut input = None;
+    let mut stretch = 1usize;
     let mut it = args.iter();
     while let Some(arg) = it.next() {
         let mut value = |name: &str| {
@@ -225,32 +228,70 @@ fn prepare_voice(args: &[String]) -> Result<(), String> {
             }
             "--ort-lib" => options.ort_lib = Some(value(arg)?.into()),
             "-o" => output = Some(PathBuf::from(value(arg)?)),
+            "--stretch" => {
+                stretch = value(arg)?
+                    .parse()
+                    .map_err(|_| "--stretch needs a number".to_string())?
+            }
             s if s.starts_with('-') && s.len() > 1 => return Err(format!("unknown option {s}")),
             s if input.is_none() => input = Some(PathBuf::from(s)),
             s => return Err(format!("unexpected argument {s}")),
         }
     }
-    let input = input.ok_or("which recording? (a WAV file)")?;
+    let input = input.ok_or("which recording? (an audio file)")?;
     let output = output.ok_or("where to save the voice? (-o VOICE.safetensors)")?;
-    let bytes = std::fs::read(&input).map_err(|e| format!("{}: {e}", input.display()))?;
-    let (samples, rate) = wav::decode(&bytes).map_err(|e| format!("{}: {e}", input.display()))?;
     let t0 = Instant::now();
-    let pocket = Pocket::load(&pocket_dir, &options).map_err(|e| e.to_string())?;
-    let loaded = t0.elapsed();
-    let t1 = Instant::now();
-    let voice = pocket
-        .prepare_voice(&samples, rate)
-        .map_err(|e| e.to_string())?;
-    let prepared = t1.elapsed();
-    pocket
-        .save_voice(&voice, &output)
-        .map_err(|e| e.to_string())?;
+    let never = std::sync::atomic::AtomicBool::new(false);
+    let audio = kalliope_sample::read_file(&input, &never, &mut |_| {})
+        .map_err(|e| format!("{}: {}", input.display(), e.message()))?;
+    let sample = kalliope_sample::Sample::new(&audio);
+    let read = t0.elapsed();
     eprintln!(
-        "load {} ms · voice prepared in {} ms ({:.1} s of recording, {} positions) · saved to {}",
-        loaded.as_millis(),
-        prepared.as_millis(),
-        samples.len() as f64 / f64::from(rate),
-        voice.positions(),
+        "{}: {:.1} s{}, {:.1} s of speech, signal-to-noise {:.0} dB",
+        input.display(),
+        audio.seconds(),
+        if audio.truncated {
+            " (only the start was read)"
+        } else {
+            ""
+        },
+        sample.quality.speech_seconds,
+        sample.quality.snr_db
+    );
+    for (i, s) in sample.stretches.iter().enumerate() {
+        eprintln!(
+            "  stretch {}: {:.1}–{:.1} s, score {:.2}, {:.1} s of speech, level {:.0} dB, SNR {:.0} dB",
+            i + 1,
+            s.start,
+            s.end,
+            s.score,
+            s.quality.speech_seconds,
+            s.quality.level_db,
+            s.quality.snr_db
+        );
+        for p in &s.problems {
+            eprintln!("    {}", p.message());
+        }
+    }
+    let index = stretch.saturating_sub(1);
+    if index >= sample.stretches.len() {
+        return Err(format!("there is no stretch {stretch}"));
+    }
+    if let Some(p) = sample.stretches[index].problems.iter().find(|p| p.blocks()) {
+        return Err(p.message().to_string());
+    }
+    let model = kalliope_sample::Model {
+        pocket_dir,
+        options,
+    };
+    let t1 = Instant::now();
+    kalliope_sample::prepare_voice(&model, sample.stretch(index), &output, &never, &mut |_| {})
+        .map_err(|e| e.message())?;
+    eprintln!(
+        "read in {} ms · voice prepared and saved in {} ms (stretch {}) · {}",
+        read.as_millis(),
+        t1.elapsed().as_millis(),
+        index + 1,
         output.display()
     );
     Ok(())
