@@ -97,6 +97,8 @@ fn say(text: &str) -> ExitCode {
         let _ = tx.send(e);
     });
     let (mut spoken, mut failed) = (false, false);
+    let trace = std::env::var_os("KALLIOPE_AVANZAMENTO").is_some();
+    let start = std::time::Instant::now();
     while let Ok(event) = rx.recv() {
         match event {
             Event::Ready { microphone } => {
@@ -106,6 +108,7 @@ fn say(text: &str) -> ExitCode {
                 engine.send(Command::Speak(text.to_string()));
             }
             Event::Speaking | Event::NotHeard => spoken = true,
+            Event::Sounding(s) if trace => eprintln!("{}", drive::trace(&s, start)),
             Event::Idle if spoken => {
                 // Apps receive audio in blocks: keep the microphone a moment longer, so the
                 // last syllables reach them before it disappears.

@@ -243,11 +243,13 @@ fn finish(
         }
         Err(e) => println!("{e}"),
     }
+    // What the window would ask; --sostituisci is the person's yes.
     let check = session.check_voice_name(name);
-    if !matches!(check, NameCheck::Free { .. })
+    if o.replace
+        && !matches!(check, NameCheck::Free { .. })
         && let Some(m) = check.message()
     {
-        println!("{m}");
+        println!("{m} Sì.");
     }
     let (tx, rx) = channel();
     let started = Instant::now();
@@ -321,15 +323,48 @@ fn say(
     if !session.speak(phrase) {
         return ExitCode::FAILURE;
     }
-    if wait(&|s| s.phase == Phase::Speaking, Duration::from_secs(10)).is_none()
-        || wait(&|s| s.phase == Phase::Ready, Duration::from_secs(120)).is_none()
-    {
-        return ExitCode::FAILURE;
+    let start = Instant::now();
+    let deadline = start + Duration::from_secs(120);
+    let (mut printed, mut speaking) = (None, false);
+    loop {
+        let Ok(s) = status.recv_timeout(deadline.saturating_duration_since(Instant::now())) else {
+            eprintln!("la frase non è finita in tempo");
+            return ExitCode::FAILURE;
+        };
+        if s.phase == Phase::Error {
+            eprintln!("{}", s.text);
+            return ExitCode::FAILURE;
+        }
+        if let Some(p) = &s.sounding {
+            let key = (p.id, p.span.start, p.exact);
+            if printed != Some(key) {
+                println!("{}", trace(p, start));
+                printed = Some(key);
+            }
+        }
+        speaking |= s.phase == Phase::Speaking;
+        if speaking && s.phase == Phase::Ready {
+            break;
+        }
     }
     // Apps receive audio in blocks: keep the microphone a moment longer.
     std::thread::sleep(Duration::from_millis(1000));
     println!("detta con la voce «{}»", id.label());
     ExitCode::SUCCESS
+}
+
+/// One line for a piece that starts sounding: when (ms since `start`), what it says and for how long.
+pub fn trace(s: &crate::engine::Sounding, start: Instant) -> String {
+    format!(
+        "avanzamento {:6} ms · {:5} ms{} · byte {}..{} · «{}»{}",
+        start.elapsed().as_millis(),
+        s.duration.as_millis(),
+        if s.exact { "" } else { " (stima)" },
+        s.span.start,
+        s.span.end,
+        &s.phrase[s.span.clone()],
+        if s.last { " · ultimo" } else { "" }
+    )
 }
 
 fn usage_error(e: &str) -> ExitCode {
