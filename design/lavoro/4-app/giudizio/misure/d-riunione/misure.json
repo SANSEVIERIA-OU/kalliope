@@ -1,0 +1,88 @@
+{
+ "video": "riunione.mp4",
+ "larghezza": 920,
+ "altezza": 640,
+ "fotogrammi": 270,
+ "durata": 8967,
+ "frequenza": "fissa",
+ "zona": null,
+ "da": 0,
+ "a": null,
+ "soglia": 12,
+ "minimo": 400,
+ "pausa": 250,
+ "tratti": [
+  {
+   "inizio": 1067,
+   "fine": 1067,
+   "durata": 0,
+   "fotogrammi": 1,
+   "intervallo": null,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0,
+   "quota_finale": 0,
+   "transitorio": 0,
+   "come": null,
+   "meta": 0,
+   "novanta": 0,
+   "passaggio": null,
+   "rettangolo": null,
+   "celle": [
+    {
+     "ms": 1033,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 1067,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "misure/d-riunione/tratto-1.jpg"
+  },
+  {
+   "inizio": 1500,
+   "fine": 1533,
+   "durata": 33,
+   "fotogrammi": 2,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.8822,
+   "quota_finale": 0.8822,
+   "transitorio": 0,
+   "come": {
+    "salta": 1,
+    "sfuma": 0,
+    "altro": 0
+   },
+   "meta": 0,
+   "novanta": 33,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 0
+   },
+   "rettangolo": {
+    "x": 0.014583333333333334,
+    "y": 0.014970059880239521,
+    "l": 0.9770833333333333,
+    "a": 0.9790419161676647
+   },
+   "celle": [
+    {
+     "ms": 1467,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 1500,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 1533,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "misure/d-riunione/tratto-2.jpg"
+  }
+ ]
+}

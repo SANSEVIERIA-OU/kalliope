@@ -1,0 +1,421 @@
+{
+ "video": "menu-tastiera.mp4",
+ "larghezza": 920,
+ "altezza": 640,
+ "fotogrammi": 420,
+ "durata": 13967,
+ "frequenza": "fissa",
+ "zona": {
+  "x": 450,
+  "y": 40,
+  "l": 470,
+  "a": 200
+ },
+ "da": 0,
+ "a": null,
+ "soglia": 12,
+ "minimo": 400,
+ "pausa": 250,
+ "tratti": [
+  {
+   "inizio": 2367,
+   "fine": 2367,
+   "durata": 0,
+   "fotogrammi": 1,
+   "intervallo": null,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.01,
+   "quota_finale": 0.01,
+   "transitorio": 0,
+   "come": {
+    "salta": 1,
+    "sfuma": 0,
+    "altro": 0
+   },
+   "meta": 0,
+   "novanta": 0,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 0
+   },
+   "rettangolo": {
+    "x": 0.11788617886178862,
+    "y": 0,
+    "l": 0.42276422764227645,
+    "a": 0.04716981132075472
+   },
+   "celle": [
+    {
+     "ms": 2333,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 2367,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "/workspace/kalliope/materiali-locali/direzione-finestra-prove/misure/c-menu-tastiera/tratto-1.jpg"
+  },
+  {
+   "inizio": 2700,
+   "fine": 2867,
+   "durata": 167,
+   "fotogrammi": 6,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.4132,
+   "quota_finale": 0.4083,
+   "transitorio": 0.0444,
+   "come": {
+    "salta": 0.372,
+    "sfuma": 0.508,
+    "altro": 0.12
+   },
+   "meta": 33,
+   "novanta": 100,
+   "passaggio": {
+    "mediana": 67,
+    "novanta": 100
+   },
+   "rettangolo": {
+    "x": 0.17886178861788618,
+    "y": 0.02830188679245283,
+    "l": 0.7479674796747967,
+    "a": 0.9528301886792453
+   },
+   "celle": [
+    {
+     "ms": 2667,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 2700,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 2733,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 2767,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 2800,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 2833,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 2867,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "/workspace/kalliope/materiali-locali/direzione-finestra-prove/misure/c-menu-tastiera/tratto-2.jpg"
+  },
+  {
+   "inizio": 3367,
+   "fine": 3367,
+   "durata": 0,
+   "fotogrammi": 1,
+   "intervallo": null,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.3123,
+   "quota_finale": 0.3123,
+   "transitorio": 0,
+   "come": {
+    "salta": 1,
+    "sfuma": 0,
+    "altro": 0
+   },
+   "meta": 0,
+   "novanta": 0,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 0
+   },
+   "rettangolo": {
+    "x": 0.23170731707317074,
+    "y": 0.22641509433962265,
+    "l": 0.7073170731707317,
+    "a": 0.46226415094339623
+   },
+   "celle": [
+    {
+     "ms": 3333,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 3367,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "/workspace/kalliope/materiali-locali/direzione-finestra-prove/misure/c-menu-tastiera/tratto-3.jpg"
+  },
+  {
+   "inizio": 3667,
+   "fine": 3667,
+   "durata": 0,
+   "fotogrammi": 1,
+   "intervallo": null,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.3111,
+   "quota_finale": 0.3111,
+   "transitorio": 0,
+   "come": {
+    "salta": 1,
+    "sfuma": 0,
+    "altro": 0
+   },
+   "meta": 0,
+   "novanta": 0,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 0
+   },
+   "rettangolo": {
+    "x": 0.23170731707317074,
+    "y": 0.46226415094339623,
+    "l": 0.7073170731707317,
+    "a": 0.46226415094339623
+   },
+   "celle": [
+    {
+     "ms": 3633,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 3667,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "/workspace/kalliope/materiali-locali/direzione-finestra-prove/misure/c-menu-tastiera/tratto-4.jpg"
+  },
+  {
+   "inizio": 4133,
+   "fine": 4367,
+   "durata": 234,
+   "fotogrammi": 8,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.3363,
+   "quota_finale": 0.3363,
+   "transitorio": 0.0219,
+   "come": {
+    "salta": 0.382,
+    "sfuma": 0.338,
+    "altro": 0.28
+   },
+   "meta": 67,
+   "novanta": 167,
+   "passaggio": {
+    "mediana": 133,
+    "novanta": 200
+   },
+   "rettangolo": {
+    "x": 0.10975609756097561,
+    "y": 0.018867924528301886,
+    "l": 0.8211382113821138,
+    "a": 0.9528301886792453
+   },
+   "celle": [
+    {
+     "ms": 4100,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 4133,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 4167,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 4233,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 4267,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 4333,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 4367,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "/workspace/kalliope/materiali-locali/direzione-finestra-prove/misure/c-menu-tastiera/tratto-5.jpg"
+  },
+  {
+   "inizio": 5000,
+   "fine": 5200,
+   "durata": 200,
+   "fotogrammi": 7,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.3299,
+   "quota_finale": 0.3297,
+   "transitorio": 0.0244,
+   "come": {
+    "salta": 0.337,
+    "sfuma": 0.525,
+    "altro": 0.137
+   },
+   "meta": 67,
+   "novanta": 133,
+   "passaggio": {
+    "mediana": 100,
+    "novanta": 100
+   },
+   "rettangolo": {
+    "x": 0.10975609756097561,
+    "y": 0.018867924528301886,
+    "l": 0.8211382113821138,
+    "a": 0.9528301886792453
+   },
+   "celle": [
+    {
+     "ms": 4967,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 5000,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5033,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5067,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5133,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5167,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5200,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "/workspace/kalliope/materiali-locali/direzione-finestra-prove/misure/c-menu-tastiera/tratto-6.jpg"
+  },
+  {
+   "inizio": 5633,
+   "fine": 5633,
+   "durata": 0,
+   "fotogrammi": 1,
+   "intervallo": null,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.3096,
+   "quota_finale": 0.3096,
+   "transitorio": 0,
+   "come": {
+    "salta": 1,
+    "sfuma": 0,
+    "altro": 0
+   },
+   "meta": 0,
+   "novanta": 0,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 0
+   },
+   "rettangolo": {
+    "x": 0.23170731707317074,
+    "y": 0.46226415094339623,
+    "l": 0.7073170731707317,
+    "a": 0.46226415094339623
+   },
+   "celle": [
+    {
+     "ms": 5600,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 5633,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "/workspace/kalliope/materiali-locali/direzione-finestra-prove/misure/c-menu-tastiera/tratto-7.jpg"
+  },
+  {
+   "inizio": 5933,
+   "fine": 6167,
+   "durata": 234,
+   "fotogrammi": 8,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.356,
+   "quota_finale": 0.356,
+   "transitorio": 0.0262,
+   "come": {
+    "salta": 0.437,
+    "sfuma": 0.342,
+    "altro": 0.221
+   },
+   "meta": 67,
+   "novanta": 167,
+   "passaggio": {
+    "mediana": 100,
+    "novanta": 200
+   },
+   "rettangolo": {
+    "x": 0.11788617886178862,
+    "y": 0.018867924528301886,
+    "l": 0.8089430894308943,
+    "a": 0.9528301886792453
+   },
+   "celle": [
+    {
+     "ms": 5900,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 5933,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5967,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 6033,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 6067,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 6133,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 6167,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "/workspace/kalliope/materiali-locali/direzione-finestra-prove/misure/c-menu-tastiera/tratto-8.jpg"
+  }
+ ]
+}

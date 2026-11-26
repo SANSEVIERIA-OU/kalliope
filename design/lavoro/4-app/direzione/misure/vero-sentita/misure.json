@@ -1,0 +1,272 @@
+{
+ "video": "vero-sentita.mp4",
+ "larghezza": 920,
+ "altezza": 640,
+ "fotogrammi": 390,
+ "durata": 12967,
+ "frequenza": "fissa",
+ "zona": null,
+ "da": 0,
+ "a": null,
+ "soglia": 12,
+ "minimo": 400,
+ "pausa": 250,
+ "tratti": [
+  {
+   "inizio": 733,
+   "fine": 3933,
+   "durata": 3200,
+   "fotogrammi": 97,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.1777,
+   "quota_finale": 0.1363,
+   "transitorio": 0.0754,
+   "come": {
+    "salta": 0.565,
+    "sfuma": 0.115,
+    "altro": 0.32
+   },
+   "meta": 1034,
+   "novanta": 1234,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 300
+   },
+   "rettangolo": {
+    "x": 0.029166666666666667,
+    "y": 0.37425149700598803,
+    "l": 0.8895833333333333,
+    "a": 0.5449101796407185
+   },
+   "celle": [
+    {
+     "ms": 700,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 733,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 1367,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 2000,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 2667,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 3300,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 3933,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "/workspace/kalliope/materiali-locali/direzione-finestra-prove/misure/vero-sentita/tratto-1.jpg"
+  },
+  {
+   "inizio": 4233,
+   "fine": 4233,
+   "durata": 0,
+   "fotogrammi": 1,
+   "intervallo": null,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.0004,
+   "quota_finale": 0.0004,
+   "transitorio": 0,
+   "come": {
+    "salta": 1,
+    "sfuma": 0,
+    "altro": 0
+   },
+   "meta": 0,
+   "novanta": 0,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 0
+   },
+   "rettangolo": {
+    "x": 0.029166666666666667,
+    "y": 0.5898203592814372,
+    "l": 0.029166666666666667,
+    "a": 0.1497005988023952
+   },
+   "celle": [
+    {
+     "ms": 4200,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 4233,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "/workspace/kalliope/materiali-locali/direzione-finestra-prove/misure/vero-sentita/tratto-2.jpg"
+  },
+  {
+   "inizio": 4833,
+   "fine": 4833,
+   "durata": 0,
+   "fotogrammi": 1,
+   "intervallo": null,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.0002,
+   "quota_finale": 0.0002,
+   "transitorio": 0,
+   "come": {
+    "salta": 1,
+    "sfuma": 0,
+    "altro": 0
+   },
+   "meta": 0,
+   "novanta": 0,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 0
+   },
+   "rettangolo": {
+    "x": 0.029166666666666667,
+    "y": 0.5898203592814372,
+    "l": 0.03125,
+    "a": 0.02694610778443114
+   },
+   "celle": [
+    {
+     "ms": 4800,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 4833,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "/workspace/kalliope/materiali-locali/direzione-finestra-prove/misure/vero-sentita/tratto-3.jpg"
+  },
+  {
+   "inizio": 5600,
+   "fine": 5767,
+   "durata": 167,
+   "fotogrammi": 6,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.0007,
+   "quota_finale": 0.0007,
+   "transitorio": 0.0001,
+   "come": {
+    "salta": 0.771,
+    "sfuma": 0.147,
+    "altro": 0.083
+   },
+   "meta": 133,
+   "novanta": 167,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 67
+   },
+   "rettangolo": {
+    "x": 0.029166666666666667,
+    "y": 0.5898203592814372,
+    "l": 0.03125,
+    "a": 0.1497005988023952
+   },
+   "celle": [
+    {
+     "ms": 5567,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 5600,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5633,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5667,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5700,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5733,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5767,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "/workspace/kalliope/materiali-locali/direzione-finestra-prove/misure/vero-sentita/tratto-4.jpg"
+  },
+  {
+   "inizio": 6267,
+   "fine": 6400,
+   "durata": 133,
+   "fotogrammi": 5,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.0629,
+   "quota_finale": 0.0588,
+   "transitorio": 0.0088,
+   "come": {
+    "salta": 0.507,
+    "sfuma": 0.124,
+    "altro": 0.369
+   },
+   "meta": 0,
+   "novanta": 100,
+   "passaggio": {
+    "mediana": 33,
+    "novanta": 100
+   },
+   "rettangolo": {
+    "x": 0.01875,
+    "y": 0.41916167664670656,
+    "l": 0.7479166666666667,
+    "a": 0.48502994011976047
+   },
+   "celle": [
+    {
+     "ms": 6233,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 6267,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 6300,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 6333,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 6367,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 6400,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "/workspace/kalliope/materiali-locali/direzione-finestra-prove/misure/vero-sentita/tratto-5.jpg"
+  }
+ ]
+}

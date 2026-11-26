@@ -1,0 +1,137 @@
+{
+ "video": "c-invio-passaggio.mp4",
+ "larghezza": 920,
+ "altezza": 640,
+ "fotogrammi": 240,
+ "durata": 7967,
+ "frequenza": "fissa",
+ "zona": {
+  "x": 0,
+  "y": 56,
+  "l": 920,
+  "a": 330
+ },
+ "da": 0,
+ "a": null,
+ "soglia": 12,
+ "minimo": 400,
+ "pausa": 250,
+ "tratti": [
+  {
+   "inizio": 0,
+   "fine": 1933,
+   "durata": 1933,
+   "fotogrammi": 59,
+   "intervallo": 33,
+   "iniziato_prima": true,
+   "non_finito": false,
+   "quota_massima": 0.3601,
+   "quota_finale": 0.3493,
+   "transitorio": 0.0908,
+   "come": {
+    "salta": 0.554,
+    "sfuma": 0.052,
+    "altro": 0.394
+   },
+   "meta": 267,
+   "novanta": 600,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 567
+   },
+   "rettangolo": {
+    "x": 0.029166666666666667,
+    "y": 0.07514450867052024,
+    "l": 0.7770833333333333,
+    "a": 0.7861271676300579
+   },
+   "celle": [
+    {
+     "ms": 0,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 400,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 767,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 1167,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 1533,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 1933,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "/workspace/kalliope/materiali-locali/direzione-finestra-prove/misure/c-invio-passaggio/tratto-1.jpg"
+  },
+  {
+   "inizio": 2367,
+   "fine": 2733,
+   "durata": 366,
+   "fotogrammi": 12,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.0671,
+   "quota_finale": 0.0671,
+   "transitorio": 0.0082,
+   "come": {
+    "salta": 0.517,
+    "sfuma": 0.179,
+    "altro": 0.304
+   },
+   "meta": 0,
+   "novanta": 233,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 300
+   },
+   "rettangolo": {
+    "x": 0.016666666666666666,
+    "y": 0.2543352601156069,
+    "l": 0.4791666666666667,
+    "a": 0.3468208092485549
+   },
+   "celle": [
+    {
+     "ms": 2333,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 2367,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 2433,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 2500,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 2600,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 2667,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 2733,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "/workspace/kalliope/materiali-locali/direzione-finestra-prove/misure/c-invio-passaggio/tratto-2.jpg"
+  }
+ ]
+}

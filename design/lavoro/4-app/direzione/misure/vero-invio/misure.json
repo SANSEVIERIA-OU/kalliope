@@ -1,0 +1,137 @@
+{
+ "video": "vero-invio.mp4",
+ "larghezza": 920,
+ "altezza": 640,
+ "fotogrammi": 450,
+ "durata": 14967,
+ "frequenza": "fissa",
+ "zona": {
+  "x": 0,
+  "y": 60,
+  "l": 920,
+  "a": 320
+ },
+ "da": 0,
+ "a": null,
+ "soglia": 12,
+ "minimo": 400,
+ "pausa": 250,
+ "tratti": [
+  {
+   "inizio": 3600,
+   "fine": 8300,
+   "durata": 4700,
+   "fotogrammi": 142,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.3999,
+   "quota_finale": 0.3973,
+   "transitorio": 0.0046,
+   "come": {
+    "salta": 0.312,
+    "sfuma": 0.564,
+    "altro": 0.124
+   },
+   "meta": 133,
+   "novanta": 567,
+   "passaggio": {
+    "mediana": 133,
+    "novanta": 233
+   },
+   "rettangolo": {
+    "x": 0.025,
+    "y": 0.5059523809523809,
+    "l": 0.8270833333333333,
+    "a": 0.47619047619047616
+   },
+   "celle": [
+    {
+     "ms": 3567,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 3600,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 4533,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5467,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 6433,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 7367,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 8300,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "/workspace/kalliope/materiali-locali/direzione-finestra-prove/misure/vero-invio/tratto-1.jpg"
+  },
+  {
+   "inizio": 9700,
+   "fine": 9833,
+   "durata": 133,
+   "fotogrammi": 5,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.116,
+   "quota_finale": 0.1099,
+   "transitorio": 0.0147,
+   "come": {
+    "salta": 0.473,
+    "sfuma": 0.144,
+    "altro": 0.384
+   },
+   "meta": 33,
+   "novanta": 100,
+   "passaggio": {
+    "mediana": 67,
+    "novanta": 133
+   },
+   "rettangolo": {
+    "x": 0.01875,
+    "y": 0.5059523809523809,
+    "l": 0.7979166666666667,
+    "a": 0.375
+   },
+   "celle": [
+    {
+     "ms": 9667,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 9700,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 9733,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 9767,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 9800,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 9833,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "/workspace/kalliope/materiali-locali/direzione-finestra-prove/misure/vero-invio/tratto-2.jpg"
+  }
+ ]
+}

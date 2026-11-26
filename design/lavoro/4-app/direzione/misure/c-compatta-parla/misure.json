@@ -1,0 +1,141 @@
+{
+ "video": "c-compatta-parla.mp4",
+ "larghezza": 400,
+ "altezza": 320,
+ "fotogrammi": 300,
+ "durata": 9967,
+ "frequenza": "fissa",
+ "zona": {
+  "x": 0,
+  "y": 0,
+  "l": 400,
+  "a": 80
+ },
+ "da": 0,
+ "a": null,
+ "soglia": 12,
+ "minimo": 400,
+ "pausa": 250,
+ "tratti": [
+  {
+   "inizio": 733,
+   "fine": 4933,
+   "durata": 4200,
+   "fotogrammi": 127,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.6729,
+   "quota_finale": 0.5979,
+   "transitorio": 0.3481,
+   "come": {
+    "salta": 0.155,
+    "sfuma": 0.297,
+    "altro": 0.548
+   },
+   "meta": 1967,
+   "novanta": 3767,
+   "passaggio": {
+    "mediana": 533,
+    "novanta": 4167
+   },
+   "rettangolo": {
+    "x": 0.01875,
+    "y": 0.10416666666666667,
+    "l": 0.9604166666666667,
+    "a": 0.8958333333333334
+   },
+   "celle": [
+    {
+     "ms": 700,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 733,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 1567,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 2400,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 3267,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 4100,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 4933,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "/workspace/kalliope/materiali-locali/direzione-finestra-prove/misure/c-compatta-parla/tratto-1.jpg"
+  },
+  {
+   "inizio": 5400,
+   "fine": 5767,
+   "durata": 367,
+   "fotogrammi": 12,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.5113,
+   "quota_finale": 0.5113,
+   "transitorio": 0.0024,
+   "come": {
+    "salta": 0.413,
+    "sfuma": 0.246,
+    "altro": 0.341
+   },
+   "meta": 67,
+   "novanta": 267,
+   "passaggio": {
+    "mediana": 133,
+    "novanta": 300
+   },
+   "rettangolo": {
+    "x": 0.010416666666666666,
+    "y": 0.09375,
+    "l": 0.9770833333333333,
+    "a": 0.90625
+   },
+   "celle": [
+    {
+     "ms": 5367,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 5400,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5467,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5533,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5633,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5700,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5767,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "/workspace/kalliope/materiali-locali/direzione-finestra-prove/misure/c-compatta-parla/tratto-2.jpg"
+  }
+ ]
+}

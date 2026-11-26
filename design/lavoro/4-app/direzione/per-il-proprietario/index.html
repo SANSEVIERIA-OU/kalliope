@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kalliope · la nuova finestra · da approvare</title>
+<style>
+  body { margin: 0; background: #121718; color: #e8efee; font: 17px/1.55 system-ui, sans-serif; }
+  main { max-width: 1180px; margin: 0 auto; padding: 32px 24px 80px; }
+  h1 { font-size: 30px; margin: 0 0 8px; } h2 { font-size: 22px; margin: 40px 0 10px; }
+  p, li { color: #c8d3d1; max-width: 70ch; }
+  img { width: 100%; border-radius: 10px; display: block; }
+  .video { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px; }
+  figure { margin: 0; } figcaption { font-size: 15px; color: #9fb0ad; margin-top: 6px; }
+  video { width: 100%; border-radius: 10px; background: #000; }
+  .nota { background: #1c2426; border-radius: 10px; padding: 14px 18px; }
+  a { color: #91dfbd; }
+</style>
+</head>
+<body>
+<main>
+  <h1>La nuova finestra di Kalliope: «la frase che si accende»</h1>
+  <p>Direzione da approvare (26/11/2026). Scrivi nella grande bolla tratteggiata (il «non ancora detto», come nel logo): Invio la dice, la frase sale nella bolla chiara e le parole si accendono mentre la voce le pronuncia, poi resta qui da ripetere. Se nessuno nella chiamata ti sente, la bolla si scalda e te lo dice. La voce propria si crea dentro la finestra.</p>
+  <p class="nota">Già guardata da un giudice indipendente e corretta una volta. I due difetti bloccanti (scrittura che non cresceva, voce non sceglibile da tastiera) sono risolti e verificati.</p>
+
+  <h2>Gli stati, in scuro e in chiaro</h2>
+  <p>Riga 1, scuro: scrivi · sta parlando · nessuno ti sente. Riga 2, chiaro: scrivi · sta parlando · la voce non parte. Riga 3: i tre passi di «Crea la tua voce». Riga 4: modalità riunione stretta, finestra minima, testo al 175%.</p>
+  <img src="finestra-stati.png" alt="Gli stati della finestra">
+
+  <h2>I movimenti, a velocità vera</h2>
+  <div class="video">
+    <figure><video src="02-vero-invio-parla-sentita.mp4" controls muted loop preload="metadata"></video><figcaption>Con il motore vero: scrivi, Invio, la voce parla e le parole si accendono.</figcaption></figure>
+    <figure><video src="c-invio-passaggio.mp4" controls muted loop preload="metadata"></video><figcaption>La frase sale dalla scrittura e la cronologia scorre.</figcaption></figure>
+    <figure><video src="c-voce-registra.mp4" controls muted loop preload="metadata"></video><figcaption>Crea la tua voce: leggi, il cerchio si riempie fino a 12 secondi.</figcaption></figure>
+    <figure><video src="c-menu-tastiera.mp4" controls muted loop preload="metadata"></video><figcaption>Scegliere la voce solo con la tastiera.</figcaption></figure>
+    <figure><video src="c-compatta-parla.mp4" controls muted loop preload="metadata"></video><figcaption>Modalità riunione compatta, mentre parla.</figcaption></figure>
+    <figure><video src="c-testo.mp4" controls muted loop preload="metadata"></video><figcaption>A+ e A−: il testo cresce, i comandi restano al loro posto.</figcaption></figure>
+  </div>
+
+  <h2>Il design system della finestra</h2>
+  <p>Colori dei due temi con la fonte di ciascuno, caratteri, misure, tempi e tutti i componenti nei loro stati. Ogni valore viene da <code>design-system/token.css</code>.</p>
+  <img src="catalogo.png" alt="Il catalogo">
+
+  <h2>Che cosa resta debole, già noto</h2>
+  <ul>
+    <li>Le parole che si accendono seguono un ritmo stimato: il motore in costruzione porterà i tempi veri di ogni pezzo detto.</li>
+    <li>Alla finestra minima con testo al 150% la modalità riunione resta stretta.</li>
+    <li>Su Wayland «sempre in primo piano» lo decide il sistema (Alt+Spazio): la finestra lo spiega una volta.</li>
+  </ul>
+  <p>Documenti: <a href="../direzione.md">direzione.md</a> · <a href="../../giudizio/giudizio.md">giudizio del giudice</a>.</p>
+</main>
+</body>
+</html>

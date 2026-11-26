@@ -1,0 +1,136 @@
+{
+ "video": "c-testo.mp4",
+ "larghezza": 920,
+ "altezza": 640,
+ "fotogrammi": 240,
+ "durata": 7967,
+ "frequenza": "fissa",
+ "zona": null,
+ "da": 0,
+ "a": null,
+ "soglia": 12,
+ "minimo": 400,
+ "pausa": 250,
+ "tratti": [
+  {
+   "inizio": 733,
+   "fine": 733,
+   "durata": 0,
+   "fotogrammi": 1,
+   "intervallo": null,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.2544,
+   "quota_finale": 0.2544,
+   "transitorio": 0,
+   "come": {
+    "salta": 1,
+    "sfuma": 0,
+    "altro": 0
+   },
+   "meta": 0,
+   "novanta": 0,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 0
+   },
+   "rettangolo": {
+    "x": 0.029166666666666667,
+    "y": 0.041916167664670656,
+    "l": 0.9375,
+    "a": 0.9191616766467066
+   },
+   "celle": [
+    {
+     "ms": 700,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 733,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "/workspace/kalliope/materiali-locali/direzione-finestra-prove/misure/c-testo/tratto-1.jpg"
+  },
+  {
+   "inizio": 2100,
+   "fine": 2100,
+   "durata": 0,
+   "fotogrammi": 1,
+   "intervallo": null,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.1969,
+   "quota_finale": 0.1969,
+   "transitorio": 0,
+   "come": {
+    "salta": 1,
+    "sfuma": 0,
+    "altro": 0
+   },
+   "meta": 0,
+   "novanta": 0,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 0
+   },
+   "rettangolo": {
+    "x": 0.022916666666666665,
+    "y": 0.04790419161676647,
+    "l": 0.9458333333333333,
+    "a": 0.9221556886227545
+   },
+   "celle": [
+    {
+     "ms": 2067,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 2100,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "/workspace/kalliope/materiali-locali/direzione-finestra-prove/misure/c-testo/tratto-2.jpg"
+  },
+  {
+   "inizio": 3433,
+   "fine": 3433,
+   "durata": 0,
+   "fotogrammi": 1,
+   "intervallo": null,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.2565,
+   "quota_finale": 0.2565,
+   "transitorio": 0,
+   "come": {
+    "salta": 1,
+    "sfuma": 0,
+    "altro": 0
+   },
+   "meta": 0,
+   "novanta": 0,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 0
+   },
+   "rettangolo": {
+    "x": 0.022916666666666665,
+    "y": 0.05688622754491018,
+    "l": 0.9479166666666666,
+    "a": 0.9131736526946108
+   },
+   "celle": [
+    {
+     "ms": 3400,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 3433,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "/workspace/kalliope/materiali-locali/direzione-finestra-prove/misure/c-testo/tratto-3.jpg"
+  }
+ ]
+}

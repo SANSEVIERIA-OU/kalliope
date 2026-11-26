@@ -1,0 +1,136 @@
+{
+ "video": "fine-frase.mp4",
+ "larghezza": 920,
+ "altezza": 640,
+ "fotogrammi": 270,
+ "durata": 8967,
+ "frequenza": "fissa",
+ "zona": null,
+ "da": 0,
+ "a": null,
+ "soglia": 12,
+ "minimo": 400,
+ "pausa": 250,
+ "tratti": [
+  {
+   "inizio": 433,
+   "fine": 1833,
+   "durata": 1400,
+   "fotogrammi": 43,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.221,
+   "quota_finale": 0.2068,
+   "transitorio": 0.0661,
+   "come": {
+    "salta": 0.663,
+    "sfuma": 0.115,
+    "altro": 0.222
+   },
+   "meta": 267,
+   "novanta": 500,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 567
+   },
+   "rettangolo": {
+    "x": 0.027083333333333334,
+    "y": 0.09281437125748503,
+    "l": 0.9041666666666667,
+    "a": 0.8682634730538922
+   },
+   "celle": [
+    {
+     "ms": 400,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 433,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 700,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 1000,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 1267,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 1567,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 1833,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "/workspace/kalliope/materiali-locali/direzione-finestra-prove/misure/fine-frase/tratto-1.jpg"
+  },
+  {
+   "inizio": 2500,
+   "fine": 2967,
+   "durata": 467,
+   "fotogrammi": 15,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.0637,
+   "quota_finale": 0.0637,
+   "transitorio": 0.0069,
+   "come": {
+    "salta": 0.417,
+    "sfuma": 0.212,
+    "altro": 0.371
+   },
+   "meta": 33,
+   "novanta": 267,
+   "passaggio": {
+    "mediana": 100,
+    "novanta": 300
+   },
+   "rettangolo": {
+    "x": 0.01875,
+    "y": 0.41916167664670656,
+    "l": 0.7958333333333333,
+    "a": 0.48502994011976047
+   },
+   "celle": [
+    {
+     "ms": 2467,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 2500,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 2600,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 2700,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 2767,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 2867,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 2967,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "/workspace/kalliope/materiali-locali/direzione-finestra-prove/misure/fine-frase/tratto-2.jpg"
+  }
+ ]
+}

@@ -1,0 +1,296 @@
+{
+ "video": "movimenti.mp4",
+ "larghezza": 920,
+ "altezza": 640,
+ "fotogrammi": 330,
+ "durata": 10978,
+ "frequenza": "fissa",
+ "zona": null,
+ "da": 0,
+ "a": null,
+ "soglia": 12,
+ "minimo": 400,
+ "pausa": 250,
+ "tratti": [
+  {
+   "inizio": 968,
+   "fine": 1134,
+   "durata": 166,
+   "fotogrammi": 6,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.2531,
+   "quota_finale": 0.2531,
+   "transitorio": 0.0268,
+   "come": {
+    "salta": 0.315,
+    "sfuma": 0.539,
+    "altro": 0.146
+   },
+   "meta": 33,
+   "novanta": 133,
+   "passaggio": {
+    "mediana": 100,
+    "novanta": 166
+   },
+   "rettangolo": {
+    "x": 0.03125,
+    "y": 0.041916167664670656,
+    "l": 0.9104166666666667,
+    "a": 0.9191616766467066
+   },
+   "celle": [
+    {
+     "ms": 934,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 968,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 1001,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 1034,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 1068,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 1101,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 1134,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "misure/d-movimenti/tratto-1.jpg"
+  },
+  {
+   "inizio": 3070,
+   "fine": 3303,
+   "durata": 233,
+   "fotogrammi": 8,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.2547,
+   "quota_finale": 0.2545,
+   "transitorio": 0.0276,
+   "come": {
+    "salta": 0.28,
+    "sfuma": 0.604,
+    "altro": 0.116
+   },
+   "meta": 66,
+   "novanta": 167,
+   "passaggio": {
+    "mediana": 133,
+    "novanta": 167
+   },
+   "rettangolo": {
+    "x": 0.03125,
+    "y": 0.038922155688622756,
+    "l": 0.9104166666666667,
+    "a": 0.9221556886227545
+   },
+   "celle": [
+    {
+     "ms": 3036,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 3070,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 3103,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 3170,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 3203,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 3270,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 3303,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "misure/d-movimenti/tratto-2.jpg"
+  },
+  {
+   "inizio": 5172,
+   "fine": 5372,
+   "durata": 200,
+   "fotogrammi": 7,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.0455,
+   "quota_finale": 0.0455,
+   "transitorio": 0.0069,
+   "come": {
+    "salta": 0.351,
+    "sfuma": 0.548,
+    "altro": 0.101
+   },
+   "meta": 67,
+   "novanta": 133,
+   "passaggio": {
+    "mediana": 67,
+    "novanta": 100
+   },
+   "rettangolo": {
+    "x": 0.35833333333333334,
+    "y": 0.08083832335329341,
+    "l": 0.5770833333333333,
+    "a": 0.4431137724550898
+   },
+   "celle": [
+    {
+     "ms": 5138,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 5172,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5205,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5239,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5305,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5339,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5372,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "misure/d-movimenti/tratto-3.jpg"
+  },
+  {
+   "inizio": 6807,
+   "fine": 6974,
+   "durata": 167,
+   "fotogrammi": 6,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.0482,
+   "quota_finale": 0.0456,
+   "transitorio": 0.0095,
+   "come": {
+    "salta": 0.355,
+    "sfuma": 0.534,
+    "altro": 0.111
+   },
+   "meta": 67,
+   "novanta": 133,
+   "passaggio": {
+    "mediana": 100,
+    "novanta": 134
+   },
+   "rettangolo": {
+    "x": 0.5770833333333333,
+    "y": 0.09880239520958084,
+    "l": 0.35833333333333334,
+    "a": 0.4251497005988024
+   },
+   "celle": [
+    {
+     "ms": 6773,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 6807,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 6840,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 6874,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 6907,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 6940,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 6974,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "misure/d-movimenti/tratto-4.jpg"
+  },
+  {
+   "inizio": 8408,
+   "fine": 8408,
+   "durata": 0,
+   "fotogrammi": 1,
+   "intervallo": null,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.3727,
+   "quota_finale": 0.3727,
+   "transitorio": 0,
+   "come": {
+    "salta": 1,
+    "sfuma": 0,
+    "altro": 0
+   },
+   "meta": 0,
+   "novanta": 0,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 0
+   },
+   "rettangolo": {
+    "x": 0.03333333333333333,
+    "y": 0.041916167664670656,
+    "l": 0.9041666666666667,
+    "a": 0.9131736526946108
+   },
+   "celle": [
+    {
+     "ms": 8375,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 8408,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "misure/d-movimenti/tratto-5.jpg"
+  }
+ ]
+}

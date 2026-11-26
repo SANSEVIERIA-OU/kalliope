@@ -1,0 +1,72 @@
+{
+ "video": "arrivo.mp4",
+ "larghezza": 920,
+ "altezza": 640,
+ "fotogrammi": 210,
+ "durata": 6967,
+ "frequenza": "fissa",
+ "zona": null,
+ "da": 0,
+ "a": null,
+ "soglia": 12,
+ "minimo": 400,
+ "pausa": 250,
+ "tratti": [
+  {
+   "inizio": 0,
+   "fine": 667,
+   "durata": 667,
+   "fotogrammi": 21,
+   "intervallo": 33,
+   "iniziato_prima": true,
+   "non_finito": false,
+   "quota_massima": 0.0151,
+   "quota_finale": 0.0105,
+   "transitorio": 0.0112,
+   "come": {
+    "salta": 0.661,
+    "sfuma": 0.025,
+    "altro": 0.314
+   },
+   "meta": 667,
+   "novanta": 667,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 634
+   },
+   "rettangolo": {
+    "x": 0.025,
+    "y": 0.5958083832335329,
+    "l": 0.95,
+    "a": 0.36826347305389223
+   },
+   "celle": [
+    {
+     "ms": 0,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 133,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 267,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 400,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 533,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 667,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "/workspace/kalliope/materiali-locali/direzione-finestra-prove/misure/arrivo/tratto-1.jpg"
+  }
+ ]
+}

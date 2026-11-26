@@ -1,0 +1,77 @@
+{
+ "video": "scrivi.mp4",
+ "larghezza": 920,
+ "altezza": 640,
+ "fotogrammi": 450,
+ "durata": 14967,
+ "frequenza": "fissa",
+ "zona": {
+  "x": 30,
+  "y": 290,
+  "l": 700,
+  "a": 50
+ },
+ "da": 3300,
+ "a": 6000,
+ "soglia": 12,
+ "minimo": 400,
+ "pausa": 400,
+ "tratti": [
+  {
+   "inizio": 3267,
+   "fine": 5533,
+   "durata": 2266,
+   "fotogrammi": 69,
+   "intervallo": 33,
+   "iniziato_prima": true,
+   "non_finito": false,
+   "quota_massima": 0.1571,
+   "quota_finale": 0.1499,
+   "transitorio": 0.0182,
+   "come": {
+    "salta": 0.193,
+    "sfuma": 0.293,
+    "altro": 0.514
+   },
+   "meta": 900,
+   "novanta": 2033,
+   "passaggio": {
+    "mediana": 1300,
+    "novanta": 2166
+   },
+   "rettangolo": {
+    "x": 0.0273224043715847,
+    "y": 0.25925925925925924,
+    "l": 0.819672131147541,
+    "a": 0.4444444444444444
+   },
+   "celle": [
+    {
+     "ms": 3267,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 3733,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 4167,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 4633,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5067,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5533,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "misure/d-scrivi-parole/tratto-1.jpg"
+  }
+ ]
+}

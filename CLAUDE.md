@@ -119,6 +119,10 @@ all'applicazione)».
   - la voce propria si crea nell'app, registrandola dal microfono o importando un file audio;
   - subito anche: una grande area di scrittura dove Invio parla (niente a capo: «ha poco senso andare a capo»), la modalità
     riunione compatta, il testo regolabile, la cronologia salvata. Rinviate: le frasi pronte.
+  - **Direzione della finestra approvata dal proprietario il 26/11/2026** («per me va tutto bene»): «La frase che si accende»
+    (`design/lavoro/4-app/direzione/direzione.md`), resa, giudicata (`design/lavoro/4-app/giudizio/giudizio.md`) e corretta una
+    volta; i video e il catalogo visti dal proprietario sono in `design/lavoro/4-app/direzione/per-il-proprietario/`. È il termine
+    di confronto della costruzione.
   - Attribuzione a Slint (decisione del proprietario del 26/11/2026): entrambe le forme ammesse dalla licenza, il widget
     `AboutSlint` in «Informazioni» e il distintivo ufficiale «Made with Slint» sulla pagina «installa» (issue #21).
   - Il lavoro si segue nelle issue della milestone 0.3 (coordinamento in #20, personas e protocollo di verifica lì): ogni issue

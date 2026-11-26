@@ -1,0 +1,76 @@
+{
+ "video": "scrivi.mp4",
+ "larghezza": 920,
+ "altezza": 640,
+ "fotogrammi": 450,
+ "durata": 14967,
+ "frequenza": "fissa",
+ "zona": null,
+ "da": 2800,
+ "a": 3600,
+ "soglia": 12,
+ "minimo": 400,
+ "pausa": 120,
+ "tratti": [
+  {
+   "inizio": 2933,
+   "fine": 3600,
+   "durata": 667,
+   "fotogrammi": 21,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": true,
+   "quota_massima": 0.2346,
+   "quota_finale": 0.2213,
+   "transitorio": 0.0495,
+   "come": {
+    "salta": 0.728,
+    "sfuma": 0.067,
+    "altro": 0.205
+   },
+   "meta": 0,
+   "novanta": 267,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 534
+   },
+   "rettangolo": {
+    "x": 0.03125,
+    "y": 0.09580838323353294,
+    "l": 0.8854166666666666,
+    "a": 0.8203592814371258
+   },
+   "celle": [
+    {
+     "ms": 2900,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 2933,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 3067,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 3200,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 3333,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 3467,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 3600,
+     "ruolo": "movimento"
+    }
+   ],
+   "striscia": "misure/d-scrivi-invio/tratto-1.jpg"
+  }
+ ]
+}

@@ -1,0 +1,136 @@
+{
+ "video": "menu-voce.mp4",
+ "larghezza": 920,
+ "altezza": 640,
+ "fotogrammi": 150,
+ "durata": 4967,
+ "frequenza": "fissa",
+ "zona": null,
+ "da": 0,
+ "a": null,
+ "soglia": 12,
+ "minimo": 400,
+ "pausa": 250,
+ "tratti": [
+  {
+   "inizio": 733,
+   "fine": 1000,
+   "durata": 267,
+   "fotogrammi": 9,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.0465,
+   "quota_finale": 0.0464,
+   "transitorio": 0.0104,
+   "come": {
+    "salta": 0.316,
+    "sfuma": 0.576,
+    "altro": 0.107
+   },
+   "meta": 34,
+   "novanta": 134,
+   "passaggio": {
+    "mediana": 100,
+    "novanta": 134
+   },
+   "rettangolo": {
+    "x": 0.3625,
+    "y": 0.09580838323353294,
+    "l": 0.5729166666666666,
+    "a": 0.5988023952095808
+   },
+   "celle": [
+    {
+     "ms": 700,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 733,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 800,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 833,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 900,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 933,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 1000,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "/workspace/kalliope/materiali-locali/direzione-finestra-prove/misure/menu-voce/tratto-1.jpg"
+  },
+  {
+   "inizio": 2500,
+   "fine": 2733,
+   "durata": 233,
+   "fotogrammi": 8,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.0482,
+   "quota_finale": 0.0458,
+   "transitorio": 0.0094,
+   "come": {
+    "salta": 0.353,
+    "sfuma": 0.537,
+    "altro": 0.111
+   },
+   "meta": 67,
+   "novanta": 133,
+   "passaggio": {
+    "mediana": 100,
+    "novanta": 134
+   },
+   "rettangolo": {
+    "x": 0.575,
+    "y": 0.09880239520958084,
+    "l": 0.36041666666666666,
+    "a": 0.4251497005988024
+   },
+   "celle": [
+    {
+     "ms": 2467,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 2500,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 2533,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 2600,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 2633,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 2700,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 2733,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "/workspace/kalliope/materiali-locali/direzione-finestra-prove/misure/menu-voce/tratto-2.jpg"
+  }
+ ]
+}

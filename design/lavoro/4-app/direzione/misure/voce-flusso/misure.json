@@ -1,0 +1,116 @@
+{
+ "video": "voce-flusso.mp4",
+ "larghezza": 920,
+ "altezza": 640,
+ "fotogrammi": 420,
+ "durata": 13967,
+ "frequenza": "fissa",
+ "zona": null,
+ "da": 0,
+ "a": null,
+ "soglia": 12,
+ "minimo": 400,
+ "pausa": 250,
+ "tratti": [
+  {
+   "inizio": 933,
+   "fine": 933,
+   "durata": 0,
+   "fotogrammi": 1,
+   "intervallo": null,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.1273,
+   "quota_finale": 0.1273,
+   "transitorio": 0,
+   "come": {
+    "salta": 1,
+    "sfuma": 0,
+    "altro": 0
+   },
+   "meta": 0,
+   "novanta": 0,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 0
+   },
+   "rettangolo": {
+    "x": 0.03333333333333333,
+    "y": 0.04790419161676647,
+    "l": 0.8833333333333333,
+    "a": 0.8922155688622755
+   },
+   "celle": [
+    {
+     "ms": 900,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 933,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "/workspace/kalliope/materiali-locali/direzione-finestra-prove/misure/voce-flusso/tratto-1.jpg"
+  },
+  {
+   "inizio": 3100,
+   "fine": 8000,
+   "durata": 4900,
+   "fotogrammi": 148,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.1217,
+   "quota_finale": 0.1217,
+   "transitorio": 0.0172,
+   "come": {
+    "salta": 0.662,
+    "sfuma": 0.013,
+    "altro": 0.325
+   },
+   "meta": 3400,
+   "novanta": 4900,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 4867
+   },
+   "rettangolo": {
+    "x": 0.03125,
+    "y": 0.04790419161676647,
+    "l": 0.9291666666666667,
+    "a": 0.8922155688622755
+   },
+   "celle": [
+    {
+     "ms": 3067,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 3100,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 4067,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5067,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 6033,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 7033,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 8000,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "/workspace/kalliope/materiali-locali/direzione-finestra-prove/misure/voce-flusso/tratto-2.jpg"
+  }
+ ]
+}

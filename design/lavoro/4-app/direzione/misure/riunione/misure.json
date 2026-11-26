@@ -1,0 +1,96 @@
+{
+ "video": "riunione.mp4",
+ "larghezza": 920,
+ "altezza": 640,
+ "fotogrammi": 179,
+ "durata": 5983,
+ "frequenza": "fissa",
+ "zona": null,
+ "da": 0,
+ "a": null,
+ "soglia": 12,
+ "minimo": 400,
+ "pausa": 250,
+ "tratti": [
+  {
+   "inizio": 739,
+   "fine": 739,
+   "durata": 0,
+   "fotogrammi": 1,
+   "intervallo": null,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.8233,
+   "quota_finale": 0.8233,
+   "transitorio": 0,
+   "come": {
+    "salta": 1,
+    "sfuma": 0,
+    "altro": 0
+   },
+   "meta": 0,
+   "novanta": 0,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 0
+   },
+   "rettangolo": {
+    "x": 0.014583333333333334,
+    "y": 0.011976047904191617,
+    "l": 0.9791666666666666,
+    "a": 0.9820359281437125
+   },
+   "celle": [
+    {
+     "ms": 706,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 739,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "/workspace/kalliope/materiali-locali/direzione-finestra-prove/misure/riunione/tratto-1.jpg"
+  },
+  {
+   "inizio": 3092,
+   "fine": 3092,
+   "durata": 0,
+   "fotogrammi": 1,
+   "intervallo": null,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.8239,
+   "quota_finale": 0.8239,
+   "transitorio": 0,
+   "come": {
+    "salta": 1,
+    "sfuma": 0,
+    "altro": 0
+   },
+   "meta": 0,
+   "novanta": 0,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 0
+   },
+   "rettangolo": {
+    "x": 0.014583333333333334,
+    "y": 0.011976047904191617,
+    "l": 0.9791666666666666,
+    "a": 0.9820359281437125
+   },
+   "celle": [
+    {
+     "ms": 3059,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 3092,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "/workspace/kalliope/materiali-locali/direzione-finestra-prove/misure/riunione/tratto-2.jpg"
+  }
+ ]
+}

@@ -1,0 +1,79 @@
+DICHIARATO durata --app-intervallo-fotogramma 16ms: scelta: un fotogramma, il tempo per far ripartire un'entrata da capo
+DICHIARATO durata --app-registrazione-utile 12s: fonte: 12 secondi utili bastano a Pocket TTS (benchmarks/voce-propria/README.md, V-4)
+TRACCIATO carattere --app-font-testo Lexend: visione del proprietario (il carattere del sito e del sistema, voluto per la finestra il 26/11/2026)
+TRACCIATO colore --app-fondo #1b2223: base: #1b2223 (kalliope-sito)
+TRACCIATO colore --app-barra #151b1c: visione del proprietario: #151b1c
+TRACCIATO colore --app-campo rgba(242, 245, 244, 0.04): base: #f2f5f4 (kalliope-sito, cboard)
+TRACCIATO colore --app-pannello #202b2b: visione del proprietario: #202b2b
+TRACCIATO colore --app-velo-modale rgba(10, 14, 15, 0.6): base: #0e1415 (kalliope-sito)
+TRACCIATO colore --app-testo #f2f5f4: base: #f2f5f4 (kalliope-sito, cboard)
+TRACCIATO colore --app-testo-tenue rgba(242, 245, 244, 0.8): base: #f2f5f4 (kalliope-sito, cboard)
+TRACCIATO colore --app-testo-spento rgba(242, 245, 244, 0.6): base: #f2f5f4 (kalliope-sito, cboard)
+TRACCIATO colore --app-segnaposto rgba(242, 245, 244, 0.46): base: #f2f5f4 (kalliope-sito, cboard)
+TRACCIATO colore --app-bordo rgba(181, 218, 206, 0.14): base: #b5dace (kalliope-sito)
+TRACCIATO colore --app-bordo-comando rgba(181, 218, 206, 0.35): base: #b5dace (kalliope-sito)
+TRACCIATO colore --app-velo-sopra rgba(242, 245, 244, 0.06): base: #f2f5f4 (kalliope-sito, cboard)
+TRACCIATO colore --app-velo-scelto rgba(242, 245, 244, 0.14): base: #f2f5f4 (kalliope-sito, cboard)
+TRACCIATO colore --app-velo-premuto rgba(242, 245, 244, 0.18): base: #f2f5f4 (kalliope-sito, cboard)
+TRACCIATO colore --app-ombra rgba(10, 14, 15, 0.85): base: #0e1415 (kalliope-sito)
+TRACCIATO colore --app-azione #91dfbd: base: #91dfbd (kalliope-sito)
+TRACCIATO colore --app-azione-sopra #b4edcf: visione del proprietario: #b5e8d2
+TRACCIATO colore --app-azione-testo #152c24: base: #152c24 (kalliope-sito)
+TRACCIATO colore --app-voce #b5e8d2: visione del proprietario: #b5e8d2
+TRACCIATO colore --app-tratteggio rgba(145, 223, 189, 0.5): base: #91dfbd (kalliope-sito)
+TRACCIATO colore --app-tratteggio-fuoco #91dfbd: base: #91dfbd (kalliope-sito)
+TRACCIATO colore --app-bolla #f2f5f4: base: #f2f5f4 (kalliope-sito, cboard)
+TRACCIATO colore --app-bolla-testo #171d1d: visione del proprietario: #171d1d
+TRACCIATO colore --app-bolla-da-dire rgba(23, 29, 29, 0.34): visione del proprietario: #171d1d
+TRACCIATO colore --app-detta rgba(242, 245, 244, 0.08): base: #f2f5f4 (kalliope-sito, cboard)
+TRACCIATO colore --app-registra-fisso #e6396e: visione del proprietario: #e6396e
+TRACCIATO colore --app-segno-fisso #e6396e: visione del proprietario: #e6396e
+TRACCIATO colore --app-attenzione #e1ad8b: variante della tinta di #655147 (kalliope-sito)
+TRACCIATO colore --app-attenzione-fondo rgba(201, 144, 120, 0.16): variante della tinta di #655147 (kalliope-sito)
+TRACCIATO colore --app-tinta-propria #263b35: base: #263b35 (kalliope-sito)
+TRACCIATO colore --app-tinta-voce-1 #55465c: base: #55465c (kalliope-sito)
+TRACCIATO colore --app-tinta-voce-2 #3d4e62: base: #3d4e62 (kalliope-sito)
+TRACCIATO colore --app-tinta-voce-3 #496259: base: #496259 (kalliope-sito)
+TRACCIATO durata --app-durata-bolla 520ms: nel campo misurato (150-1400 ms)
+TRACCIATO durata --app-durata-parola 360ms: nel campo misurato (150-1400 ms)
+TRACCIATO durata --app-durata-scurisce 200ms: nel campo misurato (150-1400 ms)
+TRACCIATO durata --app-durata-dissolvenza 160ms: nel campo misurato (150-1400 ms)
+TRACCIATO durata --app-durata-pannello 300ms: nel campo misurato (150-1400 ms)
+TRACCIATO durata --app-durata-pannello-uscita 240ms: nel campo misurato (150-1400 ms)
+TRACCIATO durata --app-durata-barre 460ms: nel campo misurato (150-1400 ms)
+TRACCIATO durata --app-durata-cammino 1400ms: nel campo misurato (150-1400 ms)
+TRACCIATO durata --app-durata-anello 900ms: nel campo misurato (150-1400 ms)
+TRACCIATO durata --app-intervallo-registrazione 100ms: nel campo misurato (150-1400 ms)
+TRACCIATO colore --app-fondo #f2f5f4: base: #f2f5f4 (kalliope-sito, cboard)
+TRACCIATO colore --app-barra #dfe7e3: visione del proprietario: #dfe7e3
+TRACCIATO colore --app-campo #fff: base: #f2f5f4 (kalliope-sito, cboard)
+TRACCIATO colore --app-pannello #fff: base: #f2f5f4 (kalliope-sito, cboard)
+TRACCIATO colore --app-velo-modale rgba(23, 29, 29, 0.32): visione del proprietario: #171d1d
+TRACCIATO colore --app-testo #171d1d: visione del proprietario: #171d1d
+TRACCIATO colore --app-testo-tenue rgba(23, 29, 29, 0.66): visione del proprietario: #171d1d
+TRACCIATO colore --app-testo-spento rgba(23, 29, 29, 0.46): visione del proprietario: #171d1d
+TRACCIATO colore --app-segnaposto rgba(23, 29, 29, 0.42): visione del proprietario: #171d1d
+TRACCIATO colore --app-bordo rgba(23, 29, 29, 0.12): visione del proprietario: #171d1d
+TRACCIATO colore --app-bordo-comando rgba(30, 39, 39, 0.35): visione del proprietario: #202b2b
+TRACCIATO colore --app-velo-sopra rgba(23, 29, 29, 0.05): visione del proprietario: #171d1d
+TRACCIATO colore --app-velo-scelto rgba(23, 29, 29, 0.09): visione del proprietario: #171d1d
+TRACCIATO colore --app-velo-premuto rgba(23, 29, 29, 0.14): visione del proprietario: #171d1d
+TRACCIATO colore --app-ombra rgba(30, 39, 39, 0.22): visione del proprietario: #202b2b
+TRACCIATO colore --app-azione #27795f: visione del proprietario: #27795f
+TRACCIATO colore --app-azione-sopra #1f6a52: variante della tinta di #27795f (visione del proprietario)
+TRACCIATO colore --app-azione-testo #fff: base: #f2f5f4 (kalliope-sito, cboard)
+TRACCIATO colore --app-voce #27795f: visione del proprietario: #27795f
+TRACCIATO colore --app-tratteggio rgba(39, 121, 95, 0.5): visione del proprietario: #27795f
+TRACCIATO colore --app-tratteggio-fuoco #27795f: visione del proprietario: #27795f
+TRACCIATO colore --app-bolla #1b2223: base: #1b2223 (kalliope-sito)
+TRACCIATO colore --app-bolla-testo #f2f5f4: base: #f2f5f4 (kalliope-sito, cboard)
+TRACCIATO colore --app-bolla-da-dire rgba(242, 245, 244, 0.4): base: #f2f5f4 (kalliope-sito, cboard)
+TRACCIATO colore --app-detta rgba(23, 29, 29, 0.06): visione del proprietario: #171d1d
+TRACCIATO colore --app-attenzione #8f4f36: variante della tinta di #655147 (kalliope-sito)
+TRACCIATO colore --app-attenzione-fondo rgba(201, 144, 120, 0.2): variante della tinta di #655147 (kalliope-sito)
+TRACCIATO colore --app-tinta-propria #b5e8d2: visione del proprietario: #b5e8d2
+TRACCIATO colore --app-tinta-voce-1 #b194bf: variante della tinta di #55465c (kalliope-sito)
+TRACCIATO colore --app-tinta-voce-2 #a4b9d1: variante della tinta di #3d4e62 (kalliope-sito)
+TRACCIATO colore --app-tinta-voce-3 #82b4a3: visione del proprietario: #82b4a3
+STILE DI DEFAULT colore --app-attenzione #8f4f36: accento terracotta, mattone o ambra (giudizio.md, parte E); viene da variante della tinta di #655147 (kalliope-sito): il giudice lo guarda
+riepilogo: 64 colori e 1 caratteri; 65 tracciati, 0 dichiarati, 0 senza fonte

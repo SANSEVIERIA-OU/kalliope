@@ -1,0 +1,77 @@
+{
+ "video": "scrivi.mp4",
+ "larghezza": 920,
+ "altezza": 640,
+ "fotogrammi": 450,
+ "durata": 14967,
+ "frequenza": "fissa",
+ "zona": {
+  "x": 20,
+  "y": 60,
+  "l": 880,
+  "a": 220
+ },
+ "da": 2800,
+ "a": 3400,
+ "soglia": 12,
+ "minimo": 400,
+ "pausa": 200,
+ "tratti": [
+  {
+   "inizio": 2767,
+   "fine": 2933,
+   "durata": 166,
+   "fotogrammi": 6,
+   "intervallo": 33,
+   "iniziato_prima": true,
+   "non_finito": false,
+   "quota_massima": 0.4038,
+   "quota_finale": 0.4038,
+   "transitorio": 0,
+   "come": {
+    "salta": 1,
+    "sfuma": 0,
+    "altro": 0
+   },
+   "meta": 166,
+   "novanta": 166,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 0
+   },
+   "rettangolo": {
+    "x": 0.02391304347826087,
+    "y": 0.008620689655172414,
+    "l": 0.7804347826086957,
+    "a": 0.9913793103448276
+   },
+   "celle": [
+    {
+     "ms": 2767,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 2800,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 2833,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 2867,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 2900,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 2933,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "misure/d-scrivi-storia/tratto-1.jpg"
+  }
+ ]
+}

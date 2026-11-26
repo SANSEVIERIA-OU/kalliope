@@ -1,0 +1,236 @@
+{
+ "video": "scrivi.mp4",
+ "larghezza": 920,
+ "altezza": 640,
+ "fotogrammi": 450,
+ "durata": 14967,
+ "frequenza": "fissa",
+ "zona": null,
+ "da": 0,
+ "a": null,
+ "soglia": 12,
+ "minimo": 400,
+ "pausa": 250,
+ "tratti": [
+  {
+   "inizio": 933,
+   "fine": 2033,
+   "durata": 1100,
+   "fotogrammi": 34,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.0237,
+   "quota_finale": 0.0237,
+   "transitorio": 0.0076,
+   "come": {
+    "salta": 0.801,
+    "sfuma": 0.007,
+    "altro": 0.192
+   },
+   "meta": 434,
+   "novanta": 967,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 167
+   },
+   "rettangolo": {
+    "x": 0.06458333333333334,
+    "y": 0.6796407185628742,
+    "l": 0.8770833333333333,
+    "a": 0.25449101796407186
+   },
+   "celle": [
+    {
+     "ms": 900,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 933,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 1167,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 1367,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 1600,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 1800,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 2033,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "misure/d-scrivi/tratto-1.jpg"
+  },
+  {
+   "inizio": 2933,
+   "fine": 5533,
+   "durata": 2600,
+   "fotogrammi": 79,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.2346,
+   "quota_finale": 0.2226,
+   "transitorio": 0.0488,
+   "come": {
+    "salta": 0.702,
+    "sfuma": 0.082,
+    "altro": 0.216
+   },
+   "meta": 0,
+   "novanta": 400,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 600
+   },
+   "rettangolo": {
+    "x": 0.029166666666666667,
+    "y": 0.09580838323353294,
+    "l": 0.8875,
+    "a": 0.8203592814371258
+   },
+   "celle": [
+    {
+     "ms": 2900,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 2933,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 3467,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 3967,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 4500,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5000,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5533,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "misure/d-scrivi/tratto-2.jpg"
+  },
+  {
+   "inizio": 6167,
+   "fine": 6667,
+   "durata": 500,
+   "fotogrammi": 16,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.0664,
+   "quota_finale": 0.0664,
+   "transitorio": 0.0049,
+   "come": {
+    "salta": 0.373,
+    "sfuma": 0.237,
+    "altro": 0.39
+   },
+   "meta": 66,
+   "novanta": 300,
+   "passaggio": {
+    "mediana": 166,
+    "novanta": 333
+   },
+   "rettangolo": {
+    "x": 0.01875,
+    "y": 0.4221556886227545,
+    "l": 0.7958333333333333,
+    "a": 0.4820359281437126
+   },
+   "celle": [
+    {
+     "ms": 6133,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 6167,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 6267,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 6367,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 6467,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 6567,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 6667,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "misure/d-scrivi/tratto-3.jpg"
+  },
+  {
+   "inizio": 8300,
+   "fine": 8300,
+   "durata": 0,
+   "fotogrammi": 1,
+   "intervallo": null,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.0233,
+   "quota_finale": 0.0233,
+   "transitorio": 0,
+   "come": {
+    "salta": 1,
+    "sfuma": 0,
+    "altro": 0
+   },
+   "meta": 0,
+   "novanta": 0,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 0
+   },
+   "rettangolo": {
+    "x": 0.06041666666666667,
+    "y": 0.6916167664670658,
+    "l": 0.8833333333333333,
+    "a": 0.24251497005988024
+   },
+   "celle": [
+    {
+     "ms": 8267,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 8300,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "misure/d-scrivi/tratto-4.jpg"
+  }
+ ]
+}
