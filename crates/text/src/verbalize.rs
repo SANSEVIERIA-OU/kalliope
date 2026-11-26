@@ -4,6 +4,7 @@
 use crate::lexer::{Kind, Token};
 use crate::lexicon::{self, Abbreviation, When};
 use crate::numbers;
+use std::ops::Range;
 
 #[derive(Debug, Clone, PartialEq)]
 enum Out {
@@ -303,13 +304,22 @@ struct Verbalizer<'a> {
     toks: &'a [Token],
     i: usize,
     out: Vec<Out>,
+    /// The tokens each item of `out` was made from.
+    from: Vec<Range<usize>>,
     shouting: bool,
     phone: bool,
     currency_before: Option<(&'static str, &'static str)>,
 }
 
+/// A sentence in spoken form, with the tokens each of its words was read from.
+pub struct Spoken {
+    pub text: String,
+    /// One per word of `text` (split at white space), in order: a range of token indices.
+    pub words: Vec<Range<usize>>,
+}
+
 /// Spoken-form sentences for the tokens of one text.
-pub fn verbalize(toks: &[Token]) -> Vec<String> {
+pub fn verbalize(toks: &[Token]) -> Vec<Spoken> {
     let words: Vec<&Token> = toks
         .iter()
         .filter(|t| t.is(Kind::Word) && t.text.chars().filter(|c| c.is_alphabetic()).count() >= 2)
@@ -322,11 +332,13 @@ pub fn verbalize(toks: &[Token]) -> Vec<String> {
         toks,
         i: 0,
         out: Vec::new(),
+        from: Vec::new(),
         shouting: words.len() >= 2 && upper * 10 >= words.len() * 7,
         phone: false,
         currency_before: None,
     };
     while v.i < toks.len() {
+        let start = v.i;
         let t = &toks[v.i];
         if t.kind != Kind::Number {
             v.phone = false;
@@ -341,6 +353,9 @@ pub fn verbalize(toks: &[Token]) -> Vec<String> {
             Kind::Word => v.word_token(t),
         }
         v.i += 1;
+        // Whatever this round said comes from the tokens it read, lookahead included.
+        let read = start..v.i.min(toks.len()).max(start + 1);
+        v.from.resize(v.out.len(), read);
     }
     v.render()
 }
@@ -382,22 +397,37 @@ impl<'a> Verbalizer<'a> {
         }
     }
 
-    fn render(self) -> Vec<String> {
+    fn render(self) -> Vec<Spoken> {
         let mut sentences = Vec::new();
         let mut cur = String::new();
+        let mut words: Vec<Range<usize>> = Vec::new();
         let mut glued = false;
-        let mut flush = |cur: &mut String| {
+        let mut flush = |cur: &mut String, words: &mut Vec<Range<usize>>| {
             let s = cur.trim().trim_end_matches([',', ';', ':']);
             if s.chars().any(char::is_alphanumeric) {
-                sentences.push(s.to_string());
+                sentences.push(Spoken {
+                    text: s.to_string(),
+                    words: std::mem::take(words),
+                });
             }
+            words.clear();
             cur.clear();
         };
-        for o in self.out {
+        let extend = |words: &mut Vec<Range<usize>>, from: &Range<usize>| {
+            if let Some(w) = words.last_mut() {
+                *w = w.start.min(from.start)..w.end.max(from.end);
+            }
+        };
+        for (o, from) in self.out.into_iter().zip(self.from) {
             match o {
                 Out::Word(w) => {
                     if !cur.is_empty() && !glued {
                         cur.push(' ');
+                    }
+                    if cur.is_empty() || !glued {
+                        words.push(from);
+                    } else {
+                        extend(&mut words, &from);
                     }
                     cur.push_str(&w);
                     glued = false;
@@ -406,13 +436,14 @@ impl<'a> Verbalizer<'a> {
                 Out::Punct(c) => {
                     if !cur.is_empty() {
                         cur.push(c);
+                        extend(&mut words, &from);
                     }
                     glued = false;
                 }
-                Out::End => flush(&mut cur),
+                Out::End => flush(&mut cur, &mut words),
             }
         }
-        flush(&mut cur);
+        flush(&mut cur, &mut words);
         sentences
     }
 

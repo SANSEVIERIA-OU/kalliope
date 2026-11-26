@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! The same speech controls, preferences and status messages on every desktop.
 use super::{Command, Engine, Event, HISTORY, Phase, READY, Settings, catalog, config, voices};
-use crate::engine::{VoiceId, has_speech};
+use crate::engine::{Said, Sounding, VoiceId, has_speech};
 use crate::settings;
 use std::sync::{Arc, Mutex};
 
@@ -16,6 +16,10 @@ pub struct Status {
     pub warning: bool,
     /// Position in the voice menu of the voice really in use, once it has loaded.
     pub voice_index: Option<usize>,
+    /// The piece of the phrase sounding now, while Kalliope speaks: what to light in the phrase.
+    pub sounding: Option<Sounding>,
+    /// What Stop left of the last phrase it cut, until the next phrase starts.
+    pub interrupted: Option<Said>,
     mic_problem: bool,
     not_heard: bool,
 }
@@ -27,6 +31,8 @@ impl Default for Status {
             text: "Preparo la voce…".into(),
             warning: false,
             voice_index: None,
+            sounding: None,
+            interrupted: None,
             mic_problem: false,
             not_heard: false,
         }
@@ -35,6 +41,20 @@ impl Default for Status {
 
 impl Status {
     fn update(&mut self, event: Event, voices: &[VoiceId]) {
+        match event {
+            Event::Sounding(piece) => {
+                self.interrupted = None;
+                self.sounding = Some(piece);
+                return;
+            }
+            Event::Interrupted(said) => {
+                self.sounding = None;
+                self.interrupted = Some(said);
+                return;
+            }
+            Event::Idle => self.sounding = None,
+            _ => {}
+        }
         match event {
             Event::Loading => *self = Self::default(),
             Event::Ready { microphone } => {
@@ -98,6 +118,7 @@ impl Status {
                 self.not_heard = false;
                 self.text = e;
             }
+            Event::Sounding(_) | Event::Interrupted(_) => {}
         }
     }
 
