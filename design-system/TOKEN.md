@@ -80,8 +80,9 @@ riquadri ai colori dei corpi delle figure della home. Due soli colori nuovi, dic
 `--app-registra-fisso` e `--app-segno-fisso` (il rosa del logo).
 
 **I vecchi `--app-*`.** I 18 colori del disegno della finestra 0.1 sulla pagina «installa» e nella riunione ricostruita non erano della
-finestra del programma: ora si chiamano `--ricostruita-*` (stessi valori; `componenti/finestra.css`, `varco.css`, `installazione.css`,
-`catena.css` aggiornati; il sito non cambia). Così il tema chiaro della finestra non li tocca.
+finestra del programma: il 26/11/2026 si chiamarono `--ricostruita-*`, e il 26/11/2026 (sito 0.3) sono stati **tolti**, con gli altri token del disegno di
+allora (`--finestra-raggio`, `--finestra-ombra*`, `--f-stato-*`, `--f-pulsante-*`…): il disegno della finestra sulle pagine è ora la finestra nuova, e usa i
+ruoli `--app-*` così come sono («La finestra disegnata sulle pagine» più sotto).
 
 | Gruppo | Token `--app-*` | Fonte |
 |---|---|---|
@@ -173,28 +174,7 @@ verde delle barre spente: la tinta di Paola resta solo all'avviso.
 | `--vetro-cornice` | `rgba(14, 20, 21, 0.42)` | la cornice della riunione | 2 usi: `.chiamata` background; `.tavolo-cornice` background |
 | `--vetro-nome` | `rgba(10, 14, 15, 0.52)` | l'etichetta di un riquadro | 1 uso: `.nome` background |
 | `--vetro-riunione-filo` | `rgba(14, 20, 21, 0.6)` | la riunione accanto al filo | 1 uso: `.riunione-filo` background |
-| `--ricostruita-accento` | `#005fb8` | l'accento della finestra: «Parla», riga attiva, barra di avanzamento | 4 usi: `.f-campo.fuoco` border-bottom; `.f-parla.attivo` background; `.f-barra i` background; +1 |
-| `--ricostruita-accento-premuto` | `#004c94` | l'accento premuto | 1 uso: `.f-primario.premuto` background |
-| `--ricostruita-barra-vuota` | `#e2e2e2` | la barra di avanzamento vuota | 1 uso: `.f-barra` background |
-| `--ricostruita-bordo-attivo` | `#d0d0d0` | il bordo dei comandi chiari attivi | 2 usi: `.f-ferma.attivo, .f-ferma:enabled` border-color; `.f-annulla` border-color |
-| `--ricostruita-bordo-forte` | `#c9c9c9` | il bordo basso del campo e di «Ferma» spento | 2 usi: `.f-campo` border-bottom-color; `.f-ferma` border-color |
-| `--ricostruita-campo` | `#fdfdfd` | il campo di testo e i comandi chiari | 3 usi: `.f-campo` background; `.f-ferma.attivo, .f-ferma:enabled` background; `.f-annulla` background |
-| `--ricostruita-campo-bordo` | `#e3e3e3` | il bordo del campo di testo | 1 uso: `.f-campo` border |
-| `--ricostruita-ferma-fondo` | `#f9f9f9` | «Ferma» spento: fondo | 1 uso: `.f-ferma` background |
-| `--ricostruita-ferma-sopra` | `#f3f3f3` | «Ferma» al passaggio | 1 uso: `button.f-ferma:enabled:hover` background |
-| `--ricostruita-ferma-testo` | `#a0a0a0` | «Ferma» spento: testo | 1 uso: `.f-ferma` color |
-| `--ricostruita-fondo` | `#fafafa` | la finestra di Kalliope: fondo | 1 uso: `.finestra` background |
-| `--ricostruita-nota` | `#555` | la nota nella finestra del primo avvio | 1 uso: `.avvio .f-nota` color |
-| `--ricostruita-parla-spento` | `#c3c3c3` | «Parla» non disponibile | 1 uso: `.f-parla` background |
-| `--ricostruita-segnaposto` | `#656565` | il testo suggerito del campo | 1 uso: `.f-segnaposto` color |
-| `--ricostruita-stato` | `#eef3fb` | la riga di stato della finestra | 1 uso: `.f-stato` background |
-| `--ricostruita-stato-allarme` | `#fff4e5` | la riga di stato in allarme (variante definita, non usata dalla pagina) | 1 uso: `.f-stato.allarme` background |
-| `--ricostruita-stato-parla` | `#e8f5e9` | la riga di stato mentre parla | 1 uso: `.f-stato.parla` background |
-| `--ricostruita-testo` | `#1d1d1f` | la finestra di Kalliope: testo e cursore | 4 usi: `.finestra` color; `.f-cursore` background; `.f-ferma.attivo, .f-ferma:enabled` color; +1 |
-| `--finestra-anello` | `rgba(0, 0, 0, 0.06)` | il filo intorno alla finestra di Kalliope | 1 uso: `.finestra` box-shadow |
-| `--finestra-chiara-anello` | `rgba(30, 39, 39, 0.08)` | il filo intorno alla finestra sulla scena chiara | 1 uso: `.scena-chiara .finestra` box-shadow |
 | `--ombra-finestra` | `rgba(5, 9, 10, 0.85)` | ombra della finestra di Kalliope | 1 uso: `.finestra` box-shadow |
-| `--ombra-finestra-chiara` | `rgba(30, 39, 39, 0.5)` | ombra della finestra sulla scena chiara | 1 uso: `.scena-chiara .finestra` box-shadow |
 | `--testo-nota-chiara` | `rgba(23, 29, 29, 0.66)` | la nota sulla scena chiara | 1 uso: `.nota-ricostruzione` color |
 | `--bordo-pannello` | `rgba(181, 218, 206, 0.2)` | il bordo di un pannello: scheda, menu aperto, computer, microfono | 4 usi in 4 componenti: `.microfono` border; `.ascolto` border; `.computer` border; +1 |
 | `--bordo-sezione` | `rgba(181, 218, 206, 0.12)` | il filo che divide: tra «Non esiste» e la strada, intorno alla riunione ricostruita | 2 usi in 2 componenti: `.riunione-app` border; `.non-esiste` border-top |
@@ -305,7 +285,6 @@ verde delle barre spente: la tinta di Paola resta solo all'avviso.
 | `--bolla-testo-interlinea` | `34px` | misura del componente «La bolla» | 1 uso: `.bolla-testo` line-height |
 | `--spaziatura-bolla-testo` | `-0.005em` | misura del componente «La bolla» | 1 uso: `.bolla-testo` letter-spacing |
 | `--nome-interlinea-telefono` | `15px` | misura del componente «I riquadri della riunione» | 1 uso: `.nome` line-height ((max-width: 760px)) |
-| `--f-stato-interlinea` | `1.32` | misura del componente «La finestra di Kalliope ricostruita» | 1 uso: `.f-stato` line-height |
 | `--microfono-grandezza-telefono` | `11.5px` | misura del componente «La riunione ricostruita, con il microfono» | 1 uso: `.microfono` font-size ((max-width: 760px)) |
 | `--filo-bolla-bolla-testo-grandezza-2` | `27px` | misura del componente «Le frasi del filo» | 1 uso: `.messaggio[data-frase="3"] .filo-bo…` font-size |
 | `--filo-bolla-bolla-testo-grandezza-tavoletta-filo` | `19px` | misura del componente «Le frasi del filo» | 1 uso: `.filo-bolla .bolla-testo` font-size ((min-width: 761px) and (max-wi) |
@@ -497,13 +476,8 @@ verde delle barre spente: la tinta di Paola resta solo all'avviso.
 | `--tavolo-margine` | `0 0 52px` | misura del componente «I riquadri della riunione» | 1 uso: `.tavolo` margin |
 | `--avvio-piede-larghezza` | `calc(100% - 520px)` | misura del componente «La finestra di Kalliope ricostruita» | 1 uso: `.avvio-piede` width ((min-width: 791px)) |
 | `--f-cursore-margine-inizio` | `1px` | misura del componente «La finestra di Kalliope ricostruita» | 1 uso: `.f-cursore` margin-inline-start |
-| `--f-nota-margine` | `10px 0 2px` | misura del componente «La finestra di Kalliope ricostruita» | 1 uso: `.avvio .f-nota` margin |
-| `--f-pulsante-spazio-interno` | `0 12px` | misura del componente «La finestra di Kalliope ricostruita» | 1 uso: `.f-pulsante` padding |
-| `--f-stato-spazio-interno` | `9px 10px` | misura del componente «La finestra di Kalliope ricostruita» | 1 uso: `.f-stato` padding |
 | `--finestra-larghezza-2` | `min(470px, 100%)` | misura del componente «La finestra di Kalliope ricostruita» | 1 uso: `.finestra.avvio` width |
 | `--nota-ricostruzione-margine-telefono` | `16px 0 0` | misura del componente «La finestra di Kalliope ricostruita» | 1 uso: `.nota-ricostruzione` margin ((max-width: 760px)) |
-| `--sotto-f-campo-spazio-interno` | `0 8px` | misura del componente «La finestra di Kalliope ricostruita» | 1 uso: `.sotto .f-campo` padding ((max-width: 760px)) |
-| `--sotto-f-pulsante-spazio-interno` | `0 7px` | misura del componente «La finestra di Kalliope ricostruita» | 1 uso: `.sotto .f-pulsante` padding ((max-width: 760px)) |
 | `--sotto-margine-sopra` | `-14px` | misura del componente «La finestra di Kalliope ricostruita» | 1 uso: `.sotto` margin-top |
 | `--sotto-margine-sopra-telefono` | `-16px` | misura del componente «La finestra di Kalliope ricostruita» | 1 uso: `.sotto` margin-top ((max-width: 760px)) |
 | `--riunione-app-comandi-spazio-interno` | `8px 0 4px` | misura del componente «La riunione ricostruita, con il microfono» | 1 uso: `.app-comandi` padding ((max-width: 420px)) |
@@ -630,7 +604,6 @@ verde delle barre spente: la tinta di Paola resta solo all'avviso.
 | `--barre-raggio` | `7px` | misura del componente «I riquadri della riunione» | 1 uso: `.barre i` border-radius |
 | `--barre-raggio-telefono` | `3px` | misura del componente «I riquadri della riunione» | 1 uso: `.barre i` border-radius ((max-width: 760px)) |
 | `--riunione-filo-riquadro-raggio` | `15px` | misura del componente «I riquadri della riunione» | 1 uso: `.riunione-filo .riquadro` border-radius |
-| `--finestra-raggio` | `8px` | misura del componente «La finestra di Kalliope ricostruita» | 1 uso: `.finestra` border-radius |
 | `--riunione-app-griglia-riquadro-raggio` | `13px` | misura del componente «La riunione ricostruita, con il microfono» | 1 uso: `.app-griglia .riquadro` border-radius |
 | `--computer-raggio` | `30px` | misura del componente «La strada della voce» | 1 uso: `.computer` border-radius |
 | `--nodo-altri-mini-raggio` | `9px` | misura del componente «La strada della voce» | 1 uso: `.nodo-altri .mini` border-radius |
@@ -660,8 +633,6 @@ verde delle barre spente: la tinta di Paola resta solo all'avviso.
 | `--lume-ombra` | `inset 0 0 0 2.5px var(--voce)` | misura del componente «I riquadri della riunione» | 1 uso: `.lume` box-shadow |
 | `--riunione-filo-ombra` | `0 40px 80px -40px var(--ombra-nera)` | misura del componente «I riquadri della riunione» | 1 uso: `.riunione-filo` box-shadow |
 | `--tavolo-cornice-ombra` | `0 40px 80px -40px var(--ombra-cornice)` | misura del componente «I riquadri della riunione» | 1 uso: `.tavolo-cornice` box-shadow |
-| `--finestra-ombra` | `0 26px 50px -20px var(--ombra-finestra), 0 0 0 1px var(--finestra-anello)` | misura del componente «La finestra di Kalliope ricostruita» | 1 uso: `.finestra` box-shadow |
-| `--finestra-ombra-2` | `0 30px 56px -26px var(--ombra-finestra-chiara), 0 0 0 1px var(--finestra-chiara-anello)` | misura del componente «La finestra di Kalliope ricostruita» | 1 uso: `.scena-chiara .finestra` box-shadow |
 | `--riunione-app-ombra` | `0 34px 60px -30px var(--ombra-riunione-app)` | misura del componente «La riunione ricostruita, con il microfono» | 1 uso: `.riunione-app` box-shadow |
 | `--ascolto-ombra` | `0 30px 60px -30px var(--ombra-cornice)` | misura del componente «La scheda dell'ascolto» | 1 uso: `.ascolto` box-shadow |
 | `--pulsa-0-100-ombra` | `0 0 0 0 var(--tratteggio)` | misura del componente «La scheda dell'ascolto» | 1 uso: `@keyframes pulsa 0%, 100%` box-shadow |
@@ -782,9 +753,6 @@ verde delle barre spente: la tinta di Paola resta solo all'avviso.
 | `--durata-riquadro` | `520ms` | misura del componente «I riquadri della riunione» | 1 uso: `.riquadro` animation |
 | `--durata-tavolo-riquadro` | `520ms` | misura del componente «I riquadri della riunione» | 1 uso: `.js .tavolo.visto .riquadro, .js .r…` animation |
 | `--durata-f-campo-f-cursore` | `1s` | misura del componente «La finestra di Kalliope ricostruita» | 1 uso: `.f-campo.fuoco .f-cursore` animation |
-| `--durata-f-primario` | `140ms` | misura del componente «La finestra di Kalliope ricostruita» | 1 uso: `.f-primario` transition |
-| `--durata-f-pulsante` | `160ms` | misura del componente «La finestra di Kalliope ricostruita» | 1 uso: `.f-pulsante` transition |
-| `--durata-f-stato` | `240ms` | misura del componente «La finestra di Kalliope ricostruita» | 1 uso: `.f-stato` transition |
 | `--durata-sotto` | `360ms` | misura del componente «La finestra di Kalliope ricostruita» | 1 uso: `.sotto` animation |
 | `--durata-riunione-app-bordo` | `900ms` | misura del componente «La riunione ricostruita, con il microfono» | 1 uso: `.riunione-app.vivo .tu .bordo` animation |
 | `--durata-scelta-sfondo` | `280ms` | misura del componente «La riunione ricostruita, con il microfono» | 1 uso: `.scelta` transition |
@@ -870,7 +838,6 @@ verde delle barre spente: la tinta di Paola resta solo all'avviso.
 | `--opacita-bolla` | `0.72` | misura del componente «La bolla» | 1 uso: `.bolla.detta` opacity |
 | `--opacita-bolla-2` | `0.38` | misura del componente «La bolla» | 1 uso: `.bolla .p.attesa` opacity |
 | `--opacita-figura-bocca` | `0.8` | misura del componente «I riquadri della riunione» | 1 uso: `.figura .bocca` opacity |
-| `--opacita-f-campo` | `0.55` | misura del componente «La finestra di Kalliope ricostruita» | 1 uso: `.f-campo.spento` opacity |
 | `--opacita-lampo-100` | `0.55` | misura del componente «La riunione ricostruita, con il microfono» | 1 uso: `@keyframes lampo 100%` opacity |
 | `--opacita-suona-frase-tondo-dopo` | `0.45` | misura del componente «Le frasi del filo» | 1 uso: `.suona-frase.pausa .tondo::after` opacity |
 | `--nodo-altri-mini-filtro` | `saturate(0.6)` | misura del componente «La strada della voce» | 1 uso: `.nodo-altri .mini` filter |
@@ -891,7 +858,6 @@ verde delle barre spente: la tinta di Paola resta solo all'avviso.
 | `--barre-4-scala-y` | `0.63` | misura del componente «I riquadri della riunione» | 1 uso: `.barre i:nth-child(4)` transform |
 | `--barre-5-scala-y` | `0.41` | misura del componente «I riquadri della riunione» | 1 uso: `.barre i:nth-child(5)` transform |
 | `--batte-50-scala-y` | `0.12` | misura del componente «I riquadri della riunione» | 1 uso: `@keyframes batte 50%` transform |
-| `--f-primario-scala` | `0.96` | misura del componente «La finestra di Kalliope ricostruita» | 1 uso: `.f-primario.premuto` transform |
 | `--scelta-scala` | `0.94` | misura del componente «La riunione ricostruita, con il microfono» | 1 uso: `.scelta.premuta` transform |
 | `--anello-a-scala` | `1.25` | misura del componente «La scheda dell'ascolto» | 1 uso: `@keyframes anello to` transform |
 | `--anello-da-scala` | `0.9` | misura del componente «La scheda dell'ascolto» | 1 uso: `@keyframes anello from` transform |
@@ -1196,7 +1162,6 @@ spaziatura resta quella di prima. Fonti, licenze e pesi dei file: `caratteri/LEG
 | Token | Valore di adesso | Prima |
 |---|---|---|
 | `--interlinea-1` … `--interlinea-14`, `--didascalia-interlinea-telefono`, `--bolla-testo-interlinea`, `--nome-interlinea-telefono`, `--tappa-nome-interlinea`, `--tratto-testo-interlinea-telefono` | `calc(<px di prima> * var(--interlinea-testo-scrittura))` | i px di prima |
-| `--f-stato-interlinea` | `calc(1.32 * var(--interlinea-testo-scrittura))` | `1.32` |
 | `--h1-grandezza`, `-medio`, `-telefono`, `--tratto-grandezza`, `-telefono`, `--chiusura-grandezza`, `-telefono` | `calc(<px> * var(--grandezza-titoli-scrittura))` | i px di prima |
 | `--h1-interlinea`, `-medio`, `-telefono`, `--tratto-interlinea`, `--chiusura-interlinea`, `-telefono` | `calc(<px> * var(--grandezza-titoli-scrittura) * var(--interlinea-titoli-scrittura))` | i px di prima |
 | `--bolla-chiusa-origine`, `--bolla-filo-bolla-origine`, `--messaggio-filo-bolla-origine` | `calc(50% + (40px − 50%) * var(--verso)) 100%` (30px per le ultime due): vicino alla coda, dall'inizio della riga | `40px 100%`, `30px 100%` |
@@ -1421,7 +1386,6 @@ file condiviso riordinato. Le scelte senza una fonte sono progettuali (piano: `d
 | `--esito-riuscito-bordo` | `var(--voce)` | «Riuscito se…»: la riga piena (quella di «Se no…» è tratteggiata, il segno di «non ancora») |
 | `--installa-colonne`, `--apri-colonne` | `minmax(0,500px) minmax(0,1fr)`, `minmax(0,1fr) minmax(0,540px)` | i tratti cambiano lato: la cartella prima dei comandi; il testo prima della finestra |
 | `--apri-finestra-larghezza`, `--apri-stato-altezza` | `540px`, `62px` | la finestra di «Apri»; la riga di stato tiene due righe (le frasi lunghe non la spostano) |
-| `--frase-finestra-bordo` | `rgba(30, 39, 39, 0.2)` | una frase della finestra, sulla scena chiara |
 | `--microfono-scena-larghezza`, `--riprendi-colonne`, `--riprendi-larghezza` | `560px`, due colonne, `1040px` | la chiusura: comando, terminale e microfono; poi «Se ti sei fermato» e l'indirizzo |
 | `--ripresa-linea-inizio`, `--ripresa-segno-scala` | `11px`, `1.15` | la strada dei cinque passi della ripresa |
 
@@ -1453,3 +1417,46 @@ I token dei colori conservano i loro ruoli e ricevono i valori approvati il 26 n
 Le tre misure sono scelte progettuali rese e viste sulla guida, derivate dalla cornice e dal telefono di confronto; non modificano la home.
 
 Soglia aggiunta: 280px, barra a forte ingrandimento. Il marchio mostra il simbolo e Menu; l’azione usa una riga propria. È una scelta circoscritta al difetto osservato a 180px CSS, con controprove a 326 e 390. Come le altre soglie è elencata in metodo.config.mjs perché le media query non leggono variabili CSS.
+
+
+## La finestra disegnata sulle pagine (sito 0.3, 26/11/2026)
+
+La finestra ricostruita sulla home («Ascolta»), nel primo avvio e nelle frasi di «Installa» è la finestra del programma ridotta a un disegno
+(`componenti/finestra.css`). **Colori, carattere, pesi, raggi, spessore e passo del tratteggio, tempi e curve sono i ruoli `--app-*` così come sono** (`--app-fondo`,
+`--app-barra`, `--app-campo`, `--app-testo`, `--app-testo-tenue`, `--app-segnaposto`, `--app-tratteggio`, `--app-tratteggio-fuoco`, `--app-azione`, `--app-voce`,
+`--app-attenzione`, `--app-attenzione-fondo`, `--app-velo-*`, `--app-raggio-*`, `--app-tratto`, `--app-tratteggio-pieno` e `-vuoto`, `--app-durata-*`, `--app-curva-*`,
+`--app-opacita-spento`…): se cambiano, cambia anche il disegno. Il disegno è sempre nel tema scuro (la regola chiara è `:root[data-tema="chiaro"]`, del solo programma).
+Le sole misure proprie sono i `--finestra-*`: per stare in 470 px non sono quelle della finestra a 920 (la scrittura a 30 px non ci starebbe), e ognuna dice nel suo
+commento che cosa è nella finestra. La bolla chiara della home (`componenti/bolla.css`) non cambia: è già la bolla della finestra, con gli stessi valori (colore del testo,
+corpo 24 px, 520 ms, 200 ms per parola); la parola non ancora detta ha l'opacità 0,38 del sito (la finestra usa `--app-bolla-da-dire`, 0,34: stesso ruolo, valore un po' diverso, non unificati).
+
+| Token | Valore | Ruolo | Fonte |
+|---|---|---|---|
+| `--finestra-barra-altezza` | `38px` | la barra del disegno | scelta (nella finestra 56 px) |
+| `--finestra-marchio` | `var(--spazio-18)` (24 px) | il logo nella barra | scelta (nella finestra 30 px) |
+| `--finestra-nome-corpo` | `var(--corpo-7)` (16 px) | «Kalliope» accanto al logo | scelta (nella finestra 18 px) |
+| `--finestra-voce-altezza` | `26px` | la pillola della voce, e «Come si risolve» | scelta (nella finestra 34 px) |
+| `--finestra-stato-altezza` | `var(--app-altezza-comando-piccolo)` | l'altezza minima della riga di stato | la finestra, 34 px |
+| `--finestra-stato-corpo` | `var(--corpo-6)` (15 px) | il nome dello stato | scelta (nella finestra 16 px) |
+| `--finestra-detto-corpo` | `var(--corpo-4)` (13 px) | ciò che lo stato spiega | scelta (nella finestra 15 px), perché la frase intera stia in una riga |
+| `--finestra-scrittura-altezza` | `54px` | la bolla tratteggiata, una riga | scelta (nella finestra 3 righe da 30 px) |
+| `--finestra-scrittura-corpo` | `var(--corpo-8)` (17 px) | ciò che si scrive | scelta (nella finestra 30 px) |
+| `--finestra-comando-altezza` | `30px` | «Ferma» e «Di'» dentro la bolla | scelta (nella finestra 44 px) |
+| `--finestra-comando-corpo` | `var(--corpo-5)` (14 px) | il testo dei comandi | scelta (nella finestra 16 px) |
+| `--finestra-nota-corpo` | `var(--app-corpo-nota)` (13 px) | la nota sotto la scrittura, e i tasti Esc e Invio | la finestra |
+
+Il disegno usa anche i token che c'erano già: `--finestra-larghezza-2` (470 px), `--sotto-margine-sopra` (e `-telefono`), `--misura-29`, `--misura-31`,
+`--livello-sotto`, `--livello-finestra`, `--durata-sotto`, `--ritardo-sotto`, `--durata-f-campo-f-cursore`, `--curva-a-scatti`, `--f-cursore-margine-inizio`,
+`--avvio-piede-larghezza`, `--nota-ricostruzione-margine-telefono`.
+
+## Il distintivo Slint (issue #21, sito 0.3, 26/11/2026)
+
+`componenti/distintivo.css`; l'immagine è ufficiale e non modificata (`terze-parti/slint/LEGGIMI.md`: fonte, impronta, licenza CC-BY-ND-4.0).
+
+| Token | Valore | Ruolo | Fonte |
+|---|---|---|---|
+| `--distintivo-slint-larghezza` | `212px` | la larghezza dell'immagine (l'SVG di Slint è 212 × 97) | fonte: la dimensione dell'immagine di Slint (212 × 97, un SVG), solo in proporzione |
+| `--distintivo-slint-larghezza-telefono` | `170px` | la stessa, al telefono | scelta |
+| `--distintivo-slint-spazio` | `var(--spazio-14)` (16 px) | fra l'immagine e la frase | scelta |
+| `--distintivo-slint-sopra` | `var(--spazio-18)` (24 px) | dopo l'esito del passo «Scarica» | scelta |
+| `--distintivo-slint-testo-larghezza` | `30ch` | la frase accanto all'immagine | scelta |

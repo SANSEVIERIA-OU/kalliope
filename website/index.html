@@ -80,7 +80,7 @@
         </div>
         <p class="stato" data-release="prova" data-t="apertura.stato"><strong>Oggi:</strong> versione di prova {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Non ancora provata in una riunione vera con Zoom, Teams o Meet.</p>
         <p class="stato" data-release="stabile" data-t="apertura.stato-stabile" data-t-nota="Shown instead of the sentence of the key apertura.stato when the release is not a test version: the same sentence without «of test». The site chooses one of the two by the release data."><strong>Oggi:</strong> versione {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Non ancora provata in una riunione vera con Zoom, Teams o Meet.</p>
-        <p class="didascalia" data-t="apertura.didascalia" data-t-nota="The parts in tags 1 and 2 are the long ones and are dropped on narrow screens: the rest must read well without them.">Ricostruzione<span class="d-lunga"> della finestra di Kalliope 0.1</span> · la voce è la registrazione vera<span class="d-piu"> · scrittura accelerata, partecipanti di esempio</span></p>
+        <p class="didascalia" data-t="apertura.didascalia" data-t-nota="The parts in tags 1 and 2 are the long ones and are dropped on narrow screens: the rest must read well without them.">Ricostruzione<span class="d-lunga"> della finestra di Kalliope</span> · la voce è la registrazione vera<span class="d-piu"> · scrittura accelerata, partecipanti di esempio</span></p>
       </section>
 
       <section class="palco" aria-label="Kalliope al lavoro in una riunione: ricostruzione" data-t-aria-label="palco.etichetta">
@@ -145,12 +145,22 @@
         </div>
 
         <div class="sotto">
-          <div class="finestra" aria-label="Ricostruzione della finestra di Kalliope 0.1" data-t-aria-label="finestra.etichetta">
-            <div class="f-stato" role="status" data-t="finestra.pronta">Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono.</div>
-            <div class="f-riga">
-              <div class="f-campo" aria-hidden="true"><span class="f-segnaposto" data-t="finestra.segnaposto">Scrivi qui e premi Invio per parlare</span><span class="f-linea"><span class="f-scritto"></span><span class="f-cursore"></span></span></div>
-              <button class="f-pulsante f-parla" type="button" disabled data-t="finestra.parla">Parla</button>
-              <button class="f-pulsante f-ferma" type="button" disabled data-t="finestra.ferma">Ferma</button>
+          <div class="finestra" role="group" aria-label="Ricostruzione della finestra di Kalliope" data-t-aria-label="finestra.etichetta">
+            <div class="f-barra" aria-hidden="true">
+              <span class="f-marchio"><svg data-marchio="libero" width="24" height="24"></svg></span>
+              <span class="f-app" data-t="marchio.nome">Kalliope</span>
+              <span class="f-voce" data-t="finestra.voce" data-t-nota="The voice shown in the window's bar: the name of the voice, written as in the voice buttons.">Giulia</span>
+            </div>
+            <div class="f-corpo">
+              <div class="f-stato" role="status">
+                <span class="f-segno" aria-hidden="true"><span class="f-punto"></span><span class="f-barre"><i></i><i></i><i></i></span></span>
+                <span class="f-testo"><strong class="f-titolo" data-t="finestra.pronta.nome" data-t-nota="The name of the state of the window when it is ready to speak: one or two words, as in the program.">Pronta</strong> <span class="f-detto" data-t="finestra.pronta.detto" data-t-nota="What the window says next to «Pronta»: the way to be heard. Keep «Kalliope» in quotes, it is the name of the microphone.">Nella riunione scegli «Kalliope» come microfono.</span></span>
+              </div>
+              <div class="f-campo">
+                <svg class="f-tratteggio" aria-hidden="true"><rect/></svg>
+                <span class="f-testo-campo" aria-hidden="true"><span class="f-segnaposto" data-t="finestra.segnaposto" data-t-nota="The hint in the empty writing area of the window: where to write, and what Enter does.">Scrivi qui. Invio la dice.</span><span class="f-linea"><span class="f-scritto"></span><span class="f-cursore"></span></span></span>
+                <span class="f-comandi"><button class="f-pulsante f-ferma" type="button" disabled><span data-t="finestra.ferma" data-t-nota="The button that stops the voice.">Ferma</span> <kbd aria-hidden="true" data-t="finestra.esc" data-t-nota="The name of the Escape key, as it is written on the keyboard of the language.">Esc</kbd></button><button class="f-pulsante f-di" type="button" disabled><span data-t="finestra.di" data-t-nota="The button that says the phrase: the imperative of «to say», short, like «Say».">Di'</span> <kbd aria-hidden="true" data-t="finestra.invio" data-t-nota="The name of the Enter key, as it is written on the keyboard of the language.">Invio</kbd></button></span>
+              </div>
             </div>
           </div>
         </div>
@@ -343,14 +353,24 @@
     <section class="tratto serve scena-chiara" aria-labelledby="serve-titolo">
       <span class="luce-tratto" aria-hidden="true"></span>
       <div class="primo-avvio">
-        <div class="finestra avvio entra entra-finestra" role="group" tabindex="-1" aria-label="Ricostruzione del primo avvio di Kalliope 0.1" data-t-aria-label="avvio.etichetta">
-          <div class="f-stato" data-t="avvio.preparo">Preparo la voce…</div>
-          <div class="f-riga">
-            <div class="f-campo spento" aria-hidden="true"><span class="f-segnaposto" data-t="finestra.segnaposto">Scrivi qui e premi Invio per parlare</span></div>
-            <span class="f-pulsante f-parla" aria-hidden="true" data-t="finestra.parla">Parla</span>
-            <span class="f-pulsante f-ferma" data-t="finestra.ferma">Ferma</span>
+        <div class="finestra avvio entra entra-finestra" role="group" tabindex="-1" aria-label="Ricostruzione del primo avvio di Kalliope" data-t-aria-label="avvio.etichetta">
+          <div class="f-barra" aria-hidden="true">
+            <span class="f-marchio"><svg data-marchio="libero" width="24" height="24"></svg></span>
+            <span class="f-app" data-t="marchio.nome">Kalliope</span>
+            <span class="f-voce" data-t="finestra.voce">Giulia</span>
           </div>
-          <p class="f-nota" data-t="avvio.nota">Le frasi che dici restano qui, per ripeterle.</p>
+          <div class="f-corpo">
+            <div class="f-stato" role="status">
+              <span class="f-segno" aria-hidden="true"><span class="f-punto"></span><span class="f-barre"><i></i><i></i><i></i></span></span>
+              <span class="f-testo"><strong class="f-titolo" data-t="avvio.preparo.nome" data-t-nota="The name of the state of the window while the voice loads, at every start: no dots at the end, the window shows its own.">Preparo la voce</strong> <span class="f-detto" data-t="avvio.preparo.detto">Fra poco puoi scrivere e farti sentire.</span></span>
+            </div>
+            <div class="f-campo spento" aria-hidden="true">
+              <svg class="f-tratteggio"><rect/></svg>
+              <span class="f-testo-campo"><span class="f-segnaposto f-se-prepara" data-t="avvio.segnaposto" data-t-nota="The hint in the writing area while the voice loads: writing is already possible.">Puoi già scrivere: la voce arriva fra poco.</span><span class="f-segnaposto f-se-pronta" data-t="finestra.segnaposto">Scrivi qui. Invio la dice.</span></span>
+              <span class="f-comandi"><span class="f-pulsante f-ferma"><span data-t="finestra.ferma">Ferma</span> <kbd data-t="finestra.esc">Esc</kbd></span><span class="f-pulsante f-di"><span data-t="finestra.di">Di'</span> <kbd data-t="finestra.invio">Invio</kbd></span></span>
+            </div>
+            <p class="f-nota" data-t="avvio.nota">Le frasi che dici restano qui, anche dopo la chiusura, per ripeterle.</p>
+          </div>
         </div>
         <div class="riunione-app entra entra-finestra" role="img" aria-label="Ricostruzione: nell'app della riunione si sceglie «Kalliope» come microfono" data-t-aria-label="app.etichetta">
           <div class="app-griglia" aria-hidden="true">
@@ -399,7 +419,7 @@
           </div>
         </div>
         <div class="avvio-piede">
-          <p class="nota-ricostruzione" data-t="avvio.ricostruzione">Ricostruzione del primo avvio di Kalliope 0.1 e della scelta del microfono in un'app di riunione · tempi accelerati</p>
+          <p class="nota-ricostruzione" data-t="avvio.ricostruzione">Ricostruzione del primo avvio di Kalliope e della scelta del microfono in un'app di riunione · tempi accelerati</p>
           <button class="rivedi" type="button" hidden data-t="avvio.rivedi">Rivedi il primo avvio</button>
         </div>
       </div>
@@ -410,6 +430,7 @@
           <li data-t="serve.2"><strong>Niente da scaricare per la voce</strong>: è dentro il pacchetto, e funziona senza internet dal primo avvio.</li>
           <li data-t="serve.3"><strong>Un'app di riunione</strong> che ti lasci scegliere il microfono: lì scegli «Kalliope».</li>
         </ul>
+        <p class="entra" data-t="serve.finestra">La finestra è una sola: scrivi, premi Invio, e la frase si accende parola per parola mentre la voce la dice. Le frasi dette restano, per ripeterle. Puoi usare anche la tua voce: la registri o la importi dentro il programma.</p>
       </div>
     </section>
 
@@ -487,7 +508,8 @@
 </div>
 
 <template id="testi-scena">
-  <p data-t="finestra.parlando" data-t-nota="Says that the voice is speaking; shown in Kalliope's window while a sentence plays.">Sto parlando…</p>
+  <p data-t="finestra.parla.nome" data-t-nota="The name of the state of the window while the voice speaks: as in the program, without dots.">Sto parlando</p>
+  <p data-t="finestra.parla.detto" data-t-nota="What the window says next to «Sto parlando»: how to stop. Esc is the Escape key.">Esc la ferma.</p>
   <p data-t="annuncio.pausa" data-t-nota="Read by screen readers when listening is paused.">In pausa.</p>
   <p data-t="errore.caricamento">Non riesco a caricare la registrazione. Controlla la connessione e riprova, oppure scaricala.</p>
   <p data-t="errore.interrotta">La registrazione si è interrotta. Riprova, oppure scaricala.</p>

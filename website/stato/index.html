@@ -172,7 +172,7 @@
         <div class="catena-misura"><p class="catena-misura-testo" data-t="st.catena.misura">Dal tasto Invio al suono nella riunione: <strong>non misurato</strong></p></div>
         <div class="catena-computer">
           <p class="catena-computer-nome" data-t="st.catena.computer">Le cifre: su un solo computer, un portatile con Ryzen 5 PRO 6650U. Su altri non le conosciamo.</p>
-          <p class="catena-programma" data-t="st.catena.programma">Il programma: 10,6 MB con la sola finestra, circa 117 MB con la voce caricata, 0% di processore quando è fermo. <span class="fonte"><a href="{{kalliope.source.url}}/README.md" title="README.md" data-t-no="il percorso di un file del repository">README</a></span></p>
+          <p class="catena-programma" data-t="st.catena.programma">Il programma con la finestra nuova: dimensione, memoria con la voce caricata e processore da fermo <strong>non ancora misurati</strong>. Con la finestra della 0.2 erano 10,6 MB, circa 117 MB con la voce caricata e 0% di processore da fermo. <span class="fonte"><a href="{{kalliope.source.url}}/README.md" title="README.md" data-t-no="il percorso di un file del repository">README</a></span></p>
         </div>
         <ol class="catena-tappe">
           <li class="anello fatto nel-computer entra" data-anello="installa">
@@ -309,7 +309,7 @@
             <h3 class="domanda-chiede" data-t="st.d.voce.q">Parla con la sua voce?</h3>
             <div class="domanda-risponde">
               <p data-release="prova" data-t="st.d.voce.a">Oggi no: con la voce di Giulia o di Marco, a scelta. Parla solo italiano.</p>
-              <p data-release="stabile" data-t="st.d.voce.personale">Sì. Puoi preparare la tua voce dal terminale con una registrazione WAV. Alla riapertura di Kalliope la trovi nell’elenco accanto a Giulia e Marco. Il programma parla in italiano.</p>
+              <p data-release="stabile" data-t="st.d.voce.personale">Sì, dentro il programma: in «Altro», «Crea la tua voce». La registri dal microfono, leggendo un testo di circa dodici secondi, oppure importi una vecchia registrazione (WAV, FLAC, MP3, OGG, M4A, o un messaggio vocale di WhatsApp o Telegram, anche dentro un video). Scegli il pezzo più chiaro, le dai un nome e confermi che è la tua voce, o che chi parla ti ha dato il permesso. La voce si crea su questo computer; la trovi accanto a Giulia e Marco. Il programma parla in italiano.</p>
             </div>
           </li>
           <li class="domanda" id="d-sottotitoli">
@@ -318,7 +318,7 @@
           </li>
           <li class="domanda" id="d-frasi">
             <h3 class="domanda-chiede" data-t="st.d.frasi.q">Ha frasi pronte o simboli?</h3>
-            <div class="domanda-risponde"><p data-t="st.d.frasi.a">No: niente frasi preimpostate, simboli o suggerimenti mentre scrivi. Le frasi già dette restano in un elenco e si ripetono con un clic. Non è un sistema completo di comunicazione aumentativa.</p></div>
+            <div class="domanda-risponde"><p data-t="st.d.frasi.a">No: niente frasi preimpostate, simboli o suggerimenti mentre scrivi. Le frasi già dette restano, anche dopo la chiusura, solo su questo computer, e si ripetono con un clic. Non è un sistema completo di comunicazione aumentativa.</p></div>
           </li>
           <li class="domanda" id="d-online">
             <h3 class="domanda-chiede" data-t="st.d.online.q">È un servizio online?</h3>
@@ -350,7 +350,7 @@
               <span class="varco-campo"><span class="varco-scritto" data-t="st.varco.scritto">Ci sono anch'io, scusate il ritardo.</span></span>
               <span class="varco-gia" data-t="st.varco.gia">Già detto</span>
               <span class="varco-elenco"><i></i><i></i><i></i></span>
-              <span class="varco-memoria" data-t="st.varco.memoria">solo finché la finestra è aperta</span>
+              <span class="varco-memoria" data-t="st.varco.memoria">solo su questo computer</span>
             </div>
             <div class="varco-disco">
               <span class="varco-etichetta" data-t="st.varco.disco">Sul disco</span>
@@ -365,7 +365,7 @@
         <ol class="varco-passi">
           <li class="varco-passo" data-passo="testo">
             <h3 data-t="st.passo.testo.titolo">Il testo che scrivi: nessun invio.</h3>
-            <p data-t="st.passo.testo.testo">Non viene mandato da nessuna parte e non viene salvato. Kalliope non usa il microfono vero e non chiede di accedervi. Alla riunione arriva soltanto la voce, attraverso l'app della riunione. <span class="fonte"><a href="{{kalliope.source.url}}/crates/app/src/main.rs" title="crates/app/src/main.rs" data-t-no="il percorso di un file del repository">main.rs</a></span></p>
+            <p data-t="st.passo.testo.testo">Non viene mandato da nessuna parte. Le frasi che dici si salvano soltanto su questo computer, per ripeterle. Kalliope non usa il microfono vero e non chiede di accedervi. Alla riunione arriva soltanto la voce, attraverso l'app della riunione. <span class="fonte"><a href="{{kalliope.source.url}}/crates/app/src/main.rs" title="crates/app/src/main.rs" data-t-no="il percorso di un file del repository">main.rs</a></span></p>
           </li>
           <li class="varco-passo" data-passo="scarico">
             <h3 data-t="st.passo.scarico.titolo">Nessuna connessione: tutto arriva con il pacchetto.</h3>
@@ -373,11 +373,11 @@
           </li>
           <li class="varco-passo" data-passo="disco">
             <h3 data-t="st.passo.disco.titolo">Che cosa scrive sul disco.</h3>
-            <p data-t="st.passo.disco.testo">Il programma e le voci: con il pacchetto .deb o .rpm in /usr, e servono i permessi di amministratore; con l'archivio e ./install in ~/.local, senza. Poi la voce scelta e «Senti anche tu» in un file di preferenze, settings.conf, e le voci che prepari da una registrazione in una cartella dell'utente. Fuori dalle sue cartelle non modifica niente. Le frasi dette restano in un elenco, fino a 30, solo finché la finestra è aperta. Nessun account. <span class="fonte"><a href="{{kalliope.source.url}}/docs/releasing.md" title="docs/releasing.md" data-t-no="il percorso di un file del repository">docs/releasing.md</a>, <a href="{{kalliope.source.url}}/crates/app/src/settings.rs" title="crates/app/src/settings.rs" data-t-no="il percorso di un file del repository">settings.rs</a>, <a href="{{kalliope.source.url}}/crates/app/src/paths.rs" title="crates/app/src/paths.rs" data-t-no="il percorso di un file del repository">paths.rs</a>, <a href="{{kalliope.source.url}}/crates/app/src/main.rs" title="crates/app/src/main.rs" data-t-no="il percorso di un file del repository">main.rs</a></span></p>
+            <p data-t="st.passo.disco.testo">Il programma e le voci: con il pacchetto .deb o .rpm in /usr, e servono i permessi di amministratore; con l'archivio e ./install in ~/.local, senza. Poi la voce scelta, «Senti anche tu la voce» e la misura del testo in un file di preferenze, settings.conf, e le voci che prepari da una registrazione e le ultime 30 frasi dette (history.txt) in una cartella dell'utente. Fuori dalle sue cartelle non modifica niente. Nessun account. <span class="fonte"><a href="{{kalliope.source.url}}/docs/releasing.md" title="docs/releasing.md" data-t-no="il percorso di un file del repository">docs/releasing.md</a>, <a href="{{kalliope.source.url}}/crates/app/src/settings.rs" title="crates/app/src/settings.rs" data-t-no="il percorso di un file del repository">settings.rs</a>, <a href="{{kalliope.source.url}}/crates/app/src/paths.rs" title="crates/app/src/paths.rs" data-t-no="il percorso di un file del repository">paths.rs</a>, <a href="{{kalliope.source.url}}/crates/app/src/main.rs" title="crates/app/src/main.rs" data-t-no="il percorso di un file del repository">main.rs</a></span></p>
           </li>
           <li class="varco-passo" data-passo="chiudi">
             <h3 data-t="st.passo.chiudi.titolo">Quando chiudi la finestra, si chiude.</h3>
-            <p data-t="st.passo.chiudi.testo">Kalliope non si avvia da solo e non lascia un servizio acceso: con la finestra sparisce l'elenco delle frasi, e il microfono «Kalliope» sparisce dall'elenco dei microfoni. Si toglie con ./install --remove o togliendo il pacchetto, voci comprese: prima di uscire, ogni pacchetto si toglie in un sistema di prova e la prova controlla che non resti niente. Restano le preferenze e le voci preparate da una registrazione. <span class="fonte"><a href="{{kalliope.tree.url}}/packaging/linux" title="packaging/linux" data-t-no="il percorso di un file del repository">packaging/linux</a>, <a href="{{kalliope.source.url}}/docs/releasing.md" title="docs/releasing.md" data-t-no="il percorso di un file del repository">docs/releasing.md</a></span></p>
+            <p data-t="st.passo.chiudi.testo">Kalliope non si avvia da solo e non lascia un servizio acceso: con la finestra sparisce il microfono «Kalliope» dall'elenco dei microfoni. Si toglie con ./install --remove o togliendo il pacchetto, voci comprese: prima di uscire, ogni pacchetto si toglie in un sistema di prova e la prova controlla che non resti niente. Restano le preferenze, le frasi dette e le voci preparate da una registrazione. <span class="fonte"><a href="{{kalliope.tree.url}}/packaging/linux" title="packaging/linux" data-t-no="il percorso di un file del repository">packaging/linux</a>, <a href="{{kalliope.source.url}}/docs/releasing.md" title="docs/releasing.md" data-t-no="il percorso di un file del repository">docs/releasing.md</a></span></p>
           </li>
         </ol>
       </div>
@@ -389,9 +389,13 @@
             <li><span data-t-no="nome di un componente">ONNX Runtime</span> <span data-t-no="nome di una licenza">MIT</span></li>
             <li><span data-t-no="nome di un componente">Klein-TTS-X1.5-Pro</span> <span data-t-no="nome di una licenza">Apache-2.0</span></li>
             <li><span data-t-no="nome di un componente">Pocket TTS (Kyutai)</span> <span data-t-no="nome di una licenza">CC BY 4.0</span></li>
-            <li><span data-t-no="nome di un componente">Slint 1.19</span> <span data-t-no="nome di una licenza">Slint Royalty-free 2.0</span></li>
+            <li><span data-t-no="nome di un componente">Slint 1.19.1</span> <span data-t-no="nome di una licenza">Slint Royalty-free 2.0</span></li>
+            <li><span data-t-no="nome di un componente">Skia</span> <span data-t-no="nome di una licenza">BSD-3-Clause</span></li>
+            <li><span data-t-no="nome di un componente">Symphonia 0.6.1</span> <span data-t-no="nome di una licenza">MPL-2.0</span></li>
+            <li><span data-t-no="nome di un componente">libopus</span> <span data-t-no="nome di una licenza">BSD-3-Clause</span></li>
             <li><span data-t="st.licenze.lessico">Lessico da Wiktionary</span> <span data-t-no="nome di una licenza">CC BY-SA 4.0</span></li>
           </ul>
+          <p class="licenze-nota" data-t="st.dipendenze.testo">La finestra la disegna Slint, con Skia sul processore: non serve una scheda grafica, e non ci sono né Qt né Python. Symphonia legge i file audio e i video da cui si prepara una voce. libopus, per i messaggi vocali di WhatsApp e Telegram, non è nel pacchetto: Kalliope lo cerca nel sistema, e se manca, quel formato non si legge. <span class="fonte"><a href="{{kalliope.source.url}}/THIRD_PARTY_NOTICES.md" title="THIRD_PARTY_NOTICES.md" data-t-no="il percorso di un file del repository">THIRD_PARTY_NOTICES.md</a></span></p>
           <p class="licenze-nota" data-t="st.licenze.nota">L'elenco completo è nei file <a href="{{kalliope.source.url}}/NOTICE" title="NOTICE" data-t-no="il percorso di un file del repository">NOTICE</a> e <a href="{{kalliope.source.url}}/THIRD_PARTY_NOTICES.md" title="THIRD_PARTY_NOTICES.md" data-t-no="il percorso di un file del repository">THIRD_PARTY_NOTICES.md</a> del codice.</p>
         </details>
         <details class="licenze-blocco" open>

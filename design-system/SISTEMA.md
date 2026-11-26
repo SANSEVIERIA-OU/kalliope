@@ -205,3 +205,17 @@ Il fondo grafite, l’accento menta per la voce e i comandi e i tre colori dei p
 - Le sezioni del catalogo `pagina-riunione` e `pagina-aiuto` mostrano la guida e gli stati di ricerca. Le tabelle ampie scorrono nel proprio contenitore anche da tastiera. I campioni dei componenti risolvono i collegamenti rispetto alla pagina da cui provengono.
 
 Il colore della barra del browser viene da `--fondo` durante la costruzione. Arrivo e rivelazione dei titoli mantengono i tempi della cornice. Foto, video, misure e risultati delle prove sono in `materiali-locali/verifica-sito-26/` nella copia principale del repository.
+
+
+## La finestra disegnata e il distintivo Slint (sito 0.3, 26/11/2026)
+
+Il sito mostra la finestra di Kalliope come è nella 0.3, non più quella della 0.1 (DejaVu 14 px, «Parla» blu, pulsanti a 4 px).
+
+- **La finestra disegnata** (`componenti/finestra.css`, riscritto; nessun valore scritto a mano): barra con il logo vero (`marchio/libero.svg`, lo stesso file della finestra) e
+  la voce, riga di stato (nome e spiegazione; calda con «Come si risolve» quando qualcosa non va), bolla tratteggiata dove si scrive con «Ferma» (Esc) e «Di'» (Invio). Un solo
+  disegno per la home, il primo avvio e le frasi di «Installa». I suoi colori, il carattere, i raggi, il tratteggio e i tempi sono i `--app-*` della finestra del programma
+  (una sola fonte per il sito e per l'applicazione); le misure sono i `--finestra-*`. La riga di stato si cambia con `window.Finestra.stato` (`website/componenti.js`).
+  `varco.css`, `catena.css` e `installazione.css` usano gli stessi ruoli per le piccole finestre di «Stato» e le frasi di «Installa». Tolti: i `--ricostruita-*` e gli altri token del vecchio disegno.
+- **Il distintivo «Made with Slint»** (`componenti/distintivo.css`, immagine in `terze-parti/slint/`: la versione «dark»), nel passo «Scarica» di «Installa»; `tools/test_site_slint.py` controlla che ci sia in ogni lingua.
+- **Il catalogo** (`catalogo/catalogo-finestra.js`): due sezioni nuove dopo «Componenti», «La finestra di Kalliope, disegnata» (sei stati, scena chiara, tabella dei `--finestra-*`) e «Il distintivo Slint».
+- **Aiuto**: la pillola «Copia il comando» ha il testo scuro anche nelle schede su scena scura (`aiuto.css`).

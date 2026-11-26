@@ -30,6 +30,7 @@
 <link rel="stylesheet" href="../design-system/componenti/lingue.css">
 <link rel="stylesheet" href="../design-system/componenti/comando.css">
 <link rel="stylesheet" href="../design-system/componenti/terminale.css">
+<link rel="stylesheet" href="../design-system/componenti/distintivo.css">
 <link rel="stylesheet" href="../design-system/componenti/scelta-sistema.css">
 <link rel="stylesheet" href="../design-system/componenti/installazione.css">
 <script src="../lingua.js" defer></script>
@@ -202,6 +203,7 @@
         <h2 id="scarica-titolo" class="entra entra-titolo" data-t="in.file.titolo">Il file giusto, e uguale a quello pubblicato.</h2>
         <p data-t="in.file.testo">Serve un computer Linux a 64 bit (x86_64), con Wayland o X11 e con PipeWire e pipewire-pulse: è così nei desktop recenti di Fedora, Ubuntu, Debian, Arch e openSUSE.</p>
         <p class="requisito-voce" data-t="in.file.voce">Le voci sono dentro il file: una volta installato, Kalliope non scarica niente e funziona senza internet dal primo avvio.</p>
+        <p class="requisito-voce" data-t="in.file.librerie">Non servono Qt, GTK né Python: la finestra è dentro il programma. Per leggere i messaggi vocali di WhatsApp e Telegram, quando prepari la tua voce, serve libopus: i pacchetti lo consigliano.</p>
 
         <div class="passo" id="passo-scarica">
           <h3 class="passo-nome" data-t="in.file.scarica.titolo">Scarica</h3>
@@ -212,6 +214,10 @@
           <div class="esito-passo">
             <p class="riuscito" data-t="in.file.scarica.riuscito"><strong>Riuscito</strong> se nella cartella dei download c'è un file con questo nome e questa dimensione.</p>
             <p class="se-no" data-t="in.file.scarica.se-no"><strong>Se no</strong>, scaricalo di nuovo. Se il browser dice che il file non esiste, è uscita una versione nuova: ricarica questa pagina.</p>
+          </div>
+          <div class="distintivo-slint">
+            <a href="https://slint.dev/" rel="noopener"><img src="../design-system/terze-parti/slint/MadeWithSlint-logo-dark.svg" width="212" height="97" alt="Made with Slint" data-t-alt="in.slint.alt" data-t-nota="The text of the official badge of Slint, #MadeWithSlint: it is a link to the site of Slint. Keep the name Slint and the words «Made with», as the badge says them."></a>
+            <p data-t="in.slint.testo">La finestra di Kalliope è fatta con <a href="https://slint.dev/" rel="noopener">Slint</a>.</p>
           </div>
         </div>
 
@@ -283,6 +289,7 @@
 
       <div class="installa-scena">
         <div class="installa-comandi">
+          <p class="nota-passo" data-t="in.installa.voce-non-parte"><strong>La finestra dice «La voce non parte»?</strong> I file della voce mancano o sono rovinati: installa di nuovo Kalliope con il comando qui sotto, poi riaprila.</p>
           <p data-sistema="deb rpm" data-t="in.installa.testo.pacchetto">Nella stessa cartella. Con il pacchetto Kalliope va in /usr, e il computer chiede la password di amministratore. Fuori dalle sue cartelle non tocca niente.</p>
           <p data-sistema="arch" data-t="in.installa.testo.arch">In una cartella vuota: la ricetta scarica l'archivio della versione, controlla l'impronta e ne fa un pacchetto, senza compilare. Kalliope va in /usr, e il computer chiede la password di amministratore.</p>
           <p data-sistema="tar" data-t="in.installa.testo.tar">Nella stessa cartella. Con l'archivio Kalliope va in ~/.local, solo per te: non serve la password di amministratore. Fuori dalle sue cartelle non tocca niente.</p>
@@ -312,7 +319,7 @@
               <li data-sistema="arch"><code data-t-no="un comando">sudo pacman -R kalliope-bin</code></li>
               <li data-sistema="tar" data-t="in.togli.tar">dalla cartella dell'archivio, <code data-t-no="un comando">./install --remove</code></li>
             </ul>
-            <p data-t="in.togli.restano">Le voci se ne vanno con il programma. Nella tua cartella personale restano le preferenze, <code data-t-no="una cartella">~/.config/kalliope</code>, e le voci che hai preparato da una registrazione, <code data-t-no="una cartella">~/.local/share/kalliope</code>: né il gestore dei pacchetti né <code data-t-no="un comando">./install --remove</code> le toccano. Per toglierle, cancella le due cartelle.</p>
+            <p data-t="in.togli.restano">Le voci se ne vanno con il programma. Nella tua cartella personale restano le preferenze, <code data-t-no="una cartella">~/.config/kalliope</code>, e le voci che hai preparato da una registrazione e le frasi già dette, <code data-t-no="una cartella">~/.local/share/kalliope</code>: né il gestore dei pacchetti né <code data-t-no="un comando">./install --remove</code> le toccano. Per toglierle, cancella le due cartelle.</p>
             <p class="nota-passo" data-t="in.togli.verificato" data-t-nota="Says what was checked and what was not. Keep the last sentence as honest as it is: removing the package on a real computer was not tried.">Come lo sappiamo: i pacchetti hanno soltanto file in /usr e nessuno script, e <code data-t-no="un comando">./install --remove</code> cancella soltanto i file messi da <code data-t-no="un comando">./install</code>. Prima di uscire, ogni pacchetto si toglie con <code data-t-no="un comando">apt</code>, <code data-t-no="un comando">dnf</code> o <code data-t-no="un comando">pacman</code> in un sistema di prova, e la prova controlla che non resti niente, voci comprese. Su un computer vero non l'abbiamo provato.</p>
           </details>
         </div>
@@ -354,37 +361,52 @@
       <span class="luce-tratto" aria-hidden="true"></span>
       <span class="vecchio-indirizzo" id="passo-4" aria-hidden="true"></span>
       <div class="apri-finestra">
-        <div class="finestra avvio pronta entra entra-finestra" role="group" tabindex="-1" aria-label="Ricostruzione della finestra di Kalliope 0.1 al primo avvio" data-t-aria-label="in.avvio.etichetta">
-          <div class="f-stato" data-stato="pronta" data-t="finestra.pronta">Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono.</div>
-          <div class="f-riga">
-            <div class="f-campo spento" aria-hidden="true"><span class="f-segnaposto" data-t="finestra.segnaposto">Scrivi qui e premi Invio per parlare</span></div>
-            <span class="f-pulsante f-parla" aria-hidden="true" data-t="finestra.parla">Parla</span>
-            <span class="f-pulsante f-ferma" data-t="finestra.ferma">Ferma</span>
+        <div class="finestra avvio pronta entra entra-finestra" role="group" tabindex="-1" aria-label="Ricostruzione della finestra di Kalliope al primo avvio" data-t-aria-label="in.avvio.etichetta">
+          <div class="f-barra" aria-hidden="true">
+            <span class="f-marchio"><svg data-marchio="libero" width="24" height="24"></svg></span>
+            <span class="f-app" data-t="marchio.nome">Kalliope</span>
+            <span class="f-voce" data-t="finestra.voce">Giulia</span>
           </div>
-          <p class="f-nota" data-t="avvio.nota">Le frasi che dici restano qui, per ripeterle.</p>
+          <div class="f-corpo">
+            <div class="f-stato" role="status" data-stato="pronta">
+              <span class="f-segno" aria-hidden="true"><span class="f-punto"></span><span class="f-barre"><i></i><i></i><i></i></span></span>
+              <span class="f-testo"><strong class="f-titolo" data-t="finestra.pronta.nome">Pronta</strong> <span class="f-detto" data-t="finestra.pronta.detto">Nella riunione scegli «Kalliope» come microfono.</span></span>
+              <span class="f-risolvi" aria-hidden="true" data-t="finestra.risolvi" data-t-nota="The button of the window next to a problem: it opens the page of this site that explains what to do.">Come si risolve</span>
+            </div>
+            <div class="f-campo spento" aria-hidden="true">
+              <svg class="f-tratteggio"><rect/></svg>
+              <span class="f-testo-campo"><span class="f-segnaposto f-se-prepara" data-t="avvio.segnaposto">Puoi già scrivere: la voce arriva fra poco.</span><span class="f-segnaposto f-se-pronta" data-t="finestra.segnaposto">Scrivi qui. Invio la dice.</span><span class="f-segnaposto f-se-errore" data-t="finestra.segnaposto.errore" data-t-nota="The hint in the writing area when the voice does not start: look at the line above.">La voce non parte: guarda qui sopra.</span></span>
+              <span class="f-comandi"><span class="f-pulsante f-ferma"><span data-t="finestra.ferma">Ferma</span> <kbd data-t="finestra.esc">Esc</kbd></span><span class="f-pulsante f-di"><span data-t="finestra.di">Di'</span> <kbd data-t="finestra.invio">Invio</kbd></span></span>
+            </div>
+            <p class="f-nota" data-t="avvio.nota">Le frasi che dici restano qui, anche dopo la chiusura, per ripeterle.</p>
+          </div>
         </div>
-        <p class="nota-ricostruzione" data-t="in.avvio.ricostruzione">Ricostruzione della finestra di Kalliope 0.1, con le sue frasi vere · tempi accelerati</p>
+        <p class="nota-ricostruzione" data-t="in.avvio.ricostruzione">Ricostruzione della finestra di Kalliope, con le sue frasi vere · tempi accelerati</p>
       </div>
       <div class="tratto-testo">
         <h2 id="apri-titolo" class="entra entra-titolo" data-t="in.apri.titolo">Apri Kalliope, e aspetta «Pronta».</h2>
         <p data-t="in.apri.testo">Dal menu delle applicazioni. Le voci sono già lì, nel pacchetto: non c'è niente da scaricare, nemmeno la prima volta.</p>
-        <p data-t="in.apri.ogni-volta">A ogni avvio dice «Preparo la voce…» per un po': il campo si accende quando ha finito.</p>
+        <p data-t="in.apri.ogni-volta">A ogni avvio dice «Preparo la voce» per un po': puoi già scrivere, e la voce arriva fra poco.</p>
         <div class="esito-passo">
-          <p class="riuscito" data-t="in.apri.riuscito"><strong>Riuscito</strong> se la riga in alto dice «Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono.»</p>
+          <p class="riuscito" data-t="in.apri.riuscito"><strong>Riuscito</strong> se la riga di stato dice «Pronta» e, accanto, «Nella riunione scegli «Kalliope» come microfono.»</p>
         </div>
         <div class="frasi-finestra">
           <h3 class="frasi-nome" data-t="in.frasi.titolo">Se la riga dice altro</h3>
           <ul class="frasi-elenco">
             <li class="frase-finestra">
-              <p class="frase-detta" data-stato="manca"><span data-t="in.frasi.manca.frase">«Manca la voce: in … non trovo …. Reinstalla Kalliope.»</span></p>
-              <p class="frase-rimedio" data-t="in.frasi.manca.rimedio">Un file delle voci non è dove il programma lo cerca: installa di nuovo il pacchetto o l'archivio, con i passi qui sopra.</p>
+              <p class="frase-detta" data-stato="voce"><span data-t="in.frasi.voce.frase">«La voce non parte»</span></p>
+              <p class="frase-rimedio" data-t="in.frasi.voce.rimedio">Un file delle voci non è dove il programma lo cerca: installa di nuovo il pacchetto o l'archivio, con i passi qui sopra. «Come si risolve» porta a questo passo.</p>
             </li>
             <li class="frase-finestra">
-              <p class="frase-detta" data-stato="microfono"><span data-t="in.frasi.microfono.frase">«La voce è pronta, ma …: per ora nessuno ti sentirà nelle chiamate.»</span></p>
-              <p class="frase-rimedio" data-t="in.frasi.microfono.rimedio">Il microfono «Kalliope» non si è creato: di solito manca PipeWire, o non è acceso. La causa è scritta in inglese dopo «ma». <a href="../aiuto/#f-senza-microfono">Che cosa fare</a></p>
+              <p class="frase-detta" data-stato="microfono"><span data-t="in.frasi.microfono.frase">«Manca il microfono»</span></p>
+              <p class="frase-rimedio" data-t="in.frasi.microfono.rimedio">Il microfono «Kalliope» non si è creato: di solito manca PipeWire, o non è acceso. La causa è scritta in inglese dopo «ma». <a href="../riunione/#non-compare">Che cosa fare</a></p>
+            </li>
+            <li class="frase-finestra">
+              <p class="frase-detta" data-stato="nessuno"><span data-t="in.frasi.nessuno.frase">«Nessuno ti sente»</span></p>
+              <p class="frase-rimedio" data-t="in.frasi.nessuno.rimedio">Kalliope funziona, ma nessuna app sta usando il suo microfono: succede finché non lo scegli nell'app della riunione. <a href="../riunione/#non-mi-sentono">Che cosa fare</a></p>
             </li>
           </ul>
-          <p class="nota-passo" data-t="in.frasi.altro">Se dice un'altra cosa, cerca la frase nella <a href="../aiuto/">pagina Aiuto</a>: ogni frase della finestra ha la sua spiegazione.</p>
+          <p class="nota-passo" data-t="in.frasi.altro">Se dice un'altra cosa, cerca la riga nella <a href="../riunione/#aiuto">sezione Aiuto</a>: ogni riga della finestra ha la sua spiegazione.</p>
         </div>
       </div>
     </section>
@@ -418,7 +440,7 @@
       </div>
       <div class="esito-passo esito-centro">
         <p class="riuscito" data-t="in.microfono.riuscito"><strong>Riuscito</strong> se fra le righe ce n'è una con la parola kalliope. Se il comando pactl non c'è, salta: lo vedrai nell'app della riunione.</p>
-        <p class="se-no" data-t="in.microfono.se-no"><strong>Se no</strong>, la finestra lo dice con «La voce è pronta, ma …»: <a href="../aiuto/#f-senza-microfono">che cosa fare</a>.</p>
+        <p class="se-no" data-t="in.microfono.se-no"><strong>Se no</strong>, la finestra dice «Manca il microfono»: <a href="../riunione/#non-compare">che cosa fare</a>.</p>
       </div>
       <div class="comandi">
         <a class="pillola azione" href="../riunione/" data-t="in.microfono.riunione">Usalo in una riunione</a>
@@ -480,9 +502,14 @@
   <p data-t="in.annuncio.copiato">Copiato negli appunti.</p>
   <p data-t="in.annuncio.finestra" data-t-nota="Read by screen readers when a phrase of the window is pressed. {frase} is what the status line of the window then says.">La riga della finestra dice: {frase}</p>
   <p data-t="in.annuncio.sistema" data-t-nota="Read by screen readers when a distribution is chosen. {sistema} is its name.">I comandi della pagina sono quelli per {sistema}.</p>
-  <p data-t="avvio.preparo">Preparo la voce…</p>
-  <p data-t="in.stato.manca" data-t-nota="A status line of Kalliope's window: keep it as the program writes it in Italian; each … stands for what the program adds (a folder, then the names of the missing files).">Manca la voce: in … non trovo …. Reinstalla Kalliope.</p>
-  <p data-t="in.stato.microfono">La voce è pronta, ma …: per ora nessuno ti sentirà nelle chiamate.</p>
+  <p data-t="avvio.preparo.nome">Preparo la voce</p>
+  <p data-t="avvio.preparo.detto">Fra poco puoi scrivere e farti sentire.</p>
+  <p data-t="in.stato.voce.nome" data-t-nota="The name of a state of Kalliope's window: keep it as the program writes it, in the language of the program.">La voce non parte</p>
+  <p data-t="in.stato.voce.detto" data-t-nota="What the window says next to the state above: keep it as the program writes it in Italian; each … stands for what the program adds (a folder, then the names of the missing files).">Manca la voce: in … non trovo …. Reinstalla Kalliope.</p>
+  <p data-t="in.stato.microfono.nome">Manca il microfono</p>
+  <p data-t="in.stato.microfono.detto" data-t-nota="What the window says next to «Manca il microfono»; the … stands for the cause the program adds, often in English.">La voce è pronta, ma …: per ora nessuno ti sentirà nelle chiamate.</p>
+  <p data-t="in.stato.nessuno.nome">Nessuno ti sente</p>
+  <p data-t="in.stato.nessuno.detto" data-t-nota="What the window says next to «Nessuno ti sente»: keep «Kalliope» in quotes, it is the name of the microphone.">Nessuno nella chiamata ha sentito la frase: nessuna app sta usando il microfono «Kalliope». Sceglilo come microfono nell'app della riunione.</p>
 </template>
 </body>
 </html>

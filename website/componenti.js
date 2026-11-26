@@ -11,6 +11,16 @@
 //  · le pillole (pulsanti.css): se il testo non ci sta nella larghezza che hanno, va a capo dentro il loro fondo («a-capo»).
 // In italiano niente cambia: sono stati misurati, e ci stanno. Senza script la pagina resta com'è (barra intera, etichette intere).
 // Correzione dopo il giudizio dell'incarico 2 (B1, I2, M2), 17/11/2026: prima stava in scena.js e non arrivava alle pagine interne.
+// La finestra di Kalliope disegnata sulle pagine (componenti/finestra.css): la sua riga di stato ha un nome («Pronta») e ciò che spiega.
+// Chi cambia lo stato (la home, il primo avvio, le frasi di «Installa») lo fa da qui, così il nome e la spiegazione restano due testi,
+// nella lingua della pagina, e la riga è sempre quella di una finestra intera.
+window.Finestra = {
+  stato(riga, nome, detto, allarme = false) {
+    riga.querySelector('.f-titolo').textContent = nome;
+    riga.querySelector('.f-detto').textContent = detto;
+    riga.classList.toggle('allarme', allarme);
+  },
+};
 (() => {
   'use strict';
   const $ = (s, r = document) => r.querySelector(s);

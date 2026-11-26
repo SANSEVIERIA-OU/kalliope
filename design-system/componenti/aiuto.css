@@ -26,6 +26,8 @@
 .guida-aiuto .comando pre { overflow-wrap: anywhere; white-space: pre-wrap; }
 .guida-aiuto .comando__barra { padding: var(--spazio-14); }
 .guida-aiuto .comando__stato { display: block; margin-block-start: var(--spazio-12); }
+/* la pillola «Copia il comando» è chiara su un fondo scuro, e il suo testo resta scuro anche nelle schede che stanno su una scena scura */
+.guida-aiuto .comando__barra .pillola { color: var(--scuro); }
 .guida-aiuto .aiuto-segnala p, .guida-aiuto .aiuto-segnala li { font-size: var(--corpo-9); line-height: var(--interlinea-9); }
 .guida-aiuto .aiuto-segnala p { margin-block: var(--spazio-21); }
 .guida-aiuto .aiuto-segnala li { margin-block: var(--spazio-12); }
