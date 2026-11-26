@@ -80,6 +80,7 @@ def take_window_picture(handle, path):
 
 
 def main():
+    output = Path(sys.argv[1] if len(sys.argv) == 2 else "desktop-window.png").resolve()
     binary_dir = Path("target/debug").resolve()
     suffix = ".exe" if sys.platform == "win32" else ""
     app = binary_dir / ("kalliope" + suffix)
@@ -107,7 +108,7 @@ def main():
                         if width >= 260 and height >= 180:
                             print(f"Visible {sys.platform} window, {width} × {height}", flush=True)
                             time.sleep(2)
-                            take_window_picture(handle, Path("desktop-window.png").resolve())
+                            take_window_picture(handle, output)
                             return
                     time.sleep(0.5)
                 raise RuntimeError("The operating system did not report a visible application window")
