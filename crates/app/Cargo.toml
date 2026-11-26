@@ -16,6 +16,7 @@ kalliope-text.workspace = true
 kalliope-phonemes.workspace = true
 kalliope-voice.workspace = true
 kalliope-mic.workspace = true
+kalliope-sample.workspace = true
 # One window through winit on every platform. The renderer is Skia on the CPU (renderer-skia-software): it needs no GPU,
 # driver or OpenGL library, draws the same pixels on every machine, shapes Arabic, Devanagari and the other scripts, and
 # supports the rotations and scaling that Slint's own software renderer lacks (measured: finestra-unica-prove/foto/testo).

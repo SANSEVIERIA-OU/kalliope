@@ -20,7 +20,10 @@ mod pod;
 #[cfg(target_os = "linux")]
 mod queue;
 #[cfg(target_os = "linux")]
-use pipewire as platform;
+mod platform {
+    pub use crate::pipewire::Mic;
+    pub use crate::pipewire::capture::{Recorder, sources};
+}
 
 #[cfg(not(target_os = "linux"))]
 mod unsupported;
@@ -38,6 +41,8 @@ pub enum ErrorKind {
     Unavailable,
     /// PipeWire is installed but its server is not running or does not answer.
     NotRunning,
+    /// No microphone to record from (or not the one asked for).
+    NoSource,
     /// Anything else; the message has the details.
     Other,
 }
@@ -136,6 +141,87 @@ impl VirtualMic {
     /// The sample rate given to [`open`](Self::open).
     pub fn sample_rate(&self) -> u32 {
         self.0.sample_rate()
+    }
+}
+
+/// Plays mono `f32` samples on the default speakers only: for listening to a recording, never heard
+/// in a call. All methods take `&self`. Dropping it stops the sound.
+pub struct Player(platform::Mic);
+
+impl Player {
+    /// `name` is the stable node name, `description` what the system's volume control shows.
+    pub fn open(name: &str, description: &str, sample_rate: u32) -> Result<Player, Error> {
+        if !(8_000..=192_000).contains(&sample_rate) {
+            return Err(Error::new(format!(
+                "unsupported sample rate {sample_rate} Hz"
+            )));
+        }
+        platform::Mic::player(name, description, sample_rate).map(Player)
+    }
+
+    /// Appends samples to play; never waits.
+    pub fn play(&self, samples: &[f32]) {
+        self.0.play(samples);
+    }
+
+    /// Stops at once.
+    pub fn clear(&self) {
+        self.0.clear();
+    }
+
+    /// Seconds still to play.
+    pub fn queued_seconds(&self) -> f32 {
+        self.0.queued_seconds()
+    }
+}
+
+/// A sound input a person can record their voice from: a microphone, a headset, a sound card.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct Source {
+    /// The stable node name, to give to [`Recorder::open`].
+    pub name: String,
+    /// The name the system shows, for example "Microfono USB".
+    pub description: String,
+    /// The one recorded from when none is chosen: the system's default input.
+    pub default: bool,
+}
+
+/// The sound inputs a person can record from, the default first. Kalliope's own microphone is
+/// never among them.
+pub fn sources() -> Result<Vec<Source>, Error> {
+    platform::sources()
+}
+
+/// A recording in progress from a real microphone, mono at [`Recorder::RATE`]. All methods take
+/// `&self` and may be called from any thread. Dropping it stops the recording.
+pub struct Recorder(platform::Recorder);
+
+impl Recorder {
+    /// The sample rate of what [`read`](Self::read) gives; PipeWire converts from the
+    /// microphone's own rate and mixes its channels.
+    pub const RATE: u32 = 48_000;
+
+    /// Starts recording from the source named `name` (a [`Source::name`]), or from the default
+    /// one. Never records from Kalliope's own microphone, and never moves to another input if
+    /// this one goes away.
+    pub fn open(name: Option<&str>) -> Result<Recorder, Error> {
+        platform::Recorder::open(name).map(Recorder)
+    }
+
+    /// The source it records from.
+    pub fn source(&self) -> &Source {
+        self.0.source()
+    }
+
+    /// Appends the samples captured since the last call; returns how many came. Call it at least
+    /// every few seconds.
+    pub fn read(&self, out: &mut Vec<f32>) -> usize {
+        self.0.read(out)
+    }
+
+    /// False once the microphone went away (unplugged, or the sound system stopped).
+    pub fn is_connected(&self) -> bool {
+        self.0.is_connected()
     }
 }
 

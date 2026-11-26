@@ -14,10 +14,11 @@ use crate::audio::{self, MicError, Output};
 use kalliope_voice::pocket::{Chunk, Pocket, PocketOptions, VoiceState};
 use kalliope_voice::{Voice, VoiceOptions};
 use std::collections::VecDeque;
+use std::ops::Range;
 use std::path::PathBuf;
 use std::sync::atomic::{AtomicU64, Ordering};
 use std::sync::mpsc::{Receiver, RecvTimeoutError, Sender, channel};
-use std::sync::{Arc, Mutex, MutexGuard};
+use std::sync::{Arc, Condvar, Mutex, MutexGuard};
 use std::thread::JoinHandle;
 use std::time::{Duration, Instant};
 
@@ -42,6 +43,8 @@ const LOOKAHEAD_SECONDS: f32 = 3.0;
 const WATCH: Duration = Duration::from_millis(500);
 /// How often it tries to open the microphone again while PipeWire does not answer.
 const RETRY: Duration = Duration::from_secs(1);
+/// Seconds per spoken word before anything is measured, to guess how long a streamed piece lasts.
+const FIRST_GUESS_SECONDS_PER_WORD: f32 = 0.36;
 
 /// A voice: Giulia or Marco, or one prepared from a recording (its file name without
 /// `.safetensors`). A prepared voice may have any name, Giulia and Marco included.
@@ -131,12 +134,59 @@ pub enum Event {
     Error(String),
     /// Something failed, but Kalliope can still speak.
     Warning(String),
+    /// A piece of a phrase starts sounding in the microphone now.
+    Sounding(Sounding),
+    /// Stop cut a phrase short: how much of it was said. Comes before [`Event::Idle`].
+    Interrupted(Said),
+}
+
+/// A piece of a phrase that starts sounding: a clause (Giulia and Marco cut sentences at their
+/// commas, semicolons and colons) or a chunk of one or two sentences (voices prepared from a
+/// recording). Pieces come in order, and the next one starts when this one ends.
+#[derive(Clone, Debug, PartialEq)]
+pub struct Sounding {
+    /// The phrase, exactly as it was sent with [`Command::Speak`].
+    pub phrase: Arc<str>,
+    /// Phrases are numbered from 1 in the order they were sent.
+    pub id: u64,
+    /// The bytes of `phrase` this piece says, with its punctuation: the words of a written number
+    /// or abbreviation all belong to the piece that says them. Everything before `span.end` has
+    /// been said once the piece ends.
+    pub span: Range<usize>,
+    /// How long the piece sounds.
+    pub duration: Duration,
+    /// False while a voice that streams its audio still synthesizes the piece: `duration` is then
+    /// a guess, and the same piece comes again with the exact duration as soon as it is known.
+    pub exact: bool,
+    /// The last piece of the phrase.
+    pub last: bool,
+}
+
+/// What was said of a phrase that Stop cut short.
+#[derive(Clone, Debug, PartialEq)]
+pub struct Said {
+    pub phrase: Arc<str>,
+    pub id: u64,
+    /// `phrase[..done]` was said in full.
+    pub done: usize,
+    /// The piece that was sounding when Stop came, and the share of its audio that was heard
+    /// (0 to 1): its words are said only in part.
+    pub cut: Option<(Range<usize>, f32)>,
 }
 
 pub struct Engine {
     tx: Sender<(Command, u64)>,
     line: Arc<Line>,
     thread: Option<JoinHandle<()>>,
+    herald: Option<JoinHandle<()>>,
+}
+
+/// Where events go: shared by the speaking thread and the herald, which says when each piece
+/// starts sounding.
+type Emit = Arc<Mutex<Box<dyn FnMut(Event) + Send>>>;
+
+fn emit_to(emit: &Emit, event: Event) {
+    (emit.lock().unwrap_or_else(|e| e.into_inner()))(event);
 }
 
 pub struct Config {
@@ -166,15 +216,26 @@ impl Engine {
     ) -> Engine {
         let (tx, rx) = channel();
         let line = Arc::new(Line::default());
+        let emit: Emit = Arc::new(Mutex::new(Box::new(on_event)));
+        let (shared, events) = (line.clone(), emit.clone());
+        let herald = std::thread::Builder::new()
+            .name("kalliope-herald".into())
+            .spawn(move || herald(&shared, &events))
+            .ok();
         let shared = line.clone();
         let thread = std::thread::Builder::new()
             .name("kalliope-voice".into())
             .spawn(move || {
-                let mut engine = Thread::new(config, shared, Box::new(on_event), load, open);
+                let mut engine = Thread::new(config, shared, emit, load, open);
                 engine.run(rx);
             })
             .ok();
-        Engine { tx, line, thread }
+        Engine {
+            tx,
+            line,
+            thread,
+            herald,
+        }
     }
 
     /// Queues a command. A text to say remembers when it was sent, so a Stop pressed after it
@@ -201,21 +262,101 @@ impl Drop for Engine {
         if let Some(t) = self.thread.take() {
             let _ = t.join();
         }
+        if let Some(t) = self.herald.take() {
+            let _ = t.join();
+        }
     }
 }
 
-/// The output, shared by the window (Stop, closing) and the speaking thread.
+/// Says when each piece starts sounding, at the moment its audio reaches the microphone: the
+/// speaking thread may be busy synthesizing the next piece then.
+fn herald(line: &Line, emit: &Emit) {
+    let mut slot = line.lock();
+    loop {
+        if slot.closed {
+            return;
+        }
+        let now = Instant::now();
+        match slot.marks.front() {
+            Some(mark) if mark.at <= now => {
+                let mark = slot.marks.pop_front().expect("a mark");
+                slot.sounding = Some((mark.sounding.clone(), mark.at));
+                emit_to(emit, Event::Sounding(mark.sounding));
+            }
+            Some(mark) => {
+                let wait = mark.at - now;
+                slot = line
+                    .wake
+                    .wait_timeout(slot, wait)
+                    .unwrap_or_else(|e| e.into_inner())
+                    .0;
+            }
+            None => slot = line.wake.wait(slot).unwrap_or_else(|e| e.into_inner()),
+        }
+    }
+}
+
+/// The output, shared by the window (Stop, closing), the speaking thread and the herald.
 #[derive(Default)]
 struct Line {
     output: Mutex<Slot>,
     /// Counts Stops: audio synthesized for a text sent before the last Stop is dropped.
     stops: AtomicU64,
+    /// Wakes the herald when a piece is queued, or when the line closes.
+    wake: Condvar,
 }
 
 #[derive(Default)]
 struct Slot {
     output: Option<Box<dyn Output>>,
     closed: bool,
+    /// Pieces queued in the output that have not started sounding, in order.
+    marks: VecDeque<Mark>,
+    /// The piece sounding (or the last one that did) and when it started.
+    sounding: Option<(Sounding, Instant)>,
+    /// What Stop left of the phrase it cut, until the speaking thread reports it.
+    said: Option<Said>,
+}
+
+/// A piece queued in the output, and when it will start sounding.
+struct Mark {
+    at: Instant,
+    sounding: Sounding,
+}
+
+impl Slot {
+    /// Forgets the pieces still to sound, and tells how much of the phrase was said: `None` when
+    /// nothing was sounding or waiting to sound.
+    fn cut(&mut self, now: Instant) -> Option<Said> {
+        let next = self.marks.front().map(|m| Said {
+            phrase: m.sounding.phrase.clone(),
+            id: m.sounding.id,
+            done: 0,
+            cut: None,
+        });
+        self.marks.clear();
+        let (s, started) = self.sounding.take()?;
+        let heard = now.saturating_duration_since(started);
+        if heard < s.duration || !s.exact {
+            let share = heard.as_secs_f32() / s.duration.as_secs_f32().max(1e-3);
+            return Some(Said {
+                done: s.span.start,
+                cut: Some((s.span, share.clamp(0.0, 1.0))),
+                phrase: s.phrase,
+                id: s.id,
+            });
+        }
+        if s.last && next.is_some() {
+            // That phrase was said in full, and the next one had not started.
+            return next;
+        }
+        Some(Said {
+            done: s.span.end,
+            cut: None,
+            phrase: s.phrase,
+            id: s.id,
+        })
+    }
 }
 
 impl Line {
@@ -228,23 +369,53 @@ impl Line {
     }
 
     fn stop(&self) {
-        let slot = self.lock();
+        let mut slot = self.lock();
         self.stops.fetch_add(1, Ordering::SeqCst);
         if let Some(out) = &slot.output {
             out.clear();
         }
+        slot.said = slot.cut(Instant::now());
     }
 
-    /// Plays `samples` unless a Stop came after `ticket` or the window closed.
-    fn play(&self, ticket: u64, samples: &[f32]) -> bool {
-        let slot = self.lock();
-        match &slot.output {
-            Some(out) if self.ticket() == ticket => {
-                out.play(samples);
-                true
-            }
-            _ => false,
+    /// Plays `samples` unless a Stop came after `ticket` or the window closed. The first audio
+    /// of a piece also says when the piece will start sounding: after what is queued before it.
+    fn play(&self, ticket: u64, samples: &[f32], starts: Option<Sounding>) -> bool {
+        let mut slot = self.lock();
+        let Some(out) = slot.output.as_ref().filter(|_| self.ticket() == ticket) else {
+            return false;
+        };
+        let at = Instant::now() + Duration::from_secs_f32(out.queued_seconds().max(0.0));
+        out.play(samples);
+        if let Some(sounding) = starts {
+            slot.marks.push_back(Mark { at, sounding });
+            self.wake.notify_all();
         }
+        true
+    }
+
+    /// The exact duration of a piece, once a streamed voice has finished it: corrected while it
+    /// waits to sound, or told again if it already started.
+    fn exact(&self, id: u64, start: usize, duration: Duration) -> Option<Sounding> {
+        let mut slot = self.lock();
+        let same = |s: &Sounding| s.id == id && s.span.start == start;
+        if let Some(mark) = slot.marks.iter_mut().find(|m| same(&m.sounding)) {
+            mark.sounding.duration = duration;
+            mark.sounding.exact = true;
+            return None;
+        }
+        match &mut slot.sounding {
+            Some((s, _)) if same(s) && !s.exact => {
+                s.duration = duration;
+                s.exact = true;
+                Some(s.clone())
+            }
+            _ => None,
+        }
+    }
+
+    /// What the last Stop left of the phrase it cut.
+    fn take_said(&self) -> Option<Said> {
+        self.lock().said.take()
     }
 
     fn with<R: Default>(&self, f: impl FnOnce(&dyn Output) -> R) -> R {
@@ -267,16 +438,28 @@ impl Line {
         if let Some(out) = &slot.output {
             out.clear();
         }
+        slot.marks.clear();
+        self.wake.notify_all();
         slot.output.take()
     }
+}
+
+/// A phrase being said: its text and number.
+struct Phrase {
+    text: Arc<str>,
+    id: u64,
 }
 
 /// One piece of speech waiting to be said.
 struct Piece {
     what: What,
-    /// The sentences this piece starts, in words, so they can be read again by another voice
-    /// after a voice change.
-    starts: Option<String>,
+    /// The bytes of the phrase it says (see [`Sounding::span`]); after a voice change, the rest of
+    /// the phrase is read again from the first piece not said.
+    source: Range<usize>,
+    /// Set by the speaking thread when the phrase is accepted.
+    phrase: Option<Arc<Phrase>>,
+    /// The last piece of its phrase.
+    ends_phrase: bool,
     /// First or last piece of its sentence: inside a sentence the silence at the cut is shortened.
     first: bool,
     last: bool,
@@ -308,6 +491,11 @@ trait Speaker: Send {
     /// Synthesizes one piece, handing its audio to `play` as soon as it exists; `play` returns
     /// false when nobody wants it any more.
     fn speak(&self, piece: &Piece, play: &mut dyn FnMut(&[f32]) -> bool) -> Result<(), String>;
+    /// Whether `speak` hands over a piece in parts as it synthesizes it, so its duration is known
+    /// only at the end; otherwise the whole piece comes in one call.
+    fn streams(&self) -> bool {
+        false
+    }
 }
 
 /// Giulia and Marco.
@@ -321,23 +509,31 @@ impl Speaker for Klein {
     /// One piece per clause; [`Thread::next_piece`] joins them as time allows.
     fn pieces(&self, text: &str, ticket: u64) -> Vec<Piece> {
         let mut out: Vec<Piece> = Vec::new();
-        for sentence in kalliope_text::normalize(text) {
-            let phonemes = kalliope_phonemes::phonemize(&sentence);
+        for sentence in kalliope_text::normalize_spans(text) {
+            let phonemes = kalliope_phonemes::phonemize(&sentence.text);
             let cut = self.0.clauses(&phonemes);
+            let sources = sources(&sentence.words, cut.iter().map(|(p, _)| p.as_str()));
             let n = cut.len();
-            out.extend(cut.into_iter().enumerate().map(|(i, (p, tokens))| Piece {
-                what: What::Phonemes {
-                    text: p,
-                    before: String::new(),
-                    after: String::new(),
+            out.extend(cut.into_iter().zip(sources).enumerate().map(
+                |(i, ((p, tokens), source))| Piece {
+                    what: What::Phonemes {
+                        text: p,
+                        before: String::new(),
+                        after: String::new(),
+                    },
+                    source,
+                    phrase: None,
+                    ends_phrase: false,
+                    first: i == 0,
+                    last: i + 1 == n,
+                    tokens,
+                    seed: i as u32,
+                    ticket,
                 },
-                starts: (i == 0).then(|| sentence.clone()),
-                first: i == 0,
-                last: i + 1 == n,
-                tokens,
-                seed: i as u32,
-                ticket,
-            }));
+            ));
+        }
+        if let Some(last) = out.last_mut() {
+            last.ends_phrase = true;
         }
         out
     }
@@ -374,14 +570,23 @@ impl Speaker for Own {
     }
 
     fn pieces(&self, text: &str, ticket: u64) -> Vec<Piece> {
-        let sentences = kalliope_text::normalize(text);
-        self.model
-            .chunks(&kalliope_voice::pocket::join_sentences(&sentences))
+        let sentences = kalliope_text::normalize_spans(text);
+        let words: Vec<Range<usize>> = sentences.iter().flat_map(|s| s.words.clone()).collect();
+        let texts: Vec<String> = sentences.into_iter().map(|s| s.text).collect();
+        let chunks = self
+            .model
+            .chunks(&kalliope_voice::pocket::join_sentences(&texts));
+        let sources = sources(&words, chunks.iter().map(|c| c.prompt.as_str()));
+        let n = chunks.len();
+        chunks
             .into_iter()
+            .zip(sources)
             .enumerate()
-            .map(|(i, c)| Piece {
-                starts: Some(c.prompt.clone()),
+            .map(|(i, (c, source))| Piece {
                 what: What::Chunk(c),
+                source,
+                phrase: None,
+                ends_phrase: i + 1 == n,
                 first: true,
                 last: true,
                 tokens: 0,
@@ -389,6 +594,10 @@ impl Speaker for Own {
                 ticket,
             })
             .collect()
+    }
+
+    fn streams(&self) -> bool {
+        true
     }
 
     fn speak(&self, piece: &Piece, play: &mut dyn FnMut(&[f32]) -> bool) -> Result<(), String> {
@@ -400,6 +609,33 @@ impl Speaker for Own {
             .map(|_| ())
             .map_err(|e| e.to_string())
     }
+}
+
+/// The bytes of the typed phrase each piece says, from the words it has: `words` are where the
+/// spoken words of the text were typed ([`kalliope_text::Sentence::words`]), `pieces` the text of
+/// each piece in order, in spoken form or in phonemes, which keep one word per spoken word. The
+/// last piece reaches the last word whatever the count says, so the whole text is always covered.
+fn sources<'a>(words: &[Range<usize>], pieces: impl Iterator<Item = &'a str>) -> Vec<Range<usize>> {
+    let mut out: Vec<Range<usize>> = Vec::new();
+    let mut next = 0;
+    for piece in pieces {
+        let n = kalliope_text::words(piece).count();
+        let start = words
+            .get(next)
+            .map_or_else(|| out.last().map_or(0, |r| r.end), |w| w.start);
+        let start = start.max(out.last().map_or(0, |r| r.end));
+        next = (next + n).min(words.len());
+        let end = next
+            .checked_sub(1)
+            .and_then(|i| words.get(i))
+            .map_or(start, |w| w.end)
+            .max(start);
+        out.push(start..end);
+    }
+    if let (Some(last), Some(word)) = (out.last_mut(), words.last()) {
+        last.end = last.end.max(word.end);
+    }
+    out
 }
 
 fn load(config: &Config, id: &VoiceId) -> Result<Box<dyn Speaker>, String> {
@@ -439,7 +675,7 @@ fn load(config: &Config, id: &VoiceId) -> Result<Box<dyn Speaker>, String> {
 struct Thread {
     config: Config,
     line: Arc<Line>,
-    on_event: Box<dyn FnMut(Event) + Send>,
+    on_event: Emit,
     load: Loader,
     open: Opener,
     speaker: Option<(VoiceId, Box<dyn Speaker>)>,
@@ -458,16 +694,16 @@ struct Thread {
     seconds_per_token: f32,
     /// The last clause said, the context of the next piece of the same sentence.
     previous_clause: String,
+    /// Phrases accepted so far.
+    phrases: u64,
+    /// The phrase of the last piece taken to be synthesized.
+    current: Option<Arc<Phrase>>,
+    /// Measured seconds per spoken word, to guess how long a streamed piece will last.
+    seconds_per_word: f32,
 }
 
 impl Thread {
-    fn new(
-        config: Config,
-        line: Arc<Line>,
-        on_event: Box<dyn FnMut(Event) + Send>,
-        load: Loader,
-        open: Opener,
-    ) -> Thread {
+    fn new(config: Config, line: Arc<Line>, on_event: Emit, load: Loader, open: Opener) -> Thread {
         let monitor = config.monitor;
         Thread {
             config,
@@ -486,11 +722,14 @@ impl Thread {
             unheard: false,
             seconds_per_token: FIRST_GUESS_SECONDS_PER_TOKEN,
             previous_clause: String::new(),
+            phrases: 0,
+            current: None,
+            seconds_per_word: FIRST_GUESS_SECONDS_PER_WORD,
         }
     }
 
     fn emit(&mut self, event: Event) {
-        (self.on_event)(event);
+        emit_to(&self.on_event, event);
     }
 
     fn run(&mut self, rx: Receiver<(Command, u64)>) {
@@ -622,9 +861,24 @@ impl Thread {
             Command::Stop => {
                 self.pending.clear();
                 self.line.with(|o| o.clear());
+                // Stopped before anything sounded: nothing of the phrase was said.
+                let said = self.line.take_said();
+                let current = self.current.as_ref().map(|p| p.id);
+                let said = said.filter(|s| Some(s.id) == current).or_else(|| {
+                    self.current.as_ref().map(|p| Said {
+                        phrase: p.text.clone(),
+                        id: p.id,
+                        done: 0,
+                        cut: None,
+                    })
+                });
+                self.current = None;
                 if self.speaking {
                     self.speaking = false;
                     kalliope_voice::release_memory();
+                    if let Some(said) = said {
+                        self.emit(Event::Interrupted(said));
+                    }
                     self.emit(Event::Idle);
                 }
             }
@@ -646,13 +900,21 @@ impl Thread {
         if ticket != self.line.ticket() {
             return; // Stopped before it was read.
         }
-        let pieces = if has_speech(text) {
+        let mut pieces = if has_speech(text) {
             speaker.pieces(text, ticket)
         } else {
             Vec::new()
         };
         if pieces.is_empty() {
             return self.emit(Event::NothingToSay);
+        }
+        self.phrases += 1;
+        let phrase = Arc::new(Phrase {
+            text: text.into(),
+            id: self.phrases,
+        });
+        for p in &mut pieces {
+            p.phrase = Some(phrase.clone());
         }
         self.pending.extend(pieces);
         if !self.speaking {
@@ -677,16 +939,24 @@ impl Thread {
         }
         match (self.load)(&self.config, &id) {
             Ok(speaker) => {
-                // What is left to say goes on in the new voice, from the next whole sentence.
-                let rest: Vec<String> = self
-                    .pending
-                    .drain(..)
-                    .skip_while(|p| p.starts.is_none())
-                    .filter_map(|p| p.starts)
-                    .collect();
+                // What is left to say goes on in the new voice from the first piece not
+                // synthesized yet, read again from the phrase as it was typed: no word is lost.
                 let ticket = self.line.ticket();
-                if !rest.is_empty() {
-                    self.pending.extend(speaker.pieces(&rest.join(" "), ticket));
+                let mut rest: Vec<(Arc<Phrase>, usize)> = Vec::new();
+                for p in self.pending.drain(..) {
+                    if let Some(phrase) = p.phrase
+                        && rest.last().is_none_or(|(r, _)| r.id != phrase.id)
+                    {
+                        rest.push((phrase, p.source.start));
+                    }
+                }
+                for (phrase, from) in rest {
+                    let mut pieces = speaker.pieces(&phrase.text[from..], ticket);
+                    for p in &mut pieces {
+                        p.source = p.source.start + from..p.source.end + from;
+                        p.phrase = Some(phrase.clone());
+                    }
+                    self.pending.extend(pieces);
                 }
                 self.use_voice(id, speaker);
             }
@@ -735,6 +1005,8 @@ impl Thread {
             last_clause = b.clone();
             piece.tokens += 1 + next.tokens;
             piece.last = next.last;
+            piece.source.end = next.source.end;
+            piece.ends_phrase = next.ends_phrase;
             self.pending.pop_front();
         }
         // The clauses that follow in the sentence, up to about a clause or two: the model
@@ -771,10 +1043,51 @@ impl Thread {
         let Some((_, speaker)) = &self.speaker else {
             return;
         };
+        self.current.clone_from(&piece.phrase);
         let line = &self.line;
         let ticket = piece.ticket;
         let started = Instant::now();
-        let result = speaker.speak(&piece, &mut |audio| line.play(ticket, audio));
+        let rate = speaker.sample_rate() as f32;
+        let streams = speaker.streams();
+        let words = piece_words(&piece);
+        let mut samples = 0usize;
+        let mut sounding = piece.phrase.as_ref().map(|phrase| Sounding {
+            phrase: phrase.text.clone(),
+            id: phrase.id,
+            span: piece.source.clone(),
+            duration: Duration::from_secs_f32(words as f32 * self.seconds_per_word),
+            exact: false,
+            last: piece.ends_phrase,
+        });
+        let result = speaker.speak(&piece, &mut |audio| {
+            // The first audio of the piece says when it will start sounding; a voice that hands
+            // over the whole piece at once gives its exact duration there.
+            let starts = sounding.take().map(|mut s| {
+                if !streams {
+                    s.duration = Duration::from_secs_f32(audio.len() as f32 / rate);
+                    s.exact = true;
+                }
+                s
+            });
+            let first = starts.is_some();
+            let played = line.play(ticket, audio, starts);
+            if played || !first {
+                samples += audio.len();
+            }
+            played
+        });
+        if samples > 0 {
+            let duration = Duration::from_secs_f32(samples as f32 / rate);
+            if let Some(phrase) = &piece.phrase
+                && let Some(update) = line.exact(phrase.id, piece.source.start, duration)
+            {
+                self.emit(Event::Sounding(update));
+            }
+            if words > 0 {
+                let measured = duration.as_secs_f32() / words as f32;
+                self.seconds_per_word = 0.5 * self.seconds_per_word + 0.5 * measured;
+            }
+        }
         if piece.tokens > 0 {
             let measured = started.elapsed().as_secs_f32() / piece.tokens as f32;
             self.seconds_per_token = 0.5 * self.seconds_per_token + 0.5 * measured;
@@ -829,6 +1142,16 @@ impl Thread {
             self.unheard = false;
             self.emit(Event::Heard);
         }
+    }
+}
+
+/// Spoken words in a piece, to guess its duration.
+fn piece_words(piece: &Piece) -> usize {
+    match &piece.what {
+        What::Phonemes { text, .. } => kalliope_text::words(text).count(),
+        What::Chunk(c) => kalliope_text::words(&c.prompt).count(),
+        #[cfg(test)]
+        What::Test => 1,
     }
 }
 

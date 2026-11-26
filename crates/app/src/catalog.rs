@@ -66,7 +66,12 @@ pub fn own_voices() -> Vec<String> {
     if !pocket_dir().join("pocket.json").is_file() {
         return Vec::new();
     }
-    let mut names: Vec<String> = std::fs::read_dir(voices_dir())
+    voice_files(&voices_dir())
+}
+
+/// Names of the voice files in `dir` (`NAME.safetensors`), sorted.
+pub fn voice_files(dir: &Path) -> Vec<String> {
+    let mut names: Vec<String> = std::fs::read_dir(dir)
         .into_iter()
         .flatten()
         .filter_map(|e| {

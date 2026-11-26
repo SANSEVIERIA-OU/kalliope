@@ -25,6 +25,8 @@ use crate::pod::AudioFormat;
 use crate::queue::Queue;
 use crate::{Error, ErrorKind};
 
+pub(crate) mod capture;
+
 const LIBRARY: &CStr = c"libpipewire-0.3.so.0";
 const RTLD_NOW: c_int = 2;
 
@@ -244,6 +246,7 @@ library! {
     stream_queue_buffer = c"pw_stream_queue_buffer": fn(*mut c_void, *mut PwBuffer) -> c_int;
     stream_set_active = c"pw_stream_set_active": fn(*mut c_void, bool) -> c_int;
     stream_flush = c"pw_stream_flush": fn(*mut c_void, bool) -> c_int;
+    proxy_destroy = c"pw_proxy_destroy": fn(*mut c_void);
 }
 
 struct Loaded {
@@ -404,6 +407,17 @@ impl Drop for LoopLock<'_> {
 
 impl Mic {
     pub fn open(name: &str, description: &str, rate: u32) -> Result<Mic, Error> {
+        Mic::open_with(name, description, rate, true)
+    }
+
+    /// The speakers only, with no microphone: [`Mic::play`] goes to the monitor stream alone.
+    pub fn player(name: &str, description: &str, rate: u32) -> Result<Mic, Error> {
+        let mic = Mic::open_with(name, description, rate, false)?;
+        mic.set_monitor(true)?;
+        Ok(mic)
+    }
+
+    fn open_with(name: &str, description: &str, rate: u32, source: bool) -> Result<Mic, Error> {
         let loaded = load()?;
         let lib = &loaded.lib;
         let text = |s: &str| CString::new(s).map_err(|_| Error::new("name contains NUL"));
@@ -464,7 +478,13 @@ impl Mic {
             (c"media.name", mic.description.as_c_str()),
             (c"node.virtual", c"true"),
             (c"node.latency", LATENCY),
+            // So that Kalliope never records its own voice when the person records theirs.
+            (capture::OWN_MARK, c"true"),
         ];
+        if !source {
+            drop(guard);
+            return Ok(mic);
+        }
         // No AUTOCONNECT: a source is linked by the apps that record from it.
         mic.connect(
             &shared.mic,

@@ -1,0 +1,26 @@
+[package]
+name = "kalliope-sample"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+description = "The recording a personal voice is made from: reading audio files, quality checks, the clearest stretch"
+
+[dependencies]
+kalliope-voice.workspace = true
+# Audio files people have (MPL-2.0): WAV, FLAC, MP3, Ogg Vorbis, M4A/AAC-LC, and the sound of MP4, MKV and WebM videos. Opus,
+# the format of WhatsApp and Telegram voice messages, is demuxed here and decoded by libopus, loaded at run time (opus.rs).
+symphonia = { version = "0.6.1", default-features = false, features = [
+    "wav",
+    "pcm",
+    "adpcm",
+    "flac",
+    "mp3",
+    "ogg",
+    "vorbis",
+    "aac",
+    "isomp4",
+    "mkv",
+    "id3v2",
+] }

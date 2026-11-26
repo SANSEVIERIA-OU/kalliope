@@ -132,7 +132,7 @@ Architecture: amd64
 Maintainer: Kalliope contributors <https://github.com/SANSEVIERIA-OU/kalliope/issues>
 Installed-Size: $(du -sk --exclude=DEBIAN "$deb" | cut -f1)
 Depends: $shlibs, libxkbcommon0, libxkbcommon-x11-0, libwayland-client0, libx11-6, libx11-xcb1, libxcb1, libxcursor1, libxi6
-Recommends: libpipewire-0.3-0t64 | libpipewire-0.3-0
+Recommends: libpipewire-0.3-0t64 | libpipewire-0.3-0, libopus0
 Section: sound
 Priority: optional
 Homepage: https://github.com/SANSEVIERIA-OU/kalliope

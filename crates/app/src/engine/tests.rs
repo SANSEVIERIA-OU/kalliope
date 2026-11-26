@@ -74,10 +74,12 @@ impl Drop for FakeMic {
     }
 }
 
-/// A voice that takes `work` to synthesize each word and says it in `spoken`.
+/// A voice that takes `work` to synthesize each word and says it in `spoken`; a streaming one
+/// hands its audio over in four parts, `work` apart.
 struct FakeVoice {
     work: Duration,
     spoken: Duration,
+    streaming: bool,
 }
 
 impl Speaker for FakeVoice {
@@ -85,12 +87,19 @@ impl Speaker for FakeVoice {
         RATE
     }
     fn pieces(&self, text: &str, ticket: u64) -> Vec<Piece> {
-        kalliope_text::normalize(text)
-            .join(" ")
-            .split_whitespace()
-            .map(|w| Piece {
+        let words: Vec<Range<usize>> = kalliope_text::normalize_spans(text)
+            .into_iter()
+            .flat_map(|s| s.words)
+            .collect();
+        let n = words.len();
+        words
+            .into_iter()
+            .enumerate()
+            .map(|(i, source)| Piece {
                 what: What::Test,
-                starts: Some(w.into()),
+                source,
+                phrase: None,
+                ends_phrase: i + 1 == n,
                 first: true,
                 last: true,
                 tokens: 0,
@@ -99,12 +108,22 @@ impl Speaker for FakeVoice {
             })
             .collect()
     }
+    fn streams(&self) -> bool {
+        self.streaming
+    }
     fn speak(&self, _piece: &Piece, play: &mut dyn FnMut(&[f32]) -> bool) -> Result<(), String> {
+        let samples = (self.spoken.as_secs_f32() * RATE as f32) as usize;
+        if self.streaming {
+            for _ in 0..4 {
+                std::thread::sleep(self.work);
+                if !play(&vec![0.5; samples / 4]) {
+                    break;
+                }
+            }
+            return Ok(());
+        }
         std::thread::sleep(self.work);
-        play(&vec![
-            0.5;
-            (self.spoken.as_secs_f32() * RATE as f32) as usize
-        ]);
+        play(&vec![0.5; samples]);
         Ok(())
     }
 }
@@ -124,6 +143,7 @@ struct Setup {
     voice: VoiceId,
     work: Duration,
     spoken: Duration,
+    streaming: bool,
     broken: Vec<VoiceId>,
     in_use: bool,
     /// Opening the microphone fails this many times first.
@@ -137,6 +157,7 @@ impl Default for Setup {
             voice: VoiceId::default(),
             work: Duration::from_millis(10),
             spoken: Duration::from_millis(100),
+            streaming: false,
             broken: Vec::new(),
             in_use: true,
             mic_failures: 0,
@@ -163,12 +184,17 @@ fn rig(setup: Setup) -> Rig {
     let connected = Arc::new(AtomicBool::new(true));
     let most_queued = Arc::new(Mutex::new(0.0));
     let opened = Arc::new(AtomicU64::new(0));
-    let (work, spoken, broken) = (setup.work, setup.spoken, setup.broken);
+    let (work, spoken, streaming, broken) =
+        (setup.work, setup.spoken, setup.streaming, setup.broken);
     let load: Loader = Box::new(move |_, id| {
         if broken.contains(id) {
             return Err(format!("{} rotta", id.key()));
         }
-        Ok(Box::new(FakeVoice { work, spoken }))
+        Ok(Box::new(FakeVoice {
+            work,
+            spoken,
+            streaming,
+        }))
     });
     let (l, u, c, m, o) = (
         log.clone(),
@@ -430,7 +456,8 @@ fn nobody_listening_is_reported_with_the_monitor_on_and_off() {
         rig.ready();
         rig.engine.send(Command::Monitor(monitor));
         rig.engine.send(Command::Speak("ciao a tutti".into()));
-        let events = rig.until(&Event::Idle, 2 * SECOND);
+        let mut events = rig.until(&Event::Idle, 2 * SECOND);
+        events.retain(|e| !matches!(e, Event::Sounding(_)));
         assert_eq!(events, [Event::NotHeard, Event::Idle], "monitor {monitor}");
         // A call starts recording from the microphone: the notice can go.
         rig.in_use.store(true, Ordering::SeqCst);
@@ -535,6 +562,18 @@ fn giulia_cuts_a_long_sentence_at_its_commas() {
         di Torino, e fissare una scadenza chiara per la consegna dei materiali entro la fine del mese.";
     let pieces = klein.pieces(text, 0);
     assert!(pieces.len() >= 3, "{}", pieces.len());
+    // Each piece says the typed text up to one of its commas, and together they cover it all.
+    let mut end = 0;
+    for p in &pieces {
+        assert_eq!(p.source.start, end + usize::from(end > 0));
+        end = p.source.end;
+        assert!(
+            text[..end].ends_with([',', '.']),
+            "{:?}",
+            &text[p.source.clone()]
+        );
+    }
+    assert_eq!(end, text.len());
     for (i, p) in pieces.iter().enumerate() {
         let What::Phonemes { text, .. } = &p.what else {
             unreachable!()
@@ -589,7 +628,7 @@ fn clauses_are_joined_as_far_as_the_queued_audio_allows() {
     let mut thread = Thread::new(
         config(VoiceId::default()),
         line,
-        Box::new(|_| {}),
+        Arc::new(Mutex::new(Box::new(|_| {}))),
         Box::new(|_, _| Err(String::new())),
         Box::new(|_| Err(MicError::lost())),
     );
@@ -600,7 +639,9 @@ fn clauses_are_joined_as_far_as_the_queued_audio_allows() {
             before: String::new(),
             after: String::new(),
         },
-        starts: (i == 0).then(|| "frase".into()),
+        source: i * 4..i * 4 + 3,
+        phrase: None,
+        ends_phrase: last,
         first: i == 0,
         last,
         tokens: 20,
@@ -640,5 +681,210 @@ fn clauses_are_joined_as_far_as_the_queued_audio_allows() {
     assert_eq!(text, "c2, c3, c4, c5, c6, c7,");
     assert_eq!((before.as_str(), after.as_str()), ("c1,", ""));
     assert!(!next.first && next.last);
+    // A joined piece says the typed text of all its clauses.
+    assert_eq!((first.source.clone(), next.source.clone()), (0..7, 8..31));
+    assert!(next.ends_phrase);
     assert!(thread.next_piece().is_none());
+}
+
+/// Whether `d` is `ms` milliseconds, give or take one.
+fn close(d: Duration, ms: u64) -> bool {
+    d.as_secs_f64() * 1000.0 - ms as f64 <= 1.0 && ms as f64 - d.as_secs_f64() * 1000.0 <= 1.0
+}
+
+/// The Soundings among `events`.
+fn soundings(events: &[Event]) -> Vec<Sounding> {
+    events
+        .iter()
+        .filter_map(|e| match e {
+            Event::Sounding(s) => Some(s.clone()),
+            _ => None,
+        })
+        .collect()
+}
+
+#[test]
+fn each_piece_is_announced_as_it_starts_sounding_with_the_text_it_says() {
+    let rig = rig(Setup {
+        work: Duration::from_millis(30),
+        spoken: Duration::from_millis(150),
+        ..Setup::default()
+    });
+    rig.ready();
+    let text = "Il Dott. Rossi paga 1.250 €, poi va.";
+    rig.engine.send(Command::Speak(text.into()));
+    let mut times = Vec::new();
+    let mut seen = Vec::new();
+    let deadline = Instant::now() + 5 * SECOND;
+    while let Ok(e) = rig.events.recv_timeout(deadline - Instant::now()) {
+        if matches!(e, Event::Sounding(_)) {
+            times.push(Instant::now());
+        }
+        let idle = e == Event::Idle;
+        seen.push(e);
+        if idle {
+            break;
+        }
+    }
+    let pieces = soundings(&seen);
+    let said: Vec<&str> = pieces.iter().map(|s| &text[s.span.clone()]).collect();
+    // The words of the number and of the currency all point to what was typed.
+    assert_eq!(said[0], "Il");
+    assert_eq!(said[1], "Dott.");
+    assert!(said.contains(&"1.250 €"), "{said:?}");
+    assert_eq!(said.last(), Some(&"va."));
+    assert!(
+        pieces.iter().all(|s| s.exact && close(s.duration, 150)),
+        "{pieces:?}"
+    );
+    assert!(pieces.iter().rev().skip(1).all(|s| !s.last) && pieces.last().unwrap().last);
+    assert!(pieces.iter().all(|s| s.id == 1 && &*s.phrase == text));
+    // One after the other, as long as each lasts, though they were synthesized much faster.
+    for pair in times.windows(2) {
+        let gap = pair[1] - pair[0];
+        assert!(
+            gap >= Duration::from_millis(110) && gap <= Duration::from_millis(220),
+            "{gap:?}"
+        );
+    }
+    assert!(
+        seen.iter().position(|e| *e == Event::Idle)
+            > seen.iter().rposition(|e| matches!(e, Event::Sounding(_)))
+    );
+}
+
+#[test]
+fn stop_tells_how_much_of_the_phrase_was_said() {
+    let rig = rig(Setup {
+        work: Duration::from_millis(10),
+        spoken: Duration::from_millis(400),
+        ..Setup::default()
+    });
+    rig.ready();
+    rig.engine
+        .send(Command::Speak("uno due tre quattro".into()));
+    let deadline = Instant::now() + 3 * SECOND;
+    let mut second = None;
+    while let Ok(e) = rig.events.recv_timeout(deadline - Instant::now()) {
+        if let Event::Sounding(s) = e
+            && s.span.start > 0
+        {
+            second = Some(s);
+            break;
+        }
+    }
+    let second = second.expect("the second word");
+    assert_eq!(second.span, 4..7);
+    std::thread::sleep(Duration::from_millis(100));
+    rig.engine.stop();
+    let events = rig.until(&Event::Idle, SECOND);
+    let said = events
+        .iter()
+        .find_map(|e| match e {
+            Event::Interrupted(s) => Some(s.clone()),
+            _ => None,
+        })
+        .expect("what was said");
+    // «uno» in full, «due» in part, nothing after it.
+    assert_eq!(said.done, 4);
+    let (cut, share) = said.cut.clone().expect("a piece cut midway");
+    assert_eq!(cut, 4..7);
+    assert!((0.15..0.5).contains(&share), "{share}");
+    assert!(soundings(&events).is_empty(), "{events:?}");
+    std::thread::sleep(Duration::from_millis(600));
+    assert!(rig.events.try_recv().is_err());
+}
+
+#[test]
+fn stop_before_any_sound_says_nothing_was_said() {
+    let rig = rig(Setup {
+        work: Duration::from_millis(400),
+        ..Setup::default()
+    });
+    rig.ready();
+    rig.engine.send(Command::Speak("uno due".into()));
+    rig.until(&Event::Speaking, SECOND);
+    std::thread::sleep(Duration::from_millis(100));
+    rig.engine.stop();
+    let events = rig.until(&Event::Idle, SECOND);
+    let said = events.iter().find_map(|e| match e {
+        Event::Interrupted(s) => Some(s.clone()),
+        _ => None,
+    });
+    assert_eq!(said.map(|s| (s.done, s.cut)), Some((0, None)));
+}
+
+#[test]
+fn a_streamed_piece_gets_its_exact_duration_once_known() {
+    let rig = rig(Setup {
+        work: Duration::from_millis(60),
+        spoken: Duration::from_millis(800),
+        streaming: true,
+        ..Setup::default()
+    });
+    rig.ready();
+    rig.engine.send(Command::Speak("ciao".into()));
+    let events = rig.until(&Event::Idle, 3 * SECOND);
+    let pieces = soundings(&events);
+    assert_eq!(pieces.len(), 2, "{pieces:?}");
+    assert!(!pieces[0].exact);
+    assert_eq!(pieces[1].span, pieces[0].span);
+    assert!(
+        pieces[1].exact && close(pieces[1].duration, 800),
+        "{pieces:?}"
+    );
+}
+
+#[test]
+fn a_voice_change_goes_on_from_the_first_word_not_said() {
+    let rig = rig(Setup {
+        work: Duration::from_millis(5),
+        spoken: Duration::from_millis(500),
+        ..Setup::default()
+    });
+    rig.ready();
+    let text = "uno due tre quattro cinque sei sette otto";
+    rig.engine.send(Command::Speak(text.into()));
+    rig.until(&Event::Speaking, SECOND);
+    std::thread::sleep(Duration::from_millis(300));
+    rig.engine
+        .send(Command::Voice(VoiceId::Klein("Marco".into())));
+    let events = rig.until(&Event::Idle, 10 * SECOND);
+    let said: Vec<&str> = soundings(&events)
+        .iter()
+        .map(|s| &text[s.span.clone()])
+        .collect();
+    assert_eq!(said.len(), 8, "{said:?}");
+    assert_eq!(said.join(" "), text);
+}
+
+#[test]
+fn pieces_map_to_the_typed_text_by_their_words() {
+    let text = "Alle 10:30, il Dott. Rossi; poi J. R. Tolkien.";
+    let sentence = kalliope_text::normalize_spans(text).remove(0);
+    let spoken = &sentence.text;
+    // Cut the spoken sentence after each comma or semicolon, as Giulia does.
+    let mut pieces = Vec::new();
+    let mut rest = spoken.as_str();
+    while let Some(i) = rest.find([',', ';']) {
+        pieces.push(&rest[..=i]);
+        rest = rest[i + 1..].trim_start();
+    }
+    pieces.push(rest);
+    let said: Vec<&str> = sources(&sentence.words, pieces.into_iter())
+        .into_iter()
+        .map(|r| &text[r])
+        .collect();
+    assert_eq!(said[0], "Alle 10:30,");
+    assert_eq!(said[1], "il Dott. Rossi;");
+    assert!(said.last().unwrap().ends_with("Tolkien."), "{said:?}");
+    // A count that runs short still reaches the end of the text.
+    let all = sources(&sentence.words, ["alle"].into_iter());
+    assert_eq!(
+        all,
+        vec![Range {
+            start: 0,
+            end: text.len()
+        }]
+    );
 }

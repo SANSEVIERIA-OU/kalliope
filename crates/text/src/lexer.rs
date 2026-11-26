@@ -3,6 +3,7 @@
 //! abbreviations and line breaks.
 
 use crate::lexicon;
+use std::ops::Range;
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Kind {
@@ -30,6 +31,8 @@ pub struct Token {
     pub kind: Kind,
     /// Whether white space separates this token from the previous one.
     pub space_before: bool,
+    /// The characters of the cleaned text it was read from (with what was dropped next to it).
+    pub span: Range<usize>,
 }
 
 impl Token {
@@ -87,10 +90,17 @@ pub fn lex(text: &str) -> Vec<Token> {
             text,
             kind,
             space_before: *space,
+            span: 0..0,
         });
         *space = false;
     };
+    // Each token's span is what the loop read while making it: set when the next round starts.
+    let (mut spanned, mut at) = (0, 0);
     while i < chars.len() {
+        for t in &mut tokens[spanned..] {
+            t.span = at..i;
+        }
+        (spanned, at) = (tokens.len(), i);
         let c = chars[i];
         if c == '\n' {
             push(&mut tokens, "\n".into(), Kind::Break, &mut space);
@@ -302,6 +312,9 @@ pub fn lex(text: &str) -> Vec<Token> {
         // Anything else (stray apostrophes, unknown signs) is dropped.
         i += 1;
     }
+    for t in &mut tokens[spanned..] {
+        t.span = at..i;
+    }
     tokens
 }
 
@@ -379,5 +392,19 @@ mod tests {
         );
         let t = lex("dell'8%");
         assert!(!t[1].space_before && t[1].kind == Number);
+    }
+
+    #[test]
+    fn each_token_knows_its_characters() {
+        let text = "Il Dott. Rossi, 1.250 € l'8";
+        let chars: Vec<char> = text.chars().collect();
+        let spans: Vec<String> = lex(text)
+            .iter()
+            .map(|t| chars[t.span.clone()].iter().collect())
+            .collect();
+        assert_eq!(
+            spans,
+            ["Il", "Dott.", "Rossi", ",", "1.250", "€", "l'", "8"]
+        );
     }
 }
