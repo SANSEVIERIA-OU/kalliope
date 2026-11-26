@@ -25,6 +25,8 @@ use crate::pod::AudioFormat;
 use crate::queue::Queue;
 use crate::{Error, ErrorKind};
 
+pub(crate) mod capture;
+
 const LIBRARY: &CStr = c"libpipewire-0.3.so.0";
 const RTLD_NOW: c_int = 2;
 
@@ -244,6 +246,7 @@ library! {
     stream_queue_buffer = c"pw_stream_queue_buffer": fn(*mut c_void, *mut PwBuffer) -> c_int;
     stream_set_active = c"pw_stream_set_active": fn(*mut c_void, bool) -> c_int;
     stream_flush = c"pw_stream_flush": fn(*mut c_void, bool) -> c_int;
+    proxy_destroy = c"pw_proxy_destroy": fn(*mut c_void);
 }
 
 struct Loaded {
@@ -464,6 +467,8 @@ impl Mic {
             (c"media.name", mic.description.as_c_str()),
             (c"node.virtual", c"true"),
             (c"node.latency", LATENCY),
+            // So that Kalliope never records its own voice when the person records theirs.
+            (capture::OWN_MARK, c"true"),
         ];
         // No AUTOCONNECT: a source is linked by the apps that record from it.
         mic.connect(
