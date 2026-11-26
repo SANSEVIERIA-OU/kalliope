@@ -28,8 +28,8 @@ export component BollaVoce inherits Rectangle {
     background: Token.bolla;
     border-radius: Token.raggio-bolla * Aspetto.scala;
     border-bottom-left-radius: Token.raggio-coda * Aspetto.scala;
-    border-width: root.parla ? Token.tratto : 0;
-    border-color: root.non-sentita ? Token.attenzione : Token.voce;
+    border-width: Token.tratto;
+    border-color: !root.parla ? Token.bolla : root.non-sentita ? Token.attenzione : Token.voce;
     drop-shadow-blur: Token.ombra-sfocatura;
     drop-shadow-offset-y: root.parla ? 0 : Token.ombra-scarto;
     drop-shadow-color: root.parla ? (root.non-sentita ? Token.attenzione : Token.voce) : Token.ombra;
@@ -37,7 +37,8 @@ export component BollaVoce inherits Rectangle {
     transform-scale-x: (Token.scala-coda + (1 - Token.scala-coda) * root.nascita) * 100%;
     transform-scale-y: (Token.scala-coda + (1 - Token.scala-coda) * root.nascita) * 100%;
     opacity: root.nascita;
-    animate border-color, drop-shadow-color { duration: Token.durata-scurisce; easing: Token.curva-dolce; }
+    // the ring of the voice fades out at the end of the phrase, in the bubble's own time
+    animate border-color, drop-shadow-color { duration: Token.durata-bolla; easing: Token.curva-dolce; }
     naturale := Text { visible: false; text: root.testo; font-size: Token.corpo-bolla * Aspetto.scala; font-weight: Token.peso-medio; }
     // Three layers with the same width wrap the same way: what is not yet said, what is said, and the word being said.
     tutto := Text {
@@ -99,15 +100,15 @@ export component FraseDetta inherits Rectangle {
         opacity: root.sopra ? 1 : 0;
         animate opacity { duration: Token.durata-dissolvenza; easing: Token.curva-lineare; }
     }
-    tocco := TouchArea {
-        mouse-cursor: root.abilitata ? pointer : default;
-        clicked => { if (root.abilitata) { root.ripeti(); } }
-    }
     chiave := FocusScope {
         key-pressed(e) => {
             if (e.text == " " || e.text == Key.Return) { if (root.abilitata) { root.ripeti(); } return accept; }
             return reject;
         }
         changed has-focus => { if (self.has-focus) { root.ensure-visible(ScrollBehavior.instant); } }
+    }
+    tocco := TouchArea {
+        mouse-cursor: root.abilitata ? pointer : default;
+        clicked => { if (root.abilitata) { root.ripeti(); } }
     }
 }

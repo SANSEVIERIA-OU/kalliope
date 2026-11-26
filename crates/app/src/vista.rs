@@ -156,6 +156,14 @@ pub fn demo(scena: &str) -> ExitCode {
         ui.set_compatta(true);
         ui.window().set_size(LogicalSize::new(ui.get_compatta_larghezza(), ui.get_compatta_altezza()));
     }
+    // KALLIOPE_DEMO_MISURA=360x320 opens the scene at another size (the smallest window, a low screen)
+    if let Some((w, h)) = std::env::var("KALLIOPE_DEMO_MISURA")
+        .ok()
+        .and_then(|m| m.split_once('x').map(|(w, h)| (w.parse::<f32>(), h.parse::<f32>())))
+        .and_then(|(w, h)| Some((w.ok()?, h.ok()?)))
+    {
+        ui.window().set_size(LogicalSize::new(w, h));
+    }
     history.set_vec(said);
     ui.set_phase(phase);
     ui.set_status(status.into());

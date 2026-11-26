@@ -31,6 +31,8 @@ export component RigaStato inherits Rectangle {
     // the engine's own sentence (session.rs): used for every state that something must be done about
     in property <string> spiegazione;
     in property <bool> compatta: false;
+    // a narrow window: the name of the state above, its explanation below, wrapped at the whole width
+    in property <bool> impilata: false;
     property <bool> male: root.situazione == Situazione.nessuno-ascolta || root.situazione == Situazione.senza-microfono
         || root.situazione == Situazione.problema-voce || root.situazione == Situazione.avviso;
     property <string> titolo:
@@ -48,7 +50,8 @@ export component RigaStato inherits Rectangle {
         : root.spiegazione;
     accessible-role: text;
     accessible-label: root.titolo + ". " + root.detto;
-    min-height: Token.altezza-comando-piccolo * Aspetto.scala;
+    // never squeezed below its words: the truth about the voice stays whole
+    min-height: max(Token.altezza-comando-piccolo * Aspetto.scala, riga.preferred-height);
     border-radius: Token.raggio-pannello * Aspetto.scala;
     background: root.male ? Token.attenzione-fondo : transparent;
     animate background { duration: Token.durata-scurisce; easing: Token.curva-dolce; }
@@ -70,14 +73,24 @@ export component RigaStato inherits Rectangle {
                     ? Token.opacita-spento + (1 - Token.opacita-spento) * abs(sin(animation-tick() / Token.durata-cammino * 0.5turn)) : 1;
             }
         }
-        Text {
-            text: root.titolo;
-            vertical-alignment: center;
-            font-size: Token.corpo-comando * Aspetto.scala;
-            font-weight: Token.peso-forte;
-            color: root.male ? Token.attenzione : Token.testo;
+        VerticalLayout {
+            horizontal-stretch: root.impilata ? 1 : 0;
+            alignment: center;
+            Text {
+                text: root.titolo;
+                vertical-alignment: center;
+                font-size: Token.corpo-comando * Aspetto.scala;
+                font-weight: Token.peso-forte;
+                color: root.male ? Token.attenzione : Token.testo;
+            }
+            if root.impilata: Text {
+                text: root.detto;
+                wrap: word-wrap;
+                font-size: Token.corpo-stato * Aspetto.scala;
+                color: Token.testo-tenue;
+            }
         }
-        Text {
+        if !root.impilata: Text {
             text: root.detto;
             vertical-alignment: center;
             horizontal-stretch: 1;

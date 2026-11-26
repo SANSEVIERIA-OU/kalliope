@@ -7,9 +7,18 @@ import { Pulsante, Tipo, Tratteggio, Punto } from "forme.slint";
 // Where the person is among the three steps: done, now, next (ElevenLabs IVC shows its steps this way).
 export component Passi inherits HorizontalLayout {
     in property <int> passo;
+    // a narrow window: only the step one is on, with «n di 3»
+    in property <bool> compatti: false;
     in property <[string]> nomi: [@tr("Registra o importa"), @tr("Leggi ad alta voce"), @tr("Ascolta e dai un nome")];
     spacing: Token.spazio-largo * Aspetto.scala;
-    for nome[i] in root.nomi: HorizontalLayout {
+    if root.compatti: Text {
+        text: @tr("{} di 3 · {}", root.passo + 1, root.nomi[root.passo]);
+        vertical-alignment: center;
+        font-size: Token.corpo-stato * Aspetto.scala;
+        font-weight: Token.peso-forte;
+        color: Token.testo;
+    }
+    for nome[i] in root.compatti ? [] : root.nomi: HorizontalLayout {
         spacing: Token.spazio-stretto * Aspetto.scala;
         Rectangle {
             width: Token.punto * 1.6 * Aspetto.scala; height: self.width;
@@ -69,13 +78,13 @@ export component Registra inherits Rectangle {
         background: Token.registra-fisso;
         animate width, border-radius { duration: Token.durata-pannello; easing: Token.curva-entrata; }
     }
-    TouchArea { mouse-cursor: pointer; clicked => { root.premuto(); } }
     chiave := FocusScope {
         key-pressed(e) => {
             if (e.text == " " || e.text == Key.Return) { root.premuto(); return accept; }
             return reject;
         }
     }
+    TouchArea { mouse-cursor: pointer; clicked => { root.premuto(); } }
 }
 
 // One of the two ways in.
@@ -90,6 +99,8 @@ component Strada inherits Rectangle {
     accessible-action-default => { root.scelta(); }
     forward-focus: chiave;
     horizontal-stretch: 1;
+    // wants the whole row: the row shares it out between the two ways
+    preferred-width: Token.bolla-larghezza * Aspetto.scala;
     min-height: Token.scelta-altezza * Aspetto.scala;
     border-radius: Token.raggio-pannello * Aspetto.scala;
     background: root.sopra ? Token.velo-scelto : Token.campo;
@@ -100,7 +111,8 @@ component Strada inherits Rectangle {
         padding: Token.spazio-largo * Aspetto.scala;
         spacing: Token.spazio-controlli * Aspetto.scala;
         alignment: start;
-        Rectangle {
+        // the sign sits in a row, so its fixed size does not make the whole card narrow
+        HorizontalLayout { alignment: start; Rectangle {
             height: Token.altezza-comando * Aspetto.scala;
             width: self.height;
             if root.registra: Rectangle {
@@ -112,17 +124,17 @@ component Strada inherits Rectangle {
                 raggio: Token.raggio-coda * Aspetto.scala; tratto: Token.tratto; pieno: Token.tratteggio-vuoto * Aspetto.scala * 0.6; vuoto: Token.tratteggio-vuoto * Aspetto.scala * 0.4;
                 colore: Token.azione;
             }
-        }
+        } }
         Text { text: root.titolo; font-size: Token.corpo-bolla * Aspetto.scala; font-weight: Token.peso-forte; color: Token.testo; wrap: word-wrap; }
         Text { text: root.testo; font-size: Token.corpo-stato * Aspetto.scala; color: Token.testo-tenue; wrap: word-wrap; }
     }
-    tocco := TouchArea { mouse-cursor: pointer; clicked => { root.scelta(); } }
     chiave := FocusScope {
         key-pressed(e) => {
             if (e.text == " " || e.text == Key.Return) { root.scelta(); return accept; }
             return reject;
         }
     }
+    tocco := TouchArea { mouse-cursor: pointer; clicked => { root.scelta(); } }
 }
 
 // A box to tick, said with words.
@@ -155,13 +167,13 @@ export component Consenso inherits Rectangle {
         }
         Text { text: root.testo; wrap: word-wrap; horizontal-stretch: 1; font-size: Token.corpo-stato * Aspetto.scala; color: Token.testo; }
     }
-    TouchArea { clicked => { root.dato = !root.dato; } }
     chiave := FocusScope {
         key-pressed(e) => {
             if (e.text == " " || e.text == Key.Return) { root.dato = !root.dato; return accept; }
             return reject;
         }
     }
+    TouchArea { clicked => { root.dato = !root.dato; } }
 }
 
 export component CreaVoce inherits Rectangle {
@@ -176,6 +188,7 @@ export component CreaVoce inherits Rectangle {
     callback torna();
     callback importa();
     callback crea(string);
+    property <bool> stretta: root.width < Token.soglia-minima * Aspetto.scala;
     property <int> decimi: self.registrato / Token.intervallo-registrazione;
     property <string> tempo: floor(self.decimi / 10) + "," + mod(self.decimi, 10) + " s";
     background: Token.fondo;
@@ -187,15 +200,21 @@ export component CreaVoce inherits Rectangle {
         triggered => { root.registrato += Token.intervallo-registrazione; }
     }
 
-    VerticalLayout {
+    // in a small window the creation scrolls, nothing is cut
+    scorre := Flickable {
+        content-width: self.width;
+        content-height: max(self.height, passi.preferred-height);
+    passi := VerticalLayout {
+        width: scorre.width;
+        height: scorre.content-height;
         padding: Token.spazio-largo * Aspetto.scala;
         padding-top: Token.spazio-medio * Aspetto.scala;
         spacing: Token.spazio-largo * Aspetto.scala;
         HorizontalLayout {
             spacing: Token.spazio-largo * Aspetto.scala;
-            primo := Pulsante { testo: @tr("← Torna a scrivere"); tipo: Tipo.nudo; piccolo: true; premuto => { root.torna(); } }
+            primo := Pulsante { testo: root.stretta ? @tr("←") : @tr("← Torna a scrivere"); accessible-label: @tr("Torna a scrivere"); tipo: Tipo.nudo; piccolo: true; premuto => { root.torna(); } }
             Rectangle { horizontal-stretch: 1; }
-            Passi { passo: root.passo; }
+            Passi { passo: root.passo; compatti: root.stretta; }
         }
         Text {
             text: root.passo == 0 ? @tr("Come vuoi creare la tua voce?")
@@ -208,7 +227,22 @@ export component CreaVoce inherits Rectangle {
         }
         if root.passo == 0: VerticalLayout {
             spacing: Token.spazio-largo * Aspetto.scala;
-            HorizontalLayout {
+            if !root.stretta: HorizontalLayout {
+                spacing: Token.spazio-medio * Aspetto.scala;
+                Strada {
+                    registra: true;
+                    titolo: @tr("Registra adesso");
+                    testo: @tr("Leggi un breve testo al microfono. Bastano dodici secondi di voce chiara.");
+                    scelta => { root.passo = 1; }
+                }
+                Strada {
+                    registra: false;
+                    titolo: @tr("Usa una registrazione");
+                    testo: @tr("Un messaggio vocale, un video, una vecchia registrazione: WAV, FLAC, MP3 o OGG.");
+                    scelta => { root.importa(); }
+                }
+            }
+            if root.stretta: VerticalLayout {
                 spacing: Token.spazio-medio * Aspetto.scala;
                 Strada {
                     registra: true;
@@ -328,5 +362,6 @@ export component CreaVoce inherits Rectangle {
             }
             Rectangle { vertical-stretch: 1; }
         }
+    }
     }
 }

@@ -34,13 +34,13 @@ component VoceNelMenu inherits Rectangle {
         Text { text: root.nome; vertical-alignment: center; horizontal-stretch: 1; color: Token.testo; font-size: Token.corpo-comando * Aspetto.scala; font-weight: root.scelta ? Token.peso-forte : Token.peso-testo; }
         if root.scelta: Text { text: @tr("in uso"); vertical-alignment: center; color: Token.azione; font-size: Token.corpo-nota * Aspetto.scala; }
     }
-    tocco := TouchArea { mouse-cursor: pointer; clicked => { root.premuta(); } }
     chiave := FocusScope {
         key-pressed(e) => {
             if (e.text == " " || e.text == Key.Return) { root.premuta(); return accept; }
             return reject;
         }
     }
+    tocco := TouchArea { mouse-cursor: pointer; clicked => { root.premuta(); } }
 }
 
 export component Finestra inherits Rectangle {
@@ -80,20 +80,29 @@ export component Finestra inherits Rectangle {
     property <bool> in-attesa: false;
     property <duration> partenza;
     property <duration> trascorso: root.parla && !root.in-attesa ? animation-tick() - root.partenza : 0ms;
-    property <int> dette: root.in-attesa ? 0
+    // Stopped: the words not yet said stay faint, because they were not said (-1: not stopped)
+    property <int> dette-fermate: -1;
+    property <int> dette: root.dette-fermate >= 0 ? root.dette-fermate
+        : root.in-attesa ? 0
         : root.parla ? min(root.parole - 1, floor(root.trascorso / Token.durata-parola))
         : root.parole;
     property <float> sfumatura: root.parla && !root.in-attesa && root.dette < root.parole - 1
         ? clamp((root.trascorso - root.dette * Token.durata-parola) / Token.durata-scurisce, 0, 1) : 0;
     property <bool> nata: true;
     property <bool> stretta: root.width < Token.soglia-stretta * Aspetto.scala;
+    property <bool> minima: root.width < Token.soglia-minima * Aspetto.scala;
     changed parla => {
         if (root.parla) { root.in-attesa = false; root.partenza = animation-tick(); }
         else { root.in-attesa = false; }
     }
 
+    function ferma() {
+        if (root.parla) { root.dette-fermate = root.dette; }
+        root.stop();
+    }
     function di(testo: string) -> bool {
         if (root.speak(testo)) {
+            root.dette-fermate = -1;
             root.in-attesa = !root.parla;
             root.nata = false;
             rinascita.running = true;
@@ -116,7 +125,7 @@ export component Finestra inherits Rectangle {
     // next to the call; the bar and the phrases already said step aside.
     VerticalLayout {
         x: 0; y: 0; width: root.width; height: root.height;
-        visible: root.schermata == Schermata.scrivi;
+        visible: root.schermata == Schermata.scrivi || crea.aperta < 1;
         if !root.compatta: Rectangle {
             height: Token.altezza-barra * Aspetto.scala;
             background: Token.barra;
@@ -143,7 +152,7 @@ export component Finestra inherits Rectangle {
                     property <bool> sopra: voce-tocco.has-hover || voce-chiave.has-focus;
                     accessible-role: combobox;
                     accessible-label: @tr("Voce: {}", root.voices[root.voice-index]);
-                    accessible-action-default => { menu-voce.show(); }
+                    accessible-action-default => { root.menu-aperto = !root.menu-aperto; }
                     y: (parent.height - self.height) / 2;
                     height: Token.altezza-comando-piccolo * Aspetto.scala;
                     width: voce-riga.preferred-width + 2 * Token.spazio-controlli * Aspetto.scala;
@@ -163,15 +172,15 @@ export component Finestra inherits Rectangle {
                         Text { text: root.voices[root.voice-index]; vertical-alignment: center; color: Token.testo; font-size: Token.corpo-stato * Aspetto.scala; font-weight: Token.peso-medio; }
                         Freccia { y: (parent.height - self.height) / 2; }
                     }
-                    voce-tocco := TouchArea { mouse-cursor: pointer; clicked => { menu-voce.show(); } }
                     voce-chiave := FocusScope {
                         key-pressed(e) => {
-                            if (e.text == " " || e.text == Key.Return || e.text == Key.DownArrow) { menu-voce.show(); return accept; }
+                            if (e.text == " " || e.text == Key.Return || e.text == Key.DownArrow) { root.menu-aperto = !root.menu-aperto; return accept; }
                             return reject;
                         }
                     }
+                    voce-tocco := TouchArea { mouse-cursor: pointer; clicked => { root.menu-aperto = !root.menu-aperto; } }
                 }
-                HorizontalLayout {
+                if !root.minima: HorizontalLayout {
                     spacing: 0;
                     Pulsante {
                         y: (parent.height - self.height) / 2;
@@ -242,7 +251,7 @@ export component Finestra inherits Rectangle {
                         vuota := Text {
                             x: Token.spazio-largo * Aspetto.scala * 0.85;
                             width: parent.width - 2 * self.x;
-                            text: @tr("Qui la voce dirà le tue frasi, una parola dopo l'altra. Restano anche dopo aver chiuso Kalliope: un clic, o Tab e Invio, le dice di nuovo.");
+                            text: @tr("Qui la voce dirà le tue frasi, una parola dopo l'altra. Restano qui: un clic, o Tab e Invio, le dice di nuovo.");
                             wrap: word-wrap;
                             color: Token.testo-tenue;
                             font-size: Token.corpo-detta * Aspetto.scala;
@@ -283,6 +292,7 @@ export component Finestra inherits Rectangle {
                 situazione: root.situazione;
                 spiegazione: root.spiegazione;
                 compatta: root.compatta;
+                impilata: root.minima && !root.compatta;
                 if root.compatta: Pulsante {
                     testo: @tr("Finestra intera"); piccolo: true; tipo: Tipo.nudo;
                     premuto => { root.compatta = false; root.compatta-cambiata(false); }
@@ -311,13 +321,21 @@ export component Finestra inherits Rectangle {
                 prepara: root.situazione == Situazione.preparazione;
                 ultima: root.history.length > 0 ? root.history[0] : "";
                 dici(t) => { return root.di(t); }
-                ferma => { root.stop(); }
+                ferma => { root.ferma(); }
             }
         }
     }
 
-    if root.schermata == Schermata.crea-voce: CreaVoce {
-        x: 0; y: 0; width: root.width; height: root.height;
+    // Creating a voice comes in from the side and goes back the same way.
+    crea := CreaVoce {
+        property <float> aperta: root.schermata == Schermata.crea-voce ? 1 : 0;
+        animate aperta {
+            duration: Aspetto.movimento-ridotto ? 0ms : (root.schermata == Schermata.crea-voce ? Token.durata-pannello : Token.durata-pannello-uscita);
+            easing: root.schermata == Schermata.crea-voce ? Token.curva-entrata : Token.curva-dolce;
+        }
+        visible: self.aperta > 0;
+        opacity: self.aperta;
+        x: Token.spostamento-entrata * 2 * (1 - self.aperta); y: 0; width: root.width; height: root.height;
         passo <=> root.passo-voce;
         registra <=> root.registra;
         registrato <=> root.registrato;
@@ -328,49 +346,76 @@ export component Finestra inherits Rectangle {
         crea(n) => { root.crea-voce(n); root.schermata = Schermata.scrivi; }
     }
 
-    menu-voce := PopupWindow {
+
+    // The voice menu: a panel inside the window, so it can leave as visibly as it came (a PopupWindow just vanishes).
+    property <bool> menu-aperto: false;
+    if root.menu-aperto: TouchArea {
+        x: 0; y: 0; width: root.width; height: root.height;
+        clicked => { root.menu-aperto = false; }
+    }
+    menu-voce := Rectangle {
+        property <float> aperto: root.menu-aperto ? 1 : 0;
+        animate aperto {
+            duration: Aspetto.movimento-ridotto ? 0ms : (root.menu-aperto ? Token.durata-pannello : Token.durata-pannello-uscita);
+            // it comes in fast and settles; it leaves evenly, so the way out is seen too
+            easing: root.menu-aperto ? Token.curva-entrata : Token.curva-dolce;
+        }
+        visible: self.aperto > 0;
+        opacity: self.aperto;
         x: root.width - self.width - Token.spazio-medio * Aspetto.scala;
-        y: Token.altezza-barra * Aspetto.scala;
+        y: Token.altezza-barra * Aspetto.scala - Token.spostamento-entrata / 2 * (1 - self.aperto);
         width: min(root.width - 2 * Token.spazio-medio * Aspetto.scala, Token.bolla-larghezza * Aspetto.scala / 2);
-        close-policy: close-on-click-outside;
-        Rectangle {
-            background: Token.pannello;
-            border-radius: Token.raggio-pannello * Aspetto.scala;
-            border-width: Token.filo;
-            border-color: Token.bordo;
-            drop-shadow-blur: Token.ombra-sfocatura;
-            drop-shadow-offset-y: Token.ombra-scarto;
-            drop-shadow-color: Token.ombra;
-            VerticalLayout {
-                padding: Token.spazio-stretto * Aspetto.scala;
-                spacing: Token.spazio-minimo * Aspetto.scala;
-                Text {
-                    text: @tr("Con quale voce parli");
-                    color: Token.testo-tenue;
-                    font-size: Token.corpo-nota * Aspetto.scala;
-                    horizontal-alignment: left;
-                }
-                for v[i] in root.voices: VoceNelMenu {
-                    nome: v;
-                    tinta: i == 0 ? Token.tinta-voce-1 : i == 1 ? Token.tinta-voce-2 : i == 2 ? Token.tinta-propria : Token.tinta-voce-3;
-                    scelta: i == root.voice-index;
-                    premuta => { root.voice-index = i; root.voice-changed(i); menu-voce.close(); }
-                }
-                Rectangle { height: Token.filo; background: Token.bordo; }
-                Interruttore {
-                    acceso <=> root.monitor;
-                    testo: @tr("Senti anche tu la voce");
-                    cambiato(on) => { root.monitor-changed(on); }
-                }
-                Pulsante {
-                    testo: @tr("+ Crea la tua voce"); tipo: Tipo.nudo; piccolo: true;
-                    premuto => { menu-voce.close(); root.schermata = Schermata.crea-voce; }
-                }
-                if root.stretta: Pulsante {
-                    testo: @tr("Informazioni"); tipo: Tipo.nudo; piccolo: true;
-                    premuto => { menu-voce.close(); informazioni.show(); }
-                }
+        height: elenco-voci.preferred-height;
+        background: Token.pannello;
+        border-radius: Token.raggio-pannello * Aspetto.scala;
+        border-width: Token.filo;
+        border-color: Token.bordo;
+        drop-shadow-blur: Token.ombra-sfocatura;
+        drop-shadow-offset-y: Token.ombra-scarto;
+        drop-shadow-color: Token.ombra;
+        TouchArea { }
+        menu-chiavi := FocusScope {
+            focus-on-tab-navigation: false;
+            key-pressed(e) => {
+                if (e.text == Key.Escape) { root.menu-aperto = false; return accept; }
+                return reject;
             }
+        elenco-voci := VerticalLayout {
+            padding: Token.spazio-stretto * Aspetto.scala;
+            spacing: Token.spazio-minimo * Aspetto.scala;
+            Text {
+                text: @tr("Con quale voce parli");
+                color: Token.testo-tenue;
+                font-size: Token.corpo-nota * Aspetto.scala;
+                horizontal-alignment: left;
+            }
+            for v[i] in root.voices: VoceNelMenu {
+                nome: v;
+                tinta: i == 0 ? Token.tinta-voce-1 : i == 1 ? Token.tinta-voce-2 : i == 2 ? Token.tinta-propria : Token.tinta-voce-3;
+                scelta: i == root.voice-index;
+                premuta => { root.voice-index = i; root.voice-changed(i); root.menu-aperto = false; }
+            }
+            Rectangle { height: Token.filo; background: Token.bordo; }
+            Interruttore {
+                acceso <=> root.monitor;
+                testo: @tr("Senti anche tu la voce");
+                cambiato(on) => { root.monitor-changed(on); }
+            }
+            Pulsante {
+                testo: @tr("+ Crea la tua voce"); tipo: Tipo.nudo; piccolo: true;
+                premuto => { root.menu-aperto = false; root.schermata = Schermata.crea-voce; }
+            }
+            if root.minima: HorizontalLayout {
+                spacing: Token.spazio-stretto * Aspetto.scala;
+                Text { text: @tr("Testo {}%", round(Aspetto.scala * 100)); vertical-alignment: center; horizontal-stretch: 1; color: Token.testo; font-size: Token.corpo-stato * Aspetto.scala; }
+                Pulsante { testo: "A−"; tipo: Tipo.quieto; piccolo: true; abilitato: Aspetto.scala > 1; accessible-label: @tr("Testo più piccolo"); premuto => { Aspetto.scala = max(1, Aspetto.scala - Token.scala-passo); } }
+                Pulsante { testo: "A+"; tipo: Tipo.quieto; piccolo: true; abilitato: Aspetto.scala < Token.scala-massima; accessible-label: @tr("Testo più grande"); premuto => { Aspetto.scala = min(Token.scala-massima, Aspetto.scala + Token.scala-passo); } }
+            }
+            if root.stretta: Pulsante {
+                testo: @tr("Informazioni"); tipo: Tipo.nudo; piccolo: true;
+                premuto => { root.menu-aperto = false; informazioni.show(); }
+            }
+        }
         }
     }
 

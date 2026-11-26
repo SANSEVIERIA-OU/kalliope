@@ -115,16 +115,16 @@ export component Pulsante inherits Rectangle {
             opacity: Token.opacita-spento + (1 - Token.opacita-spento) / 2;
         }
     }
-    tocco := TouchArea {
-        mouse-cursor: root.abilitato ? pointer : default;
-        clicked => { if (root.abilitato) { root.premuto(); } }
-    }
     chiave := FocusScope {
         enabled: root.abilitato;
         key-pressed(e) => {
             if (e.text == " " || e.text == Key.Return) { root.premuto(); return accept; }
             return reject;
         }
+    }
+    tocco := TouchArea {
+        mouse-cursor: root.abilitato ? pointer : default;
+        clicked => { if (root.abilitato) { root.premuto(); } }
     }
 }
 
@@ -177,11 +177,11 @@ export component Interruttore inherits Rectangle {
         }
         Text { text: root.testo; vertical-alignment: center; color: Token.testo; font-size: Token.corpo-stato * Aspetto.scala; }
     }
-    TouchArea { clicked => { root.acceso = !root.acceso; root.cambiato(root.acceso); } }
     chiave := FocusScope {
         key-pressed(e) => {
             if (e.text == " " || e.text == Key.Return) { root.acceso = !root.acceso; root.cambiato(root.acceso); return accept; }
             return reject;
         }
     }
+    TouchArea { clicked => { root.acceso = !root.acceso; root.cambiato(root.acceso); } }
 }

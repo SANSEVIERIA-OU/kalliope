@@ -63,6 +63,42 @@ in un solo componente ha il nome del componente e della proprietà (`--bolla-cor
 numerato in ordine di valore (`--corpo-7`, `--spazio-12`): il numero è il posto nella scala, non il valore, e il ruolo sta nell'elenco degli usi qui sotto.
 
 
+## La finestra: direzione «La frase che si accende» (26/11/2026, proposta non ancora approvata)
+
+L'idea: la finestra è la bolla del logo. Si scrive nella bolla tratteggiata del non ancora detto; Invio manda la frase nella bolla
+dove la voce la dice, una parola dopo l'altra; la frase detta resta, piena, da ripetere. Direzione, prove e video:
+`design/lavoro/4-app/direzione/direzione.md`. Componenti: `crates/app/ui/kalliope/` (aspetto, forme, stato, bolla, scrittura,
+voce-propria, finestra, catalogo). Catalogo vivo: `kalliope --catalogo` (la tabella dei token è generata da questo file da
+`crates/app/build.rs`, con i due temi uno accanto all'altro e la fonte di ogni valore).
+
+**Il tema chiaro.** È nel sistema dal 26/11/2026: `:root[data-tema="chiaro"]` in fondo a `token.css`, 31 colori `--app-*` con un valore
+chiaro. Regola: la stanza chiara è il testo chiaro approvato (`--testo`), la barra è la scena chiara del sito (`--chiara-fondo-basso`), il testo è
+`--scuro`; l'azione e la voce passano al verde acqua profondo (`--magenta`, nome storico), perché sul chiaro il menta non si stacca; la bolla
+che parla è **sempre il contrario della stanza** (chiara sullo scuro, grafite sul chiaro); le tinte delle voci passano dai fondi dei
+riquadri ai colori dei corpi delle figure della home. Due soli colori nuovi, dichiarati: `--app-azione-sopra` chiaro `#1f6a52` e
+`--app-attenzione` chiaro `#8f4f36` (scurimenti delle tinte approvate). I colori uguali nei due temi finiscono per `-fisso`:
+`--app-registra-fisso` e `--app-segno-fisso` (il rosa del logo).
+
+**I vecchi `--app-*`.** I 18 colori del disegno della finestra 0.1 sulla pagina «installa» e nella riunione ricostruita non erano della
+finestra del programma: ora si chiamano `--ricostruita-*` (stessi valori; `componenti/finestra.css`, `varco.css`, `installazione.css`,
+`catena.css` aggiornati; il sito non cambia). Così il tema chiaro della finestra non li tocca.
+
+| Gruppo | Token `--app-*` | Fonte |
+|---|---|---|
+| Superfici e testo | `fondo`, `barra`, `campo`, `pannello`, `velo-modale`, `testo`, `testo-tenue`, `testo-spento`, `segnaposto`, `bordo`, `bordo-comando`, `velo-sopra`, `velo-scelto`, `velo-premuto`, `ombra` | colori approvati del sito (visione); `campo` e `segnaposto` scelte |
+| Azione, voce, non ancora detto | `azione`, `azione-sopra`, `azione-testo`, `voce`, `tratteggio`, `tratteggio-fuoco`, `bolla`, `bolla-testo`, `bolla-da-dire`, `detta`, `registra-fisso`, `segno-fisso` | sito e marchio; `tratteggio` scelta (il menta a metà: nella finestra il rosa resta del logo) |
+| Ciò che non va | `attenzione`, `attenzione-fondo` | la tinta calda dei partecipanti approvata (Paola): il solo colore caldo della finestra |
+| Le voci come partecipanti | `tinta-propria` («Tu»), `tinta-voce-1` (Giulia: Paola), `tinta-voce-2` (Marco: Luca), `tinta-voce-3` (Anna) | visione |
+| Testo | `corpo-scrittura` 30, `corpo-lettura` 34, `corpo-titolo` 28, `corpo-bolla` 24, `corpo-marchio` 18, `corpo-detta` 17, `corpo-comando` 16, `corpo-stato` 15, `corpo-nota` 13; `peso-medio`, `peso-titolo`; `scala-passo` 0,25, `scala-massima` 2 | sito (D2); scrittura, lettura e titolo scelte |
+| Spazi e misure | `spazio-minimo` 4, `spazio-stretto` 8, `spazio-medio` 16, `spazio-largo` 24, `spazio-ampio` 48, `spazio-parola` 7; `altezza-barra` 56, `altezza-comando` 44, `altezza-comando-piccolo` 34, `marchio` 30, `punto` 10, `barra-voce` 4, `barra-voce-alta` 18, `tratto` 3, `tratteggio-pieno` 14, `tratteggio-vuoto` 10, `filo` 1, `chiusura` 10; `bolla-larghezza` 720, `scrittura-altezza` 200, `scrittura-altezza-minima` 128, `livello-altezza` 72, `registra-diametro` 76, `scelta-altezza` 168, `compatta-larghezza` 400, `compatta-altezza` 320, `soglia-stretta` 900, `soglia-minima` 560, `spostamento-entrata` 24, `ombra-sfocatura` 24, `ombra-scarto` 8 | gradini di scala del sito e marchio (tratteggio 14/9 del logo); le misure della finestra sono scelte |
+| Raggi | `raggio-bolla` 24, `raggio-coda` 6, `raggio-scrittura` 26, `raggio-pannello` 20, `raggio-pillola` 999 | sito |
+| Movimento | `curva-entrata` cubic-bezier(0.19, 1, 0.22, 1), `curva-dolce` ease, `curva-lineare`; `durata-bolla` 520, `durata-parola` 360, `durata-scurisce` 200, `durata-dissolvenza` 160, `durata-pannello` 300, `durata-pannello-uscita` 240, `durata-barre` 460, `durata-cammino` 1400, `durata-anello` 900; `intervallo-fotogramma` 16, `intervallo-registrazione` 100, `registrazione-utile` 12 s; `livello-barre` 28; `opacita-spento` 0,42; `scala-coda` 0,6 | sito (base misurata, D2); intervalli scelte |
+| Finestra | `native-width` 920, `native-height` 640 (prima 560 × 460) | scelta: la scrittura grande |
+
+`controlla-valori.mjs` sui token della finestra (var() risolto, `design/lavoro/4-app/direzione/token-finestra-risolti.css`) con la base
+`design/lavoro/4-app/direzione/base.json`: 65 valori tracciati, 0 senza fonte; un tratto di stile di default da guardare (il caldo chiaro
+`#8f4f36`, variante della tinta di Paola).
+
 ## Direzione di scrittura (1)
 
 | Token | Valore | Ruolo | Dove è usato |

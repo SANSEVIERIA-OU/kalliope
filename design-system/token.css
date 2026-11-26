@@ -1613,16 +1613,17 @@
   --app-raggio-scrittura: var(--raggio-13);   /* fonte: 26 px, la scrittura è una bolla più grande */
   --app-raggio-pannello: var(--raggio-10);   /* fonte: 20 px, i riquadri della riunione */
   --app-raggio-pillola: 999px;   /* fonte: le pillole del sito */
+  --app-soglia-minima: 560px;   /* scelta: sotto questa larghezza (per il testo regolabile) anche il testo regolabile passa nel menu della voce, lo stato va su due righe e la voce propria impila le sue strade */
   --app-filo: 1px;   /* fonte: il filo dei bordi del sito, un pixel */
   --app-opacita-spento: 0.42;   /* scelta: un comando che adesso non si può usare resta leggibile */
-  --app-soglia-stretta: 640px;   /* scelta: sotto questa larghezza la barra mostra solo i segni e la cronologia si stringe */
+  --app-soglia-stretta: 900px;   /* scelta: la larghezza della barra intera al 100%; sotto questa larghezza (per il testo regolabile) la barra tiene solo il logo, la voce, il testo e «Riunione", e il resto passa nel menu della voce */
   --app-spazio-parola: var(--spazio-6);   /* fonte: 7 px, lo spazio fra le parole della bolla (circa lo spazio di Lexend a 24 px) */
   --app-chiusura: 10px;   /* scelta: il segno «freccia» di una tendina */
   --app-ombra-sfocatura: var(--spazio-18);   /* fonte: 24 px, l'ombra della bolla */
   --app-ombra-scarto: var(--spazio-7);   /* fonte: 8 px */
   --app-bolla-larghezza: 720px;   /* scelta: la bolla che parla non va oltre ~60 caratteri per riga a 24 px */
   --app-scrittura-altezza: 200px;   /* scelta: l'altezza della scrittura all'apertura (cresce con la finestra) */
-  --app-scrittura-altezza-minima: 112px;   /* scelta: due righe di scrittura e la riga dei comandi */
+  --app-scrittura-altezza-minima: 128px;   /* scelta: una riga di scrittura a 30 px e la riga dei comandi, anche nella finestra più piccola */
   --app-livello-altezza: 72px;   /* scelta: il livello del microfono mentre si registra */
   --app-registra-diametro: 76px;   /* scelta: il tondo «registra», grande come lo stop di Apple Personal Voice in proporzione */
   --app-scelta-altezza: 168px;   /* scelta: le due strade per creare la voce (registra, importa) */
