@@ -120,7 +120,7 @@ jobs:
         run: |
           sudo apt-get update -q
           sudo apt-get install -y -q --no-install-recommends \
-            rpm libfontconfig-dev desktop-file-utils appstream
+            rpm libfontconfig-dev qt6-base-dev desktop-file-utils appstream
       - name: Check the desktop file and the AppStream metadata
         run: |
           desktop-file-validate packaging/linux/io.github.sansevieria_ou.kalliope.desktop

@@ -34,7 +34,7 @@ come si lavora.
 - **Il proprietario ha approvato i colori il 26/11/2026.** La home usa fondi grafite, accenti verde acqua e tinte distinte per i partecipanti. Il logo conserva i suoi colori.
 - **Il design system è `design-system/`**, con token, base, componenti, caratteri e catalogo vivo. Lo usano tutte le
   pagine del sito. Gli alberi `website/stile/`, `website/script/` e `website/sistema/` sono ritirati.
-- **La home su GitHub Pages** è <https://sansevieria-ou.github.io/kalliope/it/>. I pacchetti sono quelli della 0.1.
+- **La home su GitHub Pages** è <https://sansevieria-ou.github.io/kalliope/it/>. Il sito mostra i pacchetti dell’ultima release stabile di GitHub.
 - **Il lavoro in corso** (dal 16/11/2026: lingue, poi le altre pagine, poi l'applicazione) è in `design/lavoro/`:
   `STATO.md` dice fasi, decisioni prese a lavoro avviato e incarichi; `ricerca/lingue.md` i fatti con le fonti.
 - **La voce di chi usa Kalliope** (decisione del proprietario del 17/11/2026: «voglio che lo faccia già adesso (non "la
@@ -94,11 +94,10 @@ website; il design system in una cartella dedicata (dato che comunque dovrà ess
 all'applicazione)».
 
 - `design-system/` è l'unica fonte di colori, caratteri, forme, spazi e tempi, per il sito e per l'applicazione.
-- **Oggi l'applicazione non lo usa**: la finestra (`crates/app/ui/app.slint`) ha i suoi colori scritti a mano, e i
-  token sono variabili CSS, che Slint non legge. Come portarli nell'applicazione non è deciso.
-- Ogni volta che si tocca l'aspetto dell'applicazione, il primo passo è questo: proporre al proprietario come
-  ricavare da `design-system/token.css` i valori per Slint, con una sola fonte e senza copie a mano, e aspettare
-  il via. Un colore, un carattere o una misura nuovi scritti a mano nell'applicazione sono un errore.
+- **Decisione del 26/11/2026 per la 0.2.** Il proprietario approva i valori del sito e richiede che l'aspetto rispetti
+  il desktop installato. La compilazione ricava le misure da `design-system/token.css`. GNOME usa GTK/libadwaita,
+  Plasma il tema Qt di sistema, Windows Fluent e macOS Cupertino. Tema chiaro/scuro, testo e controlli seguono la piattaforma.
+- I valori condivisi hanno una sola fonte, senza copie a mano nelle finestre. Ogni nuovo valore di progetto entra nel sistema.
 - Ciò che serve all'applicazione e nel sistema manca si aggiunge al sistema, non all'applicazione.
 
 ## Pronti per le traduzioni

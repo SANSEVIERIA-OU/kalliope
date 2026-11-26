@@ -3,7 +3,10 @@
 //! length, a JSON header naming each tensor's type, shape and byte range, then the raw little-endian
 //! data. Only `F32` and `I64` tensors, the two a voice state holds.
 
+use std::fs;
+use std::io::{self, Write};
 use std::path::Path;
+use std::sync::atomic::{AtomicU64, Ordering};
 
 use crate::Error;
 use crate::json::Json;
@@ -154,9 +157,44 @@ pub fn write(path: &Path, tensors: &[Tensor], metadata: &[(&str, &str)]) -> Resu
                 .for_each(|x| out.extend_from_slice(&x.to_le_bytes())),
         }
     }
-    let tmp = path.with_extension("safetensors.part");
-    std::fs::write(&tmp, &out).map_err(|e| Error::new(format!("{}: {e}", tmp.display())))?;
-    std::fs::rename(&tmp, path).map_err(|e| Error::new(format!("{}: {e}", path.display())))
+    save_file(path, &out).map_err(|e| Error::new(format!("{}: {e}", path.display())))
+}
+
+// A fresh installation has no voices directory yet. Each writer needs its own staging
+// file: two processes preparing the same voice must never mix their tensor data.
+fn save_file(path: &Path, bytes: &[u8]) -> io::Result<()> {
+    static NEXT_FILE: AtomicU64 = AtomicU64::new(0);
+    let parent = path
+        .parent()
+        .filter(|p| !p.as_os_str().is_empty())
+        .unwrap_or(Path::new("."));
+    fs::create_dir_all(parent)?;
+    let mut options = fs::OpenOptions::new();
+    options.write(true).create_new(true);
+    #[cfg(unix)]
+    {
+        use std::os::unix::fs::OpenOptionsExt;
+        options.mode(0o600);
+    }
+    let (tmp, mut file) = loop {
+        let id = NEXT_FILE.fetch_add(1, Ordering::Relaxed);
+        let tmp = parent.join(format!(".kalliope-{}-{id}.part", std::process::id()));
+        if tmp.file_name() == path.file_name() {
+            continue;
+        }
+        match options.open(&tmp) {
+            Ok(file) => break (tmp, file),
+            Err(e) if e.kind() == io::ErrorKind::AlreadyExists => continue,
+            Err(e) => return Err(e),
+        }
+    };
+    let result = file.write_all(bytes);
+    drop(file);
+    let result = result.and_then(|()| fs::rename(&tmp, path));
+    if result.is_err() {
+        let _ = fs::remove_file(tmp);
+    }
+    result
 }
 
 fn quote(s: &str) -> String {
@@ -178,10 +216,32 @@ mod tests {
     use super::*;
 
     #[test]
+    fn concurrent_saves_leave_one_complete_voice() {
+        let dir = std::env::temp_dir().join(format!("kalliope-save-{}", std::process::id()));
+        let path = dir.join("voices/same.safetensors");
+        let start = std::sync::Barrier::new(4);
+        std::thread::scope(|threads| {
+            for value in 1..=4 {
+                let (path, start) = (&path, &start);
+                threads.spawn(move || {
+                    let data = vec![value; 128 * 1024];
+                    start.wait();
+                    save_file(path, &data).unwrap();
+                });
+            }
+        });
+        let data = fs::read(&path).unwrap();
+        assert_eq!(data.len(), 128 * 1024);
+        assert!((1..=4).contains(&data[0]));
+        assert!(data.iter().all(|v| *v == data[0]));
+        assert_eq!(fs::read_dir(dir.join("voices")).unwrap().count(), 1);
+        fs::remove_dir_all(dir).unwrap();
+    }
+
+    #[test]
     fn round_trip() {
         let dir = std::env::temp_dir().join(format!("kalliope-st-{}", std::process::id()));
-        std::fs::create_dir_all(&dir).unwrap();
-        let path = dir.join("v.safetensors");
+        let path = dir.join("voices/v.safetensors");
         let tensors = [
             Tensor {
                 name: "a/cache".into(),

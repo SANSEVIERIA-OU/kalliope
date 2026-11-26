@@ -13,6 +13,9 @@ ExclusiveArch:  x86_64
 # Linked libraries (glibc, libgcc, fontconfig, and libstdc++ for ONNX Runtime) are found by rpm.
 # These are loaded at run time: xkbcommon always, then Wayland or X11 for the window.
 Requires:       libxkbcommon%{?_isa}
+Requires:       qt6-qtwayland
+Requires:       python3dist(pygobject)
+Requires:       libadwaita
 Requires:       (libwayland-client%{?_isa} or libX11%{?_isa})
 # The virtual microphone.
 Recommends:     pipewire-libs%{?_isa}

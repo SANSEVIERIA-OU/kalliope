@@ -4,6 +4,12 @@ Kalliope's versions go up one step at a time (0.1, 0.2 … 0.9, 1.0, 1.1 …). E
 published for every supported system (see [docs/releasing.md](docs/releasing.md)). This file lists
 what each version brings, for the people who use it.
 
+## 0.2 — 26 November 2026
+
+- The desktop window follows its platform. On GNOME it uses GTK and libadwaita, on Plasma the installed Qt widget style. Windows uses Fluent and macOS uses Cupertino.
+- You can start typing while the voice loads. The app keeps your draft until it accepts the sentence. At small window sizes, you can scroll to previous phrases and settings.
+- Preparing a personal voice now creates its destination folder automatically. On a fresh installation you can save your first voice directly to the voices folder.
+
 ## 0.1 — 20 November 2026
 
 The first version, for Linux.

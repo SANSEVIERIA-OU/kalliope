@@ -37,6 +37,11 @@
   </supports>
   <content_rating type="oars-1.1"/>
   <releases>
+    <release version="0.2" date="2026-11-26">
+      <description>
+        <p>The window follows the GNOME or Plasma desktop style. Start typing while the voice loads, and scroll to repeat earlier phrases in compact windows. Preparing a personal voice creates the voices folder on first use.</p>
+      </description>
+    </release>
     <release version="0.1" date="2026-11-20">
       <description>
         <p>The first version, for Linux.</p>
