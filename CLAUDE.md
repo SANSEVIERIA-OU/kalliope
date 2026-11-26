@@ -62,7 +62,7 @@ come si lavora.
     sta nel secret `AUR_SSH_KEY` e in copia nel `.env`; la parte pubblica sta nel profilo AUR del proprietario.
   - La ricetta su AUR (PKGBUILD e `.SRCINFO`) resta sotto la SANSEVIERIA 1.1 come il resto del repository, non 0BSD (scelta del
     proprietario del 20/11/2026).
-  - La 0.1 è pubblicata il 20/11/2026 («Sì, pubblica ora»).
+  - La 0.1 è pubblicata su GitHub dal 20/11/2026 e su AUR dal 26/11/2026 come [kalliope-bin 0.1-1](https://aur.archlinux.org/packages/kalliope-bin).
   - Per un repository pubblico GitHub Actions è gratuito. Una release parte con un push su `main`, quindi resta un passo chiesto al
     proprietario ogni volta.
 - **Il telefono** (17/11/2026): «non è per telefono: è solo desktop per il momento». Il sito non dice «non ancora» per
