@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 // Kalliope's window: write, press Enter, and the virtual microphone speaks.
 
-import { Button, LineEdit, ComboBox, CheckBox, ListView, AboutSlint, VerticalBox, HorizontalBox, ScrollView, Palette, GroupBox } from "std-widgets.slint";
+import { Button, LineEdit, ComboBox, CheckBox, AboutSlint, VerticalBox, HorizontalBox, ScrollView, Palette, GroupBox } from "std-widgets.slint";
 
 import { NativeTokens } from "native_tokens.slint";
 
@@ -95,39 +95,6 @@ export component AppWindow inherits Window {
                 }
             }
 
-            Text {
-                text: root.history.length > 0 ? "Già detto: scegli una frase per ripeterla" : "Le frasi che dici restano qui, per ripeterle.";
-                color: Palette.foreground;
-                wrap: word-wrap;
-            }
-
-            history-list := ListView {
-                horizontal-scrollbar-policy: always-off;
-                vertical-stretch: 1;
-                min-height: max(NativeTokens.spacing * 4, history-button-measure.min-height + NativeTokens.spacing);
-                for phrase in root.history: HorizontalBox {
-                    width: history-list.visible-width;
-                    spacing: NativeTokens.spacing;
-                    padding: 0px;
-                    Text {
-                        text: phrase;
-                        wrap: word-wrap;
-                        min-width: 0px;
-                        horizontal-stretch: 1;
-                        color: Palette.foreground;
-                    }
-                    Button {
-                        text: "Ripeti";
-                        enabled: root.can-speak;
-                        accessible-label: "Ripeti: " + phrase;
-                        clicked => {
-                            root.speak(phrase);
-                            input.focus();
-                        }
-                    }
-                }
-            }
-
             FlexboxLayout {
                 flex-wrap: wrap;
                 vertical-stretch: 0;
@@ -165,13 +132,44 @@ export component AppWindow inherits Window {
                     }
                 }
             }
+
+            Text {
+                text: root.history.length > 0 ? "Già detto: scegli una frase per ripeterla" : "Le frasi che dici restano qui, per ripeterle.";
+                color: Palette.foreground;
+                wrap: word-wrap;
+            }
+
+            for phrase in root.history: HorizontalBox {
+                spacing: NativeTokens.spacing;
+                padding: 0px;
+                vertical-stretch: 0;
+                Text {
+                    text: phrase;
+                    wrap: word-wrap;
+                    min-width: 0px;
+                    horizontal-stretch: 1;
+                    color: Palette.foreground;
+                }
+                Button {
+                    text: "Ripeti";
+                    vertical-stretch: 0;
+                    changed has-focus => {
+                        if (self.has-focus) { self.ensure-visible(ScrollBehavior.instant); }
+                    }
+                    enabled: root.can-speak;
+                    accessible-label: "Ripeti: " + phrase;
+                    clicked => {
+                        root.speak(phrase);
+                        input.focus();
+                    }
+                }
+            }
+            Rectangle { vertical-stretch: 1; }
         }
 
     }
     // Measure two lines with the active platform font, independently of status text.
     status-lines := Text { text: "M\nM"; visible: false; }
-    // Keep a full native row visible even when the platform increases control height.
-    history-button-measure := Button { text: "Ripeti"; visible: false; enabled: false; }
 
     about-popup := PopupWindow {
         width: max(root.width, NativeTokens.min-window-width);
