@@ -1,0 +1,44 @@
+{
+ "fonte": "design/lavoro/4-app/riferimenti/fonti/apple/Apple-accessibility-Lock-Screen-Live-Speech_inline.jpg",
+ "ritaglio": [
+  160,
+  470,
+  330,
+  80
+ ],
+ "metodo": "stima da pixel (mediancut), non misura del DOM",
+ "colori": [
+  {
+   "valore": "#514936",
+   "quota": 0.21
+  },
+  {
+   "valore": "#4f5039",
+   "quota": 0.199
+  },
+  {
+   "valore": "#a59e7e",
+   "quota": 0.126
+  },
+  {
+   "valore": "#425140",
+   "quota": 0.122
+  },
+  {
+   "valore": "#4c4537",
+   "quota": 0.119
+  },
+  {
+   "valore": "#4e5c4f",
+   "quota": 0.117
+  },
+  {
+   "valore": "#3a4640",
+   "quota": 0.095
+  },
+  {
+   "valore": "#674938",
+   "quota": 0.011
+  }
+ ]
+}

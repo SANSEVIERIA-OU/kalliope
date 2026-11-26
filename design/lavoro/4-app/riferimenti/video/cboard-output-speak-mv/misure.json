@@ -1,0 +1,56 @@
+{
+ "video": "cboard-output-speak.mp4",
+ "larghezza": 1440,
+ "altezza": 812,
+ "fotogrammi": 5,
+ "durata": 3773,
+ "frequenza": "variabile",
+ "zona": null,
+ "da": 0,
+ "a": null,
+ "soglia": 12,
+ "minimo": 400,
+ "pausa": 250,
+ "tratti": [
+  {
+   "inizio": 0,
+   "fine": 169,
+   "durata": 169,
+   "fotogrammi": 2,
+   "intervallo": 169,
+   "iniziato_prima": true,
+   "non_finito": false,
+   "quota_massima": 0.1278,
+   "quota_finale": 0.1278,
+   "transitorio": 0,
+   "come": {
+    "salta": 1,
+    "sfuma": 0,
+    "altro": 0
+   },
+   "meta": 169,
+   "novanta": 169,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 0
+   },
+   "rettangolo": {
+    "x": 0.008333333333333333,
+    "y": 0,
+    "l": 0.8916666666666667,
+    "a": 0.42962962962962964
+   },
+   "celle": [
+    {
+     "ms": 0,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 169,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "cboard-output-speak-mv/tratto-1.jpg"
+  }
+ ]
+}

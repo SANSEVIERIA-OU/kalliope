@@ -1,0 +1,52 @@
+{
+ "fonte": "design/lavoro/4-app/riferimenti/fonti/pred/ipad-1.jpg",
+ "ritaglio": [
+  0,
+  0,
+  1400,
+  1049
+ ],
+ "metodo": "stima da pixel (mediancut), non misura del DOM",
+ "colori": [
+  {
+   "valore": "#ffffff",
+   "quota": 0.304
+  },
+  {
+   "valore": "#3284f2",
+   "quota": 0.2
+  },
+  {
+   "valore": "#3084f4",
+   "quota": 0.189
+  },
+  {
+   "valore": "#7fc3e4",
+   "quota": 0.069
+  },
+  {
+   "valore": "#fef7db",
+   "quota": 0.067
+  },
+  {
+   "valore": "#f7f6f3",
+   "quota": 0.054
+  },
+  {
+   "valore": "#3c7bdb",
+   "quota": 0.051
+  },
+  {
+   "valore": "#3084e7",
+   "quota": 0.028
+  },
+  {
+   "valore": "#2e84f4",
+   "quota": 0.023
+  },
+  {
+   "valore": "#3084f6",
+   "quota": 0.015
+  }
+ ]
+}

@@ -1,0 +1,377 @@
+{
+ "video": "kalliope-demo-home.mp4",
+ "larghezza": 1440,
+ "altezza": 900,
+ "fotogrammi": 399,
+ "durata": 32639,
+ "frequenza": "variabile",
+ "zona": {
+  "x": 700,
+  "y": 90,
+  "l": 650,
+  "a": 700
+ },
+ "da": 0,
+ "a": null,
+ "soglia": 12,
+ "minimo": 400,
+ "pausa": 250,
+ "tratti": [
+  {
+   "inizio": 0,
+   "fine": 208,
+   "durata": 208,
+   "fotogrammi": 8,
+   "intervallo": 33,
+   "iniziato_prima": true,
+   "non_finito": false,
+   "quota_massima": 0.0024,
+   "quota_finale": 0.0024,
+   "transitorio": 0,
+   "come": {
+    "salta": 1,
+    "sfuma": 0,
+    "altro": 0
+   },
+   "meta": 108,
+   "novanta": 208,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 0
+   },
+   "rettangolo": {
+    "x": 0.47465437788018433,
+    "y": 0.5085470085470085,
+    "l": 0.05069124423963134,
+    "a": 0.04700854700854701
+   },
+   "celle": [
+    {
+     "ms": 0,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 8,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 75,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 108,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 175,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 208,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "kalliope-demo-home-mv/tratto-1.jpg"
+  },
+  {
+   "inizio": 691,
+   "fine": 4758,
+   "durata": 4067,
+   "fotogrammi": 104,
+   "intervallo": 34,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.615,
+   "quota_finale": 0.6149,
+   "transitorio": 0.0394,
+   "come": {
+    "salta": 0.442,
+    "sfuma": 0.493,
+    "altro": 0.065
+   },
+   "meta": 749,
+   "novanta": 2883,
+   "passaggio": {
+    "mediana": 100,
+    "novanta": 200
+   },
+   "rettangolo": {
+    "x": 0.013824884792626729,
+    "y": 0.0641025641025641,
+    "l": 0.9585253456221198,
+    "a": 0.9145299145299145
+   },
+   "celle": [
+    {
+     "ms": 641,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 691,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 1573,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 2391,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 3224,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 3940,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 4758,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "kalliope-demo-home-mv/tratto-2.jpg"
+  },
+  {
+   "inizio": 5091,
+   "fine": 7323,
+   "durata": 2232,
+   "fotogrammi": 49,
+   "intervallo": 41,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.4007,
+   "quota_finale": 0.2939,
+   "transitorio": 0.4848,
+   "come": {
+    "salta": 0.204,
+    "sfuma": 0.189,
+    "altro": 0.607
+   },
+   "meta": 400,
+   "novanta": 1232,
+   "passaggio": {
+    "mediana": 449,
+    "novanta": 782
+   },
+   "rettangolo": {
+    "x": 0.009216589861751152,
+    "y": 0.017094017094017096,
+    "l": 0.967741935483871,
+    "a": 0.9529914529914529
+   },
+   "celle": [
+    {
+     "ms": 4991,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 5091,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5524,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5857,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 6323,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 6720,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 7323,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "kalliope-demo-home-mv/tratto-3.jpg"
+  },
+  {
+   "inizio": 7741,
+   "fine": 13826,
+   "durata": 6085,
+   "fotogrammi": 164,
+   "intervallo": 34,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.0989,
+   "quota_finale": 0.0244,
+   "transitorio": 0.3967,
+   "come": {
+    "salta": 0.271,
+    "sfuma": 0.706,
+    "altro": 0.023
+   },
+   "meta": 3732,
+   "novanta": 5275,
+   "passaggio": {
+    "mediana": 100,
+    "novanta": 150
+   },
+   "rettangolo": {
+    "x": 0.004608294930875576,
+    "y": 0.06837606837606838,
+    "l": 0.9769585253456221,
+    "a": 0.6623931623931624
+   },
+   "celle": [
+    {
+     "ms": 7706,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 7741,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 9084,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 10441,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 11573,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 12643,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 13826,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "kalliope-demo-home-mv/tratto-4.jpg"
+  },
+  {
+   "inizio": 14373,
+   "fine": 15174,
+   "durata": 801,
+   "fotogrammi": 21,
+   "intervallo": 34,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.279,
+   "quota_finale": 0.276,
+   "transitorio": 0.0066,
+   "come": {
+    "salta": 0.307,
+    "sfuma": 0.661,
+    "altro": 0.032
+   },
+   "meta": 67,
+   "novanta": 300,
+   "passaggio": {
+    "mediana": 116,
+    "novanta": 166
+   },
+   "rettangolo": {
+    "x": 0.009216589861751152,
+    "y": 0.01282051282051282,
+    "l": 0.967741935483871,
+    "a": 0.9743589743589743
+   },
+   "celle": [
+    {
+     "ms": 14343,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 14373,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 14556,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 14706,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 14873,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 15041,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 15174,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "kalliope-demo-home-mv/tratto-5.jpg"
+  },
+  {
+   "inizio": 16074,
+   "fine": 16473,
+   "durata": 399,
+   "fotogrammi": 13,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.0101,
+   "quota_finale": 0.0101,
+   "transitorio": 0.0006,
+   "come": {
+    "salta": 0.584,
+    "sfuma": 0.359,
+    "altro": 0.057
+   },
+   "meta": 33,
+   "novanta": 166,
+   "passaggio": {
+    "mediana": 33,
+    "novanta": 133
+   },
+   "rettangolo": {
+    "x": 0.2119815668202765,
+    "y": 0.3247863247863248,
+    "l": 0.5714285714285714,
+    "a": 0.3333333333333333
+   },
+   "celle": [
+    {
+     "ms": 16041,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 16074,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 16140,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 16240,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 16307,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 16407,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 16473,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "kalliope-demo-home-mv/tratto-6.jpg"
+  }
+ ]
+}

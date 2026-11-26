@@ -1,0 +1,50 @@
+{
+  "data": "2026-11-26",
+  "fonte": "Decisioni del proprietario del 26/11/2026 dopo aver provato la 0.2 (CLAUDE.md, «L'applicazione ha l'identità di Kalliope»; incarico della direzione della finestra, issue #13 e #20).",
+  "parole": "La 0.2 è «orripilante»: «è uno strumento per scrivere e la finestra di scrittura è minuscola», «manca la parte di registrazione della propria voce». Kalipso è «un milione di anni luce più avanti». Una grande area di scrittura dove Invio parla: «ha poco senso andare a capo». Prima il risultato più bello e vivo possibile, funzionale per chi lo usa; tutto è vivo, armonioso, pragmatico e mai fine a sé stesso (13/11/2026).",
+  "far_provare": "Che si scrive in grande e si viene sentiti subito; che la finestra dice sempre la verità su che cosa sta succedendo; che la voce propria si crea lì, senza uscire.",
+  "esempi": [
+    {"cosa": "La finestra di Kalipso (/workspace/kalipso/artifacts/design-rebuild/, script-library-review/)", "perche": "il metro di qualità: «un milione di anni luce più avanti» della 0.2. Solo le idee, mai il codice."},
+    {"cosa": "Il sito di Kalliope, direzione 2 «Alla pari, in riunione», con i colori approvati il 26/11/2026", "perche": "l'identità della finestra viene da design-system/, come il sito: fondi grafite, accenti verde acqua, tinte distinte per i partecipanti, Lexend, il logo."}
+  ],
+  "chiede": [
+    "una grande area di scrittura dove Invio parla, senza a capo",
+    "uno stato che dice sempre la verità: si prepara, pronta, sta parlando, nessuno nella chiamata ascolta, microfono assente, problema della voce",
+    "le frasi già dette, salvate fra un avvio e l'altro, da ripetere con un gesto solo; la scelta della voce",
+    "creare la voce propria dentro l'app, registrando (un testo da leggere, il livello, riascolto, rifare, nome, consenso) o importando un file audio",
+    "una modalità riunione compatta: solo scrittura, stato e Ferma, da tenere accanto a Zoom o Meet (su Wayland l'app non può imporsi sopra le altre)",
+    "il testo regolabile",
+    "tema chiaro e scuro che seguono il sistema; il tema chiaro si aggiunge al sistema con i suoi ruoli"
+  ],
+  "no": [
+    "l'aspetto della 0.2: imitazione di GTK/libadwaita o di Qt, finestra di scrittura minuscola",
+    "la finestra ricostruita della 0.1 sul sito (DejaVu, blu #005fb8, pulsanti da 4 px)",
+    "colori, misure o tempi scritti a mano nei .slint: tutto viene da design-system/token.css",
+    "WCAG come obiettivo, soglia o motivazione",
+    "le frasi pronte (rinviate)"
+  ],
+  "colori": [
+    {"valore": "#1b2223", "fonte": "grafite, il fondo approvato il 26/11/2026 (--fondo)"},
+    {"valore": "#151b1c", "fonte": "grafite piena della barra, approvata il 26/11/2026 (--barra-piena)"},
+    {"valore": "#111819", "fonte": "grafite «notte», approvata il 26/11/2026 (--notte)"},
+    {"valore": "#202b2b", "fonte": "grafite del riquadro scuro, approvata il 26/11/2026 (--riquadro-scuro)"},
+    {"valore": "#91dfbd", "fonte": "verde acqua dell'azione, approvato il 26/11/2026 (--azione)"},
+    {"valore": "#b5e8d2", "fonte": "verde acqua della voce che suona, approvato il 26/11/2026 (--voce)"},
+    {"valore": "#27795f", "fonte": "verde acqua profondo, la voce nella bolla, approvato il 26/11/2026 (--magenta, nome storico)"},
+    {"valore": "#82b4a3", "fonte": "verde acqua del bordo che risponde, approvato il 26/11/2026 (--rosa, nome storico)"},
+    {"valore": "#152c24", "fonte": "testo sull'azione, approvato il 26/11/2026 (--azione-testo)"},
+    {"valore": "#f2f5f4", "fonte": "testo neutro e bolla, approvato il 26/11/2026 (--testo)"},
+    {"valore": "#171d1d", "fonte": "testo scuro sul chiaro, approvato il 26/11/2026 (--scuro)"},
+    {"valore": "#dfe7e3", "fonte": "la scena chiara del sito, approvata il 26/11/2026 (--chiara-fondo-basso)"},
+    {"valore": "#263b35", "fonte": "riquadro «Tu», tinta del partecipante, approvata il 26/11/2026 (--tu-fondo-alto)"},
+    {"valore": "#655147", "fonte": "riquadro di Paola, tinta del partecipante, approvata il 26/11/2026 (--paola-fondo-alto)"},
+    {"valore": "#3d4e62", "fonte": "riquadro di Luca, tinta del partecipante, approvata il 26/11/2026 (--luca-fondo-alto)"},
+    {"valore": "#55465c", "fonte": "riquadro di Anna, tinta del partecipante, approvata il 26/11/2026 (--anna-fondo-alto)"},
+    {"valore": "#e6396e", "fonte": "il logo scelto il 19/11/2026: la bolla (--segno-*); «il logo conserva i suoi colori» (26/11/2026)"},
+    {"valore": "#ffedef", "fonte": "il logo: le righe dentro la bolla (--segno-*)"},
+    {"valore": "#fab7c2", "fonte": "il logo: il fondo dell'icona piena (--segno-*)"}
+  ],
+  "caratteri": [
+    {"famiglia": "Lexend", "fonte": "il carattere del sito e del sistema, voluto per la finestra il 26/11/2026"}
+  ]
+}

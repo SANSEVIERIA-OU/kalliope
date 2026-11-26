@@ -1,0 +1,870 @@
+{
+ "versione": 1,
+ "composta": "2026-11-26T17:20:20.845Z",
+ "riferimenti": [
+  "cboard",
+  "kalliope-sito"
+ ],
+ "misure": 5,
+ "nota": "Valori misurati con pagina/valori.js. «in» = in quanti riferimenti compare; «riferimenti» = la quota più alta in quel riferimento. I colori delle immagini, dei video e dei canvas non sono qui: si guardano nelle foto.",
+ "colori": [
+  {
+   "valore": "#f2f5f4",
+   "oklch": "oklch(0.968 0.003 174)",
+   "l": 0.968,
+   "c": 0.003,
+   "h": 174,
+   "ruoli": {
+    "testo": 0.714,
+    "fondo": 0.594,
+    "pulsante": 0.05
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.714,
+    "cboard": 0.594
+   },
+   "in": 2,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-riunione-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "cboard/valori/cboard-impostazioni-desktop.json",
+    "cboard/valori/cboard-board-desktop.json"
+   ]
+  },
+  {
+   "valore": "#222222",
+   "oklch": "oklch(0.252 0.000 0)",
+   "l": 0.252,
+   "c": 0,
+   "h": 0,
+   "ruoli": {
+    "fondo": 0.063,
+    "testo": 0.035
+   },
+   "riferimenti": {
+    "cboard": 0.063,
+    "kalliope-sito": 0.035
+   },
+   "in": 2,
+   "prove": [
+    "cboard/valori/cboard-board-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json"
+   ]
+  },
+  {
+   "valore": "#3f51b5",
+   "oklch": "oklch(0.478 0.159 271)",
+   "l": 0.478,
+   "c": 0.159,
+   "h": 271,
+   "ruoli": {
+    "bordo": 1,
+    "fondo": 0.063,
+    "testo": 0.017
+   },
+   "riferimenti": {
+    "cboard": 1
+   },
+   "in": 1,
+   "prove": [
+    "cboard/valori/cboard-impostazioni-desktop.json"
+   ]
+  },
+  {
+   "valore": "#000000",
+   "oklch": "oklch(0.000 0.000 0)",
+   "l": 0,
+   "c": 0,
+   "h": 0,
+   "ruoli": {
+    "testo": 0.831
+   },
+   "riferimenti": {
+    "cboard": 0.831
+   },
+   "in": 1,
+   "prove": [
+    "cboard/valori/cboard-board-desktop.json",
+    "cboard/valori/cboard-impostazioni-desktop.json"
+   ]
+  },
+  {
+   "valore": "#1b2223",
+   "oklch": "oklch(0.245 0.010 207)",
+   "l": 0.245,
+   "c": 0.01,
+   "h": 207,
+   "ruoli": {
+    "fondo": 0.729,
+    "testo": 0.13
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.729
+   },
+   "in": 1,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-riunione-desktop.json"
+   ]
+  },
+  {
+   "valore": "#bbdefb",
+   "oklch": "oklch(0.885 0.055 243)",
+   "l": 0.885,
+   "c": 0.055,
+   "h": 243,
+   "ruoli": {
+    "fondo": 0.646
+   },
+   "riferimenti": {
+    "cboard": 0.646
+   },
+   "in": 1,
+   "prove": [
+    "cboard/valori/cboard-board-desktop.json"
+   ]
+  },
+  {
+   "valore": "#c9c9c9",
+   "oklch": "oklch(0.836 0.000 0)",
+   "l": 0.836,
+   "c": 0,
+   "h": 0,
+   "ruoli": {
+    "bordo": 0.173,
+    "pulsante": 0.05,
+    "fondo": 0.003
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.173
+   },
+   "in": 1,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json"
+   ]
+  },
+  {
+   "valore": "#e3e3e3",
+   "oklch": "oklch(0.916 0.000 0)",
+   "l": 0.916,
+   "c": 0,
+   "h": 0,
+   "ruoli": {
+    "bordo": 0.125
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.125
+   },
+   "in": 1,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json"
+   ]
+  },
+  {
+   "valore": "#005fb8",
+   "oklch": "oklch(0.491 0.160 255)",
+   "l": 0.491,
+   "c": 0.16,
+   "h": 255,
+   "ruoli": {
+    "bordo": 0.104
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.104
+   },
+   "in": 1,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json"
+   ]
+  },
+  {
+   "valore": "#fff176",
+   "oklch": "oklch(0.945 0.144 103)",
+   "l": 0.945,
+   "c": 0.144,
+   "h": 103,
+   "ruoli": {
+    "fondo": 0.083
+   },
+   "riferimenti": {
+    "cboard": 0.083
+   },
+   "in": 1,
+   "prove": [
+    "cboard/valori/cboard-board-desktop.json"
+   ]
+  },
+  {
+   "valore": "#91dfbd",
+   "oklch": "oklch(0.844 0.091 165)",
+   "l": 0.844,
+   "c": 0.091,
+   "h": 165,
+   "ruoli": {
+    "pulsante": 0.05,
+    "fondo": 0.01
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.05
+   },
+   "in": 1,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-riunione-desktop.json"
+   ]
+  },
+  {
+   "valore": "#0e1415",
+   "oklch": "oklch(0.185 0.009 209)",
+   "l": 0.185,
+   "c": 0.009,
+   "h": 209,
+   "ruoli": {
+    "fondo": 0.042
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.042
+   },
+   "in": 1,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-riunione-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json"
+   ]
+  },
+  {
+   "valore": "#3d4e62",
+   "oklch": "oklch(0.418 0.040 253)",
+   "l": 0.418,
+   "c": 0.04,
+   "h": 253,
+   "ruoli": {
+    "fondo": 0.039
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.039
+   },
+   "in": 1,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-riunione-desktop.json"
+   ]
+  },
+  {
+   "valore": "#655147",
+   "oklch": "oklch(0.452 0.031 48)",
+   "l": 0.452,
+   "c": 0.031,
+   "h": 48,
+   "ruoli": {
+    "fondo": 0.039
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.039
+   },
+   "in": 1,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-riunione-desktop.json"
+   ]
+  },
+  {
+   "valore": "#55465c",
+   "oklch": "oklch(0.418 0.041 315)",
+   "l": 0.418,
+   "c": 0.041,
+   "h": 315,
+   "ruoli": {
+    "fondo": 0.039
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.039
+   },
+   "in": 1,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-riunione-desktop.json"
+   ]
+  },
+  {
+   "valore": "#263b35",
+   "oklch": "oklch(0.332 0.029 175)",
+   "l": 0.332,
+   "c": 0.029,
+   "h": 175,
+   "ruoli": {
+    "fondo": 0.036,
+    "testo": 0.011
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.036
+   },
+   "in": 1,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-riunione-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json"
+   ]
+  },
+  {
+   "valore": "#152c24",
+   "oklch": "oklch(0.271 0.033 169)",
+   "l": 0.271,
+   "c": 0.033,
+   "h": 169,
+   "ruoli": {
+    "testo": 0.02
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.02
+   },
+   "in": 1,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-riunione-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json"
+   ]
+  },
+  {
+   "valore": "#eef3fb",
+   "oklch": "oklch(0.963 0.012 260)",
+   "l": 0.963,
+   "c": 0.012,
+   "h": 260,
+   "ruoli": {
+    "fondo": 0.018
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.018
+   },
+   "in": 1,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json"
+   ]
+  },
+  {
+   "valore": "#656565",
+   "oklch": "oklch(0.507 0.000 0)",
+   "l": 0.507,
+   "c": 0,
+   "h": 0,
+   "ruoli": {
+    "testo": 0.017
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.017
+   },
+   "in": 1,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json"
+   ]
+  },
+  {
+   "valore": "#b5dace",
+   "oklch": "oklch(0.858 0.042 174)",
+   "l": 0.858,
+   "c": 0.042,
+   "h": 174,
+   "ruoli": {
+    "bordo": 0.016
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.016
+   },
+   "in": 1,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-riunione-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json"
+   ]
+  },
+  {
+   "valore": "#496259",
+   "oklch": "oklch(0.473 0.033 171)",
+   "l": 0.473,
+   "c": 0.033,
+   "h": 171,
+   "ruoli": {
+    "fondo": 0.008
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.008
+   },
+   "in": 1,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-riunione-desktop.json"
+   ]
+  }
+ ],
+ "caratteri": [
+  {
+   "famiglia": "Montserrat",
+   "generica": "sans-serif",
+   "riferimenti": {
+    "cboard": 1
+   },
+   "pesi": [
+    400,
+    500,
+    700
+   ],
+   "grandezze": [
+    12,
+    14,
+    16,
+    18
+   ],
+   "corsivo": 0,
+   "maiuscolo": 0.17,
+   "prove": [
+    "cboard/valori/cboard-board-desktop.json",
+    "cboard/valori/cboard-impostazioni-desktop.json"
+   ],
+   "in": 1
+  },
+  {
+   "famiglia": "Lexend",
+   "generica": "system-ui",
+   "riferimenti": {
+    "kalliope-sito": 1
+   },
+   "pesi": [
+    400,
+    500,
+    600,
+    700
+   ],
+   "grandezze": [
+    13,
+    15,
+    16,
+    17,
+    18,
+    20,
+    24,
+    62
+   ],
+   "corsivo": 0,
+   "maiuscolo": 0,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-riunione-desktop.json"
+   ],
+   "in": 1
+  },
+  {
+   "famiglia": "DejaVu Sans Kalliope",
+   "generica": "sans-serif",
+   "riferimenti": {
+    "kalliope-sito": 0.057
+   },
+   "pesi": [
+    400
+   ],
+   "grandezze": [
+    14
+   ],
+   "corsivo": 0,
+   "maiuscolo": 0,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json"
+   ],
+   "in": 1
+  }
+ ],
+ "movimento": [
+  {
+   "durata_ms": 200,
+   "curva": "ease",
+   "tipo": "transizione",
+   "volte": 37,
+   "riferimenti": [
+    "cboard",
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "height",
+    "none",
+    "background-color",
+    "text-decoration-color"
+   ],
+   "in": 2
+  },
+  {
+   "durata_ms": 160,
+   "curva": "linear",
+   "tipo": "transizione",
+   "volte": 34,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "opacity"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 150,
+   "curva": "cubic-bezier(0.4, 0, 0.2, 1)",
+   "tipo": "transizione",
+   "volte": 32,
+   "riferimenti": [
+    "cboard"
+   ],
+   "proprieta": [
+    "background-color",
+    "left",
+    "transform",
+    "opacity"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 200,
+   "curva": "cubic-bezier(0.4, 0, 0.2, 1)",
+   "tipo": "transizione",
+   "volte": 22,
+   "riferimenti": [
+    "cboard"
+   ],
+   "proprieta": [
+    "fill"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 240,
+   "curva": "ease",
+   "tipo": "transizione",
+   "volte": 18,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "background-color",
+    "opacity"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 160,
+   "curva": "ease",
+   "tipo": "transizione",
+   "volte": 12,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "opacity",
+    "background-color",
+    "color",
+    "transform"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 220,
+   "curva": "ease",
+   "tipo": "transizione",
+   "volte": 10,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "background-color",
+    "box-shadow"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 300,
+   "curva": "cubic-bezier(0.4, 0, 0.2, 1)",
+   "tipo": "transizione",
+   "volte": 9,
+   "riferimenti": [
+    "cboard"
+   ],
+   "proprieta": [
+    "box-shadow"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 560,
+   "curva": "cubic-bezier(0.19, 1, 0.22, 1)",
+   "tipo": "transizione",
+   "volte": 9,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "transform"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 460,
+   "curva": "cubic-bezier(0.19, 1, 0.22, 1)",
+   "tipo": "transizione",
+   "volte": 9,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "transform"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 220,
+   "curva": "cubic-bezier(0.19, 1, 0.22, 1)",
+   "tipo": "transizione",
+   "volte": 8,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "transform"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 250,
+   "curva": "cubic-bezier(0.4, 0, 0.2, 1)",
+   "tipo": "transizione",
+   "volte": 6,
+   "riferimenti": [
+    "cboard"
+   ],
+   "proprieta": [
+    "background-color",
+    "box-shadow",
+    "border"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 320,
+   "curva": "ease",
+   "tipo": "transizione",
+   "volte": 6,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "background-color",
+    "box-shadow"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 200,
+   "curva": "ease",
+   "tipo": "animazione",
+   "volte": 6,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "transform"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 520,
+   "curva": "cubic-bezier(0.19, 1, 0.22, 1)",
+   "tipo": "animazione",
+   "volte": 5,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "transform",
+    "opacity"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 300,
+   "curva": "cubic-bezier(0.19, 1, 0.22, 1)",
+   "tipo": "transizione",
+   "volte": 3,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "transform"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 240,
+   "curva": "cubic-bezier(0.19, 1, 0.22, 1)",
+   "tipo": "transizione",
+   "volte": 3,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "transform"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 350,
+   "curva": "linear",
+   "tipo": "animazione",
+   "volte": 3,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "opacity"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 225,
+   "curva": "cubic-bezier(0.4, 0, 0.2, 1)",
+   "tipo": "transizione",
+   "volte": 2,
+   "riferimenti": [
+    "cboard"
+   ],
+   "proprieta": [
+    "opacity"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 225,
+   "curva": "cubic-bezier(0, 0, 0.2, 1)",
+   "tipo": "transizione",
+   "volte": 2,
+   "riferimenti": [
+    "cboard"
+   ],
+   "proprieta": [
+    "transform"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 420,
+   "curva": "ease",
+   "tipo": "transizione",
+   "volte": 2,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "opacity"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 280,
+   "curva": "ease",
+   "tipo": "transizione",
+   "volte": 2,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "background-color",
+    "color"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 160,
+   "curva": "linear",
+   "tipo": "animazione",
+   "volte": 1,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "opacity"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 1000,
+   "curva": "steps(1)",
+   "tipo": "continua",
+   "volte": 1,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "opacity"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 1400,
+   "curva": "ease",
+   "tipo": "animazione",
+   "volte": 1,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "opacity"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 500,
+   "curva": "ease",
+   "tipo": "animazione",
+   "volte": 1,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "opacity"
+   ],
+   "in": 1
+  }
+ ],
+ "campoDurate": {
+  "cboard": [
+   150,
+   300
+  ],
+  "kalliope-sito": [
+   160,
+   1400
+  ]
+ },
+ "forme": {
+  "cboard": {
+   "pillole": 0,
+   "raggi": [
+    4
+   ]
+  },
+  "kalliope-sito": {
+   "pillole": 1,
+   "raggi": [
+    4
+   ]
+  }
+ },
+ "visione": null
+}

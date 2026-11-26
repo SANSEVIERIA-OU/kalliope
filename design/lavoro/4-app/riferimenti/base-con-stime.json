@@ -1,0 +1,1464 @@
+{
+ "versione": 1,
+ "composta": "2026-11-26T17:47:02.411Z",
+ "riferimenti": [
+  "acapela",
+  "cboard",
+  "kalipso",
+  "kalliope-sito",
+  "predictable",
+  "proloquo4text",
+  "vocable"
+ ],
+ "misure": 15,
+ "nota": "Valori misurati con pagina/valori.js. «in» = in quanti riferimenti compare; «riferimenti» = la quota più alta in quel riferimento. I colori delle immagini, dei video e dei canvas non sono qui: si guardano nelle foto.",
+ "colori": [
+  {
+   "valore": "#f2f5f4",
+   "oklch": "oklch(0.968 0.003 174)",
+   "l": 0.968,
+   "c": 0.003,
+   "h": 174,
+   "ruoli": {
+    "testo": 0.714,
+    "fondo": 0.667,
+    "pulsante": 0.05
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.714,
+    "proloquo4text": 0.667,
+    "cboard": 0.594,
+    "predictable": 0.304,
+    "acapela": 0.212,
+    "kalipso": 0.203
+   },
+   "in": 6,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-riunione-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "proloquo4text/valori/stima-proloquo4text-mac-chiaro.json",
+    "cboard/valori/cboard-impostazioni-desktop.json",
+    "proloquo4text/valori/stima-proloquo4text-ipad-chiaro.json"
+   ]
+  },
+  {
+   "valore": "#000000",
+   "oklch": "oklch(0.000 0.000 0)",
+   "l": 0,
+   "c": 0,
+   "h": 0,
+   "ruoli": {
+    "testo": 0.831,
+    "fondo": 0.76
+   },
+   "riferimenti": {
+    "cboard": 0.831,
+    "predictable": 0.76,
+    "proloquo4text": 0.358
+   },
+   "in": 3,
+   "prove": [
+    "cboard/valori/cboard-board-desktop.json",
+    "predictable/valori/stima-predictable-scuro-video.json",
+    "predictable/valori/stima-predictable-scuro.json",
+    "cboard/valori/cboard-impostazioni-desktop.json",
+    "proloquo4text/valori/stima-proloquo4text-ipad-scuro.json"
+   ]
+  },
+  {
+   "valore": "#ffffe7",
+   "oklch": "oklch(0.994 0.031 107)",
+   "l": 0.994,
+   "c": 0.031,
+   "h": 107,
+   "ruoli": {
+    "fondo": 0.801
+   },
+   "riferimenti": {
+    "proloquo4text": 0.801,
+    "predictable": 0.067
+   },
+   "in": 2,
+   "prove": [
+    "proloquo4text/valori/stima-proloquo4text-mac-personalizzato.json",
+    "predictable/valori/stima-predictable-ipad-store.json"
+   ]
+  },
+  {
+   "valore": "#282828",
+   "oklch": "oklch(0.277 0.000 0)",
+   "l": 0.277,
+   "c": 0,
+   "h": 0,
+   "ruoli": {
+    "fondo": 0.172
+   },
+   "riferimenti": {
+    "proloquo4text": 0.172,
+    "cboard": 0.063
+   },
+   "in": 2,
+   "prove": [
+    "proloquo4text/valori/stima-proloquo4text-ipad-scuro.json",
+    "cboard/valori/cboard-board-desktop.json"
+   ]
+  },
+  {
+   "valore": "#e5e6eb",
+   "oklch": "oklch(0.926 0.007 277)",
+   "l": 0.926,
+   "c": 0.007,
+   "h": 277,
+   "ruoli": {
+    "fondo": 0.164
+   },
+   "riferimenti": {
+    "proloquo4text": 0.164,
+    "kalipso": 0.025
+   },
+   "in": 2,
+   "prove": [
+    "proloquo4text/valori/stima-proloquo4text-ipad-chiaro.json",
+    "kalipso/valori/stima-kalipso-finestra-scura.json"
+   ]
+  },
+  {
+   "valore": "#131313",
+   "oklch": "oklch(0.187 0.000 0)",
+   "l": 0.187,
+   "c": 0,
+   "h": 0,
+   "ruoli": {
+    "fondo": 0.134
+   },
+   "riferimenti": {
+    "predictable": 0.134,
+    "proloquo4text": 0.093
+   },
+   "in": 2,
+   "prove": [
+    "predictable/valori/stima-predictable-scuro.json",
+    "proloquo4text/valori/stima-proloquo4text-ipad-scuro.json",
+    "predictable/valori/stima-predictable-scuro-video.json"
+   ]
+  },
+  {
+   "valore": "#010001",
+   "oklch": "oklch(0.047 0.022 328)",
+   "l": 0.047,
+   "c": 0.022,
+   "h": 328,
+   "ruoli": {
+    "fondo": 0.051
+   },
+   "riferimenti": {
+    "predictable": 0.051,
+    "proloquo4text": 0.021
+   },
+   "in": 2,
+   "prove": [
+    "predictable/valori/stima-predictable-scuro.json",
+    "predictable/valori/stima-predictable-scuro-video.json",
+    "proloquo4text/valori/stima-proloquo4text-ipad-scuro.json"
+   ]
+  },
+  {
+   "valore": "#0e1415",
+   "oklch": "oklch(0.185 0.009 209)",
+   "l": 0.185,
+   "c": 0.009,
+   "h": 209,
+   "ruoli": {
+    "fondo": 0.042
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.042,
+    "predictable": 0.006
+   },
+   "in": 2,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-riunione-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json",
+    "predictable/valori/stima-predictable-scuro-video.json"
+   ]
+  },
+  {
+   "valore": "#000002",
+   "oklch": "oklch(0.038 0.027 264)",
+   "l": 0.038,
+   "c": 0.027,
+   "h": 264,
+   "ruoli": {
+    "fondo": 0.037
+   },
+   "riferimenti": {
+    "predictable": 0.037,
+    "proloquo4text": 0.007
+   },
+   "in": 2,
+   "prove": [
+    "predictable/valori/stima-predictable-scuro.json",
+    "predictable/valori/stima-predictable-scuro-video.json",
+    "proloquo4text/valori/stima-proloquo4text-ipad-scuro.json"
+   ]
+  },
+  {
+   "valore": "#eef3fb",
+   "oklch": "oklch(0.963 0.012 260)",
+   "l": 0.963,
+   "c": 0.012,
+   "h": 260,
+   "ruoli": {
+    "fondo": 0.018
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.018,
+    "proloquo4text": 0.004
+   },
+   "in": 2,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "proloquo4text/valori/stima-proloquo4text-mac-chiaro.json"
+   ]
+  },
+  {
+   "valore": "#3f51b5",
+   "oklch": "oklch(0.478 0.159 271)",
+   "l": 0.478,
+   "c": 0.159,
+   "h": 271,
+   "ruoli": {
+    "bordo": 1,
+    "fondo": 0.063,
+    "testo": 0.017
+   },
+   "riferimenti": {
+    "cboard": 1
+   },
+   "in": 1,
+   "prove": [
+    "cboard/valori/cboard-impostazioni-desktop.json"
+   ]
+  },
+  {
+   "valore": "#1b2223",
+   "oklch": "oklch(0.245 0.010 207)",
+   "l": 0.245,
+   "c": 0.01,
+   "h": 207,
+   "ruoli": {
+    "fondo": 0.729,
+    "testo": 0.13
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.729
+   },
+   "in": 1,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-riunione-desktop.json"
+   ]
+  },
+  {
+   "valore": "#bbdefb",
+   "oklch": "oklch(0.885 0.055 243)",
+   "l": 0.885,
+   "c": 0.055,
+   "h": 243,
+   "ruoli": {
+    "fondo": 0.646
+   },
+   "riferimenti": {
+    "cboard": 0.646
+   },
+   "in": 1,
+   "prove": [
+    "cboard/valori/cboard-board-desktop.json"
+   ]
+  },
+  {
+   "valore": "#17191f",
+   "oklch": "oklch(0.214 0.012 271)",
+   "l": 0.214,
+   "c": 0.012,
+   "h": 271,
+   "ruoli": {
+    "fondo": 0.644
+   },
+   "riferimenti": {
+    "kalipso": 0.644
+   },
+   "in": 1,
+   "prove": [
+    "kalipso/valori/stima-kalipso-finestra-scura.json"
+   ]
+  },
+  {
+   "valore": "#1a323d",
+   "oklch": "oklch(0.303 0.036 229)",
+   "l": 0.303,
+   "c": 0.036,
+   "h": 229,
+   "ruoli": {
+    "fondo": 0.614
+   },
+   "riferimenti": {
+    "acapela": 0.614
+   },
+   "in": 1,
+   "prove": [
+    "acapela/valori/stima-acapela-recorder.json"
+   ]
+  },
+  {
+   "valore": "#3b369c",
+   "oklch": "oklch(0.405 0.160 279)",
+   "l": 0.405,
+   "c": 0.16,
+   "h": 279,
+   "ruoli": {
+    "fondo": 0.356
+   },
+   "riferimenti": {
+    "vocable": 0.356
+   },
+   "in": 1,
+   "prove": [
+    "vocable/valori/stima-vocable-schermo.json"
+   ]
+  },
+  {
+   "valore": "#444444",
+   "oklch": "oklch(0.387 0.000 0)",
+   "l": 0.387,
+   "c": 0,
+   "h": 0,
+   "ruoli": {
+    "fondo": 0.328
+   },
+   "riferimenti": {
+    "proloquo4text": 0.328
+   },
+   "in": 1,
+   "prove": [
+    "proloquo4text/valori/stima-proloquo4text-ipad-scuro.json"
+   ]
+  },
+  {
+   "valore": "#26265b",
+   "oklch": "oklch(0.301 0.093 279)",
+   "l": 0.301,
+   "c": 0.093,
+   "h": 279,
+   "ruoli": {
+    "fondo": 0.201
+   },
+   "riferimenti": {
+    "vocable": 0.201
+   },
+   "in": 1,
+   "prove": [
+    "vocable/valori/stima-vocable-schermo.json"
+   ]
+  },
+  {
+   "valore": "#3284f2",
+   "oklch": "oklch(0.622 0.183 257)",
+   "l": 0.622,
+   "c": 0.183,
+   "h": 257,
+   "ruoli": {
+    "fondo": 0.2
+   },
+   "riferimenti": {
+    "predictable": 0.2
+   },
+   "in": 1,
+   "prove": [
+    "predictable/valori/stima-predictable-ipad-store.json"
+   ]
+  },
+  {
+   "valore": "#c9c9c9",
+   "oklch": "oklch(0.836 0.000 0)",
+   "l": 0.836,
+   "c": 0,
+   "h": 0,
+   "ruoli": {
+    "bordo": 0.173,
+    "pulsante": 0.05,
+    "fondo": 0.003
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.173
+   },
+   "in": 1,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json"
+   ]
+  },
+  {
+   "valore": "#f3f2f8",
+   "oklch": "oklch(0.964 0.008 294)",
+   "l": 0.964,
+   "c": 0.008,
+   "h": 294,
+   "ruoli": {
+    "fondo": 0.142
+   },
+   "riferimenti": {
+    "proloquo4text": 0.142
+   },
+   "in": 1,
+   "prove": [
+    "proloquo4text/valori/stima-proloquo4text-ipad-chiaro.json"
+   ]
+  },
+  {
+   "valore": "#4f4d91",
+   "oklch": "oklch(0.456 0.109 283)",
+   "l": 0.456,
+   "c": 0.109,
+   "h": 283,
+   "ruoli": {
+    "fondo": 0.13
+   },
+   "riferimenti": {
+    "vocable": 0.13
+   },
+   "in": 1,
+   "prove": [
+    "vocable/valori/stima-vocable-schermo.json"
+   ]
+  },
+  {
+   "valore": "#e3e3e3",
+   "oklch": "oklch(0.916 0.000 0)",
+   "l": 0.916,
+   "c": 0,
+   "h": 0,
+   "ruoli": {
+    "bordo": 0.125
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.125
+   },
+   "in": 1,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json"
+   ]
+  },
+  {
+   "valore": "#005fb8",
+   "oklch": "oklch(0.491 0.160 255)",
+   "l": 0.491,
+   "c": 0.16,
+   "h": 255,
+   "ruoli": {
+    "bordo": 0.104
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.104
+   },
+   "in": 1,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json"
+   ]
+  },
+  {
+   "valore": "#fff176",
+   "oklch": "oklch(0.945 0.144 103)",
+   "l": 0.945,
+   "c": 0.144,
+   "h": 103,
+   "ruoli": {
+    "fondo": 0.083
+   },
+   "riferimenti": {
+    "cboard": 0.083
+   },
+   "in": 1,
+   "prove": [
+    "cboard/valori/cboard-board-desktop.json"
+   ]
+  },
+  {
+   "valore": "#191934",
+   "oklch": "oklch(0.229 0.051 282)",
+   "l": 0.229,
+   "c": 0.051,
+   "h": 282,
+   "ruoli": {
+    "fondo": 0.072
+   },
+   "riferimenti": {
+    "vocable": 0.072
+   },
+   "in": 1,
+   "prove": [
+    "vocable/valori/stima-vocable-schermo.json"
+   ]
+  },
+  {
+   "valore": "#2e323c",
+   "oklch": "oklch(0.317 0.019 268)",
+   "l": 0.317,
+   "c": 0.019,
+   "h": 268,
+   "ruoli": {
+    "fondo": 0.071
+   },
+   "riferimenti": {
+    "kalipso": 0.071
+   },
+   "in": 1,
+   "prove": [
+    "kalipso/valori/stima-kalipso-finestra-scura.json"
+   ]
+  },
+  {
+   "valore": "#7fc3e4",
+   "oklch": "oklch(0.784 0.083 230)",
+   "l": 0.784,
+   "c": 0.083,
+   "h": 230,
+   "ruoli": {
+    "fondo": 0.069
+   },
+   "riferimenti": {
+    "predictable": 0.069
+   },
+   "in": 1,
+   "prove": [
+    "predictable/valori/stima-predictable-ipad-store.json"
+   ]
+  },
+  {
+   "valore": "#0e0e11",
+   "oklch": "oklch(0.165 0.006 286)",
+   "l": 0.165,
+   "c": 0.006,
+   "h": 286,
+   "ruoli": {
+    "fondo": 0.068
+   },
+   "riferimenti": {
+    "predictable": 0.068
+   },
+   "in": 1,
+   "prove": [
+    "predictable/valori/stima-predictable-scuro.json"
+   ]
+  },
+  {
+   "valore": "#5db1ae",
+   "oklch": "oklch(0.707 0.082 192)",
+   "l": 0.707,
+   "c": 0.082,
+   "h": 192,
+   "ruoli": {
+    "fondo": 0.065
+   },
+   "riferimenti": {
+    "vocable": 0.065
+   },
+   "in": 1,
+   "prove": [
+    "vocable/valori/stima-vocable-schermo.json"
+   ]
+  },
+  {
+   "valore": "#7a8e94",
+   "oklch": "oklch(0.633 0.025 218)",
+   "l": 0.633,
+   "c": 0.025,
+   "h": 218,
+   "ruoli": {
+    "fondo": 0.051
+   },
+   "riferimenti": {
+    "acapela": 0.051
+   },
+   "in": 1,
+   "prove": [
+    "acapela/valori/stima-acapela-recorder.json"
+   ]
+  },
+  {
+   "valore": "#3c7bdb",
+   "oklch": "oklch(0.591 0.161 259)",
+   "l": 0.591,
+   "c": 0.161,
+   "h": 259,
+   "ruoli": {
+    "fondo": 0.051
+   },
+   "riferimenti": {
+    "predictable": 0.051
+   },
+   "in": 1,
+   "prove": [
+    "predictable/valori/stima-predictable-ipad-store.json"
+   ]
+  },
+  {
+   "valore": "#91dfbd",
+   "oklch": "oklch(0.844 0.091 165)",
+   "l": 0.844,
+   "c": 0.091,
+   "h": 165,
+   "ruoli": {
+    "pulsante": 0.05,
+    "fondo": 0.01
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.05
+   },
+   "in": 1,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-riunione-desktop.json"
+   ]
+  },
+  {
+   "valore": "#9c9288",
+   "oklch": "oklch(0.666 0.019 67)",
+   "l": 0.666,
+   "c": 0.019,
+   "h": 67,
+   "ruoli": {
+    "fondo": 0.046
+   },
+   "riferimenti": {
+    "predictable": 0.046
+   },
+   "in": 1,
+   "prove": [
+    "predictable/valori/stima-predictable-scuro.json"
+   ]
+  },
+  {
+   "valore": "#6174b6",
+   "oklch": "oklch(0.573 0.105 271)",
+   "l": 0.573,
+   "c": 0.105,
+   "h": 271,
+   "ruoli": {
+    "fondo": 0.045
+   },
+   "riferimenti": {
+    "kalipso": 0.045
+   },
+   "in": 1,
+   "prove": [
+    "kalipso/valori/stima-kalipso-finestra-scura.json"
+   ]
+  },
+  {
+   "valore": "#3d4e62",
+   "oklch": "oklch(0.418 0.040 253)",
+   "l": 0.418,
+   "c": 0.04,
+   "h": 253,
+   "ruoli": {
+    "fondo": 0.039
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.039
+   },
+   "in": 1,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-riunione-desktop.json"
+   ]
+  },
+  {
+   "valore": "#655147",
+   "oklch": "oklch(0.452 0.031 48)",
+   "l": 0.452,
+   "c": 0.031,
+   "h": 48,
+   "ruoli": {
+    "fondo": 0.039
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.039
+   },
+   "in": 1,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-riunione-desktop.json"
+   ]
+  },
+  {
+   "valore": "#55465c",
+   "oklch": "oklch(0.418 0.041 315)",
+   "l": 0.418,
+   "c": 0.041,
+   "h": 315,
+   "ruoli": {
+    "fondo": 0.039
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.039
+   },
+   "in": 1,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-riunione-desktop.json"
+   ]
+  },
+  {
+   "valore": "#263b35",
+   "oklch": "oklch(0.332 0.029 175)",
+   "l": 0.332,
+   "c": 0.029,
+   "h": 175,
+   "ruoli": {
+    "fondo": 0.036,
+    "testo": 0.011
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.036
+   },
+   "in": 1,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-riunione-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json"
+   ]
+  },
+  {
+   "valore": "#1d1d1f",
+   "oklch": "oklch(0.232 0.004 286)",
+   "l": 0.232,
+   "c": 0.004,
+   "h": 286,
+   "ruoli": {
+    "testo": 0.035
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.035
+   },
+   "in": 1,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json"
+   ]
+  },
+  {
+   "valore": "#aeafb8",
+   "oklch": "oklch(0.756 0.013 281)",
+   "l": 0.756,
+   "c": 0.013,
+   "h": 281,
+   "ruoli": {
+    "fondo": 0.032
+   },
+   "riferimenti": {
+    "proloquo4text": 0.032
+   },
+   "in": 1,
+   "prove": [
+    "proloquo4text/valori/stima-proloquo4text-ipad-chiaro.json",
+    "proloquo4text/valori/stima-proloquo4text-mac-chiaro.json"
+   ]
+  },
+  {
+   "valore": "#030305",
+   "oklch": "oklch(0.099 0.008 285)",
+   "l": 0.099,
+   "c": 0.008,
+   "h": 285,
+   "ruoli": {
+    "fondo": 0.029
+   },
+   "riferimenti": {
+    "predictable": 0.029
+   },
+   "in": 1,
+   "prove": [
+    "predictable/valori/stima-predictable-scuro.json"
+   ]
+  },
+  {
+   "valore": "#586b6f",
+   "oklch": "oklch(0.514 0.024 212)",
+   "l": 0.514,
+   "c": 0.024,
+   "h": 212,
+   "ruoli": {
+    "fondo": 0.025
+   },
+   "riferimenti": {
+    "predictable": 0.025
+   },
+   "in": 1,
+   "prove": [
+    "predictable/valori/stima-predictable-scuro-video.json"
+   ]
+  },
+  {
+   "valore": "#3f3734",
+   "oklch": "oklch(0.344 0.013 42)",
+   "l": 0.344,
+   "c": 0.013,
+   "h": 42,
+   "ruoli": {
+    "fondo": 0.023
+   },
+   "riferimenti": {
+    "predictable": 0.023
+   },
+   "in": 1,
+   "prove": [
+    "predictable/valori/stima-predictable-scuro.json"
+   ]
+  },
+  {
+   "valore": "#010203",
+   "oklch": "oklch(0.082 0.008 241)",
+   "l": 0.082,
+   "c": 0.008,
+   "h": 241,
+   "ruoli": {
+    "fondo": 0.021
+   },
+   "riferimenti": {
+    "predictable": 0.021
+   },
+   "in": 1,
+   "prove": [
+    "predictable/valori/stima-predictable-scuro-video.json"
+   ]
+  },
+  {
+   "valore": "#66696c",
+   "oklch": "oklch(0.519 0.006 248)",
+   "l": 0.519,
+   "c": 0.006,
+   "h": 248,
+   "ruoli": {
+    "fondo": 0.021
+   },
+   "riferimenti": {
+    "proloquo4text": 0.021
+   },
+   "in": 1,
+   "prove": [
+    "proloquo4text/valori/stima-proloquo4text-ipad-scuro.json"
+   ]
+  },
+  {
+   "valore": "#152c24",
+   "oklch": "oklch(0.271 0.033 169)",
+   "l": 0.271,
+   "c": 0.033,
+   "h": 169,
+   "ruoli": {
+    "testo": 0.02
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.02
+   },
+   "in": 1,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-riunione-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json"
+   ]
+  },
+  {
+   "valore": "#656565",
+   "oklch": "oklch(0.507 0.000 0)",
+   "l": 0.507,
+   "c": 0,
+   "h": 0,
+   "ruoli": {
+    "testo": 0.017
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.017
+   },
+   "in": 1,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json"
+   ]
+  },
+  {
+   "valore": "#a396ac",
+   "oklch": "oklch(0.691 0.035 312)",
+   "l": 0.691,
+   "c": 0.035,
+   "h": 312,
+   "ruoli": {
+    "fondo": 0.017
+   },
+   "riferimenti": {
+    "proloquo4text": 0.017
+   },
+   "in": 1,
+   "prove": [
+    "proloquo4text/valori/stima-proloquo4text-mac-personalizzato.json"
+   ]
+  },
+  {
+   "valore": "#b5dace",
+   "oklch": "oklch(0.858 0.042 174)",
+   "l": 0.858,
+   "c": 0.042,
+   "h": 174,
+   "ruoli": {
+    "bordo": 0.016
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.016
+   },
+   "in": 1,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-riunione-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json"
+   ]
+  },
+  {
+   "valore": "#0a0a0a",
+   "oklch": "oklch(0.145 0.000 0)",
+   "l": 0.145,
+   "c": 0,
+   "h": 0,
+   "ruoli": {
+    "fondo": 0.012
+   },
+   "riferimenti": {
+    "predictable": 0.012
+   },
+   "in": 1,
+   "prove": [
+    "predictable/valori/stima-predictable-scuro-video.json"
+   ]
+  },
+  {
+   "valore": "#496259",
+   "oklch": "oklch(0.473 0.033 171)",
+   "l": 0.473,
+   "c": 0.033,
+   "h": 171,
+   "ruoli": {
+    "fondo": 0.008
+   },
+   "riferimenti": {
+    "kalliope-sito": 0.008
+   },
+   "in": 1,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-riunione-desktop.json"
+   ]
+  },
+  {
+   "valore": "#11110e",
+   "oklch": "oklch(0.176 0.006 107)",
+   "l": 0.176,
+   "c": 0.006,
+   "h": 107,
+   "ruoli": {
+    "fondo": 0.006
+   },
+   "riferimenti": {
+    "predictable": 0.006
+   },
+   "in": 1,
+   "prove": [
+    "predictable/valori/stima-predictable-scuro-video.json"
+   ]
+  },
+  {
+   "valore": "#d2f5b9",
+   "oklch": "oklch(0.930 0.087 133)",
+   "l": 0.93,
+   "c": 0.087,
+   "h": 133,
+   "ruoli": {
+    "fondo": 0.005
+   },
+   "riferimenti": {
+    "proloquo4text": 0.005
+   },
+   "in": 1,
+   "prove": [
+    "proloquo4text/valori/stima-proloquo4text-mac-personalizzato.json"
+   ]
+  }
+ ],
+ "caratteri": [
+  {
+   "famiglia": "Montserrat",
+   "generica": "sans-serif",
+   "riferimenti": {
+    "cboard": 1
+   },
+   "pesi": [
+    400,
+    500,
+    700
+   ],
+   "grandezze": [
+    12,
+    14,
+    16,
+    18
+   ],
+   "corsivo": 0,
+   "maiuscolo": 0.17,
+   "prove": [
+    "cboard/valori/cboard-board-desktop.json",
+    "cboard/valori/cboard-impostazioni-desktop.json"
+   ],
+   "in": 1
+  },
+  {
+   "famiglia": "Lexend",
+   "generica": "system-ui",
+   "riferimenti": {
+    "kalliope-sito": 1
+   },
+   "pesi": [
+    400,
+    500,
+    600,
+    700
+   ],
+   "grandezze": [
+    13,
+    15,
+    16,
+    17,
+    18,
+    20,
+    24,
+    62
+   ],
+   "corsivo": 0,
+   "maiuscolo": 0,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-riunione-desktop.json"
+   ],
+   "in": 1
+  },
+  {
+   "famiglia": "DejaVu Sans Kalliope",
+   "generica": "sans-serif",
+   "riferimenti": {
+    "kalliope-sito": 0.057
+   },
+   "pesi": [
+    400
+   ],
+   "grandezze": [
+    14
+   ],
+   "corsivo": 0,
+   "maiuscolo": 0,
+   "prove": [
+    "kalliope-sito/valori/kalliope-sito-home-chiaro-desktop.json",
+    "kalliope-sito/valori/kalliope-sito-home-scuro-desktop.json"
+   ],
+   "in": 1
+  }
+ ],
+ "movimento": [
+  {
+   "durata_ms": 200,
+   "curva": "ease",
+   "tipo": "transizione",
+   "volte": 37,
+   "riferimenti": [
+    "cboard",
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "height",
+    "none",
+    "background-color",
+    "text-decoration-color"
+   ],
+   "in": 2
+  },
+  {
+   "durata_ms": 160,
+   "curva": "linear",
+   "tipo": "transizione",
+   "volte": 34,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "opacity"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 150,
+   "curva": "cubic-bezier(0.4, 0, 0.2, 1)",
+   "tipo": "transizione",
+   "volte": 32,
+   "riferimenti": [
+    "cboard"
+   ],
+   "proprieta": [
+    "background-color",
+    "left",
+    "transform",
+    "opacity"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 200,
+   "curva": "cubic-bezier(0.4, 0, 0.2, 1)",
+   "tipo": "transizione",
+   "volte": 22,
+   "riferimenti": [
+    "cboard"
+   ],
+   "proprieta": [
+    "fill"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 240,
+   "curva": "ease",
+   "tipo": "transizione",
+   "volte": 18,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "background-color",
+    "opacity"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 160,
+   "curva": "ease",
+   "tipo": "transizione",
+   "volte": 12,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "opacity",
+    "background-color",
+    "color",
+    "transform"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 220,
+   "curva": "ease",
+   "tipo": "transizione",
+   "volte": 10,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "background-color",
+    "box-shadow"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 300,
+   "curva": "cubic-bezier(0.4, 0, 0.2, 1)",
+   "tipo": "transizione",
+   "volte": 9,
+   "riferimenti": [
+    "cboard"
+   ],
+   "proprieta": [
+    "box-shadow"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 560,
+   "curva": "cubic-bezier(0.19, 1, 0.22, 1)",
+   "tipo": "transizione",
+   "volte": 9,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "transform"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 460,
+   "curva": "cubic-bezier(0.19, 1, 0.22, 1)",
+   "tipo": "transizione",
+   "volte": 9,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "transform"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 220,
+   "curva": "cubic-bezier(0.19, 1, 0.22, 1)",
+   "tipo": "transizione",
+   "volte": 8,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "transform"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 250,
+   "curva": "cubic-bezier(0.4, 0, 0.2, 1)",
+   "tipo": "transizione",
+   "volte": 6,
+   "riferimenti": [
+    "cboard"
+   ],
+   "proprieta": [
+    "background-color",
+    "box-shadow",
+    "border"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 320,
+   "curva": "ease",
+   "tipo": "transizione",
+   "volte": 6,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "background-color",
+    "box-shadow"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 200,
+   "curva": "ease",
+   "tipo": "animazione",
+   "volte": 6,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "transform"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 520,
+   "curva": "cubic-bezier(0.19, 1, 0.22, 1)",
+   "tipo": "animazione",
+   "volte": 5,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "transform",
+    "opacity"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 300,
+   "curva": "cubic-bezier(0.19, 1, 0.22, 1)",
+   "tipo": "transizione",
+   "volte": 3,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "transform"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 240,
+   "curva": "cubic-bezier(0.19, 1, 0.22, 1)",
+   "tipo": "transizione",
+   "volte": 3,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "transform"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 350,
+   "curva": "linear",
+   "tipo": "animazione",
+   "volte": 3,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "opacity"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 225,
+   "curva": "cubic-bezier(0.4, 0, 0.2, 1)",
+   "tipo": "transizione",
+   "volte": 2,
+   "riferimenti": [
+    "cboard"
+   ],
+   "proprieta": [
+    "opacity"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 225,
+   "curva": "cubic-bezier(0, 0, 0.2, 1)",
+   "tipo": "transizione",
+   "volte": 2,
+   "riferimenti": [
+    "cboard"
+   ],
+   "proprieta": [
+    "transform"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 420,
+   "curva": "ease",
+   "tipo": "transizione",
+   "volte": 2,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "opacity"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 280,
+   "curva": "ease",
+   "tipo": "transizione",
+   "volte": 2,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "background-color",
+    "color"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 160,
+   "curva": "linear",
+   "tipo": "animazione",
+   "volte": 1,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "opacity"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 1000,
+   "curva": "steps(1)",
+   "tipo": "continua",
+   "volte": 1,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "opacity"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 1400,
+   "curva": "ease",
+   "tipo": "animazione",
+   "volte": 1,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "opacity"
+   ],
+   "in": 1
+  },
+  {
+   "durata_ms": 500,
+   "curva": "ease",
+   "tipo": "animazione",
+   "volte": 1,
+   "riferimenti": [
+    "kalliope-sito"
+   ],
+   "proprieta": [
+    "opacity"
+   ],
+   "in": 1
+  }
+ ],
+ "campoDurate": {
+  "cboard": [
+   150,
+   300
+  ],
+  "kalliope-sito": [
+   160,
+   1400
+  ]
+ },
+ "forme": {
+  "cboard": {
+   "pillole": 0,
+   "raggi": [
+    4
+   ]
+  },
+  "kalliope-sito": {
+   "pillole": 1,
+   "raggi": [
+    4
+   ]
+  }
+ },
+ "visione": null
+}

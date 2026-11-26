@@ -1,0 +1,44 @@
+{
+ "fonte": "design/lavoro/4-app/riferimenti/foto/pred-03-hero.png",
+ "ritaglio": [
+  250,
+  200,
+  780,
+  410
+ ],
+ "metodo": "stima da pixel (mediancut), non misura del DOM",
+ "colori": [
+  {
+   "valore": "#000000",
+   "quota": 0.613
+  },
+  {
+   "valore": "#131313",
+   "quota": 0.134
+  },
+  {
+   "valore": "#0e0e11",
+   "quota": 0.068
+  },
+  {
+   "valore": "#010001",
+   "quota": 0.051
+  },
+  {
+   "valore": "#9c9288",
+   "quota": 0.046
+  },
+  {
+   "valore": "#000002",
+   "quota": 0.037
+  },
+  {
+   "valore": "#030305",
+   "quota": 0.029
+  },
+  {
+   "valore": "#3f3734",
+   "quota": 0.023
+  }
+ ]
+}

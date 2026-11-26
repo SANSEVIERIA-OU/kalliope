@@ -1,0 +1,48 @@
+{
+ "url": "design/lavoro/4-app/riferimenti/fonti/p4t/ipad-1.jpg",
+ "misura": {
+  "stima": "da pixel di una schermata"
+ },
+ "colori": {
+  "fondo": [
+   {
+    "valore": "#ffffff",
+    "quota": 0.546
+   },
+   {
+    "valore": "#e5e6eb",
+    "quota": 0.164
+   },
+   {
+    "valore": "#f3f2f8",
+    "quota": 0.142
+   },
+   {
+    "valore": "#fdfdfe",
+    "quota": 0.057
+   },
+   {
+    "valore": "#f8f7fb",
+    "quota": 0.035
+   },
+   {
+    "valore": "#aeafb8",
+    "quota": 0.032
+   },
+   {
+    "valore": "#fffffd",
+    "quota": 0.014
+   },
+   {
+    "valore": "#fdffff",
+    "quota": 0.011
+   }
+  ],
+  "testo": [],
+  "bordi": [],
+  "media": 0
+ },
+ "caratteri": [],
+ "pulsanti": [],
+ "movimento": []
+}

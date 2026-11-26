@@ -1,0 +1,48 @@
+{
+ "url": "design/lavoro/4-app/riferimenti/fonti/p4t/ipad-7.jpg",
+ "misura": {
+  "stima": "da pixel di una schermata"
+ },
+ "colori": {
+  "fondo": [
+   {
+    "valore": "#000000",
+    "quota": 0.358
+   },
+   {
+    "valore": "#444444",
+    "quota": 0.328
+   },
+   {
+    "valore": "#282828",
+    "quota": 0.172
+   },
+   {
+    "valore": "#171718",
+    "quota": 0.093
+   },
+   {
+    "valore": "#020001",
+    "quota": 0.021
+   },
+   {
+    "valore": "#66696c",
+    "quota": 0.021
+   },
+   {
+    "valore": "#000002",
+    "quota": 0.007
+   },
+   {
+    "valore": "#3a444d",
+    "quota": 0.0
+   }
+  ],
+  "testo": [],
+  "bordi": [],
+  "media": 0
+ },
+ "caratteri": [],
+ "pulsanti": [],
+ "movimento": []
+}

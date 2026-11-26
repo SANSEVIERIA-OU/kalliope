@@ -1,0 +1,48 @@
+{
+ "url": "design/lavoro/4-app/riferimenti/fonti/acapela/monitor1.png",
+ "misura": {
+  "stima": "da pixel di una schermata"
+ },
+ "colori": {
+  "fondo": [
+   {
+    "valore": "#1a323d",
+    "quota": 0.614
+   },
+   {
+    "valore": "#f8f8f8",
+    "quota": 0.212
+   },
+   {
+    "valore": "#7a8e94",
+    "quota": 0.051
+   },
+   {
+    "valore": "#162b36",
+    "quota": 0.037
+   },
+   {
+    "valore": "#1a323f",
+    "quota": 0.032
+   },
+   {
+    "valore": "#1d323c",
+    "quota": 0.025
+   },
+   {
+    "valore": "#1a323b",
+    "quota": 0.021
+   },
+   {
+    "valore": "#18323e",
+    "quota": 0.008
+   }
+  ],
+  "testo": [],
+  "bordi": [],
+  "media": 0
+ },
+ "caratteri": [],
+ "pulsanti": [],
+ "movimento": []
+}

@@ -1,0 +1,23 @@
+# Riferimenti per la finestra dell'applicazione (ricerca del 26/11/2026)
+
+Raccolta fatta da `vibe-next:research` (haiku). Per ogni voce: il premio verificato sulla pagina ufficiale (oppure «nessuno»), dove vederla al lavoro e che cosa fa secondo il testo ufficiale. La ricerca non giudica l'aspetto.
+
+**Premi.** Nessuna app di comunicazione aumentativa (CAA) ha vinto un Webby o un Apple Design Award dal 2022 a oggi. Vocable ha vinto un Webby nel 2021 ed è stata solo candidata nel 2023, 2024 e 2025. Il marchio Proloquo ha vinto l'App Store Award 2023 (Cultural Impact), ma il premio non è dato a Proloquo4Text. Le app vicine al compito che hanno un premio sono app di lettura o di sottotitoli: Voice Dream Reader (ADA 2021) e Speechify (ADA 2025) per l'inclusività, Hearing Buddy finalista ADA 2026. Red Dot ha premiato solo progetti, non prodotti.
+
+| # | App | Premio verificato | Dove vederla | Piattaforma | Che cosa fa (testo ufficiale) |
+|---|---|---|---|---|---|
+| 1 | Proloquo4Text (AssistiveWare) | Il marchio Proloquo: App Store Award 2023, Cultural Impact, https://apps.apple.com/pl/iphone/story/id1705093873 | https://assistiveware.com/products/proloquo4text; video https://www.youtube.com/embed/1TaUEIJgBU0 | iPhone, iPad, Watch, Mac | «text to speech app for those who cannot rely on their voice to speak… laid out on a single screen to reduce the effort of typing» |
+| 2 | Speech Assistant AAC (ASoft) | nessuno | https://www.asoft.nl/; https://apps.apple.com/us/app/speech-assistant-aac/id1139762358 | Apple, Android | «A Text-to-Speech communication app for people who are speech impaired» |
+| 3 | Predictable (Therapy Box / PRC-Saltillo) | nessuno verificato | https://www.therapybox.co.uk/predictable-english (foto); video https://www.youtube.com/watch?v=szq_aEoAkIo | iOS, Android, Mac | «text-to-speech app, with smart word prediction, designed for people who have difficulty speaking» |
+| 4 | Apple Live Speech (+ Personal Voice) | nessuno | https://support.apple.com/105018; https://www.apple.com/newsroom/2023/05/apple-previews-live-speech-personal-voice-and-more-new-accessibility-features/ | iPhone, iPad, Mac, Watch | «type what they want to say to have it be spoken out loud during phone and FaceTime calls»; frasi salvate «to chime in quickly» |
+| 5 | Grid 3 / Grid for iPad (Smartbox) | nessuno | https://smartboxaac.com/try-grid/ (foto) | Windows, iPad | «designed to help you communicate, control your environment and do more» |
+| 6 | TD Snap (Tobii Dynavox) | nessuno | https://www.tobiidynavox.com/pages/td-snap | Windows, iPad | «flexible software offering… AAC solutions» |
+| 7 | Vocable AAC (WillowTree) | Webby 2021, Winner, Experimental & Innovation: https://winners.webbyawards.com/2021/apps-and-software/mobile-ott-app-features/experimental-innovation/168530/vocable-aac | https://vocable.app | iOS, Android | «Through head tracking or touch, Vocable gives a voice to all» |
+| 8 | Cboard (open source) | nessuno | https://www.cboard.io/; https://app.cboard.io/ | Web | «open-source app for children and adults with speech and language impairments» |
+| 9 | my AAC (NC Cultural Foundation) | iF Design, classifica dei vincitori 2025: https://ifdesign.com/en/winner-ranking/project/augmentative-alternative-communication-app-my-aac/678982 | immagini nella galleria iF | mobile | «augmentative and alternative communication service… natural AI voices» |
+| 10 | InnoCaption | Webby 2026, candidata | https://www.innocaption.com/recentnews/innocaption-launches-ai-refine-smoother-text-to-speech-calls | iOS, Android | «QuickSpeak: Pre-written phrases that are voiced aloud as soon as they're selected» |
+| 11 | Speechify | ADA 2025 Inclusivity, Winner: https://www.apple.com/sa/newsroom/2025/06/apple-unveils-winners-and-finalists-of-the-2025-apple-design-awards/ | https://speechify.com/ | iOS, Android, Mac, Windows, web | lettura ad alta voce e dettatura (non è CAA) |
+| 12 | Hearing Buddy | ADA 2026 Inclusivity, finalista: https://apps.apple.com/story/id1896567319 | https://apps.apple.com/us/app/-/id6747363502 | Apple | sottotitoli dal vivo |
+| 13 | Voice Dream Reader | ADA 2021 Inclusivity, Winner | https://www.voicedream.com/ | Apple | lettura ad alta voce (non è CAA) |
+
+Il termine di qualità indicato dal proprietario è la finestra di **Kalipso**. La si guarda solo per le idee, mai per il codice: foto in `/workspace/kalipso/artifacts/design-rebuild/` e `/workspace/kalipso/artifacts/da-cartelle-extra/library/script-library-review/`. L'identità viene dal **sito di Kalliope** (direzione 2, colori approvati il 26/11): https://sansevieria-ou.github.io/kalliope/it/ e `design-system/`.

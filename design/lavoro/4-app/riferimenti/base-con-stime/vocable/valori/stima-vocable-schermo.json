@@ -1,0 +1,56 @@
+{
+ "url": "design/lavoro/4-app/riferimenti/fonti/vocable/showcase-2.png",
+ "misura": {
+  "stima": "da pixel di una schermata"
+ },
+ "colori": {
+  "fondo": [
+   {
+    "valore": "#3b369c",
+    "quota": 0.356
+   },
+   {
+    "valore": "#26265b",
+    "quota": 0.201
+   },
+   {
+    "valore": "#4f4d91",
+    "quota": 0.13
+   },
+   {
+    "valore": "#3c369c",
+    "quota": 0.08
+   },
+   {
+    "valore": "#191934",
+    "quota": 0.072
+   },
+   {
+    "valore": "#5db1ae",
+    "quota": 0.065
+   },
+   {
+    "valore": "#3a369a",
+    "quota": 0.038
+   },
+   {
+    "valore": "#2c2b6c",
+    "quota": 0.03
+   },
+   {
+    "valore": "#3d399b",
+    "quota": 0.018
+   },
+   {
+    "valore": "#3a369c",
+    "quota": 0.009
+   }
+  ],
+  "testo": [],
+  "bordi": [],
+  "media": 0
+ },
+ "caratteri": [],
+ "pulsanti": [],
+ "movimento": []
+}

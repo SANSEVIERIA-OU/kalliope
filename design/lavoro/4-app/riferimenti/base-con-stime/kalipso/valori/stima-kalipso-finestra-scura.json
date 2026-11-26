@@ -1,0 +1,48 @@
+{
+ "url": "design/lavoro/4-app/riferimenti/fonti/kalipso/sheet-1.png",
+ "misura": {
+  "stima": "da pixel di una schermata"
+ },
+ "colori": {
+  "fondo": [
+   {
+    "valore": "#17191f",
+    "quota": 0.644
+   },
+   {
+    "valore": "#ffffff",
+    "quota": 0.203
+   },
+   {
+    "valore": "#2e323c",
+    "quota": 0.071
+   },
+   {
+    "valore": "#6174b6",
+    "quota": 0.045
+   },
+   {
+    "valore": "#d6dfec",
+    "quota": 0.025
+   },
+   {
+    "valore": "#171920",
+    "quota": 0.007
+   },
+   {
+    "valore": "#17191e",
+    "quota": 0.006
+   },
+   {
+    "valore": "#15171d",
+    "quota": 0.0
+   }
+  ],
+  "testo": [],
+  "bordi": [],
+  "media": 0
+ },
+ "caratteri": [],
+ "pulsanti": [],
+ "movimento": []
+}

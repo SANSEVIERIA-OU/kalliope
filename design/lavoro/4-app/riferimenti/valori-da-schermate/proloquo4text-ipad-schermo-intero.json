@@ -1,0 +1,44 @@
+{
+ "fonte": "design/lavoro/4-app/riferimenti/fonti/p4t/ipad-6.jpg",
+ "ritaglio": [
+  220,
+  255,
+  960,
+  725
+ ],
+ "metodo": "stima da pixel (mediancut), non misura del DOM",
+ "colori": [
+  {
+   "valore": "#ffffff",
+   "quota": 0.911
+  },
+  {
+   "valore": "#000001",
+   "quota": 0.031
+  },
+  {
+   "valore": "#01f401",
+   "quota": 0.029
+  },
+  {
+   "valore": "#fffffc",
+   "quota": 0.012
+  },
+  {
+   "valore": "#0c1c30",
+   "quota": 0.006
+  },
+  {
+   "valore": "#ebfbeb",
+   "quota": 0.005
+  },
+  {
+   "valore": "#7dab81",
+   "quota": 0.005
+  },
+  {
+   "valore": "#f0fff1",
+   "quota": 0.001
+  }
+ ]
+}

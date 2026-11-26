@@ -1,0 +1,112 @@
+{
+ "video": "cboard-tema-scuro.mp4",
+ "larghezza": 1440,
+ "altezza": 812,
+ "fotogrammi": 20,
+ "durata": 5988,
+ "frequenza": "variabile",
+ "zona": null,
+ "da": 0,
+ "a": null,
+ "soglia": 12,
+ "minimo": 400,
+ "pausa": 250,
+ "tratti": [
+  {
+   "inizio": 378,
+   "fine": 545,
+   "durata": 167,
+   "fotogrammi": 4,
+   "intervallo": 50,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.0015,
+   "quota_finale": 0.0015,
+   "transitorio": 0.0002,
+   "come": {
+    "salta": 0.677,
+    "sfuma": 0.123,
+    "altro": 0.2
+   },
+   "meta": 117,
+   "novanta": 167,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 167
+   },
+   "rettangolo": {
+    "x": 0.6708333333333333,
+    "y": 0.3111111111111111,
+    "l": 0.052083333333333336,
+    "a": 0.362962962962963
+   },
+   "celle": [
+    {
+     "ms": 28,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 378,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 428,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 495,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 545,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "cboard-tema-scuro-mv/tratto-1.jpg"
+  },
+  {
+   "inizio": 3128,
+   "fine": 3211,
+   "durata": 83,
+   "fotogrammi": 2,
+   "intervallo": 83,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.9986,
+   "quota_finale": 0.7308,
+   "transitorio": 0.2692,
+   "come": {
+    "salta": 0.11,
+    "sfuma": 0,
+    "altro": 0.89
+   },
+   "meta": 83,
+   "novanta": 83,
+   "passaggio": {
+    "mediana": 83,
+    "novanta": 83
+   },
+   "rettangolo": {
+    "x": 0.008333333333333333,
+    "y": 0.007407407407407408,
+    "l": 0.9833333333333333,
+    "a": 0.9851851851851852
+   },
+   "celle": [
+    {
+     "ms": 2894,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 3128,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 3211,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "cboard-tema-scuro-mv/tratto-2.jpg"
+  }
+ ]
+}

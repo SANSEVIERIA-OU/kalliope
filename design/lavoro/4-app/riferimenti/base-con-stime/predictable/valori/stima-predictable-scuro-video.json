@@ -1,0 +1,64 @@
+{
+ "url": "design/lavoro/4-app/riferimenti/video/predictable-frames/t80.png",
+ "misura": {
+  "stima": "da pixel di un fotogramma"
+ },
+ "colori": {
+  "fondo": [
+   {
+    "valore": "#000000",
+    "quota": 0.76
+   },
+   {
+    "valore": "#111111",
+    "quota": 0.062
+   },
+   {
+    "valore": "#171717",
+    "quota": 0.043
+   },
+   {
+    "valore": "#020001",
+    "quota": 0.031
+   },
+   {
+    "valore": "#586b6f",
+    "quota": 0.025
+   },
+   {
+    "valore": "#010203",
+    "quota": 0.021
+   },
+   {
+    "valore": "#161616",
+    "quota": 0.016
+   },
+   {
+    "valore": "#0a0a0a",
+    "quota": 0.012
+   },
+   {
+    "valore": "#000002",
+    "quota": 0.012
+   },
+   {
+    "valore": "#131313",
+    "quota": 0.007
+   },
+   {
+    "valore": "#11110e",
+    "quota": 0.006
+   },
+   {
+    "valore": "#07131b",
+    "quota": 0.006
+   }
+  ],
+  "testo": [],
+  "bordi": [],
+  "media": 0
+ },
+ "caratteri": [],
+ "pulsanti": [],
+ "movimento": []
+}

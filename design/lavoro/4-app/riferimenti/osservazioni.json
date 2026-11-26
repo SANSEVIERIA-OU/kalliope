@@ -1,0 +1,2309 @@
+{
+ "riferimenti": [
+  {
+   "id": "proloquo4text",
+   "nome": "Proloquo4Text",
+   "fonte": "https://assistiveware.com/products/proloquo4text",
+   "categoria": "CAA a testo (app e finestra Mac)",
+   "anno": 2026,
+   "premio": "nessun premio per l'app",
+   "osservazioni": [
+    {
+     "valore": {
+      "dominante": true
+     },
+     "descrizione": "stima visiva: la colonna centrale è circa il 69% della larghezza della finestra Mac",
+     "non_misurati": [
+      "quota esatta"
+     ],
+     "evidenze": [
+      "fonti/p4t-mac/sheet-1-4.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "area di scrittura più grande di ogni altro elemento della finestra",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "valore": {
+      "presente": true,
+      "forma": "tondo"
+     },
+     "descrizione": "play blu sotto il testo, al centro",
+     "evidenze": [
+      "fonti/p4t-mac/sheet-1-4.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "tasto dedicato per dire la frase",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "valore": {
+      "unita": "parola",
+      "segno": "sfondo colorato"
+     },
+     "descrizione": "schermo intero: sfondo verde acceso dietro la parola in corso; opzionale (testo ufficiale)",
+     "evidenze": [
+      "fonti/p4t/sheet-ipad-5-7.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "evidenziazione di ciò che si sta dicendo mentre la voce parla",
+     "ambito": "voce in corso"
+    },
+    {
+     "valore": {
+      "comando": "pausa"
+     },
+     "descrizione": "pausa blu nello schermo intero; «play, pause and speak-as-you-type» [L]",
+     "evidenze": [
+      "fonti/p4t/sheet-ipad-5-7.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "pausa o arresto della voce mentre parla",
+     "ambito": "voce in corso"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "tastiera fisica e Invio non descritti nelle schermate disponibili",
+     "caratteristica": "Invio come gesto che fa parlare",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non si vede una modalità compatta nelle schermate disponibili",
+     "caratteristica": "finestra o pannello compatto",
+     "ambito": "modalità compatta"
+    },
+    {
+     "valore": {
+      "posizione": "colonna a sinistra",
+      "raggruppo": "ultimi 15 minuti"
+     },
+     "evidenze": [
+      "fonti/p4t-mac/sheet-1-4.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "cronologia delle frasi già dette",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "valore": {
+      "posizione": "colonna a destra",
+      "forma": "griglia di 2 colonne"
+     },
+     "descrizione": "«Quick Talk»",
+     "evidenze": [
+      "fonti/p4t-mac/sheet-1-4.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "frasi salvate o preferite",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "assente",
+     "descrizione": "nelle 14 schermate dello store non c'è una riga di stato",
+     "evidenze": [
+      "fonti/p4t/sheet-ipad-1-4.png",
+      "fonti/p4t-mac/sheet-1-4.png"
+     ],
+     "caratteristica": "stato scritto in parole nella schermata di uso",
+     "ambito": "schermata principale"
+    },
+    {
+     "valore": {
+      "temi": [
+       "chiaro",
+       "scuro"
+      ]
+     },
+     "descrizione": "modo scuro e aspetto personalizzato in crema",
+     "evidenze": [
+      "fonti/p4t/sheet-ipad-5-7.png",
+      "fonti/p4t-mac/sheet-1-4.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "temi di colore offerti",
+     "ambito": "aspetto della finestra"
+    },
+    {
+     "valore": {
+      "modo": "impostazione"
+     },
+     "descrizione": "«Adjust appearance (font, color, text size)» [L]",
+     "non_misurati": [
+      "gradini"
+     ],
+     "evidenze": [
+      "fonti/p4t-lookup.json"
+     ],
+     "stato": "presente",
+     "caratteristica": "dimensione del testo regolabile dalla persona",
+     "ambito": "impostazioni"
+    },
+    {
+     "valore": {
+      "classe": "sans-serif"
+     },
+     "descrizione": "classificazione visiva",
+     "non_misurati": [
+      "famiglia"
+     ],
+     "evidenze": [
+      "fonti/p4t-mac/sheet-1-4.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "classe di carattere del testo dell'interfaccia",
+     "ambito": "tipografia"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non misurabile dal DOM: il riferimento è un'app mostrata da schermate",
+     "caratteristica": "famiglia di carattere misurata dal DOM",
+     "ambito": "tipografia"
+    },
+    {
+     "valore": {
+      "elenco": true,
+      "filtri": true,
+      "scarico_con_avanzamento": true
+     },
+     "descrizione": "pagina «Choose a voice», filtri Boy/Girl/Man/Woman, MB per voce, elenco di scaricamenti",
+     "evidenze": [
+      "fonti/p4t/sheet-ipad-5-7.png",
+      "fonti/p4t/sheet-ipad-1-4.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "scelta della voce con un elenco",
+     "ambito": "impostazioni di voce"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "frase da leggere mostrata durante la registrazione",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "avanzamento della creazione sempre visibile",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "riascolto della propria registrazione",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "anteprima della voce creata prima di salvare",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "consenso esplicito prima di salvare la voce",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "ripresa della registrazione in più sedute",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "controllo del microfono prima di registrare",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "consigli di qualità mostrati a chi registra",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non misurato: nessuna sequenza del gesto",
+     "caratteristica": "durata visibile del cambio di vista",
+     "ambito": "cambio di vista"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "nessuna sequenza del movimento (solo immagini ferme o video non accessibili)",
+     "caratteristica": "movimento mentre la voce parla",
+     "ambito": "voce in corso"
+    }
+   ]
+  },
+  {
+   "id": "predictable",
+   "nome": "Predictable",
+   "fonte": "https://www.therapybox.co.uk/predictable-english",
+   "categoria": "CAA a testo (app)",
+   "anno": 2026,
+   "premio": "nessun premio verificato",
+   "osservazioni": [
+    {
+     "valore": {
+      "dominante": false
+     },
+     "descrizione": "su iPad la tastiera a schermo prende circa metà dell'altezza",
+     "non_misurati": [
+      "quota esatta"
+     ],
+     "evidenze": [
+      "fonti/pred/sheet-ipad-1-6.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "area di scrittura più grande di ogni altro elemento della finestra",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "valore": {
+      "presente": true,
+      "forma": "quadrato"
+     },
+     "descrizione": "altoparlante giallo nella colonna a destra del testo; con anello ciano e tondo nel tema scuro",
+     "evidenze": [
+      "fonti/pred/sheet-ipad-1-6.png",
+      "foto/pred-03-hero.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "tasto dedicato per dire la frase",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "nelle schermate disponibili non si vede la voce in corso",
+     "caratteristica": "evidenziazione di ciò che si sta dicendo mentre la voce parla",
+     "ambito": "voce in corso"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "nelle schermate disponibili non si vede un comando di arresto",
+     "caratteristica": "pausa o arresto della voce mentre parla",
+     "ambito": "voce in corso"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "tastiera fisica e Invio non descritti nelle schermate disponibili",
+     "caratteristica": "Invio come gesto che fa parlare",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non si vede una modalità compatta nelle schermate disponibili",
+     "caratteristica": "finestra o pannello compatto",
+     "ambito": "modalità compatta"
+    },
+    {
+     "valore": {
+      "posizione": "striscia sopra il testo",
+      "voci": 3
+     },
+     "descrizione": "«History 1 | 2 | 3» nel tema scuro; «How are you? | Thanks | Yes | No» nel chiaro",
+     "evidenze": [
+      "foto/pred-03-hero.png",
+      "fonti/pred/sheet-ipad-1-6.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "cronologia delle frasi già dette",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "valore": {
+      "posizione": "griglia per categorie",
+      "forma": "griglia"
+     },
+     "descrizione": "più linguette «Notes» per testi preparati",
+     "evidenze": [
+      "fonti/pred/sheet-ipad-1-6.png",
+      "fonti/pred/sheet-ipad-7-10.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "frasi salvate o preferite",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "assente",
+     "descrizione": "nelle schermate dello store non c'è una riga di stato",
+     "evidenze": [
+      "fonti/pred/sheet-ipad-1-6.png"
+     ],
+     "caratteristica": "stato scritto in parole nella schermata di uso",
+     "ambito": "schermata principale"
+    },
+    {
+     "valore": {
+      "temi": [
+       "chiaro",
+       "scuro",
+       "alto contrasto",
+       "bassa visione"
+      ]
+     },
+     "descrizione": "modelli «Dark», «High Contrast», «Low vision»",
+     "evidenze": [
+      "fonti/pred/sheet-ipad-1-6.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "temi di colore offerti",
+     "ambito": "aspetto della finestra"
+    },
+    {
+     "valore": {
+      "modo": "impostazione"
+     },
+     "descrizione": "«Customise the layout and appearance … font size, colours» [L]",
+     "non_misurati": [
+      "gradini"
+     ],
+     "evidenze": [
+      "fonti/pred/lookup.json"
+     ],
+     "stato": "presente",
+     "caratteristica": "dimensione del testo regolabile dalla persona",
+     "ambito": "impostazioni"
+    },
+    {
+     "valore": {
+      "classe": "sans-serif"
+     },
+     "descrizione": "classificazione visiva",
+     "non_misurati": [
+      "famiglia"
+     ],
+     "evidenze": [
+      "fonti/pred/sheet-ipad-1-6.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "classe di carattere del testo dell'interfaccia",
+     "ambito": "tipografia"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non misurabile dal DOM: il riferimento è un'app mostrata da schermate",
+     "caratteristica": "famiglia di carattere misurata dal DOM",
+     "ambito": "tipografia"
+    },
+    {
+     "valore": {
+      "elenco": true,
+      "tono_velocita": true
+     },
+     "descrizione": "motore voce (Standard, Acapela, ModelTalker, SpeakUnique, The Voice Keeper) + «Speaking pitch» + cursori; filtri non visti",
+     "non_misurati": [
+      "filtri"
+     ],
+     "evidenze": [
+      "fonti/pred/sheet-ipad-1-6.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "scelta della voce con un elenco",
+     "ambito": "impostazioni di voce"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "frase da leggere mostrata durante la registrazione",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "avanzamento della creazione sempre visibile",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "riascolto della propria registrazione",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "anteprima della voce creata prima di salvare",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "consenso esplicito prima di salvare la voce",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "ripresa della registrazione in più sedute",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "controllo del microfono prima di registrare",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "consigli di qualità mostrati a chi registra",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non misurato: nessuna sequenza del gesto",
+     "caratteristica": "durata visibile del cambio di vista",
+     "ambito": "cambio di vista"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "nessuna sequenza del movimento (solo immagini ferme o video non accessibili)",
+     "caratteristica": "movimento mentre la voce parla",
+     "ambito": "voce in corso"
+    }
+   ]
+  },
+  {
+   "id": "apple-live-speech",
+   "nome": "Apple Live Speech e Personal Voice",
+   "fonte": "https://support.apple.com/en-us/105018",
+   "categoria": "funzione di sistema",
+   "anno": 2026,
+   "premio": "nessun premio",
+   "osservazioni": [
+    {
+     "stato": "non_osservato",
+     "motivo": "non osservata la finestra intera",
+     "caratteristica": "area di scrittura più grande di ogni altro elemento della finestra",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "valore": {
+      "presente": true,
+      "forma": "tasto della tastiera"
+     },
+     "descrizione": "il tasto Invio si chiama «send» (iPhone); «Speak» o Invio sul Mac [L]",
+     "evidenze": [
+      "fonti/apple/sheet-livespeech.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "tasto dedicato per dire la frase",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "valore": {
+      "unita": "parola",
+      "segno": "parte detta piena, parte da dire attenuata"
+     },
+     "descrizione": "immagine ferma di Live Speech durante la voce",
+     "non_misurati": [
+      "velocità di avanzamento"
+     ],
+     "evidenze": [
+      "fonti/apple/sheet-livespeech.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "evidenziazione di ciò che si sta dicendo mentre la voce parla",
+     "ambito": "voce in corso"
+    },
+    {
+     "valore": {
+      "comando": "pausa",
+      "forma": "tondo rosso accanto alla frase"
+     },
+     "evidenze": [
+      "fonti/apple/sheet-livespeech.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "pausa o arresto della voce mentre parla",
+     "ambito": "voce in corso"
+    },
+    {
+     "valore": {
+      "invio_parla": true
+     },
+     "descrizione": "[L] Mac: «click the Speak button or press Return»; iPhone: il tasto Invio è «send»",
+     "evidenze": [
+      "https://support.apple.com/en-us/105018",
+      "fonti/apple/sheet-livespeech.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "Invio come gesto che fa parlare",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "valore": {
+      "compatto": true
+     },
+     "descrizione": "pannello di scrittura sopra la chiamata FaceTime, che lascia vedere la persona; sul Mac la finestra non è stata vista",
+     "non_misurati": [
+      "resta sopra le altre finestre"
+     ],
+     "evidenze": [
+      "fonti/apple/sheet-livespeech.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "finestra o pannello compatto",
+     "ambito": "modalità compatta"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non si vede una cronologia nelle schermate disponibili",
+     "caratteristica": "cronologia delle frasi già dette",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "valore": {
+      "posizione": "chip «Phrases» nel pannello",
+      "forma": "elenco"
+     },
+     "evidenze": [
+      "fonti/apple/sheet-livespeech.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "frasi salvate o preferite",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "assente",
+     "descrizione": "nel pannello di Live Speech (2 immagini) non c'è testo di stato; sulla registrazione c'è «Listening…»",
+     "evidenze": [
+      "fonti/apple/sheet-livespeech.png"
+     ],
+     "caratteristica": "stato scritto in parole nella schermata di uso",
+     "ambito": "schermata principale"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non osservato",
+     "caratteristica": "temi di colore offerti",
+     "ambito": "aspetto della finestra"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non osservato",
+     "caratteristica": "dimensione del testo regolabile dalla persona",
+     "ambito": "impostazioni"
+    },
+    {
+     "valore": {
+      "classe": "sans-serif"
+     },
+     "descrizione": "classificazione visiva",
+     "non_misurati": [
+      "famiglia"
+     ],
+     "evidenze": [
+      "fonti/apple/sheet-livespeech.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "classe di carattere del testo dell'interfaccia",
+     "ambito": "tipografia"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non misurabile dal DOM: il riferimento è un'app mostrata da schermate",
+     "caratteristica": "famiglia di carattere misurata dal DOM",
+     "ambito": "tipografia"
+    },
+    {
+     "valore": {
+      "elenco": true,
+      "tono_velocita": true
+     },
+     "descrizione": "«dozens of system voices»; «Voice Settings» per tono e velocità [L]",
+     "evidenze": [
+      "foto/apple-01-accessibility-speech.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "scelta della voce con un elenco",
+     "ambito": "impostazioni di voce"
+    },
+    {
+     "valore": {
+      "frasi_per_schermata": 1,
+      "corpo": "grande, grassetto",
+      "contatore": true
+     },
+     "descrizione": "«1 of 150» nella versione 2023",
+     "evidenze": [
+      "fonti/apple/sheet-livespeech.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "frase da leggere mostrata durante la registrazione",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "valore": {
+      "forma": "contatore «n of N»"
+     },
+     "evidenze": [
+      "fonti/apple/sheet-livespeech.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "avanzamento della creazione sempre visibile",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non visto nelle schermate disponibili",
+     "caratteristica": "riascolto della propria registrazione",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non visto nelle schermate disponibili",
+     "caratteristica": "anteprima della voce creata prima di salvare",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non visto nelle schermate disponibili",
+     "caratteristica": "consenso esplicito prima di salvare la voce",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "valore": {
+      "comando": "«Done» salva, «Continue Recording» riprende"
+     },
+     "descrizione": "[L] pagina di supporto 104993",
+     "evidenze": [
+      "https://support.apple.com/en-us/104993"
+     ],
+     "stato": "presente",
+     "caratteristica": "ripresa della registrazione in più sedute",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non visto nelle schermate disponibili",
+     "caratteristica": "controllo del microfono prima di registrare",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non visto nelle schermate disponibili",
+     "caratteristica": "consigli di qualità mostrati a chi registra",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non misurato: nessuna sequenza del gesto",
+     "caratteristica": "durata visibile del cambio di vista",
+     "ambito": "cambio di vista"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "nessuna sequenza del movimento (solo immagini ferme o video non accessibili)",
+     "caratteristica": "movimento mentre la voce parla",
+     "ambito": "voce in corso"
+    }
+   ]
+  },
+  {
+   "id": "vocable",
+   "nome": "Vocable AAC",
+   "fonte": "https://vocable.app",
+   "categoria": "CAA con testa e tocco (app)",
+   "anno": 2026,
+   "premio": "Webby 2021 Winner, Experimental & Innovation",
+   "osservazioni": [
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha un campo di scrittura",
+     "caratteristica": "area di scrittura più grande di ogni altro elemento della finestra",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "valore": {
+      "presente": true,
+      "forma": "quadrato"
+     },
+     "descrizione": "tasto ciano con altoparlante, in basso a destra della tastiera",
+     "evidenze": [
+      "fonti/vocable/sheet-showcase.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "tasto dedicato per dire la frase",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "nelle schermate disponibili non si vede la voce in corso",
+     "caratteristica": "evidenziazione di ciò che si sta dicendo mentre la voce parla",
+     "ambito": "voce in corso"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "nelle schermate disponibili non si vede un comando di arresto",
+     "caratteristica": "pausa o arresto della voce mentre parla",
+     "ambito": "voce in corso"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "tastiera fisica e Invio non descritti nelle schermate disponibili",
+     "caratteristica": "Invio come gesto che fa parlare",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non si vede una modalità compatta nelle schermate disponibili",
+     "caratteristica": "finestra o pannello compatto",
+     "ambito": "modalità compatta"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non si vede una cronologia nelle schermate disponibili",
+     "caratteristica": "cronologia delle frasi già dette",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "valore": {
+      "posizione": "icona fumetto nella tastiera",
+      "forma": "elenco"
+     },
+     "descrizione": "«My Sayings», con avviso «Saved to My Sayings»",
+     "evidenze": [
+      "fonti/vocable/sheet-showcase.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "frasi salvate o preferite",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "nelle schermate principali disponibili",
+     "caratteristica": "stato scritto in parole nella schermata di uso",
+     "ambito": "schermata principale"
+    },
+    {
+     "valore": {
+      "temi": [
+       "scuro"
+      ]
+     },
+     "descrizione": "un solo aspetto, indaco",
+     "evidenze": [
+      "fonti/vocable/sheet-showcase.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "temi di colore offerti",
+     "ambito": "aspetto della finestra"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non osservato",
+     "caratteristica": "dimensione del testo regolabile dalla persona",
+     "ambito": "impostazioni"
+    },
+    {
+     "valore": {
+      "classe": "sans-serif"
+     },
+     "descrizione": "classificazione visiva",
+     "non_misurati": [
+      "famiglia"
+     ],
+     "evidenze": [
+      "fonti/vocable/sheet-showcase.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "classe di carattere del testo dell'interfaccia",
+     "ambito": "tipografia"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non misurabile dal DOM: il riferimento è un'app mostrata da schermate",
+     "caratteristica": "famiglia di carattere misurata dal DOM",
+     "ambito": "tipografia"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non si vede nelle schermate disponibili",
+     "caratteristica": "scelta della voce con un elenco",
+     "ambito": "impostazioni di voce"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "frase da leggere mostrata durante la registrazione",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "avanzamento della creazione sempre visibile",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "riascolto della propria registrazione",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "anteprima della voce creata prima di salvare",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "consenso esplicito prima di salvare la voce",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "ripresa della registrazione in più sedute",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "controllo del microfono prima di registrare",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "consigli di qualità mostrati a chi registra",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non misurato: nessuna sequenza del gesto",
+     "caratteristica": "durata visibile del cambio di vista",
+     "ambito": "cambio di vista"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "nessuna sequenza del movimento (solo immagini ferme o video non accessibili)",
+     "caratteristica": "movimento mentre la voce parla",
+     "ambito": "voce in corso"
+    }
+   ]
+  },
+  {
+   "id": "cboard",
+   "nome": "Cboard",
+   "fonte": "https://app.cboard.io/",
+   "categoria": "CAA a simboli (web app, usata dal vivo)",
+   "anno": 2026,
+   "premio": "nessun premio",
+   "osservazioni": [
+    {
+     "stato": "non_osservato",
+     "motivo": "non osservata la finestra intera",
+     "caratteristica": "area di scrittura più grande di ogni altro elemento della finestra",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "assente",
+     "descrizione": "la barra di uscita ha solo «Backspace» e «Clear»; si parla toccando la tessera o la barra",
+     "evidenze": [
+      "foto/cboard-03-yes.png"
+     ],
+     "caratteristica": "tasto dedicato per dire la frase",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "assente",
+     "descrizione": "nello screencast della frase detta dalla barra lo schermo cambia solo all'inizio, poi resta fermo per tutta la voce",
+     "evidenze": [
+      "video/cboard-output-speak-mv/misure.json"
+     ],
+     "caratteristica": "evidenziazione di ciò che si sta dicendo mentre la voce parla",
+     "ambito": "voce in corso"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "nelle schermate disponibili non si vede un comando di arresto",
+     "caratteristica": "pausa o arresto della voce mentre parla",
+     "ambito": "voce in corso"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "tastiera fisica e Invio non descritti nelle schermate disponibili",
+     "caratteristica": "Invio come gesto che fa parlare",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non si vede una modalità compatta nelle schermate disponibili",
+     "caratteristica": "finestra o pannello compatto",
+     "ambito": "modalità compatta"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non si vede una cronologia nelle schermate disponibili",
+     "caratteristica": "cronologia delle frasi già dette",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "valore": {
+      "posizione": "tavola «quick chat»",
+      "forma": "griglia di tessere"
+     },
+     "evidenze": [
+      "foto/cboard-09-quickchat.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "frasi salvate o preferite",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "assente",
+     "descrizione": "sulla tavola, dal vivo, nessuna riga di stato",
+     "evidenze": [
+      "foto/cboard-03-yes.png"
+     ],
+     "caratteristica": "stato scritto in parole nella schermata di uso",
+     "ambito": "schermata principale"
+    },
+    {
+     "valore": {
+      "temi": [
+       "chiaro"
+      ]
+     },
+     "descrizione": "esiste «Enable dark theme», ma dopo «SAVE» il tema scuro non risultava applicato",
+     "evidenze": [
+      "foto/cboard-08-display.png",
+      "foto/cboard-12-tema-scuro.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "temi di colore offerti",
+     "ambito": "aspetto della finestra"
+    },
+    {
+     "valore": {
+      "modo": "gradini",
+      "gradini": 3
+     },
+     "descrizione": "Standard / Large / Extra Large, effetto dopo «SAVE»",
+     "evidenze": [
+      "foto/cboard-11-fontsize-menu.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "dimensione del testo regolabile dalla persona",
+     "ambito": "impostazioni"
+    },
+    {
+     "valore": {
+      "classe": "sans-serif"
+     },
+     "descrizione": "misurato con valori.js: Montserrat",
+     "evidenze": [
+      "valori/cboard-board-desktop.json"
+     ],
+     "stato": "presente",
+     "caratteristica": "classe di carattere del testo dell'interfaccia",
+     "ambito": "tipografia"
+    },
+    {
+     "valore": {
+      "famiglia": "Montserrat",
+      "pesi": [
+       700,
+       400
+      ],
+      "grandezze_px": [
+       14,
+       16
+      ]
+     },
+     "descrizione": "tavola; impostazioni 400/500 a 12, 14, 18 px",
+     "evidenze": [
+      "valori/cboard-board-desktop.json",
+      "valori/cboard-impostazioni-desktop.json"
+     ],
+     "stato": "presente",
+     "caratteristica": "famiglia di carattere misurata dal DOM",
+     "ambito": "tipografia"
+    },
+    {
+     "valore": {
+      "elenco": true,
+      "tono_velocita": true
+     },
+     "descrizione": "«Voice», «Pitch», «Rate»; campo per la chiave ElevenLabs",
+     "evidenze": [
+      "foto/cboard-07-speech.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "scelta della voce con un elenco",
+     "ambito": "impostazioni di voce"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "frase da leggere mostrata durante la registrazione",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "avanzamento della creazione sempre visibile",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "riascolto della propria registrazione",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "anteprima della voce creata prima di salvare",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "consenso esplicito prima di salvare la voce",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "ripresa della registrazione in più sedute",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "controllo del microfono prima di registrare",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "consigli di qualità mostrati a chi registra",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "valore": {
+      "durata_visibile_ms": 383,
+      "punti_che_saltano_pct": 92
+     },
+     "descrizione": "apertura di una cartella; ritorno e interruzione non provati",
+     "evidenze": [
+      "video/cboard-folder-open-mv/misure.json"
+     ],
+     "stato": "presente",
+     "caratteristica": "durata visibile del cambio di vista",
+     "ambito": "cambio di vista"
+    },
+    {
+     "stato": "assente",
+     "descrizione": "nessuna variazione dello schermo durante la voce",
+     "evidenze": [
+      "video/cboard-output-speak-mv/misure.json"
+     ],
+     "caratteristica": "movimento mentre la voce parla",
+     "ambito": "voce in corso"
+    }
+   ]
+  },
+  {
+   "id": "grid3",
+   "nome": "Grid 3",
+   "fonte": "https://smartboxaac.com/grid-software/",
+   "categoria": "CAA (Windows, iPad)",
+   "anno": 2026,
+   "premio": "nessun premio",
+   "osservazioni": [
+    {
+     "valore": {
+      "dominante": false
+     },
+     "descrizione": "la finestra del messaggio è circa il 40% dell'altezza, sopra funzioni e tastiera",
+     "non_misurati": [
+      "quota esatta"
+     ],
+     "evidenze": [
+      "fonti/grid/sheet-grid.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "area di scrittura più grande di ogni altro elemento della finestra",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "valore": {
+      "presente": true,
+      "forma": "icona con etichetta"
+     },
+     "descrizione": "«Speak», fumetto nero con etichetta, colonna a destra del testo",
+     "evidenze": [
+      "fonti/grid/sheet-grid.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "tasto dedicato per dire la frase",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "nelle schermate disponibili non si vede la voce in corso",
+     "caratteristica": "evidenziazione di ciò che si sta dicendo mentre la voce parla",
+     "ambito": "voce in corso"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "nelle schermate disponibili non si vede un comando di arresto",
+     "caratteristica": "pausa o arresto della voce mentre parla",
+     "ambito": "voce in corso"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "tastiera fisica e Invio non descritti nelle schermate disponibili",
+     "caratteristica": "Invio come gesto che fa parlare",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non si vede una modalità compatta nelle schermate disponibili",
+     "caratteristica": "finestra o pannello compatto",
+     "ambito": "modalità compatta"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non si vede una cronologia nelle schermate disponibili",
+     "caratteristica": "cronologia delle frasi già dette",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non si vede nelle schermate disponibili",
+     "caratteristica": "frasi salvate o preferite",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "assente",
+     "descrizione": "nella schermata di scrittura non c'è una riga di stato",
+     "evidenze": [
+      "fonti/grid/sheet-grid.png"
+     ],
+     "caratteristica": "stato scritto in parole nella schermata di uso",
+     "ambito": "schermata principale"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non osservato",
+     "caratteristica": "temi di colore offerti",
+     "ambito": "aspetto della finestra"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non osservato",
+     "caratteristica": "dimensione del testo regolabile dalla persona",
+     "ambito": "impostazioni"
+    },
+    {
+     "valore": {
+      "classe": "sans-serif"
+     },
+     "descrizione": "classificazione visiva",
+     "non_misurati": [
+      "famiglia"
+     ],
+     "evidenze": [
+      "fonti/grid/sheet-grid.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "classe di carattere del testo dell'interfaccia",
+     "ambito": "tipografia"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non misurabile dal DOM: il riferimento è un'app mostrata da schermate",
+     "caratteristica": "famiglia di carattere misurata dal DOM",
+     "ambito": "tipografia"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non si vede nelle schermate disponibili",
+     "caratteristica": "scelta della voce con un elenco",
+     "ambito": "impostazioni di voce"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "frase da leggere mostrata durante la registrazione",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "avanzamento della creazione sempre visibile",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "riascolto della propria registrazione",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "anteprima della voce creata prima di salvare",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "consenso esplicito prima di salvare la voce",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "ripresa della registrazione in più sedute",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "controllo del microfono prima di registrare",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "consigli di qualità mostrati a chi registra",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non misurato: nessuna sequenza del gesto",
+     "caratteristica": "durata visibile del cambio di vista",
+     "ambito": "cambio di vista"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "nessuna sequenza del movimento (solo immagini ferme o video non accessibili)",
+     "caratteristica": "movimento mentre la voce parla",
+     "ambito": "voce in corso"
+    }
+   ]
+  },
+  {
+   "id": "elevenlabs-ivc",
+   "nome": "ElevenLabs Instant Voice Clone",
+   "fonte": "https://elevenlabs.io/docs/eleven-creative/voices/voice-cloning/instant-voice-cloning",
+   "categoria": "flusso di creazione della voce",
+   "anno": 2026,
+   "premio": "non applicabile",
+   "osservazioni": [
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha un campo di scrittura",
+     "caratteristica": "area di scrittura più grande di ogni altro elemento della finestra",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non fa parlare chi scrive",
+     "caratteristica": "tasto dedicato per dire la frase",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "evidenziazione di ciò che si sta dicendo mentre la voce parla",
+     "ambito": "voce in corso"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "pausa o arresto della voce mentre parla",
+     "ambito": "voce in corso"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non fa parlare chi scrive",
+     "caratteristica": "Invio come gesto che fa parlare",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "finestra o pannello compatto",
+     "ambito": "modalità compatta"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "cronologia delle frasi già dette",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "frasi salvate o preferite",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: non è una schermata di uso quotidiano",
+     "caratteristica": "stato scritto in parole nella schermata di uso",
+     "ambito": "schermata principale"
+    },
+    {
+     "valore": {
+      "temi": [
+       "chiaro"
+      ]
+     },
+     "descrizione": "modale bianca",
+     "evidenze": [
+      "fonti/elevenlabs/ivc-modal-crop.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "temi di colore offerti",
+     "ambito": "aspetto della finestra"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non osservato",
+     "caratteristica": "dimensione del testo regolabile dalla persona",
+     "ambito": "impostazioni"
+    },
+    {
+     "valore": {
+      "classe": "sans-serif"
+     },
+     "descrizione": "classificazione visiva",
+     "non_misurati": [
+      "famiglia"
+     ],
+     "evidenze": [
+      "fonti/elevenlabs/ivc-modal-crop.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "classe di carattere del testo dell'interfaccia",
+     "ambito": "tipografia"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non misurabile dal DOM: il riferimento è un'app mostrata da schermate",
+     "caratteristica": "famiglia di carattere misurata dal DOM",
+     "ambito": "tipografia"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "scelta della voce con un elenco",
+     "ambito": "impostazioni di voce"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "la schermata di registrazione non è pubblica (serve un account)",
+     "caratteristica": "frase da leggere mostrata durante la registrazione",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "valore": {
+      "forma": "elenco di passi con tre stati"
+     },
+     "descrizione": "Upload audio (puntino verde), Voice Information (grassetto), Finish up (grigio)",
+     "evidenze": [
+      "fonti/elevenlabs/ivc-modal-crop.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "avanzamento della creazione sempre visibile",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non visto nelle schermate disponibili",
+     "caratteristica": "riascolto della propria registrazione",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "valore": {
+      "forma": "tasto «Preview voice» accanto al nome"
+     },
+     "evidenze": [
+      "fonti/elevenlabs/ivc-modal-crop.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "anteprima della voce creata prima di salvare",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "valore": {
+      "forma": "casella con testo legale intero"
+     },
+     "evidenze": [
+      "fonti/elevenlabs/ivc-modal-crop.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "consenso esplicito prima di salvare la voce",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non visto nelle schermate disponibili",
+     "caratteristica": "ripresa della registrazione in più sedute",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non visto nelle schermate disponibili",
+     "caratteristica": "controllo del microfono prima di registrare",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "valore": {
+      "forma": "consigli corti con numeri",
+      "numeri": [
+       "1-2 minuti",
+       "oltre 3 minuti peggiora",
+       "-23...-18 dB RMS"
+      ]
+     },
+     "evidenze": [
+      "foto/el-01-ivc-modal.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "consigli di qualità mostrati a chi registra",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non misurato: nessuna sequenza del gesto",
+     "caratteristica": "durata visibile del cambio di vista",
+     "ambito": "cambio di vista"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "nessuna sequenza del movimento (solo immagini ferme o video non accessibili)",
+     "caratteristica": "movimento mentre la voce parla",
+     "ambito": "voce in corso"
+    }
+   ]
+  },
+  {
+   "id": "acapela-mov",
+   "nome": "Acapela My Own Voice",
+   "fonte": "https://mov.acapela-group.com/faq/faq-computer/",
+   "categoria": "flusso di creazione della voce",
+   "anno": 2026,
+   "premio": "non applicabile",
+   "osservazioni": [
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha un campo di scrittura",
+     "caratteristica": "area di scrittura più grande di ogni altro elemento della finestra",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non fa parlare chi scrive",
+     "caratteristica": "tasto dedicato per dire la frase",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "evidenziazione di ciò che si sta dicendo mentre la voce parla",
+     "ambito": "voce in corso"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "pausa o arresto della voce mentre parla",
+     "ambito": "voce in corso"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non fa parlare chi scrive",
+     "caratteristica": "Invio come gesto che fa parlare",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "finestra o pannello compatto",
+     "ambito": "modalità compatta"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "cronologia delle frasi già dette",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "frasi salvate o preferite",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: non è una schermata di uso quotidiano",
+     "caratteristica": "stato scritto in parole nella schermata di uso",
+     "ambito": "schermata principale"
+    },
+    {
+     "valore": {
+      "temi": [
+       "chiaro"
+      ]
+     },
+     "descrizione": "finestra chiara con pannello scuro",
+     "evidenze": [
+      "fonti/acapela/sheet-monitor.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "temi di colore offerti",
+     "ambito": "aspetto della finestra"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non osservato",
+     "caratteristica": "dimensione del testo regolabile dalla persona",
+     "ambito": "impostazioni"
+    },
+    {
+     "valore": {
+      "classe": "sans-serif"
+     },
+     "descrizione": "testo delle frasi e dei comandi; il logo «acapela Recorder» ha un carattere con le grazie",
+     "non_misurati": [
+      "famiglia"
+     ],
+     "evidenze": [
+      "fonti/acapela/sheet-monitor.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "classe di carattere del testo dell'interfaccia",
+     "ambito": "tipografia"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non misurabile dal DOM: il riferimento è un'app mostrata da schermate",
+     "caratteristica": "famiglia di carattere misurata dal DOM",
+     "ambito": "tipografia"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "scelta della voce con un elenco",
+     "ambito": "impostazioni di voce"
+    },
+    {
+     "valore": {
+      "frasi_per_schermata": 3,
+      "corrente_evidenziata": true,
+      "contatore": true
+     },
+     "descrizione": "precedente e successiva attenuate; 50 frasi [L]",
+     "evidenze": [
+      "fonti/acapela/sheet-monitor.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "frase da leggere mostrata durante la registrazione",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "valore": {
+      "forma": "quadrante con percentuale e conteggio"
+     },
+     "descrizione": "«24% 359/1501» in un cerchio turchese",
+     "evidenze": [
+      "fonti/acapela/sheet-monitor.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "avanzamento della creazione sempre visibile",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "valore": {
+      "forma": "tasto tondo dedicato (cuffia con microfono)"
+     },
+     "evidenze": [
+      "fonti/acapela/sheet-monitor.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "riascolto della propria registrazione",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non visto nelle schermate disponibili",
+     "caratteristica": "anteprima della voce creata prima di salvare",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non visto nelle schermate disponibili",
+     "caratteristica": "consenso esplicito prima di salvare la voce",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "valore": {
+      "comando": "più sedute, calibrazione a ogni seduta"
+     },
+     "descrizione": "[L] FAQ",
+     "evidenze": [
+      "https://mov.acapela-group.com/faq/faq-computer/"
+     ],
+     "stato": "presente",
+     "caratteristica": "ripresa della registrazione in più sedute",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "valore": {
+      "forma": "calibrazione contando",
+      "conta_fino_a": 6
+     },
+     "descrizione": "tutti i tasti spenti tranne «avanti»",
+     "evidenze": [
+      "fonti/acapela/sheet-monitor.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "controllo del microfono prima di registrare",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "valore": {
+      "forma": "FAQ: stanza, microfono a cuffia, stessa distanza"
+     },
+     "evidenze": [
+      "https://mov.acapela-group.com/faq/faq-computer/"
+     ],
+     "stato": "presente",
+     "caratteristica": "consigli di qualità mostrati a chi registra",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non misurato: nessuna sequenza del gesto",
+     "caratteristica": "durata visibile del cambio di vista",
+     "ambito": "cambio di vista"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "nessuna sequenza del movimento (solo immagini ferme o video non accessibili)",
+     "caratteristica": "movimento mentre la voce parla",
+     "ambito": "voce in corso"
+    }
+   ]
+  },
+  {
+   "id": "speechify",
+   "nome": "Speechify (Mac)",
+   "fonte": "https://speechify.com/mac/",
+   "categoria": "lettura e dettatura (app)",
+   "anno": 2026,
+   "premio": "Apple Design Award 2025, Inclusivity, Winner",
+   "osservazioni": [
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha un campo di scrittura",
+     "caratteristica": "area di scrittura più grande di ogni altro elemento della finestra",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non fa parlare chi scrive",
+     "caratteristica": "tasto dedicato per dire la frase",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "nelle schermate disponibili non si vede la voce in corso",
+     "caratteristica": "evidenziazione di ciò che si sta dicendo mentre la voce parla",
+     "ambito": "voce in corso"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "nelle schermate disponibili non si vede un comando di arresto",
+     "caratteristica": "pausa o arresto della voce mentre parla",
+     "ambito": "voce in corso"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non fa parlare chi scrive",
+     "caratteristica": "Invio come gesto che fa parlare",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "finestra o pannello compatto",
+     "ambito": "modalità compatta"
+    },
+    {
+     "valore": {
+      "posizione": "elenco nella vista Home",
+      "raggruppo": "giorni"
+     },
+     "descrizione": "ora a sinistra, chip «Dictated in <app>», testo sotto (cronologia di dettatura e ascolto, non di voce per chi non parla)",
+     "evidenze": [
+      "fonti/speechify/mac-hero-1400.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "cronologia delle frasi già dette",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non si vede nelle schermate disponibili",
+     "caratteristica": "frasi salvate o preferite",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: non è una schermata di uso quotidiano",
+     "caratteristica": "stato scritto in parole nella schermata di uso",
+     "ambito": "schermata principale"
+    },
+    {
+     "valore": {
+      "temi": [
+       "chiaro"
+      ]
+     },
+     "descrizione": "la finestra dell'app è chiara; il tema scuro non è stato visto",
+     "evidenze": [
+      "fonti/speechify/mac-hero-1400.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "temi di colore offerti",
+     "ambito": "aspetto della finestra"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non osservato",
+     "caratteristica": "dimensione del testo regolabile dalla persona",
+     "ambito": "impostazioni"
+    },
+    {
+     "valore": {
+      "classe": "sans-serif"
+     },
+     "descrizione": "classificazione visiva",
+     "non_misurati": [
+      "famiglia"
+     ],
+     "evidenze": [
+      "fonti/speechify/mac-hero-1400.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "classe di carattere del testo dell'interfaccia",
+     "ambito": "tipografia"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non misurabile dal DOM: il riferimento è un'app mostrata da schermate",
+     "caratteristica": "famiglia di carattere misurata dal DOM",
+     "ambito": "tipografia"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non si vede nelle schermate disponibili",
+     "caratteristica": "scelta della voce con un elenco",
+     "ambito": "impostazioni di voce"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "frase da leggere mostrata durante la registrazione",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "avanzamento della creazione sempre visibile",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "riascolto della propria registrazione",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "anteprima della voce creata prima di salvare",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "consenso esplicito prima di salvare la voce",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "ripresa della registrazione in più sedute",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "controllo del microfono prima di registrare",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "consigli di qualità mostrati a chi registra",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non misurato: nessuna sequenza del gesto",
+     "caratteristica": "durata visibile del cambio di vista",
+     "ambito": "cambio di vista"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "nessuna sequenza del movimento (solo immagini ferme o video non accessibili)",
+     "caratteristica": "movimento mentre la voce parla",
+     "ambito": "voce in corso"
+    }
+   ]
+  },
+  {
+   "id": "sito-kalliope",
+   "nome": "Sito di Kalliope",
+   "fonte": "https://sansevieria-ou.github.io/kalliope/it/",
+   "categoria": "termine di paragone: identità",
+   "anno": 2026,
+   "premio": "non applicabile",
+   "osservazioni": [
+    {
+     "valore": {
+      "dominante": false
+     },
+     "descrizione": "nella demo il campo è una riga dentro la ricostruzione della finestra 0.1",
+     "evidenze": [
+      "foto/kal-01-home-scuro.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "area di scrittura più grande di ogni altro elemento della finestra",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "valore": {
+      "presente": true,
+      "forma": "rettangolo"
+     },
+     "descrizione": "«Parla» e «Ferma» nella finestra 0.1 ricostruita; Invio parla",
+     "evidenze": [
+      "video/kalliope-demo-home-mv/tratto-3.jpg"
+     ],
+     "stato": "presente",
+     "caratteristica": "tasto dedicato per dire la frase",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "valore": {
+      "unita": "parola",
+      "segno": "parole dette scure, da dire chiare"
+     },
+     "descrizione": "demo della home: 17 parole in circa 6085 ms visibili (tratto 4), con anelli e barre",
+     "evidenze": [
+      "video/kalliope-demo-home-mv/tratto-4.jpg",
+      "video/kalliope-demo-home-mv/misure.json"
+     ],
+     "stato": "presente",
+     "caratteristica": "evidenziazione di ciò che si sta dicendo mentre la voce parla",
+     "ambito": "voce in corso"
+    },
+    {
+     "valore": {
+      "comando": "ferma"
+     },
+     "descrizione": "«Ferma» si accende mentre parla; interruzione non provata",
+     "evidenze": [
+      "video/kalliope-demo-home-mv/tratto-3.jpg"
+     ],
+     "stato": "presente",
+     "caratteristica": "pausa o arresto della voce mentre parla",
+     "ambito": "voce in corso"
+    },
+    {
+     "valore": {
+      "invio_parla": true
+     },
+     "descrizione": "demo: «Scrivi qui e premi Invio per parlare»",
+     "evidenze": [
+      "foto/kal-01-home-scuro.png",
+      "video/kalliope-demo-home-mv/tratto-3.jpg"
+     ],
+     "stato": "presente",
+     "caratteristica": "Invio come gesto che fa parlare",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non si vede una modalità compatta nelle schermate disponibili",
+     "caratteristica": "finestra o pannello compatto",
+     "ambito": "modalità compatta"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non si vede una cronologia nelle schermate disponibili",
+     "caratteristica": "cronologia delle frasi già dette",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non si vede nelle schermate disponibili",
+     "caratteristica": "frasi salvate o preferite",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "valore": {
+      "forma": "striscia sopra il campo"
+     },
+     "descrizione": "«Pronta. In Zoom, Teams, Meet…» e «Sto parlando…»",
+     "evidenze": [
+      "video/kalliope-demo-home-mv/tratto-3.jpg"
+     ],
+     "stato": "presente",
+     "caratteristica": "stato scritto in parole nella schermata di uso",
+     "ambito": "schermata principale"
+    },
+    {
+     "valore": {
+      "temi": [
+       "scuro"
+      ]
+     },
+     "descrizione": "tema chiaro assente: nessun prefers-color-scheme nel sistema; la home «chiara» emulata è uguale alla scura",
+     "evidenze": [
+      "valori/kalliope-sito-home-chiaro-desktop.json",
+      "valori/kalliope-sito-home-scuro-desktop.json"
+     ],
+     "stato": "presente",
+     "caratteristica": "temi di colore offerti",
+     "ambito": "aspetto della finestra"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non osservato",
+     "caratteristica": "dimensione del testo regolabile dalla persona",
+     "ambito": "impostazioni"
+    },
+    {
+     "valore": {
+      "classe": "sans-serif"
+     },
+     "descrizione": "misurato con valori.js: Lexend; la finestra imitata usa DejaVu Sans",
+     "evidenze": [
+      "valori/kalliope-sito-home-scuro-desktop.json"
+     ],
+     "stato": "presente",
+     "caratteristica": "classe di carattere del testo dell'interfaccia",
+     "ambito": "tipografia"
+    },
+    {
+     "valore": {
+      "famiglia": "Lexend",
+      "pesi": [
+       700,
+       400,
+       500,
+       600
+      ]
+     },
+     "descrizione": "97% del testo; titolo 62 px, interlettera -1,116 px",
+     "non_misurati": [
+      "grandezze di tutte le righe"
+     ],
+     "evidenze": [
+      "valori/kalliope-sito-home-scuro-desktop.json"
+     ],
+     "stato": "presente",
+     "caratteristica": "famiglia di carattere misurata dal DOM",
+     "ambito": "tipografia"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "scelta della voce con un elenco",
+     "ambito": "impostazioni di voce"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "frase da leggere mostrata durante la registrazione",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "avanzamento della creazione sempre visibile",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "riascolto della propria registrazione",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "anteprima della voce creata prima di salvare",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "consenso esplicito prima di salvare la voce",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "ripresa della registrazione in più sedute",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "controllo del microfono prima di registrare",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "consigli di qualità mostrati a chi registra",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non misurato: nessuna sequenza del gesto",
+     "caratteristica": "durata visibile del cambio di vista",
+     "ambito": "cambio di vista"
+    },
+    {
+     "valore": {
+      "parole_in_sequenza": true,
+      "anelli": true,
+      "barre": true,
+      "durata_visibile_ms": 6085
+     },
+     "descrizione": "17 parole; anelli menta dal riquadro «Tu»; equalizzatore",
+     "evidenze": [
+      "video/kalliope-demo-home-mv/misure.json",
+      "video/kalliope-demo-home-mv/tratto-4.jpg"
+     ],
+     "stato": "presente",
+     "caratteristica": "movimento mentre la voce parla",
+     "ambito": "voce in corso"
+    }
+   ]
+  },
+  {
+   "id": "kalipso",
+   "nome": "Finestra di Kalipso",
+   "fonte": "/workspace/kalipso/artifacts/design-rebuild/",
+   "categoria": "termine di paragone: metro di qualità",
+   "anno": 2026,
+   "premio": "non applicabile",
+   "osservazioni": [
+    {
+     "stato": "non_osservato",
+     "motivo": "non osservata la finestra intera",
+     "caratteristica": "area di scrittura più grande di ogni altro elemento della finestra",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non fa parlare chi scrive",
+     "caratteristica": "tasto dedicato per dire la frase",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "evidenziazione di ciò che si sta dicendo mentre la voce parla",
+     "ambito": "voce in corso"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "pausa o arresto della voce mentre parla",
+     "ambito": "voce in corso"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non fa parlare chi scrive",
+     "caratteristica": "Invio come gesto che fa parlare",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "valore": {
+      "compatto": true
+     },
+     "descrizione": "pannello stretto con la stessa gerarchia del largo",
+     "non_misurati": [
+      "resta sopra le altre finestre"
+     ],
+     "evidenze": [
+      "fonti/kalipso/sheet-2.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "finestra o pannello compatto",
+     "ambito": "modalità compatta"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "cronologia delle frasi già dette",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "frasi salvate o preferite",
+     "ambito": "finestra di scrittura"
+    },
+    {
+     "valore": {
+      "forma": "riga sotto i comandi"
+     },
+     "descrizione": "«Manual · Microphone off»",
+     "evidenze": [
+      "fonti/kalipso/sheet-1.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "stato scritto in parole nella schermata di uso",
+     "ambito": "schermata principale"
+    },
+    {
+     "valore": {
+      "temi": [
+       "chiaro",
+       "scuro"
+      ]
+     },
+     "descrizione": "suggeritore scuro, libreria chiara",
+     "evidenze": [
+      "fonti/kalipso/sheet-1.png",
+      "fonti/kalipso/sheet-3.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "temi di colore offerti",
+     "ambito": "aspetto della finestra"
+    },
+    {
+     "valore": {
+      "modo": "più piccolo / più grande"
+     },
+     "descrizione": "«Smaller» / «Larger», con prove a 150% e 200% in cui tutta la finestra cresce",
+     "evidenze": [
+      "fonti/kalipso/sheet-1.png",
+      "fonti/kalipso/sheet-3.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "dimensione del testo regolabile dalla persona",
+     "ambito": "impostazioni"
+    },
+    {
+     "valore": {
+      "classe": "sans-serif"
+     },
+     "descrizione": "classificazione visiva (sembra DejaVu Sans)",
+     "non_misurati": [
+      "famiglia"
+     ],
+     "evidenze": [
+      "fonti/kalipso/sheet-1.png"
+     ],
+     "stato": "presente",
+     "caratteristica": "classe di carattere del testo dell'interfaccia",
+     "ambito": "tipografia"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non misurabile dal DOM: il riferimento è un'app mostrata da schermate",
+     "caratteristica": "famiglia di carattere misurata dal DOM",
+     "ambito": "tipografia"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "scelta della voce con un elenco",
+     "ambito": "impostazioni di voce"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "frase da leggere mostrata durante la registrazione",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "avanzamento della creazione sempre visibile",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "riascolto della propria registrazione",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "anteprima della voce creata prima di salvare",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "consenso esplicito prima di salvare la voce",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "ripresa della registrazione in più sedute",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "controllo del microfono prima di registrare",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non pertinente: il riferimento non ha questo compito",
+     "caratteristica": "consigli di qualità mostrati a chi registra",
+     "ambito": "creazione della voce propria"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "non misurato: nessuna sequenza del gesto",
+     "caratteristica": "durata visibile del cambio di vista",
+     "ambito": "cambio di vista"
+    },
+    {
+     "stato": "non_osservato",
+     "motivo": "nessuna sequenza del movimento (solo immagini ferme o video non accessibili)",
+     "caratteristica": "movimento mentre la voce parla",
+     "ambito": "voce in corso"
+    }
+   ]
+  }
+ ]
+}

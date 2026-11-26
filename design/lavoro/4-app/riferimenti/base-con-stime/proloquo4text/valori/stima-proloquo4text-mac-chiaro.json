@@ -1,0 +1,48 @@
+{
+ "url": "design/lavoro/4-app/riferimenti/fonti/p4t-mac/mac-1.jpg",
+ "misura": {
+  "stima": "da pixel di una schermata"
+ },
+ "colori": {
+  "fondo": [
+   {
+    "valore": "#ffffff",
+    "quota": 0.667
+   },
+   {
+    "valore": "#ececec",
+    "quota": 0.245
+   },
+   {
+    "valore": "#fffffd",
+    "quota": 0.03
+   },
+   {
+    "valore": "#f8f8f9",
+    "quota": 0.025
+   },
+   {
+    "valore": "#afb8c4",
+    "quota": 0.018
+   },
+   {
+    "valore": "#eeeceb",
+    "quota": 0.009
+   },
+   {
+    "valore": "#e7f0f5",
+    "quota": 0.004
+   },
+   {
+    "valore": "#f9fffe",
+    "quota": 0.002
+   }
+  ],
+  "testo": [],
+  "bordi": [],
+  "media": 0
+ },
+ "caratteri": [],
+ "pulsanti": [],
+ "movimento": []
+}

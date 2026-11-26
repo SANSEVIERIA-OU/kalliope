@@ -1,0 +1,52 @@
+{
+ "fonte": "design/lavoro/4-app/riferimenti/fonti/grid/Try-grid-preview-text-comm.png",
+ "ritaglio": [
+  210,
+  100,
+  530,
+  400
+ ],
+ "metodo": "stima da pixel (mediancut), non misura del DOM",
+ "colori": [
+  {
+   "valore": "#47704c",
+   "quota": 0.523
+  },
+  {
+   "valore": "#ffffff",
+   "quota": 0.268
+  },
+  {
+   "valore": "#5c5c5c",
+   "quota": 0.086
+  },
+  {
+   "valore": "#4b4f54",
+   "quota": 0.066
+  },
+  {
+   "valore": "#feffff",
+   "quota": 0.02
+  },
+  {
+   "valore": "#111112",
+   "quota": 0.016
+  },
+  {
+   "valore": "#dddede",
+   "quota": 0.013
+  },
+  {
+   "valore": "#6e6b6a",
+   "quota": 0.007
+  },
+  {
+   "valore": "#48637f",
+   "quota": 0.001
+  },
+  {
+   "valore": "#41526b",
+   "quota": 0.0
+  }
+ ]
+}
