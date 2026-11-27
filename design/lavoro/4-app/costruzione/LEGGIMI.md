@@ -139,3 +139,12 @@ Giudizio: `design/lavoro/4-app/giudizio/giudizio-costruzione.md` (nessun difetto
 | M-10 «Informazioni» dice 0.2 | la riga viene da `CARGO_PKG_VERSION` | nessuna riga a mano: `tools/version.py` cambia la versione del Cargo e la finestra la legge | — |
 
 Non toccato per ordine del coordinatore: `Speaker::say`, `Line::play`, l'araldo e `Line::exact` in `engine.rs` (I-4, le parole della voce propria: ramo `sincronia`).
+
+### Impronte e verifiche del giro (sugli stessi file finali)
+
+- Commit `5a62aaa` (sopra `93ee4f9`). Albero `crates/ design-system/ tools/ Cargo.toml Cargo.lock`: sha256 `7867b1f5fffb06a1…`. Binario di rilascio `target-direzione/release/kalliope`, costruito dagli stessi file: sha256 `9146fa5884e87721…`
+  (il binario del giudizio era `c3c74634…`; le foto e i controlli con display sono sul binario rapido costruito dagli stessi sorgenti).
+- `cargo fmt --all -- --check` pulito; `cargo clippy --workspace --all-targets -- -D warnings` pulito; `cargo test --workspace` con i modelli verde (75 test nell'app); 214+ test Python verdi; `tools/slint_valori.py` verde.
+- `tools/controlla_finestra.py` (display): sul binario del giudizio 5 difetti (`costruzione-prove/log/controlla-finestra-prima.txt`: il clic a 125, 150, 175 e 200%, il piede a 640 × 580), sul corretto nessuno (`controlla-finestra-dopo2.txt`: margine da 12 a 24 px a tutte le misure, il testo compare a ogni clic).
+- Le scene dell'approvata (vuota, scrive, cronologia, microfono, problema) restano uguali a 920 × 640: 0–114 pixel diversi su 588 800 (il cursore). Il passo del nome con un tratto: 0,27% (l'anello del fuoco).
+- Misure rifatte: a riposo la demo 0,2% di un core e 30 MB, il motore vero 0,4% e 135 MB; parlando per 20 s 7,05% di un core (voce 4,1%, finestra 2,8%; prima 2,4%), picco 240 MB. La finestra costa un po' di più mentre parla (il posto della bolla e la riga di stato si animano per mezzo secondo a ogni frase).
