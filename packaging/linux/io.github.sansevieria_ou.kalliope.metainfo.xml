@@ -37,7 +37,7 @@
   </supports>
   <content_rating type="oars-1.1"/>
   <releases>
-    <release version="0.4" date="2026-11-27" type="development">
+    <release version="0.4" date="2026-11-27">
       <description>
         <p>The window speaks the language of the system: the 24 languages of the European Union, and Chinese, Hindi, Arabic, Bengali, Indonesian and Urdu, with the window mirrored for Arabic and Urdu and a typeface for each script. The voices still speak Italian only. The window fits small screens and remembers where it was, the words light up when they are heard, and Kalliope ends when its window is destroyed.</p>
       </description>

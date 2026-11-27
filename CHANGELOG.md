@@ -4,7 +4,7 @@ Kalliope's versions go up one step at a time (0.1, 0.2 … 0.9, 1.0, 1.1 …). E
 published for every supported system (see [docs/releasing.md](docs/releasing.md)). This file lists
 what each version brings, for the people who use it.
 
-## 0.4 — not yet released
+## 0.4 — 27 November 2026
 
 Kalliope in your language, and a window that fits your screen.
 
