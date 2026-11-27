@@ -131,7 +131,13 @@ def cmd_status(args, sito=SITO, lingue=LINGUE):
             print(f"  {codice}  {cldr.info(codice)['nome']}: no file")
         else:
             stato = "published" if e.completa else "NOT published"
-            print(f"  {codice}  {cldr.info(codice)['nome']}: {e.riassunto(totale)} → {stato}")
+            # where the entries still to do are: the website's or the program's (a language is ready when both are whole)
+            nel_programma = sum(1 for v in mod.voci if v.ctx.startswith("programma."))
+            non_pronte = e.mancanti + e.fuori_data + e.fuzzy
+            programma = nel_programma - sum(1 for c in non_pronte if c.startswith("programma."))
+            sito = (totale - nel_programma) - sum(1 for c in non_pronte if not c.startswith("programma."))
+            print(f"  {codice}  {cldr.info(codice)['nome']}: {e.riassunto(totale)} (website {sito}/{totale - nel_programma}, "
+                  f"program {programma}/{nel_programma}) → {stato}")
     return 0
 
 

@@ -298,6 +298,21 @@ class CatalogoDelProgramma(unittest.TestCase):
         (self.crates / "app" / "src" / "a.rs").write_text('fn f() { tr!("programma.s.nuova" => "Nuova"); }')
         self.assertEqual(translations.main(["extract", "--check"] + argv), 1)
 
+    def test_status_dice_a_che_punto_sono_il_sito_e_il_programma(self):
+        import contextlib, io
+        argv = ["--website", str(self.sito), "--app", str(self.crates)]
+        translations.main(["extract"] + argv)
+        # a French file with the website's two messages translated and the program's four not
+        cat = self.lingua("fr", lambda c: [setattr(v, "str", [""] * len(v.str)) for v in c.voci if v.ctx.startswith("programma.")])
+        (self.sito / "lingue" / "fr.po").write_text(po.scrivi(cat), encoding="utf-8")
+        out = io.StringIO()
+        with contextlib.redirect_stdout(out):
+            translations.main(["status"] + argv)
+        riga = next(r for r in out.getvalue().splitlines() if r.strip().startswith("fr "))
+        self.assertIn("website 2/2", riga)
+        self.assertIn("program 0/4", riga)
+        self.assertIn("NOT published", riga)
+
     def test_senza_app_una_copia_del_sito_non_ha_messaggi_del_programma(self):
         pagine, tutti, errori = translations.carica(self.sito)
         self.assertEqual(list(tutti), ["titolo", "p"])
