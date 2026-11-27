@@ -42,7 +42,7 @@ jobs:
           sudo apt-get install -y -q --no-install-recommends xvfb xdotool imagemagick dbus python3-gi gir1.2-glib-2.0 python3-fonttools python3-brotli
           # What the deb requires for the window, and nothing that would bring it by chance (tools/test_packaging.py checks the list).
           sudo apt-get install -y -q --no-install-recommends libxkbcommon0 libxkbcommon-x11-0 libwayland-client0 libx11-6 libx11-xcb1 libxcb1 libxcursor1 libxi6
-      - name: Website translations, mirrored style sheets, the mark, the window's values and typefaces
+      - name: Translations of the website and of the program, mirrored style sheets, the mark, the window's values and typefaces
         run: |
           python3 -I tools/translations.py extract --check
           python3 -I tools/translations.py check
@@ -72,6 +72,12 @@ jobs:
       # With KALLIOPE_MODEL_DIR and KALLIOPE_POCKET_DIR set, the tests of both voices run for real.
       - name: Tests, with the models
         run: cargo test --workspace --locked
+      # en-XA and ar-XB exist only with the `pseudo` feature (tests only): the catalogue's plural rules, the pseudo texts and the language
+      # choice are tested in the crate that holds them, and the window still builds with them in.
+      - name: The program's pseudo-languages
+        run: |
+          cargo test -p kalliope-i18n --features pseudo --locked
+          cargo check -p kalliope-app --features pseudo --locked
       - name: kalliope-cli says a sentence
         run: |
           cargo run -q -p kalliope-cli --locked -- say -o say.wav "Buongiorno a tutti, scusate il ritardo."

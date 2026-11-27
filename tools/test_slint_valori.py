@@ -49,11 +49,11 @@ class Catches(unittest.TestCase):
             ("component A { Rectangle { width: 1phx; } }", "LUNGHEZZA"),
             ("component A { Rectangle { width: 0.5rem; } }", "LUNGHEZZA"),
             ("component A { Rectangle { width: 10pt; } }", "LUNGHEZZA"),
-            ("component A { Text { font-size: 16px; } }", "LUNGHEZZA"),
+            ("component A { Rectangle { font-size: 16px; } }", "LUNGHEZZA"),
             ("component A { Rectangle { animate x { duration: 200ms; } } }", "DURATA"),
             ("component A { Rectangle { animate x { duration: 1.5s; } } }", "DURATA"),
-            ('component A { Text { font-family: "Lexend"; } }', "CARATTERE"),
-            ("component A { Text { font-weight: 600; } }", "CARATTERE"),
+            ('component A { Rectangle { font-family: "Lexend"; } }', "CARATTERE"),
+            ("component A { Rectangle { font-weight: 600; } }", "CARATTERE"),
         ]:
             with self.subTest(line=line):
                 defects, process = self.broken(line)

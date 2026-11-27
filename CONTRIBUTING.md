@@ -70,7 +70,7 @@ these variables: the packages bring ONNX Runtime and the models, and the program
 themselves. Updating those files is for maintainers, with the owner's permission to upload:
 [docs/releasing.md](docs/releasing.md).
 
-On Linux, install the fontconfig development files before compiling the desktop binary (on Ubuntu, `libfontconfig-dev`). The window is one Slint window on every desktop: there is no Qt, GTK or Python to install. Its values are generated from `design-system/token.css` (`crates/tokens`), and `python3 -I tools/slint_valori.py` rejects a colour, length, duration or typeface written by hand in `crates/app/ui/*.slint`.
+On Linux, install the fontconfig development files before compiling the desktop binary (on Ubuntu, `libfontconfig-dev`). The window is one Slint window on every desktop: there is no Qt, GTK or Python to install. Its values are generated from `design-system/token.css` (`crates/tokens`), and `python3 -I tools/slint_valori.py` rejects a colour, length, duration or typeface written by hand in `crates/app/ui/*.slint`. Every text the window shows goes through the catalogue shared with the website: `@tr("programma.area.name" => "Testo italiano")` in a `.slint` file, `tr!(…)` and `trn!(…)` in Rust; then run `python3 -I tools/translations.py extract` (CI fails without it). Every `Text`, `TextInput` and `Image` of the window turns itself back for the mirror of right-to-left languages, and each text names its side and its distance between lines: `slint_valori.py` checks that too. `docs/translating.md`, «The program», is the guide.
 
 CI runs these checks on Linux for every push, and also on Windows and macOS for `main`. The Linux
 packages are made by `packaging/linux/build-packages.sh`; [docs/releasing.md](docs/releasing.md)

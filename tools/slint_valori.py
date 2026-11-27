@@ -11,6 +11,10 @@ design-system/TOKEN.md, «La finestra del programma»). A .slint file under DIR 
   LUNGHEZZA  a length other than zero: 12px, 1phx, 0.5rem, 10pt
   DURATA     a duration other than zero: 200ms, 1.5s
   CARATTERE  a font family as a string, or a number as a font weight
+  SPECCHIO   a Text or TextInput without `horizontal-alignment` (Slint lays «start» out as left: Aspetto.inizio is the side of the
+             language) or without `line-height-factor` (Aspetto.interlinea: the distance between lines each script asks for), or a Text, TextInput or Image without `transform-scale-x: Token.verso`: the window mirrors from right to left by turning
+             round as a whole (ui/app.slint), so every text, field and picture turns itself back; none of them may be the root of
+             a component, where Slint ignores the property
 
 A value that is right stays, with `// fisso: the reason` on the same line (a hairline that must be one device
 pixel, say). The generated file (its first line says «Generated from design-system/token.css») is not checked.
@@ -28,7 +32,9 @@ CONTROLLI = [
     ("LUNGHEZZA", re.compile(r"(?<![\w#.-])(" + NUMERO + r")(?:px|phx|rem|em|pt|cm|mm|in)\b")),
     ("DURATA", re.compile(r"(?<![\w#.-])(" + NUMERO + r")(?:ms|s)\b")),
     ("CARATTERE", re.compile(r"\bfont-family\s*:\s*\"|\bfont-weight\s*:\s*\d")),
+    # SPECCHIO is not a pattern: see specchio()
 ]
+ELEMENTI_CHE_SI_LEGGONO = ("Text", "TextInput", "Image")
 MARCA = re.compile(r"//\s*fisso:\s*\S")
 
 
@@ -60,12 +66,60 @@ def codice(testo):
     return "".join(out)
 
 
+def specchio(path, testo, nomi):
+    """The elements that are read (a Text, a TextInput, an Image, and the components of this file that inherit one of them) that do not
+    turn themselves back: [(riga, nome)]. A component whose root is one of them cannot: Slint ignores a transform on a root."""
+    pulito = codice(testo)
+    letti = set(ELEMENTI_CHE_SI_LEGGONO)
+    letti_con_lato = {"Text", "TextInput"}
+    out = []
+    # the components of this file that are a Text, TextInput or Image: the property must be where they are used
+    for m in re.finditer(r"\bcomponent\s+([A-Za-z][\w-]*)\s+inherits\s+(Text|TextInput|Image)\b", pulito):
+        letti.add(m.group(1))
+        if m.group(2) != "Image":
+            # the side is asked for once, in the definition (a root property other than a transform is fine)
+            inizio, depth = m.end(), 0
+            j = pulito.index("{", inizio)
+            k = j
+            while k < len(pulito):
+                depth += {"{": 1, "}": -1}.get(pulito[k], 0)
+                k += 1
+                if depth == 0:
+                    break
+            if not re.search(r"\bhorizontal-alignment\s*:", testo[j:k]):
+                out.append((testo.count("\n", 0, m.start()) + 1, m.group(1) + " without horizontal-alignment"))
+            elif not re.search(r"\bline-height-factor\s*:", testo[j:k]):
+                out.append((testo.count("\n", 0, m.start()) + 1, m.group(1) + " without line-height-factor"))
+    for m in re.finditer(r"(?<![\w-])(" + "|".join(sorted(letti)) + r")\s*\{", pulito):
+        if re.search(r"\binherits\s+$", pulito[max(0, m.start() - 12):m.start()]):
+            continue   # `component X inherits Text {`: the definition, not a use
+        # the body of the element, up to the brace that closes it
+        depth, i = 1, m.end()
+        while i < len(pulito) and depth:
+            depth += {"{": 1, "}": -1}.get(pulito[i], 0)
+            i += 1
+        corpo = testo[m.end():i - 1]
+        riga = testo.count("\n", 0, m.start()) + 1
+        if not re.search(r"transform-scale-x:\s*Token\.verso\s*;", corpo):
+            out.append((riga, m.group(1)))
+        # a text is laid out from the left unless it asks for its side (Slint's «start» is left): a Text or a TextInput says
+        # `horizontal-alignment` (Aspetto.inizio, or its own: centre)
+        elif m.group(1) != "Image" and m.group(1) in letti_con_lato and not re.search(r"\bhorizontal-alignment\s*:", corpo):
+            out.append((riga, m.group(1) + " without horizontal-alignment"))
+        elif m.group(1) != "Image" and m.group(1) in letti_con_lato and not re.search(r"\bline-height-factor\s*:", corpo):
+            out.append((riga, m.group(1) + " without line-height-factor"))
+    return out
+
+
 def controlla_file(path):
     testo = path.read_text(encoding="utf-8")
     if testo.startswith("// Generated from design-system/token.css"):
         return []
     righe = testo.split("\n")
     difetti = []
+    for numero, nome in specchio(path, testo, ELEMENTI_CHE_SI_LEGGONO):
+        if not MARCA.search(righe[numero - 1]):
+            difetti.append((path, numero, "SPECCHIO", nome, righe[numero - 1].strip()))
     for numero, riga in enumerate(codice(testo).split("\n"), 1):
         if MARCA.search(righe[numero - 1]):
             continue
