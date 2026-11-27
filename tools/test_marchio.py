@@ -335,7 +335,8 @@ class NelSito(unittest.TestCase):
         cls.tmp = pathlib.Path(tempfile.mkdtemp(prefix="l3-sito-"))
         cls.v, cls.grezzi = sito_py.values(RILASCIO)
         cls.out = cls.tmp / "out"
-        opzioni = {"pseudo": False, "senza_selettore": False, "base_url": "https://esempio.test/k/", "lingue": None, "website": RADICE / "website",
+        # Italian only: the test counts the pages of one language
+        opzioni = {"pseudo": False, "senza_selettore": False, "base_url": "https://esempio.test/k/", "lingue": {"it"}, "website": RADICE / "website",
                    "system": SISTEMA}
         sito_py.build(cls.out, cls.v, cls.grezzi, opzioni)
 

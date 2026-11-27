@@ -531,7 +531,8 @@ class SitoVero(unittest.TestCase):
     def setUpClass(cls):
         cls.tmp = pathlib.Path(tempfile.mkdtemp(prefix="lavoro-2b-sitovero-"))
         cls.v, cls.grezzi = sito_py.values(RILASCIO)
-        cls.una = cls.costruisci(cls.tmp / "una", RADICE / "website")
+        # the languages are named: the real catalogue has more of them than these tests are about
+        cls.una = cls.costruisci(cls.tmp / "una", RADICE / "website", {"it"})
         w = cls.tmp / "due-website"
         shutil.copytree(RADICE / "website", w)
         pagine, tutti, _ = catalogo.raccogli(w)
@@ -540,15 +541,15 @@ class SitoVero(unittest.TestCase):
             for voce in cat.voci:
                 voce.str = [f(voce.id)] if voce.id_plurale is None else [f(voce.id if i == 0 else voce.id_plurale) for i in range(len(voce.str))]
             (w / "lingue" / f"{codice}.po").write_text(po.scrivi(cat), encoding="utf-8")
-        cls.due = cls.costruisci(cls.tmp / "due", w)
+        cls.due = cls.costruisci(cls.tmp / "due", w, {"it", "en", "ar"})
 
     @classmethod
     def tearDownClass(cls):
         shutil.rmtree(cls.tmp, True)
 
     @classmethod
-    def costruisci(cls, out, website):
-        opzioni = {"pseudo": False, "senza_selettore": False, "base_url": "https://esempio.test/k/", "lingue": None, "website": website,
+    def costruisci(cls, out, website, lingue):
+        opzioni = {"pseudo": False, "senza_selettore": False, "base_url": "https://esempio.test/k/", "lingue": lingue, "website": website,
                    "system": RADICE / "design-system"}
         sito_py.build(out, cls.v, cls.grezzi, opzioni)
         return out
