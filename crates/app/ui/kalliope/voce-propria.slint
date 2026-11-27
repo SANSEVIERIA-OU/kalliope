@@ -12,6 +12,9 @@ export component Passi inherits HorizontalLayout {
     // a narrow window: only the step one is on, with «n di 3»
     in property <bool> compatti: false;
     // TRANSLATORS: The name of the second step of making a voice (the person reads a text aloud)
+    // TRANSLATORS(programma.crea.passo-scegli): The name of the first of the three steps of creating a voice, shown in a row at the top: record or import. Short.
+    // TRANSLATORS(programma.crea.passo-leggi): The name of the second step: the person reads a text aloud. Short.
+    // TRANSLATORS(programma.crea.passo-nome): The name of the third step: listen to the voice and give it a name. Short.
     in property <[string]> nomi: [@tr("programma.crea.passo-scegli" => "Registra o importa"), @tr("programma.crea.passo-leggi" => "Leggi ad alta voce"), @tr("programma.crea.passo-nome" => "Ascolta e dai un nome")];
     spacing: Token.spazio-largo * Aspetto.scala;
     if root.compatti: Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
@@ -73,6 +76,8 @@ export component Registra inherits Rectangle {
     in property <bool> occupato: false;
     callback premuto();
     accessible-role: button;
+    // TRANSLATORS(programma.crea.registra): The name of the big round record button, read by screen readers: it starts recording.
+    // TRANSLATORS(programma.crea.ferma-registrazione): The same round button while it records: it stops recording.
     accessible-label: root.registra ? @tr("programma.crea.ferma-registrazione" => "Ferma la registrazione") : @tr("programma.crea.registra" => "Registra");
     accessible-enabled: !root.occupato;
     accessible-action-default => { if (!root.occupato) { root.premuto(); } }
@@ -320,6 +325,7 @@ export component RigaTratto inherits Rectangle {
             }
             Pulsante {
                 y: (parent.height - self.height) / 2;
+                // TRANSLATORS(programma.crea.ascolta): A button that plays a recording or a stretch of one. A verb.
                 testo: root.ascolta ? @tr("programma.comune.ferma" => "Ferma") : @tr("programma.crea.ascolta" => "Ascolta");
                 // TRANSLATORS: Read aloud by a screen reader: {} is the name of the stretch
                 accessible-label: root.ascolta ? @tr("programma.crea.ferma-ascolto-tratto" => "Ferma l'ascolto di {}", root.tratto.titolo) : @tr("programma.crea.ascolta-tratto" => "Ascolta {}", root.tratto.titolo);
@@ -356,14 +362,18 @@ component PassoScelta inherits VerticalLayout {
         // the focus enters the step on its main way, so the keyboard needs no search
         init => { self.focus(); }
         principale: true;
+        // TRANSLATORS(programma.crea.se-hai-ancora-voce): A small line over the first choice: this way is for a person who can still speak.
         per-chi: @tr("programma.crea.se-hai-ancora-voce" => "Se hai ancora la voce");
+        // TRANSLATORS(programma.crea.registrala-adesso): The first choice for creating a voice: record it now, reading a short text aloud («la» is the voice). A title.
         titolo: @tr("programma.crea.registrala-adesso" => "Registrala adesso");
         testo: @tr("programma.crea.istruzioni-registra" => "Leggi ad alta voce un breve testo. Bastano dodici secondi di voce chiara, meglio finché la voce è forte.");
         scelta => { Creazione.registra-scelta(); }
     }
     if !Creazione.importa-in-corso: Strada {
         principale: false;
+        // TRANSLATORS(programma.crea.se-voce-non-c): A small line over the second choice: this way is for a person who can no longer speak.
         per-chi: @tr("programma.crea.se-voce-non-c" => "Se la voce non c'è più");
+        // TRANSLATORS(programma.crea.usa-vecchie-registrazioni): The second choice: create the voice from recordings made before (voice messages, videos). A title.
         titolo: @tr("programma.crea.usa-vecchie-registrazioni" => "Usa vecchie registrazioni");
         testo: @tr("programma.crea.messaggio-vocale-video-registrazione" => "Un messaggio vocale, un video, una registrazione di prima: WAV, FLAC, MP3, OGG, OPUS, M4A, MP4 o WEBM.");
         scelta => { Creazione.importa(); }
@@ -403,6 +413,7 @@ component PassoRegistra inherits VerticalLayout {
     // more than one microphone: the person chooses which hears the voice (never Kalliope's own)
     if Creazione.microfoni.length > 1 && !Creazione.registra && !Creazione.apro && !Creazione.controllo: VerticalLayout {
         spacing: Token.spazio-minimo * Aspetto.scala;
+        // TRANSLATORS(programma.crea.microfono): A label over the menu where the person picks the microphone to record with.
         Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: @tr("programma.crea.microfono" => "Microfono"); font-size: Token.corpo-nota * Aspetto.scala; color: Token.testo-tenue; }
         for m[i] in Creazione.microfoni: RigaMicrofono {
             nome: m;
@@ -440,6 +451,7 @@ component PassoRegistra inherits VerticalLayout {
             Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
                 text: Creazione.apro ? @tr("programma.crea.apro-microfono" => "Apro il microfono…")
                     : Creazione.controllo ? @tr("programma.crea.controllo-registrazione" => "Controllo la registrazione…")
+                    // TRANSLATORS(programma.crea.premi-tondo-leggi): The instruction over the round record button before recording: press it and read the text below aloud. Short.
                     : !Creazione.registra ? @tr("programma.crea.premi-tondo-leggi" => "Premi il tondo e leggi")
                     : root.basta ? root.tempo
                     // TRANSLATORS: While the voice is recorded: {0} is the time recorded so far («3,2 s»); {n} is how many whole seconds of clear voice are still needed
@@ -480,6 +492,8 @@ component PassoAscolta inherits VerticalLayout {
         spacing: Token.spazio-largo * Aspetto.scala;
         ascolta-comando := Pulsante {
             init => { self.focus(); }
+            // TRANSLATORS(programma.crea.ascolta-registrazione): A button that plays the recording just made.
+            // TRANSLATORS(programma.crea.ferma-ascolto): A button that stops playing the recording.
             testo: Creazione.ascolto >= 0 ? @tr("programma.crea.ferma-ascolto" => "Ferma l'ascolto") : @tr("programma.crea.ascolta-registrazione" => "Ascolta la registrazione");
             tipo: Tipo.quieto;
             // listening stays possible when no voice can be made: to hear why is the way to know what to record again
@@ -488,6 +502,7 @@ component PassoAscolta inherits VerticalLayout {
         }
         Livello { attivo: Creazione.ascolto >= 0; forma: true; forza: 0.6; horizontal-stretch: 1; height: Token.altezza-comando * Aspetto.scala; }
         Pulsante {
+            // TRANSLATORS(programma.crea.rifai): A button that throws the recording away to record again. A verb, short.
             testo: @tr("programma.crea.rifai" => "Rifai");
             tipo: Tipo.nudo;
             premuto => { Creazione.rifai(); }
@@ -564,6 +579,7 @@ component PassoAscolta inherits VerticalLayout {
                 text <=> Creazione.nome;
                 font-size: Token.corpo-bolla * Aspetto.scala;
                 color: Token.testo;
+                // TRANSLATORS(programma.crea.nome-voce): The name of the field where the person writes the name of the new voice, read by screen readers.
                 accessible-label: @tr("programma.crea.nome-voce" => "Nome della voce");
                 edited => { Creazione.nome-modificato(); }
                 accepted => { consenso-voce.focus(); }
@@ -627,13 +643,17 @@ export component CreaVoce inherits Rectangle {
         spacing: Token.spazio-largo * Aspetto.scala;
         HorizontalLayout {
             spacing: Token.spazio-largo * Aspetto.scala;
+            // TRANSLATORS(programma.crea.torna-a-scrivere): A button at the top of the steps of creating a voice: it leaves them and goes back to the main window, where the person writes the sentences to say. It means «back to writing», not «write again».
             primo := Pulsante { testo: root.stretta ? "" : @tr("programma.crea.torna-a-scrivere" => "Torna a scrivere"); indietro: true; accessible-label: @tr("programma.crea.torna-a-scrivere" => "Torna a scrivere"); tipo: Tipo.nudo; piccolo: true; premuto => { Creazione.esci(); } }
             Rectangle { horizontal-stretch: 1; }
             Passi { passo: Creazione.passo; compatti: root.stretta; }
         }
         Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
+            // TRANSLATORS(programma.crea.titolo-scegli): The title of the first step of creating a voice: how the person wants to create it.
             text: Creazione.passo == 0 ? @tr("programma.crea.titolo-scegli" => "Come vuoi creare la tua voce?")
+                // TRANSLATORS(programma.crea.titolo-leggi): The title of the step where the person reads a text aloud, calmly.
                 : Creazione.passo == 1 ? @tr("programma.crea.titolo-leggi" => "Leggi ad alta voce, con calma")
+                // TRANSLATORS(programma.crea.titolo-nome): The title of the last step: listen to the voice and give it a name («la» is the voice).
                 : @tr("programma.crea.titolo-nome" => "Ascoltala e dalle un nome");
             font-size: Token.corpo-titolo * Aspetto.scala;
             font-weight: Token.peso-titolo;
@@ -686,6 +706,7 @@ export component CreaVoce inherits Rectangle {
                     color: Token.testo-tenue;
                 }
                 Pulsante {
+                    // TRANSLATORS(programma.crea.crea-voce): The last button of the steps: it creates the voice with the name given.
                     testo: Creazione.nome-conferma != "" ? Creazione.nome-conferma : @tr("programma.crea.crea-voce" => "Crea la voce");
                     tipo: Tipo.pieno;
                     abilitato: Creazione.utilizzabile && Creazione.nome-valido(Creazione.nome) && Creazione.consenso;

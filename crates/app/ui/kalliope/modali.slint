@@ -120,6 +120,7 @@ export component Informazioni inherits Modale {
                         premuto => { root.apri-sito(); }
                     }
                 }
+                // TRANSLATORS(programma.modali.cosa-c-dentro): A heading in the About window, over the list of the parts Kalliope is made of (the voices, ONNX Runtime, Slint…).
                 Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: @tr("programma.modali.cosa-c-dentro" => "Che cosa c'è dentro"); color: Token.testo-tenue; font-size: Token.corpo-nota * Aspetto.scala; }
                 Credito { nome: "Klein-TTS-X1.5-Pro"; licenza: "Apache-2.0"; ruolo: @tr("programma.modali.voci-giulia-marco" => "Le voci Giulia e Marco."); }
                 Credito { nome: "ONNX Runtime"; licenza: "MIT"; ruolo: @tr("programma.modali.fa-girare-voci-su" => "Fa girare le voci su questo computer."); }
@@ -140,6 +141,7 @@ export component Informazioni inherits Modale {
         }
         HorizontalLayout {
             alignment: end;
+            // TRANSLATORS(programma.modali.chiudi): The button that closes the About window.
             chiudi-comando := Pulsante { testo: @tr("programma.modali.chiudi" => "Chiudi"); tipo: Tipo.pieno; premuto => { root.chiusa(); } }
         }
     }

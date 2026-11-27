@@ -228,6 +228,7 @@ export component Finestra inherits Rectangle {
                 }
                 if !root.minima: Pulsante {
                     y: (parent.height - self.height) / 2;
+                    // TRANSLATORS(programma.finestra.riunione): A button in the bar of the window: it switches to the compact meeting mode, a small window to keep beside Zoom or Meet. One short word.
                     testo: @tr("programma.finestra.riunione" => "Riunione"); piccolo: true; tipo: Tipo.quieto;
                     // TRANSLATORS: Read aloud by a screen reader for the «Riunione» button: the meeting mode shows the writing, the state and Stop
                     accessible-label: @tr("programma.finestra.modalita-riunione-solo-scrittura" => "Modalità riunione: solo scrittura, stato e Ferma");
@@ -235,6 +236,7 @@ export component Finestra inherits Rectangle {
                 }
                 altro := Pulsante {
                     y: (parent.height - self.height) / 2;
+                    // TRANSLATORS(programma.finestra.altro): A button in the bar that opens a menu of more commands (create your own voice, about, clear the history). One short word, like «More» in other programs.
                     testo: @tr("programma.finestra.altro" => "Altro"); piccolo: true; tipo: Tipo.quieto;
                     // TRANSLATORS: Read aloud by a screen reader for the «Altro» menu: say what it holds
                     accessible-label: @tr("programma.finestra.altro-crea-tua-voce" => "Altro: crea la tua voce, informazioni");
@@ -247,6 +249,7 @@ export component Finestra inherits Rectangle {
                         // TRANSLATORS: The button that makes the text smaller: a capital A with a minus sign
                         testo: @tr("programma.finestra.a-meno" => "A−"); tipo: Tipo.nudo; piccolo: true;
                         abilitato: Aspetto.scala > 1;
+                        // TRANSLATORS(programma.finestra.testo-piu-piccolo): What the A− button does, read by screen readers: makes the text smaller.
                         accessible-label: @tr("programma.finestra.testo-piu-piccolo" => "Testo più piccolo");
                         premuto => { root.piu-piccolo(); }
                     }
@@ -261,6 +264,7 @@ export component Finestra inherits Rectangle {
                         // TRANSLATORS: The button that makes the text larger: a capital A with a plus sign
                         testo: @tr("programma.finestra.a-piu" => "A+"); tipo: Tipo.nudo; piccolo: true;
                         abilitato: Aspetto.scala < Token.scala-massima;
+                        // TRANSLATORS(programma.finestra.testo-piu-grande): What the A+ button does, read by screen readers: makes the text larger.
                         accessible-label: @tr("programma.finestra.testo-piu-grande" => "Testo più grande");
                         premuto => { root.piu-grande(); }
                     }
@@ -315,6 +319,7 @@ export component Finestra inherits Rectangle {
                             vuota := Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
                                 x: Token.spazio-largo * Aspetto.scala * 0.85;
                                 width: parent.width - 2 * self.x;
+                                // TRANSLATORS(programma.finestra.qui-voce-dira-tue): Shown above the writing box before the first sentence: there the sentences appear, each word lighting up as the voice says it, and stay to be said again with a click or with Tab and Enter.
                                 text: @tr("programma.finestra.qui-voce-dira-tue" => "Qui la voce dirà le tue frasi, una parola dopo l'altra. Restano qui: un clic, o Tab e Invio, le dice di nuovo.");
                                 wrap: word-wrap;
                                 color: Token.testo-tenue;
@@ -405,12 +410,15 @@ export component Finestra inherits Rectangle {
                 if root.male: Pulsante {
                     y: (parent.height - self.height) / 2;
                     // gathered, the word is short, so the row keeps «Intera» in view (a 400 px window)
+                    // TRANSLATORS(programma.finestra.aiuto): In the compact meeting window, the short form of «Come si risolve»: it opens the help page about the problem shown. One word.
                     testo: root.raccolta ? @tr("programma.finestra.aiuto" => "Aiuto") : @tr("programma.comune.come-si-risolve" => "Come si risolve"); piccolo: true; tipo: Tipo.quieto;
                     accessible-label: @tr("programma.comune.come-si-risolve" => "Come si risolve");
                     premuto => { root.apri-guida(root.situazione); }
                 }
                 if root.compatta: Pulsante {
                     y: (parent.height - self.height) / 2;
+                    // TRANSLATORS(programma.finestra.intera): In the smallest meeting window, the button that goes back to the full window, after a small sign of a window opening. One word.
+                    // TRANSLATORS(programma.finestra.finestra-intera): In the compact meeting window, the button that goes back to the full window.
                     testo: root.minima ? @tr("programma.finestra.intera" => "Intera") : @tr("programma.finestra.finestra-intera" => "Finestra intera"); piccolo: true; tipo: Tipo.nudo; espandi: true;
                     accessible-label: @tr("programma.finestra.finestra-intera" => "Finestra intera");
                     premuto => { root.compatta = false; root.compatta-cambiata(false); scrittura.focus(); }
@@ -430,6 +438,7 @@ export component Finestra inherits Rectangle {
                     font-size: Token.corpo-nota * Aspetto.scala;
                     color: Token.testo-tenue;
                 }
+                // TRANSLATORS(programma.finestra.ho-capito): A button that closes a tip shown once.
                 Pulsante { testo: @tr("programma.finestra.ho-capito" => "Ho capito"); piccolo: true; tipo: Tipo.nudo; premuto => { root.suggerimento-sopra = false; root.suggerimento-letto(); scrittura.focus(); } }
             }
             scrittura := Scrittura {
@@ -443,9 +452,14 @@ export component Finestra inherits Rectangle {
                 prepara: root.situazione == Situazione.preparazione;
                 ultima: root.history.length > 0 ? root.history[0] : "";
                 // the empty field follows the state: it never promises «Invio» when the voice cannot take the phrase
+                // TRANSLATORS(programma.finestra.segnaposto-fra-poco): The hint in the empty writing box of the smallest window while the voice loads: it comes soon. Very short.
+                // TRANSLATORS(programma.finestra.segnaposto-puoi-gia-scrivere): The hint in the empty writing box while the voice loads: the person can already type, the voice comes soon.
                 segnaposto: root.situazione == Situazione.preparazione ? (root.raccolta ? @tr("programma.finestra.segnaposto-fra-poco" => "Fra poco.") : @tr("programma.finestra.segnaposto-puoi-gia-scrivere" => "Puoi già scrivere: la voce arriva fra poco."))
+                    // TRANSLATORS(programma.finestra.segnaposto-voce-non-parte): The hint in the empty writing box of the smallest window when the voice cannot start.
+                    // TRANSLATORS(programma.finestra.segnaposto-voce-non-parte-guarda): The hint in the empty writing box when the voice cannot start: the status line above says why.
                     : root.situazione == Situazione.problema-voce ? (root.raccolta ? @tr("programma.finestra.segnaposto-voce-non-parte" => "La voce non parte.") : @tr("programma.finestra.segnaposto-voce-non-parte-guarda" => "La voce non parte: guarda qui sopra."))
                     // TRANSLATORS: In the empty writing field; Invio is the Enter key
+                    // TRANSLATORS(programma.comune.segnaposto-scrivi-invio): The hint in the empty writing box: type here, and Enter makes the voice say it. Enter is the name of the key on the keyboard of the language.
                     : root.raccolta ? @tr("programma.comune.segnaposto-scrivi-qui" => "Scrivi qui.") : @tr("programma.comune.segnaposto-scrivi-invio" => "Scrivi qui. Invio la dice.");
                 dici(t) => { return root.di(t); }
                 ferma => { root.ferma(); }
@@ -476,6 +490,7 @@ export component Finestra inherits Rectangle {
     }
     menu-voce := Menu {
         aperto: root.menu-voce-aperto;
+        // TRANSLATORS(programma.finestra.con-quale-voce-parli): The title of the menu where the person chooses the voice that speaks for them.
         titolo: @tr("programma.finestra.con-quale-voce-parli" => "Con quale voce parli");
         voci: root.voices;
         tinte: root.tinte;
@@ -488,6 +503,7 @@ export component Finestra inherits Rectangle {
         Rectangle { height: Token.filo; background: Token.bordo; }
         Interruttore {
             acceso <=> root.monitor;
+            // TRANSLATORS(programma.finestra.senti-anche-tu-voce): A switch in the voice menu: when on, the person also hears the voice from the computer's speakers (otherwise only the others in the call hear it).
             testo: @tr("programma.finestra.senti-anche-tu-voce" => "Senti anche tu la voce");
             cambiato(on) => { root.monitor-changed(on); }
         }
@@ -496,6 +512,9 @@ export component Finestra inherits Rectangle {
         aperto: root.menu-altro-aperto;
         // «Riunione» joins when the bar has no room for it; «Svuota la cronologia» only when there is a history
         voci: root.minima
+            // TRANSLATORS(programma.finestra.crea-tua-voce): In the «Altro» menu: opens the steps to create a voice from a recording of the person who uses Kalliope, or of someone who gave permission.
+            // TRANSLATORS(programma.finestra.informazioni): In the «Altro» menu: opens the window about Kalliope (version, what is inside, licence), like «About» in other programs.
+            // TRANSLATORS(programma.finestra.svuota-cronologia): In the «Altro» menu: empties the list of sentences already said (it asks first).
             ? (root.history.length > 0 ? [@tr("programma.finestra.riunione" => "Riunione"), @tr("programma.finestra.crea-tua-voce" => "Crea la tua voce"), @tr("programma.finestra.informazioni" => "Informazioni"), @tr("programma.finestra.svuota-cronologia" => "Svuota la cronologia")] : [@tr("programma.finestra.riunione" => "Riunione"), @tr("programma.finestra.crea-tua-voce" => "Crea la tua voce"), @tr("programma.finestra.informazioni" => "Informazioni")])
             : (root.history.length > 0 ? [@tr("programma.finestra.crea-tua-voce" => "Crea la tua voce"), @tr("programma.finestra.informazioni" => "Informazioni"), @tr("programma.finestra.svuota-cronologia" => "Svuota la cronologia")] : [@tr("programma.finestra.crea-tua-voce" => "Crea la tua voce"), @tr("programma.finestra.informazioni" => "Informazioni")]);
         x: root.width - self.width - Token.spazio-medio * Aspetto.scala;
@@ -524,8 +543,10 @@ export component Finestra inherits Rectangle {
     conferma-svuota := Conferma {
         x: 0; y: 0; width: root.width; height: root.height;
         aperta: root.conferma-aperta;
+        // TRANSLATORS(programma.finestra.svuotare-cronologia): The title of the question asked before emptying the list of sentences already said.
         titolo: @tr("programma.finestra.svuotare-cronologia" => "Svuotare la cronologia?");
         testo: @tr("programma.finestra.frasi-gia-dette-spariscono" => "Le frasi già dette spariscono da questo computer. Non si può tornare indietro.");
+        // TRANSLATORS(programma.finestra.svuota): The button that confirms emptying the list of sentences already said. A verb.
         conferma-testo: @tr("programma.finestra.svuota" => "Svuota");
         confermato => { root.svuota-cronologia(); root.chiudi-conferma(); scrittura.focus(); }
         annullato => { root.chiudi-conferma(); }

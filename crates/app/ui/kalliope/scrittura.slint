@@ -97,6 +97,7 @@ export component Scrittura inherits Rectangle {
                     selection-foreground-color: Token.testo;
                     text-cursor-width: Token.tratto;
                     text <=> root.testo;
+                    // TRANSLATORS(programma.scrittura.cosa-vuoi-dire): The name of the writing box, read by screen readers.
                     accessible-label: @tr("programma.scrittura.cosa-vuoi-dire" => "Che cosa vuoi dire");
                     cursor-position-changed(punto) => {
                         if (punto.y + self.font-size * Token.interlinea > -scorre.content-y + scorre.height) {
@@ -130,6 +131,8 @@ export component Scrittura inherits Rectangle {
         Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
             // the keys are promised only when the voice can take the phrase
             visible: root.pronta && !root.compatta && root.width > Token.soglia-minima * Aspetto.scala * 0.85;
+            // TRANSLATORS(programma.scrittura.invio-dice-esc-ferma): The hint under the writing box: Enter says the sentence, Esc stops the voice, ↑ brings back the last sentence. Keys named as on the keyboard of the language.
+            // TRANSLATORS(programma.scrittura.invio-dice-esc-ferma-2): The hint under the writing box in a smaller window: Enter says the sentence, Esc stops the voice.
             text: root.ultima != "" ? @tr("programma.scrittura.invio-dice-esc-ferma" => "Invio la dice · Esc la ferma · ↑ l'ultima frase") : @tr("programma.scrittura.invio-dice-esc-ferma-2" => "Invio la dice · Esc la ferma");
             vertical-alignment: center;
             horizontal-stretch: 1;
@@ -138,16 +141,20 @@ export component Scrittura inherits Rectangle {
             color: Token.testo-tenue;
         }
         if root.parla: Pulsante {
+            // TRANSLATORS(programma.comune.ferma): A button that stops what is playing or speaking. A verb, one word.
             testo: @tr("programma.comune.ferma" => "Ferma");
             // TRANSLATORS: The name of the Esc key, as printed on a keyboard of this language
+            // TRANSLATORS(programma.scrittura.esc): The name of the Escape key, shown on the stop button.
             tasto: root.compatta ? "" : @tr("programma.scrittura.esc" => "Esc");
             tipo: Tipo.quieto;
             piccolo: root.compatta;
             premuto => { root.ferma(); campo.focus(); }
         }
         Pulsante {
+            // TRANSLATORS(programma.scrittura.di): The button beside the writing box that makes the voice say what is written, as Enter does: the imperative «Say». One short word.
             testo: @tr("programma.scrittura.di" => "Di'");
             // TRANSLATORS: The name of the Enter key, as printed on a keyboard of this language
+            // TRANSLATORS(programma.scrittura.invio): The name of the Enter key, shown on the button that says the sentence.
             tasto: @tr("programma.scrittura.invio" => "Invio");
             tipo: Tipo.pieno;
             piccolo: root.compatta;

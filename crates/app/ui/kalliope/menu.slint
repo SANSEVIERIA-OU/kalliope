@@ -26,6 +26,7 @@ component VoceDelMenu inherits Rectangle {
         spacing: Token.spazio-controlli * Aspetto.scala;
         if root.con-tinta: Punto { colore: root.tinta; lato: Token.punto * 1.8 * Aspetto.scala; y: (parent.height - self.height) / 2; }
         Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: root.nome; vertical-alignment: center; horizontal-stretch: 1; overflow: elide; color: Token.testo; font-size: Token.corpo-comando * Aspetto.scala; font-weight: root.in-uso ? Token.peso-forte : Token.peso-testo; }
+        // TRANSLATORS(programma.menu.uso): In the voice menu, next to the voice that speaks now: this one is in use. Short, lowercase.
         if root.in-uso: Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: @tr("programma.menu.uso" => "in uso"); vertical-alignment: center; color: Token.azione; font-size: Token.corpo-nota * Aspetto.scala; }
     }
     tocco := TouchArea { mouse-cursor: pointer; clicked => { root.premuta(); } }

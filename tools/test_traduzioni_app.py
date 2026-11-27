@@ -90,6 +90,21 @@ class Estrazione(unittest.TestCase):
         m, _ = rust('let a = tr!("programma.a" => "uno"); // TRANSLATORS: dopo\nlet b = tr!("programma.b" => "due");')
         self.assertEqual((m[0].nota, m[1].nota), ("dopo", None))
 
+    def test_la_nota_con_la_chiave(self):
+        # several calls on one line: each note names its key, wherever it stands in the file
+        m, e = slint('// TRANSLATORS(programma.b): a button that goes back\n'
+                     'x: @tr("programma.a" => "Uno") + @tr("programma.b" => "Torna a scrivere");\n'
+                     '// TRANSLATORS(programma.a): a title')
+        self.assertEqual(e, [])
+        self.assertEqual((m[0].nota, m[1].nota), ("a title", "a button that goes back"))
+        # the keyed note wins over the note of the line
+        m, _ = rust('// TRANSLATORS(programma.a): keyed\n// TRANSLATORS: of the line\nlet a = tr!("programma.a" => "uno");')
+        self.assertEqual(m[0].nota, "keyed")
+
+    def test_una_nota_con_una_chiave_che_non_ce_e_un_errore(self):
+        m, e = slint('// TRANSLATORS(programma.nessuna): orphan\nx: @tr("programma.a" => "Uno");')
+        self.assertTrue(e and "programma.nessuna" in e[0], e)
+
     # --- le copie guaste: ognuna deve fallire ---
     def test_un_testo_senza_chiave_e_un_errore(self):
         for cosa, testo in (("slint", 'x: @tr("Ripeti");'), ("rust", 'let a = tr!("Sto parlando");')):

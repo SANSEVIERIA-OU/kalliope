@@ -114,6 +114,7 @@ export component FraseDetta inherits Rectangle {
     ripeti := Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
         x: root.width - self.width - Token.spazio-medio * Aspetto.scala;
         y: (root.height - self.height) / 2;
+        // TRANSLATORS(programma.bolla.ripeti): Shown over a sentence already said, under the pointer: a click makes the voice say it again. A verb, one word if the language allows.
         text: @tr("programma.bolla.ripeti" => "Ripeti");
         font-size: Token.corpo-stato * Aspetto.scala;
         font-weight: Token.peso-forte;

@@ -12,7 +12,8 @@ Two kinds of source, one key each, written where the text is:
 
 The key is the `msgctxt` of the entry, like the keys of the website, and starts with `programma.` (the website's never do). The text
 in the source is the Italian text, the `msgid`. A comment `// TRANSLATORS: …` on the line above the call, or after it on its
-line, goes to the translators. Only the Python standard library.
+line, goes to the translators; `// TRANSLATORS(programma.key): …` anywhere in the same file goes to the message with that key
+(for a line with several calls). Only the Python standard library.
 """
 import pathlib
 import re
@@ -22,6 +23,7 @@ CHIAVE = re.compile(r"^programma\.[a-z0-9]+(?:[.-][a-z0-9]+)*$")
 # {} {0} {n} {name}, and {{ }} for a brace written as itself
 SEGNAPOSTO = re.compile(r"\{\{|\}\}|\{(\d*|[A-Za-z_][A-Za-z0-9_]*)\}")
 NOTA = re.compile(r"TRANSLATORS:\s*(.*)")
+NOTA_CHIAVE = re.compile(r"TRANSLATORS\(([^)\s]+)\):\s*(.*)")
 _RUST_RAW = re.compile(r'r(#*)"')
 _RUST_CHAR = re.compile(r"'(?:\\u\{[0-9a-fA-F]+\}|\\.|[^\\'])'")
 _RUST_CALL = re.compile(r"(?<![A-Za-z0-9_])(trn?)!\s*\(")
@@ -135,6 +137,7 @@ class _Lettore:
             if c == "\n":
                 self.righe.append(k + 1)
         self.note = {}   # riga → testo del commento TRANSLATORS
+        self.note_chiave = {}   # chiave → testo del commento TRANSLATORS(chiave), ovunque nel file
 
     def riga(self, i):
         import bisect
@@ -148,8 +151,10 @@ class _Lettore:
             elif t.startswith("//", i):
                 j = t.find("\n", i)
                 j = len(t) if j < 0 else j
-                m = NOTA.search(t[i + 2:j])
-                if m:
+                commento = t[i + 2:j]
+                if mc := NOTA_CHIAVE.search(commento):
+                    self.note_chiave[mc.group(1)] = mc.group(2).strip()
+                elif m := NOTA.search(commento):
                     self.note[self.riga(i)] = m.group(1).strip()
                 i = j
             elif t.startswith("/*", i):
@@ -253,9 +258,15 @@ def leggi_sorgente(testo, nome, linguaggio):
                 if sola:
                     m.nota = L.note[r]; usate.add(r)
                     break
+        if chiave in L.note_chiave:
+            m.nota = L.note_chiave[chiave]
         for p in problemi_origine(m):
             errori.append(f"{nome}:{riga}: {p}")
         messaggi.append(m)
+    chiavi = {m.chiave for m in messaggi}
+    for k in L.note_chiave:
+        if k not in chiavi:
+            errori.append(f"{nome}: the note TRANSLATORS({k}) names a key that no call of this file has")
     return messaggi, errori
 
 
