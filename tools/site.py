@@ -312,6 +312,9 @@ class Sito:
             else:
                 self.risorse.append(rel)
         for f in sorted(system.rglob("*")):
+            # a .ttf beside a .woff2 of the same name is the program's copy of a face the site serves as woff2 (tools/caratteri_ttf.py)
+            if f.suffix == ".ttf" and f.with_suffix(".woff2").exists():
+                continue
             if f.is_file() and f.suffix != ".md" and f.name != "metodo.config.mjs":
                 self.risorse.append(f"{SYSTEM_IN_SITE}/{f.relative_to(system).as_posix()}")
         self.risorse_set = set(self.risorse)

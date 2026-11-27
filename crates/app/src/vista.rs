@@ -147,7 +147,11 @@ pub fn apri(url: &str) {
 
 /// The live catalog of the design system: every token and every component in its states.
 pub fn catalogo() -> ExitCode {
-    match Catalogo::new().and_then(|c| c.run()) {
+    let language = crate::lingua::choose();
+    match Catalogo::new().and_then(|c| {
+        crate::lingua::apply_catalog(&c, language);
+        c.run()
+    }) {
         Ok(()) => ExitCode::SUCCESS,
         Err(e) => {
             eprintln!("Non riesco ad aprire il catalogo: {e}");
@@ -201,23 +205,25 @@ struct DemoVoice {
 }
 
 fn demo_tratti(ui: &AppWindow, n: usize) {
+    use crate::crea::{stretch_detail, stretch_title};
+    use kalliope_sample::Problem;
     let all = [
         (
-            "Tratto 1 · il più chiaro",
-            "da 0:12 a 0:24 · 12 s di voce",
-            "",
+            stretch_title(1, true),
+            stretch_detail("0:12", "0:24", 12.0),
+            String::new(),
             true,
         ),
         (
-            "Tratto 2",
-            "da 1:05 a 1:17 · 9 s di voce",
-            "C'è molto rumore di fondo, e la voce creata lo imiterà. Se puoi, registra in un posto più silenzioso.",
+            stretch_title(2, false),
+            stretch_detail("1:05", "1:17", 9.0),
+            Problem::TooNoisy.message(),
             true,
         ),
         (
-            "Tratto 3",
-            "da 2:40 a 2:52 · 3 s di voce",
-            "C'è troppo poco parlato: servono almeno 4 secondi di voce, meglio 12. Registra ancora un po', o scegli un file più lungo.",
+            stretch_title(3, false),
+            stretch_detail("2:40", "2:52", 3.0),
+            Problem::TooShort.message(),
             false,
         ),
     ];
@@ -225,9 +231,9 @@ fn demo_tratti(ui: &AppWindow, n: usize) {
         .iter()
         .take(n)
         .map(|(t, d, m, u)| Tratto {
-            titolo: (*t).into(),
-            dettaglio: (*d).into(),
-            messaggi: (*m).into(),
+            titolo: t.as_str().into(),
+            dettaglio: d.as_str().into(),
+            messaggi: m.as_str().into(),
             utilizzabile: *u,
         })
         .collect();
@@ -246,6 +252,7 @@ fn demo_misura() -> Option<(f32, f32)> {
 /// need a precise moment (and for the catalog of the states that are hard to meet: a missing file, a failed recording).
 /// Typing and Enter work: the voice is simulated, and nothing reaches the microphone.
 pub fn demo(scena: &str) -> ExitCode {
+    let language = crate::lingua::choose();
     let ui = match AppWindow::new() {
         Ok(ui) => ui,
         Err(e) => {
@@ -253,6 +260,7 @@ pub fn demo(scena: &str) -> ExitCode {
             return ExitCode::FAILURE;
         }
     };
+    crate::lingua::apply(&ui, language);
     collega(&ui, |_| {});
     ui.set_version(format!("{} · dimostrazione", env!("CARGO_PKG_VERSION")).into());
     ui.set_voices(modello(vec![
@@ -298,17 +306,17 @@ pub fn demo(scena: &str) -> ExitCode {
         "nessuno" => {
             phase = Phase::Speaking;
             situazione = Some(Situazione::NessunoAscolta);
-            status = "Nessuno nella chiamata ha sentito la frase: nessuna app sta usando il microfono «Kalliope». Sceglilo come microfono nell'app della riunione.".into();
+            status = crate::session::not_heard();
         }
         "microfono" => {
             situazione = Some(Situazione::SenzaMicrofono);
-            status = "La voce è pronta, ma il microfono virtuale «Kalliope» non c'è: per ora nessuno ti sentirà nelle chiamate.".into();
+            status = crate::audio::microphone_missing();
         }
         "problema" => {
             said.clear();
             phase = Phase::Error;
             situazione = Some(Situazione::ProblemaVoce);
-            status = "Non trovo i file della voce. Reinstalla Kalliope dal pacchetto.".into();
+            status = crate::catalog::missing_voice_text();
         }
         "compatta" => {}
         "notizia" => ui.set_notizia(crate::crea::made_notice("La voce di Anna").into()),
@@ -319,7 +327,7 @@ pub fn demo(scena: &str) -> ExitCode {
             match s {
                 "voce-1" => {}
                 "voce-errore" => {
-                    creazione.set_errore("Questo file non è audio, o non lo riconosco. Prova con un messaggio vocale, un video o una registrazione.".into());
+                    creazione.set_errore(kalliope_sample::ReadError::NotAudio.message().into());
                     creazione.set_errore_aiuto(true);
                 }
                 "voce-importa" => {
@@ -339,7 +347,7 @@ pub fn demo(scena: &str) -> ExitCode {
                     creazione.set_parlato(if s == "voce-2" { 6000 } else { 0 });
                     creazione.set_livello(if s == "voce-2" { 0.7 } else { 0.0 });
                     if s == "voce-suggerimento" {
-                        creazione.set_suggerimento("Non ti sento. Avvicinati al microfono, controlla che non sia spento, o scegline un altro.".into());
+                        creazione.set_suggerimento(crate::crea::no_voice_heard().into());
                     }
                 }
                 "voce-3" | "voce-nome" | "voce-crea" => {
@@ -349,8 +357,16 @@ pub fn demo(scena: &str) -> ExitCode {
                     demo_tratti(&ui, 1);
                     if s == "voce-nome" {
                         creazione.set_nome("Giulia".into());
-                        creazione.set_nome_messaggio("«Giulia» è anche il nome di una voce di Kalliope. Puoi tenerlo: nel menu la tua comparirà come «Giulia (voce propria)». Oppure scegli un altro nome.".into());
-                        creazione.set_nome_conferma("Tieni questo nome".into());
+                        creazione.set_nome_messaggio(
+                            crate::own_voice::check_name(
+                                "Giulia",
+                                std::path::Path::new("/nonexistent"),
+                            )
+                            .message()
+                            .unwrap_or_default()
+                            .into(),
+                        );
+                        creazione.set_nome_conferma(crate::crea::keep_name().into());
                     }
                     if s == "voce-crea" {
                         creazione.set_crea_in_corso(true);
@@ -359,8 +375,7 @@ pub fn demo(scena: &str) -> ExitCode {
                 }
                 "voce-tratti" => {
                     creazione.set_passo(2);
-                    creazione
-                        .set_nota("Il file è lungo: ho cercato la voce nei primi 5 minuti.".into());
+                    creazione.set_nota(crate::own_voice::long_file_note().into());
                     demo_tratti(&ui, 3);
                     creazione.set_ascolto(1);
                     creazione.set_nome("".into());

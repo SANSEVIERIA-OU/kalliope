@@ -251,3 +251,59 @@ fn the_real_token_css_is_ready() {
         out.slint
     );
 }
+
+#[test]
+fn a_right_to_left_value_follows_the_language() {
+    let out = slint(
+        ":root { --verso: 1; --app-verso: var(--verso); --app-largo: 10px; }\n:root:dir(rtl) { --verso: -1; }",
+    );
+    assert!(out.contains("in-out property <bool> rtl: false;"), "{out}");
+    assert!(
+        out.contains("out property <int> verso: rtl ? -1 : 1;"),
+        "{out}"
+    );
+    // what the direction does not change stays a plain value
+    assert!(out.contains("out property <length> largo: 10px;"), "{out}");
+}
+
+#[test]
+fn a_token_cannot_change_with_the_scheme_and_with_the_direction() {
+    let e = error(
+        ":root { --app-a: #000; }\n:root[data-tema=\"chiaro\"] { --app-a: #fff; }\n:root:dir(rtl) { --app-a: #f00; }",
+    );
+    assert!(e.contains("--app-a") && e.contains("direction"), "{e}");
+    // a right-to-left value with no base is not a token
+    let e = error(":root { --b: 1px; }\n:root:dir(rtl) { --c: 2px; }");
+    assert!(e.contains("--c"), "{e}");
+}
+
+#[test]
+fn the_face_of_a_language_is_embedded_by_the_program_not_by_slint() {
+    let css = ":root { --app-carattere-testo: url(\"caratteri/lexend/Lexend-wght.ttf\"); \
+         --app-carattere-ar: url(\"caratteri/readex-pro/ReadexPro-wght.ttf\"); \
+         --app-carattere-el: url(\"caratteri/geologica/Geologica-wght.ttf\"); \
+         --app-carattere-bg: url(\"caratteri/geologica/Geologica-wght.ttf\"); }";
+    let out = render(css).unwrap();
+    assert_eq!(
+        out.fonts,
+        vec!["caratteri/lexend/Lexend-wght.ttf".to_string()]
+    );
+    assert_eq!(
+        out.language_fonts,
+        vec![
+            (
+                "ar".to_string(),
+                "caratteri/readex-pro/ReadexPro-wght.ttf".to_string()
+            ),
+            (
+                "bg".to_string(),
+                "caratteri/geologica/Geologica-wght.ttf".to_string()
+            ),
+            (
+                "el".to_string(),
+                "caratteri/geologica/Geologica-wght.ttf".to_string()
+            ),
+        ]
+    );
+    assert!(!out.slint.contains("Readex"), "{}", out.slint);
+}

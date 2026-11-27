@@ -9,7 +9,11 @@
 //! - The light scheme is the rule `:root[data-tema="chiaro"]`; the base `:root` is the dark scheme.
 //!   `Token.dark` follows the system, and a colour with two values is `dark ? … : …`. A variant that is
 //!   incomplete stops the build.
-//! - `--app-carattere-*: url("caratteri/…/Face.ttf")` embeds a font file in the program.
+//! - `--app-carattere-testo: url("caratteri/…/Face.ttf")` embeds a font file in the program (Slint's `import`).
+//! - `--app-carattere-<ll>: url("caratteri/…/Face.ttf")`, with a two-letter language code, is the typeface of that language's script:
+//!   the program embeds the file and registers it only when that language is the one in use (`Output::language_fonts`).
+//! - `:root:dir(rtl) { --verso: -1 }` is the right-to-left value of a token: it becomes `rtl ? -1 : 1`, with `Token.rtl` set by
+//!   the program from the language (the website's mirror convention, `design-system/TOKEN.md`).
 
 pub mod color;
 pub mod css;
@@ -28,6 +32,7 @@ pub const FONT_PREFIX: &str = "--app-carattere-";
 /// What Slint reserves, and what the generated global defines itself.
 const RESERVED: &[&str] = &[
     "dark",
+    "rtl",
     "in",
     "out",
     "in-out",
@@ -66,8 +71,10 @@ const RESERVED: &[&str] = &[
 pub struct Output {
     /// The text of the generated `token.slint`.
     pub slint: String,
-    /// The font files it embeds, relative to `design-system/`.
+    /// The font files it embeds through Slint, relative to `design-system/`.
     pub fonts: Vec<String>,
+    /// The typeface of a language's script: (two-letter language code, file relative to `design-system/`), by language.
+    pub language_fonts: Vec<(String, String)>,
     /// Every property of `Token`, by its Slint name, with the kind of value.
     pub properties: BTreeMap<String, &'static str>,
 }
@@ -212,6 +219,21 @@ pub fn render(css: &str) -> Result<Output, String> {
         is_light: true,
     };
 
+    // The right-to-left variant: the same tokens, with what `:root:dir(rtl)` changes.
+    let rtl = Scheme {
+        root: group(&sheet.root),
+        light: group(&sheet.rtl),
+        is_light: true,
+    };
+    for name in rtl.light.keys() {
+        if !rtl.root.contains_key(name) {
+            return Err(format!(
+                "{name} has a value in {} but none in :root",
+                css::RTL_SELECTOR
+            ));
+        }
+    }
+
     // A variant without a base is incomplete.
     for name in light.light.keys() {
         if !light.root.contains_key(name) {
@@ -231,6 +253,7 @@ pub fn render(css: &str) -> Result<Output, String> {
         .collect();
     let mut properties = BTreeMap::new();
     let mut fonts = Vec::new();
+    let mut language_fonts = Vec::new();
     let mut body = String::new();
     let has_light = !light.light.is_empty();
     let mut seen_names: BTreeMap<String, &str> = BTreeMap::new();
@@ -249,7 +272,12 @@ pub fn render(css: &str) -> Result<Output, String> {
                     "{token}: a font file does not change with the scheme"
                 ));
             }
-            fonts.push(path.clone());
+            let language = token.strip_prefix(FONT_PREFIX).unwrap_or_default();
+            if language.len() == 2 && language.chars().all(|c| c.is_ascii_lowercase()) {
+                language_fonts.push((language.to_string(), path.clone()));
+            } else {
+                fonts.push(path.clone());
+            }
             continue;
         }
         if token.starts_with(FONT_PREFIX) {
@@ -289,8 +317,18 @@ pub fn render(css: &str) -> Result<Output, String> {
                 incomplete.push(format!("{token} ({})", literal(&dv)));
             }
         }
+        // Does a right-to-left language change it? Its own declaration, or anything it reaches, has an rtl value.
+        let rv = rtl.value(token)?;
+        let by_direction = rv != dv;
+        if by_direction && themed && dv != lv {
+            return Err(format!(
+                "{token} changes with the scheme and with the direction of writing: split it in two roles"
+            ));
+        }
         let ty = slint_type(&dv);
-        let expr = if themed && dv != lv {
+        let expr = if by_direction {
+            format!("rtl ? {} : {}", literal(&rv), literal(&dv))
+        } else if themed && dv != lv {
             format!("dark ? {} : {}", literal(&dv), literal(&lv))
         } else {
             literal(&dv)
@@ -322,11 +360,16 @@ pub fn render(css: &str) -> Result<Output, String> {
     slint.push_str("\nexport global Token {\n");
     slint.push_str("    /// The system asks for the dark scheme. With no answer (no settings portal) it is the light one, like every Slint widget.\n");
     slint.push_str("    out property <bool> dark: Palette.color-scheme == ColorScheme.dark;\n");
+    slint.push_str("    /// The language in use is written from right to left: the program sets it at start (a right-to-left token is `rtl ? … : …`).\n");
+    slint.push_str("    in-out property <bool> rtl: false;\n");
     slint.push_str(&body);
     slint.push_str("}\n");
+    language_fonts.sort();
+    language_fonts.dedup();
     Ok(Output {
         slint,
         fonts,
+        language_fonts,
         properties,
     })
 }

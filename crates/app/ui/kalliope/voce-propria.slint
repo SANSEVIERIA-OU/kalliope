@@ -11,10 +11,12 @@ export component Passi inherits HorizontalLayout {
     in property <int> passo;
     // a narrow window: only the step one is on, with «n di 3»
     in property <bool> compatti: false;
-    in property <[string]> nomi: [@tr("Registra o importa"), @tr("Leggi ad alta voce"), @tr("Ascolta e dai un nome")];
+    // TRANSLATORS: The name of the second step of making a voice (the person reads a text aloud)
+    in property <[string]> nomi: [@tr("programma.crea.passo-scegli" => "Registra o importa"), @tr("programma.crea.passo-leggi" => "Leggi ad alta voce"), @tr("programma.crea.passo-nome" => "Ascolta e dai un nome")];
     spacing: Token.spazio-largo * Aspetto.scala;
-    if root.compatti: Text {
-        text: @tr("{} di 3 · {}", root.passo + 1, root.nomi[root.passo]);
+    if root.compatti: Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
+        // TRANSLATORS: Where the person is among the three steps of making a voice: {0} is the number of the step (1 to 3), {1} its name
+        text: @tr("programma.crea.passo" => "{} di 3 · {}", root.passo + 1, root.nomi[root.passo]);
         vertical-alignment: center;
         font-size: Token.corpo-stato * Aspetto.scala;
         font-weight: Token.peso-forte;
@@ -30,7 +32,7 @@ export component Passi inherits HorizontalLayout {
             border-width: i == root.passo ? Token.tratto : Token.filo;
             border-color: i <= root.passo ? Token.azione : Token.bordo-comando;
         }
-        Text {
+        Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
             text: nome;
             vertical-alignment: center;
             font-size: Token.corpo-stato * Aspetto.scala;
@@ -71,7 +73,7 @@ export component Registra inherits Rectangle {
     in property <bool> occupato: false;
     callback premuto();
     accessible-role: button;
-    accessible-label: root.registra ? @tr("Ferma la registrazione") : @tr("Registra");
+    accessible-label: root.registra ? @tr("programma.crea.ferma-registrazione" => "Ferma la registrazione") : @tr("programma.crea.registra" => "Registra");
     accessible-enabled: !root.occupato;
     accessible-action-default => { if (!root.occupato) { root.premuto(); } }
     forward-focus: chiave;
@@ -157,9 +159,9 @@ component Strada inherits Rectangle {
             alignment: center;
             spacing: Token.spazio-minimo * Aspetto.scala;
             horizontal-stretch: 1;
-            if root.per-chi != "": Text { text: root.per-chi; font-size: Token.corpo-stato * Aspetto.scala; font-weight: Token.peso-forte; color: Token.azione; wrap: word-wrap; }
-            Text { text: root.titolo; font-size: (root.principale ? Token.corpo-titolo : Token.corpo-comando) * Aspetto.scala; font-weight: root.principale ? Token.peso-titolo : Token.peso-forte; color: Token.testo; wrap: word-wrap; }
-            Text { text: root.testo; font-size: Token.corpo-stato * Aspetto.scala; color: Token.testo-tenue; wrap: word-wrap; }
+            if root.per-chi != "": Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: root.per-chi; font-size: Token.corpo-stato * Aspetto.scala; font-weight: Token.peso-forte; color: Token.azione; wrap: word-wrap; }
+            Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: root.titolo; font-size: (root.principale ? Token.corpo-titolo : Token.corpo-comando) * Aspetto.scala; font-weight: root.principale ? Token.peso-titolo : Token.peso-forte; color: Token.testo; wrap: word-wrap; }
+            Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: root.testo; font-size: Token.corpo-stato * Aspetto.scala; color: Token.testo-tenue; wrap: word-wrap; }
         }
     }
     chiave := FocusScope {
@@ -199,7 +201,7 @@ export component Consenso inherits Rectangle {
                 fill: transparent;
             }
         }
-        Text { text: root.testo; wrap: word-wrap; horizontal-stretch: 1; font-size: Token.corpo-stato * Aspetto.scala; color: Token.testo; }
+        Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: root.testo; wrap: word-wrap; horizontal-stretch: 1; font-size: Token.corpo-stato * Aspetto.scala; color: Token.testo; }
     }
     chiave := FocusScope {
         key-pressed(e) => {
@@ -245,7 +247,7 @@ export component RigaMicrofono inherits Rectangle {
             border-width: Token.filo * 2;
             border-color: root.scelto ? Token.azione : Token.bordo-comando;
         }
-        Text { text: root.nome; vertical-alignment: center; overflow: elide; horizontal-stretch: 1; color: Token.testo; font-size: Token.corpo-stato * Aspetto.scala; font-weight: root.scelto ? Token.peso-forte : Token.peso-testo; }
+        Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: root.nome; vertical-alignment: center; overflow: elide; horizontal-stretch: 1; color: Token.testo; font-size: Token.corpo-stato * Aspetto.scala; font-weight: root.scelto ? Token.peso-forte : Token.peso-testo; }
     }
     chiave := FocusScope {
         key-pressed(e) => {
@@ -313,19 +315,20 @@ export component RigaTratto inherits Rectangle {
             VerticalLayout {
                 alignment: center;
                 horizontal-stretch: 1;
-                Text { text: root.tratto.titolo; wrap: word-wrap; font-size: Token.corpo-comando * Aspetto.scala; font-weight: Token.peso-forte; color: root.tratto.utilizzabile ? Token.testo : Token.testo-spento; }
-                Text { text: root.tratto.dettaglio; wrap: word-wrap; font-size: Token.corpo-nota * Aspetto.scala; color: Token.testo-tenue; }
+                Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: root.tratto.titolo; wrap: word-wrap; font-size: Token.corpo-comando * Aspetto.scala; font-weight: Token.peso-forte; color: root.tratto.utilizzabile ? Token.testo : Token.testo-spento; }
+                Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: root.tratto.dettaglio; wrap: word-wrap; font-size: Token.corpo-nota * Aspetto.scala; color: Token.testo-tenue; }
             }
             Pulsante {
                 y: (parent.height - self.height) / 2;
-                testo: root.ascolta ? @tr("Ferma") : @tr("Ascolta");
-                accessible-label: root.ascolta ? @tr("Ferma l'ascolto di {}", root.tratto.titolo) : @tr("Ascolta {}", root.tratto.titolo);
+                testo: root.ascolta ? @tr("programma.comune.ferma" => "Ferma") : @tr("programma.crea.ascolta" => "Ascolta");
+                // TRANSLATORS: Read aloud by a screen reader: {} is the name of the stretch
+                accessible-label: root.ascolta ? @tr("programma.crea.ferma-ascolto-tratto" => "Ferma l'ascolto di {}", root.tratto.titolo) : @tr("programma.crea.ascolta-tratto" => "Ascolta {}", root.tratto.titolo);
                 piccolo: true;
                 tipo: Tipo.quieto;
                 premuto => { root.ascolto(); }
             }
         }
-        if root.tratto.messaggi != "": Text {
+        if root.tratto.messaggi != "": Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
             text: root.tratto.messaggi;
             wrap: word-wrap;
             font-size: Token.corpo-nota * Aspetto.scala;
@@ -343,8 +346,9 @@ component PassoScelta inherits VerticalLayout {
         guida => { Creazione.apri-guida(); }
     }
     if Creazione.importa-in-corso: Attesa {
-        testo: @tr("Leggo «{}»…", Creazione.importa-file);
-        dettaglio: @tr("Cerco la parte in cui si sente meglio la voce.");
+        // TRANSLATORS: While a file is read: {} is the name of the file
+        testo: @tr("programma.crea.leggo" => "Leggo «{}»…", Creazione.importa-file);
+        dettaglio: @tr("programma.crea.cerco-parte-cui-si" => "Cerco la parte in cui si sente meglio la voce.");
         valore: Creazione.importa-avanzamento;
         annulla => { Creazione.importa-annulla(); }
     }
@@ -352,20 +356,20 @@ component PassoScelta inherits VerticalLayout {
         // the focus enters the step on its main way, so the keyboard needs no search
         init => { self.focus(); }
         principale: true;
-        per-chi: @tr("Se hai ancora la voce");
-        titolo: @tr("Registrala adesso");
-        testo: @tr("Leggi ad alta voce un breve testo. Bastano dodici secondi di voce chiara, meglio finché la voce è forte.");
+        per-chi: @tr("programma.crea.se-hai-ancora-voce" => "Se hai ancora la voce");
+        titolo: @tr("programma.crea.registrala-adesso" => "Registrala adesso");
+        testo: @tr("programma.crea.istruzioni-registra" => "Leggi ad alta voce un breve testo. Bastano dodici secondi di voce chiara, meglio finché la voce è forte.");
         scelta => { Creazione.registra-scelta(); }
     }
     if !Creazione.importa-in-corso: Strada {
         principale: false;
-        per-chi: @tr("Se la voce non c'è più");
-        titolo: @tr("Usa vecchie registrazioni");
-        testo: @tr("Un messaggio vocale, un video, una registrazione di prima: WAV, FLAC, MP3, OGG, OPUS, M4A, MP4 o WEBM.");
+        per-chi: @tr("programma.crea.se-voce-non-c" => "Se la voce non c'è più");
+        titolo: @tr("programma.crea.usa-vecchie-registrazioni" => "Usa vecchie registrazioni");
+        testo: @tr("programma.crea.messaggio-vocale-video-registrazione" => "Un messaggio vocale, un video, una registrazione di prima: WAV, FLAC, MP3, OGG, OPUS, M4A, MP4 o WEBM.");
         scelta => { Creazione.importa(); }
     }
-    if !Creazione.importa-in-corso: Text {
-        text: @tr("Una stanza tranquilla e, se c'è, un microfono a cuffia. Puoi crearla anche per un'altra persona, con il suo permesso.");
+    if !Creazione.importa-in-corso: Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
+        text: @tr("programma.crea.stanza-tranquilla-se-c" => "Una stanza tranquilla e, se c'è, un microfono a cuffia. Puoi crearla anche per un'altra persona, con il suo permesso.");
         wrap: word-wrap;
         font-size: Token.corpo-stato * Aspetto.scala;
         color: Token.testo-tenue;
@@ -382,10 +386,12 @@ component PassoRegistra inherits VerticalLayout {
     property <int> richiesta: 0;
     property <duration> utile: Token.registrazione-utile;
     property <int> decimi: Creazione.registrato / Token.intervallo-registrazione;
-    property <string> tempo: floor(self.decimi / 10) + "," + mod(self.decimi, 10) + " s";
+    property <string> numero-tempo: floor(self.decimi / 10) + Platform.decimal-separator + mod(self.decimi, 10);
+    // TRANSLATORS: {0} is the time recorded so far, a number with one decimal («3,2»): the unit is seconds
+    property <string> tempo: @tr("programma.crea.secondi" => "{} s", self.numero-tempo);
     property <bool> basta: Creazione.parlato >= Token.registrazione-utile;
     spacing: Token.spazio-largo * Aspetto.scala;
-    Text {
+    Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
         text: root.da-leggere;
         wrap: word-wrap;
         font-size: Token.corpo-lettura * Aspetto.scala;
@@ -397,7 +403,7 @@ component PassoRegistra inherits VerticalLayout {
     // more than one microphone: the person chooses which hears the voice (never Kalliope's own)
     if Creazione.microfoni.length > 1 && !Creazione.registra && !Creazione.apro && !Creazione.controllo: VerticalLayout {
         spacing: Token.spazio-minimo * Aspetto.scala;
-        Text { text: @tr("Microfono"); font-size: Token.corpo-nota * Aspetto.scala; color: Token.testo-tenue; }
+        Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: @tr("programma.crea.microfono" => "Microfono"); font-size: Token.corpo-nota * Aspetto.scala; color: Token.testo-tenue; }
         for m[i] in Creazione.microfoni: RigaMicrofono {
             nome: m;
             indice: i;
@@ -431,21 +437,22 @@ component PassoRegistra inherits VerticalLayout {
             alignment: center;
             horizontal-stretch: 1;
             spacing: Token.spazio-minimo * Aspetto.scala;
-            Text {
-                text: Creazione.apro ? @tr("Apro il microfono…")
-                    : Creazione.controllo ? @tr("Controllo la registrazione…")
-                    : !Creazione.registra ? @tr("Premi il tondo e leggi")
+            Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
+                text: Creazione.apro ? @tr("programma.crea.apro-microfono" => "Apro il microfono…")
+                    : Creazione.controllo ? @tr("programma.crea.controllo-registrazione" => "Controllo la registrazione…")
+                    : !Creazione.registra ? @tr("programma.crea.premi-tondo-leggi" => "Premi il tondo e leggi")
                     : root.basta ? root.tempo
-                    : @tr("{} · ne mancano {}", root.tempo, ceil((Token.registrazione-utile - Creazione.parlato) / 1s)); // fisso: un secondo, l'unità del conto alla rovescia
+                    // TRANSLATORS: While the voice is recorded: {0} is the time recorded so far («3,2 s»); {n} is how many whole seconds of clear voice are still needed
+                    : @tr("programma.crea.mancano" => "{0} · ne manca {n}" | "{0} · ne mancano {n}" % ceil((Token.registrazione-utile - Creazione.parlato) / 1s), root.tempo); // fisso: un secondo, l'unità del conto alla rovescia
                 wrap: word-wrap;
                 font-size: Token.corpo-bolla * Aspetto.scala;
                 font-weight: Token.peso-forte;
                 color: Token.testo;
             }
-            Text {
+            Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
                 text: Creazione.suggerimento != "" ? Creazione.suggerimento
-                    : root.basta ? @tr("Basta così: premi di nuovo per fermare.")
-                    : @tr("Ne bastano dodici secondi di voce: il cerchio si riempie. Il livello si muove con la tua voce.");
+                    : root.basta ? @tr("programma.crea.basta-cosi-premi-nuovo" => "Basta così: premi di nuovo per fermare.")
+                    : @tr("programma.crea.ne-bastano-dodici-secondi" => "Ne bastano dodici secondi di voce: il cerchio si riempie. Il livello si muove con la tua voce.");
                 wrap: word-wrap;
                 font-size: Token.corpo-stato * Aspetto.scala;
                 color: Creazione.suggerimento != "" ? Token.attenzione : root.basta ? Token.azione : Token.testo-tenue;
@@ -453,7 +460,7 @@ component PassoRegistra inherits VerticalLayout {
         }
         if Creazione.registra: Pulsante {
             y: (parent.height - self.height) / 2;
-            testo: @tr("Annulla");
+            testo: @tr("programma.comune.annulla" => "Annulla");
             tipo: Tipo.nudo;
             premuto => { Creazione.registra-annulla(); }
         }
@@ -468,12 +475,12 @@ component PassoAscolta inherits VerticalLayout {
     // the parts keep together under the title, as in the approved render; the room that is left stays empty below
     alignment: start;
     property <bool> unico: Creazione.tratti.length <= 1;
-    if Creazione.nota != "": Text { text: Creazione.nota; wrap: word-wrap; font-size: Token.corpo-stato * Aspetto.scala; color: Token.testo-tenue; }
+    if Creazione.nota != "": Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: Creazione.nota; wrap: word-wrap; font-size: Token.corpo-stato * Aspetto.scala; color: Token.testo-tenue; }
     if root.unico: HorizontalLayout {
         spacing: Token.spazio-largo * Aspetto.scala;
         ascolta-comando := Pulsante {
             init => { self.focus(); }
-            testo: Creazione.ascolto >= 0 ? @tr("Ferma l'ascolto") : @tr("Ascolta la registrazione");
+            testo: Creazione.ascolto >= 0 ? @tr("programma.crea.ferma-ascolto" => "Ferma l'ascolto") : @tr("programma.crea.ascolta-registrazione" => "Ascolta la registrazione");
             tipo: Tipo.quieto;
             // listening stays possible when no voice can be made: to hear why is the way to know what to record again
             abilitato: Creazione.tratti.length > 0;
@@ -481,7 +488,7 @@ component PassoAscolta inherits VerticalLayout {
         }
         Livello { attivo: Creazione.ascolto >= 0; forma: true; forza: 0.6; horizontal-stretch: 1; height: Token.altezza-comando * Aspetto.scala; }
         Pulsante {
-            testo: @tr("Rifai");
+            testo: @tr("programma.crea.rifai" => "Rifai");
             tipo: Tipo.nudo;
             premuto => { Creazione.rifai(); }
         }
@@ -490,7 +497,7 @@ component PassoAscolta inherits VerticalLayout {
     if root.unico && Creazione.tratti.length == 1 && Creazione.tratti[0].messaggi != "" && !Creazione.tratti[0].utilizzabile: Avviso {
         testo: Creazione.tratti[0].messaggi;
     }
-    if root.unico && Creazione.tratti.length == 1 && Creazione.tratti[0].messaggi != "" && Creazione.tratti[0].utilizzabile: Text {
+    if root.unico && Creazione.tratti.length == 1 && Creazione.tratti[0].messaggi != "" && Creazione.tratti[0].utilizzabile: Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
         text: Creazione.tratti[0].messaggi;
         wrap: word-wrap;
         font-size: Token.corpo-stato * Aspetto.scala;
@@ -501,14 +508,15 @@ component PassoAscolta inherits VerticalLayout {
         HorizontalLayout {
             alignment: start;
             spacing: Token.spazio-medio * Aspetto.scala;
-            Text {
-                text: @tr("Ho trovato {} tratti in cui si sente la voce. Ascolta e scegli.", Creazione.tratti.length);
+            Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
+                // TRANSLATORS: After a recording is read: {n} is how many stretches with a voice were found
+                text: @tr("programma.crea.trovati-tratti" => "Ho trovato {n} tratto in cui si sente la voce. Ascolta e scegli." | "Ho trovato {n} tratti in cui si sente la voce. Ascolta e scegli." % Creazione.tratti.length);
                 wrap: word-wrap;
                 vertical-alignment: center;
                 font-size: Token.corpo-stato * Aspetto.scala;
                 color: Token.testo-tenue;
             }
-            Pulsante { testo: @tr("Rifai"); tipo: Tipo.nudo; premuto => { Creazione.rifai(); } }
+            Pulsante { testo: @tr("programma.crea.rifai" => "Rifai"); tipo: Tipo.nudo; premuto => { Creazione.rifai(); } }
         }
         for t[i] in Creazione.tratti: RigaTratto {
             init => { if (i == 0) { self.focus(); } }
@@ -528,16 +536,17 @@ component PassoAscolta inherits VerticalLayout {
         }
     }
     if Creazione.crea-in-corso: Attesa {
-        testo: @tr("Creo la voce «{}»…", Creazione.nome);
-        dettaglio: @tr("Ci vuole poco. Quando è pronta la scegli da sola.");
+        // TRANSLATORS: While a voice is made: {} is the name the person gave it
+        testo: @tr("programma.crea.creo-voce" => "Creo la voce «{}»…", Creazione.nome);
+        dettaglio: @tr("programma.crea.ci-vuole-poco-quando" => "Ci vuole poco. Quando è pronta la scegli da sola.");
         valore: Creazione.crea-avanzamento;
         annulla => { Creazione.crea-annulla(); }
     }
     if !Creazione.crea-in-corso: VerticalLayout {
         spacing: Token.spazio-medio * Aspetto.scala;
         alignment: start;
-        Text {
-            text: @tr("Come si chiama questa voce?");
+        Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
+            text: @tr("programma.crea.come-si-chiama-questa" => "Come si chiama questa voce?");
             font-size: Token.corpo-comando * Aspetto.scala;
             font-weight: Token.peso-forte;
             color: Token.testo;
@@ -547,26 +556,28 @@ component PassoAscolta inherits VerticalLayout {
             border-radius: Token.raggio-pannello * Aspetto.scala;
             background: Token.campo;
             Tratteggio { width: 100%; height: 100%; raggio: Token.raggio-pannello * Aspetto.scala; colore: Creazione.nome-messaggio != "" ? Token.attenzione : nome-campo.has-focus ? Token.tratteggio-fuoco : Token.tratteggio; }
-            nome-campo := TextInput {
+            nome-campo := TextInput { transform-scale-x: Token.verso;
                 x: Token.spazio-medio * Aspetto.scala;
                 width: parent.width - 2 * self.x;
                 vertical-alignment: center;
+                horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
                 text <=> Creazione.nome;
                 font-size: Token.corpo-bolla * Aspetto.scala;
                 color: Token.testo;
-                accessible-label: @tr("Nome della voce");
+                accessible-label: @tr("programma.crea.nome-voce" => "Nome della voce");
                 edited => { Creazione.nome-modificato(); }
                 accepted => { consenso-voce.focus(); }
                 changed has-focus => { if (self.has-focus) { self.ensure-visible(ScrollBehavior.instant); } }
             }
-            if Creazione.nome == "": Text {
+            if Creazione.nome == "": Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
                 x: Token.spazio-medio * Aspetto.scala;
-                text: @tr("Per esempio: la voce di Anna");
+                // TRANSLATORS: An example of a name in the empty field: a name of a person, not a sentence
+                text: @tr("programma.crea.segnaposto-nome-voce" => "Per esempio: la voce di Anna");
                 font-size: Token.corpo-bolla * Aspetto.scala;
                 color: Token.segnaposto;
             }
         }
-        if Creazione.nome-messaggio != "": Text {
+        if Creazione.nome-messaggio != "": Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
             text: Creazione.nome-messaggio;
             wrap: word-wrap;
             font-size: Token.corpo-stato * Aspetto.scala;
@@ -574,9 +585,9 @@ component PassoAscolta inherits VerticalLayout {
         }
         consenso-voce := Consenso {
             dato <=> Creazione.consenso;
-            testo: @tr("È la mia voce, oppure la persona che parla mi ha dato il permesso di usarla.");
+            testo: @tr("programma.crea.mia-voce-oppure-persona" => "È la mia voce, oppure la persona che parla mi ha dato il permesso di usarla.");
         }
-        if Creazione.permesso-messaggio != "": Text {
+        if Creazione.permesso-messaggio != "": Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
             text: Creazione.permesso-messaggio;
             wrap: word-wrap;
             font-size: Token.corpo-stato * Aspetto.scala;
@@ -589,7 +600,7 @@ component PassoAscolta inherits VerticalLayout {
 export component CreaVoce inherits Rectangle {
     // the steps exist only while the screen is on: each takes the keyboard focus when it comes, so it never falls into the void
     in property <bool> attiva: true;
-    in property <string> da-leggere: @tr("Ciao, sono io. Questa è la mia voce, per le riunioni e per le persone a cui voglio bene. La leggo con calma, come parlo ogni giorno.");
+    in property <string> da-leggere: @tr("programma.crea.ciao-sono-io-questa" => "Ciao, sono io. Questa è la mia voce, per le riunioni e per le persone a cui voglio bene. La leggo con calma, come parlo ogni giorno.");
     // the three steps with their names need about 730 px at 100%: below that, only the step one is on, with «n di 3»
     property <bool> stretta: root.width < Token.soglia-minima * 1.3 * Aspetto.scala;
     background: Token.fondo;
@@ -616,14 +627,14 @@ export component CreaVoce inherits Rectangle {
         spacing: Token.spazio-largo * Aspetto.scala;
         HorizontalLayout {
             spacing: Token.spazio-largo * Aspetto.scala;
-            primo := Pulsante { testo: root.stretta ? @tr("←") : @tr("← Torna a scrivere"); accessible-label: @tr("Torna a scrivere"); tipo: Tipo.nudo; piccolo: true; premuto => { Creazione.esci(); } }
+            primo := Pulsante { testo: root.stretta ? "" : @tr("programma.crea.torna-a-scrivere" => "Torna a scrivere"); indietro: true; accessible-label: @tr("programma.crea.torna-a-scrivere" => "Torna a scrivere"); tipo: Tipo.nudo; piccolo: true; premuto => { Creazione.esci(); } }
             Rectangle { horizontal-stretch: 1; }
             Passi { passo: Creazione.passo; compatti: root.stretta; }
         }
-        Text {
-            text: Creazione.passo == 0 ? @tr("Come vuoi creare la tua voce?")
-                : Creazione.passo == 1 ? @tr("Leggi ad alta voce, con calma")
-                : @tr("Ascoltala e dalle un nome");
+        Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
+            text: Creazione.passo == 0 ? @tr("programma.crea.titolo-scegli" => "Come vuoi creare la tua voce?")
+                : Creazione.passo == 1 ? @tr("programma.crea.titolo-leggi" => "Leggi ad alta voce, con calma")
+                : @tr("programma.crea.titolo-nome" => "Ascoltala e dalle un nome");
             font-size: Token.corpo-titolo * Aspetto.scala;
             font-weight: Token.peso-titolo;
             color: Token.testo;
@@ -662,11 +673,11 @@ export component CreaVoce inherits Rectangle {
             HorizontalLayout {
                 alignment: end;
                 spacing: Token.spazio-largo * Aspetto.scala;
-                Text {
+                Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
                     // why the button waits: never a silent grey
-                    text: !Creazione.utilizzabile ? @tr("Da questa registrazione non si può creare la voce: rifai.")
-                        : !Creazione.nome-valido(Creazione.nome) ? @tr("Manca il nome.")
-                        : !Creazione.consenso ? @tr("Manca il permesso: spunta la casella.")
+                    text: !Creazione.utilizzabile ? @tr("programma.crea.questa-registrazione-non-si" => "Da questa registrazione non si può creare la voce: rifai.")
+                        : !Creazione.nome-valido(Creazione.nome) ? @tr("programma.crea.manca-nome" => "Manca il nome.")
+                        : !Creazione.consenso ? @tr("programma.crea.manca-permesso-spunta-casella" => "Manca il permesso: spunta la casella.")
                         : "";
                     vertical-alignment: center;
                     horizontal-stretch: 1;
@@ -675,7 +686,7 @@ export component CreaVoce inherits Rectangle {
                     color: Token.testo-tenue;
                 }
                 Pulsante {
-                    testo: Creazione.nome-conferma != "" ? Creazione.nome-conferma : @tr("Crea la voce");
+                    testo: Creazione.nome-conferma != "" ? Creazione.nome-conferma : @tr("programma.crea.crea-voce" => "Crea la voce");
                     tipo: Tipo.pieno;
                     abilitato: Creazione.utilizzabile && Creazione.nome-valido(Creazione.nome) && Creazione.consenso;
                     premuto => { Creazione.crea(); }

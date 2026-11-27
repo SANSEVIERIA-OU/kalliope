@@ -4,13 +4,14 @@
     en-XA   accented letters, a text 40% longer, delimiters: every cut, overlap and unmarked (still Italian) text shows up
     ar-XB   the same words forced right to left (RLO), with dir="rtl" on the page: what the layout does when it is mirrored
 
-The names are those of Android's pseudo-locales. Tags (<1>…</1>), placeholders ({n}, {{kalliope.version}}) and entities
-(&amp;) are copied as they are: only the words change.
+The names are those of Android's pseudo-locales. Tags (<1>…</1>), placeholders ({n}, {}, {0}, {{kalliope.version}}, and the {{ }} of a brace written as itself) and entities
+(&amp;) are copied as they are: only the words change. The program's pseudo-languages are made by crates/i18n from the same rule
+(crates/i18n/tests/pseudo.txt holds both).
 """
 import math
 import re
 
-_TOKEN = re.compile(r"</?\d+/?>|\{\{kalliope\.[a-z0-9.]+\}\}|\{[A-Za-z_][A-Za-z0-9_]*\}|&(?:amp|lt|gt);")
+_TOKEN = re.compile(r"</?\d+/?>|\{\{kalliope\.[a-z0-9.]+\}\}|\{\d*\}|\{[A-Za-z_][A-Za-z0-9_]*\}|\{\{|\}\}|&(?:amp|lt|gt);")
 _DA = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
 _A = "ÅáßβÇçÐðÉéƑƒĜĝĤĥÎîĴĵĶķĻļḾḿÑñÖöÞþǪǫŔŕŠšŢţÛûṼṽŴŵẊẋÝýŽž"
 _MAPPA = str.maketrans(_DA, _A)

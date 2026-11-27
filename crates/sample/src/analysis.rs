@@ -8,6 +8,8 @@
 //! its frames lie well below its mean energy (after the "percentage of low-energy frames" of Scheirer
 //! and Slaney, ICASSP 1997), while music and steady noise keep their energy up.
 
+use kalliope_i18n::tr;
+
 /// Frames per second: 20 ms each.
 pub const FRAMES_PER_SECOND: usize = 50;
 /// Seconds of recording a voice is made from (Pocket TTS, `kalliope_voice::pocket::MAX_VOICE_SECONDS`).
@@ -56,29 +58,29 @@ impl Problem {
         matches!(self, Problem::NoSpeech | Problem::TooShort)
     }
 
-    /// What to tell the person, in plain Italian.
-    pub fn message(self) -> &'static str {
+    /// What to tell the person.
+    pub fn message(self) -> String {
         match self {
             Problem::NoSpeech => {
-                "Non sento una voce che parla: solo silenzio, rumore o musica. Registra di nuovo, o scegli un altro file."
+                tr!("programma.analisi.nessuna-voce" => "Non sento una voce che parla: solo silenzio, rumore o musica. Registra di nuovo, o scegli un altro file.")
             }
             Problem::TooShort => {
-                "C'è troppo poco parlato: servono almeno 4 secondi di voce, meglio 12. Registra ancora un po', o scegli un file più lungo."
+                tr!("programma.analisi.troppo-poco-parlato" => "C'è troppo poco parlato: servono almeno 4 secondi di voce, meglio 12. Registra ancora un po', o scegli un file più lungo.")
             }
             Problem::Short => {
-                "La voce si può creare, ma con 12 secondi di parlato somiglierebbe di più alla persona."
+                tr!("programma.analisi.parlato-breve" => "La voce si può creare, ma con 12 secondi di parlato somiglierebbe di più alla persona.")
             }
             Problem::Clipping => {
-                "La voce è distorta perché era troppo forte. Allontana un po' il microfono, o abbassane il volume, e registra di nuovo."
+                tr!("programma.analisi.distorta" => "La voce è distorta perché era troppo forte. Allontana un po' il microfono, o abbassane il volume, e registra di nuovo.")
             }
             Problem::TooQuiet => {
-                "La voce è molto bassa. Avvicinati al microfono, o alzane il volume, e registra di nuovo."
+                tr!("programma.analisi.troppo-bassa" => "La voce è molto bassa. Avvicinati al microfono, o alzane il volume, e registra di nuovo.")
             }
             Problem::TooNoisy => {
-                "C'è molto rumore di fondo, e la voce creata lo imiterà. Se puoi, registra in un posto più silenzioso."
+                tr!("programma.analisi.rumore-di-fondo" => "C'è molto rumore di fondo, e la voce creata lo imiterà. Se puoi, registra in un posto più silenzioso.")
             }
             Problem::Music => {
-                "Questo tratto sembra musica più che una voce che parla. Scegli un altro tratto, o un altro file."
+                tr!("programma.analisi.musica" => "Questo tratto sembra musica più che una voce che parla. Scegli un altro tratto, o un altro file.")
             }
         }
     }

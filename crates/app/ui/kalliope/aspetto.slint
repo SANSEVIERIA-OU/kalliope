@@ -1,10 +1,20 @@
 // SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
+import { Token } from "token.slint";
+
 // What the whole window shares: the text size chosen by the person, and the state the window shows.
 
 // The truth the status line tells. The engine's real states map onto these (session.rs, Status::situation).
 export enum Situazione { preparazione, pronta, parla, nessuno-ascolta, senza-microfono, problema-voce, avviso }
 
 export global Aspetto {
+    // The side a line of text begins on. Slint lays «start» out as left whatever the language, so every text asks for its side:
+    // right in a language written from right to left (the window is turned round, and the text turns itself back, ui/app.slint).
+    // The language in use (its code: lingua.rs sets it at start). Each script asks for its own distance between lines, from the
+    // design system (--app-interlinea-*): the tall marks of Devanagari and Bengali, and Nastaliq, which runs downward in a slant.
+    in-out property <string> lingua: "it";
+    out property <float> interlinea: root.lingua == "ar" ? Token.interlinea-ar : root.lingua == "ur" ? Token.interlinea-ur
+        : root.lingua == "hi" ? Token.interlinea-hi : root.lingua == "bn" ? Token.interlinea-bn : root.lingua == "zh" ? Token.interlinea-zh : 1;
+    out property <TextHorizontalAlignment> inizio: Token.rtl ? TextHorizontalAlignment.right : TextHorizontalAlignment.left;
     // The text size: 1 is 100%. Every size of the window is multiplied by it, so everything grows together.
     in-out property <float> scala: 1;
     // Less motion: the dashes stop walking, the voice bars stand still, the bubble appears without growing.

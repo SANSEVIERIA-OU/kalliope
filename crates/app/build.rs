@@ -32,10 +32,94 @@ fn main() {
     if std::fs::read_to_string(&data).ok().as_deref() != Some(&catalog) {
         std::fs::write(&data, &catalog).expect("write catalogo_dati.slint");
     }
-    let config = slint_build::CompilerConfiguration::new()
-        .with_include_paths(vec![output, system])
+    write_language_fonts(&tokens.language_fonts, &system, &output);
+    let mut config = slint_build::CompilerConfiguration::new()
+        .with_include_paths(vec![output.clone(), system])
         .with_style(STYLE.into());
+    if let Some(bundle) = bundle_translations(&manifest, &output) {
+        config = config.with_bundled_translations(bundle);
+    }
     slint_build::compile_with_config("ui/app.slint", config).expect("ui/app.slint");
+}
+
+/// The translations Slint bundles: the languages whose catalogue is whole (`kalliope_i18n::catalogo`, the same choice as the
+/// program's own tables), with the program's messages only, in the folder layout `with_bundled_translations` reads. `None` when
+/// no language is ready: the window then has the Italian text of the source.
+fn bundle_translations(manifest: &std::path::Path, output: &std::path::Path) -> Option<PathBuf> {
+    println!("cargo:rerun-if-env-changed=KALLIOPE_CATALOGO");
+    let catalogue = std::env::var_os("KALLIOPE_CATALOGO")
+        .map(PathBuf::from)
+        .unwrap_or_else(|| manifest.join("../../website/lingue"));
+    println!("cargo:rerun-if-changed={}", catalogue.display());
+    let ready = match kalliope_i18n::catalogo::ready(&catalogue) {
+        Ok(r) => r,
+        Err(e) => {
+            println!("cargo::error=the catalogue cannot be read: {e}");
+            std::process::exit(1);
+        }
+    };
+    // Italian goes in the bundle too (it is the source of the code, but Slint takes the decimal separator of the language it selects)
+    let mut languages: Vec<_> = ready.italian.into_iter().chain(ready.languages).collect();
+    // the pseudo-languages exist only for the tests: `--features pseudo`
+    if std::env::var_os("CARGO_FEATURE_PSEUDO").is_some() {
+        for code in ["en-XA", "ar-XB"] {
+            languages.push(kalliope_i18n::catalogo::pseudo(code, &ready.source));
+        }
+    }
+    let bundle = output.join("lingue");
+    // a language that left the catalogue leaves the bundle
+    if let Ok(old) = std::fs::read_dir(&bundle) {
+        for folder in old.filter_map(Result::ok) {
+            if !languages
+                .iter()
+                .any(|l| folder.file_name() == l.code.as_str())
+            {
+                let _ = std::fs::remove_dir_all(folder.path());
+            }
+        }
+    }
+    if languages.is_empty() {
+        return None;
+    }
+    kalliope_i18n::catalogo::write_slint_bundle(&languages, "kalliope-app", &bundle)
+        .expect("write the translations Slint bundles");
+    Some(bundle)
+}
+
+/// `caratteri.rs`: the typeface of each language's script, embedded in the program as bytes and registered only when that
+/// language is in use (`--app-carattere-<ll>` in token.css; the same file for two languages is embedded once).
+fn write_language_fonts(
+    faces: &[(String, String)],
+    system: &std::path::Path,
+    output: &std::path::Path,
+) {
+    let mut files: Vec<&str> = faces.iter().map(|(_, f)| f.as_str()).collect();
+    files.sort();
+    files.dedup();
+    let mut code = String::from(
+        "// Generated from design-system/token.css by crates/app/build.rs; do not edit.\n\
+         pub static FACES: &[(&str, &[u8])] = &[\n",
+    );
+    for (language, file) in faces {
+        let n = files.iter().position(|f| f == file).unwrap_or(0);
+        code.push_str(&format!("    ({language:?}, FILE_{n}),\n"));
+    }
+    code.push_str("];\n");
+    for (n, file) in files.iter().enumerate() {
+        let path = system.join(file);
+        println!("cargo:rerun-if-changed={}", path.display());
+        code.push_str(&format!(
+            "static FILE_{n}: &[u8] = include_bytes!({:?});\n",
+            path.canonicalize()
+                .unwrap_or_else(|e| panic!("{}: {e}", path.display()))
+                .display()
+                .to_string()
+        ));
+    }
+    let path = output.join("caratteri.rs");
+    if std::fs::read_to_string(&path).ok().as_deref() != Some(&code) {
+        std::fs::write(&path, code).expect("write caratteri.rs");
+    }
 }
 
 /// The live catalog's table of tokens (`kalliope --catalogo`), from the generated Token global and the comments of

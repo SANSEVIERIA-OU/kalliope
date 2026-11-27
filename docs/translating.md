@@ -1,25 +1,29 @@
-# Translating the website
+# Translating Kalliope: the website and the program
 
-The website is ready for the 30 languages Kalliope was asked to speak: the 24 official languages of the European Union
+The website and the program are ready for the 30 languages Kalliope was asked to speak: the 24 official languages of the European Union
 and the ten most spoken in the world (Arabic, Bengali, Chinese, French, Hindi, Indonesian, Portuguese, Spanish, Urdu and
 English; the list is in `tools/data/cldr.json`):
 
 `bg cs da de el en es et fi fr ga hr hu it lt lv mt nl pl pt ro sk sl sv` and `zh hi ar bn id ur`.
 
-**Adding a language is adding one file**, `website/lingue/<xx>.po`. No page, no script and no style sheet changes. The
-pages are written in Italian and say what a translator sees; the build puts each translation in.
+**Adding a language is adding one file**, `website/lingue/<xx>.po`, which holds the texts of the website **and** of the program
+(the window the person types in). No page, no script, no style sheet and no source file changes. The pages and the program are
+written in Italian and say what a translator sees; the build puts each translation in. «The program» below says what is different
+for its texts; everything else in this file is the same for both.
 
 ## How it fits together
 
 | What | Where |
 | --- | --- |
 | The pages, in Italian, with the marks of what to translate | `website/**/*.html` |
+| The window and its status lines, errors and advice, in Italian, each with its key | `crates/app/ui/**/*.slint` (`@tr`), `crates/*/src/**/*.rs` (`tr!`, `trn!`) |
 | The model: every message once, with a stable key | `website/lingue/site.pot` (made, never edited) |
 | Italian, the language of the pages | `website/lingue/it.po` (made, never edited) |
 | One catalogue per language | `website/lingue/<xx>.po` |
 | Dates, sizes and plural rules of the 30 languages | `tools/data/cldr.json`, from Unicode CLDR |
 | Extract, update, check | `tools/translations.py` |
-| Build, with every language that is ready | `tools/site.py` |
+| Build the site, with every language that is ready | `tools/site.py` |
+| Build the program, with every language that is ready | `cargo build` (`crates/i18n`, `crates/app/build.rs`) |
 
 The format is gettext `.po`, the one the application will use too (Slint reads nothing else), and Weblate and Pontoon read.
 Each message is known by its `msgctxt`, a key written in the page (`apertura.titolo`, `menu.installa`), never by its
@@ -43,6 +47,88 @@ The mappings live in `website/rimandi.json`. With JavaScript, redirects keep que
 Without JavaScript, a meta refresh and a plain link lead to the default destination. Files shared by the
 languages stay where they were: `/voce/…`, `/immagini/…`, `/design-system/…`.
 
+## The program
+
+The window speaks the language of the system, from the same file as the website. Nothing is read at run time and nothing needs
+installing: the build reads `website/lingue/*.po` and writes the messages of every ready language into the program
+(`crates/i18n`; Slint bundles its own, `slint_build::with_bundled_translations`).
+
+**Which messages are the program's.** The ones whose key starts with `programma.` (the website's never do): `programma.finestra.riunione`
+(a button), `programma.sessione.pronta` (the status line), `programma.analisi.distorta` (advice after a recording), `programma.nome.esiste`
+(a name check), `programma.file.rovinato` (an import error). They are in `site.pot` and in every `<xx>.po` after the website's. A comment
+(`#.`) says what the text is for, the file it is used in is in `#:`, and the flag says how its placeholders are written:
+
+| Flag | Where it comes from | Placeholders |
+| --- | --- | --- |
+| `kalliope-slint` | the window (`.slint`, `@tr`) | `{}` or `{0}` `{1}`… for the arguments, in order; `{n}` is the count of a plural. A translation may reorder them with `{0}`, `{1}`, but not mix `{}` and `{0}` in one text |
+| `kalliope-rust` | a status line, an error, advice (`.rs`, `tr!`) | `{name}` for the argument called `name`; `{n}` is the count of a plural |
+
+Both use `{n}` for the count, and `{{` and `}}` for a brace written as itself. Leave every placeholder as it is (a plural form may
+drop `{n}` where the language says «one second» without the number; every other form keeps all of them). `check` finds a missing,
+an added and a wrong placeholder.
+
+**Plurals.** A message with a count has `msgid_plural` and as many `msgstr[N]` as the language has forms (the same as the
+website: `ar` six, `ga` and `mt` five, `cs` `sk` `lt` `pl` `sl` four, `hr` `ro` `lv` `fr` `es` `pt` `it` three, `zh` and `id` one,
+all others two). The Italian text gives the singular and the plural of the *count in the message*: «Ne manca {n}» and «Ne mancano {n}». The program picks the form with the rule of the `Plural-Forms` header (compiled into
+the program, checked against CLDR for the 30 languages), so a language with one form writes one text.
+
+**What is not translated, and what is not touched.**
+- The name «Kalliope», the voices «Giulia» and «Marco», and the sentences a person types or says: they are not messages.
+- `{causa}` (and `{formato}`) in a message is the system's own error text, in English: it stays as a cause, in the message as it is.
+- The keys (`msgctxt`) and the Italian text (`msgid`): never edit `site.pot` or `it.po` (`extract` writes them), and never a `.slint` or
+  `.rs` file for a translation.
+- Write the text as the language writes it. Do not add the invisible marks that direct a text (U+200E, U+200F, U+202A…U+202E):
+  for a language written from right to left the build opens every message with the right-to-left mark itself, so a text that
+  begins with a Latin word, such as «Kalliope», still sits on the right of the mirrored window and its punctuation lands on the
+  right side. Digits: a number written in the Italian text («4 secondi», «12») is written as the language writes it; a number the
+  program puts in (`{n}`, a time) is always 0 to 9, because Slint formats numbers itself. CLDR's own digits for the 30 languages are 0 to 9,
+  except Bengali (০১২…): a Bengali window shows Western digits in counts and times, and the translator writes Bengali digits in the fixed text.
+- The keys of the window's keyboard shortcuts (Invio, Esc, Alt+Spazio) are texts to translate as the keys are named on the
+  keyboard of that language; a letter such as «A−» and «A+» (text size) is a text too: the sign for it in that language.
+
+**Which language the program shows.** The one the system asks for: on Linux `LANGUAGE` (a list: `fr:de`, ignored when the locale is `C`
+or `POSIX`, as gettext does), then `LC_ALL`, `LC_MESSAGES`, `LANG`; on Windows and macOS the system's own list of preferred languages.
+The first of them that the program has, by its language part (`pt-BR` is `pt`, `zh-TW` is `zh`); Italian when none is. There is **no language
+menu**. `KALLIOPE_LINGUA=de` shows one language whatever the system says (to try it, or to ask for Italian).
+**A language is in the program only when its whole file is ready**, website and program: the program never shows a language half
+translated, and the guide the window opens («Come si risolve», the site) is the one of the same language, because the site has it too.
+The terminal commands (`kalliope --say`, `--registra-voce`, `--importa-voce`, `--help`) and `kalliope-cli` stay in Italian.
+
+**Right to left.** `ar` and `ur` mirror the window: the order of the bar, the side of the history, the tail of the bubble, the way a
+panel comes in, the arrows, the writing area (its caret starts on the right), the text of every line. Slint has no direction of writing
+for a layout, so the window is turned round as a whole (`transform-scale-x: Token.verso` on the root, `--verso` of the design
+system, `design-system/TOKEN.md`) and every text, field and picture turns itself back; `tools/slint_valori.py` fails when one does
+not. Mixed Latin and Arabic text keeps its logical order (the text engine's own bidirectional algorithm).
+
+**Typefaces.** One face per script, the same as the website's, embedded as TTF (derived from the design system's WOFF2 with
+`tools/caratteri_ttf.py`): Geologica for Greek and Cyrillic (`el`, `bg`), Readex Pro for Arabic, Noto Nastaliq Urdu for Urdu, Noto Sans
+Devanagari for Hindi, Noto Sans Bengali for Bengali. Only the face of the language in use is registered (`--app-carattere-<ll>` in
+`token.css`; Lexend, which draws Latin and the digits, is always there and comes first). **Chinese uses the face of the system**, as on the
+website; where the system has none, the program draws empty boxes: the same as every page of the site on that system.
+
+**Pseudo-languages, to test the program without translators.** `cargo build -p kalliope-app --features pseudo`, then
+`KALLIOPE_LINGUA=en-XA kalliope` (accented letters, a text 40% longer, delimiters) or `KALLIOPE_LINGUA=ar-XB` (the words forced
+right to left, the window mirrored). They are made from the Italian text when the program is built, are never in a normal build, and
+`--demo SCENA` and `--catalogo` open the window and the catalogue in them.
+
+**Looking at a translation in the window.** Build the program once with the catalogue as it is (`cargo build -p kalliope-app`); a
+language that is ready is in it. `KALLIOPE_LINGUA=de ./target/debug/kalliope` opens the window in German, and `--demo SCENA` shows every
+state without the voice engine: `vuota`, `prepara`, `scrive`, `parla`, `nessuno` (nobody hears), `microfono` (no virtual microphone),
+`problema` (the voice does not start), `compatta`, `notizia`, `info`, `conferma`, `voce-1`, `voce-mic`, `voce-2`, `voce-suggerimento`,
+`voce-3`, `voce-nome`, `voce-crea`, `voce-importa`, `voce-errore`, `voce-tratti`; `KALLIOPE_DEMO_MISURA=360x320` and `KALLIOPE_DEMO_SCALA=1.75`
+open it at the smallest size and with the largest text. `kalliope --catalogo` shows the components, with a switch for right to left.
+**Plural rules.** The rule of each language is read from its `Plural-Forms` header and compiled into the program; for Slint's own `@tr`
+it is written without `!` (Slint's reader of a plural rule does not know negation, which Croatian, Lithuanian and Polish use, and
+`crates/i18n/tests/slint.rs` reads all 30 rules with Slint's own reader so a language never stops the build).
+
+**A message in the source.** In a `.slint` file: `@tr("programma.finestra.riunione" => "Riunione")`, with arguments
+`@tr("programma.bolla.ripeti-frase" => "Ripeti: {}", testo)`, and a plural `@tr("programma.crea.trovati" => "Ho trovato {n} tratto." | "Ho trovato {n} tratti." % quanti)`.
+In Rust: `tr!("programma.sessione.parlo" => "Sto parlando…")`, `tr!("…" => "Leggo «{nome}»", nome = file)`, `trn!("…" => "Ne manca {n}" | "Ne mancano {n}", secondi)`.
+A comment `// TRANSLATORS: …` on the line above, or after the call, goes to the translators. `extract` reads every `.slint` and `.rs` file of `crates/` (except `crates/i18n`, which defines the macros and tests them with keys that are not messages): a `tr!` in a test would become a message, so tests do not use it. The key is
+`programma.area.nome`, lowercase letters, digits, dots and dashes, and it never changes when the Italian text does: a changed Italian text makes
+every translation `fuzzy` and the language leaves the program until someone has read it again (the website does the same). Then
+`python3 -I tools/translations.py extract` writes the entries. CI fails when it was not run.
+
 ## Add a language
 
 ```sh
@@ -52,7 +138,7 @@ python3 -I tools/translations.py check fr --complete
 python3 -I tools/site.py --out /tmp/kalliope-site --release-json releases.json
 ```
 
-A language is **published** when its file is complete and checked: every key of the model there, none empty, none
+A language is **published** (the site) and **shown by the program** (the window) when its file is complete and checked: every key of the model there, **the website's and the program's**, none empty, none
 `fuzzy`, none translated from an older Italian text, tags and placeholders intact, the `Plural-Forms` header and the number
 of forms those of the language. A language that is not (a missing, fuzzy or out-of-date entry, or a broken tag) is **left
 out of the build, and the build says so** (`site.py: language de: left out, de: 112/114 entries ready (2 missing); first:
@@ -60,7 +146,9 @@ out of the build, and the build says so** (`site.py: language de: left out, de: 
 is complete, not before. The same rule keeps a language out for a moment when the Italian text of one entry changes: it comes
 back when somebody has read the fuzzy entry again.
 
-Commit the file; the push publishes the site (`.github/workflows/pages.yml`) if the owner has authorised it.
+Commit the file; the push publishes the site (`.github/workflows/pages.yml`) if the owner has authorised it, and the next build of the
+program has the language. `python3 -I tools/translations.py status` says, for each of the 30, how many entries are ready (the website's and the program's apart) and whether the language is
+published; `cargo build -p kalliope-app` prints one line for the files that are there and not ready (`kalliope-i18n: not ready, so not in the program: de (programma.crea.mancano is missing)`).
 
 ### What a translator sees
 
@@ -134,10 +222,10 @@ gives for every rule. The build does not need a network.
 
 ## Change a text
 
-Change the Italian text in the page, then:
+Change the Italian text in the page (or in the source of the program), then:
 
 ```sh
-python3 -I tools/translations.py extract      # site.pot, it.po, and every <xx>.po brought up to date
+python3 -I tools/translations.py extract      # site.pot, it.po, and every <xx>.po brought up to date (pages and program)
 ```
 
 New keys appear empty in every language; a changed Italian text makes the entry `fuzzy` (the translation is kept, the old text is
@@ -222,5 +310,4 @@ Two notes for translators: in Chinese write the four lines of `apertura.titolo` 
 or the phone shows a gap where the lines run on; and keep the units marked in the sentences (`<1>alle 15:30?</1>`) short, a few
 words that must not break.
 
-The texts of the site are today's Italian ones and will be rewritten: the tools do not care. The application (Slint, `@tr`, `.po`
-compiled into the program) is a later step and reads the same format.
+The texts of the site and of the program are today's Italian ones and will be rewritten: the tools do not care.

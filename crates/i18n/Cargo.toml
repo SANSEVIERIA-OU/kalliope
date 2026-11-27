@@ -1,0 +1,22 @@
+[package]
+name = "kalliope-i18n"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+description = "The program's translations: the catalogue read at build time, the language chosen at start, plural forms"
+
+[features]
+# The pseudo-languages `en-XA` (accented, 40% longer) and `ar-XB` (right to left), made from the Italian text for tests only.
+pseudo = []
+
+[dependencies]
+
+[dev-dependencies]
+# Slint's own reader of a bundle, to prove it takes the plural rule of each of the 30 languages (tests/slint.rs)
+i-slint-compiler = { version = "1.19.1", default-features = false, features = ["bundle-translations"] }
+
+# Windows and macOS give the language of the person through their own API; Linux reads LANGUAGE, LC_ALL, LC_MESSAGES and LANG.
+[target.'cfg(not(target_os = "linux"))'.dependencies]
+sys-locale = "0.3.2"

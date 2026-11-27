@@ -7,6 +7,7 @@
 //! The work itself is `kalliope-sample` (shared with `kalliope-cli voice`) and `kalliope-mic`.
 
 use crate::engine::{KLEIN_VOICES, VoiceId};
+use kalliope_i18n::{tr, trn};
 use kalliope_sample::{Audio, Problem, Quality, Sample, Stretch};
 use std::path::{Path, PathBuf};
 use std::sync::atomic::{AtomicBool, AtomicU64, Ordering};
@@ -53,19 +54,24 @@ pub fn microphones() -> Result<Vec<Microphone>, String> {
         .map_err(|e| mic_message(&e))
 }
 
+/// No microphone to record from.
+pub fn no_microphone() -> String {
+    tr!("programma.registra.nessun-microfono" => "Non trovo un microfono. Collegane uno (meglio una cuffia con microfono), poi riprova.")
+}
+
 fn mic_message(e: &kalliope_mic::Error) -> String {
     eprintln!("kalliope: recording: {e}");
     match e.kind() {
-        kalliope_mic::ErrorKind::NoSource => {
-            "Non trovo un microfono. Collegane uno (meglio una cuffia con microfono), poi riprova.".into()
-        }
+        kalliope_mic::ErrorKind::NoSource => no_microphone(),
         kalliope_mic::ErrorKind::Unavailable => {
-            "Su questo computer non posso registrare: serve PipeWire, il servizio audio dei sistemi Linux di oggi.".into()
+            tr!("programma.registra.serve-pipewire" => "Su questo computer non posso registrare: serve PipeWire, il servizio audio dei sistemi Linux di oggi.")
         }
         kalliope_mic::ErrorKind::NotRunning => {
-            "Il servizio audio del computer non risponde: riprova fra qualche secondo.".into()
+            tr!("programma.registra.audio-non-risponde" => "Il servizio audio del computer non risponde: riprova fra qualche secondo.")
         }
-        _ => "Il microfono non si è aperto. Riprova, o scegli un altro microfono.".into(),
+        _ => {
+            tr!("programma.registra.microfono-non-aperto" => "Il microfono non si è aperto. Riprova, o scegli un altro microfono.")
+        }
     }
 }
 
@@ -97,14 +103,19 @@ pub struct Take {
     pub note: Option<String>,
 }
 
+/// Said when only the start of a long file was read.
+pub fn long_file_note() -> String {
+    trn!(
+        "programma.file.lungo" => "Il file è lungo: ho cercato la voce nel primo minuto." | "Il file è lungo: ho cercato la voce nei primi {n} minuti.",
+        (kalliope_sample::MAX_SECONDS / 60.0) as u32
+    )
+}
+
 impl Take {
     fn new(origin: Origin, audio: &Audio, wav: Option<PathBuf>, mut note: Option<String>) -> Take {
         let sample = Sample::new(audio);
         if sample.truncated && note.is_none() {
-            note = Some(format!(
-                "Il file è lungo: ho cercato la voce nei primi {} minuti.",
-                (kalliope_sample::MAX_SECONDS / 60.0) as u32
-            ));
+            note = Some(long_file_note());
         }
         Take {
             origin,
@@ -283,8 +294,9 @@ fn record(
             speech_seconds,
         });
         if !recorder.is_connected() {
-            note = Some(format!(
-                "Il microfono «{label}» si è scollegato: tengo quello che hai registrato fino a quel momento."
+            note = Some(tr!(
+                "programma.registra.scollegato" => "Il microfono «{label}» si è scollegato: tengo quello che hai registrato fino a quel momento.",
+                label = label
             ));
             break;
         }
@@ -296,7 +308,7 @@ fn record(
     drop(recorder);
     if samples.len() < rate as usize / 2 {
         return on_event(RecordingEvent::Failed(note.unwrap_or_else(|| {
-            "Non è arrivato nessun suono dal microfono. Controlla che sia collegato e acceso, poi riprova.".into()
+            tr!("programma.registra.nessun-suono" => "Non è arrivato nessun suono dal microfono. Controlla che sia collegato e acceso, poi riprova.")
         })));
     }
     let audio = Audio {
@@ -398,15 +410,20 @@ impl NameCheck {
     pub fn message(&self) -> Option<String> {
         match self {
             NameCheck::Free { .. } => None,
-            NameCheck::Empty => {
-                Some("Scrivi un nome per la voce, per esempio «La voce di Anna».".into())
-            }
-            NameCheck::TooLong => Some("Il nome è troppo lungo: accorcialo un po'.".into()),
-            NameCheck::SameAsKalliope { name, .. } => Some(format!(
-                "«{name}» è anche il nome di una voce di Kalliope. Puoi tenerlo: nel menu la tua comparirà come «{name} (voce propria)». Oppure scegli un altro nome."
+            NameCheck::Empty => Some(
+                tr!("programma.nome.vuoto" => "Scrivi un nome per la voce, per esempio «La voce di Anna»."),
+            ),
+            NameCheck::TooLong => Some(
+                tr!("programma.nome.troppo-lungo" => "Il nome è troppo lungo: accorcialo un po'."),
+            ),
+            // TRANSLATORS: {nome} is a name the person typed that is also the name of Giulia or Marco
+            NameCheck::SameAsKalliope { name, .. } => Some(tr!(
+                "programma.nome.come-una-voce-di-kalliope" => "«{nome}» è anche il nome di una voce di Kalliope. Puoi tenerlo: nel menu la tua comparirà come «{nome} (voce propria)». Oppure scegli un altro nome.",
+                nome = name
             )),
-            NameCheck::Exists { name, .. } => Some(format!(
-                "C'è già una voce che si chiama «{name}». Vuoi sostituirla con questa, o preferisci un altro nome?"
+            NameCheck::Exists { name, .. } => Some(tr!(
+                "programma.nome.esiste" => "C'è già una voce che si chiama «{nome}». Vuoi sostituirla con questa, o preferisci un altro nome?",
+                nome = name
             )),
         }
     }
@@ -527,7 +544,7 @@ impl Creation {
                 .messages(stretch)
                 .into_iter()
                 .next()
-                .unwrap_or_else(|| "Questa registrazione non basta per creare una voce.".into());
+                .unwrap_or_else(|| tr!("programma.voce.registrazione-non-basta" => "Questa registrazione non basta per creare una voce."));
             on_event(CreateEvent::Failed(message));
             return Ok(Creation(Job::spawn("kalliope-create", |_, _| {})));
         }
@@ -543,7 +560,7 @@ impl Creation {
                 Err(e) => {
                     eprintln!("kalliope: making the voice {}: {e:?}", out.display());
                     on_event(CreateEvent::Failed(
-                        "Non sono riuscita a creare la voce. Riprova; se succede ancora, prova con un'altra registrazione.".into(),
+                        tr!("programma.voce.non-creata" => "Non sono riuscita a creare la voce. Riprova; se succede ancora, prova con un'altra registrazione."),
                     ));
                 }
             }
@@ -573,7 +590,7 @@ impl Listening {
                 )
                 .map_err(|e| {
                     eprintln!("kalliope: listening: {e}");
-                    "Non riesco a farti ascoltare la registrazione dalle casse.".to_string()
+                    tr!("programma.registra.casse" => "Non riesco a farti ascoltare la registrazione dalle casse.")
                 })?,
             );
         }

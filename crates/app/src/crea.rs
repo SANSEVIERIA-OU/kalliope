@@ -7,6 +7,7 @@ use crate::engine::VoiceId;
 use crate::own_voice::{
     CreateEvent, ImportEvent, Microphone, NameCheck, Origin, RecordingEvent, Take,
 };
+use kalliope_i18n::tr;
 
 /// One stretch the voice can be made from, as the screen shows it.
 #[derive(Debug, Clone, PartialEq, Default)]
@@ -54,10 +55,38 @@ pub struct CreateRequest {
     pub confirmed: bool,
 }
 
-const NO_VOICE_HEARD: &str =
-    "Non ti sento. Avvicinati al microfono, controlla che non sia spento, o scegline un altro.";
-const TOO_LOUD: &str = "Il suono è troppo forte: allontanati un po' dal microfono.";
-const NO_PERMISSION: &str = "Per continuare serve il permesso: spunta la casella.";
+pub fn no_voice_heard() -> String {
+    tr!("programma.crea.non-ti-sento" => "Non ti sento. Avvicinati al microfono, controlla che non sia spento, o scegline un altro.")
+}
+
+fn too_loud() -> String {
+    tr!("programma.crea.troppo-forte" => "Il suono è troppo forte: allontanati un po' dal microfono.")
+}
+
+fn no_permission() -> String {
+    tr!("programma.crea.serve-permesso" => "Per continuare serve il permesso: spunta la casella.")
+}
+
+/// The name of a stretch in the list: its number, and a word for the clearest.
+pub fn stretch_title(number: usize, clearest: bool) -> String {
+    if clearest {
+        // TRANSLATORS: The first stretch of a recording, the one where the voice is clearest: {numero} is its number
+        tr!("programma.crea.tratto-chiaro" => "Tratto {numero} · il più chiaro", numero = number)
+    } else {
+        tr!("programma.crea.tratto" => "Tratto {numero}", numero = number)
+    }
+}
+
+/// Where a stretch is in the recording and how much voice it has.
+pub fn stretch_detail(start: &str, end: &str, speech_seconds: f32) -> String {
+    // TRANSLATORS: A stretch of a recording: from {inizio} to {fine} (times like 0:12), with {secondi} seconds of voice
+    tr!(
+        "programma.crea.tratto-dettaglio" => "da {inizio} a {fine} · {secondi} s di voce",
+        inizio = start,
+        fine = end,
+        secondi = format!("{speech_seconds:.0}")
+    )
+}
 
 /// Seconds into a recording as «0:12».
 fn clock(seconds: f32) -> String {
@@ -119,7 +148,7 @@ impl Flow {
                 true
             }
             Ok(_) => {
-                self.fail("Non trovo un microfono. Collegane uno (meglio una cuffia con microfono), poi riprova.");
+                self.fail(&crate::own_voice::no_microphone());
                 false
             }
             Err(e) => {
@@ -193,9 +222,9 @@ impl Flow {
                     self.clips += 1;
                 }
                 self.view.hint = if seconds >= 4.0 && speech_seconds < 0.5 {
-                    NO_VOICE_HEARD.into()
+                    no_voice_heard()
                 } else if self.clips >= 5 {
-                    TOO_LOUD.into()
+                    too_loud()
                 } else {
                     String::new()
                 };
@@ -225,7 +254,7 @@ impl Flow {
 
     /// The chooser did not open (it came back at once with nothing): say so, with a way out.
     pub fn chooser_missing(&mut self) {
-        self.fail("Non si apre la finestra per scegliere il file. Riprova; se succede ancora, serve il portale del tuo desktop o il programma «zenity».");
+        self.fail(&tr!("programma.crea.scelta-file-non-si-apre" => "Non si apre la finestra per scegliere il file. Riprova; se succede ancora, serve il portale del tuo desktop o il programma «zenity»."));
     }
 
     pub fn on_import(&mut self, event: ImportEvent) {
@@ -265,20 +294,11 @@ impl Flow {
                 .iter()
                 .enumerate()
                 .map(|(i, s)| StretchView {
-                    title: format!(
-                        "Tratto {}{}",
-                        i + 1,
-                        if i == 0 && take.stretches.len() > 1 {
-                            " · il più chiaro"
-                        } else {
-                            ""
-                        }
-                    ),
-                    detail: format!(
-                        "da {} a {} · {:.0} s di voce",
-                        clock(s.start),
-                        clock(s.end),
-                        s.quality.speech_seconds
+                    title: stretch_title(i + 1, i == 0 && take.stretches.len() > 1),
+                    detail: stretch_detail(
+                        &clock(s.start),
+                        &clock(s.end),
+                        s.quality.speech_seconds,
                     ),
                     messages: s
                         .problems
@@ -349,9 +369,7 @@ impl Flow {
         let stretch = self.view.chosen.max(0) as usize;
         let usable = self.view.stretches.get(stretch).is_some_and(|s| s.usable);
         if !usable {
-            self.view.error =
-                "Da questo tratto non si può creare la voce: scegli un altro tratto, o rifai."
-                    .into();
+            self.view.error = tr!("programma.crea.tratto-inutilizzabile" => "Da questo tratto non si può creare la voce: scegli un altro tratto, o rifai.");
             return None;
         }
         if name.trim().is_empty() {
@@ -359,7 +377,7 @@ impl Flow {
             return None;
         }
         if !consent {
-            self.view.consent_message = NO_PERMISSION.into();
+            self.view.consent_message = no_permission();
             return None;
         }
         match &check {
@@ -380,8 +398,10 @@ impl Flow {
                 }
                 self.view.name_message = check.message().unwrap_or_default();
                 self.view.name_confirm = match check {
-                    NameCheck::Exists { .. } => "Sostituisci la voce".into(),
-                    _ => "Tieni questo nome".into(),
+                    NameCheck::Exists { .. } => {
+                        tr!("programma.crea.sostituisci-voce" => "Sostituisci la voce")
+                    }
+                    _ => keep_name(),
                 };
                 self.awaiting = Some(file.clone());
                 None
@@ -426,9 +446,14 @@ impl Flow {
     }
 }
 
+/// The command that keeps a name Kalliope's own voices have.
+pub fn keep_name() -> String {
+    tr!("programma.crea.tieni-nome" => "Tieni questo nome")
+}
+
 /// What the main window says once a voice is made and chosen.
 pub fn made_notice(name: &str) -> String {
-    format!("La voce «{name}» è pronta, e adesso parla lei.")
+    tr!("programma.crea.voce-pronta" => "La voce «{nome}» è pronta, e adesso parla lei.", nome = name)
 }
 
 #[cfg(test)]

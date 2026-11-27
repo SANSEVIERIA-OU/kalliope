@@ -16,17 +16,20 @@ import { Informazioni, Conferma } from "modali.slint";
 import { Menu } from "menu.slint";
 
 component Titolo inherits Text {
+    horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
     font-size: Token.corpo-titolo * Aspetto.scala;
     font-weight: Token.peso-titolo;
     color: Token.testo;
     wrap: word-wrap;
 }
 component Nota inherits Text {
+    horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
     font-size: Token.corpo-nota * Aspetto.scala;
     color: Token.testo-tenue;
     wrap: word-wrap;
 }
 component Etichetta inherits Text {
+    horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
     font-size: Token.corpo-stato * Aspetto.scala;
     font-weight: Token.peso-forte;
     color: Token.testo;
@@ -36,9 +39,9 @@ component Esempio inherits VerticalLayout {
     in property <string> nome;
     in property <string> fonte;
     spacing: Token.spazio-stretto * Aspetto.scala;
-    Etichetta { text: root.nome; }
+    Etichetta { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: root.nome; }
     @children
-    if root.fonte != "": Nota { text: root.fonte; }
+    if root.fonte != "": Nota { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: root.fonte; }
 }
 
 export component Catalogo inherits Window {
@@ -49,6 +52,9 @@ export component Catalogo inherits Window {
     min-height: Token.native-min-height;
     background: Token.fondo;
     default-font-family: Token.font-testo;
+    // the language is written from right to left: the catalog shows every component mirrored (the switch below, or the language
+    // of the system)
+    in-out property <bool> rtl <=> Token.rtl;
     // to replay each movement
     property <int> giro: 0;
     property <bool> avanti: true;
@@ -67,6 +73,8 @@ export component Catalogo inherits Window {
     rinasce := Timer { interval: Token.intervallo-fotogramma; running: false; triggered => { root.nata = true; self.running = false; } }
 
     ScrollView {
+        // turned round from right to left, like the window (app.slint): the scroll bar goes to the other side too
+        transform-scale-x: Token.verso;
         VerticalLayout {
             padding: Token.spazio-ampio * Aspetto.scala;
             spacing: Token.spazio-ampio * Aspetto.scala;
@@ -76,10 +84,10 @@ export component Catalogo inherits Window {
                 spacing: Token.spazio-controlli * Aspetto.scala;
                 HorizontalLayout {
                     spacing: Token.spazio-controlli * Aspetto.scala;
-                    Image { source: @image-url("../../../../design-system/marchio/libero.svg"); width: Token.marchio * 1.6 * Aspetto.scala; height: self.width; }
-                    Titolo { text: "La finestra di Kalliope · «La frase che si accende»"; vertical-alignment: center; }
+                    Image { transform-scale-x: Token.verso; source: @image-url("../../../../design-system/marchio/libero.svg"); width: Token.marchio * 1.6 * Aspetto.scala; height: self.width; }
+                    Titolo { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: "La finestra di Kalliope · «La frase che si accende»"; vertical-alignment: center; }
                 }
-                Nota {
+                Nota { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
                     text: "Proposta del 26/11/2026, non ancora approvata. Scrivi nella bolla tratteggiata del non ancora detto; Invio la manda nella bolla dove la voce la dice, una parola dopo l'altra; la frase detta resta, piena, da ripetere. Ogni valore viene da design-system/token.css (--app-*), generato per Slint: la tabella dei token qui sotto è generata anche lei.";
                 }
                 HorizontalLayout {
@@ -87,17 +95,18 @@ export component Catalogo inherits Window {
                     alignment: start;
                     Pulsante { testo: Token.dark ? "Tema: scuro" : "Tema: chiaro"; tipo: Tipo.quieto; piccolo: true; premuto => { Palette.color-scheme = Token.dark ? ColorScheme.light : ColorScheme.dark; } }
                     Pulsante { testo: "A−"; tipo: Tipo.nudo; piccolo: true; abilitato: Aspetto.scala > 1; premuto => { Aspetto.scala = max(1, Aspetto.scala - Token.scala-passo); } }
-                    Text { text: round(Aspetto.scala * 100) + "%"; vertical-alignment: center; color: Token.testo-tenue; font-size: Token.corpo-nota * Aspetto.scala; }
+                    Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: round(Aspetto.scala * 100) + "%"; vertical-alignment: center; color: Token.testo-tenue; font-size: Token.corpo-nota * Aspetto.scala; }
                     Pulsante { testo: "A+"; tipo: Tipo.nudo; piccolo: true; abilitato: Aspetto.scala < Token.scala-massima; premuto => { Aspetto.scala = min(Token.scala-massima, Aspetto.scala + Token.scala-passo); } }
                     Interruttore { testo: "Movimento ridotto"; acceso <=> Aspetto.movimento-ridotto; }
+                    Interruttore { testo: "Da destra a sinistra (specchio)"; acceso <=> Token.rtl; }
                 }
             }
 
             // Colours, both themes side by side
             VerticalLayout {
                 spacing: Token.spazio-medio * Aspetto.scala;
-                Titolo { text: "Colori e materiali · scuro e chiaro"; }
-                Nota { text: "A sinistra il tema scuro (:root), a destra il chiaro (:root[data-tema=\"chiaro\"]). Il tema della finestra segue il sistema; il pulsante «Tema» qui sopra lo cambia per provarlo."; }
+                Titolo { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: "Colori e materiali · scuro e chiaro"; }
+                Nota { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: "A sinistra il tema scuro (:root), a destra il chiaro (:root[data-tema=\"chiaro\"]). Il tema della finestra segue il sistema; il pulsante «Tema» qui sopra lo cambia per provarlo."; }
                 for c in Dati.colori: HorizontalLayout {
                     spacing: Token.spazio-medio * Aspetto.scala;
                     Rectangle {
@@ -109,8 +118,8 @@ export component Catalogo inherits Window {
                     }
                     VerticalLayout {
                         alignment: center;
-                        Etichetta { text: "--app-" + c.nome; }
-                        Nota { text: c.fonte; }
+                        Etichetta { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: "--app-" + c.nome; }
+                        Nota { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: c.fonte; }
                     }
                 }
             }
@@ -118,24 +127,24 @@ export component Catalogo inherits Window {
             // Type
             VerticalLayout {
                 spacing: Token.spazio-medio * Aspetto.scala;
-                Titolo { text: "Caratteri e scala del testo"; }
-                Nota { text: "Lexend (OFL), il carattere del sito: forme tonde e aperte, disegnato per la scorrevolezza della lettura. Pesi 400, 500, 600, 700. Ogni grandezza cresce con il testo regolabile (100–200%)."; }
-                Esempio { nome: "corpo-scrittura · 30 px · ciò che si scrive"; Text { text: "Possiamo sentirci venerdì alle 15:30?"; font-size: Token.corpo-scrittura * Aspetto.scala; color: Token.testo; wrap: word-wrap; } }
-                Esempio { nome: "corpo-lettura · 34 px · il testo da leggere per la voce propria"; Text { text: "Ciao, sono io. Questa è la mia voce."; font-size: Token.corpo-lettura * Aspetto.scala; font-weight: Token.peso-medio; color: Token.testo; wrap: word-wrap; } }
-                Esempio { nome: "corpo-titolo · 28 px · peso-titolo"; Text { text: "Come vuoi creare la tua voce?"; font-size: Token.corpo-titolo * Aspetto.scala; font-weight: Token.peso-titolo; color: Token.testo; wrap: word-wrap; } }
-                Esempio { nome: "corpo-bolla · 24 px · peso-medio"; Text { text: "Sono d'accordo con Paola."; font-size: Token.corpo-bolla * Aspetto.scala; font-weight: Token.peso-medio; color: Token.testo; } }
+                Titolo { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: "Caratteri e scala del testo"; }
+                Nota { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: "Lexend (OFL), il carattere del sito: forme tonde e aperte, disegnato per la scorrevolezza della lettura. Pesi 400, 500, 600, 700. Ogni grandezza cresce con il testo regolabile (100–200%)."; }
+                Esempio { nome: "corpo-scrittura · 30 px · ciò che si scrive"; Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: "Possiamo sentirci venerdì alle 15:30?"; font-size: Token.corpo-scrittura * Aspetto.scala; color: Token.testo; wrap: word-wrap; } }
+                Esempio { nome: "corpo-lettura · 34 px · il testo da leggere per la voce propria"; Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: "Ciao, sono io. Questa è la mia voce."; font-size: Token.corpo-lettura * Aspetto.scala; font-weight: Token.peso-medio; color: Token.testo; wrap: word-wrap; } }
+                Esempio { nome: "corpo-titolo · 28 px · peso-titolo"; Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: "Come vuoi creare la tua voce?"; font-size: Token.corpo-titolo * Aspetto.scala; font-weight: Token.peso-titolo; color: Token.testo; wrap: word-wrap; } }
+                Esempio { nome: "corpo-bolla · 24 px · peso-medio"; Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: "Sono d'accordo con Paola."; font-size: Token.corpo-bolla * Aspetto.scala; font-weight: Token.peso-medio; color: Token.testo; } }
                 Esempio { nome: "corpo-marchio 18 · corpo-detta 17 · corpo-comando 16 · corpo-stato 15 · corpo-nota 13"; HorizontalLayout { spacing: Token.spazio-largo * Aspetto.scala; alignment: start;
-                    Text { text: "Kalliope"; font-size: Token.corpo-marchio * Aspetto.scala; font-weight: Token.peso-forte; color: Token.testo; }
-                    Text { text: "Già detta"; font-size: Token.corpo-detta * Aspetto.scala; color: Token.testo-tenue; }
-                    Text { text: "Comando"; font-size: Token.corpo-comando * Aspetto.scala; font-weight: Token.peso-medio; color: Token.testo; }
-                    Text { text: "Stato"; font-size: Token.corpo-stato * Aspetto.scala; color: Token.testo-tenue; }
-                    Text { text: "Nota"; font-size: Token.corpo-nota * Aspetto.scala; color: Token.testo-tenue; } } }
+                    Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: "Kalliope"; font-size: Token.corpo-marchio * Aspetto.scala; font-weight: Token.peso-forte; color: Token.testo; }
+                    Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: "Già detta"; font-size: Token.corpo-detta * Aspetto.scala; color: Token.testo-tenue; }
+                    Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: "Comando"; font-size: Token.corpo-comando * Aspetto.scala; font-weight: Token.peso-medio; color: Token.testo; }
+                    Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: "Stato"; font-size: Token.corpo-stato * Aspetto.scala; color: Token.testo-tenue; }
+                    Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: "Nota"; font-size: Token.corpo-nota * Aspetto.scala; color: Token.testo-tenue; } } }
             }
 
             // Lengths
             VerticalLayout {
                 spacing: Token.spazio-stretto * Aspetto.scala;
-                Titolo { text: "Spazi, misure e raggi"; }
+                Titolo { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: "Spazi, misure e raggi"; }
                 for m in Dati.misure: HorizontalLayout {
                     spacing: Token.spazio-medio * Aspetto.scala;
                     Rectangle {
@@ -143,27 +152,27 @@ export component Catalogo inherits Window {
                         height: Token.spazio-largo;
                         Rectangle { x: 0; width: min(parent.width, m.misura); height: min(parent.height, max(Token.tratto, m.misura / 4)); y: (parent.height - self.height) / 2; background: Token.voce; border-radius: self.height / 2; }
                     }
-                    Etichetta { text: m.nome + " · " + m.testo; vertical-alignment: center; min-width: Token.bolla-larghezza / 3; }
-                    Nota { text: m.fonte; vertical-alignment: center; horizontal-stretch: 1; }
+                    Etichetta { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: m.nome + " · " + m.testo; vertical-alignment: center; min-width: Token.bolla-larghezza / 3; }
+                    Nota { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: m.fonte; vertical-alignment: center; horizontal-stretch: 1; }
                 }
             }
 
             // Other values: weights, scales, curves, typeface
             VerticalLayout {
                 spacing: Token.spazio-stretto * Aspetto.scala;
-                Titolo { text: "Pesi, rapporti, curve e carattere"; }
+                Titolo { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: "Pesi, rapporti, curve e carattere"; }
                 for a in Dati.altri: HorizontalLayout {
                     spacing: Token.spazio-medio * Aspetto.scala;
-                    Etichetta { text: a.nome + " · " + a.testo; min-width: Token.bolla-larghezza / 2; }
-                    Nota { text: a.fonte; horizontal-stretch: 1; }
+                    Etichetta { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: a.nome + " · " + a.testo; min-width: Token.bolla-larghezza / 2; }
+                    Nota { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: a.fonte; horizontal-stretch: 1; }
                 }
             }
 
             // Movement
             VerticalLayout {
                 spacing: Token.spazio-medio * Aspetto.scala;
-                Titolo { text: "Movimento"; }
-                Nota { text: "Ogni durata con il suo comando: «Rivedi» muove il punto per quella durata, avanti e indietro, con la curva d'entrata del sito (cubic-bezier(0.19, 1, 0.22, 1)). Sotto, i movimenti veri della finestra."; }
+                Titolo { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: "Movimento"; }
+                Nota { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: "Ogni durata con il suo comando: «Rivedi» muove il punto per quella durata, avanti e indietro, con la curva d'entrata del sito (cubic-bezier(0.19, 1, 0.22, 1)). Sotto, i movimenti veri della finestra."; }
                 HorizontalLayout { alignment: start; Pulsante { testo: "Rivedi tutte le durate"; tipo: Tipo.pieno; piccolo: true; premuto => { root.avanti = !root.avanti; } } }
                 for d in Dati.tempi: HorizontalLayout {
                     spacing: Token.spazio-medio * Aspetto.scala;
@@ -177,8 +186,8 @@ export component Catalogo inherits Window {
                             animate x { duration: d.durata; easing: Token.curva-entrata; }
                         }
                     }
-                    Etichetta { text: d.nome + " · " + d.testo; vertical-alignment: center; min-width: Token.bolla-larghezza / 3; }
-                    Nota { text: d.fonte; vertical-alignment: center; horizontal-stretch: 1; }
+                    Etichetta { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: d.nome + " · " + d.testo; vertical-alignment: center; min-width: Token.bolla-larghezza / 3; }
+                    Nota { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: d.fonte; vertical-alignment: center; horizontal-stretch: 1; }
                 }
                 Esempio {
                     nome: "La bolla nasce dalla coda (520 ms, curva d'entrata) e le parole si scuriscono una ogni 0,36 s (200 ms ciascuna)";
@@ -216,7 +225,7 @@ export component Catalogo inherits Window {
             // Components
             VerticalLayout {
                 spacing: Token.spazio-largo * Aspetto.scala;
-                Titolo { text: "Componenti, in tutti i loro stati"; }
+                Titolo { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: "Componenti, in tutti i loro stati"; }
                 Esempio {
                     nome: "Pulsante · pieno, quieto, nudo · riposo, sopra, premuto, fuoco, spento";
                     fonte: "Pillole del sito; un solo pieno per schermata (l'azione, menta). Il fuoco è l'anello della voce, 3 px.";

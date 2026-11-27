@@ -3,6 +3,7 @@
 //! WebM videos through Symphonia; Opus (in Ogg, WebM or MKV) through libopus.
 
 use crate::opus;
+use kalliope_i18n::tr;
 use std::fs::File;
 use std::path::Path;
 use std::sync::atomic::{AtomicBool, Ordering};
@@ -38,7 +39,7 @@ impl Audio {
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub enum ReadError {
     /// The file cannot be opened: why, in words a person can use (the system's own message goes to standard error).
-    Open(String),
+    Open(OpenReason),
     /// Empty file.
     Empty,
     /// Not an audio or video file Kalliope reads.
@@ -59,14 +60,35 @@ impl ReadError {
     /// What to tell the person, in plain Italian.
     pub fn message(&self) -> String {
         match self {
-            ReadError::Open(e) => format!("Non riesco ad aprire il file: {e}. Scegline un altro."),
-            ReadError::Empty => "Il file è vuoto.".into(),
-            ReadError::NotAudio => "Questo file non è un audio. Prova con un messaggio vocale, un video o una registrazione.".into(),
-            ReadError::NoSound => "In questo file non c'è audio.".into(),
-            ReadError::Unsupported(what) => format!("Kalliope non sa ancora leggere l'audio di questo file ({what}). Convertilo in WAV o MP3, oppure scegline un altro."),
-            ReadError::NoOpus => "Per leggere i messaggi vocali in formato Opus serve la libreria libopus, che su questo computer manca: installa il pacchetto «opus» (o «libopus0»).".into(),
-            ReadError::Damaged(e) => format!("Il file sembra rovinato e non si legge ({e})."),
-            ReadError::Cancelled => "Lettura annullata.".into(),
+            ReadError::Open(OpenReason::Gone) => {
+                tr!("programma.file.non-c-e-piu" => "Non riesco ad aprire il file: non c'è più, forse è stato spostato o cancellato. Scegline un altro.")
+            }
+            ReadError::Open(OpenReason::Denied) => {
+                tr!("programma.file.nessun-permesso" => "Non riesco ad aprire il file: non ho il permesso di leggerlo. Scegline un altro.")
+            }
+            ReadError::Open(OpenReason::Other) => {
+                tr!("programma.file.non-si-apre" => "Non riesco ad aprire il file: non si apre. Scegline un altro.")
+            }
+            ReadError::Empty => tr!("programma.file.vuoto" => "Il file è vuoto."),
+            ReadError::NotAudio => {
+                tr!("programma.file.non-audio" => "Questo file non è un audio. Prova con un messaggio vocale, un video o una registrazione.")
+            }
+            ReadError::NoSound => {
+                tr!("programma.file.senza-audio" => "In questo file non c'è audio.")
+            }
+            // TRANSLATORS: {formato} is the name of the audio format as the file says it (a codec): it stays as it is
+            ReadError::Unsupported(what) => {
+                // TRANSLATORS: {formato} is the audio format the file has
+                tr!("programma.file.non-supportato" => "Kalliope non sa ancora leggere l'audio di questo file ({formato}). Convertilo in WAV o MP3, oppure scegline un altro.", formato = what)
+            }
+            ReadError::NoOpus => {
+                tr!("programma.file.manca-libopus" => "Per leggere i messaggi vocali in formato Opus serve la libreria libopus, che su questo computer manca: installa il pacchetto «opus» (o «libopus0»).")
+            }
+            // TRANSLATORS: {causa} is the decoder's own message, in English: it stays as it is
+            ReadError::Damaged(e) => {
+                tr!("programma.file.rovinato" => "Il file sembra rovinato e non si legge ({causa}).", causa = e)
+            }
+            ReadError::Cancelled => tr!("programma.file.lettura-annullata" => "Lettura annullata."),
         }
     }
 }
@@ -79,14 +101,21 @@ impl std::fmt::Display for ReadError {
 
 impl std::error::Error for ReadError {}
 
-/// Why a file did not open, in plain Italian: the system's message is English, and says «os error 2».
-fn open_reason(e: &std::io::Error) -> String {
+/// Why a file did not open: the system's message is English, and says «os error 2», so the person is told one of these.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum OpenReason {
+    Gone,
+    Denied,
+    Other,
+}
+
+fn open_reason(e: &std::io::Error) -> OpenReason {
     use std::io::ErrorKind;
     eprintln!("kalliope: opening a file: {e}");
     match e.kind() {
-        ErrorKind::NotFound => "non c'è più, forse è stato spostato o cancellato".into(),
-        ErrorKind::PermissionDenied => "non ho il permesso di leggerlo".into(),
-        _ => "non si apre".into(),
+        ErrorKind::NotFound => OpenReason::Gone,
+        ErrorKind::PermissionDenied => OpenReason::Denied,
+        _ => OpenReason::Other,
     }
 }
 

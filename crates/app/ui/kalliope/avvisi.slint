@@ -27,7 +27,7 @@ export component Avviso inherits Rectangle {
                 width: Token.barra-voce-alta * Aspetto.scala * 0.6;
                 Punto { y: Token.spazio-stretto * Aspetto.scala; colore: Token.attenzione; }
             }
-            Text {
+            Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
                 text: root.testo;
                 wrap: word-wrap;
                 horizontal-stretch: 1;
@@ -37,7 +37,7 @@ export component Avviso inherits Rectangle {
         }
         if root.con-guida: HorizontalLayout {
             alignment: start;
-            Pulsante { testo: @tr("Come si risolve"); piccolo: true; tipo: Tipo.quieto; premuto => { root.guida(); } }
+            Pulsante { testo: @tr("programma.comune.come-si-risolve" => "Come si risolve"); piccolo: true; tipo: Tipo.quieto; premuto => { root.guida(); } }
         }
     }
 }
@@ -66,13 +66,13 @@ export component Attesa inherits VerticalLayout {
     in property <string> dettaglio;
     in property <float> valore: 0;
     callback annulla();
-    in property <string> annulla-testo: @tr("Annulla");
+    in property <string> annulla-testo: @tr("programma.comune.annulla" => "Annulla");
     spacing: Token.spazio-controlli * Aspetto.scala;
     alignment: start;
     init => { annulla-comando.focus(); }
-    Text { text: root.testo; wrap: word-wrap; font-size: Token.corpo-bolla * Aspetto.scala; font-weight: Token.peso-forte; color: Token.testo; }
+    Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: root.testo; wrap: word-wrap; font-size: Token.corpo-bolla * Aspetto.scala; font-weight: Token.peso-forte; color: Token.testo; }
     Avanzamento { valore: root.valore; }
-    if root.dettaglio != "": Text { text: root.dettaglio; wrap: word-wrap; font-size: Token.corpo-stato * Aspetto.scala; color: Token.testo-tenue; }
+    if root.dettaglio != "": Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: root.dettaglio; wrap: word-wrap; font-size: Token.corpo-stato * Aspetto.scala; color: Token.testo-tenue; }
     HorizontalLayout {
         alignment: start;
         annulla-comando := Pulsante { testo: root.annulla-testo; tipo: Tipo.quieto; premuto => { root.annulla(); } }

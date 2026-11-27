@@ -35,6 +35,9 @@ Separately licensed components remain under their existing terms:
 - design-system/caratteri/lexend (the Lexend typeface, as a variable font and
   as a Latin subset of it): SIL Open Font License 1.1; see OFL.txt beside the
   files.
+- design-system/caratteri/geologica, readex-pro, noto-nastaliq-urdu, noto-sans-devanagari and
+  noto-sans-bengali (subsets of those typefaces for the scripts of the translations, as woff2 and as
+  the TrueType copies the program embeds): SIL Open Font License 1.1; see OFL.txt beside the files.
 - design-system/caratteri/dejavu (DejaVu Sans, complete and as a Latin subset
   of it): the Bitstream Vera licence, with DejaVu's changes in the public
   domain; see LICENZA-copyright.txt beside the files.

@@ -1,0 +1,32 @@
+en-XA|Preparo la voce…|[Þŕéþáŕö ļá ṽöçé… Ĺöŕéḿ·]
+ar-XB|Preparo la voce…|‮Preparo la voce…‬
+en-XA|Ne mancano {n}|[Ñé ḿáñçáñö Ĺöŕ] {n}
+ar-XB|Ne mancano {n}|‮Ne mancano {n}‬
+en-XA|{0} · ne manca {n}|{0} [· ñé ḿáñçá Ĺöŕ] {n}
+ar-XB|{0} · ne manca {n}|‮{0} · ne manca {n}‬
+en-XA|Ripeti: {}|[Ŕîþéţî: Ĺö] {}
+ar-XB|Ripeti: {}|‮Ripeti: {}‬
+en-XA|Leggo «{nome}»…|[Ļéĝĝö « Ĺö{nome}»…·]
+ar-XB|Leggo «{nome}»…|‮Leggo «{nome}»…‬
+en-XA|Esc|[Éšç Ĺ]
+ar-XB|Esc|‮Esc‬
+en-XA|A−|[Å−·]
+ar-XB|A−|‮A−‬
+en-XA|Invio la dice · Esc la ferma · ↑ l'ultima frase|[Îñṽîö ļá ðîçé · Éšç ļá ƒéŕḿá · ↑ ļ'ûļţîḿá ƒŕášé Ĺöŕéḿ ĩṕšûḿ ðöļöŕ·]
+ar-XB|Invio la dice · Esc la ferma · ↑ l'ultima frase|‮Invio la dice · Esc la ferma · ↑ l'ultima frase‬
+en-XA|Scrivi qui.|[Šçŕîṽî ǫûî. Ĺöŕé]
+ar-XB|Scrivi qui.|‮Scrivi qui.‬
+en-XA|{n}|[{n}]
+ar-XB|{n}|‮{n}‬
+en-XA|{{ok}} fatto|{{[öķ·}} ƒáţţö Ĺ]
+ar-XB|{{ok}} fatto|‮{{ok}} fatto‬
+en-XA|Per tenerla sopra la riunione: Alt+Spazio, poi «Sempre in primo piano».|[Þéŕ ţéñéŕļá šöþŕá ļá ŕîûñîöñé: Åļţ+Šþážîö, þöî «Šéḿþŕé îñ þŕîḿö þîáñö». Ĺöŕéḿ ĩṕšûḿ ðöļöŕ šĩţ àḿéţ ċ]
+ar-XB|Per tenerla sopra la riunione: Alt+Spazio, poi «Sempre in primo piano».|‮Per tenerla sopra la riunione: Alt+Spazio, poi «Sempre in primo piano».‬
+en-XA|Ho trovato {n} tratti in cui si sente la voce. Ascolta e scegli.|[Ĥö ţŕöṽáţö Ĺöŕ {n} ţŕáţţî îñ çûî šî šéñţé ļá ṽöçé. Åšçöļţá é šçéĝļî. Ĺöŕéḿ ĩṕšûḿ ðöļöŕ š]
+ar-XB|Ho trovato {n} tratti in cui si sente la voce. Ascolta e scegli.|‮Ho trovato {n} tratti in cui si sente la voce. Ascolta e scegli.‬
+en-XA|  due  spazi |  [ðûé  šþážî Ĺöŕ] 
+ar-XB|  due  spazi |‮  due  spazi ‬
+en-XA|Registra|[Ŕéĝîšţŕá Ĺöŕ]
+ar-XB|Registra|‮Registra‬
+en-XA|{x y} e {1x}|[{ẋ ý} é {1ẋ} Ĺöŕé]
+ar-XB|{x y} e {1x}|‮{x y} e {1x}‬

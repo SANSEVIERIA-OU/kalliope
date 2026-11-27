@@ -19,7 +19,19 @@
   --app-font-testo: var(--font-testo);   /* il carattere del testo della finestra: Lexend (di una pila, la finestra prende la prima famiglia) */
   --app-peso-testo: var(--peso-testo);   /* il peso del testo della finestra */
   --app-peso-forte: var(--peso-forte);   /* il peso di ciò che conta nella finestra: titoli, comandi */
-  --app-carattere-testo: url("caratteri/lexend/Lexend-wght.ttf");   /* il file di Lexend, tutti i pesi, che il programma porta dentro di sé: una riga --app-carattere-* per ogni carattere (uno per scrittura) */
+  --app-carattere-testo: url("caratteri/lexend/Lexend-wght.ttf");   /* il file di Lexend, tutti i pesi, che il programma porta dentro di sé */
+  --app-carattere-el: url("caratteri/geologica/Geologica-wght.ttf");   /* il carattere di una lingua (il codice nel nome): il programma lo usa solo con quella lingua. Greco */
+  --app-carattere-bg: url("caratteri/geologica/Geologica-wght.ttf");   /* cirillico: lo stesso file */
+  --app-carattere-ar: url("caratteri/readex-pro/ReadexPro-wght.ttf");   /* arabo */
+  --app-carattere-ur: url("caratteri/noto-nastaliq-urdu/NotoNastaliqUrdu-wght.ttf");   /* urdu, in nastaliq */
+  --app-carattere-hi: url("caratteri/noto-sans-devanagari/NotoSansDevanagari-wght.ttf");   /* hindi */
+  --app-carattere-bn: url("caratteri/noto-sans-bengali/NotoSansBengali-wght.ttf");   /* bengali; il cinese usa il carattere di sistema, come sul sito */
+  --app-interlinea-ar: 1.15;   /* quanto le righe del testo si allontanano nella scrittura di una lingua (1 = come in latino): gli stessi valori di --interlinea-testo-scrittura nelle regole :lang() */
+  --app-interlinea-ur: 1.6;
+  --app-interlinea-hi: 1.12;
+  --app-interlinea-bn: 1.12;
+  --app-interlinea-zh: 1.1;
+  --app-verso: var(--verso);   /* 1, e −1 da destra a sinistra: la finestra specchia moltiplicando per Token.verso */
 
   /* Direzione di scrittura */
   --verso: 1;   /* 1 con la scrittura da sinistra a destra, −1 da destra a sinistra (la cambia :root:dir(rtl), più sotto). Ciò che ha un verso (uno spostamento orizzontale, l'origine di una crescita, l'asse di una barra) la moltiplica; scena.js la legge da qui */

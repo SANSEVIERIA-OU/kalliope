@@ -17,6 +17,7 @@ kalliope-phonemes.workspace = true
 kalliope-voice.workspace = true
 kalliope-mic.workspace = true
 kalliope-sample.workspace = true
+kalliope-i18n.workspace = true
 # One window through winit on every platform. The renderer is Skia on the CPU (renderer-skia-software): it needs no GPU,
 # driver or OpenGL library, draws the same pixels on every machine, shapes Arabic, Devanagari and the other scripts, and
 # supports the rotations and scaling that Slint's own software renderer lacks (measured: finestra-unica-prove/foto/testo).
@@ -32,6 +33,9 @@ slint = { version = "1.19.1", default-features = false, features = [
     # winit's monitors at start, before the window is created, and its window events: the size and place the window opens
     # at, and the end of Kalliope when the window is destroyed from outside (schermo.rs)
     "unstable-winit-030",
+    # the typeface of the language in use is registered as the fallback of its script (lingua.rs); the API may change in a minor
+    # release of Slint, which breaks the build and does not go unseen
+    "unstable-fontique-012",
 ] }
 # The system's own dialog for choosing a file: the XDG desktop portal on Linux (it loads libdbus at run time and falls back to
 # zenity), the standard dialogs on Windows and macOS. One API for the three; evidence in design/lavoro/4-app/costruzione/.
@@ -43,6 +47,15 @@ rfd = { version = "0.18.0", default-features = false, features = ["xdg-portal", 
 [target.'cfg(target_os = "linux")'.dependencies]
 x11rb = { version = "0.14.0", default-features = false, features = ["allow-unsafe-code", "dl-libxcb"] }
 
+[features]
+# The pseudo-languages `en-XA` and `ar-XB` (tests only): `cargo build --features pseudo`, then KALLIOPE_LINGUA=en-XA
+pseudo = ["kalliope-i18n/pseudo"]
+
+[dev-dependencies]
+# a window with no screen, to test what the generated Slint code computes (the mirror, the distance between lines)
+i-slint-backend-testing = "1.19.1"
+
 [build-dependencies]
 kalliope-tokens.workspace = true
+kalliope-i18n.workspace = true
 slint-build = "1.19.1"

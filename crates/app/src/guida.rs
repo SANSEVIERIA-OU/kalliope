@@ -4,12 +4,25 @@
 
 use crate::Situazione;
 
-/// The guide of the published website (the Italian pages).
-const BASE: &str = "https://sansevieria-ou.github.io/kalliope/it/";
+/// The published website, without the language.
+const SITE: &str = "https://sansevieria-ou.github.io/kalliope/";
 
-/// The website's home, in Italian.
+/// The pages of the website in the language of the program. A language is in the program only when the website has it too (the
+/// catalogue is one file for both: a language counts as ready when both are complete), so the folder is there. The pseudo-languages
+/// are for tests and have no pages: they take Italian.
+fn base() -> String {
+    let code = kalliope_i18n::current();
+    let folder = if code.contains("-X") {
+        kalliope_i18n::SOURCE
+    } else {
+        code
+    };
+    format!("{SITE}{folder}/")
+}
+
+/// The website's home, in the language of the program.
 pub fn sito() -> String {
-    BASE.to_string()
+    base()
 }
 
 /// What a person needs help with.
@@ -34,7 +47,7 @@ impl Guida {
             Guida::VoceNonParte => ("installa/", "installa"),
             Guida::Errori => ("riunione/", "f-errori"),
         };
-        format!("{BASE}{page}#{anchor}")
+        format!("{}{page}#{anchor}", base())
     }
 }
 

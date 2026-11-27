@@ -8,10 +8,14 @@ pub struct Sheet {
     pub root: Vec<(String, String)>,
     /// `:root[data-tema="chiaro"] { --x: … }`: what the light scheme changes.
     pub light: Vec<(String, String)>,
+    /// `:root:dir(rtl) { --x: … }`: what a right-to-left language changes (the website's mirror, `--verso`).
+    pub rtl: Vec<(String, String)>,
 }
 
 /// The selector of the rule that carries the light scheme.
 pub const LIGHT_SELECTOR: &str = r#":root[data-tema="chiaro"]"#;
+/// The selector of the rule that carries the right-to-left writing.
+pub const RTL_SELECTOR: &str = ":root:dir(rtl)";
 
 /// Removes comments, leaving strings and urls alone.
 fn strip_comments(css: &str) -> Result<String, String> {
@@ -140,6 +144,8 @@ pub fn parse(css: &str) -> Result<Sheet, String> {
                     declarations(&body, &mut sheet.root);
                 } else if selector == LIGHT_SELECTOR {
                     declarations(&body, &mut sheet.light);
+                } else if selector == RTL_SELECTOR {
+                    declarations(&body, &mut sheet.rtl);
                 }
                 prelude.clear();
                 i = j;
@@ -170,6 +176,7 @@ mod tests {
             @font-face { font-family: "X"; src: url("a.woff2"); }
             :root[data-tema='chiaro'] { --a: 3px }
             .x { --z: 1 }
+            :root:dir(rtl) { --d: -1 }
             :root { --c: calc(1px +
                2px) }"#,
         )
@@ -183,6 +190,7 @@ mod tests {
             ]
         );
         assert_eq!(s.light, vec![("--a".into(), "3px".into())]);
+        assert_eq!(s.rtl, vec![("--d".into(), "-1".into())]);
     }
 
     #[test]

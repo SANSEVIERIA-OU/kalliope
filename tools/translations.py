@@ -1,14 +1,16 @@
 # SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
-"""The translations of the website: the model, one catalogue per language, and the check (docs/translating.md).
+"""The translations of the website and of the program: the model, one catalogue per language, and the check (docs/translating.md).
 
-    python3 -I tools/translations.py extract [--check]   make website/lingue/site.pot and it.po from the pages, and bring
+    python3 -I tools/translations.py extract [--check]   make website/lingue/site.pot and it.po from the pages and from the program's
+                                                          sources (`@tr` in the .slint files, `tr!` in the Rust ones), and bring
                                                           every <xx>.po up to date (new entries empty, changed text fuzzy)
     python3 -I tools/translations.py check [xx …]        check the catalogues: every key there, placeholders and tags
                                                           intact, the plural forms of the language; exit 1 on an error
     python3 -I tools/translations.py status              for each language: how many entries are ready, published or not
     python3 -I tools/translations.py new xx              start website/lingue/xx.po for one of the supported languages
 
-Any command takes `--website DIR` to work on another copy of website/ (the tests do).
+Any command takes `--website DIR` to work on another copy of website/ (the tests do), and `--app DIR` to read the program's messages
+from another copy of crates/ (a copy of website/ alone brings none).
 
 `check --complete` also fails when a language has entries missing, out of date or fuzzy (what the site build does not
 publish). `extract --check` writes nothing and fails when the files are not what `extract` would write: a text in a page
@@ -24,6 +26,8 @@ RADICE = pathlib.Path(__file__).resolve().parent.parent
 SITO = RADICE / "website"
 LINGUE = SITO / "lingue"
 SORGENTE = "it"
+PROGRAMMA = RADICE / "crates"
+_crates = "auto"   # `--app DIR` lo cambia; "auto": il programma del repository con il sito del repository
 
 
 def mostra(f):
@@ -34,8 +38,12 @@ def mostra(f):
         return str(f)
 
 
-def carica(sito=SITO):
-    pagine, tutti, errori = catalogo.raccogli(sito)
+def carica(sito=SITO, crates=None):
+    """Le pagine e i messaggi del sito e del programma. Con `crates="auto"` il programma del repository, ma soltanto se il sito
+    è quello del repository (una copia di website/ non ha il suo programma)."""
+    if crates is None:
+        crates = _crates if _crates != "auto" else (PROGRAMMA if pathlib.Path(sito) == SITO else None)
+    pagine, tutti, errori = catalogo.raccogli(sito, crates)
     return pagine, tutti, errori
 
 
@@ -123,7 +131,13 @@ def cmd_status(args, sito=SITO, lingue=LINGUE):
             print(f"  {codice}  {cldr.info(codice)['nome']}: no file")
         else:
             stato = "published" if e.completa else "NOT published"
-            print(f"  {codice}  {cldr.info(codice)['nome']}: {e.riassunto(totale)} → {stato}")
+            # where the entries still to do are: the website's or the program's (a language is ready when both are whole)
+            nel_programma = sum(1 for v in mod.voci if v.ctx.startswith("programma."))
+            non_pronte = e.mancanti + e.fuori_data + e.fuzzy
+            programma = nel_programma - sum(1 for c in non_pronte if c.startswith("programma."))
+            sito = (totale - nel_programma) - sum(1 for c in non_pronte if not c.startswith("programma."))
+            print(f"  {codice}  {cldr.info(codice)['nome']}: {e.riassunto(totale)} (website {sito}/{totale - nel_programma}, "
+                  f"program {programma}/{nel_programma}) → {stato}")
     return 0
 
 
@@ -161,7 +175,13 @@ def main(argv=None):
     if not argv or argv[0] not in COMANDI:
         print(__doc__)
         return 2
+    global _crates
     sito = SITO
+    _crates = "auto"
+    if "--app" in argv:   # per le prove: un'altra copia di crates/
+        i = argv.index("--app")
+        _crates = pathlib.Path(argv[i + 1]).resolve()
+        del argv[i:i + 2]
     if "--website" in argv:   # per le prove: un'altra copia di website/
         i = argv.index("--website")
         sito = pathlib.Path(argv[i + 1]).resolve()

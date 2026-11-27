@@ -70,6 +70,8 @@ export component Pulsante inherits Rectangle {
     in property <bool> piccolo: false;
     // a small sign of a window opening out before the word («Intera»: it says what the command does)
     in property <bool> espandi: false;
+    // an arrow that points back, drawn (not written) so that the mirrored window turns it round: toward the start of the line
+    in property <bool> indietro: false;
     // to show the states in the catalog
     in property <bool> mostra-sopra: false;
     in property <bool> mostra-premuto: false;
@@ -105,6 +107,17 @@ export component Pulsante inherits Rectangle {
     riga := HorizontalLayout {
         alignment: center;
         spacing: Token.spazio-stretto * Aspetto.scala;
+        if root.indietro: Rectangle {
+            width: Token.chiusura * 0.85 * Aspetto.scala;
+            Path {
+                x: 0; y: (parent.height - self.height) / 2;
+                width: parent.width; height: self.width;
+                viewbox-width: 12; viewbox-height: 12;
+                commands: "M 11 6 H 1.5 M 5.5 1.5 L 1.5 6 L 5.5 10.5";
+                stroke: Token.testo; stroke-width: Token.filo * 2 * Aspetto.scala;
+                fill: transparent;
+            }
+        }
         if root.espandi: Rectangle {
             width: Token.chiusura * 1.1 * Aspetto.scala;
             Path {
@@ -116,14 +129,14 @@ export component Pulsante inherits Rectangle {
                 fill: transparent;
             }
         }
-        Text {
+        Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
             text: root.testo;
             vertical-alignment: center;
             font-size: (root.piccolo ? Token.corpo-stato : Token.corpo-comando) * Aspetto.scala;
             font-weight: root.tipo == Tipo.pieno ? Token.peso-forte : Token.peso-medio;
             color: root.tipo == Tipo.pieno ? (root.abilitato ? Token.azione-testo : Token.testo-spento) : Token.testo;
         }
-        if root.tasto != "": Text {
+        if root.tasto != "": Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
             text: root.tasto;
             vertical-alignment: center;
             font-size: Token.corpo-nota * Aspetto.scala;
@@ -193,7 +206,7 @@ export component Interruttore inherits Rectangle {
                 animate x { duration: Token.durata-pannello; easing: Token.curva-entrata; }
             }
         }
-        Text { text: root.testo; vertical-alignment: center; color: Token.testo; font-size: Token.corpo-stato * Aspetto.scala; }
+        Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: root.testo; vertical-alignment: center; color: Token.testo; font-size: Token.corpo-stato * Aspetto.scala; }
     }
     chiave := FocusScope {
         key-pressed(e) => {
