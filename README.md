@@ -42,7 +42,7 @@ typed text → normalizer → phonemizer → neural voice → virtual microphone
 | Own voice | `kalliope-voice` (`pocket`) | Pocket TTS by Kyutai: three ONNX graphs, the flow model with 8-bit weights, two threads; streamed frame by frame | see [A voice of your own](#a-voice-of-your-own-in-progress) |
 | Microphone | `kalliope-mic` | PipeWire virtual source "Kalliope", loaded at run time; audio flows only while an app listens | 0% CPU when nobody listens |
 | Languages | `kalliope-i18n` | The window's texts in 30 languages, from the website's catalogue, compiled into the program; the language of the system, mirrored from right to left for Arabic and Urdu | nothing read at run time |
-| App | `kalliope-app` | One Slint window drawn by Skia on the CPU, with Kalliope's own look from the design system, accessible to screen readers; a sentence is spoken piece by piece and Stop is immediate | 24 MB binary; about 135 MB RAM with the voice loaded; under 0.5% of a core when idle, about 7% while speaking |
+| App | `kalliope-app` | One Slint window drawn by Skia on the CPU, with Kalliope's own look from the design system, accessible to screen readers; a sentence is spoken piece by piece and Stop is immediate | 28 MB binary, with the 30 languages and their typefaces; about 135–140 MB RAM with the voice loaded; under 0.5% of a core when idle, about 7% while speaking |
 
 ## A voice of your own (in progress)
 
