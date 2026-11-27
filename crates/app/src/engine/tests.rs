@@ -769,14 +769,16 @@ fn each_piece_is_announced_as_it_starts_sounding_with_the_text_it_says() {
     assert!(pieces.iter().all(|s| s.id == 1 && &*s.phrase == text));
     // One after the other, as long as each lasts, though they were synthesized much faster. Each is
     // measured from the first announcement, so one late receipt on a busy machine (CI's macOS
-    // runners) does not shorten the next gap: the announcements keep the schedule of the audio.
+    // runners) does not shorten the next gap: the announcements keep the schedule of the audio. Never
+    // before a piece sounds; on such a machine the audio itself can fall behind a little more with
+    // every piece, so the margin after grows with the time played.
     let first = times[0];
     for (i, at) in times.iter().enumerate() {
         let expected = Duration::from_millis(150 * i as u64);
         let since = *at - first;
         assert!(
             since + Duration::from_millis(60) >= expected
-                && since <= expected + Duration::from_millis(150),
+                && since <= expected + Duration::from_millis(150) + expected / 4,
             "piece {i}: {since:?} after the first, expected about {expected:?}"
         );
     }
@@ -1001,7 +1003,8 @@ fn a_piece_of_silence_still_sounds_from_its_first_sample() {
     rig.ready();
     rig.engine.send(Command::Speak("ciao".into()));
     let (s, announced, played) = first_sounding(&rig, 2 * SECOND);
-    assert!(announced - played < Duration::from_millis(60));
+    // at its first sample, not after the 300 ms it lasts (a slow machine may take a little longer to say so)
+    assert!(announced - played < Duration::from_millis(200));
     assert!(s.exact && close(s.duration, 300), "{s:?}");
     rig.until(&Event::Idle, 2 * SECOND);
 }

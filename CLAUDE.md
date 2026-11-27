@@ -16,7 +16,7 @@ per i caratteri stanno in `materiali-locali/playwright/`. I campioni vocali, i m
 
 ## Il sito e il design system: da dove si riparte
 
-**Stato al 26/11/2026.** Aggiorna questa sezione ogni volta che lo stato cambia.
+**Stato al 27/11/2026.** Aggiorna questa sezione ogni volta che lo stato cambia.
 
 - **Il sito è `website/`** (prima si chiamava `site/`). La home è quella nuova, nella direzione 2 «Alla pari, in
   riunione», scelta dal proprietario il 14/11/2026 fra tre direzioni rese.
@@ -47,7 +47,7 @@ per i caratteri stanno in `materiali-locali/playwright/`. I campioni vocali, i m
 - **Il proprietario ha approvato i colori il 26/11/2026.** La home usa fondi grafite, accenti verde acqua e tinte distinte per i partecipanti. Il logo conserva i suoi colori.
 - **Il design system è `design-system/`**, con token, base, componenti, caratteri e catalogo vivo. Lo usano tutte le
   pagine del sito. Gli alberi `website/stile/`, `website/script/` e `website/sistema/` sono ritirati.
-- **La home su GitHub Pages** è <https://sansevieria-ou.github.io/kalliope/it/>. **Il 27/11/2026 è stata pubblicata la 0.3** per Linux: la finestra nuova «La frase che si accende», la voce propria creata nell'app (registrata o importata, anche dai vocali Opus), la cronologia salvata, la modalità riunione, il testo regolabile, i difetti della 0.2 corretti. Il sito offre la 0.3 e AUR ha `kalliope-bin 0.3-1` (la ricerca di AUR può mostrare per qualche ora la versione prima). [Release](https://github.com/SANSEVIERIA-OU/kalliope/releases/tag/v0.3). Seguiti nella milestone 0.4: #8 (doppio avvio su Wayland, da provare sul desktop del proprietario), #22–#26.
+- **La home su GitHub Pages** è <https://sansevieria-ou.github.io/kalliope/it/>. **Il 27/11/2026 è stata pubblicata la 0.3** per Linux: la finestra nuova «La frase che si accende», la voce propria creata nell'app (registrata o importata, anche dai vocali Opus), la cronologia salvata, la modalità riunione, il testo regolabile, i difetti della 0.2 corretti. Il sito offre la 0.3 e AUR ha `kalliope-bin 0.3-1` (la ricerca di AUR può mostrare per qualche ora la versione prima). [Release](https://github.com/SANSEVIERIA-OU/kalliope/releases/tag/v0.3). **Lo stesso giorno è stata pubblicata la 0.4**: programma e sito nelle 30 lingue (finestra specchiata per arabo e urdu, un carattere per scrittura, le voci sempre solo italiane), la finestra che sta negli schermi piccoli e ricorda dove la si è lasciata, le parole accese quando si sentono, Kalliope che finisce con la sua finestra (#22–#27; #8 verificato su mutter). AUR `kalliope-bin 0.4-1`. [Release](https://github.com/SANSEVIERIA-OU/kalliope/releases/tag/v0.4). Seguiti aperti, scelte del proprietario: la voce del menu delle applicazioni tradotta solo in inglese e italiano; in urdu la frase italiana della bolla eredita l'interlinea del nastaliq; nelle finestre minime i passi della voce propria scorrono sotto la barra fissa; l'uscita fino a ~2 s se la finestra è distrutta mentre la voce parla (`RunOptionsSetTerminate`).
 - **Il lavoro in corso** (dal 16/11/2026: lingue, poi le altre pagine, poi l'applicazione) è in `design/lavoro/`:
   `STATO.md` dice fasi, decisioni prese a lavoro avviato e incarichi; `ricerca/lingue.md` i fatti con le fonti.
 - **La voce di chi usa Kalliope** (decisione del proprietario del 17/11/2026: «voglio che lo faccia già adesso (non "la
@@ -148,7 +148,13 @@ mondo.»
 - Come farlo: proposto dopo la ricerca e approvato dal proprietario il 16/11/2026 (`.po` unico per sito e
   applicazione, una cartella per lingua, design system specchiabile, applicazione con `@tr`). **Il sito è pronto**
   (17/11/2026): struttura, specchio da destra a sinistra, un carattere per scrittura (`design-system/caratteri/LEGGIMI.md`),
-  scelta della lingua. **L'applicazione è da fare**, dopo le pagine del sito (`design/lavoro/STATO.md`, fase 4).
+  scelta della lingua. **L'applicazione è pronta anche lei** (27/11/2026, #25): ogni testo della finestra passa dal catalogo unico
+  (`crates/i18n`), la lingua è quella del sistema, la finestra si specchia per arabo e urdu, ogni testo breve ha la nota per chi
+  traduce.
+- **Le traduzioni le fa Codex** (decisione del proprietario del 27/11/2026: «il codice lo fai tu ma tutte le traduzioni le fai
+  fare a codex»). Claude scrive il codice, i controlli e le istruzioni; Codex traduce e rilegge, con le foto della finestra
+  nella sua lingua. Come si è fatto la prima volta, con le istruzioni e le note di ogni lingua: `design/lavoro/5-traduzioni/`.
+  Le 29 lingue sono pubblicate dal 27/11/2026 con la 0.4.
 
 ## Come si costruisce e si pubblica il sito
 
