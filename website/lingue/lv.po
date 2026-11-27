@@ -435,13 +435,19 @@ msgctxt "frase.2"
 msgid "Sono d'accordo con Paola. Però la consegna del 14/3 mi sembra stretta: possiamo sentirci venerdì <1>alle 15:30?</1>"
 msgstr "Sono d'accordo con Paola. Però la consegna del 14/3 mi sembra stretta: possiamo sentirci venerdì <1>alle 15:30?</1>"
 
-#. Tags in the text (move the words, keep every tag, each inside the same tag):
-#.   <1> = <span>
+#. The label before the words the voice said, in the language of the page.
 #: index.html
 #, kalliope-markup
-msgctxt "frase.3.detto-riga"
-msgid "<1>Detto:</1> «Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
-msgstr "<1>Izrunāts:</1> „Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.”"
+msgctxt "frase.3.detto-etichetta"
+msgid "Detto:"
+msgstr ""
+
+#. What the Italian voice said: it stays in Italian, as the voice says it.
+#: index.html
+#, kalliope-markup
+msgctxt "frase.3.detto-frase"
+msgid "«Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
+msgstr ""
 
 #: index.html
 #, kalliope-markup
@@ -1609,18 +1615,19 @@ msgctxt "in.annuncio.sistema"
 msgid "I comandi della pagina sono quelli per {sistema}."
 msgstr "Šajā lapā tagad redzamas komandas sistēmai {sistema}."
 
-#. The name of a state of Kalliope's window: keep it as the program writes it, in the language of the program.
+#. The name of a state of Kalliope's window: the same words as the program's message programma.stato.voce-non-parte.
 #: installa/index.html
 #, kalliope-markup
 msgctxt "in.stato.voce.nome"
 msgid "La voce non parte"
 msgstr "Balss nesāk skanēt"
 
-#. What the window says next to the state above: keep it as the program writes it in Italian; each … stands for what the program adds (a folder, then the names of the missing files).
+#. What the window says next to the state above: the same words as the program's message programma.voce.file-mancanti.
 #: installa/index.html
-#, kalliope-markup
+#, kalliope-markup, fuzzy
+#| msgid "Manca la voce: in … non trovo …. Reinstalla Kalliope."
 msgctxt "in.stato.voce.detto"
-msgid "Manca la voce: in … non trovo …. Reinstalla Kalliope."
+msgid "Non trovo i file della voce, e senza non posso parlare. Reinstalla Kalliope dal pacchetto."
 msgstr "Manca la voce: in … non trovo …. Reinstalla Kalliope."
 
 #: installa/index.html
@@ -2398,9 +2405,10 @@ msgid "Cosa significa"
 msgstr "Ko tas nozīmē?"
 
 #: riunione/index.html
-#, kalliope-markup
+#, kalliope-markup, fuzzy
+#| msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive quale cartella e quali file («Manca la voce: in … non trovo …»). L'installazione è rotta, e finché non è a posto la voce non può parlare."
 msgctxt "ai.testo.21"
-msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive quale cartella e quali file («Manca la voce: in … non trovo …»). L'installazione è rotta, e finché non è a posto la voce non può parlare."
+msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive «Non trovo i file della voce». L'installazione è rotta, e finché non è a posto la voce non può parlare."
 msgstr "Balsis ir iekļautas pakotnē, bet Kalliope nevar atrast kādu no balss failiem tur, kur tam vajadzētu būt. Logā blakus statusam ir norādīta mape un trūkstošie faili („Manca la voce: in … non trovo …”). Instalācija ir bojāta. Kamēr tā nav salabota, balss nevar runāt."
 
 #: riunione/index.html
@@ -2627,9 +2635,10 @@ msgid "Cosa significa"
 msgstr "Ko tas nozīmē?"
 
 #: riunione/index.html
-#, kalliope-markup
+#, kalliope-markup, fuzzy
+#| msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …», «Errore della voce: …» o «Non riesco a cambiare voce: …»."
 msgctxt "ai.testo.54"
-msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …», «Errore della voce: …» o «Non riesco a cambiare voce: …»."
+msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …» o «Non sono riuscita a dire questa frase: …»."
 msgstr "Kaut kas nav kārtībā ar programmu vai balss failiem. Līdzās ir paziņojums, piemēram, „Neizdodas sagatavot balsi: …”, „Balss kļūda: …” vai „Neizdodas nomainīt balsi: …”."
 
 #: riunione/index.html
@@ -3615,18 +3624,21 @@ msgctxt "st.annuncio.risposta"
 msgid "Risposta: {domanda}"
 msgstr "Atbilde uz jautājumu „{domanda}”"
 
+#. The status line while the voice loads, when Kalliope starts.
 #: crates/app/ui/app.slint
 #, kalliope-slint
 msgctxt "programma.finestra.preparo-la-voce"
 msgid "Preparo la voce…"
 msgstr "Gatavoju balsi…"
 
+#. A small button next to a problem (nobody hears you, no microphone, the voice does not start): it opens the page of the website that explains what to do. Two or three words.
 #: crates/app/ui/kalliope/avvisi.slint crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.comune.come-si-risolve"
 msgid "Come si risolve"
 msgstr "Kā to novērst"
 
+#. The button that closes a question without doing anything.
 #: crates/app/ui/kalliope/avvisi.slint crates/app/ui/kalliope/modali.slint crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.comune.annulla"
@@ -3641,6 +3653,7 @@ msgctxt "programma.bolla.ripeti-frase"
 msgid "Ripeti: {}"
 msgstr "Atkārtot: {}"
 
+#. Shown over a sentence already said, under the pointer: a click makes the voice say it again. A verb, one word if the language allows.
 #: crates/app/ui/kalliope/bolla.slint
 #, kalliope-slint
 msgctxt "programma.bolla.ripeti"
@@ -3655,6 +3668,7 @@ msgctxt "programma.finestra.voce"
 msgid "Voce: {}"
 msgstr "Balss: {}"
 
+#. A button in the bar of the window: it switches to the compact meeting mode, a small window to keep beside Zoom or Meet. One short word.
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.riunione"
@@ -3668,6 +3682,7 @@ msgctxt "programma.finestra.modalita-riunione-solo-scrittura"
 msgid "Modalità riunione: solo scrittura, stato e Ferma"
 msgstr "Sapulces režīms: tikai rakstīšanas lauks, balss statuss un poga „Apturēt”"
 
+#. A button in the bar that opens a menu of more commands (create your own voice, about, clear the history). One short word, like «More» in other programs.
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.altro"
@@ -3688,6 +3703,7 @@ msgctxt "programma.finestra.a-meno"
 msgid "A−"
 msgstr "A−"
 
+#. What the A− button does, read by screen readers: makes the text smaller.
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.testo-piu-piccolo"
@@ -3701,30 +3717,35 @@ msgctxt "programma.finestra.a-piu"
 msgid "A+"
 msgstr "A+"
 
+#. What the A+ button does, read by screen readers: makes the text larger.
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.testo-piu-grande"
 msgid "Testo più grande"
 msgstr "Lielāks teksts"
 
+#. Shown above the writing box before the first sentence: there the sentences appear, each word lighting up as the voice says it, and stay to be said again with a click or with Tab and Enter.
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.qui-voce-dira-tue"
 msgid "Qui la voce dirà le tue frasi, una parola dopo l'altra. Restano qui: un clic, o Tab e Invio, le dice di nuovo."
 msgstr "Šeit redzēsi, kā balss vārdu pa vārdam izrunā tavas frāzes. Tās paliek logā. Lai frāze atskanētu vēlreiz, noklikšķini uz tās vai izvēlies to ar Tab un nospied Enter."
 
+#. In the compact meeting window, the short form of «Come si risolve»: it opens the help page about the problem shown. One word.
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.aiuto"
 msgid "Aiuto"
 msgstr "Palīdzība"
 
+#. In the smallest meeting window, the button that goes back to the full window, after a small sign of a window opening. One word.
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.intera"
 msgid "Intera"
 msgstr "Pilns logs"
 
+#. In the compact meeting window, the button that goes back to the full window.
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.finestra-intera"
@@ -3738,79 +3759,90 @@ msgctxt "programma.finestra.tenerla-sopra-riunione-alt"
 msgid "Per tenerla sopra la riunione: Alt+Spazio, poi «Sempre in primo piano»."
 msgstr "Lai logs paliktu virs sapulces loga, nospied Alt+atstarpes taustiņu un izvēlies „Vienmēr virspusē”."
 
+#. A button that closes a tip shown once.
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.ho-capito"
 msgid "Ho capito"
 msgstr "Sapratu"
 
+#. The hint in the empty writing box of the smallest window while the voice loads: it comes soon. Very short.
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.segnaposto-fra-poco"
 msgid "Fra poco."
 msgstr "Tūlīt."
 
+#. The hint in the empty writing box while the voice loads: the person can already type, the voice comes soon.
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.segnaposto-puoi-gia-scrivere"
 msgid "Puoi già scrivere: la voce arriva fra poco."
 msgstr "Vari jau rakstīt. Balss drīz būs gatava."
 
+#. The hint in the empty writing box of the smallest window when the voice cannot start.
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.segnaposto-voce-non-parte"
 msgid "La voce non parte."
 msgstr "Balss nesāk skanēt."
 
+#. The hint in the empty writing box when the voice cannot start: the status line above says why.
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.segnaposto-voce-non-parte-guarda"
 msgid "La voce non parte: guarda qui sopra."
 msgstr "Balss nesāk skanēt. Paskaties augstāk."
 
-#. In the empty writing field; Invio is the Enter key
 #: crates/app/ui/kalliope/finestra.slint crates/app/ui/kalliope/scrittura.slint
 #, kalliope-slint
 msgctxt "programma.comune.segnaposto-scrivi-qui"
 msgid "Scrivi qui."
 msgstr "Raksti šeit."
 
+#. The hint in the empty writing box: type here, and Enter makes the voice say it. Enter is the name of the key on the keyboard of the language.
 #: crates/app/ui/kalliope/finestra.slint crates/app/ui/kalliope/scrittura.slint
 #, kalliope-slint
 msgctxt "programma.comune.segnaposto-scrivi-invio"
 msgid "Scrivi qui. Invio la dice."
 msgstr "Raksti šeit. Nospied Enter, lai runātu."
 
+#. The title of the menu where the person chooses the voice that speaks for them.
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.con-quale-voce-parli"
 msgid "Con quale voce parli"
 msgstr "Ar kuru balsi runāsi?"
 
+#. A switch in the voice menu: when on, the person also hears the voice from the computer's speakers (otherwise only the others in the call hear it).
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.senti-anche-tu-voce"
 msgid "Senti anche tu la voce"
 msgstr "Dzirdēt balsi arī šeit"
 
+#. In the «Altro» menu: opens the steps to create a voice from a recording of the person who uses Kalliope, or of someone who gave permission.
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.crea-tua-voce"
 msgid "Crea la tua voce"
 msgstr "Izveidot savu balsi"
 
+#. In the «Altro» menu: opens the window about Kalliope (version, what is inside, licence), like «About» in other programs.
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.informazioni"
 msgid "Informazioni"
 msgstr "Par programmu"
 
+#. In the «Altro» menu: empties the list of sentences already said (it asks first).
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.svuota-cronologia"
 msgid "Svuota la cronologia"
 msgstr "Notīrīt vēsturi"
 
+#. The title of the question asked before emptying the list of sentences already said.
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.svuotare-cronologia"
@@ -3823,12 +3855,14 @@ msgctxt "programma.finestra.frasi-gia-dette-spariscono"
 msgid "Le frasi già dette spariscono da questo computer. Non si può tornare indietro."
 msgstr "Jau izrunātās frāzes tiks dzēstas no šī datora. Tās nevarēs atgūt."
 
+#. The button that confirms emptying the list of sentences already said. A verb.
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.svuota"
 msgid "Svuota"
 msgstr "Notīrīt"
 
+#. In the voice menu, next to the voice that speaks now: this one is in use. Short, lowercase.
 #: crates/app/ui/kalliope/menu.slint
 #, kalliope-slint
 msgctxt "programma.menu.uso"
@@ -3853,6 +3887,7 @@ msgctxt "programma.modali.apri-sito-kalliope-nel"
 msgid "Apri il sito di Kalliope nel browser"
 msgstr "Atvērt Kalliope vietni pārlūkā"
 
+#. A heading in the About window, over the list of the parts Kalliope is made of (the voices, ONNX Runtime, Slint…).
 #: crates/app/ui/kalliope/modali.slint
 #, kalliope-slint
 msgctxt "programma.modali.cosa-c-dentro"
@@ -3907,135 +3942,154 @@ msgctxt "programma.modali.sansevieria-ou-licenza-sansevieria"
 msgid "© SANSEVIERIA OÜ. Licenza SANSEVIERIA 1.1."
 msgstr "© SANSEVIERIA OÜ. Licence SANSEVIERIA 1.1."
 
+#. The button that closes the About window.
 #: crates/app/ui/kalliope/modali.slint
 #, kalliope-slint
 msgctxt "programma.modali.chiudi"
 msgid "Chiudi"
 msgstr "Aizvērt"
 
+#. The name of the writing box, read by screen readers.
 #: crates/app/ui/kalliope/scrittura.slint
 #, kalliope-slint
 msgctxt "programma.scrittura.cosa-vuoi-dire"
 msgid "Che cosa vuoi dire"
 msgstr "Ko tu vēlies pateikt?"
 
+#. The hint under the writing box: Enter says the sentence, Esc stops the voice, ↑ brings back the last sentence. Keys named as on the keyboard of the language.
 #: crates/app/ui/kalliope/scrittura.slint
 #, kalliope-slint
 msgctxt "programma.scrittura.invio-dice-esc-ferma"
 msgid "Invio la dice · Esc la ferma · ↑ l'ultima frase"
 msgstr "Enter — izrunāt · Esc — apturēt · ↑ — pēdējā frāze"
 
+#. The hint under the writing box in a smaller window: Enter says the sentence, Esc stops the voice.
 #: crates/app/ui/kalliope/scrittura.slint
 #, kalliope-slint
 msgctxt "programma.scrittura.invio-dice-esc-ferma-2"
 msgid "Invio la dice · Esc la ferma"
 msgstr "Enter — izrunāt · Esc — apturēt"
 
+#. A button that stops what is playing or speaking. A verb, one word.
 #: crates/app/ui/kalliope/scrittura.slint crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.comune.ferma"
 msgid "Ferma"
 msgstr "Apturēt"
 
-#. The name of the Esc key, as printed on a keyboard of this language
+#. The name of the Escape key, shown on the stop button.
 #: crates/app/ui/kalliope/scrittura.slint
 #, kalliope-slint
 msgctxt "programma.scrittura.esc"
 msgid "Esc"
 msgstr "Esc"
 
+#. The button beside the writing box that makes the voice say what is written, as Enter does: the imperative «Say». One short word.
 #: crates/app/ui/kalliope/scrittura.slint
 #, kalliope-slint
 msgctxt "programma.scrittura.di"
 msgid "Di'"
 msgstr "Izrunāt"
 
-#. The name of the Enter key, as printed on a keyboard of this language
+#. The name of the Enter key, shown on the button that says the sentence.
 #: crates/app/ui/kalliope/scrittura.slint
 #, kalliope-slint
 msgctxt "programma.scrittura.invio"
 msgid "Invio"
 msgstr "Enter"
 
+#. The title of the status line just after a new voice is ready.
 #: crates/app/ui/kalliope/stato.slint
 #, kalliope-slint
 msgctxt "programma.stato.voce-nuova"
 msgid "Voce nuova"
 msgstr "Jauna balss"
 
+#. The name of the state while the voice loads, said by Kalliope: «I am getting the voice ready». Two or three words, no dots.
 #: crates/app/ui/kalliope/stato.slint
 #, kalliope-slint
 msgctxt "programma.stato.preparo-la-voce"
 msgid "Preparo la voce"
 msgstr "Gatavoju balsi"
 
+#. The name of the state when the voice is ready to speak. One word; it refers to the voice (feminine in Italian).
 #: crates/app/ui/kalliope/stato.slint
 #, kalliope-slint
 msgctxt "programma.stato.pronta"
 msgid "Pronta"
 msgstr "Gatava"
 
+#. The name of the state while the voice speaks, said by Kalliope: «I am speaking». Two words.
 #: crates/app/ui/kalliope/stato.slint
 #, kalliope-slint
 msgctxt "programma.stato.sto-parlando"
 msgid "Sto parlando"
 msgstr "Runāju"
 
+#. The name of the state when no app in the call uses the «Kalliope» microphone: the others cannot hear the person. Short.
 #: crates/app/ui/kalliope/stato.slint
 #, kalliope-slint
 msgctxt "programma.stato.nessuno-ti-sente"
 msgid "Nessuno ti sente"
 msgstr "Neviens tevi nedzird"
 
+#. The name of the state when the virtual microphone «Kalliope» could not be created. Short.
 #: crates/app/ui/kalliope/stato.slint
 #, kalliope-slint
 msgctxt "programma.stato.manca-microfono"
 msgid "Manca il microfono"
 msgstr "Nav mikrofona"
 
+#. The name of the state when the voice cannot start. Short.
 #: crates/app/ui/kalliope/stato.slint
 #, kalliope-slint
 msgctxt "programma.stato.voce-non-parte"
 msgid "La voce non parte"
 msgstr "Balss nesāk skanēt"
 
+#. The name of the state for any other problem: one word, as on a warning sign.
 #: crates/app/ui/kalliope/stato.slint
 #, kalliope-slint
 msgctxt "programma.stato.attenzione"
 msgid "Attenzione"
 msgstr "Uzmanību"
 
+#. What the status line says while the voice loads.
 #: crates/app/ui/kalliope/stato.slint
 #, kalliope-slint
 msgctxt "programma.stato.fra-poco-puoi-scrivere"
 msgid "Fra poco puoi scrivere e farti sentire."
 msgstr "Drīz varēsi rakstīt, un citi tevi dzirdēs."
 
+#. What the status line says when the voice is ready: how to be heard. «Kalliope» in quotes is the name of the microphone to choose in the meeting app.
 #: crates/app/ui/kalliope/stato.slint
 #, kalliope-slint
 msgctxt "programma.stato.nella-riunione-scegli-kalliope"
 msgid "Nella riunione scegli «Kalliope» come microfono."
 msgstr "Sapulcē kā mikrofonu izvēlies „Kalliope”."
 
+#. What the status line says while the voice speaks: the Esc key stops it. Short.
 #: crates/app/ui/kalliope/stato.slint
 #, kalliope-slint
 msgctxt "programma.stato.esc-ferma"
 msgid "Esc la ferma."
 msgstr "Esc aptur balsi."
 
-#. The name of the second step of making a voice (the person reads a text aloud)
+#. The name of the first of the three steps of creating a voice, shown in a row at the top: record or import. Short.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.passo-scegli"
 msgid "Registra o importa"
 msgstr "Ieraksti vai importē"
 
+#. The name of the second step: the person reads a text aloud. Short.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.passo-leggi"
 msgid "Leggi ad alta voce"
 msgstr "Nolasi tekstu skaļi"
 
+#. The name of the third step: listen to the voice and give it a name. Short.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.passo-nome"
@@ -4050,18 +4104,21 @@ msgctxt "programma.crea.passo"
 msgid "{} di 3 · {}"
 msgstr "{} no 3 · {}"
 
+#. The same round button while it records: it stops recording.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ferma-registrazione"
 msgid "Ferma la registrazione"
 msgstr "Apturēt ierakstu"
 
+#. The name of the big round record button, read by screen readers: it starts recording.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.registra"
 msgid "Registra"
 msgstr "Ierakstīt"
 
+#. A button that plays a recording or a stretch of one. A verb.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ascolta"
@@ -4097,12 +4154,14 @@ msgctxt "programma.crea.cerco-parte-cui-si"
 msgid "Cerco la parte in cui si sente meglio la voce."
 msgstr "Meklēju vietu, kur balss dzirdama visskaidrāk."
 
+#. A small line over the first choice: this way is for a person who can still speak.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.se-hai-ancora-voce"
 msgid "Se hai ancora la voce"
 msgstr "Ja vēl vari runāt"
 
+#. The first choice for creating a voice: record it now, reading a short text aloud («la» is the voice). A title.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.registrala-adesso"
@@ -4115,12 +4174,14 @@ msgctxt "programma.crea.istruzioni-registra"
 msgid "Leggi ad alta voce un breve testo. Bastano dodici secondi di voce chiara, meglio finché la voce è forte."
 msgstr "Nolasi skaļi īsu tekstu. Pietiek ar divpadsmit sekundēm skaidras runas. Vislabāk ierakstīt, kamēr balss vēl ir stipra."
 
+#. A small line over the second choice: this way is for a person who can no longer speak.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.se-voce-non-c"
 msgid "Se la voce non c'è più"
 msgstr "Ja vairs nevari runāt"
 
+#. The second choice: create the voice from recordings made before (voice messages, videos). A title.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.usa-vecchie-registrazioni"
@@ -4147,6 +4208,7 @@ msgctxt "programma.crea.secondi"
 msgid "{} s"
 msgstr "{} s"
 
+#. A label over the menu where the person picks the microphone to record with.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.microfono"
@@ -4165,6 +4227,7 @@ msgctxt "programma.crea.controllo-registrazione"
 msgid "Controllo la registrazione…"
 msgstr "Pārbaudu ierakstu…"
 
+#. The instruction over the round record button before recording: press it and read the text below aloud. Short.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.premi-tondo-leggi"
@@ -4194,18 +4257,21 @@ msgctxt "programma.crea.ne-bastano-dodici-secondi"
 msgid "Ne bastano dodici secondi di voce: il cerchio si riempie. Il livello si muove con la tua voce."
 msgstr "Pietiek ar divpadsmit sekundēm runas. Runājot aplis pakāpeniski piepildās, un skaļuma rādītājs kustas līdzi tavai balsij."
 
+#. A button that stops playing the recording.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ferma-ascolto"
 msgid "Ferma l'ascolto"
 msgstr "Apturēt atskaņošanu"
 
+#. A button that plays the recording just made.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ascolta-registrazione"
 msgid "Ascolta la registrazione"
 msgstr "Noklausīties ierakstu"
 
+#. A button that throws the recording away to record again. A verb, short.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.rifai"
@@ -4243,6 +4309,7 @@ msgctxt "programma.crea.come-si-chiama-questa"
 msgid "Come si chiama questa voce?"
 msgstr "Kā sauks šo balsi?"
 
+#. The name of the field where the person writes the name of the new voice, read by screen readers.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.nome-voce"
@@ -4268,24 +4335,28 @@ msgctxt "programma.crea.ciao-sono-io-questa"
 msgid "Ciao, sono io. Questa è la mia voce, per le riunioni e per le persone a cui voglio bene. La leggo con calma, come parlo ogni giorno."
 msgstr "Sveiki, te es. Šī ir mana balss. Ar to runāšu sapulcēs un ar sev mīļiem cilvēkiem. Lasu mierīgi, kā runāju ikdienā."
 
+#. A button at the top of the steps of creating a voice: it leaves them and goes back to the main window, where the person writes the sentences to say. It means «back to writing», not «write again».
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.torna-a-scrivere"
 msgid "Torna a scrivere"
 msgstr "Atgriezties pie rakstīšanas"
 
+#. The title of the first step of creating a voice: how the person wants to create it.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.titolo-scegli"
 msgid "Come vuoi creare la tua voce?"
 msgstr "Kā vēlies izveidot savu balsi?"
 
+#. The title of the step where the person reads a text aloud, calmly.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.titolo-leggi"
 msgid "Leggi ad alta voce, con calma"
 msgstr "Lasi skaļi un nesteidzies"
 
+#. The title of the last step: listen to the voice and give it a name («la» is the voice).
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.titolo-nome"
@@ -4310,6 +4381,7 @@ msgctxt "programma.crea.manca-permesso-spunta-casella"
 msgid "Manca il permesso: spunta la casella."
 msgstr "Vajadzīga atļauja. Atzīmē izvēles rūtiņu."
 
+#. The last button of the steps: it creates the voice with the name given.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.crea-voce"
@@ -4360,12 +4432,14 @@ msgctxt "programma.scelta.titolo"
 msgid "Scegli una registrazione"
 msgstr "Izvēlies ierakstu"
 
+#. A filter in the system's window for choosing a file: only audio and video files.
 #: crates/app/src/collega.rs
 #, kalliope-rust
 msgctxt "programma.scelta.audio-e-video"
 msgid "Audio e video"
 msgstr "Audio un video"
 
+#. A filter in the system's window for choosing a file: every file.
 #: crates/app/src/collega.rs
 #, kalliope-rust
 msgctxt "programma.scelta.tutti-i-file"
@@ -4398,6 +4472,7 @@ msgctxt "programma.crea.tratto-chiaro"
 msgid "Tratto {numero} · il più chiaro"
 msgstr "{numero}. fragments · visskaidrākā balss"
 
+#. The name of a stretch of an imported recording where a voice was found, numbered: «Stretch 2». {numero} is the number.
 #. Placeholders to leave as they are: {numero}
 #: crates/app/src/crea.rs
 #, kalliope-rust, python-brace-format
@@ -4425,12 +4500,14 @@ msgctxt "programma.crea.tratto-inutilizzabile"
 msgid "Da questo tratto non si può creare la voce: scegli un altro tratto, o rifai."
 msgstr "No šī fragmenta nevar izveidot balsi. Izvēlies citu fragmentu vai mēģini vēlreiz."
 
+#. A button: replace the existing voice that has the same name with the new one.
 #: crates/app/src/crea.rs
 #, kalliope-rust
 msgctxt "programma.crea.sostituisci-voce"
 msgid "Sostituisci la voce"
 msgstr "Aizstāt balsi"
 
+#. A button: keep this name, although one of Kalliope's own voices has it too.
 #: crates/app/src/crea.rs
 #, kalliope-rust
 msgctxt "programma.crea.tieni-nome"
@@ -4729,3 +4806,11 @@ msgstr "Balss izveide atcelta."
 msgctxt "programma.voce.creazione-fallita"
 msgid "Non sono riuscita a creare la voce: {causa}"
 msgstr "Neizdevās izveidot balsi: {causa}"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span>
+#: index.html
+#, kalliope-markup
+#~ msgctxt "frase.3.detto-riga"
+#~ msgid "<1>Detto:</1> «Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
+#~ msgstr "<1>Izrunāts:</1> „Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.”"
