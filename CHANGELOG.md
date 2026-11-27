@@ -4,6 +4,15 @@ Kalliope's versions go up one step at a time (0.1, 0.2 … 0.9, 1.0, 1.1 …). E
 published for every supported system (see [docs/releasing.md](docs/releasing.md)). This file lists
 what each version brings, for the people who use it.
 
+## 0.6 — 27 November 2026
+
+Everything inside Kalliope at its latest version.
+
+- **The code behind your own voice is Kyutai's newest.** Kyutai has fixed a fault where long texts
+  lost their later parts. Kalliope never had it: it already starts every part of a long text from
+  your voice. Your voice sounds exactly as before; we compared it byte for byte.
+- **The libraries Kalliope is built with are at their latest versions.**
+
 ## 0.5 — 27 November 2026
 
 Kalliope in the menu of your desktop, in your language.

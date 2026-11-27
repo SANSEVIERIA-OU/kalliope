@@ -37,6 +37,11 @@
   </supports>
   <content_rating type="oars-1.1"/>
   <releases>
+    <release version="0.6" date="2026-11-27">
+      <description>
+        <p>Everything inside Kalliope at its latest version: the code behind the voice made from a recording follows Kyutai's newest, and the libraries Kalliope is built with are up to date. The voices sound exactly as before.</p>
+      </description>
+    </release>
     <release version="0.5" date="2026-11-27">
       <description>
         <p>Kalliope's entry in the applications menu speaks the language of the system: what Kalliope is, its description and the words the search of the desktop finds it with are in the same 30 languages as the window. The voices still speak Italian only.</p>
