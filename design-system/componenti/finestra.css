@@ -1,89 +1,202 @@
 /* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
-/* Componente · La finestra di Kalliope ricostruita
-   Le regole di questo componente, nell'ordine in cui la pagina le dava.
-   Ogni valore viene da ../token.css (o ../../token.css): qui non ce n'è nessuno scritto a mano. */
+/* Componente · La finestra di Kalliope disegnata sulle pagine (versione 0.3)
+   È la finestra del programma («La frase che si accende», direzione approvata il 26/11/2026) ridotta a un disegno: la barra con il logo e la voce,
+   la riga di stato, la bolla tratteggiata dove si scrive, «Ferma» e «Di'». Colori, carattere, pesi, raggi, spessore e passo del tratteggio,
+   tempi e curve sono i suoi ruoli --app-* così come stanno in ../token.css (stessa fonte della finestra: se cambiano lì, cambiano qui); le misure
+   del disegno, che per stare in 470 px non sono quelle della finestra a 920, sono i token --finestra-*. Qui non c'è nessun valore scritto a mano.
+   Il disegno è sempre nel tema scuro, anche dentro una scena chiara (come la riunione ricostruita): :root[data-tema="chiaro"] è del solo programma.
+   La lista dei comandi è un'immagine, non comandi: i pezzi sono <span> e il disegno dice «Ricostruzione». */
 
-/* la finestra di Kalliope, ricostruita (DejaVu Sans su bianco, testi e colori di app.slint) */
 .sotto { position: relative; z-index: var(--livello-sotto); margin-top: var(--sotto-margine-sopra); display: flex; }
 .finestra {
   width: var(--misura-29);
   max-width: 100%;
-  font-family: var(--font-app);
-  font-size: var(--corpo-5);
-  color: var(--ricostruita-testo);
-  background: var(--ricostruita-fondo);
-  border-radius: var(--finestra-raggio);
-  padding: var(--spazio-8);
-  box-shadow: var(--finestra-ombra);
-}
-.f-stato {
-  background: var(--ricostruita-stato);
-  border-radius: var(--raggio-4);
-  padding: var(--f-stato-spazio-interno);
-  line-height: var(--f-stato-interlinea);
-  transition: background-color var(--durata-f-stato) var(--curva-dolce);
-}
-.f-stato.parla { background: var(--ricostruita-stato-parla); }
-.f-riga { display: flex; gap: var(--spazio-7); margin-top: var(--spazio-7); }
-.f-campo {
-  position: relative;
-  flex: 1;
-  min-width: 0;
-  height: var(--misura-15);
-  padding: var(--spazi-1);
+  font-family: var(--app-font-testo);
+  font-weight: var(--app-peso-testo);
+  font-size: var(--app-corpo-stato);
+  color: var(--app-testo);
+  background: var(--app-fondo);
+  border-radius: var(--app-raggio-pannello);
+  box-shadow: 0 var(--app-ombra-scarto) var(--app-ombra-sfocatura) var(--app-ombra), 0 0 0 var(--app-filo) var(--app-bordo);
   overflow: hidden;
-  white-space: nowrap;
-  background: var(--ricostruita-campo);
-  border: var(--filetto-sottile) solid var(--ricostruita-campo-bordo);
-  border-bottom-color: var(--ricostruita-bordo-forte);
-  border-radius: var(--raggio-2);
+}
+
+/* la barra: il logo vero, il nome, la voce */
+.f-barra {
   display: flex;
   align-items: center;
+  gap: var(--app-spazio-stretto);
+  min-height: var(--finestra-barra-altezza);
+  padding-block: var(--app-spazio-minimo);
+  padding-inline: var(--app-spazio-medio) var(--app-spazio-stretto);
+  background: var(--app-barra);
+  border-block-end: var(--app-filo) solid var(--app-bordo);
 }
-.f-segnaposto { color: var(--ricostruita-segnaposto); overflow: hidden; text-overflow: ellipsis; }
+.f-marchio { display: block; width: var(--finestra-marchio); height: var(--finestra-marchio); flex: none; }
+.f-marchio img { display: block; width: 100%; height: 100%; }
+.f-app { font-size: var(--finestra-nome-corpo); font-weight: var(--app-peso-forte); line-height: 1; }
+.f-voce {
+  margin-inline-start: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--app-spazio-stretto);
+  height: var(--finestra-voce-altezza);
+  padding-inline: var(--app-spazio-stretto);
+  border: var(--app-filo) solid var(--app-bordo-comando);
+  border-radius: var(--app-raggio-pillola);
+  font-size: var(--finestra-comando-corpo);
+  font-weight: var(--app-peso-forte);
+  line-height: 1;
+}
+.f-voce::before { content: ""; width: var(--app-punto); height: var(--app-punto); border-radius: 50%; background: var(--app-tinta-voce-1); }
+.f-voce::after {
+  content: "";
+  width: calc(var(--app-chiusura) / 2);
+  height: calc(var(--app-chiusura) / 2);
+  border: 0 solid var(--app-testo-tenue);
+  border-inline-end-width: var(--filetto-medio);
+  border-block-end-width: var(--filetto-medio);
+  transform: translateY(-25%) rotate(calc(45deg * var(--verso)));
+}
+
+.f-corpo { padding: var(--app-spazio-stretto); }
+
+/* la riga di stato: il punto (o le barre della voce), il nome dello stato, ciò che spiega */
+.f-stato {
+  display: flex;
+  align-items: center;
+  gap: var(--app-spazio-controlli);
+  min-height: var(--finestra-stato-altezza);
+  padding-block: var(--app-spazio-minimo);
+  padding-inline: var(--app-spazio-stretto) var(--app-spazio-medio);
+  border-radius: var(--app-raggio-pannello);
+  background: transparent;
+  transition: background-color var(--app-durata-scurisce) var(--app-curva-dolce);
+}
+.f-segno { flex: none; display: inline-flex; align-items: center; justify-content: center; width: var(--app-barra-voce-alta); height: var(--app-barra-voce-alta); }
+.f-punto { width: var(--app-punto); height: var(--app-punto); border-radius: 50%; background: var(--app-azione); }
+.f-barre { display: none; align-items: center; gap: var(--app-spazio-minimo); height: var(--app-barra-voce-alta); }
+.f-barre i { display: block; width: var(--app-barra-voce); height: 100%; border-radius: var(--app-raggio-pillola); background: var(--app-voce); transform: scaleY(0.4); }
+.f-testo { min-width: 0; flex: 1; display: flex; align-items: baseline; flex-wrap: wrap; column-gap: var(--app-spazio-controlli); }
+.f-titolo { font-size: var(--finestra-stato-corpo); font-weight: var(--app-peso-forte); color: var(--app-testo); white-space: nowrap; }
+.f-detto { min-width: 0; font-size: var(--finestra-detto-corpo); color: var(--app-testo-tenue); }
+.f-stato.parla .f-punto { display: none; }
+.f-stato.parla .f-barre { display: inline-flex; }
+.f-stato.parla .f-barre i { animation: f-respira var(--app-durata-barre) var(--app-curva-dolce) infinite alternate; }
+.f-stato.parla .f-barre i:nth-child(2) { animation-delay: calc(var(--app-durata-barre) / -3); }
+.f-stato.parla .f-barre i:nth-child(3) { animation-delay: calc(var(--app-durata-barre) / -1.5); }
+@keyframes f-respira { to { transform: scaleY(1); } }
+/* ciò che non va: il solo colore caldo della finestra, con il fondo della riga */
+.f-stato.allarme { background: var(--app-attenzione-fondo); }
+.f-stato.allarme .f-punto { background: var(--app-attenzione); }
+.f-stato.allarme .f-titolo { color: var(--app-attenzione); }
+.f-risolvi {
+  flex: none;
+  display: none;
+  align-items: center;
+  height: var(--finestra-voce-altezza);
+  padding-inline: var(--app-spazio-medio);
+  border: var(--app-filo) solid var(--app-bordo-comando);
+  border-radius: var(--app-raggio-pillola);
+  font-size: var(--finestra-comando-corpo);
+  font-weight: var(--app-peso-forte);
+  white-space: nowrap;
+}
+.f-stato.allarme .f-risolvi { display: inline-flex; }
+
+/* la scrittura: la bolla del non ancora detto, con il contorno tratteggiato del marchio (tratto, trattino e spazio sono i token della finestra) */
+.f-campo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--app-spazio-stretto);
+  min-height: var(--finestra-scrittura-altezza);
+  margin-top: var(--app-spazio-stretto);
+  padding-block: var(--app-spazio-stretto);
+  padding-inline: var(--app-spazio-medio) var(--app-spazio-stretto);
+  border-radius: var(--app-raggio-scrittura);
+  background: var(--app-campo);
+  overflow: hidden;
+  white-space: nowrap;
+}
+.f-tratteggio { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+.f-tratteggio rect {
+  x: calc(var(--app-tratto) / 2);
+  y: calc(var(--app-tratto) / 2);
+  width: calc(100% - var(--app-tratto));
+  height: calc(100% - var(--app-tratto));
+  rx: calc(var(--app-raggio-scrittura) - var(--app-tratto) / 2);
+  fill: none;
+  stroke: var(--app-tratteggio);
+  stroke-width: var(--app-tratto);
+  stroke-dasharray: var(--app-tratteggio-pieno) var(--app-tratteggio-vuoto);
+  transition: stroke var(--app-durata-scurisce) var(--app-curva-dolce);
+}
+.f-campo.fuoco .f-tratteggio rect { stroke: var(--app-tratteggio-fuoco); }
+.f-testo-campo { position: relative; flex: 1; min-width: 0; display: flex; align-items: center; overflow: hidden; font-size: var(--finestra-scrittura-corpo); line-height: var(--app-interlinea); }
+.f-segnaposto { color: var(--app-segnaposto); overflow: hidden; text-overflow: ellipsis; }
 .f-linea { display: inline-flex; align-items: center; white-space: pre; }
 .f-campo.pieno .f-segnaposto { display: none; }
 .f-cursore {
   display: none;
   width: var(--misura-1);
-  height: var(--misura-9);
-  background: var(--ricostruita-testo);
+  height: calc(var(--finestra-scrittura-corpo) * var(--app-interlinea));
+  background: var(--app-testo);
   margin-inline-start: var(--f-cursore-margine-inizio);
   flex: none;
 }
 .f-campo.fuoco .f-cursore { display: block; animation: lampeggia var(--durata-f-campo-f-cursore) var(--curva-a-scatti) infinite; }
-.f-campo.fuoco { border-bottom: var(--filetto-medio) solid var(--ricostruita-accento); }
 @keyframes lampeggia {
   50% { opacity: 0; }
 }
+/* «Ferma» (con Esc) e «Di'» (con Invio) dentro la bolla, in fondo; «Ferma» c'è solo mentre la voce parla */
+.f-comandi { position: relative; flex: none; display: inline-flex; align-items: center; gap: var(--app-spazio-stretto); }
 .f-pulsante {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  height: var(--misura-15);
-  padding: var(--f-pulsante-spazio-interno);
-  border-radius: var(--raggio-2);
-  flex: none;
-  font-family: inherit;
-  font-size: inherit;
-  border: var(--filetto-sottile) solid transparent;
-  transition: background-color var(--durata-f-pulsante), color var(--durata-f-pulsante);
+  gap: var(--app-spazio-minimo);
+  height: var(--finestra-comando-altezza);
+  padding-inline: var(--app-spazio-medio);
+  border-radius: var(--app-raggio-pillola);
+  border: var(--app-filo) solid transparent;
+  font-size: var(--finestra-comando-corpo);
+  font-weight: var(--app-peso-forte);
+  line-height: 1;
+  white-space: nowrap;
+  transition: background-color var(--app-durata-scurisce) var(--app-curva-dolce), color var(--app-durata-scurisce) var(--app-curva-dolce), opacity var(--app-durata-scurisce) var(--app-curva-dolce);
 }
-.f-parla { background: var(--ricostruita-parla-spento); color: var(--bianco); }
-.f-parla.attivo { background: var(--ricostruita-accento); }
-.f-ferma { background: var(--ricostruita-ferma-fondo); color: var(--ricostruita-ferma-testo); border-color: var(--ricostruita-bordo-forte); }
-.f-ferma.attivo, .f-ferma:enabled { background: var(--ricostruita-campo); color: var(--ricostruita-testo); border-color: var(--ricostruita-bordo-attivo); }
-button.f-ferma:enabled, button.f-parla:enabled { cursor: pointer; }
-button.f-ferma:enabled:hover { background: var(--ricostruita-ferma-sopra); }
+.f-pulsante kbd { font: inherit; font-weight: var(--app-peso-testo); font-size: var(--finestra-nota-corpo); color: var(--app-testo-spento); }
+button.f-pulsante { font-family: inherit; color: inherit; background: none; cursor: pointer; }
+.f-ferma { border-color: var(--app-bordo-comando); color: var(--app-testo); }
+.f-ferma:disabled { opacity: var(--app-opacita-spento); cursor: default; }
+button.f-ferma:enabled:hover { background: var(--app-velo-sopra); }
+.f-di { background: var(--app-velo-scelto); color: var(--app-testo-spento); }
+.f-di.attivo { background: var(--app-azione); color: var(--app-azione-testo); }
+.f-di.attivo kbd { color: var(--app-azione-testo); }
+button.f-di:hover { background: var(--app-velo-premuto); }
+button.f-di.attivo:hover { background: var(--app-azione-sopra); }
+button.f-pulsante:focus-visible { outline: var(--app-tratto) solid var(--app-voce); outline-offset: var(--app-tratto); }
+.f-campo.spento .f-pulsante { opacity: var(--app-opacita-spento); }
+.f-nota { margin: var(--app-spazio-stretto) var(--app-spazio-stretto) var(--app-spazio-minimo); font-size: var(--finestra-nota-corpo); color: var(--app-testo-tenue); }
+
+/* la voce si prepara: il tratteggio cammina e il punto respira (1,4 s, come nella finestra) */
+.finestra.prepara .f-punto { animation: f-punto-respira var(--app-durata-cammino) var(--app-curva-dolce) infinite alternate; }
+.finestra.prepara .f-tratteggio rect { animation: f-cammina var(--app-durata-cammino) var(--app-curva-lineare) infinite; }
+@keyframes f-punto-respira { from { opacity: var(--app-opacita-spento); } to { opacity: 1; } }
+@keyframes f-cammina { to { stroke-dashoffset: calc(-1 * (var(--app-tratteggio-pieno) + var(--app-tratteggio-vuoto))); } }
+
 .sotto { animation: sale var(--durata-sotto) var(--entra) var(--ritardo-sotto) backwards; }
 @media (max-width: 760px) {
   .sotto { margin-top: var(--sotto-margine-sopra-telefono); }
-  .sotto .finestra { width: 100%; font-size: var(--corpo-2); padding: var(--spazio-5); }
-  .sotto .finestra .f-stato { display: none; }
-  .sotto .finestra .f-riga { margin-top: 0; gap: var(--spazio-5); }
-  .sotto .f-campo { height: var(--misura-14); padding: var(--sotto-f-campo-spazio-interno); }
-  .sotto .f-pulsante { height: var(--misura-14); padding: var(--sotto-f-pulsante-spazio-interno); }
+  .sotto .finestra { width: 100%; }
+  /* al telefono la finestra tiene soltanto la scrittura: la barra della pagina c'è già, e lo stato è nella bolla che parla */
+  .sotto .finestra .f-barra, .sotto .finestra .f-stato { display: none; }
+  .sotto .f-corpo { padding: var(--app-spazio-minimo); }
+  .sotto .f-campo { margin-top: 0; }
+  /* i nomi dei tasti (Esc, Invio) sono per la tastiera: al telefono non servono, e lasciano posto alla scrittura */
+  .finestra .f-pulsante kbd { display: none; }
 }
+
 .primo-avvio { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); align-items: start; }
 .finestra.avvio {
   grid-column: 1;
@@ -91,26 +204,15 @@ button.f-ferma:enabled:hover { background: var(--ricostruita-ferma-sopra); }
   position: relative;
   z-index: var(--livello-finestra);
   width: var(--finestra-larghezza-2);
-  font-size: var(--corpo-6);
 }
-.avvio .f-nota { margin: var(--f-nota-margine); font-size: var(--corpo-4); color: var(--ricostruita-nota); }
-.f-scarico { display: none; margin-top: var(--spazio-8); }
-.avvio.scarica .f-scarico { display: block; }
-.f-barra { display: block; height: var(--misura-4); border-radius: var(--raggio-2); background: var(--ricostruita-barra-vuota); overflow: hidden; }
-.f-barra i { display: block; height: 100%; background: var(--ricostruita-accento); transform-origin: var(--origine-inizio-x) 50%; transform: scaleX(0); }
-.f-riga-scarica { margin-top: var(--spazio-8); }
-.avvio.pronta .f-riga-scarica, .avvio.prepara .f-riga-scarica { display: none; }
-.f-primario {
-  background: var(--ricostruita-accento);
-  color: var(--bianco);
-  padding: var(--spazi-2);
-  transition: transform var(--durata-f-primario) var(--curva-dolce), background-color var(--durata-f-primario) var(--curva-dolce);
-}
-.f-primario.premuto { transform: scale(var(--f-primario-scala)); background: var(--ricostruita-accento-premuto); }
-.f-annulla { background: var(--ricostruita-campo); color: var(--ricostruita-testo); border-color: var(--ricostruita-bordo-attivo); }
-.f-campo.spento { opacity: var(--opacita-f-campo); }
-.avvio.pronta .f-campo.spento { opacity: 1; }
-.f-stato.allarme { background: var(--ricostruita-stato-allarme); }
+/* il primo avvio: la voce è nel pacchetto, «Preparo la voce» dura poco e poi la scrittura dice «Scrivi qui. Invio la dice.»; con la voce che non parte
+   dice di guardare lo stato. I tre suggerimenti stanno nella pagina, ne vale uno secondo lo stato (così nella lingua della pagina) */
+.f-campo.spento .f-pulsante { pointer-events: none; }
+.avvio .f-se-pronta, .avvio .f-se-errore { display: none; }
+.avvio.pronta .f-se-prepara, .avvio.errore .f-se-prepara { display: none; }
+.avvio.pronta .f-se-pronta { display: inline; }
+.avvio.errore .f-se-errore { display: inline; }
+.avvio.errore .f-campo .f-di, .avvio.errore .f-campo .f-ferma { opacity: var(--app-opacita-spento); }
 /* correzioni 6b: quando la colonna è stretta (tavoletta 761-880 px, e 1181-1400 px dove la riunione ha accanto il testo) la finestra
    della riunione, tirata su di 22 px a destra, copriva la fine della nota «Le frasi che dici restano qui, per ripeterle.»: allora sta
    sotto la finestra di Kalliope, senza sovrapporsi. La larghezza si misura sulla colonna, non sullo schermo */
@@ -119,7 +221,6 @@ button.f-ferma:enabled:hover { background: var(--ricostruita-ferma-sopra); }
   .finestra.avvio { width: 100%; max-width: var(--misura-31); }
 }
 @media (max-width: 760px) {
-  .primo-avvio {  }
   .finestra.avvio { grid-column: 1; min-height: 0; }
 }
 .nota-ricostruzione {
@@ -132,10 +233,8 @@ button.f-ferma:enabled:hover { background: var(--ricostruita-ferma-sopra); }
   color: var(--testo-nota-chiara);
   text-wrap: pretty;
 }
-.scena-chiara .finestra { box-shadow: var(--finestra-ombra-2); }
 @media (max-width: 760px) {
   .primo-avvio { grid-template-columns: minmax(0, 1fr); }
-  .finestra.avvio { width: 100%; font-size: var(--corpo-4); }
   .nota-ricostruzione { margin: var(--nota-ricostruzione-margine-telefono); }
 }
 /* punto 3: didascalia e «Rivedi il primo avvio» stanno nel posto libero a sinistra della finestra della riunione, sotto quella
@@ -148,7 +247,14 @@ button.f-ferma:enabled:hover { background: var(--ricostruita-ferma-sopra); }
   .avvio-piede { grid-row: 2; justify-self: start; align-self: end; width: var(--avvio-piede-larghezza); padding-bottom: var(--spazio-3); }
   .avvio-piede .nota-ricostruzione { margin: 0; }
 }
+/* sugli schermi bassi la barra del disegno lascia il posto alla scrittura (la pagina ha già la sua, con il logo); sotto 700 px d'altezza anche lo stato */
+@media (min-width: 761px) and (max-height: 802px) {
+  .sotto .finestra .f-barra { display: none; }
+}
 @media (min-width: 761px) and (max-height: 699px) {
   .sotto .finestra .f-stato { display: none; }
-  .sotto .finestra .f-riga { margin-top: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .finestra.prepara .f-punto, .finestra.prepara .f-tratteggio rect, .f-stato.parla .f-barre i { animation: none; }
+  .f-stato.parla .f-barre i { transform: scaleY(0.7); }
 }

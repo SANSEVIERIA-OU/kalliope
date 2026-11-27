@@ -270,10 +270,10 @@
   const avvio = $('.passo-apri .avvio');
   if (avvio) {
     const aStato = $('.f-stato', avvio);
-    const PRONTA = aStato.textContent;
+    const PRONTA = {nome: $('.f-titolo', aStato).textContent, detto: $('.f-detto', aStato).textContent};   // lo stato che la pagina mostra: nome e spiegazione
     let corsaAvvio = null;
-    const prontaOra = () => { avvio.classList.remove('prepara', 'errore'); avvio.classList.add('pronta'); aStato.textContent = PRONTA; aStato.classList.remove('allarme'); };
-    const dice = riga => annuncia(fmt(T('in.annuncio.finestra'), {frase: riga}));   // la riga della finestra cambia: chi non la vede la sente
+    const prontaOra = () => { avvio.classList.remove('prepara', 'errore'); avvio.classList.add('pronta'); window.Finestra.stato(aStato, PRONTA.nome, PRONTA.detto); };
+    const dice = (nome, detto) => annuncia(fmt(T('in.annuncio.finestra'), {frase: `${nome}. ${detto}`}));   // la riga della finestra cambia: chi non la vede la sente
     const mostraFinestra = bottone => inVista(avvio, bottone);   // la frase premuta cambia la finestra: la finestra resta in vista
     // «Preparo la voce…» dura quanto nel racconto di sempre (da --avvio-prepara a --avvio-pronta), poi «Pronta».
     function animaAvvio() {
@@ -281,13 +281,12 @@
       const corsa = corsaAvvio;
       avvio.classList.remove('pronta', 'errore');
       avvio.classList.add('prepara');
-      aStato.classList.remove('allarme');
-      aStato.textContent = T('avvio.preparo');
+      window.Finestra.stato(aStato, T('avvio.preparo.nome'), T('avvio.preparo.detto'));
       corsa.voci.push(dopo(tempo('--avvio-pronta') - tempo('--avvio-prepara'), prontaOra));
     }
     if (ridotto) prontaOra();
     else {
-      aStato.textContent = T('avvio.preparo');
+      window.Finestra.stato(aStato, T('avvio.preparo.nome'), T('avvio.preparo.detto'));
       avvio.addEventListener('rivelato', () => dopo(tempo('--ritardo-avvio'), () => { if (!avvio.classList.contains('provata')) animaAvvio(); }));
     }
 
@@ -302,12 +301,14 @@
       bottoni.forEach(x => x.setAttribute('aria-pressed', String(x === b && su)));
       corsaAvvio = nuovaCorsa(corsaAvvio);
       avvio.classList.add('provata');
-      if (!su) { prontaOra(); dice(PRONTA); requestAnimationFrame(() => mostraFinestra(b)); return; }
-      // «Manca la voce» è lo stato d'errore della finestra; con il microfono che non si apre, la voce è pronta
-      const st = b.dataset.stato, errore = st !== 'microfono';
+      if (!su) { prontaOra(); dice(PRONTA.nome, PRONTA.detto); requestAnimationFrame(() => mostraFinestra(b)); return; }
+      // «La voce non parte» è lo stato d'errore della finestra (il campo dice di guardare lo stato); con il microfono che manca o che nessuno
+      // usa, la voce è pronta e la scrittura resta com'è: cambia soltanto la riga di stato, calda, con «Come si risolve»
+      const st = b.dataset.stato, errore = st === 'voce';
       avvio.classList.remove('prepara', 'pronta');
       avvio.classList.toggle('errore', errore); if (!errore) avvio.classList.add('pronta');
-      aStato.textContent = T(`in.stato.${st}`); aStato.classList.add('allarme'); dice(aStato.textContent);
+      const nome = T(`in.stato.${st}.nome`), detto = T(`in.stato.${st}.detto`);
+      window.Finestra.stato(aStato, nome, detto, true); dice(nome, detto);
       requestAnimationFrame(() => mostraFinestra(b));
     }));
   }

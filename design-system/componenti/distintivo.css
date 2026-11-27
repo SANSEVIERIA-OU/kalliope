@@ -1,0 +1,13 @@
+/* SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1 */
+/* Componente · Il distintivo «Made with Slint» (issue #21, sito 0.3)
+   L'attribuzione che la licenza Slint Royalty-free 2.0 (§2) chiede su una pagina pubblica, «preferibilmente dove si scaricano i binari»: l'immagine ufficiale di Slint,
+   non modificata (design-system/terze-parti/slint/LEGGIMI.md: fonte, impronta, licenza CC-BY-ND-4.0), dentro un collegamento al sito di Slint. L'immagine si ridimensiona
+   soltanto in proporzione (width con height: auto): niente colori, filtri o ritagli. È una pillola bianca su fondo trasparente (la versione «dark» di Slint, per i fondi scuri), come la scena del passo «Scarica». */
+.distintivo-slint { display: flex; align-items: center; flex-wrap: wrap; gap: var(--distintivo-slint-spazio); margin-top: var(--distintivo-slint-sopra); }
+.distintivo-slint a { display: inline-block; line-height: 0; border-radius: var(--raggio-pillola); }
+.distintivo-slint img { display: block; width: var(--distintivo-slint-larghezza); max-width: 100%; height: auto; }
+.distintivo-slint p { margin: 0; max-width: var(--distintivo-slint-testo-larghezza); font-size: var(--corpo-5); line-height: var(--interlinea-5); }
+.distintivo-slint a:focus-visible { outline: var(--filetto-forte) solid var(--voce); outline-offset: var(--spazio-3); }
+@media (max-width: 760px) {
+  .distintivo-slint img { width: var(--distintivo-slint-larghezza-telefono); }
+}

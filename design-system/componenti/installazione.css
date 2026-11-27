@@ -183,18 +183,18 @@
   max-width: none;
   margin: 0;
   padding: var(--spazio-7) var(--spazio-10);
-  border-radius: var(--raggio-4);
-  border: var(--filetto-sottile) solid var(--frase-finestra-bordo);
-  background: var(--ricostruita-campo);
-  color: var(--ricostruita-testo);
-  font-family: var(--font-app);
+  border-radius: var(--app-raggio-pannello);
+  border: var(--app-filo) solid var(--app-bordo);
+  background: var(--app-fondo);
+  color: var(--app-testo);
+  font-family: var(--app-font-testo);
   font-size: var(--corpo-4);
   line-height: var(--interlinea-4);
   text-align: start;
 }
 .frase-bottone { cursor: pointer; transition: border-color var(--durata-voce-bordo) var(--curva-dolce), background-color var(--durata-voce-sfondo) var(--curva-dolce); }
-.frase-bottone:hover { border-color: var(--bordeaux); }
-.frase-bottone[aria-pressed="true"] { background: var(--ricostruita-stato-allarme); border-color: var(--bordeaux); }
+.frase-bottone:hover { border-color: var(--app-attenzione); }
+.frase-bottone[aria-pressed="true"] { background: linear-gradient(var(--app-attenzione-fondo), var(--app-attenzione-fondo)), var(--app-fondo); border-color: var(--app-attenzione); }
 .frasi-finestra .frase-rimedio { max-width: none; margin: var(--spazio-5) 0 0; font-size: var(--corpo-5); line-height: var(--interlinea-5); color: var(--testo-spiegazione-chiara); }
 .frase-rimedio a, .passo-apri .nota-passo a { color: var(--bordeaux); font-weight: var(--peso-forte); text-decoration-color: var(--bordo-rivedi-chiaro); }
 .passo-apri .nota-passo { color: var(--testo-nota-chiara) !important; }

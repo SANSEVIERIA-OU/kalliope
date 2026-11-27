@@ -83,28 +83,7 @@
   --vetro-cornice: rgba(14, 20, 21, 0.42);   /* la cornice della riunione */
   --vetro-nome: rgba(10, 14, 15, 0.52);   /* l'etichetta di un riquadro */
   --vetro-riunione-filo: rgba(14, 20, 21, 0.6);   /* la riunione accanto al filo */
-  --ricostruita-accento: #005fb8;   /* l'accento della finestra: «Parla», riga attiva, barra di avanzamento */
-  --ricostruita-accento-premuto: #004c94;   /* l'accento premuto */
-  --ricostruita-barra-vuota: #e2e2e2;   /* la barra di avanzamento vuota */
-  --ricostruita-bordo-attivo: #d0d0d0;   /* il bordo dei comandi chiari attivi */
-  --ricostruita-bordo-forte: #c9c9c9;   /* il bordo basso del campo e di «Ferma» spento */
-  --ricostruita-campo: #fdfdfd;   /* il campo di testo e i comandi chiari */
-  --ricostruita-campo-bordo: #e3e3e3;   /* il bordo del campo di testo */
-  --ricostruita-ferma-fondo: #f9f9f9;   /* «Ferma» spento: fondo */
-  --ricostruita-ferma-sopra: #f3f3f3;   /* «Ferma» al passaggio */
-  --ricostruita-ferma-testo: #a0a0a0;   /* «Ferma» spento: testo */
-  --ricostruita-fondo: #fafafa;   /* la finestra di Kalliope: fondo */
-  --ricostruita-nota: #555;   /* la nota nella finestra del primo avvio */
-  --ricostruita-parla-spento: #c3c3c3;   /* «Parla» non disponibile */
-  --ricostruita-segnaposto: #656565;   /* il testo suggerito del campo */
-  --ricostruita-stato: #eef3fb;   /* la riga di stato della finestra */
-  --ricostruita-stato-allarme: #fff4e5;   /* la riga di stato in allarme (variante definita, non usata dalla pagina) */
-  --ricostruita-stato-parla: #e8f5e9;   /* la riga di stato mentre parla */
-  --ricostruita-testo: #1d1d1f;   /* la finestra di Kalliope: testo e cursore */
-  --finestra-anello: rgba(0, 0, 0, 0.06);   /* il filo intorno alla finestra di Kalliope */
-  --finestra-chiara-anello: rgba(30, 39, 39, 0.08);   /* il filo intorno alla finestra sulla scena chiara */
   --ombra-finestra: rgba(5, 9, 10, 0.85);   /* ombra della finestra di Kalliope */
-  --ombra-finestra-chiara: rgba(30, 39, 39, 0.5);   /* ombra della finestra sulla scena chiara */
   --testo-nota-chiara: rgba(23, 29, 29, 0.66);   /* la nota sulla scena chiara */
   --bordo-pannello: rgba(181, 218, 206, 0.2);   /* il bordo di un pannello: scheda, menu aperto, computer, microfono */
   --bordo-sezione: rgba(181, 218, 206, 0.12);   /* il filo che divide: tra «Non esiste» e la strada, intorno alla riunione ricostruita */
@@ -217,7 +196,6 @@
   /* · I riquadri della riunione */
   --nome-interlinea-telefono: calc(15px * var(--interlinea-testo-scrittura));
   /* · La finestra di Kalliope ricostruita */
-  --f-stato-interlinea: calc(1.32 * var(--interlinea-testo-scrittura));
   /* · La riunione ricostruita, con il microfono */
   --microfono-grandezza-telefono: 11.5px;
   /* · Le frasi del filo */
@@ -417,13 +395,8 @@
   /* · La finestra di Kalliope ricostruita */
   --avvio-piede-larghezza: calc(100% - 520px);
   --f-cursore-margine-inizio: 1px;
-  --f-nota-margine: 10px 0 2px;
-  --f-pulsante-spazio-interno: 0 12px;
-  --f-stato-spazio-interno: 9px 10px;
   --finestra-larghezza-2: min(470px, 100%);
   --nota-ricostruzione-margine-telefono: 16px 0 0;
-  --sotto-f-campo-spazio-interno: 0 8px;
-  --sotto-f-pulsante-spazio-interno: 0 7px;
   --sotto-margine-sopra: -14px;
   --sotto-margine-sopra-telefono: -16px;
   /* · La riunione ricostruita, con il microfono */
@@ -560,7 +533,6 @@
   --barre-raggio-telefono: 3px;
   --riunione-filo-riquadro-raggio: 15px;
   /* · La finestra di Kalliope ricostruita */
-  --finestra-raggio: 8px;
   /* · La riunione ricostruita, con il microfono */
   --riunione-app-griglia-riquadro-raggio: 13px;
   /* · La strada della voce */
@@ -595,8 +567,6 @@
   --riunione-filo-ombra: 0 40px 80px -40px var(--ombra-nera);
   --tavolo-cornice-ombra: 0 40px 80px -40px var(--ombra-cornice);
   /* · La finestra di Kalliope ricostruita */
-  --finestra-ombra: 0 26px 50px -20px var(--ombra-finestra), 0 0 0 1px var(--finestra-anello);
-  --finestra-ombra-2: 0 30px 56px -26px var(--ombra-finestra-chiara), 0 0 0 1px var(--finestra-chiara-anello);
   /* · La riunione ricostruita, con il microfono */
   --riunione-app-ombra: 0 34px 60px -30px var(--ombra-riunione-app);
   /* · La scheda dell'ascolto */
@@ -739,9 +709,6 @@
   --durata-tavolo-riquadro: 520ms;
   /* · La finestra di Kalliope ricostruita */
   --durata-f-campo-f-cursore: 1s;
-  --durata-f-primario: 140ms;
-  --durata-f-pulsante: 160ms;
-  --durata-f-stato: 240ms;
   --durata-sotto: 360ms;
   /* · La riunione ricostruita, con il microfono */
   --durata-riunione-app-bordo: 900ms;
@@ -839,7 +806,6 @@
   /* · I riquadri della riunione */
   --opacita-figura-bocca: 0.8;
   /* · La finestra di Kalliope ricostruita */
-  --opacita-f-campo: 0.55;
   /* · La riunione ricostruita, con il microfono */
   --opacita-lampo-100: 0.55;
   /* · Le frasi del filo */
@@ -865,7 +831,6 @@
   --barre-5-scala-y: 0.41;
   --batte-50-scala-y: 0.12;
   /* · La finestra di Kalliope ricostruita */
-  --f-primario-scala: 0.96;
   /* · La riunione ricostruita, con il microfono */
   --scelta-scala: 0.94;
   /* · La scheda dell'ascolto */
@@ -1505,7 +1470,6 @@
   --apri-colonne: minmax(0, 1fr) minmax(0, 540px);   /* il testo, poi la finestra */
   --apri-finestra-larghezza: 540px;
   --apri-stato-altezza: 62px;   /* la riga di stato tiene due righe: le frasi lunghe non spostano la finestra */
-  --frase-finestra-bordo: rgba(30, 39, 39, 0.2);   /* una frase della finestra, sulla scena chiara */
   --microfono-scena-larghezza: 560px;
   --riprendi-colonne: minmax(0, 1fr) minmax(0, 1fr);
   --riprendi-larghezza: 1040px;
@@ -1521,6 +1485,34 @@
   --righe-prima-dei-file: 3;   /* le righe del terminale che si vedono (il comando e le due del computer) prima che i file comincino a scendere nella cartella */
   --impronta-cifre-gruppo: 8;   /* le cifre di un gruppo dell'impronta che si confronta */
   --annuncio-attesa: 60ms;   /* l'annuncio si svuota e poi si riscrive: un lettore di schermo lo legge anche se il testo è uguale al precedente */
+}
+
+/* ---------- La finestra di Kalliope disegnata sulle pagine, versione 0.3 (sito 0.3, 26/11/2026) ----------
+   È la finestra del programma ridotta a un disegno. Colori, carattere, pesi, raggi, tratteggio, tempi e curve sono i suoi ruoli --app-*
+   (componenti/finestra.css li usa così com'è: nessun valore ripetuto); qui stanno soltanto le misure del disegno, che per stare in 470 px non
+   possono essere quelle della finestra a 920 (la scrittura a 30 px non ci starebbe). «scelta:» di chi costruisce, con il perché. */
+:root {
+  --finestra-barra-altezza: 38px;   /* scelta: la barra del disegno (nella finestra 56 px, --app-altezza-barra): il logo, il nome e la voce in una riga bassa */
+  --finestra-marchio: var(--spazio-18);   /* scelta: 24 px, il logo nella barra del disegno (nella finestra --app-marchio, 30 px) */
+  --finestra-nome-corpo: var(--corpo-7);   /* scelta: 16 px, «Kalliope» accanto al logo (nella finestra 18 px) */
+  --finestra-voce-altezza: 26px;   /* scelta: la pillola della voce (nella finestra --app-altezza-comando-piccolo, 34 px) */
+  --finestra-stato-altezza: var(--app-altezza-comando-piccolo);   /* la riga di stato: 34 px come nella finestra */
+  --finestra-stato-corpo: var(--corpo-6);   /* scelta: 15 px, il nome dello stato (nella finestra 16 px, --app-corpo-comando) */
+  --finestra-detto-corpo: var(--corpo-4);   /* scelta: 13 px, ciò che lo stato spiega (nella finestra 15 px, --app-corpo-stato), perché la frase intera stia in una riga */
+  --finestra-scrittura-altezza: 54px;   /* scelta: la bolla tratteggiata della scrittura, una riga (nella finestra 3 righe da 30 px) */
+  --finestra-scrittura-corpo: var(--corpo-8);   /* scelta: 17 px, ciò che si scrive (nella finestra 30 px) */
+  --finestra-comando-altezza: 30px;   /* scelta: «Ferma» e «Di'» dentro la bolla (nella finestra --app-altezza-comando, 44 px) */
+  --finestra-comando-corpo: var(--corpo-5);   /* scelta: 14 px, il testo dei comandi (nella finestra 16 px) */
+  --finestra-nota-corpo: var(--app-corpo-nota);   /* 13 px come nella finestra: la nota sotto la scrittura */
+}
+
+/* ---------- Il distintivo «Made with Slint» (issue #21, sito 0.3, 26/11/2026) ---------- */
+:root {
+  --distintivo-slint-larghezza: 212px;   /* fonte: la dimensione dell'immagine di Slint (212 × 97, un SVG); soltanto in proporzione, come vuole la licenza dell'immagine (CC-BY-ND-4.0) */
+  --distintivo-slint-larghezza-telefono: 170px;   /* scelta: più piccolo sul telefono, sempre in proporzione */
+  --distintivo-slint-spazio: var(--spazio-14);   /* scelta: 16 px fra l'immagine e la frase */
+  --distintivo-slint-sopra: var(--spazio-18);   /* scelta: 24 px dopo l'esito del passo «Scarica» */
+  --distintivo-slint-testo-larghezza: 30ch;   /* scelta: la frase accanto all'immagine non si allarga oltre una colonna di lettura breve */
 }
 
 /* In riunione — scelta: i passaggi discorsivi hanno la stessa misura delle scene interne,

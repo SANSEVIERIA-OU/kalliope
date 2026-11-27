@@ -22,7 +22,8 @@
   const verso = window.Testi.verso;
   // il nome di una voce è quello scritto nei suoi pulsanti; il testo «Pronta…» della finestra, quello che la pagina mostra all'arrivo
   const nomeVoce = v => $(`.voce[data-voce="${v}"]`).textContent.trim();
-  const TESTO_PRONTA = $('.sotto .f-stato').textContent;
+  // lo stato «Pronta» che la pagina mostra all'arrivo: il nome e ciò che spiega (la riga di stato della finestra disegnata, window.Finestra)
+  const TESTO_PRONTA = {nome: $('.sotto .f-titolo').textContent, detto: $('.sotto .f-detto').textContent};
 
   // ---------- il tempo della scena ----------
   // Tutto ciò che la pagina fa da sola (arrivo, strada, primo avvio, onde) segue questo orologio, che si ferma quando la
@@ -232,7 +233,7 @@
     const luceVoce = $('.luce-voce');
     const PRONTA = TESTO_PRONTA;
     function statoFinestra(parlando) {
-      fStato.textContent = parlando ? T('finestra.parlando') : PRONTA;
+      if (parlando) window.Finestra.stato(fStato, T('finestra.parla.nome'), T('finestra.parla.detto')); else window.Finestra.stato(fStato, PRONTA.nome, PRONTA.detto);
       fStato.classList.toggle('parla', parlando);
       ferma.disabled = !parlando;
     }
@@ -690,7 +691,7 @@
   // L'ARRIVO, senza suono
   // =================================================================================================================
   const SCRIVE = 2.2, PASSO = 0.026, INVIO = 5.3, F2 = FRASI[2].testo;
-  const scritto = $('.f-scritto', eroe.finestra), linea = $('.f-linea', eroe.finestra), parlaBtn = $('.f-parla', eroe.finestra);
+  const scritto = $('.f-scritto', eroe.finestra), linea = $('.f-linea', eroe.finestra), zona = $('.f-testo-campo', eroe.finestra), parlaBtn = $('.f-di', eroe.finestra);
   let arrivo = !ridotto, scritti = -1;
   function scrivi(k) {
     if (k === scritti) return;
@@ -698,7 +699,7 @@
     scritto.textContent = F2.slice(0, k);
     eroe.campo.classList.toggle('pieno', k > 0);
     parlaBtn.classList.toggle('attivo', k > 0);
-    const spazio = eroe.campo.clientWidth - 18, sposta = Math.max(0, linea.offsetWidth - spazio);
+    const spazio = zona.clientWidth - 2, sposta = Math.max(0, linea.offsetWidth - spazio);
     linea.style.transform = sposta ? `translateX(${-sposta * verso()}px)` : '';   // il testo scorre verso l'inizio della riga
   }
   function passoArrivo(t) {
@@ -866,7 +867,12 @@
     const n = discorso && discorso.audio && discorso.palco === filo ? discorso.n : ultimaFilo || fraseInVista();
     ultimaFilo = n; suona(filo, n, true);
   }));
-  addEventListener('keydown', e => { if (e.key === 'Escape' && aperta) chiudiScheda(); });
+  // Esc: chiude la scheda dell'ascolto; altrimenti ferma la voce della finestra in alto, come dice la sua riga di stato («Esc la ferma»)
+  addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    if (aperta) chiudiScheda();
+    else if (discorso && discorso.audio && discorso.palco === eroe) ferma(true);
+  });
   if (typeof Audio === 'undefined') {   // un browser senza audio: i comandi non ci sono, restano i lettori nativi e i file
     [...vociEroe, ...vociFilo, ...frasiEroe, ...suonaFilo, pillola, parlaBtn].forEach(b => { b.disabled = true; });
   }
@@ -913,7 +919,7 @@
   const scelte = $$('.scelta', avvioBox), rivedi = $('.rivedi', avvioBox);
   const app = $('.riunione-app', avvioBox);
   const requisiti = $('.requisiti'), req = $$('li', requisiti);
-  const PRIMO = aStato.textContent, PRONTA = TESTO_PRONTA;   // i testi che la pagina mostra all'arrivo
+  const PRIMO = {nome: $('.f-titolo', aStato).textContent, detto: $('.f-detto', aStato).textContent}, PRONTA = TESTO_PRONTA;   // i testi che la pagina mostra all'arrivo
   let agendaAvvio = [];
   function requisito(k, ms) {   // k = requisito del momento; quelli prima sono fatti; ms = quanto dura il suo momento
     req.forEach((li, i) => { li.classList.toggle('fatto', i < k || k >= req.length); li.classList.toggle('attivo', i === k); });
@@ -926,14 +932,14 @@
   function animaAvvio() {
     annulla(agendaAvvio);
     avvio.classList.remove('pronta'); avvio.classList.add('prepara');
-    aStato.textContent = PRIMO;
+    window.Finestra.stato(aStato, PRIMO.nome, PRIMO.detto);
     microfonoScelto(false);
     rivedi.classList.add('in-scena');
-    if (ridotto) { avvio.classList.remove('prepara'); avvio.classList.add('pronta'); aStato.textContent = PRONTA; microfonoScelto(true); requisito(req.length); rivedi.classList.remove('in-scena'); return; }
+    if (ridotto) { avvio.classList.remove('prepara'); avvio.classList.add('pronta'); window.Finestra.stato(aStato, PRONTA.nome, PRONTA.detto); microfonoScelto(true); requisito(req.length); rivedi.classList.remove('in-scena'); return; }
     requisiti.classList.add('in-scena'); requisito(0, 860);
     const quando = (ms, f) => agendaAvvio.push(dopo(ms, f));
     quando(860, () => requisito(1, 900));
-    quando(1760, () => { avvio.classList.remove('prepara'); avvio.classList.add('pronta'); aStato.textContent = PRONTA; requisito(2, 1400); });
+    quando(1760, () => { avvio.classList.remove('prepara'); avvio.classList.add('pronta'); window.Finestra.stato(aStato, PRONTA.nome, PRONTA.detto); requisito(2, 1400); });
     quando(2160, () => { scelte[1].classList.add('puntata'); });
     quando(2510, () => { scelte[1].classList.add('premuta'); });
     quando(2710, () => { scelte[0].classList.remove('scelto'); scelte[1].classList.remove('puntata', 'premuta'); scelte[1].classList.add('scelto'); });
