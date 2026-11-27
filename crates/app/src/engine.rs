@@ -946,7 +946,13 @@ impl Thread {
             if self.queued() < LOOKAHEAD_SECONDS
                 && let Some(piece) = self.next_piece()
             {
+                let ticket = piece.ticket;
                 self.say(piece);
+                if self.line.ticket() != ticket {
+                    // A Stop came while the piece was synthesized: it emptied the output, but the
+                    // phrase did not end; the Stop is read first and tells what was said.
+                    continue;
+                }
             }
             if self.speaking && self.pending.is_empty() && self.queued() <= 0.0 {
                 self.speaking = false;

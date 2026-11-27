@@ -836,6 +836,46 @@ fn stop_tells_how_much_of_the_phrase_was_said() {
     assert!(rig.events.try_recv().is_err());
 }
 
+/// Stop while the voice still synthesizes the piece that sounds (a voice prepared from a recording
+/// streams it, and its duration is still a guess): what was said is told before Idle, so the
+/// bubble keeps faint the words not said.
+#[test]
+fn stop_while_a_streamed_piece_is_synthesized_tells_what_was_said() {
+    let rig = rig(Setup {
+        work: Duration::from_millis(300),
+        spoken: Duration::from_millis(2000),
+        streaming: true,
+        ..Setup::default()
+    });
+    rig.ready();
+    rig.engine.send(Command::Speak("uno".into()));
+    let deadline = Instant::now() + 3 * SECOND;
+    loop {
+        match rig.events.recv_timeout(deadline - Instant::now()) {
+            Ok(Event::Sounding(s)) => {
+                assert!(!s.exact);
+                break;
+            }
+            Ok(_) => continue,
+            Err(e) => panic!("no piece sounded: {e}"),
+        }
+    }
+    std::thread::sleep(Duration::from_millis(100));
+    rig.engine.stop();
+    let events = rig.until(&Event::Idle, SECOND);
+    let said = events
+        .iter()
+        .find_map(|e| match e {
+            Event::Interrupted(s) => Some(s.clone()),
+            _ => None,
+        })
+        .unwrap_or_else(|| panic!("what was said: {events:?}"));
+    assert_eq!(said.done, 0);
+    let (cut, share) = said.cut.expect("a piece cut midway");
+    assert_eq!(cut, 0..3);
+    assert!(share > 0.0 && share < 0.5, "{share}");
+}
+
 #[test]
 fn stop_before_any_sound_says_nothing_was_said() {
     let rig = rig(Setup {
