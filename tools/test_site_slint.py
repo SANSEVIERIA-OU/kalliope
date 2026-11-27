@@ -11,6 +11,7 @@ The check is a function (`problems`) that takes a built site; the spoilt copies 
 Standard library only.
 """
 import hashlib
+import json
 import pathlib
 import re
 import shutil
@@ -23,6 +24,12 @@ RADICE = pathlib.Path(__file__).resolve().parent.parent
 FILE = "design-system/terze-parti/slint/MadeWithSlint-logo-dark.svg"
 # SHA-256 of logo/MadeWithSlint-logo-dark.svg in slint-ui/slint (v1.19.1 and master, checked 26/11/2026)
 IMPRONTA = "a994c8ce0e21d008fdd5a6f23b45b5c13a2208ce5c4a8a8e8fd09c0d0cb6175b"
+# The release the site offers in the test, as the releases API describes it (the same shape as test_translations.py).
+RILASCIO = {"tag_name": "v0.3", "published_at": "2026-11-27T09:00:00Z", "html_url": "https://x/r", "prerelease": False,
+            "assets": [{"name": "kalliope-0.3-amd64.deb", "browser_download_url": "https://x/d", "size": 190_000_000, "digest": "sha256:aa"},
+                       {"name": "kalliope-0.3-x86_64.rpm", "browser_download_url": "https://x/r", "size": 191_000_000, "digest": "sha256:bb"},
+                       {"name": "kalliope-0.3-linux-x86_64.tar.gz", "browser_download_url": "https://x/t", "size": 205_000_000, "digest": "sha256:cc"},
+                       {"name": "kalliope-bin.PKGBUILD", "browser_download_url": "https://x/p"}, {"name": "SHA256SUMS", "browser_download_url": "https://x/s"}]}
 
 
 def problems(sito):
@@ -64,7 +71,11 @@ class DistintivoSlint(unittest.TestCase):
     def setUpClass(cls):
         cls.tmp = pathlib.Path(tempfile.mkdtemp(prefix="sito-slint-"))
         cls.sito = cls.tmp / "sito"
-        r = subprocess.run([sys.executable, "-I", str(RADICE / "tools/site.py"), "--out", str(cls.sito), "--pseudo"], capture_output=True, text=True, cwd=RADICE)
+        # A saved answer of the releases API, so the test needs no network (GitHub's API sometimes answers 504 to CI).
+        rilasci = cls.tmp / "releases.json"
+        rilasci.write_text(json.dumps([RILASCIO]), encoding="utf-8")
+        r = subprocess.run([sys.executable, "-I", str(RADICE / "tools/site.py"), "--out", str(cls.sito), "--pseudo", "--release-json", str(rilasci)],
+                           capture_output=True, text=True, cwd=RADICE)
         assert r.returncode == 0, r.stderr
 
     @classmethod
