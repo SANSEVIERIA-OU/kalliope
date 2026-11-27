@@ -755,12 +755,17 @@ fn each_piece_is_announced_as_it_starts_sounding_with_the_text_it_says() {
     );
     assert!(pieces.iter().rev().skip(1).all(|s| !s.last) && pieces.last().unwrap().last);
     assert!(pieces.iter().all(|s| s.id == 1 && &*s.phrase == text));
-    // One after the other, as long as each lasts, though they were synthesized much faster.
-    for pair in times.windows(2) {
-        let gap = pair[1] - pair[0];
+    // One after the other, as long as each lasts, though they were synthesized much faster. Each is
+    // measured from the first announcement, so one late receipt on a busy machine (CI's macOS
+    // runners) does not shorten the next gap: the announcements keep the schedule of the audio.
+    let first = times[0];
+    for (i, at) in times.iter().enumerate() {
+        let expected = Duration::from_millis(150 * i as u64);
+        let since = *at - first;
         assert!(
-            gap >= Duration::from_millis(110) && gap <= Duration::from_millis(220),
-            "{gap:?}"
+            since + Duration::from_millis(60) >= expected
+                && since <= expected + Duration::from_millis(150),
+            "piece {i}: {since:?} after the first, expected about {expected:?}"
         );
     }
     assert!(
@@ -790,9 +795,13 @@ fn stop_tells_how_much_of_the_phrase_was_said() {
         }
     }
     let second = second.expect("the second word");
+    let heard_from = Instant::now();
     assert_eq!(second.span, 4..7);
     std::thread::sleep(Duration::from_millis(100));
     rig.engine.stop();
+    // How long the second word had sounded when Stop came, as this thread saw it: at least this
+    // much (the announcement came before it was received), and at most this plus a late receipt.
+    let elapsed = heard_from.elapsed().as_secs_f32();
     let events = rig.until(&Event::Idle, SECOND);
     let said = events
         .iter()
@@ -805,7 +814,11 @@ fn stop_tells_how_much_of_the_phrase_was_said() {
     assert_eq!(said.done, 4);
     let (cut, share) = said.cut.clone().expect("a piece cut midway");
     assert_eq!(cut, 4..7);
-    assert!((0.15..0.5).contains(&share), "{share}");
+    let (low, high) = ((elapsed - 0.02) / 0.4, (elapsed + 0.15) / 0.4);
+    assert!(
+        share > 0.0 && share < 1.0 && share >= low && share <= high,
+        "share {share}, expected {low}..{high} after {elapsed} s"
+    );
     assert!(soundings(&events).is_empty(), "{events:?}");
     std::thread::sleep(Duration::from_millis(600));
     assert!(rig.events.try_recv().is_err());
