@@ -16,6 +16,7 @@ kalliope-voice = { path = "crates/voice" }
 kalliope-mic = { path = "crates/mic" }
 kalliope-tokens = { path = "crates/tokens" }
 kalliope-sample = { path = "crates/sample" }
+kalliope-i18n = { path = "crates/i18n" }
 
 [profile.release]
 opt-level = 3
