@@ -147,7 +147,7 @@ is complete, not before. The same rule keeps a language out for a moment when th
 back when somebody has read the fuzzy entry again.
 
 Commit the file; the push publishes the site (`.github/workflows/pages.yml`) if the owner has authorised it, and the next build of the
-program has the language. `python3 -I tools/translations.py status` says, for each of the 30, how many entries are ready and whether the language is
+program has the language. `python3 -I tools/translations.py status` says, for each of the 30, how many entries are ready (the website's and the program's apart) and whether the language is
 published; `cargo build -p kalliope-app` prints one line for the files that are there and not ready (`kalliope-i18n: not ready, so not in the program: de (programma.crea.mancano is missing)`).
 
 ### What a translator sees
