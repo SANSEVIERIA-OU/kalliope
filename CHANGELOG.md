@@ -4,6 +4,16 @@ Kalliope's versions go up one step at a time (0.1, 0.2 … 0.9, 1.0, 1.1 …). E
 published for every supported system (see [docs/releasing.md](docs/releasing.md)). This file lists
 what each version brings, for the people who use it.
 
+## 0.5 — 27 November 2026
+
+Kalliope in the menu of your desktop, in your language.
+
+- **The applications menu speaks your language too.** The line that says what Kalliope is, its
+  description and the words the search of your desktop finds it with are in the same 30 languages
+  as the window. You can find Kalliope without knowing its name: «synthèse vocale», «Sprachausgabe»,
+  «sintesi vocale», «文字转语音» or «microphone», in the language of your system. As in the window,
+  **the voices still speak Italian only.**
+
 ## 0.4 — 27 November 2026
 
 Kalliope in your language, and a window that fits your screen.

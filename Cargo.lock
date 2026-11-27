@@ -2257,7 +2257,7 @@ dependencies = [
 
 [[package]]
 name = "kalliope-app"
-version = "0.4.0"
+version = "0.5.0"
 dependencies = [
  "i-slint-backend-testing",
  "kalliope-i18n",
@@ -2275,7 +2275,7 @@ dependencies = [
 
 [[package]]
 name = "kalliope-cli"
-version = "0.4.0"
+version = "0.5.0"
 dependencies = [
  "kalliope-phonemes",
  "kalliope-sample",
@@ -2285,7 +2285,7 @@ dependencies = [
 
 [[package]]
 name = "kalliope-i18n"
-version = "0.4.0"
+version = "0.5.0"
 dependencies = [
  "i-slint-compiler",
  "sys-locale",
@@ -2293,15 +2293,15 @@ dependencies = [
 
 [[package]]
 name = "kalliope-mic"
-version = "0.4.0"
+version = "0.5.0"
 
 [[package]]
 name = "kalliope-phonemes"
-version = "0.4.0"
+version = "0.5.0"
 
 [[package]]
 name = "kalliope-sample"
-version = "0.4.0"
+version = "0.5.0"
 dependencies = [
  "kalliope-i18n",
  "kalliope-voice",
@@ -2310,15 +2310,15 @@ dependencies = [
 
 [[package]]
 name = "kalliope-text"
-version = "0.4.0"
+version = "0.5.0"
 
 [[package]]
 name = "kalliope-tokens"
-version = "0.4.0"
+version = "0.5.0"
 
 [[package]]
 name = "kalliope-voice"
-version = "0.4.0"
+version = "0.5.0"
 
 [[package]]
 name = "keyboard-types"
