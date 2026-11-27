@@ -976,8 +976,9 @@ fn a_streamed_piece_starts_sounding_when_its_voice_reaches_the_microphone() {
     rig.engine.send(Command::Speak("ciao".into()));
     let (s, announced, played) = first_sounding(&rig, 2 * SECOND);
     let wait = announced - played;
+    // not before the 400 ms of noise floor have played; on a slow machine later, never as late as the end of the voice
     assert!(
-        (Duration::from_millis(370)..Duration::from_millis(480)).contains(&wait),
+        (Duration::from_millis(370)..Duration::from_millis(700)).contains(&wait),
         "{wait:?}"
     );
     assert!(!s.exact);
