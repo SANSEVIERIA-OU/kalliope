@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! Text preparation of Pocket TTS, as the official code does it (`pocket_tts/models/text_chunking.py`
-//! of kyutai-labs/pocket-tts a4a6054d): the prompt of each chunk, and the split of a text into chunks of
+//! of kyutai-labs/pocket-tts bc4d640c): the prompt of each chunk, and the split of a text into chunks of
 //! at most `max_tokens` tokens on sentence ends, then on commas.
 //!
 //! Python's `str.split()`, `strip()`, `isalnum()` and `isupper()` are matched with their Rust Unicode

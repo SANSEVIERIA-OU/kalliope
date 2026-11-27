@@ -49,8 +49,8 @@
       },
       "code": {
         "repository": "kyutai-labs/pocket-tts",
-        "commit": "a4a6054db281f0f34f3d44d626a972a44560dc83",
-        "tree_sha256": "521d9c925397504d81fae2c512c2bda56e99141b14ffd90311d255f6d68f07b0"
+        "commit": "bc4d640c925a3782092a841e9bc7ba442a65a838",
+        "tree_sha256": "0c8e6bd3e9e209862283854de78dfa28cf732da3ac93e16dc3669ffe9245136b"
       },
       "licence": {
         "url": "https://creativecommons.org/licenses/by/4.0/legalcode.txt",
@@ -119,17 +119,17 @@
       }
     },
     "pocket": {
-      "name": "pocket-tts-italian-3e82814.tar.xz",
-      "size": 122699524,
-      "sha256": "9723a60bb393e4872d5dbf5b1dd7ef4229653265ae5394e8db8b59a3a6a85f02",
-      "folder": "pocket-tts-italian-3e82814",
+      "name": "pocket-tts-italian-3e82814-2.tar.xz",
+      "size": 122688516,
+      "sha256": "023774c881d566577c9f9827bd2b3817ac3550fcfc1fa95553c28a7840432983",
+      "folder": "pocket-tts-italian-3e82814-2",
       "contents": {
         "LICENSE": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
-        "NOTICE.txt": "111831ea2bad8d765a52ffb29f471c024b77873df000679897c2be8b3b665584",
+        "NOTICE.txt": "3e0c28fcddfae7e6104b6e651159c6e1937b14579d405c9311594d69267aefb1",
         "flow_lm.onnx": "6862a77bcf185bcbe60c9ceb2d522ff60359af9e4d5798e5eed31d839b3dce8d",
         "mimi_decoder.onnx": "0fe54e432734ed04d6f9a28d77e9f6fa5780811bfbf2bb7b18b79f98eb7bb5cd",
         "mimi_encoder.onnx": "6af6e86ec6b369a744e3240c906cd20f13876d43efd3c4c903b26a47757f591e",
-        "pocket.json": "bcd795fc15be8c40f261e8292fe25856208af22e9c9d8c87f68a834fd4e84ad2",
+        "pocket.json": "cc7315f46a0c0682a0ea9005bc12687e9e899d929c8e055be221be584749cbdf",
         "tokenizer.json": "4bc1c0d4d54f9480183e94c94cfabf74fd89b0912537d4ef607d1982c4a381ec"
       }
     },

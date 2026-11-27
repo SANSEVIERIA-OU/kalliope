@@ -377,7 +377,7 @@ Microsoft's or Hugging Face's servers:
 
 The weekly check opens an issue that names the new version and the command. Then:
 
-1. Prepare the files (here, or on any machine with Python 3.10–3.14 and about 3 GB of free memory):
+1. Prepare the files (here, or on any machine with Python 3.11–3.14 and about 3 GB of free memory):
    ```sh
    python3 tools/release_assets.py build OUT --onnxruntime 1.33.0     # or --klein REV, --pocket-weights REV,
                                                                      # --pocket-tokenizer REV, --pocket-code COMMIT

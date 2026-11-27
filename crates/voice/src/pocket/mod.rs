@@ -10,7 +10,7 @@
 //! - `mimi_encoder.onnx`: a recording to the voice conditioning, in pieces, only to prepare a voice.
 //!
 //! The generation loop is the official one (`TTSModel.generate_audio_stream`, kyutai-labs/pocket-tts
-//! a4a6054d) with the settings of the Italian config: the text in chunks of at most 50 tokens, each
+//! bc4d640c) with the settings of the Italian config: the text in chunks of at most 50 tokens, each
 //! chunk from the voice state; the end detected when the logit passes -4 (not before frame 6), then
 //! two or three more frames; noise of variance 0.3; a fresh decoder per chunk with a 5 ms fade-in.
 

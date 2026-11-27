@@ -21,7 +21,7 @@ caller (Kalliope, in Rust) owns the state:
   Also outputs bos_before_voice, to put in front of the voice.
 
 The arithmetic is the official one: modules.attention, modules.transformer, modules.conv, modules.rope,
-models.flow_lm, models.mimi (kyutai-labs/pocket-tts a4a6054d).
+models.flow_lm, models.mimi (kyutai-labs/pocket-tts bc4d640c).
 """
 from __future__ import annotations
 
