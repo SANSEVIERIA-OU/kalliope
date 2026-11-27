@@ -2,8 +2,9 @@
 """The translations of the website and of the program: the model, one catalogue per language, and the check (docs/translating.md).
 
     python3 -I tools/translations.py extract [--check]   make website/lingue/site.pot and it.po from the pages and from the program's
-                                                          sources (`@tr` in the .slint files, `tr!` in the Rust ones), and bring
-                                                          every <xx>.po up to date (new entries empty, changed text fuzzy)
+                                                          sources (`@tr` in the .slint files, `tr!` in the Rust ones, the menu entry
+                                                          packaging/linux/*.desktop.in), and bring every <xx>.po up to date (new
+                                                          entries empty, changed text fuzzy)
     python3 -I tools/translations.py check [xx …]        check the catalogues: every key there, placeholders and tags
                                                           intact, the plural forms of the language; exit 1 on an error
     python3 -I tools/translations.py status              for each language: how many entries are ready, published or not

@@ -48,6 +48,7 @@ jobs:
           python3 -I tools/translations.py check
           python3 -I tools/css_logico.py
           python3 -I tools/marchio.py --check
+          python3 -I tools/menu.py --check
           python3 -I tools/slint_valori.py
           python3 -I tools/caratteri_ttf.py --check
           python3 -I -m unittest discover -s tools -p 'test_*.py'

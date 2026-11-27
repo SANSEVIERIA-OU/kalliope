@@ -62,10 +62,22 @@ installing: the build reads `website/lingue/*.po` and writes the messages of eve
 | --- | --- | --- |
 | `kalliope-slint` | the window (`.slint`, `@tr`) | `{}` or `{0}` `{1}`… for the arguments, in order; `{n}` is the count of a plural. A translation may reorder them with `{0}`, `{1}`, but not mix `{}` and `{0}` in one text |
 | `kalliope-rust` | a status line, an error, advice (`.rs`, `tr!`) | `{name}` for the argument called `name`; `{n}` is the count of a plural |
+| `kalliope-desktop` | the entry in the applications menu (`packaging/linux/*.desktop.in`) | none: one line of plain text |
 
 Both use `{n}` for the count, and `{{` and `}}` for a brace written as itself. Leave every placeholder as it is (a plural form may
 drop `{n}` where the language says «one second» without the number; every other form keeps all of them). `check` finds a missing,
 an added and a wrong placeholder.
+
+**The entry in the applications menu.** Three messages, `programma.menu.genere` (the kind of program, the desktop's
+`GenericName`), `programma.menu.descrizione` (the line under the name and the tooltip, `Comment`) and `programma.menu.parole` (the
+words the menu's search finds Kalliope with, `Keywords`), come from `packaging/linux/io.github.sansevieria_ou.kalliope.desktop.in`, one
+line `Key=@tr("programma.menu.KEY" => "Italian text")` each, with a `# TRANSLATORS:` comment above. `python3 -I tools/menu.py` writes the
+desktop file the packages install from that model and the catalogue: English as the default line (`GenericName=`), Italian and every
+language whose line is translated, not fuzzy and correct as `GenericName[de]=`, by the language's code alone (the desktop gives `pt_BR`
+and `zh_TW` the `pt` and `zh` lines, as the program does); CI runs `tools/menu.py --check`, so a new translation is never forgotten. The
+words are a list: separated by `;`, a `;` at the end, no spaces around it, no empty word (`check` says so); they are the words people
+of the language search with, not a translation of the Italian list word by word. A line of the desktop file holds no line break and no
+backslash, and the two texts no `;`.
 
 **Plurals.** A message with a count has `msgid_plural` and as many `msgstr[N]` as the language has forms (the same as the
 website: `ar` six, `ga` and `mt` five, `cs` `sk` `lt` `pl` `sl` four, `hr` `ro` `lv` `fr` `es` `pt` `it` three, `zh` and `id` one,

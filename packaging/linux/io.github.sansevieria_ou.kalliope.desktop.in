@@ -1,0 +1,22 @@
+# SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
+# The entry of Kalliope in the applications menu. `python3 -I tools/menu.py` writes io.github.sansevieria_ou.kalliope.desktop
+# from this file and from the catalogue (website/lingue, docs/translating.md, «The program»): never edit that one by hand.
+#
+# A line `Key=@tr("programma.menu.KEY" => "Italian text")` is a message of the one catalogue, like a `@tr` of the window. The desktop
+# file gets `Key=` in English (the default of the desktop), `Key[it]=` in Italian and `Key[xx]=` in every language whose
+# translation of that line is there and not fuzzy. A comment `# TRANSLATORS: …` on the line above goes to the translators.
+# The other lines are copied as they are.
+[Desktop Entry]
+Type=Application
+Name=Kalliope
+# TRANSLATORS: The kind of program, shown with the name «Kalliope» in the applications menu and in the search of the desktop (the GenericName of the desktop entry). Kalliope lets a person who cannot speak, or finds it hard, type sentences that a voice says into a virtual microphone, so the others hear them in Zoom, Teams, Meet and the other meeting apps. A few words, a name not a sentence, no full stop.
+GenericName=@tr("programma.menu.genere" => "Voce per le videochiamate")
+# TRANSLATORS: The one-line description of Kalliope in the applications menu (its tooltip, and the line under the name in some menus). Addressed to the person who uses it, in the form of address of the program; short; no full stop at the end.
+Comment=@tr("programma.menu.descrizione" => "Scrivi e fatti sentire nelle videochiamate")
+# TRANSLATORS: Words a person may type in the search of the applications menu to find Kalliope, besides its name: what they would look for in your language (the technology, the need, the meeting). Not a translation word by word: the words people of your language search with. Separate the words with «;» and end with «;», no spaces around «;», about 6 to 10 words or short phrases, lower case where the language allows it.
+Keywords=@tr("programma.menu.parole" => "sintesi vocale;voce;parlare;microfono;videochiamata;muto;CAA;")
+Exec=kalliope
+Icon=io.github.sansevieria_ou.kalliope
+Terminal=false
+Categories=Utility;Accessibility;
+StartupNotify=true

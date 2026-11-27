@@ -11,7 +11,7 @@ An entry is known by its `msgctxt`. When the Italian text of a key changes, the 
 import pathlib
 import re
 
-from . import app, cldr, pagina, plurali, po
+from . import app, cldr, menu, pagina, plurali, po
 
 PROGETTO = "Kalliope"
 
@@ -54,6 +54,14 @@ def raccogli(sito, crates=None):
         errori.extend(err)
         for chiave, m in msgs.items():
             tutti[chiave] = m
+        # la voce del menu delle applicazioni (packaging/linux/*.desktop.in, accanto a crates/): messaggi del programma anche lei
+        msgs, err = menu.raccogli(pathlib.Path(crates).parent)
+        errori.extend(err)
+        for chiave, m in msgs.items():
+            if chiave in tutti:
+                errori.append(f"{m.pagina}:{m.riga}: the key «{chiave}» is used by the program too: write two keys")
+            else:
+                tutti[chiave] = m
     return pagine, tutti, errori
 
 
@@ -94,13 +102,15 @@ def modello(pagine, tutti):
             if m.nota:
                 v.estratti.append(m.nota)
             ph = list(dict.fromkeys(app.nomi_segnaposto(m.testo + " " + (m.plurale or ""), m.formato)))
+            if m.formato == "desktop":
+                v.estratti.append("A line of the desktop file (the applications menu): plain text on one line, no tags, no backslash.")
             if m.formato == "slint" and ph:
                 v.estratti.append("Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. "
                                   "Leave them as they are; a translation may reorder them.")
             elif ph:
                 v.estratti.append("Placeholders to leave as they are: " + " ".join("{" + p + "}" for p in ph))
             v.riferimenti = sorted(m.usi or {m.pagina})
-            v.flags.append("kalliope-slint" if m.formato == "slint" else "kalliope-rust")
+            v.flags.append({"slint": "kalliope-slint", "rust": "kalliope-rust", "desktop": "kalliope-desktop"}[m.formato])
             if app.segnaposto(m.testo + " " + (m.plurale or "")):
                 v.flags.append("python-brace-format")
             cat.voci.append(v)
@@ -249,6 +259,9 @@ def controlla(cat, mod, codice):
 def _controlla_testo(e, t, tradotto, sorgente, uguali):
     if "kalliope-slint" in t.flags or "kalliope-rust" in t.flags:   # un messaggio del programma
         e.errori.extend(app.controlla_testo(t, tradotto, not uguali))
+        return
+    if "kalliope-desktop" in t.flags:   # una riga della voce del menu delle applicazioni
+        e.errori.extend(menu.controlla_testo(t, tradotto))
         return
     a, b = pagina.segnaposto(sorgente), pagina.segnaposto(tradotto)
     if uguali:
