@@ -435,13 +435,19 @@ msgctxt "frase.2"
 msgid "Sono d'accordo con Paola. Però la consegna del 14/3 mi sembra stretta: possiamo sentirci venerdì <1>alle 15:30?</1>"
 msgstr "Sono d'accordo con Paola. Però la consegna del 14/3 mi sembra stretta: possiamo sentirci venerdì <1>alle 15:30?</1>"
 
-#. Tags in the text (move the words, keep every tag, each inside the same tag):
-#.   <1> = <span>
+#. The label before the words the voice said, in the language of the page.
 #: index.html
 #, kalliope-markup
-msgctxt "frase.3.detto-riga"
-msgid "<1>Detto:</1> «Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
-msgstr "<1>Detto:</1> «Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
+msgctxt "frase.3.detto-etichetta"
+msgid "Detto:"
+msgstr "Detto:"
+
+#. What the Italian voice said: it stays in Italian, as the voice says it.
+#: index.html
+#, kalliope-markup
+msgctxt "frase.3.detto-frase"
+msgid "«Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
+msgstr "«Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
 
 #: index.html
 #, kalliope-markup
@@ -4797,6 +4803,14 @@ msgstr "Creazione della voce annullata."
 msgctxt "programma.voce.creazione-fallita"
 msgid "Non sono riuscita a creare la voce: {causa}"
 msgstr "Non sono riuscita a creare la voce: {causa}"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span>
+#: index.html
+#, kalliope-markup
+#~ msgctxt "frase.3.detto-riga"
+#~ msgid "<1>Detto:</1> «Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
+#~ msgstr "<1>Detto:</1> «Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
 
 #: crates/i18n/src/lib.rs
 #, kalliope-rust
