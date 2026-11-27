@@ -1414,7 +1414,7 @@ msgstr ""
 #: installa/index.html
 #, kalliope-markup
 msgctxt "in.frasi.microfono.rimedio"
-msgid "Il microfono «Kalliope» non si è creato: di solito manca PipeWire, o non è acceso. La causa è scritta in inglese dopo «ma». <1>Che cosa fare</1>"
+msgid "Il microfono «Kalliope» non si è creato: di solito manca PipeWire, o non risponde. Dopo «ma» la riga dice la causa. <1>Che cosa fare</1>"
 msgstr ""
 
 #: installa/index.html
@@ -2025,7 +2025,7 @@ msgstr ""
 #. Attribute «alt» of an element of the page: plain text, no tags.
 #: riunione/index.html
 msgctxt "riu.immagine.8"
-msgid "La finestra di Kalliope. In alto la barra, con il logo, il nome e la voce (Giulia). Sotto, la riga di stato: «Pronta. Nella riunione scegli «Kalliope» come microfono.» Poi le frasi già dette, in bolle, e in basso la bolla tratteggiata dove scrivi, con «Di'»."
+msgid "La finestra di Kalliope. In alto la barra, con il logo, il nome, la voce (Giulia), «Riunione», «Altro» e la grandezza del testo. Sotto, le frasi già dette, in bolle: l'ultima è la più chiara. Poi la riga di stato: «Pronta. Nella riunione scegli «Kalliope» come microfono.» In basso la grande bolla tratteggiata dove scrivi, con «Di'»."
 msgstr ""
 
 #: riunione/index.html
@@ -2503,7 +2503,7 @@ msgstr ""
 #: riunione/index.html
 #, kalliope-markup
 msgctxt "ai.testo.36"
-msgid "La voce funziona, ma il microfono «Kalliope» non si è creato, e per ora nessuno ti sentirà nelle chiamate. Dopo «ma», la riga scrive la causa, spesso in inglese («La voce è pronta, ma …»)."
+msgid "La voce funziona, ma il microfono «Kalliope» non si è creato, e per ora nessuno ti sentirà nelle chiamate. Dopo «ma», la riga dice la causa in parole semplici, per esempio che PipeWire, il servizio audio del computer, non risponde."
 msgstr ""
 
 #: riunione/index.html
@@ -2979,13 +2979,12 @@ msgid "Le cifre: su un solo computer, un portatile con Ryzen 5 PRO 6650U. Su alt
 msgstr ""
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
-#.   <1> = <strong>
-#.   <2> = <span class="fonte">
-#.   <3> = <a href="{{kalliope.source.url}}/README.md" title="README.md" data-t-no="il percorso di un
+#.   <1> = <span class="fonte">
+#.   <2> = <a href="{{kalliope.source.url}}/README.md" title="README.md" data-t-no="il percorso di un
 #: stato/index.html
 #, kalliope-markup
 msgctxt "st.catena.programma"
-msgid "Il programma con la finestra nuova: dimensione, memoria con la voce caricata e processore da fermo <1>non ancora misurati</1>. Con la finestra della 0.2 erano 10,6 MB, circa 117 MB con la voce caricata e 0% di processore da fermo. <2><3>README</3></2>"
+msgid "Il programma con la finestra nuova: 24 MB, circa 135 MB di memoria con la voce caricata, meno dello 0,5% di un processore da fermo e circa il 7% mentre parla, finestra compresa. <1><2>README</2></1>"
 msgstr ""
 
 #: stato/index.html

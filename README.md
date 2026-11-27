@@ -41,7 +41,7 @@ typed text → normalizer → phonemizer → neural voice → virtual microphone
 | Voice | `kalliope-voice` | Klein-TTS-X1.5-Pro through ONNX Runtime, loaded at run time; one thread, no spinning, no memory arena | about 0.07 CPU-seconds per second of speech |
 | Own voice | `kalliope-voice` (`pocket`) | Pocket TTS by Kyutai: three ONNX graphs, the flow model with 8-bit weights, two threads; streamed frame by frame | see [A voice of your own](#a-voice-of-your-own-in-progress) |
 | Microphone | `kalliope-mic` | PipeWire virtual source "Kalliope", loaded at run time; audio flows only while an app listens | 0% CPU when nobody listens |
-| App | `kalliope-app` | Slint window, software-rendered, accessible to screen readers; one sentence is synthesized while the previous one plays | 10.6 MB RAM with the window alone, about 117 MB with the voice loaded, 0% CPU when idle |
+| App | `kalliope-app` | One Slint window drawn by Skia on the CPU, with Kalliope's own look from the design system, accessible to screen readers; a sentence is spoken piece by piece and Stop is immediate | 24 MB binary; about 135 MB RAM with the voice loaded; under 0.5% of a core when idle, about 7% while speaking |
 
 ## A voice of your own (in progress)
 
