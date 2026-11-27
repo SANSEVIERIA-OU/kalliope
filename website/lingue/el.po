@@ -292,7 +292,7 @@ msgstr "Esc"
 #, kalliope-markup
 msgctxt "finestra.di"
 msgid "Di'"
-msgstr "Πες το"
+msgstr "Πες"
 
 #. The name of the Enter key, as it is written on the keyboard of the language.
 #: index.html installa/index.html
@@ -371,7 +371,7 @@ msgstr "«Buongiorno…»"
 #, kalliope-markup
 msgctxt "campioni.titolo"
 msgid "Senti come suona, con il testo accanto."
-msgstr "Άκου τη φωνή με το κείμενο δίπλα σου."
+msgstr "Άκου τη φωνή και δες δίπλα το κείμενο."
 
 #. Two versions of one sentence: the part in tag 1 is read when the page runs with JavaScript, the part in tag 2 when it does not. Write both.
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
@@ -440,14 +440,14 @@ msgstr "Sono d'accordo con Paola. Però la consegna del 14/3 mi sembra stretta: 
 #, kalliope-markup
 msgctxt "frase.3.detto-etichetta"
 msgid "Detto:"
-msgstr ""
+msgstr "Ακούστηκε:"
 
 #. What the Italian voice said: it stays in Italian, as the voice says it.
 #: index.html
 #, kalliope-markup
 msgctxt "frase.3.detto-frase"
 msgid "«Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
-msgstr ""
+msgstr "«Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
 
 #: index.html
 #, kalliope-markup
@@ -477,7 +477,7 @@ msgstr "Δεν έχουμε μετρήσει πόσο εύκολα καταλα�
 #, kalliope-markup
 msgctxt "campioni.provenienza.testi"
 msgid "Il testo «scrivi» è quello che hai digitato. Il testo «dice» è quello che Kalliope prepara prima di parlare: cifre, date e orari diventano parole."
-msgstr "Στο «Γράφεις» βλέπεις το κείμενο που πληκτρολόγησες. Στο «Ακούγεται» βλέπεις πώς το ετοιμάζει η Kalliope πριν μιλήσει. Οι αριθμοί, οι ημερομηνίες και οι ώρες γίνονται λέξεις."
+msgstr "Στο «Γράφεις» βλέπεις το κείμενο που πληκτρολόγησες. Στο «Ακούστηκε» βλέπεις πώς το ετοιμάζει η Kalliope πριν μιλήσει. Οι αριθμοί, οι ημερομηνίες και οι ώρες γίνονται λέξεις."
 
 #: index.html
 #, kalliope-markup
@@ -1387,7 +1387,7 @@ msgstr "Σε κάθε εκκίνηση βλέπεις για λίγο «Ετοι
 #, kalliope-markup
 msgctxt "in.apri.riuscito"
 msgid "<1>Riuscito</1> se la riga di stato dice «Pronta» e, accanto, «Nella riunione scegli «Kalliope» come microfono.»"
-msgstr "<1>Πέτυχε</1> αν η γραμμή κατάστασης γράφει «Έτοιμη» και δίπλα διαβάζεις “Στη συνάντηση διάλεξε το «Kalliope» ως μικρόφωνο.”"
+msgstr "<1>Πέτυχε</1> αν η γραμμή κατάστασης γράφει «Έτοιμη» και δίπλα διαβάζεις: Στη συνάντηση διάλεξε το «Kalliope» ως μικρόφωνο."
 
 #: installa/index.html
 #, kalliope-markup
@@ -1624,11 +1624,10 @@ msgstr "Η φωνή δεν ξεκινά"
 
 #. What the window says next to the state above: the same words as the program's message programma.voce.file-mancanti.
 #: installa/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Manca la voce: in … non trovo …. Reinstalla Kalliope."
+#, kalliope-markup
 msgctxt "in.stato.voce.detto"
 msgid "Non trovo i file della voce, e senza non posso parlare. Reinstalla Kalliope dal pacchetto."
-msgstr "Manca la voce: in … non trovo …. Reinstalla Kalliope."
+msgstr "Δεν βρίσκω τα αρχεία της φωνής και χωρίς αυτά δεν μπορώ να μιλήσω. Εγκατάστησε ξανά την Kalliope από το πακέτο."
 
 #: installa/index.html
 #, kalliope-markup
@@ -2016,7 +2015,7 @@ msgstr "Άνοιξε την Kalliope πριν μπεις στη συνάντησ
 #, kalliope-markup
 msgctxt "riu.testo.5"
 msgid "<1>Come sai che è andata bene</1>La riga dice «Pronta» e, accanto, «Nella riunione scegli «Kalliope» come microfono.»"
-msgstr "<1>Πώς ξέρεις ότι πέτυχε</1>Η γραμμή γράφει «Έτοιμη» και δίπλα διαβάζεις “Στη συνάντηση διάλεξε το «Kalliope» ως μικρόφωνο.”"
+msgstr "<1>Πώς ξέρεις ότι πέτυχε</1>Η γραμμή γράφει «Έτοιμη» και δίπλα διαβάζεις: Στη συνάντηση διάλεξε το «Kalliope» ως μικρόφωνο."
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <span class="se-non-va__titolo">
@@ -2031,7 +2030,7 @@ msgstr "<1>Αν δεν πέτυχε</1>Αν γράφει «Δεν σε ακού�
 #: riunione/index.html
 msgctxt "riu.immagine.8"
 msgid "La finestra di Kalliope. In alto la barra, con il logo, il nome, la voce (Giulia), «Riunione», «Altro» e la grandezza del testo. Sotto, le frasi già dette, in bolle: l'ultima è la più chiara. Poi la riga di stato: «Pronta. Nella riunione scegli «Kalliope» come microfono.» In basso la grande bolla tratteggiata dove scrivi, con «Di'»."
-msgstr "Το παράθυρο της Kalliope. Πάνω βρίσκεται η γραμμή με το λογότυπο, το όνομα, τη φωνή (Giulia), τα κουμπιά «Συνάντηση» και «Περισσότερα» και τη ρύθμιση μεγέθους κειμένου. Από κάτω, σε συννεφάκια, οι φράσεις που έχουν ακουστεί. Η τελευταία φαίνεται πιο φωτεινή. Η γραμμή κατάστασης γράφει «Έτοιμη» και δίπλα “Στη συνάντηση διάλεξε το «Kalliope» ως μικρόφωνο.” Κάτω βρίσκεται το μεγάλο συννεφάκι με διακεκομμένο περίγραμμα όπου γράφεις, με το κουμπί «Πες το»."
+msgstr "Το παράθυρο της Kalliope. Πάνω βρίσκεται η γραμμή με το λογότυπο, το όνομα, τη φωνή (Giulia), τα κουμπιά «Συνάντηση» και «Άλλα» και τη ρύθμιση μεγέθους κειμένου. Από κάτω, σε συννεφάκια, οι φράσεις που έχουν ακουστεί. Η τελευταία φαίνεται πιο φωτεινή. Η γραμμή κατάστασης γράφει «Έτοιμη» και δίπλα διαβάζεις: Στη συνάντηση διάλεξε το «Kalliope» ως μικρόφωνο. Κάτω βρίσκεται το μεγάλο συννεφάκι με διακεκομμένο περίγραμμα όπου γράφεις, με το κουμπί «Πες»."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2308,7 +2307,7 @@ msgstr "Με τη δική σου φωνή"
 #, kalliope-markup
 msgctxt "riu.voce.testo"
 msgid "In «Altro» scegli «Crea la tua voce». La registri dal microfono, leggendo un testo (bastano circa dodici secondi), oppure importi una vecchia registrazione: WAV, FLAC, MP3, OGG, M4A, o un messaggio vocale di WhatsApp o Telegram, anche dentro un video. Scegli il pezzo più chiaro, dai un nome alla voce e conferma che è la tua, o che chi parla ti ha dato il permesso."
-msgstr "Στο μενού «Περισσότερα» διάλεξε «Δημιούργησε τη φωνή σου». Διάβασε ένα κείμενο στο μικρόφωνο για να ηχογραφήσεις τη φωνή σου. Αρκούν περίπου δώδεκα δευτερόλεπτα. Μπορείς επίσης να εισαγάγεις μια παλιά ηχογράφηση σε WAV, FLAC, MP3, OGG ή M4A, ένα φωνητικό μήνυμα από WhatsApp ή Telegram ή ακόμη και ήχο από βίντεο. Διάλεξε το πιο καθαρό απόσπασμα, δώσε όνομα στη φωνή και επιβεβαίωσε ότι είναι δική σου ή ότι έχεις την άδεια του ανθρώπου που μιλάει."
+msgstr "Στο μενού «Άλλα» διάλεξε «Φτιάξε τη φωνή σου». Διάβασε ένα κείμενο στο μικρόφωνο για να ηχογραφήσεις τη φωνή σου. Αρκούν περίπου δώδεκα δευτερόλεπτα. Μπορείς επίσης να εισαγάγεις μια παλιά ηχογράφηση σε WAV, FLAC, MP3, OGG ή M4A, ένα φωνητικό μήνυμα από WhatsApp ή Telegram ή ακόμη και ήχο από βίντεο. Διάλεξε το πιο καθαρό απόσπασμα, δώσε όνομα στη φωνή και επιβεβαίωσε ότι είναι δική σου ή ότι έχεις την άδεια του ανθρώπου που μιλάει."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2405,11 +2404,10 @@ msgid "Cosa significa"
 msgstr "Τι σημαίνει"
 
 #: riunione/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive quale cartella e quali file («Manca la voce: in … non trovo …»). L'installazione è rotta, e finché non è a posto la voce non può parlare."
+#, kalliope-markup
 msgctxt "ai.testo.21"
 msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive «Non trovo i file della voce». L'installazione è rotta, e finché non è a posto la voce non può parlare."
-msgstr "Οι φωνές περιλαμβάνονται στο πακέτο, αλλά κάποιο αρχείο λείπει από τον φάκελο όπου το αναζητά η Kalliope. Το μήνυμα αναφέρει τον φάκελο και τα αρχεία που λείπουν («Manca la voce: in … non trovo …»). Υπάρχει πρόβλημα με την εγκατάσταση. Μέχρι να διορθωθεί, η φωνή δεν μπορεί να μιλήσει."
+msgstr "Οι φωνές περιλαμβάνονται στο πακέτο, αλλά κάποιο αρχείο λείπει από τον φάκελο όπου το αναζητά η Kalliope. Δίπλα στη γραμμή κατάστασης θα δεις «Δεν βρίσκω τα αρχεία της φωνής». Υπάρχει πρόβλημα με την εγκατάσταση. Μέχρι να διορθωθεί, η Kalliope δεν μπορεί να μιλήσει."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2476,7 +2474,7 @@ msgstr "Τι σημαίνει"
 #, kalliope-markup
 msgctxt "ai.testo.31"
 msgid "Tutto a posto: Kalliope può parlare. Accanto la riga dice «Nella riunione scegli «Kalliope» come microfono»."
-msgstr "Όλα είναι έτοιμα. Η Kalliope μπορεί να μιλήσει. Δίπλα διαβάζεις “Στη συνάντηση διάλεξε το «Kalliope» ως μικρόφωνο.”"
+msgstr "Όλα είναι έτοιμα. Η Kalliope μπορεί να μιλήσει. Δίπλα διαβάζεις: Στη συνάντηση διάλεξε το «Kalliope» ως μικρόφωνο."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2635,11 +2633,10 @@ msgid "Cosa significa"
 msgstr "Τι σημαίνει"
 
 #: riunione/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …», «Errore della voce: …» o «Non riesco a cambiare voce: …»."
+#, kalliope-markup
 msgctxt "ai.testo.54"
 msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …» o «Non sono riuscita a dire questa frase: …»."
-msgstr "Κάτι δεν πάει καλά με το πρόγραμμα ή με τα αρχεία της φωνής. Δίπλα θα δεις ένα μήνυμα όπως «Δεν μπορώ να ετοιμάσω τη φωνή: …», «Σφάλμα φωνής: …» ή «Δεν μπορώ να αλλάξω φωνή: …»."
+msgstr "Κάτι δεν πάει καλά με το πρόγραμμα ή με τα αρχεία της φωνής. Δίπλα στη γραμμή κατάστασης θα δεις ένα μήνυμα όπως «Δεν μπορώ να ετοιμάσω τη φωνή: …» ή «Δεν κατάφερα να πω αυτή τη φράση: …»."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -3291,7 +3288,7 @@ msgstr "Προς το παρόν όχι. Μπορεί να διαλέξει τη
 #, kalliope-markup
 msgctxt "st.d.voce.personale"
 msgid "Sì, dentro il programma: in «Altro», «Crea la tua voce». La registri dal microfono, leggendo un testo di circa dodici secondi, oppure importi una vecchia registrazione (WAV, FLAC, MP3, OGG, M4A, o un messaggio vocale di WhatsApp o Telegram, anche dentro un video). Scegli il pezzo più chiaro, le dai un nome e confermi che è la tua voce, o che chi parla ti ha dato il permesso. La voce si crea su questo computer; la trovi accanto a Giulia e Marco. Il programma parla in italiano."
-msgstr "Ναι, μέσα στο πρόγραμμα. Στο μενού «Περισσότερα» διάλεξε «Δημιούργησε τη φωνή σου». Διάβασε ένα κείμενο στο μικρόφωνο για περίπου δώδεκα δευτερόλεπτα ή χρησιμοποίησε μια παλιότερη ηχογράφηση (WAV, FLAC, MP3, OGG, M4A), ένα φωνητικό μήνυμα από WhatsApp ή Telegram ή ακόμη και ήχο από βίντεο. Διάλεξε το πιο καθαρό απόσπασμα, δώσε όνομα στη φωνή και επιβεβαίωσε ότι είναι δική σου ή ότι έχεις την άδεια του ανθρώπου που μιλάει. Η φωνή δημιουργείται σε αυτόν τον υπολογιστή. Θα τη βρεις δίπλα στη Giulia και στον Marco. Το πρόγραμμα μιλά ιταλικά."
+msgstr "Ναι, μέσα στο πρόγραμμα. Στο μενού «Άλλα» διάλεξε «Φτιάξε τη φωνή σου». Διάβασε ένα κείμενο στο μικρόφωνο για περίπου δώδεκα δευτερόλεπτα ή χρησιμοποίησε μια παλιότερη ηχογράφηση (WAV, FLAC, MP3, OGG, M4A), ένα φωνητικό μήνυμα από WhatsApp ή Telegram ή ακόμη και ήχο από βίντεο. Διάλεξε το πιο καθαρό απόσπασμα, δώσε όνομα στη φωνή και επιβεβαίωσε ότι είναι δική σου ή ότι έχεις την άδεια του ανθρώπου που μιλάει. Η φωνή δημιουργείται σε αυτόν τον υπολογιστή. Θα τη βρεις δίπλα στη Giulia και στον Marco. Το πρόγραμμα μιλά ιταλικά."
 
 #: stato/index.html
 #, kalliope-markup
@@ -3650,14 +3647,14 @@ msgstr "Ακύρωση"
 #, kalliope-slint, python-brace-format
 msgctxt "programma.bolla.ripeti-frase"
 msgid "Ripeti: {}"
-msgstr "Πες ξανά: {}"
+msgstr "Επανάλαβε: {}"
 
 #. Shown over a sentence already said, under the pointer: a click makes the voice say it again. A verb, one word if the language allows.
 #: crates/app/ui/kalliope/bolla.slint
 #, kalliope-slint
 msgctxt "programma.bolla.ripeti"
 msgid "Ripeti"
-msgstr "Πες ξανά"
+msgstr "Επανάλαβε"
 
 #. Read aloud by a screen reader for the voice menu: {} is the name of the voice in use
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -3686,14 +3683,14 @@ msgstr "Λειτουργία συνάντησης: μόνο το πεδίο κε
 #, kalliope-slint
 msgctxt "programma.finestra.altro"
 msgid "Altro"
-msgstr "Περισσότερα"
+msgstr "Άλλα"
 
 #. Read aloud by a screen reader for the «Altro» menu: say what it holds
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.altro-crea-tua-voce"
 msgid "Altro: crea la tua voce, informazioni"
-msgstr "Περισσότερα: Δημιούργησε τη φωνή σου, Πληροφορίες"
+msgstr "Άλλα: Φτιάξε τη φωνή σου, Πληροφορίες"
 
 #. The button that makes the text smaller: a capital A with a minus sign
 #: crates/app/ui/kalliope/finestra.slint
@@ -3811,7 +3808,7 @@ msgstr "Γράψε εδώ. Με Enter ακούγεται η φράση σου."
 #, kalliope-slint
 msgctxt "programma.finestra.con-quale-voce-parli"
 msgid "Con quale voce parli"
-msgstr "Διάλεξε τη φωνή σου"
+msgstr "Με ποια φωνή μιλάς;"
 
 #. A switch in the voice menu: when on, the person also hears the voice from the computer's speakers (otherwise only the others in the call hear it).
 #: crates/app/ui/kalliope/finestra.slint
@@ -3825,7 +3822,7 @@ msgstr "Να ακούω κι εγώ τη φωνή"
 #, kalliope-slint
 msgctxt "programma.finestra.crea-tua-voce"
 msgid "Crea la tua voce"
-msgstr "Δημιούργησε τη φωνή σου"
+msgstr "Φτιάξε τη φωνή σου"
 
 #. In the «Altro» menu: opens the window about Kalliope (version, what is inside, licence), like «About» in other programs.
 #: crates/app/ui/kalliope/finestra.slint
@@ -3839,14 +3836,14 @@ msgstr "Πληροφορίες"
 #, kalliope-slint
 msgctxt "programma.finestra.svuota-cronologia"
 msgid "Svuota la cronologia"
-msgstr "Διαγραφή ιστορικού"
+msgstr "Σβήσε το ιστορικό"
 
 #. The title of the question asked before emptying the list of sentences already said.
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.svuotare-cronologia"
 msgid "Svuotare la cronologia?"
-msgstr "Να διαγραφεί το ιστορικό;"
+msgstr "Να σβηστεί το ιστορικό;"
 
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
@@ -3859,7 +3856,7 @@ msgstr "Οι φράσεις που έχεις πει θα διαγραφούν �
 #, kalliope-slint
 msgctxt "programma.finestra.svuota"
 msgid "Svuota"
-msgstr "Διαγραφή"
+msgstr "Σβήσε"
 
 #. In the voice menu, next to the voice that speaks now: this one is in use. Short, lowercase.
 #: crates/app/ui/kalliope/menu.slint
@@ -3988,7 +3985,7 @@ msgstr "Esc"
 #, kalliope-slint
 msgctxt "programma.scrittura.di"
 msgid "Di'"
-msgstr "Πες το"
+msgstr "Πες"
 
 #. The name of the Enter key, shown on the button that says the sentence.
 #: crates/app/ui/kalliope/scrittura.slint
@@ -4079,7 +4076,7 @@ msgstr "Με Esc σταματά η φωνή."
 #, kalliope-slint
 msgctxt "programma.crea.passo-scegli"
 msgid "Registra o importa"
-msgstr "Ηχογράφηση ή εισαγωγή"
+msgstr "Εγγραφή ή εισαγωγή"
 
 #. The name of the second step: the person reads a text aloud. Short.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4101,7 +4098,7 @@ msgstr "Άκου και δώσε όνομα"
 #, kalliope-slint, python-brace-format
 msgctxt "programma.crea.passo"
 msgid "{} di 3 · {}"
-msgstr "{} από 3 · {}"
+msgstr "{}/3 · {}"
 
 #. The same round button while it records: it stops recording.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4115,7 +4112,7 @@ msgstr "Σταμάτα την ηχογράφηση"
 #, kalliope-slint
 msgctxt "programma.crea.registra"
 msgid "Registra"
-msgstr "Ηχογράφηση"
+msgstr "Ηχογράφησε"
 
 #. A button that plays a recording or a stretch of one. A verb.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4158,27 +4155,27 @@ msgstr "Ψάχνω το σημείο όπου η φωνή ακούγεται π�
 #, kalliope-slint
 msgctxt "programma.crea.se-hai-ancora-voce"
 msgid "Se hai ancora la voce"
-msgstr "Αν έχεις ακόμη τη φωνή σου"
+msgstr "Αν μιλάς ακόμη"
 
 #. The first choice for creating a voice: record it now, reading a short text aloud («la» is the voice). A title.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.registrala-adesso"
 msgid "Registrala adesso"
-msgstr "Ηχογράφησέ τη τώρα"
+msgstr "Εγγραφή τώρα"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.istruzioni-registra"
 msgid "Leggi ad alta voce un breve testo. Bastano dodici secondi di voce chiara, meglio finché la voce è forte."
-msgstr "Διάβασε δυνατά ένα σύντομο κείμενο. Αρκούν δώδεκα δευτερόλεπτα καθαρής ομιλίας. Καλύτερα όσο η φωνή σου είναι ακόμη δυνατή."
+msgstr "Διάβασε δυνατά ένα μικρό κείμενο. Αρκούν 12 δευτερόλεπτα καθαρής ομιλίας. Καλύτερα όσο η φωνή σου είναι ακόμη δυνατή."
 
 #. A small line over the second choice: this way is for a person who can no longer speak.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.se-voce-non-c"
 msgid "Se la voce non c'è più"
-msgstr "Αν δεν έχεις πια τη φωνή σου"
+msgstr "Αν δεν μιλάς πια"
 
 #. The second choice: create the voice from recordings made before (voice messages, videos). A title.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4231,7 +4228,7 @@ msgstr "Ελέγχω την ηχογράφηση…"
 #, kalliope-slint
 msgctxt "programma.crea.premi-tondo-leggi"
 msgid "Premi il tondo e leggi"
-msgstr "Πάτησε τον κύκλο και διάβασε"
+msgstr "Πάτα τον κύκλο και διάβασε"
 
 #. While the voice is recorded: {0} is the time recorded so far («3,2 s»); {n} is how many whole seconds of clear voice are still needed
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4240,8 +4237,8 @@ msgstr "Πάτησε τον κύκλο και διάβασε"
 msgctxt "programma.crea.mancano"
 msgid "{0} · ne manca {n}"
 msgid_plural "{0} · ne mancano {n}"
-msgstr[0] "{0} · απομένει {n} δευτερόλεπτο"
-msgstr[1] "{0} · απομένουν {n} δευτερόλεπτα"
+msgstr[0] "{0} · μένει {n} s"
+msgstr[1] "{0} · μένουν {n} s"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4260,21 +4257,21 @@ msgstr "Αρκούν δώδεκα δευτερόλεπτα ομιλίας. Ο κ
 #, kalliope-slint
 msgctxt "programma.crea.ferma-ascolto"
 msgid "Ferma l'ascolto"
-msgstr "Διακοπή"
+msgstr "Σταμάτα"
 
 #. A button that plays the recording just made.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ascolta-registrazione"
 msgid "Ascolta la registrazione"
-msgstr "Άκου την ηχογράφηση"
+msgstr "Άκου"
 
 #. A button that throws the recording away to record again. A verb, short.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.rifai"
 msgid "Rifai"
-msgstr "Δοκίμασε ξανά"
+msgstr "Ξανάρχισε"
 
 #. After a recording is read: {n} is how many stretches with a voice were found
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4292,7 +4289,7 @@ msgstr[1] "Βρήκα {n} αποσπάσματα όπου ακούγεται φ�
 #, kalliope-slint, python-brace-format
 msgctxt "programma.crea.creo-voce"
 msgid "Creo la voce «{}»…"
-msgstr "Δημιουργώ τη φωνή «{}»…"
+msgstr "Φτιάχνω τη φωνή «{}»…"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4304,7 +4301,7 @@ msgstr "Σε λίγο θα είναι έτοιμη και θα μιλάς με �
 #, kalliope-slint
 msgctxt "programma.crea.come-si-chiama-questa"
 msgid "Come si chiama questa voce?"
-msgstr "Τι όνομα θέλεις να δώσεις στη φωνή;"
+msgstr "Τι όνομα θα της δώσεις;"
 
 #. The name of the field where the person writes the name of the new voice, read by screen readers.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4337,28 +4334,28 @@ msgstr "Γεια σου, εγώ είμαι. Αυτή είναι η φωνή μο
 #, kalliope-slint
 msgctxt "programma.crea.torna-a-scrivere"
 msgid "Torna a scrivere"
-msgstr "Συνέχισε να γράφεις"
+msgstr "Πίσω στο κείμενο"
 
 #. The title of the first step of creating a voice: how the person wants to create it.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.titolo-scegli"
 msgid "Come vuoi creare la tua voce?"
-msgstr "Πώς θέλεις να δημιουργήσεις τη φωνή σου;"
+msgstr "Πώς θα φτιάξεις τη φωνή σου;"
 
 #. The title of the step where the person reads a text aloud, calmly.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.titolo-leggi"
 msgid "Leggi ad alta voce, con calma"
-msgstr "Διάβασε δυνατά, με την ησυχία σου"
+msgstr "Διάβασε δυνατά, χωρίς βιασύνη"
 
 #. The title of the last step: listen to the voice and give it a name («la» is the voice).
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.titolo-nome"
 msgid "Ascoltala e dalle un nome"
-msgstr "Άκου τη φωνή και δώσε της όνομα"
+msgstr "Άκου και δώσε όνομα στη φωνή"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4376,14 +4373,14 @@ msgstr "Λείπει το όνομα."
 #, kalliope-slint
 msgctxt "programma.crea.manca-permesso-spunta-casella"
 msgid "Manca il permesso: spunta la casella."
-msgstr "Χρειάζεται η άδειά σου. Τσέκαρε το κουτάκι."
+msgstr "Τσέκαρε το κουτάκι για να επιβεβαιώσεις ότι έχεις άδεια."
 
 #. The last button of the steps: it creates the voice with the name given.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.crea-voce"
 msgid "Crea la voce"
-msgstr "Δημιούργησε τη φωνή"
+msgstr "Φτιάξε τη φωνή"
 
 #. A warning: the person cannot hear their own voice from the loudspeakers (the option «Senti anche tu la voce»)
 #: crates/app/src/audio.rs
@@ -4459,7 +4456,7 @@ msgstr "Ο ήχος είναι πολύ δυνατός. Απομακρύνσου
 #, kalliope-rust
 msgctxt "programma.crea.serve-permesso"
 msgid "Per continuare serve il permesso: spunta la casella."
-msgstr "Για να συνεχίσεις, χρειάζεται η άδειά σου. Τσέκαρε το κουτάκι."
+msgstr "Για να συνεχίσεις, τσέκαρε το κουτάκι που επιβεβαιώνει ότι έχεις άδεια."
 
 #. The first stretch of a recording, the one where the voice is clearest: {numero} is its number
 #. Placeholders to leave as they are: {numero}
@@ -4483,7 +4480,7 @@ msgstr "Απόσπασμα {numero}"
 #, kalliope-rust, python-brace-format
 msgctxt "programma.crea.tratto-dettaglio"
 msgid "da {inizio} a {fine} · {secondi} s di voce"
-msgstr "από {inizio} έως {fine} · {secondi} s ομιλίας"
+msgstr "{inizio}–{fine} · {secondi} s ομιλίας"
 
 #: crates/app/src/crea.rs
 #, kalliope-rust
@@ -4677,7 +4674,7 @@ msgstr "Καμία εφαρμογή δεν χρησιμοποιεί το μικ�
 #, kalliope-rust
 msgctxt "programma.sessione.niente-da-dire"
 msgid "Non c'è niente da dire in questo testo: scrivi almeno una parola, poi premi Invio."
-msgstr "Δεν υπάρχει κάτι να πω σε αυτό το κείμενο. Γράψε τουλάχιστον μία λέξη και πάτησε Enter."
+msgstr "Δεν βρίσκω λέξεις στο κείμενο. Γράψε τουλάχιστον μία λέξη και πάτησε Enter."
 
 #: crates/app/src/session.rs
 #, kalliope-rust
@@ -4755,7 +4752,7 @@ msgstr "Το αρχείο είναι κενό."
 #, kalliope-rust
 msgctxt "programma.file.non-audio"
 msgid "Questo file non è un audio. Prova con un messaggio vocale, un video o una registrazione."
-msgstr "Αυτό το αρχείο δεν είναι αρχείο ήχου. Δοκίμασε με ένα φωνητικό μήνυμα, ένα βίντεο ή μια ηχογράφηση."
+msgstr "Δεν είναι αρχείο ήχου. Δοκίμασε με φωνητικό μήνυμα, βίντεο ή ηχογράφηση."
 
 #: crates/sample/src/decode.rs
 #, kalliope-rust

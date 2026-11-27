@@ -257,7 +257,7 @@ msgstr "Giulia"
 #, kalliope-markup
 msgctxt "finestra.pronta.nome"
 msgid "Pronta"
-msgstr "Paruošta"
+msgstr "Paruoštas"
 
 #. What the window says next to «Pronta»: the way to be heard. Keep «Kalliope» in quotes, it is the name of the microphone.
 #: index.html installa/index.html
@@ -440,14 +440,14 @@ msgstr "Sono d'accordo con Paola. Però la consegna del 14/3 mi sembra stretta: 
 #, kalliope-markup
 msgctxt "frase.3.detto-etichetta"
 msgid "Detto:"
-msgstr ""
+msgstr "Ištarta:"
 
 #. What the Italian voice said: it stays in Italian, as the voice says it.
 #: index.html
 #, kalliope-markup
 msgctxt "frase.3.detto-frase"
 msgid "«Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
-msgstr ""
+msgstr "«Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
 
 #: index.html
 #, kalliope-markup
@@ -1274,7 +1274,7 @@ msgstr "<1>Jei nepavyko</1>, patikrink, ką rašo terminalas. Jei trūksta prikl
 #, kalliope-markup
 msgctxt "in.installa.provato"
 msgid "Ogni pacchetto è provato da uno script prima di uscire: si installa, Kalliope dice una frase con la voce, poi si toglie. <1>Fin dove è provato</1>"
-msgstr "Prieš išleisdami kiekvieną paketą patikriname scenarijumi. Jis įdiegia paketą, „Kalliope“ balsu ištaria sakinį, tada scenarijus pašalina paketą. <1>Ką jau išbandėme</1>"
+msgstr "Prieš išleisdami kiekvieną paketą patikriname scenarijumi. Jis įdiegia paketą, paleidžia „Kalliope“, kad ši ištartų sakinį, o tada paketą pašalina. <1>Ką jau išbandėme</1>"
 
 #: installa/index.html
 #, kalliope-markup
@@ -1311,7 +1311,7 @@ msgstr "Kartu su programa pašalinami ir jos balsai. Tavo namų aplanke lieka nu
 #, kalliope-markup
 msgctxt "in.togli.verificato"
 msgid "Come lo sappiamo: i pacchetti hanno soltanto file in /usr e nessuno script, e <1>./install --remove</1> cancella soltanto i file messi da <2>./install</2>. Prima di uscire, ogni pacchetto si toglie con <3>apt</3>, <4>dnf</4> o <5>pacman</5> in un sistema di prova, e la prova controlla che non resti niente, voci comprese. Su un computer vero non l'abbiamo provato."
-msgstr "Kaip tai patikrinome? Paketuose yra tik /usr diegiami failai, scenarijų nėra. Komanda <1>./install --remove</1> pašalina tik tuos failus, kuriuos įdiegė <2>./install</2>. Prieš išleidžiant kiekvienas paketas bandomojoje sistemoje pašalinamas su <3>apt</3>, <4>dnf</4> arba <5>pacman</5>. Patikriname, ar nieko neliko, įskaitant balsus. Tikrame kompiuteryje šalinimo neišbandėme."
+msgstr "Kaip tai patikrinome? Paketuose yra tik į /usr diegiami failai, scenarijų nėra. Komanda <1>./install --remove</1> pašalina tik tuos failus, kuriuos įdiegė <2>./install</2>. Prieš išleidžiant kiekvienas paketas bandomojoje sistemoje pašalinamas su <3>apt</3>, <4>dnf</4> arba <5>pacman</5>. Patikriname, ar nieko neliko, įskaitant balsus. Tikrame kompiuteryje šalinimo neišbandėme."
 
 #: installa/index.html
 #, kalliope-markup
@@ -1367,7 +1367,7 @@ msgstr "„Kalliope“ lango pavyzdys su tikrais programos pranešimais · rodom
 #, kalliope-markup
 msgctxt "in.apri.titolo"
 msgid "Apri Kalliope, e aspetta «Pronta»."
-msgstr "Atverk „Kalliope“ ir palauk, kol pamatysi „Paruošta“."
+msgstr "Atverk „Kalliope“ ir palauk, kol pamatysi „Paruoštas“."
 
 #: installa/index.html
 #, kalliope-markup
@@ -1387,7 +1387,7 @@ msgstr "Kaskart paleidus programą trumpam pasirodo „Ruošiu balsą“. Jau ga
 #, kalliope-markup
 msgctxt "in.apri.riuscito"
 msgid "<1>Riuscito</1> se la riga di stato dice «Pronta» e, accanto, «Nella riunione scegli «Kalliope» come microfono.»"
-msgstr "<1>Pavyko</1>, jei būsenos eilutėje matai „Paruošta“, o šalia – „Susitikimo programoje pasirink „Kalliope“ mikrofoną.“"
+msgstr "<1>Pavyko</1>, jei būsenos eilutėje matai „Paruoštas“, o šalia – „Susitikimo programoje pasirink „Kalliope“ mikrofoną.“"
 
 #: installa/index.html
 #, kalliope-markup
@@ -1526,7 +1526,7 @@ msgstr "kalliope --version neatsako"
 #, kalliope-markup
 msgctxt "in.ripresa.pronta"
 msgid "La finestra non dice «Pronta»"
-msgstr "Lange nematai „Paruošta“"
+msgstr "Lange nematai „Paruoštas“"
 
 #: installa/index.html
 #, kalliope-markup
@@ -1624,11 +1624,10 @@ msgstr "Balsas neveikia"
 
 #. What the window says next to the state above: the same words as the program's message programma.voce.file-mancanti.
 #: installa/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Manca la voce: in … non trovo …. Reinstalla Kalliope."
+#, kalliope-markup
 msgctxt "in.stato.voce.detto"
 msgid "Non trovo i file della voce, e senza non posso parlare. Reinstalla Kalliope dal pacchetto."
-msgstr "Trūksta balso failų. Aplanke … nerandu …. Iš naujo įdiek „Kalliope“."
+msgstr "Nerandu balso failų. Be jų negaliu kalbėti. Iš naujo įdiek „Kalliope“ iš paketo."
 
 #: installa/index.html
 #, kalliope-markup
@@ -1988,7 +1987,7 @@ msgstr "Tu · mikrofonas „Kalliope“"
 #, kalliope-markup
 msgctxt "riu.testo.1"
 msgid "Apri Kalliope e aspetta «Pronta»"
-msgstr "Atverk „Kalliope“ ir palauk, kol pamatysi „Paruošta“"
+msgstr "Atverk „Kalliope“ ir palauk, kol pamatysi „Paruoštas“"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2008,7 +2007,7 @@ msgstr "Balsas pasiekia mikrofoną „Kalliope“. Įprastame kompiuteryje per �
 #, kalliope-markup
 msgctxt "riu.testo.4"
 msgid "Apri Kalliope prima di entrare nella riunione. Aspetta che la riga di stato dica «Pronta»."
-msgstr "Pirmiausia atverk „Kalliope“. Palauk, kol būsenos eilutėje pasirodys „Paruošta“, tada junkis į susitikimą."
+msgstr "Pirmiausia atverk „Kalliope“. Palauk, kol būsenos eilutėje pasirodys „Paruoštas“, tada junkis į susitikimą."
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <span class="controllo__titolo">
@@ -2016,7 +2015,7 @@ msgstr "Pirmiausia atverk „Kalliope“. Palauk, kol būsenos eilutėje pasirod
 #, kalliope-markup
 msgctxt "riu.testo.5"
 msgid "<1>Come sai che è andata bene</1>La riga dice «Pronta» e, accanto, «Nella riunione scegli «Kalliope» come microfono.»"
-msgstr "<1>Kaip žinoti, kad pavyko</1>Būsenos eilutėje matai „Paruošta“, o šalia – „Susitikimo programoje pasirink „Kalliope“ mikrofoną.“"
+msgstr "<1>Kaip žinoti, kad pavyko</1>Būsenos eilutėje matai „Paruoštas“, o šalia – „Susitikimo programoje pasirink „Kalliope“ mikrofoną.“"
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <span class="se-non-va__titolo">
@@ -2031,7 +2030,7 @@ msgstr "<1>Jei nepavyko</1>Jei matai „Tavęs niekas negirdi“, „Nėra mikro
 #: riunione/index.html
 msgctxt "riu.immagine.8"
 msgid "La finestra di Kalliope. In alto la barra, con il logo, il nome, la voce (Giulia), «Riunione», «Altro» e la grandezza del testo. Sotto, le frasi già dette, in bolle: l'ultima è la più chiara. Poi la riga di stato: «Pronta. Nella riunione scegli «Kalliope» come microfono.» In basso la grande bolla tratteggiata dove scrivi, con «Di'»."
-msgstr "„Kalliope“ langas. Viršutinėje juostoje matyti logotipas, pavadinimas, balsas (Giulia), „Susitikimas“, „Daugiau“ ir teksto dydžio mygtukai. Po juosta – ištarti sakiniai burbuluose. Naujausias sakinys šviesiausias. Žemiau būsenos eilutė: „Paruošta. Susitikimo programoje pasirink „Kalliope“ mikrofoną.“ Apačioje – didelis punktyrinis burbulas, kuriame rašai, ir mygtukas „Tarti“."
+msgstr "„Kalliope“ langas. Viršutinėje juostoje matyti logotipas, pavadinimas, balsas (Giulia), „Susitikimas“, „Daugiau“ ir teksto dydžio mygtukai. Po juosta – ištarti sakiniai burbuluose. Naujausias sakinys šviesiausias. Žemiau būsenos eilutė: „Paruoštas. Susitikimo programoje pasirink „Kalliope“ mikrofoną.“ Apačioje – didelis punktyrinis burbulas, kuriame rašai, ir mygtukas „Tarti“."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2043,7 +2042,7 @@ msgstr "„Kalliope“ langas. Jame yra juosta su balso pasirinkimu, būsenos ei
 #, kalliope-markup
 msgctxt "riu.testo.9"
 msgid "Scegli «Kalliope» come microfono"
-msgstr "Kaip mikrofoną pasirink „Kalliope“"
+msgstr "Pasirink mikrofoną „Kalliope“"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2356,7 +2355,7 @@ msgstr "<1>„Ruošiu balsą“</1>"
 #, kalliope-markup
 msgctxt "ai.testo.14"
 msgid "<1>«Pronta»</1>"
-msgstr "<1>„Paruošta“</1>"
+msgstr "<1>„Paruoštas“</1>"
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <a href="#f-senza-microfono">
@@ -2405,11 +2404,10 @@ msgid "Cosa significa"
 msgstr "Ką tai reiškia"
 
 #: riunione/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive quale cartella e quali file («Manca la voce: in … non trovo …»). L'installazione è rotta, e finché non è a posto la voce non può parlare."
+#, kalliope-markup
 msgctxt "ai.testo.21"
 msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive «Non trovo i file della voce». L'installazione è rotta, e finché non è a posto la voce non può parlare."
-msgstr "Balsai įdiegiami kartu su paketu, bet aplanke, kuriame „Kalliope“ jų ieško, trūksta balso failo. Šalia būsenos nurodytas aplankas ir trūkstami failai: „Trūksta balso failų. Aplanke … nerandu …“. Kol diegimas nesutvarkytas, balsas neveiks."
+msgstr "Balsai įdiegiami kartu su paketu, bet aplanke, kuriame „Kalliope“ jų ieško, trūksta failo. Šalia būsenos matai „Nerandu balso failų“. Kad balsas vėl veiktų, reikia sutvarkyti diegimą."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2464,7 +2462,7 @@ msgstr "Palauk. Kiek tai trunka, dar nematavome."
 #, kalliope-markup
 msgctxt "ai.testo.29"
 msgid "<1>Pronta</1>"
-msgstr "<1>Paruošta</1>"
+msgstr "<1>Paruoštas</1>"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2635,11 +2633,10 @@ msgid "Cosa significa"
 msgstr "Ką tai reiškia"
 
 #: riunione/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …», «Errore della voce: …» o «Non riesco a cambiare voce: …»."
+#, kalliope-markup
 msgctxt "ai.testo.54"
 msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …» o «Non sono riuscita a dire questa frase: …»."
-msgstr "Sutriko programos veikimas arba kilo bėda su balso failais. Šalia būsenos gali matyti „Nepavyksta paruošti balso: …“, „Balso klaida: …“ arba „Nepavyksta pakeisti balso: …“."
+msgstr "Sutriko programos veikimas arba kilo bėda su balso failais. Šalia būsenos gali matyti „Nepavyksta paruošti balso: …“ arba „Nepavyko ištarti šio sakinio: …“."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2698,7 +2695,7 @@ msgstr "Jei matai <1>PipeWire is not available</1>, trūksta bibliotekos. Įdiek
 #, kalliope-markup
 msgctxt "ai.testo.60"
 msgid "Se invece la finestra dice «Pronta» e l'app non mostra «Kalliope»: scrivi in un terminale <1>pactl list short sources</1>, deve esserci una riga con <2>kalliope</2>. Se c'è, chiudi e riapri l'elenco dei microfoni dell'app; non abbiamo provato se serva riavviare l'app."
-msgstr "Jei lange matai „Paruošta“, bet programos mikrofonų sąraše nėra „Kalliope“, terminale įrašyk <1>pactl list short sources</1>. Turėtų pasirodyti eilutė su žodžiu <2>kalliope</2>. Jei ji yra, užverk ir vėl atverk programos mikrofonų sąrašą. Ar reikia paleisti pačią susitikimo programą iš naujo, netikrinome."
+msgstr "Jei lange matai „Paruoštas“, bet programos mikrofonų sąraše nėra „Kalliope“, terminale įrašyk <1>pactl list short sources</1>. Turėtų pasirodyti eilutė su žodžiu <2>kalliope</2>. Jei ji yra, užverk ir vėl atverk programos mikrofonų sąrašą. Ar reikia paleisti pačią susitikimo programą iš naujo, netikrinome."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2722,7 +2719,7 @@ msgstr "Nė viena programa nenaudoja mikrofono „Kalliope“. Atverk susitikimo
 #, kalliope-markup
 msgctxt "ai.sentono.due"
 msgid "Se hai aperto Kalliope dopo l'app, chiudi e riapri l'elenco dei microfoni. Poi scrivi di nuovo la frase: una frase detta mentre nessuno ascolta è persa, come con un microfono vero (con la scrittura vuota, ↑ riporta l'ultima). La riga torna a «Pronta» appena un'app ascolta."
-msgstr "Jei „Kalliope“ atvėrei vėliau nei susitikimo programą, užverk ir vėl atverk mikrofonų sąrašą. Tada dar kartą įvesk sakinį. Jei tuo metu, kai jis skambėjo, niekas nesiklausė, garsas dingo, kaip ir naudojant tikrą mikrofoną. Kai rašymo laukas tuščias, klavišu ↑ susigrąžinsi paskutinį sakinį. Programai pradėjus naudoti mikrofoną, vėl pasirodys būsena „Paruošta“."
+msgstr "Jei „Kalliope“ atvėrei vėliau nei susitikimo programą, užverk ir vėl atverk mikrofonų sąrašą. Tada dar kartą įvesk sakinį. Jei tuo metu, kai jis skambėjo, niekas nesiklausė, garsas dingo, kaip ir naudojant tikrą mikrofoną. Kai rašymo laukas tuščias, klavišu ↑ susigrąžinsi paskutinį sakinį. Programai pradėjus naudoti mikrofoną, vėl pasirodys būsena „Paruoštas“."
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <a href="../riunione/#passo-3">
@@ -2880,7 +2877,7 @@ msgstr[3] "{n} pranešimų"
 #, kalliope-markup
 msgctxt "ai.filtro.nessuna"
 msgid "Nessuna frase trovata. Prova una parola sola, per esempio «pronta» o «microfono». Oppure guarda i tre casi qui sotto, o segnala il problema."
-msgstr "Pranešimų nerasta. Pabandyk įrašyti vieną žodį, pavyzdžiui, „paruošta“ arba „mikrofono“. Taip pat gali peržiūrėti tris atvejus žemiau arba pranešti apie problemą."
+msgstr "Pranešimų nerasta. Pabandyk įrašyti vieną žodį, pavyzdžiui, „paruoštas“ arba „mikrofono“. Taip pat gali peržiūrėti tris atvejus žemiau arba pranešti apie problemą."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -3486,7 +3483,7 @@ msgstr "Užvėrus langą programa baigia darbą."
 #, kalliope-markup
 msgctxt "st.passo.chiudi.testo"
 msgid "Kalliope non si avvia da solo e non lascia un servizio acceso: con la finestra sparisce il microfono «Kalliope» dall'elenco dei microfoni. Si toglie con ./install --remove o togliendo il pacchetto, voci comprese: prima di uscire, ogni pacchetto si toglie in un sistema di prova e la prova controlla che non resti niente. Restano le preferenze, le frasi dette e le voci preparate da una registrazione. <1><2>packaging/linux</2>, <3>docs/releasing.md</3></1>"
-msgstr "„Kalliope“ nepasileidžia automatiškai ir nepalieka veikiančios tarnybos. Užvėrus langą iš mikrofonų sąrašo dingsta ir „Kalliope“. Programą kartu su jos balsais pašalinsi komanda ./install --remove arba pašalinęs paketą. Prieš išleisdami kiekvieną paketą pašaliname jį bandomojoje sistemoje ir patikriname, ar nieko neliko. Tavo nuostatos, ištarti sakiniai ir iš įrašų sukurti balsai išlieka. <1><2>packaging/linux</2>, <3>docs/releasing.md</3></1>"
+msgstr "„Kalliope“ nepasileidžia automatiškai ir nepalieka veikiančios tarnybos. Užvėrus langą iš mikrofonų sąrašo dingsta ir „Kalliope“. Jei nori pašalinti programą kartu su jos balsais, paleisk ./install --remove arba pašalink paketą. Prieš išleisdami kiekvieną paketą pašaliname jį bandomojoje sistemoje ir patikriname, ar nieko neliko. Tavo nuostatos, ištarti sakiniai ir iš įrašų sukurti balsai išlieka. <1><2>packaging/linux</2>, <3>docs/releasing.md</3></1>"
 
 #: stato/index.html
 #, kalliope-markup
@@ -3744,7 +3741,7 @@ msgstr "Pagalba"
 #, kalliope-slint
 msgctxt "programma.finestra.intera"
 msgid "Intera"
-msgstr "Visas langas"
+msgstr "Išskleisti"
 
 #. In the compact meeting window, the button that goes back to the full window.
 #: crates/app/ui/kalliope/finestra.slint
@@ -3813,7 +3810,7 @@ msgstr "Rašyk čia. Enter – tarti."
 #, kalliope-slint
 msgctxt "programma.finestra.con-quale-voce-parli"
 msgid "Con quale voce parli"
-msgstr "Kuriuo balsu kalbėsi"
+msgstr "Kuriuo balsu kalbėsi?"
 
 #. A switch in the voice menu: when on, the person also hears the voice from the computer's speakers (otherwise only the others in the call hear it).
 #: crates/app/ui/kalliope/finestra.slint
@@ -4018,7 +4015,7 @@ msgstr "Ruošiu balsą"
 #, kalliope-slint
 msgctxt "programma.stato.pronta"
 msgid "Pronta"
-msgstr "Paruošta"
+msgstr "Paruoštas"
 
 #. The name of the state while the voice speaks, said by Kalliope: «I am speaking». Two words.
 #: crates/app/ui/kalliope/stato.slint
@@ -4095,7 +4092,7 @@ msgstr "Skaityk balsu"
 #, kalliope-slint
 msgctxt "programma.crea.passo-nome"
 msgid "Ascolta e dai un nome"
-msgstr "Paklausyk ir suteik vardą"
+msgstr "Paklausyk ir pavadink"
 
 #. Where the person is among the three steps of making a voice: {0} is the number of the step (1 to 3), {1} its name
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4167,13 +4164,13 @@ msgstr "Jei dar gali kalbėti"
 #, kalliope-slint
 msgctxt "programma.crea.registrala-adesso"
 msgid "Registrala adesso"
-msgstr "Įrašyk savo balsą dabar"
+msgstr "Įrašyk dabar"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.istruzioni-registra"
 msgid "Leggi ad alta voce un breve testo. Bastano dodici secondi di voce chiara, meglio finché la voce è forte."
-msgstr "Balsu perskaityk trumpą tekstą. Pakanka dvylikos sekundžių aiškios kalbos. Geriausia įrašyti, kol balsas dar stiprus."
+msgstr "Balsu perskaityk trumpą tekstą. Pakanka 12 sekundžių aiškios kalbos. Geriausia įrašyti, kol balsas dar stiprus."
 
 #. A small line over the second choice: this way is for a person who can no longer speak.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4207,7 +4204,7 @@ msgstr "Pasirink tylią patalpą. Jei turi ausines su mikrofonu, naudok jas. Gal
 #, kalliope-slint, python-brace-format
 msgctxt "programma.crea.secondi"
 msgid "{} s"
-msgstr "{} s"
+msgstr "{} s"
 
 #. A label over the menu where the person picks the microphone to record with.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4233,7 +4230,7 @@ msgstr "Tikrinu įrašą…"
 #, kalliope-slint
 msgctxt "programma.crea.premi-tondo-leggi"
 msgid "Premi il tondo e leggi"
-msgstr "Spausk apvalų mygtuką ir skaityk"
+msgstr "Spausk ir skaityk balsu"
 
 #. While the voice is recorded: {0} is the time recorded so far («3,2 s»); {n} is how many whole seconds of clear voice are still needed
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4242,43 +4239,43 @@ msgstr "Spausk apvalų mygtuką ir skaityk"
 msgctxt "programma.crea.mancano"
 msgid "{0} · ne manca {n}"
 msgid_plural "{0} · ne mancano {n}"
-msgstr[0] "{0} · liko {n} sekundė"
-msgstr[1] "{0} · liko {n} sekundės"
-msgstr[2] "{0} · liko {n} sekundės"
-msgstr[3] "{0} · liko {n} sekundžių"
+msgstr[0] "{0} · liko {n} s"
+msgstr[1] "{0} · liko {n} s"
+msgstr[2] "{0} · liko {n} s"
+msgstr[3] "{0} · liko {n} s"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.basta-cosi-premi-nuovo"
 msgid "Basta così: premi di nuovo per fermare."
-msgstr "Jau užtenka. Paspausk dar kartą, kad sustabdytum įrašymą."
+msgstr "Jau pakanka. Dar kartą spustelėk ir įrašymas baigsis."
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ne-bastano-dodici-secondi"
 msgid "Ne bastano dodici secondi di voce: il cerchio si riempie. Il livello si muove con la tua voce."
-msgstr "Pakanka dvylikos sekundžių kalbos. Kol kalbi, pildosi apskritimas, o garso lygio rodiklis juda kartu su tavo balsu."
+msgstr "Pakanka 12 sekundžių kalbos. Kai kalbi, pildosi žiedas ir juda garso juostos."
 
 #. A button that stops playing the recording.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ferma-ascolto"
 msgid "Ferma l'ascolto"
-msgstr "Stabdyti atkūrimą"
+msgstr "Stabdyti"
 
 #. A button that plays the recording just made.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ascolta-registrazione"
 msgid "Ascolta la registrazione"
-msgstr "Klausyti įrašo"
+msgstr "Klausyti"
 
 #. A button that throws the recording away to record again. A verb, short.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.rifai"
 msgid "Rifai"
-msgstr "Kartoti"
+msgstr "Keisti įrašą"
 
 #. After a recording is read: {n} is how many stretches with a voice were found
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4287,10 +4284,10 @@ msgstr "Kartoti"
 msgctxt "programma.crea.trovati-tratti"
 msgid "Ho trovato {n} tratto in cui si sente la voce. Ascolta e scegli."
 msgid_plural "Ho trovato {n} tratti in cui si sente la voce. Ascolta e scegli."
-msgstr[0] "Radau {n} ištrauką, kurioje girdėti balsas. Paklausyk ir pasirink."
-msgstr[1] "Radau {n} ištraukas, kuriose girdėti balsas. Paklausyk ir pasirink."
-msgstr[2] "Radau {n} ištraukos su girdimu balsu. Paklausyk ir pasirink."
-msgstr[3] "Radau {n} ištraukų, kuriose girdėti balsas. Paklausyk ir pasirink."
+msgstr[0] "Radau {n} kalbos ištrauką. Paklausyk ir pasirink."
+msgstr[1] "Radau {n} kalbos ištraukas. Paklausyk ir pasirink."
+msgstr[2] "Radau {n} kalbos ištraukos. Paklausyk ir pasirink."
+msgstr[3] "Radau {n} kalbos ištraukų. Paklausyk ir pasirink."
 
 #. While a voice is made: {} is the name the person gave it
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4304,7 +4301,7 @@ msgstr "Kuriu balsą „{}“…"
 #, kalliope-slint
 msgctxt "programma.crea.ci-vuole-poco-quando"
 msgid "Ci vuole poco. Quando è pronta la scegli da sola."
-msgstr "Tai truks neilgai. Kai balsas bus paruoštas, programa pati jį pasirinks."
+msgstr "Ilgai netruks. Kai balsas bus paruoštas, jį parinksiu."
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4324,7 +4321,7 @@ msgstr "Balso vardas"
 #, kalliope-slint
 msgctxt "programma.crea.segnaposto-nome-voce"
 msgid "Per esempio: la voce di Anna"
-msgstr "Pavyzdžiui, Anos balsas"
+msgstr "Pavyzdžiui, Ona"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4370,7 +4367,7 @@ msgstr "Paklausyk ir suteik balsui vardą"
 #, kalliope-slint
 msgctxt "programma.crea.questa-registrazione-non-si"
 msgid "Da questa registrazione non si può creare la voce: rifai."
-msgstr "Iš šio įrašo balso sukurti nepavyks. Įrašyk dar kartą."
+msgstr "Iš šio įrašo balso sukurti nepavyks. Pradėk iš naujo."
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4453,7 +4450,7 @@ msgstr "Visi failai"
 #, kalliope-rust
 msgctxt "programma.crea.non-ti-sento"
 msgid "Non ti sento. Avvicinati al microfono, controlla che non sia spento, o scegline un altro."
-msgstr "Tavęs negirdžiu. Prieik arčiau mikrofono, patikrink, ar jis įjungtas, arba pasirink kitą."
+msgstr "Tavęs negirdžiu. Priartėk prie mikrofono, patikrink, ar jis įjungtas, arba rinkis kitą."
 
 #: crates/app/src/crea.rs
 #, kalliope-rust
@@ -4489,7 +4486,7 @@ msgstr "Ištrauka {numero}"
 #, kalliope-rust, python-brace-format
 msgctxt "programma.crea.tratto-dettaglio"
 msgid "da {inizio} a {fine} · {secondi} s di voce"
-msgstr "Nuo {inizio} iki {fine} · balsas girdėti {secondi} s"
+msgstr "{inizio}–{fine} · {secondi} s kalbos"
 
 #: crates/app/src/crea.rs
 #, kalliope-rust
@@ -4501,7 +4498,7 @@ msgstr "Nepavyko atverti failo pasirinkimo lango. Bandyk dar kartą. Jei langas 
 #, kalliope-rust
 msgctxt "programma.crea.tratto-inutilizzabile"
 msgid "Da questo tratto non si può creare la voce: scegli un altro tratto, o rifai."
-msgstr "Iš šios ištraukos balso sukurti nepavyks. Pasirink kitą arba įrašyk iš naujo."
+msgstr "Iš šios ištraukos balso sukurti nepavyks. Pasirink kitą ištrauką arba pradėk iš naujo."
 
 #. A button: replace the existing voice that has the same name with the new one.
 #: crates/app/src/crea.rs
@@ -4661,7 +4658,7 @@ msgstr "Nepavyksta paleisti įrašo per garsiakalbius."
 #, kalliope-rust
 msgctxt "programma.sessione.pronta"
 msgid "Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono."
-msgstr "Paruošta. Programoje „Zoom“, „Teams“, „Meet“ ar naršyklėje mikrofonų sąraše pasirink „Kalliope“."
+msgstr "Paruoštas. Programoje „Zoom“, „Teams“, „Meet“ ar naršyklėje mikrofonų sąraše pasirink „Kalliope“."
 
 #: crates/app/src/session.rs
 #, kalliope-rust
@@ -4763,7 +4760,7 @@ msgstr "Failas tuščias."
 #, kalliope-rust
 msgctxt "programma.file.non-audio"
 msgid "Questo file non è un audio. Prova con un messaggio vocale, un video o una registrazione."
-msgstr "Tai ne garso failas. Pabandyk naudoti balso žinutę, vaizdo ar garso įrašą."
+msgstr "Tai ne garso failas. Pabandyk įkelti balso žinutę, vaizdo įrašą ar garso įrašą."
 
 #: crates/sample/src/decode.rs
 #, kalliope-rust

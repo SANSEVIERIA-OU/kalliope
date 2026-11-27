@@ -440,14 +440,14 @@ msgstr "Sono d'accordo con Paola. Però la consegna del 14/3 mi sembra stretta: 
 #, kalliope-markup
 msgctxt "frase.3.detto-etichetta"
 msgid "Detto:"
-msgstr ""
+msgstr "যা বলা হয়েছে:"
 
 #. What the Italian voice said: it stays in Italian, as the voice says it.
 #: index.html
 #, kalliope-markup
 msgctxt "frase.3.detto-frase"
 msgid "«Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
-msgstr ""
+msgstr "«Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
 
 #: index.html
 #, kalliope-markup
@@ -576,7 +576,7 @@ msgstr "প্রথমবার Kalliope খোলার নমুনা"
 #, kalliope-markup
 msgctxt "avvio.preparo.nome"
 msgid "Preparo la voce"
-msgstr "কণ্ঠ তৈরি করছি"
+msgstr "কণ্ঠ প্রস্তুত করছি"
 
 #: index.html installa/index.html
 #, kalliope-markup
@@ -670,7 +670,7 @@ msgstr "<1>এমন একটি মিটিংয়ের অ্যাপ</1
 #, kalliope-markup
 msgctxt "serve.finestra"
 msgid "La finestra è una sola: scrivi, premi Invio, e la frase si accende parola per parola mentre la voce la dice. Le frasi dette restano, per ripeterle. Puoi usare anche la tua voce: la registri o la importi dentro il programma."
-msgstr "একটিই উইন্ডো। লিখে Enter চাপুন। কণ্ঠ যখন বলবে, তখন একেকটি শব্দ জ্বলে উঠবে। বলা হয়ে গেলে কথাগুলো থেকে যায়, চাইলে আবার বলতে পারেন। নিজের কণ্ঠও ব্যবহার করতে পারেন। প্রোগ্রামের মধ্যেই রেকর্ড করুন বা রেকর্ডিং আমদানি করুন।"
+msgstr "একটিই উইন্ডো। লিখে Enter চাপুন। কণ্ঠ যখন বলবে, তখন একেকটি শব্দ জ্বলে উঠবে। বলা হয়ে গেলে কথাগুলো থেকে যায়, চাইলে আবার বলতে পারেন। নিজের কণ্ঠও ব্যবহার করতে পারেন। প্রোগ্রামের মধ্যেই রেকর্ড করুন বা রেকর্ডিং ফাইল থেকে নিন।"
 
 #: index.html
 #, kalliope-markup
@@ -1379,7 +1379,7 @@ msgstr "অ্যাপ্লিকেশন মেনু থেকে খুল
 #, kalliope-markup
 msgctxt "in.apri.ogni-volta"
 msgid "A ogni avvio dice «Preparo la voce» per un po': puoi già scrivere, e la voce arriva fra poco."
-msgstr "প্রতিবার খোলার পর কিছুক্ষণ ‘কণ্ঠ তৈরি করছি’ দেখায়। তখনই লিখতে পারেন। একটু পরেই কণ্ঠ প্রস্তুত হবে।"
+msgstr "প্রতিবার খোলার পর কিছুক্ষণ ‘কণ্ঠ প্রস্তুত করছি’ দেখায়। তখনই লিখতে পারেন। একটু পরেই কণ্ঠ প্রস্তুত হবে।"
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <strong>
@@ -1425,7 +1425,7 @@ msgstr "‘Kalliope’ মাইক্রোফোন তৈরি হয়ন�
 #, kalliope-markup
 msgctxt "in.frasi.nessuno.frase"
 msgid "«Nessuno ti sente»"
-msgstr "‘কেউ আপনাকে শুনতে পাচ্ছেন না’"
+msgstr "‘কেউ শুনতে পাচ্ছেন না’"
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <a href="../riunione/#non-mi-sentono">
@@ -1624,11 +1624,10 @@ msgstr "কণ্ঠ চালু হচ্ছে না"
 
 #. What the window says next to the state above: the same words as the program's message programma.voce.file-mancanti.
 #: installa/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Manca la voce: in … non trovo …. Reinstalla Kalliope."
+#, kalliope-markup
 msgctxt "in.stato.voce.detto"
 msgid "Non trovo i file della voce, e senza non posso parlare. Reinstalla Kalliope dal pacchetto."
-msgstr "Manca la voce: in … non trovo …. Reinstalla Kalliope."
+msgstr "কণ্ঠের ফাইলগুলো পাচ্ছি না। এগুলো ছাড়া কথা বলতে পারব না। প্যাকেজ থেকে Kalliope আবার ইনস্টল করুন।"
 
 #: installa/index.html
 #, kalliope-markup
@@ -1647,7 +1646,7 @@ msgstr "কণ্ঠ প্রস্তুত। তবে …। আপাত�
 #, kalliope-markup
 msgctxt "in.stato.nessuno.nome"
 msgid "Nessuno ti sente"
-msgstr "কেউ আপনাকে শুনতে পাচ্ছেন না"
+msgstr "কেউ শুনতে পাচ্ছেন না"
 
 #. What the window says next to «Nessuno ti sente»: keep «Kalliope» in quotes, it is the name of the microphone.
 #: installa/index.html
@@ -2025,7 +2024,7 @@ msgstr "<1>কী দেখে বুঝবেন হয়েছে</1>লা�
 #, kalliope-markup
 msgctxt "riu.testo.6"
 msgid "<1>Se non è andata</1>Se dice «Nessuno ti sente», «Manca il microfono» o «La voce non parte», premi «Come si risolve», accanto alla riga: ti porta alla spiegazione giusta. Per ogni altra riga, <2>cercala nella sezione Aiuto</2>."
-msgstr "<1>কাজ না হলে</1>‘কেউ আপনাকে শুনতে পাচ্ছেন না’, ‘মাইক্রোফোন নেই’ বা ‘কণ্ঠ চালু হচ্ছে না’ দেখালে লাইনের পাশে ‘কীভাবে ঠিক করবেন’ চাপুন। সমস্যাটির ব্যাখ্যা খুলবে। অন্য বার্তা দেখালে <2>সাহায্য বিভাগে খুঁজুন</2>।"
+msgstr "<1>কাজ না হলে</1>‘কেউ শুনতে পাচ্ছেন না’, ‘মাইক্রোফোন নেই’ বা ‘কণ্ঠ চালু হচ্ছে না’ দেখালে লাইনের পাশে ‘কীভাবে ঠিক করবেন’ চাপুন। সমস্যাটির ব্যাখ্যা খুলবে। অন্য বার্তা দেখালে <2>সাহায্য বিভাগে খুঁজুন</2>।"
 
 #. Attribute «alt» of an element of the page: plain text, no tags.
 #: riunione/index.html
@@ -2148,7 +2147,7 @@ msgstr "<1>কী করবেন।</1> একটি বাক্য লিখ�
 #, kalliope-markup
 msgctxt "riu.testo.25"
 msgid "<1>Come sai che è andata.</1> Se la riga di stato diventa «Nessuno ti sente», nessuna app sta usando il microfono «Kalliope». Se dice «Sto parlando», una app ti ascolta."
-msgstr "<1>কী দেখে বুঝবেন।</1> স্ট্যাটাস লাইনে ‘কেউ আপনাকে শুনতে পাচ্ছেন না’ দেখালে কোনো অ্যাপ ‘Kalliope’ মাইক্রোফোন ব্যবহার করছে না। ‘কথা বলছি’ দেখালে কোনো একটি অ্যাপ আপনার কণ্ঠ নিচ্ছে।"
+msgstr "<1>কী দেখে বুঝবেন।</1> স্ট্যাটাস লাইনে ‘কেউ শুনতে পাচ্ছেন না’ দেখালে কোনো অ্যাপ ‘Kalliope’ মাইক্রোফোন ব্যবহার করছে না। ‘কথা বলছি’ দেখালে কোনো একটি অ্যাপ আপনার কণ্ঠ নিচ্ছে।"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2308,7 +2307,7 @@ msgstr "আপনার নিজের কণ্ঠে"
 #, kalliope-markup
 msgctxt "riu.voce.testo"
 msgid "In «Altro» scegli «Crea la tua voce». La registri dal microfono, leggendo un testo (bastano circa dodici secondi), oppure importi una vecchia registrazione: WAV, FLAC, MP3, OGG, M4A, o un messaggio vocale di WhatsApp o Telegram, anche dentro un video. Scegli il pezzo più chiaro, dai un nome alla voce e conferma che è la tua, o che chi parla ti ha dato il permesso."
-msgstr "‘আরও’ মেনুতে ‘নিজের কণ্ঠ তৈরি করুন’ বেছে নিন। মাইক্রোফোনে একটু লেখা পড়ে রেকর্ড করতে পারেন (প্রায় বারো সেকেন্ডই যথেষ্ট)। অথবা পুরোনো রেকর্ডিং আমদানি করুন। WAV, FLAC, MP3, OGG, M4A বা WhatsApp কিংবা Telegram-এর ভয়েস মেসেজ ব্যবহার করতে পারেন। ভিডিওর ভেতরে থাকা কণ্ঠও চলবে। সবচেয়ে স্পষ্ট অংশটি বেছে নিয়ে কণ্ঠের নাম দিন। নিশ্চিত করুন যে কণ্ঠটি আপনার, অথবা যাঁর কণ্ঠ তিনি অনুমতি দিয়েছেন।"
+msgstr "‘আরও’ মেনুতে ‘নিজের কণ্ঠ তৈরি করুন’ বেছে নিন। মাইক্রোফোনে একটু লেখা পড়ে রেকর্ড করতে পারেন (প্রায় বারো সেকেন্ডই যথেষ্ট)। অথবা পুরোনো রেকর্ডিং ফাইল থেকে নিন। WAV, FLAC, MP3, OGG, M4A বা WhatsApp কিংবা Telegram-এর ভয়েস মেসেজ ব্যবহার করতে পারেন। ভিডিওর ভেতরে থাকা কণ্ঠও চলবে। সবচেয়ে স্পষ্ট অংশটি বেছে নিয়ে কণ্ঠের নাম দিন। নিশ্চিত করুন যে কণ্ঠটি আপনার, অথবা যাঁর কণ্ঠ তিনি অনুমতি দিয়েছেন।"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2348,7 +2347,7 @@ msgstr "<1>‘কণ্ঠ চালু হচ্ছে না’</1>"
 #, kalliope-markup
 msgctxt "ai.testo.13"
 msgid "<1>«Preparo la voce»</1>"
-msgstr "<1>‘কণ্ঠ তৈরি করছি’</1>"
+msgstr "<1>‘কণ্ঠ প্রস্তুত করছি’</1>"
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <a href="#f-pronta">
@@ -2380,7 +2379,7 @@ msgstr "<1>‘কথা বলছি’</1>"
 #, kalliope-markup
 msgctxt "ai.testo.17"
 msgid "<1>«Nessuno ti sente»</1>"
-msgstr "<1>‘কেউ আপনাকে শুনতে পাচ্ছেন না’</1>"
+msgstr "<1>‘কেউ শুনতে পাচ্ছেন না’</1>"
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <a href="#f-errori">
@@ -2388,7 +2387,7 @@ msgstr "<1>‘কেউ আপনাকে শুনতে পাচ্ছেন
 #, kalliope-markup
 msgctxt "ai.testo.18"
 msgid "<1>«Attenzione»</1>"
-msgstr "<1>‘খেয়াল করুন’</1>"
+msgstr "<1>‘সতর্কতা’</1>"
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <q class="frase-finestra">
@@ -2405,11 +2404,10 @@ msgid "Cosa significa"
 msgstr "এর মানে কী"
 
 #: riunione/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive quale cartella e quali file («Manca la voce: in … non trovo …»). L'installazione è rotta, e finché non è a posto la voce non può parlare."
+#, kalliope-markup
 msgctxt "ai.testo.21"
 msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive «Non trovo i file della voce». L'installazione è rotta, e finché non è a posto la voce non può parlare."
-msgstr "কণ্ঠগুলো প্যাকেজের সঙ্গেই আসে। Kalliope তার কোনো একটি ফাইল ঠিক জায়গায় পাচ্ছে না। উইন্ডোতে বার্তার পাশে কোন ফোল্ডারে কোন ফাইল খুঁজে পায়নি তা লেখা থাকে (‘Manca la voce: in … non trovo …’)। ইনস্টলেশনে সমস্যা হয়েছে। ঠিক না করা পর্যন্ত কণ্ঠ চালু হবে না।"
+msgstr "কণ্ঠগুলো প্যাকেজের সঙ্গে আসে। Kalliope যে ফোল্ডারে খোঁজে, সেখানে কণ্ঠের একটি ফাইল নেই। তাই স্ট্যাটাস লাইনের পাশে লেখা থাকে ‘কণ্ঠের ফাইলগুলো পাচ্ছি না’। ইনস্টলেশনের এই সমস্যা ঠিক না করা পর্যন্ত Kalliope কথা বলতে পারবে না।"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2432,7 +2430,7 @@ msgstr "<1>‘ইনস্টল করুন’ পাতার</1> ধাপ�
 #, kalliope-markup
 msgctxt "ai.testo.24"
 msgid "<1>Preparo la voce</1>"
-msgstr "<1>কণ্ঠ তৈরি করছি</1>"
+msgstr "<1>কণ্ঠ প্রস্তুত করছি</1>"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2592,7 +2590,7 @@ msgstr "Esc বা ‘থামান’ চাপলে সঙ্গে সঙ�
 #, kalliope-markup
 msgctxt "ai.testo.47"
 msgid "<1>Nessuno ti sente</1>"
-msgstr "<1>কেউ আপনাকে শুনতে পাচ্ছেন না</1>"
+msgstr "<1>কেউ শুনতে পাচ্ছেন না</1>"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2626,7 +2624,7 @@ msgstr "মিটিংয়ের অ্যাপে মাইক্রোফ�
 #, kalliope-markup
 msgctxt "ai.testo.52"
 msgid "<1>Attenzione</1>"
-msgstr "<1>খেয়াল করুন</1>"
+msgstr "<1>সতর্কতা</1>"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2635,11 +2633,10 @@ msgid "Cosa significa"
 msgstr "এর মানে কী"
 
 #: riunione/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …», «Errore della voce: …» o «Non riesco a cambiare voce: …»."
+#, kalliope-markup
 msgctxt "ai.testo.54"
 msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …» o «Non sono riuscita a dire questa frase: …»."
-msgstr "প্রোগ্রামে বা কণ্ঠের ফাইলে সমস্যা হয়েছে। পাশে ‘কণ্ঠ প্রস্তুত করতে পারছি না: …’, ‘কণ্ঠে সমস্যা: …’ বা ‘কণ্ঠ বদলাতে পারছি না: …’ গোছের একটি বার্তা দেখা যায়।"
+msgstr "প্রোগ্রামে বা কণ্ঠের ফাইলে সমস্যা হয়েছে। স্ট্যাটাস লাইনের পাশে ‘কণ্ঠ প্রস্তুত করতে পারছি না: …’ বা ‘কথাটি বলতে পারিনি: …’ লেখা থাকতে পারে।"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2704,7 +2701,7 @@ msgstr "উইন্ডোতে ‘প্রস্তুত’ দেখাল�
 #, kalliope-markup
 msgctxt "ai.testo.61"
 msgid "«Nessuno ti sente», o gli altri non ti sentono"
-msgstr "‘কেউ আপনাকে শুনতে পাচ্ছেন না’ দেখাচ্ছে বা অন্যরা আপনার কথা শুনতে পাচ্ছেন না"
+msgstr "‘কেউ শুনতে পাচ্ছেন না’ দেখাচ্ছে বা অন্যরা আপনার কথা শুনতে পাচ্ছেন না"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2730,7 +2727,7 @@ msgstr "মিটিংয়ের অ্যাপ খোলার পরে Ka
 #, kalliope-markup
 msgctxt "ai.testo.63"
 msgid "«Senti anche tu la voce» fa sentire la voce a te, non all'app. Per essere sicuro, segui i tre controlli della <1>pagina In riunione</1>."
-msgstr "‘নিজেও কণ্ঠ শুনুন’ চালু করলে আপনি শুনতে পাবেন। এতে অ্যাপে কণ্ঠ পৌঁছায় না। নিশ্চিত হতে <1>‘মিটিংয়ে’ পাতায়</1> দেওয়া তিনটি উপায়ে পরীক্ষা করুন।"
+msgstr "‘নিজেও কণ্ঠ শুনুন’ চালু করলে আপনার স্পিকারে কণ্ঠ শোনা যায়। মিটিংয়ের অ্যাপ সেই কণ্ঠ পাচ্ছে কি না জানতে <1>‘মিটিংয়ে’ পাতায়</1> দেওয়া তিনটি উপায়ে পরীক্ষা করুন।"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2926,7 +2923,7 @@ msgstr "আপনার লেখা বাক্যটি Kalliope মিটি
 #, kalliope-markup
 msgctxt "st.apertura.per-chi"
 msgid "Per chi è, e per chi no"
-msgstr "কাদের কাজে আসতে পারে"
+msgstr "কাদের কাজে আসতে পারে, কাদের না-ও পারে"
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <span class="freccia" aria-hidden="true">
@@ -3000,7 +2997,7 @@ msgstr "নতুন উইন্ডোসহ প্রোগ্রামটি�
 #, kalliope-markup
 msgctxt "st.anello.installa"
 msgid "Si installa"
-msgstr "ইনস্টল করা"
+msgstr "ইনস্টল হয়"
 
 #. Attribute «aria-label» of an element of the page: plain text, no tags.
 #: stato/index.html
@@ -3102,7 +3099,7 @@ msgstr "প্রথম বাক্য তৈরি হলেই কণ্ঠ�
 #, kalliope-markup
 msgctxt "st.voce.forse"
 msgid "Quanto dura «Preparo la voce…» a ogni avvio: <1>non misurato</1>."
-msgstr "প্রতিবার খোলার পর ‘কণ্ঠ তৈরি করছি…’ কতক্ষণ দেখা যায়: <1>মাপা হয়নি</1>।"
+msgstr "প্রতিবার খোলার পর ‘কণ্ঠ প্রস্তুত করছি…’ কতক্ষণ দেখা যায়: <1>মাপা হয়নি</1>।"
 
 #: stato/index.html
 #, kalliope-markup
@@ -3203,7 +3200,7 @@ msgstr "GitHub-এ আপনার অভিজ্ঞতা জানান (অ
 #, kalliope-markup
 msgctxt "st.per-chi.titolo"
 msgid "Per chi è, e per chi no."
-msgstr "কাদের কাজে আসতে পারে"
+msgstr "কাদের কাজে আসতে পারে, কাদের না-ও পারে"
 
 #: stato/index.html
 #, kalliope-markup
@@ -3291,7 +3288,7 @@ msgstr "এখন যায় না। Giulia আর Marco-র মধ্যে
 #, kalliope-markup
 msgctxt "st.d.voce.personale"
 msgid "Sì, dentro il programma: in «Altro», «Crea la tua voce». La registri dal microfono, leggendo un testo di circa dodici secondi, oppure importi una vecchia registrazione (WAV, FLAC, MP3, OGG, M4A, o un messaggio vocale di WhatsApp o Telegram, anche dentro un video). Scegli il pezzo più chiaro, le dai un nome e confermi che è la tua voce, o che chi parla ti ha dato il permesso. La voce si crea su questo computer; la trovi accanto a Giulia e Marco. Il programma parla in italiano."
-msgstr "হ্যাঁ, প্রোগ্রামের মধ্যেই পারেন। ‘আরও’ মেনুতে ‘নিজের কণ্ঠ তৈরি করুন’ বেছে নিন। মাইক্রোফোনে প্রায় বারো সেকেন্ড লেখা পড়ে রেকর্ড করুন বা পুরোনো রেকর্ডিং আমদানি করুন। WAV, FLAC, MP3, OGG, M4A বা WhatsApp কিংবা Telegram-এর ভয়েস মেসেজ ব্যবহার করতে পারেন। ভিডিওর ভেতরে থাকা কণ্ঠও চলবে। সবচেয়ে স্পষ্ট অংশটি বেছে নিয়ে কণ্ঠের নাম দিন। নিশ্চিত করুন যে কণ্ঠটি আপনার, অথবা যাঁর কণ্ঠ তিনি অনুমতি দিয়েছেন। কণ্ঠ আপনার কম্পিউটারেই তৈরি হয়। Giulia আর Marco-র পাশে সেটি পাবেন। প্রোগ্রামটি শুধু ইতালীয় ভাষায় কথা বলে।"
+msgstr "হ্যাঁ, প্রোগ্রামের মধ্যেই পারেন। ‘আরও’ মেনুতে ‘নিজের কণ্ঠ তৈরি করুন’ বেছে নিন। মাইক্রোফোনে প্রায় বারো সেকেন্ড লেখা পড়ে রেকর্ড করুন বা পুরোনো রেকর্ডিং ফাইল থেকে নিন। WAV, FLAC, MP3, OGG, M4A বা WhatsApp কিংবা Telegram-এর ভয়েস মেসেজ ব্যবহার করতে পারেন। ভিডিওর ভেতরে থাকা কণ্ঠও চলবে। সবচেয়ে স্পষ্ট অংশটি বেছে নিয়ে কণ্ঠের নাম দিন। নিশ্চিত করুন যে কণ্ঠটি আপনার, অথবা যাঁর কণ্ঠ তিনি অনুমতি দিয়েছেন। কণ্ঠ আপনার কম্পিউটারেই তৈরি হয়। Giulia আর Marco-র পাশে সেটি পাবেন। প্রোগ্রামটি শুধু ইতালীয় ভাষায় কথা বলে।"
 
 #: stato/index.html
 #, kalliope-markup
@@ -3628,7 +3625,7 @@ msgstr "উত্তর: {domanda}"
 #, kalliope-slint
 msgctxt "programma.finestra.preparo-la-voce"
 msgid "Preparo la voce…"
-msgstr "কণ্ঠ তৈরি করছি…"
+msgstr "কণ্ঠ প্রস্তুত করছি…"
 
 #. A small button next to a problem (nobody hears you, no microphone, the voice does not start): it opens the page of the website that explains what to do. Two or three words.
 #: crates/app/ui/kalliope/avvisi.slint crates/app/ui/kalliope/finestra.slint
@@ -3742,7 +3739,7 @@ msgstr "সাহায্য"
 #, kalliope-slint
 msgctxt "programma.finestra.intera"
 msgid "Intera"
-msgstr "পুরো উইন্ডো"
+msgstr "ফিরুন"
 
 #. In the compact meeting window, the button that goes back to the full window.
 #: crates/app/ui/kalliope/finestra.slint
@@ -3866,7 +3863,7 @@ msgstr "মুছুন"
 #, kalliope-slint
 msgctxt "programma.menu.uso"
 msgid "in uso"
-msgstr "চালু আছে"
+msgstr "চালু"
 
 #: crates/app/ui/kalliope/modali.slint
 #, kalliope-slint
@@ -4009,7 +4006,7 @@ msgstr "নতুন কণ্ঠ"
 #, kalliope-slint
 msgctxt "programma.stato.preparo-la-voce"
 msgid "Preparo la voce"
-msgstr "কণ্ঠ তৈরি করছি"
+msgstr "কণ্ঠ প্রস্তুত করছি"
 
 #. The name of the state when the voice is ready to speak. One word; it refers to the voice (feminine in Italian).
 #: crates/app/ui/kalliope/stato.slint
@@ -4030,7 +4027,7 @@ msgstr "কথা বলছি"
 #, kalliope-slint
 msgctxt "programma.stato.nessuno-ti-sente"
 msgid "Nessuno ti sente"
-msgstr "কেউ আপনাকে শুনতে পাচ্ছেন না"
+msgstr "কেউ শুনতে পাচ্ছেন না"
 
 #. The name of the state when the virtual microphone «Kalliope» could not be created. Short.
 #: crates/app/ui/kalliope/stato.slint
@@ -4051,7 +4048,7 @@ msgstr "কণ্ঠ চালু হচ্ছে না"
 #, kalliope-slint
 msgctxt "programma.stato.attenzione"
 msgid "Attenzione"
-msgstr "খেয়াল করুন"
+msgstr "সতর্কতা"
 
 #. What the status line says while the voice loads.
 #: crates/app/ui/kalliope/stato.slint
@@ -4079,14 +4076,14 @@ msgstr "Esc চাপলে থামবে।"
 #, kalliope-slint
 msgctxt "programma.crea.passo-scegli"
 msgid "Registra o importa"
-msgstr "রেকর্ড বা আমদানি করুন"
+msgstr "রেকর্ড করুন বা ফাইল নিন"
 
 #. The name of the second step: the person reads a text aloud. Short.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.passo-leggi"
 msgid "Leggi ad alta voce"
-msgstr "জোরে পড়ুন"
+msgstr "পড়ে শোনান"
 
 #. The name of the third step: listen to the voice and give it a name. Short.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4151,7 +4148,7 @@ msgstr "‘{}’ পড়ছি…"
 #, kalliope-slint
 msgctxt "programma.crea.cerco-parte-cui-si"
 msgid "Cerco la parte in cui si sente meglio la voce."
-msgstr "কোন অংশে কণ্ঠ সবচেয়ে স্পষ্ট, খুঁজে দেখছি।"
+msgstr "কোন অংশে কণ্ঠ সবচেয়ে স্পষ্ট, তা খুঁজছি।"
 
 #. A small line over the first choice: this way is for a person who can still speak.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4165,13 +4162,13 @@ msgstr "এখনও কথা বলতে পারলে"
 #, kalliope-slint
 msgctxt "programma.crea.registrala-adesso"
 msgid "Registrala adesso"
-msgstr "এখনই রেকর্ড করুন"
+msgstr "এখনই রেকর্ড"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.istruzioni-registra"
 msgid "Leggi ad alta voce un breve testo. Bastano dodici secondi di voce chiara, meglio finché la voce è forte."
-msgstr "একটু লেখা জোরে পড়ুন। বারো সেকেন্ড স্পষ্ট কণ্ঠ শোনা গেলেই হবে। গলার জোর থাকতে থাকতে রেকর্ড করলে ভালো।"
+msgstr "ছোট্ট একটি লেখা পড়ে শোনান। বারো সেকেন্ড স্পষ্ট কথা হলেই চলবে। গলার জোর থাকতেই রেকর্ড করলে ভালো।"
 
 #. A small line over the second choice: this way is for a person who can no longer speak.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4185,7 +4182,7 @@ msgstr "এখন আর কথা বলতে না পারলে"
 #, kalliope-slint
 msgctxt "programma.crea.usa-vecchie-registrazioni"
 msgid "Usa vecchie registrazioni"
-msgstr "পুরোনো রেকর্ডিং ব্যবহার করুন"
+msgstr "আগের রেকর্ডিং নিন"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4231,7 +4228,7 @@ msgstr "রেকর্ডিং পরীক্ষা করছি…"
 #, kalliope-slint
 msgctxt "programma.crea.premi-tondo-leggi"
 msgid "Premi il tondo e leggi"
-msgstr "গোল বোতামটি চেপে পড়ুন"
+msgstr "গোল বোতাম চেপে পড়ুন"
 
 #. While the voice is recorded: {0} is the time recorded so far («3,2 s»); {n} is how many whole seconds of clear voice are still needed
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4240,8 +4237,8 @@ msgstr "গোল বোতামটি চেপে পড়ুন"
 msgctxt "programma.crea.mancano"
 msgid "{0} · ne manca {n}"
 msgid_plural "{0} · ne mancano {n}"
-msgstr[0] "{0} · আরও {n} সেকেন্ড চাই"
-msgstr[1] "{0} · আরও {n} সেকেন্ড চাই"
+msgstr[0] "{0} · বাকি {n}"
+msgstr[1] "{0} · বাকি {n}"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4253,21 +4250,21 @@ msgstr "এতেই হবে। থামাতে আবার চাপু�
 #, kalliope-slint
 msgctxt "programma.crea.ne-bastano-dodici-secondi"
 msgid "Ne bastano dodici secondi di voce: il cerchio si riempie. Il livello si muove con la tua voce."
-msgstr "বারো সেকেন্ড কথা বললেই বৃত্তটি ভরে যাবে। বলার সময় সূচকটি দেখে বুঝবেন আওয়াজ কতটা জোরে আসছে।"
+msgstr "বারো সেকেন্ড কথা বললেই বৃত্তটি ভরে যাবে। আপনার গলার আওয়াজে দাগগুলো ওঠানামা করবে।"
 
 #. A button that stops playing the recording.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ferma-ascolto"
 msgid "Ferma l'ascolto"
-msgstr "শোনা থামান"
+msgstr "থামান"
 
 #. A button that plays the recording just made.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ascolta-registrazione"
 msgid "Ascolta la registrazione"
-msgstr "রেকর্ডিং শুনুন"
+msgstr "শুনুন"
 
 #. A button that throws the recording away to record again. A verb, short.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4298,7 +4295,7 @@ msgstr "‘{}’ কণ্ঠ তৈরি করছি…"
 #, kalliope-slint
 msgctxt "programma.crea.ci-vuole-poco-quando"
 msgid "Ci vuole poco. Quando è pronta la scegli da sola."
-msgstr "বেশি সময় লাগবে না। তৈরি হলেই এই কণ্ঠটি নিজে থেকে চালু হবে।"
+msgstr "একটু পরেই তৈরি হবে। তখন এই কণ্ঠেই কথা শোনা যাবে।"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4330,7 +4327,7 @@ msgstr "এটা আমার কণ্ঠ, অথবা যাঁর কণ্
 #, kalliope-slint
 msgctxt "programma.crea.ciao-sono-io-questa"
 msgid "Ciao, sono io. Questa è la mia voce, per le riunioni e per le persone a cui voglio bene. La leggo con calma, come parlo ogni giorno."
-msgstr "হ্যালো, এই যে আমি। এটাই আমার কণ্ঠ। এই কণ্ঠে মিটিংয়ে কথা বলি, প্রিয় মানুষদের সঙ্গেও কথা বলি। প্রতিদিন যেভাবে কথা বলি, সেভাবেই ধীরেসুস্থে পড়ছি।"
+msgstr "হ্যালো, এই যে আমি। এটাই আমার কণ্ঠ। মিটিংয়ে আর প্রিয়জনদের সঙ্গে এই কণ্ঠেই কথা বলি। রোজ যেভাবে কথা বলি, সেভাবেই ধীরেসুস্থে পড়ছি।"
 
 #. A button at the top of the steps of creating a voice: it leaves them and goes back to the main window, where the person writes the sentences to say. It means «back to writing», not «write again».
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4344,14 +4341,14 @@ msgstr "লেখায় ফিরুন"
 #, kalliope-slint
 msgctxt "programma.crea.titolo-scegli"
 msgid "Come vuoi creare la tua voce?"
-msgstr "নিজের কণ্ঠ কীভাবে তৈরি করতে চান?"
+msgstr "নিজের কণ্ঠ কীভাবে বানাবেন?"
 
 #. The title of the step where the person reads a text aloud, calmly.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.titolo-leggi"
 msgid "Leggi ad alta voce, con calma"
-msgstr "ধীরেসুস্থে জোরে পড়ুন"
+msgstr "ধীরেসুস্থে পড়ে শোনান"
 
 #. The title of the last step: listen to the voice and give it a name («la» is the voice).
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4376,7 +4373,7 @@ msgstr "একটি নাম দিন।"
 #, kalliope-slint
 msgctxt "programma.crea.manca-permesso-spunta-casella"
 msgid "Manca il permesso: spunta la casella."
-msgstr "অনুমতি দিতে ঘরটিতে টিক দিন।"
+msgstr "অনুমতি আছে জানাতে ঘরটিতে টিক দিন।"
 
 #. The last button of the steps: it creates the voice with the name given.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4390,7 +4387,7 @@ msgstr "কণ্ঠ তৈরি করুন"
 #, kalliope-rust
 msgctxt "programma.audio.casse"
 msgid "Attenzione: non riesco a farti sentire la voce dalle casse."
-msgstr "খেয়াল করুন: স্পিকারে আপনাকে কণ্ঠ শোনাতে পারছি না।"
+msgstr "সতর্কতা: স্পিকারে কণ্ঠ শোনাতে পারছি না।"
 
 #: crates/app/src/audio.rs
 #, kalliope-rust
@@ -4459,7 +4456,7 @@ msgstr "আওয়াজ খুব জোরে আসছে। মাইক�
 #, kalliope-rust
 msgctxt "programma.crea.serve-permesso"
 msgid "Per continuare serve il permesso: spunta la casella."
-msgstr "এগিয়ে যেতে আপনার অনুমতি চাই। ঘরটিতে টিক দিন।"
+msgstr "এগোতে হলে অনুমতি থাকতে হবে। তা জানাতে ঘরটিতে টিক দিন।"
 
 #. The first stretch of a recording, the one where the voice is clearest: {numero} is its number
 #. Placeholders to leave as they are: {numero}
@@ -4495,7 +4492,7 @@ msgstr "ফাইল বেছে নেওয়ার উইন্ডোটি
 #, kalliope-rust
 msgctxt "programma.crea.tratto-inutilizzabile"
 msgid "Da questo tratto non si può creare la voce: scegli un altro tratto, o rifai."
-msgstr "এই অংশ থেকে কণ্ঠ তৈরি করা যাচ্ছে না। অন্য অংশ বেছে নিন বা আবার রেকর্ড করুন।"
+msgstr "এই অংশ থেকে কণ্ঠ তৈরি করা যাচ্ছে না। অন্য অংশ বেছে নিন বা আবার শুরু করুন।"
 
 #. A button: replace the existing voice that has the same name with the new one.
 #: crates/app/src/crea.rs
@@ -4587,8 +4584,8 @@ msgstr "মাইক্রোফোন চালু হয়নি। আবা
 msgctxt "programma.file.lungo"
 msgid "Il file è lungo: ho cercato la voce nel primo minuto."
 msgid_plural "Il file è lungo: ho cercato la voce nei primi {n} minuti."
-msgstr[0] "ফাইলটি দীর্ঘ। প্রথম {n} মিনিটে কোথায় কণ্ঠ শোনা যায় খুঁজে দেখেছি।"
-msgstr[1] "ফাইলটি দীর্ঘ। প্রথম {n} মিনিটে কোথায় কণ্ঠ শোনা যায় খুঁজে দেখেছি।"
+msgstr[0] "ফাইলটি বেশ লম্বা। প্রথম {n} মিনিটে কোথায় কথা আছে দেখেছি।"
+msgstr[1] "ফাইলটি বেশ লম্বা। প্রথম {n} মিনিটে কোথায় কথা আছে দেখেছি।"
 
 #. Placeholders to leave as they are: {label}
 #: crates/app/src/own_voice.rs
@@ -4646,7 +4643,7 @@ msgstr "কণ্ঠ তৈরি করতে পারিনি। আবা�
 #, kalliope-rust
 msgctxt "programma.registra.casse"
 msgid "Non riesco a farti ascoltare la registrazione dalle casse."
-msgstr "স্পিকারে আপনাকে রেকর্ডিংটি শোনাতে পারছি না।"
+msgstr "স্পিকারে রেকর্ডিংটি শোনাতে পারছি না।"
 
 #. The status line when the voice is ready; «Kalliope» is the name of the virtual microphone the person picks in the meeting
 #: crates/app/src/session.rs
@@ -4683,7 +4680,7 @@ msgstr "এই লেখায় বলার মতো কোনো শব্�
 #, kalliope-rust
 msgctxt "programma.sessione.preparo"
 msgid "Preparo la voce…"
-msgstr "কণ্ঠ তৈরি করছি…"
+msgstr "কণ্ঠ প্রস্তুত করছি…"
 
 #: crates/sample/src/analysis.rs
 #, kalliope-rust

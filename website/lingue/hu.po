@@ -278,7 +278,7 @@ msgstr "Ide írj. Enterrel felolvasom."
 #, kalliope-markup
 msgctxt "finestra.ferma"
 msgid "Ferma"
-msgstr "Leállítás"
+msgstr "Állj"
 
 #. The name of the Escape key, as it is written on the keyboard of the language.
 #: index.html installa/index.html
@@ -292,7 +292,7 @@ msgstr "Esc"
 #, kalliope-markup
 msgctxt "finestra.di"
 msgid "Di'"
-msgstr "Mondd ki"
+msgstr "Mondd"
 
 #. The name of the Enter key, as it is written on the keyboard of the language.
 #: index.html installa/index.html
@@ -440,14 +440,14 @@ msgstr "Sono d'accordo con Paola. Però la consegna del 14/3 mi sembra stretta: 
 #, kalliope-markup
 msgctxt "frase.3.detto-etichetta"
 msgid "Detto:"
-msgstr ""
+msgstr "Elhangzott:"
 
 #. What the Italian voice said: it stays in Italian, as the voice says it.
 #: index.html
 #, kalliope-markup
 msgctxt "frase.3.detto-frase"
 msgid "«Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
-msgstr ""
+msgstr "«Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
 
 #: index.html
 #, kalliope-markup
@@ -477,7 +477,7 @@ msgstr "Még nem mértük meg, mennyire érthető a hang egy valódi értekezlet
 #, kalliope-markup
 msgctxt "campioni.provenienza.testi"
 msgid "Il testo «scrivi» è quello che hai digitato. Il testo «dice» è quello che Kalliope prepara prima di parlare: cifre, date e orari diventano parole."
-msgstr "Az „Ezt írod” mellett a begépelt szöveg áll. Az „Így hangzik” mellett azt látod, hogyan készíti elő a Kalliope a szöveget a felolvasáshoz. A számokat, dátumokat és időpontokat szavakkal írja ki."
+msgstr "Az „Ezt írod” a begépelt szöveget jelöli. Az „Elhangzott:” után azt látod, hogyan olvasta fel a Kalliope. Felolvasás előtt a számokat, dátumokat és időpontokat szavakká alakítja."
 
 #: index.html
 #, kalliope-markup
@@ -664,7 +664,7 @@ msgstr "<1>A hanghoz semmit sem kell külön letöltened.</1> Benne van a csomag
 #, kalliope-markup
 msgctxt "serve.3"
 msgid "<1>Un'app di riunione</1> che ti lasci scegliere il microfono: lì scegli «Kalliope»."
-msgstr "<1>Egy értekezletekhez használható alkalmazásra</1>, amelyben kiválaszthatod a mikrofont. Itt válaszd a „Kalliope” mikrofont."
+msgstr "<1>Egy alkalmazásra az értekezlethez</1>, amelyben kiválaszthatod a mikrofont. Itt válaszd a „Kalliope” mikrofont."
 
 #: index.html
 #, kalliope-markup
@@ -1624,11 +1624,10 @@ msgstr "Nem indul a hang"
 
 #. What the window says next to the state above: the same words as the program's message programma.voce.file-mancanti.
 #: installa/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Manca la voce: in … non trovo …. Reinstalla Kalliope."
+#, kalliope-markup
 msgctxt "in.stato.voce.detto"
 msgid "Non trovo i file della voce, e senza non posso parlare. Reinstalla Kalliope dal pacchetto."
-msgstr "Nem találom a hang fájljait, így nem tudok beszélni. Telepítsd újra a Kalliope programot a csomagból."
+msgstr "Nem találom a hang fájljait. Nélkülük nem tudok beszélni. Telepítsd újra a Kalliope programot a csomagból."
 
 #: installa/index.html
 #, kalliope-markup
@@ -2031,7 +2030,7 @@ msgstr "<1>Ha nem sikerült</1>Ha a „Senki sem hall”, a „Nincs mikrofon”
 #: riunione/index.html
 msgctxt "riu.immagine.8"
 msgid "La finestra di Kalliope. In alto la barra, con il logo, il nome, la voce (Giulia), «Riunione», «Altro» e la grandezza del testo. Sotto, le frasi già dette, in bolle: l'ultima è la più chiara. Poi la riga di stato: «Pronta. Nella riunione scegli «Kalliope» come microfono.» In basso la grande bolla tratteggiata dove scrivi, con «Di'»."
-msgstr "A Kalliope ablaka. Fent a sávban a logó, a név, a hang (Giulia), az „Értekezlet” és a „Továbbiak” gomb, valamint a szövegméret gombjai látszanak. Alattuk buborékokban a kimondott mondatok. A legutóbbi a legvilágosabb. Az állapotsor szövege: Kész. Az értekezleten válaszd a „Kalliope” mikrofont. Lent a nagy, szaggatott szélű buborékba írhatsz. Mellette a „Mondd ki” gomb."
+msgstr "A Kalliope ablaka. Fent a sávban a logó, a név, a hang (Giulia), az „Értekezlet” és az „Egyéb” gomb, valamint a szövegméret gombjai látszanak. Alattuk buborékokban a kimondott mondatok. A legutóbbi a legvilágosabb. Az állapotsor szövege: Kész. Az értekezleten válaszd a „Kalliope” mikrofont. Lent a nagy, szaggatott szélű buborékba írhatsz. Mellette a „Mondd” gomb."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2278,7 +2277,7 @@ msgstr "A kimondott mondatok az írómező fölött maradnak. A legújabb van le
 #, kalliope-markup
 msgctxt "riu.scrivi.riunione"
 msgid "Per tenere Kalliope vicino alla riunione premi «Riunione»: la finestra si stringe e tiene solo lo stato, la scrittura e «Ferma». Su Wayland è il sistema a tenere una finestra sopra le altre: premi Alt+Spazio, poi «Sempre in primo piano»."
-msgstr "Ha azt szeretnéd, hogy a Kalliope elférjen az értekezlet mellett, nyomd meg az „Értekezlet” gombot. Az ablak kisebb lesz. Csak az állapotsor, az írómező és a „Leállítás” gomb marad. Waylanden a rendszer kezeli, melyik ablak maradjon felül. Használd az Alt+Szóköz billentyűparancsot, majd válaszd a „Mindig felül” menüpontot."
+msgstr "Ha azt szeretnéd, hogy a Kalliope elférjen az értekezlet mellett, nyomd meg az „Értekezlet” gombot. Az ablak kisebb lesz. Csak az állapotsor, az írómező és az „Állj” gomb marad. Waylanden a rendszer kezeli, melyik ablak maradjon felül. Használd az Alt+Szóköz billentyűparancsot, majd válaszd a „Mindig felül” menüpontot."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2308,7 +2307,7 @@ msgstr "A saját hangodon"
 #, kalliope-markup
 msgctxt "riu.voce.testo"
 msgid "In «Altro» scegli «Crea la tua voce». La registri dal microfono, leggendo un testo (bastano circa dodici secondi), oppure importi una vecchia registrazione: WAV, FLAC, MP3, OGG, M4A, o un messaggio vocale di WhatsApp o Telegram, anche dentro un video. Scegli il pezzo più chiaro, dai un nome alla voce e conferma che è la tua, o che chi parla ti ha dato il permesso."
-msgstr "A „Továbbiak” menüben válaszd a „Saját hang létrehozása” menüpontot. Olvass fel egy szöveget a mikrofonba. Körülbelül tizenkét másodperc elég. Régebbi felvételt is importálhatsz: WAV-, FLAC-, MP3-, OGG- vagy M4A-fájlt, WhatsApp- vagy Telegram-hangüzenetet, akár videóban lévő hangot is. Válaszd ki a legtisztább részletet, adj nevet a hangnak, és erősítsd meg, hogy a tiéd, vagy a beszélő engedélyt adott a használatára."
+msgstr "Az „Egyéb” menüben válaszd a „Saját hang létrehozása” menüpontot. Olvass fel egy szöveget a mikrofonba. Körülbelül tizenkét másodperc elég. Régebbi felvételt is importálhatsz: WAV-, FLAC-, MP3-, OGG- vagy M4A-fájlt, WhatsApp- vagy Telegram-hangüzenetet, akár videóban lévő hangot is. Válaszd ki a legtisztább részletet, adj nevet a hangnak, és erősítsd meg, hogy a tiéd, vagy a beszélő engedélyt adott a használatára."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2405,11 +2404,10 @@ msgid "Cosa significa"
 msgstr "Mit jelent?"
 
 #: riunione/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive quale cartella e quali file («Manca la voce: in … non trovo …»). L'installazione è rotta, e finché non è a posto la voce non può parlare."
+#, kalliope-markup
 msgctxt "ai.testo.21"
 msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive «Non trovo i file della voce». L'installazione è rotta, e finché non è a posto la voce non può parlare."
-msgstr "A hangok a csomagban vannak, de az egyik fájl nincs abban a mappában, ahol a Kalliope keresi. Az ablakban ez áll: „Nem találom a hang fájljait, így nem tudok beszélni. Telepítsd újra a Kalliope programot a csomagból.” A hiányzó fájlok és a mappa nevét a naplóban találod. Amíg a telepítés nincs rendben, a hang nem tud megszólalni."
+msgstr "A hangok a csomagban vannak, de valamelyik fájl hiányzik abból a mappából, ahol a Kalliope keresi. Az állapotsor mellett ezt látod: „Nem találom a hang fájljait”. Amíg nem javítod a telepítést, a hang nem szólal meg."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2584,7 +2582,7 @@ msgstr "Mit tegyél?"
 #, kalliope-markup
 msgctxt "ai.testo.46"
 msgid "Esc, o «Ferma», interrompe subito. Il testo che scrivi nel frattempo aspetta il suo turno."
-msgstr "Az Esc vagy a „Leállítás” gomb azonnal leállítja a beszédet. A közben beírt szöveg megvárja, amíg sorra kerül."
+msgstr "Az Esc vagy az „Állj” gomb azonnal leállítja a beszédet. A közben beírt szöveg megvárja, amíg sorra kerül."
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <q class="frase-finestra">
@@ -2635,11 +2633,10 @@ msgid "Cosa significa"
 msgstr "Mit jelent?"
 
 #: riunione/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …», «Errore della voce: …» o «Non riesco a cambiare voce: …»."
+#, kalliope-markup
 msgctxt "ai.testo.54"
 msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …» o «Non sono riuscita a dire questa frase: …»."
-msgstr "Valami nincs rendben a programmal vagy a hang fájljaival. Az állapotsor mellett ilyen üzenetek jelenhetnek meg: „Nem tudom előkészíteni a hangot: …”, „Nem sikerült kimondanom ezt a mondatot: …” vagy „A kiválasztott hang (»…«) nem indul. Ezzel folytatom: »…«.”"
+msgstr "Valami nincs rendben a programmal vagy a hang fájljaival. Az állapotsor mellett például ezt láthatod: „Nem tudom előkészíteni a hangot: …” vagy „Nem sikerült kimondanom ezt a mondatot: …”."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -3291,7 +3288,7 @@ msgstr "Egyelőre nem. Giulia és Marco hangja közül választhat. A program cs
 #, kalliope-markup
 msgctxt "st.d.voce.personale"
 msgid "Sì, dentro il programma: in «Altro», «Crea la tua voce». La registri dal microfono, leggendo un testo di circa dodici secondi, oppure importi una vecchia registrazione (WAV, FLAC, MP3, OGG, M4A, o un messaggio vocale di WhatsApp o Telegram, anche dentro un video). Scegli il pezzo più chiaro, le dai un nome e confermi che è la tua voce, o che chi parla ti ha dato il permesso. La voce si crea su questo computer; la trovi accanto a Giulia e Marco. Il programma parla in italiano."
-msgstr "Igen, közvetlenül a programban. A „Továbbiak” menüben válaszd a „Saját hang létrehozása” menüpontot. Olvass fel a mikrofonba egy körülbelül tizenkét másodperces szöveget, vagy importálj régebbi felvételt. Lehet WAV-, FLAC-, MP3-, OGG- vagy M4A-fájl, WhatsApp- vagy Telegram-hangüzenet, akár videóban lévő hang is. Válaszd ki a legtisztább részletet, adj nevet a hangnak, és erősítsd meg, hogy a tiéd, vagy a beszélő engedélyt adott a használatára. A hang ezen a gépen készül, és Giulia és Marco mellett találod majd. A program csak olaszul beszél."
+msgstr "Igen, közvetlenül a programban. Az „Egyéb” menüben válaszd a „Saját hang létrehozása” menüpontot. Olvass fel a mikrofonba egy körülbelül tizenkét másodperces szöveget, vagy importálj régebbi felvételt. Lehet WAV-, FLAC-, MP3-, OGG- vagy M4A-fájl, WhatsApp- vagy Telegram-hangüzenet, akár videóban lévő hang is. Válaszd ki a legtisztább részletet, adj nevet a hangnak, és erősítsd meg, hogy a tiéd, vagy a beszélő engedélyt adott a használatára. A hang ezen a gépen készül, és Giulia és Marco mellett találod majd. A program csak olaszul beszél."
 
 #: stato/index.html
 #, kalliope-markup
@@ -3315,7 +3312,7 @@ msgstr "Vannak benne kész mondatok vagy szimbólumok?"
 #, kalliope-markup
 msgctxt "st.d.frasi.a"
 msgid "No: niente frasi preimpostate, simboli o suggerimenti mentre scrivi. Le frasi già dette restano, anche dopo la chiusura, solo su questo computer, e si ripetono con un clic. Non è un sistema completo di comunicazione aumentativa."
-msgstr "Nincsenek előre megadott mondatok vagy szimbólumok, és írás közben sem kapsz javaslatokat. A már kimondott mondatok bezárás után is megmaradnak, de csak ezen a gépen. Egy kattintással újra elmondhatod őket. A Kalliope nem teljes körű beszédet kiegészítő kommunikációs rendszer."
+msgstr "Nincsenek előre megadott mondatok vagy szimbólumok, és írás közben sem kapsz javaslatokat. A már kimondott mondatok bezárás után is megmaradnak, de csak ezen a gépen. Egy kattintással újra elmondhatod őket. A Kalliope nem teljes körű, beszédet kiegészítő kommunikációs rendszer."
 
 #: stato/index.html
 #, kalliope-markup
@@ -3650,14 +3647,14 @@ msgstr "Mégse"
 #, kalliope-slint, python-brace-format
 msgctxt "programma.bolla.ripeti-frase"
 msgid "Ripeti: {}"
-msgstr "Ismétlés: {}"
+msgstr "Ismételd: {}"
 
 #. Shown over a sentence already said, under the pointer: a click makes the voice say it again. A verb, one word if the language allows.
 #: crates/app/ui/kalliope/bolla.slint
 #, kalliope-slint
 msgctxt "programma.bolla.ripeti"
 msgid "Ripeti"
-msgstr "Ismétlés"
+msgstr "Ismételd"
 
 #. Read aloud by a screen reader for the voice menu: {} is the name of the voice in use
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -3679,21 +3676,21 @@ msgstr "Értekezlet"
 #, kalliope-slint
 msgctxt "programma.finestra.modalita-riunione-solo-scrittura"
 msgid "Modalità riunione: solo scrittura, stato e Ferma"
-msgstr "Értekezleti mód: csak az írómező, az állapotsor és a Leállítás gomb látszik"
+msgstr "Értekezleti mód: csak az írómező, az állapotsor és az „Állj” gomb látszik"
 
 #. A button in the bar that opens a menu of more commands (create your own voice, about, clear the history). One short word, like «More» in other programs.
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.altro"
 msgid "Altro"
-msgstr "Továbbiak"
+msgstr "Egyéb"
 
 #. Read aloud by a screen reader for the «Altro» menu: say what it holds
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.altro-crea-tua-voce"
 msgid "Altro: crea la tua voce, informazioni"
-msgstr "Továbbiak: saját hang létrehozása, névjegy"
+msgstr "Egyéb: saját hang létrehozása, névjegy"
 
 #. The button that makes the text smaller: a capital A with a minus sign
 #: crates/app/ui/kalliope/finestra.slint
@@ -3859,7 +3856,7 @@ msgstr "A már kimondott mondatok törlődnek erről a gépről. Ezt nem lehet v
 #, kalliope-slint
 msgctxt "programma.finestra.svuota"
 msgid "Svuota"
-msgstr "Törlés"
+msgstr "Töröld"
 
 #. In the voice menu, next to the voice that speaks now: this one is in use. Short, lowercase.
 #: crates/app/ui/kalliope/menu.slint
@@ -3974,7 +3971,7 @@ msgstr "Enter: kimondás · Esc: leállítás"
 #, kalliope-slint
 msgctxt "programma.comune.ferma"
 msgid "Ferma"
-msgstr "Leállítás"
+msgstr "Állj"
 
 #. The name of the Escape key, shown on the stop button.
 #: crates/app/ui/kalliope/scrittura.slint
@@ -3988,7 +3985,7 @@ msgstr "Esc"
 #, kalliope-slint
 msgctxt "programma.scrittura.di"
 msgid "Di'"
-msgstr "Mondd ki"
+msgstr "Mondd"
 
 #. The name of the Enter key, shown on the button that says the sentence.
 #: crates/app/ui/kalliope/scrittura.slint
@@ -4079,21 +4076,21 @@ msgstr "Az Esc leállítja."
 #, kalliope-slint
 msgctxt "programma.crea.passo-scegli"
 msgid "Registra o importa"
-msgstr "Felvétel vagy importálás"
+msgstr "Felvétel vagy import"
 
 #. The name of the second step: the person reads a text aloud. Short.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.passo-leggi"
 msgid "Leggi ad alta voce"
-msgstr "Olvass fel"
+msgstr "Felolvasás"
 
 #. The name of the third step: listen to the voice and give it a name. Short.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.passo-nome"
 msgid "Ascolta e dai un nome"
-msgstr "Meghallgatás és névadás"
+msgstr "Lejátszás és névadás"
 
 #. Where the person is among the three steps of making a voice: {0} is the number of the step (1 to 3), {1} its name
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4101,7 +4098,7 @@ msgstr "Meghallgatás és névadás"
 #, kalliope-slint, python-brace-format
 msgctxt "programma.crea.passo"
 msgid "{} di 3 · {}"
-msgstr "{}. lépés a 3-ból · {}"
+msgstr "{}/3 · {}"
 
 #. The same round button while it records: it stops recording.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4115,14 +4112,14 @@ msgstr "Felvétel leállítása"
 #, kalliope-slint
 msgctxt "programma.crea.registra"
 msgid "Registra"
-msgstr "Felvétel"
+msgstr "Felvétel indítása"
 
 #. A button that plays a recording or a stretch of one. A verb.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ascolta"
 msgid "Ascolta"
-msgstr "Meghallgatás"
+msgstr "Hallgasd meg"
 
 #. Read aloud by a screen reader: {} is the name of the stretch
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4137,7 +4134,7 @@ msgstr "Lejátszás leállítása: {}"
 #, kalliope-slint, python-brace-format
 msgctxt "programma.crea.ascolta-tratto"
 msgid "Ascolta {}"
-msgstr "Meghallgatás: {}"
+msgstr "Hallgasd meg: {}"
 
 #. While a file is read: {} is the name of the file
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4145,7 +4142,7 @@ msgstr "Meghallgatás: {}"
 #, kalliope-slint, python-brace-format
 msgctxt "programma.crea.leggo"
 msgid "Leggo «{}»…"
-msgstr "Fájl beolvasása: „{}”…"
+msgstr "Beolvasom: „{}”…"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4165,20 +4162,20 @@ msgstr "Ha még tudsz beszélni"
 #, kalliope-slint
 msgctxt "programma.crea.registrala-adesso"
 msgid "Registrala adesso"
-msgstr "Vedd fel most a hangod"
+msgstr "Vedd fel most"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.istruzioni-registra"
 msgid "Leggi ad alta voce un breve testo. Bastano dodici secondi di voce chiara, meglio finché la voce è forte."
-msgstr "Olvass fel egy rövid szöveget. Tizenkét másodpercnyi tiszta beszéd elég. Érdemes addig felvenned, amíg erős a hangod."
+msgstr "Olvass fel egy rövid szöveget. Elég tizenkét másodperc tiszta beszéd. Érdemes addig felvenned, amíg erős a hangod."
 
 #. A small line over the second choice: this way is for a person who can no longer speak.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.se-voce-non-c"
 msgid "Se la voce non c'è più"
-msgstr "Ha már nincs hangod"
+msgstr "Ha már nem tudsz beszélni"
 
 #. The second choice: create the voice from recordings made before (voice messages, videos). A title.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4205,7 +4202,7 @@ msgstr "Keress egy csendes szobát. Ha van mikrofonos fejhallgatód, használd a
 #, kalliope-slint, python-brace-format
 msgctxt "programma.crea.secondi"
 msgid "{} s"
-msgstr "{} mp"
+msgstr "{} s"
 
 #. A label over the menu where the person picks the microphone to record with.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4240,41 +4237,41 @@ msgstr "Nyomd meg a kört, és olvass fel"
 msgctxt "programma.crea.mancano"
 msgid "{0} · ne manca {n}"
 msgid_plural "{0} · ne mancano {n}"
-msgstr[0] "{0} · még {n} mp kell"
-msgstr[1] "{0} · még {n} mp kell"
+msgstr[0] "{0} · még {n} s"
+msgstr[1] "{0} · még {n} s"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.basta-cosi-premi-nuovo"
 msgid "Basta così: premi di nuovo per fermare."
-msgstr "Ennyi elég. Nyomd meg újra a gombot a leállításhoz."
+msgstr "Ennyi elég. A leállításhoz nyomd meg újra a kört."
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ne-bastano-dodici-secondi"
 msgid "Ne bastano dodici secondi di voce: il cerchio si riempie. Il livello si muove con la tua voce."
-msgstr "Tizenkét másodpercnyi beszéd elég. Közben megtelik a kör. A szintjelző követi a hangod erejét."
+msgstr "12 másodperc beszéd elég. Közben megtelik a kör. A jelző a hangerőt mutatja."
 
 #. A button that stops playing the recording.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ferma-ascolto"
 msgid "Ferma l'ascolto"
-msgstr "Lejátszás leállítása"
+msgstr "Állj"
 
 #. A button that plays the recording just made.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ascolta-registrazione"
 msgid "Ascolta la registrazione"
-msgstr "Felvétel meghallgatása"
+msgstr "Hallgasd meg"
 
 #. A button that throws the recording away to record again. A verb, short.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.rifai"
 msgid "Rifai"
-msgstr "Újra"
+msgstr "Kezdd újra"
 
 #. After a recording is read: {n} is how many stretches with a voice were found
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4283,8 +4280,8 @@ msgstr "Újra"
 msgctxt "programma.crea.trovati-tratti"
 msgid "Ho trovato {n} tratto in cui si sente la voce. Ascolta e scegli."
 msgid_plural "Ho trovato {n} tratti in cui si sente la voce. Ascolta e scegli."
-msgstr[0] "{n} részletben találtam beszédet. Hallgasd meg, és döntsd el, ezt választod-e."
-msgstr[1] "{n} részletben találtam beszédet. Hallgasd meg őket, és válassz."
+msgstr[0] "{n} részletben hallok beszédet. Hallgasd meg, és válaszd ki, ha megfelel."
+msgstr[1] "{n} részletben hallok beszédet. Hallgasd meg őket, és válassz."
 
 #. While a voice is made: {} is the name the person gave it
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4292,13 +4289,13 @@ msgstr[1] "{n} részletben találtam beszédet. Hallgasd meg őket, és válassz
 #, kalliope-slint, python-brace-format
 msgctxt "programma.crea.creo-voce"
 msgid "Creo la voce «{}»…"
-msgstr "Létrehozom a hangot: „{}”…"
+msgstr "Készítem a hangot: „{}”…"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ci-vuole-poco-quando"
 msgid "Ci vuole poco. Quando è pronta la scegli da sola."
-msgstr "Mindjárt kész. Ha elkészült, automatikusan ez a hang szólal meg."
+msgstr "Mindjárt kész. Ha elkészült, automatikusan erre a hangra váltok."
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4330,7 +4327,7 @@ msgstr "Ez a saját hangom, vagy a beszélő engedélyt adott rá, hogy használ
 #, kalliope-slint
 msgctxt "programma.crea.ciao-sono-io-questa"
 msgid "Ciao, sono io. Questa è la mia voce, per le riunioni e per le persone a cui voglio bene. La leggo con calma, come parlo ogni giorno."
-msgstr "Szia, én vagyok. Ez az én hangom. Ezen a hangon szólalok meg az értekezleteken, és így beszélek azokkal is, akiket szeretek. Nyugodtan olvasok, ahogy máskor is beszélek."
+msgstr "Szia, én vagyok. Ez az én hangom. Így szólalok meg az értekezleteken, és így beszélgetek azokkal, akiket szeretek. Nyugodtan olvasok, ahogy máskor beszélek."
 
 #. A button at the top of the steps of creating a voice: it leaves them and goes back to the main window, where the person writes the sentences to say. It means «back to writing», not «write again».
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4344,7 +4341,7 @@ msgstr "Vissza az íráshoz"
 #, kalliope-slint
 msgctxt "programma.crea.titolo-scegli"
 msgid "Come vuoi creare la tua voce?"
-msgstr "Hogyan szeretnéd létrehozni a hangod?"
+msgstr "Hogyan készüljön a hangod?"
 
 #. The title of the step where the person reads a text aloud, calmly.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4364,7 +4361,7 @@ msgstr "Hallgasd meg és nevezd el"
 #, kalliope-slint
 msgctxt "programma.crea.questa-registrazione-non-si"
 msgid "Da questa registrazione non si può creare la voce: rifai."
-msgstr "Ebből a felvételből nem készíthető hang. Próbáld újra."
+msgstr "Ebből a felvételből nem készíthető hang. Kezdd újra."
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4420,7 +4417,7 @@ msgstr "A hang készen áll, de a „Kalliope” mikrofont nem sikerült megnyit
 #, kalliope-rust
 msgctxt "programma.voce.file-mancanti"
 msgid "Non trovo i file della voce, e senza non posso parlare. Reinstalla Kalliope dal pacchetto."
-msgstr "Nem találom a hang fájljait, így nem tudok beszélni. Telepítsd újra a Kalliope programot a csomagból."
+msgstr "Nem találom a hang fájljait. Nélkülük nem tudok beszélni. Telepítsd újra a Kalliope programot a csomagból."
 
 #. The title of the system's window for choosing an audio or video file
 #: crates/app/src/collega.rs
@@ -4447,7 +4444,7 @@ msgstr "Minden fájl"
 #, kalliope-rust
 msgctxt "programma.crea.non-ti-sento"
 msgid "Non ti sento. Avvicinati al microfono, controlla che non sia spento, o scegline un altro."
-msgstr "Nem hallak. Menj közelebb a mikrofonhoz, nézd meg, be van-e kapcsolva, vagy válassz másik mikrofont."
+msgstr "Nem hallak. Hajolj közelebb a mikrofonhoz, nézd meg, be van-e kapcsolva, vagy válassz másikat."
 
 #: crates/app/src/crea.rs
 #, kalliope-rust
@@ -4467,7 +4464,7 @@ msgstr "A folytatáshoz engedély kell. Jelöld be a négyzetet."
 #, kalliope-rust, python-brace-format
 msgctxt "programma.crea.tratto-chiaro"
 msgid "Tratto {numero} · il più chiaro"
-msgstr "{numero}. részlet · a legtisztább"
+msgstr "{numero}. részlet · a legtisztább"
 
 #. The name of a stretch of an imported recording where a voice was found, numbered: «Stretch 2». {numero} is the number.
 #. Placeholders to leave as they are: {numero}
@@ -4483,7 +4480,7 @@ msgstr "{numero}. részlet"
 #, kalliope-rust, python-brace-format
 msgctxt "programma.crea.tratto-dettaglio"
 msgid "da {inizio} a {fine} · {secondi} s di voce"
-msgstr "{inizio}–{fine} · {secondi} mp beszéd"
+msgstr "{inizio}–{fine} · {secondi} s beszéd"
 
 #: crates/app/src/crea.rs
 #, kalliope-rust
@@ -4695,13 +4692,13 @@ msgstr "Nem hallok beszédet, csak csendet, zajt vagy zenét. Készíts új felv
 #, kalliope-rust
 msgctxt "programma.analisi.troppo-poco-parlato"
 msgid "C'è troppo poco parlato: servono almeno 4 secondi di voce, meglio 12. Registra ancora un po', o scegli un file più lungo."
-msgstr "Túl kevés a beszéd. Legalább 4 másodpercnyi kell, de 12 még jobb. Vegyél fel még egy kicsit, vagy válassz hosszabb fájlt."
+msgstr "Túl kevés a beszéd. Legalább 4 másodperc kell, de 12 még jobb. Készíts hosszabb felvételt, vagy válassz hosszabb fájlt."
 
 #: crates/sample/src/analysis.rs
 #, kalliope-rust
 msgctxt "programma.analisi.parlato-breve"
 msgid "La voce si può creare, ma con 12 secondi di parlato somiglierebbe di più alla persona."
-msgstr "Ebből már készülhet hang. Ha van 12 másodpercnyi beszéd a felvételen, jobban hasonlít majd a beszélőre."
+msgstr "Ebből már készülhet hang. Ha a felvételen van 12 másodpercnyi beszéd, a hang jobban hasonlít majd a beszélő hangjára."
 
 #: crates/sample/src/analysis.rs
 #, kalliope-rust

@@ -50,7 +50,7 @@ msgstr "找不到<1/>这个页面"
 #, kalliope-markup
 msgctxt "nf.spiegazione"
 msgid "L'indirizzo potrebbe essere cambiato. Riparti dalla pagina iniziale, oppure cerca la frase che vedi in Kalliope."
-msgstr "地址可能变了。你可以从首页重新开始，也可以搜索 Kalliope 显示的那句话。"
+msgstr "网址可能变了。你可以返回首页，或搜索 Kalliope 窗口里显示的那句话。"
 
 #: 404.html
 #, kalliope-markup
@@ -117,7 +117,7 @@ msgstr "Kalliope · 一起开会，平等发言"
 #: index.html
 msgctxt "pagina.descrizione"
 msgid "Kalliope è un programma per il computer, per chi non può parlare o fa fatica: scrivi una frase, premi Invio, e nella riunione gli altri la sentono con una voce italiana naturale."
-msgstr "Kalliope 是一款电脑程序，适合无法说话或说话有困难的人。用意大利语写一句话，按回车，会议里的其他人就能听到一个自然的声音读出你的话。"
+msgstr "Kalliope 是一款电脑程序，适合无法说话或说话有困难的人。打下一句意大利语，按回车，Kalliope 就会用自然的声音读给会上其他人听。"
 
 #. Attribute «aria-label» of an element of the page: plain text, no tags.
 #: index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
@@ -219,7 +219,7 @@ msgstr "Il preventivo è di <1>1.250 € +</1> IVA, valido fino al <2>31 dicembr
 #, kalliope-markup
 msgctxt "riunione.tu-lungo"
 msgid "Tu<1> · microfono «Kalliope»</1>"
-msgstr "你<1> · 麦克风“Kalliope”</1>"
+msgstr "你<1> · “Kalliope”麦克风</1>"
 
 #: index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
 #, kalliope-markup
@@ -401,7 +401,7 @@ msgstr "你"
 #: index.html
 msgctxt "riunione.tu-microfono"
 msgid "· microfono «Kalliope»"
-msgstr "· 麦克风“Kalliope”"
+msgstr "· “Kalliope”麦克风"
 
 #: index.html non-ancora/index.html riunione/index.html
 #, kalliope-markup
@@ -440,14 +440,14 @@ msgstr "Sono d'accordo con Paola. Però la consegna del 14/3 mi sembra stretta: 
 #, kalliope-markup
 msgctxt "frase.3.detto-etichetta"
 msgid "Detto:"
-msgstr ""
+msgstr "读作："
 
 #. What the Italian voice said: it stays in Italian, as the voice says it.
 #: index.html
 #, kalliope-markup
 msgctxt "frase.3.detto-frase"
 msgid "«Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
-msgstr ""
+msgstr "«Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
 
 #: index.html
 #, kalliope-markup
@@ -513,7 +513,7 @@ msgstr "电脑生成声音"
 #, kalliope-markup
 msgctxt "strada.tappa.3"
 msgid "Microfono «Kalliope»"
-msgstr "麦克风“Kalliope”"
+msgstr "“Kalliope”麦克风"
 
 #: index.html non-ancora/index.html
 #, kalliope-markup
@@ -893,7 +893,7 @@ msgstr "在 Linux 上安装 Kalliope：复制命令，逐步确认安装结果"
 #: installa/index.html
 msgctxt "in.descrizione"
 msgid "Come installare Kalliope su Debian, Ubuntu, Fedora, Arch e le altre distribuzioni Linux: il file giusto, il controllo dell'impronta, il comando da copiare, la voce, e il microfono «Kalliope» nell'app della riunione."
-msgstr "在 Debian、Ubuntu、Fedora、Arch 和其他 Linux 发行版上安装 Kalliope。选对文件，核对校验值，复制安装命令，准备好声音，再到会议应用中选择“Kalliope”麦克风。"
+msgstr "在 Debian、Ubuntu、Fedora、Arch 和其他 Linux 发行版上安装 Kalliope：选对文件，核对校验值，复制安装命令，确认声音已就绪，再到会议应用中选择“Kalliope”麦克风。"
 
 #. Three lines, one under the other: install Kalliope; every step can be seen to succeed.
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
@@ -1041,7 +1041,7 @@ msgstr "你<1> · 没有声音</1>"
 #, kalliope-markup
 msgctxt "st.tu-voce"
 msgid "Tu<1> · microfono «Kalliope»</1>"
-msgstr "你<1> · 麦克风“Kalliope”</1>"
+msgstr "你<1> · “Kalliope”麦克风</1>"
 
 #: installa/index.html
 #, kalliope-markup
@@ -1079,7 +1079,7 @@ msgstr "下载"
 #, kalliope-markup
 msgctxt "in.file.scarica.arch"
 msgid "Per Arch non c'è un file da scaricare qui: la ricetta lo fa da sola, al passo «Installa». Puoi <1>leggerla prima</1>."
-msgstr "Arch 用户无需在这里下载文件。运行安装命令时，构建脚本会自动下载。你可以<1>先看看脚本的内容</1>。"
+msgstr "Arch 用户无需在这里下载文件。到了安装这一步，构建脚本会自动下载。你可以<1>先看看脚本的内容</1>。"
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <strong>
@@ -1201,7 +1201,7 @@ msgstr "运行一条命令，菜单中就有 Kalliope 了"
 #, kalliope-markup
 msgctxt "in.installa.voce-non-parte"
 msgid "<1>La finestra dice «La voce non parte»?</1> I file della voce mancano o sono rovinati: installa di nuovo Kalliope con il comando qui sotto, poi riaprila."
-msgstr "<1>窗口显示“声音启动失败”？</1>声音文件可能缺失或损坏。用下面的命令重新安装 Kalliope，再打开程序。"
+msgstr "<1>窗口显示“语音启动失败”？</1>语音文件可能缺失或损坏。用下面的命令重新安装 Kalliope，再打开程序。"
 
 #: installa/index.html
 #, kalliope-markup
@@ -1355,7 +1355,7 @@ msgstr "解决方法"
 #, kalliope-markup
 msgctxt "finestra.segnaposto.errore"
 msgid "La voce non parte: guarda qui sopra."
-msgstr "声音启动失败，请看上方提示。"
+msgstr "语音启动失败，请看上方提示。"
 
 #: installa/index.html
 #, kalliope-markup
@@ -1399,19 +1399,19 @@ msgstr "如果状态栏显示别的提示"
 #, kalliope-markup
 msgctxt "in.frasi.voce.frase"
 msgid "«La voce non parte»"
-msgstr "“声音启动失败”"
+msgstr "“语音启动失败”"
 
 #: installa/index.html
 #, kalliope-markup
 msgctxt "in.frasi.voce.rimedio"
 msgid "Un file delle voci non è dove il programma lo cerca: installa di nuovo il pacchetto o l'archivio, con i passi qui sopra. «Come si risolve» porta a questo passo."
-msgstr "程序在预期的位置找不到声音文件。按上面的步骤，用安装包或压缩包重新安装。点“解决方法”就会来到这一步。"
+msgstr "程序在预期的位置找不到语音文件。按上面的步骤，用安装包或压缩包重新安装。点“解决方法”就会来到这一步。"
 
 #: installa/index.html
 #, kalliope-markup
 msgctxt "in.frasi.microfono.frase"
 msgid "«Manca il microfono»"
-msgstr "“找不到麦克风”"
+msgstr "“虚拟麦克风不可用”"
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <a href="../riunione/#non-compare">
@@ -1470,7 +1470,7 @@ msgstr "<1>麦克风已就绪：</1>其中一行包含 kalliope。如果系统�
 #, kalliope-markup
 msgctxt "in.microfono.se-no"
 msgid "<1>Se no</1>, la finestra dice «Manca il microfono»: <2>che cosa fare</2>."
-msgstr "<1>如果没有，</1>窗口会显示“找不到麦克风”。<2>查看处理方法</2>"
+msgstr "<1>如果没有，</1>窗口会显示“虚拟麦克风不可用”。<2>查看处理方法</2>"
 
 #: installa/index.html
 #, kalliope-markup
@@ -1620,21 +1620,20 @@ msgstr "本页现在显示适用于 {sistema} 的命令。"
 #, kalliope-markup
 msgctxt "in.stato.voce.nome"
 msgid "La voce non parte"
-msgstr "声音启动失败"
+msgstr "语音启动失败"
 
 #. What the window says next to the state above: the same words as the program's message programma.voce.file-mancanti.
 #: installa/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Manca la voce: in … non trovo …. Reinstalla Kalliope."
+#, kalliope-markup
 msgctxt "in.stato.voce.detto"
 msgid "Non trovo i file della voce, e senza non posso parlare. Reinstalla Kalliope dal pacchetto."
-msgstr "找不到声音文件，暂时无法说话。请用安装包重新安装 Kalliope。"
+msgstr "找不到语音文件，没法读出你写的话。请用安装包重新安装 Kalliope。"
 
 #: installa/index.html
 #, kalliope-markup
 msgctxt "in.stato.microfono.nome"
 msgid "Manca il microfono"
-msgstr "找不到麦克风"
+msgstr "虚拟麦克风不可用"
 
 #. What the window says next to «Manca il microfono»; the … stands for the cause the program adds, often in English.
 #: installa/index.html
@@ -1749,7 +1748,7 @@ msgstr "目前在 Windows 和 macOS 上"
 #, kalliope-markup
 msgctxt "na.strada.tappa.3"
 msgid "Microfono «Kalliope»<1>: non c'è ancora</1>"
-msgstr "麦克风“Kalliope”<1>：暂时还没有</1>"
+msgstr "“Kalliope”麦克风<1>：暂时还没有</1>"
 
 #: non-ancora/index.html
 #, kalliope-markup
@@ -2025,7 +2024,7 @@ msgstr "<1>怎样确认准备好了</1>状态栏显示“已就绪”，旁边�
 #, kalliope-markup
 msgctxt "riu.testo.6"
 msgid "<1>Se non è andata</1>Se dice «Nessuno ti sente», «Manca il microfono» o «La voce non parte», premi «Come si risolve», accanto alla riga: ti porta alla spiegazione giusta. Per ogni altra riga, <2>cercala nella sezione Aiuto</2>."
-msgstr "<1>如果没准备好</1>看到“别人听不到你”“找不到麦克风”或“声音启动失败”，点提示旁的“解决方法”，就会打开对应的说明。看到其他提示时，可以<2>在帮助里搜索</2>。"
+msgstr "<1>如果没准备好</1>看到“别人听不到你”“虚拟麦克风不可用”或“语音启动失败”，点提示旁的“解决方法”，就会打开对应的说明。看到其他提示时，可以<2>在帮助里搜索</2>。"
 
 #. Attribute «alt» of an element of the page: plain text, no tags.
 #: riunione/index.html
@@ -2340,7 +2339,7 @@ msgstr "查看所有提示"
 #, kalliope-markup
 msgctxt "ai.testo.12"
 msgid "<1>«La voce non parte»</1>"
-msgstr "<1>“声音启动失败”</1>"
+msgstr "<1>“语音启动失败”</1>"
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <a href="#f-preparo">
@@ -2364,7 +2363,7 @@ msgstr "<1>“已就绪”</1>"
 #, kalliope-markup
 msgctxt "ai.testo.15"
 msgid "<1>«Manca il microfono»</1>"
-msgstr "<1>“找不到麦克风”</1>"
+msgstr "<1>“虚拟麦克风不可用”</1>"
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <a href="#f-parlo">
@@ -2396,7 +2395,7 @@ msgstr "<1>“请注意”</1>"
 #, kalliope-markup
 msgctxt "ai.testo.19"
 msgid "<1>La voce non parte</1>"
-msgstr "<1>声音启动失败</1>"
+msgstr "<1>语音启动失败</1>"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2405,11 +2404,10 @@ msgid "Cosa significa"
 msgstr "这是什么意思"
 
 #: riunione/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive quale cartella e quali file («Manca la voce: in … non trovo …»). L'installazione è rotta, e finché non è a posto la voce non può parlare."
+#, kalliope-markup
 msgctxt "ai.testo.21"
 msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive «Non trovo i file della voce». L'installazione è rotta, e finché non è a posto la voce non può parlare."
-msgstr "声音随安装包一起提供。如果安装不完整，Kalliope 就找不到所需的声音文件。窗口会提示“找不到声音文件，暂时无法说话。请用安装包重新安装 Kalliope。”具体的文件夹和文件名可以在日志中查看。"
+msgstr "语音文件随安装包一起提供。如果文件不在应有的位置，状态栏旁就会显示“找不到语音文件”。这说明安装出了问题，修好后 Kalliope 才能朗读。"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2498,7 +2496,7 @@ msgstr "在会议应用中选择“Kalliope”作为麦克风。<1>到“开会�
 #, kalliope-markup
 msgctxt "ai.testo.34"
 msgid "<1>Manca il microfono</1>"
-msgstr "<1>找不到麦克风</1>"
+msgstr "<1>虚拟麦克风不可用</1>"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2635,11 +2633,10 @@ msgid "Cosa significa"
 msgstr "这是什么意思"
 
 #: riunione/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …», «Errore della voce: …» o «Non riesco a cambiare voce: …»."
+#, kalliope-markup
 msgctxt "ai.testo.54"
 msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …» o «Non sono riuscita a dire questa frase: …»."
-msgstr "程序或声音文件出了问题。状态旁边会说明是哪里出了问题，例如“无法准备声音：……”或“这句话没能读出来：……”。切换声音失败时，提示也会说明现在用的是哪个声音。"
+msgstr "程序或语音文件出了问题。状态栏旁会显示“无法准备声音：……”或“这句话没能读出来：……”之类的提示。"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2665,7 +2662,7 @@ msgstr "找不到我看到的提示"
 #, kalliope-markup
 msgctxt "ai.testo.58"
 msgid "«Manca il microfono», o «Kalliope» non compare fra i microfoni dell'app"
-msgstr "窗口提示“找不到麦克风”，或应用的麦克风列表中没有“Kalliope”"
+msgstr "窗口提示“虚拟麦克风不可用”，或应用的麦克风列表中没有“Kalliope”"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2679,7 +2676,7 @@ msgstr "怎么做"
 #, kalliope-markup
 msgctxt "ai.compare.manca"
 msgid "Se la finestra dice «Manca il microfono», la voce è pronta ma il microfono «Kalliope» non si è creato: dopo «ma» la riga scrive la causa. Se dice <1>PipeWire is not running</1>, avvia PipeWire con questo comando:"
-msgstr "如果窗口显示“找不到麦克风”，说明声音已经就绪，但“Kalliope”麦克风未能创建。提示中“但”字后面会说明原因。如果显示 <1>PipeWire is not running</1>，用这条命令启动 PipeWire："
+msgstr "如果窗口显示“虚拟麦克风不可用”，说明声音已经就绪，但“Kalliope”麦克风未能创建。提示中“但”字后面会说明原因。如果显示 <1>PipeWire is not running</1>，用这条命令启动 PipeWire："
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <code>
@@ -2722,7 +2719,7 @@ msgstr "没有应用在使用“Kalliope”麦克风。打开会议应用的音�
 #, kalliope-markup
 msgctxt "ai.sentono.due"
 msgid "Se hai aperto Kalliope dopo l'app, chiudi e riapri l'elenco dei microfoni. Poi scrivi di nuovo la frase: una frase detta mentre nessuno ascolta è persa, come con un microfono vero (con la scrittura vuota, ↑ riporta l'ultima). La riga torna a «Pronta» appena un'app ascolta."
-msgstr "如果你先打开了会议应用，后来才打开 Kalliope，关掉麦克风列表再重新打开。然后把刚才那句话再说一遍。和实体麦克风一样，没人接收时说的话不会补播（输入框为空时，按 ↑ 可调出上一句）。只要有应用开始接收声音，状态栏就会恢复为“已就绪”。"
+msgstr "如果你先打开会议应用，后来才打开 Kalliope，关掉麦克风列表再重新打开。然后重新输入刚才那句话，按回车读出。和实体麦克风一样，没人接收时说的话不会补播（输入框为空时，按 ↑ 可调出上一句）。只要有应用开始接收声音，状态栏就会恢复为“已就绪”。"
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <a href="../riunione/#passo-3">
@@ -2877,7 +2874,7 @@ msgstr[0] "{n} 条提示"
 #, kalliope-markup
 msgctxt "ai.filtro.nessuna"
 msgid "Nessuna frase trovata. Prova una parola sola, per esempio «pronta» o «microfono». Oppure guarda i tre casi qui sotto, o segnala il problema."
-msgstr "没有找到匹配的提示。可以只搜一个词，比如“就绪”或“麦克风”。也可以看看下面三种情况，或反馈问题。"
+msgstr "没有找到匹配的提示。可以只搜一个词，比如“已就绪”或“麦克风”。也可以看看下面三种情况，或反馈问题。"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -3107,7 +3104,7 @@ msgstr "每次启动时，“正在准备声音…”会显示多久？<1>尚未
 #, kalliope-markup
 msgctxt "st.anello.microfono"
 msgid "Microfono «Kalliope»"
-msgstr "麦克风“Kalliope”"
+msgstr "“Kalliope”麦克风"
 
 #: stato/index.html
 #, kalliope-markup
@@ -3418,7 +3415,7 @@ msgstr "声音，来自安装包"
 #, kalliope-markup
 msgctxt "st.varco.mic"
 msgid "Microfono «Kalliope»"
-msgstr "麦克风“Kalliope”"
+msgstr "“Kalliope”麦克风"
 
 #: stato/index.html
 #, kalliope-markup
@@ -3783,14 +3780,14 @@ msgstr "现在就可以写，声音马上就好。"
 #, kalliope-slint
 msgctxt "programma.finestra.segnaposto-voce-non-parte"
 msgid "La voce non parte."
-msgstr "声音启动失败。"
+msgstr "语音启动失败。"
 
 #. The hint in the empty writing box when the voice cannot start: the status line above says why.
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.segnaposto-voce-non-parte-guarda"
 msgid "La voce non parte: guarda qui sopra."
-msgstr "声音启动失败，请看上方提示。"
+msgstr "语音启动失败，请看上方提示。"
 
 #: crates/app/ui/kalliope/finestra.slint crates/app/ui/kalliope/scrittura.slint
 #, kalliope-slint
@@ -4036,14 +4033,14 @@ msgstr "别人听不到你"
 #, kalliope-slint
 msgctxt "programma.stato.manca-microfono"
 msgid "Manca il microfono"
-msgstr "找不到麦克风"
+msgstr "虚拟麦克风不可用"
 
 #. The name of the state when the voice cannot start. Short.
 #: crates/app/ui/kalliope/stato.slint
 #, kalliope-slint
 msgctxt "programma.stato.voce-non-parte"
 msgid "La voce non parte"
-msgstr "声音启动失败"
+msgstr "语音启动失败"
 
 #. The name of the state for any other problem: one word, as on a warning sign.
 #: crates/app/ui/kalliope/stato.slint
@@ -4085,7 +4082,7 @@ msgstr "录音或导入"
 #, kalliope-slint
 msgctxt "programma.crea.passo-leggi"
 msgid "Leggi ad alta voce"
-msgstr "朗读一段文字"
+msgstr "朗读"
 
 #. The name of the third step: listen to the voice and give it a name. Short.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4100,7 +4097,7 @@ msgstr "试听并命名"
 #, kalliope-slint, python-brace-format
 msgctxt "programma.crea.passo"
 msgid "{} di 3 · {}"
-msgstr "第 {} 步，共 3 步 · {}"
+msgstr "{}/3 · {}"
 
 #. The same round button while it records: it stops recording.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4150,34 +4147,34 @@ msgstr "正在读取“{}”…"
 #, kalliope-slint
 msgctxt "programma.crea.cerco-parte-cui-si"
 msgid "Cerco la parte in cui si sente meglio la voce."
-msgstr "正在找人声最清楚的片段。"
+msgstr "正在找人声最清晰的片段。"
 
 #. A small line over the first choice: this way is for a person who can still speak.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.se-hai-ancora-voce"
 msgid "Se hai ancora la voce"
-msgstr "如果你现在还能说话"
+msgstr "如果你还能说话"
 
 #. The first choice for creating a voice: record it now, reading a short text aloud («la» is the voice). A title.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.registrala-adesso"
 msgid "Registrala adesso"
-msgstr "现在录下你的声音"
+msgstr "现在录音"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.istruzioni-registra"
 msgid "Leggi ad alta voce un breve testo. Bastano dodici secondi di voce chiara, meglio finché la voce è forte."
-msgstr "读一小段文字。只要 12 秒清楚的人声就够了，最好趁说话还有力气时录。"
+msgstr "朗读一小段文字，录下 12 秒清晰的人声就够了。最好趁说话还有力气时录。"
 
 #. A small line over the second choice: this way is for a person who can no longer speak.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.se-voce-non-c"
 msgid "Se la voce non c'è più"
-msgstr "如果你现在已经不能说话"
+msgstr "如果你已无法说话"
 
 #. The second choice: create the voice from recordings made before (voice messages, videos). A title.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4230,7 +4227,7 @@ msgstr "正在检查录音…"
 #, kalliope-slint
 msgctxt "programma.crea.premi-tondo-leggi"
 msgid "Premi il tondo e leggi"
-msgstr "按下圆形按钮，开始朗读"
+msgstr "按圆形按钮开始朗读"
 
 #. While the voice is recorded: {0} is the time recorded so far («3,2 s»); {n} is how many whole seconds of clear voice are still needed
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4239,7 +4236,7 @@ msgstr "按下圆形按钮，开始朗读"
 msgctxt "programma.crea.mancano"
 msgid "{0} · ne manca {n}"
 msgid_plural "{0} · ne mancano {n}"
-msgstr[0] "{0} · 还差 {n} 秒"
+msgstr[0] "{0} · 剩{n}秒"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4251,7 +4248,7 @@ msgstr "录够了，再按一下就能停止。"
 #, kalliope-slint
 msgctxt "programma.crea.ne-bastano-dodici-secondi"
 msgid "Ne bastano dodici secondi di voce: il cerchio si riempie. Il livello si muove con la tua voce."
-msgstr "录下 12 秒人声就够了，圆环会逐渐填满。音量指示条会随着你的声音起伏。"
+msgstr "录够 12 秒人声，圆环就满了。说话时，音量条会跟着动。"
 
 #. A button that stops playing the recording.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4272,7 +4269,7 @@ msgstr "试听录音"
 #, kalliope-slint
 msgctxt "programma.crea.rifai"
 msgid "Rifai"
-msgstr "重新开始"
+msgstr "重来"
 
 #. After a recording is read: {n} is how many stretches with a voice were found
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4281,7 +4278,7 @@ msgstr "重新开始"
 msgctxt "programma.crea.trovati-tratti"
 msgid "Ho trovato {n} tratto in cui si sente la voce. Ascolta e scegli."
 msgid_plural "Ho trovato {n} tratti in cui si sente la voce. Ascolta e scegli."
-msgstr[0] "找到了 {n} 段能听清人声的录音。听一听，选一段。"
+msgstr[0] "有 {n} 个片段录到了人声。听一听，选一段。"
 
 #. While a voice is made: {} is the name the person gave it
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4289,19 +4286,19 @@ msgstr[0] "找到了 {n} 段能听清人声的录音。听一听，选一段。"
 #, kalliope-slint, python-brace-format
 msgctxt "programma.crea.creo-voce"
 msgid "Creo la voce «{}»…"
-msgstr "正在创建声音“{}”…"
+msgstr "正在创建“{}”…"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ci-vuole-poco-quando"
 msgid "Ci vuole poco. Quando è pronta la scegli da sola."
-msgstr "很快就好。创建完成后会自动切换到这个声音。"
+msgstr "很快就好。之后会自动用这个声音说话。"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.come-si-chiama-questa"
 msgid "Come si chiama questa voce?"
-msgstr "你想给这个声音起什么名字？"
+msgstr "想给声音起什么名字？"
 
 #. The name of the field where the person writes the name of the new voice, read by screen readers.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4321,7 +4318,7 @@ msgstr "例如：安娜的声音"
 #, kalliope-slint
 msgctxt "programma.crea.mia-voce-oppure-persona"
 msgid "È la mia voce, oppure la persona che parla mi ha dato il permesso di usarla."
-msgstr "这是我自己的声音，或是说话的人已同意我使用这个声音。"
+msgstr "这是我自己的声音，或者说话的人已同意让我使用这个声音。"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4341,7 +4338,7 @@ msgstr "返回输入框"
 #, kalliope-slint
 msgctxt "programma.crea.titolo-scegli"
 msgid "Come vuoi creare la tua voce?"
-msgstr "你想怎样创建自己的声音？"
+msgstr "怎么创建自己的声音？"
 
 #. The title of the step where the person reads a text aloud, calmly.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4361,7 +4358,7 @@ msgstr "听一听，再起个名字"
 #, kalliope-slint
 msgctxt "programma.crea.questa-registrazione-non-si"
 msgid "Da questa registrazione non si può creare la voce: rifai."
-msgstr "这段录音无法用来创建声音，请重新开始。"
+msgstr "这段录音没法用来创建声音，请点“重来”。"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4373,7 +4370,7 @@ msgstr "请给声音起个名字。"
 #, kalliope-slint
 msgctxt "programma.crea.manca-permesso-spunta-casella"
 msgid "Manca il permesso: spunta la casella."
-msgstr "请勾选方框，确认你有权使用这个声音。"
+msgstr "请勾选方框，确认是你的声音或对方已同意。"
 
 #. The last button of the steps: it creates the voice with the name given.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4417,7 +4414,7 @@ msgstr "声音已就绪，但“Kalliope”麦克风未能打开。通话中的�
 #, kalliope-rust
 msgctxt "programma.voce.file-mancanti"
 msgid "Non trovo i file della voce, e senza non posso parlare. Reinstalla Kalliope dal pacchetto."
-msgstr "找不到声音文件，暂时无法说话。请用安装包重新安装 Kalliope。"
+msgstr "找不到语音文件，没法读出你写的话。请用安装包重新安装 Kalliope。"
 
 #. The title of the system's window for choosing an audio or video file
 #: crates/app/src/collega.rs
@@ -4444,7 +4441,7 @@ msgstr "所有文件"
 #, kalliope-rust
 msgctxt "programma.crea.non-ti-sento"
 msgid "Non ti sento. Avvicinati al microfono, controlla che non sia spento, o scegline un altro."
-msgstr "听不到你的声音。靠近麦克风，检查麦克风是否已开启，或换一个麦克风。"
+msgstr "听不到你的声音。靠近麦克风，看看开了没有，或换一个试试。"
 
 #: crates/app/src/crea.rs
 #, kalliope-rust
@@ -4456,7 +4453,7 @@ msgstr "声音太响了，离麦克风稍远一点。"
 #, kalliope-rust
 msgctxt "programma.crea.serve-permesso"
 msgid "Per continuare serve il permesso: spunta la casella."
-msgstr "请勾选方框，确认你有权使用这个声音，然后继续。"
+msgstr "请先勾选方框，确认是你的声音或对方已同意，再继续。"
 
 #. The first stretch of a recording, the one where the voice is clearest: {numero} is its number
 #. Placeholders to leave as they are: {numero}
@@ -4464,7 +4461,7 @@ msgstr "请勾选方框，确认你有权使用这个声音，然后继续。"
 #, kalliope-rust, python-brace-format
 msgctxt "programma.crea.tratto-chiaro"
 msgid "Tratto {numero} · il più chiaro"
-msgstr "片段 {numero} · 人声最清楚"
+msgstr "片段 {numero} · 人声最清晰"
 
 #. The name of a stretch of an imported recording where a voice was found, numbered: «Stretch 2». {numero} is the number.
 #. Placeholders to leave as they are: {numero}
@@ -4492,7 +4489,7 @@ msgstr "无法打开文件选择窗口。再试一次。如果还是打不开，
 #, kalliope-rust
 msgctxt "programma.crea.tratto-inutilizzabile"
 msgid "Da questo tratto non si può creare la voce: scegli un altro tratto, o rifai."
-msgstr "这段录音无法用来创建声音。可以换个片段，或重新开始。"
+msgstr "这个片段没法用来创建声音。请换一段，或点“重来”。"
 
 #. A button: replace the existing voice that has the same name with the new one.
 #: crates/app/src/crea.rs
@@ -4597,7 +4594,7 @@ msgstr "麦克风“{label}”已断开。断开前录下的内容已保留。"
 #, kalliope-rust
 msgctxt "programma.registra.nessun-suono"
 msgid "Non è arrivato nessun suono dal microfono. Controlla che sia collegato e acceso, poi riprova."
-msgstr "麦克风没有收到声音。检查是否已接好并开启，然后再试。"
+msgstr "没录到声音。检查麦克风是否接好、打开，再试一次。"
 
 #: crates/app/src/own_voice.rs
 #, kalliope-rust
@@ -4709,7 +4706,7 @@ msgstr "声音太响，录出来有些失真。把麦克风移远一点，或调
 #, kalliope-rust
 msgctxt "programma.analisi.troppo-bassa"
 msgid "La voce è molto bassa. Avvicinati al microfono, o alzane il volume, e registra di nuovo."
-msgstr "声音太轻。靠近麦克风，或调高麦克风音量，再录一次。"
+msgstr "录音里的声音太小。靠近麦克风，或调高麦克风音量，再录一次。"
 
 #: crates/sample/src/analysis.rs
 #, kalliope-rust
@@ -4751,7 +4748,7 @@ msgstr "文件是空的。"
 #, kalliope-rust
 msgctxt "programma.file.non-audio"
 msgid "Questo file non è un audio. Prova con un messaggio vocale, un video o una registrazione."
-msgstr "这不是音频文件。可以试试语音消息、视频或录音。"
+msgstr "这不是音频文件。试试语音消息、视频或录音。"
 
 #: crates/sample/src/decode.rs
 #, kalliope-rust

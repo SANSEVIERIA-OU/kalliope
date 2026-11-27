@@ -381,7 +381,7 @@ msgstr "Isma’ l-vuċi waqt li taqra t-test maġenbha."
 #, kalliope-markup
 msgctxt "campioni.testo"
 msgid "Le frasi sono tue, dette con le registrazioni vere di Kalliope 0.1-rc.1. <1>Scegli la voce, poi premi una frase: le parole si accendono mentre Paola, Luca e Anna la sentono.</1><2>Premi il lettore sotto ogni frase per ascoltarla. Accanto trovi il collegamento alla stessa frase con la voce di Marco.</2>"
-msgstr "Is-sentenzi huma tiegħek. Li tisma’ huma reġistrazzjonijiet veri ta’ Kalliope 0.1-rc.1. <1>Agħżel il-vuċi u agħfas fuq sentenza. Il-kliem jixgħel waqt li Paola, Luca u Anna jisimgħuha.</1><2>Agħfas il-buttuna tad-daqq taħt kull sentenza biex tismagħha. Ħdejha hemm link għall-istess sentenza bil-vuċi ta’ Marco.</2>"
+msgstr "Is-sentenzi huma tiegħek. Hawn tismagħhom f’reġistrazzjonijiet veri ta’ Kalliope 0.1-rc.1. <1>Agħżel il-vuċi u agħfas fuq sentenza. Il-kliem jixgħel waqt li Paola, Luca u Anna jisimgħuha.</1><2>Agħfas il-buttuna tad-daqq taħt kull sentenza biex tismagħha. Ħdejha hemm link għall-istess sentenza bil-vuċi ta’ Marco.</2>"
 
 #. Attribute «aria-label» of an element of the page: plain text, no tags.
 #: index.html
@@ -440,14 +440,14 @@ msgstr "Sono d'accordo con Paola. Però la consegna del 14/3 mi sembra stretta: 
 #, kalliope-markup
 msgctxt "frase.3.detto-etichetta"
 msgid "Detto:"
-msgstr ""
+msgstr "Il-vuċi qalet:"
 
 #. What the Italian voice said: it stays in Italian, as the voice says it.
 #: index.html
 #, kalliope-markup
 msgctxt "frase.3.detto-frase"
 msgid "«Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
-msgstr ""
+msgstr "«Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
 
 #: index.html
 #, kalliope-markup
@@ -477,7 +477,7 @@ msgstr "Għadna ma kejilniex kemm jinftiehmu f’laqgħa vera, jew kemm jgħaddi
 #, kalliope-markup
 msgctxt "campioni.provenienza.testi"
 msgid "Il testo «scrivi» è quello che hai digitato. Il testo «dice» è quello che Kalliope prepara prima di parlare: cifre, date e orari diventano parole."
-msgstr "“Int tikteb” juri dak li tkun ittajpjajt. “Il-vuċi tgħid” juri t-test li tħejji Kalliope qabel titkellem. Il-figuri, id-dati u l-ħinijiet isiru kliem."
+msgstr "L-ewwel tara s-sentenza kif ittajpjajtha. Maġenb “Il-vuċi qalet:” tara kif Kalliope tkun ħejjietha biex tgħidha. Iċ-ċifri, id-dati u l-ħinijiet isiru kliem."
 
 #: index.html
 #, kalliope-markup
@@ -531,7 +531,7 @@ msgstr "L-oħrajn jisimgħuk"
 #, kalliope-markup
 msgctxt "strada.provato.titolo"
 msgid "Provato"
-msgstr "Ippruvajnieha"
+msgstr "Dak li ppruvajna"
 
 #: index.html
 #, kalliope-markup
@@ -711,7 +711,7 @@ msgstr "Qed nitkellem"
 #, kalliope-markup
 msgctxt "finestra.parla.detto"
 msgid "Esc la ferma."
-msgstr "Agħfas Esc biex twaqqaf il-vuċi."
+msgstr "Esc iwaqqaf il-vuċi."
 
 #. Read by screen readers when listening is paused.
 #: index.html non-ancora/index.html
@@ -1624,11 +1624,10 @@ msgstr "Il-vuċi ma tibdiex"
 
 #. What the window says next to the state above: the same words as the program's message programma.voce.file-mancanti.
 #: installa/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Manca la voce: in … non trovo …. Reinstalla Kalliope."
+#, kalliope-markup
 msgctxt "in.stato.voce.detto"
 msgid "Non trovo i file della voce, e senza non posso parlare. Reinstalla Kalliope dal pacchetto."
-msgstr "Il-vuċi nieqsa: f’… ma nsibx … Erġa’ installa Kalliope."
+msgstr "Ma nsibx il-fajls tal-vuċi. Mingħajrhom ma nistax nitkellem. Erġa’ installa Kalliope mill-pakkett."
 
 #: installa/index.html
 #, kalliope-markup
@@ -2266,7 +2265,7 @@ msgstr "Ikteb u tkellem"
 #, kalliope-markup
 msgctxt "riu.testo.41"
 msgid "Scrivi nella bolla tratteggiata e premi Invio: la frase passa nella bolla sopra e si accende parola per parola, mentre la voce la dice. Non si va a capo: un testo su più righe diventa una frase sola. Esc ferma la voce subito, e se scrivi mentre Kalliope parla, il nuovo testo aspetta il suo turno."
-msgstr "Ikteb fil-bużżieqa bix-xifer tas-singijiet u agħfas Enter. Is-sentenza titla’ fil-bużżieqa ta’ fuq u l-kliem jixgħel kelma b’kelma hekk kif il-vuċi tgħidu. Enter ma jiftaħx linja ġdida. Test fuq aktar minn linja waħda jsir sentenza waħda. Esc iwaqqaf il-vuċi minnufih. Jekk tikteb waqt li Kalliope qed titkellem, it-test il-ġdid jistenna sakemm imissu."
+msgstr "Ikteb fil-bużżieqa bix-xifer tas-singijiet u agħfas Enter. Is-sentenza titla’ fil-bużżieqa ta’ fuq. Kull kelma tixgħel hekk kif il-vuċi tgħidha. Enter ma jiftaħx linja ġdida. Test fuq aktar minn linja waħda jsir sentenza waħda. Esc iwaqqaf il-vuċi minnufih. Jekk tikteb waqt li Kalliope qed titkellem, it-test il-ġdid jistenna sakemm imissu."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2405,11 +2404,10 @@ msgid "Cosa significa"
 msgstr "Xi jfisser?"
 
 #: riunione/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive quale cartella e quali file («Manca la voce: in … non trovo …»). L'installazione è rotta, e finché non è a posto la voce non può parlare."
+#, kalliope-markup
 msgctxt "ai.testo.21"
 msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive «Non trovo i file della voce». L'installazione è rotta, e finché non è a posto la voce non può parlare."
-msgstr "Il-vuċijiet jiġu mal-pakkett, imma wieħed mill-fajls tagħhom mhuwiex fil-fowlder fejn qed tfittxu Kalliope. Ħdejn il-linja tal-istat tara liema fowlder u liema fajls: “Il-vuċi nieqsa: f’… ma nsibx …”. Hemm problema fl-installazzjoni. Il-vuċi ma tistax titkellem sakemm tirranġaha."
+msgstr "Il-vuċijiet jiġu mal-pakkett. Jekk xi fajl ma jkunx fil-fowlder fejn tfittxu Kalliope, ħdejn l-istat tara “Ma nsibx il-fajls tal-vuċi”. Hemm problema fl-installazzjoni. Sakemm tirranġaha, il-vuċi ma tistax titkellem."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2572,7 +2570,7 @@ msgstr "Xi jfisser?"
 #, kalliope-markup
 msgctxt "ai.testo.44"
 msgid "Kalliope sta dicendo la frase: le parole si accendono nella bolla man mano che la voce le dice. La riga aggiunge «Esc la ferma»."
-msgstr "Kalliope qed tgħid is-sentenza. Il-kliem fil-bużżieqa jixgħel kelma b’kelma kif tgħidu l-vuċi. Il-messaġġ ikompli: “Agħfas Esc biex twaqqaf il-vuċi.”"
+msgstr "Kalliope qed tgħid is-sentenza. Kull kelma fil-bużżieqa tixgħel hekk kif il-vuċi tgħidha. Il-messaġġ ikompli “Esc iwaqqaf il-vuċi.”"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2635,11 +2633,10 @@ msgid "Cosa significa"
 msgstr "Xi jfisser?"
 
 #: riunione/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …», «Errore della voce: …» o «Non riesco a cambiare voce: …»."
+#, kalliope-markup
 msgctxt "ai.testo.54"
 msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …» o «Non sono riuscita a dire questa frase: …»."
-msgstr "Hemm xi ħaġa ħażina fil-programm jew fil-fajls tal-vuċi. Ħdejn l-istat tara messaġġ bħal “Ma nistax inħejji l-vuċi: …”, “Żball fil-vuċi: …” jew “Ma nistax nibdel il-vuċi: …”."
+msgstr "Hemm problema fil-programm jew fil-fajls tal-vuċi. Ħdejn l-istat tara messaġġ bħal “Ma nistax inħejji l-vuċi: …” jew “Ma rnexxilix ngħid din is-sentenza: …”."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2750,7 +2747,7 @@ msgstr "X’tista’ tagħmel"
 #, kalliope-markup
 msgctxt "ai.testo.66"
 msgid "Prova ad abbassare la soppressione del rumore nelle impostazioni audio dell'app. Non l'abbiamo provato: se ti aiuta, o se non cambia nulla, <1>dicci come è andata</1>."
-msgstr "Fis-settings tal-awdjo tal-app, ipprova naqqas it-trażżin tal-istorbju. Għadna ma ppruvajna dan il-pass. Kemm jekk jgħinek kif ukoll jekk ma jinbidel xejn, <1>għidilna kif marret</1>."
+msgstr "Fis-settings tal-awdjo tal-app, ipprova naqqas it-trażżin tal-istorbju. Għadna ma ppruvajniex dan il-pass. Kemm jekk jgħinek kif ukoll jekk ma jinbidel xejn, <1>għidilna kif marret</1>."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -3230,7 +3227,7 @@ msgstr "Iva, jekk il-persuna tista’ tikteb, b’tastiera jew b’apparat ieħo
 #, kalliope-markup
 msgctxt "st.d.scrivere.q"
 msgid "E se scrivere è difficile?"
-msgstr "U jekk insibha bi tqila biex nikteb?"
+msgstr "U jekk insibha diffiċli biex nikteb?"
 
 #: stato/index.html
 #, kalliope-markup
@@ -3653,14 +3650,14 @@ msgstr "Ikkanċella"
 #, kalliope-slint, python-brace-format
 msgctxt "programma.bolla.ripeti-frase"
 msgid "Ripeti: {}"
-msgstr "Erġa’ għid: {}"
+msgstr "Irrepeti: {}"
 
 #. Shown over a sentence already said, under the pointer: a click makes the voice say it again. A verb, one word if the language allows.
 #: crates/app/ui/kalliope/bolla.slint
 #, kalliope-slint
 msgctxt "programma.bolla.ripeti"
 msgid "Ripeti"
-msgstr "Erġa’ għid"
+msgstr "Irrepeti"
 
 #. Read aloud by a screen reader for the voice menu: {} is the name of the voice in use
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -3912,7 +3909,7 @@ msgstr "Iħaddem il-vuċijiet fuq dan il-kompjuter."
 #, kalliope-slint
 msgctxt "programma.modali.dati-pronuncia"
 msgid "I dati di pronuncia."
-msgstr "Id-data dwar il-pronunzja."
+msgstr "Tagħrif dwar il-pronunzja."
 
 #: crates/app/ui/kalliope/modali.slint
 #, kalliope-slint
@@ -4075,7 +4072,7 @@ msgstr "Fil-laqgħa agħżel “Kalliope” bħala l-mikrofonu."
 #, kalliope-slint
 msgctxt "programma.stato.esc-ferma"
 msgid "Esc la ferma."
-msgstr "Agħfas Esc biex twaqqaf il-vuċi."
+msgstr "Esc iwaqqaf il-vuċi."
 
 #. The name of the first of the three steps of creating a voice, shown in a row at the top: record or import. Short.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4096,7 +4093,7 @@ msgstr "Aqra b’leħen għoli"
 #, kalliope-slint
 msgctxt "programma.crea.passo-nome"
 msgid "Ascolta e dai un nome"
-msgstr "Isma’ u semmi l-vuċi"
+msgstr "Isma’ u semmiha"
 
 #. Where the person is among the three steps of making a voice: {0} is the number of the step (1 to 3), {1} its name
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4104,7 +4101,7 @@ msgstr "Isma’ u semmi l-vuċi"
 #, kalliope-slint, python-brace-format
 msgctxt "programma.crea.passo"
 msgid "{} di 3 · {}"
-msgstr "{} minn 3 · {}"
+msgstr "{}/3 · {}"
 
 #. The same round button while it records: it stops recording.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4161,20 +4158,20 @@ msgstr "Qed infittex il-parti fejn il-vuċi tinstema’ l-iktar ċara."
 #, kalliope-slint
 msgctxt "programma.crea.se-hai-ancora-voce"
 msgid "Se hai ancora la voce"
-msgstr "Jekk għadek tista’ titkellem"
+msgstr "Jekk għadek titkellem"
 
 #. The first choice for creating a voice: record it now, reading a short text aloud («la» is the voice). A title.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.registrala-adesso"
 msgid "Registrala adesso"
-msgstr "Irrekordjaha issa"
+msgstr "Irrekordja issa"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.istruzioni-registra"
 msgid "Leggi ad alta voce un breve testo. Bastano dodici secondi di voce chiara, meglio finché la voce è forte."
-msgstr "Aqra test qasir b’leħen għoli. Biżżejjed tnax-il sekonda ta’ vuċi ċara. Aħjar tirrekordjaha meta l-vuċi tkun għadha b’saħħitha."
+msgstr "Aqra test qasir b’leħen għoli. Biżżejjed 12-il sekonda ta’ vuċi ċara. Aħjar tirrekordja meta leħnek għadu b’saħħtu."
 
 #. A small line over the second choice: this way is for a person who can no longer speak.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4208,7 +4205,7 @@ msgstr "Agħżel kamra kwieta u, jekk għandek, uża headphones b’mikrofonu. T
 #, kalliope-slint, python-brace-format
 msgctxt "programma.crea.secondi"
 msgid "{} s"
-msgstr "{} s"
+msgstr "{} s"
 
 #. A label over the menu where the person picks the microphone to record with.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4243,44 +4240,44 @@ msgstr "Agħfas iċ-ċirku u aqra"
 msgctxt "programma.crea.mancano"
 msgid "{0} · ne manca {n}"
 msgid_plural "{0} · ne mancano {n}"
-msgstr[0] "{0} · fadal {n} s"
-msgstr[1] "{0} · fadal {n} s"
-msgstr[2] "{0} · fadal {n} s"
-msgstr[3] "{0} · fadal {n} s"
-msgstr[4] "{0} · fadal {n} s"
+msgstr[0] "{0} · fadal {n}"
+msgstr[1] "{0} · fadal {n}"
+msgstr[2] "{0} · fadal {n}"
+msgstr[3] "{0} · fadal {n}"
+msgstr[4] "{0} · fadal {n}"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.basta-cosi-premi-nuovo"
 msgid "Basta così: premi di nuovo per fermare."
-msgstr "Biżżejjed. Erġa’ agħfas biex tieqaf."
+msgstr "Biżżejjed. Erġa’ agħfas biex twaqqaf ir-reġistrazzjoni."
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ne-bastano-dodici-secondi"
 msgid "Ne bastano dodici secondi di voce: il cerchio si riempie. Il livello si muove con la tua voce."
-msgstr "Biżżejjed tnax-il sekonda ta’ vuċi. Iċ-ċirku jimtela ftit ftit u l-livell jinbidel ma’ leħnek."
+msgstr "Biżżejjed 12-il sekonda ta’ vuċi. Iċ-ċirku jimtela u l-livell jogħla u jinżel ma’ leħnek."
 
 #. A button that stops playing the recording.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ferma-ascolto"
 msgid "Ferma l'ascolto"
-msgstr "Waqqaf id-daqq"
+msgstr "Waqqaf"
 
 #. A button that plays the recording just made.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ascolta-registrazione"
 msgid "Ascolta la registrazione"
-msgstr "Isma’ r-reġistrazzjoni"
+msgstr "Isma’"
 
 #. A button that throws the recording away to record again. A verb, short.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.rifai"
 msgid "Rifai"
-msgstr "Erġa’ pprova"
+msgstr "Erġa’ ibda"
 
 #. After a recording is read: {n} is how many stretches with a voice were found
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4289,11 +4286,11 @@ msgstr "Erġa’ pprova"
 msgctxt "programma.crea.trovati-tratti"
 msgid "Ho trovato {n} tratto in cui si sente la voce. Ascolta e scegli."
 msgid_plural "Ho trovato {n} tratti in cui si sente la voce. Ascolta e scegli."
-msgstr[0] "Sibt {n} parti fejn tinstema’ l-vuċi. Ismagħha u agħżel."
-msgstr[1] "Sibt {n} partijiet fejn tinstema’ l-vuċi. Ismagħhom u agħżel."
-msgstr[2] "Sibt {n} partijiet fejn tinstema’ l-vuċi. Ismagħhom u agħżel."
-msgstr[3] "Sibt {n}-il parti fejn tinstema’ l-vuċi. Ismagħhom u agħżel."
-msgstr[4] "Sibt {n} parti fejn tinstema’ l-vuċi. Ismagħhom u agħżel."
+msgstr[0] "Sibt {n} parti bil-vuċi. Ismagħha u agħżel."
+msgstr[1] "Partijiet bil-vuċi li sibt: {n}. Ismagħhom u agħżel."
+msgstr[2] "Sibt {n} partijiet bil-vuċi. Ismagħhom u agħżel."
+msgstr[3] "Sibt {n}-il parti bil-vuċi. Ismagħhom u agħżel."
+msgstr[4] "Sibt {n} parti bil-vuċi. Ismagħhom u agħżel."
 
 #. While a voice is made: {} is the name the person gave it
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4307,7 +4304,7 @@ msgstr "Qed noħloq il-vuċi “{}”…"
 #, kalliope-slint
 msgctxt "programma.crea.ci-vuole-poco-quando"
 msgid "Ci vuole poco. Quando è pronta la scegli da sola."
-msgstr "Ma ddumx. Meta tkun lesta, tintgħażel waħedha."
+msgstr "Fadal ftit. Meta tkun lesta, il-vuċi tintgħażel waħedha."
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4333,13 +4330,13 @@ msgstr "Pereżempju: il-vuċi ta’ Anna"
 #, kalliope-slint
 msgctxt "programma.crea.mia-voce-oppure-persona"
 msgid "È la mia voce, oppure la persona che parla mi ha dato il permesso di usarla."
-msgstr "Din hi l-vuċi tiegħi jew għandi l-permess tal-persuna li qed titkellem biex nuża l-vuċi tagħha."
+msgstr "Din hi l-vuċi tiegħi jew għandi permess mingħand min qed jitkellem biex nużaha."
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ciao-sono-io-questa"
 msgid "Ciao, sono io. Questa è la mia voce, per le riunioni e per le persone a cui voglio bene. La leggo con calma, come parlo ogni giorno."
-msgstr "Bonġu, jien hawn. Din hi l-vuċi tiegħi, għal-laqgħat u għan-nies li nħobb. Qed naqra bil-kalma, kif nitkellem kuljum."
+msgstr "Bonġu, dan leħni. Bih nitkellem fil-laqgħat u ma’ min inħobb. Qed naqra bil-kalma, kif nitkellem kuljum."
 
 #. A button at the top of the steps of creating a voice: it leaves them and goes back to the main window, where the person writes the sentences to say. It means «back to writing», not «write again».
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4367,13 +4364,13 @@ msgstr "Aqra b’leħen għoli, bil-kalma"
 #, kalliope-slint
 msgctxt "programma.crea.titolo-nome"
 msgid "Ascoltala e dalle un nome"
-msgstr "Ismagħha u agħtiha isem"
+msgstr "Isma’ u semmi l-vuċi"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.questa-registrazione-non-si"
 msgid "Da questa registrazione non si può creare la voce: rifai."
-msgstr "Ma nistax noħloq vuċi minn din ir-reġistrazzjoni. Erġa’ pprova."
+msgstr "Ma nistax noħloq vuċi minn din ir-reġistrazzjoni. Erġa’ ibda."
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4429,7 +4426,7 @@ msgstr "Il-vuċi lesta, imma l-mikrofonu “Kalliope” ma nfetaħx. Għalissa �
 #, kalliope-rust
 msgctxt "programma.voce.file-mancanti"
 msgid "Non trovo i file della voce, e senza non posso parlare. Reinstalla Kalliope dal pacchetto."
-msgstr "Ma nistax insib il-fajls tal-vuċi. Għandi bżonnhom biex nitkellem. Erġa’ installa Kalliope mill-pakkett."
+msgstr "Ma nsibx il-fajls tal-vuċi. Mingħajrhom ma nistax nitkellem. Erġa’ installa Kalliope mill-pakkett."
 
 #. The title of the system's window for choosing an audio or video file
 #: crates/app/src/collega.rs
@@ -4456,7 +4453,7 @@ msgstr "Il-fajls kollha"
 #, kalliope-rust
 msgctxt "programma.crea.non-ti-sento"
 msgid "Non ti sento. Avvicinati al microfono, controlla che non sia spento, o scegline un altro."
-msgstr "Ma nisimgħekx. Ersaq lejn il-mikrofonu, ara li jkun mixgħul jew agħżel mikrofonu ieħor."
+msgstr "Ma nisimgħekx. Ersaq lejn il-mikrofonu, ara li hu mixgħul jew agħżel ieħor."
 
 #: crates/app/src/crea.rs
 #, kalliope-rust
@@ -4492,19 +4489,19 @@ msgstr "Parti {numero}"
 #, kalliope-rust, python-brace-format
 msgctxt "programma.crea.tratto-dettaglio"
 msgid "da {inizio} a {fine} · {secondi} s di voce"
-msgstr "minn {inizio} sa {fine} · {secondi} s ta’ vuċi"
+msgstr "{inizio}–{fine} · {secondi} s ta’ vuċi"
 
 #: crates/app/src/crea.rs
 #, kalliope-rust
 msgctxt "programma.crea.scelta-file-non-si-apre"
 msgid "Non si apre la finestra per scegliere il file. Riprova; se succede ancora, serve il portale del tuo desktop o il programma «zenity»."
-msgstr "It-tieqa biex tagħżel fajl ma tinfetaħx. Erġa’ pprova. Jekk jerġa’ jiġri, għandek bżonn il-portal tad-desktop jew il-programm “zenity”."
+msgstr "Ma nistax niftaħ it-tieqa biex tagħżel fajl. Erġa’ pprova. Jekk terġa’ tiġri l-istess ħaġa, għandek bżonn il-portal tad-desktop jew il-programm “zenity”."
 
 #: crates/app/src/crea.rs
 #, kalliope-rust
 msgctxt "programma.crea.tratto-inutilizzabile"
 msgid "Da questo tratto non si può creare la voce: scegli un altro tratto, o rifai."
-msgstr "Ma nistax noħloq vuċi minn din il-parti. Agħżel parti oħra jew erġa’ rrekordja."
+msgstr "Ma nistax noħloq vuċi minn din il-parti. Agħżel oħra jew erġa’ ibda."
 
 #. A button: replace the existing voice that has the same name with the new one.
 #: crates/app/src/crea.rs
@@ -4582,7 +4579,7 @@ msgstr "Ma nistax nirrekordja fuq dan il-kompjuter. Hemm bżonn PipeWire, is-ser
 #, kalliope-rust
 msgctxt "programma.registra.audio-non-risponde"
 msgid "Il servizio audio del computer non risponde: riprova fra qualche secondo."
-msgstr "Is-servizz tal-awdjo tal-kompjuter mhux qed jirrispondi. Erġa’ pprova fi ftit sekondi."
+msgstr "Is-servizz tal-awdjo tal-kompjuter mhux qed jirrispondi. Stenna ftit sekondi u erġa’ pprova."
 
 #: crates/app/src/own_voice.rs
 #, kalliope-rust

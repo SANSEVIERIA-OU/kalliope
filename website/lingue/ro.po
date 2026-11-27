@@ -271,7 +271,7 @@ msgstr "În întâlnire, alege „Kalliope” ca microfon."
 #, kalliope-markup
 msgctxt "finestra.segnaposto"
 msgid "Scrivi qui. Invio la dice."
-msgstr "Scrie aici. Enter pornește vocea."
+msgstr "Scrie aici. Apasă Enter ca să vorbești."
 
 #. The button that stops the voice.
 #: index.html installa/index.html
@@ -440,14 +440,14 @@ msgstr "Sono d'accordo con Paola. Però la consegna del 14/3 mi sembra stretta: 
 #, kalliope-markup
 msgctxt "frase.3.detto-etichetta"
 msgid "Detto:"
-msgstr ""
+msgstr "Rostit:"
 
 #. What the Italian voice said: it stays in Italian, as the voice says it.
 #: index.html
 #, kalliope-markup
 msgctxt "frase.3.detto-frase"
 msgid "«Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
-msgstr ""
+msgstr "«Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
 
 #: index.html
 #, kalliope-markup
@@ -477,7 +477,7 @@ msgstr "Nu am măsurat cât de bine se înțeleg cuvintele într-o întâlnire r
 #, kalliope-markup
 msgctxt "campioni.provenienza.testi"
 msgid "Il testo «scrivi» è quello che hai digitato. Il testo «dice» è quello che Kalliope prepara prima di parlare: cifre, date e orari diventano parole."
-msgstr "„Ce scrii” arată textul pe care l-ai tastat. „Ce se aude” arată textul pe care Kalliope îl pregătește înainte să vorbească. Numerele, datele și orele devin cuvinte."
+msgstr "În balon vezi fraza așa cum ai scris-o. La „Rostit” vezi textul pe care Kalliope îl pregătește înainte să vorbească. Numerele, datele și orele devin cuvinte."
 
 #: index.html
 #, kalliope-markup
@@ -1298,7 +1298,7 @@ msgstr "din dosarul arhivei, <1>./install --remove</1>"
 #, kalliope-markup
 msgctxt "in.togli.restano"
 msgid "Le voci se ne vanno con il programma. Nella tua cartella personale restano le preferenze, <1>~/.config/kalliope</1>, e le voci che hai preparato da una registrazione e le frasi già dette, <2>~/.local/share/kalliope</2>: né il gestore dei pacchetti né <3>./install --remove</3> le toccano. Per toglierle, cancella le due cartelle."
-msgstr "Vocile incluse se șterg odată cu programul. În dosarul tău personal rămân preferințele, în <1>~/.config/kalliope</1>, iar vocile create din înregistrări și frazele rostite rămân în <2>~/.local/share/kalliope</2>. Atât managerul de pachete, cât și <3>./install --remove</3> păstrează aceste date. Ca să le ștergi, șterge cele două dosare."
+msgstr "Vocile incluse se șterg odată cu programul. În dosarul tău personal rămân preferințele, în <1>~/.config/kalliope</1>, iar vocile create din înregistrări și frazele rostite rămân în <2>~/.local/share/kalliope</2>. Atât managerul de pachete, cât și <3>./install --remove</3> păstrează aceste date. Dacă vrei să elimini și aceste date, șterge cele două dosare."
 
 #. Says what was checked and what was not. Keep the last sentence as honest as it is: removing the package on a real computer was not tried.
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
@@ -1624,8 +1624,7 @@ msgstr "Vocea nu pornește"
 
 #. What the window says next to the state above: the same words as the program's message programma.voce.file-mancanti.
 #: installa/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Manca la voce: in … non trovo …. Reinstalla Kalliope."
+#, kalliope-markup
 msgctxt "in.stato.voce.detto"
 msgid "Non trovo i file della voce, e senza non posso parlare. Reinstalla Kalliope dal pacchetto."
 msgstr "Nu găsesc fișierele vocii. Fără ele nu pot vorbi. Reinstalează Kalliope din pachet."
@@ -1761,7 +1760,7 @@ msgstr "Ce funcționează deja"
 #, kalliope-markup
 msgctxt "na.esito.fatto.testo"
 msgid "Il programma si costruisce e supera i test anche su Windows e macOS: la voce nasce."
-msgstr "Și pe Windows și macOS, programul se compilează, trece testele și poate genera vocea."
+msgstr "Programul se compilează, trece testele și poate genera voce atât pe Windows, cât și pe macOS."
 
 #: non-ancora/index.html
 #, kalliope-markup
@@ -2031,7 +2030,7 @@ msgstr "<1>Dacă nu a mers</1>Dacă apare „Nu te aude nimeni”, „Lipsește 
 #: riunione/index.html
 msgctxt "riu.immagine.8"
 msgid "La finestra di Kalliope. In alto la barra, con il logo, il nome, la voce (Giulia), «Riunione», «Altro» e la grandezza del testo. Sotto, le frasi già dette, in bolle: l'ultima è la più chiara. Poi la riga di stato: «Pronta. Nella riunione scegli «Kalliope» come microfono.» In basso la grande bolla tratteggiata dove scrivi, con «Di'»."
-msgstr "Fereastra Kalliope. Sus, pe bară, apar sigla, numele, vocea (Giulia), „Întâlnire”, „Mai multe” și butoanele pentru mărimea textului. Dedesubt sunt frazele rostite, fiecare într-un balon. Ultima se vede cel mai clar. Urmează bara de stare: „Gata. În întâlnire, alege «Kalliope» ca microfon.” Jos este balonul mare cu contur întrerupt în care scrii, cu butonul „Spune”."
+msgstr "Fereastra Kalliope. Sus, pe bară, apar sigla, numele, vocea (Giulia), „Întâlnire”, „Altele” și butoanele pentru mărimea textului. Dedesubt sunt frazele rostite, fiecare într-un balon. Ultima se vede cel mai clar. Urmează bara de stare: „Gata. În întâlnire, alege «Kalliope» ca microfon.” Jos este balonul mare cu contur întrerupt în care scrii, cu butonul „Spune”."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2308,7 +2307,7 @@ msgstr "Cu propria voce"
 #, kalliope-markup
 msgctxt "riu.voce.testo"
 msgid "In «Altro» scegli «Crea la tua voce». La registri dal microfono, leggendo un testo (bastano circa dodici secondi), oppure importi una vecchia registrazione: WAV, FLAC, MP3, OGG, M4A, o un messaggio vocale di WhatsApp o Telegram, anche dentro un video. Scegli il pezzo più chiaro, dai un nome alla voce e conferma che è la tua, o che chi parla ti ha dato il permesso."
-msgstr "În meniul „Mai multe”, alege „Creează-ți vocea”. O poți înregistra la microfon citind un text. Ajung cam douăsprezece secunde. Poți și importa o înregistrare mai veche în format WAV, FLAC, MP3, OGG sau M4A ori un mesaj vocal de pe WhatsApp sau Telegram. Vocea poate fi și într-un videoclip. Alege fragmentul în care vocea se aude cel mai clar, dă-i un nume și confirmă că e vocea ta sau că ai acordul persoanei care vorbește."
+msgstr "În meniul „Altele”, alege „Creează-ți vocea”. O poți înregistra la microfon citind un text. Ajung cam douăsprezece secunde. Poți și importa o înregistrare mai veche în format WAV, FLAC, MP3, OGG sau M4A ori un mesaj vocal de pe WhatsApp sau Telegram. Vocea poate fi și într-un videoclip. Alege fragmentul în care vocea se aude cel mai clar, dă-i un nume și confirmă că e vocea ta sau că ai acordul persoanei care vorbește."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2405,11 +2404,10 @@ msgid "Cosa significa"
 msgstr "Ce înseamnă"
 
 #: riunione/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive quale cartella e quali file («Manca la voce: in … non trovo …»). L'installazione è rotta, e finché non è a posto la voce non può parlare."
+#, kalliope-markup
 msgctxt "ai.testo.21"
 msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive «Non trovo i file della voce». L'installazione è rotta, e finché non è a posto la voce non può parlare."
-msgstr "Vocile sunt incluse în pachet, dar cel puțin un fișier lipsește din dosarul în care îl caută Kalliope. Lângă starea vocii apare mesajul „Nu găsesc fișierele vocii. Fără ele nu pot vorbi.” Până repari instalarea, Kalliope nu poate rosti frazele."
+msgstr "Vocile sunt incluse în pachet. Dacă lipsește un fișier din dosarul în care îl caută Kalliope, lângă starea vocii apare „Nu găsesc fișierele vocii”. Instalarea e incompletă. Până o repari, Kalliope nu poate vorbi."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2584,7 +2582,7 @@ msgstr "Ce ai de făcut"
 #, kalliope-markup
 msgctxt "ai.testo.46"
 msgid "Esc, o «Ferma», interrompe subito. Il testo che scrivi nel frattempo aspetta il suo turno."
-msgstr "Apasă Esc sau „Oprește” ca să oprești imediat vocea. Textul pe care îl scrii între timp își așteaptă rândul."
+msgstr "Poți opri vocea imediat cu tasta Esc sau cu butonul „Oprește”. Textul pe care îl scrii între timp își așteaptă rândul."
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <q class="frase-finestra">
@@ -2635,11 +2633,10 @@ msgid "Cosa significa"
 msgstr "Ce înseamnă"
 
 #: riunione/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …», «Errore della voce: …» o «Non riesco a cambiare voce: …»."
+#, kalliope-markup
 msgctxt "ai.testo.54"
 msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …» o «Non sono riuscita a dire questa frase: …»."
-msgstr "Ceva nu merge în program sau în fișierele vocii. Alături apare un mesaj precum „Nu pot pregăti vocea: …”, „Eroare de voce: …” sau „Nu pot schimba vocea: …”."
+msgstr "E o problemă cu programul sau cu fișierele vocii. Lângă starea vocii apare un mesaj precum „Nu pot pregăti vocea: …” sau „Nu am reușit să rostesc această frază: …”."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2995,7 +2992,7 @@ msgstr "Am făcut măsurătorile pe un singur calculator, un laptop cu Ryzen 5 P
 #, kalliope-markup
 msgctxt "st.catena.programma"
 msgid "Il programma con la finestra nuova: 24 MB, circa 135 MB di memoria con la voce caricata, meno dello 0,5% di un processore da fermo e circa il 7% mentre parla, finestra compresa. <1><2>README</2></1>"
-msgstr "Programul cu noua fereastră ocupă 24 MB pe disc și aproximativ 135 MB de memorie cu vocea încărcată. Folosește sub 0,5% dintr-un procesor în repaus și cam 7% când vorbește, cu tot cu fereastră. <1><2>README</2></1>"
+msgstr "Programul cu noua fereastră ocupă 24 MB pe disc și aproximativ 135 MB de memorie cu vocea încărcată. În repaus folosește sub 0,5% dintr-un procesor, iar când vorbește, cam 7%, cu tot cu fereastră. <1><2>README</2></1>"
 
 #: stato/index.html
 #, kalliope-markup
@@ -3056,7 +3053,7 @@ msgstr "Detalii și surse"
 #, kalliope-markup
 msgctxt "st.scrivi.fatto"
 msgid "Anche le abbreviazioni, e gli accenti mancanti tornano: «cmq ci vediamo dmn alle 10:30» si dice «comunque ci vediamo domani alle dieci e trenta». Circa 11 µs a frase. <1><2>README</2>, <3>CHANGELOG.md</3></1>"
-msgstr "Kalliope scrie prescurtările pe larg și adaugă accentele care lipsesc. De exemplu, „cmq ci vediamo dmn alle 10:30” se rostește „comunque ci vediamo domani alle dieci e trenta”. Durează aproximativ 11 µs pe frază. <1><2>README</2>, <3>CHANGELOG.md</3></1>"
+msgstr "Kalliope înlocuiește prescurtările cu formele întregi și adaugă accentele care lipsesc. De exemplu, „cmq ci vediamo dmn alle 10:30” se rostește „comunque ci vediamo domani alle dieci e trenta”. Durează aproximativ 11 µs pe frază. <1><2>README</2>, <3>CHANGELOG.md</3></1>"
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <strong>
@@ -3292,7 +3289,7 @@ msgstr "Deocamdată nu. Poți alege între Giulia și Marco. Ambele voci vorbesc
 #, kalliope-markup
 msgctxt "st.d.voce.personale"
 msgid "Sì, dentro il programma: in «Altro», «Crea la tua voce». La registri dal microfono, leggendo un testo di circa dodici secondi, oppure importi una vecchia registrazione (WAV, FLAC, MP3, OGG, M4A, o un messaggio vocale di WhatsApp o Telegram, anche dentro un video). Scegli il pezzo più chiaro, le dai un nome e confermi che è la tua voce, o che chi parla ti ha dato il permesso. La voce si crea su questo computer; la trovi accanto a Giulia e Marco. Il programma parla in italiano."
-msgstr "Da. În program, deschide „Mai multe” și alege „Creează-ți vocea”. O poți înregistra la microfon citind un text de aproximativ douăsprezece secunde. Poți și importa o înregistrare mai veche (WAV, FLAC, MP3, OGG, M4A sau un mesaj vocal de pe WhatsApp ori Telegram). Vocea poate fi și într-un videoclip. Alege fragmentul cel mai clar, dă-i un nume și confirmă că e vocea ta sau că ai acordul persoanei care vorbește. Vocea se creează pe acest calculator și o găsești alături de Giulia și Marco. Programul vorbește doar italiană."
+msgstr "Da. În program, deschide „Altele” și alege „Creează-ți vocea”. O poți înregistra la microfon citind un text de aproximativ douăsprezece secunde. Poți și importa o înregistrare mai veche (WAV, FLAC, MP3, OGG, M4A sau un mesaj vocal de pe WhatsApp ori Telegram). Vocea poate fi și într-un videoclip. Alege fragmentul cel mai clar, dă-i un nume și confirmă că e vocea ta sau că ai acordul persoanei care vorbește. Vocea se creează pe acest calculator și o găsești alături de Giulia și Marco. Programul vorbește doar italiană."
 
 #: stato/index.html
 #, kalliope-markup
@@ -3680,21 +3677,21 @@ msgstr "Întâlnire"
 #, kalliope-slint
 msgctxt "programma.finestra.modalita-riunione-solo-scrittura"
 msgid "Modalità riunione: solo scrittura, stato e Ferma"
-msgstr "Mod întâlnire: doar câmpul de scriere, starea și butonul Oprește"
+msgstr "Mod de întâlnire: doar câmpul de scriere, starea și butonul Oprește"
 
 #. A button in the bar that opens a menu of more commands (create your own voice, about, clear the history). One short word, like «More» in other programs.
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.altro"
 msgid "Altro"
-msgstr "Mai multe"
+msgstr "Altele"
 
 #. Read aloud by a screen reader for the «Altro» menu: say what it holds
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.altro-crea-tua-voce"
 msgid "Altro: crea la tua voce, informazioni"
-msgstr "Mai multe: creează-ți vocea, informații"
+msgstr "Altele: creează-ți vocea, despre Kalliope"
 
 #. The button that makes the text smaller: a capital A with a minus sign
 #: crates/app/ui/kalliope/finestra.slint
@@ -3805,7 +3802,7 @@ msgstr "Scrie aici."
 #, kalliope-slint
 msgctxt "programma.comune.segnaposto-scrivi-invio"
 msgid "Scrivi qui. Invio la dice."
-msgstr "Scrie aici. Enter pornește vocea."
+msgstr "Scrie aici. Apasă Enter ca să vorbești."
 
 #. The title of the menu where the person chooses the voice that speaks for them.
 #: crates/app/ui/kalliope/finestra.slint
@@ -3833,7 +3830,7 @@ msgstr "Creează-ți vocea"
 #, kalliope-slint
 msgctxt "programma.finestra.informazioni"
 msgid "Informazioni"
-msgstr "Informații"
+msgstr "Despre Kalliope"
 
 #. In the «Altro» menu: empties the list of sentences already said (it asks first).
 #: crates/app/ui/kalliope/finestra.slint
@@ -4080,7 +4077,7 @@ msgstr "Apasă Esc ca să oprești vocea."
 #, kalliope-slint
 msgctxt "programma.crea.passo-scegli"
 msgid "Registra o importa"
-msgstr "Înregistrează sau importă"
+msgstr "Înregistrare sau import"
 
 #. The name of the second step: the person reads a text aloud. Short.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4094,7 +4091,7 @@ msgstr "Citește cu voce tare"
 #, kalliope-slint
 msgctxt "programma.crea.passo-nome"
 msgid "Ascolta e dai un nome"
-msgstr "Ascultă și alege un nume"
+msgstr "Ascultă și dă-i un nume"
 
 #. Where the person is among the three steps of making a voice: {0} is the number of the step (1 to 3), {1} its name
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4102,7 +4099,7 @@ msgstr "Ascultă și alege un nume"
 #, kalliope-slint, python-brace-format
 msgctxt "programma.crea.passo"
 msgid "{} di 3 · {}"
-msgstr "{} din 3 · {}"
+msgstr "{}/3 · {}"
 
 #. The same round button while it records: it stops recording.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4166,13 +4163,13 @@ msgstr "Dacă încă poți vorbi"
 #, kalliope-slint
 msgctxt "programma.crea.registrala-adesso"
 msgid "Registrala adesso"
-msgstr "Înregistrează-ți vocea acum"
+msgstr "Te înregistrezi acum"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.istruzioni-registra"
 msgid "Leggi ad alta voce un breve testo. Bastano dodici secondi di voce chiara, meglio finché la voce è forte."
-msgstr "Citește un text scurt cu voce tare. Ajung douăsprezece secunde în care vocea se aude clar. Cel mai bine e să o înregistrezi cât încă e puternică."
+msgstr "Citește un text scurt cu voce tare. Ajung 12 secunde de voce clară. E mai bine să te înregistrezi cât vocea îți e încă puternică."
 
 #. A small line over the second choice: this way is for a person who can no longer speak.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4186,7 +4183,7 @@ msgstr "Dacă nu mai poți vorbi"
 #, kalliope-slint
 msgctxt "programma.crea.usa-vecchie-registrazioni"
 msgid "Usa vecchie registrazioni"
-msgstr "Folosește înregistrări mai vechi"
+msgstr "Folosești înregistrări vechi"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4232,7 +4229,7 @@ msgstr "Verific înregistrarea…"
 #, kalliope-slint
 msgctxt "programma.crea.premi-tondo-leggi"
 msgid "Premi il tondo e leggi"
-msgstr "Apasă butonul rotund și citește"
+msgstr "Apasă pe cerc și citește"
 
 #. While the voice is recorded: {0} is the time recorded so far («3,2 s»); {n} is how many whole seconds of clear voice are still needed
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4241,9 +4238,9 @@ msgstr "Apasă butonul rotund și citește"
 msgctxt "programma.crea.mancano"
 msgid "{0} · ne manca {n}"
 msgid_plural "{0} · ne mancano {n}"
-msgstr[0] "{0} · mai trebuie {n} secundă"
-msgstr[1] "{0} · mai trebuie {n} secunde"
-msgstr[2] "{0} · mai trebuie {n} de secunde"
+msgstr[0] "{0} · încă {n} s"
+msgstr[1] "{0} · încă {n} s"
+msgstr[2] "{0} · încă {n} s"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4255,28 +4252,28 @@ msgstr "E suficient. Apasă din nou ca să oprești înregistrarea."
 #, kalliope-slint
 msgctxt "programma.crea.ne-bastano-dodici-secondi"
 msgid "Ne bastano dodici secondi di voce: il cerchio si riempie. Il livello si muove con la tua voce."
-msgstr "Ajung douăsprezece secunde de voce. Cercul se umple pe măsură ce vorbești, iar indicatorul arată cât de tare se aude vocea."
+msgstr "Ajung 12 secunde de voce. Cercul se umple, iar indicatorul arată cât de tare vorbești."
 
 #. A button that stops playing the recording.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ferma-ascolto"
 msgid "Ferma l'ascolto"
-msgstr "Oprește redarea"
+msgstr "Oprește"
 
 #. A button that plays the recording just made.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ascolta-registrazione"
 msgid "Ascolta la registrazione"
-msgstr "Ascultă înregistrarea"
+msgstr "Ascultă"
 
 #. A button that throws the recording away to record again. A verb, short.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.rifai"
 msgid "Rifai"
-msgstr "Reia"
+msgstr "Refă"
 
 #. After a recording is read: {n} is how many stretches with a voice were found
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4301,7 +4298,7 @@ msgstr "Creez vocea „{}”…"
 #, kalliope-slint
 msgctxt "programma.crea.ci-vuole-poco-quando"
 msgid "Ci vuole poco. Quando è pronta la scegli da sola."
-msgstr "Durează puțin. Când e gata, vocea va fi selectată automat."
+msgstr "Durează puțin. Când vocea e gata, o selectez automat."
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4321,13 +4318,13 @@ msgstr "Numele vocii"
 #, kalliope-slint
 msgctxt "programma.crea.segnaposto-nome-voce"
 msgid "Per esempio: la voce di Anna"
-msgstr "De exemplu: Vocea mea (Anna)"
+msgstr "De exemplu: Anna"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.mia-voce-oppure-persona"
 msgid "È la mia voce, oppure la persona che parla mi ha dato il permesso di usarla."
-msgstr "Este vocea mea sau am acordul persoanei care vorbește pentru a-i folosi vocea."
+msgstr "E vocea mea sau am permisiunea să folosesc vocea persoanei care vorbește."
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4361,13 +4358,13 @@ msgstr "Citește cu voce tare, fără grabă"
 #, kalliope-slint
 msgctxt "programma.crea.titolo-nome"
 msgid "Ascoltala e dalle un nome"
-msgstr "Ascultă vocea și dă-i un nume"
+msgstr "Ascult-o și dă-i un nume"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.questa-registrazione-non-si"
 msgid "Da questa registrazione non si può creare la voce: rifai."
-msgstr "Nu pot crea vocea din această înregistrare. Încearcă din nou."
+msgstr "Nu pot crea vocea din această înregistrare. Fă alta."
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4379,7 +4376,7 @@ msgstr "Lipsește numele."
 #, kalliope-slint
 msgctxt "programma.crea.manca-permesso-spunta-casella"
 msgid "Manca il permesso: spunta la casella."
-msgstr "Am nevoie de acordul tău. Bifează căsuța."
+msgstr "Lipsește acordul. Bifează căsuța."
 
 #. The last button of the steps: it creates the voice with the name given.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4462,7 +4459,7 @@ msgstr "Sunetul e prea puternic. Îndepărtează-te puțin de microfon."
 #, kalliope-rust
 msgctxt "programma.crea.serve-permesso"
 msgid "Per continuare serve il permesso: spunta la casella."
-msgstr "Ca să continui, bifează căsuța pentru a-ți da acordul."
+msgstr "Ca să continui, bifează căsuța dacă e vocea ta sau ai permisiunea să o folosești."
 
 #. The first stretch of a recording, the one where the voice is clearest: {numero} is its number
 #. Placeholders to leave as they are: {numero}
@@ -4470,7 +4467,7 @@ msgstr "Ca să continui, bifează căsuța pentru a-ți da acordul."
 #, kalliope-rust, python-brace-format
 msgctxt "programma.crea.tratto-chiaro"
 msgid "Tratto {numero} · il più chiaro"
-msgstr "Fragmentul {numero} · cel mai clar"
+msgstr "Fragment {numero} · cel mai clar"
 
 #. The name of a stretch of an imported recording where a voice was found, numbered: «Stretch 2». {numero} is the number.
 #. Placeholders to leave as they are: {numero}
@@ -4478,7 +4475,7 @@ msgstr "Fragmentul {numero} · cel mai clar"
 #, kalliope-rust, python-brace-format
 msgctxt "programma.crea.tratto"
 msgid "Tratto {numero}"
-msgstr "Fragmentul {numero}"
+msgstr "Fragment {numero}"
 
 #. A stretch of a recording: from {inizio} to {fine} (times like 0:12), with {secondi} seconds of voice
 #. Placeholders to leave as they are: {inizio} {fine} {secondi}
@@ -4486,7 +4483,7 @@ msgstr "Fragmentul {numero}"
 #, kalliope-rust, python-brace-format
 msgctxt "programma.crea.tratto-dettaglio"
 msgid "da {inizio} a {fine} · {secondi} s di voce"
-msgstr "de la {inizio} la {fine} · {secondi} s de voce"
+msgstr "{inizio}–{fine} · {secondi} s de voce"
 
 #: crates/app/src/crea.rs
 #, kalliope-rust
@@ -4498,7 +4495,7 @@ msgstr "Nu se deschide fereastra de alegere a fișierului. Încearcă din nou. D
 #, kalliope-rust
 msgctxt "programma.crea.tratto-inutilizzabile"
 msgid "Da questo tratto non si può creare la voce: scegli un altro tratto, o rifai."
-msgstr "Nu pot crea vocea din acest fragment. Alege alt fragment sau încearcă din nou."
+msgstr "Nu pot crea vocea din acest fragment. Alege altul sau ia-o de la capăt."
 
 #. A button: replace the existing voice that has the same name with the new one.
 #: crates/app/src/crea.rs
@@ -4611,7 +4608,7 @@ msgstr "Nu primesc niciun sunet de la microfon. Verifică dacă e conectat și p
 #, kalliope-rust
 msgctxt "programma.nome.vuoto"
 msgid "Scrivi un nome per la voce, per esempio «La voce di Anna»."
-msgstr "Scrie un nume pentru voce, de exemplu „Vocea mea (Anna)”."
+msgstr "Dă-i vocii un nume, de exemplu „Anna”."
 
 #: crates/app/src/own_voice.rs
 #, kalliope-rust

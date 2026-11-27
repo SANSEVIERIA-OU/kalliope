@@ -440,14 +440,14 @@ msgstr "Sono d'accordo con Paola. Però la consegna del 14/3 mi sembra stretta: 
 #, kalliope-markup
 msgctxt "frase.3.detto-etichetta"
 msgid "Detto:"
-msgstr ""
+msgstr "आवाज़ ने कहा:"
 
 #. What the Italian voice said: it stays in Italian, as the voice says it.
 #: index.html
 #, kalliope-markup
 msgctxt "frase.3.detto-frase"
 msgid "«Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
-msgstr ""
+msgstr "«Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
 
 #: index.html
 #, kalliope-markup
@@ -576,7 +576,7 @@ msgstr "पहली बार Kalliope खोलने की झलक"
 #, kalliope-markup
 msgctxt "avvio.preparo.nome"
 msgid "Preparo la voce"
-msgstr "आवाज़ तैयार हो रही है"
+msgstr "आवाज़ तैयार कर रही हूँ"
 
 #: index.html installa/index.html
 #, kalliope-markup
@@ -589,7 +589,7 @@ msgstr "बस कुछ ही देर में आप अपनी बा�
 #, kalliope-markup
 msgctxt "avvio.segnaposto"
 msgid "Puoi già scrivere: la voce arriva fra poco."
-msgstr "आप अभी से लिख सकते हैं। आवाज़ बस तैयार होने वाली है।"
+msgstr "अभी से लिखें। आवाज़ जल्द तैयार होगी।"
 
 #: index.html installa/index.html
 #, kalliope-markup
@@ -1122,7 +1122,7 @@ msgstr "देखें कि फ़ाइल हूबहू वही है"
 #, kalliope-markup
 msgctxt "in.file.controlla.testo"
 msgid "Consigliato: così sai che è il file pubblicato. Apri un terminale nella cartella dei download (di solito Scaricati) e scrivi:"
-msgstr "इस जाँच से पता चलता है कि आपने वही फ़ाइल डाउनलोड की है जिसे जारी किया गया था। जिस फ़ोल्डर में फ़ाइल है (आमतौर पर Downloads), उसमें टर्मिनल खोलें और लिखें:"
+msgstr "हम यह जाँच करने की सलाह देते हैं। इससे पता चलता है कि आपने वही फ़ाइल डाउनलोड की है जिसे जारी किया गया था। डाउनलोड वाले फ़ोल्डर (आमतौर पर Downloads) में टर्मिनल खोलें और लिखें:"
 
 #: installa/index.html
 #, kalliope-markup
@@ -1225,13 +1225,13 @@ msgstr "उसी फ़ोल्डर में कमांड चलाए�
 #, kalliope-markup
 msgctxt "in.installa.deb.nota"
 msgid "Il pacchetto non è firmato."
-msgstr "पैकेज पर डिजिटल हस्ताक्षर नहीं है।"
+msgstr "पैकेज पर डिजिटल हस्ताक्षर नहीं हैं।"
 
 #: installa/index.html
 #, kalliope-markup
 msgctxt "in.installa.rpm.nota"
 msgid "Il pacchetto non è firmato: dnf mostra un avviso e lo installa dopo l'avviso. Per questa versione è previsto."
-msgstr "पैकेज पर डिजिटल हस्ताक्षर नहीं है। dnf एक चेतावनी दिखाकर इसे इंस्टॉल करता है। इस वर्शन के लिए यह सामान्य है।"
+msgstr "पैकेज पर डिजिटल हस्ताक्षर नहीं हैं। dnf एक चेतावनी दिखाकर इसे इंस्टॉल करता है। इस वर्शन के लिए यह सामान्य है।"
 
 #: installa/index.html
 #, kalliope-markup
@@ -1348,7 +1348,7 @@ msgstr "पहली बार खोलने पर Kalliope की विं�
 #, kalliope-markup
 msgctxt "finestra.risolvi"
 msgid "Come si risolve"
-msgstr "इसे कैसे ठीक करें"
+msgstr "हल देखें"
 
 #. The hint in the writing area when the voice does not start: look at the line above.
 #: installa/index.html
@@ -1379,7 +1379,7 @@ msgstr "इसे ऐप मेन्यू से खोलें। आवा�
 #, kalliope-markup
 msgctxt "in.apri.ogni-volta"
 msgid "A ogni avvio dice «Preparo la voce» per un po': puoi già scrivere, e la voce arriva fra poco."
-msgstr "हर बार खोलने पर थोड़ी देर के लिए “आवाज़ तैयार हो रही है” दिखता है। आप तब भी लिख सकते हैं। आवाज़ बस तैयार होने वाली है।"
+msgstr "हर बार खोलने पर थोड़ी देर के लिए “आवाज़ तैयार कर रही हूँ” दिखता है। आप तब भी लिख सकते हैं। आवाज़ बस तैयार होने वाली है।"
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <strong>
@@ -1387,7 +1387,7 @@ msgstr "हर बार खोलने पर थोड़ी देर के
 #, kalliope-markup
 msgctxt "in.apri.riuscito"
 msgid "<1>Riuscito</1> se la riga di stato dice «Pronta» e, accanto, «Nella riunione scegli «Kalliope» come microfono.»"
-msgstr "<1>आवाज़ तैयार है</1> जब स्थिति वाली पंक्ति में “तैयार” दिखे और उसके पास लिखा हो: ‘मीटिंग में माइक्रोफ़ोन के लिए “Kalliope” चुनें।’"
+msgstr "स्थिति वाली पंक्ति में “तैयार” दिखे तो <1>आवाज़ तैयार है</1>। उसके पास यह संदेश भी दिखेगा: ‘मीटिंग में माइक्रोफ़ोन के लिए “Kalliope” चुनें।’"
 
 #: installa/index.html
 #, kalliope-markup
@@ -1405,7 +1405,7 @@ msgstr "“आवाज़ शुरू नहीं हुई”"
 #, kalliope-markup
 msgctxt "in.frasi.voce.rimedio"
 msgid "Un file delle voci non è dove il programma lo cerca: installa di nuovo il pacchetto o l'archivio, con i passi qui sopra. «Come si risolve» porta a questo passo."
-msgstr "आवाज़ की कोई फ़ाइल वहाँ नहीं है जहाँ प्रोग्राम उसे खोजता है। ऊपर दिए चरणों से पैकेज या आर्काइव दोबारा इंस्टॉल करें। “इसे कैसे ठीक करें” आपको इसी चरण पर लाता है।"
+msgstr "आवाज़ की कोई फ़ाइल वहाँ नहीं है जहाँ प्रोग्राम उसे खोजता है। ऊपर दिए चरणों से पैकेज या आर्काइव दोबारा इंस्टॉल करें। “हल देखें” आपको इसी चरण पर लाता है।"
 
 #: installa/index.html
 #, kalliope-markup
@@ -1425,7 +1425,7 @@ msgstr "“Kalliope” माइक्रोफ़ोन नहीं बन प
 #, kalliope-markup
 msgctxt "in.frasi.nessuno.frase"
 msgid "«Nessuno ti sente»"
-msgstr "“कोई नहीं सुन रहा”"
+msgstr "“कॉल में आवाज़ नहीं जा रही”"
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <a href="../riunione/#non-mi-sentono">
@@ -1624,11 +1624,10 @@ msgstr "आवाज़ शुरू नहीं हुई"
 
 #. What the window says next to the state above: the same words as the program's message programma.voce.file-mancanti.
 #: installa/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Manca la voce: in … non trovo …. Reinstalla Kalliope."
+#, kalliope-markup
 msgctxt "in.stato.voce.detto"
 msgid "Non trovo i file della voce, e senza non posso parlare. Reinstalla Kalliope dal pacchetto."
-msgstr "Manca la voce: in … non trovo …. Reinstalla Kalliope."
+msgstr "मुझे आवाज़ की फ़ाइलें नहीं मिलीं। इनके बिना मैं बोल नहीं सकती। पैकेज से Kalliope फिर से इंस्टॉल करें।"
 
 #: installa/index.html
 #, kalliope-markup
@@ -1647,7 +1646,7 @@ msgstr "आवाज़ तैयार है, लेकिन …। अभी
 #, kalliope-markup
 msgctxt "in.stato.nessuno.nome"
 msgid "Nessuno ti sente"
-msgstr "कोई नहीं सुन रहा"
+msgstr "कॉल में आवाज़ नहीं जा रही"
 
 #. What the window says next to «Nessuno ti sente»: keep «Kalliope» in quotes, it is the name of the microphone.
 #: installa/index.html
@@ -1790,7 +1789,7 @@ msgstr "<1>यह फ़ोन या टैबलेट के लिए नह
 #, kalliope-markup
 msgctxt "na.quando.titolo"
 msgid "Non promettiamo date."
-msgstr "अभी कोई तारीख तय नहीं है।"
+msgstr "हम किसी तारीख का वादा नहीं करते।"
 
 #: non-ancora/index.html
 #, kalliope-markup
@@ -2025,13 +2024,13 @@ msgstr "<1>कैसे जानें कि सब ठीक है</1>पं
 #, kalliope-markup
 msgctxt "riu.testo.6"
 msgid "<1>Se non è andata</1>Se dice «Nessuno ti sente», «Manca il microfono» o «La voce non parte», premi «Come si risolve», accanto alla riga: ti porta alla spiegazione giusta. Per ogni altra riga, <2>cercala nella sezione Aiuto</2>."
-msgstr "<1>अगर दिक्कत आए</1>“कोई नहीं सुन रहा”, “माइक्रोफ़ोन नहीं मिला” या “आवाज़ शुरू नहीं हुई” दिखे तो उसके पास “इसे कैसे ठीक करें” दबाएँ। इससे उसी दिक्कत का हल खुलेगा। कोई और संदेश हो तो <2>मदद वाले हिस्से में उसे खोजें</2>।"
+msgstr "<1>अगर दिक्कत आए</1>“कॉल में आवाज़ नहीं जा रही”, “माइक्रोफ़ोन नहीं मिला” या “आवाज़ शुरू नहीं हुई” दिखे तो उसके पास “हल देखें” दबाएँ। इससे उसी दिक्कत का हल खुलेगा। कोई और संदेश हो तो <2>मदद वाले हिस्से में उसे खोजें</2>।"
 
 #. Attribute «alt» of an element of the page: plain text, no tags.
 #: riunione/index.html
 msgctxt "riu.immagine.8"
 msgid "La finestra di Kalliope. In alto la barra, con il logo, il nome, la voce (Giulia), «Riunione», «Altro» e la grandezza del testo. Sotto, le frasi già dette, in bolle: l'ultima è la più chiara. Poi la riga di stato: «Pronta. Nella riunione scegli «Kalliope» come microfono.» In basso la grande bolla tratteggiata dove scrivi, con «Di'»."
-msgstr "Kalliope की विंडो। ऊपर की पट्टी में लोगो, नाम, आवाज़ (Giulia), “मीटिंग”, “और विकल्प” और अक्षरों का आकार बदलने के बटन हैं। नीचे बुलबुलों में पहले बोले गए वाक्य हैं। सबसे नया वाक्य सबसे साफ़ दिखता है। फिर स्थिति वाली पंक्ति है: ‘तैयार। मीटिंग में माइक्रोफ़ोन के लिए “Kalliope” चुनें।’ सबसे नीचे लिखने का बड़ा बुलबुला है जिसकी किनारी टूटी रेखा की है। इसके साथ “बोलें” बटन है।"
+msgstr "Kalliope की विंडो। ऊपर की पट्टी में लोगो, नाम, आवाज़ (Giulia), “मीटिंग”, “विकल्प” और अक्षरों का आकार बदलने के बटन हैं। नीचे बुलबुलों में पहले बोले गए वाक्य हैं। सबसे नया वाक्य सबसे साफ़ दिखता है। फिर स्थिति वाली पंक्ति है: ‘तैयार। मीटिंग में माइक्रोफ़ोन के लिए “Kalliope” चुनें।’ सबसे नीचे लिखने का बड़ा बुलबुला है जिसकी किनारी टूटी रेखा की है। इसके साथ “बोलें” बटन है।"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2148,7 +2147,7 @@ msgstr "<1>क्या करें?</1> एक वाक्य लिखकर
 #, kalliope-markup
 msgctxt "riu.testo.25"
 msgid "<1>Come sai che è andata.</1> Se la riga di stato diventa «Nessuno ti sente», nessuna app sta usando il microfono «Kalliope». Se dice «Sto parlando», una app ti ascolta."
-msgstr "<1>कैसे पता चलेगा?</1> अगर स्थिति वाली पंक्ति में “कोई नहीं सुन रहा” दिखे, तो कोई ऐप “Kalliope” माइक्रोफ़ोन इस्तेमाल नहीं कर रहा है। “बोल रही हूँ” दिखे तो किसी ऐप को आपकी आवाज़ मिल रही है।"
+msgstr "<1>कैसे पता चलेगा?</1> अगर स्थिति वाली पंक्ति में “कॉल में आवाज़ नहीं जा रही” दिखे, तो कोई ऐप “Kalliope” माइक्रोफ़ोन इस्तेमाल नहीं कर रहा है। “बोल रही हूँ” दिखे तो किसी ऐप को आपकी आवाज़ मिल रही है।"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2214,7 +2213,7 @@ msgstr "आवाज़ के मेन्यू में “खुद भी 
 #, kalliope-markup
 msgctxt "riu.testo.34"
 msgid "<1>Se non è andata</1>Premi «Come si risolve» nella finestra, o cerca la riga nella <2>sezione Aiuto</2>. Se vuoi, <3>dicci come è andata</3>."
-msgstr "<1>अगर दिक्कत आए</1>विंडो में “इसे कैसे ठीक करें” दबाएँ या <2>मदद वाले हिस्से</2> में वह संदेश खोजें। चाहें तो <3>हमें बताएँ कि क्या हुआ</3>।"
+msgstr "<1>अगर दिक्कत आए</1>विंडो में “हल देखें” दबाएँ या <2>मदद वाले हिस्से</2> में वह संदेश खोजें। चाहें तो <3>हमें बताएँ कि क्या हुआ</3>।"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2308,7 +2307,7 @@ msgstr "आपकी अपनी आवाज़ में"
 #, kalliope-markup
 msgctxt "riu.voce.testo"
 msgid "In «Altro» scegli «Crea la tua voce». La registri dal microfono, leggendo un testo (bastano circa dodici secondi), oppure importi una vecchia registrazione: WAV, FLAC, MP3, OGG, M4A, o un messaggio vocale di WhatsApp o Telegram, anche dentro un video. Scegli il pezzo più chiaro, dai un nome alla voce e conferma che è la tua, o che chi parla ti ha dato il permesso."
-msgstr "“और विकल्प” में “अपनी आवाज़ बनाएँ” चुनें। आप कोई पाठ बोलकर माइक्रोफ़ोन से रिकॉर्ड कर सकते हैं (लगभग बारह सेकंड काफ़ी हैं)। चाहें तो पुरानी रिकॉर्डिंग इम्पोर्ट करें। WAV, FLAC, MP3, OGG, M4A, WhatsApp या Telegram का वॉइस मैसेज, यहाँ तक कि वीडियो में मौजूद आवाज़ भी चलेगी। सबसे साफ़ हिस्सा चुनें, आवाज़ को नाम दें और पुष्टि करें कि यह आपकी आवाज़ है या जिसकी आवाज़ है उन्होंने आपको इसकी इजाज़त दी है।"
+msgstr "“विकल्प” में “अपनी आवाज़ बनाएँ” चुनें। आप कोई पाठ बोलकर माइक्रोफ़ोन से रिकॉर्ड कर सकते हैं (लगभग बारह सेकंड काफ़ी हैं)। चाहें तो पुरानी रिकॉर्डिंग इम्पोर्ट करें। WAV, FLAC, MP3, OGG, M4A, WhatsApp या Telegram का वॉइस मैसेज, यहाँ तक कि वीडियो में मौजूद आवाज़ भी चलेगी। सबसे साफ़ हिस्सा चुनें, आवाज़ को नाम दें और पुष्टि करें कि यह आपकी आवाज़ है या आपने इसे इस्तेमाल करने की इजाज़त बोलने वाले व्यक्ति से ली है।"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2348,7 +2347,7 @@ msgstr "<1>“आवाज़ शुरू नहीं हुई”</1>"
 #, kalliope-markup
 msgctxt "ai.testo.13"
 msgid "<1>«Preparo la voce»</1>"
-msgstr "<1>“आवाज़ तैयार हो रही है”</1>"
+msgstr "<1>“आवाज़ तैयार कर रही हूँ”</1>"
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <a href="#f-pronta">
@@ -2380,7 +2379,7 @@ msgstr "<1>“बोल रही हूँ”</1>"
 #, kalliope-markup
 msgctxt "ai.testo.17"
 msgid "<1>«Nessuno ti sente»</1>"
-msgstr "<1>“कोई नहीं सुन रहा”</1>"
+msgstr "<1>“कॉल में आवाज़ नहीं जा रही”</1>"
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <a href="#f-errori">
@@ -2405,11 +2404,10 @@ msgid "Cosa significa"
 msgstr "इसका क्या मतलब है?"
 
 #: riunione/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive quale cartella e quali file («Manca la voce: in … non trovo …»). L'installazione è rotta, e finché non è a posto la voce non può parlare."
+#, kalliope-markup
 msgctxt "ai.testo.21"
 msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive «Non trovo i file della voce». L'installazione è rotta, e finché non è a posto la voce non può parlare."
-msgstr "आवाज़ें पैकेज के साथ आती हैं। उनकी कोई फ़ाइल उस फ़ोल्डर में नहीं है जहाँ Kalliope उसे खोजता है। संदेश के पास फ़ोल्डर और गायब फ़ाइलों के नाम दिखते हैं (“Manca la voce: in … non trovo …”)। इंस्टॉलेशन ठीक होने तक Kalliope बोल नहीं पाएगा।"
+msgstr "आवाज़ें पैकेज के साथ आती हैं। उनकी कोई फ़ाइल उस फ़ोल्डर में नहीं है जहाँ Kalliope उसे ढूँढ़ता है। स्थिति वाली पंक्ति के पास लिखा आता है “मुझे आवाज़ की फ़ाइलें नहीं मिलीं”। इंस्टॉलेशन ठीक होने तक Kalliope बोल नहीं पाएगा।"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2432,7 +2430,7 @@ msgstr "<1>इंस्टॉल करें पेज</1> पर दिए च
 #, kalliope-markup
 msgctxt "ai.testo.24"
 msgid "<1>Preparo la voce</1>"
-msgstr "<1>आवाज़ तैयार हो रही है</1>"
+msgstr "<1>आवाज़ तैयार कर रही हूँ</1>"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2592,7 +2590,7 @@ msgstr "Esc या “रोकें” दबाने पर आवाज़ 
 #, kalliope-markup
 msgctxt "ai.testo.47"
 msgid "<1>Nessuno ti sente</1>"
-msgstr "<1>कोई नहीं सुन रहा</1>"
+msgstr "<1>कॉल में आवाज़ नहीं जा रही</1>"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2635,11 +2633,10 @@ msgid "Cosa significa"
 msgstr "इसका क्या मतलब है?"
 
 #: riunione/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …», «Errore della voce: …» o «Non riesco a cambiare voce: …»."
+#, kalliope-markup
 msgctxt "ai.testo.54"
 msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …» o «Non sono riuscita a dire questa frase: …»."
-msgstr "प्रोग्राम या आवाज़ की फ़ाइलों में कोई दिक्कत है। पास में ऐसा कोई संदेश दिखता है: “आवाज़ तैयार नहीं हो सकी: …”, “आवाज़ में गड़बड़ी: …” या “आवाज़ बदली नहीं जा सकी: …”।"
+msgstr "प्रोग्राम या आवाज़ की फ़ाइलों में कोई दिक्कत है। स्थिति वाली पंक्ति के पास ऐसा कोई संदेश दिखता है: “मैं आवाज़ तैयार नहीं कर पा रही हूँ: …” या “मैं यह वाक्य नहीं बोल पाई: …”।"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2704,7 +2701,7 @@ msgstr "अगर विंडो में “तैयार” दिखत�
 #, kalliope-markup
 msgctxt "ai.testo.61"
 msgid "«Nessuno ti sente», o gli altri non ti sentono"
-msgstr "“कोई नहीं सुन रहा” दिखता है या बाकी लोग आपको सुन नहीं पा रहे हैं"
+msgstr "“कॉल में आवाज़ नहीं जा रही” दिखता है या बाकी लोग आपको सुन नहीं पा रहे हैं"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2926,7 +2923,7 @@ msgstr "आप जो वाक्य लिखते हैं, Kalliope उस
 #, kalliope-markup
 msgctxt "st.apertura.per-chi"
 msgid "Per chi è, e per chi no"
-msgstr "यह किसके काम आ सकता है?"
+msgstr "यह किसके काम आ सकता है और किसके नहीं?"
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <span class="freccia" aria-hidden="true">
@@ -3102,7 +3099,7 @@ msgstr "पहला वाक्य तैयार होते ही आव�
 #, kalliope-markup
 msgctxt "st.voce.forse"
 msgid "Quanto dura «Preparo la voce…» a ogni avvio: <1>non misurato</1>."
-msgstr "खोलने पर “आवाज़ तैयार हो रही है…” कितनी देर दिखता है: <1>अभी मापा नहीं गया है</1>।"
+msgstr "खोलने पर “आवाज़ तैयार कर रही हूँ…” कितनी देर दिखता है: <1>अभी मापा नहीं गया है</1>।"
 
 #: stato/index.html
 #, kalliope-markup
@@ -3203,7 +3200,7 @@ msgstr "GitHub पर अपना अनुभव बताएँ (खाता
 #, kalliope-markup
 msgctxt "st.per-chi.titolo"
 msgid "Per chi è, e per chi no."
-msgstr "यह किसके काम आ सकता है?"
+msgstr "यह किसके काम आ सकता है और किसके नहीं?"
 
 #: stato/index.html
 #, kalliope-markup
@@ -3291,7 +3288,7 @@ msgstr "अभी नहीं। आप Giulia और Marco की आवाज
 #, kalliope-markup
 msgctxt "st.d.voce.personale"
 msgid "Sì, dentro il programma: in «Altro», «Crea la tua voce». La registri dal microfono, leggendo un testo di circa dodici secondi, oppure importi una vecchia registrazione (WAV, FLAC, MP3, OGG, M4A, o un messaggio vocale di WhatsApp o Telegram, anche dentro un video). Scegli il pezzo più chiaro, le dai un nome e confermi che è la tua voce, o che chi parla ti ha dato il permesso. La voce si crea su questo computer; la trovi accanto a Giulia e Marco. Il programma parla in italiano."
-msgstr "हाँ। प्रोग्राम में “और विकल्प” खोलकर “अपनी आवाज़ बनाएँ” चुनें। कोई पाठ बोलकर माइक्रोफ़ोन से करीब बारह सेकंड रिकॉर्ड करें या पुरानी रिकॉर्डिंग इम्पोर्ट करें। WAV, FLAC, MP3, OGG, M4A, WhatsApp या Telegram का वॉइस मैसेज, यहाँ तक कि वीडियो में मौजूद आवाज़ भी चलेगी। सबसे साफ़ हिस्सा चुनें और आवाज़ को नाम दें। पुष्टि करें कि यह आपकी आवाज़ है या जिसकी आवाज़ है उन्होंने आपको इसकी इजाज़त दी है। आवाज़ इसी कंप्यूटर पर बनती है। यह आपको Giulia और Marco के साथ मिलेगी। प्रोग्राम सिर्फ़ इतालवी बोलता है।"
+msgstr "हाँ। प्रोग्राम में “विकल्प” खोलकर “अपनी आवाज़ बनाएँ” चुनें। कोई पाठ बोलकर माइक्रोफ़ोन से करीब बारह सेकंड रिकॉर्ड करें या पुरानी रिकॉर्डिंग इम्पोर्ट करें। WAV, FLAC, MP3, OGG, M4A, WhatsApp या Telegram का वॉइस मैसेज, यहाँ तक कि वीडियो में मौजूद आवाज़ भी चलेगी। सबसे साफ़ हिस्सा चुनें और आवाज़ को नाम दें। पुष्टि करें कि यह आपकी आवाज़ है या आपने इसे इस्तेमाल करने की इजाज़त बोलने वाले व्यक्ति से ली है। आवाज़ इसी कंप्यूटर पर बनती है। यह आपको Giulia और Marco के साथ मिलेगी। प्रोग्राम सिर्फ़ इतालवी बोलता है।"
 
 #: stato/index.html
 #, kalliope-markup
@@ -3628,14 +3625,14 @@ msgstr "जवाब: {domanda}"
 #, kalliope-slint
 msgctxt "programma.finestra.preparo-la-voce"
 msgid "Preparo la voce…"
-msgstr "आवाज़ तैयार हो रही है…"
+msgstr "आवाज़ तैयार कर रही हूँ…"
 
 #. A small button next to a problem (nobody hears you, no microphone, the voice does not start): it opens the page of the website that explains what to do. Two or three words.
 #: crates/app/ui/kalliope/avvisi.slint crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.comune.come-si-risolve"
 msgid "Come si risolve"
-msgstr "इसे कैसे ठीक करें"
+msgstr "हल देखें"
 
 #. The button that closes a question without doing anything.
 #: crates/app/ui/kalliope/avvisi.slint crates/app/ui/kalliope/modali.slint crates/app/ui/kalliope/voce-propria.slint
@@ -3686,14 +3683,14 @@ msgstr "मीटिंग मोड: सिर्फ़ लिखने की 
 #, kalliope-slint
 msgctxt "programma.finestra.altro"
 msgid "Altro"
-msgstr "और विकल्प"
+msgstr "विकल्प"
 
 #. Read aloud by a screen reader for the «Altro» menu: say what it holds
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.altro-crea-tua-voce"
 msgid "Altro: crea la tua voce, informazioni"
-msgstr "और विकल्प: अपनी आवाज़ बनाएँ, जानकारी"
+msgstr "विकल्प: अपनी आवाज़ बनाएँ, जानकारी"
 
 #. The button that makes the text smaller: a capital A with a minus sign
 #: crates/app/ui/kalliope/finestra.slint
@@ -3777,7 +3774,7 @@ msgstr "बस कुछ पल।"
 #, kalliope-slint
 msgctxt "programma.finestra.segnaposto-puoi-gia-scrivere"
 msgid "Puoi già scrivere: la voce arriva fra poco."
-msgstr "आप अभी से लिख सकते हैं। आवाज़ बस तैयार होने वाली है।"
+msgstr "अभी से लिखें। आवाज़ जल्द तैयार होगी।"
 
 #. The hint in the empty writing box of the smallest window when the voice cannot start.
 #: crates/app/ui/kalliope/finestra.slint
@@ -3811,7 +3808,7 @@ msgstr "यहाँ लिखें। बोलने के लिए Enter �
 #, kalliope-slint
 msgctxt "programma.finestra.con-quale-voce-parli"
 msgid "Con quale voce parli"
-msgstr "बोलने के लिए आवाज़ चुनें"
+msgstr "किस आवाज़ में बोलें?"
 
 #. A switch in the voice menu: when on, the person also hears the voice from the computer's speakers (otherwise only the others in the call hear it).
 #: crates/app/ui/kalliope/finestra.slint
@@ -4009,7 +4006,7 @@ msgstr "नई आवाज़"
 #, kalliope-slint
 msgctxt "programma.stato.preparo-la-voce"
 msgid "Preparo la voce"
-msgstr "आवाज़ तैयार हो रही है"
+msgstr "आवाज़ तैयार कर रही हूँ"
 
 #. The name of the state when the voice is ready to speak. One word; it refers to the voice (feminine in Italian).
 #: crates/app/ui/kalliope/stato.slint
@@ -4030,7 +4027,7 @@ msgstr "बोल रही हूँ"
 #, kalliope-slint
 msgctxt "programma.stato.nessuno-ti-sente"
 msgid "Nessuno ti sente"
-msgstr "कोई नहीं सुन रहा"
+msgstr "कॉल में आवाज़ नहीं जा रही"
 
 #. The name of the state when the virtual microphone «Kalliope» could not be created. Short.
 #: crates/app/ui/kalliope/stato.slint
@@ -4145,47 +4142,47 @@ msgstr "{} सुनें"
 #, kalliope-slint, python-brace-format
 msgctxt "programma.crea.leggo"
 msgid "Leggo «{}»…"
-msgstr "“{}” पढ़ी जा रही है…"
+msgstr "“{}” पढ़ रही हूँ…"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.cerco-parte-cui-si"
 msgid "Cerco la parte in cui si sente meglio la voce."
-msgstr "वह हिस्सा ढूँढ़ रही हूँ जिसमें आवाज़ सबसे साफ़ सुनाई देती है।"
+msgstr "सबसे साफ़ आवाज़ वाला हिस्सा ढूँढ़ रही हूँ।"
 
 #. A small line over the first choice: this way is for a person who can still speak.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.se-hai-ancora-voce"
 msgid "Se hai ancora la voce"
-msgstr "अगर आप अभी बोल सकते हैं"
+msgstr "अगर बोल सकते हैं"
 
 #. The first choice for creating a voice: record it now, reading a short text aloud («la» is the voice). A title.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.registrala-adesso"
 msgid "Registrala adesso"
-msgstr "अभी रिकॉर्ड करें"
+msgstr "रिकॉर्ड करें"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.istruzioni-registra"
 msgid "Leggi ad alta voce un breve testo. Bastano dodici secondi di voce chiara, meglio finché la voce è forte."
-msgstr "कोई छोटा सा पाठ बोलकर पढ़ें। बारह सेकंड की साफ़ आवाज़ काफ़ी है। हो सके तो ऐसे समय रिकॉर्ड करें जब आपकी आवाज़ साफ़ और मज़बूत हो।"
+msgstr "छोटा सा पाठ बोलकर पढ़ें। बारह सेकंड की साफ़ आवाज़ काफ़ी है। हो सके तो तब रिकॉर्ड करें जब आवाज़ में दम हो।"
 
 #. A small line over the second choice: this way is for a person who can no longer speak.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.se-voce-non-c"
 msgid "Se la voce non c'è più"
-msgstr "अगर अब आप बोल नहीं पाते"
+msgstr "अगर अब बोल नहीं पाते"
 
 #. The second choice: create the voice from recordings made before (voice messages, videos). A title.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.usa-vecchie-registrazioni"
 msgid "Usa vecchie registrazioni"
-msgstr "पुरानी रिकॉर्डिंग इस्तेमाल करें"
+msgstr "पुरानी रिकॉर्डिंग चुनें"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4218,13 +4215,13 @@ msgstr "माइक्रोफ़ोन"
 #, kalliope-slint
 msgctxt "programma.crea.apro-microfono"
 msgid "Apro il microfono…"
-msgstr "माइक्रोफ़ोन चालू हो रहा है…"
+msgstr "माइक्रोफ़ोन चालू कर रही हूँ…"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.controllo-registrazione"
 msgid "Controllo la registrazione…"
-msgstr "रिकॉर्डिंग की जाँच हो रही है…"
+msgstr "रिकॉर्डिंग जाँच रही हूँ…"
 
 #. The instruction over the round record button before recording: press it and read the text below aloud. Short.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4240,8 +4237,8 @@ msgstr "गोल बटन दबाएँ और पढ़ें"
 msgctxt "programma.crea.mancano"
 msgid "{0} · ne manca {n}"
 msgid_plural "{0} · ne mancano {n}"
-msgstr[0] "{0} · {n} सेकंड और चाहिए"
-msgstr[1] "{0} · {n} सेकंड और चाहिए"
+msgstr[0] "{0} · {n} बाकी"
+msgstr[1] "{0} · {n} बाकी"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4260,7 +4257,7 @@ msgstr "बारह सेकंड की आवाज़ काफ़ी ह�
 #, kalliope-slint
 msgctxt "programma.crea.ferma-ascolto"
 msgid "Ferma l'ascolto"
-msgstr "सुनना बंद करें"
+msgstr "रोकें"
 
 #. A button that plays the recording just made.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4274,7 +4271,7 @@ msgstr "रिकॉर्डिंग सुनें"
 #, kalliope-slint
 msgctxt "programma.crea.rifai"
 msgid "Rifai"
-msgstr "फिर से करें"
+msgstr "दोबारा करें"
 
 #. After a recording is read: {n} is how many stretches with a voice were found
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4292,13 +4289,13 @@ msgstr[1] "रिकॉर्डिंग में {n} हिस्से म�
 #, kalliope-slint, python-brace-format
 msgctxt "programma.crea.creo-voce"
 msgid "Creo la voce «{}»…"
-msgstr "“{}” आवाज़ बन रही है…"
+msgstr "“{}” आवाज़ बना रही हूँ…"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ci-vuole-poco-quando"
 msgid "Ci vuole poco. Quando è pronta la scegli da sola."
-msgstr "बस कुछ ही पल लगेंगे। तैयार होने पर यह आवाज़ अपने आप चुन ली जाएगी।"
+msgstr "बस कुछ पल लगेंगे। तैयार होते ही यही आवाज़ अपने आप चुन ली जाएगी।"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4324,27 +4321,27 @@ msgstr "जैसे, Anna की आवाज़"
 #, kalliope-slint
 msgctxt "programma.crea.mia-voce-oppure-persona"
 msgid "È la mia voce, oppure la persona che parla mi ha dato il permesso di usarla."
-msgstr "यह मेरी आवाज़ है या जिसकी आवाज़ है, उन्होंने मुझे इसे इस्तेमाल करने की इजाज़त दी है।"
+msgstr "यह मेरी आवाज़ है या जिसकी आवाज़ है, उनसे मैंने इसे इस्तेमाल करने की इजाज़त ली है।"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ciao-sono-io-questa"
 msgid "Ciao, sono io. Questa è la mia voce, per le riunioni e per le persone a cui voglio bene. La leggo con calma, come parlo ogni giorno."
-msgstr "नमस्ते, ये मैं हूँ। ये मेरी आवाज़ है, मीटिंग के लिए और अपनों से बात करने के लिए। कोई जल्दी नहीं है। मुझे बस आराम से पढ़ना है, जैसे रोज़ बातचीत होती है।"
+msgstr "नमस्ते, ये मैं हूँ। ये मेरी आवाज़ है, मीटिंग के लिए और अपनों से बात करने के लिए। इसे आराम से पढ़ना है, जैसे रोज़ की बातचीत में।"
 
 #. A button at the top of the steps of creating a voice: it leaves them and goes back to the main window, where the person writes the sentences to say. It means «back to writing», not «write again».
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.torna-a-scrivere"
 msgid "Torna a scrivere"
-msgstr "फिर से लिखें"
+msgstr "लिखने पर लौटें"
 
 #. The title of the first step of creating a voice: how the person wants to create it.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.titolo-scegli"
 msgid "Come vuoi creare la tua voce?"
-msgstr "आप अपनी आवाज़ कैसे बनाना चाहते हैं?"
+msgstr "अपनी आवाज़ कैसे बनाएँ?"
 
 #. The title of the step where the person reads a text aloud, calmly.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4358,13 +4355,13 @@ msgstr "आराम से बोलकर पढ़ें"
 #, kalliope-slint
 msgctxt "programma.crea.titolo-nome"
 msgid "Ascoltala e dalle un nome"
-msgstr "सुनें और आवाज़ को नाम दें"
+msgstr "आवाज़ सुनें और नाम दें"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.questa-registrazione-non-si"
 msgid "Da questa registrazione non si può creare la voce: rifai."
-msgstr "इस रिकॉर्डिंग से आवाज़ नहीं बन सकती। फिर से कोशिश करें।"
+msgstr "इस रिकॉर्डिंग से आवाज़ नहीं बन सकती। दोबारा करें।"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4408,7 +4405,7 @@ msgstr "आवाज़ तैयार है, लेकिन इस सिस
 #, kalliope-rust
 msgctxt "programma.audio.pipewire-non-risponde"
 msgid "La voce è pronta, ma PipeWire, il servizio audio del computer, non risponde (riprovo da sola appena torna): per ora nessuno ti sentirà nelle chiamate."
-msgstr "आवाज़ तैयार है, लेकिन कंप्यूटर की ऑडियो सेवा PipeWire जवाब नहीं दे रही है। सेवा फिर से चालू होते ही Kalliope अपने आप फिर से कोशिश करेगा। अभी कॉल में किसी को आपकी आवाज़ नहीं सुनाई देगी।"
+msgstr "आवाज़ तैयार है, लेकिन कंप्यूटर की ऑडियो सेवा PipeWire जवाब नहीं दे रही है। सेवा चालू होते ही मैं फिर कोशिश करूँगी। अभी कॉल में किसी को आपकी आवाज़ नहीं सुनाई देगी।"
 
 #: crates/app/src/audio.rs
 #, kalliope-rust
@@ -4420,7 +4417,7 @@ msgstr "आवाज़ तैयार है, लेकिन “Kalliope” �
 #, kalliope-rust
 msgctxt "programma.voce.file-mancanti"
 msgid "Non trovo i file della voce, e senza non posso parlare. Reinstalla Kalliope dal pacchetto."
-msgstr "आवाज़ की फ़ाइलें नहीं मिलीं। इनके बिना Kalliope बोल नहीं सकता। पैकेज से Kalliope फिर से इंस्टॉल करें।"
+msgstr "मुझे आवाज़ की फ़ाइलें नहीं मिलीं। इनके बिना मैं बोल नहीं सकती। पैकेज से Kalliope फिर से इंस्टॉल करें।"
 
 #. The title of the system's window for choosing an audio or video file
 #: crates/app/src/collega.rs
@@ -4495,14 +4492,14 @@ msgstr "फ़ाइल चुनने की विंडो नहीं ख�
 #, kalliope-rust
 msgctxt "programma.crea.tratto-inutilizzabile"
 msgid "Da questo tratto non si può creare la voce: scegli un altro tratto, o rifai."
-msgstr "इस हिस्से से आवाज़ नहीं बन सकती। कोई दूसरा हिस्सा चुनें या फिर से कोशिश करें।"
+msgstr "इस हिस्से से आवाज़ नहीं बन सकती। कोई दूसरा हिस्सा चुनें या फिर से शुरू करें।"
 
 #. A button: replace the existing voice that has the same name with the new one.
 #: crates/app/src/crea.rs
 #, kalliope-rust
 msgctxt "programma.crea.sostituisci-voce"
 msgid "Sostituisci la voce"
-msgstr "आवाज़ बदलें"
+msgstr "पुरानी आवाज़ बदलें"
 
 #. A button: keep this name, although one of Kalliope's own voices has it too.
 #: crates/app/src/crea.rs
@@ -4516,7 +4513,7 @@ msgstr "यही नाम रखें"
 #, kalliope-rust, python-brace-format
 msgctxt "programma.crea.voce-pronta"
 msgid "La voce «{nome}» è pronta, e adesso parla lei."
-msgstr "“{nome}” आवाज़ तैयार है। अब आप इसी आवाज़ में बोलेंगे।"
+msgstr "“{nome}” आवाज़ तैयार है। अब आपके वाक्य इसी आवाज़ में सुनाई देंगे।"
 
 #. In the voice menu: a voice made from a recording that has the same name as one of Kalliope's («Giulia (voce propria)»); {nome} is that name
 #. Placeholders to leave as they are: {nome}
@@ -4547,7 +4544,7 @@ msgstr "“{voce}” आवाज़ नहीं खुली। आपके �
 #, kalliope-rust, python-brace-format
 msgctxt "programma.motore.frase-non-detta"
 msgid "Non sono riuscita a dire questa frase: {causa}"
-msgstr "यह वाक्य बोला नहीं जा सका: {causa}"
+msgstr "मैं यह वाक्य नहीं बोल पाई: {causa}"
 
 #. {causa} is the system's own message, in English: it stays as it is
 #. Placeholders to leave as they are: {causa}
@@ -4555,7 +4552,7 @@ msgstr "यह वाक्य बोला नहीं जा सका: {caus
 #, kalliope-rust, python-brace-format
 msgctxt "programma.motore.non-prepara"
 msgid "Non riesco a preparare la voce: {causa}"
-msgstr "आवाज़ तैयार नहीं हो सकी: {causa}"
+msgstr "मैं आवाज़ तैयार नहीं कर पा रही हूँ: {causa}"
 
 #: crates/app/src/own_voice.rs
 #, kalliope-rust
@@ -4683,7 +4680,7 @@ msgstr "इसमें बोलने के लिए कोई शब्द 
 #, kalliope-rust
 msgctxt "programma.sessione.preparo"
 msgid "Preparo la voce…"
-msgstr "आवाज़ तैयार हो रही है…"
+msgstr "आवाज़ तैयार कर रही हूँ…"
 
 #: crates/sample/src/analysis.rs
 #, kalliope-rust
@@ -4701,7 +4698,7 @@ msgstr "इसमें बोलने का हिस्सा बहुत �
 #, kalliope-rust
 msgctxt "programma.analisi.parlato-breve"
 msgid "La voce si può creare, ma con 12 secondi di parlato somiglierebbe di più alla persona."
-msgstr "इससे आवाज़ बन सकती है। 12 सेकंड की बातचीत मिले तो बनी हुई आवाज़ उस व्यक्ति की आवाज़ से ज़्यादा मिलती-जुलती होगी।"
+msgstr "इससे आवाज़ बन सकती है। अगर रिकॉर्डिंग में 12 सेकंड तक बोलने की आवाज़ हो, तो नई आवाज़ उस व्यक्ति की आवाज़ से और भी मिलती-जुलती होगी।"
 
 #: crates/sample/src/analysis.rs
 #, kalliope-rust

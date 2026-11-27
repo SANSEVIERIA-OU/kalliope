@@ -440,14 +440,14 @@ msgstr "Sono d'accordo con Paola. Però la consegna del 14/3 mi sembra stretta: 
 #, kalliope-markup
 msgctxt "frase.3.detto-etichetta"
 msgid "Detto:"
-msgstr ""
+msgstr "Diucapkan:"
 
 #. What the Italian voice said: it stays in Italian, as the voice says it.
 #: index.html
 #, kalliope-markup
 msgctxt "frase.3.detto-frase"
 msgid "«Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
-msgstr ""
+msgstr "«Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
 
 #: index.html
 #, kalliope-markup
@@ -483,7 +483,7 @@ msgstr "“Kamu ketik” menunjukkan teks yang kamu masukkan. “Diucapkan” me
 #, kalliope-markup
 msgctxt "oggi.titolo"
 msgid "Fin dove arriva la voce, oggi."
-msgstr "Sejauh mana suara sudah sampai?"
+msgstr "Sejauh mana suara Kalliope sudah diuji?"
 
 #: index.html
 #, kalliope-markup
@@ -1425,7 +1425,7 @@ msgstr "Mikrofon “Kalliope” gagal dibuat. Biasanya karena PipeWire belum ter
 #, kalliope-markup
 msgctxt "in.frasi.nessuno.frase"
 msgid "«Nessuno ti sente»"
-msgstr "“Tak ada yang mendengarmu”"
+msgstr "“Suara tak terdengar”"
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <a href="../riunione/#non-mi-sentono">
@@ -1624,11 +1624,10 @@ msgstr "Suara gagal dimuat"
 
 #. What the window says next to the state above: the same words as the program's message programma.voce.file-mancanti.
 #: installa/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Manca la voce: in … non trovo …. Reinstalla Kalliope."
+#, kalliope-markup
 msgctxt "in.stato.voce.detto"
 msgid "Non trovo i file della voce, e senza non posso parlare. Reinstalla Kalliope dal pacchetto."
-msgstr "Manca la voce: in … non trovo …. Reinstalla Kalliope."
+msgstr "File suara tidak ditemukan. Tanpa file itu, Kalliope tidak bisa berbicara. Pasang ulang Kalliope dari paketnya."
 
 #: installa/index.html
 #, kalliope-markup
@@ -1647,7 +1646,7 @@ msgstr "Suara sudah siap, tetapi …. Untuk sementara, orang lain belum bisa men
 #, kalliope-markup
 msgctxt "in.stato.nessuno.nome"
 msgid "Nessuno ti sente"
-msgstr "Tak ada yang mendengarmu"
+msgstr "Suara tak terdengar"
 
 #. What the window says next to «Nessuno ti sente»: keep «Kalliope» in quotes, it is the name of the microphone.
 #: installa/index.html
@@ -2025,7 +2024,7 @@ msgstr "<1>Tanda berhasil</1>Muncul status “Siap” dan di sebelahnya tertulis
 #, kalliope-markup
 msgctxt "riu.testo.6"
 msgid "<1>Se non è andata</1>Se dice «Nessuno ti sente», «Manca il microfono» o «La voce non parte», premi «Come si risolve», accanto alla riga: ti porta alla spiegazione giusta. Per ogni altra riga, <2>cercala nella sezione Aiuto</2>."
-msgstr "<1>Jika belum berhasil</1>Jika muncul “Tak ada yang mendengarmu”, “Mikrofon tidak ada”, atau “Suara gagal dimuat”, tekan “Cara mengatasinya” di sebelah pesan untuk membuka penjelasannya. Untuk pesan lain, <2>cari di bagian Bantuan</2>."
+msgstr "<1>Jika belum berhasil</1>Jika muncul “Suara tak terdengar”, “Mikrofon tidak ada”, atau “Suara gagal dimuat”, tekan “Cara mengatasinya” di sebelah pesan untuk membuka penjelasannya. Untuk pesan lain, <2>cari di bagian Bantuan</2>."
 
 #. Attribute «alt» of an element of the page: plain text, no tags.
 #: riunione/index.html
@@ -2148,7 +2147,7 @@ msgstr "<1>Caranya.</1> Ketik kalimat lalu tekan Enter."
 #, kalliope-markup
 msgctxt "riu.testo.25"
 msgid "<1>Come sai che è andata.</1> Se la riga di stato diventa «Nessuno ti sente», nessuna app sta usando il microfono «Kalliope». Se dice «Sto parlando», una app ti ascolta."
-msgstr "<1>Lihat hasilnya.</1> Jika baris status berubah menjadi “Tak ada yang mendengarmu”, belum ada aplikasi yang memakai mikrofon “Kalliope”. Jika tertulis “Sedang bicara”, ada aplikasi yang menerima suaramu."
+msgstr "<1>Lihat hasilnya.</1> Jika baris status berubah menjadi “Suara tak terdengar”, belum ada aplikasi yang memakai mikrofon “Kalliope”. Jika tertulis “Sedang bicara”, ada aplikasi yang menerima suaramu."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2380,7 +2379,7 @@ msgstr "<1>“Sedang bicara”</1>"
 #, kalliope-markup
 msgctxt "ai.testo.17"
 msgid "<1>«Nessuno ti sente»</1>"
-msgstr "<1>“Tak ada yang mendengarmu”</1>"
+msgstr "<1>“Suara tak terdengar”</1>"
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <a href="#f-errori">
@@ -2405,11 +2404,10 @@ msgid "Cosa significa"
 msgstr "Artinya"
 
 #: riunione/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive quale cartella e quali file («Manca la voce: in … non trovo …»). L'installazione è rotta, e finché non è a posto la voce non può parlare."
+#, kalliope-markup
 msgctxt "ai.testo.21"
 msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive «Non trovo i file della voce». L'installazione è rotta, e finché non è a posto la voce non può parlare."
-msgstr "Suara sudah disertakan dalam paket, tetapi salah satu file suara tidak ditemukan di folder yang diperiksa Kalliope. Di sebelah status tertulis nama folder dan file yang hilang (“Manca la voce: in … non trovo …”). Ada masalah pada pemasangan. Suara baru bisa digunakan lagi setelah masalah itu diperbaiki."
+msgstr "Suara sudah disertakan dalam paket. Jika salah satu file suara tidak ada di folder tempat Kalliope mencarinya, di sebelah status akan muncul pesan “File suara tidak ditemukan”. Ada masalah pada pemasangan. Kalliope baru bisa berbicara lagi setelah masalah itu diperbaiki."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2592,7 +2590,7 @@ msgstr "Tekan Esc atau “Hentikan” untuk langsung menghentikan suara. Teks ya
 #, kalliope-markup
 msgctxt "ai.testo.47"
 msgid "<1>Nessuno ti sente</1>"
-msgstr "<1>Tak ada yang mendengarmu</1>"
+msgstr "<1>Suara tak terdengar</1>"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2635,11 +2633,10 @@ msgid "Cosa significa"
 msgstr "Artinya"
 
 #: riunione/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …», «Errore della voce: …» o «Non riesco a cambiare voce: …»."
+#, kalliope-markup
 msgctxt "ai.testo.54"
 msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …» o «Non sono riuscita a dire questa frase: …»."
-msgstr "Ada masalah pada program atau file suara. Di sebelah status muncul pesan seperti “Suara gagal disiapkan: …”, “Terjadi kesalahan pada suara: …”, atau “Suara gagal diganti: …”."
+msgstr "Ada masalah pada program atau file suara. Di sebelah status muncul pesan seperti “Suara gagal disiapkan: …” atau “Kalimat ini gagal diucapkan: …”."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2704,7 +2701,7 @@ msgstr "Jika statusnya “Siap” tetapi “Kalliope” tidak muncul di aplikasi
 #, kalliope-markup
 msgctxt "ai.testo.61"
 msgid "«Nessuno ti sente», o gli altri non ti sentono"
-msgstr "Muncul “Tak ada yang mendengarmu” atau peserta lain tidak mendengarmu"
+msgstr "Muncul “Suara tak terdengar” atau peserta lain tidak mendengarmu"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2750,7 +2747,7 @@ msgstr "Yang bisa kamu lakukan"
 #, kalliope-markup
 msgctxt "ai.testo.66"
 msgid "Prova ad abbassare la soppressione del rumore nelle impostazioni audio dell'app. Non l'abbiamo provato: se ti aiuta, o se non cambia nulla, <1>dicci come è andata</1>."
-msgstr "Coba turunkan tingkat peredaman bising di pengaturan audio aplikasi rapat. Kami belum mencobanya. <1>Ceritakan hasilnya kepada kami</1>, baik jika suaranya membaik maupun jika tetap sama."
+msgstr "Coba kurangi peredaman bising di pengaturan audio aplikasi rapat. Kami belum mencobanya. <1>Ceritakan hasilnya kepada kami</1>, baik kalau suaranya membaik maupun kalau tetap sama."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -3865,13 +3862,13 @@ msgstr "Kosongkan"
 #, kalliope-slint
 msgctxt "programma.menu.uso"
 msgid "in uso"
-msgstr "sedang dipakai"
+msgstr "dipakai"
 
 #: crates/app/ui/kalliope/modali.slint
 #, kalliope-slint
 msgctxt "programma.modali.scrivi-fatti-sentire-nelle"
 msgid "Scrivi e fatti sentire nelle videochiamate. La voce viene creata su questo computer: nessun testo lascia la tua macchina."
-msgstr "Ketik apa yang ingin kamu katakan agar orang lain bisa mendengarmu saat panggilan video. Suara dibuat di komputer ini. Semua teks tetap di sini."
+msgstr "Ketik pesanmu agar orang lain bisa mendengarmu saat panggilan video. Suara dibuat di komputer ini. Teksmu tetap di sini."
 
 #: crates/app/ui/kalliope/modali.slint
 #, kalliope-slint
@@ -4029,7 +4026,7 @@ msgstr "Sedang bicara"
 #, kalliope-slint
 msgctxt "programma.stato.nessuno-ti-sente"
 msgid "Nessuno ti sente"
-msgstr "Tak ada yang mendengarmu"
+msgstr "Suara tak terdengar"
 
 #. The name of the state when the virtual microphone «Kalliope» could not be created. Short.
 #: crates/app/ui/kalliope/stato.slint
@@ -4092,7 +4089,7 @@ msgstr "Baca nyaring"
 #, kalliope-slint
 msgctxt "programma.crea.passo-nome"
 msgid "Ascolta e dai un nome"
-msgstr "Dengarkan dan beri nama"
+msgstr "Dengar dan beri nama"
 
 #. Where the person is among the three steps of making a voice: {0} is the number of the step (1 to 3), {1} its name
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4100,7 +4097,7 @@ msgstr "Dengarkan dan beri nama"
 #, kalliope-slint, python-brace-format
 msgctxt "programma.crea.passo"
 msgid "{} di 3 · {}"
-msgstr "{} dari 3 · {}"
+msgstr "{}/3 · {}"
 
 #. The same round button while it records: it stops recording.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4157,27 +4154,27 @@ msgstr "Mencari bagian dengan suara paling jelas."
 #, kalliope-slint
 msgctxt "programma.crea.se-hai-ancora-voce"
 msgid "Se hai ancora la voce"
-msgstr "Jika kamu masih bisa berbicara"
+msgstr "Jika masih bisa bicara"
 
 #. The first choice for creating a voice: record it now, reading a short text aloud («la» is the voice). A title.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.registrala-adesso"
 msgid "Registrala adesso"
-msgstr "Rekam suaramu sekarang"
+msgstr "Rekam sekarang"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.istruzioni-registra"
 msgid "Leggi ad alta voce un breve testo. Bastano dodici secondi di voce chiara, meglio finché la voce è forte."
-msgstr "Bacakan teks pendek. Cukup dua belas detik dengan suara yang jelas. Sebaiknya rekam selagi suaramu masih kuat."
+msgstr "Bacakan teks pendek. Cukup 12 detik suara yang jelas. Sebaiknya rekam selagi suaramu masih kuat."
 
 #. A small line over the second choice: this way is for a person who can no longer speak.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.se-voce-non-c"
 msgid "Se la voce non c'è più"
-msgstr "Jika kamu sudah tidak bisa berbicara"
+msgstr "Jika sudah tidak bisa bicara"
 
 #. The second choice: create the voice from recordings made before (voice messages, videos). A title.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4230,7 +4227,7 @@ msgstr "Memeriksa rekaman…"
 #, kalliope-slint
 msgctxt "programma.crea.premi-tondo-leggi"
 msgid "Premi il tondo e leggi"
-msgstr "Tekan tombol bulat lalu baca"
+msgstr "Tekan tombol bulat, lalu baca"
 
 #. While the voice is recorded: {0} is the time recorded so far («3,2 s»); {n} is how many whole seconds of clear voice are still needed
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4239,7 +4236,7 @@ msgstr "Tekan tombol bulat lalu baca"
 msgctxt "programma.crea.mancano"
 msgid "{0} · ne manca {n}"
 msgid_plural "{0} · ne mancano {n}"
-msgstr[0] "{0} · perlu {n} detik lagi"
+msgstr[0] "{0} · {n} dtk lagi"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4251,21 +4248,21 @@ msgstr "Sudah cukup. Tekan lagi untuk berhenti."
 #, kalliope-slint
 msgctxt "programma.crea.ne-bastano-dodici-secondi"
 msgid "Ne bastano dodici secondi di voce: il cerchio si riempie. Il livello si muove con la tua voce."
-msgstr "Cukup dua belas detik suara. Lingkaran akan terisi dan indikator akan bergerak mengikuti suaramu."
+msgstr "Cukup 12 detik. Lingkaran akan terisi dan indikator bergerak mengikuti suaramu."
 
 #. A button that stops playing the recording.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ferma-ascolto"
 msgid "Ferma l'ascolto"
-msgstr "Hentikan pemutaran"
+msgstr "Hentikan"
 
 #. A button that plays the recording just made.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ascolta-registrazione"
 msgid "Ascolta la registrazione"
-msgstr "Dengarkan rekaman"
+msgstr "Putar rekaman"
 
 #. A button that throws the recording away to record again. A verb, short.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4281,7 +4278,7 @@ msgstr "Ulangi"
 msgctxt "programma.crea.trovati-tratti"
 msgid "Ho trovato {n} tratto in cui si sente la voce. Ascolta e scegli."
 msgid_plural "Ho trovato {n} tratti in cui si sente la voce. Ascolta e scegli."
-msgstr[0] "Ada {n} bagian yang berisi suara orang berbicara. Dengarkan lalu pilih."
+msgstr[0] "Ada suara orang berbicara di {n} bagian. Dengarkan lalu pilih."
 
 #. While a voice is made: {} is the name the person gave it
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4334,34 +4331,34 @@ msgstr "Hai, ini aku. Ini suaraku untuk rapat dan untuk orang-orang yang kusayan
 #, kalliope-slint
 msgctxt "programma.crea.torna-a-scrivere"
 msgid "Torna a scrivere"
-msgstr "Kembali mengetik"
+msgstr "Kembali ke kolom teks"
 
 #. The title of the first step of creating a voice: how the person wants to create it.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.titolo-scegli"
 msgid "Come vuoi creare la tua voce?"
-msgstr "Bagaimana kamu ingin membuat suaramu?"
+msgstr "Pilih cara membuat suaramu"
 
 #. The title of the step where the person reads a text aloud, calmly.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.titolo-leggi"
 msgid "Leggi ad alta voce, con calma"
-msgstr "Baca nyaring, pelan-pelan saja"
+msgstr "Baca nyaring dengan tenang"
 
 #. The title of the last step: listen to the voice and give it a name («la» is the voice).
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.titolo-nome"
 msgid "Ascoltala e dalle un nome"
-msgstr "Dengarkan suaranya dan beri nama"
+msgstr "Dengar, beri nama"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.questa-registrazione-non-si"
 msgid "Da questa registrazione non si può creare la voce: rifai."
-msgstr "Suara belum bisa dibuat dari rekaman ini. Coba lagi."
+msgstr "Suara tidak bisa dibuat dari rekaman ini. Mulai lagi."
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4444,7 +4441,7 @@ msgstr "Semua file"
 #, kalliope-rust
 msgctxt "programma.crea.non-ti-sento"
 msgid "Non ti sento. Avvicinati al microfono, controlla che non sia spento, o scegline un altro."
-msgstr "Suaramu belum terdengar. Coba mendekat ke mikrofon, pastikan mikrofonnya menyala, atau pilih mikrofon lain."
+msgstr "Suaramu belum terdengar. Dekati mikrofon, pastikan menyala, atau pilih mikrofon lain."
 
 #: crates/app/src/crea.rs
 #, kalliope-rust
@@ -4480,7 +4477,7 @@ msgstr "Bagian {numero}"
 #, kalliope-rust, python-brace-format
 msgctxt "programma.crea.tratto-dettaglio"
 msgid "da {inizio} a {fine} · {secondi} s di voce"
-msgstr "dari {inizio} sampai {fine} · {secondi} detik suara"
+msgstr "{inizio}–{fine} · {secondi} detik suara"
 
 #: crates/app/src/crea.rs
 #, kalliope-rust
@@ -4584,7 +4581,7 @@ msgstr "Mikrofon tidak bisa dibuka. Coba lagi atau pilih mikrofon lain."
 msgctxt "programma.file.lungo"
 msgid "Il file è lungo: ho cercato la voce nel primo minuto."
 msgid_plural "Il file è lungo: ho cercato la voce nei primi {n} minuti."
-msgstr[0] "File ini panjang. Kalliope mencari suara orang berbicara dalam {n} menit pertama."
+msgstr[0] "File ini panjang. Kalliope mencari suara orang bicara dalam {n} menit pertama."
 
 #. Placeholders to leave as they are: {label}
 #: crates/app/src/own_voice.rs
@@ -4715,7 +4712,7 @@ msgstr "Suara terdengar sangat pelan. Dekatkan mulut ke mikrofon atau naikkan vo
 #, kalliope-rust
 msgctxt "programma.analisi.rumore-di-fondo"
 msgid "C'è molto rumore di fondo, e la voce creata lo imiterà. Se puoi, registra in un posto più silenzioso."
-msgstr "Banyak bunyi latar yang ikut terekam. Suara yang dibuat juga akan menirunya. Kalau bisa, rekam di tempat yang lebih tenang."
+msgstr "Banyak suara latar yang ikut terekam. Suara yang dibuat juga akan menirunya. Kalau bisa, rekam di tempat yang lebih tenang."
 
 #: crates/sample/src/analysis.rs
 #, kalliope-rust
@@ -4751,7 +4748,7 @@ msgstr "File ini kosong."
 #, kalliope-rust
 msgctxt "programma.file.non-audio"
 msgid "Questo file non è un audio. Prova con un messaggio vocale, un video o una registrazione."
-msgstr "File ini bukan file audio. Coba gunakan pesan suara, video, atau rekaman."
+msgstr "File ini bukan audio. Coba pakai pesan suara, video, atau rekaman."
 
 #: crates/sample/src/decode.rs
 #, kalliope-rust

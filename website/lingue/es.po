@@ -292,7 +292,7 @@ msgstr "Esc"
 #, kalliope-markup
 msgctxt "finestra.di"
 msgid "Di'"
-msgstr "Hablar"
+msgstr "Dilo"
 
 #. The name of the Enter key, as it is written on the keyboard of the language.
 #: index.html installa/index.html
@@ -440,14 +440,14 @@ msgstr "Sono d'accordo con Paola. Però la consegna del 14/3 mi sembra stretta: 
 #, kalliope-markup
 msgctxt "frase.3.detto-etichetta"
 msgid "Detto:"
-msgstr ""
+msgstr "Dijo:"
 
 #. What the Italian voice said: it stays in Italian, as the voice says it.
 #: index.html
 #, kalliope-markup
 msgctxt "frase.3.detto-frase"
 msgid "«Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
-msgstr ""
+msgstr "«Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
 
 #: index.html
 #, kalliope-markup
@@ -477,7 +477,7 @@ msgstr "No hemos medido cuánto se entiende en una reunión real ni cuánto tard
 #, kalliope-markup
 msgctxt "campioni.provenienza.testi"
 msgid "Il testo «scrivi» è quello che hai digitato. Il testo «dice» è quello che Kalliope prepara prima di parlare: cifre, date e orari diventano parole."
-msgstr "«Escribes» muestra la frase tal como la has tecleado. «Así suena» muestra cómo la prepara Kalliope para leerla en voz alta, con las cifras, las fechas y las horas en palabras."
+msgstr "En la burbuja ves la frase tal como la has escrito. Junto a «Dijo:» puedes leer lo que dice la voz: Kalliope convierte las cifras, las fechas y las horas en palabras."
 
 #: index.html
 #, kalliope-markup
@@ -576,7 +576,7 @@ msgstr "Simulación de la primera vez que abres Kalliope"
 #, kalliope-markup
 msgctxt "avvio.preparo.nome"
 msgid "Preparo la voce"
-msgstr "Preparando la voz"
+msgstr "Preparo la voz"
 
 #: index.html installa/index.html
 #, kalliope-markup
@@ -704,7 +704,7 @@ msgstr "Kalliope no es un producto sanitario ni sustituye la evaluación de un l
 #, kalliope-markup
 msgctxt "finestra.parla.nome"
 msgid "Sto parlando"
-msgstr "Hablando"
+msgstr "Estoy hablando"
 
 #. What the window says next to «Sto parlando»: how to stop. Esc is the Escape key.
 #: index.html
@@ -1379,7 +1379,7 @@ msgstr "Ábrelo desde el menú de aplicaciones. Las voces ya vienen en el paquet
 #, kalliope-markup
 msgctxt "in.apri.ogni-volta"
 msgid "A ogni avvio dice «Preparo la voce» per un po': puoi già scrivere, e la voce arriva fra poco."
-msgstr "Cada vez que lo abres, aparece «Preparando la voz» durante un momento. Ya puedes escribir mientras se prepara."
+msgstr "Cada vez que lo abres, aparece «Preparo la voz» durante un momento. Ya puedes escribir mientras se prepara."
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <strong>
@@ -1624,11 +1624,10 @@ msgstr "La voz no arranca"
 
 #. What the window says next to the state above: the same words as the program's message programma.voce.file-mancanti.
 #: installa/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Manca la voce: in … non trovo …. Reinstalla Kalliope."
+#, kalliope-markup
 msgctxt "in.stato.voce.detto"
 msgid "Non trovo i file della voce, e senza non posso parlare. Reinstalla Kalliope dal pacchetto."
-msgstr "Manca la voce: in … non trovo …. Reinstalla Kalliope."
+msgstr "No encuentro los archivos de la voz. Sin ellos no puedo hablar. Vuelve a instalar Kalliope desde el paquete."
 
 #: installa/index.html
 #, kalliope-markup
@@ -2031,7 +2030,7 @@ msgstr "<1>Si algo falla</1>Si dice «Nadie te oye», «Falta el micrófono» o 
 #: riunione/index.html
 msgctxt "riu.immagine.8"
 msgid "La finestra di Kalliope. In alto la barra, con il logo, il nome, la voce (Giulia), «Riunione», «Altro» e la grandezza del testo. Sotto, le frasi già dette, in bolle: l'ultima è la più chiara. Poi la riga di stato: «Pronta. Nella riunione scegli «Kalliope» come microfono.» In basso la grande bolla tratteggiata dove scrivi, con «Di'»."
-msgstr "Ventana de Kalliope. En la barra superior están el logo, el nombre, la voz (Giulia), «Reunión», «Más» y el ajuste del tamaño del texto. Debajo aparecen las frases que ya has dicho, cada una en una burbuja. La última es la más clara. La línea de estado dice «Lista». Al lado se lee: En la reunión, elige «Kalliope» como micrófono. Abajo está la burbuja grande de borde discontinuo donde escribes, con el botón «Hablar»."
+msgstr "Ventana de Kalliope. En la barra superior están el logo, el nombre, la voz (Giulia), «Reunión», «Más» y el ajuste del tamaño del texto. Debajo aparecen las frases que ya has dicho, cada una en una burbuja. La última es la más clara. La línea de estado dice «Lista». Al lado se lee: En la reunión, elige «Kalliope» como micrófono. Abajo está la burbuja grande de borde discontinuo donde escribes, con el botón «Dilo»."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2148,7 +2147,7 @@ msgstr "<1>Qué hacer.</1> Escribe una frase y pulsa Intro."
 #, kalliope-markup
 msgctxt "riu.testo.25"
 msgid "<1>Come sai che è andata.</1> Se la riga di stato diventa «Nessuno ti sente», nessuna app sta usando il microfono «Kalliope». Se dice «Sto parlando», una app ti ascolta."
-msgstr "<1>Cómo saber si ha funcionado.</1> Si la línea de estado dice «Nadie te oye», ninguna aplicación está usando el micrófono «Kalliope». Si dice «Hablando», alguna aplicación está recibiendo la voz."
+msgstr "<1>Cómo saber si ha funcionado.</1> Si la línea de estado dice «Nadie te oye», ninguna aplicación está usando el micrófono «Kalliope». Si dice «Estoy hablando», alguna aplicación está recibiendo la voz."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2348,7 +2347,7 @@ msgstr "<1>«La voz no arranca»</1>"
 #, kalliope-markup
 msgctxt "ai.testo.13"
 msgid "<1>«Preparo la voce»</1>"
-msgstr "<1>«Preparando la voz»</1>"
+msgstr "<1>«Preparo la voz»</1>"
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <a href="#f-pronta">
@@ -2372,7 +2371,7 @@ msgstr "<1>«Falta el micrófono»</1>"
 #, kalliope-markup
 msgctxt "ai.testo.16"
 msgid "<1>«Sto parlando»</1>"
-msgstr "<1>«Hablando»</1>"
+msgstr "<1>«Estoy hablando»</1>"
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <a href="#f-nessuna-chiamata">
@@ -2405,11 +2404,10 @@ msgid "Cosa significa"
 msgstr "Qué significa"
 
 #: riunione/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive quale cartella e quali file («Manca la voce: in … non trovo …»). L'installazione è rotta, e finché non è a posto la voce non può parlare."
+#, kalliope-markup
 msgctxt "ai.testo.21"
 msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive «Non trovo i file della voce». L'installazione è rotta, e finché non è a posto la voce non può parlare."
-msgstr "Las voces vienen con el paquete, pero falta un archivo en la carpeta donde Kalliope lo busca. Junto al aviso verás en qué carpeta lo ha buscado y qué archivos faltan («Manca la voce: in … non trovo …»). Hay un problema con la instalación. La voz no podrá hablar hasta que lo soluciones."
+msgstr "Las voces vienen con el paquete. Si falta un archivo en la carpeta donde Kalliope lo busca, junto al aviso verás «No encuentro los archivos de la voz». Hasta que repares la instalación, Kalliope no podrá hablar."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2432,7 +2430,7 @@ msgstr "Vuelve a instalar Kalliope siguiendo los pasos de la <1>página Instalar
 #, kalliope-markup
 msgctxt "ai.testo.24"
 msgid "<1>Preparo la voce</1>"
-msgstr "<1>Preparando la voz</1>"
+msgstr "<1>Preparo la voz</1>"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2560,7 +2558,7 @@ msgstr "Cierra Kalliope y vuelve a abrirlo. No hemos comprobado si es necesario,
 #, kalliope-markup
 msgctxt "ai.testo.42"
 msgid "<1>Sto parlando</1>"
-msgstr "<1>Hablando</1>"
+msgstr "<1>Estoy hablando</1>"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2635,11 +2633,10 @@ msgid "Cosa significa"
 msgstr "Qué significa"
 
 #: riunione/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …», «Errore della voce: …» o «Non riesco a cambiare voce: …»."
+#, kalliope-markup
 msgctxt "ai.testo.54"
 msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …» o «Non sono riuscita a dire questa frase: …»."
-msgstr "Hay un problema en el programa o en los archivos de la voz. Junto al aviso verás un mensaje como «No puedo preparar la voz: …», «Error de la voz: …» o «No puedo cambiar de voz: …»."
+msgstr "Hay un problema en el programa o en los archivos de la voz. Junto al aviso verás un mensaje como «No puedo preparar la voz: …» o «No he podido decir esta frase: …»."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -3103,7 +3100,7 @@ msgstr "La voz empieza a hablar en cuanto está lista la primera frase. Mientras
 #, kalliope-markup
 msgctxt "st.voce.forse"
 msgid "Quanto dura «Preparo la voce…» a ogni avvio: <1>non misurato</1>."
-msgstr "Cuánto tiempo aparece «Preparando la voz…» cada vez que abres Kalliope: <1>sin medir</1>."
+msgstr "Cuánto tiempo aparece «Preparo la voz…» cada vez que abres Kalliope: <1>sin medir</1>."
 
 #: stato/index.html
 #, kalliope-markup
@@ -3629,7 +3626,7 @@ msgstr "Respuesta: {domanda}"
 #, kalliope-slint
 msgctxt "programma.finestra.preparo-la-voce"
 msgid "Preparo la voce…"
-msgstr "Preparando la voz…"
+msgstr "Preparo la voz…"
 
 #. A small button next to a problem (nobody hears you, no microphone, the voice does not start): it opens the page of the website that explains what to do. Two or three words.
 #: crates/app/ui/kalliope/avvisi.slint crates/app/ui/kalliope/finestra.slint
@@ -3989,7 +3986,7 @@ msgstr "Esc"
 #, kalliope-slint
 msgctxt "programma.scrittura.di"
 msgid "Di'"
-msgstr "Hablar"
+msgstr "Dilo"
 
 #. The name of the Enter key, shown on the button that says the sentence.
 #: crates/app/ui/kalliope/scrittura.slint
@@ -4010,7 +4007,7 @@ msgstr "Voz nueva"
 #, kalliope-slint
 msgctxt "programma.stato.preparo-la-voce"
 msgid "Preparo la voce"
-msgstr "Preparando la voz"
+msgstr "Preparo la voz"
 
 #. The name of the state when the voice is ready to speak. One word; it refers to the voice (feminine in Italian).
 #: crates/app/ui/kalliope/stato.slint
@@ -4024,7 +4021,7 @@ msgstr "Lista"
 #, kalliope-slint
 msgctxt "programma.stato.sto-parlando"
 msgid "Sto parlando"
-msgstr "Hablando"
+msgstr "Estoy hablando"
 
 #. The name of the state when no app in the call uses the «Kalliope» microphone: the others cannot hear the person. Short.
 #: crates/app/ui/kalliope/stato.slint
@@ -4094,7 +4091,7 @@ msgstr "Lee en voz alta"
 #, kalliope-slint
 msgctxt "programma.crea.passo-nome"
 msgid "Ascolta e dai un nome"
-msgstr "Escucha y ponle un nombre"
+msgstr "Escucha y ponle nombre"
 
 #. Where the person is among the three steps of making a voice: {0} is the number of the step (1 to 3), {1} its name
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4102,7 +4099,7 @@ msgstr "Escucha y ponle un nombre"
 #, kalliope-slint, python-brace-format
 msgctxt "programma.crea.passo"
 msgid "{} di 3 · {}"
-msgstr "{} de 3 · {}"
+msgstr "{}/3 · {}"
 
 #. The same round button while it records: it stops recording.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4146,7 +4143,7 @@ msgstr "Escuchar {}"
 #, kalliope-slint, python-brace-format
 msgctxt "programma.crea.leggo"
 msgid "Leggo «{}»…"
-msgstr "Leyendo «{}»…"
+msgstr "Leo «{}»…"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4219,13 +4216,13 @@ msgstr "Micrófono"
 #, kalliope-slint
 msgctxt "programma.crea.apro-microfono"
 msgid "Apro il microfono…"
-msgstr "Abriendo el micrófono…"
+msgstr "Abro el micrófono…"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.controllo-registrazione"
 msgid "Controllo la registrazione…"
-msgstr "Comprobando la grabación…"
+msgstr "Reviso la grabación…"
 
 #. The instruction over the round record button before recording: press it and read the text below aloud. Short.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4241,9 +4238,9 @@ msgstr "Pulsa el círculo y lee"
 msgctxt "programma.crea.mancano"
 msgid "{0} · ne manca {n}"
 msgid_plural "{0} · ne mancano {n}"
-msgstr[0] "{0} · falta {n} segundo"
-msgstr[1] "{0} · faltan {n} segundos"
-msgstr[2] "{0} · faltan {n} segundos"
+msgstr[0] "{0} · falta {n}"
+msgstr[1] "{0} · faltan {n}"
+msgstr[2] "{0} · faltan {n}"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4262,21 +4259,21 @@ msgstr "El círculo se llena con doce segundos de voz. El indicador de volumen s
 #, kalliope-slint
 msgctxt "programma.crea.ferma-ascolto"
 msgid "Ferma l'ascolto"
-msgstr "Detener la reproducción"
+msgstr "Detener"
 
 #. A button that plays the recording just made.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ascolta-registrazione"
 msgid "Ascolta la registrazione"
-msgstr "Escuchar la grabación"
+msgstr "Escuchar"
 
 #. A button that throws the recording away to record again. A verb, short.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.rifai"
 msgid "Rifai"
-msgstr "Volver a empezar"
+msgstr "Descartar"
 
 #. After a recording is read: {n} is how many stretches with a voice were found
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4285,9 +4282,9 @@ msgstr "Volver a empezar"
 msgctxt "programma.crea.trovati-tratti"
 msgid "Ho trovato {n} tratto in cui si sente la voce. Ascolta e scegli."
 msgid_plural "Ho trovato {n} tratti in cui si sente la voce. Ascolta e scegli."
-msgstr[0] "He encontrado {n} fragmento en el que se oye la voz. Escúchalo y elige."
-msgstr[1] "He encontrado {n} fragmentos en los que se oye la voz. Escúchalos y elige."
-msgstr[2] "He encontrado {n} fragmentos en los que se oye la voz. Escúchalos y elige."
+msgstr[0] "He encontrado {n} fragmento con voz. Escúchalo antes de elegir."
+msgstr[1] "He encontrado {n} fragmentos con voz. Escúchalos y elige uno."
+msgstr[2] "He encontrado {n} fragmentos con voz. Escúchalos y elige uno."
 
 #. While a voice is made: {} is the name the person gave it
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4295,13 +4292,13 @@ msgstr[2] "He encontrado {n} fragmentos en los que se oye la voz. Escúchalos y 
 #, kalliope-slint, python-brace-format
 msgctxt "programma.crea.creo-voce"
 msgid "Creo la voce «{}»…"
-msgstr "Creando la voz «{}»…"
+msgstr "Creo la voz «{}»…"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ci-vuole-poco-quando"
 msgid "Ci vuole poco. Quando è pronta la scegli da sola."
-msgstr "Tardará poco. La voz quedará seleccionada en cuanto esté lista."
+msgstr "Tardaré poco. En cuanto esté lista, usarás esta voz."
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4340,7 +4337,7 @@ msgstr "Hola, soy yo. Esta es mi voz, para las reuniones y para hablar con la ge
 #, kalliope-slint
 msgctxt "programma.crea.torna-a-scrivere"
 msgid "Torna a scrivere"
-msgstr "Volver a escribir"
+msgstr "Volver al texto"
 
 #. The title of the first step of creating a voice: how the person wants to create it.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4361,13 +4358,13 @@ msgstr "Lee en voz alta, sin prisa"
 #, kalliope-slint
 msgctxt "programma.crea.titolo-nome"
 msgid "Ascoltala e dalle un nome"
-msgstr "Escúchala y ponle un nombre"
+msgstr "Escúchala y ponle nombre"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.questa-registrazione-non-si"
 msgid "Da questa registrazione non si può creare la voce: rifai."
-msgstr "No se puede crear la voz con esta grabación. Vuelve a grabarla."
+msgstr "No se puede crear la voz con esta grabación. Empieza de nuevo."
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4486,7 +4483,7 @@ msgstr "Fragmento {numero}"
 #, kalliope-rust, python-brace-format
 msgctxt "programma.crea.tratto-dettaglio"
 msgid "da {inizio} a {fine} · {secondi} s di voce"
-msgstr "De {inizio} a {fine} · {secondi} s de voz"
+msgstr "{inizio}–{fine} · {secondi} s de voz"
 
 #: crates/app/src/crea.rs
 #, kalliope-rust
@@ -4498,7 +4495,7 @@ msgstr "No se abre la ventana para elegir el archivo. Vuelve a intentarlo. Si vu
 #, kalliope-rust
 msgctxt "programma.crea.tratto-inutilizzabile"
 msgid "Da questo tratto non si può creare la voce: scegli un altro tratto, o rifai."
-msgstr "No se puede crear la voz con este fragmento. Elige otro o vuelve a grabar."
+msgstr "No se puede crear la voz con este fragmento. Elige otro o empieza de nuevo."
 
 #. A button: replace the existing voice that has the same name with the new one.
 #: crates/app/src/crea.rs
@@ -4535,7 +4532,7 @@ msgstr "{nome} (voz propia)"
 #, kalliope-rust, python-brace-format
 msgctxt "programma.motore.voce-non-si-apre-parlo-con"
 msgid "La voce «{voce}» non si apre: parlo con {altra}. Puoi sceglierne un'altra dal menu «Voce»."
-msgstr "No puedo abrir la voz «{voce}». Hablaré con la voz de {altra}. Puedes elegir otra en el menú «Voz»."
+msgstr "No puedo abrir la voz «{voce}». Hablaré con {altra}. Puedes elegir otra en el menú «Voz»."
 
 #. Placeholders to leave as they are: {voce} {altra}
 #: crates/app/src/engine.rs
@@ -4663,7 +4660,7 @@ msgstr "Lista. Elige «Kalliope» como micrófono en Zoom, Teams, Meet o en el n
 #, kalliope-rust
 msgctxt "programma.sessione.parlo"
 msgid "Sto parlando…"
-msgstr "Hablando…"
+msgstr "Estoy hablando…"
 
 #: crates/app/src/session.rs
 #, kalliope-rust
@@ -4687,7 +4684,7 @@ msgstr "Este texto no tiene nada que se pueda leer en voz alta. Escribe al menos
 #, kalliope-rust
 msgctxt "programma.sessione.preparo"
 msgid "Preparo la voce…"
-msgstr "Preparando la voz…"
+msgstr "Preparo la voz…"
 
 #: crates/sample/src/analysis.rs
 #, kalliope-rust
@@ -4806,11 +4803,3 @@ msgstr "Se ha cancelado la creación de la voz."
 msgctxt "programma.voce.creazione-fallita"
 msgid "Non sono riuscita a creare la voce: {causa}"
 msgstr "No he podido crear la voz: {causa}"
-
-#. Tags in the text (move the words, keep every tag, each inside the same tag):
-#.   <1> = <span>
-#: index.html
-#, kalliope-markup
-#~ msgctxt "frase.3.detto-riga"
-#~ msgid "<1>Detto:</1> «Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
-#~ msgstr "<1>Así suena:</1> «Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"

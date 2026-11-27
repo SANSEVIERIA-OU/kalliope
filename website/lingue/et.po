@@ -440,14 +440,14 @@ msgstr "Sono d'accordo con Paola. Però la consegna del 14/3 mi sembra stretta: 
 #, kalliope-markup
 msgctxt "frase.3.detto-etichetta"
 msgid "Detto:"
-msgstr ""
+msgstr "Öeldud:"
 
 #. What the Italian voice said: it stays in Italian, as the voice says it.
 #: index.html
 #, kalliope-markup
 msgctxt "frase.3.detto-frase"
 msgid "«Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
-msgstr ""
+msgstr "«Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
 
 #: index.html
 #, kalliope-markup
@@ -1441,7 +1441,7 @@ msgstr "Kalliope töötab, aga ükski rakendus ei kasuta selle mikrofoni. Vali s
 #, kalliope-markup
 msgctxt "in.frasi.altro"
 msgid "Se dice un'altra cosa, cerca la riga nella <1>sezione Aiuto</1>: ogni riga della finestra ha la sua spiegazione."
-msgstr "Kui näed muud teadet, otsi seda <1>abi jaotisest</1>. Seal on selgitus iga aknas kuvatava teate kohta."
+msgstr "Kui näed muud teadet, otsi seda <1>abijaotisest</1>. Seal on iga aknas kuvatava teate selgitus."
 
 #: installa/index.html
 #, kalliope-markup
@@ -1496,7 +1496,7 @@ msgstr "Pane kirja distributsioon, PipeWire’i versioon, mis juhtus ja millist 
 #, kalliope-markup
 msgctxt "in.ripresa.titolo"
 msgid "Se ti sei fermato, riprendi da qui."
-msgstr "Kui jäid pooleli, jätka siit."
+msgstr "Kui midagi jäi pooleli, jätka siit."
 
 #: installa/index.html
 #, kalliope-markup
@@ -1538,7 +1538,7 @@ msgstr "Mikrofonide seas pole valikut „Kalliope“"
 #, kalliope-markup
 msgctxt "in.inoltra.titolo"
 msgid "Lo installa un'altra persona?"
-msgstr "Kas paigaldab keegi teine?"
+msgstr "Kas Kalliope paigaldab keegi teine?"
 
 #: installa/index.html
 #, kalliope-markup
@@ -1624,11 +1624,10 @@ msgstr "Hääl ei käivitu"
 
 #. What the window says next to the state above: the same words as the program's message programma.voce.file-mancanti.
 #: installa/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Manca la voce: in … non trovo …. Reinstalla Kalliope."
+#, kalliope-markup
 msgctxt "in.stato.voce.detto"
 msgid "Non trovo i file della voce, e senza non posso parlare. Reinstalla Kalliope dal pacchetto."
-msgstr "Manca la voce: in … non trovo …. Reinstalla Kalliope."
+msgstr "Ma ei leia häälefaile. Ilma nendeta ei saa ma rääkida. Paigalda Kalliope paketist uuesti."
 
 #: installa/index.html
 #, kalliope-markup
@@ -2025,7 +2024,7 @@ msgstr "<1>Kuidas tead, et see õnnestus?</1>Olekureal on „Valmis“ ja selle 
 #, kalliope-markup
 msgctxt "riu.testo.6"
 msgid "<1>Se non è andata</1>Se dice «Nessuno ti sente», «Manca il microfono» o «La voce non parte», premi «Come si risolve», accanto alla riga: ti porta alla spiegazione giusta. Per ogni altra riga, <2>cercala nella sezione Aiuto</2>."
-msgstr "<1>Kui see ei õnnestunud</1>Kui näed teadet „Keegi ei kuule sind“, „Mikrofon puudub“ või „Hääl ei käivitu“, vajuta selle kõrval nuppu „Vaata lahendust“. Nii jõuad õige selgituseni. Muud teadet <2>otsi abi jaotisest</2>."
+msgstr "<1>Kui see ei õnnestunud</1>Kui näed teadet „Keegi ei kuule sind“, „Mikrofon puudub“ või „Hääl ei käivitu“, vajuta selle kõrval nuppu „Vaata lahendust“. Nii jõuad õige selgituseni. Muid teateid <2>otsi abijaotisest</2>."
 
 #. Attribute «alt» of an element of the page: plain text, no tags.
 #: riunione/index.html
@@ -2214,7 +2213,7 @@ msgstr "Kui valid häälemenüüst „Kuula häält ka ise“, kostab hääl ka 
 #, kalliope-markup
 msgctxt "riu.testo.34"
 msgid "<1>Se non è andata</1>Premi «Come si risolve» nella finestra, o cerca la riga nella <2>sezione Aiuto</2>. Se vuoi, <3>dicci come è andata</3>."
-msgstr "<1>Kui see ei õnnestunud</1>Vajuta aknas nuppu „Vaata lahendust“ või otsi teadet <2>abi jaotisest</2>. Kui soovid, <3>anna meile teada, kuidas läks</3>."
+msgstr "<1>Kui see ei õnnestunud</1>Vajuta aknas nuppu „Vaata lahendust“ või otsi teadet <2>abijaotisest</2>. Kui soovid, <3>anna meile teada, kuidas läks</3>."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2405,11 +2404,10 @@ msgid "Cosa significa"
 msgstr "Mida see tähendab?"
 
 #: riunione/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive quale cartella e quali file («Manca la voce: in … non trovo …»). L'installazione è rotta, e finché non è a posto la voce non può parlare."
+#, kalliope-markup
 msgctxt "ai.testo.21"
 msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive «Non trovo i file della voce». L'installazione è rotta, e finché non è a posto la voce non può parlare."
-msgstr "Hääled on paketis kaasas, aga mõni häälefail puudub kaustast, kust Kalliope seda otsib. Teate kõrval on kirjas kaust ja puuduvad failid („Manca la voce: in … non trovo …“). Paigaldusega on midagi valesti. Kalliope saab uuesti rääkida siis, kui failid on omal kohal."
+msgstr "Hääled on paketis kaasas. Kui mõni häälefail pole seal, kust Kalliope seda otsib, näed olekurea kõrval teadet „Ma ei leia häälefaile“. Paigaldus on vigane. Kalliope saab jälle rääkida, kui failid on omal kohal."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2635,11 +2633,10 @@ msgid "Cosa significa"
 msgstr "Mida see tähendab?"
 
 #: riunione/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …», «Errore della voce: …» o «Non riesco a cambiare voce: …»."
+#, kalliope-markup
 msgctxt "ai.testo.54"
 msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …» o «Non sono riuscita a dire questa frase: …»."
-msgstr "Midagi on programmi või häälefailidega valesti. Kõrval näed näiteks teadet „Ma ei saa häält laadida: …“, „Hääle viga: …“ või „Ma ei saa häält vahetada: …“."
+msgstr "Midagi on programmi või häälefailidega valesti. Olekurea kõrval näed näiteks teadet „Ma ei saa häält laadida: …“ või „Ma ei saanud seda lauset öelda: …“."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -3291,7 +3288,7 @@ msgstr "Praegu veel mitte. Valida saab Giulia ja Marco hääle vahel. Mõlemad r
 #, kalliope-markup
 msgctxt "st.d.voce.personale"
 msgid "Sì, dentro il programma: in «Altro», «Crea la tua voce». La registri dal microfono, leggendo un testo di circa dodici secondi, oppure importi una vecchia registrazione (WAV, FLAC, MP3, OGG, M4A, o un messaggio vocale di WhatsApp o Telegram, anche dentro un video). Scegli il pezzo più chiaro, le dai un nome e confermi che è la tua voce, o che chi parla ti ha dato il permesso. La voce si crea su questo computer; la trovi accanto a Giulia e Marco. Il programma parla in italiano."
-msgstr "Jah. Ava programmis menüü „Veel“ ja vali „Loo oma hääl“. Loe mikrofoni umbes kaksteist sekundit teksti või impordi varasem salvestis. Sobib WAV-, FLAC-, MP3-, OGG- või M4A-fail, WhatsAppi või Telegrami häälsõnum või ka video, kus häält on kuulda. Vali kõige selgem lõik, pane häälele nimi ja kinnita, et see on sinu hääl või et rääkija lubab sul seda kasutada. Hääl luuakse sinu arvutis. Leiad selle Giulia ja Marco kõrvalt. Programm räägib itaalia keelt."
+msgstr "Jah. Ava programmis menüü „Veel“ ja vali „Loo oma hääl“. Loe teksti umbes 12 sekundit mikrofoni või impordi varasem salvestis. Sobib WAV-, FLAC-, MP3-, OGG- või M4A-fail, WhatsAppi või Telegrami häälsõnum või ka video, kus häält on kuulda. Vali kõige selgem lõik, pane häälele nimi ja kinnita, et see on sinu hääl või et rääkija lubab sul seda kasutada. Hääl luuakse sinu arvutis. Leiad selle Giulia ja Marco kõrvalt. Programm räägib itaalia keelt."
 
 #: stato/index.html
 #, kalliope-markup
@@ -3728,7 +3725,7 @@ msgstr "Suurem tekst"
 #, kalliope-slint
 msgctxt "programma.finestra.qui-voce-dira-tue"
 msgid "Qui la voce dirà le tue frasi, una parola dopo l'altra. Restano qui: un clic, o Tab e Invio, le dice di nuovo."
-msgstr "Siin loeb hääl su laused sõnahaaval ette. Laused jäävad siia alles. Lause kordamiseks klõpsa sellel või vali see tabeldusklahviga ja vajuta Enterit."
+msgstr "Siin loeb hääl su laused sõnahaaval ette. Need jäävad siia alles. Lause kordamiseks klõpsa sellel või vali see Tab-klahviga ja vajuta Enterit."
 
 #. In the compact meeting window, the short form of «Come si risolve»: it opens the help page about the problem shown. One word.
 #: crates/app/ui/kalliope/finestra.slint
@@ -4086,7 +4083,7 @@ msgstr "Salvesta või impordi"
 #, kalliope-slint
 msgctxt "programma.crea.passo-leggi"
 msgid "Leggi ad alta voce"
-msgstr "Loe valjusti"
+msgstr "Loe ette"
 
 #. The name of the third step: listen to the voice and give it a name. Short.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4101,7 +4098,7 @@ msgstr "Kuula ja pane nimi"
 #, kalliope-slint, python-brace-format
 msgctxt "programma.crea.passo"
 msgid "{} di 3 · {}"
-msgstr "Samm {} / 3 · {}"
+msgstr "{}/3 · {}"
 
 #. The same round button while it records: it stops recording.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4130,7 +4127,7 @@ msgstr "Kuula"
 #, kalliope-slint, python-brace-format
 msgctxt "programma.crea.ferma-ascolto-tratto"
 msgid "Ferma l'ascolto di {}"
-msgstr "Peata kuulamine: {}"
+msgstr "Peata esitus: {}"
 
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4165,13 +4162,13 @@ msgstr "Kui saad veel rääkida"
 #, kalliope-slint
 msgctxt "programma.crea.registrala-adesso"
 msgid "Registrala adesso"
-msgstr "Salvesta oma hääl kohe"
+msgstr "Salvesta kohe"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.istruzioni-registra"
 msgid "Leggi ad alta voce un breve testo. Bastano dodici secondi di voce chiara, meglio finché la voce è forte."
-msgstr "Loe valjusti ette lühike tekst. Piisab, kui räägid selge häälega kaksteist sekundit. Kõige parem on salvestada siis, kui su hääl on veel tugev."
+msgstr "Loe lühike tekst ette. Piisab, kui räägid selge häälega 12 sekundit. Parim aeg salvestada on siis, kui su hääl on veel tugev."
 
 #. A small line over the second choice: this way is for a person who can no longer speak.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4185,7 +4182,7 @@ msgstr "Kui sa enam rääkida ei saa"
 #, kalliope-slint
 msgctxt "programma.crea.usa-vecchie-registrazioni"
 msgid "Usa vecchie registrazioni"
-msgstr "Kasuta varasemaid salvestisi"
+msgstr "Kasuta varasemat salvestist"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4231,7 +4228,7 @@ msgstr "Kontrollin salvestist…"
 #, kalliope-slint
 msgctxt "programma.crea.premi-tondo-leggi"
 msgid "Premi il tondo e leggi"
-msgstr "Vajuta ümmargust nuppu ja loe"
+msgstr "Vajuta ringile ja loe"
 
 #. While the voice is recorded: {0} is the time recorded so far («3,2 s»); {n} is how many whole seconds of clear voice are still needed
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4240,8 +4237,8 @@ msgstr "Vajuta ümmargust nuppu ja loe"
 msgctxt "programma.crea.mancano"
 msgid "{0} · ne manca {n}"
 msgid_plural "{0} · ne mancano {n}"
-msgstr[0] "{0} · veel {n} sekund"
-msgstr[1] "{0} · veel {n} sekundit"
+msgstr[0] "{0} · veel {n} s"
+msgstr[1] "{0} · veel {n} s"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4253,28 +4250,28 @@ msgstr "Nüüd piisab. Peatamiseks vajuta uuesti."
 #, kalliope-slint
 msgctxt "programma.crea.ne-bastano-dodici-secondi"
 msgid "Ne bastano dodici secondi di voce: il cerchio si riempie. Il livello si muove con la tua voce."
-msgstr "Piisab, kui räägid kaksteist sekundit. Ring täitub salvestamise ajal. Helitaseme näidik liigub koos su häälega."
+msgstr "Piisab 12 sekundist kõnest. Kui räägid, täitub ring ja helinäidik liigub."
 
 #. A button that stops playing the recording.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ferma-ascolto"
 msgid "Ferma l'ascolto"
-msgstr "Peata kuulamine"
+msgstr "Peata"
 
 #. A button that plays the recording just made.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ascolta-registrazione"
 msgid "Ascolta la registrazione"
-msgstr "Kuula salvestist"
+msgstr "Kuula"
 
 #. A button that throws the recording away to record again. A verb, short.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.rifai"
 msgid "Rifai"
-msgstr "Proovi uuesti"
+msgstr "Tee uuesti"
 
 #. After a recording is read: {n} is how many stretches with a voice were found
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4283,8 +4280,8 @@ msgstr "Proovi uuesti"
 msgctxt "programma.crea.trovati-tratti"
 msgid "Ho trovato {n} tratto in cui si sente la voce. Ascolta e scegli."
 msgid_plural "Ho trovato {n} tratti in cui si sente la voce. Ascolta e scegli."
-msgstr[0] "Leidsin {n} lõigu, kus on kuulda kõnet. Kuula ja vali."
-msgstr[1] "Leidsin {n} lõiku, kus on kuulda kõnet. Kuula ja vali."
+msgstr[0] "Leidsin {n} kõnelõigu. Kuula ja vali."
+msgstr[1] "Leidsin {n} kõnelõiku. Kuula ja vali."
 
 #. While a voice is made: {} is the name the person gave it
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4304,7 +4301,7 @@ msgstr "See võtab hetke. Kui hääl on valmis, võtan selle kohe kasutusele."
 #, kalliope-slint
 msgctxt "programma.crea.come-si-chiama-questa"
 msgid "Come si chiama questa voce?"
-msgstr "Mis nime sa häälele annad?"
+msgstr "Mis nime hääl saab?"
 
 #. The name of the field where the person writes the name of the new voice, read by screen readers.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4324,13 +4321,13 @@ msgstr "Näiteks Anna hääl"
 #, kalliope-slint
 msgctxt "programma.crea.mia-voce-oppure-persona"
 msgid "È la mia voce, oppure la persona che parla mi ha dato il permesso di usarla."
-msgstr "See on minu hääl või on mul rääkija luba tema häält kasutada."
+msgstr "See on minu hääl või rääkija on lubanud mul tema häält kasutada."
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ciao-sono-io-questa"
 msgid "Ciao, sono io. Questa è la mia voce, per le riunioni e per le persone a cui voglio bene. La leggo con calma, come parlo ogni giorno."
-msgstr "Tere, see olen mina. See on minu hääl. Sellega saan rääkida nii koosolekutel kui ka oma lähedastega. Loen seda rahulikult, nii nagu ma iga päev räägin."
+msgstr "Tere, see olen mina. See on minu hääl. Selle häälega räägin koosolekutel ja oma lähedastega. Loen seda teksti rahulikult, nii nagu ma iga päev räägin."
 
 #. A button at the top of the steps of creating a voice: it leaves them and goes back to the main window, where the person writes the sentences to say. It means «back to writing», not «write again».
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4351,20 +4348,20 @@ msgstr "Kuidas tahad oma häält luua?"
 #, kalliope-slint
 msgctxt "programma.crea.titolo-leggi"
 msgid "Leggi ad alta voce, con calma"
-msgstr "Loe rahulikult ja valjusti"
+msgstr "Loe rahulikult ette"
 
 #. The title of the last step: listen to the voice and give it a name («la» is the voice).
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.titolo-nome"
 msgid "Ascoltala e dalle un nome"
-msgstr "Kuula ja pane häälele nimi"
+msgstr "Kuula ja pane nimi"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.questa-registrazione-non-si"
 msgid "Da questa registrazione non si può creare la voce: rifai."
-msgstr "Sellest salvestisest ei saa häält luua. Proovi uuesti."
+msgstr "Sellest salvestisest ei saa häält luua. Tee uuesti."
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4447,7 +4444,7 @@ msgstr "Kõik failid"
 #, kalliope-rust
 msgctxt "programma.crea.non-ti-sento"
 msgid "Non ti sento. Avvicinati al microfono, controlla che non sia spento, o scegline un altro."
-msgstr "Ma ei kuule sind. Liigu mikrofonile lähemale, kontrolli, kas see on sisse lülitatud, või vali teine mikrofon."
+msgstr "Ma ei kuule sind. Tule mikrofonile lähemale. Vaata, kas mikrofon on sees, või vali teine."
 
 #: crates/app/src/crea.rs
 #, kalliope-rust
@@ -4495,7 +4492,7 @@ msgstr "Failivaliku aken ei avane. Proovi uuesti. Kui aken ikka ei avane, on vaj
 #, kalliope-rust
 msgctxt "programma.crea.tratto-inutilizzabile"
 msgid "Da questo tratto non si può creare la voce: scegli un altro tratto, o rifai."
-msgstr "Sellest lõigust ei saa häält luua. Vali teine lõik või proovi uuesti."
+msgstr "Sellest lõigust ei saa häält luua. Vali teine lõik või tee uuesti."
 
 #. A button: replace the existing voice that has the same name with the new one.
 #: crates/app/src/crea.rs
@@ -4561,7 +4558,7 @@ msgstr "Ma ei saa häält laadida: {causa}"
 #, kalliope-rust
 msgctxt "programma.registra.nessun-microfono"
 msgid "Non trovo un microfono. Collegane uno (meglio una cuffia con microfono), poi riprova."
-msgstr "Ma ei leia mikrofoni. Kui sul on mikrofoniga kõrvaklapid, ühenda need. Sobib ka muu mikrofon. Siis proovi uuesti."
+msgstr "Ma ei leia mikrofoni. Ühenda mikrofon ja proovi uuesti. Kõige paremini sobivad mikrofoniga kõrvaklapid."
 
 #: crates/app/src/own_voice.rs
 #, kalliope-rust
@@ -4587,8 +4584,8 @@ msgstr "Mikrofoni ei õnnestunud avada. Proovi uuesti või vali teine mikrofon."
 msgctxt "programma.file.lungo"
 msgid "Il file è lungo: ho cercato la voce nel primo minuto."
 msgid_plural "Il file è lungo: ho cercato la voce nei primi {n} minuti."
-msgstr[0] "Fail on pikk. Otsisin kõnet esimesest minutist."
-msgstr[1] "Fail on pikk. Otsisin kõnet esimesest {n} minutist."
+msgstr[0] "Fail on pikk. Otsisin kõnet faili esimesest minutist."
+msgstr[1] "Fail on pikk. Otsisin kõnet faili esimesest {n} minutist."
 
 #. Placeholders to leave as they are: {label}
 #: crates/app/src/own_voice.rs

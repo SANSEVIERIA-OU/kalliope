@@ -381,7 +381,7 @@ msgstr "Klausies, kā skan balss, un seko līdzi tekstam."
 #, kalliope-markup
 msgctxt "campioni.testo"
 msgid "Le frasi sono tue, dette con le registrazioni vere di Kalliope 0.1-rc.1. <1>Scegli la voce, poi premi una frase: le parole si accendono mentre Paola, Luca e Anna la sentono.</1><2>Premi il lettore sotto ogni frase per ascoltarla. Accanto trovi il collegamento alla stessa frase con la voce di Marco.</2>"
-msgstr "Šādi skan tavas frāzes. Tie ir īsti Kalliope 0.1-rc.1 ieraksti. <1>Izvēlies balsi un nospied uz frāzes. Kamēr Paola, Luca un Anna klausās, izrunātie vārdi pēc kārtas izgaismojas.</1><2>Spied atskaņošanas pogu zem frāzes, lai to noklausītos. Līdzās ir saite uz to pašu frāzi, ko izrunā Marco.</2>"
+msgstr "Šādi skan tavas frāzes. Tie ir īsti Kalliope 0.1-rc.1 ieraksti. <1>Izvēlies balsi un noklikšķini uz frāzes. Kamēr Paola, Luca un Anna klausās, izrunātie vārdi pēc kārtas izgaismojas.</1><2>Spied atskaņošanas pogu zem frāzes, lai to noklausītos. Līdzās ir saite uz to pašu frāzi, ko izrunā Marco.</2>"
 
 #. Attribute «aria-label» of an element of the page: plain text, no tags.
 #: index.html
@@ -440,14 +440,14 @@ msgstr "Sono d'accordo con Paola. Però la consegna del 14/3 mi sembra stretta: 
 #, kalliope-markup
 msgctxt "frase.3.detto-etichetta"
 msgid "Detto:"
-msgstr ""
+msgstr "Izrunāts:"
 
 #. What the Italian voice said: it stays in Italian, as the voice says it.
 #: index.html
 #, kalliope-markup
 msgctxt "frase.3.detto-frase"
 msgid "«Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
-msgstr ""
+msgstr "«Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
 
 #: index.html
 #, kalliope-markup
@@ -1624,11 +1624,10 @@ msgstr "Balss nesāk skanēt"
 
 #. What the window says next to the state above: the same words as the program's message programma.voce.file-mancanti.
 #: installa/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Manca la voce: in … non trovo …. Reinstalla Kalliope."
+#, kalliope-markup
 msgctxt "in.stato.voce.detto"
 msgid "Non trovo i file della voce, e senza non posso parlare. Reinstalla Kalliope dal pacchetto."
-msgstr "Manca la voce: in … non trovo …. Reinstalla Kalliope."
+msgstr "Nevaru atrast balss failus. Bez tiem nevaru runāt. Instalē Kalliope vēlreiz no pakotnes."
 
 #: installa/index.html
 #, kalliope-markup
@@ -2405,11 +2404,10 @@ msgid "Cosa significa"
 msgstr "Ko tas nozīmē?"
 
 #: riunione/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive quale cartella e quali file («Manca la voce: in … non trovo …»). L'installazione è rotta, e finché non è a posto la voce non può parlare."
+#, kalliope-markup
 msgctxt "ai.testo.21"
 msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive «Non trovo i file della voce». L'installazione è rotta, e finché non è a posto la voce non può parlare."
-msgstr "Balsis ir iekļautas pakotnē, bet Kalliope nevar atrast kādu no balss failiem tur, kur tam vajadzētu būt. Logā blakus statusam ir norādīta mape un trūkstošie faili („Manca la voce: in … non trovo …”). Instalācija ir bojāta. Kamēr tā nav salabota, balss nevar runāt."
+msgstr "Balsis ir iekļautas pakotnē, taču mapē, kur Kalliope meklē balss failus, kāda faila trūkst. Blakus statusam redzēsi vārdus „Nevaru atrast balss failus”. Kalliope nevarēs runāt, kamēr instalācija nebūs salabota."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2635,11 +2633,10 @@ msgid "Cosa significa"
 msgstr "Ko tas nozīmē?"
 
 #: riunione/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …», «Errore della voce: …» o «Non riesco a cambiare voce: …»."
+#, kalliope-markup
 msgctxt "ai.testo.54"
 msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …» o «Non sono riuscita a dire questa frase: …»."
-msgstr "Kaut kas nav kārtībā ar programmu vai balss failiem. Līdzās ir paziņojums, piemēram, „Neizdodas sagatavot balsi: …”, „Balss kļūda: …” vai „Neizdodas nomainīt balsi: …”."
+msgstr "Kaut kas nav kārtībā ar programmu vai balss failiem. Blakus statusam redzēsi, piemēram, „Neizdodas sagatavot balsi: …” vai „Neizdevās izrunāt šo frāzi: …”."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -3095,7 +3092,7 @@ msgstr "procesora laika uz katru balss sekundi, izmantojot vienu pavedienu. <1><
 #, kalliope-markup
 msgctxt "st.voce.fatto"
 msgid "La voce parte dopo la prima frase; mentre una suona si prepara la successiva. La pronuncia viene da regole e da un lessico di 7.920 parole. Nel banco di prova dei motori il primo suono arriva in meno di 160 ms: è uno strumento in Python, non il programma. <1><2>engine.rs</2>, <3>benchmarks/engines</3></1>"
-msgstr "Balss sāk skanēt, tiklīdz sagatavota pirmā frāze. Kamēr viena skan, top nākamā. Izrunu nosaka likumi un 7 920 vārdu vārdnīca. Runas dzinēju testā pirmā skaņa atskanēja mazāk nekā 160 ms laikā. Šis mērījums veikts ar Python rīku, nevis pašā programmā. <1><2>engine.rs</2>, <3>benchmarks/engines</3></1>"
+msgstr "Balss sāk skanēt, tiklīdz sagatavota pirmā frāze. Kamēr viena skan, top nākamā. Programma izmanto izrunas noteikumus un 7 920 vārdu vārdnīcu. Runas dzinēju testā pirmā skaņa atskanēja mazāk nekā 160 ms laikā. Šis mērījums veikts ar Python rīku, nevis pašā programmā. <1><2>engine.rs</2>, <3>benchmarks/engines</3></1>"
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <strong>
@@ -3304,7 +3301,7 @@ msgstr "Vai Kalliope veido subtitrus?"
 #, kalliope-markup
 msgctxt "st.d.sottotitoli.a"
 msgid "No. Kalliope non ascolta e non trascrive: i sottotitoli della riunione, se ci sono, li fa l'app della riunione."
-msgstr "Nē. Kalliope neklausās un nepārraksta runu tekstā. Ja sapulcē ir subtitri, tos veido sapulces lietotne."
+msgstr "Nē. Kalliope neklausās un nepārvērš runu tekstā. Ja sapulcē ir subtitri, tos veido sapulces lietotne."
 
 #: stato/index.html
 #, kalliope-markup
@@ -3708,7 +3705,7 @@ msgstr "A−"
 #, kalliope-slint
 msgctxt "programma.finestra.testo-piu-piccolo"
 msgid "Testo più piccolo"
-msgstr "Mazāks teksts"
+msgstr "Samazināt tekstu"
 
 #. The button that makes the text larger: a capital A with a plus sign
 #: crates/app/ui/kalliope/finestra.slint
@@ -3722,14 +3719,14 @@ msgstr "A+"
 #, kalliope-slint
 msgctxt "programma.finestra.testo-piu-grande"
 msgid "Testo più grande"
-msgstr "Lielāks teksts"
+msgstr "Palielināt tekstu"
 
 #. Shown above the writing box before the first sentence: there the sentences appear, each word lighting up as the voice says it, and stay to be said again with a click or with Tab and Enter.
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.qui-voce-dira-tue"
 msgid "Qui la voce dirà le tue frasi, una parola dopo l'altra. Restano qui: un clic, o Tab e Invio, le dice di nuovo."
-msgstr "Šeit redzēsi, kā balss vārdu pa vārdam izrunā tavas frāzes. Tās paliek logā. Lai frāze atskanētu vēlreiz, noklikšķini uz tās vai izvēlies to ar Tab un nospied Enter."
+msgstr "Tavas frāzes paliek šeit. Kamēr balss runā, vārdi cits pēc cita izgaismojas. Lai frāzi dzirdētu vēlreiz, noklikšķini uz tās vai izvēlies to ar Tab un nospied Enter."
 
 #. In the compact meeting window, the short form of «Come si risolve»: it opens the help page about the problem shown. One word.
 #: crates/app/ui/kalliope/finestra.slint
@@ -3743,14 +3740,14 @@ msgstr "Palīdzība"
 #, kalliope-slint
 msgctxt "programma.finestra.intera"
 msgid "Intera"
-msgstr "Pilns logs"
+msgstr "Izvērst"
 
 #. In the compact meeting window, the button that goes back to the full window.
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.finestra-intera"
 msgid "Finestra intera"
-msgstr "Rādīt pilnu logu"
+msgstr "Izvērst logu"
 
 #. A hint on Wayland: Alt+Space opens the window menu, where «Sempre in primo piano» («Always on top») is a command of the person's desktop: keep both as the desktop calls them
 #: crates/app/ui/kalliope/finestra.slint
@@ -3892,7 +3889,7 @@ msgstr "Atvērt Kalliope vietni pārlūkā"
 #, kalliope-slint
 msgctxt "programma.modali.cosa-c-dentro"
 msgid "Che cosa c'è dentro"
-msgstr "Ko izmanto Kalliope"
+msgstr "Kalliope sastāvdaļas"
 
 #: crates/app/ui/kalliope/modali.slint
 #, kalliope-slint
@@ -4087,14 +4084,14 @@ msgstr "Ieraksti vai importē"
 #, kalliope-slint
 msgctxt "programma.crea.passo-leggi"
 msgid "Leggi ad alta voce"
-msgstr "Nolasi tekstu skaļi"
+msgstr "Lasi skaļi"
 
 #. The name of the third step: listen to the voice and give it a name. Short.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.passo-nome"
 msgid "Ascolta e dai un nome"
-msgstr "Noklausies un dod vārdu"
+msgstr "Klausies un nosauc"
 
 #. Where the person is among the three steps of making a voice: {0} is the number of the step (1 to 3), {1} its name
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4102,14 +4099,14 @@ msgstr "Noklausies un dod vārdu"
 #, kalliope-slint, python-brace-format
 msgctxt "programma.crea.passo"
 msgid "{} di 3 · {}"
-msgstr "{} no 3 · {}"
+msgstr "{}/3 · {}"
 
 #. The same round button while it records: it stops recording.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ferma-registrazione"
 msgid "Ferma la registrazione"
-msgstr "Apturēt ierakstu"
+msgstr "Beigt ierakstīšanu"
 
 #. The name of the big round record button, read by screen readers: it starts recording.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4166,13 +4163,13 @@ msgstr "Ja vēl vari runāt"
 #, kalliope-slint
 msgctxt "programma.crea.registrala-adesso"
 msgid "Registrala adesso"
-msgstr "Ieraksti savu balsi tagad"
+msgstr "Ieraksti tagad"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.istruzioni-registra"
 msgid "Leggi ad alta voce un breve testo. Bastano dodici secondi di voce chiara, meglio finché la voce è forte."
-msgstr "Nolasi skaļi īsu tekstu. Pietiek ar divpadsmit sekundēm skaidras runas. Vislabāk ierakstīt, kamēr balss vēl ir stipra."
+msgstr "Nolasi skaļi īsu tekstu. Pietiek ar 12 sekundēm skaidras runas. Vislabāk ierakstīt, kamēr balss vēl ir stipra."
 
 #. A small line over the second choice: this way is for a person who can no longer speak.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4206,7 +4203,7 @@ msgstr "Izvēlies klusu telpu un, ja vari, izmanto austiņas ar mikrofonu. Ar ot
 #, kalliope-slint, python-brace-format
 msgctxt "programma.crea.secondi"
 msgid "{} s"
-msgstr "{} s"
+msgstr "{} s"
 
 #. A label over the menu where the person picks the microphone to record with.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4232,7 +4229,7 @@ msgstr "Pārbaudu ierakstu…"
 #, kalliope-slint
 msgctxt "programma.crea.premi-tondo-leggi"
 msgid "Premi il tondo e leggi"
-msgstr "Nospied apaļo pogu un sāc lasīt"
+msgstr "Spied apli un lasi"
 
 #. While the voice is recorded: {0} is the time recorded so far («3,2 s»); {n} is how many whole seconds of clear voice are still needed
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4241,42 +4238,42 @@ msgstr "Nospied apaļo pogu un sāc lasīt"
 msgctxt "programma.crea.mancano"
 msgid "{0} · ne manca {n}"
 msgid_plural "{0} · ne mancano {n}"
-msgstr[0] "{0} · vēl {n} s"
-msgstr[1] "{0} · vēl {n} sekunde"
-msgstr[2] "{0} · vēl {n} sekundes"
+msgstr[0] "{0} · vēl {n} s"
+msgstr[1] "{0} · vēl {n} s"
+msgstr[2] "{0} · vēl {n} s"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.basta-cosi-premi-nuovo"
 msgid "Basta così: premi di nuovo per fermare."
-msgstr "Ar to pietiek. Nospied vēlreiz, lai apturētu ierakstu."
+msgstr "Pietiek! Spied vēlreiz, lai beigtu ierakstu."
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ne-bastano-dodici-secondi"
 msgid "Ne bastano dodici secondi di voce: il cerchio si riempie. Il livello si muove con la tua voce."
-msgstr "Pietiek ar divpadsmit sekundēm runas. Runājot aplis pakāpeniski piepildās, un skaļuma rādītājs kustas līdzi tavai balsij."
+msgstr "Pietiek ar 12 sekundēm runas. Kamēr runā, aplis piepildās un rādītājs rāda skaļumu."
 
 #. A button that stops playing the recording.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ferma-ascolto"
 msgid "Ferma l'ascolto"
-msgstr "Apturēt atskaņošanu"
+msgstr "Apturēt"
 
 #. A button that plays the recording just made.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ascolta-registrazione"
 msgid "Ascolta la registrazione"
-msgstr "Noklausīties ierakstu"
+msgstr "Klausīties"
 
 #. A button that throws the recording away to record again. A verb, short.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.rifai"
 msgid "Rifai"
-msgstr "Mēģināt vēlreiz"
+msgstr "Sākt no jauna"
 
 #. After a recording is read: {n} is how many stretches with a voice were found
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4285,9 +4282,9 @@ msgstr "Mēģināt vēlreiz"
 msgctxt "programma.crea.trovati-tratti"
 msgid "Ho trovato {n} tratto in cui si sente la voce. Ascolta e scegli."
 msgid_plural "Ho trovato {n} tratti in cui si sente la voce. Ascolta e scegli."
-msgstr[0] "Fragmenti, kuros dzirdama balss: {n}. Noklausies un izvēlies."
-msgstr[1] "Atradu {n} fragmentu, kurā dzirdama balss. Noklausies un izvēlies."
-msgstr[2] "Atradu {n} fragmentus, kuros dzirdama balss. Noklausies un izvēlies."
+msgstr[0] "Fragmenti ar balsi: {n}. Klausies un izvēlies."
+msgstr[1] "Atradu {n} fragmentu ar balsi. Klausies un izvēlies."
+msgstr[2] "Atradu {n} fragmentus ar balsi. Klausies un izvēlies."
 
 #. While a voice is made: {} is the name the person gave it
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4301,13 +4298,13 @@ msgstr "Veidoju balsi „{}”…"
 #, kalliope-slint
 msgctxt "programma.crea.ci-vuole-poco-quando"
 msgid "Ci vuole poco. Quando è pronta la scegli da sola."
-msgstr "Tas būs ātri. Tiklīdz balss būs gatava, Kalliope to izvēlēsies automātiski."
+msgstr "Tas būs ātri. Kad balss būs gatava, Kalliope pati to izvēlēsies."
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.come-si-chiama-questa"
 msgid "Come si chiama questa voce?"
-msgstr "Kā sauks šo balsi?"
+msgstr "Kā sauksi šo balsi?"
 
 #. The name of the field where the person writes the name of the new voice, read by screen readers.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4327,7 +4324,7 @@ msgstr "Piemēram, Annas balss"
 #, kalliope-slint
 msgctxt "programma.crea.mia-voce-oppure-persona"
 msgid "È la mia voce, oppure la persona che parla mi ha dato il permesso di usarla."
-msgstr "Tā ir mana balss, vai arī ierakstā dzirdamais cilvēks ir devis man atļauju izmantot šo balsi."
+msgstr "Tā ir mana balss, vai arī runātājs ir atļāvis man izmantot savu balsi."
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4361,13 +4358,13 @@ msgstr "Lasi skaļi un nesteidzies"
 #, kalliope-slint
 msgctxt "programma.crea.titolo-nome"
 msgid "Ascoltala e dalle un nome"
-msgstr "Noklausies balsi un dod tai vārdu"
+msgstr "Noklausies un dod balsij vārdu"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.questa-registrazione-non-si"
 msgid "Da questa registrazione non si può creare la voce: rifai."
-msgstr "No šī ieraksta nevar izveidot balsi. Mēģini vēlreiz."
+msgstr "No šī ieraksta nevar izveidot balsi. Sāc no jauna."
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4379,7 +4376,7 @@ msgstr "Ieraksti nosaukumu."
 #, kalliope-slint
 msgctxt "programma.crea.manca-permesso-spunta-casella"
 msgid "Manca il permesso: spunta la casella."
-msgstr "Vajadzīga atļauja. Atzīmē izvēles rūtiņu."
+msgstr "Vajadzīga atļauja. Atzīmē rūtiņu."
 
 #. The last button of the steps: it creates the voice with the name given.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4450,19 +4447,19 @@ msgstr "Visi faili"
 #, kalliope-rust
 msgctxt "programma.crea.non-ti-sento"
 msgid "Non ti sento. Avvicinati al microfono, controlla che non sia spento, o scegline un altro."
-msgstr "Es tevi nedzirdu. Pārbaudi, vai mikrofons ir ieslēgts. Pamēģini pavirzīties tam tuvāk vai izvēlies citu mikrofonu."
+msgstr "Tevi nedzirdu. Pavirzies tuvāk mikrofonam. Pārbaudi, vai tas ir ieslēgts, vai izvēlies citu."
 
 #: crates/app/src/crea.rs
 #, kalliope-rust
 msgctxt "programma.crea.troppo-forte"
 msgid "Il suono è troppo forte: allontanati un po' dal microfono."
-msgstr "Skaņa ir pārāk skaļa. Atvirzies nedaudz tālāk no mikrofona."
+msgstr "Par skaļu. Pavirzies mazliet tālāk no mikrofona."
 
 #: crates/app/src/crea.rs
 #, kalliope-rust
 msgctxt "programma.crea.serve-permesso"
 msgid "Per continuare serve il permesso: spunta la casella."
-msgstr "Lai turpinātu, vajadzīga atļauja. Atzīmē izvēles rūtiņu."
+msgstr "Lai turpinātu, vajadzīga atļauja. Atzīmē rūtiņu."
 
 #. The first stretch of a recording, the one where the voice is clearest: {numero} is its number
 #. Placeholders to leave as they are: {numero}
@@ -4470,7 +4467,7 @@ msgstr "Lai turpinātu, vajadzīga atļauja. Atzīmē izvēles rūtiņu."
 #, kalliope-rust, python-brace-format
 msgctxt "programma.crea.tratto-chiaro"
 msgid "Tratto {numero} · il più chiaro"
-msgstr "{numero}. fragments · visskaidrākā balss"
+msgstr "{numero}. fragments · visskaidrākais"
 
 #. The name of a stretch of an imported recording where a voice was found, numbered: «Stretch 2». {numero} is the number.
 #. Placeholders to leave as they are: {numero}
@@ -4486,7 +4483,7 @@ msgstr "{numero}. fragments"
 #, kalliope-rust, python-brace-format
 msgctxt "programma.crea.tratto-dettaglio"
 msgid "da {inizio} a {fine} · {secondi} s di voce"
-msgstr "no {inizio} līdz {fine} · {secondi} s runas"
+msgstr "{inizio}–{fine} · {secondi} s runas"
 
 #: crates/app/src/crea.rs
 #, kalliope-rust
@@ -4498,7 +4495,7 @@ msgstr "Neizdodas atvērt faila izvēles logu. Mēģini vēlreiz. Ja logs joproj
 #, kalliope-rust
 msgctxt "programma.crea.tratto-inutilizzabile"
 msgid "Da questo tratto non si può creare la voce: scegli un altro tratto, o rifai."
-msgstr "No šī fragmenta nevar izveidot balsi. Izvēlies citu fragmentu vai mēģini vēlreiz."
+msgstr "No šī fragmenta nevar izveidot balsi. Izvēlies citu fragmentu vai sāc no jauna."
 
 #. A button: replace the existing voice that has the same name with the new one.
 #: crates/app/src/crea.rs
@@ -4806,11 +4803,3 @@ msgstr "Balss izveide atcelta."
 msgctxt "programma.voce.creazione-fallita"
 msgid "Non sono riuscita a creare la voce: {causa}"
 msgstr "Neizdevās izveidot balsi: {causa}"
-
-#. Tags in the text (move the words, keep every tag, each inside the same tag):
-#.   <1> = <span>
-#: index.html
-#, kalliope-markup
-#~ msgctxt "frase.3.detto-riga"
-#~ msgid "<1>Detto:</1> «Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
-#~ msgstr "<1>Izrunāts:</1> „Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.”"

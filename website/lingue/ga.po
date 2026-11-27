@@ -50,7 +50,7 @@ msgstr "Níl an leathanach<1/>seo ann."
 #, kalliope-markup
 msgctxt "nf.spiegazione"
 msgid "L'indirizzo potrebbe essere cambiato. Riparti dalla pagina iniziale, oppure cerca la frase che vedi in Kalliope."
-msgstr "Seans gur athraíodh an seoladh. Fill ar an leathanach baile nó cuardaigh an abairt a fheiceann tú in Kalliope."
+msgstr "Seans gur athraíodh an seoladh. Fill ar an leathanach baile nó cuardaigh an abairt a fheiceann tú i bhfuinneog Kalliope."
 
 #: 404.html
 #, kalliope-markup
@@ -440,14 +440,14 @@ msgstr "Sono d'accordo con Paola. Però la consegna del 14/3 mi sembra stretta: 
 #, kalliope-markup
 msgctxt "frase.3.detto-etichetta"
 msgid "Detto:"
-msgstr ""
+msgstr "Ráite:"
 
 #. What the Italian voice said: it stays in Italian, as the voice says it.
 #: index.html
 #, kalliope-markup
 msgctxt "frase.3.detto-frase"
 msgid "«Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
-msgstr ""
+msgstr "«Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
 
 #: index.html
 #, kalliope-markup
@@ -555,7 +555,7 @@ msgstr "Fíorchruinniú ar Zoom, Teams nó Meet."
 #, kalliope-markup
 msgctxt "strada.riservato"
 msgid "Il testo che scrivi resta sul tuo computer: non passa da internet e non serve un account. Alla riunione arriva soltanto la voce."
-msgstr "Fanann an téacs a scríobhann tú ar do ríomhaire. Ní théann sé tríd an idirlíon agus ní theastaíonn cuntas uait. Ní shroicheann ach an guth an cruinniú."
+msgstr "Fanann an téacs a scríobhann tú ar do ríomhaire. Ní sheoltar thar an idirlíon é agus ní theastaíonn cuntas uait. Ní shroicheann ach an guth an cruinniú."
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <strong>
@@ -576,20 +576,20 @@ msgstr "Léiriú ar Kalliope á oscailt den chéad uair"
 #, kalliope-markup
 msgctxt "avvio.preparo.nome"
 msgid "Preparo la voce"
-msgstr "Guth á ullmhú"
+msgstr "Táim ag ullmhú an ghutha"
 
 #: index.html installa/index.html
 #, kalliope-markup
 msgctxt "avvio.preparo.detto"
 msgid "Fra poco puoi scrivere e farti sentire."
-msgstr "Is gearr go mbeidh tú in ann scríobh agus go gcloisfear thú."
+msgstr "Beidh tú in ann scríobh gan mhoill agus cloisfidh na daoine eile thú."
 
 #. The hint in the writing area while the voice loads: writing is already possible.
 #: index.html installa/index.html
 #, kalliope-markup
 msgctxt "avvio.segnaposto"
 msgid "Puoi già scrivere: la voce arriva fra poco."
-msgstr "Is féidir leat scríobh anois. Beidh an guth réidh ar ball."
+msgstr "Scríobh anois más mian leat. Beidh an guth réidh ar ball beag."
 
 #: index.html installa/index.html
 #, kalliope-markup
@@ -704,7 +704,7 @@ msgstr "Ní feiste leighis é Kalliope agus ní féidir é a úsáid in ionad me
 #, kalliope-markup
 msgctxt "finestra.parla.nome"
 msgid "Sto parlando"
-msgstr "Ag caint"
+msgstr "Táim ag caint"
 
 #. What the window says next to «Sto parlando»: how to stop. Esc is the Escape key.
 #: index.html
@@ -1348,7 +1348,7 @@ msgstr "Léiriú ar fhuinneog Kalliope an chéad uair a osclaítear é"
 #, kalliope-markup
 msgctxt "finestra.risolvi"
 msgid "Come si risolve"
-msgstr "Conas é a réiteach"
+msgstr "An réiteach"
 
 #. The hint in the writing area when the voice does not start: look at the line above.
 #: installa/index.html
@@ -1379,7 +1379,7 @@ msgstr "Oscail é ó roghchlár na bhfeidhmchlár. Tá na guthanna sa phacáiste
 #, kalliope-markup
 msgctxt "in.apri.ogni-volta"
 msgid "A ogni avvio dice «Preparo la voce» per un po': puoi già scrivere, e la voce arriva fra poco."
-msgstr "Gach uair a osclaíonn tú é, feicfidh tú “Guth á ullmhú” ar feadh tamaill. Is féidir leat scríobh cheana féin. Beidh an guth réidh ar ball."
+msgstr "Gach uair a osclaíonn tú é, feicfidh tú “Táim ag ullmhú an ghutha” ar feadh tamaill. Is féidir leat scríobh cheana féin. Beidh an guth réidh ar ball."
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <strong>
@@ -1405,7 +1405,7 @@ msgstr "“Ní thosaíonn an guth”"
 #, kalliope-markup
 msgctxt "in.frasi.voce.rimedio"
 msgid "Un file delle voci non è dove il programma lo cerca: installa di nuovo il pacchetto o l'archivio, con i passi qui sopra. «Come si risolve» porta a questo passo."
-msgstr "Tá comhad gutha ar iarraidh ón áit ina lorgaíonn an clár é. Suiteáil an pacáiste nó an chartlann arís de réir na gcéimeanna thuas. Tugann “Conas é a réiteach” chuig an gcéim seo thú."
+msgstr "Tá comhad gutha ar iarraidh ón áit ina lorgaíonn an clár é. Suiteáil an pacáiste nó an chartlann arís de réir na gcéimeanna thuas. Brúigh “An réiteach” chun teacht ar an gcéim seo."
 
 #: installa/index.html
 #, kalliope-markup
@@ -1624,11 +1624,10 @@ msgstr "Ní thosaíonn an guth"
 
 #. What the window says next to the state above: the same words as the program's message programma.voce.file-mancanti.
 #: installa/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Manca la voce: in … non trovo …. Reinstalla Kalliope."
+#, kalliope-markup
 msgctxt "in.stato.voce.detto"
 msgid "Non trovo i file della voce, e senza non posso parlare. Reinstalla Kalliope dal pacchetto."
-msgstr "Manca la voce: in … non trovo …. Reinstalla Kalliope."
+msgstr "Ní féidir liom comhaid an ghutha a aimsiú. Ní féidir liom labhairt gan iad. Suiteáil Kalliope arís ón bpacáiste."
 
 #: installa/index.html
 #, kalliope-markup
@@ -2025,13 +2024,13 @@ msgstr "<1>Conas a bheidh a fhios agat gur éirigh leis?</1>Feicfidh tú “Réi
 #, kalliope-markup
 msgctxt "riu.testo.6"
 msgid "<1>Se non è andata</1>Se dice «Nessuno ti sente», «Manca il microfono» o «La voce non parte», premi «Come si risolve», accanto alla riga: ti porta alla spiegazione giusta. Per ogni altra riga, <2>cercala nella sezione Aiuto</2>."
-msgstr "<1>Murar éirigh leis</1>Má fheiceann tú “Ní chloistear thú”, “Micreafón ar iarraidh” nó “Ní thosaíonn an guth”, brúigh “Conas é a réiteach” in aice leis an líne. Tabharfaidh sé chuig an míniú ceart thú. Má fheiceann tú líne eile, <2>cuardaigh í faoi Cabhair</2>."
+msgstr "<1>Murar éirigh leis</1>Má fheiceann tú “Ní chloistear thú”, “Micreafón ar iarraidh” nó “Ní thosaíonn an guth”, brúigh “An réiteach” in aice leis an líne. Tabharfaidh sé chuig an míniú ceart thú. Má fheiceann tú líne eile, <2>cuardaigh í faoi Cabhair</2>."
 
 #. Attribute «alt» of an element of the page: plain text, no tags.
 #: riunione/index.html
 msgctxt "riu.immagine.8"
 msgid "La finestra di Kalliope. In alto la barra, con il logo, il nome, la voce (Giulia), «Riunione», «Altro» e la grandezza del testo. Sotto, le frasi già dette, in bolle: l'ultima è la più chiara. Poi la riga di stato: «Pronta. Nella riunione scegli «Kalliope» come microfono.» In basso la grande bolla tratteggiata dove scrivi, con «Di'»."
-msgstr "Fuinneog Kalliope. Ar an mbarra ag an mbarr tá an lógó, an t-ainm, an guth (Giulia), “Cruinniú”, “Tuilleadh” agus méid an téacs. Fúthu sin tá na habairtí a dúirt tú cheana, i mboilgeoga. Is í an bhoilgeog is déanaí an ceann is gile. Ar an líne stádais feicfidh tú: Réidh. Roghnaigh “Kalliope” mar mhicreafón sa chruinniú. Ag an mbun tá an bhoilgeog mhór ina scríobhann tú, le himlíne bhriste agus an cnaipe “Abair”."
+msgstr "Fuinneog Kalliope. Ar an mbarra ag an mbarr tá an lógó, an t-ainm, an guth (Giulia), “Cruinniú”, “Eile” agus méid an téacs. Fúthu sin tá na habairtí a dúirt tú cheana, i mboilgeoga. Is í an bhoilgeog is déanaí an ceann is gile. Ar an líne stádais feicfidh tú: Réidh. Roghnaigh “Kalliope” mar mhicreafón sa chruinniú. Ag an mbun tá an bhoilgeog mhór ina scríobhann tú, le himlíne bhriste agus an cnaipe “Abair”."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2055,7 +2054,7 @@ msgstr "Oscail na socruithe fuaime in aip an chruinnithe agus roghnaigh “Kalli
 #, kalliope-markup
 msgctxt "riu.testo.11"
 msgid "In Zoom: Impostazioni, Audio, Microfono, «Kalliope»."
-msgstr "In Zoom, téigh chuig na socruithe fuaime (Settings → Audio). Faoi Microphone, roghnaigh “Kalliope”."
+msgstr "In aip Zoom, oscail na socruithe fuaime (Settings → Audio). Faoi Microphone, roghnaigh “Kalliope”."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2148,7 +2147,7 @@ msgstr "<1>Cad atá le déanamh?</1> Scríobh abairt agus brúigh Enter."
 #, kalliope-markup
 msgctxt "riu.testo.25"
 msgid "<1>Come sai che è andata.</1> Se la riga di stato diventa «Nessuno ti sente», nessuna app sta usando il microfono «Kalliope». Se dice «Sto parlando», una app ti ascolta."
-msgstr "<1>Cad a fheicfidh tú?</1> Má thagann “Ní chloistear thú” aníos ar an líne stádais, níl micreafón “Kalliope” in úsáid ag aon aip. Má fheiceann tú “Ag caint”, tá aip ag éisteacht leat."
+msgstr "<1>Cad a fheicfidh tú?</1> Má thagann “Ní chloistear thú” aníos ar an líne stádais, níl micreafón “Kalliope” in úsáid ag aon aip. Má fheiceann tú “Táim ag caint”, tá aip ag éisteacht leat."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2214,7 +2213,7 @@ msgstr "Má roghnaíonn tú “Clois an guth tú féin” sa roghchlár gutha, c
 #, kalliope-markup
 msgctxt "riu.testo.34"
 msgid "<1>Se non è andata</1>Premi «Come si risolve» nella finestra, o cerca la riga nella <2>sezione Aiuto</2>. Se vuoi, <3>dicci come è andata</3>."
-msgstr "<1>Murar éirigh leis</1>Brúigh “Conas é a réiteach” san fhuinneog nó cuardaigh an líne faoi <2>Cabhair</2>. Más mian leat, <3>inis dúinn conas a d’éirigh leat</3>."
+msgstr "<1>Murar éirigh leis</1>Brúigh “An réiteach” san fhuinneog nó cuardaigh an líne faoi <2>Cabhair</2>. Más mian leat, <3>inis dúinn conas a d’éirigh leat</3>."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2272,7 +2271,7 @@ msgstr "Scríobh sa bhoilgeog a bhfuil imlíne bhriste uirthi agus brúigh Enter
 #, kalliope-markup
 msgctxt "riu.testo.42"
 msgid "Le frasi già dette restano sopra la scrittura, la più recente in basso, anche dopo aver chiuso Kalliope: si salvano solo su questo computer. Un clic su una frase la ripete; con la scrittura vuota, ↑ riporta l'ultima."
-msgstr "Fanann na habairtí a dúirt tú os cionn an bhosca scríbhneoireachta, an ceann is déanaí ag an mbun, fiú tar éis duit Kalliope a dhúnadh. Ní shábháiltear iad ach ar an ríomhaire seo. Cliceáil ar abairt lena rá arís. Nuair atá an bosca folamh, brúigh ↑ chun an abairt dheireanach a fháil ar ais."
+msgstr "Fanann na habairtí a dúirt tú os cionn an bhosca scríbhneoireachta, an abairt is déanaí ag an mbun, fiú tar éis duit Kalliope a dhúnadh. Ní shábháiltear iad ach ar an ríomhaire seo. Cliceáil ar abairt lena rá arís. Nuair atá an bosca folamh, brúigh ↑ chun an abairt dheireanach a fháil ar ais."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2308,7 +2307,7 @@ msgstr "Le do ghuth féin"
 #, kalliope-markup
 msgctxt "riu.voce.testo"
 msgid "In «Altro» scegli «Crea la tua voce». La registri dal microfono, leggendo un testo (bastano circa dodici secondi), oppure importi una vecchia registrazione: WAV, FLAC, MP3, OGG, M4A, o un messaggio vocale di WhatsApp o Telegram, anche dentro un video. Scegli il pezzo più chiaro, dai un nome alla voce e conferma che è la tua, o che chi parla ti ha dato il permesso."
-msgstr "Faoi “Tuilleadh”, roghnaigh “Cruthaigh do ghuth féin”. Is féidir leat téacs a léamh isteach sa mhicreafón (is leor thart ar dhá shoicind déag) nó seantaifeadadh a iompórtáil. Oireann WAV, FLAC, MP3, OGG, M4A agus teachtaireachtaí gutha ó WhatsApp nó Telegram. Is féidir fuaim ó fhíseán a úsáid freisin. Roghnaigh an sliocht is soiléire, tabhair ainm ar an nguth agus deimhnigh gur leatsa é nó go bhfuil cead agat ón té atá ag caint."
+msgstr "Faoi “Eile”, roghnaigh “Cruthaigh do ghuth féin”. Is féidir leat téacs a léamh isteach sa mhicreafón (is leor thart ar dhá shoicind déag) nó seantaifeadadh a iompórtáil. Oireann WAV, FLAC, MP3, OGG, M4A agus teachtaireachtaí gutha ó WhatsApp nó Telegram. Is féidir fuaim ó fhíseán a úsáid freisin. Roghnaigh an sliocht is soiléire, tabhair ainm ar an nguth agus deimhnigh gur leatsa é nó go bhfuil cead agat ón té atá ag caint."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2348,7 +2347,7 @@ msgstr "<1>“Ní thosaíonn an guth”</1>"
 #, kalliope-markup
 msgctxt "ai.testo.13"
 msgid "<1>«Preparo la voce»</1>"
-msgstr "<1>“Guth á ullmhú”</1>"
+msgstr "<1>“Táim ag ullmhú an ghutha”</1>"
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <a href="#f-pronta">
@@ -2372,7 +2371,7 @@ msgstr "<1>“Micreafón ar iarraidh”</1>"
 #, kalliope-markup
 msgctxt "ai.testo.16"
 msgid "<1>«Sto parlando»</1>"
-msgstr "<1>“Ag caint”</1>"
+msgstr "<1>“Táim ag caint”</1>"
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <a href="#f-nessuna-chiamata">
@@ -2405,11 +2404,10 @@ msgid "Cosa significa"
 msgstr "Cad is brí leis?"
 
 #: riunione/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive quale cartella e quali file («Manca la voce: in … non trovo …»). L'installazione è rotta, e finché non è a posto la voce non può parlare."
+#, kalliope-markup
 msgctxt "ai.testo.21"
 msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive «Non trovo i file della voce». L'installazione è rotta, e finché non è a posto la voce non può parlare."
-msgstr "Tagann na guthanna leis an bpacáiste. Níl ceann dá gcomhaid san fhillteán ina lorgaíonn Kalliope é. Luann an teachtaireacht an fillteán agus na comhaid atá ar iarraidh (“Manca la voce: in … non trovo …”). Tá rud éigin cearr leis an tsuiteáil. Ní bheidh an guth in ann labhairt go dtí go mbeidh sé réitithe."
+msgstr "Tagann na guthanna leis an bpacáiste. Níl ceann dá gcomhaid san fhillteán ina lorgaíonn Kalliope é. In aice leis an líne, taispeánann an fhuinneog “Ní féidir liom comhaid an ghutha a aimsiú”. Tá rud éigin cearr leis an tsuiteáil. Ní bheidh an guth in ann labhairt go dtí go mbeidh sé réitithe."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2432,7 +2430,7 @@ msgstr "Suiteáil Kalliope arís de réir na gcéimeanna ar an <1>leathanach Sui
 #, kalliope-markup
 msgctxt "ai.testo.24"
 msgid "<1>Preparo la voce</1>"
-msgstr "<1>Guth á ullmhú</1>"
+msgstr "<1>Táim ag ullmhú an ghutha</1>"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2444,7 +2442,7 @@ msgstr "Cad is brí leis?"
 #, kalliope-markup
 msgctxt "ai.testo.26"
 msgid "La voce si sta caricando in memoria. Succede a ogni avvio. Puoi già scrivere: la riga dice «Fra poco puoi scrivere e farti sentire»."
-msgstr "Tá an guth á luchtú sa chuimhne. Tarlaíonn sé seo gach uair a osclaíonn tú Kalliope. Is féidir leat scríobh cheana féin. Feicfidh tú “Is gearr go mbeidh tú in ann scríobh agus go gcloisfear thú.”"
+msgstr "Tá an guth á luchtú sa chuimhne. Tarlaíonn sé seo gach uair a osclaíonn tú Kalliope. Is féidir leat scríobh cheana féin. Feicfidh tú “Beidh tú in ann scríobh gan mhoill agus cloisfidh na daoine eile thú.”"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2552,7 +2550,7 @@ msgstr "Tar éis duit é a réiteach"
 #, kalliope-markup
 msgctxt "ai.testo.41"
 msgid "Chiudi e riapri Kalliope. Non abbiamo provato se serva, ma è il modo più semplice per cominciare da capo."
-msgstr "Dún Kalliope agus oscail arís é. Níor thástálamar an gá é seo a dhéanamh, ach is é an bealach is fusa é le tosú as an nua."
+msgstr "Dún Kalliope agus oscail arís é. Níor thástálamar an gá é seo a dhéanamh, ach sin an bealach is fusa le tosú as an nua."
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <q class="frase-finestra">
@@ -2560,7 +2558,7 @@ msgstr "Dún Kalliope agus oscail arís é. Níor thástálamar an gá é seo a 
 #, kalliope-markup
 msgctxt "ai.testo.42"
 msgid "<1>Sto parlando</1>"
-msgstr "<1>Ag caint</1>"
+msgstr "<1>Táim ag caint</1>"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2635,11 +2633,10 @@ msgid "Cosa significa"
 msgstr "Cad is brí leis?"
 
 #: riunione/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …», «Errore della voce: …» o «Non riesco a cambiare voce: …»."
+#, kalliope-markup
 msgctxt "ai.testo.54"
 msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …» o «Non sono riuscita a dire questa frase: …»."
-msgstr "Tá rud éigin cearr leis an gclár nó le comhaid an ghutha. In aice leis an stádas feicfidh tú teachtaireacht ar nós “Ní féidir liom an guth a ullmhú: …”, “Earráid ghutha: …” nó “Ní féidir liom an guth a athrú: …”."
+msgstr "Tá rud éigin cearr leis an gclár nó le comhaid an ghutha. In aice leis an stádas feicfidh tú teachtaireacht ar nós “Ní féidir liom an guth a ullmhú: …” nó “Níor éirigh liom an abairt seo a rá: …”."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -3105,7 +3102,7 @@ msgstr "Tosaíonn an guth a luaithe atá an chéad abairt ullamh. Ullmhaítear a
 #, kalliope-markup
 msgctxt "st.voce.forse"
 msgid "Quanto dura «Preparo la voce…» a ogni avvio: <1>non misurato</1>."
-msgstr "Cá fhad a fheiceann tú “Guth á ullmhú…” gach uair a osclaíonn tú Kalliope? <1>Gan tomhas fós.</1>"
+msgstr "Cá fhad a fheiceann tú “Táim ag ullmhú an ghutha…” gach uair a osclaíonn tú Kalliope? <1>Gan tomhas fós.</1>"
 
 #: stato/index.html
 #, kalliope-markup
@@ -3144,7 +3141,7 @@ msgstr "Nuair a d’éisteamar leis na taifeadtaí lena seiceáil, ba sa chaoi a
 #, kalliope-markup
 msgctxt "st.microfono.fatto"
 msgid "Provato con un PipeWire preparato per la prova. Se nessuna app ascolta non usa il processore, e ciò che si dice va perso, come con un microfono vero; mentre un'app registra usa circa lo 0,26% di un core, con un ritardo di circa 21 ms. <1><2>docs/virtual-microphone.md</2></1>"
-msgstr "D’úsáideamar PipeWire a bhí socraithe don tástáil. Mura bhfuil aip ag éisteacht, ní úsáideann an micreafón an próiseálaí agus cailltear a ndeirtear, mar a tharlaíonn le fíormhicreafón. Nuair a bhíonn aip ag taifeadadh, úsáideann sé thart ar 0.26% de chroí próiseála, le moill thart ar 21 ms. <1><2>docs/virtual-microphone.md</2></1>"
+msgstr "D’úsáideamar PipeWire a bhí socraithe don tástáil. Mura bhfuil aip ag éisteacht, ní úsáideann an micreafón an próiseálaí agus cailltear an méid a deirtear, mar a tharlaíonn le fíormhicreafón. Nuair a bhíonn aip ag taifeadadh, úsáideann sé thart ar 0.26% de chroí próiseála, le moill thart ar 21 ms. <1><2>docs/virtual-microphone.md</2></1>"
 
 #: stato/index.html
 #, kalliope-markup
@@ -3248,7 +3245,7 @@ msgstr "Cé mhéad a chosnaíonn sé?"
 #, kalliope-markup
 msgctxt "st.d.costa.a"
 msgid "Non c'è un prezzo e non serve un account. L'uso personale è libero; anche quello di ricerca e interno a un'azienda."
-msgstr "Tá sé saor in aisce agus ní theastaíonn cuntas uait. Is féidir é a úsáid go saor chun críocha pearsanta, le haghaidh taighde nó laistigh de chomhlacht."
+msgstr "Ní theastaíonn cuntas uait. Tá Kalliope saor in aisce d’úsáid phearsanta, le haghaidh taighde agus le húsáid laistigh de chomhlacht."
 
 #: stato/index.html
 #, kalliope-markup
@@ -3294,7 +3291,7 @@ msgstr "Ní bheidh faoi láthair. Tá rogha ann idir guth Giulia agus guth Marco
 #, kalliope-markup
 msgctxt "st.d.voce.personale"
 msgid "Sì, dentro il programma: in «Altro», «Crea la tua voce». La registri dal microfono, leggendo un testo di circa dodici secondi, oppure importi una vecchia registrazione (WAV, FLAC, MP3, OGG, M4A, o un messaggio vocale di WhatsApp o Telegram, anche dentro un video). Scegli il pezzo più chiaro, le dai un nome e confermi che è la tua voce, o che chi parla ti ha dato il permesso. La voce si crea su questo computer; la trovi accanto a Giulia e Marco. Il programma parla in italiano."
-msgstr "Beidh, sa chlár féin. Faoi “Tuilleadh”, roghnaigh “Cruthaigh do ghuth féin”. Is féidir leat téacs a léamh isteach sa mhicreafón ar feadh thart ar dhá shoicind déag nó seantaifeadadh a iompórtáil (WAV, FLAC, MP3, OGG, M4A nó teachtaireacht ghutha ó WhatsApp nó Telegram, fiú más i bhfíseán atá an guth). Roghnaigh an sliocht is soiléire, tabhair ainm ar an nguth agus deimhnigh gur leatsa é nó go bhfuil cead agat ón té atá ag caint. Cruthaítear an guth ar an ríomhaire seo. Gheobhaidh tú é taobh le Giulia agus Marco. Labhraíonn an clár in Iodáilis amháin."
+msgstr "Beidh, sa chlár féin. Faoi “Eile”, roghnaigh “Cruthaigh do ghuth féin”. Is féidir leat téacs a léamh isteach sa mhicreafón ar feadh thart ar dhá shoicind déag nó seantaifeadadh a iompórtáil (WAV, FLAC, MP3, OGG, M4A nó teachtaireacht ghutha ó WhatsApp nó Telegram, fiú más i bhfíseán atá an guth). Roghnaigh an sliocht is soiléire, tabhair ainm ar an nguth agus deimhnigh gur leatsa é nó go bhfuil cead agat ón té atá ag caint. Cruthaítear an guth ar an ríomhaire seo. Gheobhaidh tú é taobh le Giulia agus Marco. Labhraíonn an clár in Iodáilis amháin."
 
 #: stato/index.html
 #, kalliope-markup
@@ -3578,13 +3575,13 @@ msgstr "Mar atá cúrsaí inniu i gcúpla líne, le seoladh an leathanaigh seo. 
 #, kalliope-markup
 msgctxt "st.inoltra.messaggio"
 msgid "Kalliope: scrivi una frase e una voce italiana la dice nella riunione. Oggi è una versione di prova, solo per Linux, provata fino al microfono e non ancora in una riunione vera. Senza account e senza prezzo; il testo resta sul computer."
-msgstr "Le Kalliope, scríobhann tú abairt agus deir guth sa chruinniú í in Iodáilis. Is leagan trialach do Linux amháin atá ann faoi láthair. Tá sé tástáilte chomh fada leis an micreafón, ach tá fíorchruinniú fós le triail. Tá sé saor in aisce, ní gá cuntas a bheith agat agus fanann an téacs ar an ríomhaire."
+msgstr "Scríobhann tú abairt agus deir guth Kalliope in Iodáilis í sa chruinniú. Is leagan trialach do Linux amháin atá ann faoi láthair. Tá sé tástáilte chomh fada leis an micreafón, ach tá fíorchruinniú fós le triail. Tá sé saor in aisce, ní gá cuntas a bheith agat agus fanann an téacs ar an ríomhaire."
 
 #: stato/index.html
 #, kalliope-markup
 msgctxt "st.inoltra.messaggio-stabile"
 msgid "Kalliope: scrivi una frase e una voce italiana la dice nella riunione. Oggi è solo per Linux, provata fino al microfono e non ancora in una riunione vera. Senza account e senza prezzo; il testo resta sul computer."
-msgstr "Le Kalliope, scríobhann tú abairt agus deir guth sa chruinniú í in Iodáilis. Is do Linux amháin é faoi láthair. Tá sé tástáilte chomh fada leis an micreafón, ach tá fíorchruinniú fós le triail. Tá sé saor in aisce, ní gá cuntas a bheith agat agus fanann an téacs ar an ríomhaire."
+msgstr "Scríobhann tú abairt agus deir guth Kalliope in Iodáilis í sa chruinniú. Is do Linux amháin é faoi láthair. Tá sé tástáilte chomh fada leis an micreafón, ach tá fíorchruinniú fós le triail. Tá sé saor in aisce, ní gá cuntas a bheith agat agus fanann an téacs ar an ríomhaire."
 
 #: stato/index.html
 #, kalliope-markup
@@ -3631,14 +3628,14 @@ msgstr "Freagra: {domanda}"
 #, kalliope-slint
 msgctxt "programma.finestra.preparo-la-voce"
 msgid "Preparo la voce…"
-msgstr "Guth á ullmhú…"
+msgstr "Táim ag ullmhú an ghutha…"
 
 #. A small button next to a problem (nobody hears you, no microphone, the voice does not start): it opens the page of the website that explains what to do. Two or three words.
 #: crates/app/ui/kalliope/avvisi.slint crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.comune.come-si-risolve"
 msgid "Come si risolve"
-msgstr "Conas é a réiteach"
+msgstr "An réiteach"
 
 #. The button that closes a question without doing anything.
 #: crates/app/ui/kalliope/avvisi.slint crates/app/ui/kalliope/modali.slint crates/app/ui/kalliope/voce-propria.slint
@@ -3689,14 +3686,14 @@ msgstr "Mód cruinnithe: an bosca scríbhneoireachta, an stádas agus an cnaipe 
 #, kalliope-slint
 msgctxt "programma.finestra.altro"
 msgid "Altro"
-msgstr "Tuilleadh"
+msgstr "Eile"
 
 #. Read aloud by a screen reader for the «Altro» menu: say what it holds
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.altro-crea-tua-voce"
 msgid "Altro: crea la tua voce, informazioni"
-msgstr "Tuilleadh: cruthaigh do ghuth féin, eolas"
+msgstr "Eile: cruthaigh do ghuth féin, eolas"
 
 #. The button that makes the text smaller: a capital A with a minus sign
 #: crates/app/ui/kalliope/finestra.slint
@@ -3773,14 +3770,14 @@ msgstr "Tuigim"
 #, kalliope-slint
 msgctxt "programma.finestra.segnaposto-fra-poco"
 msgid "Fra poco."
-msgstr "I gceann nóiméid."
+msgstr "Go luath."
 
 #. The hint in the empty writing box while the voice loads: the person can already type, the voice comes soon.
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.segnaposto-puoi-gia-scrivere"
 msgid "Puoi già scrivere: la voce arriva fra poco."
-msgstr "Is féidir leat scríobh anois. Beidh an guth réidh ar ball."
+msgstr "Scríobh anois más mian leat. Beidh an guth réidh ar ball beag."
 
 #. The hint in the empty writing box of the smallest window when the voice cannot start.
 #: crates/app/ui/kalliope/finestra.slint
@@ -3814,7 +3811,7 @@ msgstr "Scríobh anseo. Brúigh Enter lena rá."
 #, kalliope-slint
 msgctxt "programma.finestra.con-quale-voce-parli"
 msgid "Con quale voce parli"
-msgstr "Roghnaigh do ghuth"
+msgstr "Cén guth?"
 
 #. A switch in the voice menu: when on, the person also hears the voice from the computer's speakers (otherwise only the others in the call hear it).
 #: crates/app/ui/kalliope/finestra.slint
@@ -3881,13 +3878,13 @@ msgstr "Scríobh chun go gcloisfear thú ar fhísghlaonna. Gintear an guth ar an
 #, kalliope-slint
 msgctxt "programma.modali.sito-kalliope"
 msgid "Il sito di Kalliope"
-msgstr "Suíomh gréasáin Kalliope"
+msgstr "Suíomh Kalliope"
 
 #: crates/app/ui/kalliope/modali.slint
 #, kalliope-slint
 msgctxt "programma.modali.apri-sito-kalliope-nel"
 msgid "Apri il sito di Kalliope nel browser"
-msgstr "Oscail suíomh gréasáin Kalliope sa bhrabhsálaí"
+msgstr "Oscail suíomh Kalliope sa bhrabhsálaí"
 
 #. A heading in the About window, over the list of the parts Kalliope is made of (the voices, ONNX Runtime, Slint…).
 #: crates/app/ui/kalliope/modali.slint
@@ -4012,7 +4009,7 @@ msgstr "Guth nua"
 #, kalliope-slint
 msgctxt "programma.stato.preparo-la-voce"
 msgid "Preparo la voce"
-msgstr "Guth á ullmhú"
+msgstr "Táim ag ullmhú an ghutha"
 
 #. The name of the state when the voice is ready to speak. One word; it refers to the voice (feminine in Italian).
 #: crates/app/ui/kalliope/stato.slint
@@ -4026,7 +4023,7 @@ msgstr "Réidh"
 #, kalliope-slint
 msgctxt "programma.stato.sto-parlando"
 msgid "Sto parlando"
-msgstr "Ag caint"
+msgstr "Táim ag caint"
 
 #. The name of the state when no app in the call uses the «Kalliope» microphone: the others cannot hear the person. Short.
 #: crates/app/ui/kalliope/stato.slint
@@ -4061,7 +4058,7 @@ msgstr "Aire"
 #, kalliope-slint
 msgctxt "programma.stato.fra-poco-puoi-scrivere"
 msgid "Fra poco puoi scrivere e farti sentire."
-msgstr "Is gearr go mbeidh tú in ann scríobh agus go gcloisfear thú."
+msgstr "Beidh tú in ann scríobh gan mhoill agus cloisfidh na daoine eile thú."
 
 #. What the status line says when the voice is ready: how to be heard. «Kalliope» in quotes is the name of the microphone to choose in the meeting app.
 #: crates/app/ui/kalliope/stato.slint
@@ -4096,7 +4093,7 @@ msgstr "Léigh os ard"
 #, kalliope-slint
 msgctxt "programma.crea.passo-nome"
 msgid "Ascolta e dai un nome"
-msgstr "Éist agus tabhair ainm air"
+msgstr "Éist agus ainmnigh"
 
 #. Where the person is among the three steps of making a voice: {0} is the number of the step (1 to 3), {1} its name
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4133,14 +4130,14 @@ msgstr "Éist"
 #, kalliope-slint, python-brace-format
 msgctxt "programma.crea.ferma-ascolto-tratto"
 msgid "Ferma l'ascolto di {}"
-msgstr "Stad athsheinm {}"
+msgstr "Stad an t-athsheinm: {}"
 
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint, python-brace-format
 msgctxt "programma.crea.ascolta-tratto"
 msgid "Ascolta {}"
-msgstr "Éist le {}"
+msgstr "Éist: {}"
 
 #. While a file is read: {} is the name of the file
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4161,14 +4158,14 @@ msgstr "Táim ag lorg na coda ina bhfuil an guth is soiléire."
 #, kalliope-slint
 msgctxt "programma.crea.se-hai-ancora-voce"
 msgid "Se hai ancora la voce"
-msgstr "Má tá do ghuth agat fós"
+msgstr "Má tá guth agat fós"
 
 #. The first choice for creating a voice: record it now, reading a short text aloud («la» is the voice). A title.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.registrala-adesso"
 msgid "Registrala adesso"
-msgstr "Taifead anois é"
+msgstr "Taifead anois"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4200,7 +4197,7 @@ msgstr "Teachtaireacht ghutha, físeán nó taifeadadh a rinne tú cheana: WAV, 
 #, kalliope-slint
 msgctxt "programma.crea.stanza-tranquilla-se-c"
 msgid "Una stanza tranquilla e, se c'è, un microfono a cuffia. Puoi crearla anche per un'altra persona, con il suo permesso."
-msgstr "Roghnaigh seomra ciúin agus úsáid micreafón ar chluasáin má tá ceann agat. Is féidir leat guth a chruthú do dhuine eile freisin, le cead an duine sin."
+msgstr "Roghnaigh seomra ciúin. Úsáid cluasáin le micreafón má tá siad agat. Is féidir leat guth a chruthú do dhuine eile freisin, le cead an duine sin."
 
 #. {0} is the time recorded so far, a number with one decimal («3,2»): the unit is seconds
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4234,7 +4231,7 @@ msgstr "Taifeadadh á sheiceáil…"
 #, kalliope-slint
 msgctxt "programma.crea.premi-tondo-leggi"
 msgid "Premi il tondo e leggi"
-msgstr "Brúigh an cnaipe cruinn agus léigh"
+msgstr "Brúigh an ciorcal agus léigh"
 
 #. While the voice is recorded: {0} is the time recorded so far («3,2 s»); {n} is how many whole seconds of clear voice are still needed
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4243,11 +4240,11 @@ msgstr "Brúigh an cnaipe cruinn agus léigh"
 msgctxt "programma.crea.mancano"
 msgid "{0} · ne manca {n}"
 msgid_plural "{0} · ne mancano {n}"
-msgstr[0] "{0} · {n} soicind eile"
-msgstr[1] "{0} · {n} shoicind eile"
-msgstr[2] "{0} · {n} shoicind eile"
-msgstr[3] "{0} · {n} soicind eile"
-msgstr[4] "{0} · {n} soicind eile"
+msgstr[0] "{0} · {n} s eile"
+msgstr[1] "{0} · {n} s eile"
+msgstr[2] "{0} · {n} s eile"
+msgstr[3] "{0} · {n} s eile"
+msgstr[4] "{0} · {n} s eile"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4259,21 +4256,21 @@ msgstr "Is leor sin. Brúigh arís é chun stopadh."
 #, kalliope-slint
 msgctxt "programma.crea.ne-bastano-dodici-secondi"
 msgid "Ne bastano dodici secondi di voce: il cerchio si riempie. Il livello si muove con la tua voce."
-msgstr "Is leor dhá shoicind déag de chaint. Líonann an ciorcal de réir a chéile. Bogann an méadar de réir mar a labhraíonn tú."
+msgstr "Is leor 12 shoicind cainte. Líonann an ciorcal agus tú ag caint. Léiríonn an méadar neart do ghutha."
 
 #. A button that stops playing the recording.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ferma-ascolto"
 msgid "Ferma l'ascolto"
-msgstr "Stad an t-athsheinm"
+msgstr "Stad"
 
 #. A button that plays the recording just made.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ascolta-registrazione"
 msgid "Ascolta la registrazione"
-msgstr "Éist leis an taifeadadh"
+msgstr "Éist siar"
 
 #. A button that throws the recording away to record again. A verb, short.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4289,11 +4286,11 @@ msgstr "Déan arís"
 msgctxt "programma.crea.trovati-tratti"
 msgid "Ho trovato {n} tratto in cui si sente la voce. Ascolta e scegli."
 msgid_plural "Ho trovato {n} tratti in cui si sente la voce. Ascolta e scegli."
-msgstr[0] "Fuair mé {n} sliocht ina gcloistear an guth. Éist agus roghnaigh."
-msgstr[1] "Fuair mé {n} shliocht ina gcloistear an guth. Éist agus roghnaigh."
-msgstr[2] "Fuair mé {n} shliocht ina gcloistear an guth. Éist agus roghnaigh."
-msgstr[3] "Fuair mé {n} sliocht ina gcloistear an guth. Éist agus roghnaigh."
-msgstr[4] "Fuair mé {n} sliocht ina gcloistear an guth. Éist agus roghnaigh."
+msgstr[0] "Fuair mé {n} sliocht cainte. Éist agus roghnaigh."
+msgstr[1] "Fuair mé {n} shliocht cainte. Éist agus roghnaigh."
+msgstr[2] "Fuair mé {n} shliocht cainte. Éist agus roghnaigh."
+msgstr[3] "Fuair mé {n} sliocht cainte. Éist agus roghnaigh."
+msgstr[4] "Fuair mé {n} sliocht cainte. Éist agus roghnaigh."
 
 #. While a voice is made: {} is the name the person gave it
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4307,13 +4304,13 @@ msgstr "An guth “{}” á chruthú…"
 #, kalliope-slint
 msgctxt "programma.crea.ci-vuole-poco-quando"
 msgid "Ci vuole poco. Quando è pronta la scegli da sola."
-msgstr "Ní fada a thógfaidh sé. Roghnófar an guth go huathoibríoch nuair a bheidh sé réidh."
+msgstr "Ní bheidh sé i bhfad. Úsáidfidh mé an guth a luaithe a bheidh sé réidh."
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.come-si-chiama-questa"
 msgid "Come si chiama questa voce?"
-msgstr "Cén t-ainm a bheidh ar an nguth seo?"
+msgstr "Cén t-ainm atá air?"
 
 #. The name of the field where the person writes the name of the new voice, read by screen readers.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4346,7 +4343,7 @@ msgstr "Dia duit, mise atá ann. Seo mo ghuth, do na cruinnithe agus do na daoin
 #, kalliope-slint
 msgctxt "programma.crea.torna-a-scrivere"
 msgid "Torna a scrivere"
-msgstr "Ar ais ag scríobh"
+msgstr "Fill ar an mbosca téacs"
 
 #. The title of the first step of creating a voice: how the person wants to create it.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4367,7 +4364,7 @@ msgstr "Léigh os ard ar do shuaimhneas"
 #, kalliope-slint
 msgctxt "programma.crea.titolo-nome"
 msgid "Ascoltala e dalle un nome"
-msgstr "Éist leis agus tabhair ainm air"
+msgstr "Éist agus ainmnigh é"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4379,7 +4376,7 @@ msgstr "Ní féidir guth a chruthú ón taifeadadh seo. Déan arís é."
 #, kalliope-slint
 msgctxt "programma.crea.manca-nome"
 msgid "Manca il nome."
-msgstr "Tabhair ainm ar an nguth."
+msgstr "Ainmnigh an guth."
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4405,7 +4402,7 @@ msgstr "Aire: ní féidir liom an guth a sheinm trí na callairí."
 #, kalliope-rust
 msgctxt "programma.audio.serve-pipewire"
 msgid "La voce è pronta, ma il microfono «Kalliope» ha bisogno di PipeWire, che su questo computer manca o è troppo vecchio (pacchetti pipewire e pipewire-pulse): per ora nessuno ti sentirà nelle chiamate."
-msgstr "Tá an guth réidh, ach tá PipeWire ag teastáil ó mhicreafón “Kalliope”. Tá sé ar iarraidh nó tá an leagan ar an ríomhaire seo róshean (na pacáistí pipewire agus pipewire-pulse). Faoi láthair, ní chloisfidh aon duine thú ar ghlaonna."
+msgstr "Tá an guth réidh, ach teastaíonn PipeWire ó mhicreafón “Kalliope”. Tá sé ar iarraidh nó tá an leagan anseo róshean (na pacáistí pipewire agus pipewire-pulse). Faoi láthair, ní chloisfidh aon duine thú ar ghlaonna."
 
 #: crates/app/src/audio.rs
 #, kalliope-rust
@@ -4456,7 +4453,7 @@ msgstr "Gach comhad"
 #, kalliope-rust
 msgctxt "programma.crea.non-ti-sento"
 msgid "Non ti sento. Avvicinati al microfono, controlla che non sia spento, o scegline un altro."
-msgstr "Ní chloisim thú. Bog níos gaire don mhicreafón, seiceáil go bhfuil sé ar siúl nó roghnaigh ceann eile."
+msgstr "Ní chloisim thú. An bhfuil an micreafón ar siúl? Tar níos gaire dó nó roghnaigh ceann eile."
 
 #: crates/app/src/crea.rs
 #, kalliope-rust
@@ -4476,7 +4473,7 @@ msgstr "Tá cead ag teastáil chun leanúint ar aghaidh. Cuir tic sa bhosca."
 #, kalliope-rust, python-brace-format
 msgctxt "programma.crea.tratto-chiaro"
 msgid "Tratto {numero} · il più chiaro"
-msgstr "Sliocht {numero} · an ceann is soiléire"
+msgstr "An sliocht is soiléire · {numero}"
 
 #. The name of a stretch of an imported recording where a voice was found, numbered: «Stretch 2». {numero} is the number.
 #. Placeholders to leave as they are: {numero}
@@ -4570,7 +4567,7 @@ msgstr "Ní féidir liom an guth a ullmhú: {causa}"
 #, kalliope-rust
 msgctxt "programma.registra.nessun-microfono"
 msgid "Non trovo un microfono. Collegane uno (meglio una cuffia con microfono), poi riprova."
-msgstr "Ní féidir liom micreafón a aimsiú. Ceangail ceann (micreafón ar chluasáin más féidir) agus bain triail eile as."
+msgstr "Ní féidir liom micreafón a aimsiú. Ceangail ceann (cluasáin le micreafón más féidir) agus bain triail eile as."
 
 #: crates/app/src/own_voice.rs
 #, kalliope-rust
@@ -4596,11 +4593,11 @@ msgstr "Níor osclaíodh an micreafón. Bain triail eile as nó roghnaigh micrea
 msgctxt "programma.file.lungo"
 msgid "Il file è lungo: ho cercato la voce nel primo minuto."
 msgid_plural "Il file è lungo: ho cercato la voce nei primi {n} minuti."
-msgstr[0] "Tá an comhad fada. Chuardaigh mé an guth sa chéad nóiméad."
-msgstr[1] "Tá an comhad fada. Chuardaigh mé an guth sa chéad {n} nóiméad."
-msgstr[2] "Tá an comhad fada. Chuardaigh mé an guth sa chéad {n} nóiméad."
-msgstr[3] "Tá an comhad fada. Chuardaigh mé an guth sa chéad {n} nóiméad."
-msgstr[4] "Tá an comhad fada. Chuardaigh mé an guth sa chéad {n} nóiméad."
+msgstr[0] "Comhad fada. Lorg mé an guth sa chéad nóiméad."
+msgstr[1] "Comhad fada. Lorg mé an guth sa chéad {n} nóiméad."
+msgstr[2] "Comhad fada. Lorg mé an guth sa chéad {n} nóiméad."
+msgstr[3] "Comhad fada. Lorg mé an guth sa chéad {n} nóiméad."
+msgstr[4] "Comhad fada. Lorg mé an guth sa chéad {n} nóiméad."
 
 #. Placeholders to leave as they are: {label}
 #: crates/app/src/own_voice.rs
@@ -4665,13 +4662,13 @@ msgstr "Ní féidir liom an taifeadadh a sheinm trí na callairí."
 #, kalliope-rust
 msgctxt "programma.sessione.pronta"
 msgid "Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono."
-msgstr "Réidh. Roghnaigh “Kalliope” mar mhicreafón in Zoom, Teams, Meet nó sa bhrabhsálaí."
+msgstr "Réidh. Roghnaigh “Kalliope” mar mhicreafón in aip Zoom, Teams nó Meet, nó sa bhrabhsálaí."
 
 #: crates/app/src/session.rs
 #, kalliope-rust
 msgctxt "programma.sessione.parlo"
 msgid "Sto parlando…"
-msgstr "Ag caint…"
+msgstr "Táim ag caint…"
 
 #: crates/app/src/session.rs
 #, kalliope-rust
@@ -4695,7 +4692,7 @@ msgstr "Níl aon rud le rá sa téacs seo. Scríobh focal amháin ar a laghad ag
 #, kalliope-rust
 msgctxt "programma.sessione.preparo"
 msgid "Preparo la voce…"
-msgstr "Guth á ullmhú…"
+msgstr "Táim ag ullmhú an ghutha…"
 
 #: crates/sample/src/analysis.rs
 #, kalliope-rust
@@ -4731,7 +4728,7 @@ msgstr "Tá an guth an-íseal. Bog níos gaire don mhicreafón nó ardaigh an fh
 #, kalliope-rust
 msgctxt "programma.analisi.rumore-di-fondo"
 msgid "C'è molto rumore di fondo, e la voce creata lo imiterà. Se puoi, registra in un posto più silenzioso."
-msgstr "Tá go leor torainn sa chúlra. Déanfaidh an guth a chruthaítear aithris air. Más féidir leat, taifead áit éigin níos ciúine."
+msgstr "Tá go leor torainn sa chúlra. Déanfaidh an guth a chruthaítear aithris air. Más féidir leat, déan an taifeadadh in áit níos ciúine."
 
 #: crates/sample/src/analysis.rs
 #, kalliope-rust

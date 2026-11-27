@@ -111,7 +111,7 @@ msgstr "Версия {{kalliope.version}} от {{kalliope.date}}. Изходни
 #, kalliope-markup
 msgctxt "pagina.titolo"
 msgid "Kalliope · In riunione, alla pari"
-msgstr "Kalliope · На равна нога в срещата"
+msgstr "Kalliope · Наравно с другите в срещата"
 
 #. Attribute «content» of an element of the page: plain text, no tags.
 #: index.html
@@ -153,7 +153,7 @@ msgstr "Меню"
 #, kalliope-markup
 msgctxt "apertura.titolo"
 msgid "<1>In riunione,</1> <2>alla pari.</2> <3>Tu scrivi, gli altri</3> <4>ti sentono.</4>"
-msgstr "<1>В срещата</1> <2>на равна нога.</2> <3>Ти пишеш,</3> <4>другите те чуват.</4>"
+msgstr "<1>В срещата си</1> <2>наравно с другите.</2> <3>Ти пишеш,</3> <4>другите те чуват.</4>"
 
 #: index.html
 #, kalliope-markup
@@ -257,7 +257,7 @@ msgstr "Giulia"
 #, kalliope-markup
 msgctxt "finestra.pronta.nome"
 msgid "Pronta"
-msgstr "Готово"
+msgstr "Готов"
 
 #. What the window says next to «Pronta»: the way to be heard. Keep «Kalliope» in quotes, it is the name of the microphone.
 #: index.html installa/index.html
@@ -271,7 +271,7 @@ msgstr "В срещата избери „Kalliope“ за микрофон."
 #, kalliope-markup
 msgctxt "finestra.segnaposto"
 msgid "Scrivi qui. Invio la dice."
-msgstr "Пиши тук. С Enter изговаряш текста."
+msgstr "Пиши тук. С Enter гласът прочита фразата."
 
 #. The button that stops the voice.
 #: index.html installa/index.html
@@ -440,14 +440,14 @@ msgstr "Sono d'accordo con Paola. Però la consegna del 14/3 mi sembra stretta: 
 #, kalliope-markup
 msgctxt "frase.3.detto-etichetta"
 msgid "Detto:"
-msgstr ""
+msgstr "Казано:"
 
 #. What the Italian voice said: it stays in Italian, as the voice says it.
 #: index.html
 #, kalliope-markup
 msgctxt "frase.3.detto-frase"
 msgid "«Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
-msgstr ""
+msgstr "«Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
 
 #: index.html
 #, kalliope-markup
@@ -711,7 +711,7 @@ msgstr "Говоря"
 #, kalliope-markup
 msgctxt "finestra.parla.detto"
 msgid "Esc la ferma."
-msgstr "Натисни Esc, за да спреш гласа."
+msgstr "С Esc спираш гласа."
 
 #. Read by screen readers when listening is paused.
 #: index.html non-ancora/index.html
@@ -1348,14 +1348,14 @@ msgstr "Възстановка на прозореца на Kalliope при пъ
 #, kalliope-markup
 msgctxt "finestra.risolvi"
 msgid "Come si risolve"
-msgstr "Как да го поправя"
+msgstr "Виж решението"
 
 #. The hint in the writing area when the voice does not start: look at the line above.
 #: installa/index.html
 #, kalliope-markup
 msgctxt "finestra.segnaposto.errore"
 msgid "La voce non parte: guarda qui sopra."
-msgstr "Гласът не тръгва. Виж съобщението отгоре."
+msgstr "Гласът не тръгва. Виж съобщението по-горе."
 
 #: installa/index.html
 #, kalliope-markup
@@ -1367,7 +1367,7 @@ msgstr "Възстановка на прозореца на Kalliope с дейс
 #, kalliope-markup
 msgctxt "in.apri.titolo"
 msgid "Apri Kalliope, e aspetta «Pronta»."
-msgstr "Отвори Kalliope и изчакай да се появи „Готово“"
+msgstr "Отвори Kalliope и изчакай да се появи „Готов“"
 
 #: installa/index.html
 #, kalliope-markup
@@ -1387,7 +1387,7 @@ msgstr "При всяко стартиране за кратко се появя
 #, kalliope-markup
 msgctxt "in.apri.riuscito"
 msgid "<1>Riuscito</1> se la riga di stato dice «Pronta» e, accanto, «Nella riunione scegli «Kalliope» come microfono.»"
-msgstr "<1>Всичко е наред</1>, ако на реда за състоянието пише „Готово“ и до него виждаш следното указание: В срещата избери „Kalliope“ за микрофон."
+msgstr "<1>Всичко е наред</1>, ако на реда за състоянието пише „Готов“ и до него виждаш следното указание: В срещата избери „Kalliope“ за микрофон."
 
 #: installa/index.html
 #, kalliope-markup
@@ -1405,7 +1405,7 @@ msgstr "„Гласът не тръгва“"
 #, kalliope-markup
 msgctxt "in.frasi.voce.rimedio"
 msgid "Un file delle voci non è dove il programma lo cerca: installa di nuovo il pacchetto o l'archivio, con i passi qui sopra. «Come si risolve» porta a questo passo."
-msgstr "Един от файловете за гласовете не е там, където го търси програмата. Инсталирай отново пакета или архива според стъпките по-горе. „Как да го поправя“ отваря тази стъпка."
+msgstr "Един от файловете за гласовете не е там, където го търси програмата. Инсталирай отново пакета или архива според стъпките по-горе. „Виж решението“ отваря тази стъпка."
 
 #: installa/index.html
 #, kalliope-markup
@@ -1526,7 +1526,7 @@ msgstr "kalliope --version не отговаря"
 #, kalliope-markup
 msgctxt "in.ripresa.pronta"
 msgid "La finestra non dice «Pronta»"
-msgstr "В прозореца не пише „Готово“"
+msgstr "В прозореца не пише „Готов“"
 
 #: installa/index.html
 #, kalliope-markup
@@ -1624,11 +1624,10 @@ msgstr "Гласът не тръгва"
 
 #. What the window says next to the state above: the same words as the program's message programma.voce.file-mancanti.
 #: installa/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Manca la voce: in … non trovo …. Reinstalla Kalliope."
+#, kalliope-markup
 msgctxt "in.stato.voce.detto"
 msgid "Non trovo i file della voce, e senza non posso parlare. Reinstalla Kalliope dal pacchetto."
-msgstr "Не намирам файловете за гласа. Без тях не мога да говоря. Инсталирай отново Kalliope от пакета."
+msgstr "Не намирам файловете за гласа. Без тях не мога да говоря. Инсталирай Kalliope отново от пакета."
 
 #: installa/index.html
 #, kalliope-markup
@@ -1988,7 +1987,7 @@ msgstr "Ти · микрофон Kalliope"
 #, kalliope-markup
 msgctxt "riu.testo.1"
 msgid "Apri Kalliope e aspetta «Pronta»"
-msgstr "Отвори Kalliope и изчакай да се появи „Готово“"
+msgstr "Отвори Kalliope и изчакай да се появи „Готов“"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2008,7 +2007,7 @@ msgstr "Гласът стига до микрофона „Kalliope“. Още �
 #, kalliope-markup
 msgctxt "riu.testo.4"
 msgid "Apri Kalliope prima di entrare nella riunione. Aspetta che la riga di stato dica «Pronta»."
-msgstr "Отвори Kalliope, преди да влезеш в срещата. Изчакай на реда за състоянието да се появи „Готово“."
+msgstr "Отвори Kalliope, преди да влезеш в срещата. Изчакай на реда за състоянието да се появи „Готов“."
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <span class="controllo__titolo">
@@ -2016,7 +2015,7 @@ msgstr "Отвори Kalliope, преди да влезеш в срещата. �
 #, kalliope-markup
 msgctxt "riu.testo.5"
 msgid "<1>Come sai che è andata bene</1>La riga dice «Pronta» e, accanto, «Nella riunione scegli «Kalliope» come microfono.»"
-msgstr "<1>Как да разбереш дали се е получило</1>На реда пише „Готово“, а до него виждаш указанието: В срещата избери „Kalliope“ за микрофон."
+msgstr "<1>Как да разбереш дали се е получило</1>На реда пише „Готов“, а до него виждаш указанието: В срещата избери „Kalliope“ за микрофон."
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <span class="se-non-va__titolo">
@@ -2025,13 +2024,13 @@ msgstr "<1>Как да разбереш дали се е получило</1>Н�
 #, kalliope-markup
 msgctxt "riu.testo.6"
 msgid "<1>Se non è andata</1>Se dice «Nessuno ti sente», «Manca il microfono» o «La voce non parte», premi «Come si risolve», accanto alla riga: ti porta alla spiegazione giusta. Per ogni altra riga, <2>cercala nella sezione Aiuto</2>."
-msgstr "<1>Ако не се получи</1>Ако пише „Никой не те чува“, „Липсва микрофон“ или „Гласът не тръгва“, натисни „Как да го поправя“ до съобщението. Така ще отвориш обяснението за него. Ако пише нещо друго, <2>потърси съобщението в раздел Помощ</2>."
+msgstr "<1>Ако не се получи</1>Ако пише „Никой не те чува“, „Липсва микрофон“ или „Гласът не тръгва“, натисни „Виж решението“ до съобщението. Така ще отвориш обяснението за него. Ако пише нещо друго, <2>потърси съобщението в раздел Помощ</2>."
 
 #. Attribute «alt» of an element of the page: plain text, no tags.
 #: riunione/index.html
 msgctxt "riu.immagine.8"
 msgid "La finestra di Kalliope. In alto la barra, con il logo, il nome, la voce (Giulia), «Riunione», «Altro» e la grandezza del testo. Sotto, le frasi già dette, in bolle: l'ultima è la più chiara. Poi la riga di stato: «Pronta. Nella riunione scegli «Kalliope» come microfono.» In basso la grande bolla tratteggiata dove scrivi, con «Di'»."
-msgstr "Прозорецът на Kalliope. Най-горе е лентата с логото, името, гласа (Giulia), „Среща“, „Още“ и размера на текста. Под нея са балончетата с вече казаните фрази. Последното е най-светло. На реда за състоянието пише „Готово“. До него: В срещата избери „Kalliope“ за микрофон. Най-долу е голямото балонче с прекъснат контур, в което пишеш, и бутонът „Кажи“."
+msgstr "Прозорецът на Kalliope. Най-горе е лентата с логото, името, гласа (Giulia), „Среща“, „Още“ и размера на текста. Под нея са балончетата с вече казаните фрази. Последното е най-светло. На реда за състоянието пише „Готов“. До него: В срещата избери „Kalliope“ за микрофон. Най-долу е голямото балонче с прекъснат контур, в което пишеш, и бутонът „Кажи“."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2214,7 +2213,7 @@ msgstr "Включи „Да чувам и аз гласа“ в менюто з
 #, kalliope-markup
 msgctxt "riu.testo.34"
 msgid "<1>Se non è andata</1>Premi «Come si risolve» nella finestra, o cerca la riga nella <2>sezione Aiuto</2>. Se vuoi, <3>dicci come è andata</3>."
-msgstr "<1>Ако не се получи</1>Натисни „Как да го поправя“ в прозореца или потърси съобщението в раздел <2>Помощ</2>. Ако искаш, <3>разкажи ни как мина</3>."
+msgstr "<1>Ако не се получи</1>Натисни „Виж решението“ в прозореца или потърси съобщението в раздел <2>Помощ</2>. Ако искаш, <3>разкажи ни как мина</3>."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2284,7 +2283,7 @@ msgstr "За да държиш Kalliope до прозореца на среща�
 #, kalliope-markup
 msgctxt "riu.scrivi.testo-grande"
 msgid "A− e A+ (o Ctrl e −, Ctrl e +) rimpiccioliscono e ingrandiscono tutto il testo, e Kalliope ricorda la misura. Chiaro o scuro lo decide il sistema."
-msgstr "С А− и А+ (или с Ctrl и −, Ctrl и +) намаляваш и увеличаваш целия текст. Kalliope запомня размера. Светлата или тъмната тема следва настройките на системата."
+msgstr "С А− и А+ (или с Ctrl и −, Ctrl и +) променяш размера на целия текст. Kalliope запомня размера. Светлата или тъмната тема следва настройките на системата."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2356,7 +2355,7 @@ msgstr "<1>„Подготвям гласа“</1>"
 #, kalliope-markup
 msgctxt "ai.testo.14"
 msgid "<1>«Pronta»</1>"
-msgstr "<1>„Готово“</1>"
+msgstr "<1>„Готов“</1>"
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <a href="#f-senza-microfono">
@@ -2405,11 +2404,10 @@ msgid "Cosa significa"
 msgstr "Какво означава"
 
 #: riunione/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive quale cartella e quali file («Manca la voce: in … non trovo …»). L'installazione è rotta, e finché non è a posto la voce non può parlare."
+#, kalliope-markup
 msgctxt "ai.testo.21"
 msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive «Non trovo i file della voce». L'installazione è rotta, e finché non è a posto la voce non può parlare."
-msgstr "Гласовете са част от пакета, но един или повече файлове липсват там, където ги търси Kalliope. В прозореца пише: „Не намирам файловете за гласа. Без тях не мога да говоря. Инсталирай отново Kalliope от пакета.“ Папката и имената на липсващите файлове се виждат в съобщението в терминала. Докато не поправиш инсталацията, гласът няма да работи."
+msgstr "Гласовете са в пакета, но един от файловете им липсва в папката, в която го търси Kalliope. До реда за състоянието пише „Не намирам файловете за гласа“. Докато не поправиш инсталацията, гласът няма да работи."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2464,7 +2462,7 @@ msgstr "Изчакай. Още не сме измервали колко вре�
 #, kalliope-markup
 msgctxt "ai.testo.29"
 msgid "<1>Pronta</1>"
-msgstr "<1>Готово</1>"
+msgstr "<1>Готов</1>"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2572,7 +2570,7 @@ msgstr "Какво означава"
 #, kalliope-markup
 msgctxt "ai.testo.44"
 msgid "Kalliope sta dicendo la frase: le parole si accendono nella bolla man mano che la voce le dice. La riga aggiunge «Esc la ferma»."
-msgstr "Kalliope произнася фразата. Думите в балончето се открояват една по една, докато гласът ги изговаря. До съобщението пише: „Натисни Esc, за да спреш гласа.“"
+msgstr "Kalliope произнася фразата. Думите в балончето се открояват една по една, докато гласът ги изговаря. До съобщението пише: „С Esc спираш гласа.“"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2635,11 +2633,10 @@ msgid "Cosa significa"
 msgstr "Какво означава"
 
 #: riunione/index.html
-#, kalliope-markup, fuzzy
-#| msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …», «Errore della voce: …» o «Non riesco a cambiare voce: …»."
+#, kalliope-markup
 msgctxt "ai.testo.54"
 msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …» o «Non sono riuscita a dire questa frase: …»."
-msgstr "Има проблем с програмата или с файловете за гласа. До съобщението пише например „Не успявам да подготвя гласа: …“, „Грешка с гласа: …“ или „Не успявам да сменя гласа: …“."
+msgstr "Има проблем с програмата или с файловете за гласа. До реда за състоянието може да пише „Не успявам да подготвя гласа: …“ или „Не успях да кажа тази фраза: …“."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2659,7 +2656,7 @@ msgstr "Затвори Kalliope и я отвори отново. Ако съоб
 #, kalliope-markup
 msgctxt "ai.testo.57"
 msgid "La mia frase non c'è"
-msgstr "Не намирам моето съобщение"
+msgstr "Не намирам съобщението си"
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2698,7 +2695,7 @@ msgstr "Ако пише <1>PipeWire is not available</1>, библиотекат
 #, kalliope-markup
 msgctxt "ai.testo.60"
 msgid "Se invece la finestra dice «Pronta» e l'app non mostra «Kalliope»: scrivi in un terminale <1>pactl list short sources</1>, deve esserci una riga con <2>kalliope</2>. Se c'è, chiudi e riapri l'elenco dei microfoni dell'app; non abbiamo provato se serva riavviare l'app."
-msgstr "Ако пише „Готово“, но „Kalliope“ липсва в приложението за срещи, въведи <1>pactl list short sources</1> в терминал. Потърси ред с <2>kalliope</2>. Ако има такъв, затвори и отвори отново списъка с микрофони в приложението. Не сме проверили дали е нужно да рестартираш самото приложение."
+msgstr "Ако пише „Готов“, но „Kalliope“ липсва в приложението за срещи, въведи <1>pactl list short sources</1> в терминал. Потърси ред с <2>kalliope</2>. Ако има такъв, затвори и отвори отново списъка с микрофони в приложението. Не сме проверили дали е нужно да рестартираш самото приложение."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2722,7 +2719,7 @@ msgstr "Никое приложение не използва микрофона
 #, kalliope-markup
 msgctxt "ai.sentono.due"
 msgid "Se hai aperto Kalliope dopo l'app, chiudi e riapri l'elenco dei microfoni. Poi scrivi di nuovo la frase: una frase detta mentre nessuno ascolta è persa, come con un microfono vero (con la scrittura vuota, ↑ riporta l'ultima). La riga torna a «Pronta» appena un'app ascolta."
-msgstr "Ако приложението за срещи вече е било отворено при стартирането на Kalliope, затвори и отвори отново списъка с микрофони. След това въведи пак фразата. Ако никой не слуша, изговореното се губи, както при обикновен микрофон. Когато полето за писане е празно, с ↑ връщаш последната фраза. Щом някое приложение започне да получава звук, отново ще видиш „Готово“."
+msgstr "Ако приложението за срещи вече е било отворено при стартирането на Kalliope, затвори и отвори отново списъка с микрофони. След това въведи пак фразата. Ако никой не слуша, изговореното се губи, както при обикновен микрофон. Когато полето за писане е празно, с ↑ връщаш последната фраза. Щом някое приложение започне да получава звук, отново ще видиш „Готов“."
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <a href="../riunione/#passo-3">
@@ -2792,7 +2789,7 @@ msgstr "кое приложение за срещи използваш и коя
 #, kalliope-markup
 msgctxt "ai.testo.72"
 msgid "la tua distribuzione Linux e la sua versione (<1>cat /etc/os-release</1>);"
-msgstr "дистрибуцията и версията на Linux (<1>cat /etc/os-release</1>),"
+msgstr "коя дистрибуция на Linux използваш и коя нейна версия (<1>cat /etc/os-release</1>),"
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <code>
@@ -2878,7 +2875,7 @@ msgstr[1] "{n} съобщения"
 #, kalliope-markup
 msgctxt "ai.filtro.nessuna"
 msgid "Nessuna frase trovata. Prova una parola sola, per esempio «pronta» o «microfono». Oppure guarda i tre casi qui sotto, o segnala il problema."
-msgstr "Няма такова съобщение. Опитай само с една дума, например „готово“ или „микрофон“. Можеш също да разгледаш трите случая по-долу или да съобщиш за проблема."
+msgstr "Няма такова съобщение. Опитай само с една дума, например „готов“ или „микрофон“. Можеш също да разгледаш трите случая по-долу или да съобщиш за проблема."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -3084,7 +3081,7 @@ msgstr "0,07 с"
 #, kalliope-markup
 msgctxt "st.voce.cifra-detto"
 msgid "di processore per ogni secondo di voce, con un solo thread. <1><2>README</2></1>"
-msgstr "процесорно време за всяка секунда говор с една нишка. <1><2>README</2></1>"
+msgstr "процесорно време на една нишка за всяка секунда говор. <1><2>README</2></1>"
 
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <span class="fonte">
@@ -3635,7 +3632,7 @@ msgstr "Подготвям гласа…"
 #, kalliope-slint
 msgctxt "programma.comune.come-si-risolve"
 msgid "Come si risolve"
-msgstr "Как да го поправя"
+msgstr "Виж решението"
 
 #. The button that closes a question without doing anything.
 #: crates/app/ui/kalliope/avvisi.slint crates/app/ui/kalliope/modali.slint crates/app/ui/kalliope/voce-propria.slint
@@ -3679,7 +3676,7 @@ msgstr "Среща"
 #, kalliope-slint
 msgctxt "programma.finestra.modalita-riunione-solo-scrittura"
 msgid "Modalità riunione: solo scrittura, stato e Ferma"
-msgstr "Режим за срещи: само полето за писане, състоянието и бутонът „Спри“"
+msgstr "Режим за срещи. Виждаш само полето за писане, състоянието и бутона „Спри“."
 
 #. A button in the bar that opens a menu of more commands (create your own voice, about, clear the history). One short word, like «More» in other programs.
 #: crates/app/ui/kalliope/finestra.slint
@@ -3707,7 +3704,7 @@ msgstr "А−"
 #, kalliope-slint
 msgctxt "programma.finestra.testo-piu-piccolo"
 msgid "Testo più piccolo"
-msgstr "Намали текста"
+msgstr "Намали размера на текста"
 
 #. The button that makes the text larger: a capital A with a plus sign
 #: crates/app/ui/kalliope/finestra.slint
@@ -3721,14 +3718,14 @@ msgstr "А+"
 #, kalliope-slint
 msgctxt "programma.finestra.testo-piu-grande"
 msgid "Testo più grande"
-msgstr "Увеличи текста"
+msgstr "Увеличи размера на текста"
 
 #. Shown above the writing box before the first sentence: there the sentences appear, each word lighting up as the voice says it, and stay to be said again with a click or with Tab and Enter.
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.qui-voce-dira-tue"
 msgid "Qui la voce dirà le tue frasi, una parola dopo l'altra. Restano qui: un clic, o Tab e Invio, le dice di nuovo."
-msgstr "Тук ще виждаш как гласът произнася думите ти една по една. Фразите остават тук. Щракни върху фраза или я избери с Tab и натисни Enter, за да я чуеш отново."
+msgstr "Тук думите се открояват една по една, докато гласът ги произнася. Фразите остават тук. За да повториш фраза, щракни върху нея или я избери с Tab и натисни Enter."
 
 #. In the compact meeting window, the short form of «Come si risolve»: it opens the help page about the problem shown. One word.
 #: crates/app/ui/kalliope/finestra.slint
@@ -3791,7 +3788,7 @@ msgstr "Гласът не тръгва."
 #, kalliope-slint
 msgctxt "programma.finestra.segnaposto-voce-non-parte-guarda"
 msgid "La voce non parte: guarda qui sopra."
-msgstr "Гласът не тръгва. Виж съобщението отгоре."
+msgstr "Гласът не тръгва. Виж съобщението по-горе."
 
 #: crates/app/ui/kalliope/finestra.slint crates/app/ui/kalliope/scrittura.slint
 #, kalliope-slint
@@ -3804,14 +3801,14 @@ msgstr "Пиши тук."
 #, kalliope-slint
 msgctxt "programma.comune.segnaposto-scrivi-invio"
 msgid "Scrivi qui. Invio la dice."
-msgstr "Пиши тук. С Enter изговаряш текста."
+msgstr "Пиши тук. С Enter гласът прочита фразата."
 
 #. The title of the menu where the person chooses the voice that speaks for them.
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.con-quale-voce-parli"
 msgid "Con quale voce parli"
-msgstr "С кой глас да говориш"
+msgstr "С кой глас ще говориш?"
 
 #. A switch in the voice menu: when on, the person also hears the voice from the computer's speakers (otherwise only the others in the call hear it).
 #: crates/app/ui/kalliope/finestra.slint
@@ -3846,13 +3843,13 @@ msgstr "Изчисти историята"
 #, kalliope-slint
 msgctxt "programma.finestra.svuotare-cronologia"
 msgid "Svuotare la cronologia?"
-msgstr "Да се изчисти ли историята?"
+msgstr "Да изчистя ли историята?"
 
 #: crates/app/ui/kalliope/finestra.slint
 #, kalliope-slint
 msgctxt "programma.finestra.frasi-gia-dette-spariscono"
 msgid "Le frasi già dette spariscono da questo computer. Non si può tornare indietro."
-msgstr "Вече казаните фрази ще се изтрият от този компютър. После няма да можеш да ги възстановиш."
+msgstr "Казаните фрази ще се изтрият от този компютър. После няма да можеш да ги възстановиш."
 
 #. The button that confirms emptying the list of sentences already said. A verb.
 #: crates/app/ui/kalliope/finestra.slint
@@ -3960,14 +3957,14 @@ msgstr "Какво искаш да кажеш"
 #, kalliope-slint
 msgctxt "programma.scrittura.invio-dice-esc-ferma"
 msgid "Invio la dice · Esc la ferma · ↑ l'ultima frase"
-msgstr "Enter — говори · Esc — спри · ↑ — последна фраза"
+msgstr "Enter — кажи · Esc — спри · ↑ — последна фраза"
 
 #. The hint under the writing box in a smaller window: Enter says the sentence, Esc stops the voice.
 #: crates/app/ui/kalliope/scrittura.slint
 #, kalliope-slint
 msgctxt "programma.scrittura.invio-dice-esc-ferma-2"
 msgid "Invio la dice · Esc la ferma"
-msgstr "Enter — говори · Esc — спри"
+msgstr "Enter — кажи · Esc — спри"
 
 #. A button that stops what is playing or speaking. A verb, one word.
 #: crates/app/ui/kalliope/scrittura.slint crates/app/ui/kalliope/voce-propria.slint
@@ -4016,7 +4013,7 @@ msgstr "Подготвям гласа"
 #, kalliope-slint
 msgctxt "programma.stato.pronta"
 msgid "Pronta"
-msgstr "Готово"
+msgstr "Готов"
 
 #. The name of the state while the voice speaks, said by Kalliope: «I am speaking». Two words.
 #: crates/app/ui/kalliope/stato.slint
@@ -4072,7 +4069,7 @@ msgstr "В срещата избери „Kalliope“ за микрофон."
 #, kalliope-slint
 msgctxt "programma.stato.esc-ferma"
 msgid "Esc la ferma."
-msgstr "Натисни Esc, за да спреш гласа."
+msgstr "С Esc спираш гласа."
 
 #. The name of the first of the three steps of creating a voice, shown in a row at the top: record or import. Short.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4093,7 +4090,7 @@ msgstr "Прочети на глас"
 #, kalliope-slint
 msgctxt "programma.crea.passo-nome"
 msgid "Ascolta e dai un nome"
-msgstr "Чуй гласа и му дай име"
+msgstr "Чуй и избери име"
 
 #. Where the person is among the three steps of making a voice: {0} is the number of the step (1 to 3), {1} its name
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4130,7 +4127,7 @@ msgstr "Чуй"
 #, kalliope-slint, python-brace-format
 msgctxt "programma.crea.ferma-ascolto-tratto"
 msgid "Ferma l'ascolto di {}"
-msgstr "Спри прослушването: {}"
+msgstr "Спри възпроизвеждането на {}"
 
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4158,27 +4155,27 @@ msgstr "Търся частта, в която гласът се чува най
 #, kalliope-slint
 msgctxt "programma.crea.se-hai-ancora-voce"
 msgid "Se hai ancora la voce"
-msgstr "Ако все още имаш глас"
+msgstr "Ако още говориш"
 
 #. The first choice for creating a voice: record it now, reading a short text aloud («la» is the voice). A title.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.registrala-adesso"
 msgid "Registrala adesso"
-msgstr "Запиши го сега"
+msgstr "Запиши гласа си"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.istruzioni-registra"
 msgid "Leggi ad alta voce un breve testo. Bastano dodici secondi di voce chiara, meglio finché la voce è forte."
-msgstr "Прочети на глас кратък текст. Достатъчни са дванадесет секунди, в които гласът ти се чува ясно. Най-добре го запиши, докато е силен."
+msgstr "Прочети кратък текст на глас. Стигат 12 секунди ясен говор. Най-добре запиши гласа си, докато е силен."
 
 #. A small line over the second choice: this way is for a person who can no longer speak.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.se-voce-non-c"
 msgid "Se la voce non c'è più"
-msgstr "Ако вече нямаш глас"
+msgstr "Ако вече не говориш"
 
 #. The second choice: create the voice from recordings made before (voice messages, videos). A title.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4240,8 +4237,8 @@ msgstr "Натисни кръга и чети"
 msgctxt "programma.crea.mancano"
 msgid "{0} · ne manca {n}"
 msgid_plural "{0} · ne mancano {n}"
-msgstr[0] "{0} · остава {n} секунда"
-msgstr[1] "{0} · остават {n} секунди"
+msgstr[0] "{0} · още {n} с"
+msgstr[1] "{0} · още {n} с"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4253,21 +4250,21 @@ msgstr "Достатъчно е. Натисни отново, за да спре
 #, kalliope-slint
 msgctxt "programma.crea.ne-bastano-dodici-secondi"
 msgid "Ne bastano dodici secondi di voce: il cerchio si riempie. Il livello si muove con la tua voce."
-msgstr "Достатъчни са дванадесет секунди говор. Кръгът се запълва, докато четеш, а индикаторът показва силата на гласа ти."
+msgstr "Стигат 12 секунди говор. Докато четеш, кръгът се запълва, а индикаторът показва колко силно се чуваш."
 
 #. A button that stops playing the recording.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ferma-ascolto"
 msgid "Ferma l'ascolto"
-msgstr "Спри звука"
+msgstr "Спри"
 
 #. A button that plays the recording just made.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ascolta-registrazione"
 msgid "Ascolta la registrazione"
-msgstr "Чуй записа"
+msgstr "Чуй"
 
 #. A button that throws the recording away to record again. A verb, short.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4283,8 +4280,8 @@ msgstr "Запиши пак"
 msgctxt "programma.crea.trovati-tratti"
 msgid "Ho trovato {n} tratto in cui si sente la voce. Ascolta e scegli."
 msgid_plural "Ho trovato {n} tratti in cui si sente la voce. Ascolta e scegli."
-msgstr[0] "Намерих {n} откъс, в който се чува глас. Чуй го, преди да го избереш."
-msgstr[1] "Намерих {n} откъса, в които се чува глас. Чуй ги и избери."
+msgstr[0] "Намерих {n} откъс с говор. Чуй го и го избери."
+msgstr[1] "Намерих {n} откъса с говор. Чуй ги и избери."
 
 #. While a voice is made: {} is the name the person gave it
 #. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
@@ -4298,13 +4295,13 @@ msgstr "Създавам гласа „{}“…"
 #, kalliope-slint
 msgctxt "programma.crea.ci-vuole-poco-quando"
 msgid "Ci vuole poco. Quando è pronta la scegli da sola."
-msgstr "Ще отнеме малко време. Щом гласът е готов, Kalliope ще го избере."
+msgstr "Ще отнеме малко време. Щом гласът е готов, ще го избера."
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.come-si-chiama-questa"
 msgid "Come si chiama questa voce?"
-msgstr "Как ще се казва този глас?"
+msgstr "Как ще се казва гласът?"
 
 #. The name of the field where the person writes the name of the new voice, read by screen readers.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4324,27 +4321,27 @@ msgstr "Например: гласът на Анна"
 #, kalliope-slint
 msgctxt "programma.crea.mia-voce-oppure-persona"
 msgid "È la mia voce, oppure la persona che parla mi ha dato il permesso di usarla."
-msgstr "Това е моят глас или имам разрешение от човека, който говори, да използвам гласа му."
+msgstr "Това е моят глас или имам разрешение да използвам гласа на човека от записа."
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.ciao-sono-io-questa"
 msgid "Ciao, sono io. Questa è la mia voce, per le riunioni e per le persone a cui voglio bene. La leggo con calma, come parlo ogni giorno."
-msgstr "Здравей, аз съм. Това е моят глас. С него ще говоря в срещите и с хората, които обичам. Чета спокойно, както говоря всеки ден."
+msgstr "Здравей, аз съм. Това е моят глас. С него ще говоря на срещи и с хората, които обичам. Чета спокойно, както говоря всеки ден."
 
 #. A button at the top of the steps of creating a voice: it leaves them and goes back to the main window, where the person writes the sentences to say. It means «back to writing», not «write again».
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.torna-a-scrivere"
 msgid "Torna a scrivere"
-msgstr "Обратно към писането"
+msgstr "Към писането"
 
 #. The title of the first step of creating a voice: how the person wants to create it.
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
 msgctxt "programma.crea.titolo-scegli"
 msgid "Come vuoi creare la tua voce?"
-msgstr "Как искаш да създадеш своя глас?"
+msgstr "Нов запис или файл?"
 
 #. The title of the step where the person reads a text aloud, calmly.
 #: crates/app/ui/kalliope/voce-propria.slint
@@ -4358,7 +4355,7 @@ msgstr "Прочети спокойно на глас"
 #, kalliope-slint
 msgctxt "programma.crea.titolo-nome"
 msgid "Ascoltala e dalle un nome"
-msgstr "Чуй гласа и му дай име"
+msgstr "Чуй и избери име"
 
 #: crates/app/ui/kalliope/voce-propria.slint
 #, kalliope-slint
@@ -4420,7 +4417,7 @@ msgstr "Гласът е готов, но микрофонът „Kalliope“ н�
 #, kalliope-rust
 msgctxt "programma.voce.file-mancanti"
 msgid "Non trovo i file della voce, e senza non posso parlare. Reinstalla Kalliope dal pacchetto."
-msgstr "Не намирам файловете за гласа. Без тях не мога да говоря. Инсталирай отново Kalliope от пакета."
+msgstr "Не намирам файловете за гласа. Без тях не мога да говоря. Инсталирай Kalliope отново от пакета."
 
 #. The title of the system's window for choosing an audio or video file
 #: crates/app/src/collega.rs
@@ -4447,7 +4444,7 @@ msgstr "Всички файлове"
 #, kalliope-rust
 msgctxt "programma.crea.non-ti-sento"
 msgid "Non ti sento. Avvicinati al microfono, controlla che non sia spento, o scegline un altro."
-msgstr "Не те чувам. Приближи се до микрофона, провери дали е включен или избери друг."
+msgstr "Не те чувам. Приближи се до микрофона. Провери дали е включен или избери друг."
 
 #: crates/app/src/crea.rs
 #, kalliope-rust
@@ -4653,7 +4650,7 @@ msgstr "Не успявам да пусна записа през тонколо
 #, kalliope-rust
 msgctxt "programma.sessione.pronta"
 msgid "Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono."
-msgstr "Готово. В Zoom, Teams, Meet или в браузъра избери „Kalliope“ за микрофон."
+msgstr "Гласът е готов. В Zoom, Teams, Meet или в браузъра избери „Kalliope“ за микрофон."
 
 #: crates/app/src/session.rs
 #, kalliope-rust
@@ -4755,7 +4752,7 @@ msgstr "Файлът е празен."
 #, kalliope-rust
 msgctxt "programma.file.non-audio"
 msgid "Questo file non è un audio. Prova con un messaggio vocale, un video o una registrazione."
-msgstr "Това не е звуков файл. Опитай с гласово съобщение, видео или запис."
+msgstr "Това не е аудиофайл. Опитай с гласово съобщение, видео или запис."
 
 #: crates/sample/src/decode.rs
 #, kalliope-rust
