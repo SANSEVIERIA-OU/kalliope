@@ -7,7 +7,7 @@ any conferencing app (Zoom, Teams, Meet, Webex, Jitsi…) can select. Everything
 Goals: excellent, punctuation-aware voice quality on modest CPUs; a very small app with the best
 performance per watt; Italian first.
 
-**Status:** version 0.2 for Linux x86_64. The app speaks into a virtual microphone named
+**Status:** for Linux x86_64; the latest version is on the [releases page](https://github.com/SANSEVIERIA-OU/kalliope/releases/latest). The app speaks into a virtual microphone named
 "Kalliope". It has been tested end to end with PipeWire 1.6 but not yet with Zoom, Teams or Meet on
 a real desktop. Windows and macOS builds compile and pass tests, but have no virtual microphone yet.
 
@@ -16,7 +16,7 @@ a real desktop. Windows and macOS builds compile and pass tests, but have no vir
 1. Install the package for your system from the [releases page](https://github.com/SANSEVIERIA-OU/kalliope/releases)
    and open **Kalliope**.
 2. The voices come inside the package: Kalliope downloads nothing and works offline from the
-   first start. (Version 0.1-rc.1 still downloaded its voice, 53 MB, the first time.)
+   first start.
 3. In Zoom, Teams, Meet, Webex, Jitsi or your browser, choose **Kalliope** as the microphone.
 4. Type and press Enter. **Ferma** stops; earlier phrases stay in the list, ready to repeat.
    **Senti anche tu** also plays the voice on your speakers.
