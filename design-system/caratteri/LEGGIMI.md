@@ -34,6 +34,15 @@ senza grazie della stessa famiglia (Noto Sans SC è Source Han Sans, che su Linu
 su Apple, Microsoft YaHei su Windows). Se servisse lo stesso disegno ovunque, il passo è un carattere scaricato a fette per
 `unicode-range`, come fa Google Fonts.
 
+## Nel programma
+
+Il programma porta dentro un `.ttf` per scrittura, ricavato dal `.woff2` con `python3 -I tools/caratteri_ttf.py` (senza perdere nulla; la CI controlla che
+siano quelli che i `.woff2` danno): `geologica/Geologica-wght.ttf` 56 020 byte (greco e cirillico), `readex-pro/ReadexPro-wght.ttf` 47 940 (arabo),
+`noto-nastaliq-urdu/NotoNastaliqUrdu-wght.ttf` 1 104 472 (urdu), `noto-sans-devanagari/NotoSansDevanagari-wght.ttf` 323 900 (hindi),
+`noto-sans-bengali/NotoSansBengali-wght.ttf` 201 600 (bengalese): 1 733 932 byte in tutto, e Lexend (175 756) c'era già. Il programma ne registra uno solo, quello
+della lingua in uso (`--app-carattere-<ll>` in `../token.css`, `TOKEN.md`). Il cinese non ha un file: usa il carattere di sistema come sul sito, e dove
+il sistema non ne ha uno il programma disegna dei riquadri vuoti. Il sito non pubblica questi `.ttf` (`tools/site.py`).
+
 ## Da dove vengono
 
 Scaricati da `github.com/google/fonts`, ramo `main`, il 16/11/2026 (licenza SIL Open Font License 1.1, `OFL.txt` accanto):
