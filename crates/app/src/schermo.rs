@@ -193,6 +193,7 @@ pub fn opening(
 
 /// The work area of `monitor` under X11: the part of `_NET_WORKAREA` (the desktop less its panels) on it, as GTK does;
 /// the whole monitor when the window manager says nothing or the two do not meet.
+#[cfg(any(target_os = "linux", test))]
 pub fn work_area(monitor: Rect, net_workarea: Option<Rect>) -> Rect {
     net_workarea
         .and_then(|w| w.intersect(&monitor))

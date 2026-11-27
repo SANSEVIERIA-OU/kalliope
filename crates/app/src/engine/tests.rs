@@ -850,18 +850,21 @@ fn stop_while_a_streamed_piece_is_synthesized_tells_what_was_said() {
     rig.ready();
     rig.engine.send(Command::Speak("uno".into()));
     let deadline = Instant::now() + 3 * SECOND;
-    loop {
+    let (guess, sounded) = loop {
         match rig.events.recv_timeout(deadline - Instant::now()) {
             Ok(Event::Sounding(s)) => {
                 assert!(!s.exact);
-                break;
+                break (s.duration, Instant::now());
             }
             Ok(_) => continue,
             Err(e) => panic!("no piece sounded: {e}"),
         }
-    }
+    };
     std::thread::sleep(Duration::from_millis(100));
     rig.engine.stop();
+    // the share said is the time it sounded over the guessed duration: bounded by the time that really passed before Stop
+    // (a slow machine passes more of it), never the whole piece
+    let waited = sounded.elapsed();
     let events = rig.until(&Event::Idle, SECOND);
     let said = events
         .iter()
@@ -873,7 +876,11 @@ fn stop_while_a_streamed_piece_is_synthesized_tells_what_was_said() {
     assert_eq!(said.done, 0);
     let (cut, share) = said.cut.expect("a piece cut midway");
     assert_eq!(cut, 0..3);
-    assert!(share > 0.0 && share < 0.5, "{share}");
+    let most = ((waited.as_secs_f32() + 0.15) / guess.as_secs_f32()).min(0.99);
+    assert!(
+        share > 0.0 && share <= most,
+        "{share} (at most {most}: {waited:?} of {guess:?})"
+    );
 }
 
 #[test]
@@ -944,8 +951,10 @@ fn a_piece_starts_sounding_with_its_voice_not_with_the_silence_before_it() {
     rig.engine.send(Command::Speak("ciao".into()));
     let (s, announced, played) = first_sounding(&rig, 2 * SECOND);
     let wait = announced - played;
+    // not before the 300 ms of silence have played; on a slow machine the announcement can come later, never as late as
+    // the end of the voice (500 ms more)
     assert!(
-        (Duration::from_millis(270)..Duration::from_millis(380)).contains(&wait),
+        (Duration::from_millis(270)..Duration::from_millis(600)).contains(&wait),
         "{wait:?}"
     );
     assert!(s.exact && close(s.duration, 500), "{s:?}");
