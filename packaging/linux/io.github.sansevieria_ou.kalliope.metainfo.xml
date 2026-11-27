@@ -37,6 +37,11 @@
   </supports>
   <content_rating type="oars-1.1"/>
   <releases>
+    <release version="0.4" date="2026-11-27" type="development">
+      <description>
+        <p>The window speaks the language of the system: the 24 languages of the European Union, and Chinese, Hindi, Arabic, Bengali, Indonesian and Urdu, with the window mirrored for Arabic and Urdu and a typeface for each script. The voices still speak Italian only. The window fits small screens and remembers where it was, the words light up when they are heard, and Kalliope ends when its window is destroyed.</p>
+      </description>
+    </release>
     <release version="0.3" date="2026-11-27">
       <description>
         <p>A new window made for writing: a large writing area where Enter speaks, the words lighting up as the voice says them, and the phrases said kept across restarts. Kalliope tells you when nobody in the call hears you. Create your own voice inside Kalliope, by recording yourself or from an old voice message or video. A compact meeting mode, adjustable text size, and light and dark themes that follow the system.</p>
