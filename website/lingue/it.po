@@ -1609,19 +1609,19 @@ msgctxt "in.annuncio.sistema"
 msgid "I comandi della pagina sono quelli per {sistema}."
 msgstr "I comandi della pagina sono quelli per {sistema}."
 
-#. The name of a state of Kalliope's window: keep it as the program writes it, in the language of the program.
+#. The name of a state of Kalliope's window: the same words as the program's message programma.stato.voce-non-parte.
 #: installa/index.html
 #, kalliope-markup
 msgctxt "in.stato.voce.nome"
 msgid "La voce non parte"
 msgstr "La voce non parte"
 
-#. What the window says next to the state above: keep it as the program writes it in Italian; each … stands for what the program adds (a folder, then the names of the missing files).
+#. What the window says next to the state above: the same words as the program's message programma.voce.file-mancanti.
 #: installa/index.html
 #, kalliope-markup
 msgctxt "in.stato.voce.detto"
-msgid "Manca la voce: in … non trovo …. Reinstalla Kalliope."
-msgstr "Manca la voce: in … non trovo …. Reinstalla Kalliope."
+msgid "Non trovo i file della voce, e senza non posso parlare. Reinstalla Kalliope dal pacchetto."
+msgstr "Non trovo i file della voce, e senza non posso parlare. Reinstalla Kalliope dal pacchetto."
 
 #: installa/index.html
 #, kalliope-markup
@@ -2400,8 +2400,8 @@ msgstr "Cosa significa"
 #: riunione/index.html
 #, kalliope-markup
 msgctxt "ai.testo.21"
-msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive quale cartella e quali file («Manca la voce: in … non trovo …»). L'installazione è rotta, e finché non è a posto la voce non può parlare."
-msgstr "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive quale cartella e quali file («Manca la voce: in … non trovo …»). L'installazione è rotta, e finché non è a posto la voce non può parlare."
+msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive «Non trovo i file della voce». L'installazione è rotta, e finché non è a posto la voce non può parlare."
+msgstr "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive «Non trovo i file della voce». L'installazione è rotta, e finché non è a posto la voce non può parlare."
 
 #: riunione/index.html
 #, kalliope-markup
@@ -2629,8 +2629,8 @@ msgstr "Cosa significa"
 #: riunione/index.html
 #, kalliope-markup
 msgctxt "ai.testo.54"
-msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …», «Errore della voce: …» o «Non riesco a cambiare voce: …»."
-msgstr "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …», «Errore della voce: …» o «Non riesco a cambiare voce: …»."
+msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …» o «Non sono riuscita a dire questa frase: …»."
+msgstr "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …» o «Non sono riuscita a dire questa frase: …»."
 
 #: riunione/index.html
 #, kalliope-markup
