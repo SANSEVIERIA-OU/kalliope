@@ -15,6 +15,7 @@ mod history;
 mod instance;
 mod own_voice;
 mod paths;
+mod schermo;
 mod session;
 mod settings;
 mod vista;
@@ -161,7 +162,10 @@ fn bring_to_front(ui: &AppWindow, token: Option<String>) {
 }
 
 fn run_window(owner: &instance::Owner) -> Result<(), Box<dyn std::error::Error>> {
+    // winit with the watcher that sizes and places the window when it opens and ends Kalliope when it is destroyed
+    schermo::installa()?;
     let ui = AppWindow::new()?;
+    schermo::sorveglia(&ui);
     let _ = slint::set_xdg_app_id("io.github.sansevieria_ou.kalliope");
     let weak = ui.as_weak();
     owner.listen(move |token| {
@@ -184,14 +188,21 @@ fn run_window(owner: &instance::Owner) -> Result<(), Box<dyn std::error::Error>>
     ui.set_version(version().into());
     collega::collega(&ui, session);
     // Bringing the window to the front hides and shows it again, so a hidden window must not end
-    // Kalliope: only closing it does.
-    ui.window().on_close_requested(|| {
+    // Kalliope: only closing it does, or the window destroyed from outside (schermo.rs).
+    let weak = ui.as_weak();
+    ui.window().on_close_requested(move || {
+        if let Some(ui) = weak.upgrade() {
+            schermo::annota(&ui);
+        }
         let _ = slint::quit_event_loop();
         slint::CloseRequestResponse::HideWindow
     });
     ui.show()?;
     slint::run_event_loop_until_quit()?;
+    // A shown window keeps its component, and with it the session, alive: hidden, even when it was destroyed from
+    // outside, it lets them go, so the speaking thread stops and the microphone closes before Kalliope ends.
     let _ = ui.hide();
+    schermo::ricorda();
     Ok(())
 }
 

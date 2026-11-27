@@ -29,10 +29,19 @@ slint = { version = "1.19.1", default-features = false, features = [
     "accessibility",
     # the window's handle, so the file chooser opens over it and the system keeps it in front (rfd)
     "raw-window-handle-06",
+    # winit's monitors at start, before the window is created, and its window events: the size and place the window opens
+    # at, and the end of Kalliope when the window is destroyed from outside (schermo.rs)
+    "unstable-winit-030",
 ] }
 # The system's own dialog for choosing a file: the XDG desktop portal on Linux (it loads libdbus at run time and falls back to
 # zenity), the standard dialogs on Windows and macOS. One API for the three; evidence in design/lavoro/4-app/costruzione/.
 rfd = { version = "0.18.0", default-features = false, features = ["xdg-portal", "wayland"] }
+
+# The work area of an X11 desktop (_NET_WORKAREA: the screen less its panels), which winit does not give. Through libxcb,
+# loaded at run time as winit loads it: it reaches every X server winit reaches (the pure Rust connection of x11rb knows
+# neither Linux's abstract sockets nor every authentication).
+[target.'cfg(target_os = "linux")'.dependencies]
+x11rb = { version = "0.14.0", default-features = false, features = ["allow-unsafe-code", "dl-libxcb"] }
 
 [build-dependencies]
 kalliope-tokens.workspace = true

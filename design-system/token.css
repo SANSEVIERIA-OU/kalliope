@@ -13,6 +13,8 @@
   --app-native-height: 640px;   /* scelta: vedi la larghezza */
   --app-native-min-width: 360px;
   --app-native-min-height: 320px;
+  --app-cornice-larghezza: 16px;   /* scelta (issue #23): quanto aggiungono ai lati i bordi del sistema, che la finestra conosce solo dopo essersi aperta; la finestra si apre stretta di tanto quanto basta a starci intera nell'area di lavoro dello schermo */
+  --app-cornice-altezza: 48px;   /* scelta (issue #23): la barra del titolo e i bordi del sistema (Windows 31 + 8, GNOME 37, KDE e IceWM 30, Wayland di winit 37); sopra le proporzioni di 920 × 640 restano, sotto c'è la finestra minima */
   --app-spazio-controlli: var(--spazio-10);   /* lo spazio comune fra i controlli della finestra */
   --app-font-testo: var(--font-testo);   /* il carattere del testo della finestra: Lexend (di una pila, la finestra prende la prima famiglia) */
   --app-peso-testo: var(--peso-testo);   /* il peso del testo della finestra */

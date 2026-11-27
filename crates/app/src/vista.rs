@@ -44,6 +44,31 @@ fn modello(items: Vec<SharedString>) -> ModelRc<SharedString> {
 thread_local! {
     /// The size of the window before the meeting mode made it small, to give it back.
     static BEFORE: Cell<Option<LogicalSize>> = const { Cell::new(None) };
+    /// The window's own size on this screen: the design's, fitted to the work area when the window opened (schermo.rs).
+    static OWN: Cell<Option<LogicalSize>> = const { Cell::new(None) };
+}
+
+/// The window's own size: the one it opened at outside the meeting mode, or the design's.
+fn own_size(ui: &AppWindow) -> LogicalSize {
+    OWN.get()
+        .unwrap_or_else(|| LogicalSize::new(ui.get_nativa_larghezza(), ui.get_nativa_altezza()))
+}
+
+/// The size the meeting mode asks for at the current text size, in logical pixels.
+pub fn compatta_misura(ui: &AppWindow) -> (f32, f32) {
+    let s = compact_size(ui);
+    (s.width, s.height)
+}
+
+/// The window opens at `own`, its own size fitted to the screen; in the meeting mode it opens at `chosen` (the meeting
+/// size, fitted the same way) and gives back `own` when the meeting mode ends.
+pub fn apertura(ui: &AppWindow, own: (f32, f32), chosen: (f32, f32)) {
+    let own = LogicalSize::new(own.0, own.1);
+    OWN.set(Some(own));
+    if ui.get_compatta() {
+        BEFORE.set(Some(own));
+    }
+    ui.window().set_size(LogicalSize::new(chosen.0, chosen.1));
 }
 
 /// The size the meeting mode asks for: 400 × 320 at the design's text size, and larger as the text grows, so a larger text
@@ -76,9 +101,7 @@ pub fn compatta_applica(ui: &AppWindow, on: bool) {
         });
         window.set_size(compact_size(ui));
     } else {
-        let size = BEFORE.with(|b| b.take()).unwrap_or_else(|| {
-            LogicalSize::new(ui.get_nativa_larghezza(), ui.get_nativa_altezza())
-        });
+        let size = BEFORE.with(|b| b.take()).unwrap_or_else(|| own_size(ui));
         window.set_size(size);
     }
 }

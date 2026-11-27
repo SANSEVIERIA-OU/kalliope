@@ -36,5 +36,15 @@ class Appearance(unittest.TestCase):
             check_desktop.check_appearance(picture(tmp, "desktop-window.png", "#808080"))
 
 
+class WorkArea(unittest.TestCase):
+    def test_a_window_inside_the_work_area_passes(self):
+        self.assertEqual(check_desktop.outside((50, 30, 970, 718), (0, 0, 1024, 720)), 0)
+
+    def test_the_foot_under_the_taskbar_is_measured(self):
+        # the Windows runner of issue #23: a 1024 × 768 screen with a 48 px taskbar, the window's foot under it
+        self.assertEqual(check_desktop.outside((52, 52, 988, 740), (0, 0, 1024, 720)), 20)
+        self.assertEqual(check_desktop.outside((-8, 0, 900, 700), (0, 0, 1024, 720)), 8)
+
+
 if __name__ == "__main__":
     unittest.main()

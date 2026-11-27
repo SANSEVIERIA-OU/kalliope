@@ -42,6 +42,32 @@ def windows_window(pid):
     return windows
 
 
+def windows_outside_work_area(handle):
+    """How many pixels of the window lie outside the work area of the primary monitor (the screen less the taskbar)."""
+    from ctypes import wintypes
+    user32 = ctypes.windll.user32
+    work, window = wintypes.RECT(), wintypes.RECT()
+    user32.SystemParametersInfoW(0x0030, 0, ctypes.byref(work), 0)  # SPI_GETWORKAREA
+    user32.GetWindowRect(handle, ctypes.byref(window))
+    return outside((window.left, window.top, window.right, window.bottom), (work.left, work.top, work.right, work.bottom))
+
+
+def outside(window, area):
+    """The largest overhang of the rectangle `window` beyond `area`, both (left, top, right, bottom); 0 when inside."""
+    return max(0, area[0] - window[0], area[1] - window[1], window[2] - area[2], window[3] - area[3])
+
+
+def ends_when_destroyed(window, handle):
+    """Destroys the window from outside, as a crashed compositor or `xdotool windowclose` does, and requires Kalliope to
+    end with it, taking its microphone (issue #24)."""
+    subprocess.run(["xdotool", "windowclose", handle], check=True)
+    try:
+        window.wait(timeout=10)
+    except subprocess.TimeoutExpired:
+        raise RuntimeError("Kalliope kept running after its window was destroyed") from None
+    print(f"The window destroyed from outside ended Kalliope (exit {window.returncode})", flush=True)
+
+
 def mac_inspector(work):
     helper = Path(work) / "macos-window"
     source = Path(__file__).with_name("macos_window.swift")
@@ -153,8 +179,11 @@ def main():
                             take_window_picture(handle, output)
                             if helper and output.name == "desktop-window-dark.png":
                                 subprocess.run([helper, "--check-dark", output], check=True, timeout=10)
+                            if sys.platform == "win32" and (over := windows_outside_work_area(handle)):
+                                raise RuntimeError(f"The window runs {over} px outside the work area (issue #23)")
                             if sys.platform.startswith("linux"):
                                 check_appearance(output)
+                                ends_when_destroyed(window, handle)
                             return
                     time.sleep(0.5)
                 raise RuntimeError("The operating system did not report a visible application window")

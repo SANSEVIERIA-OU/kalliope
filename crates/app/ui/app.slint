@@ -55,6 +55,11 @@ export component AppWindow inherits Window {
     out property <length> compatta-altezza: Token.compatta-altezza;
     out property <length> nativa-larghezza: Token.native-width;
     out property <length> nativa-altezza: Token.native-height;
+    // the smallest window and what the system's frame adds around it, to open at a size that fits the screen (schermo.rs)
+    out property <length> minima-larghezza: Token.native-min-width;
+    out property <length> minima-altezza: Token.native-min-height;
+    out property <length> cornice-larghezza: Token.cornice-larghezza;
+    out property <length> cornice-altezza: Token.cornice-altezza;
     out property <duration> durata-parola: Token.durata-parola;
     out property <duration> durata-scurisce: Token.durata-scurisce;
     out property <duration> intervallo-fotogramma: Token.intervallo-fotogramma;

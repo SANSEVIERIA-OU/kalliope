@@ -15,6 +15,9 @@ pub struct Settings {
     pub compact: bool,
     /// The hint about keeping the meeting window above the others was read («Ho capito»): it is shown once.
     pub hint_seen: bool,
+    /// Where the window was when Kalliope last ended: its top left corner, frame included, in physical pixels of the
+    /// desktop. It comes back only on a monitor still connected (schermo.rs); under Wayland there is none.
+    pub position: Option<(i32, i32)>,
 }
 
 /// The text can be made this much smaller or larger.
@@ -28,8 +31,15 @@ impl Default for Settings {
             text_scale: 1.0,
             compact: false,
             hint_seen: false,
+            position: None,
         }
     }
+}
+
+/// `X,Y`, two whole numbers (negative on a monitor left of or above the main one).
+fn position(v: &str) -> Option<(i32, i32)> {
+    let (x, y) = v.trim().split_once(',')?;
+    Some((x.trim().parse().ok()?, y.trim().parse().ok()?))
 }
 
 /// One writer at a time.
@@ -64,6 +74,7 @@ impl Settings {
                     }
                     Some(("compact", v)) => s.compact = v.trim() == "true",
                     Some(("hint_seen", v)) => s.hint_seen = v.trim() == "true",
+                    Some(("position", v)) => s.position = position(v),
                     _ => {}
                 }
             }
@@ -72,7 +83,7 @@ impl Settings {
     }
 
     fn write(&self, path: &Path) {
-        let text = format!(
+        let mut text = format!(
             "voice={}\nmonitor={}\ntext_scale={}\ncompact={}\nhint_seen={}\n",
             self.voice.key(),
             self.monitor,
@@ -80,6 +91,9 @@ impl Settings {
             self.compact,
             self.hint_seen
         );
+        if let Some((x, y)) = self.position {
+            text.push_str(&format!("position={x},{y}\n"));
+        }
         if let Err(e) = crate::paths::write_atomic(path, text.as_bytes()) {
             eprintln!(
                 "kalliope: cannot save the settings in {}: {e}",
@@ -118,6 +132,11 @@ pub fn save_hint_seen() {
     update_at(&file(), |s| s.hint_seen = true);
 }
 
+/// Remembers where the window was, when Kalliope ends.
+pub fn save_position(position: (i32, i32)) {
+    update_at(&file(), |s| s.position = Some(position));
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -153,6 +172,45 @@ mod tests {
         assert_eq!(Settings::read(&path).text_scale, 1.0);
         std::fs::write(&path, "voice=Anna\nmonitor=true\n").unwrap();
         assert_eq!(Settings::read(&path).voice, VoiceId::Own("Anna".into()));
+        std::fs::remove_dir_all(&dir).unwrap();
+    }
+
+    #[test]
+    fn the_window_position_is_remembered_with_the_other_settings() {
+        let dir = std::env::temp_dir().join(format!("kalliope-position-{}", std::process::id()));
+        let path = dir.join("settings.conf");
+        assert_eq!(
+            Settings::read(&path).position,
+            None,
+            "none before the first end"
+        );
+        update_at(&path, |s| s.monitor = false);
+        update_at(&path, |s| s.position = Some((-1440, 120)));
+        let s = Settings::read(&path);
+        assert_eq!(
+            s.position,
+            Some((-1440, 120)),
+            "a monitor left of the main one"
+        );
+        assert!(!s.monitor, "the other keys survive it");
+        update_at(&path, |s| s.text_scale = 2.0);
+        assert_eq!(Settings::read(&path).position, Some((-1440, 120)));
+        assert!(
+            std::fs::read_to_string(&path)
+                .unwrap()
+                .ends_with("position=-1440,120\n")
+        );
+        for broken in [
+            "position=12\n",
+            "position=a,b\n",
+            "position=1,2,3\n",
+            "position=\n",
+        ] {
+            std::fs::write(&path, broken).unwrap();
+            assert_eq!(Settings::read(&path).position, None, "{broken:?}");
+        }
+        std::fs::write(&path, "position= 30 , 40 \n").unwrap();
+        assert_eq!(Settings::read(&path).position, Some((30, 40)));
         std::fs::remove_dir_all(&dir).unwrap();
     }
 }
