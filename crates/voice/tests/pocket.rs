@@ -7,6 +7,7 @@
 use std::path::PathBuf;
 
 use kalliope_voice::pocket::{MAX_VOICE_SECONDS, Pocket, PocketOptions};
+use kalliope_voice::{SILENCE, voice_starts};
 
 fn model() -> Option<Pocket> {
     let (Some(dir), Some(_)) = (
@@ -100,4 +101,27 @@ fn reads_text_as_the_official_code() {
                 e ancora, finché il modello non deve dividerla in pezzi più corti per dirla bene, \
                 come fa il codice ufficiale.";
     assert!(pocket.chunks(long).len() >= 2);
+}
+
+/// A chunk starts with the model's noise floor, below [`SILENCE`], and the voice rises well past
+/// it as soon as it begins: the engine announces each piece there, not at the first sample.
+#[test]
+fn the_voice_begins_after_the_noise_floor_and_rises_at_once() {
+    let Some(pocket) = model() else { return };
+    let voice = pocket.prepare_voice(&signal(4.0), 16_000).expect("prepare");
+    let chunk = &pocket.chunks("Buongiorno a tutti, mi sentite bene?")[0];
+    let mut audio = Vec::new();
+    pocket
+        .speak_chunk(&voice, chunk, 0, &mut |a| {
+            audio.extend_from_slice(a);
+            true
+        })
+        .expect("speak");
+    let rate = pocket.sample_rate() as usize;
+    let start = voice_starts(&audio).expect("a voice");
+    // 0.6 s with this voice; 0.1 to 0.5 s with the voices of people measured in the app.
+    assert!(start > rate / 10, "{start}");
+    let next = &audio[start..start + rate / 10];
+    let rms = (next.iter().map(|s| s * s).sum::<f32>() / next.len() as f32).sqrt();
+    assert!(rms > 3.0 * SILENCE, "rms {rms}");
 }
