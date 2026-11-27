@@ -92,3 +92,65 @@ fn the_voice_begins_after_a_silence_and_rises_at_once() {
     let rms = (next.iter().map(|s| s * s).sum::<f32>() / next.len() as f32).sqrt();
     assert!(rms > 3.0 * SILENCE, "rms {rms}");
 }
+
+/// Giulia says where each word begins to be heard, from the durations the model gives its
+/// phonemes: the first word where the voice begins, a word after a pause where its voice comes
+/// back.
+#[test]
+fn says_where_each_word_begins() {
+    let (Some(dir), Some(_)) = (
+        std::env::var_os("KALLIOPE_MODEL_DIR"),
+        std::env::var_os("KALLIOPE_ORT_LIB"),
+    ) else {
+        eprintln!("skipped: set KALLIOPE_MODEL_DIR and KALLIOPE_ORT_LIB to run");
+        return;
+    };
+    let voice = Voice::load(&PathBuf::from(dir), "Giulia", &VoiceOptions::default()).expect("load");
+    let rate = voice.sample_rate() as f32;
+    let ms = |samples: usize| samples as f32 / rate * 1000.0;
+    let text = "pˈer kwˈanto riɡwˈarda il bilˈanʧo. le spˈeze sˈono aʊmentˈate.";
+    let timed = voice.synthesize_timed("", text, "", 0).expect("synthesis");
+    let audio = &timed.audio;
+    assert_eq!(timed.words.len(), 9, "{:?}", timed.words);
+    assert!(
+        timed.words.windows(2).all(|w| w[0] < w[1]),
+        "{:?}",
+        timed.words
+    );
+    assert!(*timed.words.last().unwrap() < audio.len());
+    // The same audio as without the times.
+    assert_eq!(
+        voice.synthesize_in_context("", text, "", 0).unwrap(),
+        *audio
+    );
+    let voice_at = voice_starts(audio).expect("a voice");
+    // The first word is heard from where the voice begins (after the silence that opens an
+    // utterance the decoder starts it less early than after a pause inside one).
+    assert!(
+        timed.words[0] <= voice_at && ms(voice_at - timed.words[0]) < 120.0,
+        "voice at {} ms, first word at {} ms",
+        ms(voice_at),
+        ms(timed.words[0])
+    );
+    // «le», after the full stop: silence until it begins, its voice right after.
+    let le = timed.words[5];
+    let rms = |a: &[f32]| (a.iter().map(|s| s * s).sum::<f32>() / a.len().max(1) as f32).sqrt();
+    let before = rms(&audio[le - (0.04 * rate) as usize..le]);
+    let heard = voice_starts(&audio[le..]).expect("its voice");
+    assert!(
+        before < SILENCE && ms(heard) < 40.0,
+        "level {before} in the 40 ms before «le», its voice {} ms after",
+        ms(heard)
+    );
+    // Said as a piece between its neighbours, the times are those of the piece.
+    let piece = voice
+        .synthesize_timed(
+            "pˈer kwˈanto riɡwˈarda il bilˈanʧo,",
+            "le spˈeze",
+            "sˈono aʊmentˈate.",
+            0,
+        )
+        .unwrap();
+    assert_eq!(piece.words.len(), 2);
+    assert!(piece.words[0] < piece.words[1] && piece.words[1] < piece.audio.len());
+}

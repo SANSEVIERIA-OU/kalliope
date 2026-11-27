@@ -74,6 +74,10 @@ impl Drop for FakeMic {
     }
 }
 
+/// How long each word of the fake voice takes to say, in units of [`spoken_weight`]: a word of
+/// five sounds.
+const FAKE_WEIGHT: f32 = 6.0;
+
 /// A voice that takes `work` to synthesize each word and says it in `spoken`, after `lead` of
 /// silence; a streaming one hands the silence over first, on its own, then the voice in four
 /// parts, `work` apart.
@@ -99,6 +103,10 @@ impl Speaker for FakeVoice {
             .enumerate()
             .map(|(i, source)| Piece {
                 what: What::Test,
+                spoken: vec![Spoken {
+                    byte: source.start,
+                    weight: FAKE_WEIGHT,
+                }],
                 source,
                 phrase: None,
                 ends_phrase: i + 1 == n,
@@ -113,16 +121,16 @@ impl Speaker for FakeVoice {
     fn streams(&self) -> bool {
         self.streaming
     }
-    fn speak(&self, _piece: &Piece, play: &mut dyn FnMut(&[f32]) -> bool) -> Result<(), String> {
+    fn speak(&self, _piece: &Piece, play: &mut Play) -> Result<(), String> {
         let samples = (self.spoken.as_secs_f32() * RATE as f32) as usize;
         let silence = vec![0.0; (self.lead.as_secs_f32() * RATE as f32) as usize];
         if self.streaming {
-            if !silence.is_empty() && !play(&silence) {
+            if !silence.is_empty() && !play(&silence, &[]) {
                 return Ok(());
             }
             for _ in 0..4 {
                 std::thread::sleep(self.work);
-                if !play(&vec![0.5; samples / 4]) {
+                if !play(&vec![0.5; samples / 4], &[]) {
                     break;
                 }
             }
@@ -131,7 +139,7 @@ impl Speaker for FakeVoice {
         std::thread::sleep(self.work);
         let mut audio = silence;
         audio.resize(audio.len() + samples, 0.5);
-        play(&audio);
+        play(&audio, &[]);
         Ok(())
     }
 }
@@ -602,7 +610,7 @@ fn giulia_cuts_a_long_sentence_at_its_commas() {
     let started = Instant::now();
     let mut first = Vec::new();
     klein
-        .speak(&pieces[0], &mut |a| {
+        .speak(&pieces[0], &mut |a, _| {
             first.extend_from_slice(a);
             true
         })
@@ -656,6 +664,10 @@ fn clauses_are_joined_as_far_as_the_queued_audio_allows() {
             after: String::new(),
         },
         source: i * 4..i * 4 + 3,
+        spoken: vec![Spoken {
+            byte: i * 4,
+            weight: 1.0,
+        }],
         phrase: None,
         ends_phrase: last,
         first: i == 0,
@@ -994,7 +1006,7 @@ fn each_voice_starts_from_the_first_guess_of_its_pace() {
             .expect("a guess")
             .duration
     };
-    let first = Duration::from_secs_f32(FIRST_GUESS_SECONDS_PER_WORD);
+    let first = Duration::from_secs_f32(FAKE_WEIGHT * FIRST_GUESS_SECONDS_PER_UNIT);
     assert!(close(guess(&rig), first.as_millis() as u64));
     // The same voice learns its pace from what it said...
     assert!(guess(&rig) > first + Duration::from_millis(200));
@@ -1043,18 +1055,134 @@ fn pieces_map_to_the_typed_text_by_their_words() {
     pieces.push(rest);
     let said: Vec<&str> = sources(&sentence.words, pieces.into_iter())
         .into_iter()
-        .map(|r| &text[r])
+        .map(|(r, _)| &text[r])
         .collect();
     assert_eq!(said[0], "Alle 10:30,");
     assert_eq!(said[1], "il Dott. Rossi;");
     assert!(said.last().unwrap().ends_with("Tolkien."), "{said:?}");
     // A count that runs short still reaches the end of the text.
     let all = sources(&sentence.words, ["alle"].into_iter());
+    assert_eq!(all, vec![(0..text.len(), 0..sentence.words.len())]);
+}
+
+/// Giulia and Marco say where each word of a piece begins: its share of the piece counts from where
+/// the voice begins. A voice that does not say, or says a count that does not match the words,
+/// shares the piece by how long each word takes to say.
+#[test]
+fn words_start_where_the_voice_says_them_or_by_how_long_they_take() {
+    let piece = Piece {
+        what: What::Test,
+        source: 0..12,
+        spoken: vec![
+            Spoken {
+                byte: 0,
+                weight: 5.0,
+            },
+            Spoken {
+                byte: 6,
+                weight: 15.0,
+            },
+        ],
+        phrase: None,
+        ends_phrase: true,
+        first: true,
+        last: true,
+        tokens: 0,
+        seed: 0,
+        ticket: 0,
+    };
+    let shares = |w: Arc<[WordStart]>| -> Vec<(usize, f32)> {
+        w.iter().map(|s| (s.byte, s.share)).collect()
+    };
+    // 1000 samples of silence, then the voice to 3000: the second word begins at 2500.
     assert_eq!(
-        all,
-        vec![Range {
-            start: 0,
-            end: text.len()
-        }]
+        shares(word_starts(&piece, &[900, 2500], 1000, 3000)),
+        [(0, 0.0), (6, 0.75)]
     );
+    assert_eq!(
+        shares(word_starts(&piece, &[], 0, 0)),
+        [(0, 0.0), (6, 0.25)]
+    );
+    assert_eq!(
+        shares(word_starts(&piece, &[1000], 1000, 3000)),
+        [(0, 0.0), (6, 0.25)]
+    );
+}
+
+/// The words of a written number all start where it was typed, and weigh what they take to say:
+/// «1.250» is three long words, «€» one.
+#[test]
+fn a_written_number_weighs_the_words_it_is_said_with() {
+    let text = "Costa 1.250 €, va bene.";
+    let sentence = kalliope_text::normalize_spans(text).remove(0);
+    let s = spoken(
+        text,
+        &sentence.text,
+        &sentence.words,
+        kalliope_phonemes::phonemize,
+    );
+    let bytes: Vec<usize> = s.iter().map(|w| w.byte).collect();
+    // «euro» is read with «1.250» (from the bytes of both), and shown on «€».
+    assert_eq!(bytes, [0, 6, 6, 6, 12, 17, 20], "{}", sentence.text);
+    let number: f32 = s[1..4].iter().map(|w| w.weight).sum();
+    assert!(number > 3.0 * s[0].weight, "{s:?}");
+    // «bene.» ends the sentence: its pause is part of it.
+    assert_eq!(spoken_weight("bˈɛne."), PER_WORD + 4.0 + PAUSE_SENTENCE);
+    assert_eq!(spoken_weight("sˈi,"), PER_WORD + 2.0 + PAUSE_CLAUSE);
+    assert_eq!(spoken_weight("skrˈitːo"), PER_WORD + 6.0);
+}
+
+/// With the real model: each piece Giulia says is announced with where its words begin, one for
+/// each spoken word, at the bytes where they were typed.
+#[test]
+fn giulia_announces_where_her_words_begin() {
+    let (Some(dir), Some(_)) = (
+        std::env::var_os("KALLIOPE_MODEL_DIR"),
+        std::env::var_os("KALLIOPE_ORT_LIB"),
+    ) else {
+        eprintln!("skipped: set KALLIOPE_MODEL_DIR and KALLIOPE_ORT_LIB to run");
+        return;
+    };
+    let voice = Voice::load(&PathBuf::from(dir), "Giulia", &VoiceOptions::default()).unwrap();
+    let klein = Klein(voice);
+    let text =
+        "Per quanto riguarda il bilancio, le spese sono aumentate soprattutto per il personale.";
+    let pieces = klein.pieces(text, 0);
+    assert_eq!(pieces.len(), 2);
+    let (mut offsets, mut len, mut voice_at) = (Vec::new(), 0, 0);
+    klein
+        .speak(&pieces[1], &mut |a, o| {
+            offsets = o.to_vec();
+            len = a.len();
+            voice_at = kalliope_voice::voice_starts(a).unwrap();
+            true
+        })
+        .unwrap();
+    assert_eq!(offsets.len(), 8);
+    let starts = word_starts(&pieces[1], &offsets, voice_at, len);
+    let typed: Vec<&str> = starts
+        .iter()
+        .map(|w| text[w.byte..].split(' ').next().unwrap())
+        .collect();
+    assert_eq!(
+        typed,
+        [
+            "le",
+            "spese",
+            "sono",
+            "aumentate",
+            "soprattutto",
+            "per",
+            "il",
+            "personale."
+        ]
+    );
+    assert!(starts[0].share < 0.05, "{starts:?}");
+    assert!(
+        starts.windows(2).all(|w| w[0].share < w[1].share),
+        "{starts:?}"
+    );
+    // «soprattutto» is said quickly for its letters: «per» starts before 70% of the piece, which
+    // ends with the silence after the full stop.
+    assert!((0.45..0.7).contains(&starts[5].share), "{starts:?}");
 }

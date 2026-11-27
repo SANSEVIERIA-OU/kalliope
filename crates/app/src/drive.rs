@@ -403,15 +403,21 @@ pub fn trace(s: &crate::engine::Sounding, start: Instant) -> String {
     let wall = std::time::SystemTime::now()
         .duration_since(std::time::UNIX_EPOCH)
         .map_or(0.0, |d| d.as_secs_f64());
+    let words: Vec<String> = s
+        .words
+        .iter()
+        .map(|w| format!("{}:{:.4}", w.byte, w.share))
+        .collect();
     format!(
-        "avanzamento {:6} ms · ora {wall:.3} · {:5} ms{} · byte {}..{} · «{}»{}",
+        "avanzamento {:6} ms · ora {wall:.3} · {:5} ms{} · byte {}..{} · «{}»{} · parole {}",
         start.elapsed().as_millis(),
         s.duration.as_millis(),
         if s.exact { "" } else { " (stima)" },
         s.span.start,
         s.span.end,
         &s.phrase[s.span.clone()],
-        if s.last { " · ultimo" } else { "" }
+        if s.last { " · ultimo" } else { "" },
+        words.join(" ")
     )
 }
 
