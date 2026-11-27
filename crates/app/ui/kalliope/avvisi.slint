@@ -37,6 +37,7 @@ export component Avviso inherits Rectangle {
         }
         if root.con-guida: HorizontalLayout {
             alignment: start;
+            // TRANSLATORS(programma.comune.come-si-risolve): A small button next to a problem (nobody hears you, no microphone, the voice does not start): it opens the page of the website that explains what to do. Two or three words.
             Pulsante { testo: @tr("programma.comune.come-si-risolve" => "Come si risolve"); piccolo: true; tipo: Tipo.quieto; premuto => { root.guida(); } }
         }
     }
@@ -66,6 +67,7 @@ export component Attesa inherits VerticalLayout {
     in property <string> dettaglio;
     in property <float> valore: 0;
     callback annulla();
+    // TRANSLATORS(programma.comune.annulla): The button that closes a question without doing anything.
     in property <string> annulla-testo: @tr("programma.comune.annulla" => "Annulla");
     spacing: Token.spazio-controlli * Aspetto.scala;
     alignment: start;

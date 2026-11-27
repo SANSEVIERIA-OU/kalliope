@@ -73,6 +73,7 @@ pub fn stretch_title(number: usize, clearest: bool) -> String {
         // TRANSLATORS: The first stretch of a recording, the one where the voice is clearest: {numero} is its number
         tr!("programma.crea.tratto-chiaro" => "Tratto {numero} · il più chiaro", numero = number)
     } else {
+        // TRANSLATORS(programma.crea.tratto): The name of a stretch of an imported recording where a voice was found, numbered: «Stretch 2». {numero} is the number.
         tr!("programma.crea.tratto" => "Tratto {numero}", numero = number)
     }
 }
@@ -399,6 +400,7 @@ impl Flow {
                 self.view.name_message = check.message().unwrap_or_default();
                 self.view.name_confirm = match check {
                     NameCheck::Exists { .. } => {
+                        // TRANSLATORS(programma.crea.sostituisci-voce): A button: replace the existing voice that has the same name with the new one.
                         tr!("programma.crea.sostituisci-voce" => "Sostituisci la voce")
                     }
                     _ => keep_name(),
@@ -448,6 +450,7 @@ impl Flow {
 
 /// The command that keeps a name Kalliope's own voices have.
 pub fn keep_name() -> String {
+    // TRANSLATORS(programma.crea.tieni-nome): A button: keep this name, although one of Kalliope's own voices has it too.
     tr!("programma.crea.tieni-nome" => "Tieni questo nome")
 }
 

@@ -107,14 +107,16 @@ export component Pulsante inherits Rectangle {
     riga := HorizontalLayout {
         alignment: center;
         spacing: Token.spazio-stretto * Aspetto.scala;
+        // as wide as the «←» of the typeface at the size of the word, with a stroke as fine as its letters
         if root.indietro: Rectangle {
-            width: Token.chiusura * 0.85 * Aspetto.scala;
+            width: (root.piccolo ? Token.corpo-stato : Token.corpo-comando) * 0.7 * Aspetto.scala;
             Path {
                 x: 0; y: (parent.height - self.height) / 2;
                 width: parent.width; height: self.width;
                 viewbox-width: 12; viewbox-height: 12;
-                commands: "M 11 6 H 1.5 M 5.5 1.5 L 1.5 6 L 5.5 10.5";
-                stroke: Token.testo; stroke-width: Token.filo * 2 * Aspetto.scala;
+                commands: "M 11 6.5 H 1.5 M 5.2 2.8 L 1.5 6.5 L 5.2 10.2";
+                stroke: Token.testo; stroke-width: Token.filo * 1.5 * Aspetto.scala;
+                stroke-line-cap: round;
                 fill: transparent;
             }
         }

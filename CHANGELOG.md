@@ -4,6 +4,26 @@ Kalliope's versions go up one step at a time (0.1, 0.2 … 0.9, 1.0, 1.1 …). E
 published for every supported system (see [docs/releasing.md](docs/releasing.md)). This file lists
 what each version brings, for the people who use it.
 
+## 0.4 — not yet released
+
+Kalliope in your language, and a window that fits your screen.
+
+- **The window speaks the language of your system**: the 24 languages of the European Union, and
+  Chinese, Hindi, Arabic, Bengali, Indonesian and Urdu. Buttons, states, advice and error messages
+  are all translated. Arabic and Urdu are written from right to left, and the whole window turns
+  round for them. Greek, Bulgarian, Arabic, Urdu, Hindi and Bengali have their own typeface inside
+  Kalliope; Chinese uses the one of your system. `KALLIOPE_LINGUA=de kalliope` opens Kalliope in
+  another language. **The voices still speak Italian only.**
+- **The website too**, in the same 30 languages, with a page to choose yours. «Come si risolve»
+  opens the guide in the language of the window.
+- **The window fits your screen.** On a small laptop it opens no taller than the space between the
+  panels, and Kalliope remembers where you left it (on Wayland your desktop decides where windows go).
+- **Words light up when you hear them**, measured on the voice itself, also in long texts and with
+  your own voice.
+- **Kalliope ends with its window**: if the desktop destroys the window without asking, Kalliope
+  no longer keeps running in the background.
+- **The guide quotes the window's own words** for every problem it explains.
+
 ## 0.3 — 27 November 2026
 
 A new window, made for writing, and your own voice made inside Kalliope.

@@ -594,10 +594,12 @@ fn choose_file(ui: &AppWindow) {
         // TRANSLATORS: The title of the system's window for choosing an audio or video file
         .set_title(tr!("programma.scelta.titolo" => "Scegli una registrazione"))
         .add_filter(
+            // TRANSLATORS(programma.scelta.audio-e-video): A filter in the system's window for choosing a file: only audio and video files.
             tr!("programma.scelta.audio-e-video" => "Audio e video"),
             &extensions,
         )
         .add_filter(
+            // TRANSLATORS(programma.scelta.tutti-i-file): A filter in the system's window for choosing a file: every file.
             tr!("programma.scelta.tutti-i-file" => "Tutti i file"),
             &["*"],
         )

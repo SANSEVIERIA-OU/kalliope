@@ -39,18 +39,29 @@ export component RigaStato inherits Rectangle {
         || root.situazione == Situazione.problema-voce || root.situazione == Situazione.avviso;
     property <bool> bene: root.notizia != "" && !root.male;
     property <string> titolo:
+        // TRANSLATORS(programma.stato.voce-nuova): The title of the status line just after a new voice is ready.
         root.bene ? @tr("programma.stato.voce-nuova" => "Voce nuova")
+        // TRANSLATORS(programma.stato.preparo-la-voce): The name of the state while the voice loads, said by Kalliope: «I am getting the voice ready». Two or three words, no dots.
         : root.situazione == Situazione.preparazione ? @tr("programma.stato.preparo-la-voce" => "Preparo la voce")
+        // TRANSLATORS(programma.stato.pronta): The name of the state when the voice is ready to speak. One word; it refers to the voice (feminine in Italian).
         : root.situazione == Situazione.pronta ? @tr("programma.stato.pronta" => "Pronta")
+        // TRANSLATORS(programma.stato.sto-parlando): The name of the state while the voice speaks, said by Kalliope: «I am speaking». Two words.
         : root.situazione == Situazione.parla ? @tr("programma.stato.sto-parlando" => "Sto parlando")
+        // TRANSLATORS(programma.stato.nessuno-ti-sente): The name of the state when no app in the call uses the «Kalliope» microphone: the others cannot hear the person. Short.
         : root.situazione == Situazione.nessuno-ascolta ? @tr("programma.stato.nessuno-ti-sente" => "Nessuno ti sente")
+        // TRANSLATORS(programma.stato.manca-microfono): The name of the state when the virtual microphone «Kalliope» could not be created. Short.
         : root.situazione == Situazione.senza-microfono ? @tr("programma.stato.manca-microfono" => "Manca il microfono")
+        // TRANSLATORS(programma.stato.voce-non-parte): The name of the state when the voice cannot start. Short.
         : root.situazione == Situazione.problema-voce ? @tr("programma.stato.voce-non-parte" => "La voce non parte")
+        // TRANSLATORS(programma.stato.attenzione): The name of the state for any other problem: one word, as on a warning sign.
         : @tr("programma.stato.attenzione" => "Attenzione");
     property <string> detto:
         root.bene ? root.notizia
+        // TRANSLATORS(programma.stato.fra-poco-puoi-scrivere): What the status line says while the voice loads.
         : root.situazione == Situazione.preparazione ? @tr("programma.stato.fra-poco-puoi-scrivere" => "Fra poco puoi scrivere e farti sentire.")
+        // TRANSLATORS(programma.stato.nella-riunione-scegli-kalliope): What the status line says when the voice is ready: how to be heard. «Kalliope» in quotes is the name of the microphone to choose in the meeting app.
         : root.situazione == Situazione.pronta ? @tr("programma.stato.nella-riunione-scegli-kalliope" => "Nella riunione scegli «Kalliope» come microfono.")
+        // TRANSLATORS(programma.stato.esc-ferma): What the status line says while the voice speaks: the Esc key stops it. Short.
         : root.situazione == Situazione.parla ? @tr("programma.stato.esc-ferma" => "Esc la ferma.")
         : root.spiegazione;
     accessible-role: text;

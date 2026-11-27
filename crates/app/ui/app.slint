@@ -26,6 +26,7 @@ export component AppWindow inherits Window {
     always-on-top: root.compatta;
 
     in property <Phase> phase: Phase.loading;
+    // TRANSLATORS(programma.finestra.preparo-la-voce): The status line while the voice loads, when Kalliope starts.
     in property <string> status: @tr("programma.finestra.preparo-la-voce" => "Preparo la voce…");
     in property <bool> warning: false;
     // the state the status line shows, from the engine's real flags (session.rs, Status::situation)
