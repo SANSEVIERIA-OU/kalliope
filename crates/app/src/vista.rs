@@ -522,6 +522,7 @@ pub fn demo(scena: &str) -> ExitCode {
                                 duration: *duration,
                                 exact: true,
                                 last: n + 1 == v.pieces.len(),
+                                words: Default::default(),
                             },
                             v.started + at,
                         );

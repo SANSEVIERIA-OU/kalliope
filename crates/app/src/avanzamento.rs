@@ -1,11 +1,12 @@
 // SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! Which words of a phrase the voice has said, from the engine's real pieces ([`Sounding`]), for the bubble that darkens
 //! them one by one. It replaces the estimate of one word every 0.36 s: a piece says exactly which bytes of the phrase it
-//! voices and how long it sounds, and the words of the piece share that time by how long they take to say.
+//! voices, how long it sounds and where each of its spoken words starts ([`WordStart`]); a typed word starts with the
+//! first word read from it, so a written number or an abbreviation lasts as long as its words take to say.
 //!
 //! Pure: the clock comes in as an argument, so every case is tested without a window.
 
-use crate::engine::{Said, Sounding};
+use crate::engine::{Said, Sounding, WordStart};
 use std::ops::Range;
 use std::time::{Duration, Instant};
 
@@ -29,11 +30,10 @@ pub fn words(phrase: &str) -> Vec<Range<usize>> {
     out
 }
 
-/// How long a word takes to say, in arbitrary units: letters count one, digits three (a written number is long to say), any
-/// other sign six (a «€» or a «%» is a word). A word that ends a clause or a sentence carries the pause after it: a short one
-/// for a comma, a long one for a full stop, because a piece lasts until the next begins and the voice is silent at its end.
-/// The two pauses were fitted on Whisper's word times against the pieces Giulia says (costruzione-prove/strumenti/adatta-pesi.py):
-/// with them the start of a word is wrong by 0.08 s on average, against 0.23 s with a pause of two letters for both.
+/// How long a word takes to say, in arbitrary units, for a piece that does not say where its words start: letters count one,
+/// digits three (a written number is long to say), any other sign six (a «€» or a «%» is a word). A word that ends a clause
+/// or a sentence carries the pause after it: a short one for a comma, a long one for a full stop, because a piece lasts until
+/// the next begins and the voice is silent at its end.
 const PAUSE_CLAUSE: f32 = 2.0;
 const PAUSE_SENTENCE: f32 = 10.0;
 
@@ -67,7 +67,42 @@ fn in_span(words: &[Range<usize>], span: &Range<usize>) -> Range<usize> {
     first..last.max(first)
 }
 
-/// Where each word of `range` starts in the piece, as shares of its time (0 to 1), and the end (1).
+/// Where each word of `range` starts in the piece, as shares of its time (0 to 1), and the end (1): with the first spoken
+/// word read from it (`spoken`, from the engine). A typed word that is not said (a sign the voice leaves out) starts with the
+/// word after it. Without spoken words, by the letters of each word ([`weight`]).
+fn starts_of(
+    phrase: &str,
+    words: &[Range<usize>],
+    range: &Range<usize>,
+    spoken: &[WordStart],
+) -> Vec<f32> {
+    if spoken.is_empty() || range.is_empty() {
+        return starts(phrase, words, range);
+    }
+    let mut out: Vec<Option<f32>> = vec![None; range.len()];
+    for w in spoken {
+        let k = words
+            .partition_point(|r| r.start <= w.byte)
+            .saturating_sub(1)
+            .clamp(range.start, range.end - 1)
+            - range.start;
+        out[k] = Some(out[k].map_or(w.share, |s| s.min(w.share)));
+    }
+    let mut next = 1.0f32;
+    let mut filled: Vec<f32> = out
+        .into_iter()
+        .rev()
+        .map(|s| {
+            next = s.unwrap_or(next).min(next);
+            next
+        })
+        .collect();
+    filled.reverse();
+    filled.push(1.0);
+    filled
+}
+
+/// Where each word of `range` starts in the piece, as shares of its time (0 to 1), and the end (1), by its letters.
 fn starts(phrase: &str, words: &[Range<usize>], range: &Range<usize>) -> Vec<f32> {
     let weights: Vec<f32> = words[range.clone()]
         .iter()
@@ -90,6 +125,9 @@ struct Piece {
     starts: Vec<f32>,
     started: Instant,
     duration: Duration,
+    /// Words already dark when the duration was corrected: a longer exact duration does not light
+    /// them again.
+    kept: usize,
 }
 
 /// What the bubble shows at a moment: `said` words are dark, and the next one is darkening, `fade` of the way.
@@ -132,10 +170,16 @@ impl Lighting {
             self.piece = None;
             self.before = 0;
         }
-        if let Some(p) = &mut self.piece
-            && p.span == s.span
-        {
+        if self.piece.as_ref().is_some_and(|p| p.span == s.span) {
+            let kept = self.at(now, Duration::ZERO).said;
+            let Some(p) = &mut self.piece else {
+                return true;
+            };
+            p.kept = kept;
             p.duration = s.duration;
+            if !s.words.is_empty() {
+                p.starts = starts_of(&self.phrase, &self.words, &p.words, &s.words);
+            }
             return true;
         }
         if let Some(p) = &self.piece {
@@ -144,11 +188,12 @@ impl Lighting {
         let words = in_span(&self.words, &s.span);
         self.before = self.before.max(words.start);
         self.piece = Some(Piece {
-            starts: starts(&self.phrase, &self.words, &words),
+            starts: starts_of(&self.phrase, &self.words, &words, &s.words),
             span: s.span.clone(),
             words,
             started: now,
             duration: s.duration,
+            kept: 0,
         });
         true
     }
@@ -173,6 +218,12 @@ impl Lighting {
             .partition_point(|s| *s <= share)
             .saturating_sub(1);
         let into = elapsed.as_secs_f32() - p.starts[k] * p.duration.as_secs_f32();
+        if p.words.start + k < p.kept {
+            return Lit {
+                said: p.kept,
+                fade: 0.0,
+            };
+        }
         Lit {
             said: p.words.start + k,
             fade: (into / fade_time.as_secs_f32().max(f32::EPSILON)).clamp(0.0, 1.0),
@@ -190,7 +241,11 @@ impl Lighting {
             return done;
         };
         let range = in_span(&self.words, span);
-        let starts = starts(&self.phrase, &self.words, &range);
+        // The piece that was cut is the one lit last: its words end where the next one starts.
+        let starts = match &self.piece {
+            Some(p) if p.span == *span => p.starts.clone(),
+            _ => starts(&self.phrase, &self.words, &range),
+        };
         let finished = (1..starts.len()).filter(|&k| starts[k] <= *share).count();
         done.max(range.start) + finished
     }
@@ -217,6 +272,7 @@ mod tests {
             span,
             duration: Duration::from_millis(ms),
             exact,
+            words: Arc::from([]),
         }
     }
 
@@ -284,6 +340,23 @@ mod tests {
     }
 
     #[test]
+    fn a_longer_exact_duration_does_not_light_dark_words_again() {
+        let phrase = "uno due tre quattro";
+        let t0 = Instant::now();
+        let mut l = Lighting::new(phrase);
+        l.sounding(&piece(phrase, 1, 0..phrase.len(), 1000, false), t0);
+        let t1 = t0 + Duration::from_millis(800);
+        assert_eq!(l.at(t1, FADE).said, 3);
+        // the exact duration is twice the guess: the three words stay dark, the fourth waits
+        l.sounding(&piece(phrase, 1, 0..phrase.len(), 2000, true), t1);
+        assert_eq!(l.at(t1, FADE), Lit { said: 3, fade: 0.0 });
+        assert_eq!(l.at(t1 + Duration::from_millis(500), FADE).said, 3);
+        let late = l.at(t0 + Duration::from_millis(1700), FADE);
+        assert_eq!(late.said, 3);
+        assert!(late.fade > 0.0, "{late:?}");
+    }
+
+    #[test]
     fn a_piece_of_another_phrase_is_not_ours() {
         let t0 = Instant::now();
         let mut l = Lighting::new("prima");
@@ -348,6 +421,101 @@ mod tests {
             cut: None,
         };
         assert_eq!(l.after_stop(&other), 0);
+    }
+
+    fn said_at(
+        phrase: &str,
+        id: u64,
+        span: Range<usize>,
+        ms: u64,
+        words: &[(usize, f32)],
+    ) -> Sounding {
+        Sounding {
+            words: words
+                .iter()
+                .map(|&(byte, share)| WordStart { byte, share })
+                .collect(),
+            ..piece(phrase, id, span, ms, true)
+        }
+    }
+
+    #[test]
+    fn words_light_where_the_engine_says_they_start() {
+        // «soprattutto» is long to write and quick to say: the engine says where «per» starts
+        let phrase = "soprattutto per il personale.";
+        let t0 = Instant::now();
+        let mut l = Lighting::new(phrase);
+        let words = [(0, 0.0), (12, 0.2), (16, 0.35), (19, 0.45)];
+        l.sounding(&said_at(phrase, 1, 0..phrase.len(), 2000, &words), t0);
+        assert_eq!(l.at(t0 + Duration::from_millis(350), FADE).said, 0);
+        assert_eq!(l.at(t0 + Duration::from_millis(450), FADE).said, 1);
+        assert_eq!(l.at(t0 + Duration::from_millis(750), FADE).said, 2);
+        assert_eq!(l.at(t0 + Duration::from_millis(950), FADE).said, 3);
+        // the same piece again with its exact duration keeps the starts
+        l.sounding(&said_at(phrase, 1, 0..phrase.len(), 1000, &words), t0);
+        assert_eq!(l.at(t0 + Duration::from_millis(250), FADE).said, 1);
+    }
+
+    #[test]
+    fn a_typed_word_starts_with_the_first_word_read_from_it() {
+        // «1.250» is said «mille duecento cinquanta»: three words that start at its byte
+        let phrase = "Costa 1.250 € più IVA.";
+        let t0 = Instant::now();
+        let mut l = Lighting::new(phrase);
+        let euro = phrase.find('€').unwrap();
+        let piu = phrase.find("più").unwrap();
+        let iva = phrase.find("IVA").unwrap();
+        let words = [
+            (0, 0.0),
+            (6, 0.15),
+            (6, 0.3),
+            (6, 0.45),
+            (euro, 0.6),
+            (piu, 0.7),
+            (iva, 0.8),
+        ];
+        l.sounding(&said_at(phrase, 1, 0..phrase.len(), 1000, &words), t0);
+        assert_eq!(l.at(t0 + Duration::from_millis(100), FADE).said, 0);
+        assert_eq!(l.at(t0 + Duration::from_millis(200), FADE).said, 1);
+        // still on the number while its last word is said
+        assert_eq!(l.at(t0 + Duration::from_millis(550), FADE).said, 1);
+        assert_eq!(l.at(t0 + Duration::from_millis(650), FADE).said, 2);
+        // a sign the voice leaves out starts with the word after it
+        let phrase = "Ciao — a tutti.";
+        let mut l = Lighting::new(phrase);
+        let a = phrase.find(" a ").unwrap() + 1;
+        let tutti = phrase.find("tutti").unwrap();
+        l.sounding(
+            &said_at(
+                phrase,
+                1,
+                0..phrase.len(),
+                1000,
+                &[(0, 0.0), (a, 0.4), (tutti, 0.5)],
+            ),
+            t0,
+        );
+        assert_eq!(l.at(t0 + Duration::from_millis(300), FADE).said, 0);
+        assert_eq!(l.at(t0 + Duration::from_millis(420), FADE).said, 2);
+    }
+
+    #[test]
+    fn stop_counts_the_words_of_the_cut_piece_by_where_they_start() {
+        let phrase = "soprattutto per il personale.";
+        let t0 = Instant::now();
+        let mut l = Lighting::new(phrase);
+        let words = [(0, 0.0), (12, 0.2), (16, 0.35), (19, 0.45)];
+        l.sounding(&said_at(phrase, 1, 0..phrase.len(), 2000, &words), t0);
+        let said = |share| Said {
+            phrase: Arc::from(phrase),
+            id: 1,
+            done: 0,
+            cut: Some((0..phrase.len(), share)),
+        };
+        // a quarter in: «soprattutto» was said, «per» was being said
+        assert_eq!(l.after_stop(&said(0.25)), 1);
+        assert_eq!(l.after_stop(&said(0.4)), 2);
+        assert_eq!(l.after_stop(&said(1.0)), 4);
     }
 
     #[test]

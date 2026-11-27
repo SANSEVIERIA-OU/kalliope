@@ -25,6 +25,12 @@ pub const PAUSE_SECONDS: f32 = 0.12;
 /// Frames decoded on each side of a piece cut from a sentence and then dropped (see
 /// [`Voice::synthesize_in_context`]).
 const CONTEXT_FRAMES: usize = 8;
+/// How long before the first step of its phonemes a word begins to be heard: the decoder starts
+/// its sound early. After the pause of a full stop Giulia's voice comes back 0.06 to 0.08 s before
+/// it (`tests/model.rs`); against Whisper's word starts in the 32 sentences of
+/// `materiali-locali/tempi-parole-prove/`, 0.09 s fitted on 16 halved the mean error on the
+/// other 16, from 0.09 to 0.05 s with Giulia and from 0.13 to 0.07 s with Marco.
+const WORD_LEAD_SECONDS: f32 = 0.09;
 
 /// Public voice names (from the Klein-TTS model card) for the model's internal voice ids.
 const VOICE_NAMES: &[(&str, &str)] = &[
@@ -272,6 +278,21 @@ impl Voice {
         after: &str,
         seed: u32,
     ) -> Result<Vec<f32>, Error> {
+        self.synthesize_timed(before, text, after, seed)
+            .map(|t| t.audio)
+    }
+
+    /// [`Voice::synthesize_in_context`], and where each word of `text` begins to be heard in the
+    /// audio, from the durations the model gives each phoneme: the decoder turns each step of the
+    /// expanded features into the same number of samples, and starts the sound of a word a little
+    /// before its first step ([`WORD_LEAD_SECONDS`]).
+    pub fn synthesize_timed(
+        &self,
+        before: &str,
+        text: &str,
+        after: &str,
+        seed: u32,
+    ) -> Result<Timed, Error> {
         let m = &self.model;
         let count = |s: &str| m.tokens(s).count();
         // Nothing to pronounce (only spaces or punctuation): no audio rather than a short breath.
@@ -279,7 +300,7 @@ impl Voice {
             .chars()
             .any(|c| c.is_alphabetic() && m.vocab.contains_key(&c));
         if count(text) == 0 || !speakable {
-            return Ok(Vec::new());
+            return Ok(Timed::default());
         }
         let (mut before, mut after) = (before.trim(), after.trim());
         if count(before) + count(text) + count(after) + 2 > MAX_TOKENS {
@@ -403,7 +424,19 @@ impl Voice {
         let cut_end = audio.len().saturating_sub(margin_after * m.hop);
         audio.truncate(cut_end);
         audio.drain(..(margin_before * m.hop).min(audio.len()));
-        Ok(audio)
+        // The first token of each word of `text`, past the boundary token and the context before.
+        let first = 1 + count(&left);
+        let lead = (WORD_LEAD_SECONDS * m.sample_rate as f32) as usize;
+        let words = word_starts(text)
+            .map(|at| {
+                let token = (first + count(&text[..at])).min(n);
+                let frame: usize = reps[..token].iter().sum();
+                (frame.saturating_sub(start) * m.hop)
+                    .saturating_sub(lead)
+                    .min(audio.len())
+            })
+            .collect();
+        Ok(Timed { audio, words })
     }
 
     /// Synthesizes any amount of phonemes, chunk by chunk, with a short pause between chunks.
@@ -423,6 +456,24 @@ impl Voice {
         release_memory();
         Ok(audio)
     }
+}
+
+/// A piece of speech and where its words begin.
+#[derive(Debug, Default)]
+pub struct Timed {
+    pub audio: Vec<f32>,
+    /// The sample of `audio` where each word of the text begins, one per word as
+    /// `kalliope_text::words` counts them (what lies between white space, with a letter or a
+    /// digit), in order.
+    pub words: Vec<usize>,
+}
+
+/// The byte where each word of `text` begins: what lies between white space, with a letter or a
+/// digit.
+fn word_starts(text: &str) -> impl Iterator<Item = usize> + '_ {
+    text.split_whitespace()
+        .filter(|w| w.chars().any(char::is_alphanumeric))
+        .map(move |w| w.as_ptr() as usize - text.as_ptr() as usize)
 }
 
 /// The loudest a sample of silence gets (about -50 dBFS). Both voices start each utterance with
@@ -599,6 +650,18 @@ pub fn find_runtime() -> Option<PathBuf> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn words_are_found_where_they_begin() {
+        let text = "sˈi, « vˈa bˈɛne. »";
+        let starts: Vec<usize> = word_starts(text).collect();
+        let words: Vec<&str> = starts
+            .iter()
+            .map(|&at| text[at..].split_whitespace().next().unwrap())
+            .collect();
+        assert_eq!(words, ["sˈi,", "vˈa", "bˈɛne."]);
+        assert_eq!(word_starts(" , . ").count(), 0);
+    }
 
     #[test]
     fn rounds_halves_up_like_javascript() {

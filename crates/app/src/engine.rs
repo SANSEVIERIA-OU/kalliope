@@ -43,10 +43,11 @@ const LOOKAHEAD_SECONDS: f32 = 3.0;
 const WATCH: Duration = Duration::from_millis(500);
 /// How often it tries to open the microphone again while PipeWire does not answer.
 const RETRY: Duration = Duration::from_secs(1);
-/// Seconds per spoken word before anything is measured, to guess how long a streamed piece lasts
-/// from where its voice begins: a voice prepared from a recording said four phrases of 6 to 27
-/// words at 0.27 to 0.34 s per word.
-const FIRST_GUESS_SECONDS_PER_WORD: f32 = 0.30;
+/// Seconds per unit of [`spoken_weight`] before anything is measured, to guess how long a streamed
+/// piece lasts from where its voice begins: the median of the pieces two voices prepared from a
+/// recording said (`materiali-locali/tempi-parole-prove/`). Counting sounds rather than words, a
+/// written number that is said in many words is not guessed short.
+const FIRST_GUESS_SECONDS_PER_UNIT: f32 = 0.049;
 
 /// A voice: Giulia or Marco, or one prepared from a recording (its file name without
 /// `.safetensors`). A prepared voice may have any name, Giulia and Marco included.
@@ -162,6 +163,21 @@ pub struct Sounding {
     pub exact: bool,
     /// The last piece of the phrase.
     pub last: bool,
+    /// Where each spoken word of the piece starts, in order. Empty when the piece does not say.
+    pub words: Arc<[WordStart]>,
+}
+
+/// Where a spoken word starts in its piece.
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub struct WordStart {
+    /// The first byte of the phrase it was read from: the words of a written number or
+    /// abbreviation all start where it does.
+    pub byte: usize,
+    /// The share of the piece's duration before the word (0 to 1). Giulia and Marco say where
+    /// each word begins (the model gives every phoneme its duration); a voice prepared from a
+    /// recording does not, and its words share the piece by how long each takes to say
+    /// ([`spoken_weight`]).
+    pub share: f32,
 }
 
 /// What was said of a phrase that Stop cut short.
@@ -482,11 +498,22 @@ struct Piece {
     /// First or last piece of its sentence: inside a sentence the silence at the cut is shortened.
     first: bool,
     last: bool,
+    /// Its spoken words: where each was typed, and how long it takes to say.
+    spoken: Vec<Spoken>,
     /// Phoneme tokens, for pieces that can be joined with the next clause of their sentence.
     tokens: usize,
     seed: u32,
     /// When its text was sent (see [`Line::stops`]).
     ticket: u64,
+}
+
+/// A spoken word of a piece.
+#[derive(Clone, Copy, Debug, PartialEq)]
+struct Spoken {
+    /// The first byte of the phrase it was read from.
+    byte: usize,
+    /// How long it takes to say, in the units of [`spoken_weight`].
+    weight: f32,
 }
 
 enum What {
@@ -508,14 +535,18 @@ trait Speaker: Send {
     /// The pieces to say for `text`.
     fn pieces(&self, text: &str, ticket: u64) -> Vec<Piece>;
     /// Synthesizes one piece, handing its audio to `play` as soon as it exists; `play` returns
-    /// false when nobody wants it any more.
-    fn speak(&self, piece: &Piece, play: &mut dyn FnMut(&[f32]) -> bool) -> Result<(), String>;
+    /// false when nobody wants it any more. A voice that knows where the spoken words of the
+    /// piece begin in the audio hands that over too, one sample per word; otherwise nothing.
+    fn speak(&self, piece: &Piece, play: &mut Play) -> Result<(), String>;
     /// Whether `speak` hands over a piece in parts as it synthesizes it, so its duration is known
     /// only at the end; otherwise the whole piece comes in one call.
     fn streams(&self) -> bool {
         false
     }
 }
+
+/// What a voice hands its audio to: the samples, and where the spoken words begin in them.
+type Play<'a> = dyn FnMut(&[f32], &[usize]) -> bool + 'a;
 
 /// Giulia and Marco.
 struct Klein(Voice);
@@ -534,7 +565,8 @@ impl Speaker for Klein {
             let sources = sources(&sentence.words, cut.iter().map(|(p, _)| p.as_str()));
             let n = cut.len();
             out.extend(cut.into_iter().zip(sources).enumerate().map(
-                |(i, ((p, tokens), source))| Piece {
+                |(i, ((p, tokens), (source, said)))| Piece {
+                    spoken: spoken(text, &p, &sentence.words[said], |w| w.to_owned()),
                     what: What::Phonemes {
                         text: p,
                         before: String::new(),
@@ -557,7 +589,7 @@ impl Speaker for Klein {
         out
     }
 
-    fn speak(&self, piece: &Piece, play: &mut dyn FnMut(&[f32]) -> bool) -> Result<(), String> {
+    fn speak(&self, piece: &Piece, play: &mut Play) -> Result<(), String> {
         let What::Phonemes {
             text,
             before,
@@ -566,12 +598,12 @@ impl Speaker for Klein {
         else {
             return Ok(());
         };
-        let audio = self
+        let timed = self
             .0
-            .synthesize_in_context(before, text, after, piece.seed)
+            .synthesize_timed(before, text, after, piece.seed)
             .map_err(|e| e.to_string())?;
-        if !audio.is_empty() {
-            play(&audio);
+        if !timed.audio.is_empty() {
+            play(&timed.audio, &timed.words);
         }
         Ok(())
     }
@@ -601,7 +633,8 @@ impl Speaker for Own {
             .into_iter()
             .zip(sources)
             .enumerate()
-            .map(|(i, (c, source))| Piece {
+            .map(|(i, (c, (source, said)))| Piece {
+                spoken: spoken(text, &c.prompt, &words[said], kalliope_phonemes::phonemize),
                 what: What::Chunk(c),
                 source,
                 phrase: None,
@@ -619,42 +652,163 @@ impl Speaker for Own {
         true
     }
 
-    fn speak(&self, piece: &Piece, play: &mut dyn FnMut(&[f32]) -> bool) -> Result<(), String> {
+    fn speak(&self, piece: &Piece, play: &mut Play) -> Result<(), String> {
         let What::Chunk(chunk) = &piece.what else {
             return Ok(());
         };
         self.model
-            .speak_chunk(&self.voice, chunk, piece.seed, play)
+            .speak_chunk(&self.voice, chunk, piece.seed, &mut |audio| {
+                play(audio, &[])
+            })
             .map(|_| ())
             .map_err(|e| e.to_string())
     }
 }
 
-/// The bytes of the typed phrase each piece says, from the words it has: `words` are where the
-/// spoken words of the text were typed ([`kalliope_text::Sentence::words`]), `pieces` the text of
-/// each piece in order, in spoken form or in phonemes, which keep one word per spoken word. The
-/// last piece reaches the last word whatever the count says, so the whole text is always covered.
-fn sources<'a>(words: &[Range<usize>], pieces: impl Iterator<Item = &'a str>) -> Vec<Range<usize>> {
-    let mut out: Vec<Range<usize>> = Vec::new();
+/// The bytes of the typed phrase each piece says, from the words it has, and which of `words` it
+/// says: `words` are where the spoken words of the text were typed
+/// ([`kalliope_text::Sentence::words`]), `pieces` the text of each piece in order, in spoken form or
+/// in phonemes, which keep one word per spoken word. The last piece reaches the last word whatever
+/// the count says, so the whole text is always covered.
+fn sources<'a>(
+    words: &[Range<usize>],
+    pieces: impl Iterator<Item = &'a str>,
+) -> Vec<(Range<usize>, Range<usize>)> {
+    let mut out: Vec<(Range<usize>, Range<usize>)> = Vec::new();
     let mut next = 0;
     for piece in pieces {
         let n = kalliope_text::words(piece).count();
-        let start = words
-            .get(next)
-            .map_or_else(|| out.last().map_or(0, |r| r.end), |w| w.start);
-        let start = start.max(out.last().map_or(0, |r| r.end));
+        let before = out.last().map_or(0, |(r, _)| r.end);
+        let start = words.get(next).map_or(before, |w| w.start).max(before);
+        let first = next;
         next = (next + n).min(words.len());
         let end = next
             .checked_sub(1)
             .and_then(|i| words.get(i))
             .map_or(start, |w| w.end)
             .max(start);
-        out.push(start..end);
+        out.push((start..end, first..next));
     }
-    if let (Some(last), Some(word)) = (out.last_mut(), words.last()) {
+    if let (Some((last, said)), Some(word)) = (out.last_mut(), words.last()) {
         last.end = last.end.max(word.end);
+        said.end = words.len();
     }
     out
+}
+
+/// The spoken words of a piece of `phrase`: its `text` (in spoken form or in phonemes) word by
+/// word, with where each was typed (`typed`, one per word as [`sources`] counts them) and how long
+/// it takes to say, from its phonemes (`phonemes` turns a word of `text` into them).
+///
+/// The words read together from several typed words («1.250 €» is «mille duecento cinquanta
+/// euro», all from the bytes of both) are shown on them in order: the first spoken word on the
+/// first typed word, the last ones on the last ones.
+fn spoken(
+    phrase: &str,
+    text: &str,
+    typed: &[Range<usize>],
+    phonemes: impl Fn(&str) -> String,
+) -> Vec<Spoken> {
+    let mut out: Vec<Spoken> = kalliope_text::words(text)
+        .zip(typed)
+        .map(|(w, at)| Spoken {
+            byte: at.start,
+            weight: spoken_weight(&phonemes(w)),
+        })
+        .collect();
+    let mut i = 0;
+    while i < out.len() {
+        let group = &typed[i..out.len()];
+        let n = group
+            .iter()
+            .take_while(|r| r.start == typed[i].start)
+            .count();
+        let range = typed[i].start..group[..n].iter().map(|r| r.end).max().unwrap_or(0);
+        // Where the typed words after the first begin, inside the range.
+        let later: Vec<usize> = phrase
+            .get(range.clone())
+            .map(|t| {
+                crate::avanzamento::words(t)
+                    .into_iter()
+                    .skip(1)
+                    .map(|w| range.start + w.start)
+                    .collect()
+            })
+            .unwrap_or_default();
+        let shown = later.len().min(n - 1);
+        for (k, byte) in later[later.len() - shown..].iter().enumerate() {
+            out[i + n - shown + k].byte = *byte;
+        }
+        i += n;
+    }
+    out
+}
+
+/// How long a spoken word takes to say, from its phonemes: one per sound (stress and length marks
+/// are not sounds), and the pause after it when it ends a clause or a sentence, because a piece
+/// lasts until the next begins and the voice is silent at its end. Counting the sounds said, a
+/// written number or an abbreviation weighs the words it is read as. See [`PER_WORD`].
+fn spoken_weight(phonemes: &str) -> f32 {
+    let sounds = phonemes
+        .chars()
+        .filter(|c| c.is_alphabetic() && !matches!(c, 'ˈ' | 'ˌ' | 'ː'))
+        .count() as f32;
+    let pause = if phonemes.ends_with(['.', '!', '?', '…']) {
+        PAUSE_SENTENCE
+    } else if phonemes.ends_with([',', ';', ':', '—']) {
+        PAUSE_CLAUSE
+    } else {
+        0.0
+    };
+    PER_WORD + sounds + pause
+}
+
+/// Sounds each word takes on top of its own, and the pauses after a clause and after a sentence,
+/// in sounds (see [`spoken_weight`]). Fitted on 16 of 32 sentences said by two voices prepared
+/// from a recording, against Whisper's word times; on the other 16 the mean error of a lit word
+/// fell from 0.18 s to 0.13 s (one voice) and from 0.24 s to 0.14 s (the other), the largest from
+/// 1.4 s and 2.3 s to 0.6 s and 0.9 s, with the guess of the piece's duration made from them.
+const PER_WORD: f32 = 1.0;
+const PAUSE_CLAUSE: f32 = 5.0;
+const PAUSE_SENTENCE: f32 = 11.0;
+
+/// Where each spoken word of `piece` starts, as shares of its duration: where the voice says it
+/// begins (`offsets`, samples of the piece's audio, which sounds from `voice` and has `len`
+/// samples), when it said one for each word; otherwise by how long each takes to say.
+fn word_starts(piece: &Piece, offsets: &[usize], voice: usize, len: usize) -> Arc<[WordStart]> {
+    let shares: Vec<f32> =
+        if !offsets.is_empty() && offsets.len() == piece.spoken.len() && len > voice {
+            let span = (len - voice) as f32;
+            offsets
+                .iter()
+                .map(|&o| o.saturating_sub(voice) as f32 / span)
+                .collect()
+        } else {
+            let total: f32 = piece.spoken.iter().map(|w| w.weight).sum();
+            let mut at = 0.0;
+            piece
+                .spoken
+                .iter()
+                .map(|w| {
+                    let share = at / total.max(f32::EPSILON);
+                    at += w.weight;
+                    share
+                })
+                .collect()
+        };
+    let mut last = 0.0f32;
+    piece
+        .spoken
+        .iter()
+        .zip(shares)
+        .map(|(w, share)| {
+            last = last.max(share.clamp(0.0, 1.0));
+            WordStart {
+                byte: w.byte,
+                share: last,
+            }
+        })
+        .collect()
 }
 
 fn load(config: &Config, id: &VoiceId) -> Result<Box<dyn Speaker>, String> {
@@ -717,9 +871,9 @@ struct Thread {
     phrases: u64,
     /// The phrase of the last piece taken to be synthesized.
     current: Option<Arc<Phrase>>,
-    /// Measured seconds per spoken word of the voice in use, from where its voice begins, to guess
-    /// how long a streamed piece will last.
-    seconds_per_word: f32,
+    /// Measured seconds per unit of [`spoken_weight`] of the voice in use, from where its voice
+    /// begins, to guess how long a streamed piece will last.
+    seconds_per_unit: f32,
 }
 
 impl Thread {
@@ -744,7 +898,7 @@ impl Thread {
             previous_clause: String::new(),
             phrases: 0,
             current: None,
-            seconds_per_word: FIRST_GUESS_SECONDS_PER_WORD,
+            seconds_per_unit: FIRST_GUESS_SECONDS_PER_UNIT,
         }
     }
 
@@ -792,7 +946,13 @@ impl Thread {
             if self.queued() < LOOKAHEAD_SECONDS
                 && let Some(piece) = self.next_piece()
             {
+                let ticket = piece.ticket;
                 self.say(piece);
+                if self.line.ticket() != ticket {
+                    // A Stop came while the piece was synthesized: it emptied the output, but the
+                    // phrase did not end; the Stop is read first and tells what was said.
+                    continue;
+                }
             }
             if self.speaking && self.pending.is_empty() && self.queued() <= 0.0 {
                 self.speaking = false;
@@ -843,7 +1003,7 @@ impl Thread {
         let first = self.speaker.is_none();
         if self.speaker.as_ref().is_none_or(|(old, _)| *old != id) {
             // Each voice has its own pace.
-            self.seconds_per_word = FIRST_GUESS_SECONDS_PER_WORD;
+            self.seconds_per_unit = FIRST_GUESS_SECONDS_PER_UNIT;
         }
         self.speaker = Some((id.clone(), speaker));
         self.emit(Event::Voice(id));
@@ -1027,6 +1187,7 @@ impl Thread {
             a.push(' ');
             a.push_str(b);
             last_clause = b.clone();
+            piece.spoken.extend_from_slice(&next.spoken);
             piece.tokens += 1 + next.tokens;
             piece.last = next.last;
             piece.source.end = next.source.end;
@@ -1073,7 +1234,7 @@ impl Thread {
         let started = Instant::now();
         let rate = speaker.sample_rate() as f32;
         let streams = speaker.streams();
-        let words = piece_words(&piece);
+        let weight: f32 = piece.spoken.iter().map(|w| w.weight).sum();
         let seconds = |samples: usize| Duration::from_secs_f32(samples as f32 / rate);
         // Samples played, and those of silence before the voice begins.
         let (mut samples, mut lead) = (0usize, 0usize);
@@ -1084,11 +1245,12 @@ impl Thread {
             phrase: phrase.text.clone(),
             id: phrase.id,
             span: piece.source.clone(),
-            duration: Duration::from_secs_f32(words as f32 * self.seconds_per_word),
+            duration: Duration::from_secs_f32(weight * self.seconds_per_unit),
             exact: false,
             last: piece.ends_phrase,
+            words: word_starts(&piece, &[], 0, 0),
         });
-        let result = speaker.speak(&piece, &mut |audio| {
+        let result = speaker.speak(&piece, &mut |audio, offsets| {
             // The piece starts sounding with its voice, not with the silence the model puts
             // before it; a voice that hands over the whole piece at once gives its exact duration
             // there.
@@ -1100,6 +1262,7 @@ impl Thread {
                     if !streams {
                         s.duration = seconds(audio.len() - at);
                         s.exact = true;
+                        s.words = word_starts(&piece, offsets, at, audio.len());
                     }
                     (s, seconds(at))
                 }),
@@ -1132,9 +1295,9 @@ impl Thread {
             if let Some(update) = line.exact(phrase.id, piece.source.start, duration) {
                 self.emit(Event::Sounding(update));
             }
-            if words > 0 && !stopped && result.is_ok() {
-                let measured = duration.as_secs_f32() / words as f32;
-                self.seconds_per_word = 0.5 * self.seconds_per_word + 0.5 * measured;
+            if weight > 0.0 && !stopped && result.is_ok() {
+                let measured = duration.as_secs_f32() / weight;
+                self.seconds_per_unit = 0.5 * self.seconds_per_unit + 0.5 * measured;
             }
         }
         if piece.tokens > 0 {
@@ -1191,16 +1354,6 @@ impl Thread {
             self.unheard = false;
             self.emit(Event::Heard);
         }
-    }
-}
-
-/// Spoken words in a piece, to guess its duration.
-fn piece_words(piece: &Piece) -> usize {
-    match &piece.what {
-        What::Phonemes { text, .. } => kalliope_text::words(text).count(),
-        What::Chunk(c) => kalliope_text::words(&c.prompt).count(),
-        #[cfg(test)]
-        What::Test => 1,
     }
 }
 
