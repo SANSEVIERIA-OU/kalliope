@@ -1,21 +1,43 @@
 // SPDX-License-Identifier: LicenseRef-SANSEVIERIA-1.1
 //! The same speech controls, preferences and status messages on every desktop.
-use super::{Command, Engine, Event, Phase, READY, Settings, catalog, config, voices};
+use super::{Command, Engine, Event, Phase, Settings, catalog, config, voices};
 use crate::engine::{Said, Sounding, VoiceId, has_speech};
 use crate::own_voice::{
     self, CreateEvent, Creation, Import, ImportEvent, Listening, Microphone, NameCheck, Recording,
     RecordingEvent, TempFolder,
 };
 use crate::{history, settings};
+use kalliope_i18n::tr;
 use std::path::PathBuf;
 use std::sync::{Arc, Mutex};
 use std::time::Duration;
 
-const NOT_HEARD: &str = "Nessuno nella chiamata ha sentito la frase: nessuna app sta usando il microfono «Kalliope». Sceglilo come microfono nell'app della riunione.";
+/// What the line says once the voice is ready.
+pub fn ready() -> String {
+    // TRANSLATORS: The status line when the voice is ready; «Kalliope» is the name of the virtual microphone the person picks in the meeting
+    tr!("programma.sessione.pronta" => "Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono.")
+}
+
+pub fn speaking() -> String {
+    tr!("programma.sessione.parlo" => "Sto parlando…")
+}
+
+pub fn not_heard() -> String {
+    tr!("programma.sessione.nessuno-sente" => "Nessuno nella chiamata ha sentito la frase: nessuna app sta usando il microfono «Kalliope». Sceglilo come microfono nell'app della riunione.")
+}
+
 /// What the line says about nobody listening when no phrase is left to talk about (the history was emptied).
-const NOT_HEARD_NO_PHRASE: &str = "Nessuna app sta usando il microfono «Kalliope». Sceglilo come microfono nell'app della riunione.";
-const NOTHING_TO_SAY: &str =
-    "Non c'è niente da dire in questo testo: scrivi almeno una parola, poi premi Invio.";
+pub fn not_heard_no_phrase() -> String {
+    tr!("programma.sessione.nessuno-sente-senza-frase" => "Nessuna app sta usando il microfono «Kalliope». Sceglilo come microfono nell'app della riunione.")
+}
+
+pub fn nothing_to_say() -> String {
+    tr!("programma.sessione.niente-da-dire" => "Non c'è niente da dire in questo testo: scrivi almeno una parola, poi premi Invio.")
+}
+
+pub fn preparing() -> String {
+    tr!("programma.sessione.preparo" => "Preparo la voce…")
+}
 
 #[derive(Clone)]
 pub struct Status {
@@ -36,7 +58,7 @@ impl Default for Status {
     fn default() -> Self {
         Self {
             phase: Phase::Loading,
-            text: "Preparo la voce…".into(),
+            text: preparing(),
             warning: false,
             voice_index: None,
             sounding: None,
@@ -77,7 +99,7 @@ impl Status {
                 if changed && self.warning && !self.mic_problem && !self.not_heard {
                     self.warning = false;
                     if self.phase == Phase::Ready {
-                        self.text = READY.into();
+                        self.text = ready();
                     }
                 }
                 self.voice_index = index;
@@ -87,7 +109,7 @@ impl Status {
                 self.not_heard = false;
                 if !self.mic_problem {
                     self.warning = false;
-                    self.text = "Sto parlando…".into();
+                    self.text = speaking();
                 }
             }
             Event::NotHeard => {
@@ -95,26 +117,26 @@ impl Status {
                 if !self.mic_problem {
                     self.not_heard = true;
                     self.warning = true;
-                    self.text = NOT_HEARD.into();
+                    self.text = not_heard();
                 }
             }
             Event::Heard => {
                 if self.not_heard {
                     self.not_heard = false;
                     self.warning = false;
-                    self.text = READY.into();
+                    self.text = ready();
                 }
             }
             Event::Idle => {
                 self.phase = Phase::Ready;
                 if !self.warning {
-                    self.text = READY.into();
+                    self.text = ready();
                 }
             }
             Event::NothingToSay => {
                 self.warning = true;
                 self.not_heard = false;
-                self.text = NOTHING_TO_SAY.into();
+                self.text = nothing_to_say();
             }
             Event::Error(e) => {
                 self.phase = Phase::Error;
@@ -133,7 +155,7 @@ impl Status {
     /// The line's words when no phrase is left in the window: «la frase» would name something that is gone.
     pub fn text_without_phrase(&self) -> String {
         if self.not_heard {
-            NOT_HEARD_NO_PHRASE.to_string()
+            not_heard_no_phrase()
         } else {
             self.text.clone()
         }
@@ -160,17 +182,17 @@ impl Status {
                 self.mic_problem = true;
                 self.warning = true;
                 self.not_heard = false;
-                self.text =
-                    format!("La voce è pronta, ma {e}: per ora nessuno ti sentirà nelle chiamate.");
+                // a whole sentence (audio.rs): the language puts the clause where it wants it
+                self.text = e;
             }
             Ok(()) => {
                 if self.mic_problem || !self.warning {
                     self.mic_problem = false;
                     self.warning = false;
                     self.text = if self.phase == Phase::Speaking {
-                        "Sto parlando…".into()
+                        speaking()
                     } else {
-                        READY.into()
+                        ready()
                     };
                 }
             }
@@ -493,7 +515,7 @@ mod tests {
         );
         // nothing to correct when the line is not about a phrase
         state.update(Event::Heard, &[]);
-        assert_eq!(state.text_without_phrase(), READY);
+        assert_eq!(state.text_without_phrase(), ready());
     }
 
     #[test]
@@ -555,7 +577,7 @@ mod tests {
         assert!(state.text.contains("microfono assente"));
         state.update(Event::Ready { microphone: Ok(()) }, &[]);
         assert!(!state.warning);
-        assert_eq!(state.text, READY);
+        assert_eq!(state.text, ready());
     }
 
     #[test]
@@ -566,7 +588,7 @@ mod tests {
         assert!(state.warning && state.text.contains("PipeWire non risponde"));
         state.update(Event::Microphone(Ok(())), &[]);
         assert!(!state.warning);
-        assert_eq!(state.text, READY);
+        assert_eq!(state.text, ready());
     }
 
     #[test]
@@ -576,11 +598,11 @@ mod tests {
         state.update(Event::NotHeard, &[]);
         state.update(Event::Idle, &[]);
         assert!(state.warning);
-        assert_eq!(state.text, NOT_HEARD);
+        assert_eq!(state.text, not_heard());
         assert_eq!(state.phase, Phase::Ready);
         state.update(Event::Heard, &[]);
         assert!(!state.warning);
-        assert_eq!(state.text, READY);
+        assert_eq!(state.text, ready());
     }
 
     #[test]
@@ -606,7 +628,7 @@ mod tests {
         // Another voice loads: the old warning goes.
         state.update(Event::Voice(VoiceId::Own("Marco".into())), &voices);
         assert!(!state.warning);
-        assert_eq!(state.text, READY);
+        assert_eq!(state.text, ready());
     }
 
     #[test]
@@ -634,6 +656,6 @@ mod tests {
         assert_eq!(app.history, ["già detta"]);
         let last = seen.lock().unwrap().last().cloned().expect("a message");
         assert!(last.warning);
-        assert_eq!(last.text, NOTHING_TO_SAY);
+        assert_eq!(last.text, nothing_to_say());
     }
 }

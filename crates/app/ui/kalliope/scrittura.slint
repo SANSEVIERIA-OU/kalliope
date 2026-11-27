@@ -18,7 +18,7 @@ export component Scrittura inherits Rectangle {
     // the gathered arrangement (meeting mode, a low window): smaller writing, short hint, small commands
     in property <bool> compatta: false;
     // what the empty field says: it follows the state of the voice, it never promises what the voice cannot do now
-    in property <string> segnaposto: root.compatta ? @tr("Scrivi qui.") : @tr("Scrivi qui. Invio la dice.");
+    in property <string> segnaposto: root.compatta ? @tr("programma.comune.segnaposto-scrivi-qui" => "Scrivi qui.") : @tr("programma.comune.segnaposto-scrivi-invio" => "Scrivi qui. Invio la dice.");
     // for the catalog: show the focused look without focus
     in property <bool> mostra-fuoco: false;
     callback dici(string) -> bool;
@@ -82,11 +82,14 @@ export component Scrittura inherits Rectangle {
                     if (e.text == Key.UpArrow && !root.ha-testo && root.ultima != "") { root.testo = root.ultima; campo.set-selection-offsets(100000, 100000); return accept; }
                     return reject;
                 }
-                campo := TextInput {
+                campo := TextInput { transform-scale-x: Token.verso;
                     width: 100%; height: 100%;
                     single-line: false;
                     wrap: word-wrap;
                     vertical-alignment: top;
+                    // an empty field of a language from right to left has its caret on the right, and a line of Latin stays on
+                    // the right too, as in a field with dir="rtl"; Arabic typed in it runs from right to left by itself
+                    horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
                     font-size: root.corpo;
                     font-weight: Token.peso-testo;
                     color: Token.testo;
@@ -94,7 +97,7 @@ export component Scrittura inherits Rectangle {
                     selection-foreground-color: Token.testo;
                     text-cursor-width: Token.tratto;
                     text <=> root.testo;
-                    accessible-label: @tr("Che cosa vuoi dire");
+                    accessible-label: @tr("programma.scrittura.cosa-vuoi-dire" => "Che cosa vuoi dire");
                     cursor-position-changed(punto) => {
                         if (punto.y + self.font-size * Token.interlinea > -scorre.content-y + scorre.height) {
                             scorre.content-y = -(punto.y + self.font-size * Token.interlinea - scorre.height);
@@ -104,12 +107,15 @@ export component Scrittura inherits Rectangle {
                         }
                     }
                 }
-                if !root.ha-testo: Text {
+                if !root.ha-testo: Text { transform-scale-x: Token.verso;
                     x: 0; y: 0;
                     width: 100%;
                     text: root.segnaposto;
                     wrap: word-wrap;
                     vertical-alignment: top;
+                    // an empty field of a language from right to left has its caret on the right, and a line of Latin stays on
+                    // the right too, as in a field with dir="rtl"; Arabic typed in it runs from right to left by itself
+                    horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
                     font-size: root.corpo;
                     color: Token.segnaposto;
                 }
@@ -121,10 +127,10 @@ export component Scrittura inherits Rectangle {
         width: root.width - 2 * root.aria;
         height: (root.compatta ? Token.altezza-comando-piccolo : Token.altezza-comando) * Aspetto.scala;
         spacing: Token.spazio-controlli * Aspetto.scala;
-        Text {
+        Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
             // the keys are promised only when the voice can take the phrase
             visible: root.pronta && !root.compatta && root.width > Token.soglia-minima * Aspetto.scala * 0.85;
-            text: root.ultima != "" ? @tr("Invio la dice · Esc la ferma · ↑ l'ultima frase") : @tr("Invio la dice · Esc la ferma");
+            text: root.ultima != "" ? @tr("programma.scrittura.invio-dice-esc-ferma" => "Invio la dice · Esc la ferma · ↑ l'ultima frase") : @tr("programma.scrittura.invio-dice-esc-ferma-2" => "Invio la dice · Esc la ferma");
             vertical-alignment: center;
             horizontal-stretch: 1;
             overflow: elide;
@@ -132,15 +138,17 @@ export component Scrittura inherits Rectangle {
             color: Token.testo-tenue;
         }
         if root.parla: Pulsante {
-            testo: @tr("Ferma");
-            tasto: root.compatta ? "" : @tr("Esc");
+            testo: @tr("programma.comune.ferma" => "Ferma");
+            // TRANSLATORS: The name of the Esc key, as printed on a keyboard of this language
+            tasto: root.compatta ? "" : @tr("programma.scrittura.esc" => "Esc");
             tipo: Tipo.quieto;
             piccolo: root.compatta;
             premuto => { root.ferma(); campo.focus(); }
         }
         Pulsante {
-            testo: @tr("Di'");
-            tasto: @tr("Invio");
+            testo: @tr("programma.scrittura.di" => "Di'");
+            // TRANSLATORS: The name of the Enter key, as printed on a keyboard of this language
+            tasto: @tr("programma.scrittura.invio" => "Invio");
             tipo: Tipo.pieno;
             piccolo: root.compatta;
             abilitato: root.pronta && root.ha-testo;

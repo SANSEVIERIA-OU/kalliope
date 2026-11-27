@@ -11,9 +11,10 @@ pub mod wav;
 pub use analysis::{
     GOOD_SPEECH_SECONDS, MIN_SPEECH_SECONDS, Problem, Quality, Stretch, VOICE_SECONDS,
 };
-pub use decode::{Audio, MAX_SECONDS, ReadError, read_file};
+pub use decode::{Audio, MAX_SECONDS, OpenReason, ReadError, read_file};
 
 use analysis::Analysis;
+use kalliope_i18n::tr;
 use kalliope_voice::pocket::{Pocket, PocketOptions};
 use std::path::{Path, PathBuf};
 use std::sync::atomic::{AtomicBool, Ordering};
@@ -99,8 +100,13 @@ pub enum PrepareError {
 impl PrepareError {
     pub fn message(&self) -> String {
         match self {
-            PrepareError::Cancelled => "Creazione della voce annullata.".into(),
-            PrepareError::Failed(e) => format!("Non sono riuscita a creare la voce: {e}"),
+            PrepareError::Cancelled => {
+                tr!("programma.voce.creazione-annullata" => "Creazione della voce annullata.")
+            }
+            // TRANSLATORS: {causa} is the system's own message, in English: it stays as it is
+            PrepareError::Failed(e) => {
+                tr!("programma.voce.creazione-fallita" => "Non sono riuscita a creare la voce: {causa}", causa = e)
+            }
         }
     }
 }

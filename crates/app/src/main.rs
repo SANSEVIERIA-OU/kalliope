@@ -13,6 +13,7 @@ mod engine;
 mod guida;
 mod history;
 mod instance;
+mod lingua;
 mod own_voice;
 mod paths;
 mod session;
@@ -29,7 +30,6 @@ use std::rc::Rc;
 slint::include_modules!();
 
 const HISTORY: usize = 30;
-const READY: &str = "Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono.";
 
 fn version() -> String {
     // People see "0.1" for Cargo's 0.1.0.
@@ -161,7 +161,10 @@ fn bring_to_front(ui: &AppWindow, token: Option<String>) {
 }
 
 fn run_window(owner: &instance::Owner) -> Result<(), Box<dyn std::error::Error>> {
+    // the language first: the session writes its first status line as it opens
+    let language = lingua::choose();
     let ui = AppWindow::new()?;
+    lingua::apply(&ui, language);
     let _ = slint::set_xdg_app_id("io.github.sansevieria_ou.kalliope");
     let weak = ui.as_weak();
     owner.listen(move |token| {

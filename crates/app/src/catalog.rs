@@ -43,13 +43,14 @@ pub fn missing_voice() -> Option<String> {
             dir.display(),
             missing.join(", ")
         );
-        MISSING_VOICE.to_string()
+        missing_voice_text()
     })
 }
 
 /// What the person is told when the files of the voice are missing: no paths, no file names.
-pub const MISSING_VOICE: &str =
-    "Non trovo i file della voce, e senza non posso parlare. Reinstalla Kalliope dal pacchetto.";
+pub fn missing_voice_text() -> String {
+    kalliope_i18n::tr!("programma.voce.file-mancanti" => "Non trovo i file della voce, e senza non posso parlare. Reinstalla Kalliope dal pacchetto.")
+}
 
 /// The Pocket TTS model that speaks with the voices prepared from a recording:
 /// `KALLIOPE_POCKET_DIR`, or the copy that comes with Kalliope.
@@ -97,11 +98,11 @@ mod tests {
     #[test]
     fn the_missing_voice_is_said_plainly_and_the_files_go_to_the_log() {
         assert!(
-            !MISSING_VOICE.contains('/')
-                && !MISSING_VOICE.contains(".onnx")
-                && !MISSING_VOICE.contains(".json")
+            !missing_voice_text().contains('/')
+                && !missing_voice_text().contains(".onnx")
+                && !missing_voice_text().contains(".json")
         );
-        assert!(MISSING_VOICE.contains("Reinstalla Kalliope"));
+        assert!(missing_voice_text().contains("Reinstalla Kalliope"));
     }
 
     #[test]

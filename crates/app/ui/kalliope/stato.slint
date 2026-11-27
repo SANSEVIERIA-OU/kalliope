@@ -39,19 +39,19 @@ export component RigaStato inherits Rectangle {
         || root.situazione == Situazione.problema-voce || root.situazione == Situazione.avviso;
     property <bool> bene: root.notizia != "" && !root.male;
     property <string> titolo:
-        root.bene ? @tr("Voce nuova")
-        : root.situazione == Situazione.preparazione ? @tr("Preparo la voce")
-        : root.situazione == Situazione.pronta ? @tr("Pronta")
-        : root.situazione == Situazione.parla ? @tr("Sto parlando")
-        : root.situazione == Situazione.nessuno-ascolta ? @tr("Nessuno ti sente")
-        : root.situazione == Situazione.senza-microfono ? @tr("Manca il microfono")
-        : root.situazione == Situazione.problema-voce ? @tr("La voce non parte")
-        : @tr("Attenzione");
+        root.bene ? @tr("programma.stato.voce-nuova" => "Voce nuova")
+        : root.situazione == Situazione.preparazione ? @tr("programma.stato.preparo-la-voce" => "Preparo la voce")
+        : root.situazione == Situazione.pronta ? @tr("programma.stato.pronta" => "Pronta")
+        : root.situazione == Situazione.parla ? @tr("programma.stato.sto-parlando" => "Sto parlando")
+        : root.situazione == Situazione.nessuno-ascolta ? @tr("programma.stato.nessuno-ti-sente" => "Nessuno ti sente")
+        : root.situazione == Situazione.senza-microfono ? @tr("programma.stato.manca-microfono" => "Manca il microfono")
+        : root.situazione == Situazione.problema-voce ? @tr("programma.stato.voce-non-parte" => "La voce non parte")
+        : @tr("programma.stato.attenzione" => "Attenzione");
     property <string> detto:
         root.bene ? root.notizia
-        : root.situazione == Situazione.preparazione ? @tr("Fra poco puoi scrivere e farti sentire.")
-        : root.situazione == Situazione.pronta ? @tr("Nella riunione scegli «Kalliope» come microfono.")
-        : root.situazione == Situazione.parla ? @tr("Esc la ferma.")
+        : root.situazione == Situazione.preparazione ? @tr("programma.stato.fra-poco-puoi-scrivere" => "Fra poco puoi scrivere e farti sentire.")
+        : root.situazione == Situazione.pronta ? @tr("programma.stato.nella-riunione-scegli-kalliope" => "Nella riunione scegli «Kalliope» come microfono.")
+        : root.situazione == Situazione.parla ? @tr("programma.stato.esc-ferma" => "Esc la ferma.")
         : root.spiegazione;
     accessible-role: text;
     accessible-label: root.titolo + ". " + root.detto;
@@ -86,14 +86,14 @@ export component RigaStato inherits Rectangle {
         VerticalLayout {
             alignment: center;
             horizontal-stretch: root.impilata || root.compatta ? 1 : 0;
-            Text {
+            Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
                 text: root.titolo;
                 vertical-alignment: center;
                 font-size: Token.corpo-comando * Aspetto.scala;
                 font-weight: Token.peso-forte;
                 color: root.male ? Token.attenzione : root.bene ? Token.azione : Token.testo;
             }
-            if root.impilata: Text {
+            if root.impilata: Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
                 text: root.detto;
                 wrap: word-wrap;
                 font-size: Token.corpo-stato * Aspetto.scala;
@@ -101,7 +101,7 @@ export component RigaStato inherits Rectangle {
             }
         }
         // gathered: the state in a word (the whole sentence stays in the accessible label and in the full window)
-        if !root.impilata && !root.compatta: Text {
+        if !root.impilata && !root.compatta: Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
             text: root.detto;
             vertical-alignment: center;
             horizontal-stretch: 1;

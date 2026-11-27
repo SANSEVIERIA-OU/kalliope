@@ -11,6 +11,7 @@
 //! takes the microphone away before the speaking thread finishes its piece.
 
 use crate::audio::{self, MicError, Output};
+use kalliope_i18n::tr;
 use kalliope_voice::pocket::{Chunk, Pocket, PocketOptions, VoiceState};
 use kalliope_voice::{Voice, VoiceOptions};
 use std::collections::VecDeque;
@@ -89,7 +90,8 @@ impl VoiceId {
         match self {
             VoiceId::Klein(name) => name.clone(),
             VoiceId::Own(name) if KLEIN_VOICES.iter().any(|v| v.eq_ignore_ascii_case(name)) => {
-                format!("{name} (voce propria)")
+                // TRANSLATORS: In the voice menu: a voice made from a recording that has the same name as one of Kalliope's («Giulia (voce propria)»); {nome} is that name
+                tr!("programma.voci.voce-propria" => "{nome} (voce propria)", nome = name)
             }
             VoiceId::Own(name) => name.clone(),
         }
@@ -819,10 +821,11 @@ impl Thread {
                 match (self.load)(&self.config, &VoiceId::default()) {
                     Ok(s) => {
                         // The details are for developers, on standard error.
-                        let warning = format!(
-                            "La voce «{}» non si apre: parlo con {}. Puoi sceglierne un'altra dal menu «Voce».",
-                            wanted.label(),
-                            VoiceId::default().label()
+                        // TRANSLATORS: {voce} is the voice that failed, {altra} the one that speaks instead
+                        let warning = tr!(
+                            "programma.motore.voce-non-si-apre-parlo-con" => "La voce «{voce}» non si apre: parlo con {altra}. Puoi sceglierne un'altra dal menu «Voce».",
+                            voce = wanted.label(),
+                            altra = VoiceId::default().label()
                         );
                         (VoiceId::default(), s, Some(warning))
                     }
@@ -910,7 +913,8 @@ impl Thread {
             Command::Monitor(on) => {
                 self.monitor = on;
                 if let Some(e) = self.line.with(|o| o.set_monitor(on).err()) {
-                    self.emit(Event::Warning(format!("Attenzione: {e}.")));
+                    // the message is a whole sentence (audio.rs)
+                    self.emit(Event::Warning(e));
                 }
             }
             Command::Quit => {}
@@ -988,10 +992,10 @@ impl Thread {
                 eprintln!("kalliope: voice {id:?}: {e}");
                 match self.speaker.as_ref().map(|(current, _)| current.clone()) {
                     Some(current) => {
-                        self.emit(Event::Warning(format!(
-                            "La voce «{}» non si apre: continuo con «{}».",
-                            id.label(),
-                            current.label()
+                        self.emit(Event::Warning(tr!(
+                            "programma.motore.voce-non-si-apre-continuo" => "La voce «{voce}» non si apre: continuo con «{altra}».",
+                            voce = id.label(),
+                            altra = current.label()
                         )));
                         self.emit(Event::Voice(current));
                     }
@@ -1142,8 +1146,10 @@ impl Thread {
             self.seconds_per_token = 0.5 * self.seconds_per_token + 0.5 * measured;
         }
         if let Err(e) = result {
-            self.emit(Event::Warning(format!(
-                "Non sono riuscita a dire questa frase: {e}"
+            // TRANSLATORS: {causa} is the system's own message, in English: it stays as it is
+            self.emit(Event::Warning(tr!(
+                "programma.motore.frase-non-detta" => "Non sono riuscita a dire questa frase: {causa}",
+                causa = e
             )));
         }
     }
@@ -1205,7 +1211,8 @@ fn piece_words(piece: &Piece) -> usize {
 }
 
 fn cannot_prepare(e: &str) -> String {
-    format!("Non riesco a preparare la voce: {e}")
+    // TRANSLATORS: {causa} is the system's own message, in English: it stays as it is
+    tr!("programma.motore.non-prepara" => "Non riesco a preparare la voce: {causa}", causa = e)
 }
 
 #[cfg(test)]

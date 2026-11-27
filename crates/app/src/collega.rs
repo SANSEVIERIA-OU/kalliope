@@ -9,6 +9,7 @@ use crate::crea::{self, Flow, StretchView, View};
 use crate::engine::{Sounding, VoiceId};
 use crate::session::{Session, Status};
 use crate::{AppWindow, Creazione, Phase, Schermata, Tratto, guida, settings, vista};
+use kalliope_i18n::tr;
 use slint::{ComponentHandle, ModelRc, SharedString, Timer, TimerMode, VecModel, Weak};
 use std::cell::RefCell;
 use std::path::PathBuf;
@@ -590,9 +591,16 @@ fn choose_file(ui: &AppWindow) {
     let handle = ui.window().window_handle();
     let extensions = extensions();
     let dialog = rfd::FileDialog::new()
-        .set_title("Scegli una registrazione")
-        .add_filter("Audio e video", &extensions)
-        .add_filter("Tutti i file", &["*"])
+        // TRANSLATORS: The title of the system's window for choosing an audio or video file
+        .set_title(tr!("programma.scelta.titolo" => "Scegli una registrazione"))
+        .add_filter(
+            tr!("programma.scelta.audio-e-video" => "Audio e video"),
+            &extensions,
+        )
+        .add_filter(
+            tr!("programma.scelta.tutti-i-file" => "Tutti i file"),
+            &["*"],
+        )
         .set_parent(&handle);
     let weak = ui.as_weak();
     std::thread::spawn(move || {

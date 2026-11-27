@@ -9,6 +9,8 @@ description = "The recording a personal voice is made from: reading audio files,
 
 [dependencies]
 kalliope-voice.workspace = true
+# the texts the window shows come from the catalogue; the terminal never chooses a language, so it keeps the Italian text
+kalliope-i18n.workspace = true
 # Audio files people have (MPL-2.0): WAV, FLAC, MP3, Ogg Vorbis, M4A/AAC-LC, and the sound of MP4, MKV and WebM videos. Opus,
 # the format of WhatsApp and Telegram voice messages, is demuxed here and decoded by libopus, loaded at run time (opus.rs).
 symphonia = { version = "0.6.1", default-features = false, features = [

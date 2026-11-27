@@ -2,6 +2,7 @@
 //! Where synthesized speech goes: the virtual microphone, or, where none exists yet, a silent
 //! stand-in that keeps time so the app behaves the same.
 
+use kalliope_i18n::tr;
 use std::sync::Mutex;
 use std::time::{Duration, Instant};
 
@@ -76,7 +77,8 @@ impl Output for kalliope_mic::VirtualMic {
     fn set_monitor(&self, on: bool) -> Result<(), String> {
         kalliope_mic::VirtualMic::set_monitor(self, on).map_err(|e| {
             eprintln!("kalliope: monitor: {e}");
-            "non riesco a farti sentire la voce dalle casse".to_string()
+            // TRANSLATORS: A warning: the person cannot hear their own voice from the loudspeakers (the option «Senti anche tu la voce»)
+            tr!("programma.audio.casse" => "Attenzione: non riesco a farti sentire la voce dalle casse.")
         })
     }
     fn in_use(&self) -> bool {
@@ -90,7 +92,7 @@ impl Output for kalliope_mic::VirtualMic {
 /// Why the virtual microphone is missing.
 #[derive(Clone, Debug, PartialEq)]
 pub struct MicError {
-    /// In Italian, to complete "La voce è pronta, ma …".
+    /// A whole sentence for the status line (the first words say the voice is ready).
     pub reason: String,
     /// For developers, on standard error.
     pub detail: String,
@@ -102,7 +104,7 @@ impl MicError {
     /// PipeWire went away while Kalliope was using it (an upgrade, a restart of the session audio).
     pub fn lost() -> MicError {
         MicError {
-            reason: explain(kalliope_mic::ErrorKind::NotRunning).into(),
+            reason: explain(kalliope_mic::ErrorKind::NotRunning),
             detail: "PipeWire went away".into(),
             retry: true,
         }
@@ -116,7 +118,7 @@ pub fn open(rate: u32) -> Result<Box<dyn Output>, MicError> {
         .map_err(|e| {
             MicError {
                 detail: e.to_string(),
-                reason: explain(e.kind()).to_string(),
+                reason: explain(e.kind()),
                 // A missing or too old PipeWire, or a system without the microphone, does not
                 // change while Kalliope runs.
                 retry: e.kind() != kalliope_mic::ErrorKind::Unavailable,
@@ -124,17 +126,25 @@ pub fn open(rate: u32) -> Result<Box<dyn Output>, MicError> {
         })
 }
 
-fn explain(kind: kalliope_mic::ErrorKind) -> &'static str {
+/// The sentence for a system with no virtual microphone (the catalog and the demonstration show it).
+pub fn microphone_missing() -> String {
+    explain(kalliope_mic::ErrorKind::Unavailable)
+}
+
+fn explain(kind: kalliope_mic::ErrorKind) -> String {
     use kalliope_mic::ErrorKind;
     match kind {
-        ErrorKind::Unavailable if cfg!(target_os = "linux") => {
-            "il microfono «Kalliope» ha bisogno di PipeWire, che su questo computer manca o è troppo vecchio \
-             (pacchetti pipewire e pipewire-pulse)"
-        }
-        ErrorKind::Unavailable => "su questo sistema il microfono «Kalliope» non c'è ancora",
-        ErrorKind::NotRunning => {
-            "PipeWire, il servizio audio del computer, non risponde (riprovo da sola appena torna)"
-        }
-        _ => "il microfono «Kalliope» non si è aperto",
+        ErrorKind::Unavailable if cfg!(target_os = "linux") => tr!(
+            "programma.audio.serve-pipewire" => "La voce è pronta, ma il microfono «Kalliope» ha bisogno di PipeWire, che su questo computer manca o è troppo vecchio (pacchetti pipewire e pipewire-pulse): per ora nessuno ti sentirà nelle chiamate."
+        ),
+        ErrorKind::Unavailable => tr!(
+            "programma.audio.sistema-non-supportato" => "La voce è pronta, ma su questo sistema il microfono «Kalliope» non c'è ancora: per ora nessuno ti sentirà nelle chiamate."
+        ),
+        ErrorKind::NotRunning => tr!(
+            "programma.audio.pipewire-non-risponde" => "La voce è pronta, ma PipeWire, il servizio audio del computer, non risponde (riprovo da sola appena torna): per ora nessuno ti sentirà nelle chiamate."
+        ),
+        _ => tr!(
+            "programma.audio.microfono-non-aperto" => "La voce è pronta, ma il microfono «Kalliope» non si è aperto: per ora nessuno ti sentirà nelle chiamate."
+        ),
     }
 }

@@ -68,10 +68,10 @@ component Credito inherits VerticalLayout {
     spacing: Token.spazio-minimo * Aspetto.scala;
     HorizontalLayout {
         spacing: Token.spazio-controlli * Aspetto.scala;
-        Text { text: root.nome; font-size: Token.corpo-stato * Aspetto.scala; font-weight: Token.peso-forte; color: Token.testo; wrap: word-wrap; }
-        Text { text: root.licenza; font-size: Token.corpo-nota * Aspetto.scala; color: Token.azione; vertical-alignment: center; horizontal-stretch: 1; }
+        Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: root.nome; font-size: Token.corpo-stato * Aspetto.scala; font-weight: Token.peso-forte; color: Token.testo; wrap: word-wrap; }
+        Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: root.licenza; font-size: Token.corpo-nota * Aspetto.scala; color: Token.azione; vertical-alignment: center; horizontal-stretch: 1; }
     }
-    Text { text: root.ruolo; font-size: Token.corpo-nota * Aspetto.scala; color: Token.testo-tenue; wrap: word-wrap; }
+    Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: root.ruolo; font-size: Token.corpo-nota * Aspetto.scala; color: Token.testo-tenue; wrap: word-wrap; }
 }
 
 // What Kalliope is, what it keeps to itself, where the website is, and what it is made with. The Slint widget is here by the
@@ -94,7 +94,7 @@ export component Informazioni inherits Modale {
     VerticalLayout {
         padding: Token.spazio-largo * Aspetto.scala;
         spacing: Token.spazio-controlli * Aspetto.scala;
-        Text { text: "Kalliope " + root.versione; color: Token.testo; font-size: Token.corpo-titolo * Aspetto.scala; font-weight: Token.peso-titolo; }
+        Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: "Kalliope " + root.versione; color: Token.testo; font-size: Token.corpo-titolo * Aspetto.scala; font-weight: Token.peso-titolo; }
         scorre := Flickable {
             vertical-stretch: 1;
             min-height: 0;
@@ -104,8 +104,8 @@ export component Informazioni inherits Modale {
             testo := VerticalLayout {
                 width: scorre.width;
                 spacing: Token.spazio-medio * Aspetto.scala;
-                Text {
-                    text: @tr("Scrivi e fatti sentire nelle videochiamate. La voce viene creata su questo computer: nessun testo lascia la tua macchina.");
+                Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
+                    text: @tr("programma.modali.scrivi-fatti-sentire-nelle" => "Scrivi e fatti sentire nelle videochiamate. La voce viene creata su questo computer: nessun testo lascia la tua macchina.");
                     wrap: word-wrap; color: Token.testo; font-size: Token.corpo-stato * Aspetto.scala;
                 }
                 HorizontalLayout {
@@ -113,26 +113,26 @@ export component Informazioni inherits Modale {
                     alignment: start;
                     sito := Pulsante {
                         init => { self.focus(); }
-                        testo: @tr("Il sito di Kalliope");
+                        testo: @tr("programma.modali.sito-kalliope" => "Il sito di Kalliope");
                         piccolo: true;
                         tipo: Tipo.quieto;
-                        accessible-label: @tr("Apri il sito di Kalliope nel browser");
+                        accessible-label: @tr("programma.modali.apri-sito-kalliope-nel" => "Apri il sito di Kalliope nel browser");
                         premuto => { root.apri-sito(); }
                     }
                 }
-                Text { text: @tr("Che cosa c'è dentro"); color: Token.testo-tenue; font-size: Token.corpo-nota * Aspetto.scala; }
-                Credito { nome: "Klein-TTS-X1.5-Pro"; licenza: "Apache-2.0"; ruolo: @tr("Le voci Giulia e Marco."); }
-                Credito { nome: "ONNX Runtime"; licenza: "MIT"; ruolo: @tr("Fa girare le voci su questo computer."); }
-                Credito { nome: "Wiktionary"; licenza: "CC BY-SA 4.0"; ruolo: @tr("I dati di pronuncia."); }
+                Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: @tr("programma.modali.cosa-c-dentro" => "Che cosa c'è dentro"); color: Token.testo-tenue; font-size: Token.corpo-nota * Aspetto.scala; }
+                Credito { nome: "Klein-TTS-X1.5-Pro"; licenza: "Apache-2.0"; ruolo: @tr("programma.modali.voci-giulia-marco" => "Le voci Giulia e Marco."); }
+                Credito { nome: "ONNX Runtime"; licenza: "MIT"; ruolo: @tr("programma.modali.fa-girare-voci-su" => "Fa girare le voci su questo computer."); }
+                Credito { nome: "Wiktionary"; licenza: "CC BY-SA 4.0"; ruolo: @tr("programma.modali.dati-pronuncia" => "I dati di pronuncia."); }
                 Credito {
                     nome: "Pocket TTS · Kyutai"; licenza: "CC BY 4.0";
-                    ruolo: @tr("La voce creata da una registrazione (kyutai.org). Convertito in ONNX e quantizzato da Kalliope. Fonte, modifiche e licenza nei file share/doc/kalliope/pocket-tts/NOTICE.txt e LICENSE del pacchetto.");
+                    ruolo: @tr("programma.modali.voce-creata-registrazione-kyutai" => "La voce creata da una registrazione (kyutai.org). Convertito in ONNX e quantizzato da Kalliope. Fonte, modifiche e licenza nei file share/doc/kalliope/pocket-tts/NOTICE.txt e LICENSE del pacchetto.");
                 }
-                Credito { nome: "Skia"; licenza: "BSD-3-Clause"; ruolo: @tr("Disegna questa finestra."); }
-                Credito { nome: "symphonia"; licenza: "MPL-2.0"; ruolo: @tr("Legge i file audio e video."); }
-                Credito { nome: "libopus"; licenza: "BSD-3-Clause"; ruolo: @tr("Legge i messaggi vocali (.opus)."); }
-                Text {
-                    text: @tr("© SANSEVIERIA OÜ. Licenza SANSEVIERIA 1.1.");
+                Credito { nome: "Skia"; licenza: "BSD-3-Clause"; ruolo: @tr("programma.modali.disegna-questa-finestra" => "Disegna questa finestra."); }
+                Credito { nome: "symphonia"; licenza: "MPL-2.0"; ruolo: @tr("programma.modali.legge-file-audio-video" => "Legge i file audio e video."); }
+                Credito { nome: "libopus"; licenza: "BSD-3-Clause"; ruolo: @tr("programma.modali.legge-messaggi-vocali-opus" => "Legge i messaggi vocali (.opus)."); }
+                Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
+                    text: @tr("programma.modali.sansevieria-ou-licenza-sansevieria" => "© SANSEVIERIA OÜ. Licenza SANSEVIERIA 1.1.");
                     wrap: word-wrap; color: Token.testo-tenue; font-size: Token.corpo-nota * Aspetto.scala;
                 }
                 AboutSlint { preferred-height: self.min-height; }
@@ -140,7 +140,7 @@ export component Informazioni inherits Modale {
         }
         HorizontalLayout {
             alignment: end;
-            chiudi-comando := Pulsante { testo: @tr("Chiudi"); tipo: Tipo.pieno; premuto => { root.chiusa(); } }
+            chiudi-comando := Pulsante { testo: @tr("programma.modali.chiudi" => "Chiudi"); tipo: Tipo.pieno; premuto => { root.chiusa(); } }
         }
     }
 }
@@ -162,12 +162,12 @@ export component Conferma inherits Modale {
     corpo := VerticalLayout {
         padding: Token.spazio-largo * Aspetto.scala;
         spacing: Token.spazio-medio * Aspetto.scala;
-        Text { text: root.titolo; color: Token.testo; font-size: Token.corpo-bolla * Aspetto.scala; font-weight: Token.peso-titolo; wrap: word-wrap; }
-        Text { text: root.testo; color: Token.testo; font-size: Token.corpo-stato * Aspetto.scala; wrap: word-wrap; }
+        Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: root.titolo; color: Token.testo; font-size: Token.corpo-bolla * Aspetto.scala; font-weight: Token.peso-titolo; wrap: word-wrap; }
+        Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: root.testo; color: Token.testo; font-size: Token.corpo-stato * Aspetto.scala; wrap: word-wrap; }
         HorizontalLayout {
             alignment: end;
             spacing: Token.spazio-controlli * Aspetto.scala;
-            annulla := Pulsante { init => { self.focus(); } testo: @tr("Annulla"); tipo: Tipo.pieno; premuto => { root.annullato(); } }
+            annulla := Pulsante { init => { self.focus(); } testo: @tr("programma.comune.annulla" => "Annulla"); tipo: Tipo.pieno; premuto => { root.annullato(); } }
             conferma := Pulsante { testo: root.conferma-testo; tipo: Tipo.quieto; premuto => { root.confermato(); } }
         }
     }

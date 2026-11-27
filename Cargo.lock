@@ -1642,6 +1642,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "i-slint-backend-testing"
+version = "1.19.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "930e2c0fc1722c5e14b5dca9ac3e1f11e7cf60f5f8ba50bc208b0671cebcdbe2"
+dependencies = [
+ "cfg_aliases",
+ "i-slint-common",
+ "i-slint-core",
+ "vtable",
+]
+
+[[package]]
 name = "i-slint-backend-winit"
 version = "1.19.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2247,6 +2259,8 @@ dependencies = [
 name = "kalliope-app"
 version = "0.3.0"
 dependencies = [
+ "i-slint-backend-testing",
+ "kalliope-i18n",
  "kalliope-mic",
  "kalliope-phonemes",
  "kalliope-sample",
@@ -2269,6 +2283,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "kalliope-i18n"
+version = "0.3.0"
+dependencies = [
+ "i-slint-compiler",
+ "sys-locale",
+]
+
+[[package]]
 name = "kalliope-mic"
 version = "0.3.0"
 
@@ -2280,6 +2302,7 @@ version = "0.3.0"
 name = "kalliope-sample"
 version = "0.3.0"
 dependencies = [
+ "kalliope-i18n",
  "kalliope-voice",
  "symphonia",
 ]

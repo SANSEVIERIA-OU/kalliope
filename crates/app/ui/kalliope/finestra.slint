@@ -26,6 +26,7 @@ export component Finestra inherits Rectangle {
     // the number of words of the last phrase (history[0]), and its beginning up to a number of words
     in property <int> parole;
     pure callback prefisso(string, int) -> string;
+    pure callback da-destra(string) -> bool;
     in property <[string]> voices: ["Giulia", "Marco"];
     in-out property <int> voice-index: 0;
     in-out property <bool> monitor: true;
@@ -143,6 +144,7 @@ export component Finestra inherits Rectangle {
         x: 0; y: 0;
         visible: false;
         testo: root.history[1];
+        da-destra: root.da-destra(root.history[1]);
         larghezza-massima: min(root.width - 2 * Token.spazio-largo * Aspetto.scala, Token.bolla-larghezza * Aspetto.scala);
         init => { root.alto-ultima = self.height; }
         changed height => { root.alto-ultima = self.height; }
@@ -180,13 +182,13 @@ export component Finestra inherits Rectangle {
                 padding-left: Token.spazio-largo * Aspetto.scala * 0.75;
                 padding-right: Token.spazio-stretto * Aspetto.scala;
                 spacing: (root.minima ? Token.spazio-stretto : Token.spazio-controlli) * Aspetto.scala;
-                Image {
+                Image { transform-scale-x: Token.verso;
                     source: @image-url("../../../../design-system/marchio/libero.svg");
                     width: Token.marchio * Aspetto.scala; height: self.width;
                     y: (parent.height - self.height) / 2;
                     accessible-role: none;
                 }
-                if !root.stretta: Text {
+                if !root.stretta: Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
                     text: "Kalliope";
                     vertical-alignment: center;
                     font-size: Token.corpo-marchio * Aspetto.scala;
@@ -197,7 +199,8 @@ export component Finestra inherits Rectangle {
                 voce := Rectangle {
                     property <bool> sopra: voce-tocco.has-hover || voce-chiave.has-focus;
                     accessible-role: combobox;
-                    accessible-label: @tr("Voce: {}", root.voices[root.voice-index]);
+                    // TRANSLATORS: Read aloud by a screen reader for the voice menu: {} is the name of the voice in use
+                    accessible-label: @tr("programma.finestra.voce" => "Voce: {}", root.voices[root.voice-index]);
                     accessible-action-default => { root.apri-voce(); }
                     y: (parent.height - self.height) / 2;
                     height: Token.altezza-comando-piccolo * Aspetto.scala;
@@ -212,7 +215,7 @@ export component Finestra inherits Rectangle {
                         width: parent.width - 2 * self.x;
                         spacing: Token.spazio-stretto * Aspetto.scala;
                         Punto { y: (parent.height - self.height) / 2; colore: root.tinte[root.voice-index]; lato: Token.punto * 1.4 * Aspetto.scala; }
-                        Text { text: root.voices[root.voice-index]; vertical-alignment: center; overflow: elide; horizontal-stretch: 1; color: Token.testo; font-size: Token.corpo-stato * Aspetto.scala; font-weight: Token.peso-medio; }
+                        Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea; text: root.voices[root.voice-index]; vertical-alignment: center; overflow: elide; horizontal-stretch: 1; color: Token.testo; font-size: Token.corpo-stato * Aspetto.scala; font-weight: Token.peso-medio; }
                         Freccia { y: (parent.height - self.height) / 2; }
                     }
                     voce-chiave := FocusScope {
@@ -225,26 +228,29 @@ export component Finestra inherits Rectangle {
                 }
                 if !root.minima: Pulsante {
                     y: (parent.height - self.height) / 2;
-                    testo: @tr("Riunione"); piccolo: true; tipo: Tipo.quieto;
-                    accessible-label: @tr("Modalità riunione: solo scrittura, stato e Ferma");
+                    testo: @tr("programma.finestra.riunione" => "Riunione"); piccolo: true; tipo: Tipo.quieto;
+                    // TRANSLATORS: Read aloud by a screen reader for the «Riunione» button: the meeting mode shows the writing, the state and Stop
+                    accessible-label: @tr("programma.finestra.modalita-riunione-solo-scrittura" => "Modalità riunione: solo scrittura, stato e Ferma");
                     premuto => { root.compatta = true; root.compatta-cambiata(true); scrittura.focus(); }
                 }
                 altro := Pulsante {
                     y: (parent.height - self.height) / 2;
-                    testo: @tr("Altro"); piccolo: true; tipo: Tipo.quieto;
-                    accessible-label: @tr("Altro: crea la tua voce, informazioni");
+                    testo: @tr("programma.finestra.altro" => "Altro"); piccolo: true; tipo: Tipo.quieto;
+                    // TRANSLATORS: Read aloud by a screen reader for the «Altro» menu: say what it holds
+                    accessible-label: @tr("programma.finestra.altro-crea-tua-voce" => "Altro: crea la tua voce, informazioni");
                     premuto => { if (root.menu-altro-aperto) { root.chiudi-altro(); } else { root.apri-altro(); } }
                 }
                 testo := HorizontalLayout {
                     spacing: 0;
                     Pulsante {
                         y: (parent.height - self.height) / 2;
-                        testo: "A−"; tipo: Tipo.nudo; piccolo: true;
+                        // TRANSLATORS: The button that makes the text smaller: a capital A with a minus sign
+                        testo: @tr("programma.finestra.a-meno" => "A−"); tipo: Tipo.nudo; piccolo: true;
                         abilitato: Aspetto.scala > 1;
-                        accessible-label: @tr("Testo più piccolo");
+                        accessible-label: @tr("programma.finestra.testo-piu-piccolo" => "Testo più piccolo");
                         premuto => { root.piu-piccolo(); }
                     }
-                    Text {
+                    Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
                         text: round(Aspetto.scala * 100) + "%";
                         vertical-alignment: center;
                         color: Token.testo-tenue;
@@ -252,9 +258,10 @@ export component Finestra inherits Rectangle {
                     }
                     Pulsante {
                         y: (parent.height - self.height) / 2;
-                        testo: "A+"; tipo: Tipo.nudo; piccolo: true;
+                        // TRANSLATORS: The button that makes the text larger: a capital A with a plus sign
+                        testo: @tr("programma.finestra.a-piu" => "A+"); tipo: Tipo.nudo; piccolo: true;
                         abilitato: Aspetto.scala < Token.scala-massima;
-                        accessible-label: @tr("Testo più grande");
+                        accessible-label: @tr("programma.finestra.testo-piu-grande" => "Testo più grande");
                         premuto => { root.piu-grande(); }
                     }
                 }
@@ -305,10 +312,10 @@ export component Finestra inherits Rectangle {
                                 tratto: Token.tratto * 0.67;
                                 colore: Token.bordo-comando;
                             }
-                            vuota := Text {
+                            vuota := Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
                                 x: Token.spazio-largo * Aspetto.scala * 0.85;
                                 width: parent.width - 2 * self.x;
-                                text: @tr("Qui la voce dirà le tue frasi, una parola dopo l'altra. Restano qui: un clic, o Tab e Invio, le dice di nuovo.");
+                                text: @tr("programma.finestra.qui-voce-dira-tue" => "Qui la voce dirà le tue frasi, una parola dopo l'altra. Restano qui: un clic, o Tab e Invio, le dice di nuovo.");
                                 wrap: word-wrap;
                                 color: Token.testo-tenue;
                                 font-size: Token.corpo-detta * Aspetto.scala;
@@ -319,6 +326,7 @@ export component Finestra inherits Rectangle {
                         alignment: start;
                         FraseDetta {
                             testo: root.history[root.history.length - 1 - i];
+                            da-destra: root.da-destra(self.testo);
                             abilitata: root.pronta;
                             larghezza-massima: min(root.width - 2 * Token.spazio-largo * Aspetto.scala, Token.bolla-larghezza * Aspetto.scala);
                             ripeti => { root.di(self.testo); scrittura.focus(); }
@@ -355,6 +363,7 @@ export component Finestra inherits Rectangle {
                     y: parent.height - self.height;
                     accessible-role: none;
                     testo: root.vecchia;
+                    da-destra: root.da-destra(root.vecchia);
                     detto: root.vecchia;
                     dicendo: root.vecchia;
                     riga-sola: root.una-riga;
@@ -370,6 +379,7 @@ export component Finestra inherits Rectangle {
                     x: 0;
                     y: parent.height - self.height + (1 - root.nascita) * Token.spostamento-entrata * 2;
                     testo: root.history[0];
+                    da-destra: root.da-destra(root.history[0]);
                     detto: root.prefisso(root.history[0], root.dette);
                     dicendo: root.prefisso(root.history[0], root.dette + 1);
                     sfumatura: root.sfumatura;
@@ -395,14 +405,14 @@ export component Finestra inherits Rectangle {
                 if root.male: Pulsante {
                     y: (parent.height - self.height) / 2;
                     // gathered, the word is short, so the row keeps «Intera» in view (a 400 px window)
-                    testo: root.raccolta ? @tr("Aiuto") : @tr("Come si risolve"); piccolo: true; tipo: Tipo.quieto;
-                    accessible-label: @tr("Come si risolve");
+                    testo: root.raccolta ? @tr("programma.finestra.aiuto" => "Aiuto") : @tr("programma.comune.come-si-risolve" => "Come si risolve"); piccolo: true; tipo: Tipo.quieto;
+                    accessible-label: @tr("programma.comune.come-si-risolve" => "Come si risolve");
                     premuto => { root.apri-guida(root.situazione); }
                 }
                 if root.compatta: Pulsante {
                     y: (parent.height - self.height) / 2;
-                    testo: root.minima ? @tr("Intera") : @tr("Finestra intera"); piccolo: true; tipo: Tipo.nudo; espandi: true;
-                    accessible-label: @tr("Finestra intera");
+                    testo: root.minima ? @tr("programma.finestra.intera" => "Intera") : @tr("programma.finestra.finestra-intera" => "Finestra intera"); piccolo: true; tipo: Tipo.nudo; espandi: true;
+                    accessible-label: @tr("programma.finestra.finestra-intera" => "Finestra intera");
                     premuto => { root.compatta = false; root.compatta-cambiata(false); scrittura.focus(); }
                 }
             }
@@ -411,15 +421,16 @@ export component Finestra inherits Rectangle {
             if root.compatta && root.suggerimento-sopra && root.senza-primo-piano && root.height >= Token.compatta-altezza * Aspetto.scala: HorizontalLayout {
                 spacing: Token.spazio-stretto * Aspetto.scala;
                 padding-left: Token.spazio-stretto * Aspetto.scala;
-                Text {
-                    text: @tr("Per tenerla sopra la riunione: Alt+Spazio, poi «Sempre in primo piano».");
+                Text { transform-scale-x: Token.verso; horizontal-alignment: Aspetto.inizio; line-height-factor: Aspetto.interlinea;
+                    // TRANSLATORS: A hint on Wayland: Alt+Space opens the window menu, where «Sempre in primo piano» («Always on top») is a command of the person's desktop: keep both as the desktop calls them
+                    text: @tr("programma.finestra.tenerla-sopra-riunione-alt" => "Per tenerla sopra la riunione: Alt+Spazio, poi «Sempre in primo piano».");
                     wrap: word-wrap;
                     horizontal-stretch: 1;
                     vertical-alignment: center;
                     font-size: Token.corpo-nota * Aspetto.scala;
                     color: Token.testo-tenue;
                 }
-                Pulsante { testo: @tr("Ho capito"); piccolo: true; tipo: Tipo.nudo; premuto => { root.suggerimento-sopra = false; root.suggerimento-letto(); scrittura.focus(); } }
+                Pulsante { testo: @tr("programma.finestra.ho-capito" => "Ho capito"); piccolo: true; tipo: Tipo.nudo; premuto => { root.suggerimento-sopra = false; root.suggerimento-letto(); scrittura.focus(); } }
             }
             scrittura := Scrittura {
                 changed ha-fuoco => { if (self.ha-fuoco) { root.in-fondo(); } }
@@ -432,9 +443,10 @@ export component Finestra inherits Rectangle {
                 prepara: root.situazione == Situazione.preparazione;
                 ultima: root.history.length > 0 ? root.history[0] : "";
                 // the empty field follows the state: it never promises «Invio» when the voice cannot take the phrase
-                segnaposto: root.situazione == Situazione.preparazione ? (root.raccolta ? @tr("Fra poco.") : @tr("Puoi già scrivere: la voce arriva fra poco."))
-                    : root.situazione == Situazione.problema-voce ? (root.raccolta ? @tr("La voce non parte.") : @tr("La voce non parte: guarda qui sopra."))
-                    : root.raccolta ? @tr("Scrivi qui.") : @tr("Scrivi qui. Invio la dice.");
+                segnaposto: root.situazione == Situazione.preparazione ? (root.raccolta ? @tr("programma.finestra.segnaposto-fra-poco" => "Fra poco.") : @tr("programma.finestra.segnaposto-puoi-gia-scrivere" => "Puoi già scrivere: la voce arriva fra poco."))
+                    : root.situazione == Situazione.problema-voce ? (root.raccolta ? @tr("programma.finestra.segnaposto-voce-non-parte" => "La voce non parte.") : @tr("programma.finestra.segnaposto-voce-non-parte-guarda" => "La voce non parte: guarda qui sopra."))
+                    // TRANSLATORS: In the empty writing field; Invio is the Enter key
+                    : root.raccolta ? @tr("programma.comune.segnaposto-scrivi-qui" => "Scrivi qui.") : @tr("programma.comune.segnaposto-scrivi-invio" => "Scrivi qui. Invio la dice.");
                 dici(t) => { return root.di(t); }
                 ferma => { root.ferma(); }
             }
@@ -464,7 +476,7 @@ export component Finestra inherits Rectangle {
     }
     menu-voce := Menu {
         aperto: root.menu-voce-aperto;
-        titolo: @tr("Con quale voce parli");
+        titolo: @tr("programma.finestra.con-quale-voce-parli" => "Con quale voce parli");
         voci: root.voices;
         tinte: root.tinte;
         in-uso: root.voice-index;
@@ -476,7 +488,7 @@ export component Finestra inherits Rectangle {
         Rectangle { height: Token.filo; background: Token.bordo; }
         Interruttore {
             acceso <=> root.monitor;
-            testo: @tr("Senti anche tu la voce");
+            testo: @tr("programma.finestra.senti-anche-tu-voce" => "Senti anche tu la voce");
             cambiato(on) => { root.monitor-changed(on); }
         }
     }
@@ -484,8 +496,8 @@ export component Finestra inherits Rectangle {
         aperto: root.menu-altro-aperto;
         // «Riunione» joins when the bar has no room for it; «Svuota la cronologia» only when there is a history
         voci: root.minima
-            ? (root.history.length > 0 ? [@tr("Riunione"), @tr("Crea la tua voce"), @tr("Informazioni"), @tr("Svuota la cronologia")] : [@tr("Riunione"), @tr("Crea la tua voce"), @tr("Informazioni")])
-            : (root.history.length > 0 ? [@tr("Crea la tua voce"), @tr("Informazioni"), @tr("Svuota la cronologia")] : [@tr("Crea la tua voce"), @tr("Informazioni")]);
+            ? (root.history.length > 0 ? [@tr("programma.finestra.riunione" => "Riunione"), @tr("programma.finestra.crea-tua-voce" => "Crea la tua voce"), @tr("programma.finestra.informazioni" => "Informazioni"), @tr("programma.finestra.svuota-cronologia" => "Svuota la cronologia")] : [@tr("programma.finestra.riunione" => "Riunione"), @tr("programma.finestra.crea-tua-voce" => "Crea la tua voce"), @tr("programma.finestra.informazioni" => "Informazioni")])
+            : (root.history.length > 0 ? [@tr("programma.finestra.crea-tua-voce" => "Crea la tua voce"), @tr("programma.finestra.informazioni" => "Informazioni"), @tr("programma.finestra.svuota-cronologia" => "Svuota la cronologia")] : [@tr("programma.finestra.crea-tua-voce" => "Crea la tua voce"), @tr("programma.finestra.informazioni" => "Informazioni")]);
         x: root.width - self.width - Token.spazio-medio * Aspetto.scala;
         y: Token.altezza-barra * Aspetto.scala - Token.spostamento-entrata / 2 * (1 - self.fase);
         width: min(root.width - 2 * Token.spazio-medio * Aspetto.scala, Token.bolla-larghezza * Aspetto.scala / 2.2);
@@ -512,9 +524,9 @@ export component Finestra inherits Rectangle {
     conferma-svuota := Conferma {
         x: 0; y: 0; width: root.width; height: root.height;
         aperta: root.conferma-aperta;
-        titolo: @tr("Svuotare la cronologia?");
-        testo: @tr("Le frasi già dette spariscono da questo computer. Non si può tornare indietro.");
-        conferma-testo: @tr("Svuota");
+        titolo: @tr("programma.finestra.svuotare-cronologia" => "Svuotare la cronologia?");
+        testo: @tr("programma.finestra.frasi-gia-dette-spariscono" => "Le frasi già dette spariscono da questo computer. Non si può tornare indietro.");
+        conferma-testo: @tr("programma.finestra.svuota" => "Svuota");
         confermato => { root.svuota-cronologia(); root.chiudi-conferma(); scrittura.focus(); }
         annullato => { root.chiudi-conferma(); }
     }

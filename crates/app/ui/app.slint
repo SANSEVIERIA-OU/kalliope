@@ -26,7 +26,7 @@ export component AppWindow inherits Window {
     always-on-top: root.compatta;
 
     in property <Phase> phase: Phase.loading;
-    in property <string> status: @tr("Preparo la voce…");
+    in property <string> status: @tr("programma.finestra.preparo-la-voce" => "Preparo la voce…");
     in property <bool> warning: false;
     // the state the status line shows, from the engine's real flags (session.rs, Status::situation)
     in property <Situazione> situazione:
@@ -40,6 +40,10 @@ export component AppWindow inherits Window {
     in-out property <int> voice-index: 0;
     in-out property <bool> monitor: true;
     in property <string> version: "0.1";
+    // the language is written from right to left: the window is mirrored (the program sets it from the language, lingua.rs)
+    in-out property <bool> rtl <=> Token.rtl;
+    // what the mirror multiplies by (1, or -1 from right to left): for Rust, which tests it
+    out property <int> verso: Token.verso;
     in-out property <string> draft;
     in-out property <bool> compatta: false;
     in-out property <Schermata> schermata: Schermata.scrivi;
@@ -67,6 +71,8 @@ export component AppWindow inherits Window {
     // the bubble darkens the words one by one: how many words a phrase has, and its beginning up to a number of words
     pure callback conta-parole(string) -> int;
     pure callback prefisso(string, int) -> string;
+    // a phrase runs from right to left (its first letter says so): the bubble lays it out that way, whatever the window's language
+    pure callback da-destra(string) -> bool;
     callback speak(string) -> bool;
     callback stop();
     callback voice-changed(int);
@@ -82,6 +88,12 @@ export component AppWindow inherits Window {
 
     finestra := Finestra {
         x: 0; y: 0; width: root.width; height: root.height;
+        // The mirror. Slint has no direction of writing for a layout, so from right to left the whole window is turned round
+        // (`Token.verso` is -1) and every Text, TextInput and Image turns itself back (`transform-scale-x: Token.verso`, about its own
+        // centre): the places mirror, the letters and the logo do not. Inside a text the letters keep their own direction (Arabic
+        // from right to left, a number or a word in Latin from left to right) and the paragraph starts on its own side.
+        // tools/slint_valori.py checks that no Text, TextInput or Image of the window forgets it.
+        transform-scale-x: Token.verso;
         situazione: root.situazione;
         spiegazione: root.status;
         pronta: root.phase == Phase.ready || root.phase == Phase.speaking;
@@ -93,6 +105,7 @@ export component AppWindow inherits Window {
         notizia: root.notizia;
         parole: root.history.length > 0 ? root.conta-parole(root.history[0]) : 0;
         prefisso(t, n) => { return root.prefisso(t, n); }
+        da-destra(t) => { return root.da-destra(t); }
         voices: root.voices;
         voice-index <=> root.voice-index;
         monitor <=> root.monitor;
