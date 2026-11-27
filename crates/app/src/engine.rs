@@ -861,6 +861,9 @@ struct Thread {
     monitor: bool,
     pending: VecDeque<Piece>,
     speaking: bool,
+    /// The count of Stops when the text being said was accepted: a Stop pressed since then has already emptied the microphone
+    /// from the window's thread, and its command, on its way, tells what was said.
+    spoken_ticket: u64,
     /// While speaking: whether an app records from the microphone.
     heard: bool,
     /// The last phrase was said while nobody recorded.
@@ -894,6 +897,7 @@ impl Thread {
             monitor,
             pending: VecDeque::new(),
             speaking: false,
+            spoken_ticket: 0,
             heard: true,
             unheard: false,
             seconds_per_token: FIRST_GUESS_SECONDS_PER_TOKEN,
@@ -956,7 +960,13 @@ impl Thread {
                     continue;
                 }
             }
-            if self.speaking && self.pending.is_empty() && self.queued() <= 0.0 {
+            // The end of what was to be said, unless a Stop emptied the microphone and its command is still on its way: then
+            // the Stop ends the phrase and says how much was said, not this.
+            if self.speaking
+                && self.pending.is_empty()
+                && self.queued() <= 0.0
+                && self.line.ticket() == self.spoken_ticket
+            {
                 self.speaking = false;
                 self.unheard = !self.heard;
                 kalliope_voice::release_memory();
@@ -1105,6 +1115,7 @@ impl Thread {
             p.phrase = Some(phrase.clone());
         }
         self.pending.extend(pieces);
+        self.spoken_ticket = ticket;
         if !self.speaking {
             self.speaking = true;
             self.unheard = false;

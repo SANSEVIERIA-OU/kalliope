@@ -1009,6 +1009,41 @@ fn a_piece_of_silence_still_sounds_from_its_first_sample() {
     rig.until(&Event::Idle, 2 * SECOND);
 }
 
+/// The window's thread empties the microphone at once and then sends the Stop: if the voice's thread looks in between, the
+/// microphone is empty and nothing is left to say, but the phrase did not end by itself: the Stop, read next, says what was said.
+#[test]
+fn a_stop_on_its_way_ends_the_phrase_not_the_empty_microphone() {
+    let rig = rig(Setup {
+        work: Duration::from_millis(20),
+        spoken: Duration::from_millis(600),
+        lead: Duration::from_millis(500),
+        ..Setup::default()
+    });
+    rig.ready();
+    rig.engine.send(Command::Speak("uno due".into()));
+    let deadline = Instant::now() + SECOND;
+    while rig.log.first("play").is_none() && Instant::now() < deadline {
+        std::thread::sleep(Duration::from_millis(5));
+    }
+    std::thread::sleep(Duration::from_millis(100));
+    // the first half of a Stop, as `Engine::send` does it, and the command a while later
+    rig.engine.line.stop();
+    std::thread::sleep(Duration::from_millis(300));
+    let ticket = rig.engine.line.ticket();
+    rig.engine.tx.send((Command::Stop, ticket)).unwrap();
+    let events = rig.until(&Event::Idle, SECOND);
+    let said = events.iter().find_map(|e| match e {
+        Event::Interrupted(s) => Some(s.clone()),
+        _ => None,
+    });
+    assert_eq!(said.map(|s| (s.done, s.cut)), Some((0, None)), "{events:?}");
+    assert_eq!(
+        events.iter().filter(|e| **e == Event::Idle).count(),
+        1,
+        "{events:?}"
+    );
+}
+
 #[test]
 fn stop_during_the_silence_before_the_voice_says_nothing_was_said() {
     for streaming in [false, true] {
