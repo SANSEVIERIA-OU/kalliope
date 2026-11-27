@@ -1,0 +1,421 @@
+{
+ "video": "07-menu-tastiera.mp4",
+ "larghezza": 920,
+ "altezza": 640,
+ "fotogrammi": 300,
+ "durata": 9967,
+ "frequenza": "fissa",
+ "zona": {
+  "x": 450,
+  "y": 40,
+  "l": 470,
+  "a": 200
+ },
+ "da": 0,
+ "a": null,
+ "soglia": 12,
+ "minimo": 400,
+ "pausa": 250,
+ "tratti": [
+  {
+   "inizio": 633,
+   "fine": 633,
+   "durata": 0,
+   "fotogrammi": 1,
+   "intervallo": null,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.0058,
+   "quota_finale": 0.0058,
+   "transitorio": 0,
+   "come": {
+    "salta": 1,
+    "sfuma": 0,
+    "altro": 0
+   },
+   "meta": 0,
+   "novanta": 0,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 0
+   },
+   "rettangolo": {
+    "x": 0.11382113821138211,
+    "y": 0,
+    "l": 0.2073170731707317,
+    "a": 0.03773584905660377
+   },
+   "celle": [
+    {
+     "ms": 600,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 633,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "misure/07-menu-tastiera/tratto-1.jpg"
+  },
+  {
+   "inizio": 1233,
+   "fine": 1400,
+   "durata": 167,
+   "fotogrammi": 6,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.366,
+   "quota_finale": 0.366,
+   "transitorio": 0.0702,
+   "come": {
+    "salta": 0.406,
+    "sfuma": 0.466,
+    "altro": 0.128
+   },
+   "meta": 67,
+   "novanta": 100,
+   "passaggio": {
+    "mediana": 66,
+    "novanta": 67
+   },
+   "rettangolo": {
+    "x": 0.2032520325203252,
+    "y": 0.02830188679245283,
+    "l": 0.7235772357723578,
+    "a": 0.9339622641509434
+   },
+   "celle": [
+    {
+     "ms": 1200,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 1233,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 1267,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 1300,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 1333,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 1367,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 1400,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "misure/07-menu-tastiera/tratto-2.jpg"
+  },
+  {
+   "inizio": 2233,
+   "fine": 2233,
+   "durata": 0,
+   "fotogrammi": 1,
+   "intervallo": null,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.3115,
+   "quota_finale": 0.3115,
+   "transitorio": 0,
+   "come": {
+    "salta": 1,
+    "sfuma": 0,
+    "altro": 0
+   },
+   "meta": 0,
+   "novanta": 0,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 0
+   },
+   "rettangolo": {
+    "x": 0.22357723577235772,
+    "y": 0.22641509433962265,
+    "l": 0.7235772357723578,
+    "a": 0.46226415094339623
+   },
+   "celle": [
+    {
+     "ms": 2200,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 2233,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "misure/07-menu-tastiera/tratto-3.jpg"
+  },
+  {
+   "inizio": 2933,
+   "fine": 2933,
+   "durata": 0,
+   "fotogrammi": 1,
+   "intervallo": null,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.3114,
+   "quota_finale": 0.3114,
+   "transitorio": 0,
+   "come": {
+    "salta": 1,
+    "sfuma": 0,
+    "altro": 0
+   },
+   "meta": 0,
+   "novanta": 0,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 0
+   },
+   "rettangolo": {
+    "x": 0.22357723577235772,
+    "y": 0.22641509433962265,
+    "l": 0.7235772357723578,
+    "a": 0.46226415094339623
+   },
+   "celle": [
+    {
+     "ms": 2900,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 2933,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "misure/07-menu-tastiera/tratto-4.jpg"
+  },
+  {
+   "inizio": 3633,
+   "fine": 3800,
+   "durata": 167,
+   "fotogrammi": 6,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.3854,
+   "quota_finale": 0.3739,
+   "transitorio": 0.1644,
+   "come": {
+    "salta": 0.43,
+    "sfuma": 0.452,
+    "altro": 0.118
+   },
+   "meta": 67,
+   "novanta": 134,
+   "passaggio": {
+    "mediana": 67,
+    "novanta": 133
+   },
+   "rettangolo": {
+    "x": 0.1991869918699187,
+    "y": 0.02830188679245283,
+    "l": 0.7276422764227642,
+    "a": 0.9339622641509434
+   },
+   "celle": [
+    {
+     "ms": 3600,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 3633,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 3667,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 3700,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 3733,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 3767,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 3800,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "misure/07-menu-tastiera/tratto-5.jpg"
+  },
+  {
+   "inizio": 4633,
+   "fine": 4800,
+   "durata": 167,
+   "fotogrammi": 6,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.3656,
+   "quota_finale": 0.3656,
+   "transitorio": 0.0773,
+   "come": {
+    "salta": 0.344,
+    "sfuma": 0.527,
+    "altro": 0.129
+   },
+   "meta": 34,
+   "novanta": 100,
+   "passaggio": {
+    "mediana": 100,
+    "novanta": 100
+   },
+   "rettangolo": {
+    "x": 0.2032520325203252,
+    "y": 0.02830188679245283,
+    "l": 0.7276422764227642,
+    "a": 0.9339622641509434
+   },
+   "celle": [
+    {
+     "ms": 4600,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 4633,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 4667,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 4700,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 4733,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 4767,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 4800,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "misure/07-menu-tastiera/tratto-6.jpg"
+  },
+  {
+   "inizio": 5433,
+   "fine": 5433,
+   "durata": 0,
+   "fotogrammi": 1,
+   "intervallo": null,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.3116,
+   "quota_finale": 0.3116,
+   "transitorio": 0,
+   "come": {
+    "salta": 1,
+    "sfuma": 0,
+    "altro": 0
+   },
+   "meta": 0,
+   "novanta": 0,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 0
+   },
+   "rettangolo": {
+    "x": 0.22357723577235772,
+    "y": 0.22641509433962265,
+    "l": 0.7235772357723578,
+    "a": 0.46226415094339623
+   },
+   "celle": [
+    {
+     "ms": 5400,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 5433,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "misure/07-menu-tastiera/tratto-7.jpg"
+  },
+  {
+   "inizio": 5967,
+   "fine": 6133,
+   "durata": 166,
+   "fotogrammi": 6,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.4359,
+   "quota_finale": 0.4192,
+   "transitorio": 0.1137,
+   "come": {
+    "salta": 0.511,
+    "sfuma": 0.366,
+    "altro": 0.123
+   },
+   "meta": 66,
+   "novanta": 133,
+   "passaggio": {
+    "mediana": 33,
+    "novanta": 133
+   },
+   "rettangolo": {
+    "x": 0.1991869918699187,
+    "y": 0.02830188679245283,
+    "l": 0.7276422764227642,
+    "a": 0.9339622641509434
+   },
+   "celle": [
+    {
+     "ms": 5933,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 5967,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 6000,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 6033,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 6067,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 6100,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 6133,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "misure/07-menu-tastiera/tratto-8.jpg"
+  }
+ ]
+}

@@ -1,0 +1,441 @@
+{
+ "video": "03-invio-sentita.mp4",
+ "larghezza": 920,
+ "altezza": 640,
+ "fotogrammi": 390,
+ "durata": 12967,
+ "frequenza": "fissa",
+ "zona": {
+  "x": 0,
+  "y": 56,
+  "l": 920,
+  "a": 330
+ },
+ "da": 0,
+ "a": null,
+ "soglia": 12,
+ "minimo": 400,
+ "pausa": 250,
+ "tratti": [
+  {
+   "inizio": 633,
+   "fine": 2167,
+   "durata": 1534,
+   "fotogrammi": 47,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.0412,
+   "quota_finale": 0.0412,
+   "transitorio": 0.0209,
+   "come": {
+    "salta": 0.78,
+    "sfuma": 0.004,
+    "altro": 0.215
+   },
+   "meta": 700,
+   "novanta": 1400,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 167
+   },
+   "rettangolo": {
+    "x": 0.05625,
+    "y": 0.7167630057803468,
+    "l": 0.8770833333333333,
+    "a": 0.21965317919075145
+   },
+   "celle": [
+    {
+     "ms": 600,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 633,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 933,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 1233,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 1567,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 1867,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 2167,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "misure/03-invio-sentita/tratto-1.jpg"
+  },
+  {
+   "inizio": 2633,
+   "fine": 4333,
+   "durata": 1700,
+   "fotogrammi": 52,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.3944,
+   "quota_finale": 0.3423,
+   "transitorio": 0.1264,
+   "come": {
+    "salta": 0.343,
+    "sfuma": 0.326,
+    "altro": 0.331
+   },
+   "meta": 167,
+   "novanta": 367,
+   "passaggio": {
+    "mediana": 166,
+    "novanta": 433
+   },
+   "rettangolo": {
+    "x": 0.029166666666666667,
+    "y": 0.15028901734104047,
+    "l": 0.8666666666666667,
+    "a": 0.7456647398843931
+   },
+   "celle": [
+    {
+     "ms": 2600,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 2633,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 2967,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 3300,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 3667,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 4000,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 4333,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "misure/03-invio-sentita/tratto-2.jpg"
+  },
+  {
+   "inizio": 4600,
+   "fine": 4800,
+   "durata": 200,
+   "fotogrammi": 7,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.0065,
+   "quota_finale": 0.0065,
+   "transitorio": 0.0031,
+   "come": {
+    "salta": 0.384,
+    "sfuma": 0.581,
+    "altro": 0.035
+   },
+   "meta": 100,
+   "novanta": 200,
+   "passaggio": {
+    "mediana": 100,
+    "novanta": 167
+   },
+   "rettangolo": {
+    "x": 0.029166666666666667,
+    "y": 0.32947976878612717,
+    "l": 0.4895833333333333,
+    "a": 0.5549132947976878
+   },
+   "celle": [
+    {
+     "ms": 4567,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 4600,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 4633,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 4667,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 4733,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 4767,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 4800,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "misure/03-invio-sentita/tratto-3.jpg"
+  },
+  {
+   "inizio": 5100,
+   "fine": 5300,
+   "durata": 200,
+   "fotogrammi": 7,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.0066,
+   "quota_finale": 0.0066,
+   "transitorio": 0.0039,
+   "come": {
+    "salta": 0.527,
+    "sfuma": 0.436,
+    "altro": 0.036
+   },
+   "meta": 100,
+   "novanta": 167,
+   "passaggio": {
+    "mediana": 33,
+    "novanta": 167
+   },
+   "rettangolo": {
+    "x": 0.029166666666666667,
+    "y": 0.3236994219653179,
+    "l": 0.5916666666666667,
+    "a": 0.5664739884393064
+   },
+   "celle": [
+    {
+     "ms": 5067,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 5100,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5133,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5167,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5233,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5267,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5300,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "misure/03-invio-sentita/tratto-4.jpg"
+  },
+  {
+   "inizio": 5633,
+   "fine": 5800,
+   "durata": 167,
+   "fotogrammi": 6,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.0061,
+   "quota_finale": 0.0061,
+   "transitorio": 0.0043,
+   "come": {
+    "salta": 0.46,
+    "sfuma": 0.519,
+    "altro": 0.022
+   },
+   "meta": 67,
+   "novanta": 167,
+   "passaggio": {
+    "mediana": 67,
+    "novanta": 167
+   },
+   "rettangolo": {
+    "x": 0.029166666666666667,
+    "y": 0.3236994219653179,
+    "l": 0.6958333333333333,
+    "a": 0.5664739884393064
+   },
+   "celle": [
+    {
+     "ms": 5600,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 5633,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5667,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5700,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5733,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5767,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 5800,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "misure/03-invio-sentita/tratto-5.jpg"
+  },
+  {
+   "inizio": 6067,
+   "fine": 6767,
+   "durata": 700,
+   "fotogrammi": 22,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.0107,
+   "quota_finale": 0.0092,
+   "transitorio": 0.0074,
+   "come": {
+    "salta": 0.155,
+    "sfuma": 0.81,
+    "altro": 0.035
+   },
+   "meta": 366,
+   "novanta": 633,
+   "passaggio": {
+    "mediana": 167,
+    "novanta": 500
+   },
+   "rettangolo": {
+    "x": 0.029166666666666667,
+    "y": 0.32947976878612717,
+    "l": 0.7479166666666667,
+    "a": 0.5491329479768786
+   },
+   "celle": [
+    {
+     "ms": 6033,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 6067,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 6200,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 6333,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 6500,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 6633,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 6767,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "misure/03-invio-sentita/tratto-6.jpg"
+  },
+  {
+   "inizio": 7367,
+   "fine": 7900,
+   "durata": 533,
+   "fotogrammi": 17,
+   "intervallo": 33,
+   "iniziato_prima": false,
+   "non_finito": false,
+   "quota_massima": 0.11,
+   "quota_finale": 0.097,
+   "transitorio": 0.0412,
+   "come": {
+    "salta": 0.635,
+    "sfuma": 0.221,
+    "altro": 0.145
+   },
+   "meta": 200,
+   "novanta": 400,
+   "passaggio": {
+    "mediana": 0,
+    "novanta": 200
+   },
+   "rettangolo": {
+    "x": 0.020833333333333332,
+    "y": 0.23121387283236994,
+    "l": 0.7916666666666666,
+    "a": 0.4161849710982659
+   },
+   "celle": [
+    {
+     "ms": 7333,
+     "ruolo": "prima"
+    },
+    {
+     "ms": 7367,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 7467,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 7567,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 7700,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 7800,
+     "ruolo": "movimento"
+    },
+    {
+     "ms": 7900,
+     "ruolo": "posato"
+    }
+   ],
+   "striscia": "misure/03-invio-sentita/tratto-7.jpg"
+  }
+ ]
+}
