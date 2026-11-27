@@ -260,6 +260,18 @@ pub fn demo(scena: &str) -> ExitCode {
         "scrive" => ui.set_draft(LUNGA.into()),
         "parla" | "compatta-parla" => phase = Phase::Speaking,
         "cronologia" => {}
+        // phrases of two lines in the history, the case that showed a bubble cut in half
+        "cronologia-lunga" => {
+            said = [
+                "Per me va bene la seconda proposta ma vorrei rivedere il preventivo con calma insieme a Luca",
+                "Sono d'accordo con Paola e possiamo sentirci venerdì alle tre e mezza del pomeriggio in sala grande",
+                "Vorrei aggiungere una cosa importante sul progetto prima che chiudiate la riunione di oggi",
+                "Buongiorno a tutti, mi sentite bene?",
+            ]
+            .iter()
+            .map(|f| SharedString::from(*f))
+            .collect();
+        }
         "nessuno" => {
             phase = Phase::Speaking;
             situazione = Some(Situazione::NessunoAscolta);

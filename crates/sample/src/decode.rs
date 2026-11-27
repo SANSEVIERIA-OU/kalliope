@@ -61,7 +61,7 @@ impl ReadError {
         match self {
             ReadError::Open(e) => format!("Non riesco ad aprire il file: {e}. Scegline un altro."),
             ReadError::Empty => "Il file è vuoto.".into(),
-            ReadError::NotAudio => "Questo file non è un audio che Kalliope sa leggere. Vanno bene i file WAV, MP3, FLAC, OGG, OPUS (i messaggi vocali di WhatsApp e Telegram), M4A e i video MP4, MKV e WEBM.".into(),
+            ReadError::NotAudio => "Questo file non è un audio. Prova con un messaggio vocale, un video o una registrazione.".into(),
             ReadError::NoSound => "In questo file non c'è audio.".into(),
             ReadError::Unsupported(what) => format!("Kalliope non sa ancora leggere l'audio di questo file ({what}). Convertilo in WAV o MP3, oppure scegline un altro."),
             ReadError::NoOpus => "Per leggere i messaggi vocali in formato Opus serve la libreria libopus, che su questo computer manca: installa il pacchetto «opus» (o «libopus0»).".into(),

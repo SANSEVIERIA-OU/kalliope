@@ -12,6 +12,8 @@ use std::sync::{Arc, Mutex};
 use std::time::Duration;
 
 const NOT_HEARD: &str = "Nessuno nella chiamata ha sentito la frase: nessuna app sta usando il microfono «Kalliope». Sceglilo come microfono nell'app della riunione.";
+/// What the line says about nobody listening when no phrase is left to talk about (the history was emptied).
+const NOT_HEARD_NO_PHRASE: &str = "Nessuna app sta usando il microfono «Kalliope». Sceglilo come microfono nell'app della riunione.";
 const NOTHING_TO_SAY: &str =
     "Non c'è niente da dire in questo testo: scrivi almeno una parola, poi premi Invio.";
 
@@ -125,6 +127,15 @@ impl Status {
                 self.text = e;
             }
             Event::Sounding(_) | Event::Interrupted(_) => {}
+        }
+    }
+
+    /// The line's words when no phrase is left in the window: «la frase» would name something that is gone.
+    pub fn text_without_phrase(&self) -> String {
+        if self.not_heard {
+            NOT_HEARD_NO_PHRASE.to_string()
+        } else {
+            self.text.clone()
         }
     }
 
@@ -468,6 +479,22 @@ impl Session {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn after_the_history_is_emptied_the_line_no_longer_talks_about_a_phrase() {
+        let mut state = Status::default();
+        state.update(Event::Ready { microphone: Ok(()) }, &[]);
+        state.update(Event::NotHeard, &[]);
+        assert!(state.text.contains("la frase"));
+        let said = state.text_without_phrase();
+        assert!(
+            !said.contains("la frase") && said.contains("«Kalliope»"),
+            "{said}"
+        );
+        // nothing to correct when the line is not about a phrase
+        state.update(Event::Heard, &[]);
+        assert_eq!(state.text_without_phrase(), READY);
+    }
 
     #[test]
     fn the_status_line_names_the_real_problem() {

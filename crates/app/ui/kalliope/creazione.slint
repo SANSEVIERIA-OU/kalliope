@@ -57,6 +57,8 @@ export global Creazione {
     in property <bool> crea-in-corso: false;
     in property <float> crea-avanzamento: 0;
 
+    // a voice can be made from the stretch chosen
+    out property <bool> utilizzabile: root.tratti.length > 0 && root.tratti[clamp(root.tratto-scelto, 0, root.tratti.length - 1)].utilizzabile;
     // a name of only spaces is no name (Rust, vista.rs)
     pure callback nome-valido(string) -> bool;
     callback registra-scelta();

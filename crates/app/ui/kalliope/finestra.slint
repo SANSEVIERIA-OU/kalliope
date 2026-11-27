@@ -58,6 +58,9 @@ export component Finestra inherits Rectangle {
     in property <float> sfumatura-vera: 0;
     property <int> dette: root.dette-vere >= 0 ? min(root.dette-vere, root.parole) : root.parole;
     property <float> sfumatura: root.parla ? root.sfumatura-vera : 0;
+    // false for the first moments: the layout that exists at start is not animated
+    property <bool> avviata: false;
+    avvio := Timer { interval: Token.durata-bolla; running: true; triggered => { root.avviata = true; self.running = false; } }
     // a new phrase: false for one frame, then the bubble grows and the history slides up (correction I4)
     property <bool> nata: true;
     // the phrase that was in the bubble when Enter was pressed, kept for its leaving
@@ -77,7 +80,13 @@ export component Finestra inherits Rectangle {
     property <bool> raccolta: root.compatta || root.bassa;
     // the phrase being said on one line: in the meeting mode and in a window lower than the threshold at 100%;
     // otherwise it wraps and stays whole (correction I1)
-    property <bool> una-riga: root.compatta || root.height < Token.soglia-bassa;
+    // At the largest text size the phrase says itself on one line unless the window is tall: three lines of it, the state and
+    // the writing do not fit a low window, and the writing must keep its margin at the foot (correction M-2).
+    // In a narrow window the state needs more lines, so the one-line phrase comes a fifth sooner (a 640 × 500 window with the
+    // longest state lost the foot of the writing, found by sweeping the heights between 420 and 580).
+    property <length> soglia-riga: Token.soglia-bassa * (root.width < Token.soglia-minima * 1.5 * Aspetto.scala ? 1.2 : 1);
+    property <bool> una-riga: root.compatta || root.height < root.soglia-riga
+        || (Aspetto.scala >= Token.scala-massima && root.height < Token.soglia-bassa * Token.scala-massima * 1.6);
     property <bool> male: root.situazione == Situazione.nessuno-ascolta || root.situazione == Situazione.senza-microfono
         || root.situazione == Situazione.problema-voce;
     // Giulia, Marco, then each voice made from a recording: the first of them has the tint of «Tu», the others the grey green of
@@ -113,6 +122,7 @@ export component Finestra inherits Rectangle {
     function chiudi-informazioni() { root.info-aperta = false; altro.focus(); }
     public function apri-conferma() { root.conferma-aperta = true; conferma-svuota.apri(); }
     function chiudi-conferma() { root.conferma-aperta = false; altro.focus(); }
+    function in-fondo() { storia.content-y = min(0px, storia.height - storia.content-height); }
     public function metti-a-fuoco() { scrittura.focus(); }
 
     background: Token.fondo;
@@ -126,6 +136,18 @@ export component Finestra inherits Rectangle {
 
     // Keys that work wherever the focus is: the text size (Ctrl and plus, minus, zero), and Esc, which stops the voice, or
     // leaves «Crea la tua voce». A menu or a dialog that is open keeps its own Esc.
+    // The height of the newest phrase in the history, measured on a copy that is never seen (it sits outside every layout): the
+    // list keeps the room for that phrase whole, or is not shown (correction I-1: half a bubble is worse than none).
+    property <length> alto-ultima: 0px;
+    if root.history.length > 1: FraseDetta {
+        x: 0; y: 0;
+        visible: false;
+        testo: root.history[1];
+        larghezza-massima: min(root.width - 2 * Token.spazio-largo * Aspetto.scala, Token.bolla-larghezza * Aspetto.scala);
+        init => { root.alto-ultima = self.height; }
+        changed height => { root.alto-ultima = self.height; }
+    }
+
     globali := FocusScope {
         x: 0; y: 0; width: root.width; height: root.height;
         focus-on-tab-navigation: false;
@@ -143,6 +165,9 @@ export component Finestra inherits Rectangle {
     VerticalLayout {
         x: 0; y: 0; width: root.width; height: root.height;
         visible: root.schermata == Schermata.scrivi || crea.aperta < 1;
+        // the two screens never show their words together: going to «Crea la tua voce» the writing fades in the first half
+        // and the creation comes in the second; coming back it is the other way round (correction: the texts overlapped for 100 ms)
+        opacity: clamp(1 - 2 * crea.aperta, 0, 1);
 
         // The bar: the same commands at every text size. A− and A+ sit at the right edge, so a second press finds them
         // under the pointer; what does not fit goes into «Altro», which keeps its place (correction I2).
@@ -243,14 +268,24 @@ export component Finestra inherits Rectangle {
 
             // The phrases already said: they yield the room and scroll. Bottom-anchored, they slide up when a phrase is added.
             storia := Flickable {
-                visible: !root.raccolta;
+                // not a piece of a bubble: where there is no room for one whole phrase the list is not shown at all (correction I-1)
+                // (the outline of the first bubble shows whole or not at all; a list shows at least one phrase of two lines)
+                visible: !root.raccolta && self.height >= (root.history.length == 0 ? frasi.preferred-height : min(frasi.preferred-height, root.alto-ultima));
                 vertical-stretch: root.raccolta ? 0 : Token.quota-storia;
-                min-height: 0;
+                // where the window is tall enough and the newest phrase has two lines, its room is kept whole, taken from the writing's share
+                // (a phrase of one line already fits the share the list has: the layout of the approved render is left as it is)
+                min-height: root.history.length > 1 && !root.raccolta && root.height >= Token.soglia-bassa * 1.25 * Aspetto.scala
+                    && root.alto-ultima > Token.altezza-comando * 1.2 * Aspetto.scala ? min(root.alto-ultima, root.height) : 0;
                 preferred-height: 0;
                 max-height: root.raccolta ? 0 : root.height;
                 content-width: self.width;
                 content-height: max(self.height, frasi.preferred-height);
-                content-y: min(0px, self.height - self.content-height);
+                // The list stays at its end: a binding would be lost the first time the list is moved (the wheel, a Tab that
+                // passes over a phrase), so the end is reached again by hand whenever the phrases or the room change, and when the
+                // focus comes back to the writing.
+                init => { root.in-fondo(); }
+                changed content-height => { root.in-fondo(); }
+                changed height => { root.in-fondo(); }
                 frasi := VerticalLayout {
                     y: root.salto * root.fase-storia;
                     width: storia.width;
@@ -300,7 +335,19 @@ export component Finestra inherits Rectangle {
 
             // The phrase being said: outside the scroll, always whole (correction I1). It rises from the writing as it grows.
             if root.history.length > 0: Rectangle {
-                height: bolla.height;
+                // The place of the phrase grows with the phrase, in the time of the passage, instead of opening in one frame: the
+                // first phrase of all made the writing drop by the height of a bubble at once (62 px, correction M-1). Not at start,
+                // when the place already holds the phrases kept from before.
+                property <bool> pronto: !root.avviata;
+                property <length> alto: self.pronto ? bolla.height : 0px;
+                animate alto {
+                    delay: Aspetto.movimento-ridotto ? 0ms : Token.ritardo-bolla;
+                    duration: Aspetto.movimento-ridotto ? 0ms : Token.durata-bolla;
+                    easing: Token.curva-dolce;
+                }
+                // one frame at nothing, so the growth is seen (a binding read for the first time at its end would not move)
+                Timer { interval: Token.intervallo-fotogramma; running: true; triggered => { parent.pronto = true; self.running = false; } }
+                height: self.alto;
                 // the old bubble does not vanish in one frame: it fades in the time the new one grows (correction of the weak point left
                 // in the direction, «a Invio c'è ancora un salto»)
                 if root.vecchia != "": BollaVoce {
@@ -321,7 +368,7 @@ export component Finestra inherits Rectangle {
                 }
                 bolla := BollaVoce {
                     x: 0;
-                    y: (1 - root.nascita) * Token.spostamento-entrata * 2;
+                    y: parent.height - self.height + (1 - root.nascita) * Token.spostamento-entrata * 2;
                     testo: root.history[0];
                     detto: root.prefisso(root.history[0], root.dette);
                     dicendo: root.prefisso(root.history[0], root.dette + 1);
@@ -341,7 +388,9 @@ export component Finestra inherits Rectangle {
                 notizia: root.notizia;
                 spiegazione: root.spiegazione;
                 compatta: root.raccolta;
-                impilata: root.minima && !root.raccolta;
+                // the state above, its words across the whole width below, wherever the words would need more than three lines beside
+                // it (a 640 px window: five lines, and the writing below lost its foot, correction M-2)
+                impilata: root.width < Token.soglia-minima * 1.5 * Aspetto.scala && !root.raccolta;
                 // where a problem has a way out, it is offered next to it (correction I6)
                 if root.male: Pulsante {
                     y: (parent.height - self.height) / 2;
@@ -352,7 +401,7 @@ export component Finestra inherits Rectangle {
                 }
                 if root.compatta: Pulsante {
                     y: (parent.height - self.height) / 2;
-                    testo: root.minima ? @tr("Intera") : @tr("Finestra intera"); piccolo: true; tipo: Tipo.nudo;
+                    testo: root.minima ? @tr("Intera") : @tr("Finestra intera"); piccolo: true; tipo: Tipo.nudo; espandi: true;
                     accessible-label: @tr("Finestra intera");
                     premuto => { root.compatta = false; root.compatta-cambiata(false); scrittura.focus(); }
                 }
@@ -373,6 +422,7 @@ export component Finestra inherits Rectangle {
                 Pulsante { testo: @tr("Ho capito"); piccolo: true; tipo: Tipo.nudo; premuto => { root.suggerimento-sopra = false; root.suggerimento-letto(); scrittura.focus(); } }
             }
             scrittura := Scrittura {
+                changed ha-fuoco => { if (self.ha-fuoco) { root.in-fondo(); } }
                 compatta: root.raccolta;
                 vertical-stretch: Token.quota-scrittura;
                 preferred-height: self.min-height;
@@ -400,7 +450,7 @@ export component Finestra inherits Rectangle {
         }
         attiva: self.aperta > 0;
         visible: self.aperta > 0;
-        opacity: self.aperta;
+        opacity: clamp(2 * self.aperta - 1, 0, 1);
         x: Token.spostamento-entrata * 2 * (1 - self.aperta); y: 0; width: root.width; height: root.height;
     }
 

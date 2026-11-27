@@ -52,6 +52,8 @@ struct Speech {
 }
 
 thread_local! {
+    /// The last report of the engine, to say it again in other words when the history is emptied.
+    static LAST: RefCell<Option<Status>> = const { RefCell::new(None) };
     static SPEECH: RefCell<Speech> = RefCell::new(Speech::default());
     static CREA: RefCell<Option<Ctl>> = const { RefCell::new(None) };
     static NEWS: Timer = Timer::default();
@@ -134,10 +136,20 @@ impl Speech {
 
 /// The engine's report reaches the window: the status line, the voice in the menu, and the words of the bubble.
 pub fn stato(ui: &AppWindow, status: &Status) {
+    LAST.with(|l| *l.borrow_mut() = Some(status.clone()));
     ui.set_phase(status.phase);
     ui.set_warning(status.warning);
     ui.set_situazione(status.situation());
-    ui.set_status(status.text.clone().into());
+    // with no phrase left in the window (the history was emptied) the line does not talk about «la frase»
+    let empty = slint::Model::row_count(&ui.get_history()) == 0;
+    ui.set_status(
+        if empty {
+            status.text_without_phrase()
+        } else {
+            status.text.clone()
+        }
+        .into(),
+    );
     if let Some(index) = status.voice_index {
         ui.set_voice_index(index as i32);
     }
@@ -242,6 +254,9 @@ pub fn collega(ui: &AppWindow, session: Rc<RefCell<Session>>) {
         if let Some(ui) = ui_of_thread() {
             SPEECH.with(|s| s.borrow_mut().lighting = None);
             ui.set_dette_vere(-1);
+            if let Some(status) = LAST.with(|l| l.borrow().clone()) {
+                ui.set_status(status.text_without_phrase().into());
+            }
         }
     });
     let weak = ui.as_weak();

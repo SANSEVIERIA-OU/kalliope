@@ -85,6 +85,13 @@ fn wrong_files_are_explained_and_never_panic() {
     for e in [ReadError::Empty, ReadError::NotAudio, ReadError::NoOpus] {
         assert!(!e.message().is_empty());
     }
+    // short enough for someone who reads slowly: one sentence of what is wrong, one of what to try, no list of formats
+    let not_audio = ReadError::NotAudio.message();
+    assert!(not_audio.split_whitespace().count() <= 16, "{not_audio}");
+    assert!(
+        !not_audio.contains("WAV") && !not_audio.contains("MP3"),
+        "{not_audio}"
+    );
 }
 
 #[test]

@@ -68,6 +68,8 @@ export component Pulsante inherits Rectangle {
     in property <Tipo> tipo: Tipo.quieto;
     in property <bool> abilitato: true;
     in property <bool> piccolo: false;
+    // a small sign of a window opening out before the word («Intera»: it says what the command does)
+    in property <bool> espandi: false;
     // to show the states in the catalog
     in property <bool> mostra-sopra: false;
     in property <bool> mostra-premuto: false;
@@ -103,6 +105,17 @@ export component Pulsante inherits Rectangle {
     riga := HorizontalLayout {
         alignment: center;
         spacing: Token.spazio-stretto * Aspetto.scala;
+        if root.espandi: Rectangle {
+            width: Token.chiusura * 1.1 * Aspetto.scala;
+            Path {
+                x: 0; y: (parent.height - self.height) / 2;
+                width: parent.width; height: self.width;
+                viewbox-width: 12; viewbox-height: 12;
+                commands: "M 7 1 H 11 V 5 M 11 1 L 6 6 M 5 2 H 1.5 V 10.5 H 10 V 7";
+                stroke: Token.testo; stroke-width: Token.filo * 2 * Aspetto.scala;
+                fill: transparent;
+            }
+        }
         Text {
             text: root.testo;
             vertical-alignment: center;

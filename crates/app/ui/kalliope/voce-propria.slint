@@ -215,7 +215,13 @@ export component Consenso inherits Rectangle {
 export component RigaMicrofono inherits Rectangle {
     in property <string> nome;
     in property <bool> scelto;
+    // the arrows move the choice along the list, like in the voice menu: -1 up, 1 down (the list moves the focus)
+    in property <int> indice;
+    in property <int> bersaglio: -1;
+    in property <int> richiesta: 0;
     callback scelta();
+    callback sposta(int);
+    changed richiesta => { if (self.bersaglio == self.indice) { chiave.focus(); } }
     property <bool> sopra: tocco.has-hover || chiave.has-focus;
     accessible-role: radio-button;
     accessible-label: root.nome;
@@ -244,6 +250,8 @@ export component RigaMicrofono inherits Rectangle {
     chiave := FocusScope {
         key-pressed(e) => {
             if (e.text == " " || e.text == Key.Return) { root.scelta(); return accept; }
+            if (e.text == Key.UpArrow) { root.sposta(-1); return accept; }
+            if (e.text == Key.DownArrow) { root.sposta(1); return accept; }
             return reject;
         }
         changed has-focus => { if (self.has-focus) { root.ensure-visible(ScrollBehavior.instant); } }
@@ -256,8 +264,14 @@ export component RigaTratto inherits Rectangle {
     in property <Tratto> tratto;
     in property <bool> scelto;
     in property <bool> ascolta;
+    // the arrows move along the list (the focus, and the choice where a voice can be made): -1 up, 1 down
+    in property <int> indice;
+    in property <int> bersaglio: -1;
+    in property <int> richiesta: 0;
     callback scelta();
     callback ascolto();
+    callback sposta(int);
+    changed richiesta => { if (self.bersaglio == self.indice) { chiave.focus(); } }
     property <bool> sopra: tocco.has-hover || chiave.has-focus;
     accessible-role: radio-button;
     accessible-label: root.tratto.titolo + ". " + root.tratto.dettaglio;
@@ -276,6 +290,8 @@ export component RigaTratto inherits Rectangle {
     chiave := FocusScope {
         key-pressed(e) => {
             if ((e.text == " " || e.text == Key.Return) && root.tratto.utilizzabile) { root.scelta(); return accept; }
+            if (e.text == Key.UpArrow) { root.sposta(-1); return accept; }
+            if (e.text == Key.DownArrow) { root.sposta(1); return accept; }
             return reject;
         }
         changed has-focus => { if (self.has-focus) { root.ensure-visible(ScrollBehavior.instant); } }
@@ -361,6 +377,9 @@ component PassoScelta inherits VerticalLayout {
 component PassoRegistra inherits VerticalLayout {
     in property <string> da-leggere;
     init => { registra-tondo.focus(); }
+    // the row the arrows move the focus to
+    property <int> bersaglio: 0;
+    property <int> richiesta: 0;
     property <duration> utile: Token.registrazione-utile;
     property <int> decimi: Creazione.registrato / Token.intervallo-registrazione;
     property <string> tempo: floor(self.decimi / 10) + "," + mod(self.decimi, 10) + " s";
@@ -381,8 +400,16 @@ component PassoRegistra inherits VerticalLayout {
         Text { text: @tr("Microfono"); font-size: Token.corpo-nota * Aspetto.scala; color: Token.testo-tenue; }
         for m[i] in Creazione.microfoni: RigaMicrofono {
             nome: m;
+            indice: i;
+            bersaglio: root.bersaglio;
+            richiesta: root.richiesta;
             scelto: i == Creazione.microfono;
             scelta => { Creazione.scegli-microfono(i); }
+            sposta(d) => {
+                root.bersaglio = clamp(i + d, 0, Creazione.microfoni.length - 1);
+                Creazione.scegli-microfono(root.bersaglio);
+                root.richiesta += 1;
+            }
         }
     }
     Livello { attivo: Creazione.registra; forza: clamp(Creazione.livello, 0.12, 1); }
@@ -435,11 +462,12 @@ component PassoRegistra inherits VerticalLayout {
 
 // Step 2: listen, choose the stretch, name the voice, say whose it is.
 component PassoAscolta inherits VerticalLayout {
+    property <int> bersaglio: 0;
+    property <int> richiesta: 0;
     spacing: Token.spazio-medio * Aspetto.scala;
     // the parts keep together under the title, as in the approved render; the room that is left stays empty below
     alignment: start;
     property <bool> unico: Creazione.tratti.length <= 1;
-    property <bool> si-puo: Creazione.tratti.length > 0 && Creazione.tratti[clamp(Creazione.tratto-scelto, 0, Creazione.tratti.length - 1)].utilizzabile;
     if Creazione.nota != "": Text { text: Creazione.nota; wrap: word-wrap; font-size: Token.corpo-stato * Aspetto.scala; color: Token.testo-tenue; }
     if root.unico: HorizontalLayout {
         spacing: Token.spazio-largo * Aspetto.scala;
@@ -471,10 +499,12 @@ component PassoAscolta inherits VerticalLayout {
     if !root.unico: VerticalLayout {
         spacing: Token.spazio-controlli * Aspetto.scala;
         HorizontalLayout {
+            alignment: start;
+            spacing: Token.spazio-medio * Aspetto.scala;
             Text {
                 text: @tr("Ho trovato {} tratti in cui si sente la voce. Ascolta e scegli.", Creazione.tratti.length);
                 wrap: word-wrap;
-                horizontal-stretch: 1;
+                vertical-alignment: center;
                 font-size: Token.corpo-stato * Aspetto.scala;
                 color: Token.testo-tenue;
             }
@@ -482,6 +512,14 @@ component PassoAscolta inherits VerticalLayout {
         }
         for t[i] in Creazione.tratti: RigaTratto {
             init => { if (i == 0) { self.focus(); } }
+            indice: i;
+            bersaglio: root.bersaglio;
+            richiesta: root.richiesta;
+            sposta(d) => {
+                root.bersaglio = clamp(i + d, 0, Creazione.tratti.length - 1);
+                if (Creazione.tratti[root.bersaglio].utilizzabile) { Creazione.tratto-scelto = root.bersaglio; }
+                root.richiesta += 1;
+            }
             tratto: t;
             scelto: i == Creazione.tratto-scelto;
             ascolta: i == Creazione.ascolto;
@@ -545,34 +583,6 @@ component PassoAscolta inherits VerticalLayout {
             color: Token.attenzione;
         }
     }
-    if !Creazione.crea-in-corso && Creazione.errore != "": Avviso {
-        testo: Creazione.errore;
-        con-guida: Creazione.errore-aiuto;
-        guida => { Creazione.apri-guida(); }
-    }
-    if !Creazione.crea-in-corso: HorizontalLayout {
-        alignment: end;
-        vertical-stretch: 0;
-        spacing: Token.spazio-largo * Aspetto.scala;
-        Text {
-            // why the button waits: never a silent grey
-            text: !root.si-puo ? @tr("Da questa registrazione non si può creare la voce: rifai.")
-                : !Creazione.nome-valido(Creazione.nome) ? @tr("Manca il nome.")
-                : !Creazione.consenso ? @tr("Manca il permesso: spunta la casella.")
-                : "";
-            vertical-alignment: center;
-            horizontal-stretch: 1;
-            wrap: word-wrap;
-            font-size: Token.corpo-nota * Aspetto.scala;
-            color: Token.testo-tenue;
-        }
-        Pulsante {
-            testo: Creazione.nome-conferma != "" ? Creazione.nome-conferma : @tr("Crea la voce");
-            tipo: Tipo.pieno;
-            abilitato: root.si-puo && Creazione.nome-valido(Creazione.nome) && Creazione.consenso;
-            premuto => { Creazione.crea(); }
-        }
-    }
     Rectangle { vertical-stretch: 1; }
 }
 
@@ -580,12 +590,22 @@ export component CreaVoce inherits Rectangle {
     // the steps exist only while the screen is on: each takes the keyboard focus when it comes, so it never falls into the void
     in property <bool> attiva: true;
     in property <string> da-leggere: @tr("Ciao, sono io. Questa è la mia voce, per le riunioni e per le persone a cui voglio bene. La leggo con calma, come parlo ogni giorno.");
-    property <bool> stretta: root.width < Token.soglia-minima * Aspetto.scala;
+    // the three steps with their names need about 730 px at 100%: below that, only the step one is on, with «n di 3»
+    property <bool> stretta: root.width < Token.soglia-minima * 1.3 * Aspetto.scala;
     background: Token.fondo;
     forward-focus: primo;
 
+    // The last step ends with «Crea la voce», and it must be seen: under the parts when they fit, and pinned at the foot of the
+    // window, over a hairline and a soft edge, when they do not (three stretches at 920 × 640). The page scrolls under it, and the
+    // edge says so (correction I-3). What the footer needs is measured without it, so showing it cannot change its own cause.
+    property <bool> in-fondo: root.attiva && Creazione.passo == 2 && !Creazione.crea-in-corso;
+    property <length> alto-piede: piede.preferred-height + 2 * Token.spazio-medio * Aspetto.scala;
+    property <bool> trabocca: root.in-fondo && passi.preferred-height + root.alto-piede - Token.spazio-largo * Aspetto.scala > root.height;
+
     // in a small window the creation scrolls, nothing is cut
     scorre := Flickable {
+        x: 0; y: 0; width: root.width;
+        height: root.height - (root.trabocca ? root.alto-piede : 0);
         content-width: self.width;
         content-height: max(self.height, passi.preferred-height);
     passi := VerticalLayout {
@@ -613,5 +633,54 @@ export component CreaVoce inherits Rectangle {
         if root.attiva && Creazione.passo == 1: PassoRegistra { da-leggere: root.da-leggere; }
         if root.attiva && Creazione.passo == 2: PassoAscolta { }
     }
+    }
+
+    // the soft edge that says the page goes on under the footer
+    if root.trabocca: Rectangle {
+        x: 0; width: root.width;
+        y: root.height - root.alto-piede - Token.spazio-largo * Aspetto.scala;
+        height: Token.spazio-largo * Aspetto.scala;
+        background: @linear-gradient(180deg, Token.fondo.transparentize(100%) 0%, Token.fondo 100%);
+    }
+    // the footer: the problem of the last gesture, why the button waits, and the button
+    piede-fondo := Rectangle {
+        visible: root.in-fondo;
+        x: 0; width: root.width;
+        y: root.trabocca ? root.height - root.alto-piede : passi.preferred-height - Token.spazio-largo * Aspetto.scala - Token.spazio-medio * Aspetto.scala;
+        height: root.alto-piede;
+        background: root.trabocca ? Token.fondo : transparent;
+        if root.trabocca: Rectangle { y: 0; height: Token.filo; background: Token.bordo; }
+        piede := VerticalLayout {
+            x: Token.spazio-largo * Aspetto.scala; y: Token.spazio-medio * Aspetto.scala;
+            width: root.width - 2 * Token.spazio-largo * Aspetto.scala;
+            spacing: Token.spazio-controlli * Aspetto.scala;
+            if Creazione.errore != "": Avviso {
+                testo: Creazione.errore;
+                con-guida: Creazione.errore-aiuto;
+                guida => { Creazione.apri-guida(); }
+            }
+            HorizontalLayout {
+                alignment: end;
+                spacing: Token.spazio-largo * Aspetto.scala;
+                Text {
+                    // why the button waits: never a silent grey
+                    text: !Creazione.utilizzabile ? @tr("Da questa registrazione non si può creare la voce: rifai.")
+                        : !Creazione.nome-valido(Creazione.nome) ? @tr("Manca il nome.")
+                        : !Creazione.consenso ? @tr("Manca il permesso: spunta la casella.")
+                        : "";
+                    vertical-alignment: center;
+                    horizontal-stretch: 1;
+                    wrap: word-wrap;
+                    font-size: Token.corpo-nota * Aspetto.scala;
+                    color: Token.testo-tenue;
+                }
+                Pulsante {
+                    testo: Creazione.nome-conferma != "" ? Creazione.nome-conferma : @tr("Crea la voce");
+                    tipo: Tipo.pieno;
+                    abilitato: Creazione.utilizzabile && Creazione.nome-valido(Creazione.nome) && Creazione.consenso;
+                    premuto => { Creazione.crea(); }
+                }
+            }
+        }
     }
 }

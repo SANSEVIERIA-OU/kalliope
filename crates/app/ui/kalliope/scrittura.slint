@@ -41,6 +41,13 @@ export component Scrittura inherits Rectangle {
         campo.focus();
     }
 
+    // The whole dashed place takes the click and the focus, at every text size (correction I-2): under everything else, so the
+    // field, the hint and the commands keep their own clicks, and the empty corners, the margins and the strip of the commands
+    // no longer let a phrase be written into nothing.
+    TouchArea {
+        mouse-cursor: text;
+        clicked => { campo.focus(); }
+    }
     Tratteggio {
         width: 100%; height: 100%;
         raggio: Token.raggio-scrittura * Aspetto.scala;
@@ -71,7 +78,8 @@ export component Scrittura inherits Rectangle {
                 capture-key-pressed(e) => {
                     if (e.text == Key.Return) { root.invia(); return accept; }
                     if (e.text == Key.Escape) { root.ferma(); return accept; }
-                    if (e.text == Key.UpArrow && !root.ha-testo && root.ultima != "") { root.testo = root.ultima; return accept; }
+                    // the last phrase comes back with the cursor at its end, to add a word (correction M-4)
+                    if (e.text == Key.UpArrow && !root.ha-testo && root.ultima != "") { root.testo = root.ultima; campo.set-selection-offsets(100000, 100000); return accept; }
                     return reject;
                 }
                 campo := TextInput {

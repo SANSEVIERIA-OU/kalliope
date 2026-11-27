@@ -37,13 +37,19 @@ pub fn missing_voice() -> Option<String> {
     let dir = model_dir();
     let missing = missing_in(&dir);
     (!missing.is_empty()).then(|| {
-        format!(
-            "Manca la voce: in {} non trovo {}. Reinstalla Kalliope.",
+        // the folder and the file names are for whoever installs, in the log; the person is told what to do
+        eprintln!(
+            "kalliope: in {} non trovo {}",
             dir.display(),
             missing.join(", ")
-        )
+        );
+        MISSING_VOICE.to_string()
     })
 }
+
+/// What the person is told when the files of the voice are missing: no paths, no file names.
+pub const MISSING_VOICE: &str =
+    "Non trovo i file della voce, e senza non posso parlare. Reinstalla Kalliope dal pacchetto.";
 
 /// The Pocket TTS model that speaks with the voices prepared from a recording:
 /// `KALLIOPE_POCKET_DIR`, or the copy that comes with Kalliope.
@@ -87,6 +93,16 @@ pub fn voice_files(dir: &Path) -> Vec<String> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn the_missing_voice_is_said_plainly_and_the_files_go_to_the_log() {
+        assert!(
+            !MISSING_VOICE.contains('/')
+                && !MISSING_VOICE.contains(".onnx")
+                && !MISSING_VOICE.contains(".json")
+        );
+        assert!(MISSING_VOICE.contains("Reinstalla Kalliope"));
+    }
 
     #[test]
     fn names_the_missing_files_of_the_voice() {

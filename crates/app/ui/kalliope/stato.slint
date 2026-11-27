@@ -55,8 +55,13 @@ export component RigaStato inherits Rectangle {
         : root.spiegazione;
     accessible-role: text;
     accessible-label: root.titolo + ". " + root.detto;
-    // never squeezed below its words: the truth about the voice stays whole
-    min-height: max(Token.altezza-comando-piccolo * Aspetto.scala, riga.preferred-height);
+    // never squeezed below its words: the truth about the voice stays whole. When its words need more or fewer lines the row
+    // changes height in the time of the history's slide (correction M-1), so the writing below does not drop in one frame.
+    property <length> alto: max(Token.altezza-comando-piccolo * Aspetto.scala, riga.preferred-height);
+    animate alto { duration: Aspetto.movimento-ridotto ? 0ms : Token.durata-bolla; easing: Token.curva-dolce; }
+    min-height: root.alto;
+    preferred-height: root.alto;
+    clip: true;
     border-radius: Token.raggio-pannello * Aspetto.scala;
     background: root.male ? Token.attenzione-fondo : transparent;
     animate background { duration: Token.durata-scurisce; easing: Token.curva-dolce; }
