@@ -65,3 +65,16 @@ I tre messaggi aggiornati della guida riprendono le parole della finestra. Il te
 - `sk_920x640_s1_scuro_1.png` e `sk_920x640_s1_scuro_2.png` — a dimensione normale i comandi principali sono leggibili. In `compatta-parla` si vede parte della frase italiana sulla riga che scorre. In `voce-tratti` si vedono tutte e tre le opzioni, mentre il campo del nome continua sotto il bordo visibile del pannello.
 
 Le foto documentano la traduzione precedente alle correzioni. Ho confrontato la larghezza delle etichette di ascolto con il carattere Lexend del progetto. Rimane da verificare su un nuovo fotogramma la resa finale a 360×320. L’unica dicitura esterna non verificata nel relativo programma è il percorso di Zoom indicato sopra.
+
+## Applications menu
+
+| Campo | Testo del menu | Retrotraduzione inglese |
+| --- | --- | --- |
+| GenericName | Hlas pre videohovory | Voice for video calls |
+| Comment | Píšte a ostatní vás vo videohovore budú počuť | Type and the others on the video call will hear you |
+| Keywords | `prevod textu na reč;syntéza reči;tts;hlas;hovoriť;mikrofón;videohovor;augmentatívna a alternatívna komunikácia;aak;nemôžem hovoriť;` | text-to-speech conversion; speech synthesis; TTS; voice; speak; microphone; video call; augmentative and alternative communication; AAK; I can’t speak |
+
+«Prevod textu na reč» indica la funzione, «syntéza reči» la tecnologia. «Videohovor» è la parola della finestra.
+«Nemôžem hovoriť» esprime il bisogno in prima persona. Il nome slovacco della comunicazione aumentativa accompagna la sigla «aak».
+
+Review: no change. «Píšte» e «vás» rispettano la forma di cortesia della finestra. «Videohovor» identifica la chiamata e «nemôžem hovoriť» esprime il bisogno in prima persona.

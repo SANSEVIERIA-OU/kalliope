@@ -66,3 +66,16 @@ Le frasi digitate, i frammenti pronunciati e i testi delle registrazioni restano
 ## Dubbio residuo
 
 La dicitura del primo menu audio di Zoom può variare con la localizzazione di Zoom. Nel percorso ho usato «Configurações», «Áudio», «Microfone». Non ho verificato la dicitura in una sessione Zoom in portoghese.
+
+## Applications menu
+
+| Campo | Testo del menu | Retrotraduzione inglese |
+| --- | --- | --- |
+| GenericName | Voz para videochamadas | Voice for video calls |
+| Comment | Escreve para que te ouçam nas videochamadas | Type so people can hear you on video calls |
+| Keywords | `conversão de texto em voz;síntese de voz;tts;voz;falar;microfone;videochamada;comunicação aumentativa e alternativa;caa;não consigo falar;` | text to speech; speech synthesis; TTS; voice; speak; microphone; video call; augmentative and alternative communication; CAA; I can’t speak |
+
+«Conversão de texto em voz» descrive la funzione. «Síntese de voz» e «tts» coprono le ricerche più tecniche.
+«Não consigo falar» segue il modo in cui il sito si rivolge alla persona. Il nome della comunicazione aumentativa e la sigla «caa» permettono di cercare l’ausilio anche per ambito. [Instituto Português da Afasia](https://ipafasia.pt/wp-content/uploads/2021/02/5-Tecnologias-de-apoio-a%CC%80-comunicac%CC%A7a%CC%83o-na-afasia.pdf)
+
+Review: no change. «Escreve para que te ouçam» riprende il tu del programma. «Conversão de texto em voz» e «não consigo falar» permettono di cercare sia la funzione sia il bisogno.

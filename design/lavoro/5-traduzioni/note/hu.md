@@ -62,3 +62,16 @@ Le foto precedono le modifiche. Ho misurato le nuove diciture con Lexend del pro
 ## Dubbio aperto
 
 «Mindig felül» è la dicitura presente nel catalogo ungherese di GTK. Per Zoom ho usato «Beállítások, Hang, Mikrofon». La dicitura esatta dei menu nella versione ungherese di Zoom resta da verificare.
+
+## Applications menu
+
+| Campo | Testo del menu | Retrotraduzione inglese |
+| --- | --- | --- |
+| GenericName | Hang videóhívásokhoz | Voice for video calls |
+| Comment | Írj, és a többiek hallani fognak a videóhívásban | Type and the others on the video call will hear you |
+| Keywords | `szövegfelolvasó;beszédszintézis;tts;hang;beszéd;mikrofon;videóhívás;augmentatív és alternatív kommunikáció;aak;nem tudok beszélni;` | text-to-speech reader; speech synthesis; TTS; voice; speech; microphone; video call; augmentative and alternative communication; AAK; I can’t speak |
+
+«Szövegfelolvasó» è il programma che legge il testo ad alta voce. «Beszédszintézis» è il nome della tecnologia.
+«Nem tudok beszélni» usa in prima persona il verbo del sito. Il nome locale della comunicazione aumentativa accompagna la sigla «aak».
+
+Review: no change. «Írj» dà del tu come la finestra e «a többiek» identifica chi ascolta. «Szövegfelolvasó» indica il programma cercato e «nem tudok beszélni» esprime il bisogno.

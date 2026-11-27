@@ -61,3 +61,16 @@ Rilette le 529 voci del sito e le 175 del programma. «Kembali ke kolom teks» i
 - Le sei foto documentano la prima traduzione. Per le nuove diciture ho controllato anche la larghezza in Lexend con le misure dell’interfaccia. La resa finale resta da confermare in una nuova acquisizione della finestra.
 
 Nessun dubbio linguistico aperto. Controllo del catalogo: `id: 704/704 entries ready`.
+
+## Applications menu
+
+| Campo | Testo nel menu | Back-translation (English) |
+| --- | --- | --- |
+| GenericName | `Alat Bantu Bicara untuk Panggilan Video` | Speaking aid for video calls |
+| Comment | `Ketik pesanmu agar orang lain bisa mendengarmu saat panggilan video` | Type your message so others can hear you on a video call |
+| Keywords | `teks ke suara;text-to-speech;tts;suara;mikrofon;panggilan video;komunikasi augmentatif dan alternatif;kaa;aac;sulit bicara;` | text to voice; text-to-speech; TTS; voice; microphone; video call; augmentative and alternative communication; KAA (Indonesian acronym); AAC; difficulty speaking |
+
+«suara» e «mikrofon» riprendono la finestra. «teks ke suara» descrive il passaggio dal testo alla voce, mentre «sulit bicara» lo rende cercabile a partire da una difficoltà quotidiana.
+Il nome indonesiano della CAA si cerca anche con «kaa», dalle iniziali indonesiane, e «aac», dalle iniziali inglesi. [Corso indonesiano sulla KAA](https://www.e-learn.cae-indonesia.com/courses/komunikasi-augmentatif-dan-alternatif-kaa-bagi-individu-dengan-kesulitan-bicara-dan-berbahasa/)
+
+Review: Ho sostituito «kaa» con «berbicara» («parlare»), il verbo usato nella presentazione. KAA è anche la sigla con cui si cerca la Conferenza di Bandung (Konferensi Asia Afrika). Per la comunicazione restano il nome indonesiano esteso e «aac». [Arsip Nasional Republik Indonesia](https://anri.go.id/download/guide-tematis-arsip-presiden-sukarno-19451967-1630548715)

@@ -56,3 +56,16 @@ La scena d’installazione riproduce per intero il messaggio sui file mancanti. 
 Nel carattere della finestra a scala normale, il testo di «Play» misura circa 35 px contro i 182 px di «Listen to the recording». Il nuovo titolo dell’ultimo passo misura 283 px nei 312 px disponibili a 360×320. Sono misure del testo. Le sei foto mostrano la versione precedente alla revisione.
 
 Non restano dubbi di traduzione.
+
+## Applications menu
+
+| Voce | Testo esatto | English back-translation |
+| --- | --- | --- |
+| GenericName | Text to Speech for Video Calls | Text to Speech for Video Calls |
+| Comment | Type to speak in video calls | Type to speak in video calls |
+| Keywords | text to speech;tts;voice;speak;microphone;video call;augmentative and alternative communication;aac;nonspeaking; | text to speech;tts;voice;speak;microphone;video call;augmentative and alternative communication;aac;nonspeaking; |
+
+«Text to speech» e «TTS» coprono il nome comune e la sigla. «Speak», «voice» e «microphone» sono le parole della finestra.
+«Nonspeaking» è una parola usata dalle persone che si descrivono in inglese. Il nome per esteso e la sigla AAC permettono anche una ricerca per tipo di ausilio.
+
+Review: Nessuna modifica. «Type to speak in video calls» riprende la finestra e spiega in sei parole come si partecipa alla chiamata. «AAC» e «nonspeaking» permettono di cercare sia l’ausilio sia il bisogno.

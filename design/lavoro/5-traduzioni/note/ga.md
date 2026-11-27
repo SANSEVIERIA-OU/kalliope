@@ -66,3 +66,16 @@ Le osservazioni si riferiscono alle foto fornite, precedenti alle correzioni. Ne
 ## Dubbio residuo
 
 I nomi dei menu audio possono variare con la lingua e la versione di Zoom. Non ho verificato una dicitura ufficiale irlandese per quel percorso.
+
+## Applications menu
+
+| Campo | Testo | Retrotraduzione inglese |
+| --- | --- | --- |
+| GenericName | `Guth le haghaidh físghlaonna` | `Voice for video calls` |
+| Comment | `Scríobh chun go gcloisfear thú ar fhísghlaonna` | `Type to be heard on video calls` |
+| Keywords | `téacs-go-caint;téacs-go-hurlabhra;tts;guth;caint;micreafón;físghlao;cumarsáid bhreisitheach agus mhalartach;aac;ní féidir liom labhairt;` | `text to speech;text to speech;tts;voice;speaking;microphone;video call;augmentative and alternative communication;aac;I can’t speak;` |
+
+«Téacs-go-caint» è il nome usato dal servizio irlandese ABAIR. «Téacs-go-hurlabhra» ricorre anche nei materiali didattici. [ABAIR](https://abair.ie/terms) · [COGG](https://cogg.ie/wp-content/uploads/2026/05/Tuiscint-ar-Litriu-na-Gaeilge-1.pdf)
+«Ní féidir liom labhairt» esprime il bisogno in prima persona. Il nome irlandese per esteso e la sigla AAC seguono l’uso di Geabaire. [Geabaire](https://abair.ie/geabaire/faq)
+
+Review: Tra le parole chiave «cbm» prende il posto di «téacs-go-hurlabhra». La ricerca per la sintesi vocale era già coperta da «téacs-go-caint» e «tts». Ora trova Kalliope anche chi cerca le iniziali irlandesi di «cumarsáid bhreisitheach agus mhalartach», usate nel curricolo Aistear. [Aistear](https://www.curriculumonline.ie/getmedia/8d15cbf7-a67c-438c-8ca2-bceda418276c/Aistear-FW-GA.pdf)

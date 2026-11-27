@@ -63,3 +63,16 @@ Le citazioni di `in.stato.voce.detto`, `ai.testo.21` e `ai.testo.54` riprendono 
 - Nei tre fogli `_2.png`, *info* riporta « dimostrazione » nel titolo di versione, troncato a 360 px. Il programma compone la versione dimostrativa fuori dal catalogo. Anche i nomi dei microfoni in *voce-mic*, « La voce di Anna » e il nome del file Opus sono dati della dimostrazione. A 360 px e al 175% si vede solo una parte dei crediti nella finestra *info*.
 
 Le osservazioni visive riguardano i sei fogli forniti, precedenti alle correzioni. Le larghezze citate misurano solo il testo con il carattere del progetto. Resta da vedere la resa delle nuove diciture in una cattura successiva. Nessun dubbio linguistico aperto.
+
+## Applications menu
+
+| Voce | Testo esatto | English back-translation |
+| --- | --- | --- |
+| GenericName | Synthèse vocale pour les appels vidéo | Speech synthesis for video calls |
+| Comment | Écrivez pour vous faire entendre en appel vidéo | Type to make yourself heard in a video call |
+| Keywords | synthèse vocale;tts;voix;parler;micro;appel vidéo;communication alternative et améliorée;caa;je ne peux pas parler; | speech synthesis;tts;voice;speak;microphone;video call;augmentative and alternative communication;aac;I can’t speak; |
+
+«Micro» riprende il nome usato nella finestra. «Je ne peux pas parler» permette di cercare in prima persona con le stesse parole che il sito usa per descrivere il bisogno.
+«Synthèse vocale» è il nome della tecnologia. Il termine «communication alternative et améliorée» e la sigla CAA seguono l’uso francese. [Mon Parcours Handicap](https://www.monparcourshandicap.gouv.fr/actualite/journee-mondiale-de-la-voix-la-communication-alternative-et-amelioree)
+
+Review: Nelle parole chiave «micro» diventa «microphone». Chi digita il nome intero trova ora il programma, e «micro», il termine della finestra, resta ricercabile come prefisso.

@@ -63,3 +63,16 @@ Il percorso di creazione prevede lo scorrimento verticale e una barra di conferm
 ## Dubbio aperto
 
 Nella guida a Zoom ho mantenuto *Settings*, *Audio* e *Microphone* accanto a *Nastavitve*, *Zvok* e *Mikrofon*. Le diciture del client Zoom in sloveno restano da verificare sul client stesso.
+
+## Applications menu
+
+| Campo | Testo del menu | Retrotraduzione inglese |
+| --- | --- | --- |
+| GenericName | Glas za videoklice | Voice for video calls |
+| Comment | Napiši, kar želiš povedati v videoklicu | Type what you want to say on a video call |
+| Keywords | `sinteza govora;pretvorba besedila v govor;tts;glas;govoriti;mikrofon;videoklic;nadomestna in dopolnilna komunikacija;ndk;ne morem govoriti;` | speech synthesis; converting text to speech; TTS; voice; speak; microphone; video call; alternative and augmentative communication; NDK; I can’t speak |
+
+«Sinteza govora» e «tts» coprono la funzione, mentre «videoklic» è la parola che compare già nella finestra.
+«Ne morem govoriti» è una ricerca in prima persona. La locuzione completa e «ndk» servono a chi cerca l’ausilio attraverso la terminologia slovena.
+
+Review: «Napiši, kar želiš povedati v videoklicu» invitava a scrivere ciò che si vuole dire. «Pišeš, drugi pa te v videoklicu slišijo» esplicita che gli altri sentono chi scrive, con i verbi già usati nella home. NDK è la sigla in uso per «nadomestna in dopolnilna komunikacija». [CIRIUS Kamnik](https://cirius.splet.arnes.si/zdravstvo/medicinska-rehabilitacija/logopedija/nadomestna-komunikacija/)

@@ -69,3 +69,16 @@ La guida ora cita le stesse parole del programma per i file mancanti, l’errore
 La verifica visiva si riferisce alle sei immagini ricevute. Per le nuove etichette ho controllato gli ingombri con il carattere del progetto. La resa finale nella finestra ricompilata resta da verificare.
 
 Controllo del catalogo riuscito con `lv: 704/704 entries ready`. Nessun dubbio linguistico aperto.
+
+## Applications menu
+
+| Campo | Testo del menu | Retrotraduzione inglese |
+| --- | --- | --- |
+| GenericName | Balss videozvaniem | Voice for video calls |
+| Comment | Raksti, un tevi dzirdēs videozvanā | Type and you’ll be heard on the video call |
+| Keywords | `runas sintēze;teksta pārvēršana runā;tts;balss;runāt;mikrofons;videozvans;augmentatīvā un alternatīvā komunikācija;aak;nevaru runāt;` | speech synthesis; converting text to speech; TTS; voice; speak; microphone; video call; augmentative and alternative communication; AAK; I can’t speak |
+
+«Runas sintēze» è il nome tecnico, «teksta pārvēršana runā» descrive la conversione. «Videozvans» segue la finestra.
+«Nevaru runāt» è un modo diretto per cercare aiuto in prima persona. La denominazione lettone della comunicazione aumentativa accompagna la sua sigla. [Centro nazionale di riabilitazione Vaivari](https://www.nrcvaivari.lv/sites/default/files/augmentivas-un-alternativas-komunikacijas-kompetencu-centra-izveide-merki-vajadzibas-un-sniedzamie-pakalpojumi.pdf)
+
+Review: no change. «Raksti» riprende il tu della finestra e «tevi dzirdēs» dice che chi scrive sarà ascoltato. «Teksta pārvēršana runā» è la dicitura del portale terminologico lettone. [Portale nazionale di terminologia](https://termini.gov.lv/atrast/text-to-speech/en)

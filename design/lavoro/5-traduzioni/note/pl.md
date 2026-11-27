@@ -66,3 +66,16 @@ Ho riletto le 529 voci del sito e le 175 del programma. Le tre citazioni segnala
 | `pl_920x640_s1_scuro_2.png` | Il campo del nome in *voce-tratti* è parzialmente fuori vista sopra la barra. *dimostrazione*, i nomi dei microfoni, il nome del file e il nome di voce *La voce di Anna* sono dati italiani della demo. |
 
 Nessun dubbio linguistico aperto. I fogli documentano la versione precedente alle correzioni. Dalle immagini fisse si vede dove il contenuto esce dall’area visibile. La raggiungibilità dei controlli tramite scorrimento resta da verificare nella finestra.
+
+## Applications menu
+
+| Campo | Testo del menu | Retrotraduzione inglese |
+| --- | --- | --- |
+| GenericName | Głos do rozmów wideo | Voice for video calls |
+| Comment | Pisz, a inni usłyszą cię podczas rozmów wideo | Type and others will hear you during video calls |
+| Keywords | `synteza mowy;syntezator mowy;tts;głos;mówienie;mikrofon;rozmowa wideo;komunikacja wspomagająca i alternatywna;aac;osoba niemówiąca;` | speech synthesis; speech synthesizer; TTS; voice; speaking; microphone; video call; augmentative and alternative communication; AAC; nonspeaking person |
+
+«Synteza mowy» indica la tecnologia, «syntezator mowy» lo strumento che si cerca. «Rozmowa wideo» segue la finestra.
+«Osoba niemówiąca» è la forma centrata sulla persona. Il nome polacco della comunicazione aumentativa affianca la sigla internazionale «aac». [Servizio pubblico polacco per le persone con disabilità](https://niepelnosprawni.gov.pl/kazdy-ma-prawo-do-komunikacji-pazdziernik-miesiacem-aac/)
+
+Review: no change. «Pisz, a inni usłyszą cię» usa il ty della finestra. «Syntezator mowy» nomina lo strumento che si cerca e «osoba niemówiąca» permette di cercarlo pensando alla persona.

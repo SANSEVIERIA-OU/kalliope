@@ -55,3 +55,16 @@ Ho riletto le 529 voci del sito e le 175 del programma. Quando Kalliope parla di
 - Nella scena `info` di `hi_360x320_s1_scuro_2.png` il titolo si interrompe dopo l’inizio di «dimostrazione». La parola intera si vede nei due fogli `hi_920x640_s1_scuro_2.png` e `hi_920x640_s1.75_scuro_2.png`. Il titolo arriva da `crates/app/src/vista.rs`, che aggiunge la parola italiana alla versione della demo.
 
 Ho confrontato le larghezze delle diciture accorciate per la barra, la prima scheda e il conteggio con il carattere devanagari del progetto. Le foto documentano la versione precedente alle correzioni. La resa finale a 360×320 resta da verificare in una nuova acquisizione, in particolare per अ+. Nessun dubbio linguistico aperto.
+
+## Applications menu
+
+| Campo | Testo nel menu | Back-translation (English) |
+| --- | --- | --- |
+| GenericName | `वीडियो कॉल के लिए आवाज़` | Voice for video calls |
+| Comment | `वीडियो कॉल में अपनी बात लिखकर सुनाएँ` | On video calls, type what you want to say so others can hear it |
+| Keywords | `टेक्स्ट टू स्पीच;tts;आवाज़;बोलना;माइक्रोफ़ोन;वीडियो कॉल;संवर्धक और वैकल्पिक संचार;एएसी;aac;बोलने में दिक्कत;` | text to speech; TTS; voice; speak; microphone; video call; augmentative and alternative communication; AAC in Devanagari; AAC; difficulty speaking |
+
+«आवाज़» e «माइक्रोफ़ोन» mantengono la grafia della finestra. «बोलने में दिक्कत» descrive una difficoltà con le parole della home.
+Per la CAA ho incluso il nome esteso e la sigla sia in devanagari sia in caratteri latini. [Materiale didattico dell’IGNOU](https://egyankosh.ac.in/bitstream/123456789/119141/1/Unit-19.pdf)
+
+Review: no change. «अपनी बात लिखकर सुनाएँ» riprende l’invito cortese della finestra a farsi sentire scrivendo. «बोलने में दिक्कत» usa le parole della home e le grafie «एएसी» e «aac» consentono di cercare la sigla nelle due scritture.

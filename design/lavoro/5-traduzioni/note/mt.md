@@ -72,3 +72,17 @@ Nella guida, «Ma nsibx il-fajls tal-vuċi» riprende l’inizio dell’avviso s
 | `mt_920x640_s1_scuro_2.png` | Si leggono i titoli, la riga di ascolto e i tre tratti individuati. In `voce-tratti` il campo del nome è visibile solo in parte sopra il piè di finestra. |
 
 Le misure delle nuove diciture sono state calcolate con Lexend del progetto. I fogli mostrano la versione precedente alla revisione. Le foto documentano ciò che è visibile nella posizione di scorrimento ripresa. Il suffisso *dimostrazione*, i nomi dei dispositivi, il nome di esempio *La voce di Anna* e il nome del file provengono dalla demo.
+
+## Applications menu
+
+| Campo | Testo | Retrotraduzione inglese |
+| --- | --- | --- |
+| GenericName | `Vuċi għas-sejħiet bil-vidjo` | `Voice for video calls` |
+| Comment | `Ikteb biex jisimgħuk waqt is-sejħiet bil-vidjo` | `Type so people can hear you during video calls` |
+| Keywords | `sinteżi tat-taħdit;text-to-speech;tts;vuċi;taħdit;mikrofonu;sejħa bil-vidjo;komunikazzjoni awmentattiva u alternattiva;aac;ma nistax nitkellem;` | `speech synthesis;text-to-speech;tts;voice;speaking;microphone;video call;augmentative and alternative communication;aac;I can’t speak;` |
+
+«Vuċi», «mikrofonu» e «sejħa bil-vidjo» riprendono il lessico della finestra. «Ma nistax nitkellem» permette di cercare il programma con le parole della persona stessa.
+Il nome maltese della comunicazione aumentativa segue l’uso dei servizi sanitari, mentre l’ente pubblico Aġenzija Sapport usa la sigla internazionale AAC. [Allied Health Services](https://alliedhealthservices.gov.mt/professjonijiet/diskors-u-lingwa/disturbi-tal-ispettru-tal-awtizmu/) · [Aġenzija Sapport](https://sapport.gov.mt/mt/mistoqsijiet-frekwenti/)
+«Sinteżi tat-taħdit» descrive la funzione in maltese. «Text-to-speech» è il nome usato anche dall’Università di Malta per il suo motore. [Università di Malta](https://www.um.edu.mt/newspoint/news/2020/02/maltese-speech-engine)
+
+Review: Nessuna modifica. «Ikteb biex jisimgħuk» dice con il tu della finestra che chi partecipa alla chiamata sente ciò che scrivi. «Ma nistax nitkellem» esprime il bisogno in prima persona e «aac» è la sigla usata dai servizi maltesi.

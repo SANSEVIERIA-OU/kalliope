@@ -72,3 +72,16 @@ La pagina di installazione riproduce per intero il messaggio sui file vocali man
 | `el_920x640_s1.75_scuro_2.png` | In «info» si vede solo l’inizio dell’elenco dei componenti. In «voce-2» e «voce-suggerimento» i suggerimenti proseguono sotto il bordo. In «voce-3» e «voce-nome» si vede il bordo superiore del campo, in «voce-crea» solo parte del comando in basso. In «voce-tratti» compare il primo tratto sopra la barra. |
 
 «dimostrazione» nel titolo di versione e i nomi italiani dei microfoni vengono dalla scena dimostrativa. Le foto documentano le posizioni prima delle correzioni. La procedura vocale prevede lo scorrimento, ma dai fotogrammi non si può verificare fin dove si arrivi scorrendo. Nessun dubbio linguistico aperto.
+
+## Applications menu
+
+| Campo | Testo nel menu | Back-translation (English) |
+| --- | --- | --- |
+| GenericName | `Φωνή για βιντεοκλήσεις` | Voice for video calls |
+| Comment | `Γράψε για να σε ακούσουν στις βιντεοκλήσεις` | Type so others can hear you on video calls |
+| Keywords | `μετατροπή κειμένου σε ομιλία;tts;φωνή;ομιλία;μικρόφωνο;βιντεοκλήση;επαυξητική και εναλλακτική επικοινωνία;εεε;aac;δεν μπορώ να μιλήσω;` | text to speech; TTS; voice; speech; microphone; video call; augmentative and alternative communication; ΕΕΕ (Greek acronym); AAC; I can’t speak |
+
+«φωνή» e «μικρόφωνο» riprendono la finestra. «δεν μπορώ να μιλήσω» permette di cercare in prima persona.
+Chi conosce già la tecnologia può cercare «tts» oppure il nome greco della CAA e le sigle «εεε» e «aac». [Glossario dell’Università di Atene](https://speech.di.uoa.gr/sppages/spppdf/orologia_EEE.pdf)
+
+Review: Ho tolto «εεε» dalle parole chiave perché in greco si scrive così anche un’esitazione. Chi cerca la CAA trova ancora Kalliope con «επαυξητική και εναλλακτική επικοινωνία» o «aac».

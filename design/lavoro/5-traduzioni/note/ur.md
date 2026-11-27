@@ -67,3 +67,16 @@ La guida all’installazione riporta per intero il messaggio sui file mancanti. 
 | `ur_920x640_s1_scuro_2.png` | In `voce-3` e `voce-nome` si vedono il campo, il consenso e il pulsante finale. In `voce-tratti` il piede delimita la lista in corrispondenza della terza scheda. I nomi italiani di dispositivi, file e voci di esempio appartengono alla demo. |
 
 Il confronto visivo riguarda i sei fogli forniti, acquisiti prima delle modifiche. Rimane da verificare in una nuova acquisizione quanto testo resta visibile a 360×320 e al 175%, soprattutto nel conteggio e sopra il piede fisso. Il dubbio della prima traduzione sui file mancanti è risolto.
+
+## Applications menu
+
+| Campo | Testo nel menu | Back-translation (English) |
+| --- | --- | --- |
+| GenericName | `ویڈیو کال کے لیے آواز` | Voice for video calls |
+| Comment | `ویڈیو کال میں لکھ کر اپنی بات سنائیں` | On a video call, type what you want to say so others can hear it |
+| Keywords | `متن کو آواز میں بدلنا;ٹیکسٹ ٹو اسپیچ;tts;آواز;بولنا;مائیکروفون;ویڈیو کال;اضافہ پذیر اور متبادل رابطہ;aac;بولنے میں دقت;` | turn text into voice; text to speech; TTS; voice; speak; microphone; video call; augmentative and alternative communication; AAC; difficulty speaking |
+
+«آواز» e «مائیکروفون» sono le parole della finestra. «بولنے میں دقت» descrive la difficoltà con le stesse parole della presentazione.
+Il nome esteso della CAA ha più rese in urdu. Ho affiancato alla forma del glossario la sigla internazionale «aac». [Glossario scolastico in urdu](https://www.pwcs.edu/userfiles/servers/server_340140/file/special-education/parent-packets/abbreviations/abbreviations---urdu-print-only.pdf)
+
+Review: no change. «لکھ کر اپنی بات سنائیں» riprende l’invito cortese della finestra. «بولنے میں دقت» esprime la difficoltà con parole comuni e «اضافہ پذیر اور متبادل رابطہ» è la dicitura del glossario urdu citato sopra.

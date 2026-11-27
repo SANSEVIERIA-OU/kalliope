@@ -71,3 +71,16 @@ Le osservazioni descrivono i fotogrammi ricevuti prima delle correzioni. I passi
 ## Dubbio residuo
 
 Per il comando del desktop «Sempre in primo piano» ho usato 总在最前 sia nella finestra sia nella guida. La dicitura esatta dipende dall'ambiente desktop Linux della persona.
+
+## Applications menu
+
+| Campo | Testo nel menu | Back-translation (English) |
+| --- | --- | --- |
+| GenericName | `视频通话文字转语音工具` | Text-to-speech tool for video calls |
+| Comment | `在视频通话中，把你想说的话打出来，让大家听见` | On video calls, type what you want to say so everyone can hear it |
+| Keywords | `文字转语音;语音合成;tts;声音;说话;麦克风;视频通话;辅助与替代沟通系统;aac;无法说话;` | text to speech; speech synthesis; TTS; voice; speak; microphone; video call; augmentative and alternative communication system; AAC; unable to speak |
+
+«文字转语音» descrive il passaggio dalla scrittura alla voce. «语音合成» è il nome tecnico e «无法说话» riprende la presentazione di Kalliope.
+«辅助与替代沟通系统» e «aac» accolgono chi conosce la CAA attraverso il nome cinese o la sigla internazionale. [Guida alla CAA in cinese](https://atic.sfusd.edu/aac/chinese)
+
+Review: no change. «把你想说的话打出来，让大家听见» invita a digitare ciò che si vuole dire e indica chi lo sentirà. Tra le chiavi figurano sia «语音合成», cercata nel foglio, sia «无法说话», già usata nella presentazione.

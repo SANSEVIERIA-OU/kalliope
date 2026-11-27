@@ -58,3 +58,16 @@ Ho riletto tutte le 704 voci, comprese le 175 del programma, e guardato i sei fo
 - In `cs_360x320_s1_scuro_2.png` e `cs_920x640_s1.75_scuro_2.png` si vede solo una parte del brano e delle istruzioni di registrazione. Nelle scene `voce-3` e `voce-nome` il campo del nome è sotto il limite visibile sopra il pulsante fisso. Il pannello prevede lo scorrimento. I fogli mostrano una sola posizione.
 - In `cs_360x320_s1_scuro_1.png` e `cs_920x640_s1.75_scuro_1.png` il bordo della zona di scrittura nasconde parte della frase italiana lunga nella scena `scrive`. Le bolle compatte mostrano un tratto della frase su una riga. Anche in `cs_920x640_s1_scuro_1.png` la bolla compatta mostra solo parte del testo. Sono frasi digitate dalla persona.
 - In `cs_920x640_s1_scuro_2.png` le etichette ceche dei comandi sono leggibili. Tutti i fogli documentano la traduzione precedente alle correzioni. Per le nuove diciture del terzo passo e dei pulsanti ho confrontato le larghezze in Lexend.
+
+## Applications menu
+
+| Campo | Testo del menu | Retrotraduzione inglese |
+| --- | --- | --- |
+| GenericName | Hlas pro videohovory | Voice for video calls |
+| Comment | Pište a při videohovoru vás ostatní uslyší | Type and the others on the video call will hear you |
+| Keywords | `převod textu na řeč;syntéza řeči;tts;hlas;mluvení;mikrofon;videohovor;augmentativní a alternativní komunikace;aak;nemohu mluvit;` | text-to-speech conversion; speech synthesis; TTS; voice; speaking; microphone; video call; augmentative and alternative communication; AAK; I can’t speak |
+
+«Převod textu na řeč» descrive la funzione, «syntéza řeči» la tecnologia. «Videohovor» segue la finestra.
+«Nemohu mluvit» riprende in prima persona le parole del sito. «aak» affianca la denominazione usata dal Museo pedagogico nazionale ceco. [Národní pedagogické muzeum a knihovna](https://npmk.gov.cz/node/605)
+
+Review: no change. «Pište» mantiene la forma di cortesia e «vás ostatní uslyší» dice che gli altri sentiranno chi scrive. «Převod textu na řeč» e «aak» coprono due ricerche pertinenti.

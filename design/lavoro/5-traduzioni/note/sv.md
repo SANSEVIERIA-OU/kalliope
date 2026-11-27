@@ -64,3 +64,16 @@ Ho riletto tutte le 704 voci, comprese le 175 del programma con le rispettive no
 - `sv_920x640_s1_scuro_2.png` — In «voce-mic» si vede solo parte del pulsante di registrazione. In «voce-tratti» il campo del nome prosegue sotto il piè di pagina. Questi pannelli e l’elenco delle licenze in «info» sono scorrevoli. «Cuffia USB», «Microfono del portatile» e «La voce di Anna» sono nomi inseriti dalla demo.
 
 I fogli mostrano il testo precedente alle correzioni. Le misure si riferiscono al carattere del progetto. La resa finale delle nuove diciture resta da verificare in una nuova acquisizione. Non restano dubbi linguistici aperti.
+
+## Applications menu
+
+| Campo | Testo | Retrotraduzione inglese |
+| --- | --- | --- |
+| GenericName | `Talsyntes för videosamtal` | `Speech synthesis for video calls` |
+| Comment | `Skriv det du vill säga i videosamtal` | `Type what you want to say on video calls` |
+| Keywords | `talsyntes;text till tal;tts;röst;prata;mikrofon;videosamtal;alternativ och kompletterande kommunikation;akk;kan inte prata;` | `speech synthesis;text to speech;tts;voice;talk;microphone;video call;augmentative and alternative communication;aac;can’t talk;` |
+
+«Talsyntes» e «text till tal» coprono due modi di cercare la lettura di un testo, mentre «prata» e «kan inte prata» riprendono le parole rivolte alla persona sul sito.
+«Mikrofon» e «videosamtal» collegano la ricerca alla chiamata. Chi usa la comunicazione aumentativa può cercarla per esteso o con la sigla svedese AKK. [Dart](https://www.dart-gbg.org/utredning/ebh_rapport)
+
+Review: «Skriv det du vill säga i videosamtal» diventa «Skriv så att de andra hör dig i videosamtalet». La prima versione indicava cosa scrivere. «De andra hör dig», già usato sul sito, dice anche cosa succede nella chiamata.

@@ -4800,6 +4800,30 @@ msgctxt "programma.voce.creazione-fallita"
 msgid "Non sono riuscita a creare la voce: {causa}"
 msgstr "Nem sikerült létrehoznom a hangot: {causa}"
 
+#. The kind of program, shown with the name «Kalliope» in the applications menu and in the search of the desktop (the GenericName of the desktop entry). Kalliope lets a person who cannot speak, or finds it hard, type sentences that a voice says into a virtual microphone, so the others hear them in Zoom, Teams, Meet and the other meeting apps. A few words, a name not a sentence, no full stop.
+#. A line of the desktop file (the applications menu): plain text on one line, no tags, no backslash.
+#: packaging/linux/io.github.sansevieria_ou.kalliope.desktop.in
+#, kalliope-desktop
+msgctxt "programma.menu.genere"
+msgid "Voce per le videochiamate"
+msgstr "Hang videóhívásokhoz"
+
+#. The one-line description of Kalliope in the applications menu (its tooltip, and the line under the name in some menus). Addressed to the person who uses it, in the form of address of the program; short; no full stop at the end.
+#. A line of the desktop file (the applications menu): plain text on one line, no tags, no backslash.
+#: packaging/linux/io.github.sansevieria_ou.kalliope.desktop.in
+#, kalliope-desktop
+msgctxt "programma.menu.descrizione"
+msgid "Scrivi e fatti sentire nelle videochiamate"
+msgstr "Írj, és a többiek hallani fognak a videóhívásban"
+
+#. Words a person may type in the search of the applications menu to find Kalliope, besides its name: what they would look for in your language (the technology, the need, the meeting). Not a translation word by word: the words people of your language search with. Separate the words with «;» and end with «;», no spaces around «;», about 6 to 10 words or short phrases, lower case where the language allows it.
+#. A line of the desktop file (the applications menu): plain text on one line, no tags, no backslash.
+#: packaging/linux/io.github.sansevieria_ou.kalliope.desktop.in
+#, kalliope-desktop
+msgctxt "programma.menu.parole"
+msgid "sintesi vocale;voce;parlare;microfono;videochiamata;muto;CAA;"
+msgstr "szövegfelolvasó;beszédszintézis;tts;hang;beszéd;mikrofon;videóhívás;augmentatív és alternatív kommunikáció;aak;nem tudok beszélni;"
+
 #. Tags in the text (move the words, keep every tag, each inside the same tag):
 #.   <1> = <span>
 #: index.html

@@ -64,3 +64,16 @@ Le pagine di installazione e aiuto riportano le parole del programma per i file 
 - In `bn_920x640_s1_scuro_1.png` i comandi bengalesi sono leggibili. La bolla su una riga delle scene compatte mostra solo parte del campione italiano. In `bn_920x640_s1_scuro_2.png` le etichette bengalesi risultano leggibili anche nella riga di ascolto.
 
 Il controllo visivo si riferisce ai sei fogli consegnati prima delle modifiche. Le nuove diciture sono state controllate nel catalogo. Il controllo di completezza restituisce `bn: 704/704 entries ready`.
+
+## Applications menu
+
+| Campo | Testo nel menu | Back-translation (English) |
+| --- | --- | --- |
+| GenericName | `ভিডিও কলের জন্য কণ্ঠ` | Voice for video calls |
+| Comment | `ভিডিও কলে লিখে কথা বলুন` | Speak on video calls by typing |
+| Keywords | `টেক্সট-টু-স্পিচ;লেখা থেকে কথা;tts;কণ্ঠ;কথা বলা;মাইক্রোফোন;ভিডিও কল;বিকল্প ও সহায়ক যোগাযোগ;aac;কথা বলতে অসুবিধা;` | text-to-speech; speech from text; TTS; voice; speaking; microphone; video call; alternative and augmentative communication; AAC; difficulty speaking |
+
+«কণ্ঠ» e «কথা বলা» sono le parole della finestra per la voce e il parlare. «কথা বলতে অসুবিধা» permette di cercare con parole quotidiane.
+Il nome bengalese della CAA mette prima l’idea di alternativa. La sigla «aac» offre una ricerca più breve. [Portale degli insegnanti del Bangladesh](https://teachers.gov.bd/blog/details/808893)
+
+Review: no change. «লিখে কথা বলুন» dice in tre parole che si può parlare scrivendo e usa la forma di cortesia della finestra. «কথা বলতে অসুবিধা» riprende le parole della home per la difficoltà a parlare.

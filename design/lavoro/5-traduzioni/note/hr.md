@@ -66,3 +66,16 @@ Le foto documentano la versione precedente alla revisione. Mostrano la posizione
 ## Dubbi aperti
 
 Nessun dubbio linguistico rimasto aperto.
+
+## Applications menu
+
+| Campo | Testo del menu | Retrotraduzione inglese |
+| --- | --- | --- |
+| GenericName | Glas za videopozive | Voice for video calls |
+| Comment | Piši da te drugi čuju u videopozivima | Type so others can hear you on video calls |
+| Keywords | `pretvaranje teksta u govor;tts;glas;govoriti;mikrofon;videopoziv;potpomognuta komunikacija;pk;aac;ne mogu govoriti;` | converting text to speech; TTS; voice; speak; microphone; video call; supported communication (Croatian term for AAC); PK; AAC; I can’t speak |
+
+«Pretvaranje teksta u govor» descrive ciò che fa il programma. «Ne mogu govoriti» riprende in prima persona la formulazione del sito.
+«Potpomognuta komunikacija» e «pk» sono il nome e la sigla croati per l’ambito della CAA. «aac» permette la ricerca anche con la sigla internazionale.
+
+Review: no change. «Piši» si rivolge alla stessa persona della finestra e «drugi čuju» rende esplicito l’ascolto. «Potpomognuta komunikacija» e la sigla PK sono attestate nell’uso croato. [Manuale CARNET](https://www.carnet.hr/wp-content/uploads/2025/09/udzbenik_obrazovanje_ucenika_s_teskocama_web-3.pdf)

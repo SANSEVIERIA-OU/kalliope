@@ -68,3 +68,16 @@ La guida cita ora gli errori effettivi del programma. Per i file mancanti riprod
 I passi per creare la voce e i crediti hanno uno scorrimento verticale. I nomi dei microfoni, del file importato e della voce di Anna sono dati della demo. Le osservazioni riguardano le sei foto fornite. Per i nuovi testi ho misurato gli ingombri indicati sopra con il Lexend del progetto. Per confermare la resa finale dei ritagli occorre una nuova foto del programma ricompilato.
 
 **Esito.** `python3 -I tools/translations.py check de --complete` stampa `de: 704/704 entries ready`. I due dubbi della prima lettura riguardavano le vecchie citazioni e sono risolti.
+
+## Applications menu
+
+| Voce | Testo esatto | English back-translation |
+| --- | --- | --- |
+| GenericName | Sprachausgabe für Videoanrufe | Speech output for video calls |
+| Comment | Schreib, was du im Videoanruf sagen möchtest | Type what you want to say in the video call |
+| Keywords | Sprachausgabe;Sprachsynthese;TTS;Stimme;sprechen;Mikrofon;Videoanruf;Unterstützte Kommunikation;UK;nicht sprechen können; | speech output;speech synthesis;TTS;voice;speak;microphone;video call;augmentative and alternative communication;AAC;being unable to speak; |
+
+«Sprachausgabe» indica ciò che si sente, «Sprachsynthese» la tecnologia. «Nicht sprechen können» esprime il bisogno con il verbo usato anche sul sito.
+Il nome «Unterstützte Kommunikation» e la sigla UK seguono l’uso della comunità tedesca. [Lebenshilfe](https://www.lebenshilfe.de/informieren/familie/unterstuetzte-kommunikation)
+
+Review: «Schreib, was du im Videoanruf sagen möchtest» diventa «Schreib, damit die anderen dich im Videoanruf hören können». Il «du» resta quello della finestra e «die anderen dich … hören» rende esplicito che chi partecipa alla chiamata sente la frase.

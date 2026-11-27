@@ -54,3 +54,16 @@ Le frasi digitate per Kalliope, compresa quella in `st.varco.scritto`, e le tras
 ## Verifica
 
 Le tre citazioni aggiornate riprendono i messaggi spagnoli della finestra. L’etichetta del campione è «Dijo:» e le parole che seguono sono la trascrizione italiana. Il controllo di completezza restituisce `es: 704/704 entries ready`. Nessun dubbio linguistico aperto. I sei fogli documentano la versione precedente alle correzioni.
+
+## Applications menu
+
+| Campo | Testo del menu | Retrotraduzione inglese |
+| --- | --- | --- |
+| GenericName | Voz para videollamadas | Voice for video calls |
+| Comment | Escribe para que te oigan en las videollamadas | Type so people can hear you on video calls |
+| Keywords | `texto a voz;tts;voz;hablar;micrófono;videollamada;comunicación aumentativa y alternativa;caa;saac;no puedo hablar;` | text to speech; TTS; voice; speak; microphone; video call; augmentative and alternative communication; CAA; augmentative and alternative communication systems (SAAC); I can’t speak |
+
+«Texto a voz» e «tts» servono a chi cerca la funzione. «No puedo hablar» riprende in prima persona le parole usate sul sito.
+«caa» indica la comunicazione aumentativa e alternativa. «saac» serve a chi cerca i sistemi con cui si pratica. [ARASAAC](https://aulaabierta.arasaac.org/que_son_los_sistemas_aumentativos_y_alternativos_de_comunicacion)
+
+Review: no change. «Escribe para que te oigan» usa il tú della finestra e dice chi sente la frase. «Texto a voz» trova la funzione, «no puedo hablar» esprime il bisogno.

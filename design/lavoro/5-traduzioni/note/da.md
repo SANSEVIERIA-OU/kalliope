@@ -62,3 +62,16 @@ Ho riallineato le citazioni del sito, comprese le tre voci segnalate come fuzzy.
 | `da_920x640_s1_scuro_2.png` | I comandi di ascolto e i passi sono leggibili. In «voce-tratti» il bordo sfumato intercetta il campo del nome sotto i tre clip. I nomi italiani dei dispositivi, del file e della voce sono dati della demo. |
 
 Ho misurato il titolo dell’ultimo passo con Lexend a 28 px e peso 700. «Lyt og giv stemmen et navn» richiede circa 398 px, «Lyt og vælg et navn» circa 284 px. Nella finestra da 360 px la colonna del titolo ne offre 312. Le foto documentano la versione precedente alle correzioni. Non restano dubbi linguistici. Il controllo delle 704 voci ha dato `da: 704/704 entries ready`.
+
+## Applications menu
+
+| Campo | Testo | Retrotraduzione inglese |
+| --- | --- | --- |
+| GenericName | `Talesyntese til videoopkald` | `Speech synthesis for video calls` |
+| Comment | `Skriv, så de andre kan høre dig i videoopkald` | `Type so the others can hear you on video calls` |
+| Keywords | `tekst til tale;talesyntese;tts;stemme;tale;mikrofon;videoopkald;alternativ og supplerende kommunikation;ask;uden talesprog;` | `text to speech;speech synthesis;tts;voice;speak;microphone;video call;augmentative and alternative communication;aac;without spoken language;` |
+
+«Tekst til tale» è la ricerca in parole comuni, «talesyntese» il nome della tecnologia. «Stemme», «mikrofon» e «videoopkald» riprendono la finestra.
+«Uden talesprog» descrive il bisogno. Chi conosce già la comunicazione aumentativa trova sia il nome danese per esteso sia la sigla ASK. [Social- og Boligstyrelsen](https://www.sbst.dk/handicap/multiple-funktionsnedsaettelser/metoder/alternativ-og-supplerende-kommunikation)
+
+Review: Ho tolto la parola chiave «ask». La sigla ASK è in uso, ma «ask» in danese significa anche «frassino». Il nome per esteso «alternativ og supplerende kommunikation» conserva la ricerca specifica.

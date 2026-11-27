@@ -64,3 +64,16 @@ Ho riletto 529 voci del sito e 175 del programma. Per queste ultime ho confronta
 - `bg_920x640_s1_scuro_1.png` e `bg_920x640_s1_scuro_2.png` — a dimensione normale le etichette bulgare dei pulsanti sono leggibili. In `compatta` la frase italiana continua oltre la bolla. In `voce-tratti` i tre tratti sono visibili, ma il campo del nome è al margine inferiore del pannello scorrevole.
 
 Le schermate di creazione consentono lo scorrimento. Dai fotogrammi si può stabilire quali parole erano visibili al momento dello scatto. La raggiungibilità di tutti i controlli durante lo scorrimento e la resa delle nuove diciture nella finestra ricompilata restano da verificare.
+
+## Applications menu
+
+| Campo | Testo nel menu | Back-translation (English) |
+| --- | --- | --- |
+| GenericName | `Глас за видеоразговори` | Voice for video calls |
+| Comment | `Пиши, за да те чуят във видеоразговора` | Type so others can hear you on the video call |
+| Keywords | `синтез на реч;синтезиран говор;tts;глас;говорене;микрофон;видеоразговор;допълваща и алтернативна комуникация;дак;не мога да говоря;` | speech synthesis; synthesized speech; TTS; voice; speaking; microphone; video call; augmentative and alternative communication; ДАК (AAC); I can’t speak |
+
+«синтез на реч» indica la tecnologia. «синтезиран говор» riprende il nome di un’impostazione di accessibilità e «не мога да говоря» esprime il bisogno in prima persona.
+Per la CAA ho scelto «допълваща и алтернативна комуникация» e la sigla locale ДАК. [Uso nella rivista bulgara Педагогика](https://press.azbuki.bg/uncategorized/prilozhenie-na-sredstvata-za-dopalvashha-i-alternativna-komunikacziya-v-obrazovatelnite-instituczii-v-balgariya/)
+
+Review: no change. „Пиши, за да те чуят“ usa il «tu» della finestra e dice chi verrà sentito. La ricerca copre sia la sigla bulgara „дак“ sia la richiesta in prima persona „не мога да говоря“.

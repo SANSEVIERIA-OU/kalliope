@@ -54,3 +54,16 @@ Le citazioni in `in.stato.voce.detto`, `ai.testo.21` e `ai.testo.54` riprendono 
 - In `fi_360x320_s1_scuro_1.png` il comando A+ arriva al bordo destro della barra. In `scrive`, qui e in `fi_920x640_s1.75_scuro_1.png`, si vede soltanto parte della frase digitata sopra i comandi. Le bolle compatte mostrano solo un tratto della frase italiana. Sono contenuti della scena e limiti dello spazio visibile.
 - In `fi_360x320_s1_scuro_2.png` il titolo di `info` taglia *dimostrazione*, un suffisso italiano aggiunto dalla demo. In questo foglio e in `fi_920x640_s1.75_scuro_2.png`, l’area scorrevole mostra solo parte delle istruzioni di registrazione, dell’elenco dei componenti o del modulo sopra il pulsante fisso. Le immagini documentano la porzione visibile. Nomi dei microfoni, del file e della voce di esempio provengono dalla demo.
 - Nei fogli `fi_920x640_s1_scuro_1.png` e `fi_920x640_s1_scuro_2.png` alla scala normale le etichette finlandesi sono leggibili. Le misure delle nuove diciture usano il carattere Lexend del progetto. I sei fogli mostrano la traduzione precedente alle correzioni.
+
+## Applications menu
+
+| Campo | Testo | Retrotraduzione inglese |
+| --- | --- | --- |
+| GenericName | `Puhesynteesi videopuheluihin` | `Speech synthesis for video calls` |
+| Comment | `Kirjoita, niin muut kuulevat sinut videopuhelussa` | `Type so the others can hear you on the video call` |
+| Keywords | `puhesynteesi;teksti puheeksi;tts;ääni;puhuminen;mikrofoni;videopuhelu;puhetta tukeva ja korvaava kommunikointi;aac;en voi puhua;` | `speech synthesis;text to speech;tts;voice;speaking;microphone;video call;augmentative and alternative communication;aac;I can’t speak;` |
+
+«Puhesynteesi» dà il nome alla tecnologia e «teksti puheeksi» descrive cosa fa. «En voi puhua» permette di cercare il programma in prima persona.
+«Ääni», «mikrofoni» e «videopuhelu» riprendono il lessico della finestra. Il nome finlandese della comunicazione aumentativa si trova anche con la sigla internazionale AAC. [Papunet](https://web.papunet.net/sites/default/files/tietoa/Oppaat/passi_yhteiseen_kieleen_s.pdf)
+
+Review: Nessuna modifica. «Kirjoita, niin muut kuulevat sinut videopuhelussa» collega la scrittura all’ascolto degli altri con il tu della finestra. «Teksti puheeksi» ed «en voi puhua» permettono di cercare la funzione o di esprimere il bisogno in prima persona.

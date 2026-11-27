@@ -54,3 +54,16 @@ Ho riletto le 529 voci del sito e le 175 del programma. Per lo stato di avvio ho
 ## Dubbi residui
 
 Nessun dubbio linguistico aperto. Le osservazioni visive si riferiscono ai sei fogli forniti prima delle correzioni. Le larghezze delle nuove diciture sono misure del carattere del programma.
+
+## Applications menu
+
+| Voce | Testo esatto | English back-translation |
+| --- | --- | --- |
+| GenericName | Spraaksynthese voor videobellen | Speech synthesis for video calling |
+| Comment | Typ wat je wilt zeggen tijdens het videobellen | Type what you want to say during video calls |
+| Keywords | tekst-naar-spraak;spraaksynthese;tts;stem;spreken;microfoon;videobellen;ondersteunde communicatie;oc;niet kunnen praten; | text to speech;speech synthesis;tts;voice;speak;microphone;video calling;augmentative and alternative communication;aac;being unable to talk; |
+
+«Tekst-naar-spraak» descrive la funzione, «spraaksynthese» la tecnologia. «Niet kunnen praten» usa il verbo con cui il sito parla del bisogno della persona.
+Il nome «ondersteunde communicatie» e la sigla OC permettono la ricerca con il lessico neerlandese degli ausili. [Regelhulp](https://www.regelhulp.nl/onderwerpen/welke-soort/communicatie/ondersteunde-communicatie)
+
+Review: «Typ wat je wilt zeggen tijdens het videobellen» diventa «Typ zodat de anderen je kunnen horen tijdens het videobellen». «Typ» e «videobellen» riprendono la finestra. Come nella guida, «de anderen je kunnen horen» chiarisce che il testo arriva agli altri come voce.

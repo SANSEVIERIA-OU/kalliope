@@ -63,3 +63,16 @@ La simulazione di installazione riporta per intero il messaggio sui file mancant
 - In `ro_920x640_s1_scuro_1.png` la bolla compatta mostra una parte della frase italiana sulla sua unica riga. In `ro_920x640_s1_scuro_2.png` le etichette romene sono leggibili al 100%. In `voce-tratti` il campo del nome prosegue sotto il limite visibile della zona scorrevole.
 
 I sei fogli documentano la versione precedente alle correzioni. Per le nuove etichette ho confrontato anche le larghezze con il carattere Lexend del progetto. La resa finale della barra e delle schede a 360×320 resta da verificare in una nuova cattura.
+
+## Applications menu
+
+| Campo | Testo del menu | Retrotraduzione inglese |
+| --- | --- | --- |
+| GenericName | Voce pentru apeluri video | Voice for video calls |
+| Comment | Scrii, iar ceilalți te aud în apelurile video | You type, and the others hear you on video calls |
+| Keywords | `sinteză vocală;tts;voce;vorbire;microfon;apel video;comunicare augmentativă și alternativă;caa;aac;nu pot vorbi;` | speech synthesis; TTS; voice; speaking; microphone; video call; augmentative and alternative communication; CAA; AAC; I can’t speak |
+
+«Sinteză vocală» nomina la tecnologia. «Apel video» viene dalla finestra e «nu pot vorbi» esprime il bisogno con le parole del sito.
+Accanto alla locuzione romena ho incluso «caa» e «aac», entrambe usate nella stessa guida scolastica. [CJRAE Ilfov](https://www.cjrae-ilfov.ro/wp-content/uploads/2026/09/GHID_AMBASADORII-ANTIBULLYING-SI-MEDIEREA-INTRE-EGALI.pdf)
+
+Review: no change. «Scrii, iar ceilalți te aud» riprende il tu della home e colloca l’ascolto nella videochiamata. La guida citata usa entrambe le sigle, CAA e AAC.

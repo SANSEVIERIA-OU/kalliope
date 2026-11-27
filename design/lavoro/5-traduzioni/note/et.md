@@ -64,3 +64,16 @@ Il dubbio della prima lettura sui file mancanti è risolto. La pagina di install
 - In `et_360x320_s1_scuro_1.png` e `et_920x640_s1.75_scuro_1.png` la scena *scrive* mostra solo una parte della frase digitata. Le bolle su una sola riga in modalità compatta mostrano una porzione della frase anche in `et_920x640_s1_scuro_1.png`. Si tratta degli esempi italiani della demo. Le etichette estoni di stato e comando nei tre fogli sono leggibili.
 
 La verifica visiva usa i sei fogli forniti. Le misure delle nuove diciture usano il carattere Lexend della finestra. Una nuova acquisizione dell’app con il catalogo corretto resta da verificare. Nessun dubbio linguistico aperto.
+
+## Applications menu
+
+| Campo | Testo | Retrotraduzione inglese |
+| --- | --- | --- |
+| GenericName | `Kõnesüntees videokõnedeks` | `Speech synthesis for video calls` |
+| Comment | `Kirjuta ja teised kuulevad sind videokõnes` | `Type and the others will hear you on the video call` |
+| Keywords | `kõnesüntees;kõnesüntesaator;tts;hääl;rääkimine;mikrofon;videokõne;kõnet toetav ja asendav kommunikatsioon;aac;ei saa rääkida;` | `speech synthesis;speech synthesizer;tts;voice;speaking;microphone;video call;augmentative and alternative communication;aac;can’t speak;` |
+
+«Kõnesüntees» indica la sintesi vocale e «kõnesüntesaator» lo strumento che legge il testo. «Ei saa rääkida» riprende le parole usate sul sito per descrivere il bisogno.
+«Mikrofon» e «videokõne» servono a chi cerca partendo dalla chiamata. Il nome estone per esteso e la sigla AAC seguono l’uso di Harno. [Harno](https://harno.ee/materjalid-metoodikad-ja-digitehnoloogia/oppekavad-ja-oppematerjalid/lihtsustatud-viiped)
+
+Review: Nessuna modifica. «Kirjuta ja teised kuulevad sind videokõnes» riprende il tu e il lessico della finestra. Le parole chiave distinguono la sintesi («kõnesüntees») dallo strumento («kõnesüntesaator») e includono «ei saa rääkida».

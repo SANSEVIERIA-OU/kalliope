@@ -16,3 +16,21 @@ Codex. Le regole per chi traduce stanno in `docs/translating.md`; qui c'è come 
 - **`note/`**: le note di ogni lingua scritte da Codex (forma di cortesia, variante, glossario, dubbi).
 
 Gli script hanno i percorsi di questa macchina: sono il resoconto di com'è andata, da adattare per rifarlo.
+
+## La voce del menu delle applicazioni (27/11/2026)
+
+Richiesta del proprietario: «traduci anche la voce del menu applicazioni con codex». Le tre righe del file `.desktop` (genere,
+descrizione, parole di ricerca) sono entrate nel catalogo unico come `programma.menu.*`, dal modello
+`packaging/linux/io.github.sansevieria_ou.kalliope.desktop.in`; `tools/menu.py` scrive il file che i pacchetti installano
+(`docs/translating.md`, «The entry in the applications menu»).
+
+- **Traduzione**, tre sessioni di Codex in parallelo, una per gruppo di lingue (latine dell'ovest e del nord, latine dell'est e
+  del sud, le altre scritture con l'indonesiano), 4–8 minuti: `menu-gruppo.sh` con `menu-brief-codex.md`. Le parole di ricerca
+  non sono la traduzione della lista italiana ma le parole con cui si cerca in quella lingua.
+- **Revisione** da madrelingua, tre sessioni nuove con il foglio delle foto del loro gruppo allegato: `menu-rivedi.sh` con
+  `menu-revisione-codex.md`. Le foto (`menu-foto.sh`, `menu-fogli.sh`) mostrano la voce in un lanciatore vero, rofi, che legge il
+  file come un menu: la ricerca «kalliope» con nome, genere e descrizione, e la ricerca con una parola chiave che non sta né nel
+  genere né nella descrizione, quindi trovata solo dalla riga `Keywords`.
+- **Controlli di chi coordina**: `menu-solo-menu.py` (Codex ha cambiato solo le tre voci), `check --complete`, `extract --check`,
+  `desktop-file-validate`, e la prova di `tools/test_menu.py` che legge il file con GLib (GDesktopAppInfo, quello di GNOME) in
+  ogni lingua. Le note di ogni lingua hanno in fondo la sezione `Applications menu`, con la revisione.

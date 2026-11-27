@@ -59,3 +59,16 @@ La guida all’installazione riporta per intero il messaggio sui file vocali man
 - `ar_920x640_s1_scuro_1.png` e `ar_920x640_s1_scuro_2.png`. A scala normale si leggono i testi arabi dei controlli. Anche qui la bolla in modalità compatta lascia vedere solo una parte della frase italiana. La finestra Informazioni mostra il suffisso italiano per intero. I nomi italiani dei dispositivi e del file nelle scene di prova sono dati della demo.
 
 Le foto precedono le modifiche. Con il carattere arabo del progetto a 28 px, il nuovo titolo dell’ultimo passo misura circa 273 px, contro 454 px prima. La misura riguarda il testo su una riga. L’effetto finale sullo spazio verticale resta da osservare in una nuova cattura. Nessun dubbio linguistico aperto.
+
+## Applications menu
+
+| Campo | Testo nel menu | Back-translation (English) |
+| --- | --- | --- |
+| GenericName | `صوت لمكالمات الفيديو` | Voice for video calls |
+| Comment | `اكتب ليسمعك الآخرون في مكالمات الفيديو` | Type so others can hear you on video calls |
+| Keywords | `تحويل النص إلى كلام;tts;صوت;نطق;ميكروفون;مكالمة فيديو;التواصل المعزز والبديل;aac;صعوبة في الكلام;` | text to speech; TTS; voice; speech; microphone; video call; augmentative and alternative communication; AAC; difficulty speaking |
+
+«صوت» e «ميكروفون» sono le parole della finestra, senza articolo per la ricerca. «صعوبة في الكلام» esprime con parole comuni la difficoltà nel parlare.
+«التواصل المعزز والبديل» riprende il termine usato da Mada. Chi lo conosce attraverso la sigla può cercare «aac». [Centro Mada](https://mip.mada.org.qa/solution/tawasol-aac-app/?lang=ar)
+
+Review: no change. «اكتب ليسمعك الآخرون» si rivolge direttamente a chi scrive e dice che gli altri lo sentiranno. «تحويل النص إلى كلام» è il termine per la sintesi vocale e «صعوبة في الكلام» permette di cercare con le parole di chi ha difficoltà a parlare.

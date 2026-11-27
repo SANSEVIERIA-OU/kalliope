@@ -67,3 +67,16 @@ La procedura vocale e il corpo della finestra delle informazioni prevedono lo sc
 ## Dubbio residuo
 
 Il percorso di Zoom è reso con *Nustatymai → Garsas → Mikrofonas*. La dicitura della specifica versione di Zoom non è stata verificata nell’app. Per il comando del desktop *Visada viršuje* ho riscontrato la stessa dicitura nel catalogo lituano di GTK.
+
+## Applications menu
+
+| Campo | Testo del menu | Retrotraduzione inglese |
+| --- | --- | --- |
+| GenericName | Balsas vaizdo skambučiams | Voice for video calls |
+| Comment | Rašyk per vaizdo skambutį ir kiti išgirs tavo žodžius | Type during a video call and others will hear your words |
+| Keywords | `kalbos sintezė;teksto įgarsinimas;tts;balsas;kalbėti;mikrofonas;vaizdo skambutis;alternatyvioji ir augmentinė komunikacija;aak;negaliu kalbėti;` | speech synthesis; reading text aloud; TTS; voice; speak; microphone; video call; alternative and augmentative communication; AAK; I can’t speak |
+
+«Kalbos sintezė» indica la tecnologia, «teksto įgarsinimas» il risultato per chi scrive. «Vaizdo skambutis» è la dicitura della finestra.
+«Negaliu kalbėti» esprime il bisogno con il verbo del sito. Il termine lituano per la comunicazione aumentativa accompagna la sigla «aak». [Lietuvos įtraukties švietime centras](https://lisc.lt/kvieciame-i-viesaja-konsultacija-apie-alternatyviaja-ir-augmentine-komunikacija/)
+
+Review: no change. «Rašyk» e «tavo žodžius» mantengono il tu della finestra e spiegano che in chiamata si sentono le parole scritte. Il centro lituano citato usa il nome esteso e la sigla AAK.
