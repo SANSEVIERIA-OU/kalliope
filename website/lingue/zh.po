@@ -1,0 +1,4723 @@
+# Kalliope · texts of the website and of the program in zh.
+msgid ""
+msgstr ""
+"Project-Id-Version: Kalliope\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: 404.html
+#, kalliope-markup
+msgctxt "nf.titolo"
+msgid "Pagina non trovata · Kalliope"
+msgstr "找不到页面 · Kalliope"
+
+#. Attribute «content» of an element of the page: plain text, no tags.
+#: 404.html
+msgctxt "nf.descrizione"
+msgid "Questa pagina non c’è. Torna alla pagina iniziale di Kalliope o trova aiuto."
+msgstr "找不到这个页面。你可以返回 Kalliope 首页，或查看帮助。"
+
+#: 404.html index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
+#, kalliope-markup
+msgctxt "salta"
+msgid "Vai al contenuto"
+msgstr "跳到正文"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: 404.html index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
+msgctxt "barra.marchio"
+msgid "Kalliope, pagina iniziale"
+msgstr "Kalliope 首页"
+
+#: 404.html index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
+#, kalliope-markup
+msgctxt "marchio.nome"
+msgid "Kalliope"
+msgstr "Kalliope"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <br/>
+#: 404.html
+#, kalliope-markup
+msgctxt "nf.h1"
+msgid "Questa pagina<1/>non c'è."
+msgstr "找不到<1/>这个页面"
+
+#: 404.html
+#, kalliope-markup
+msgctxt "nf.spiegazione"
+msgid "L'indirizzo potrebbe essere cambiato. Riparti dalla pagina iniziale, oppure cerca la frase che vedi in Kalliope."
+msgstr "地址可能变了。你可以从首页重新开始，也可以搜索 Kalliope 显示的那句话。"
+
+#: 404.html
+#, kalliope-markup
+msgctxt "nf.home"
+msgid "Torna alla pagina iniziale"
+msgstr "返回首页"
+
+#: 404.html index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
+#, kalliope-markup
+msgctxt "menu.aiuto"
+msgid "Aiuto"
+msgstr "帮助"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: 404.html index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
+msgctxt "piede.sezioni"
+msgid "Sezioni del sito, in fondo"
+msgstr "页脚导航"
+
+#: 404.html index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
+#, kalliope-markup
+msgctxt "menu.ascolta"
+msgid "Ascolta"
+msgstr "试听"
+
+#: 404.html index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
+#, kalliope-markup
+msgctxt "menu.stato"
+msgid "Stato e limiti"
+msgstr "现状与限制"
+
+#: 404.html index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
+#, kalliope-markup
+msgctxt "menu.installa"
+msgid "Installa"
+msgstr "安装"
+
+#: 404.html index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
+#, kalliope-markup
+msgctxt "menu.riunione"
+msgid "In riunione"
+msgstr "开会时"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: 404.html index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
+msgctxt "piede.lingue"
+msgid "Lingue"
+msgstr "语言"
+
+#. Placeholders to leave as they are: {{kalliope.date}} {{kalliope.version}}
+#: 404.html index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
+#, kalliope-markup, python-brace-format
+msgctxt "piede.testo"
+msgid "Versione {{kalliope.version}} del {{kalliope.date}}. Codice sorgente disponibile, licenza SANSEVIERIA 1.1 (non «open source» nel senso dell'OSI). Prodotto da SANSEVIERIA OÜ. Questo sito non usa cookie né statistiche."
+msgstr "版本 {{kalliope.version}}，发布于 {{kalliope.date}}。源代码可供查看，采用 SANSEVIERIA 1.1 许可证，不属于 OSI 定义的“开源”。由 SANSEVIERIA OÜ 制作。本网站不使用 Cookie，也不统计访问情况。"
+
+#: index.html
+#, kalliope-markup
+msgctxt "pagina.titolo"
+msgid "Kalliope · In riunione, alla pari"
+msgstr "Kalliope · 一起开会，平等发言"
+
+#. Attribute «content» of an element of the page: plain text, no tags.
+#: index.html
+msgctxt "pagina.descrizione"
+msgid "Kalliope è un programma per il computer, per chi non può parlare o fa fatica: scrivi una frase, premi Invio, e nella riunione gli altri la sentono con una voce italiana naturale."
+msgstr "Kalliope 是一款电脑程序，适合无法说话或说话有困难的人。用意大利语写一句话，按回车，会议里的其他人就能听到一个自然的声音读出你的话。"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
+msgctxt "barra.sezioni"
+msgid "Sezioni del sito"
+msgstr "网站导航"
+
+#. Attribute «title» of an element of the page: plain text, no tags.
+#: index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
+msgctxt "barra.lingua"
+msgid "Cambia lingua"
+msgstr "切换语言"
+
+#: index.html
+#, kalliope-markup
+msgctxt "cta.scarica"
+msgid "Scarica e installa"
+msgstr "下载并安装"
+
+#: index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
+#, kalliope-markup
+msgctxt "barra.menu"
+msgid "Menu"
+msgstr "菜单"
+
+#. Four lines, one under the other: words can move from one line to another, but there must still be four lines.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="riga">
+#.   <2> = <span class="riga">
+#.   <3> = <span class="riga">
+#.   <4> = <span class="riga">
+#: index.html
+#, kalliope-markup
+msgctxt "apertura.titolo"
+msgid "<1>In riunione,</1> <2>alla pari.</2> <3>Tu scrivi, gli altri</3> <4>ti sentono.</4>"
+msgstr "<1>一起开会，</1><2>平等发言。</2><3>你打字，</3><4>大家都能听见。</4>"
+
+#: index.html
+#, kalliope-markup
+msgctxt "apertura.presentazione"
+msgid "Un programma per chi non può parlare o fa fatica. Scrivi una frase e premi Invio: una voce italiana naturale la dice nella riunione."
+msgstr "如果你无法说话，或说话有困难，可以用这个程序。用意大利语写一句话，按回车，Kalliope 就会用自然的声音在会议里读出来。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="freccia" aria-hidden="true">
+#: index.html
+#, kalliope-markup
+msgctxt "cta.non-linux"
+msgid "Non uso Linux: cosa posso fare<1/>"
+msgstr "我不用 Linux，有什么办法？<1/>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#. Placeholders to leave as they are: {{kalliope.version}}
+#: index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
+#, kalliope-markup, python-brace-format
+msgctxt "apertura.stato"
+msgid "<1>Oggi:</1> versione di prova {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Non ancora provata in una riunione vera con Zoom, Teams o Meet."
+msgstr "<1>目前：</1>测试版 {{kalliope.version}} 仅适用于 Linux（x86_64，需配备 PipeWire）。尚未在 Zoom、Teams 或 Meet 的实际会议中测试。"
+
+#. Shown instead of the sentence of the key apertura.stato when the release is not a test version: the same sentence without «of test». The site chooses one of the two by the release data.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#. Placeholders to leave as they are: {{kalliope.version}}
+#: index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
+#, kalliope-markup, python-brace-format
+msgctxt "apertura.stato-stabile"
+msgid "<1>Oggi:</1> versione {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Non ancora provata in una riunione vera con Zoom, Teams o Meet."
+msgstr "<1>目前：</1>{{kalliope.version}} 版仅适用于 Linux（x86_64，需配备 PipeWire）。尚未在 Zoom、Teams 或 Meet 的实际会议中测试。"
+
+#. The parts in tags 1 and 2 are the long ones and are dropped on narrow screens: the rest must read well without them.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="d-lunga">
+#.   <2> = <span class="d-piu">
+#: index.html
+#, kalliope-markup
+msgctxt "apertura.didascalia"
+msgid "Ricostruzione<1> della finestra di Kalliope</1> · la voce è la registrazione vera<2> · scrittura accelerata, partecipanti di esempio</2>"
+msgstr "<1>Kalliope 窗口</1>演示 · 声音为实际录音<2> · 打字已加速，参会者为示例</2>"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: index.html
+msgctxt "palco.etichetta"
+msgid "Kalliope al lavoro in una riunione: ricostruzione"
+msgstr "演示 Kalliope 在会议中的使用过程"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="unita">
+#.   <2> = <span class="unita">
+#: index.html stato/index.html
+#, kalliope-markup
+msgctxt "frase.3"
+msgid "Il preventivo è di <1>1.250 € +</1> IVA, valido fino al <2>31 dicembre.</2>"
+msgstr "Il preventivo è di <1>1.250 € +</1> IVA, valido fino al <2>31 dicembre.</2>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="nome-lungo">
+#: index.html
+#, kalliope-markup
+msgctxt "riunione.tu-lungo"
+msgid "Tu<1> · microfono «Kalliope»</1>"
+msgstr "你<1> · 麦克风“Kalliope”</1>"
+
+#: index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
+#, kalliope-markup
+msgctxt "persona.paola"
+msgid "Paola"
+msgstr "Paola"
+
+#: index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
+#, kalliope-markup
+msgctxt "persona.luca"
+msgid "Luca"
+msgstr "Luca"
+
+#: index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
+#, kalliope-markup
+msgctxt "persona.anna"
+msgid "Anna"
+msgstr "Anna"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: index.html
+msgctxt "finestra.etichetta"
+msgid "Ricostruzione della finestra di Kalliope"
+msgstr "Kalliope 窗口演示"
+
+#. The voice shown in the window's bar: the name of the voice, written as in the voice buttons.
+#: index.html installa/index.html
+#, kalliope-markup
+msgctxt "finestra.voce"
+msgid "Giulia"
+msgstr "Giulia"
+
+#. The name of the state of the window when it is ready to speak: one or two words, as in the program.
+#: index.html installa/index.html
+#, kalliope-markup
+msgctxt "finestra.pronta.nome"
+msgid "Pronta"
+msgstr "已就绪"
+
+#. What the window says next to «Pronta»: the way to be heard. Keep «Kalliope» in quotes, it is the name of the microphone.
+#: index.html installa/index.html
+#, kalliope-markup
+msgctxt "finestra.pronta.detto"
+msgid "Nella riunione scegli «Kalliope» come microfono."
+msgstr "在会议中选择“Kalliope”作为麦克风。"
+
+#. The hint in the empty writing area of the window: where to write, and what Enter does.
+#: index.html installa/index.html
+#, kalliope-markup
+msgctxt "finestra.segnaposto"
+msgid "Scrivi qui. Invio la dice."
+msgstr "在这里输入，按回车读出。"
+
+#. The button that stops the voice.
+#: index.html installa/index.html
+#, kalliope-markup
+msgctxt "finestra.ferma"
+msgid "Ferma"
+msgstr "停止"
+
+#. The name of the Escape key, as it is written on the keyboard of the language.
+#: index.html installa/index.html
+#, kalliope-markup
+msgctxt "finestra.esc"
+msgid "Esc"
+msgstr "Esc"
+
+#. The button that says the phrase: the imperative of «to say», short, like «Say».
+#: index.html installa/index.html
+#, kalliope-markup
+msgctxt "finestra.di"
+msgid "Di'"
+msgstr "读出"
+
+#. The name of the Enter key, as it is written on the keyboard of the language.
+#: index.html installa/index.html
+#, kalliope-markup
+msgctxt "finestra.invio"
+msgid "Invio"
+msgstr "回车"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="tondo" aria-hidden="true">
+#: index.html
+#, kalliope-markup
+msgctxt "ascolto.pillola"
+msgid "<1/>Ascolta Giulia"
+msgstr "<1/>听听 Giulia 的声音"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: index.html
+msgctxt "ascolto.etichetta"
+msgid "Ascolto della voce vera"
+msgstr "试听实际录音"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: index.html
+msgctxt "ascolto.voce"
+msgid "Voce"
+msgstr "声音"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="voce-tondo" aria-hidden="true">
+#: index.html
+#, kalliope-markup
+msgctxt "voce.giulia"
+msgid "<1/>Giulia"
+msgstr "<1/>Giulia"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="voce-tondo" aria-hidden="true">
+#: index.html
+#, kalliope-markup
+msgctxt "voce.marco"
+msgid "<1/>Marco"
+msgstr "<1/>Marco"
+
+#: index.html
+#, kalliope-markup
+msgctxt "ascolto.chiudi"
+msgid "Chiudi"
+msgstr "关闭"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: index.html
+msgctxt "ascolto.frasi"
+msgid "Frasi da ascoltare"
+msgstr "可试听的句子"
+
+#: index.html
+#, kalliope-markup
+msgctxt "ascolto.frase.3"
+msgid "«Il preventivo…»"
+msgstr "«Il preventivo…»"
+
+#: index.html
+#, kalliope-markup
+msgctxt "ascolto.frase.2"
+msgid "«Sono d'accordo…»"
+msgstr "«Sono d'accordo…»"
+
+#: index.html
+#, kalliope-markup
+msgctxt "ascolto.frase.1"
+msgid "«Buongiorno…»"
+msgstr "«Buongiorno…»"
+
+#: index.html
+#, kalliope-markup
+msgctxt "campioni.titolo"
+msgid "Senti come suona, con il testo accanto."
+msgstr "听听声音，对照旁边的文字。"
+
+#. Two versions of one sentence: the part in tag 1 is read when the page runs with JavaScript, the part in tag 2 when it does not. Write both.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="con-js">
+#.   <2> = <span class="senza-js">
+#: index.html
+#, kalliope-markup
+msgctxt "campioni.testo"
+msgid "Le frasi sono tue, dette con le registrazioni vere di Kalliope 0.1-rc.1. <1>Scegli la voce, poi premi una frase: le parole si accendono mentre Paola, Luca e Anna la sentono.</1><2>Premi il lettore sotto ogni frase per ascoltarla. Accanto trovi il collegamento alla stessa frase con la voce di Marco.</2>"
+msgstr "你在会议里写下的话，读出来是什么样？这里用的是 Kalliope 0.1-rc.1 的实际录音。<1>先选声音，再点一句话。Paola、Luca 和 Anna 听到哪个词，哪个词就会亮起来。</1><2>点击每句话下方的播放器就能试听。旁边的链接可以听到 Marco 读同一句话。</2>"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: index.html
+msgctxt "campioni.voce"
+msgid "Voce delle frasi"
+msgstr "朗读这些句子的声音"
+
+#. The name on the tile of the person who writes (riunione.tu); riunione.tu-microfono is what follows it once the microphone is chosen: keep the quotes around Kalliope.
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "riunione.tu"
+msgid "Tu"
+msgstr "你"
+
+#. The name on the tile of the person who writes (riunione.tu); riunione.tu-microfono is what follows it once the microphone is chosen: keep the quotes around Kalliope.
+#. Attribute «data-lungo» of an element of the page: plain text, no tags.
+#: index.html
+msgctxt "riunione.tu-microfono"
+msgid "· microfono «Kalliope»"
+msgstr "· 麦克风“Kalliope”"
+
+#: index.html non-ancora/index.html riunione/index.html
+#, kalliope-markup
+msgctxt "frase.1"
+msgid "Buongiorno a tutti! Scrivo invece di parlare, ma vi seguo benissimo."
+msgstr "Buongiorno a tutti! Scrivo invece di parlare, ma vi seguo benissimo."
+
+#: index.html
+#, kalliope-markup
+msgctxt "ascolto.verbo.fermo"
+msgid "Ascolta"
+msgstr "试听"
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "campioni.scarica-audio"
+msgid "Scarica l'audio (Giulia)"
+msgstr "下载音频（Giulia）"
+
+#: index.html
+#, kalliope-markup
+msgctxt "campioni.altra-voce"
+msgid "La stessa frase con Marco"
+msgstr "听 Marco 读同一句话"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="unita">
+#: index.html
+#, kalliope-markup
+msgctxt "frase.2"
+msgid "Sono d'accordo con Paola. Però la consegna del 14/3 mi sembra stretta: possiamo sentirci venerdì <1>alle 15:30?</1>"
+msgstr "Sono d'accordo con Paola. Però la consegna del 14/3 mi sembra stretta: possiamo sentirci venerdì <1>alle 15:30?</1>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span>
+#: index.html
+#, kalliope-markup
+msgctxt "frase.3.detto-riga"
+msgid "<1>Detto:</1> «Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.»"
+msgstr "<1>读出：</1>“Il preventivo è di milleduecentocinquanta euro più IVA, valido fino al trentuno dicembre.”"
+
+#: index.html
+#, kalliope-markup
+msgctxt "campioni.provenienza.titolo"
+msgid "Come sono state fatte queste registrazioni"
+msgstr "这些录音是怎么做的"
+
+#: index.html
+#, kalliope-markup
+msgctxt "campioni.provenienza.file"
+msgid "Sono l'uscita di Kalliope 0.1-rc.1, senza ritocchi, convertita in MP3 (64 kbit/s, mono, 24 kHz)."
+msgstr "声音来自 Kalliope 0.1-rc.1，未经修饰，只转成了 MP3（64 kbit/s，单声道，24 kHz）。"
+
+#: index.html
+#, kalliope-markup
+msgctxt "campioni.provenienza.whisper"
+msgid "Un programma di riconoscimento del parlato, Whisper, le trascrive con circa una parola sbagliata su 45. È una misura del progetto sui sei campioni."
+msgstr "用语音识别程序 Whisper 把录音转成文字，平均每 45 个词约有一个识别错误。这是项目对六段录音的测量结果。"
+
+#: index.html
+#, kalliope-markup
+msgctxt "campioni.provenienza.limiti"
+msgid "Non abbiamo misurato quanto si capiscano in una riunione vera, né quanto tempo passa fra il tasto Invio e il suono."
+msgstr "我们还没有测过，大家在实际会议中能听清多少，也没有测过从按回车到听见声音需要多久。"
+
+#: index.html
+#, kalliope-markup
+msgctxt "campioni.provenienza.testi"
+msgid "Il testo «scrivi» è quello che hai digitato. Il testo «dice» è quello che Kalliope prepara prima di parlare: cifre, date e orari diventano parole."
+msgstr "“输入”的是你打下的原文。“读出”的是 Kalliope 准备说的话，其中的数字、日期和时间都会换成相应的意大利语词语。"
+
+#: index.html
+#, kalliope-markup
+msgctxt "oggi.titolo"
+msgid "Fin dove arriva la voce, oggi."
+msgstr "现在，你写的话能传到哪里？"
+
+#: index.html
+#, kalliope-markup
+msgctxt "oggi.testo"
+msgid "Detto chiaro, prima di scaricare: che cosa è provato e che cosa no."
+msgstr "下载前，你可以先看看哪些环节已经测过，哪些还有待测试。"
+
+#: index.html
+#, kalliope-markup
+msgctxt "strada.computer"
+msgid "Sul tuo computer"
+msgstr "在你的电脑上"
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "strada.tappa.1"
+msgid "Scrivi la frase"
+msgstr "你写下一句话"
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "strada.tappa.2"
+msgid "La voce nasce qui"
+msgstr "电脑生成声音"
+
+#: index.html
+#, kalliope-markup
+msgctxt "strada.tappa.3"
+msgid "Microfono «Kalliope»"
+msgstr "麦克风“Kalliope”"
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "strada.tappa.4"
+msgid "Zoom, Teams, Meet"
+msgstr "Zoom、Teams、Meet"
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "strada.tappa.5"
+msgid "Gli altri ti sentono"
+msgstr "大家听见你说的话"
+
+#: index.html
+#, kalliope-markup
+msgctxt "strada.provato.titolo"
+msgid "Provato"
+msgstr "已经测过"
+
+#: index.html
+#, kalliope-markup
+msgctxt "strada.provato.testo"
+msgid "La voce arriva al microfono «Kalliope». L'installazione è provata da uno script su Ubuntu, Fedora e Arch."
+msgstr "声音能传到“Kalliope”麦克风。安装过程已在 Ubuntu、Fedora 和 Arch 上用脚本测试过。"
+
+#: index.html
+#, kalliope-markup
+msgctxt "strada.nonprovato.titolo"
+msgid "Non ancora provato"
+msgstr "还没测过"
+
+#: index.html
+#, kalliope-markup
+msgctxt "strada.nonprovato.testo"
+msgid "Una riunione vera con Zoom, Teams o Meet."
+msgstr "在 Zoom、Teams 或 Meet 里实际开一次会。"
+
+#: index.html
+#, kalliope-markup
+msgctxt "strada.riservato"
+msgid "Il testo che scrivi resta sul tuo computer: non passa da internet e non serve un account. Alla riunione arriva soltanto la voce."
+msgstr "你写的文字只留在自己的电脑上，不会通过互联网发送，也不需要账号。传到会议里的只有声音。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: index.html
+#, kalliope-markup
+msgctxt "strada.non-esiste"
+msgid "<1>Non esiste ancora</1> per Windows, macOS e altre lingue. Per ora è solo per il computer, non per il telefono."
+msgstr "<1>暂时没有</1> Windows 或 macOS 版本，声音也只会说意大利语。目前只能在电脑上用，手机上用不了。"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: index.html
+msgctxt "avvio.etichetta"
+msgid "Ricostruzione del primo avvio di Kalliope"
+msgstr "Kalliope 首次启动演示"
+
+#. The name of the state of the window while the voice loads, at every start: no dots at the end, the window shows its own.
+#: index.html installa/index.html
+#, kalliope-markup
+msgctxt "avvio.preparo.nome"
+msgid "Preparo la voce"
+msgstr "正在准备声音"
+
+#: index.html installa/index.html
+#, kalliope-markup
+msgctxt "avvio.preparo.detto"
+msgid "Fra poco puoi scrivere e farti sentire."
+msgstr "马上就可以打字，让大家听见你想说的话。"
+
+#. The hint in the writing area while the voice loads: writing is already possible.
+#: index.html installa/index.html
+#, kalliope-markup
+msgctxt "avvio.segnaposto"
+msgid "Puoi già scrivere: la voce arriva fra poco."
+msgstr "现在就可以写，声音马上就好。"
+
+#: index.html installa/index.html
+#, kalliope-markup
+msgctxt "avvio.nota"
+msgid "Le frasi che dici restano qui, anche dopo la chiusura, per ripeterle."
+msgstr "说过的话会保留在这里，关闭窗口后也还在，方便再说一遍。"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: index.html
+msgctxt "app.etichetta"
+msgid "Ricostruzione: nell'app della riunione si sceglie «Kalliope» come microfono"
+msgstr "演示如何在会议应用里选择“Kalliope”作为麦克风"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="app-icona">
+#: index.html installa/index.html non-ancora/index.html riunione/index.html stato/index.html
+#, kalliope-markup
+msgctxt "app.microfono"
+msgid "<1/>Microfono"
+msgstr "<1/>麦克风"
+
+#: index.html installa/index.html non-ancora/index.html stato/index.html
+#, kalliope-markup
+msgctxt "app.scelta.computer"
+msgid "Microfono del computer"
+msgstr "电脑麦克风"
+
+#. The name of the virtual microphone, as a meeting app lists it: keep it as it is.
+#: index.html installa/index.html
+#, kalliope-markup
+msgctxt "app.scelta.kalliope"
+msgid "Kalliope"
+msgstr "Kalliope"
+
+#: index.html
+#, kalliope-markup
+msgctxt "avvio.ricostruzione"
+msgid "Ricostruzione del primo avvio di Kalliope e della scelta del microfono in un'app di riunione · tempi accelerati"
+msgstr "演示首次打开 Kalliope、在会议应用中选择麦克风的过程 · 已加速"
+
+#: index.html
+#, kalliope-markup
+msgctxt "avvio.rivedi"
+msgid "Rivedi il primo avvio"
+msgstr "再看一次首次启动过程"
+
+#: index.html
+#, kalliope-markup
+msgctxt "serve.titolo"
+msgid "Che cosa serve."
+msgstr "需要哪些准备？"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: index.html
+#, kalliope-markup
+msgctxt "serve.1"
+msgid "<1>Un computer Linux a 64 bit</1> con PipeWire."
+msgstr "<1>一台 64 位 Linux 电脑</1>，装有 PipeWire。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: index.html
+#, kalliope-markup
+msgctxt "serve.2"
+msgid "<1>Niente da scaricare per la voce</1>: è dentro il pacchetto, e funziona senza internet dal primo avvio."
+msgstr "<1>声音无需另外下载</1>。安装包里已经有了，第一次启动就能离线使用。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: index.html
+#, kalliope-markup
+msgctxt "serve.3"
+msgid "<1>Un'app di riunione</1> che ti lasci scegliere il microfono: lì scegli «Kalliope»."
+msgstr "<1>一个能选择麦克风的会议应用</1>。在里面选“Kalliope”。"
+
+#: index.html
+#, kalliope-markup
+msgctxt "serve.finestra"
+msgid "La finestra è una sola: scrivi, premi Invio, e la frase si accende parola per parola mentre la voce la dice. Le frasi dette restano, per ripeterle. Puoi usare anche la tua voce: la registri o la importi dentro il programma."
+msgstr "只用一个窗口就能说话：写下你想说的话，按回车，读到哪个词，哪个词就会亮起来。说过的话会留下，方便再说一遍。你也可以用自己的声音，在程序里录一段或导入录音就行。"
+
+#: index.html
+#, kalliope-markup
+msgctxt "chiusura.titolo"
+msgid "Provala sul tuo computer."
+msgstr "在你的电脑上试试"
+
+#. Placeholders to leave as they are: {{kalliope.version}}
+#: index.html
+#, kalliope-markup, python-brace-format
+msgctxt "chiusura.fatti"
+msgid "Versione di prova {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Nessun account, nessun prezzo: l'uso personale è libero."
+msgstr "测试版 {{kalliope.version}} 仅适用于 Linux（x86_64，需配备 PipeWire）。个人使用免费，无需账号。"
+
+#. Shown instead of the sentence of the key chiusura.fatti when the release is not a test version: the same sentence without «of test». The site chooses one of the two by the release data.
+#. Placeholders to leave as they are: {{kalliope.version}}
+#: index.html
+#, kalliope-markup, python-brace-format
+msgctxt "chiusura.fatti-stabile"
+msgid "Versione {{kalliope.version}}, solo per Linux (x86_64 con PipeWire). Nessun account, nessun prezzo: l'uso personale è libero."
+msgstr "{{kalliope.version}} 版仅适用于 Linux（x86_64，需配备 PipeWire）。个人使用免费，无需账号。"
+
+#: index.html
+#, kalliope-markup
+msgctxt "chiusura.avvertenza"
+msgid "Kalliope non è un dispositivo medico e non sostituisce la valutazione di un logopedista."
+msgstr "Kalliope 不是医疗器械，不能代替言语治疗师的评估。"
+
+#. The name of the state of the window while the voice speaks: as in the program, without dots.
+#: index.html
+#, kalliope-markup
+msgctxt "finestra.parla.nome"
+msgid "Sto parlando"
+msgstr "正在说话"
+
+#. What the window says next to «Sto parlando»: how to stop. Esc is the Escape key.
+#: index.html
+#, kalliope-markup
+msgctxt "finestra.parla.detto"
+msgid "Esc la ferma."
+msgstr "按 Esc 停止。"
+
+#. Read by screen readers when listening is paused.
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "annuncio.pausa"
+msgid "In pausa."
+msgstr "已暂停。"
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "errore.caricamento"
+msgid "Non riesco a caricare la registrazione. Controlla la connessione e riprova, oppure scaricala."
+msgstr "录音加载失败。检查网络连接后再试，也可以下载录音。"
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "errore.interrotta"
+msgid "La registrazione si è interrotta. Riprova, oppure scaricala."
+msgstr "录音播放中断。可以重试，也可以下载录音。"
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "errore.permesso"
+msgid "Il browser non ha fatto partire il suono. Premi «Riprova»: il suono parte solo con un tuo gesto."
+msgstr "浏览器没有播放声音。点一下“重试”，浏览器就能开始播放。"
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "errore.lento"
+msgid "Il caricamento è lento. Puoi aspettare, riprovare o scaricare la registrazione."
+msgstr "录音加载较慢。你可以再等一会儿、重试或下载录音。"
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "errore.riprova"
+msgid "Riprova"
+msgstr "重试"
+
+#. {voce} is the name of the voice (Giulia or Marco), written as in the voice buttons.
+#. Placeholders to leave as they are: {voce}
+#: index.html non-ancora/index.html
+#, kalliope-markup, python-brace-format
+msgctxt "errore.scarica"
+msgid "Scarica la registrazione ({voce}, mp3)"
+msgstr "下载录音（{voce}，mp3）"
+
+#. Read by screen readers when a voice is chosen while a sentence plays. {n} is the number of the sentence (1, 2 or 3).
+#. Placeholders to leave as they are: {n} {voce}
+#: index.html
+#, kalliope-markup, python-brace-format
+msgctxt "annuncio.voce-frase"
+msgid "Voce scelta: {voce}. Sto leggendo la frase {n}."
+msgstr "已选择声音：{voce}。正在读第 {n} 句。"
+
+#. Read by screen readers when a sentence starts. {n} is the number of the sentence (1, 2 or 3).
+#. Placeholders to leave as they are: {n} {voce}
+#: index.html
+#, kalliope-markup, python-brace-format
+msgctxt "annuncio.frase"
+msgid "Sto leggendo la frase {n}, voce di {voce}."
+msgstr "正在用 {voce} 的声音读第 {n} 句。"
+
+#. Placeholders to leave as they are: {voce}
+#: index.html
+#, kalliope-markup, python-brace-format
+msgctxt "annuncio.voce"
+msgid "Voce scelta: {voce}."
+msgstr "已选择声音：{voce}。"
+
+#. Short text on a sentence's button while it loads.
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "ascolto.verbo.carica"
+msgid "Carico…"
+msgstr "加载中…"
+
+#. Short text on a sentence's button while it plays: pressing it pauses.
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "ascolto.verbo.suona"
+msgid "Pausa"
+msgstr "暂停"
+
+#. Short text on a sentence's button when paused: pressing it resumes.
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "ascolto.verbo.pausa"
+msgid "Riprendi"
+msgstr "继续播放"
+
+#. Short text on the button of a sentence already heard.
+#: index.html
+#, kalliope-markup
+msgctxt "ascolto.verbo.fatto"
+msgid "Riascolta"
+msgstr "再听一遍"
+
+#. What a sentence's button tells screen readers, before the colon and the sentence.
+#: index.html
+#, kalliope-markup
+msgctxt "ascolto.azione.fermo"
+msgid "Ascolta"
+msgstr "试听"
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "ascolto.azione.carica"
+msgid "Carico la registrazione, premi per annullare"
+msgstr "正在加载录音，点按可取消"
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "ascolto.azione.suona"
+msgid "Metti in pausa"
+msgstr "暂停播放"
+
+#: index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "ascolto.azione.pausa"
+msgid "Riprendi"
+msgstr "继续播放"
+
+#: index.html
+#, kalliope-markup
+msgctxt "ascolto.azione.fatto"
+msgid "Riascolta"
+msgstr "再听一遍"
+
+#. Joins the action and the sentence: «Ascolta: Il preventivo…». {azione} is one of the actions above, {frase} the text of the sentence.
+#. Placeholders to leave as they are: {azione} {frase}
+#: index.html
+#, kalliope-markup, python-brace-format
+msgctxt "ascolto.azione.formato"
+msgid "{azione}: {frase}"
+msgstr "{azione}：{frase}"
+
+#. The word of sentence 2 that is Paola's name, written as it is in the sentence, punctuation included: when the voice says it, Paola turns to look.
+#: index.html
+#, kalliope-markup
+msgctxt "frase.2.chi.paola"
+msgid "Paola."
+msgstr "Paola."
+
+#. Words of sentence 3 that change together, in one go, when the voice reaches them (a price): written exactly as in the sentence.
+#: index.html
+#, kalliope-markup
+msgctxt "frase.3.gruppo.1"
+msgid "1.250 € +"
+msgstr "1.250 € +"
+
+#. How the words of the group above are said aloud, one spoken word for each written word (three for three).
+#: index.html
+#, kalliope-markup
+msgctxt "frase.3.detto.1"
+msgid "milleduecentocinquanta euro più"
+msgstr "milleduecentocinquanta euro più"
+
+#. A second group of sentence 3, written exactly as in the sentence (a day).
+#: index.html
+#, kalliope-markup
+msgctxt "frase.3.gruppo.2"
+msgid "31"
+msgstr "31"
+
+#. How the words of the group above are said aloud.
+#: index.html
+#, kalliope-markup
+msgctxt "frase.3.detto.2"
+msgid "trentuno"
+msgstr "trentuno"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.titolo"
+msgid "Installa Kalliope su Linux: i comandi da copiare, e come sai che ogni passo è riuscito"
+msgstr "在 Linux 上安装 Kalliope：复制命令，逐步确认安装结果"
+
+#. Attribute «content» of an element of the page: plain text, no tags.
+#: installa/index.html
+msgctxt "in.descrizione"
+msgid "Come installare Kalliope su Debian, Ubuntu, Fedora, Arch e le altre distribuzioni Linux: il file giusto, il controllo dell'impronta, il comando da copiare, la voce, e il microfono «Kalliope» nell'app della riunione."
+msgstr "在 Debian、Ubuntu、Fedora、Arch 和其他 Linux 发行版上安装 Kalliope。选对文件，核对校验值，复制安装命令，准备好声音，再到会议应用中选择“Kalliope”麦克风。"
+
+#. Three lines, one under the other: install Kalliope; every step can be seen to succeed.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="riga">
+#.   <2> = <span class="riga">
+#.   <3> = <span class="riga">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.apertura.titolo"
+msgid "<1>Installa Kalliope.</1> <2>Ogni passo</2> <3>si vede riuscire.</3>"
+msgstr "<1>安装 Kalliope，</1><2>每做完一步，</2><3>都能核对结果。</3>"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.apertura.presentazione"
+msgid "Per un computer Linux a 64 bit con PipeWire, anche se lo installi per un'altra persona. Scegli la distribuzione: i comandi diventano i suoi."
+msgstr "适用于配备 PipeWire 的 64 位 Linux 电脑。帮别人安装也一样。选好发行版，下面就会显示对应的命令。"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.sistemi.legenda"
+msgid "La tua distribuzione"
+msgstr "你的 Linux 发行版"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.sistemi.deb"
+msgid "Debian e Ubuntu"
+msgstr "Debian 和 Ubuntu"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.sistemi.tar"
+msgid "Altre"
+msgstr "其他发行版"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.sistemi.deb.dice"
+msgid "Debian 13, Ubuntu 24.04 o successive: il pacchetto .deb"
+msgstr "Debian 13、Ubuntu 24.04 及各自的后续版本：使用 .deb 安装包"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.sistemi.rpm.dice"
+msgid "Fedora attuale: il pacchetto .rpm"
+msgstr "当前版本的 Fedora：使用 .rpm 安装包"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.sistemi.arch.dice"
+msgid "Arch Linux: la ricetta PKGBUILD, che non compila nulla"
+msgstr "Arch Linux：使用 PKGBUILD 构建脚本，无需编译"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.sistemi.tar.dice"
+msgid "Le altre distribuzioni: l'archivio, che si installa senza password"
+msgstr "其他发行版：使用压缩包，安装时无需密码"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="freccia" aria-hidden="true">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.sistemi.non-linux"
+msgid "Non uso Linux<1/>"
+msgstr "我不用 Linux<1/>"
+
+#. The download button. Tag 1 is the size of the file, written by the build.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="peso" data-t-no="dimensione">
+#. Placeholders to leave as they are: {{kalliope.deb.size}}
+#: installa/index.html
+#, kalliope-markup, python-brace-format
+msgctxt "in.scarica.deb"
+msgid "Scarica il .deb <1>{{kalliope.deb.size}}</1>"
+msgstr "下载 .deb 安装包 <1>{{kalliope.deb.size}}</1>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="peso" data-t-no="dimensione">
+#. Placeholders to leave as they are: {{kalliope.rpm.size}}
+#: installa/index.html
+#, kalliope-markup, python-brace-format
+msgctxt "in.scarica.rpm"
+msgid "Scarica il .rpm <1>{{kalliope.rpm.size}}</1>"
+msgstr "下载 .rpm 安装包 <1>{{kalliope.rpm.size}}</1>"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.scarica.arch"
+msgid "Vai ai comandi per Arch"
+msgstr "查看 Arch 安装命令"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="peso" data-t-no="dimensione">
+#. Placeholders to leave as they are: {{kalliope.tar.size}}
+#: installa/index.html
+#, kalliope-markup, python-brace-format
+msgctxt "in.scarica.tar"
+msgid "Scarica l'archivio <1>{{kalliope.tar.size}}</1>"
+msgstr "下载压缩包 <1>{{kalliope.tar.size}}</1>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="freccia" aria-hidden="true">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.apertura.inoltra"
+msgid "Lo installa un'altra persona<1/>"
+msgstr "请别人帮我安装<1/>"
+
+#. The caption of the scene: the first word says what it is; the part in tag 1 says what it shows. On narrow screens it goes to a second line.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="d-lunga">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.apertura.didascalia"
+msgid "Ricostruzione<1> · dal comando nel terminale al microfono «Kalliope» nell'app della riunione, a tempi accelerati</1>"
+msgstr "安装演示<1> · 从在终端输入命令，到在会议应用中看到“Kalliope”麦克风，过程已加速</1>"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: installa/index.html
+msgctxt "in.palco.etichetta"
+msgid "Ricostruzione: un comando nel terminale installa Kalliope, e nell'app della riunione compare il microfono «Kalliope»"
+msgstr "演示：在终端运行命令安装 Kalliope，会议应用中就会出现“Kalliope”麦克风"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.terminale.titolo"
+msgid "Terminale"
+msgstr "终端"
+
+#. The name on the tile of the person who writes, who has no voice here. The part in tag 1 is the long one and is dropped on narrow screens.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="nome-lungo">
+#: installa/index.html non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.tu-senza-voce"
+msgid "Tu<1> · senza voce</1>"
+msgstr "你<1> · 没有声音</1>"
+
+#. The name on the tile of the person who writes. The part in tag 1 is the long one and is dropped on narrow screens.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="nome-lungo">
+#: installa/index.html stato/index.html
+#, kalliope-markup
+msgctxt "st.tu-voce"
+msgid "Tu<1> · microfono «Kalliope»</1>"
+msgstr "你<1> · 麦克风“Kalliope”</1>"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.file.titolo"
+msgid "Il file giusto, e uguale a quello pubblicato."
+msgstr "选对文件，核对是否与发布的原件相同"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.file.testo"
+msgid "Serve un computer Linux a 64 bit (x86_64), con Wayland o X11 e con PipeWire e pipewire-pulse: è così nei desktop recenti di Fedora, Ubuntu, Debian, Arch e openSUSE."
+msgstr "需要一台 64 位 Linux 电脑（x86_64），使用 Wayland 或 X11，并装有 PipeWire 和 pipewire-pulse。较新的 Fedora、Ubuntu、Debian、Arch 和 openSUSE 桌面系统都采用这样的配置。"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.file.voce"
+msgid "Le voci sono dentro il file: una volta installato, Kalliope non scarica niente e funziona senza internet dal primo avvio."
+msgstr "声音已经包含在文件中。装好后，Kalliope 无需再下载任何东西，第一次启动就能离线使用。"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.file.librerie"
+msgid "Non servono Qt, GTK né Python: la finestra è dentro il programma. Per leggere i messaggi vocali di WhatsApp e Telegram, quando prepari la tua voce, serve libopus: i pacchetti lo consigliano."
+msgstr "窗口内置在程序里，无需安装 Qt、GTK 或 Python。如果要用 WhatsApp 或 Telegram 的语音消息创建自己的声音，还需要 libopus。安装包把它列为推荐依赖。"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.file.scarica.titolo"
+msgid "Scarica"
+msgstr "下载"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="{{kalliope.aur.url}}">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.file.scarica.arch"
+msgid "Per Arch non c'è un file da scaricare qui: la ricetta lo fa da sola, al passo «Installa». Puoi <1>leggerla prima</1>."
+msgstr "Arch 用户无需在这里下载文件。运行安装命令时，构建脚本会自动下载。你可以<1>先看看脚本的内容</1>。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.file.scarica.riuscito"
+msgid "<1>Riuscito</1> se nella cartella dei download c'è un file con questo nome e questa dimensione."
+msgstr "<1>下载成功：</1>下载文件夹里有一个文件，名称和大小与这里相同。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.file.scarica.se-no"
+msgid "<1>Se no</1>, scaricalo di nuovo. Se il browser dice che il file non esiste, è uscita una versione nuova: ricarica questa pagina."
+msgstr "<1>如果对不上，</1>请重新下载。如果浏览器提示文件不存在，说明已有新版本，请刷新本页。"
+
+#. The text of the official badge of Slint, #MadeWithSlint: it is a link to the site of Slint. Keep the name Slint and the words «Made with», as the badge says them.
+#. Attribute «alt» of an element of the page: plain text, no tags.
+#: installa/index.html
+msgctxt "in.slint.alt"
+msgid "Made with Slint"
+msgstr "Made with Slint"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="https://slint.dev/" rel="noopener">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.slint.testo"
+msgid "La finestra di Kalliope è fatta con <1>Slint</1>."
+msgstr "Kalliope 的窗口使用 <1>Slint</1> 制作。"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.file.controlla.titolo"
+msgid "Controlla che sia uguale"
+msgstr "核对文件是否一致"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.file.controlla.testo"
+msgid "Consigliato: così sai che è il file pubblicato. Apri un terminale nella cartella dei download (di solito Scaricati) e scrivi:"
+msgstr "建议做这一步，确认你拿到的就是发布的文件。在保存下载文件的文件夹（通常叫“下载”）里打开终端，输入："
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.file.controlla.numero"
+msgid "Il numero che compare deve essere questo:"
+msgstr "显示的校验值应该是："
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.file.controlla.arch"
+msgid "Per Arch il controllo lo fa la ricetta: prima di installare, makepkg confronta l'impronta dell'archivio che scarica. Non c'è niente da scrivere."
+msgstr "Arch 的构建脚本会自动检查。安装前，makepkg 会核对下载的压缩包的校验值，你无需输入命令。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.file.controlla.riuscito"
+msgid "<1>Riuscito</1> se i due numeri sono identici, cifra per cifra."
+msgstr "<1>校验成功：</1>两个校验值的每一位都相同。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#.   <2> = <a href="https://github.com/SANSEVIERIA-OU/kalliope/issues">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.file.controlla.se-no"
+msgid "<1>Se no</1>, non installare il file: scaricalo di nuovo e rifai il controllo. Se il numero resta diverso, <2>segnalalo</2>."
+msgstr "<1>如果不一致，</1>先不要安装。重新下载文件并再次核对。如果仍有差异，请<2>反馈问题</2>。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="{{kalliope.sums.url}}">
+#.   <2> = <code data-t-no="un comando">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.file.controlla.tutti"
+msgid "Per controllare tutti i file insieme c'è il file <1>SHA256SUMS</1>: scaricalo nella stessa cartella e scrivi <2>sha256sum -c SHA256SUMS --ignore-missing</2>."
+msgstr "要一次检查所有文件，把 <1>SHA256SUMS</1> 下载到同一个文件夹，然后输入 <2>sha256sum -c SHA256SUMS --ignore-missing</2>。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <code data-t-no="un comando">
+#.   <2> = <a href="../stato/#controllare">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.file.controlla.attestazione"
+msgid "Ogni file ha anche l'attestazione di provenienza: <1>gh attestation verify</1>, il comando di GitHub, dice se è stato costruito da questa versione del codice. Il resto per chi controlla è in <2>Stato e limiti</2>."
+msgstr "每个文件也都有来源证明。使用 GitHub 命令 <1>gh attestation verify</1>，就能查看文件是否由这个版本的代码构建。更多核对方法见<2>现状与限制</2>。"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.cartella.nome"
+msgid "Scaricati"
+msgstr "下载"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.controllo.pubblicato"
+msgid "Il numero pubblicato"
+msgstr "发布时的校验值"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.controllo.uguale"
+msgid "Uguale, cifra per cifra"
+msgstr "每一位都相同"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.installa.titolo"
+msgid "Installa: un comando, e Kalliope è nel menu."
+msgstr "运行一条命令，菜单中就有 Kalliope 了"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.installa.voce-non-parte"
+msgid "<1>La finestra dice «La voce non parte»?</1> I file della voce mancano o sono rovinati: installa di nuovo Kalliope con il comando qui sotto, poi riaprila."
+msgstr "<1>窗口显示“声音启动失败”？</1>声音文件可能缺失或损坏。用下面的命令重新安装 Kalliope，再打开程序。"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.installa.testo.pacchetto"
+msgid "Nella stessa cartella. Con il pacchetto Kalliope va in /usr, e il computer chiede la password di amministratore. Fuori dalle sue cartelle non tocca niente."
+msgstr "在同一个文件夹里运行命令。使用安装包时，Kalliope 会装到 /usr，电脑会要求输入管理员密码。安装只会改动 Kalliope 自己的文件夹。"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.installa.testo.arch"
+msgid "In una cartella vuota: la ricetta scarica l'archivio della versione, controlla l'impronta e ne fa un pacchetto, senza compilare. Kalliope va in /usr, e il computer chiede la password di amministratore."
+msgstr "在一个空文件夹里运行命令。构建脚本会下载该版本的压缩包，核对校验值，再打成安装包，无需编译。Kalliope 会装到 /usr，电脑会要求输入管理员密码。"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.installa.testo.tar"
+msgid "Nella stessa cartella. Con l'archivio Kalliope va in ~/.local, solo per te: non serve la password di amministratore. Fuori dalle sue cartelle non tocca niente."
+msgstr "在同一个文件夹里运行命令。用压缩包安装时，Kalliope 会装到 ~/.local，只有你能使用，无需管理员密码。安装只会改动 Kalliope 自己的文件夹。"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.installa.deb.nota"
+msgid "Il pacchetto non è firmato."
+msgstr "这个安装包没有签名。"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.installa.rpm.nota"
+msgid "Il pacchetto non è firmato: dnf mostra un avviso e lo installa dopo l'avviso. Per questa versione è previsto."
+msgstr "这个安装包没有签名。dnf 会先显示警告，再继续安装。安装这个版本时会看到这条提示。"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.installa.arch.nota"
+msgid "La stessa ricetta è anche su AUR, con il nome kalliope-bin, aggiornata da ogni versione."
+msgstr "AUR 上也有同一份构建脚本，名为 kalliope-bin，随每个版本更新。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#.   <2> = <code data-t-no="un comando">
+#.   <3> = <code data-t-no="ciò che risponde il programma">
+#. Placeholders to leave as they are: {{kalliope.program.version}}
+#: installa/index.html
+#, kalliope-markup, python-brace-format
+msgctxt "in.installa.riuscito"
+msgid "<1>Riuscito</1> se, scrivendo <2>kalliope --version</2>, il terminale risponde <3>kalliope {{kalliope.program.version}}</3>."
+msgstr "<1>安装成功：</1>输入 <2>kalliope --version</2>，终端会显示 <3>kalliope {{kalliope.program.version}}</3>。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <code data-t-no="un comando">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.installa.riuscito.tar"
+msgid "Se il comando non si trova, scrivi <1>~/.local/bin/kalliope --version</1>: ~/.local/bin può non essere fra le cartelle dei comandi. Kalliope è comunque nel menu."
+msgstr "如果提示找不到命令，输入 <1>~/.local/bin/kalliope --version</1>。系统查找命令的位置可能不包含 ~/.local/bin。你仍然能在菜单中找到 Kalliope。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#.   <2> = <code data-t-no="un comando">
+#.   <3> = <a href="https://github.com/SANSEVIERIA-OU/kalliope/issues">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.installa.se-no"
+msgid "<1>Se no</1>: se mancano dipendenze, o un messaggio parla di GLIBC, il sistema è troppo vecchio. Scrivi <2>ldd --version | head -n 1</2>: il numero in fondo alla riga deve essere almeno 2.39. Se è così e non va lo stesso, <3>segnalalo</3> con il messaggio intero."
+msgstr "<1>如果没成功：</1>遇到缺少依赖的提示，或消息中提到 GLIBC，说明系统太旧。输入 <2>ldd --version | head -n 1</2>，行末的版本号应为 2.39 或更高。如果版本符合要求却仍然无法安装，请附上完整消息<3>反馈问题</3>。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="../stato/#provato">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.installa.provato"
+msgid "Ogni pacchetto è provato da uno script prima di uscire: si installa, Kalliope dice una frase con la voce, poi si toglie. <1>Fin dove è provato</1>"
+msgstr "每个安装包在发布前都经过脚本测试：安装，让 Kalliope 读出一句话，再卸载。<1>查看测试范围</1>"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.togli.titolo"
+msgid "Per togliere Kalliope"
+msgstr "卸载 Kalliope"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <code data-t-no="un comando">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.togli.tar"
+msgid "dalla cartella dell'archivio, <1>./install --remove</1>"
+msgstr "在解压后的文件夹里运行 <1>./install --remove</1>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <code data-t-no="una cartella">
+#.   <2> = <code data-t-no="una cartella">
+#.   <3> = <code data-t-no="un comando">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.togli.restano"
+msgid "Le voci se ne vanno con il programma. Nella tua cartella personale restano le preferenze, <1>~/.config/kalliope</1>, e le voci che hai preparato da una registrazione e le frasi già dette, <2>~/.local/share/kalliope</2>: né il gestore dei pacchetti né <3>./install --remove</3> le toccano. Per toglierle, cancella le due cartelle."
+msgstr "自带的声音会随程序一起卸载。个人文件夹里的偏好设置（<1>~/.config/kalliope</1>）、你用录音创建的声音和说过的话（<2>~/.local/share/kalliope</2>）都会保留。软件包管理器和 <3>./install --remove</3> 都不会改动这些内容。如果也想删除它们，可以删除这两个文件夹。"
+
+#. Says what was checked and what was not. Keep the last sentence as honest as it is: removing the package on a real computer was not tried.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <code data-t-no="un comando">
+#.   <2> = <code data-t-no="un comando">
+#.   <3> = <code data-t-no="un comando">
+#.   <4> = <code data-t-no="un comando">
+#.   <5> = <code data-t-no="un comando">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.togli.verificato"
+msgid "Come lo sappiamo: i pacchetti hanno soltanto file in /usr e nessuno script, e <1>./install --remove</1> cancella soltanto i file messi da <2>./install</2>. Prima di uscire, ogni pacchetto si toglie con <3>apt</3>, <4>dnf</4> o <5>pacman</5> in un sistema di prova, e la prova controlla che non resti niente, voci comprese. Su un computer vero non l'abbiamo provato."
+msgstr "我们这样核实：安装包只包含 /usr 中的文件，没有脚本。<1>./install --remove</1> 只会删除 <2>./install</2> 安装的文件。发布前，我们在测试系统中用 <3>apt</3>、<4>dnf</4> 或 <5>pacman</5> 卸载每个安装包，检查所有文件都已移除，包括自带的声音。我们还没在实际使用的电脑上测试卸载。"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.disco.libreria"
+msgid "lib/kalliope · ONNX Runtime"
+msgstr "lib/kalliope · ONNX Runtime"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.disco.menu"
+msgid "share/applications · nel menu"
+msgstr "share/applications · 应用菜单"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.disco.password"
+msgid "con la password di amministratore"
+msgstr "需要管理员密码"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.disco.senza"
+msgid "solo per te, senza password"
+msgstr "仅供你使用，无需密码"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: installa/index.html
+msgctxt "in.avvio.etichetta"
+msgid "Ricostruzione della finestra di Kalliope al primo avvio"
+msgstr "演示首次启动时的 Kalliope 窗口"
+
+#. The button of the window next to a problem: it opens the page of this site that explains what to do.
+#: installa/index.html
+#, kalliope-markup
+msgctxt "finestra.risolvi"
+msgid "Come si risolve"
+msgstr "解决方法"
+
+#. The hint in the writing area when the voice does not start: look at the line above.
+#: installa/index.html
+#, kalliope-markup
+msgctxt "finestra.segnaposto.errore"
+msgid "La voce non parte: guarda qui sopra."
+msgstr "声音启动失败，请看上方提示。"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.avvio.ricostruzione"
+msgid "Ricostruzione della finestra di Kalliope, con le sue frasi vere · tempi accelerati"
+msgstr "Kalliope 窗口演示，提示语与程序一致 · 已加速"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.apri.titolo"
+msgid "Apri Kalliope, e aspetta «Pronta»."
+msgstr "打开 Kalliope，等到出现“已就绪”"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.apri.testo"
+msgid "Dal menu delle applicazioni. Le voci sono già lì, nel pacchetto: non c'è niente da scaricare, nemmeno la prima volta."
+msgstr "从应用菜单打开 Kalliope。声音已经包含在安装包里，即使第一次使用也无需下载。"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.apri.ogni-volta"
+msgid "A ogni avvio dice «Preparo la voce» per un po': puoi già scrivere, e la voce arriva fra poco."
+msgstr "每次启动时，窗口都会短暂显示“正在准备声音”。这时就可以开始打字，声音很快就好。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.apri.riuscito"
+msgid "<1>Riuscito</1> se la riga di stato dice «Pronta» e, accanto, «Nella riunione scegli «Kalliope» come microfono.»"
+msgstr "<1>启动成功：</1>状态栏显示“已就绪”，旁边写着“在会议中选择‘Kalliope’作为麦克风。”"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.frasi.titolo"
+msgid "Se la riga dice altro"
+msgstr "如果状态栏显示别的提示"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.frasi.voce.frase"
+msgid "«La voce non parte»"
+msgstr "“声音启动失败”"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.frasi.voce.rimedio"
+msgid "Un file delle voci non è dove il programma lo cerca: installa di nuovo il pacchetto o l'archivio, con i passi qui sopra. «Come si risolve» porta a questo passo."
+msgstr "程序在预期的位置找不到声音文件。按上面的步骤，用安装包或压缩包重新安装。点“解决方法”就会来到这一步。"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.frasi.microfono.frase"
+msgid "«Manca il microfono»"
+msgstr "“找不到麦克风”"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="../riunione/#non-compare">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.frasi.microfono.rimedio"
+msgid "Il microfono «Kalliope» non si è creato: di solito manca PipeWire, o non risponde. Dopo «ma» la riga dice la causa. <1>Che cosa fare</1>"
+msgstr "“Kalliope”麦克风未能创建，通常是因为没有安装 PipeWire，或是这个服务没有响应。提示中“但”字后面会写明原因。<1>查看处理方法</1>"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.frasi.nessuno.frase"
+msgid "«Nessuno ti sente»"
+msgstr "“别人听不到你”"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="../riunione/#non-mi-sentono">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.frasi.nessuno.rimedio"
+msgid "Kalliope funziona, ma nessuna app sta usando il suo microfono: succede finché non lo scegli nell'app della riunione. <1>Che cosa fare</1>"
+msgstr "Kalliope 可以正常工作，只是还没有应用在使用它的麦克风。在会议应用中选好麦克风，这个提示就会消失。<1>查看处理方法</1>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="../riunione/#aiuto">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.frasi.altro"
+msgid "Se dice un'altra cosa, cerca la riga nella <1>sezione Aiuto</1>: ogni riga della finestra ha la sua spiegazione."
+msgstr "如果看到其他提示，可以在<1>帮助</1>里搜索这行文字。窗口中的每条提示都有说明。"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.microfono.titolo"
+msgid "«Kalliope» è fra i microfoni."
+msgstr "在麦克风列表里找到“Kalliope”"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.microfono.sotto"
+msgid "Finché Kalliope è aperto, il computer ha un microfono in più. Per vederlo dal terminale:"
+msgstr "只要 Kalliope 开着，电脑上就会多一个麦克风。要在终端里查看，输入："
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.microfono.riuscito"
+msgid "<1>Riuscito</1> se fra le righe ce n'è una con la parola kalliope. Se il comando pactl non c'è, salta: lo vedrai nell'app della riunione."
+msgstr "<1>麦克风已就绪：</1>其中一行包含 kalliope。如果系统没有 pactl 命令，可以跳过这一步，到会议应用里查看。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#.   <2> = <a href="../riunione/#non-compare">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.microfono.se-no"
+msgid "<1>Se no</1>, la finestra dice «Manca il microfono»: <2>che cosa fare</2>."
+msgstr "<1>如果没有，</1>窗口会显示“找不到麦克风”。<2>查看处理方法</2>"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.microfono.riunione"
+msgid "Usalo in una riunione"
+msgstr "在会议中使用"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="freccia" aria-hidden="true">
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.microfono.segnala"
+msgid "Se un passo non va, segnalalo (serve un account GitHub)<1/>"
+msgstr "哪一步遇到了问题？告诉我们（需要 GitHub 账号）<1/>"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.microfono.segnala-come"
+msgid "Scrivi la distribuzione, la versione di PipeWire, che cosa è successo e la frase che la finestra mostrava; non incollare le frasi che hai detto."
+msgstr "写下你的 Linux 发行版、PipeWire 版本、发生了什么，以及窗口显示的提示。请不要粘贴你在会议中说过的话。"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.ripresa.titolo"
+msgid "Se ti sei fermato, riprendi da qui."
+msgstr "中途停下了？从这里继续"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.ripresa.testo"
+msgid "Il sito non salva niente: dove eri lo dice ciò che vedi."
+msgstr "网站不会保存进度。看看你现在遇到的是哪种情况。"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.ripresa.file"
+msgid "Non trovi il file"
+msgstr "找不到下载的文件"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.ripresa.numero"
+msgid "Il numero non è uguale"
+msgstr "校验值不一致"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.ripresa.versione"
+msgid "kalliope --version non risponde"
+msgstr "kalliope --version 没有响应"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.ripresa.pronta"
+msgid "La finestra non dice «Pronta»"
+msgstr "窗口没有显示“已就绪”"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.ripresa.microfono"
+msgid "«Kalliope» non è fra i microfoni"
+msgstr "麦克风列表里没有“Kalliope”"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.inoltra.titolo"
+msgid "Lo installa un'altra persona?"
+msgstr "有人帮你安装？"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.inoltra.testo"
+msgid "Mandale l'indirizzo di questa pagina: trova i passi e i comandi da copiare."
+msgstr "把这页的网址发给对方。这里有安装步骤和可以直接复制的命令。"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.inoltra.copia"
+msgid "Copia l'indirizzo"
+msgstr "复制网址"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.inoltra.fatto"
+msgid "Copiato: incollalo in un messaggio."
+msgstr "已复制，可以粘贴到消息里了。"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.inoltra.errore"
+msgid "Non riesco a copiarlo: seleziona l'indirizzo e copialo."
+msgstr "无法自动复制。请选中网址后复制。"
+
+#. The button next to every command: it copies the command.
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.copia"
+msgid "Copia"
+msgstr "复制"
+
+#. Shown on the button for a moment after the command is copied.
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.copia.fatto"
+msgid "Copiato"
+msgstr "已复制"
+
+#. Shown under a command when the browser does not let the page copy it.
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.copia.errore"
+msgid "Non riesco a copiarlo da solo: seleziona il testo e copialo."
+msgstr "无法自动复制。请选中文字后复制。"
+
+#. Read by screen readers on the copy button. {comando} is the command.
+#. Placeholders to leave as they are: {comando}
+#: installa/index.html
+#, kalliope-markup, python-brace-format
+msgctxt "in.copia.etichetta"
+msgid "Copia: {comando}"
+msgstr "复制：{comando}"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.annuncio.copiato"
+msgid "Copiato negli appunti."
+msgstr "已复制到剪贴板。"
+
+#. Read by screen readers when a phrase of the window is pressed. {frase} is what the status line of the window then says.
+#. Placeholders to leave as they are: {frase}
+#: installa/index.html
+#, kalliope-markup, python-brace-format
+msgctxt "in.annuncio.finestra"
+msgid "La riga della finestra dice: {frase}"
+msgstr "窗口的状态栏显示：{frase}"
+
+#. Read by screen readers when a distribution is chosen. {sistema} is its name.
+#. Placeholders to leave as they are: {sistema}
+#: installa/index.html
+#, kalliope-markup, python-brace-format
+msgctxt "in.annuncio.sistema"
+msgid "I comandi della pagina sono quelli per {sistema}."
+msgstr "本页现在显示适用于 {sistema} 的命令。"
+
+#. The name of a state of Kalliope's window: keep it as the program writes it, in the language of the program.
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.stato.voce.nome"
+msgid "La voce non parte"
+msgstr "声音启动失败"
+
+#. What the window says next to the state above: keep it as the program writes it in Italian; each … stands for what the program adds (a folder, then the names of the missing files).
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.stato.voce.detto"
+msgid "Manca la voce: in … non trovo …. Reinstalla Kalliope."
+msgstr "找不到声音文件，暂时无法说话。请用安装包重新安装 Kalliope。"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.stato.microfono.nome"
+msgid "Manca il microfono"
+msgstr "找不到麦克风"
+
+#. What the window says next to «Manca il microfono»; the … stands for the cause the program adds, often in English.
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.stato.microfono.detto"
+msgid "La voce è pronta, ma …: per ora nessuno ti sentirà nelle chiamate."
+msgstr "声音已就绪，但……。通话中的其他人暂时听不到你。"
+
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.stato.nessuno.nome"
+msgid "Nessuno ti sente"
+msgstr "别人听不到你"
+
+#. What the window says next to «Nessuno ti sente»: keep «Kalliope» in quotes, it is the name of the microphone.
+#: installa/index.html
+#, kalliope-markup
+msgctxt "in.stato.nessuno.detto"
+msgid "Nessuno nella chiamata ha sentito la frase: nessuna app sta usando il microfono «Kalliope». Sceglilo come microfono nell'app della riunione."
+msgstr "通话中的其他人没听到这句话。没有应用在使用“Kalliope”麦克风，请在会议应用中选它作为麦克风。"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.titolo"
+msgid "Kalliope per Windows e macOS: non ancora, e perché"
+msgstr "Kalliope 暂时没有 Windows 或 macOS 版，原因在这里"
+
+#. Attribute «content» of an element of the page: plain text, no tags.
+#: non-ancora/index.html
+msgctxt "na.descrizione"
+msgid "Oggi Kalliope funziona solo su Linux. Perché non ancora su Windows e macOS, che cosa manca e come saperlo quando arriva, senza lasciare dati."
+msgstr "Kalliope 目前只能在 Linux 上使用。了解 Windows 和 macOS 版还缺什么，以及怎样在不留下个人信息的情况下获知发布消息。"
+
+#. Three lines, one under the other: words can move from one line to another, but there must still be three lines. The answer to the question of the page comes first: not yet.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="riga">
+#.   <2> = <span class="riga">
+#.   <3> = <span class="riga">
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.apertura.titolo"
+msgid "<1>Su Windows</1> <2>e macOS:</2> <3>non ancora.</3>"
+msgstr "<1>Windows</1><2>和 macOS 版</2><3>暂未推出</3>"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.apertura.presentazione"
+msgid "Kalliope, il programma che dice nella riunione la frase che scrivi, oggi funziona solo su Linux. Qui trovi perché, che cosa manca e come saperlo quando arriva."
+msgstr "Kalliope 能在会议中读出你写的话，目前只支持 Linux。下面说说原因、还差什么，以及怎样知道新版本已经推出。"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.apertura.quando"
+msgid "Come saperlo quando arriva"
+msgstr "怎样知道新版本推出了？"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="freccia" aria-hidden="true">
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.apertura.ascolta"
+msgid "Intanto, senti la voce<1/>"
+msgstr "先听听声音<1/>"
+
+#. The caption of the scene: the first word says what it is, the part in tag 1 says which one. On narrow screens the part in tag 1 goes to a second line; it is not dropped.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="d-lunga">
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.apertura.didascalia"
+msgid "Ricostruzione<1> · su Windows e macOS «Kalliope» non compare fra i microfoni dell'app di riunione</1>"
+msgstr "演示<1> · 在 Windows 和 macOS 的会议应用里，麦克风列表中还没有“Kalliope”</1>"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: non-ancora/index.html
+msgctxt "na.palco.etichetta"
+msgid "Ricostruzione: su Windows e macOS, nell'app della riunione, il microfono «Kalliope» non c'è e la tua frase resta senza voce"
+msgstr "演示：在 Windows 和 macOS 的会议应用中没有“Kalliope”麦克风，别人听不到你写的话"
+
+#. The name of the virtual microphone as a meeting app lists it (keep it as it is), and what follows it where the program is not installed: the part in tag 2 appears when the person tries to choose it.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="mancante-nome">
+#.   <2> = <span class="mancante-nota">
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.scelta.mancante"
+msgid "<1>Kalliope</1><2> · non c'è</2>"
+msgstr "<1>Kalliope</1><2> · 暂无</2>"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.perche.titolo"
+msgid "Si ferma al microfono."
+msgstr "还差一个麦克风"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.perche.testo"
+msgid "Su Windows e macOS Kalliope si costruisce e supera i test, ma non ha ancora il suo microfono. Senza, nessuna app di riunione può sentire la voce."
+msgstr "Kalliope 在 Windows 和 macOS 上都能构建并通过测试，但还没有自己的麦克风。没有它，会议应用就接收不到声音。"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.strada.computer"
+msgid "Su Windows e macOS, oggi"
+msgstr "目前在 Windows 和 macOS 上"
+
+#. The part in tag 1 is read by screen readers and not shown: the step is drawn dashed and empty, and this says what the drawing says.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="solo-lettori">
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.strada.tappa.3"
+msgid "Microfono «Kalliope»<1>: non c'è ancora</1>"
+msgstr "麦克风“Kalliope”<1>：暂时还没有</1>"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.esito.fatto.titolo"
+msgid "C'è già"
+msgstr "已经能做的"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.esito.fatto.testo"
+msgid "Il programma si costruisce e supera i test anche su Windows e macOS: la voce nasce."
+msgstr "程序在 Windows 和 macOS 上也能构建、通过测试并生成声音。"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.esito.manca.titolo"
+msgid "Manca il microfono"
+msgstr "还缺麦克风"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#.   <2> = <strong>
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.esito.manca.testo"
+msgid "Su <1>Windows</1> serve un driver audio con una firma valida; su <2>macOS</2>, per firmare il componente audio, un account sviluppatore Apple. Nessuno dei due c'è ancora, e mancano anche i pacchetti da installare, con la loro firma."
+msgstr "在 <1>Windows</1> 上，需要有有效签名的音频驱动程序。在 <2>macOS</2> 上，要给音频组件签名，需要 Apple 开发者账号。目前这两项条件都还没具备，两个系统也都还没有签过名的安装包。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.non-esiste"
+msgid "<1>Non è per telefono e tablet</1>: per ora Kalliope è solo per il computer, e parla solo italiano. Non è un servizio online né un'estensione del browser."
+msgstr "<1>手机和平板电脑上用不了</1>。Kalliope 目前只适用于电脑，只会说意大利语。它不是在线服务，也不是浏览器扩展。"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.quando.titolo"
+msgid "Non promettiamo date."
+msgstr "目前没有确定的发布日期"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.quando.testo"
+msgid "Quando ci sarà una versione per Windows o macOS, comparirà in cima a questo elenco. L'elenco si aggiorna da solo a ogni nuova versione di Kalliope: tieni l'indirizzo di questa pagina e ripassa quando vuoi."
+msgstr "等有了 Windows 或 macOS 版，你会在这个列表的最上方看到。Kalliope 每次发布新版本，列表都会自动更新。保存这页的网址，想看的时候再回来。"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.quando.nessuna-email"
+msgid "Non raccogliamo indirizzi e-mail e non abbiamo un elenco d'attesa."
+msgstr "我们不收集电子邮箱地址，也没有等候名单。"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.versioni.titolo"
+msgid "Versioni di Kalliope"
+msgstr "Kalliope 版本"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.versioni.prossima.nome"
+msgid "Windows e macOS"
+msgstr "Windows 和 macOS"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.versioni.prossima.nota"
+msgid "compariranno qui, in cima · nessuna data"
+msgstr "推出后会出现在列表顶部 · 日期未定"
+
+#. Placeholders to leave as they are: {{kalliope.version}}
+#: non-ancora/index.html
+#, kalliope-markup, python-brace-format
+msgctxt "na.versioni.ultima.nome"
+msgid "Kalliope {{kalliope.version}}"
+msgstr "Kalliope {{kalliope.version}}"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.versioni.ultima.nota"
+msgid "Versione di prova · solo Linux"
+msgstr "测试版 · 仅限 Linux"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.versioni.ultima.nota-stabile"
+msgid "Solo Linux"
+msgstr "仅限 Linux"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.copia.pulsante"
+msgid "Copia l'indirizzo di questa pagina"
+msgstr "复制本页网址"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.copia.fatto"
+msgid "Copiato: incollalo nelle note o in un messaggio, e ripassa da qui."
+msgstr "已复制。可以把网址粘贴到笔记或消息里，方便下次再来。"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.copia.errore"
+msgid "Non riesco a copiarlo: salva la pagina tra i preferiti del browser."
+msgstr "无法自动复制。你可以把本页加入浏览器书签。"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.copia.senza-js"
+msgid "Salva questa pagina tra i preferiti del browser e ripassa da qui."
+msgstr "把本页加入浏览器书签，方便下次再来。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="https://github.com/SANSEVIERIA-OU/kalliope/releases.atom">
+#.   <2> = <a href="https://github.com/SANSEVIERIA-OU/kalliope/releases">
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.quando.feed"
+msgid "Usi un lettore di feed, un programma che ti avvisa quando un sito pubblica qualcosa? Il <1>feed delle versioni</1> segnala ogni nuova versione, anche quelle solo per Linux, ed è in inglese, come la <2>pagina delle versioni su GitHub</2>."
+msgstr "你用订阅阅读器吗？网站有新内容时，它就会提醒你。<1>订阅版本更新</1>可以收到每次发布的消息，包括仅适用于 Linux 的版本。订阅内容和 <2>GitHub 上的版本页面</2>都是英文。"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.ascolta.titolo"
+msgid "Intanto, senti come suona."
+msgstr "先听听声音"
+
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.ascolta.sotto"
+msgid "La frase di prima, detta con la registrazione vera di Kalliope 0.1. Il suono parte solo se premi."
+msgstr "这是刚才那句话，声音是用 Kalliope 0.1 实际录制的。点一下才会播放。"
+
+#. The part in tag 1 is the name of the voice, written as it is in the second line of the page: the script reads it from here for what it says aloud and for the file to download.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="nome-voce">
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.ascolta.fermo"
+msgid "Ascolta <1>Giulia</1>"
+msgstr "听听 <1>Giulia</1> 的声音"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: non-ancora/index.html
+msgctxt "na.ascolta.lettore"
+msgid "Ascolta la frase con la voce di Giulia"
+msgstr "听 Giulia 读这句话"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="freccia" aria-hidden="true">
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.ascolta.tutte"
+msgid "Tutte le frasi, anche con Marco<1/>"
+msgstr "试听所有句子，也可以选 Marco<1/>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="../stato/">
+#: non-ancora/index.html
+#, kalliope-markup
+msgctxt "na.ascolta.fatti"
+msgid "Che cosa è provato e che cosa no, anche su Linux: <1>stato e limiti</1>."
+msgstr "想知道 Linux 等系统上已经测过哪些环节、哪些还没测过？请看<1>现状与限制</1>。"
+
+#. Read by screen readers when the voice starts speaking the sentence of the page. {voce} is the name of the voice, written as in the button.
+#. Placeholders to leave as they are: {voce}
+#: non-ancora/index.html
+#, kalliope-markup, python-brace-format
+msgctxt "na.annuncio.parte"
+msgid "Sto leggendo la frase, voce di {voce}."
+msgstr "正在用 {voce} 的声音读这句话。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.titolo"
+msgid "Usare Kalliope in una riunione: scegli il microfono e controlla che ti sentano"
+msgstr "在会议中使用 Kalliope：选择麦克风，确认别人能听见"
+
+#. Attribute «content» of an element of the page: plain text, no tags.
+#: riunione/index.html
+msgctxt "riu.descrizione"
+msgid "Come scegliere «Kalliope» come microfono nell'app della riunione e come controllare che gli altri ti sentano, anche quando qualcosa non va."
+msgstr "在会议应用中选择“Kalliope”作为麦克风，确认别人能听见你的话。遇到问题也可以在这里找到解决方法。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="riga">
+#.   <2> = <span class="riga">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.apertura.titolo"
+msgid "<1>Entra in riunione.</1> <2>Con le tue parole.</2>"
+msgstr "<1>加入会议，</1><2>说你想说的话。</2>"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.apertura.testo"
+msgid "Apri Kalliope, scegli il suo microfono e fai una prova con qualcuno. Poi scrivi: la voce porta le tue parole nella riunione."
+msgstr "打开 Kalliope，选好它的麦克风，再找个人一起试试。接下来，你只管打字，Kalliope 会在会议里读出你的话。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.inizia"
+msgid "Prepara la riunione"
+msgstr "会前准备"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span aria-hidden="true" class="freccia">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.aiuto.scorciatoia"
+msgid "Se non ti sentono<1/>"
+msgstr "如果别人听不到你<1/>"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.didascalia"
+msgid "Ricostruzione · la scelta del microfono, non una prova di compatibilità"
+msgstr "麦克风选择演示 · 尚未测试实际兼容性"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: riunione/index.html
+msgctxt "riu.palco"
+msgid "Ricostruzione: il microfono Kalliope scelto nella riunione"
+msgstr "演示：在会议中选中 Kalliope 麦克风"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.tu"
+msgid "Tu · microfono Kalliope"
+msgstr "你 · Kalliope 麦克风"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.1"
+msgid "Apri Kalliope e aspetta «Pronta»"
+msgstr "打开 Kalliope，等到出现“已就绪”"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.2"
+msgid "Non ancora provato in una riunione vera"
+msgstr "尚未在实际会议中测试"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="../stato/#provato-per-app">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.3"
+msgid "La voce arriva fino al microfono «Kalliope». Con Zoom, Teams o Meet su un computer di tutti i giorni non l'abbiamo ancora provata. Prima di una riunione importante fai una prova con una persona di fiducia. <1>Vedi la tabella app per app</1>."
+msgstr "声音能传到“Kalliope”麦克风。我们还没在日常使用的电脑上用 Zoom、Teams 或 Meet 实际开会测试。重要会议前，先找个你信任的人试一下。<1>查看各应用的测试情况</1>。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.4"
+msgid "Apri Kalliope prima di entrare nella riunione. Aspetta che la riga di stato dica «Pronta»."
+msgstr "在进入会议前打开 Kalliope，等状态栏显示“已就绪”。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="controllo__titolo">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.5"
+msgid "<1>Come sai che è andata bene</1>La riga dice «Pronta» e, accanto, «Nella riunione scegli «Kalliope» come microfono.»"
+msgstr "<1>怎样确认准备好了</1>状态栏显示“已就绪”，旁边写着“在会议中选择‘Kalliope’作为麦克风。”"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="se-non-va__titolo">
+#.   <2> = <a href="#aiuto">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.6"
+msgid "<1>Se non è andata</1>Se dice «Nessuno ti sente», «Manca il microfono» o «La voce non parte», premi «Come si risolve», accanto alla riga: ti porta alla spiegazione giusta. Per ogni altra riga, <2>cercala nella sezione Aiuto</2>."
+msgstr "<1>如果没准备好</1>看到“别人听不到你”“找不到麦克风”或“声音启动失败”，点提示旁的“解决方法”，就会打开对应的说明。看到其他提示时，可以<2>在帮助里搜索</2>。"
+
+#. Attribute «alt» of an element of the page: plain text, no tags.
+#: riunione/index.html
+msgctxt "riu.immagine.8"
+msgid "La finestra di Kalliope. In alto la barra, con il logo, il nome, la voce (Giulia), «Riunione», «Altro» e la grandezza del testo. Sotto, le frasi già dette, in bolle: l'ultima è la più chiara. Poi la riga di stato: «Pronta. Nella riunione scegli «Kalliope» come microfono.» In basso la grande bolla tratteggiata dove scrivi, con «Di'»."
+msgstr "Kalliope 窗口。顶栏有标志、程序名称、当前声音（Giulia）、“会议”“更多”和字号按钮。下方的气泡里是说过的话，最近一句最亮。再往下是状态栏：“已就绪。在会议中选择‘Kalliope’作为麦克风。”最下方的大虚线气泡用来打字，旁边有“读出”按钮。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.7"
+msgid "La finestra di Kalliope: la barra con la voce, la riga di stato, le frasi già dette e, in basso, la bolla dove scrivi."
+msgstr "Kalliope 窗口：顶栏可以选声音，窗口里能看到状态栏和说过的话，底部的气泡用来输入。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.9"
+msgid "Scegli «Kalliope» come microfono"
+msgstr "选择“Kalliope”作为麦克风"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.10"
+msgid "Apri le impostazioni audio dell'app della riunione e scegli «Kalliope» fra i microfoni."
+msgstr "打开会议应用的音频设置，在麦克风列表中选择“Kalliope”。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.11"
+msgid "In Zoom: Impostazioni, Audio, Microfono, «Kalliope»."
+msgstr "在 Zoom 中，打开“设置”，选择“音频”，在“麦克风”下选“Kalliope”。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.12"
+msgid "Per le altre app non descriviamo i menu: ognuna è diversa e non le abbiamo provate. Cerca le impostazioni audio. In un browser, scegli il microfono nella richiesta del browser o nella pagina della riunione."
+msgstr "其他应用的菜单各不相同，我们也还没测试过。可以先找音频设置。如果你在浏览器里开会，可以在浏览器弹出的提示中或会议页面上选择麦克风。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.13"
+msgid "Kalliope diventa il microfono predefinito del computer solo se è l'unico. Altrimenti scegli «Kalliope» in ogni app."
+msgstr "只有当电脑上没有其他麦克风时，Kalliope 才会成为默认麦克风。否则，需要在每个应用里选择“Kalliope”。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="controllo__titolo">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.14"
+msgid "<1>Come sai che è andata bene</1>«Kalliope» compare nell'elenco, accanto ai microfoni veri, e resta scelto."
+msgstr "<1>怎样确认选好了</1>列表里除了实体麦克风，还能看到“Kalliope”，并且它保持选中状态。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="se-non-va__titolo">
+#.   <2> = <a href="#non-compare">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.15"
+msgid "<1>Se non è andata</1>Se «Kalliope» non compare: Kalliope deve essere aperto prima. Poi chiudi e riapri l'elenco dei microfoni dell'app. Se non basta, <2>leggi la spiegazione</2>."
+msgstr "<1>如果没选好</1>列表里没有“Kalliope”，先打开 Kalliope，再关掉会议应用的麦克风列表并重新打开。如果还是没有，<2>查看说明</2>。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.16"
+msgid "Esempio di scelta"
+msgstr "试选麦克风"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.17"
+msgid "Microfono"
+msgstr "麦克风"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.18"
+msgid "Microfono del computer"
+msgstr "电脑麦克风"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.19"
+msgid "Kalliope"
+msgstr "Kalliope"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.20"
+msgid "Qui puoi provare il menu. Nella riunione, scegli «Kalliope» nelle impostazioni audio dell'app che usi."
+msgstr "你可以在这里试试这个菜单。实际开会时，请到你使用的会议应用的音频设置里选择“Kalliope”。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.21"
+msgid "Controlla che ti sentano"
+msgstr "确认别人能听见"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.22"
+msgid "Hai tre modi. Il primo è il più semplice, il terzo il più sicuro."
+msgstr "有三种方法。第一种最简单，第三种最可靠。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.23"
+msgid "1. La finestra ti avvisa"
+msgstr "1. 看窗口提示"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.24"
+msgid "<1>Cosa fare.</1> Scrivi una frase e premi Invio."
+msgstr "<1>怎么做：</1>写一句话，按回车。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.25"
+msgid "<1>Come sai che è andata.</1> Se la riga di stato diventa «Nessuno ti sente», nessuna app sta usando il microfono «Kalliope». Se dice «Sto parlando», una app ti ascolta."
+msgstr "<1>怎么看结果：</1>如果状态栏变成“别人听不到你”，说明没有应用在使用“Kalliope”麦克风。如果显示“正在说话”，说明有应用在接收声音。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.26"
+msgid "Così dice il programma. Non l'abbiamo provato in una riunione vera."
+msgstr "这是程序给出的提示。我们还没在实际会议中测试过。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.27"
+msgid "2. La barra dell'app"
+msgstr "2. 看应用里的音量指示条"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.28"
+msgid "<1>Cosa fare.</1> Apri la prova del microfono dell'app, se ce l'ha. Scrivi una frase."
+msgstr "<1>怎么做：</1>如果会议应用有测试麦克风的功能，打开它，然后写一句话。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.29"
+msgid "<1>Come sai che è andata.</1> La barra del livello si muove mentre Kalliope parla."
+msgstr "<1>怎么看结果：</1>Kalliope 说话时，音量指示条会动。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.30"
+msgid "3. Una prova con una persona"
+msgstr "3. 找个人通话试试"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.31"
+msgid "<1>Cosa fare.</1> Prima di una riunione importante, entra in una chiamata con una persona di fiducia. Scrivi una frase."
+msgstr "<1>怎么做：</1>重要会议前，先和你信任的人通话，试着写一句话。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.32"
+msgid "<1>Come sai che è andata.</1> La persona ti dice cosa sente."
+msgstr "<1>怎么看结果：</1>让对方告诉你听到了什么。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.33"
+msgid "«Senti anche tu la voce», nel menu della voce, fa sentire la voce anche sulle casse del tuo computer. Serve a te per sapere cosa esce. Non vuol dire che l'app della riunione la riceva."
+msgstr "打开声音菜单里的“自己也能听到”，电脑扬声器就会播放合成的声音。你可以听听读出来是什么样，会议应用能否收到声音还要另外确认。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="se-non-va__titolo">
+#.   <2> = <a href="#aiuto">
+#.   <3> = <a href="#segnala">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.34"
+msgid "<1>Se non è andata</1>Premi «Come si risolve» nella finestra, o cerca la riga nella <2>sezione Aiuto</2>. Se vuoi, <3>dicci come è andata</3>."
+msgstr "<1>如果别人没听到</1>点窗口里的“解决方法”，或到<2>帮助</2>里搜索这条提示。你也可以<3>告诉我们试用结果</3>。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.35"
+msgid "Da terminale, senza la finestra"
+msgstr "在终端里使用，无需打开窗口"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <code>
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.36"
+msgid "Con la finestra chiusa, <1>kalliope --say \"prova\"</1> fa dire «prova» al microfono «Kalliope». Non l'abbiamo provato con la finestra aperta nello stesso momento."
+msgstr "窗口关闭时，运行 <1>kalliope --say \"prova\"</1>，“Kalliope”麦克风就会传出“prova”这个词。我们还没试过同时开着窗口运行这条命令。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.37"
+msgid "Una frase, con la voce di Giulia"
+msgstr "听 Giulia 读一句话"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.38"
+msgid "Una registrazione da ascoltare qui. Non prova il microfono della tua riunione."
+msgstr "你可以在这里听一段录音。它无法测试你在会议中使用的麦克风。"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: riunione/index.html
+msgctxt "riu.audio"
+msgid "Registrazione della voce di Giulia"
+msgstr "Giulia 的声音录音"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="../voce/giulia-1.mp3">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.39"
+msgid "<1>Apri la registrazione</1>"
+msgstr "<1>打开录音</1>"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.40"
+msgid "Scrivi e parla"
+msgstr "把想说的话打出来"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.41"
+msgid "Scrivi nella bolla tratteggiata e premi Invio: la frase passa nella bolla sopra e si accende parola per parola, mentre la voce la dice. Non si va a capo: un testo su più righe diventa una frase sola. Esc ferma la voce subito, e se scrivi mentre Kalliope parla, il nuovo testo aspetta il suo turno."
+msgstr "在虚线气泡里写下想说的话，按回车。文字就会移到上方的气泡里，读到哪个词，哪个词就会亮起来。回车不会换行，多行文字会合成一句。按 Esc 可以立即停止朗读。如果 Kalliope 正在说话，你又写了新的内容，新内容会排在后面，等前面的话读完再读。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.42"
+msgid "Le frasi già dette restano sopra la scrittura, la più recente in basso, anche dopo aver chiuso Kalliope: si salvano solo su questo computer. Un clic su una frase la ripete; con la scrittura vuota, ↑ riporta l'ultima."
+msgstr "说过的话会留在输入框上方，最新的一句在最下面。关闭 Kalliope 后也会保留，只存在这台电脑上。点一句话可以再说一遍。输入框为空时，按 ↑ 可以调出上一句。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.scrivi.riunione"
+msgid "Per tenere Kalliope vicino alla riunione premi «Riunione»: la finestra si stringe e tiene solo lo stato, la scrittura e «Ferma». Su Wayland è il sistema a tenere una finestra sopra le altre: premi Alt+Spazio, poi «Sempre in primo piano»."
+msgstr "想让 Kalliope 和会议窗口放在一起，点“会议”。窗口会缩小，只留下状态、输入框和“停止”按钮。在 Wayland 上，由系统决定哪个窗口置顶。按 Alt+空格，再选“总在最前”。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.scrivi.testo-grande"
+msgid "A− e A+ (o Ctrl e −, Ctrl e +) rimpiccioliscono e ingrandiscono tutto il testo, e Kalliope ricorda la misura. Chiaro o scuro lo decide il sistema."
+msgstr "点 A− 或 A+（也可以按 Ctrl 和 −、Ctrl 和 +）就能缩小或放大所有文字。Kalliope 会记住你选的字号。浅色或深色外观跟随系统。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.43"
+msgid "La finestra di Kalliope e quella della riunione sono due finestre. Kalliope non ha scorciatoie da tastiera che funzionino fuori dalla sua finestra: per scrivere devi passare a quella di Kalliope. Per chi scrive con un solo interruttore o con lo sguardo non abbiamo provato come funziona in una riunione."
+msgstr "Kalliope 和会议应用各有自己的窗口。Kalliope 的快捷键只在它自己的窗口里有效，打字前要切换过去。我们还没测试过用单个开关或眼动输入的人在会议中使用它的情况。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.44"
+msgid "Come per un microfono vero, le frasi dette mentre nessuna app registra vengono scartate. Così una riunione non comincia con parole vecchie."
+msgstr "和实体麦克风一样，如果没有应用在接收声音，此时说的话就不会传过去。这样，会议刚开始时就不会播出之前的话。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.voce.titolo"
+msgid "Con la tua voce"
+msgstr "用自己的声音说话"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.voce.testo"
+msgid "In «Altro» scegli «Crea la tua voce». La registri dal microfono, leggendo un testo (bastano circa dodici secondi), oppure importi una vecchia registrazione: WAV, FLAC, MP3, OGG, M4A, o un messaggio vocale di WhatsApp o Telegram, anche dentro un video. Scegli il pezzo più chiaro, dai un nome alla voce e conferma che è la tua, o che chi parla ti ha dato il permesso."
+msgstr "在“更多”里选“创建自己的声音”。你可以对着麦克风读一段文字，录下大约 12 秒就够了。也可以导入以前的录音，例如 WAV、FLAC、MP3、OGG、M4A 文件，或 WhatsApp、Telegram 的语音消息。视频里的人声也能用。选出声音最清楚的一段，给声音起个名字，再确认这是你自己的声音，或说话的人已同意你使用。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.voce.opus"
+msgid "I messaggi vocali di WhatsApp e Telegram sono in formato Opus: per leggerli serve libopus, che i pacchetti consigliano. Senza, gli altri formati funzionano lo stesso."
+msgstr "WhatsApp 和 Telegram 的语音消息使用 Opus 格式，读取时需要 libopus，安装包将它列为推荐依赖。即使没有 libopus，其他格式也照常可用。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.aiuto.titolo"
+msgid "Se non ti sentono, cerca la frase."
+msgstr "别人听不到你？搜一下窗口里的提示"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.10"
+msgid "Scrivi una parte della frase"
+msgstr "输入提示中的几个字"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.11"
+msgid "Tutte le frasi, a colpo d’occhio"
+msgstr "查看所有提示"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="#f-manca">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.12"
+msgid "<1>«La voce non parte»</1>"
+msgstr "<1>“声音启动失败”</1>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="#f-preparo">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.13"
+msgid "<1>«Preparo la voce»</1>"
+msgstr "<1>“正在准备声音”</1>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="#f-pronta">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.14"
+msgid "<1>«Pronta»</1>"
+msgstr "<1>“已就绪”</1>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="#f-senza-microfono">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.15"
+msgid "<1>«Manca il microfono»</1>"
+msgstr "<1>“找不到麦克风”</1>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="#f-parlo">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.16"
+msgid "<1>«Sto parlando»</1>"
+msgstr "<1>“正在说话”</1>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="#f-nessuna-chiamata">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.17"
+msgid "<1>«Nessuno ti sente»</1>"
+msgstr "<1>“别人听不到你”</1>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="#f-errori">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.18"
+msgid "<1>«Attenzione»</1>"
+msgstr "<1>“请注意”</1>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <q class="frase-finestra">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.19"
+msgid "<1>La voce non parte</1>"
+msgstr "<1>声音启动失败</1>"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.20"
+msgid "Cosa significa"
+msgstr "这是什么意思"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.21"
+msgid "Le voci arrivano con il pacchetto, e un loro file non è nella cartella dove Kalliope lo cerca: accanto alla riga la finestra scrive quale cartella e quali file («Manca la voce: in … non trovo …»). L'installazione è rotta, e finché non è a posto la voce non può parlare."
+msgstr "声音随安装包一起提供。如果安装不完整，Kalliope 就找不到所需的声音文件。窗口会提示“找不到声音文件，暂时无法说话。请用安装包重新安装 Kalliope。”具体的文件夹和文件名可以在日志中查看。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.22"
+msgid "Cosa fare"
+msgstr "怎么做"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="../installa/#installa">
+#.   <2> = <a href="#segnala">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.23"
+msgid "Installa di nuovo Kalliope, con i passi della <1>pagina Installa</1>. Se la riga ricompare, <2>segnalala</2> intera."
+msgstr "按<1>安装页面</1>的步骤重新安装 Kalliope。如果又看到这条提示，请<2>反馈问题</2>并附上完整提示。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <q class="frase-finestra">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.24"
+msgid "<1>Preparo la voce</1>"
+msgstr "<1>正在准备声音</1>"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.25"
+msgid "Cosa significa"
+msgstr "这是什么意思"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.26"
+msgid "La voce si sta caricando in memoria. Succede a ogni avvio. Puoi già scrivere: la riga dice «Fra poco puoi scrivere e farti sentire»."
+msgstr "每次启动时，Kalliope 都要把声音加载到内存里。这时已经可以打字了。状态栏会显示“马上就可以打字，让大家听见你想说的话。”"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.27"
+msgid "Cosa fare"
+msgstr "怎么做"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.28"
+msgid "Aspetta. Non abbiamo misurato quanto dura."
+msgstr "等一会儿。我们还没测过需要多久。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <q class="frase-finestra">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.29"
+msgid "<1>Pronta</1>"
+msgstr "<1>已就绪</1>"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.30"
+msgid "Cosa significa"
+msgstr "这是什么意思"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.31"
+msgid "Tutto a posto: Kalliope può parlare. Accanto la riga dice «Nella riunione scegli «Kalliope» come microfono»."
+msgstr "一切准备就绪，Kalliope 可以说话了。旁边的提示是“在会议中选择‘Kalliope’作为麦克风。”"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.32"
+msgid "Cosa fare"
+msgstr "怎么做"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="../riunione/">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.33"
+msgid "Nell'app della riunione scegli «Kalliope» come microfono. <1>I passi sono nella pagina In riunione</1>."
+msgstr "在会议应用中选择“Kalliope”作为麦克风。<1>到“开会时”查看具体步骤</1>。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <q class="frase-finestra">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.34"
+msgid "<1>Manca il microfono</1>"
+msgstr "<1>找不到麦克风</1>"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.35"
+msgid "Cosa significa"
+msgstr "这是什么意思"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.36"
+msgid "La voce funziona, ma il microfono «Kalliope» non si è creato, e per ora nessuno ti sentirà nelle chiamate. Dopo «ma», la riga dice la causa in parole semplici, per esempio che PipeWire, il servizio audio del computer, non risponde."
+msgstr "声音本身可以使用，但“Kalliope”麦克风未能创建，所以通话中的其他人暂时听不到你。提示中“但”字后面会说明原因，例如电脑的音频服务 PipeWire 没有响应。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.37"
+msgid "Cosa fare"
+msgstr "怎么做"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <code>
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.78"
+msgid "Se la causa dice <1>PipeWire is not running</1>, avvia PipeWire con questo comando:"
+msgstr "如果原因是 <1>PipeWire is not running</1>，用这条命令启动 PipeWire："
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.38"
+msgid "Copia il comando"
+msgstr "复制命令"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <code>
+#.   <2> = <code>
+#.   <3> = <code>
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.39"
+msgid "Se dice <1>PipeWire is not available</1>, manca la libreria: installa <2>pipewire</2> e <3>pipewire-pulse</3>. Se il computer usa solo PulseAudio, il microfono di Kalliope oggi non è disponibile."
+msgstr "如果显示 <1>PipeWire is not available</1>，说明缺少所需的库。请安装 <2>pipewire</2> 和 <3>pipewire-pulse</3>。如果电脑只使用 PulseAudio，目前还无法使用 Kalliope 的麦克风。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.40"
+msgid "Dopo aver sistemato"
+msgstr "处理好之后"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.41"
+msgid "Chiudi e riapri Kalliope. Non abbiamo provato se serva, ma è il modo più semplice per cominciare da capo."
+msgstr "关闭 Kalliope，再重新打开。我们还没验证这一步是否必需，不过这是重新开始最简单的办法。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <q class="frase-finestra">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.42"
+msgid "<1>Sto parlando</1>"
+msgstr "<1>正在说话</1>"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.43"
+msgid "Cosa significa"
+msgstr "这是什么意思"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.44"
+msgid "Kalliope sta dicendo la frase: le parole si accendono nella bolla man mano che la voce le dice. La riga aggiunge «Esc la ferma»."
+msgstr "Kalliope 正在读出你写的话。读到哪个词，气泡里的哪个词就会亮起来。旁边还有一句“按 Esc 停止。”"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.45"
+msgid "Cosa fare"
+msgstr "怎么做"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.46"
+msgid "Esc, o «Ferma», interrompe subito. Il testo che scrivi nel frattempo aspetta il suo turno."
+msgstr "按 Esc 或点“停止”就能立即停下来。这时写的新内容会排在后面。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <q class="frase-finestra">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.47"
+msgid "<1>Nessuno ti sente</1>"
+msgstr "<1>别人听不到你</1>"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.48"
+msgid "Cosa significa"
+msgstr "这是什么意思"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.49"
+msgid "Nessuna app sta registrando dal microfono «Kalliope», quindi gli altri non ti sentono («Nessuno nella chiamata ha sentito la frase …»). Il suono viene scartato, come per un microfono vero."
+msgstr "没有应用在接收“Kalliope”麦克风的声音，所以别人听不到你。窗口会提示“通话中的其他人没听到这句话……”。和实体麦克风一样，没人接收时发出的声音会被丢弃。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.50"
+msgid "Cosa fare"
+msgstr "怎么做"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="#non-mi-sentono">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.51"
+msgid "Nell'app della riunione scegli «Kalliope» come microfono. Se lo hai già scelto, controlla che nell'app il microfono non sia disattivato. Kalliope è il microfono predefinito del computer solo se è l'unico: altrimenti va scelto in ogni app. <1>I controlli, uno per uno</1>."
+msgstr "在会议应用中选择“Kalliope”作为麦克风。如果已经选好了，检查应用里的麦克风有没有被静音。只有当电脑上没有其他麦克风时，Kalliope 才是默认麦克风，否则要在每个应用里选择它。<1>逐项检查</1>。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <q class="frase-finestra">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.52"
+msgid "<1>Attenzione</1>"
+msgstr "<1>请注意</1>"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.53"
+msgid "Cosa significa"
+msgstr "这是什么意思"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.54"
+msgid "Qualcosa non va nel programma o nei file della voce. Accanto alla riga c'è una frase come «Non riesco a preparare la voce: …», «Errore della voce: …» o «Non riesco a cambiare voce: …»."
+msgstr "程序或声音文件出了问题。状态旁边会说明是哪里出了问题，例如“无法准备声音：……”或“这句话没能读出来：……”。切换声音失败时，提示也会说明现在用的是哪个声音。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.55"
+msgid "Cosa fare"
+msgstr "怎么做"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="#segnala">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.56"
+msgid "Chiudi e riapri Kalliope. Se la riga ricompare, <1>segnalala</1> intera, compreso ciò che segue i due punti. Non abbiamo una soluzione provata per questi errori."
+msgstr "关闭 Kalliope，再重新打开。如果又出现同一条提示，请<1>反馈问题</1>，附上完整提示，包括冒号后面的内容。我们还没有经过验证的解决办法。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.57"
+msgid "La mia frase non c'è"
+msgstr "找不到我看到的提示"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.58"
+msgid "«Manca il microfono», o «Kalliope» non compare fra i microfoni dell'app"
+msgstr "窗口提示“找不到麦克风”，或应用的麦克风列表中没有“Kalliope”"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.59"
+msgid "Cosa fare"
+msgstr "怎么做"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <code>
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.compare.manca"
+msgid "Se la finestra dice «Manca il microfono», la voce è pronta ma il microfono «Kalliope» non si è creato: dopo «ma» la riga scrive la causa. Se dice <1>PipeWire is not running</1>, avvia PipeWire con questo comando:"
+msgstr "如果窗口显示“找不到麦克风”，说明声音已经就绪，但“Kalliope”麦克风未能创建。提示中“但”字后面会说明原因。如果显示 <1>PipeWire is not running</1>，用这条命令启动 PipeWire："
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <code>
+#.   <2> = <code>
+#.   <3> = <code>
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.compare.libreria"
+msgid "Se dice <1>PipeWire is not available</1>, manca la libreria: installa <2>pipewire</2> e <3>pipewire-pulse</3>. Poi chiudi e riapri Kalliope."
+msgstr "如果显示 <1>PipeWire is not available</1>，说明缺少所需的库。请安装 <2>pipewire</2> 和 <3>pipewire-pulse</3>，然后关闭并重新打开 Kalliope。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <code>
+#.   <2> = <code>
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.60"
+msgid "Se invece la finestra dice «Pronta» e l'app non mostra «Kalliope»: scrivi in un terminale <1>pactl list short sources</1>, deve esserci una riga con <2>kalliope</2>. Se c'è, chiudi e riapri l'elenco dei microfoni dell'app; non abbiamo provato se serva riavviare l'app."
+msgstr "如果窗口显示“已就绪”，但会议应用里没有“Kalliope”，在终端输入 <1>pactl list short sources</1>。输出中应有一行包含 <2>kalliope</2>。如果有，关掉应用的麦克风列表，再重新打开。我们还没测试过是否需要重启会议应用。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.61"
+msgid "«Nessuno ti sente», o gli altri non ti sentono"
+msgstr "窗口提示“别人听不到你”，或对方说听不到"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.62"
+msgid "Cosa fare"
+msgstr "怎么做"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.sentono.uno"
+msgid "Nessuna app sta usando il microfono «Kalliope». Nell'app della riunione apri le impostazioni audio e scegli «Kalliope» come microfono; controlla anche che nell'app il microfono non sia disattivato."
+msgstr "没有应用在使用“Kalliope”麦克风。打开会议应用的音频设置，选择“Kalliope”作为麦克风，也要检查应用里的麦克风有没有被静音。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.sentono.due"
+msgid "Se hai aperto Kalliope dopo l'app, chiudi e riapri l'elenco dei microfoni. Poi scrivi di nuovo la frase: una frase detta mentre nessuno ascolta è persa, come con un microfono vero (con la scrittura vuota, ↑ riporta l'ultima). La riga torna a «Pronta» appena un'app ascolta."
+msgstr "如果你先打开了会议应用，后来才打开 Kalliope，关掉麦克风列表再重新打开。然后把刚才那句话再说一遍。和实体麦克风一样，没人接收时说的话不会补播（输入框为空时，按 ↑ 可调出上一句）。只要有应用开始接收声音，状态栏就会恢复为“已就绪”。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="../riunione/#passo-3">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.63"
+msgid "«Senti anche tu la voce» fa sentire la voce a te, non all'app. Per essere sicuro, segui i tre controlli della <1>pagina In riunione</1>."
+msgstr "“自己也能听到”让你能在自己的电脑上听见声音。要确认会议应用也能收到，请按<1>“开会时”页面</1>上的三种方法检查。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.64"
+msgid "La voce va a scatti nella riunione"
+msgstr "开会时声音断断续续"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.65"
+msgid "Cosa fare"
+msgstr "怎么做"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="#segnala">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.66"
+msgid "Prova ad abbassare la soppressione del rumore nelle impostazioni audio dell'app. Non l'abbiamo provato: se ti aiuta, o se non cambia nulla, <1>dicci come è andata</1>."
+msgstr "试试在会议应用的音频设置里调低降噪强度。我们还没验证过这个办法。不论有没有改善，都欢迎<1>告诉我们结果</1>。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.67"
+msgid "Segnala un problema, o dicci come è andata"
+msgstr "反馈问题，或告诉我们使用情况"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="nowrap">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.68"
+msgid "Non c'è un indirizzo <1>e-mail</1>. Le segnalazioni passano dalle issue di GitHub, che richiedono un account GitHub."
+msgstr "目前没有联系<1>邮箱</1>。请通过 GitHub 的 Issues 反馈，你需要一个 GitHub 账号。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a class="pillola azione" href="https://github.com/SANSEVIERIA-OU/kalliope/issues/new">
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.69"
+msgid "<1>Apri una segnalazione su GitHub</1>"
+msgstr "<1>在 GitHub 上反馈问题</1>"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.70"
+msgid "Una segnalazione utile dice:"
+msgstr "反馈时，请写清楚下面这些信息："
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.71"
+msgid "quale app di riunione usi, e quale versione;"
+msgstr "你用的是哪个会议应用、哪个版本。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <code>
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.72"
+msgid "la tua distribuzione Linux e la sua versione (<1>cat /etc/os-release</1>);"
+msgstr "你的 Linux 发行版及其版本（<1>cat /etc/os-release</1>）。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <code>
+#.   <2> = <code>
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.73"
+msgid "la versione di PipeWire (<1>pipewire --version</1>) e quella di Kalliope (<2>kalliope --version</2>);"
+msgstr "PipeWire 的版本（<1>pipewire --version</1>）和 Kalliope 的版本（<2>kalliope --version</2>）。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.74"
+msgid "la frase che la finestra di Kalliope mostrava, intera;"
+msgstr "Kalliope 窗口显示的完整提示。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.75"
+msgid "che cosa hai fatto, e che cosa è successo."
+msgstr "你做了哪些操作，之后发生了什么。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.76"
+msgid "Non incollare le frasi che hai detto"
+msgstr "请不要粘贴你说过的话"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.testo.77"
+msgid "Sono private. Per una segnalazione bastano la frase della finestra e i passi che hai fatto."
+msgstr "你说的话属于你的隐私。反馈问题时，写下窗口提示和操作步骤就够了。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <br/>
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.45"
+msgid "Prima una prova.<1/>Poi, la riunione."
+msgstr "先试一试，<1/>再去开会。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.46"
+msgid "Una persona di fiducia può dirti davvero che cosa sente."
+msgstr "找个你信任的人，让对方告诉你实际听到了什么。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.47"
+msgid "Se qualcosa non va, trova aiuto"
+msgstr "遇到问题？查看帮助"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "riu.testo.48"
+msgid "Torna all’installazione"
+msgstr "返回安装指南"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.filtro.tutte"
+msgid "Tutte le frasi."
+msgstr "所有提示"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.filtro.una"
+msgid "1 frase"
+msgstr "1 条提示"
+
+#. Placeholders to leave as they are: {n}
+#: riunione/index.html
+#, kalliope-markup, python-brace-format
+msgctxt "ai.filtro.numero"
+msgid "{n} frase"
+msgid_plural "{n} frasi"
+msgstr[0] "{n} 条提示"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.filtro.nessuna"
+msgid "Nessuna frase trovata. Prova una parola sola, per esempio «pronta» o «microfono». Oppure guarda i tre casi qui sotto, o segnala il problema."
+msgstr "没有找到匹配的提示。可以只搜一个词，比如“就绪”或“麦克风”。也可以看看下面三种情况，或反馈问题。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.copia.ok"
+msgid "Copiato."
+msgstr "已复制。"
+
+#: riunione/index.html
+#, kalliope-markup
+msgctxt "ai.copia.no"
+msgid "Non riesco a copiare da solo: seleziona il testo e copialo."
+msgstr "无法自动复制。请选中文字后复制。"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.titolo"
+msgid "Stato e limiti di Kalliope: che cosa è provato e che cosa no"
+msgstr "Kalliope 的现状与限制：哪些已经测过，哪些还没测过"
+
+#. Attribute «content» of an element of the page: plain text, no tags.
+#: stato/index.html
+msgctxt "st.descrizione"
+msgid "Kalliope è provato fino al microfono, non ancora in una riunione vera. Che cosa è provato e come, per chi è e per chi no, e i fatti con la fonte per chi deve controllare."
+msgstr "Kalliope 已测到麦克风这一步，还没在实际会议中测试。了解测试范围和方法、适合哪些人使用，也可以查看各项说明的出处。"
+
+#. Four lines, one under the other. The answer comes first: tested up to the microphone, not yet in a real meeting.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="riga">
+#.   <2> = <span class="riga">
+#.   <3> = <span class="riga">
+#.   <4> = <span class="riga">
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.apertura.titolo"
+msgid "<1>Provato fino</1> <2>al microfono.</2> <3>In riunione,</3> <4>non ancora.</4>"
+msgstr "<1>声音传到麦克风，</1><2>已经测过。</2><3>实际开会，</3><4>还没测过。</4>"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.apertura.presentazione"
+msgid "Kalliope dice nella riunione, con una voce italiana, la frase che scrivi. Qui c'è a che punto è: che cosa è provato e come, per chi è e per chi no, e i fatti con la fonte per chi deve controllare."
+msgstr "Kalliope 用意大利语在会议中读出你写的话。这里介绍目前的进展：测过什么、怎么测的、适合谁用、哪些需求还满足不了。想要核实，也能找到出处。"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.apertura.per-chi"
+msgid "Per chi è, e per chi no"
+msgstr "适合谁用，有哪些限制"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="freccia" aria-hidden="true">
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.apertura.controllare"
+msgid "Se devi controllare<1/>"
+msgstr "查看核实依据<1/>"
+
+#. The caption of the scene: the first word says what it is; the part in tag 1 says where the tests stop. On narrow screens it goes to a second line.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="d-lunga">
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.apertura.didascalia"
+msgid "Ricostruzione<1> · la voce arriva al microfono «Kalliope»: provato. Dopo, nell'app della riunione: non ancora</1>"
+msgstr "演示<1> · 声音能传到“Kalliope”麦克风，这一步已测过。声音从麦克风传到会议应用的过程还没测过</1>"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: stato/index.html
+msgctxt "st.palco.etichetta"
+msgid "Ricostruzione: la tua frase diventa voce e arriva al microfono «Kalliope», ed è provato; da lì all'app della riunione e alle altre persone non è ancora provato"
+msgstr "演示：你写的话变成声音，传到“Kalliope”麦克风，这一步已通过测试。从麦克风传到会议应用，再到其他人耳中，这段过程还没测试过"
+
+#. The name of the virtual microphone as a meeting app lists it (keep it as it is), and the note that appears when the voice reaches it.
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="provato-nome">
+#.   <2> = <span class="provato-nota">
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.scelta.provato"
+msgid "<1>Kalliope</1><2> · provato fin qui</2>"
+msgstr "<1>Kalliope</1><2> · 已测到这一步</2>"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.provato.titolo"
+msgid "Fin dove è provato, e come."
+msgstr "测到了哪一步？怎么测的？"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.provato.testo"
+msgid "Ogni cifra sta nel punto della strada in cui è stata misurata, con il file da cui viene. Dove la strada è tratteggiata nessuno l'ha ancora provata."
+msgstr "下面按声音传递的顺序列出各环节的实测数据，旁边附有数据出处。虚线标出的部分还没人测过。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.catena.misura"
+msgid "Dal tasto Invio al suono nella riunione: <1>non misurato</1>"
+msgstr "从按回车到在会议中听见声音：<1>尚未测量</1>"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.catena.computer"
+msgid "Le cifre: su un solo computer, un portatile con Ryzen 5 PRO 6650U. Su altri non le conosciamo."
+msgstr "这些数字都来自同一台搭载 Ryzen 5 PRO 6650U 的笔记本电脑。其他电脑上的表现还不清楚。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="fonte">
+#.   <2> = <a href="{{kalliope.source.url}}/README.md" title="README.md" data-t-no="il percorso di un
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.catena.programma"
+msgid "Il programma con la finestra nuova: 24 MB, circa 135 MB di memoria con la voce caricata, meno dello 0,5% di un processore da fermo e circa il 7% mentre parla, finestra compresa. <1><2>README</2></1>"
+msgstr "带新窗口的程序大小为 24 MB，加载声音后约占用 135 MB 内存。连窗口一起算，空闲时占用不到一个处理器核心的 0.5%，说话时约占 7%。<1><2>README</2></1>"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.anello.installa"
+msgid "Si installa"
+msgstr "安装 Kalliope"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: stato/index.html
+msgctxt "st.pacchetti.etichetta"
+msgid "I quattro pacchetti provati"
+msgstr "测过的四种安装包"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="fonte">
+#.   <2> = <a href="{{kalliope.source.url}}/docs/releasing.md" title="docs/releasing.md" data-t-no="i
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.installa.fatto"
+msgid "Uno script installa ogni pacchetto, apre Kalliope e gli fa dire una frase con la voce; poi lo toglie. <1><2>docs/releasing.md</2></1>"
+msgstr "脚本会逐一安装每种安装包，打开 Kalliope，让它读出一句话，然后卸载。<1><2>docs/releasing.md</2></1>"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.anello.scrivi"
+msgid "Scrivi la frase"
+msgstr "你写下一句话"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.riscrive.da"
+msgid "cmq ci vediamo dmn alle 10:30"
+msgstr "cmq ci vediamo dmn alle 10:30"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.riscrive.a"
+msgid "comunque ci vediamo domani alle dieci e trenta"
+msgstr "comunque ci vediamo domani alle dieci e trenta"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.scrivi.breve"
+msgid "Numeri, date, orari, importi e sigle diventano parole da dire."
+msgstr "数字、日期、时间、金额和缩略词都会转成可以读出来的词。"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.dettagli.apri"
+msgid "I dettagli e le fonti"
+msgstr "查看详情和出处"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="fonte">
+#.   <2> = <a href="{{kalliope.source.url}}/README.md" title="README.md" data-t-no="il percorso di un
+#.   <3> = <a href="{{kalliope.source.url}}/CHANGELOG.md" title="CHANGELOG.md" data-t-no="il percorso
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.scrivi.fatto"
+msgid "Anche le abbreviazioni, e gli accenti mancanti tornano: «cmq ci vediamo dmn alle 10:30» si dice «comunque ci vediamo domani alle dieci e trenta». Circa 11 µs a frase. <1><2>README</2>, <3>CHANGELOG.md</3></1>"
+msgstr "Kalliope 也会展开简写，补上漏写的重音符号。“cmq ci vediamo dmn alle 10:30”会读成“comunque ci vediamo domani alle dieci e trenta”。每句话约需 11 微秒。<1><2>README</2>、<3>CHANGELOG.md</3></1>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.scrivi.forse"
+msgid "Con la tastiera. Con un lettore di schermo, il puntamento oculare o gli interruttori: <1>non ancora provato</1>."
+msgstr "已用键盘测试。屏幕阅读器、眼动输入和开关输入<1>还没测过</1>。"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.anello.voce"
+msgid "La voce nasce qui"
+msgstr "电脑生成声音"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.voce.cifra"
+msgid "0,07 s"
+msgstr "0.07 秒"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="fonte">
+#.   <2> = <a href="{{kalliope.source.url}}/README.md" title="README.md" data-t-no="il percorso di un
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.voce.cifra-detto"
+msgid "di processore per ogni secondo di voce, con un solo thread. <1><2>README</2></1>"
+msgstr "单线程生成一秒声音所用的处理器时间。<1><2>README</2></1>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="fonte">
+#.   <2> = <a href="{{kalliope.source.url}}/crates/app/src/engine.rs" title="crates/app/src/engine.rs
+#.   <3> = <a href="{{kalliope.tree.url}}/benchmarks/engines" title="benchmarks/engines" data-t-no="i
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.voce.fatto"
+msgid "La voce parte dopo la prima frase; mentre una suona si prepara la successiva. La pronuncia viene da regole e da un lessico di 7.920 parole. Nel banco di prova dei motori il primo suono arriva in meno di 160 ms: è uno strumento in Python, non il programma. <1><2>engine.rs</2>, <3>benchmarks/engines</3></1>"
+msgstr "第一句话准备好就开始播放，播放的同时准备下一句。发音依据规则和一个收有 7,920 个词的词库。在语音引擎测试中，不到 160 毫秒就能听到第一个音。这是在 Python 测试工具里测得的时间，实际程序尚未测量。<1><2>engine.rs</2>、<3>benchmarks/engines</3></1>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.voce.forse"
+msgid "Quanto dura «Preparo la voce…» a ogni avvio: <1>non misurato</1>."
+msgstr "每次启动时，“正在准备声音…”会显示多久？<1>尚未测量。</1>"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.anello.microfono"
+msgid "Microfono «Kalliope»"
+msgstr "麦克风“Kalliope”"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.microfono.cifra"
+msgid "2,3%"
+msgstr "2.3%"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="fonte">
+#.   <2> = <a href="{{kalliope.source.url}}/README.md" title="README.md" data-t-no="il percorso di un
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.microfono.cifra-breve"
+msgid "di parole sbagliate secondo Whisper, sulla voce registrata da questo microfono come la sentirebbe una riunione: 10 frasi di prova. <1><2>README</2></1>"
+msgstr "Whisper 在 10 个测试句子上测得的词错误率。录音来自这个麦克风，录到的是会议应用会收到的声音。<1><2>README</2></1>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="fonte">
+#.   <2> = <a href="{{kalliope.source.url}}/README.md" title="README.md" data-t-no="il percorso di un
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.microfono.differenze"
+msgid "Negli ascolti di verifica le differenze che restano sono soprattutto di scrittura: «10 e 30» per «10:30», «ancora» per «àncora». Sui sei campioni di questo sito, una misura a parte: circa una parola su 45. <1><2>README</2></1>"
+msgstr "核对录音时，剩下的差异大多是写法不同，比如把“10:30”写成“10 e 30”，把“àncora”写成“ancora”。本网站的六段录音另做了测试，平均每 45 个词约错一个。<1><2>README</2></1>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="fonte">
+#.   <2> = <a href="{{kalliope.source.url}}/docs/virtual-microphone.md" title="docs/virtual-microphon
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.microfono.fatto"
+msgid "Provato con un PipeWire preparato per la prova. Se nessuna app ascolta non usa il processore, e ciò che si dice va perso, come con un microfono vero; mentre un'app registra usa circa lo 0,26% di un core, con un ritardo di circa 21 ms. <1><2>docs/virtual-microphone.md</2></1>"
+msgstr "测试使用了专门为此配置的 PipeWire。没有应用接收声音时，麦克风不占用处理器，发出的声音也会和实体麦克风一样被丢弃。有应用录音时，它约占用一个核心的 0.26%，延迟约 21 毫秒。<1><2>docs/virtual-microphone.md</2></1>"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.anello.app"
+msgid "L'app della riunione"
+msgstr "会议应用"
+
+#. Attribute «aria-label» of an element of the page: plain text, no tags.
+#: stato/index.html
+msgctxt "st.app.etichetta"
+msgid "Le app di riunione: nessuna ancora provata in una riunione vera"
+msgstr "会议应用：都还没有在实际会议中测试过"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.app.browser"
+msgid "il browser"
+msgstr "浏览器"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.app.fatto"
+msgid "<1>Nessuna ancora provata in una riunione vera.</1> Per l'app Kalliope è un microfono qualunque, da scegliere nell'elenco: per questo va provato app per app."
+msgstr "<1>这些应用都还没在实际会议中测试过。</1>对会议应用来说，Kalliope 就是列表里可选的一个普通麦克风，所以每个应用都需要单独测试。"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.anello.altri"
+msgid "Gli altri ti sentono"
+msgstr "大家听见你说的话"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.altri.fatto"
+msgid "Se gli altri ti sentono, e con quale ritardo, lo dirà soltanto una prova in una riunione vera: <1>non ancora fatta</1>."
+msgstr "大家能不能听见、要过多久才能听见，只有在实际会议中测试才知道。<1>这一步还没测过。</1>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <strong>
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.racconta.testo"
+msgid "<1>Hai provato Kalliope in una riunione vera?</1> Lo stato «non ancora» cambia solo con prove vere, e questa pagina si aggiorna con quelle che arrivano. Scrivi l'app e la sua versione, la distribuzione, la versione di PipeWire, che cosa è successo e la frase che la finestra mostrava; non incollare le frasi che hai detto."
+msgstr "<1>你在实际会议中用过 Kalliope 吗？</1>收到实际会议的测试结果后，我们会据此更新本页的测试情况。请写下会议应用及其版本、Linux 发行版、PipeWire 版本、发生了什么，以及窗口显示的提示。请不要粘贴你在会议中说过的话。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="freccia" aria-hidden="true">
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.racconta.collegamento"
+msgid "Dicci come è andata, su GitHub (serve un account)<1/>"
+msgstr "到 GitHub 告诉我们试用结果（需要账号）<1/>"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.per-chi.titolo"
+msgid "Per chi è, e per chi no."
+msgstr "适合谁用，有哪些限制？"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.per-chi.testo"
+msgid "Le domande di chi lo valuta per un'altra persona. Ogni risposta è breve; quello che non sappiamo è detto."
+msgstr "如果你在帮别人了解 Kalliope，这里有一些常见问题和简短回答。哪些事我们还不清楚，也会写明。"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.d.adatto.q"
+msgid "È per chi non può parlare?"
+msgstr "不能说话的人可以用吗？"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.d.adatto.a"
+msgid "Sì, se scrive: con una tastiera, o con un altro dispositivo che scrive per lei. Kalliope dice la frase con una voce italiana, nella riunione. Serve un computer Linux a 64 bit con PipeWire."
+msgstr "可以，只要能用键盘或其他设备输入文字，Kalliope 就能用意大利语在会议中读出来。需要一台配备 PipeWire 的 64 位 Linux 电脑。"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.d.scrivere.q"
+msgid "E se scrivere è difficile?"
+msgstr "如果打字也有困难呢？"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.d.scrivere.a"
+msgid "Per alcune persone con afasia anche scrivere è difficile: Kalliope può non servire, o servire con un familiare. Non lo sappiamo: va visto con un logopedista. Kalliope non è un dispositivo medico."
+msgstr "有些失语的人写字也有困难。Kalliope 可能帮不上忙，也可能需要家人一起用。是否合适，我们无法判断，可以和言语治疗师一起看看。Kalliope 不是医疗器械。"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.d.costa.q"
+msgid "Quanto costa?"
+msgstr "要花多少钱？"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.d.costa.a"
+msgid "Non c'è un prezzo e non serve un account. L'uso personale è libero; anche quello di ricerca e interno a un'azienda."
+msgstr "免费，也不需要账号。个人使用、研究和企业内部使用都免费。"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.d.installa.q"
+msgid "Chi lo installa?"
+msgstr "谁能帮忙安装？"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="../installa/">
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.d.installa.a"
+msgid "Una persona che sa usare il terminale di Linux: i passi e i comandi da copiare sono nella <1>pagina Installa</1>. Le voci sono già nel pacchetto: Kalliope non scarica niente."
+msgstr "会用 Linux 终端的人就能安装。<1>安装页面</1>有操作步骤和可以直接复制的命令。声音已经包含在安装包里，Kalliope 无需再下载。"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.d.dove.q"
+msgid "Funziona su Windows, Mac o telefono?"
+msgstr "Windows、Mac 或手机上能用吗？"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="../non-ancora/">
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.d.dove.a"
+msgid "Su Windows e macOS non ancora: <1>ecco perché</1>. Per ora Kalliope è solo per il computer, non per il telefono."
+msgstr "Windows 和 macOS 版暂未推出，<1>原因在这里</1>。Kalliope 目前只适用于电脑，手机上用不了。"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.d.voce.q"
+msgid "Parla con la sua voce?"
+msgstr "能用自己的声音说话吗？"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.d.voce.a"
+msgid "Oggi no: con la voce di Giulia o di Marco, a scelta. Parla solo italiano."
+msgstr "目前还不能，可以选择 Giulia 或 Marco 的声音。两种声音都只会说意大利语。"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.d.voce.personale"
+msgid "Sì, dentro il programma: in «Altro», «Crea la tua voce». La registri dal microfono, leggendo un testo di circa dodici secondi, oppure importi una vecchia registrazione (WAV, FLAC, MP3, OGG, M4A, o un messaggio vocale di WhatsApp o Telegram, anche dentro un video). Scegli il pezzo più chiaro, le dai un nome e confermi che è la tua voce, o che chi parla ti ha dato il permesso. La voce si crea su questo computer; la trovi accanto a Giulia e Marco. Il programma parla in italiano."
+msgstr "可以，打开程序，在“更多”里选择“创建自己的声音”。可以对着麦克风读一段文字，录下大约 12 秒，也可以导入以前的录音（WAV、FLAC、MP3、OGG、M4A 文件，或 WhatsApp、Telegram 的语音消息，视频里的人声也可以）。选出声音最清楚的一段，给声音起个名字，再确认这是你自己的声音，或说话的人已同意你使用。声音会在这台电脑上创建，之后就能在 Giulia 和 Marco 旁边找到。程序只会说意大利语。"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.d.sottotitoli.q"
+msgid "Fa i sottotitoli?"
+msgstr "能生成字幕吗？"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.d.sottotitoli.a"
+msgid "No. Kalliope non ascolta e non trascrive: i sottotitoli della riunione, se ci sono, li fa l'app della riunione."
+msgstr "不能。Kalliope 不会听取通话内容或转写文字。如果会议有字幕，那是会议应用生成的。"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.d.frasi.q"
+msgid "Ha frasi pronte o simboli?"
+msgstr "有没有现成的句子或符号？"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.d.frasi.a"
+msgid "No: niente frasi preimpostate, simboli o suggerimenti mentre scrivi. Le frasi già dette restano, anche dopo la chiusura, solo su questo computer, e si ripetono con un clic. Non è un sistema completo di comunicazione aumentativa."
+msgstr "没有预设的句子或符号，打字时也不会给出建议。说过的话只留在这台电脑上，关闭程序后也会保留，点一下就能再说一遍。Kalliope 不是一套完整的辅助沟通系统。"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.d.online.q"
+msgid "È un servizio online?"
+msgstr "这是在线服务吗？"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.d.online.a"
+msgid "No: è un programma che sta sul computer. Non è un servizio online né un'estensione del browser, e il testo non esce dal computer."
+msgstr "不是。它是安装在电脑上的程序。它不是在线服务，也不是浏览器扩展，你写的文字不会离开这台电脑。"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.d.chi.q"
+msgid "Chi c'è dietro?"
+msgstr "是谁做的？"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.d.chi.a"
+msgid "SANSEVIERIA OÜ; gli autori sono nel file NOTICE del codice. Non c'è un'assistenza telefonica, né un indirizzo e‑mail, né una certificazione: le segnalazioni passano da GitHub."
+msgstr "由 SANSEVIERIA OÜ 制作。作者名单在源代码的 NOTICE 文件里。项目没有电话客服、联系邮箱或认证。有问题可以到 GitHub 反馈。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="freccia" aria-hidden="true">
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.per-chi.poi"
+msgid "Da mandare a chi ti aiuta: lo stato di oggi in poche righe<1/>"
+msgstr "发给帮你的人：用几句话了解目前的情况<1/>"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.controllare.titolo"
+msgid "Il testo non esce dal computer."
+msgstr "你写的文字只留在电脑上"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.controllare.testo"
+msgid "Per chi deve controllare: che cosa entra nel computer, che cosa resta e che cosa sparisce, con il file del codice che lo dice."
+msgstr "如果你需要核实，这里列出了哪些文件会装进电脑、哪些会保留、哪些会被删除，也附上了对应的源代码文件。"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.varco.fuori"
+msgid "github.com"
+msgstr "github.com"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.varco.nome"
+msgid "Il tuo computer"
+msgstr "你的电脑"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.varco.finestra"
+msgid "Kalliope"
+msgstr "Kalliope"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.varco.scritto"
+msgid "Ci sono anch'io, scusate il ritardo."
+msgstr "Ci sono anch'io, scusate il ritardo."
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.varco.gia"
+msgid "Già detto"
+msgstr "说过的话"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.varco.memoria"
+msgid "solo su questo computer"
+msgstr "只留在这台电脑上"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.varco.disco"
+msgid "Sul disco"
+msgstr "磁盘上"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.varco.programma"
+msgid "il programma"
+msgstr "程序"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.varco.voce"
+msgid "le voci, dal pacchetto"
+msgstr "声音，来自安装包"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.varco.mic"
+msgid "Microfono «Kalliope»"
+msgstr "麦克风“Kalliope”"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.passo.testo.titolo"
+msgid "Il testo che scrivi: nessun invio."
+msgstr "你输入的文字不会发送出去"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="fonte">
+#.   <2> = <a href="{{kalliope.source.url}}/crates/app/src/main.rs" title="crates/app/src/main.rs" da
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.passo.testo.testo"
+msgid "Non viene mandato da nessuna parte. Le frasi che dici si salvano soltanto su questo computer, per ripeterle. Kalliope non usa il microfono vero e non chiede di accedervi. Alla riunione arriva soltanto la voce, attraverso l'app della riunione. <1><2>main.rs</2></1>"
+msgstr "你写的内容不会发到别处。说过的话只保存在这台电脑上，方便再说一遍。读出文字时，Kalliope 不使用实体麦克风，也不会请求访问它。只有合成的声音会通过会议应用传给大家。<1><2>main.rs</2></1>"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.passo.scarico.titolo"
+msgid "Nessuna connessione: tutto arriva con il pacchetto."
+msgstr "无需联网，安装包里已经备齐"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="fonte">
+#.   <2> = <a href="{{kalliope.source.url}}/tools/assets.json" title="tools/assets.json" data-t-no="i
+#.   <3> = <a href="{{kalliope.source.url}}/crates/app/src/catalog.rs" title="crates/app/src/catalog.
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.passo.scarico.testo"
+msgid "Kalliope non si collega a niente, né al primo avvio né dopo, e funziona senza internet. L'unica cosa che entra è il pacchetto che scarichi tu da github.com: dentro ci sono le voci e ONNX Runtime, copie fissate con l'impronta SHA-256 di ogni file, e il programma le cerca accanto a sé. <1><2>assets.json</2>, <3>catalog.rs</3></1>"
+msgstr "无论是第一次启动还是之后使用，Kalliope 都不会连接网络，离线就能工作。唯一需要下载的是你从 github.com 获取的安装包。包里有声音和 ONNX Runtime，每个文件都用 SHA-256 校验值核对，确保与打包时选定的文件一致。程序会到自己的安装位置查找它们。<1><2>assets.json</2>、<3>catalog.rs</3></1>"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.passo.disco.titolo"
+msgid "Che cosa scrive sul disco."
+msgstr "哪些内容会写入磁盘？"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="fonte">
+#.   <2> = <a href="{{kalliope.source.url}}/docs/releasing.md" title="docs/releasing.md" data-t-no="i
+#.   <3> = <a href="{{kalliope.source.url}}/crates/app/src/settings.rs" title="crates/app/src/setting
+#.   <4> = <a href="{{kalliope.source.url}}/crates/app/src/paths.rs" title="crates/app/src/paths.rs" 
+#.   <5> = <a href="{{kalliope.source.url}}/crates/app/src/main.rs" title="crates/app/src/main.rs" da
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.passo.disco.testo"
+msgid "Il programma e le voci: con il pacchetto .deb o .rpm in /usr, e servono i permessi di amministratore; con l'archivio e ./install in ~/.local, senza. Poi la voce scelta, «Senti anche tu la voce» e la misura del testo in un file di preferenze, settings.conf, e le voci che prepari da una registrazione e le ultime 30 frasi dette (history.txt) in una cartella dell'utente. Fuori dalle sue cartelle non modifica niente. Nessun account. <1><2>docs/releasing.md</2>, <3>settings.rs</3>, <4>paths.rs</4>, <5>main.rs</5></1>"
+msgstr "用 .deb 或 .rpm 安装包时，程序和声音会装到 /usr，需要管理员权限。用压缩包运行 ./install 时，它们会装到 ~/.local，无需管理员权限。你选择的声音、“自己也能听到”的开关状态和字号都保存在偏好设置文件 settings.conf 里。用录音创建的声音和最近说过的 30 句话（history.txt）保存在你的用户文件夹里。Kalliope 只改动自己的文件夹，无需账号。<1><2>docs/releasing.md</2>、<3>settings.rs</3>、<4>paths.rs</4>、<5>main.rs</5></1>"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.passo.chiudi.titolo"
+msgid "Quando chiudi la finestra, si chiude."
+msgstr "关闭窗口，程序也随之退出"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="fonte">
+#.   <2> = <a href="{{kalliope.tree.url}}/packaging/linux" title="packaging/linux" data-t-no="il perc
+#.   <3> = <a href="{{kalliope.source.url}}/docs/releasing.md" title="docs/releasing.md" data-t-no="i
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.passo.chiudi.testo"
+msgid "Kalliope non si avvia da solo e non lascia un servizio acceso: con la finestra sparisce il microfono «Kalliope» dall'elenco dei microfoni. Si toglie con ./install --remove o togliendo il pacchetto, voci comprese: prima di uscire, ogni pacchetto si toglie in un sistema di prova e la prova controlla che non resti niente. Restano le preferenze, le frasi dette e le voci preparate da una registrazione. <1><2>packaging/linux</2>, <3>docs/releasing.md</3></1>"
+msgstr "Kalliope 不会自行启动，也不留下后台服务。关闭窗口，“Kalliope”麦克风就会从列表中消失。运行 ./install --remove 或卸载安装包，就能移除程序和自带的声音。发布前，我们会在测试系统上卸载每个安装包，检查它安装的文件是否全部清除。偏好设置、说过的话和你用录音创建的声音会保留。<1><2>packaging/linux</2>、<3>docs/releasing.md</3></1>"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.licenze.titolo"
+msgid "Licenze"
+msgstr "许可证"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="fonte">
+#.   <2> = <a href="{{kalliope.source.url}}/LICENSE" title="LICENSE" data-t-no="il percorso di un fil
+#.   <3> = <a href="{{kalliope.source.url}}/NOTICE" title="NOTICE" data-t-no="il percorso di un file 
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.licenze.testo"
+msgid "Kalliope: licenza SANSEVIERIA 1.1, codice sorgente disponibile; non è «open source» nel senso dell'OSI. Uso personale, di ricerca e interno a un'azienda: senza compenso. Per offrirlo a pagamento serve l'autorizzazione scritta di SANSEVIERIA OÜ; chi lo distribuisce o lo offre in rete deve dare il sorgente. <1><2>LICENSE</2>, <3>NOTICE</3></1>"
+msgstr "Kalliope 采用 SANSEVIERIA 1.1 许可证，源代码可供查看，不属于 OSI 定义的“开源”。个人使用、研究和企业内部使用都免费。收费提供 Kalliope 需要取得 SANSEVIERIA OÜ 的书面授权。分发 Kalliope 或通过网络提供它的人必须提供源代码。<1><2>LICENSE</2>、<3>NOTICE</3></1>"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.licenze.lessico"
+msgid "Lessico da Wiktionary"
+msgstr "词库来自 Wiktionary"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="fonte">
+#.   <2> = <a href="{{kalliope.source.url}}/THIRD_PARTY_NOTICES.md" title="THIRD_PARTY_NOTICES.md" da
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.dipendenze.testo"
+msgid "La finestra la disegna Slint, con Skia sul processore: non serve una scheda grafica, e non ci sono né Qt né Python. Symphonia legge i file audio e i video da cui si prepara una voce. libopus, per i messaggi vocali di WhatsApp e Telegram, non è nel pacchetto: Kalliope lo cerca nel sistema, e se manca, quel formato non si legge. <1><2>THIRD_PARTY_NOTICES.md</2></1>"
+msgstr "窗口由 Slint 绘制，Skia 在处理器上渲染，无需显卡，也不使用 Qt 或 Python。Symphonia 读取用于创建声音的音频和视频文件。读取 WhatsApp 和 Telegram 的语音消息需要 libopus。它没有包含在安装包里，Kalliope 会在系统中查找它。如果找不到，就无法读取这种格式。<1><2>THIRD_PARTY_NOTICES.md</2></1>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="{{kalliope.source.url}}/NOTICE" title="NOTICE" data-t-no="il percorso di un file 
+#.   <2> = <a href="{{kalliope.source.url}}/THIRD_PARTY_NOTICES.md" title="THIRD_PARTY_NOTICES.md" da
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.licenze.nota"
+msgid "L'elenco completo è nei file <1>NOTICE</1> e <2>THIRD_PARTY_NOTICES.md</2> del codice."
+msgstr "完整列表见源代码中的 <1>NOTICE</1> 和 <2>THIRD_PARTY_NOTICES.md</2> 文件。"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.impronte.titolo"
+msgid "Impronte e provenienza"
+msgstr "文件校验值和来源"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="../installa/">
+#.   <2> = <a href="{{kalliope.sums.url}}">
+#.   <3> = <span class="comando" data-t-no="un comando">
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.impronte.testo"
+msgid "Le impronte dei file sono nella <1>pagina Installa</1> e nel file <2>SHA256SUMS</2> della versione. L'attestazione di dove è stato costruito ogni file (<3>gh attestation verify</3>) c'è per le versioni pubblicate da quando il codice è pubblico: la 0.1-rc.1, pubblicata prima, non ce l'ha. Non c'è un audit indipendente che possiamo citare."
+msgstr "文件校验值列在<1>安装页面</1>和该版本的 <2>SHA256SUMS</2> 文件里。源代码公开后发布的版本都有构建来源证明，可用 <3>gh attestation verify</3> 核实。0.1-rc.1 发布得更早，没有这份证明。目前没有可供引用的独立审计报告。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="fonte">
+#.   <2> = <a href="{{kalliope.source.url}}/.github/workflows/pages.yml" title=".github/workflows/pag
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.sito.testo"
+msgid "Questo sito lo servono le pagine di GitHub (GitHub Pages), che registrano le richieste come ogni server; il sito non usa cookie né statistiche e non carica niente da altri siti. <1><2>.github/workflows/pages.yml</2></1>"
+msgstr "本网站托管在 GitHub Pages 上。和其他服务器一样，GitHub Pages 会记录访问请求。网站不使用 Cookie，不统计访问情况，也不从其他网站加载内容。<1><2>.github/workflows/pages.yml</2></1>"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <a href="https://github.com/SANSEVIERIA-OU/kalliope">
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.codice.testo"
+msgid "Il codice, le istruzioni per compilarlo, la storia delle versioni e come contribuire: nel <1>repository su GitHub</1>, in inglese."
+msgstr "想查看源代码、构建说明、版本历史或参与项目的方法，可以到 <1>GitHub 代码仓库</1>查看，内容为英文。"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.inoltra.titolo"
+msgid "Da mandare a chi ti aiuta."
+msgstr "发给帮你的人"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.inoltra.sotto"
+msgid "Lo stato di oggi in poche righe, con l'indirizzo di questa pagina: da incollare in un messaggio."
+msgstr "下面几句话概括了目前的情况，附有本页网址，可以直接粘贴到消息里。"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.inoltra.messaggio"
+msgid "Kalliope: scrivi una frase e una voce italiana la dice nella riunione. Oggi è una versione di prova, solo per Linux, provata fino al microfono e non ancora in una riunione vera. Senza account e senza prezzo; il testo resta sul computer."
+msgstr "在 Kalliope 里写一句意大利语，它就会在会议中读出你的话。目前是测试版，仅适用于 Linux。声音传到麦克风这一步已测过，实际开会还没测过。免费，无需账号，文字只留在电脑上。"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.inoltra.messaggio-stabile"
+msgid "Kalliope: scrivi una frase e una voce italiana la dice nella riunione. Oggi è solo per Linux, provata fino al microfono e non ancora in una riunione vera. Senza account e senza prezzo; il testo resta sul computer."
+msgstr "在 Kalliope 里写一句意大利语，它就会在会议中读出你的话。目前仅适用于 Linux。声音传到麦克风这一步已测过，实际开会还没测过。免费，无需账号，文字只留在电脑上。"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.inoltra.copia"
+msgid "Copia il messaggio"
+msgstr "复制消息"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.inoltra.fatto"
+msgid "Copiato: incollalo in un messaggio o in una e‑mail."
+msgstr "已复制，可以粘贴到消息或邮件里了。"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.inoltra.errore"
+msgid "Non riesco a copiarlo: seleziona il testo della bolla e copialo, o manda l'indirizzo di questa pagina."
+msgstr "无法自动复制。可以选中气泡里的文字并复制，也可以直接发送本页网址。"
+
+#. Tags in the text (move the words, keep every tag, each inside the same tag):
+#.   <1> = <span class="freccia" aria-hidden="true">
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.inoltra.installa"
+msgid "Come si installa<1/>"
+msgstr "怎样安装<1/>"
+
+#: stato/index.html
+#, kalliope-markup
+msgctxt "st.inoltra.senza-js"
+msgid "Seleziona il testo della bolla e copialo, o manda l'indirizzo di questa pagina."
+msgstr "选中气泡里的文字并复制，或直接发送本页网址。"
+
+#. Read by screen readers when an answer appears in the bubble. {domanda} is the question.
+#. Placeholders to leave as they are: {domanda}
+#: stato/index.html
+#, kalliope-markup, python-brace-format
+msgctxt "st.annuncio.risposta"
+msgid "Risposta: {domanda}"
+msgstr "问题“{domanda}”的回答"
+
+#: crates/app/ui/app.slint
+#, kalliope-slint
+msgctxt "programma.finestra.preparo-la-voce"
+msgid "Preparo la voce…"
+msgstr "正在准备声音…"
+
+#: crates/app/ui/kalliope/avvisi.slint crates/app/ui/kalliope/finestra.slint
+#, kalliope-slint
+msgctxt "programma.comune.come-si-risolve"
+msgid "Come si risolve"
+msgstr "解决方法"
+
+#: crates/app/ui/kalliope/avvisi.slint crates/app/ui/kalliope/modali.slint crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.comune.annulla"
+msgid "Annulla"
+msgstr "取消"
+
+#. Read aloud by a screen reader for a phrase already said: {} is the phrase
+#. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
+#: crates/app/ui/kalliope/bolla.slint
+#, kalliope-slint, python-brace-format
+msgctxt "programma.bolla.ripeti-frase"
+msgid "Ripeti: {}"
+msgstr "再说一遍：{}"
+
+#: crates/app/ui/kalliope/bolla.slint
+#, kalliope-slint
+msgctxt "programma.bolla.ripeti"
+msgid "Ripeti"
+msgstr "再说一遍"
+
+#. Read aloud by a screen reader for the voice menu: {} is the name of the voice in use
+#. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
+#: crates/app/ui/kalliope/finestra.slint
+#, kalliope-slint, python-brace-format
+msgctxt "programma.finestra.voce"
+msgid "Voce: {}"
+msgstr "声音：{}"
+
+#: crates/app/ui/kalliope/finestra.slint
+#, kalliope-slint
+msgctxt "programma.finestra.riunione"
+msgid "Riunione"
+msgstr "会议"
+
+#. Read aloud by a screen reader for the «Riunione» button: the meeting mode shows the writing, the state and Stop
+#: crates/app/ui/kalliope/finestra.slint
+#, kalliope-slint
+msgctxt "programma.finestra.modalita-riunione-solo-scrittura"
+msgid "Modalità riunione: solo scrittura, stato e Ferma"
+msgstr "会议模式：只显示输入框、状态和“停止”按钮"
+
+#: crates/app/ui/kalliope/finestra.slint
+#, kalliope-slint
+msgctxt "programma.finestra.altro"
+msgid "Altro"
+msgstr "更多"
+
+#. Read aloud by a screen reader for the «Altro» menu: say what it holds
+#: crates/app/ui/kalliope/finestra.slint
+#, kalliope-slint
+msgctxt "programma.finestra.altro-crea-tua-voce"
+msgid "Altro: crea la tua voce, informazioni"
+msgstr "更多：创建自己的声音、关于"
+
+#. The button that makes the text smaller: a capital A with a minus sign
+#: crates/app/ui/kalliope/finestra.slint
+#, kalliope-slint
+msgctxt "programma.finestra.a-meno"
+msgid "A−"
+msgstr "A−"
+
+#: crates/app/ui/kalliope/finestra.slint
+#, kalliope-slint
+msgctxt "programma.finestra.testo-piu-piccolo"
+msgid "Testo più piccolo"
+msgstr "缩小字号"
+
+#. The button that makes the text larger: a capital A with a plus sign
+#: crates/app/ui/kalliope/finestra.slint
+#, kalliope-slint
+msgctxt "programma.finestra.a-piu"
+msgid "A+"
+msgstr "A+"
+
+#: crates/app/ui/kalliope/finestra.slint
+#, kalliope-slint
+msgctxt "programma.finestra.testo-piu-grande"
+msgid "Testo più grande"
+msgstr "放大字号"
+
+#: crates/app/ui/kalliope/finestra.slint
+#, kalliope-slint
+msgctxt "programma.finestra.qui-voce-dira-tue"
+msgid "Qui la voce dirà le tue frasi, una parola dopo l'altra. Restano qui: un clic, o Tab e Invio, le dice di nuovo."
+msgstr "你写的话会显示在这里，读到哪个词，哪个词就会亮起来。说过的话会留下。点一句话，或按 Tab 选中后按回车，就能再说一遍。"
+
+#: crates/app/ui/kalliope/finestra.slint
+#, kalliope-slint
+msgctxt "programma.finestra.aiuto"
+msgid "Aiuto"
+msgstr "帮助"
+
+#: crates/app/ui/kalliope/finestra.slint
+#, kalliope-slint
+msgctxt "programma.finestra.intera"
+msgid "Intera"
+msgstr "展开"
+
+#: crates/app/ui/kalliope/finestra.slint
+#, kalliope-slint
+msgctxt "programma.finestra.finestra-intera"
+msgid "Finestra intera"
+msgstr "展开窗口"
+
+#. A hint on Wayland: Alt+Space opens the window menu, where «Sempre in primo piano» («Always on top») is a command of the person's desktop: keep both as the desktop calls them
+#: crates/app/ui/kalliope/finestra.slint
+#, kalliope-slint
+msgctxt "programma.finestra.tenerla-sopra-riunione-alt"
+msgid "Per tenerla sopra la riunione: Alt+Spazio, poi «Sempre in primo piano»."
+msgstr "要让窗口一直显示在会议上方，按 Alt+空格，然后选择“总在最前”。"
+
+#: crates/app/ui/kalliope/finestra.slint
+#, kalliope-slint
+msgctxt "programma.finestra.ho-capito"
+msgid "Ho capito"
+msgstr "知道了"
+
+#: crates/app/ui/kalliope/finestra.slint
+#, kalliope-slint
+msgctxt "programma.finestra.segnaposto-fra-poco"
+msgid "Fra poco."
+msgstr "马上就好。"
+
+#: crates/app/ui/kalliope/finestra.slint
+#, kalliope-slint
+msgctxt "programma.finestra.segnaposto-puoi-gia-scrivere"
+msgid "Puoi già scrivere: la voce arriva fra poco."
+msgstr "现在就可以写，声音马上就好。"
+
+#: crates/app/ui/kalliope/finestra.slint
+#, kalliope-slint
+msgctxt "programma.finestra.segnaposto-voce-non-parte"
+msgid "La voce non parte."
+msgstr "声音启动失败。"
+
+#: crates/app/ui/kalliope/finestra.slint
+#, kalliope-slint
+msgctxt "programma.finestra.segnaposto-voce-non-parte-guarda"
+msgid "La voce non parte: guarda qui sopra."
+msgstr "声音启动失败，请看上方提示。"
+
+#. In the empty writing field; Invio is the Enter key
+#: crates/app/ui/kalliope/finestra.slint crates/app/ui/kalliope/scrittura.slint
+#, kalliope-slint
+msgctxt "programma.comune.segnaposto-scrivi-qui"
+msgid "Scrivi qui."
+msgstr "在这里输入。"
+
+#: crates/app/ui/kalliope/finestra.slint crates/app/ui/kalliope/scrittura.slint
+#, kalliope-slint
+msgctxt "programma.comune.segnaposto-scrivi-invio"
+msgid "Scrivi qui. Invio la dice."
+msgstr "在这里输入，按回车读出。"
+
+#: crates/app/ui/kalliope/finestra.slint
+#, kalliope-slint
+msgctxt "programma.finestra.con-quale-voce-parli"
+msgid "Con quale voce parli"
+msgstr "选择说话的声音"
+
+#: crates/app/ui/kalliope/finestra.slint
+#, kalliope-slint
+msgctxt "programma.finestra.senti-anche-tu-voce"
+msgid "Senti anche tu la voce"
+msgstr "自己也能听到"
+
+#: crates/app/ui/kalliope/finestra.slint
+#, kalliope-slint
+msgctxt "programma.finestra.crea-tua-voce"
+msgid "Crea la tua voce"
+msgstr "创建自己的声音"
+
+#: crates/app/ui/kalliope/finestra.slint
+#, kalliope-slint
+msgctxt "programma.finestra.informazioni"
+msgid "Informazioni"
+msgstr "关于"
+
+#: crates/app/ui/kalliope/finestra.slint
+#, kalliope-slint
+msgctxt "programma.finestra.svuota-cronologia"
+msgid "Svuota la cronologia"
+msgstr "清空历史记录"
+
+#: crates/app/ui/kalliope/finestra.slint
+#, kalliope-slint
+msgctxt "programma.finestra.svuotare-cronologia"
+msgid "Svuotare la cronologia?"
+msgstr "清空历史记录？"
+
+#: crates/app/ui/kalliope/finestra.slint
+#, kalliope-slint
+msgctxt "programma.finestra.frasi-gia-dette-spariscono"
+msgid "Le frasi già dette spariscono da questo computer. Non si può tornare indietro."
+msgstr "说过的话会从这台电脑上删除，无法恢复。"
+
+#: crates/app/ui/kalliope/finestra.slint
+#, kalliope-slint
+msgctxt "programma.finestra.svuota"
+msgid "Svuota"
+msgstr "清空"
+
+#: crates/app/ui/kalliope/menu.slint
+#, kalliope-slint
+msgctxt "programma.menu.uso"
+msgid "in uso"
+msgstr "使用中"
+
+#: crates/app/ui/kalliope/modali.slint
+#, kalliope-slint
+msgctxt "programma.modali.scrivi-fatti-sentire-nelle"
+msgid "Scrivi e fatti sentire nelle videochiamate. La voce viene creata su questo computer: nessun testo lascia la tua macchina."
+msgstr "在视频通话中，把你想说的话打出来，让大家听见。声音在这台电脑上生成，你写的内容也只留在这里。"
+
+#: crates/app/ui/kalliope/modali.slint
+#, kalliope-slint
+msgctxt "programma.modali.sito-kalliope"
+msgid "Il sito di Kalliope"
+msgstr "Kalliope 网站"
+
+#: crates/app/ui/kalliope/modali.slint
+#, kalliope-slint
+msgctxt "programma.modali.apri-sito-kalliope-nel"
+msgid "Apri il sito di Kalliope nel browser"
+msgstr "在浏览器中打开 Kalliope 网站"
+
+#: crates/app/ui/kalliope/modali.slint
+#, kalliope-slint
+msgctxt "programma.modali.cosa-c-dentro"
+msgid "Che cosa c'è dentro"
+msgstr "用到的组件"
+
+#: crates/app/ui/kalliope/modali.slint
+#, kalliope-slint
+msgctxt "programma.modali.voci-giulia-marco"
+msgid "Le voci Giulia e Marco."
+msgstr "Giulia 和 Marco 的声音。"
+
+#: crates/app/ui/kalliope/modali.slint
+#, kalliope-slint
+msgctxt "programma.modali.fa-girare-voci-su"
+msgid "Fa girare le voci su questo computer."
+msgstr "让这台电脑能合成语音。"
+
+#: crates/app/ui/kalliope/modali.slint
+#, kalliope-slint
+msgctxt "programma.modali.dati-pronuncia"
+msgid "I dati di pronuncia."
+msgstr "发音数据。"
+
+#: crates/app/ui/kalliope/modali.slint
+#, kalliope-slint
+msgctxt "programma.modali.voce-creata-registrazione-kyutai"
+msgid "La voce creata da una registrazione (kyutai.org). Convertito in ONNX e quantizzato da Kalliope. Fonte, modifiche e licenza nei file share/doc/kalliope/pocket-tts/NOTICE.txt e LICENSE del pacchetto."
+msgstr "根据录音创建声音（kyutai.org）。Kalliope 将模型转换为 ONNX 格式并进行了量化。来源、改动和许可证见安装包中的 share/doc/kalliope/pocket-tts/NOTICE.txt 和 LICENSE 文件。"
+
+#: crates/app/ui/kalliope/modali.slint
+#, kalliope-slint
+msgctxt "programma.modali.disegna-questa-finestra"
+msgid "Disegna questa finestra."
+msgstr "绘制这个窗口。"
+
+#: crates/app/ui/kalliope/modali.slint
+#, kalliope-slint
+msgctxt "programma.modali.legge-file-audio-video"
+msgid "Legge i file audio e video."
+msgstr "读取音频和视频文件。"
+
+#: crates/app/ui/kalliope/modali.slint
+#, kalliope-slint
+msgctxt "programma.modali.legge-messaggi-vocali-opus"
+msgid "Legge i messaggi vocali (.opus)."
+msgstr "读取语音消息（.opus）。"
+
+#: crates/app/ui/kalliope/modali.slint
+#, kalliope-slint
+msgctxt "programma.modali.sansevieria-ou-licenza-sansevieria"
+msgid "© SANSEVIERIA OÜ. Licenza SANSEVIERIA 1.1."
+msgstr "© SANSEVIERIA OÜ。采用 SANSEVIERIA 1.1 许可证。"
+
+#: crates/app/ui/kalliope/modali.slint
+#, kalliope-slint
+msgctxt "programma.modali.chiudi"
+msgid "Chiudi"
+msgstr "关闭"
+
+#: crates/app/ui/kalliope/scrittura.slint
+#, kalliope-slint
+msgctxt "programma.scrittura.cosa-vuoi-dire"
+msgid "Che cosa vuoi dire"
+msgstr "你想说什么"
+
+#: crates/app/ui/kalliope/scrittura.slint
+#, kalliope-slint
+msgctxt "programma.scrittura.invio-dice-esc-ferma"
+msgid "Invio la dice · Esc la ferma · ↑ l'ultima frase"
+msgstr "回车读出 · Esc 停止 · ↑ 调出上一句"
+
+#: crates/app/ui/kalliope/scrittura.slint
+#, kalliope-slint
+msgctxt "programma.scrittura.invio-dice-esc-ferma-2"
+msgid "Invio la dice · Esc la ferma"
+msgstr "回车读出 · Esc 停止"
+
+#: crates/app/ui/kalliope/scrittura.slint crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.comune.ferma"
+msgid "Ferma"
+msgstr "停止"
+
+#. The name of the Esc key, as printed on a keyboard of this language
+#: crates/app/ui/kalliope/scrittura.slint
+#, kalliope-slint
+msgctxt "programma.scrittura.esc"
+msgid "Esc"
+msgstr "Esc"
+
+#: crates/app/ui/kalliope/scrittura.slint
+#, kalliope-slint
+msgctxt "programma.scrittura.di"
+msgid "Di'"
+msgstr "读出"
+
+#. The name of the Enter key, as printed on a keyboard of this language
+#: crates/app/ui/kalliope/scrittura.slint
+#, kalliope-slint
+msgctxt "programma.scrittura.invio"
+msgid "Invio"
+msgstr "回车"
+
+#: crates/app/ui/kalliope/stato.slint
+#, kalliope-slint
+msgctxt "programma.stato.voce-nuova"
+msgid "Voce nuova"
+msgstr "新声音"
+
+#: crates/app/ui/kalliope/stato.slint
+#, kalliope-slint
+msgctxt "programma.stato.preparo-la-voce"
+msgid "Preparo la voce"
+msgstr "正在准备声音"
+
+#: crates/app/ui/kalliope/stato.slint
+#, kalliope-slint
+msgctxt "programma.stato.pronta"
+msgid "Pronta"
+msgstr "已就绪"
+
+#: crates/app/ui/kalliope/stato.slint
+#, kalliope-slint
+msgctxt "programma.stato.sto-parlando"
+msgid "Sto parlando"
+msgstr "正在说话"
+
+#: crates/app/ui/kalliope/stato.slint
+#, kalliope-slint
+msgctxt "programma.stato.nessuno-ti-sente"
+msgid "Nessuno ti sente"
+msgstr "别人听不到你"
+
+#: crates/app/ui/kalliope/stato.slint
+#, kalliope-slint
+msgctxt "programma.stato.manca-microfono"
+msgid "Manca il microfono"
+msgstr "找不到麦克风"
+
+#: crates/app/ui/kalliope/stato.slint
+#, kalliope-slint
+msgctxt "programma.stato.voce-non-parte"
+msgid "La voce non parte"
+msgstr "声音启动失败"
+
+#: crates/app/ui/kalliope/stato.slint
+#, kalliope-slint
+msgctxt "programma.stato.attenzione"
+msgid "Attenzione"
+msgstr "请注意"
+
+#: crates/app/ui/kalliope/stato.slint
+#, kalliope-slint
+msgctxt "programma.stato.fra-poco-puoi-scrivere"
+msgid "Fra poco puoi scrivere e farti sentire."
+msgstr "马上就可以打字，让大家听见你想说的话。"
+
+#: crates/app/ui/kalliope/stato.slint
+#, kalliope-slint
+msgctxt "programma.stato.nella-riunione-scegli-kalliope"
+msgid "Nella riunione scegli «Kalliope» come microfono."
+msgstr "在会议中选择“Kalliope”作为麦克风。"
+
+#: crates/app/ui/kalliope/stato.slint
+#, kalliope-slint
+msgctxt "programma.stato.esc-ferma"
+msgid "Esc la ferma."
+msgstr "按 Esc 停止。"
+
+#. The name of the second step of making a voice (the person reads a text aloud)
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.passo-scegli"
+msgid "Registra o importa"
+msgstr "录音或导入"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.passo-leggi"
+msgid "Leggi ad alta voce"
+msgstr "朗读一段文字"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.passo-nome"
+msgid "Ascolta e dai un nome"
+msgstr "试听并命名"
+
+#. Where the person is among the three steps of making a voice: {0} is the number of the step (1 to 3), {1} its name
+#. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint, python-brace-format
+msgctxt "programma.crea.passo"
+msgid "{} di 3 · {}"
+msgstr "第 {} 步，共 3 步 · {}"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.ferma-registrazione"
+msgid "Ferma la registrazione"
+msgstr "停止录音"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.registra"
+msgid "Registra"
+msgstr "录音"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.ascolta"
+msgid "Ascolta"
+msgstr "试听"
+
+#. Read aloud by a screen reader: {} is the name of the stretch
+#. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint, python-brace-format
+msgctxt "programma.crea.ferma-ascolto-tratto"
+msgid "Ferma l'ascolto di {}"
+msgstr "停止试听{}"
+
+#. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint, python-brace-format
+msgctxt "programma.crea.ascolta-tratto"
+msgid "Ascolta {}"
+msgstr "试听{}"
+
+#. While a file is read: {} is the name of the file
+#. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint, python-brace-format
+msgctxt "programma.crea.leggo"
+msgid "Leggo «{}»…"
+msgstr "正在读取“{}”…"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.cerco-parte-cui-si"
+msgid "Cerco la parte in cui si sente meglio la voce."
+msgstr "正在找人声最清楚的片段。"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.se-hai-ancora-voce"
+msgid "Se hai ancora la voce"
+msgstr "如果你现在还能说话"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.registrala-adesso"
+msgid "Registrala adesso"
+msgstr "现在录下你的声音"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.istruzioni-registra"
+msgid "Leggi ad alta voce un breve testo. Bastano dodici secondi di voce chiara, meglio finché la voce è forte."
+msgstr "读一小段文字。只要 12 秒清楚的人声就够了，最好趁说话还有力气时录。"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.se-voce-non-c"
+msgid "Se la voce non c'è più"
+msgstr "如果你现在已经不能说话"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.usa-vecchie-registrazioni"
+msgid "Usa vecchie registrazioni"
+msgstr "用以前的录音"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.messaggio-vocale-video-registrazione"
+msgid "Un messaggio vocale, un video, una registrazione di prima: WAV, FLAC, MP3, OGG, OPUS, M4A, MP4 o WEBM."
+msgstr "可以用以前的语音消息、视频或录音，支持 WAV、FLAC、MP3、OGG、OPUS、M4A、MP4 或 WEBM。"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.stanza-tranquilla-se-c"
+msgid "Una stanza tranquilla e, se c'è, un microfono a cuffia. Puoi crearla anche per un'altra persona, con il suo permesso."
+msgstr "找个安静的房间，有带麦克风的耳机就戴上。经对方同意，你也可以为别人创建声音。"
+
+#. {0} is the time recorded so far, a number with one decimal («3,2»): the unit is seconds
+#. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint, python-brace-format
+msgctxt "programma.crea.secondi"
+msgid "{} s"
+msgstr "{} 秒"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.microfono"
+msgid "Microfono"
+msgstr "麦克风"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.apro-microfono"
+msgid "Apro il microfono…"
+msgstr "正在打开麦克风…"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.controllo-registrazione"
+msgid "Controllo la registrazione…"
+msgstr "正在检查录音…"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.premi-tondo-leggi"
+msgid "Premi il tondo e leggi"
+msgstr "按下圆形按钮，开始朗读"
+
+#. While the voice is recorded: {0} is the time recorded so far («3,2 s»); {n} is how many whole seconds of clear voice are still needed
+#. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint, python-brace-format
+msgctxt "programma.crea.mancano"
+msgid "{0} · ne manca {n}"
+msgid_plural "{0} · ne mancano {n}"
+msgstr[0] "{0} · 还差 {n} 秒"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.basta-cosi-premi-nuovo"
+msgid "Basta così: premi di nuovo per fermare."
+msgstr "录够了，再按一下就能停止。"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.ne-bastano-dodici-secondi"
+msgid "Ne bastano dodici secondi di voce: il cerchio si riempie. Il livello si muove con la tua voce."
+msgstr "录下 12 秒人声就够了，圆环会逐渐填满。音量指示条会随着你的声音起伏。"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.ferma-ascolto"
+msgid "Ferma l'ascolto"
+msgstr "停止试听"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.ascolta-registrazione"
+msgid "Ascolta la registrazione"
+msgstr "试听录音"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.rifai"
+msgid "Rifai"
+msgstr "重新开始"
+
+#. After a recording is read: {n} is how many stretches with a voice were found
+#. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint, python-brace-format
+msgctxt "programma.crea.trovati-tratti"
+msgid "Ho trovato {n} tratto in cui si sente la voce. Ascolta e scegli."
+msgid_plural "Ho trovato {n} tratti in cui si sente la voce. Ascolta e scegli."
+msgstr[0] "找到了 {n} 段能听清人声的录音。听一听，选一段。"
+
+#. While a voice is made: {} is the name the person gave it
+#. Placeholders: {} or {0} {1}… are the arguments, in order; {n} is the count of a plural. Leave them as they are; a translation may reorder them.
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint, python-brace-format
+msgctxt "programma.crea.creo-voce"
+msgid "Creo la voce «{}»…"
+msgstr "正在创建声音“{}”…"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.ci-vuole-poco-quando"
+msgid "Ci vuole poco. Quando è pronta la scegli da sola."
+msgstr "很快就好。创建完成后会自动切换到这个声音。"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.come-si-chiama-questa"
+msgid "Come si chiama questa voce?"
+msgstr "你想给这个声音起什么名字？"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.nome-voce"
+msgid "Nome della voce"
+msgstr "声音名称"
+
+#. An example of a name in the empty field: a name of a person, not a sentence
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.segnaposto-nome-voce"
+msgid "Per esempio: la voce di Anna"
+msgstr "例如：安娜的声音"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.mia-voce-oppure-persona"
+msgid "È la mia voce, oppure la persona che parla mi ha dato il permesso di usarla."
+msgstr "这是我自己的声音，或是说话的人已同意我使用这个声音。"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.ciao-sono-io-questa"
+msgid "Ciao, sono io. Questa è la mia voce, per le riunioni e per le persone a cui voglio bene. La leggo con calma, come parlo ogni giorno."
+msgstr "你好，是我。这是我的声音。我想用它开会，也想用它和我在乎的人说说话。我慢慢地读，就像平时说话一样。"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.torna-a-scrivere"
+msgid "Torna a scrivere"
+msgstr "返回输入框"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.titolo-scegli"
+msgid "Come vuoi creare la tua voce?"
+msgstr "你想怎样创建自己的声音？"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.titolo-leggi"
+msgid "Leggi ad alta voce, con calma"
+msgstr "慢慢读出这段话"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.titolo-nome"
+msgid "Ascoltala e dalle un nome"
+msgstr "听一听，再起个名字"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.questa-registrazione-non-si"
+msgid "Da questa registrazione non si può creare la voce: rifai."
+msgstr "这段录音无法用来创建声音，请重新开始。"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.manca-nome"
+msgid "Manca il nome."
+msgstr "请给声音起个名字。"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.manca-permesso-spunta-casella"
+msgid "Manca il permesso: spunta la casella."
+msgstr "请勾选方框，确认你有权使用这个声音。"
+
+#: crates/app/ui/kalliope/voce-propria.slint
+#, kalliope-slint
+msgctxt "programma.crea.crea-voce"
+msgid "Crea la voce"
+msgstr "创建声音"
+
+#. A warning: the person cannot hear their own voice from the loudspeakers (the option «Senti anche tu la voce»)
+#: crates/app/src/audio.rs
+#, kalliope-rust
+msgctxt "programma.audio.casse"
+msgid "Attenzione: non riesco a farti sentire la voce dalle casse."
+msgstr "请注意：扬声器无法播放合成的声音。"
+
+#: crates/app/src/audio.rs
+#, kalliope-rust
+msgctxt "programma.audio.serve-pipewire"
+msgid "La voce è pronta, ma il microfono «Kalliope» ha bisogno di PipeWire, che su questo computer manca o è troppo vecchio (pacchetti pipewire e pipewire-pulse): per ora nessuno ti sentirà nelle chiamate."
+msgstr "声音已就绪，但“Kalliope”麦克风需要 PipeWire。这台电脑没有安装 PipeWire，或版本太旧（软件包为 pipewire 和 pipewire-pulse）。通话中的其他人暂时听不到你。"
+
+#: crates/app/src/audio.rs
+#, kalliope-rust
+msgctxt "programma.audio.sistema-non-supportato"
+msgid "La voce è pronta, ma su questo sistema il microfono «Kalliope» non c'è ancora: per ora nessuno ti sentirà nelle chiamate."
+msgstr "声音已就绪，但这个系统暂时没有“Kalliope”麦克风。通话中的其他人暂时听不到你。"
+
+#: crates/app/src/audio.rs
+#, kalliope-rust
+msgctxt "programma.audio.pipewire-non-risponde"
+msgid "La voce è pronta, ma PipeWire, il servizio audio del computer, non risponde (riprovo da sola appena torna): per ora nessuno ti sentirà nelle chiamate."
+msgstr "声音已就绪，但电脑的音频服务 PipeWire 没有响应。服务恢复后会自动重试。在此之前，通话中的其他人听不到你。"
+
+#: crates/app/src/audio.rs
+#, kalliope-rust
+msgctxt "programma.audio.microfono-non-aperto"
+msgid "La voce è pronta, ma il microfono «Kalliope» non si è aperto: per ora nessuno ti sentirà nelle chiamate."
+msgstr "声音已就绪，但“Kalliope”麦克风未能打开。通话中的其他人暂时听不到你。"
+
+#: crates/app/src/catalog.rs
+#, kalliope-rust
+msgctxt "programma.voce.file-mancanti"
+msgid "Non trovo i file della voce, e senza non posso parlare. Reinstalla Kalliope dal pacchetto."
+msgstr "找不到声音文件，暂时无法说话。请用安装包重新安装 Kalliope。"
+
+#. The title of the system's window for choosing an audio or video file
+#: crates/app/src/collega.rs
+#, kalliope-rust
+msgctxt "programma.scelta.titolo"
+msgid "Scegli una registrazione"
+msgstr "选择一段录音"
+
+#: crates/app/src/collega.rs
+#, kalliope-rust
+msgctxt "programma.scelta.audio-e-video"
+msgid "Audio e video"
+msgstr "音频和视频"
+
+#: crates/app/src/collega.rs
+#, kalliope-rust
+msgctxt "programma.scelta.tutti-i-file"
+msgid "Tutti i file"
+msgstr "所有文件"
+
+#: crates/app/src/crea.rs
+#, kalliope-rust
+msgctxt "programma.crea.non-ti-sento"
+msgid "Non ti sento. Avvicinati al microfono, controlla che non sia spento, o scegline un altro."
+msgstr "听不到你的声音。靠近麦克风，检查麦克风是否已开启，或换一个麦克风。"
+
+#: crates/app/src/crea.rs
+#, kalliope-rust
+msgctxt "programma.crea.troppo-forte"
+msgid "Il suono è troppo forte: allontanati un po' dal microfono."
+msgstr "声音太响了，离麦克风稍远一点。"
+
+#: crates/app/src/crea.rs
+#, kalliope-rust
+msgctxt "programma.crea.serve-permesso"
+msgid "Per continuare serve il permesso: spunta la casella."
+msgstr "请勾选方框，确认你有权使用这个声音，然后继续。"
+
+#. The first stretch of a recording, the one where the voice is clearest: {numero} is its number
+#. Placeholders to leave as they are: {numero}
+#: crates/app/src/crea.rs
+#, kalliope-rust, python-brace-format
+msgctxt "programma.crea.tratto-chiaro"
+msgid "Tratto {numero} · il più chiaro"
+msgstr "片段 {numero} · 人声最清楚"
+
+#. Placeholders to leave as they are: {numero}
+#: crates/app/src/crea.rs
+#, kalliope-rust, python-brace-format
+msgctxt "programma.crea.tratto"
+msgid "Tratto {numero}"
+msgstr "片段 {numero}"
+
+#. A stretch of a recording: from {inizio} to {fine} (times like 0:12), with {secondi} seconds of voice
+#. Placeholders to leave as they are: {inizio} {fine} {secondi}
+#: crates/app/src/crea.rs
+#, kalliope-rust, python-brace-format
+msgctxt "programma.crea.tratto-dettaglio"
+msgid "da {inizio} a {fine} · {secondi} s di voce"
+msgstr "{inizio} 至 {fine} · 人声 {secondi} 秒"
+
+#: crates/app/src/crea.rs
+#, kalliope-rust
+msgctxt "programma.crea.scelta-file-non-si-apre"
+msgid "Non si apre la finestra per scegliere il file. Riprova; se succede ancora, serve il portale del tuo desktop o il programma «zenity»."
+msgstr "无法打开文件选择窗口。再试一次。如果还是打不开，需要安装桌面环境的门户服务或 zenity 程序。"
+
+#: crates/app/src/crea.rs
+#, kalliope-rust
+msgctxt "programma.crea.tratto-inutilizzabile"
+msgid "Da questo tratto non si può creare la voce: scegli un altro tratto, o rifai."
+msgstr "这段录音无法用来创建声音。可以换个片段，或重新开始。"
+
+#: crates/app/src/crea.rs
+#, kalliope-rust
+msgctxt "programma.crea.sostituisci-voce"
+msgid "Sostituisci la voce"
+msgstr "替换声音"
+
+#: crates/app/src/crea.rs
+#, kalliope-rust
+msgctxt "programma.crea.tieni-nome"
+msgid "Tieni questo nome"
+msgstr "保留这个名字"
+
+#. Placeholders to leave as they are: {nome}
+#: crates/app/src/crea.rs
+#, kalliope-rust, python-brace-format
+msgctxt "programma.crea.voce-pronta"
+msgid "La voce «{nome}» è pronta, e adesso parla lei."
+msgstr "声音“{nome}”已就绪，现在就用它说话。"
+
+#. In the voice menu: a voice made from a recording that has the same name as one of Kalliope's («Giulia (voce propria)»); {nome} is that name
+#. Placeholders to leave as they are: {nome}
+#: crates/app/src/engine.rs
+#, kalliope-rust, python-brace-format
+msgctxt "programma.voci.voce-propria"
+msgid "{nome} (voce propria)"
+msgstr "{nome}（自己的声音）"
+
+#. {voce} is the voice that failed, {altra} the one that speaks instead
+#. Placeholders to leave as they are: {voce} {altra}
+#: crates/app/src/engine.rs
+#, kalliope-rust, python-brace-format
+msgctxt "programma.motore.voce-non-si-apre-parlo-con"
+msgid "La voce «{voce}» non si apre: parlo con {altra}. Puoi sceglierne un'altra dal menu «Voce»."
+msgstr "无法加载声音“{voce}”，现在用“{altra}”说话。你也可以在“声音”菜单中另选一个。"
+
+#. Placeholders to leave as they are: {voce} {altra}
+#: crates/app/src/engine.rs
+#, kalliope-rust, python-brace-format
+msgctxt "programma.motore.voce-non-si-apre-continuo"
+msgid "La voce «{voce}» non si apre: continuo con «{altra}»."
+msgstr "无法加载声音“{voce}”，继续使用“{altra}”。"
+
+#. {causa} is the system's own message, in English: it stays as it is
+#. Placeholders to leave as they are: {causa}
+#: crates/app/src/engine.rs
+#, kalliope-rust, python-brace-format
+msgctxt "programma.motore.frase-non-detta"
+msgid "Non sono riuscita a dire questa frase: {causa}"
+msgstr "这句话没能读出来：{causa}"
+
+#. {causa} is the system's own message, in English: it stays as it is
+#. Placeholders to leave as they are: {causa}
+#: crates/app/src/engine.rs
+#, kalliope-rust, python-brace-format
+msgctxt "programma.motore.non-prepara"
+msgid "Non riesco a preparare la voce: {causa}"
+msgstr "无法准备声音：{causa}"
+
+#: crates/app/src/own_voice.rs
+#, kalliope-rust
+msgctxt "programma.registra.nessun-microfono"
+msgid "Non trovo un microfono. Collegane uno (meglio una cuffia con microfono), poi riprova."
+msgstr "找不到麦克风。请接上一个再试，最好用带麦克风的耳机。"
+
+#: crates/app/src/own_voice.rs
+#, kalliope-rust
+msgctxt "programma.registra.serve-pipewire"
+msgid "Su questo computer non posso registrare: serve PipeWire, il servizio audio dei sistemi Linux di oggi."
+msgstr "这台电脑暂时无法录音。录音需要 PipeWire，也就是现在的 Linux 系统使用的音频服务。"
+
+#: crates/app/src/own_voice.rs
+#, kalliope-rust
+msgctxt "programma.registra.audio-non-risponde"
+msgid "Il servizio audio del computer non risponde: riprova fra qualche secondo."
+msgstr "电脑的音频服务没有响应。请过几秒再试。"
+
+#: crates/app/src/own_voice.rs
+#, kalliope-rust
+msgctxt "programma.registra.microfono-non-aperto"
+msgid "Il microfono non si è aperto. Riprova, o scegli un altro microfono."
+msgstr "麦克风未能打开。再试一次，或选择另一个麦克风。"
+
+#. Placeholders to leave as they are: {n}
+#: crates/app/src/own_voice.rs
+#, kalliope-rust, python-brace-format
+msgctxt "programma.file.lungo"
+msgid "Il file è lungo: ho cercato la voce nel primo minuto."
+msgid_plural "Il file è lungo: ho cercato la voce nei primi {n} minuti."
+msgstr[0] "文件很长，只在前 {n} 分钟里查找了人声。"
+
+#. Placeholders to leave as they are: {label}
+#: crates/app/src/own_voice.rs
+#, kalliope-rust, python-brace-format
+msgctxt "programma.registra.scollegato"
+msgid "Il microfono «{label}» si è scollegato: tengo quello che hai registrato fino a quel momento."
+msgstr "麦克风“{label}”已断开。断开前录下的内容已保留。"
+
+#: crates/app/src/own_voice.rs
+#, kalliope-rust
+msgctxt "programma.registra.nessun-suono"
+msgid "Non è arrivato nessun suono dal microfono. Controlla che sia collegato e acceso, poi riprova."
+msgstr "麦克风没有收到声音。检查是否已接好并开启，然后再试。"
+
+#: crates/app/src/own_voice.rs
+#, kalliope-rust
+msgctxt "programma.nome.vuoto"
+msgid "Scrivi un nome per la voce, per esempio «La voce di Anna»."
+msgstr "给声音起个名字，例如“安娜的声音”。"
+
+#: crates/app/src/own_voice.rs
+#, kalliope-rust
+msgctxt "programma.nome.troppo-lungo"
+msgid "Il nome è troppo lungo: accorcialo un po'."
+msgstr "名字太长了，写短一点吧。"
+
+#. {nome} is a name the person typed that is also the name of Giulia or Marco
+#. Placeholders to leave as they are: {nome}
+#: crates/app/src/own_voice.rs
+#, kalliope-rust, python-brace-format
+msgctxt "programma.nome.come-una-voce-di-kalliope"
+msgid "«{nome}» è anche il nome di una voce di Kalliope. Puoi tenerlo: nel menu la tua comparirà come «{nome} (voce propria)». Oppure scegli un altro nome."
+msgstr "Kalliope 已经有一个声音叫“{nome}”。你可以保留这个名字，菜单中会显示“{nome}（自己的声音）”，也可以另起一个名字。"
+
+#. Placeholders to leave as they are: {nome}
+#: crates/app/src/own_voice.rs
+#, kalliope-rust, python-brace-format
+msgctxt "programma.nome.esiste"
+msgid "C'è già una voce che si chiama «{nome}». Vuoi sostituirla con questa, o preferisci un altro nome?"
+msgstr "已经有一个声音叫“{nome}”。要替换它，还是另起一个名字？"
+
+#: crates/app/src/own_voice.rs
+#, kalliope-rust
+msgctxt "programma.voce.registrazione-non-basta"
+msgid "Questa registrazione non basta per creare una voce."
+msgstr "这段录音还不足以创建声音。"
+
+#: crates/app/src/own_voice.rs
+#, kalliope-rust
+msgctxt "programma.voce.non-creata"
+msgid "Non sono riuscita a creare la voce. Riprova; se succede ancora, prova con un'altra registrazione."
+msgstr "声音创建失败。再试一次，如果还是不行，就换一段录音。"
+
+#: crates/app/src/own_voice.rs
+#, kalliope-rust
+msgctxt "programma.registra.casse"
+msgid "Non riesco a farti ascoltare la registrazione dalle casse."
+msgstr "扬声器无法播放这段录音。"
+
+#. The status line when the voice is ready; «Kalliope» is the name of the virtual microphone the person picks in the meeting
+#: crates/app/src/session.rs
+#, kalliope-rust
+msgctxt "programma.sessione.pronta"
+msgid "Pronta. In Zoom, Teams, Meet o nel browser scegli «Kalliope» come microfono."
+msgstr "已就绪。在 Zoom、Teams、Meet 或浏览器中选择“Kalliope”作为麦克风。"
+
+#: crates/app/src/session.rs
+#, kalliope-rust
+msgctxt "programma.sessione.parlo"
+msgid "Sto parlando…"
+msgstr "正在说话…"
+
+#: crates/app/src/session.rs
+#, kalliope-rust
+msgctxt "programma.sessione.nessuno-sente"
+msgid "Nessuno nella chiamata ha sentito la frase: nessuna app sta usando il microfono «Kalliope». Sceglilo come microfono nell'app della riunione."
+msgstr "通话中的其他人没听到这句话。没有应用在使用“Kalliope”麦克风，请在会议应用中选它作为麦克风。"
+
+#: crates/app/src/session.rs
+#, kalliope-rust
+msgctxt "programma.sessione.nessuno-sente-senza-frase"
+msgid "Nessuna app sta usando il microfono «Kalliope». Sceglilo come microfono nell'app della riunione."
+msgstr "没有应用在使用“Kalliope”麦克风，请在会议应用中选它作为麦克风。"
+
+#: crates/app/src/session.rs
+#, kalliope-rust
+msgctxt "programma.sessione.niente-da-dire"
+msgid "Non c'è niente da dire in questo testo: scrivi almeno una parola, poi premi Invio."
+msgstr "这段文字里没有可以读出的内容。至少输入一个词，再按回车。"
+
+#: crates/app/src/session.rs
+#, kalliope-rust
+msgctxt "programma.sessione.preparo"
+msgid "Preparo la voce…"
+msgstr "正在准备声音…"
+
+#: crates/sample/src/analysis.rs
+#, kalliope-rust
+msgctxt "programma.analisi.nessuna-voce"
+msgid "Non sento una voce che parla: solo silenzio, rumore o musica. Registra di nuovo, o scegli un altro file."
+msgstr "录音里听不到人说话，可能是没有声音，或只有噪声或音乐。再录一次，或换个文件。"
+
+#: crates/sample/src/analysis.rs
+#, kalliope-rust
+msgctxt "programma.analisi.troppo-poco-parlato"
+msgid "C'è troppo poco parlato: servono almeno 4 secondi di voce, meglio 12. Registra ancora un po', o scegli un file più lungo."
+msgstr "人声太短。至少需要 4 秒，最好有 12 秒。再录一会儿，或选一个更长的文件。"
+
+#: crates/sample/src/analysis.rs
+#, kalliope-rust
+msgctxt "programma.analisi.parlato-breve"
+msgid "La voce si può creare, ma con 12 secondi di parlato somiglierebbe di più alla persona."
+msgstr "可以用这段录音创建声音。如果能录到 12 秒的人声，听起来会更像本人。"
+
+#: crates/sample/src/analysis.rs
+#, kalliope-rust
+msgctxt "programma.analisi.distorta"
+msgid "La voce è distorta perché era troppo forte. Allontana un po' il microfono, o abbassane il volume, e registra di nuovo."
+msgstr "声音太响，录出来有些失真。把麦克风移远一点，或调低麦克风音量，再录一次。"
+
+#: crates/sample/src/analysis.rs
+#, kalliope-rust
+msgctxt "programma.analisi.troppo-bassa"
+msgid "La voce è molto bassa. Avvicinati al microfono, o alzane il volume, e registra di nuovo."
+msgstr "声音太轻。靠近麦克风，或调高麦克风音量，再录一次。"
+
+#: crates/sample/src/analysis.rs
+#, kalliope-rust
+msgctxt "programma.analisi.rumore-di-fondo"
+msgid "C'è molto rumore di fondo, e la voce creata lo imiterà. Se puoi, registra in un posto più silenzioso."
+msgstr "背景噪声很大，创建的声音也会模仿这些噪声。如果方便，找个更安静的地方再录一次。"
+
+#: crates/sample/src/analysis.rs
+#, kalliope-rust
+msgctxt "programma.analisi.musica"
+msgid "Questo tratto sembra musica più che una voce che parla. Scegli un altro tratto, o un altro file."
+msgstr "这段听起来更像音乐，人声不明显。换个片段或文件吧。"
+
+#: crates/sample/src/decode.rs
+#, kalliope-rust
+msgctxt "programma.file.non-c-e-piu"
+msgid "Non riesco ad aprire il file: non c'è più, forse è stato spostato o cancellato. Scegline un altro."
+msgstr "找不到这个文件。它可能已被移动或删除。请选择另一个文件。"
+
+#: crates/sample/src/decode.rs
+#, kalliope-rust
+msgctxt "programma.file.nessun-permesso"
+msgid "Non riesco ad aprire il file: non ho il permesso di leggerlo. Scegline un altro."
+msgstr "没有读取这个文件的权限。请选择另一个文件。"
+
+#: crates/sample/src/decode.rs
+#, kalliope-rust
+msgctxt "programma.file.non-si-apre"
+msgid "Non riesco ad aprire il file: non si apre. Scegline un altro."
+msgstr "打不开这个文件。请选择另一个文件。"
+
+#: crates/sample/src/decode.rs
+#, kalliope-rust
+msgctxt "programma.file.vuoto"
+msgid "Il file è vuoto."
+msgstr "文件是空的。"
+
+#: crates/sample/src/decode.rs
+#, kalliope-rust
+msgctxt "programma.file.non-audio"
+msgid "Questo file non è un audio. Prova con un messaggio vocale, un video o una registrazione."
+msgstr "这不是音频文件。可以试试语音消息、视频或录音。"
+
+#: crates/sample/src/decode.rs
+#, kalliope-rust
+msgctxt "programma.file.senza-audio"
+msgid "In questo file non c'è audio."
+msgstr "这个文件里没有音频。"
+
+#. {formato} is the audio format the file has
+#. Placeholders to leave as they are: {formato}
+#: crates/sample/src/decode.rs
+#, kalliope-rust, python-brace-format
+msgctxt "programma.file.non-supportato"
+msgid "Kalliope non sa ancora leggere l'audio di questo file ({formato}). Convertilo in WAV o MP3, oppure scegline un altro."
+msgstr "Kalliope 还无法读取这个文件里的音频（{formato}）。可以把它转为 WAV 或 MP3，或换个文件。"
+
+#: crates/sample/src/decode.rs
+#, kalliope-rust
+msgctxt "programma.file.manca-libopus"
+msgid "Per leggere i messaggi vocali in formato Opus serve la libreria libopus, che su questo computer manca: installa il pacchetto «opus» (o «libopus0»)."
+msgstr "读取 Opus 格式的语音消息需要 libopus 库。这台电脑上缺少这个库，请安装软件包“opus”或“libopus0”。"
+
+#. Placeholders to leave as they are: {causa}
+#: crates/sample/src/decode.rs
+#, kalliope-rust, python-brace-format
+msgctxt "programma.file.rovinato"
+msgid "Il file sembra rovinato e non si legge ({causa})."
+msgstr "文件似乎已损坏，无法读取（{causa}）。"
+
+#: crates/sample/src/decode.rs
+#, kalliope-rust
+msgctxt "programma.file.lettura-annullata"
+msgid "Lettura annullata."
+msgstr "已取消读取。"
+
+#: crates/sample/src/lib.rs
+#, kalliope-rust
+msgctxt "programma.voce.creazione-annullata"
+msgid "Creazione della voce annullata."
+msgstr "已取消创建声音。"
+
+#. Placeholders to leave as they are: {causa}
+#: crates/sample/src/lib.rs
+#, kalliope-rust, python-brace-format
+msgctxt "programma.voce.creazione-fallita"
+msgid "Non sono riuscita a creare la voce: {causa}"
+msgstr "声音创建失败：{causa}"
