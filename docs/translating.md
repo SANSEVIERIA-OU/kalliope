@@ -124,7 +124,7 @@ it is written without `!` (Slint's reader of a plural rule does not know negatio
 **A message in the source.** In a `.slint` file: `@tr("programma.finestra.riunione" => "Riunione")`, with arguments
 `@tr("programma.bolla.ripeti-frase" => "Ripeti: {}", testo)`, and a plural `@tr("programma.crea.trovati" => "Ho trovato {n} tratto." | "Ho trovato {n} tratti." % quanti)`.
 In Rust: `tr!("programma.sessione.parlo" => "Sto parlando…")`, `tr!("…" => "Leggo «{nome}»", nome = file)`, `trn!("…" => "Ne manca {n}" | "Ne mancano {n}", secondi)`.
-A comment `// TRANSLATORS: …` on the line above, or after the call, goes to the translators. The key is
+A comment `// TRANSLATORS: …` on the line above, or after the call, goes to the translators. `extract` reads every `.slint` and `.rs` file of `crates/` (except `crates/i18n`, which defines the macros and tests them with keys that are not messages): a `tr!` in a test would become a message, so tests do not use it. The key is
 `programma.area.nome`, lowercase letters, digits, dots and dashes, and it never changes when the Italian text does: a changed Italian text makes
 every translation `fuzzy` and the language leaves the program until someone has read it again (the website does the same). Then
 `python3 -I tools/translations.py extract` writes the entries. CI fails when it was not run.
