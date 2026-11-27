@@ -42,6 +42,8 @@ LOADED = {
     "libXi.so.6": ("libxi", "libxi6", "libXi", True),
     "libpipewire-0.3.so.0": ("libpipewire", "libpipewire-0.3-0", "pipewire-libs", False),
     "libopus.so.0": ("opus", "libopus0", "opus", False),
+    # rfd asks the desktop's file chooser through the XDG portal over libdbus, loaded at run time; without it, zenity.
+    "libdbus-1.so.3": ("dbus", "libdbus-1-3", "dbus-libs", False),
     "libonnxruntime.so.1": None,  # in the package, next to the program
     "libXrender.so.1": None,  # opened on X11 as a dependency of libXcursor: the package manager brings it
     "libxcb.so.1": None,  # opened on X11 as a dependency of libX11: the package manager brings it

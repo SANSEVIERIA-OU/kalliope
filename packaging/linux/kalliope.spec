@@ -23,6 +23,8 @@ Requires:       libXi%{?_isa}
 Recommends:     pipewire-libs%{?_isa}
 # Making a personal voice from Opus voice messages (WhatsApp, Telegram).
 Recommends:     opus%{?_isa}
+# The desktop's file chooser (portal) to import a recording; zenity otherwise.
+Recommends:     dbus-libs%{?_isa}
 
 # Already built, stripped and linked: no debug package, no post-processing, no build-id links
 # (another package with the same ONNX Runtime build would otherwise conflict).

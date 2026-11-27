@@ -18,12 +18,14 @@ license=('LicenseRef-SANSEVIERIA-1.1')
 # fontconfig. Loaded at run time for the window: libxkbcommon, libwayland-client (Wayland), libX11, libX11-xcb, libXcursor, libXi and
 # libxkbcommon-x11 (X11). All are required: the window falls back to X11 where Wayland is missing, and a missing X11 library stops it
 # (a desktop already has them all). libpipewire is the virtual microphone and records a personal voice; libopus reads Opus voice
-# messages (WhatsApp, Telegram) to make a voice from. ONNX Runtime and the voice models come in the tarball
+# messages (WhatsApp, Telegram) to make a voice from; libdbus asks the desktop's file chooser (portal) for the file to import, with zenity
+# as the fallback. ONNX Runtime and the voice models come in the tarball
 # (lib/, share/kalliope/): nothing is downloaded. tools/test_packaging.py checks this list against the binary and the CI.
 depends=('glibc' 'gcc-libs' 'fontconfig' 'libxkbcommon' 'libxkbcommon-x11' 'wayland' 'libx11' 'libxcursor' 'libxi')
 optdepends=(
   'libpipewire: the virtual microphone, and recording a personal voice'
   'opus: making a personal voice from WhatsApp and Telegram voice messages'
+  'dbus: the desktop file chooser to import a recording (zenity otherwise)'
 )
 provides=('kalliope')
 conflicts=('kalliope')
