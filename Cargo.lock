@@ -2245,7 +2245,7 @@ dependencies = [
 
 [[package]]
 name = "kalliope-app"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "kalliope-mic",
  "kalliope-phonemes",
@@ -2260,7 +2260,7 @@ dependencies = [
 
 [[package]]
 name = "kalliope-cli"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "kalliope-phonemes",
  "kalliope-sample",
@@ -2270,15 +2270,15 @@ dependencies = [
 
 [[package]]
 name = "kalliope-mic"
-version = "0.2.0"
+version = "0.3.0"
 
 [[package]]
 name = "kalliope-phonemes"
-version = "0.2.0"
+version = "0.3.0"
 
 [[package]]
 name = "kalliope-sample"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "kalliope-voice",
  "symphonia",
@@ -2286,15 +2286,15 @@ dependencies = [
 
 [[package]]
 name = "kalliope-text"
-version = "0.2.0"
+version = "0.3.0"
 
 [[package]]
 name = "kalliope-tokens"
-version = "0.2.0"
+version = "0.3.0"
 
 [[package]]
 name = "kalliope-voice"
-version = "0.2.0"
+version = "0.3.0"
 
 [[package]]
 name = "keyboard-types"

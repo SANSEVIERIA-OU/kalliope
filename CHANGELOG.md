@@ -4,6 +4,43 @@ Kalliope's versions go up one step at a time (0.1, 0.2 … 0.9, 1.0, 1.1 …). E
 published for every supported system (see [docs/releasing.md](docs/releasing.md)). This file lists
 what each version brings, for the people who use it.
 
+## 0.3 — 27 November 2026
+
+A new window, made for writing, and your own voice made inside Kalliope.
+
+- **A window of its own.** Kalliope now has the look of its website: graphite or light, following
+  your system, with the Lexend typeface and the logo. It is one window on every desktop, with no Qt,
+  GTK or Python to install.
+- **Writing comes first.** You write in a large area that grows with the window, with big text.
+  Enter says the phrase. The phrase rises into a bubble, and its words light up as the voice says
+  them. Esc stops at once, and the bubble shows how far the voice got. ↑ brings back the last
+  phrase.
+- **The phrases you have said stay**, also after you close Kalliope, stored only on your computer.
+  Repeat one with a click, or with Tab and Enter. «Altro» → «Svuota la cronologia» empties the list.
+- **Kalliope tells you when nobody hears you.** If no app in the call is using the «Kalliope»
+  microphone, the bubble turns warm and says «Nessuno ti sente». The same goes for a missing
+  microphone and a voice that cannot start. «Come si risolve» opens the right page of the guide.
+- **Your own voice, inside Kalliope.** «Altro» → «Crea la tua voce» offers two ways:
+  - Record yourself reading a short text. A circle fills up to twelve seconds of voice.
+  - Use an old recording: a WhatsApp or Telegram voice message, a video, or a WAV, FLAC, MP3, OGG or
+    M4A file. Kalliope finds the clearest stretches and says in plain words if one is noisy or too
+    short.
+
+  Listen, give the voice a name and confirm you may use it. The new voice is ready in a couple of
+  seconds.
+- **«Riunione»**, a compact window to keep next to Zoom or Meet. On Wayland, your system keeps it on
+  top: Alt+Space, then «Sempre in primo piano».
+- **Bigger or smaller text** with A− and A+, or with Ctrl+plus and Ctrl+minus. Kalliope remembers
+  your choice and the meeting mode.
+- **Stop works at once**, even on long texts. The first words start in under a second instead of
+  waiting for the whole text. Closing Kalliope while it speaks takes the microphone away right away.
+- **Read the way people say it.** Initials («via G. Verdi»), «a.C.», «½», units like «kg» and «mld»,
+  and names like Zoom, Teams, Meet and WhatsApp are read as an Italian speaker says them.
+- **Sturdier.** A broken voice file no longer locks the window. Kalliope reconnects by itself when
+  the audio service restarts, and opening it twice brings back the window already open.
+- **Installing.** The packages require the small Wayland and X11 libraries the window needs, and
+  recommend libopus, for importing voice messages.
+
 ## 0.2 — 26 November 2026
 
 - The desktop window follows its platform. On GNOME it uses GTK and libadwaita, on Plasma the installed Qt widget style. Windows uses Fluent and macOS uses Cupertino.

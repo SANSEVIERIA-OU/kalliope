@@ -37,6 +37,11 @@
   </supports>
   <content_rating type="oars-1.1"/>
   <releases>
+    <release version="0.3" date="2026-11-27">
+      <description>
+        <p>A new window made for writing: a large writing area where Enter speaks, the words lighting up as the voice says them, and the phrases said kept across restarts. Kalliope tells you when nobody in the call hears you. Create your own voice inside Kalliope, by recording yourself or from an old voice message or video. A compact meeting mode, adjustable text size, and light and dark themes that follow the system.</p>
+      </description>
+    </release>
     <release version="0.2" date="2026-11-26">
       <description>
         <p>The window follows the GNOME or Plasma desktop style. Start typing while the voice loads, and scroll to repeat earlier phrases in compact windows. Preparing a personal voice creates the voices folder on first use.</p>
