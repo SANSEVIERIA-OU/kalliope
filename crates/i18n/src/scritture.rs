@@ -45,3 +45,9 @@ pub fn is_rtl(code: &str) -> bool {
 /// begins with a word in Latin («Kalliope è…») would run from left to right and sit on the left of a mirrored window; the
 /// mark makes the paragraph right to left whatever it begins with, and only that: the letters still order themselves.
 pub const RLM: char = '\u{200f}';
+
+/// The marks that isolate what fills a placeholder in a text written from right to left (U+2068 first strong isolate, U+2069 pop
+/// directional isolate): a Latin name, a file or a number keeps its own direction, and the punctuation around it stays where the
+/// sentence puts it instead of moving to the other end of the line.
+pub const FSI: char = '\u{2068}';
+pub const PDI: char = '\u{2069}';

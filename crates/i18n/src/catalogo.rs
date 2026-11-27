@@ -394,17 +394,31 @@ pub fn pseudo(code: &str, source: &[Entry]) -> Language {
 }
 
 /// The forms of an entry as the program carries them: in a language written from right to left each opens with the mark that makes
-/// its paragraph right to left (`scritture::RLM`).
+/// its paragraph right to left (`scritture::RLM`), and each placeholder is isolated (`scritture::FSI` … `scritture::PDI`).
 fn forms_for(language: &Language, entry: &Entry) -> Vec<String> {
     if scritture::is_rtl(&language.code) {
         entry
             .forms
             .iter()
-            .map(|f| format!("{}{f}", scritture::RLM))
+            .map(|f| format!("{}{}", scritture::RLM, isolate(f)))
             .collect()
     } else {
         entry.forms.clone()
     }
+}
+
+/// A text whose placeholders are each closed between the isolating marks; `{{` and `}}` are a brace, not a placeholder.
+fn isolate(text: &str) -> String {
+    pieces(text)
+        .into_iter()
+        .map(|(placeholder, t)| {
+            if placeholder && t != "{{" && t != "}}" {
+                format!("{}{t}{}", scritture::FSI, scritture::PDI)
+            } else {
+                t
+            }
+        })
+        .collect()
 }
 
 fn escape(s: &str) -> String {
@@ -687,9 +701,17 @@ mod tests {
             parse(&std::fs::read_to_string(dir.join("ar/LC_MESSAGES/kalliope-app.po")).unwrap())
                 .unwrap();
         assert_eq!(po.entries[0].forms, ["\u{200f}Mehr"]);
+        // what fills a placeholder is isolated: a Latin name keeps the punctuation of the sentence where it belongs
         assert_eq!(
             po.entries[1].forms,
-            ["\u{200f}Noch {n}", "\u{200f}Noch {n}"]
+            [
+                "\u{200f}Noch \u{2068}{n}\u{2069}",
+                "\u{200f}Noch \u{2068}{n}\u{2069}"
+            ]
+        );
+        assert_eq!(
+            isolate("«{}» {{x}} {nome}"),
+            "«\u{2068}{}\u{2069}» {{x}} \u{2068}{nome}\u{2069}"
         );
         // the pseudo-language from right to left is marked too
         let p = pseudo("ar-XB", &[model[1].clone()]);
